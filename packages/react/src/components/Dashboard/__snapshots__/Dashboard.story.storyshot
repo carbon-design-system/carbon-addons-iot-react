@@ -2121,7 +2121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                     >
                                       <defs>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__a"
+                                          id="emptystate-Default-icon_svg__a-defaultIcon"
                                           x1="37.502%"
                                           x2="55.959%"
                                           y1="34.928%"
@@ -2137,7 +2137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__b"
+                                          id="emptystate-Default-icon_svg__b-defaultIcon"
                                           x1="-63.062%"
                                           x2="101.194%"
                                           y1="77.587%"
@@ -2153,7 +2153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__c"
+                                          id="emptystate-Default-icon_svg__c-defaultIcon"
                                           x1="73.167%"
                                           x2="44.204%"
                                           y1="89.948%"
@@ -2169,7 +2169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__d"
+                                          id="emptystate-Default-icon_svg__d-defaultIcon"
                                           x1="-23.114%"
                                           x2="57.391%"
                                           y1="-11.496%"
@@ -2185,7 +2185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__e"
+                                          id="emptystate-Default-icon_svg__e-defaultIcon"
                                           x1="5.255%"
                                           x2="56.521%"
                                           y1="115.2%"
@@ -2201,7 +2201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__f"
+                                          id="emptystate-Default-icon_svg__f-defaultIcon"
                                           x1="45.625%"
                                           x2="61.212%"
                                           y1="38.922%"
@@ -2217,7 +2217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__g"
+                                          id="emptystate-Default-icon_svg__g-defaultIcon"
                                           x1="57.243%"
                                           x2="41.531%"
                                           y1="31.727%"
@@ -2233,7 +2233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__h"
+                                          id="emptystate-Default-icon_svg__h-defaultIcon"
                                           x1="27.599%"
                                           x2="45.796%"
                                           y1="69.394%"
@@ -2249,7 +2249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__i"
+                                          id="emptystate-Default-icon_svg__i-defaultIcon"
                                           x1="62.356%"
                                           x2="31.337%"
                                           y1="64.634%"
@@ -2265,7 +2265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__j"
+                                          id="emptystate-Default-icon_svg__j-defaultIcon"
                                           x1="62.354%"
                                           x2="43.81%"
                                           y1="114.244%"
@@ -2291,52 +2291,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                         />
                                         <path
                                           d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                                          fill="url(#emptystate-Default-icon_svg__a)"
+                                          fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
                                           transform="translate(11.724 43)"
                                         />
                                         <path
                                           d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                                          fill="url(#emptystate-Default-icon_svg__b)"
+                                          fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
                                           transform="translate(12.414 7.138)"
                                         />
                                         <path
                                           d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                                          fill="url(#emptystate-Default-icon_svg__c)"
+                                          fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
                                           transform="translate(0 4.38)"
                                         />
                                         <path
                                           d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                                          fill="url(#emptystate-Default-icon_svg__d)"
+                                          fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
                                           transform="translate(12.414 31.276)"
                                         />
                                         <path
                                           d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                                          fill="url(#emptystate-Default-icon_svg__e)"
+                                          fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
                                           transform="translate(40 7.138)"
                                         />
                                         <path
                                           d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                                          fill="url(#emptystate-Default-icon_svg__f)"
+                                          fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                                          fill="url(#emptystate-Default-icon_svg__g)"
+                                          fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
                                           transform="translate(12.414 23)"
                                         />
                                         <path
                                           d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                                          fill="url(#emptystate-Default-icon_svg__h)"
+                                          fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
                                           transform="translate(40 3)"
                                         />
                                         <path
                                           d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                                          fill="url(#emptystate-Default-icon_svg__i)"
+                                          fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                                          fill="url(#emptystate-Default-icon_svg__j)"
+                                          fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
                                           transform="translate(2.069 23)"
                                         />
                                         <path
@@ -5048,7 +5048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                     >
                                       <defs>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__a"
+                                          id="emptystate-Default-icon_svg__a-defaultIcon"
                                           x1="37.502%"
                                           x2="55.959%"
                                           y1="34.928%"
@@ -5064,7 +5064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__b"
+                                          id="emptystate-Default-icon_svg__b-defaultIcon"
                                           x1="-63.062%"
                                           x2="101.194%"
                                           y1="77.587%"
@@ -5080,7 +5080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__c"
+                                          id="emptystate-Default-icon_svg__c-defaultIcon"
                                           x1="73.167%"
                                           x2="44.204%"
                                           y1="89.948%"
@@ -5096,7 +5096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__d"
+                                          id="emptystate-Default-icon_svg__d-defaultIcon"
                                           x1="-23.114%"
                                           x2="57.391%"
                                           y1="-11.496%"
@@ -5112,7 +5112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__e"
+                                          id="emptystate-Default-icon_svg__e-defaultIcon"
                                           x1="5.255%"
                                           x2="56.521%"
                                           y1="115.2%"
@@ -5128,7 +5128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__f"
+                                          id="emptystate-Default-icon_svg__f-defaultIcon"
                                           x1="45.625%"
                                           x2="61.212%"
                                           y1="38.922%"
@@ -5144,7 +5144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__g"
+                                          id="emptystate-Default-icon_svg__g-defaultIcon"
                                           x1="57.243%"
                                           x2="41.531%"
                                           y1="31.727%"
@@ -5160,7 +5160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__h"
+                                          id="emptystate-Default-icon_svg__h-defaultIcon"
                                           x1="27.599%"
                                           x2="45.796%"
                                           y1="69.394%"
@@ -5176,7 +5176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__i"
+                                          id="emptystate-Default-icon_svg__i-defaultIcon"
                                           x1="62.356%"
                                           x2="31.337%"
                                           y1="64.634%"
@@ -5192,7 +5192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__j"
+                                          id="emptystate-Default-icon_svg__j-defaultIcon"
                                           x1="62.354%"
                                           x2="43.81%"
                                           y1="114.244%"
@@ -5218,52 +5218,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                         />
                                         <path
                                           d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                                          fill="url(#emptystate-Default-icon_svg__a)"
+                                          fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
                                           transform="translate(11.724 43)"
                                         />
                                         <path
                                           d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                                          fill="url(#emptystate-Default-icon_svg__b)"
+                                          fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
                                           transform="translate(12.414 7.138)"
                                         />
                                         <path
                                           d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                                          fill="url(#emptystate-Default-icon_svg__c)"
+                                          fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
                                           transform="translate(0 4.38)"
                                         />
                                         <path
                                           d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                                          fill="url(#emptystate-Default-icon_svg__d)"
+                                          fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
                                           transform="translate(12.414 31.276)"
                                         />
                                         <path
                                           d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                                          fill="url(#emptystate-Default-icon_svg__e)"
+                                          fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
                                           transform="translate(40 7.138)"
                                         />
                                         <path
                                           d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                                          fill="url(#emptystate-Default-icon_svg__f)"
+                                          fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                                          fill="url(#emptystate-Default-icon_svg__g)"
+                                          fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
                                           transform="translate(12.414 23)"
                                         />
                                         <path
                                           d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                                          fill="url(#emptystate-Default-icon_svg__h)"
+                                          fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
                                           transform="translate(40 3)"
                                         />
                                         <path
                                           d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                                          fill="url(#emptystate-Default-icon_svg__i)"
+                                          fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                                          fill="url(#emptystate-Default-icon_svg__j)"
+                                          fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
                                           transform="translate(2.069 23)"
                                         />
                                         <path
@@ -8010,7 +8010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                     >
                                       <defs>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__a"
+                                          id="emptystate-Default-icon_svg__a-defaultIcon"
                                           x1="37.502%"
                                           x2="55.959%"
                                           y1="34.928%"
@@ -8026,7 +8026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__b"
+                                          id="emptystate-Default-icon_svg__b-defaultIcon"
                                           x1="-63.062%"
                                           x2="101.194%"
                                           y1="77.587%"
@@ -8042,7 +8042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__c"
+                                          id="emptystate-Default-icon_svg__c-defaultIcon"
                                           x1="73.167%"
                                           x2="44.204%"
                                           y1="89.948%"
@@ -8058,7 +8058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__d"
+                                          id="emptystate-Default-icon_svg__d-defaultIcon"
                                           x1="-23.114%"
                                           x2="57.391%"
                                           y1="-11.496%"
@@ -8074,7 +8074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__e"
+                                          id="emptystate-Default-icon_svg__e-defaultIcon"
                                           x1="5.255%"
                                           x2="56.521%"
                                           y1="115.2%"
@@ -8090,7 +8090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__f"
+                                          id="emptystate-Default-icon_svg__f-defaultIcon"
                                           x1="45.625%"
                                           x2="61.212%"
                                           y1="38.922%"
@@ -8106,7 +8106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__g"
+                                          id="emptystate-Default-icon_svg__g-defaultIcon"
                                           x1="57.243%"
                                           x2="41.531%"
                                           y1="31.727%"
@@ -8122,7 +8122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__h"
+                                          id="emptystate-Default-icon_svg__h-defaultIcon"
                                           x1="27.599%"
                                           x2="45.796%"
                                           y1="69.394%"
@@ -8138,7 +8138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__i"
+                                          id="emptystate-Default-icon_svg__i-defaultIcon"
                                           x1="62.356%"
                                           x2="31.337%"
                                           y1="64.634%"
@@ -8154,7 +8154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__j"
+                                          id="emptystate-Default-icon_svg__j-defaultIcon"
                                           x1="62.354%"
                                           x2="43.81%"
                                           y1="114.244%"
@@ -8180,52 +8180,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                         />
                                         <path
                                           d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                                          fill="url(#emptystate-Default-icon_svg__a)"
+                                          fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
                                           transform="translate(11.724 43)"
                                         />
                                         <path
                                           d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                                          fill="url(#emptystate-Default-icon_svg__b)"
+                                          fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
                                           transform="translate(12.414 7.138)"
                                         />
                                         <path
                                           d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                                          fill="url(#emptystate-Default-icon_svg__c)"
+                                          fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
                                           transform="translate(0 4.38)"
                                         />
                                         <path
                                           d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                                          fill="url(#emptystate-Default-icon_svg__d)"
+                                          fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
                                           transform="translate(12.414 31.276)"
                                         />
                                         <path
                                           d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                                          fill="url(#emptystate-Default-icon_svg__e)"
+                                          fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
                                           transform="translate(40 7.138)"
                                         />
                                         <path
                                           d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                                          fill="url(#emptystate-Default-icon_svg__f)"
+                                          fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                                          fill="url(#emptystate-Default-icon_svg__g)"
+                                          fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
                                           transform="translate(12.414 23)"
                                         />
                                         <path
                                           d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                                          fill="url(#emptystate-Default-icon_svg__h)"
+                                          fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
                                           transform="translate(40 3)"
                                         />
                                         <path
                                           d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                                          fill="url(#emptystate-Default-icon_svg__i)"
+                                          fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                                          fill="url(#emptystate-Default-icon_svg__j)"
+                                          fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
                                           transform="translate(2.069 23)"
                                         />
                                         <path
@@ -13592,7 +13592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                     >
                                       <defs>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__a"
+                                          id="emptystate-Default-icon_svg__a-defaultIcon"
                                           x1="37.502%"
                                           x2="55.959%"
                                           y1="34.928%"
@@ -13608,7 +13608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__b"
+                                          id="emptystate-Default-icon_svg__b-defaultIcon"
                                           x1="-63.062%"
                                           x2="101.194%"
                                           y1="77.587%"
@@ -13624,7 +13624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__c"
+                                          id="emptystate-Default-icon_svg__c-defaultIcon"
                                           x1="73.167%"
                                           x2="44.204%"
                                           y1="89.948%"
@@ -13640,7 +13640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__d"
+                                          id="emptystate-Default-icon_svg__d-defaultIcon"
                                           x1="-23.114%"
                                           x2="57.391%"
                                           y1="-11.496%"
@@ -13656,7 +13656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__e"
+                                          id="emptystate-Default-icon_svg__e-defaultIcon"
                                           x1="5.255%"
                                           x2="56.521%"
                                           y1="115.2%"
@@ -13672,7 +13672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__f"
+                                          id="emptystate-Default-icon_svg__f-defaultIcon"
                                           x1="45.625%"
                                           x2="61.212%"
                                           y1="38.922%"
@@ -13688,7 +13688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__g"
+                                          id="emptystate-Default-icon_svg__g-defaultIcon"
                                           x1="57.243%"
                                           x2="41.531%"
                                           y1="31.727%"
@@ -13704,7 +13704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__h"
+                                          id="emptystate-Default-icon_svg__h-defaultIcon"
                                           x1="27.599%"
                                           x2="45.796%"
                                           y1="69.394%"
@@ -13720,7 +13720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__i"
+                                          id="emptystate-Default-icon_svg__i-defaultIcon"
                                           x1="62.356%"
                                           x2="31.337%"
                                           y1="64.634%"
@@ -13736,7 +13736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__j"
+                                          id="emptystate-Default-icon_svg__j-defaultIcon"
                                           x1="62.354%"
                                           x2="43.81%"
                                           y1="114.244%"
@@ -13762,52 +13762,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                         />
                                         <path
                                           d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                                          fill="url(#emptystate-Default-icon_svg__a)"
+                                          fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
                                           transform="translate(11.724 43)"
                                         />
                                         <path
                                           d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                                          fill="url(#emptystate-Default-icon_svg__b)"
+                                          fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
                                           transform="translate(12.414 7.138)"
                                         />
                                         <path
                                           d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                                          fill="url(#emptystate-Default-icon_svg__c)"
+                                          fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
                                           transform="translate(0 4.38)"
                                         />
                                         <path
                                           d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                                          fill="url(#emptystate-Default-icon_svg__d)"
+                                          fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
                                           transform="translate(12.414 31.276)"
                                         />
                                         <path
                                           d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                                          fill="url(#emptystate-Default-icon_svg__e)"
+                                          fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
                                           transform="translate(40 7.138)"
                                         />
                                         <path
                                           d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                                          fill="url(#emptystate-Default-icon_svg__f)"
+                                          fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                                          fill="url(#emptystate-Default-icon_svg__g)"
+                                          fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
                                           transform="translate(12.414 23)"
                                         />
                                         <path
                                           d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                                          fill="url(#emptystate-Default-icon_svg__h)"
+                                          fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
                                           transform="translate(40 3)"
                                         />
                                         <path
                                           d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                                          fill="url(#emptystate-Default-icon_svg__i)"
+                                          fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                                          fill="url(#emptystate-Default-icon_svg__j)"
+                                          fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
                                           transform="translate(2.069 23)"
                                         />
                                         <path
@@ -31051,7 +31051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                     >
                                       <defs>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__a"
+                                          id="emptystate-Default-icon_svg__a-defaultIcon"
                                           x1="37.502%"
                                           x2="55.959%"
                                           y1="34.928%"
@@ -31067,7 +31067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__b"
+                                          id="emptystate-Default-icon_svg__b-defaultIcon"
                                           x1="-63.062%"
                                           x2="101.194%"
                                           y1="77.587%"
@@ -31083,7 +31083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__c"
+                                          id="emptystate-Default-icon_svg__c-defaultIcon"
                                           x1="73.167%"
                                           x2="44.204%"
                                           y1="89.948%"
@@ -31099,7 +31099,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__d"
+                                          id="emptystate-Default-icon_svg__d-defaultIcon"
                                           x1="-23.114%"
                                           x2="57.391%"
                                           y1="-11.496%"
@@ -31115,7 +31115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__e"
+                                          id="emptystate-Default-icon_svg__e-defaultIcon"
                                           x1="5.255%"
                                           x2="56.521%"
                                           y1="115.2%"
@@ -31131,7 +31131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__f"
+                                          id="emptystate-Default-icon_svg__f-defaultIcon"
                                           x1="45.625%"
                                           x2="61.212%"
                                           y1="38.922%"
@@ -31147,7 +31147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__g"
+                                          id="emptystate-Default-icon_svg__g-defaultIcon"
                                           x1="57.243%"
                                           x2="41.531%"
                                           y1="31.727%"
@@ -31163,7 +31163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__h"
+                                          id="emptystate-Default-icon_svg__h-defaultIcon"
                                           x1="27.599%"
                                           x2="45.796%"
                                           y1="69.394%"
@@ -31179,7 +31179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__i"
+                                          id="emptystate-Default-icon_svg__i-defaultIcon"
                                           x1="62.356%"
                                           x2="31.337%"
                                           y1="64.634%"
@@ -31195,7 +31195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                           />
                                         </linearGradient>
                                         <linearGradient
-                                          id="emptystate-Default-icon_svg__j"
+                                          id="emptystate-Default-icon_svg__j-defaultIcon"
                                           x1="62.354%"
                                           x2="43.81%"
                                           y1="114.244%"
@@ -31221,52 +31221,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                         />
                                         <path
                                           d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                                          fill="url(#emptystate-Default-icon_svg__a)"
+                                          fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
                                           transform="translate(11.724 43)"
                                         />
                                         <path
                                           d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                                          fill="url(#emptystate-Default-icon_svg__b)"
+                                          fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
                                           transform="translate(12.414 7.138)"
                                         />
                                         <path
                                           d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                                          fill="url(#emptystate-Default-icon_svg__c)"
+                                          fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
                                           transform="translate(0 4.38)"
                                         />
                                         <path
                                           d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                                          fill="url(#emptystate-Default-icon_svg__d)"
+                                          fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
                                           transform="translate(12.414 31.276)"
                                         />
                                         <path
                                           d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                                          fill="url(#emptystate-Default-icon_svg__e)"
+                                          fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
                                           transform="translate(40 7.138)"
                                         />
                                         <path
                                           d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                                          fill="url(#emptystate-Default-icon_svg__f)"
+                                          fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                                          fill="url(#emptystate-Default-icon_svg__g)"
+                                          fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
                                           transform="translate(12.414 23)"
                                         />
                                         <path
                                           d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                                          fill="url(#emptystate-Default-icon_svg__h)"
+                                          fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
                                           transform="translate(40 3)"
                                         />
                                         <path
                                           d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                                          fill="url(#emptystate-Default-icon_svg__i)"
+                                          fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
                                           transform="translate(40 23)"
                                         />
                                         <path
                                           d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                                          fill="url(#emptystate-Default-icon_svg__j)"
+                                          fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
                                           transform="translate(2.069 23)"
                                         />
                                         <path
