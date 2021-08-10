@@ -1,10 +1,19 @@
 import * as React from 'react';
 
+import { useUniqueId } from '../../hooks/useUniqueId';
+
 function SvgEmptystateSuccessIcon(props) {
+  const id = useUniqueId() || 'successIcon';
   return (
     <svg width={80} height={80} {...props}>
       <defs>
-        <linearGradient x1="0%" y1="50%" x2="99.938%" y2="50%" id="emptystate-Success-icon_svg__a">
+        <linearGradient
+          x1="0%"
+          y1="50%"
+          x2="99.938%"
+          y2="50%"
+          id={`emptystate-Success-icon_svg__a"-${id}`}
+        >
           <stop stopColor="#F6F6F6" offset="0%" />
           <stop stopColor="#A9A9A9" offset="56.682%" />
           <stop stopColor="#999" offset="68.111%" />
@@ -15,7 +24,7 @@ function SvgEmptystateSuccessIcon(props) {
           y1="572.588%"
           x2="200.857%"
           y2="162.5%"
-          id="emptystate-Success-icon_svg__b"
+          id={`emptystate-Success-icon_svg__b-${id}`}
         >
           <stop stopColor="#7D7D7D" offset="0%" />
           <stop stopColor="#2B2B2B" offset="100%" />
@@ -25,7 +34,7 @@ function SvgEmptystateSuccessIcon(props) {
           y1="62.295%"
           x2="60.758%"
           y2="17.126%"
-          id="emptystate-Success-icon_svg__c"
+          id={`emptystate-Success-icon_svg__c-${id}`}
         >
           <stop stopColor="#969696" offset=".392%" />
           <stop stopColor="#484848" offset="100%" />
@@ -35,7 +44,7 @@ function SvgEmptystateSuccessIcon(props) {
           y1="33.147%"
           x2="33.188%"
           y2="66.447%"
-          id="emptystate-Success-icon_svg__d"
+          id={`emptystate-Success-icon_svg__d-${id}`}
         >
           <stop stopColor="#5B5B5B" offset="0%" />
           <stop stopColor="#8B8B8B" offset="100%" />
@@ -49,22 +58,22 @@ function SvgEmptystateSuccessIcon(props) {
         />
         <path
           d="M32.167 2.32l-.308.184v-.336l-.34.214V1.069h.031c.062.203.206.376.432.519.309.183.668.264 1.08.244.452 0 .822-.092 1.11-.275.247-.142.39-.305.432-.488v59.815c-.018.207-.162.39-.432.551-.288.183-.658.275-1.11.275-.412.02-.771-.061-1.08-.244-.288-.184-.442-.407-.462-.672V30.84l.4-.214.247-.153V2.321z"
-          fill="url(#emptystate-Success-icon_svg__a)"
+          fill={`url(#emptystate-Success-icon_svg__a-${id})`}
           transform="translate(9)"
         />
         <path
-          fill="url(#emptystate-Success-icon_svg__b)"
+          fill={`url(#emptystate-Success-icon_svg__b-${id})`}
           d="M8.728 12.733l-1.203 3.48 1.203-.671z"
           transform="translate(9)"
         />
         <path
-          fill="url(#emptystate-Success-icon_svg__c)"
+          fill={`url(#emptystate-Success-icon_svg__c-${id})`}
           d="M7.093 16.458h.062l1.203-3.48-5.983 3.419V44.58l4.718-2.717z"
           transform="translate(9)"
         />
         <path
           d="M31.52 30.84l.4-.214V2.473l.247-.152-.308.183L7.402 16.61V44.763L31.52 30.84m-5.891-15.97l2.498 1.069-10.085 15.756-6.292-2.626 2.499-3.94 3.7 1.527c.021.02.052.02.093 0s.072-.06.093-.122l7.494-11.664z"
-          fill="url(#emptystate-Success-icon_svg__d)"
+          fill={`url(#emptystate-Success-icon_svg__d-${id})`}
           transform="translate(9)"
         />
         <path

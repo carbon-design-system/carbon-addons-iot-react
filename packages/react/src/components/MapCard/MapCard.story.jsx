@@ -116,5 +116,6 @@ export default {
     docs: {
       page: MapCardREADME,
     },
+    storyshots: { disable: true },
   },
 };
