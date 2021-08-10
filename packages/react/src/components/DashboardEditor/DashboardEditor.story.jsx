@@ -2,7 +2,8 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, object, array } from '@storybook/addon-knobs';
 
-import { DataScientistIcon, EmptystateDefaultIcon } from '../../icons/components';
+import { DataScientistIcon } from '../../icons/components';
+import { EmptystateDefaultIcon } from '../../icons/static';
 import {
   NumberInput,
   TextInput,
