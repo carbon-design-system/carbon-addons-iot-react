@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.76](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.75...v2.146.0-next.76) (2021-08-10)
+
+
+### Bug Fixes
+
+* **datetimepicker:** resolving flatpickr to 4.6.1 for consumers ([ccfe61e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ccfe61e4a8577972fe87701b2f01b2a4f3900bd1))
+
+
+
+
+
 # [2.146.0-next.75](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.74...v2.146.0-next.75) (2021-08-10)
 
 
