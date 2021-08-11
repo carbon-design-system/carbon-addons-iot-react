@@ -156,10 +156,7 @@ export class AITableModel implements PaginationModel {
 
     // only create a fresh header if necessary (header doesn't exist or differs in length)
     // this will only create a single level of headers (it will destroy any existing header items)
-    if (
-      this.header == null ||
-      (this.header[0].length !== this._data[0].length && this._data[0].length > 0)
-    ) {
+    if (this.header === null) {
       const newHeader = [[]];
       // disable this tslint here since we don't actually want to
       // loop the contents of the data
@@ -168,6 +165,19 @@ export class AITableModel implements PaginationModel {
         newHeader[0].push(new TableHeaderItem());
       }
       this.header = newHeader;
+    } else {
+      this.header.forEach((headerRow) => {
+        const projectedRowLength = this.projectedRowLength(headerRow);
+        if (projectedRowLength < this._data[0].length && this._data[0].length > 0) {
+          const difference = this._data[0].length - projectedRowLength;
+          // disable this tslint here since we don't actually want to
+          // loop the difference between contents of data and projected header row length
+          // tslint:disable-next-line: prefer-for-of
+          for (let i = 0; i < difference; i++) {
+            headerRow.push(new TableHeaderItem());
+          }
+        }
+      });
     }
 
     this.dataChange.emit();
@@ -695,7 +705,10 @@ export class AITableModel implements PaginationModel {
     const projectedIndices = this.actualIndexToProjectedIndices(indexFrom, this.header[rowIndex]);
     // based on those indices, find the "actual indices" of child rows
     for (let nextRowIndex = rowIndex; nextRowIndex < this.header.length; nextRowIndex++) {
-      const actualIndices = this.projectedIndicesToActualIndices(projectedIndices, this.header[nextRowIndex]);
+      const actualIndices = this.projectedIndicesToActualIndices(
+        projectedIndices,
+        this.header[nextRowIndex]
+      );
       // move them to the right place (based on the "projected indexTo")
       this.moveMultipleToIndex(actualIndices, indexTo, this.header[nextRowIndex]);
     }
@@ -929,7 +942,10 @@ export class AITableModel implements PaginationModel {
     return new Array(list[actualIndex].colSpan).fill(0).map((_, index) => startingIndex + index);
   }
 
-  protected projectedIndicesToActualIndices(projectedIndices: number[], list: TableHeaderItem[] | TableItem[]) {
+  protected projectedIndicesToActualIndices(
+    projectedIndices: number[],
+    list: TableHeaderItem[] | TableItem[]
+  ) {
     const actualIndicesSet = new Set();
 
     for (let projectedIndex of projectedIndices) {
