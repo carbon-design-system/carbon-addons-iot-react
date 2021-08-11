@@ -1,8 +1,6 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--pie-chart-container {
-  padding: 0 $spacing-05 $spacing-05;
-  position: absolute;
   width: 100%;
   height: 100%;
 }

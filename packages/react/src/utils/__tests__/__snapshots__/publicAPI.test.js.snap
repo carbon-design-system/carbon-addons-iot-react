@@ -5977,6 +5977,12 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -6096,6 +6102,9 @@ Map {
         "type": "bool",
       },
       "size": [Function],
+      "subtitle": Object {
+        "type": "string",
+      },
       "tabIndex": Object {
         "type": "number",
       },
@@ -11616,6 +11625,8 @@ Map {
         "xl": 16,
         "xs": 4,
       },
+      "footerContent": undefined,
+      "hasTitleWrap": false,
       "hideHeader": false,
       "i18n": Object {
         "cloneCardLabel": "Clone card",
@@ -11670,6 +11681,7 @@ Map {
         "xs": 144,
       },
       "size": "MEDIUM",
+      "subtitle": undefined,
       "tabIndex": undefined,
       "testId": "Card",
       "timeRange": undefined,
@@ -12192,6 +12204,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -12399,6 +12417,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -13140,6 +13161,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -13423,6 +13450,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -14322,6 +14352,12 @@ Map {
       "fontSize": Object {
         "type": "number",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -14532,6 +14568,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -15520,6 +15559,12 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -15672,6 +15717,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -16430,6 +16478,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -16646,6 +16700,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -17576,6 +17633,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -17711,6 +17774,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -18595,6 +18661,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -18802,6 +18874,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -19522,7 +19597,13 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
       "hasMoreData": Object {
+        "type": "bool",
+      },
+      "hasTitleWrap": Object {
         "type": "bool",
       },
       "hideHeader": Object {
@@ -19730,6 +19811,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -23073,6 +23157,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -23280,6 +23370,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -24306,6 +24399,12 @@ Map {
         ],
         "type": "oneOfType",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -24758,6 +24857,9 @@ Map {
       },
       "stops": Object {
         "type": "array",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
