@@ -423,8 +423,10 @@ export const handleTooltip = (
   defaultTooltip,
   timeDataSourceId,
   showTimeInGMT,
-  tooltipDateFormatPattern = 'L HH:mm:ss'
+  tooltipDateFormatPattern = 'L HH:mm:ss',
+  locale
 ) => {
+  dayjs.locale(locale);
   const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
     ? dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
     : dataOrHoveredElement;

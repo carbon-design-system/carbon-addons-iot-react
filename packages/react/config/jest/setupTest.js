@@ -2,6 +2,8 @@ import 'jest-styled-components';
 import '@testing-library/jest-dom';
 import { resetIdCounter } from 'downshift';
 
+import * as uniqueHook from '../../src/hooks/useUniqueId';
+
 let aChecker;
 
 async function toBeAccessible(node, label) {
@@ -12,22 +14,23 @@ async function toBeAccessible(node, label) {
     aChecker = require('accessibility-checker');
   }
 
-  let results = await aChecker.getCompliance(node, label);
+  const results = await aChecker.getCompliance(node, label);
   if (aChecker.assertCompliance(results.report) === 0) {
     return {
       pass: true,
     };
-  } else {
-    return {
-      pass: false,
-      message: () => aChecker.stringifyResults(results.report),
-    };
   }
+  return {
+    pass: false,
+    message: () => aChecker.stringifyResults(results.report),
+  };
 }
 
 expect.extend({ toBeAccessible });
 
 beforeEach(() => {
+  jest.spyOn(uniqueHook, 'useUniqueId').mockImplementation(() => undefined);
+
   // Every test we write should have at least one assertion. If this fails, we need to look at the invoking test to ensure there's not a promise being swallowed or something.
   // Review this for more context: https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1143#issuecomment-623577505
   expect.hasAssertions();

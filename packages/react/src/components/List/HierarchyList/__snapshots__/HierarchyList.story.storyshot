@@ -599,7 +599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 <input
                   checked={false}
                   className="bx--radio-button"
-                  id="id16"
+                  id="id18"
                   name="Chicago White Sox"
                   onChange={[Function]}
                   tabIndex={0}
@@ -608,7 +608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 />
                 <label
                   className="bx--radio-button__label"
-                  htmlFor="id16"
+                  htmlFor="id18"
                 >
                   <span
                     className="bx--radio-button__appearance"
@@ -643,7 +643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 <input
                   checked={false}
                   className="bx--radio-button"
-                  id="id17"
+                  id="id19"
                   name="New York Yankees"
                   onChange={[Function]}
                   tabIndex={0}
@@ -652,7 +652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 />
                 <label
                   className="bx--radio-button__label"
-                  htmlFor="id17"
+                  htmlFor="id19"
                 >
                   <span
                     className="bx--radio-button__appearance"
@@ -687,7 +687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 <input
                   checked={false}
                   className="bx--radio-button"
-                  id="id18"
+                  id="id20"
                   name="Houston Astros"
                   onChange={[Function]}
                   tabIndex={0}
@@ -696,7 +696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 />
                 <label
                   className="bx--radio-button__label"
-                  htmlFor="id18"
+                  htmlFor="id20"
                 >
                   <span
                     className="bx--radio-button__appearance"
@@ -731,7 +731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 <input
                   checked={false}
                   className="bx--radio-button"
-                  id="id19"
+                  id="id21"
                   name="Atlanta Braves"
                   onChange={[Function]}
                   tabIndex={0}
@@ -740,7 +740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 />
                 <label
                   className="bx--radio-button__label"
-                  htmlFor="id19"
+                  htmlFor="id21"
                 >
                   <span
                     className="bx--radio-button__appearance"
@@ -775,7 +775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 <input
                   checked={false}
                   className="bx--radio-button"
-                  id="id20"
+                  id="id22"
                   name="New York Mets"
                   onChange={[Function]}
                   tabIndex={0}
@@ -784,7 +784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 />
                 <label
                   className="bx--radio-button__label"
-                  htmlFor="id20"
+                  htmlFor="id22"
                 >
                   <span
                     className="bx--radio-button__appearance"
@@ -819,7 +819,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 <input
                   checked={false}
                   className="bx--radio-button"
-                  id="id21"
+                  id="id23"
                   name="Washington Nationals"
                   onChange={[Function]}
                   tabIndex={0}
@@ -828,7 +828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 />
                 <label
                   className="bx--radio-button__label"
-                  htmlFor="id21"
+                  htmlFor="id23"
                 >
                   <span
                     className="bx--radio-button__appearance"

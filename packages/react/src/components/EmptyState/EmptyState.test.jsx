@@ -7,10 +7,10 @@ import {
   Emptystate404Icon as Error404Image,
   EmptystateDefaultIcon as EmptyImage,
   EmptystateSuccessIcon as SuccessImage,
-  EmptystateNoresultsIcon as NoResultImage,
   EmptystateNotauthorizedIcon as NotAuthImage,
-  DashboardIcon as CustomIcon,
-} from '../../icons/components';
+  EmptystateNoresultsIcon as NoResultImage,
+} from '../../icons/static';
+import { DashboardIcon as CustomIcon } from '../../icons/components';
 
 import EmptyState from './EmptyState';
 
