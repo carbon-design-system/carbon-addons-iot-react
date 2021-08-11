@@ -7,6 +7,7 @@ import { Popup16, Tree16 } from '@carbon/icons-react';
 
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
+import Button from '../Button';
 import { PICKER_KINDS } from '../../constants/DateConstants';
 import { DATE_PICKER_OPTIONS } from '../../constants/CardPropTypes';
 
@@ -30,18 +31,22 @@ describe('Card', () => {
     rerender(
       <Card
         {...cardProps}
+        subtitle="Subtitle text"
         size={CARD_SIZES.SMALL}
         availableActions={{ range: true, expand: true }}
         testId="card_test"
+        footerContent={() => <Button kind="ghost">Footer Content</Button>}
       />
     );
     expect(screen.getByTestId('card_test')).toBeTruthy();
     expect(screen.getByTestId('card_test-content')).toBeTruthy();
     expect(screen.getByTestId('card_test-title')).toBeTruthy();
+    expect(screen.getByTestId('card_test-subtitle')).toBeTruthy();
     expect(screen.getByTestId('card_test-header')).toBeTruthy();
     expect(screen.getByTestId('card_test-toolbar')).toBeTruthy();
     expect(screen.getByTestId('card_test-toolbar-expand-button')).toBeTruthy();
     expect(screen.getByTestId('card_test-toolbar-range-picker')).toBeTruthy();
+    expect(screen.getByTestId('card_test-footer')).toBeTruthy();
   });
 
   it('small', () => {
@@ -261,5 +266,30 @@ describe('Card', () => {
         .getDOMNode()
         .querySelectorAll(`.${iotPrefix}--card--header .${iotPrefix}--card--toolbar`)
     ).toHaveLength(0);
+  });
+
+  it('render footer only if prop is present', () => {
+    const { rerender } = render(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.SMALL}
+        availableActions={{ range: true, expand: true }}
+        renderExpandIcon={Tree16}
+      />
+    );
+
+    expect(screen.queryByTestId('card_test-footer')).toBeFalsy();
+
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.SMALL}
+        availableActions={{ range: true, expand: true }}
+        renderExpandIcon={Tree16}
+        footerContent={() => <Button kind="ghost">Footer Content</Button>}
+      />
+    );
+
+    expect(screen.queryByText(/Footer Content/)).toBeInTheDocument();
   });
 });
