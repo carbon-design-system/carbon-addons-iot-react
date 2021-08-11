@@ -44,9 +44,9 @@
 
   &--content {
     flex: 1;
-    margin: -$spacing-05;
     height: 100%;
-    padding-top: $spacing-05;
+    display: flex;
+    flex-flow: column;
   }
 
   &--form-section {
@@ -198,6 +198,12 @@
     // hide multi-select combobox tags in editor form
     display: none;
   }
+}
+
+// Table card form styles
+.#{$iot-prefix}--table-card-form--content {
+  display: flex;
+  flex-flow: column;
 }
 
 // Image card form styles

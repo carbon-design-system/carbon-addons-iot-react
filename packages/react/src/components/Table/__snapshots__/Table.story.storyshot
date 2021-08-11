@@ -99530,7 +99530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </div>
                             <span
                               className="bx--list-box__label"
-                              id="multiselect-field-label-3"
+                              id="multiselect-field-label-4"
                             >
                               Select a filter
                             </span>
