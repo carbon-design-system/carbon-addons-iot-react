@@ -6,6 +6,7 @@ import { Tree16 } from '@carbon/icons-react';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
+import Button from '../Button';
 import { INTERVAL_VALUES, RELATIVE_VALUES, PICKER_KINDS } from '../../constants/DateConstants';
 
 import CardREADME from './Card.mdx';
@@ -126,6 +127,12 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           'title',
           'Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.'
         )}
+        subtitle={select(
+          'subtitle',
+          ['lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse', undefined],
+          'lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse'
+        )}
+        hasTitleWrap={boolean('wrap title', true)}
         id="facilitycard-basic"
         size={size}
         isLoading={boolean('isloading', false)}
@@ -134,17 +141,22 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         isExpanded={boolean('isExpanded', false)}
         breakpoint={breakpoint}
         availableActions={object('availableActions', {
-          range: true,
+          range: false,
           expand: true,
-          edit: true,
-          clone: false,
-          delete: false,
+          edit: false,
+          clone: true,
+          delete: true,
         })}
         onCardAction={action('onCardAction')}
         onFocus={action('onFocus')}
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
         tooltip={<p>this is the external tooltip content</p>}
       />
     </div>
@@ -180,6 +192,11 @@ export const BasicWithRenderProp = () => {
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
       >
         {(childSize) => (
           <p>
@@ -370,6 +387,7 @@ export const ImplementingACustomCard = () => {
         {!isEditable
           ? (_$, { cardToolbar, values }) => (
               <Table
+                style={{ width: 'calc(100% + 2rem)', transform: 'translateX(-1rem)' }}
                 id="my table"
                 secondaryTitle={title}
                 columns={[

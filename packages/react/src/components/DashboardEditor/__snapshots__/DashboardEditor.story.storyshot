@@ -589,7 +589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   }
                 >
                   <div
-                    className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
+                    className="iot--card iot--table-card iot--dashboard-editor--preview__card iot--card--wrapper"
                     data-testid="Card"
                     id="Table"
                     onKeyDown={[Function]}
@@ -19875,7 +19875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 }
               >
                 <div
-                  className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
+                  className="iot--card iot--table-card iot--dashboard-editor--preview__card iot--card--wrapper"
                   data-testid="Card"
                   id="Table"
                   onKeyDown={[Function]}
