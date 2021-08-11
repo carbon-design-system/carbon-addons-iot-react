@@ -1,3 +1,5 @@
+export { ListModule } from './list.module';
+
 // Components
 export { AIListComponent, SelectionType } from './ai-list.component';
 export { AIListHeaderComponent } from './list-header/ai-list-header';
