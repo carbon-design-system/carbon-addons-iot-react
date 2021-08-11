@@ -3,7 +3,7 @@
 @import './card-range-picker';
 @import './card-toolbar';
 @import './data-state-renderer';
-@import '../../../../styles/src/globals/_mixins.scss';
+@import '../../globals/mixins';
 
 $iot-header-padding: $spacing-05;
 $tooltipSize: $spacing-07;
