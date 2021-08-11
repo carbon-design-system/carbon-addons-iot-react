@@ -13,7 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       id="table-list"
       role="presentation"
@@ -33,7 +33,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -1454,7 +1454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       id="table-list"
       role="presentation"
@@ -1474,7 +1474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -1710,6 +1710,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -1755,7 +1761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <button
                   aria-describedby={null}
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                   data-testid="card-toolbar-expand-button"
                   disabled={false}
                   onBlur={[Function]}
@@ -2934,7 +2940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       id="table-list"
       role="presentation"
@@ -2954,7 +2960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -3190,6 +3196,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -4648,7 +4660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       role="presentation"
       style={
@@ -4667,7 +4679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-undefined-table-container"
         >
           <section
@@ -4877,6 +4889,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -5562,7 +5580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       id="table-list"
       role="presentation"
@@ -5582,7 +5600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -5818,6 +5836,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -6796,7 +6820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       id="table-list"
       role="presentation"
@@ -6816,7 +6840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -7052,6 +7076,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -7097,7 +7127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <button
                   aria-describedby={null}
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                   data-testid="card-toolbar-expand-button"
                   disabled={false}
                   onBlur={[Function]}
@@ -9262,7 +9292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       id="table-list"
       role="presentation"
@@ -9282,7 +9312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -9518,6 +9548,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -11562,7 +11598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       id="table-list"
       role="presentation"
@@ -11582,7 +11618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -11818,6 +11854,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -11863,7 +11905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <button
                   aria-describedby={null}
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                   data-testid="card-toolbar-expand-button"
                   disabled={false}
                   onBlur={[Function]}
@@ -13377,7 +13419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       id="table-list"
       role="presentation"
@@ -13397,7 +13439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -13633,6 +13675,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -15536,7 +15584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
+      className="iot--card iot--table-card iot--card--wrapper"
       data-testid="Card"
       id="table-list"
       role="presentation"
@@ -15556,7 +15604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -15792,6 +15840,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}

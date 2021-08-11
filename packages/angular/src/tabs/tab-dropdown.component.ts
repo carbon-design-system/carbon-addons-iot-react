@@ -1,5 +1,10 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
-import { DocumentService, DropdownList, DropdownService } from 'carbon-components-angular';
+import {
+  DocumentService,
+  DropdownList,
+  DropdownService,
+  ListItem,
+} from 'carbon-components-angular';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TabController } from './tab-controller.class';
@@ -22,7 +27,7 @@ export class TabDropdownComponent implements OnInit, OnDestroy {
   @ViewChild('dropdownButton', { static: true }) dropdownButton: ElementRef;
   @ViewChild(DropdownList) dropdownList: DropdownList;
   isOpen = false;
-  displayItems: Observable<any>;
+  displayItems: any;
 
   constructor(
     protected dropdownService: DropdownService,
