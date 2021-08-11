@@ -162,7 +162,17 @@ export class AIListComponent implements OnInit {
 
   @Input() isFullHeight = false;
 
-  @Input() emptyState: string | TemplateRef<any> = 'No list items to show';
+  /**
+   * Text that is displayed when list is empty. To change the default
+   * icon with the text, this can also be set to a `TemplateRef`.
+   *
+   * The reason we are using type `any` instead of `string | TemplateRef<any>`,
+   * which is the only two types that should be accepted, is because
+   * passing `emptyState` into `ngTemplateOutlet` would cause the error:
+   * `Type 'string | TemplateRef<any>' is not assignable to type 'TemplateRef<any>'`
+   * to come up while building.
+   */
+  @Input() emptyState: any = 'No list items to show';
 
   /**
    * If a `hasSearch` is true, this is emitted when search value is changed.
