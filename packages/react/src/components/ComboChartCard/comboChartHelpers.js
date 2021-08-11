@@ -224,7 +224,7 @@ export const useChartOptions = (content) => {
         valueFormatter: (tooltipValue) =>
           chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
         customHTML: (...args) =>
-          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
+          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern, locale),
         groupLabel: i18n.tooltipGroupLabel,
         totalLabel: i18n.tooltipTotalLabel,
       },

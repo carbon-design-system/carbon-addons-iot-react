@@ -288,3 +288,7 @@ html[dir='rtl'] {
     }
   }
 }
+
+.#{$iot-prefix}--card--toolbar .#{$iot-prefix}--date-time-pickerv2__wrapper:focus {
+  outline: none;
+}
