@@ -166,8 +166,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "@carbon/charts": "0.41.31",
-    "@carbon/charts-react": "0.41.31",
+    "@carbon/charts": "0.41.11",
+    "@carbon/charts-react": "0.41.11",
     "@carbon/colors": "10.28.0",
     "@carbon/icons-react": "10.35.0",
     "@carbon/layout": "10.27.0",
@@ -343,7 +343,7 @@
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",
     "flatpickr": "4.6.1",
-    "@carbon/charts": "0.41.31",
-    "@carbon/charts-react": "0.41.31"
+    "@carbon/charts": "0.41.11",
+    "@carbon/charts-react": "0.41.11"
   }
 }
