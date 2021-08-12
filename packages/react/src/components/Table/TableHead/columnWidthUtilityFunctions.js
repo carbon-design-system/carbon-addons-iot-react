@@ -8,11 +8,13 @@ import warning from 'warning';
 
 // This width must be able to fit the elipsis of a truncated text + sort arrows
 export const MIN_COLUMN_WIDTH = 62;
+// This width can be used when adding a new column without a width.
+export const DEFAULT_COLUMN_WIDTH = 150;
 
-function isColumnVisible(ordering, columnId) {
+export const isColumnVisible = (ordering, columnId) => {
   const orderedColumn = ordering.find((orderedCol) => orderedCol.columnId === columnId);
   return orderedColumn && !orderedColumn.isHidden;
-}
+};
 
 function getTotalWidth(cols) {
   return cols.reduce((width, col) => width + col.width, 0);
@@ -43,10 +45,10 @@ function getVisibleColumns(currentColumnWidths, ordering, excludeIDs) {
   );
 }
 
-function getOriginalWidthOfColumn(origColumns, colId) {
+export const getOriginalWidthOfColumn = (origColumns, colId) => {
   const orginalWidth = origColumns.find((col) => col.id === colId).width;
   return orginalWidth ? parseInt(orginalWidth, 10) : undefined;
-}
+};
 
 function getExistingColumnWidth(currentColumnWidths, origColumns, colId) {
   const currentColumnWidth = currentColumnWidths[colId]?.width;
@@ -127,6 +129,42 @@ export const visibleColumnsHaveWidth = (ordering, columns) => {
   return columns
     .filter((col) => isColumnVisible(ordering, col.id))
     .every((col) => col.hasOwnProperty('width') && col.width !== undefined);
+};
+
+export const addDefaultWidthToNewVisibleColumns = (ordering, columns, currentColumnWidths) => {
+  if (!visibleColumnsHaveWidth(ordering, columns)) {
+    const addedVisibleColumnIDs = getIDsOfAddedVisibleColumns(ordering, currentColumnWidths);
+    return columns.map((column) => {
+      const isNewVisibleColumn = addedVisibleColumnIDs.includes(column.id);
+      return {
+        ...column,
+        width:
+          isNewVisibleColumn && column.width === undefined
+            ? `${DEFAULT_COLUMN_WIDTH}px`
+            : column.width,
+      };
+    });
+  }
+  return columns;
+};
+
+function addCurrentlyRenderedWidths(columns, currentColumnWidths) {
+  return columns.map((col) => {
+    const renderedWidth = currentColumnWidths[col.id]?.width;
+    const width =
+      col.width === undefined && renderedWidth !== undefined ? `${renderedWidth}px` : col.width;
+    return { ...col, width };
+  });
+}
+
+export const addMissingColumnWidths = ({ ordering, columns, currentColumnWidths }) => {
+  const modifiedColumns = addDefaultWidthToNewVisibleColumns(
+    ordering,
+    columns,
+    currentColumnWidths
+  );
+
+  return addCurrentlyRenderedWidths(modifiedColumns, currentColumnWidths);
 };
 
 /**
