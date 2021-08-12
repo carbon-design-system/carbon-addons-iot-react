@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.83](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.82...v2.146.0-next.83) (2021-08-12)
+
+
+### Bug Fixes
+
+* **list:** fix build ([9c2c97a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9c2c97a29b4bf80e10bb48f5b73a9d2f3d54f9e4))
+* **list:** initialize list states in set items ([f014e2e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f014e2e24bc3392270c603f268a430a6a0b78a71))
+* **list:** prevent unselectable items from being selected ([1683664](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/16836645f366573342a48ca0dfabf76cbffe3a17))
+* **list:** remove unnecessary lifecycle hooks ([7492bf8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7492bf8ced44046f27e63782d5b2c90823674188))
+* **sortable-list:** revert offset to original ([f7d078f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f7d078fff49f0594d366e3540dd2c12a29aa9db1))
+
+
+### Features
+
+* **list:** add drag and drop support ([875302c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/875302cbe529e3540a6427f23e1ce9de2172914d))
+* **list:** add empty state ([77ce99f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/77ce99fc8ac04a4bdd41408c7e91b31470bfc873))
+* **list:** add header ([473c833](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/473c83358120fe2c34a312067d6e3a74f782ed78))
+* **list:** add large items ([cb67c7c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cb67c7c03cc68425445dbbb73e92cb2ffa0c821f))
+* **list:** add package.json to root ([3b26f81](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3b26f81894a7d80a09b08145eaaed31fef9aee06))
+* **list:** add support for adding and removing items ([a4c70d1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a4c70d1ce4377bbc135109047189b7136ab496f7))
+* **list:** add support for disabled items ([e7abfa9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e7abfa9eeb04ea040b69541a850c6a84a9fc7780))
+* **list:** add support for row actions ([57ad775](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/57ad7753145739b8cd716bd35565bc9ea2c31128))
+* **list:** add template context for rowActions ([aec82a2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aec82a2aa412acfea49724ebb59dffdbc20fbe9e))
+* **list:** change selectedIds expandedIds and indeterminateIds to sets ([4d71656](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4d7165630a8cc632c4f1674b5d329b419a93f44e))
+* **list:** start working on angular list component ([923143c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/923143c9e9c615737b17f05045bcfa031a1fa8eb))
+* **list:** update to latest specs ([fc82b50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fc82b50a2af4e452a2cb23d2bc629da4a0f960ec))
+* **list:** update to latest specs ([d791682](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d791682bcc160469d100d09721d2f211d4010f51))
+
+
+
+
+
+# [2.146.0-next.82](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.81...v2.146.0-next.82) (2021-08-12)
+
+
+### Bug Fixes
+
+* **sc-table-model:** fix sterling model throwing errors ([50d780e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/50d780e1fd3f84674e052eac6fe76414f280f136))
+
+
+
+
+
 # [2.146.0-next.81](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.80...v2.146.0-next.81) (2021-08-12)
 
 
