@@ -128,6 +128,7 @@ export const SimpleBarTimeSeriesCustomDomainRange = () => {
         size={size}
         onCardAction={action('onCardAction')}
         availableActions={object('availableActions', { expand: true, range: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
       />
     </div>
   );
@@ -197,6 +198,7 @@ export const SimpleBarTimeSeries = () => {
         size={size}
         onCardAction={action('onCardAction')}
         availableActions={object('availableActions', { expand: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
       />
     </div>
   );
@@ -217,6 +219,7 @@ export const GroupedBar = () => {
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         content={{
           ...object('content', {
             type: BAR_CHART_TYPES.GROUPED,
@@ -305,6 +308,7 @@ export const StackedBar = () => {
         size={size}
         onCardAction={action('onCardAction')}
         availableActions={object('availableActions', { expand: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
       />
     </div>
   );
@@ -357,6 +361,7 @@ export const StackedBarTimeSeries = () => {
         size={size}
         onCardAction={action('onCardAction')}
         availableActions={object('availableActions', { expand: true, range: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
       />
     </div>
   );
@@ -405,6 +410,7 @@ export const StackedBarTimeSeriesWithCategories = () => {
         size={size}
         onCardAction={action('onCardAction')}
         availableActions={object('availableActions', { expand: true, range: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
       />
     </div>
   );
