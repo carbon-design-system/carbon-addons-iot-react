@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.79](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.78...v2.146.0-next.79) (2021-08-12)
+
+
+### Bug Fixes
+
+* **combo-box:** more explicit prop selection for carbon ComboBox ([34f8ba9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/34f8ba9f65157515c90478f7f7d242577dbe15df))
+
+
+
+
+
+# [2.146.0-next.78](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.77...v2.146.0-next.78) (2021-08-11)
+
+
+### Bug Fixes
+
+* **card:** fix mixin import ([4e413c6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4e413c654dfb7f5322b20966f4e1c083ad141cd1))
+
+
+
+
+
 # [2.146.0-next.77](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.76...v2.146.0-next.77) (2021-08-11)
 
 
