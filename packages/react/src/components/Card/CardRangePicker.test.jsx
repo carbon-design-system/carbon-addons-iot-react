@@ -37,13 +37,14 @@ describe('CardRangePicker', () => {
           last24HoursLabel,
           thisWeekLabel,
         }}
+        cardWidth={500}
         timeRangeOptions={defaultTimeRangeOptions}
         onCardAction={mockOnCardAction}
       />
     );
     fireEvent.click(screen.getAllByTitle(selectTimeRangeLabel)[0]);
     // Click on the default
-    const defaultRange = await screen.findByText(defaultLabel);
+    const defaultRange = await screen.getAllByText(defaultLabel)[1];
     fireEvent.click(defaultRange);
     expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
       range: 'default',
@@ -93,7 +94,7 @@ describe('CardRangePicker', () => {
         timeRangeOptions={defaultTimeRangeOptions}
       />
     );
-    expect(wrapper2.find(`.${iotPrefix}--card--toolbar-timerange-label`)).toHaveLength(0);
+    expect(wrapper2.find(`.${iotPrefix}--card--toolbar-timerange-label--hidden`)).toHaveLength(1);
   });
 
   it('should show custom time range options', async () => {

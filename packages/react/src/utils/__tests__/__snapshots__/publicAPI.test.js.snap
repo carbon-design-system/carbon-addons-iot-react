@@ -4575,6 +4575,7 @@ Map {
       "items": null,
       "onClickItem": null,
       "showLabels": true,
+      "spaceEqually": false,
       "stepWidth": null,
       "testId": "iot--progress-indicator-testid",
     },
@@ -4646,6 +4647,9 @@ Map {
         "type": "func",
       },
       "showLabels": Object {
+        "type": "bool",
+      },
+      "spaceEqually": Object {
         "type": "bool",
       },
       "stepWidth": Object {
@@ -5973,6 +5977,12 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -6092,6 +6102,9 @@ Map {
         "type": "bool",
       },
       "size": [Function],
+      "subtitle": Object {
+        "type": "string",
+      },
       "tabIndex": Object {
         "type": "number",
       },
@@ -11604,6 +11617,8 @@ Map {
         "xl": 16,
         "xs": 4,
       },
+      "footerContent": undefined,
+      "hasTitleWrap": false,
       "hideHeader": false,
       "i18n": Object {
         "cloneCardLabel": "Clone card",
@@ -11658,6 +11673,7 @@ Map {
         "xs": 144,
       },
       "size": "MEDIUM",
+      "subtitle": undefined,
       "tabIndex": undefined,
       "testId": "Card",
       "timeRange": undefined,
@@ -12180,6 +12196,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -12387,6 +12409,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -13128,6 +13153,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -13411,6 +13442,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -14310,6 +14344,12 @@ Map {
       "fontSize": Object {
         "type": "number",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -14520,6 +14560,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -15508,6 +15551,12 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -15660,6 +15709,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -16418,6 +16470,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -16634,6 +16692,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -17564,6 +17625,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -17699,6 +17766,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -18583,6 +18653,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -18790,6 +18866,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -19510,7 +19589,13 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
       "hasMoreData": Object {
+        "type": "bool",
+      },
+      "hasTitleWrap": Object {
         "type": "bool",
       },
       "hideHeader": Object {
@@ -19719,6 +19804,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "subtitle": Object {
+        "type": "string",
+      },
       "tabIndex": Object {
         "type": "number",
       },
@@ -19895,6 +19983,7 @@ Map {
       "onNext": null,
       "sendingData": false,
       "setStep": null,
+      "spaceEqually": false,
       "testId": "page-wizard",
     },
     "propTypes": Object {
@@ -19985,6 +20074,9 @@ Map {
       },
       "setStep": Object {
         "type": "func",
+      },
+      "spaceEqually": Object {
+        "type": "bool",
       },
       "testId": Object {
         "type": "string",
@@ -20212,6 +20304,7 @@ Map {
       "onNext": null,
       "sendingData": false,
       "setStep": null,
+      "spaceEqually": false,
     },
     "propTypes": Object {
       "afterFooterContent": Object {
@@ -20298,6 +20391,9 @@ Map {
       },
       "setStep": Object {
         "type": "func",
+      },
+      "spaceEqually": Object {
+        "type": "bool",
       },
     },
   },
@@ -23053,6 +23149,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -23260,6 +23362,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -24286,6 +24391,12 @@ Map {
         ],
         "type": "oneOfType",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -24738,6 +24849,9 @@ Map {
       },
       "stops": Object {
         "type": "array",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -31816,16 +31930,16 @@ Map {
   "DashboardIcon" => Object {},
   "DataScientistIcon" => Object {},
   "DataTableIcon" => Object {},
-  "Emptystate404Icon" => Object {},
-  "EmptystateDefaultIcon" => Object {},
-  "EmptystateErrorIcon" => Object {},
-  "EmptystateNoresultsIcon" => Object {},
-  "EmptystateNotauthorizedIcon" => Object {},
-  "EmptystateSuccessIcon" => Object {},
   "ImageIcon" => Object {},
   "LineGraphIcon" => Object {},
   "ListIcon" => Object {},
   "SimpleBarGraphIcon" => Object {},
   "ValueKpiIcon" => Object {},
+  "EmptystateDefaultIcon" => Object {},
+  "Emptystate404Icon" => Object {},
+  "EmptystateErrorIcon" => Object {},
+  "EmptystateNoresultsIcon" => Object {},
+  "EmptystateNotauthorizedIcon" => Object {},
+  "EmptystateSuccessIcon" => Object {},
 }
 `;

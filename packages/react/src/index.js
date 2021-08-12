@@ -344,6 +344,7 @@ export { determineMaxValueCardAttributeCount } from './components/ValueCard/valu
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
 
 export * from './icons/components';
+export * from './icons/static';
 
 // Constants
 export {
