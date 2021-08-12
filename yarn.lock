@@ -9634,10 +9634,10 @@ capture-exit@^2.0.0:
   dependencies:
     rsvp "^4.8.4"
 
-carbon-components-angular@4.53.3:
-  version "4.53.3"
-  resolved "https://registry.yarnpkg.com/carbon-components-angular/-/carbon-components-angular-4.53.3.tgz#0da17ce4358e2ed1523b62012542f1c3c9f432dd"
-  integrity sha512-nr0LcDpBh4h8koZSsnIBRvga/OQIHniAmuAVQMUDPmtckpjfvkktM+SrWsxWf3Hw5T7/WtgOyl85VKbFh+ogkw==
+carbon-components-angular@4.53.5:
+  version "4.53.5"
+  resolved "https://registry.yarnpkg.com/carbon-components-angular/-/carbon-components-angular-4.53.5.tgz#74c326bdc549cbb6392f560aedd3097b98f25883"
+  integrity sha512-aZ9svVVlqmBKhC9pFveG0jCtPC2SzHHwN1jXcH2HFBGyUDCrRJhDzq8rehc4jqVY56p7gwAuenslPIqoSY2ODA==
   dependencies:
     "@carbon/icon-helpers" "10.9.0"
     "@carbon/icons" "10.20.0"
