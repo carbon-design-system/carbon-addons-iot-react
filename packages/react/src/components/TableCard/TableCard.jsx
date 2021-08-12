@@ -7,6 +7,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import { spacing01, spacing05 } from '@carbon/layout';
+import classnames from 'classnames';
 
 import dayjs from '../../utils/dayjs';
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
@@ -175,6 +176,7 @@ const TableCard = ({
   isLoading,
   testID,
   testId,
+  className,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -638,6 +640,7 @@ const TableCard = ({
       i18n={mergedI18n}
       resizeHandles={resizeHandles}
       hideHeader
+      className={classnames(`${iotPrefix}--table-card`, className)}
       // Use the Table's loading state rather than Card's
       isLoading={false}
       // TODO: remove deprecated testID in v3.
