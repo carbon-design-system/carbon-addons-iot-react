@@ -548,6 +548,7 @@ const TableHead = ({
                   columnId={matchingColumnMeta.id}
                   ordering={ordering}
                   paddingExtra={paddingExtra}
+                  preserveColumnWidths={preserveColumnWidths}
                 />
               ) : null}
             </TableHeader>
