@@ -54,6 +54,29 @@ class HeaderActionMenu extends React.Component {
     tabIndex: null,
   };
 
+  state = {
+    isOverflowing: [],
+  };
+
+  constructor(props) {
+    super(props);
+    this.menuItemRefs = props.childContent.map(() => React.createRef(null));
+  }
+
+  componentDidUpdate(prevProps) {
+    const { isExpanded } = this.props;
+    if (isExpanded && !prevProps.isExpanded) {
+      this.setState({
+        isOverflowing: this.menuItemRefs.map((ref) => {
+          const element = ref.current.firstChild;
+          return (
+            element.offsetHeight < element.scrollHeight || element.offsetWidth < element.scrollWidth
+          );
+        }),
+      });
+    }
+  }
+
   render() {
     const {
       // eslint-disable-next-line react/prop-types
@@ -109,11 +132,22 @@ class HeaderActionMenu extends React.Component {
           <MenuContent ariaLabel={ariaLabel} />
         </a>
         <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
-          {childContent.map((childItem, index) => (
-            <HeaderMenuItem key={`menu-item-${label + index}-child`} {...childItem.metaData}>
-              {childItem.content}
-            </HeaderMenuItem>
-          ))}
+          {childContent.map((childItem, index) => {
+            const { isOverflowing } = this.state;
+            const childIsOverflowing = isOverflowing[index];
+            const fallbackTitle = this.menuItemRefs?.[index]?.current?.textContent ?? '';
+            const title = childItem.metaData?.title ?? (childIsOverflowing && fallbackTitle);
+            return (
+              <HeaderMenuItem
+                ref={this.menuItemRefs[index]}
+                key={`menu-item-${label + index}-child`}
+                {...childItem.metaData}
+                title={title}
+              >
+                {childItem.content}
+              </HeaderMenuItem>
+            );
+          })}
         </ul>
       </div>
     );
