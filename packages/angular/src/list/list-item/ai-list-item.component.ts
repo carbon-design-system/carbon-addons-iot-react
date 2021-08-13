@@ -63,6 +63,7 @@ import { IconService } from 'carbon-components-angular';
           <ibm-checkbox
             (checkedChange)="handleSelect($event)"
             [checked]="item.selected"
+            [id]="item.id + '_checkbox'"
             [disabled]="item.disabled"
             [indeterminate]="item.indeterminate"
           >

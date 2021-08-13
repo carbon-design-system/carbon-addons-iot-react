@@ -70,9 +70,9 @@ export class AIListItem {
 
   constructor(rawData?: any) {
     const data = {
-      ...rawData,
+      ...(rawData ? rawData : {}),
       items:
-        rawData.items && rawData.items.length > 0
+        rawData?.items && rawData.items.length > 0
           ? rawData.items.map((item: any) =>
               item instanceof AIListItem ? item : new AIListItem(item)
             )
@@ -130,14 +130,17 @@ export class AIListItem {
     this.disabled = disabled;
   }
 
-  addItem(listItem: AIListItem, index: number) {
-    this.items.splice(index, 0, listItem);
+  addItem(listItem: AIListItem, index = 0) {
+    if (index > this.items.length) {
+      this.items.splice(this.items.length, 0, listItem);
+    } else {
+      this.items.splice(index, 0, listItem);
+    }
   }
 
-  removeItem(listItem: AIListItem) {
-    const removeIndex = this.items.findIndex((item: AIListItem) => item.id === listItem.id);
-    if (removeIndex >= 0) {
-      this.items.splice(removeIndex, 1);
+  removeItem(index = 0) {
+    if (index >= 0 && this.items.length > index) {
+      this.items.splice(index, 1);
     }
   }
 
@@ -158,6 +161,6 @@ export class AIListItem {
   }
 
   allChildrenSelected() {
-    return this.items.every((item: AIListItem) => (item.isSelectable ? item.selected : true));
+    return this.items.every((item: AIListItem) => (item.isSelectable ? item.selected : false));
   }
 }
