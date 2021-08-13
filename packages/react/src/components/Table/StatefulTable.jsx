@@ -347,7 +347,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const filteredTotalItems =
     filteredCount && filteredCount !== currentlyLoadedDataCount
       ? filteredCount
-      : totalItems || currentlyLoadedDataCount;
+      : view?.pagination?.totalItems || totalItems || currentlyLoadedDataCount;
 
   return filteredData ? (
     <Table
