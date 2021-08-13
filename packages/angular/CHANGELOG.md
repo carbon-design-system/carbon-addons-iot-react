@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.82](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.81...v2.146.0-next.82) (2021-08-12)
+
+
+### Bug Fixes
+
+* **sc-table-model:** fix sterling model throwing errors ([50d780e](https://github.com/IBM/carbon-components-angular/commit/50d780e1fd3f84674e052eac6fe76414f280f136))
+
+
+
+
+
 # [2.146.0-next.74](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.73...v2.146.0-next.74) (2021-08-09)
 
 
