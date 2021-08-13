@@ -63,18 +63,29 @@ class HeaderActionMenu extends React.Component {
     this.menuItemRefs = props.childContent.map(() => React.createRef(null));
   }
 
+  componentDidMount() {
+    const { isExpanded } = this.props;
+    if (isExpanded) {
+      this.checkForOverflows();
+    }
+  }
+
   componentDidUpdate(prevProps) {
     const { isExpanded } = this.props;
     if (isExpanded && !prevProps.isExpanded) {
-      this.setState({
-        isOverflowing: this.menuItemRefs.map((ref) => {
-          const element = ref.current.firstChild;
-          return (
-            element.offsetHeight < element.scrollHeight || element.offsetWidth < element.scrollWidth
-          );
-        }),
-      });
+      this.checkForOverflows();
     }
+  }
+
+  checkForOverflows() {
+    this.setState({
+      isOverflowing: this.menuItemRefs.map((ref) => {
+        const element = ref.current.firstChild;
+        return (
+          element.offsetHeight < element.scrollHeight || element.offsetWidth < element.scrollWidth
+        );
+      }),
+    });
   }
 
   render() {
@@ -136,7 +147,8 @@ class HeaderActionMenu extends React.Component {
             const { isOverflowing } = this.state;
             const childIsOverflowing = isOverflowing[index];
             const fallbackTitle = this.menuItemRefs?.[index]?.current?.textContent ?? '';
-            const title = childItem.metaData?.title ?? (childIsOverflowing && fallbackTitle);
+            const title =
+              childItem.metaData?.title ?? (childIsOverflowing ? fallbackTitle : undefined);
             return (
               <HeaderMenuItem
                 ref={this.menuItemRefs[index]}
