@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.85](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.84...v2.146.0-next.85) (2021-08-13)
+
+
+### Bug Fixes
+
+* **dashboard:** fix small card sizes ([b88c603](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b88c60342c3aaaff0ba00d4edc4f260cb9866b94))
+
+
+
+
+
 # [2.146.0-next.84](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.83...v2.146.0-next.84) (2021-08-12)
 
 **Note:** Version bump only for package ibm-ai-applications
