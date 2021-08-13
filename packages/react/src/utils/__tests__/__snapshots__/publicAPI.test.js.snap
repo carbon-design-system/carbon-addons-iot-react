@@ -479,6 +479,7 @@ Map {
         "hasSearch": false,
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
+        "preserveColumnWidths": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
         "wrapCellText": "always",
@@ -1209,6 +1210,9 @@ Map {
               "type": "bool",
             },
             "hasUserViewManagement": Object {
+              "type": "bool",
+            },
+            "preserveColumnWidths": Object {
               "type": "bool",
             },
             "shouldLazyRender": Object {
@@ -2146,6 +2150,9 @@ Map {
               "type": "oneOf",
             },
             "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
+            "preserveColumnWidths": Object {
               "type": "bool",
             },
             "truncateCellText": Object {
