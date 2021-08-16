@@ -169,8 +169,8 @@ export const tableColumns = [
     id: 'object',
     name: 'Object Id',
     isSortable: true,
-    renderDataFunction: ({ value: { id } }) => {
-      return id;
+    renderDataFunction: ({ value }) => {
+      return value?.id;
     },
     sortFunction: ({ data, columnId, direction }) => {
       // clone inputData because sort mutates the array
@@ -396,7 +396,10 @@ const RowExpansionContent = ({ rowId }) => (
     <ul style={{ lineHeight: '22px' }}>
       {Object.entries(tableData.find((i) => i.id === rowId).values).map(([key, value]) => (
         <li key={`${rowId}-${key}`}>
-          <b>{key}</b>: {value}
+          <b>{key}</b>:{' '}
+          {!React.isValidElement(value) && typeof value === 'object' && value !== null
+            ? JSON.stringify(value, null, 2)
+            : value}
         </li>
       ))}
     </ul>
@@ -1434,7 +1437,7 @@ export const WithRowExpansionAndActions = () => {
       id="table"
       columns={tableColumns.map((c) => ({
         ...c,
-        renderDataFunction,
+        renderDataFunction: c.renderDataFunction || renderDataFunction,
       }))}
       data={tableData.map((i, idx) => ({
         ...i,
@@ -2332,7 +2335,7 @@ export const WithStickyHeaderExperimentalAndCellTooltipCalculation = () => {
         id="table"
         columns={tableColumns.map((i) => ({
           ...i,
-          renderDataFunction,
+          renderDataFunction: i.renderDataFunction || renderDataFunction,
         }))}
         data={tableData}
         actions={tableActions}
