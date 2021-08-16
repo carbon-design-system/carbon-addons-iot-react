@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.89](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.88...v2.146.0-next.89) (2021-08-16)
+
+
+### Bug Fixes
+
+* **repo:** fix copy plugin to include css ([262e313](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/262e3138d1346e59edbf00acb326fbc7388821b1))
+
+
+
+
+
 # [2.146.0-next.88](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.87...v2.146.0-next.88) (2021-08-16)
 
 
