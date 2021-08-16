@@ -165,6 +165,33 @@ export const tableColumns = [
     id: 'node',
     name: 'React Node',
   },
+  {
+    id: 'object',
+    name: 'Object Id',
+    isSortable: true,
+    renderDataFunction: ({ value: { id } }) => {
+      return id;
+    },
+    sortFunction: ({ data, columnId, direction }) => {
+      // clone inputData because sort mutates the array
+      const sortedData = data.map((i) => i);
+      sortedData.sort((a, b) => {
+        const aId = a.values[columnId].id;
+        const bId = b.values[columnId].id;
+        const compare = aId.localeCompare(bId);
+
+        return direction === 'ASC' ? compare : -compare;
+      });
+
+      return sortedData;
+    },
+    filter: {
+      placeholderText: 'Filter object values...',
+      filterFunction: (columnValue, filterValue) => {
+        return columnValue.id.includes(filterValue);
+      },
+    },
+  },
 ];
 
 export const tableColumnsWithAlignment = [
@@ -337,6 +364,7 @@ export const getNewRow = (idx, suffix = '', withActions = false) => ({
     status: getStatus(idx),
     boolean: getBoolean(idx),
     node: <Add20 />,
+    object: { id: getString(idx, 5) },
   },
   rowActions: withActions
     ? [

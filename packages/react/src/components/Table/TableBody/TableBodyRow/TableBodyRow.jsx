@@ -69,7 +69,9 @@ const propTypes = {
   totalColumns: PropTypes.number.isRequired,
 
   /** contents of the row each object value is a renderable node keyed by column id */
-  values: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool])).isRequired,
+  values: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object])
+  ).isRequired,
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
@@ -487,6 +489,10 @@ const TableBodyRow = ({
                   truncateCellText={truncateCellText}
                   locale={locale}
                   renderDataFunction={col.renderDataFunction}
+                  isSortable={col.isSortable}
+                  sortFunction={col.sortFunction}
+                  isFilterable={col.filter}
+                  filterFunction={col.filter?.filterFunction}
                   columnId={col.columnId}
                   rowId={id}
                   row={values}
