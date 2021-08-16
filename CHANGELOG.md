@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.88](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.87...v2.146.0-next.88) (2021-08-16)
+
+
+### Features
+
+* **theshold-form-item:** allow strings when equal comparison ([7d36c42](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7d36c4287ac75896cb4410f7b590f39078497d6c))
+
+
+
+
+
+# [2.146.0-next.87](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.86...v2.146.0-next.87) (2021-08-13)
+
+
+### Bug Fixes
+
+* **header:** add fallback titles for truncated items ([6ba1c40](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6ba1c40f9567d232a7eae120a4e930cae6a0e03d))
+* **header:** add tests to confirm text truncation and title addition ([74151c1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/74151c1aee5d81fa71a1c4cca4315ba5fc3cfd49))
+* **suite-header:** truncate long titles in menu items ([28a8675](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/28a8675bfc137a7a319cbc575e8b698581610091))
+
+
+
+
+
+# [2.146.0-next.86](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.85...v2.146.0-next.86) (2021-08-13)
+
+
+### Features
+
+* **table:** preserve columns widths on resize ([c417219](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c41721987732aa7057f725f1b480fa714ca8ebff)), closes [#2658](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2658)
+
+
+
+
+
+# [2.146.0-next.85](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.84...v2.146.0-next.85) (2021-08-13)
+
+
+### Bug Fixes
+
+* **dashboard:** fix small card sizes ([b88c603](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b88c60342c3aaaff0ba00d4edc4f260cb9866b94))
+
+
+
+
+
 # [2.146.0-next.84](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.83...v2.146.0-next.84) (2021-08-12)
 
 **Note:** Version bump only for package ibm-ai-applications
