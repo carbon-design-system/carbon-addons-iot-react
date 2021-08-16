@@ -10349,6 +10349,7 @@ Map {
       "onCancel": null,
       "onCardChange": null,
       "onCardJsonPreview": null,
+      "onCardSelect": null,
       "onDelete": null,
       "onEditDataItems": null,
       "onExport": null,
@@ -10924,6 +10925,9 @@ Map {
         "type": "func",
       },
       "onCardJsonPreview": Object {
+        "type": "func",
+      },
+      "onCardSelect": Object {
         "type": "func",
       },
       "onDelete": Object {

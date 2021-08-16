@@ -332,7 +332,7 @@ const TableCardFormContent = ({
       >
         <ComboBox
           // need to re-gen if selected card changes or if a dataItem is removed from the list
-          key={`data-item-select-${hash(validDataItemsForDropdown)}-selected_card-id-${
+          key={`data-item-select-${hash(validDataItemsForDropdown || {})}-selected_card-id-${
             cardConfig.id
           }`}
           id={`${cardConfig.id}_dataSourceIds-combobox`}
