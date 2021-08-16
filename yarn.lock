@@ -3698,26 +3698,14 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.41.11":
+"@carbon/charts-react@0.41.11":
   version "0.41.11"
   resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.11.tgz#60fa7044dfbae9c4a94679ab290aadbf34a5c069"
   integrity sha512-WRsfO+X5NQhhKzyevY8MQAWlL+SKOlvPm+WK1vaKnD5VuFMrdnLB2OG6esJmrF7taAC5qeY5mTlAfJ0ZE97p5Q==
   dependencies:
     "@carbon/charts" "^0.41.11"
 
-"@carbon/charts@0.41.31":
-  version "0.41.31"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.31.tgz#03c2d33156109d5032e8e392b4c669d34ce360b1"
-  integrity sha512-4IJH3SwZycnDM7+jbt1UceLKtRR9dVbNkHCyn504MlpdqEcfZEAsKrTKc4NYhSnvYUeFlihThwKBFCZHlSYSTQ==
-  dependencies:
-    "@carbon/colors" "10.15.0"
-    "@carbon/telemetry" "0.0.0-alpha.6"
-    "@carbon/utils-position" "1.1.1"
-    date-fns "2.8.1"
-    lodash-es "4.17.15"
-    resize-observer-polyfill "1.5.0"
-
-"@carbon/charts@^0.41.11":
+"@carbon/charts@0.41.11", "@carbon/charts@0.41.31", "@carbon/charts@^0.41.11":
   version "0.41.11"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.11.tgz#9b295c891e440adef0cf38fc5202f95e0081ca54"
   integrity sha512-0V/LOcUYh9dtqu09r7I1HwDrr+2sBBAnNYABAl6HC42PUbnt3MmXpWAZi+e69YvSyw1IuH6jBWLAb1vkc27/PQ==
@@ -9621,10 +9609,10 @@ capture-exit@^2.0.0:
   dependencies:
     rsvp "^4.8.4"
 
-carbon-components-angular@4.53.3:
-  version "4.53.3"
-  resolved "https://registry.yarnpkg.com/carbon-components-angular/-/carbon-components-angular-4.53.3.tgz#0da17ce4358e2ed1523b62012542f1c3c9f432dd"
-  integrity sha512-nr0LcDpBh4h8koZSsnIBRvga/OQIHniAmuAVQMUDPmtckpjfvkktM+SrWsxWf3Hw5T7/WtgOyl85VKbFh+ogkw==
+carbon-components-angular@4.53.5:
+  version "4.53.5"
+  resolved "https://registry.yarnpkg.com/carbon-components-angular/-/carbon-components-angular-4.53.5.tgz#74c326bdc549cbb6392f560aedd3097b98f25883"
+  integrity sha512-aZ9svVVlqmBKhC9pFveG0jCtPC2SzHHwN1jXcH2HFBGyUDCrRJhDzq8rehc4jqVY56p7gwAuenslPIqoSY2ODA==
   dependencies:
     "@carbon/icon-helpers" "10.9.0"
     "@carbon/icons" "10.20.0"
@@ -22279,7 +22267,7 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
-react-dom@16.14.0, react-dom@^16.8.6:
+react-dom@16.14.0, react-dom@>=16.14.0:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
   integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
@@ -22537,7 +22525,7 @@ react-visibility-sensor@^5.0.2:
   dependencies:
     prop-types "^15.6.2"
 
-react@16.14.0, react@^16.8.6:
+react@16.14.0, react@>=16.14.0:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
   integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==

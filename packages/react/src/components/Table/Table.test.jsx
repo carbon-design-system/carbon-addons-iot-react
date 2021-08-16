@@ -337,7 +337,7 @@ describe('Table', () => {
     expect(mockActions.toolbar.onClearAllFilters).not.toHaveBeenCalled();
   });
 
-  it('triggers onColumnResize callback when column widths are modified', () => {
+  it('triggers onColumnResize callback when column is toggled', () => {
     const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
     const mockGetBoundingClientRect = jest.fn();
     Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
@@ -372,6 +372,41 @@ describe('Table', () => {
       { id: 'col2', name: 'Column 2', width: '100px' },
       { id: 'col3', name: 'Column 3', width: '150px' },
     ]);
+
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('does not trigger onColumnResize callback when column is toggled and preserveColumnWidths:true', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn();
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+    const ordering = [
+      { columnId: 'col1', isHidden: false },
+      { columnId: 'col2', isHidden: false },
+      { columnId: 'col3', isHidden: false },
+    ];
+    const columns = [
+      { id: 'col1', name: 'Column 1', width: '100px' },
+      { id: 'col2', name: 'Column 2', width: '100px' },
+      { id: 'col3', name: 'Column 3', width: '100px' },
+    ];
+
+    render(
+      <Table
+        columns={columns}
+        data={[{ id: 'row-1', values: { col1: 'a', col2: 'b', col3: 'c' } }]}
+        actions={mockActions}
+        options={{ hasResize: true, hasColumnSelection: true, preserveColumnWidths: true }}
+        view={{ table: { ordering }, toolbar: { activeBar: 'column' } }}
+      />
+    );
+
+    const toggleHideCol2Button = screen.getAllByText('Column 2')[1];
+    fireEvent.click(toggleHideCol2Button);
+
+    expect(mockActions.table.onColumnResize).not.toHaveBeenCalled();
 
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });

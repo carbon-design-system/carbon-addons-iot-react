@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { green50 } from '@carbon/colors';
 import { Help24 } from '@carbon/icons-react';
 
@@ -207,6 +208,37 @@ describe('ThresholdsFormItem', () => {
         comparison: '>',
         color: 'red',
         icon: 'Error',
+      },
+    ]);
+  });
+  it("should allow text input when comparison is '='", () => {
+    render(<ThresholdsFormItem {...commonProps} thresholds={thresholds} />);
+
+    const comparisonInput = screen.getAllByLabelText('Open menu')[4];
+    expect(comparisonInput).toBeInTheDocument();
+
+    fireEvent.click(comparisonInput);
+
+    const equalsOperator = screen.getByText('=');
+    expect(equalsOperator).toBeInTheDocument();
+
+    fireEvent.click(equalsOperator);
+    expect(mockOnChange).toHaveBeenCalledWith([
+      {
+        value: 5,
+        comparison: '=',
+        color: 'red',
+        icon: 'Warning',
+      },
+    ]);
+    expect(screen.getByTestId('threshold-0-text-input')).toBeDefined();
+    userEvent.type(screen.getByTestId('threshold-0-text-input'), '{backspace}orange');
+    expect(mockOnChange).toHaveBeenLastCalledWith([
+      {
+        value: 'orange',
+        comparison: '=',
+        color: 'red',
+        icon: 'Warning',
       },
     ]);
   });

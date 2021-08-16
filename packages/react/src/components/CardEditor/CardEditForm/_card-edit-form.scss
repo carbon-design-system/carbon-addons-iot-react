@@ -173,6 +173,9 @@
       .#{$prefix}--number input[type='number'] {
         padding-right: 0;
       }
+      .#{$prefix}--form-item input[type='text'] {
+        min-width: 9.375rem;
+      }
     }
     &--item-dropdown {
       margin-right: $spacing-05;
