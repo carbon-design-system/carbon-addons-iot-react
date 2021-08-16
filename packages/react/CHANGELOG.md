@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.90](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.89...v2.146.0-next.90) (2021-08-16)
+
+
+### Bug Fixes
+
+* **cardeditform:** force unique key ([0f0ce7e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0f0ce7e5507f5073156a39cc896f64a7803028fc))
+
+
+### Features
+
+* **tablecardeditform:** allow additional custom elements ([09c72e7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/09c72e709c4be380bc26f2e631ffc71548bbea3b))
+* **tablecardeditform:** allow additional custom elements ([48869a2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/48869a2893271e95026356f3f6203cdf1052f687))
+
+
+
+
+
 # [2.146.0-next.89](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.88...v2.146.0-next.89) (2021-08-16)
 
 

@@ -90,6 +90,12 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  /** if provided, returns an object where the keys are available dimensions which are the dimensions to be allowed
+   * on each card
+   * ex response: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   * getValidDimensions(card)
+   */
+  getValidDimensions: PropTypes.func,
   /** if provided, will update the dashboard json according to its own logic. Is called if a card is edited, or added.
    * Should return an updated card to be rendered
    * onCardChange(updatedCard, template): Card
@@ -316,6 +322,7 @@ const defaultProps = {
   availableImages: [],
   dataItems: [],
   availableDimensions: {},
+  getValidDimensions: null,
   onCardChange: null,
   onImageDelete: null,
   onLayoutChange: null,
@@ -403,6 +410,7 @@ const DashboardEditor = ({
   onValidateCardJson,
   onValidateUploadedImage,
   availableDimensions,
+  getValidDimensions,
   isSummaryDashboard,
   isLoading,
   i18n,
@@ -768,6 +776,7 @@ const DashboardEditor = ({
             onCardJsonPreview={onCardJsonPreview}
             supportedCardTypes={supportedCardTypes}
             icons={icons}
+            getValidDimensions={getValidDimensions}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}

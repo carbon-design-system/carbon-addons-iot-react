@@ -302,7 +302,7 @@ const TableCardFormContent = ({
   );
 
   return (
-    <>
+    <div className={`${iotPrefix}--table-card-form--content`}>
       <DataSeriesFormItemModal
         cardConfig={cardConfig}
         showEditor={showEditor}
@@ -395,7 +395,7 @@ const TableCardFormContent = ({
         title=""
         items={dataListItems}
       />
-    </>
+    </div>
   );
 };
 TableCardFormContent.defaultProps = defaultProps;
