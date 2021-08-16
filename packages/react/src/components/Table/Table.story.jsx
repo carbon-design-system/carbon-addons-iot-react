@@ -2063,7 +2063,7 @@ export const WithOptionsToExploreColumnSettings = () => {
   const initialColumnsWidth = select(
     'initial column width',
     [undefined, '100px', '300px'],
-    undefined
+    '100px'
   );
   const [myColumns, setMyColumns] = useState(
     [
@@ -2075,6 +2075,7 @@ export const WithOptionsToExploreColumnSettings = () => {
     ...defaultOrdering,
     { columnId: 'longName', isHidden: false },
   ]);
+  const [activeBar, setActiveBar] = useState(null);
 
   const onAdd = (colIds, colWidths, isHidden) => {
     const colsToAdd = colIds.split(', ');
@@ -2098,7 +2099,22 @@ export const WithOptionsToExploreColumnSettings = () => {
     setMyColumns(myColumns.filter((col) => !colsToDelete.includes(col.id)));
     setMyOrdering(myOrdering.filter((col) => !colsToDelete.includes(col.columnId)));
   };
-  const onColumnResize = (cols) => setMyColumns(cols);
+  const onColumnResize = (cols) => {
+    action('onColumnResize')(cols);
+    setMyColumns(cols);
+  };
+  const onToggleColumnSelection = () => {
+    action('onToggleColumnSelection')();
+    if (selectedTableType === 'Table') {
+      setActiveBar(activeBar ? undefined : 'column');
+    }
+  };
+  const onChangeOrdering = (ordering) => {
+    action('onChangeOrdering')(ordering);
+    if (selectedTableType === 'Table') {
+      setMyOrdering(ordering);
+    }
+  };
 
   return (
     <>
@@ -2116,6 +2132,7 @@ export const WithOptionsToExploreColumnSettings = () => {
             hasResize: boolean('options.hasResize', true),
             wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
             useAutoTableLayoutForResize: boolean('options.useAutoTableLayoutForResize', false),
+            preserveColumnWidths: boolean('options.preserveColumnWidths', true),
             hasPagination: true,
           }}
           columns={myColumns}
@@ -2124,11 +2141,20 @@ export const WithOptionsToExploreColumnSettings = () => {
             table: {
               ordering: myOrdering,
             },
+            toolbar: { activeBar },
           }}
           data={tableData}
           actions={{
             ...tableActions,
-            table: { ...tableActions.table, onColumnResize },
+            table: {
+              ...tableActions.table,
+              onColumnResize,
+              onChangeOrdering,
+            },
+            toolbar: {
+              ...tableActions.toolbar,
+              onToggleColumnSelection,
+            },
           }}
         />
       </div>

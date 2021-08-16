@@ -36,6 +36,10 @@ import {
   visibleColumnsHaveWidth,
   getIDsOfAddedVisibleColumns,
   getIDsOfRemovedColumns,
+  isColumnVisible,
+  getOriginalWidthOfColumn,
+  DEFAULT_COLUMN_WIDTH,
+  addMissingColumnWidths,
   checkColumnWidthFormat,
 } from './columnWidthUtilityFunctions';
 
@@ -56,6 +60,8 @@ const propTypes = {
     truncateCellText: PropTypes.bool.isRequired,
     hasMultiSort: PropTypes.bool,
     useAutoTableLayoutForResize: PropTypes.bool,
+    /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
+    preserveColumnWidths: PropTypes.bool,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -167,6 +173,7 @@ const TableHead = ({
     hasSingleRowEdit,
     hasMultiSort,
     useAutoTableLayoutForResize,
+    preserveColumnWidths,
   },
   columns,
   tableState: {
@@ -250,14 +257,24 @@ const TableHead = ({
 
   const onColumnToggle = (columnId, newOrdering) => {
     if (hasResize) {
-      const toggleArgs = {
-        currentColumnWidths,
-        newOrdering,
-        columnId,
-        columns,
-      };
-      const newColumnWidths = calculateWidthsOnToggle(toggleArgs);
-      updateColumnWidths(newColumnWidths);
+      if (preserveColumnWidths) {
+        const isToggleShow = isColumnVisible(newOrdering, columnId);
+        const columnHasNoWidth = getOriginalWidthOfColumn(columns, columnId) === undefined;
+        if (isToggleShow && columnHasNoWidth) {
+          const newColumnWidths = createNewWidthsMap(newOrdering, currentColumnWidths, [
+            { id: columnId, width: DEFAULT_COLUMN_WIDTH },
+          ]);
+          updateColumnWidths(newColumnWidths);
+        }
+      } else {
+        const newColumnWidths = calculateWidthsOnToggle({
+          currentColumnWidths,
+          newOrdering,
+          columnId,
+          columns,
+        });
+        updateColumnWidths(newColumnWidths);
+      }
     }
     onChangeOrdering(newOrdering);
   };
@@ -306,17 +323,40 @@ const TableHead = ({
     useAutoTableLayoutForResize,
   ]);
 
+  // Handle external modification of columns prop and ordering prop
   const previousColumns = usePrevious(columns);
   const previousOrdering = usePrevious(ordering);
   useEffect(
     () => {
       // We need to update the currentColumnWidths (state) after the initial render
-      // only if the widths of the column prop is updated or columns are added/removed .
+      // if the widths of the column prop are externally updated or if columns are added/removed.
       const externallyModified =
         !isEqual(columns, previousColumns) || !isEqual(ordering, previousOrdering);
       if (hasResize && columns.length && !isEmpty(currentColumnWidths) && externallyModified) {
         checkColumnWidthFormat(columns);
 
+        // PRESERVE WIDTHS
+        // Preserve column when possible widths when columns are externally modified
+        if (preserveColumnWidths) {
+          const columnPropInlcudingWidths = addMissingColumnWidths({
+            ordering,
+            columns,
+            currentColumnWidths,
+          });
+
+          const newColumnWidths = createNewWidthsMap(ordering, columnPropInlcudingWidths);
+          if (!isEqual(currentColumnWidths, newColumnWidths)) {
+            setCurrentColumnWidths(newColumnWidths);
+            // Notify the application if any columns were assigned the rendered or default widths
+            if (!isEqual(columnPropInlcudingWidths, columns)) {
+              onColumnResize(columnPropInlcudingWidths);
+            }
+          }
+          return;
+        }
+
+        // MODIFY WIDTHS
+        // Modify existing columns widths when columns are externally modified
         const removedColumnIDs = getIDsOfRemovedColumns(ordering, currentColumnWidths);
         const addedVisibleColumnIDs = getIDsOfAddedVisibleColumns(ordering, currentColumnWidths);
         const adjustedForRemoved =
@@ -508,6 +548,7 @@ const TableHead = ({
                   columnId={matchingColumnMeta.id}
                   ordering={ordering}
                   paddingExtra={paddingExtra}
+                  preserveColumnWidths={preserveColumnWidths}
                 />
               ) : null}
             </TableHeader>

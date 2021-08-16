@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.84](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.83...v2.146.0-next.84) (2021-08-12)
+
+**Note:** Version bump only for package @ai-apps/styles
+
+
+
+
+
+# [2.146.0-next.83](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.82...v2.146.0-next.83) (2021-08-12)
+
+
+### Features
+
+* **list:** add template context for rowActions ([aec82a2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aec82a2aa412acfea49724ebb59dffdbc20fbe9e))
+* **list:** update to latest specs ([fc82b50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fc82b50a2af4e452a2cb23d2bc629da4a0f960ec))
+* **list:** update to latest specs ([d791682](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d791682bcc160469d100d09721d2f211d4010f51))
+
+
+
+
+
 # [2.146.0-next.70](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.69...v2.146.0-next.70) (2021-07-30)
 
 

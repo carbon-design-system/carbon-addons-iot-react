@@ -3,6 +3,111 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.88](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.87...v2.146.0-next.88) (2021-08-16)
+
+
+### Features
+
+* **theshold-form-item:** allow strings when equal comparison ([7d36c42](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7d36c4287ac75896cb4410f7b590f39078497d6c))
+
+
+
+
+
+# [2.146.0-next.87](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.86...v2.146.0-next.87) (2021-08-13)
+
+
+### Bug Fixes
+
+* **header:** add fallback titles for truncated items ([6ba1c40](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6ba1c40f9567d232a7eae120a4e930cae6a0e03d))
+* **header:** add tests to confirm text truncation and title addition ([74151c1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/74151c1aee5d81fa71a1c4cca4315ba5fc3cfd49))
+* **suite-header:** truncate long titles in menu items ([28a8675](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/28a8675bfc137a7a319cbc575e8b698581610091))
+
+
+
+
+
+# [2.146.0-next.86](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.85...v2.146.0-next.86) (2021-08-13)
+
+
+### Features
+
+* **table:** preserve columns widths on resize ([c417219](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c41721987732aa7057f725f1b480fa714ca8ebff)), closes [#2658](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2658)
+
+
+
+
+
+# [2.146.0-next.85](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.84...v2.146.0-next.85) (2021-08-13)
+
+
+### Bug Fixes
+
+* **dashboard:** fix small card sizes ([b88c603](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b88c60342c3aaaff0ba00d4edc4f260cb9866b94))
+
+
+
+
+
+# [2.146.0-next.84](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.83...v2.146.0-next.84) (2021-08-12)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.146.0-next.83](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.82...v2.146.0-next.83) (2021-08-12)
+
+
+### Features
+
+* **list:** update to latest specs ([fc82b50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fc82b50a2af4e452a2cb23d2bc629da4a0f960ec))
+* **list:** update to latest specs ([d791682](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d791682bcc160469d100d09721d2f211d4010f51))
+
+
+
+
+
+# [2.146.0-next.81](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.80...v2.146.0-next.81) (2021-08-12)
+
+
+### Bug Fixes
+
+* **table:** fixed snapshots ([dcae45d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dcae45d6806bf74332535fcc05d8e085198cedfb))
+
+
+### Features
+
+* **table:** manage columns with preserved widths ([6483f9f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6483f9f29d724693732ae070225360762ffd0e2a)), closes [#2460](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2460)
+
+
+
+
+
+# [2.146.0-next.80](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.79...v2.146.0-next.80) (2021-08-12)
+
+
+### Bug Fixes
+
+* **repo:** pin carbon/charts and carbon/charts-react versions ([46ec000](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/46ec00012a9fd310058162a4a9763460dc02946a))
+* **repo:** pin carbon/charts carbon/charts-react to current versions ([4fa77c9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4fa77c9a7beeeac26ebb33164403c2638fa53df9))
+
+
+
+
+
+# [2.146.0-next.79](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.78...v2.146.0-next.79) (2021-08-12)
+
+
+### Bug Fixes
+
+* **combo-box:** more explicit prop selection for carbon ComboBox ([34f8ba9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/34f8ba9f65157515c90478f7f7d242577dbe15df))
+
+
+
+
+
 # [2.146.0-next.78](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.77...v2.146.0-next.78) (2021-08-11)
 
 
