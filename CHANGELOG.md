@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.88](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.87...v2.146.0-next.88) (2021-08-16)
+
+
+### Features
+
+* **theshold-form-item:** allow strings when equal comparison ([7d36c42](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7d36c4287ac75896cb4410f7b590f39078497d6c))
+
+
+
+
+
 # [2.146.0-next.87](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.86...v2.146.0-next.87) (2021-08-13)
 
 
