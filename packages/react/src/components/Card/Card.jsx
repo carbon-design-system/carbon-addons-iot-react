@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useEffect, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useEffect } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import SizeMe from 'react-sizeme';
@@ -21,6 +21,7 @@ import {
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize, useCardResizing } from '../../utils/cardUtilityFunctions';
+import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 
 import CardToolbar from './CardToolbar';
 
@@ -173,6 +174,8 @@ export const defaultProps = {
   size: CARD_SIZES.MEDIUM,
   layout: CARD_LAYOUTS.HORIZONTAL,
   title: undefined,
+  subtitle: undefined,
+  hasTitleWrap: false,
   toolbar: undefined,
   hideHeader: false,
   timeRange: undefined,
@@ -237,6 +240,7 @@ export const defaultProps = {
   onBlur: undefined,
   tabIndex: undefined,
   testId: CardWrapper.defaultProps.testId,
+  footerContent: undefined,
 };
 
 /** Dumb component that renders the card basics */
@@ -245,6 +249,8 @@ const Card = (props) => {
     size,
     children,
     title,
+    subtitle,
+    hasTitleWrap,
     layout,
     isLoading,
     isEmpty,
@@ -271,6 +277,7 @@ const Card = (props) => {
     testID,
     testId,
     contentClassName,
+    footerContent: CardFooter,
     ...others
   } = props;
 
@@ -332,16 +339,11 @@ const Card = (props) => {
     return childSize;
   };
 
-  // Ensure the title text has a tooltip only if the title text is truncated
-  const titleRef = React.createRef();
-  const [hasTitleTooltip, setHasTitleTooltip] = useState(false);
-  useEffect(() => {
-    if (titleRef.current && titleRef.current.clientWidth < titleRef.current.scrollWidth) {
-      setHasTitleTooltip(true);
-    } else {
-      setHasTitleTooltip(false);
-    }
-  });
+  // Ensure the title and subtitle have a tooltip only if their text is truncated
+  const titleRef = useRef();
+  const subTitleRef = useRef();
+  const hasTitleTooltip = useHasTextOverflow(titleRef);
+  const hasSubTitleTooltip = useHasTextOverflow(subTitleRef);
 
   const { resizeHandles, isResizing } = useCardResizing(
     wrappingCardResizeHandles,
@@ -407,13 +409,25 @@ const Card = (props) => {
                           data-testid={`${testID || testId}-title-tooltip`}
                           ref={titleRef}
                           showIcon={false}
-                          triggerClassName={`${iotPrefix}--card--title--text`}
+                          triggerClassName={classnames(
+                            `${iotPrefix}--card--title--text__overflow`,
+                            `${iotPrefix}--card--title--text`,
+                            {
+                              [`${iotPrefix}--card--title--text--wrapped`]:
+                                hasTitleWrap && !subtitle,
+                            }
+                          )}
                           triggerText={title}
                         >
                           {title}
                         </Tooltip>
                       ) : (
-                        <div ref={titleRef} className={`${iotPrefix}--card--title--text`}>
+                        <div
+                          ref={titleRef}
+                          className={classnames(`${iotPrefix}--card--title--text`, {
+                            [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
+                          })}
+                        >
                           {title}
                         </div>
                       )}
@@ -422,11 +436,35 @@ const Card = (props) => {
                           data-testid={`${testID || testId}-tooltip`}
                           triggerId={`card-tooltip-trigger-${id}`}
                           tooltipId={`card-tooltip-${id}`}
+                          triggerClassName={`${iotPrefix}--card--header--tooltip`}
                           id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
                           triggerText=""
                         >
                           {tooltip}
                         </Tooltip>
+                      )}
+                      {!subtitle ? null : hasSubTitleTooltip ? (
+                        <Tooltip
+                          data-testid={`${testID || testId}-subtitle`}
+                          ref={subTitleRef}
+                          showIcon={false}
+                          triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
+                            [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
+                          })}
+                          triggerText={subtitle}
+                        >
+                          {subtitle}
+                        </Tooltip>
+                      ) : (
+                        <div
+                          ref={subTitleRef}
+                          data-testid={`${testID || testId}-subtitle`}
+                          className={classnames(`${iotPrefix}--card--subtitle--text`, {
+                            [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
+                          })}
+                        >
+                          {subtitle}
+                        </div>
                       )}
                     </CardTitle>
                     {cardToolbar}
@@ -484,6 +522,14 @@ const Card = (props) => {
                     children
                   )}
                 </CardContent>
+                {CardFooter ? (
+                  <div
+                    className={`${iotPrefix}--card--footer--wrapper`}
+                    data-testid={`${testID || testId}-footer`}
+                  >
+                    <CardFooter />
+                  </div>
+                ) : null}
                 {resizeHandles}
               </CardWrapper>
             );

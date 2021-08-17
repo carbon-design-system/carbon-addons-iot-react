@@ -479,6 +479,7 @@ Map {
         "hasSearch": false,
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
+        "preserveColumnWidths": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
         "wrapCellText": "always",
@@ -1209,6 +1210,9 @@ Map {
               "type": "bool",
             },
             "hasUserViewManagement": Object {
+              "type": "bool",
+            },
+            "preserveColumnWidths": Object {
               "type": "bool",
             },
             "shouldLazyRender": Object {
@@ -2146,6 +2150,9 @@ Map {
               "type": "oneOf",
             },
             "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
+            "preserveColumnWidths": Object {
               "type": "bool",
             },
             "truncateCellText": Object {
@@ -5977,6 +5984,12 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -6096,6 +6109,9 @@ Map {
         "type": "bool",
       },
       "size": [Function],
+      "subtitle": Object {
+        "type": "string",
+      },
       "tabIndex": Object {
         "type": "number",
       },
@@ -10294,6 +10310,7 @@ Map {
       "dataSeriesItemLinks": null,
       "getDefaultCard": null,
       "getValidDataItems": null,
+      "getValidDimensions": null,
       "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
       "i18n": Object {
@@ -10339,6 +10356,7 @@ Map {
       "onCancel": null,
       "onCardChange": null,
       "onCardJsonPreview": null,
+      "onCardSelect": null,
       "onDelete": null,
       "onEditDataItems": null,
       "onExport": null,
@@ -10494,6 +10512,9 @@ Map {
         "type": "func",
       },
       "getValidDataItems": Object {
+        "type": "func",
+      },
+      "getValidDimensions": Object {
         "type": "func",
       },
       "getValidTimeRanges": Object {
@@ -10913,6 +10934,9 @@ Map {
       "onCardJsonPreview": Object {
         "type": "func",
       },
+      "onCardSelect": Object {
+        "type": "func",
+      },
       "onDelete": Object {
         "type": "func",
       },
@@ -10976,6 +11000,7 @@ Map {
       "dataItems": Array [],
       "dataSeriesItemLinks": null,
       "getValidDataItems": null,
+      "getValidDimensions": null,
       "getValidTimeRanges": null,
       "i18n": Object {
         "addCardButton": "Add card",
@@ -11145,6 +11170,9 @@ Map {
         "type": "shape",
       },
       "getValidDataItems": Object {
+        "type": "func",
+      },
+      "getValidDimensions": Object {
         "type": "func",
       },
       "getValidTimeRanges": Object {
@@ -11394,7 +11422,7 @@ Map {
           },
           "md": Object {
             "h": 1,
-            "w": 4,
+            "w": 2,
           },
           "sm": Object {
             "h": 1,
@@ -11423,7 +11451,7 @@ Map {
             "w": 8,
           },
           "sm": Object {
-            "h": 2,
+            "h": 1,
             "w": 8,
           },
           "xl": Object {
@@ -11446,10 +11474,10 @@ Map {
           },
           "md": Object {
             "h": 1,
-            "w": 8,
+            "w": 4,
           },
           "sm": Object {
-            "h": 2,
+            "h": 1,
             "w": 4,
           },
           "xl": Object {
@@ -11608,6 +11636,8 @@ Map {
         "xl": 16,
         "xs": 4,
       },
+      "footerContent": undefined,
+      "hasTitleWrap": false,
       "hideHeader": false,
       "i18n": Object {
         "cloneCardLabel": "Clone card",
@@ -11662,6 +11692,7 @@ Map {
         "xs": 144,
       },
       "size": "MEDIUM",
+      "subtitle": undefined,
       "tabIndex": undefined,
       "testId": "Card",
       "timeRange": undefined,
@@ -12184,6 +12215,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -12391,6 +12428,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -13132,6 +13172,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -13415,6 +13461,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -14314,6 +14363,12 @@ Map {
       "fontSize": Object {
         "type": "number",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -14524,6 +14579,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -15512,6 +15570,12 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -15664,6 +15728,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -16422,6 +16489,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -16638,6 +16711,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -17568,6 +17644,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -17703,6 +17785,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -18587,6 +18672,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -18794,6 +18885,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -19514,7 +19608,13 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
       "hasMoreData": Object {
+        "type": "bool",
+      },
+      "hasTitleWrap": Object {
         "type": "bool",
       },
       "hideHeader": Object {
@@ -19722,6 +19822,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -23065,6 +23168,12 @@ Map {
         ],
         "type": "shape",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -23272,6 +23381,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -24298,6 +24410,12 @@ Map {
         ],
         "type": "oneOfType",
       },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -24750,6 +24868,9 @@ Map {
       },
       "stops": Object {
         "type": "array",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "tabIndex": Object {
         "type": "number",
@@ -31828,16 +31949,16 @@ Map {
   "DashboardIcon" => Object {},
   "DataScientistIcon" => Object {},
   "DataTableIcon" => Object {},
-  "Emptystate404Icon" => Object {},
-  "EmptystateDefaultIcon" => Object {},
-  "EmptystateErrorIcon" => Object {},
-  "EmptystateNoresultsIcon" => Object {},
-  "EmptystateNotauthorizedIcon" => Object {},
-  "EmptystateSuccessIcon" => Object {},
   "ImageIcon" => Object {},
   "LineGraphIcon" => Object {},
   "ListIcon" => Object {},
   "SimpleBarGraphIcon" => Object {},
   "ValueKpiIcon" => Object {},
+  "EmptystateDefaultIcon" => Object {},
+  "Emptystate404Icon" => Object {},
+  "EmptystateErrorIcon" => Object {},
+  "EmptystateNoresultsIcon" => Object {},
+  "EmptystateNotauthorizedIcon" => Object {},
+  "EmptystateSuccessIcon" => Object {},
 }
 `;

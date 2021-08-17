@@ -1,6 +1,9 @@
 import * as React from 'react';
 
-function SvgEmptystateNoresultsIcon(props) {
+import { useUniqueId } from '../../hooks/useUniqueId';
+
+function EmptyStateNoResultsIcon(props) {
+  const id = useUniqueId() || 'noResultsIcon';
   return (
     <svg width={80} height={80} {...props}>
       <defs>
@@ -9,7 +12,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="40.646%"
           x2="63.844%"
           y2="82.272%"
-          id="emptystate-Noresults-icon_svg__a"
+          id={`emptystate-Noresults-icon_svg__a-${id}`}
         >
           <stop stopOpacity={0.12} offset="0%" />
           <stop stopOpacity={0.29} offset="99%" />
@@ -19,7 +22,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="49.937%"
           x2="-5.873%"
           y2="49.937%"
-          id="emptystate-Noresults-icon_svg__b"
+          id={`emptystate-Noresults-icon_svg__b-${id}`}
         >
           <stop stopColor="#C9C9C9" offset="0%" />
           <stop stopColor="#666" offset="73%" />
@@ -29,7 +32,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="60.026%"
           x2="57.71%"
           y2="37.165%"
-          id="emptystate-Noresults-icon_svg__d"
+          id={`emptystate-Noresults-icon_svg__d-${id}`}
         >
           <stop stopColor="#666" offset="0%" />
           <stop stopColor="#C2C2C2" offset="68%" />
@@ -39,7 +42,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="49.899%"
           x2="100%"
           y2="49.899%"
-          id="emptystate-Noresults-icon_svg__f"
+          id={`emptystate-Noresults-icon_svg__f-${id}`}
         >
           <stop stopColor="#FFF" offset="1%" />
           <stop stopColor="#292929" offset="99%" />
@@ -49,7 +52,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="49.986%"
           x2="100%"
           y2="49.986%"
-          id="emptystate-Noresults-icon_svg__g"
+          id={`emptystate-Noresults-icon_svg__g-${id}`}
         >
           <stop stopColor="#E2E2E2" offset="0%" />
           <stop stopColor="#959595" offset="17%" />
@@ -62,7 +65,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="103.108%"
           x2="60.593%"
           y2="-.766%"
-          id="emptystate-Noresults-icon_svg__h"
+          id={`emptystate-Noresults-icon_svg__h-${id}`}
         >
           <stop stopColor="#343434" offset="0%" />
           <stop stopColor="#6E6E6E" offset="97%" />
@@ -72,7 +75,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="83.201%"
           x2="67.107%"
           y2="4.635%"
-          id="emptystate-Noresults-icon_svg__i"
+          id={`emptystate-Noresults-icon_svg__i-${id}`}
         >
           <stop stopColor="#C8C8C8" offset="0%" />
           <stop stopColor="#F3F3F3" offset="98%" />
@@ -82,7 +85,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="40.812%"
           x2="106.485%"
           y2="107.052%"
-          id="emptystate-Noresults-icon_svg__j"
+          id={`emptystate-Noresults-icon_svg__j-${id}`}
         >
           <stop stopColor="#FFF" offset="0%" />
           <stop stopColor="#A5A5A5" offset="88%" />
@@ -92,7 +95,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="-65.714%"
           x2="55.132%"
           y2="109.429%"
-          id="emptystate-Noresults-icon_svg__k"
+          id={`emptystate-Noresults-icon_svg__k-${id}`}
         >
           <stop stopOpacity={0.09} offset="0%" />
           <stop stopOpacity={0.39} offset="100%" />
@@ -102,7 +105,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="57.007%"
           x2="36.716%"
           y2="44.266%"
-          id="emptystate-Noresults-icon_svg__l"
+          id={`emptystate-Noresults-icon_svg__l-${id}`}
         >
           <stop stopColor="#FFF" stopOpacity={0.84} offset="11%" />
           <stop stopColor="#FFF" stopOpacity={0} offset="100%" />
@@ -112,7 +115,7 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="89.438%"
           x2="64.466%"
           y2="-1.425%"
-          id="emptystate-Noresults-icon_svg__m"
+          id={`emptystate-Noresults-icon_svg__m-${id}`}
         >
           <stop stopColor="#2B2B2B" offset="0%" />
           <stop stopColor="#9F9F9F" offset="100%" />
@@ -124,7 +127,7 @@ function SvgEmptystateNoresultsIcon(props) {
           fy="107.842%"
           r="139.225%"
           gradientTransform="matrix(.25825 -.49848 .1485 .8669 .25 .42)"
-          id="emptystate-Noresults-icon_svg__c"
+          id={`emptystate-Noresults-icon_svg__c-${id}`}
         >
           <stop stopColor="#FFF" stopOpacity={0} offset="12%" />
           <stop stopColor="#FFF" stopOpacity={0.38} offset="100%" />
@@ -136,7 +139,7 @@ function SvgEmptystateNoresultsIcon(props) {
           fy="55.57%"
           r="71.75%"
           gradientTransform="scale(.5781 1) rotate(-29.9 .757 -.202)"
-          id="emptystate-Noresults-icon_svg__e"
+          id={`emptystate-Noresults-icon_svg__e-${id}`}
         >
           <stop stopColor="#FFF" stopOpacity={0} offset="12%" />
           <stop stopColor="#FFF" stopOpacity={0.17} offset="100%" />
@@ -147,71 +150,71 @@ function SvgEmptystateNoresultsIcon(props) {
         <path
           d="M49.782 5.406C44.102 2.13 37.252.491 29.228.491 21.205.491 14.36 2.13 8.695 5.406 3.249 8.59.419 12.383.204 16.788v1.053c.069 1.444.432 2.858 1.066 4.157 1.3 2.682 3.785 5.083 7.453 7.203 5.67 3.277 12.521 4.915 20.554 4.915 7.925 0 14.709-1.607 20.351-4.823l.94.561h.05a.063.063 0 01.042 0l2.105 1.222 1.474.836.14.077L74.47 43.595l.225.126a2.104 2.104 0 002.042-.273 5.897 5.897 0 002.161-2.275c.56-.903.87-1.937.898-2.998a2.318 2.318 0 00-.575-1.735l-.66-.379L60.316 25.53l-.337-.182-.232-.14-1.46-.773-.378-.218-1.446-.835c.3-.45.57-.918.807-1.404a10.663 10.663 0 001.046-4.424v-.646c-.155-4.493-2.999-8.336-8.534-11.529m-6.428 3.764c3.888 2.237 5.832 4.945 5.832 8.123 0 .417-.035.833-.105 1.243-.44 2.673-2.344 4.988-5.713 6.944-3.892 2.252-8.59 3.38-14.09 3.384-5.503.005-10.18-1.118-14.036-3.37-3.392-1.956-5.307-4.26-5.747-6.909a6.384 6.384 0 01-.113-1.221c0-3.165 1.94-5.88 5.818-8.145 3.878-2.266 8.573-3.394 14.084-3.384 5.488 0 10.178 1.12 14.07 3.363v-.028z"
           transform="translate(0 28.064)"
-          fill="url(#emptystate-Noresults-icon_svg__a)"
+          fill={`url(#emptystate-Noresults-icon_svg__a-${id})`}
         />
         <path
           d="M30.105.288a52.548 52.548 0 00-3.684-.134c-7.177 0-13.3 1.477-18.372 4.43C2.978 7.54.442 11.083.442 15.216c.002.532.046 1.062.133 1.587a22.507 22.507 0 015.313-4.115c5.67-3.276 12.514-4.914 20.533-4.914 1.256 0 2.484.042 3.684.119 6.456.435 12.07 2.034 16.842 4.795a21.917 21.917 0 015.34 4.129c.088-.534.132-1.074.134-1.615 0-4.142-2.54-7.681-7.621-10.616A34.372 34.372 0 0030.105.288z"
           transform="translate(2.807 9.106)"
-          fill="url(#emptystate-Noresults-icon_svg__b)"
+          fill={`url(#emptystate-Noresults-icon_svg__b-${id})`}
         />
         <path
           d="M52.435 16.001v-.47c0-4.142-2.54-7.681-7.621-10.616C39.734 1.98 33.602.517 26.421.527c-7.177 0-13.3 1.476-18.372 4.43C2.978 7.911.442 11.454.442 15.587v.429C.615 12.079 3.151 8.697 8.05 5.87c5.067-2.94 11.19-4.417 18.372-4.43 7.181-.015 13.317 1.448 18.407 4.388C49.726 8.66 52.262 12.05 52.435 16z"
           transform="translate(2.807 11.213)"
-          fill="url(#emptystate-Noresults-icon_svg__c)"
+          fill={`url(#emptystate-Noresults-icon_svg__c-${id})`}
         />
         <path
           d="M5.93.653l-.246-.14a1.571 1.571 0 00-.484 0A3.01 3.01 0 003.95.94c-.39.225-.748.502-1.066.821-.418.42-.782.892-1.08 1.405-.106.182-.204.365-.302.547A5.718 5.718 0 00.905 6.18c0 .512-.168.702-.498.477.21.555.182.765-.077.64l20.105 11.591a2.107 2.107 0 01-.786-1.874 4.917 4.917 0 011.025-2.88 4 4 0 012.631-1.691c1.074-.183 1.67-.436 1.783-.759L6.316.863 5.93.654z"
           transform="translate(54.035 37.191)"
-          fill="url(#emptystate-Noresults-icon_svg__d)"
+          fill={`url(#emptystate-Noresults-icon_svg__d-${id})`}
         />
         <path
           d="M52.45 15.04c0-4.143-2.541-7.682-7.622-10.617C39.748 1.49 33.612.026 26.421.035c-7.177 0-13.3 1.477-18.372 4.43C2.978 7.42.442 10.96.442 15.09c0 4.166 2.547 7.71 7.642 10.63C13.18 28.639 19.308 30.1 26.47 30.1c7.181 0 13.31-1.472 18.386-4.416 5.076-2.944 7.607-6.493 7.593-10.644z"
           transform="translate(2.807 12.617)"
-          fill="url(#emptystate-Noresults-icon_svg__e)"
+          fill={`url(#emptystate-Noresults-icon_svg__e-${id})`}
         />
         <path
           d="M52.75 7.218l-.118-.077a26.61 26.61 0 01-2.807 1.832c-5.67 3.277-12.515 4.915-20.534 4.915-8.018 0-14.87-1.638-20.554-4.915C4.316 6.47 1.612 3.534.625.17h-.07c.935 3.45 3.658 6.468 8.168 9.057 5.67 3.277 12.521 4.915 20.554 4.915 8.033 0 14.877-1.638 20.534-4.915a26.105 26.105 0 002.94-2.008z"
           transform="translate(0 36.49)"
-          fill="url(#emptystate-Noresults-icon_svg__f)"
+          fill={`url(#emptystate-Noresults-icon_svg__f-${id})`}
         />
         <path
           d="M58.316 0a10.733 10.733 0 01-1.08 4.395 14.596 14.596 0 01-4.05 4.915h-.042a25.817 25.817 0 01-3.32 2.303c-5.67 3.277-12.514 4.915-20.533 4.915-8.018 0-14.87-1.638-20.554-4.915-3.677-2.087-6.17-4.482-7.48-7.183A10.6 10.6 0 01.203.288v9.366c.215 4.424 3.054 8.206 8.519 11.347 5.67 3.276 12.521 4.915 20.554 4.915 8.033 0 14.877-1.639 20.534-4.915a27.087 27.087 0 002.94-1.966l-2.105-1.215h-.042l-.078-.098a2.107 2.107 0 01-.835-1.917 6.034 6.034 0 01.898-3.012 6.198 6.198 0 012.162-2.261 2.42 2.42 0 011.775-.386 1.635 1.635 0 01.716.414l2.639 1.524a.204.204 0 000-.064c.246-.842.388-1.713.42-2.59a.794.794 0 010-.183L58.317 0z"
           transform="translate(0 24.553)"
-          fill="url(#emptystate-Noresults-icon_svg__g)"
+          fill={`url(#emptystate-Noresults-icon_svg__g-${id})`}
         />
         <path
           d="M6.239.52A2.23 2.23 0 003.95.583a5.538 5.538 0 00-2.309 2.226 5.717 5.717 0 00-.94 2.97 2.107 2.107 0 00.779 1.874l.224.134c.68.275 1.453.176 2.042-.26A5.918 5.918 0 005.91 5.245c.56-.902.87-1.937.898-2.998A2.276 2.276 0 006.217.52h.022z"
           transform="translate(72.982 48.426)"
-          fill="url(#emptystate-Noresults-icon_svg__h)"
+          fill={`url(#emptystate-Noresults-icon_svg__h-${id})`}
         />
         <path
           d="M5.404.323a2.42 2.42 0 00-1.776.386 6.198 6.198 0 00-2.161 2.254 6.034 6.034 0 00-.899 3.012c-.08.742.237 1.471.836 1.917l.063.035h.042l2.105 1.215 1.46.842A1.805 1.805 0 014.28 8.58a3.253 3.253 0 01-.042-.54c.001-.292.027-.584.077-.871.15-.744.428-1.457.82-2.107A6.88 6.88 0 016.54 3.3c.222-.18.457-.345.702-.491a4.721 4.721 0 011.46-.576L5.614.4l-.21-.077z"
           transform="translate(49.123 34.383)"
-          fill="url(#emptystate-Noresults-icon_svg__i)"
+          fill={`url(#emptystate-Noresults-icon_svg__i-${id})`}
         />
         <path
           d="M58.316 16.921c-.155-4.489-2.999-8.33-8.534-11.522C44.102 2.123 37.252.484 29.228.484c-8.023 0-14.868 1.653-20.533 4.957C3.249 8.601.419 12.38.204 16.774v1.067a10.6 10.6 0 001.052 4.143C2.561 24.68 5.05 27.086 8.723 29.2c5.67 3.277 12.521 4.915 20.554 4.915 8.033 0 14.877-1.638 20.534-4.915a25.817 25.817 0 003.333-2.281h.042a14.596 14.596 0 004.05-4.915 10.733 10.733 0 001.08-4.452v-.632m-3.06.351a10.236 10.236 0 01-.133 1.615c-.576 3.464-3.062 6.472-7.46 9.023-5.08 2.949-11.21 4.411-18.386 4.388-7.176-.024-13.305-1.486-18.386-4.388-4.42-2.542-6.924-5.552-7.509-9.03a9.835 9.835 0 01-.133-1.587c0-4.142 2.536-7.686 7.607-10.63 5.071-2.944 11.195-4.42 18.372-4.43 7.186 0 13.322 1.465 18.407 4.395 5.085 2.93 7.626 6.478 7.621 10.644z"
-          fill="url(#emptystate-Noresults-icon_svg__j)"
+          fill={`url(#emptystate-Noresults-icon_svg__j-${id})`}
           transform="translate(0 7)"
         />
         <path
           d="M1.509 1.636h-.042l-.063-.063A1.924 1.924 0 01.582 0v4.915l.106-.05A27.087 27.087 0 003.628 2.9l-2.12-1.264z"
           transform="translate(49.123 40.702)"
-          fill="url(#emptystate-Noresults-icon_svg__k)"
+          fill={`url(#emptystate-Noresults-icon_svg__k-${id})`}
         />
         <path
           d="M49.123 7.625a20.962 20.962 0 00-4.309-3.202C39.734 1.474 33.602.012 26.421.035 19.24.06 13.116 1.535 8.05 4.465 2.97 7.406.433 10.947.442 15.09c.003.858.119 1.713.344 2.541 10.606-4.732 26.718-8.067 48.337-10.005z"
           transform="translate(2.807 12.617)"
-          fill="url(#emptystate-Noresults-icon_svg__l)"
+          fill={`url(#emptystate-Noresults-icon_svg__l-${id})`}
         />
         <path
           d="M4.954.393L4.575.17A4.448 4.448 0 003.088.73c-.246.147-.48.311-.702.492A6.88 6.88 0 00.982 2.984a6.616 6.616 0 00-.82 2.106c-.05.288-.076.58-.078.871 0 .181.013.362.042.54.03.568.323 1.088.793 1.405l.127.077c.26.127.596.316 1.003.562-.224-.148-.35-.702-.386-1.552a5.556 5.556 0 01.555-2.59c.098-.183.196-.366.301-.548A6.958 6.958 0 013.6 2.45c.318-.32.676-.596 1.067-.821A3.01 3.01 0 015.916 1.2c.16-.025.324-.025.484 0L4.954.393z"
           transform="translate(53.333 36.49)"
-          fill="url(#emptystate-Noresults-icon_svg__m)"
+          fill={`url(#emptystate-Noresults-icon_svg__m-${id})`}
         />
       </g>
     </svg>
   );
 }
 
-export default SvgEmptystateNoresultsIcon;
+export default EmptyStateNoResultsIcon;

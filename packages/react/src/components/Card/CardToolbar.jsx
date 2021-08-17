@@ -29,6 +29,7 @@ export const ToolbarSVGWrapper = (props) => {
         `${prefix}--btn--icon-only` // can't actually use the hasIconOnly prop because we don't want the tooltip
       )}
       {...props}
+      size="sm"
     />
   );
 };

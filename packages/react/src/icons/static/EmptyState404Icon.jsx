@@ -1,6 +1,9 @@
 import * as React from 'react';
 
+import { useUniqueId } from '../../hooks/useUniqueId';
+
 function SvgEmptystate404Icon(props) {
+  const id = useUniqueId() || '404Icon';
   return (
     <svg width={80} height={80} {...props}>
       <defs>
@@ -9,7 +12,7 @@ function SvgEmptystate404Icon(props) {
           y1="56.704%"
           x2="34.436%"
           y2="36.281%"
-          id="emptystate-404-icon_svg__a"
+          id={`emptystate-404-icon_svg__a-${id}`}
         >
           <stop stopColor="#5C5C5C" offset="0%" />
           <stop stopColor="#B2B2B2" offset="98%" />
@@ -19,7 +22,7 @@ function SvgEmptystate404Icon(props) {
           y1="35.257%"
           x2="20.038%"
           y2="99.807%"
-          id="emptystate-404-icon_svg__b"
+          id={`emptystate-404-icon_svg__b-${id}`}
         >
           <stop stopColor="#D4D4D4" offset="0%" />
           <stop stopColor="#757575" offset="100%" />
@@ -29,7 +32,7 @@ function SvgEmptystate404Icon(props) {
           y1="88.863%"
           x2="58.465%"
           y2="81.744%"
-          id="emptystate-404-icon_svg__c"
+          id={`emptystate-404-icon_svg__c-${id}`}
         >
           <stop stopOpacity={0} offset="0%" />
           <stop stopOpacity={0.37} offset="98%" />
@@ -39,7 +42,7 @@ function SvgEmptystate404Icon(props) {
           y1="3308.565%"
           x2="-127.214%"
           y2="3313.015%"
-          id="emptystate-404-icon_svg__d"
+          id={`emptystate-404-icon_svg__d-${id}`}
         >
           <stop stopOpacity={0} offset="0%" />
           <stop stopOpacity={0.37} offset="98%" />
@@ -49,7 +52,7 @@ function SvgEmptystate404Icon(props) {
           y1="0%"
           x2="54.886%"
           y2="158.279%"
-          id="emptystate-404-icon_svg__e"
+          id={`emptystate-404-icon_svg__e-${id}`}
         >
           <stop stopOpacity={0} offset="0%" />
           <stop stopOpacity={0.345} offset="47.927%" />
@@ -60,22 +63,22 @@ function SvgEmptystate404Icon(props) {
         <path
           d="M.05 22.713l38.714 22.303 38.572-22.303L38.62.409z"
           transform="translate(2.143 27.804)"
-          fill="url(#emptystate-404-icon_svg__a)"
+          fill={`url(#emptystate-404-icon_svg__a-${id}-${id})`}
         />
         <path
           d="M.036.402l.15 44.607 38.571-22.304z"
           transform="translate(40.714 27.804)"
-          fill="url(#emptystate-404-icon_svg__b)"
+          fill={`url(#emptystate-404-icon_svg__b-${id})`}
         />
         <path
           d="M0 8.358l10.307 5.94 7.55-2.36L13.871.357z"
           transform="translate(2.143 42.152)"
-          fill="url(#emptystate-404-icon_svg__c)"
+          fill={`url(#emptystate-404-icon_svg__c-${id})`}
         />
         <path
           d="M16.064 11.945L12.093.365.357 7.175l12.55 34.148 10.236-4.154z"
           transform="translate(25 29.957)"
-          fill="url(#emptystate-404-icon_svg__d)"
+          fill={`url(#emptystate-404-icon_svg__d-${id})`}
         />
         <path
           d="M9.214 22.022L4.93 24.533l11.914 34.514 6.65 3.838c0-.05 0-.108-.057-.165-1.476-4.381-2.86-8.463-4.15-12.246-4.52-13.2-7.853-22.684-10-28.452h-.072m37.143 47.6l4.357-2.519A5448.833 5448.833 0 0045 50.473C37.605 28.819 32.869 15.24 30.793 9.74l-4.286 2.504 19.85 57.377z"
@@ -96,7 +99,7 @@ function SvgEmptystate404Icon(props) {
         <path
           d="M0 .43l38.729 22.304L77.3.43z"
           transform="translate(2.143 50.043)"
-          fill="url(#emptystate-404-icon_svg__e)"
+          fill={`url(#emptystate-404-icon_svg__e-${id})`}
         />
       </g>
     </svg>

@@ -135,6 +135,20 @@ const customActionItems = [
       },
       {
         metaData: {
+          href: 'http://google.com',
+          title: 'this is a title',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          element: 'a',
+        },
+        content: (
+          <span id="a-message">
+            this is my really long message to you that should be truncated...
+          </span>
+        ),
+      },
+      {
+        metaData: {
           element: 'button',
         },
         content: (
@@ -157,12 +171,26 @@ const customActionItems = [
       {
         metaData: {
           href: 'http://google.com',
-          title: 'this is a title',
+          title: 'this is my message to you',
           target: '_blank',
           rel: 'noopener noreferrer',
           element: 'a',
         },
         content: <span id="another-message">this is my message to you</span>,
+      },
+      {
+        metaData: {
+          href: 'http://google.com',
+          title: 'this is my really long message to you that should be truncated...',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          element: 'a',
+        },
+        content: (
+          <span id="another-message">
+            this is my really long message to you that should be truncated...
+          </span>
+        ),
       },
       {
         metaData: {
@@ -204,7 +232,11 @@ const customHelpLinks = [
       href: 'javascript:void(0)',
       onClick: () => alert('custom help menu action'),
     },
-    content: <span id="yet-another-custom-help-link">{'{Yet another custom help link}'}</span>,
+    content: (
+      <span id="yet-another-custom-help-link">
+        {'{Yet another custom help link that is really long and should be truncated...}'}
+      </span>
+    ),
   },
 ];
 
@@ -234,7 +266,9 @@ const customProfileLinks = [
       onClick: () => alert('custom profile menu action'),
     },
     content: (
-      <span id="yet-another-custom-profile-link">{'{Yet another custom profile link}'}</span>
+      <span id="yet-another-custom-profile-link">
+        {'{Yet another custom profile link that is really long and should be truncated...}'}
+      </span>
     ),
   },
 ];

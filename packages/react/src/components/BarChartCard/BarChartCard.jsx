@@ -304,7 +304,7 @@ const BarChartCard = ({
         valueFormatter: (tooltipValue) =>
           chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
         customHTML: (...args) =>
-          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
+          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern, locale),
         groupLabel: mergedI18n.tooltipGroupLabel,
         totalLabel: mergedI18n.tooltipTotalLabel,
       },

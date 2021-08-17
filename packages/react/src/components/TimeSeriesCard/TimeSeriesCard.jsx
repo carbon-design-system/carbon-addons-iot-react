@@ -466,7 +466,8 @@ const TimeSeriesCard = ({
             alertRanges,
             mergedI18n.alertDetected,
             showTimeInGMT,
-            tooltipDateFormatPattern
+            tooltipDateFormatPattern,
+            locale
           ),
         groupLabel: mergedI18n.tooltipGroupLabel,
       },
