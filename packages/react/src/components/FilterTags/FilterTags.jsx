@@ -107,11 +107,16 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer, onChange, i18n, t
         >
           {overflowItems.map((child, i) => (
             <OverflowMenuItem
+              // adding href="#" to force the OverflowMenuItem to use an a tag to prevent <button> within <button> errors
+              href="#"
               data-testid={`${testId}-overflow-menu-item-${i}`}
               className={`${iotPrefix}--filtertags-overflow-item`}
               title={child.props.children}
               key={`${child.props.children}-${i}`}
-              onClick={child.props.onClose}
+              onClick={(e) => {
+                e.preventDefault();
+                child.props.onClose();
+              }}
               itemText={<OverflowTag>{child.props.children}</OverflowTag>}
             />
           ))}
