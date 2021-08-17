@@ -952,7 +952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             <span
               style={
                 Object {
-                  "margin-left": "1rem",
+                  "marginLeft": "1rem",
                 }
               }
             >
