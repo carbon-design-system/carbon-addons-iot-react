@@ -330,8 +330,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label is very, very long"
           >
-            Optional label
+            Optional label is very, very long
           </p>
         </div>
       </button>
@@ -396,6 +397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -497,6 +499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -660,6 +663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -848,8 +852,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label is very, very long"
           >
-            Optional label
+            Optional label is very, very long
           </p>
         </div>
       </button>
@@ -915,6 +920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -1028,6 +1034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -1209,6 +1216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -1393,8 +1401,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label is very, very long"
           >
-            Optional label
+            Optional label is very, very long
           </p>
         </div>
       </button>
@@ -1459,6 +1468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -1560,6 +1570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -1723,6 +1734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -1988,8 +2000,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label is very, very long"
           >
-            Optional label
+            Optional label is very, very long
           </p>
         </div>
       </button>
@@ -2050,6 +2063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -2171,6 +2185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>
@@ -2352,6 +2367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
           <p
             className="iot--progress-text-label--optional"
+            title="Optional label"
           >
             Optional label
           </p>

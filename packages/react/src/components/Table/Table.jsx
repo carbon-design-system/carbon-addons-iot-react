@@ -99,6 +99,8 @@ const propTypes = {
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
     hasUserViewManagement: PropTypes.bool,
+    /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
+    preserveColumnWidths: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     /**
@@ -306,6 +308,7 @@ export const defaultProps = (baseProps) => ({
     hasResize: false,
     hasSingleRowEdit: false,
     hasUserViewManagement: false,
+    preserveColumnWidths: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
     wrapCellText: 'always',
@@ -841,7 +844,8 @@ const Table = (props) => {
                 'hasSingleRowEdit',
                 'hasRowSelection',
                 'useAutoTableLayoutForResize',
-                'hasMultiSort'
+                'hasMultiSort',
+                'preserveColumnWidths'
               ),
               wrapCellText: options.wrapCellText,
               truncateCellText: useCellTextTruncate,
@@ -996,10 +1000,7 @@ const Table = (props) => {
           ) : null}
         </CarbonTable>
       </div>
-      {options.hasPagination &&
-      !view.table.loadingState.isLoading &&
-      visibleData &&
-      visibleData.length ? ( // don't show pagination row while loading
+      {options.hasPagination && !view.table.loadingState.isLoading && visibleData?.length ? ( // don't show pagination row while loading
         <Pagination
           pageSize={paginationProps.pageSize}
           pageSizes={paginationProps.pageSizes}

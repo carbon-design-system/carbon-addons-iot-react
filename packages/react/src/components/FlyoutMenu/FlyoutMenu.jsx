@@ -93,7 +93,9 @@ const FlyoutMenu = ({
   triggerId,
   tabIndex,
   tooltipClassName,
+  tooltipContentClassName,
   passive,
+  tooltipFocusTrap,
   hideTooltip,
   customFooter: CustomFooter,
   onApply,
@@ -101,6 +103,7 @@ const FlyoutMenu = ({
   useAutoPositioning,
   onChange,
   isOpen,
+  renderInPortal,
 }) => {
   const [isControlledOpen, setIsOpen] = useState(defaultOpen);
   const [tooltipDirection, setTooltipDirection] = useState(getTooltipDirection(direction));
@@ -249,7 +252,10 @@ const FlyoutMenu = ({
         }}
       />
       {
-        <div className={`${iotPrefix}--flyout-menu--tooltip-anchor`} data-floating-menu-container>
+        <div
+          className={`${iotPrefix}--flyout-menu--tooltip-anchor`}
+          {...(!renderInPortal ? { 'data-floating-menu-container': true } : {})}
+        >
           <Tooltip
             disabled={disabled}
             className={classnames(
@@ -266,6 +272,7 @@ const FlyoutMenu = ({
             iconDescription={iconDescription}
             data-testid={testId}
             showIcon={false}
+            focusTrap={tooltipFocusTrap}
             open={typeof isOpen === 'boolean' ? isOpen : isControlledOpen}
             direction={tooltipDirection}
             menuOffset={calculateMenuOffset}
@@ -276,7 +283,11 @@ const FlyoutMenu = ({
             useAutoPositioning={false}
             onChange={onChange}
           >
-            <div className={`${iotPrefix}--flyout-menu--content`}>{children}</div>
+            <div
+              className={classnames(`${iotPrefix}--flyout-menu--content`, tooltipContentClassName)}
+            >
+              {children}
+            </div>
             {!passive && (
               <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
             )}
@@ -309,6 +320,16 @@ const propTypes = {
    * The CSS class names of the flyout menu.
    */
   tooltipClassName: PropTypes.string,
+
+  /**
+   * The CSS class names of the tooltip content.
+   */
+  tooltipContentClassName: PropTypes.string,
+
+  /**
+   * whether to send focus to the tooltip when it's expanded
+   */
+  tooltipFocusTrap: PropTypes.bool,
 
   /**
    * Where to put the flyout menu, relative to the trigger UI.
@@ -405,6 +426,9 @@ const propTypes = {
   }),
 
   isOpen: PropTypes.bool,
+
+  /** by default the flyout menu will render as a child, if you set this to true it will render outside of the current DOM in a portal */
+  renderInPortal: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -416,6 +440,8 @@ const defaultProps = {
   defaultOpen: false,
   children: undefined,
   tooltipClassName: '',
+  tooltipContentClassName: '',
+  tooltipFocusTrap: true,
   passive: false,
   hideTooltip: true,
   customFooter: null,
@@ -437,6 +463,7 @@ const defaultProps = {
   light: true,
   useAutoPositioning: false,
   onChange: () => {},
+  renderInPortal: false,
 };
 
 FlyoutMenu.propTypes = propTypes;

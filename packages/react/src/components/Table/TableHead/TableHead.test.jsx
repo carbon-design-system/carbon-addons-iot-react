@@ -1,15 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import cloneDeep from 'lodash/cloneDeep';
-import { render, screen, fireEvent, within, act } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../constants/Settings';
 
 import TableHead from './TableHead';
 import TableHeader from './TableHeader';
-import { MIN_COLUMN_WIDTH } from './columnWidthUtilityFunctions';
+import { MIN_COLUMN_WIDTH, DEFAULT_COLUMN_WIDTH } from './columnWidthUtilityFunctions';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const commonTableHeadProps = {
   tableId: 'tablehead-test',
@@ -96,7 +97,9 @@ describe('TableHead', () => {
       `${iotPrefix}--table-header-row-action-column`
     );
 
-    expect(lastTableHeader.find('.bx--table-header-label').getDOMNode().innerHTML).toEqual('');
+    expect(lastTableHeader.find(`.${prefix}--table-header-label`).getDOMNode().innerHTML).toEqual(
+      ''
+    );
   });
 
   it('make sure data-column is set for width', () => {
@@ -299,29 +302,28 @@ describe('TableHead', () => {
     it('toggle hide column correctly updates the column widths of visible columns', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
-      const wrapper = mount(<TableHead {...myProps} />, {
-        attachTo: document.createElement('table'),
+      const { container } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
       });
-      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
-      const orderingAfterTogleHide = [
-        { columnId: 'col1', isHidden: true },
-        { columnId: 'col2', isHidden: false },
-        { columnId: 'col3', isHidden: false },
-      ];
 
       // Hide col1. The width of col1 is proportionally distributed over
       // the remaining visible columns.
-
-      act(() => {
-        onColumnToggleFunc('col1', orderingAfterTogleHide);
-      });
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '100px' },
         { id: 'col2', name: 'Column 2', width: '150px' },
         { id: 'col3', name: 'Column 3', width: '150px' },
       ]);
-      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleHide);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: true },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ]);
     });
 
     it('toggle show column correctly updates the column widths of visible columns', () => {
@@ -336,7 +338,7 @@ describe('TableHead', () => {
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
-      const wrapper = mount(
+      const { container } = render(
         <TableHead
           {...myProps}
           columns={[
@@ -346,29 +348,28 @@ describe('TableHead', () => {
           ]}
         />,
         {
-          attachTo: document.createElement('table'),
+          container: document.body.appendChild(document.createElement('table')),
         }
       );
-      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
-
-      const orderingAfterTogleShow = [
-        { columnId: 'col1', isHidden: false },
-        { columnId: 'col2', isHidden: false },
-        { columnId: 'col3', isHidden: false },
-      ];
 
       // Show col1. The width needed for col1 is proportionally subtracted from
       // the other visible columns.
-      act(() => {
-        onColumnToggleFunc('col1', orderingAfterTogleShow);
-      });
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '133px' },
         { id: 'col2', name: 'Column 2', width: '133px' },
         { id: 'col3', name: 'Column 3', width: '133px' },
       ]);
-      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ]);
     });
 
     it('toggle show column does not allow columns to shrink below MIN WIDTH', () => {
@@ -383,22 +384,17 @@ describe('TableHead', () => {
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
-      const wrapper = mount(<TableHead {...myProps} />, {
-        attachTo: document.createElement('table'),
+      const { container } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
       });
-      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
-
-      const orderingAfterTogleShow = [
-        { columnId: 'col1', isHidden: false },
-        { columnId: 'col2', isHidden: false },
-        { columnId: 'col3', isHidden: false },
-      ];
 
       // Show col1. The width needed for col1 is proportionally subtracted from
       // the other visible columns.
-      act(() => {
-        onColumnToggleFunc('col1', orderingAfterTogleShow);
-      });
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '67px' },
@@ -410,7 +406,11 @@ describe('TableHead', () => {
         expect(parseInt(column.width, 10)).toBeGreaterThanOrEqual(MIN_COLUMN_WIDTH);
       });
 
-      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ]);
     });
 
     it('toggle show column without initial width correctly updates the column widths of visible columns', () => {
@@ -430,28 +430,27 @@ describe('TableHead', () => {
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
-      const wrapper = mount(<TableHead {...myProps} />, {
-        attachTo: document.createElement('table'),
+      const { container } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
       });
-      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
-
-      const orderingAfterTogleShow = [
-        { columnId: 'col1', isHidden: false },
-        { columnId: 'col2', isHidden: false },
-        { columnId: 'col3', isHidden: false },
-      ];
 
       // Show col3 which has no initial column width.
-      act(() => {
-        onColumnToggleFunc('col3', orderingAfterTogleShow);
-      });
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 3')
+      );
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '133px' },
         { id: 'col2', name: 'Column 2', width: '133px' },
         { id: 'col3', name: 'Column 3', width: '133px' },
       ]);
-      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ]);
     });
 
     it('should not add resize handle to the last visible column if there is no expander column', () => {
@@ -466,31 +465,34 @@ describe('TableHead', () => {
       myProps.showExpanderColumn = false;
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
-      const wrapper = mount(<TableHead {...myProps} />, {
-        attachTo: document.createElement('table'),
+      const { rerender } = render(<TableHead {...myProps} testId="my-test" />, {
+        container: document.body.appendChild(document.createElement('table')),
       });
-      const resizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
-      expect(resizeHandles).toHaveLength(2);
-      const lastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
-      expect(lastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
+
+      expect(screen.queryAllByRole('button', 'Resize column')).toHaveLength(2);
+
+      let lastTableHeader = screen.getByTestId('my-test-column-col3');
+      expect(within(lastTableHeader).queryAllByRole('button', 'Resize column')).toHaveLength(0);
 
       // Hide the last column (use shortcut via props)
       const orderingAfterToggleHide = cloneDeep(myProps.tableState.ordering).map((col) =>
         col.columnId === 'col3' ? { ...col, isHidden: true } : col
       );
-      wrapper.setProps({
-        ...myProps,
-        tableState: {
-          ...myProps.tableState,
-          ordering: orderingAfterToggleHide,
-        },
-      });
-      wrapper.update();
-      const updatedResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
-      expect(updatedResizeHandles).toHaveLength(1);
 
-      const modLastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
-      expect(modLastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
+      rerender(
+        <TableHead
+          {...myProps}
+          tableState={{ ...myProps.tableState, ordering: orderingAfterToggleHide }}
+          testId="my-test"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+      expect(screen.queryAllByRole('button', 'Resize column')).toHaveLength(1);
+
+      lastTableHeader = screen.getByTestId('my-test-column-col2');
+      expect(within(lastTableHeader).queryAllByRole('button', 'Resize column')).toHaveLength(0);
     });
 
     it('should always add resize handle to the last visible column if there is an expander column', () => {
@@ -697,7 +699,7 @@ describe('TableHead', () => {
       myProps.tableState.ordering = orderingWidthHiddenCol1;
       myProps.tableState.activeBar = 'column';
 
-      const { rerender } = render(<TableHead {...myProps} />, {
+      const { rerender, container } = render(<TableHead {...myProps} />, {
         container: document.body.appendChild(document.createElement('table')),
       });
       myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
@@ -706,8 +708,10 @@ describe('TableHead', () => {
       rerender(<TableHead {...myProps} />, {
         container: document.body.appendChild(document.createElement('table')),
       });
-      const toggleHideCol2Button = screen.getAllByText('Column 2')[1];
-      fireEvent.click(toggleHideCol2Button);
+      const toggleHideButtons = container.querySelector(
+        `.${iotPrefix}--column-header-row--select-wrapper`
+      );
+      userEvent.click(within(toggleHideButtons).getByText('Column 2'));
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col2', name: 'Column 2', width: '100px' },
@@ -819,6 +823,424 @@ describe('TableHead', () => {
       });
       expect(screen.getAllByText('Column 4')[0].closest('th')).toHaveStyle({
         width: '150px',
+      });
+    });
+
+    it('handles adding a new hidden column', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      // Add 1 new hidden columns
+      myProps.tableState.ordering = [
+        ...myProps.tableState.ordering,
+        { columnId: 'col4', isHidden: true },
+      ];
+      myProps.columns = [...myProps.columns, { id: 'col4', name: 'Column 4', width: '100px' }];
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 4')[0].closest('th')).not.toHaveStyle({
+        width: '100px',
+      });
+    });
+
+    it('prevents missing inital column widths from geting a value below the minimum width', () => {
+      const WIDTH_SMALLER_THAN_MIN_WIDTH = 50;
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1' },
+        { id: 'col2', name: 'Column 2', width: undefined },
+        { id: 'col3', name: 'Column 3', width: '800px' },
+      ];
+      mockGetBoundingClientRect.mockImplementation(() => ({
+        width: WIDTH_SMALLER_THAN_MIN_WIDTH,
+      }));
+      render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
+        width: `${DEFAULT_COLUMN_WIDTH}px`,
+      });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
+        width: `${DEFAULT_COLUMN_WIDTH}px`,
+      });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '800px',
+      });
+    });
+  });
+
+  describe('Column resizing active - preserveColumnWidths', () => {
+    let ordering;
+    let columns;
+    let myActions;
+    let myProps;
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn();
+
+    beforeAll(() => {
+      Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    });
+
+    beforeEach(() => {
+      ordering = [
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ];
+      columns = [
+        { id: 'col1', name: 'Column 1', width: '100px' },
+        { id: 'col2', name: 'Column 2', width: '100px' },
+        { id: 'col3', name: 'Column 3', width: '100px' },
+      ];
+
+      myActions = { onChangeOrdering: jest.fn(), onColumnResize: jest.fn() };
+      myProps = {
+        ...commonTableHeadProps,
+        columns,
+        tableState: {
+          ...commonTableHeadProps.tableState,
+          ordering,
+          activeBar: 'column',
+        },
+        options: {
+          hasResize: true,
+          wrapCellText: 'auto',
+          truncateCellText: false,
+          preserveColumnWidths: true,
+        },
+        actions: myActions,
+        showExpanderColumn: true,
+      };
+    });
+
+    afterAll(() => {
+      Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+    });
+
+    it('toggle hide column does not modify the widths of visible columns', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+      const { container } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
+
+      expect(myActions.onColumnResize).not.toHaveBeenCalled();
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: true },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ]);
+    });
+
+    it('toggle show column does not modify the widths of visible columns', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: false },
+          { columnId: 'col3', isHidden: false },
+        ],
+      };
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { container } = render(
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: '200px' },
+            { id: 'col2', name: 'Column 2', width: '200px' },
+            { id: 'col3', name: 'Column 3', width: '200px' },
+          ]}
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
+
+      expect(myActions.onColumnResize).not.toHaveBeenCalled();
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ]);
+    });
+
+    it('toggle show column without a width will set the width to default width', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: false },
+          { columnId: 'col3', isHidden: false },
+        ],
+      };
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { container } = render(
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: undefined },
+            { id: 'col2', name: 'Column 2', width: '200px' },
+            { id: 'col3', name: 'Column 3', width: '200px' },
+          ]}
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: `${DEFAULT_COLUMN_WIDTH}px` },
+        { id: 'col2', name: 'Column 2', width: '200px' },
+        { id: 'col3', name: 'Column 3', width: '200px' },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ]);
+    });
+
+    it('preservs remaining column widths when columns are removed', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      myProps.options = { ...myProps.options, preserveColumnWidths: true };
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+      myProps.tableState.ordering = myProps.tableState.ordering.slice(2);
+      myProps.columns = myProps.columns.slice(2);
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+
+      expect(screen.queryByText('Column 1')).not.toBeInTheDocument();
+      expect(screen.queryByText('Column 2')).not.toBeInTheDocument();
+    });
+
+    it('preservs remaining column widths when removing hidden columns without any widths', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const orderingWidthHiddenCol1 = [
+        { columnId: 'col1', isHidden: true },
+        ...myProps.tableState.ordering.slice(1),
+      ];
+      myProps.tableState.ordering = orderingWidthHiddenCol1;
+      myProps.tableState.activeBar = 'column';
+
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+      myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
+      myProps.columns = myProps.columns.slice(1);
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(myActions.onColumnResize).not.toHaveBeenCalled();
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+    });
+
+    it('preservs existing column widths when adding new columns', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      // Add two new columns
+      myProps.tableState.ordering = [
+        ...myProps.tableState.ordering,
+        { columnId: 'col4', isHidden: false },
+        { columnId: 'col5', isHidden: false },
+      ];
+      myProps.columns = [
+        ...myProps.columns,
+        { id: 'col4', name: 'Column 4', width: '150px' },
+        { id: 'col5', name: 'Column 5', width: '300px' },
+      ];
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 4')[0].closest('th')).toHaveStyle({
+        width: '150px',
+      });
+      expect(screen.getAllByText('Column 5')[0].closest('th')).toHaveStyle({
+        width: '300px',
+      });
+    });
+
+    it('uses default width when new columns without widths are added', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      // Add two new columns
+      myProps.tableState.ordering = [
+        ...myProps.tableState.ordering,
+        { columnId: 'col4', isHidden: false },
+        { columnId: 'col5', isHidden: false },
+      ];
+      myProps.columns = [
+        ...myProps.columns,
+        { id: 'col4', name: 'Column 4' },
+        { id: 'col5', name: 'Column 5', width: undefined },
+      ];
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 4')[0].closest('th')).toHaveStyle({
+        width: `${DEFAULT_COLUMN_WIDTH}px`,
+      });
+      expect(screen.getAllByText('Column 5')[0].closest('th')).toHaveStyle({
+        width: `${DEFAULT_COLUMN_WIDTH}px`,
+      });
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: '100px' },
+        { id: 'col2', name: 'Column 2', width: '100px' },
+        { id: 'col3', name: 'Column 3', width: '100px' },
+        { id: 'col4', name: 'Column 4', width: `${DEFAULT_COLUMN_WIDTH}px` },
+        { id: 'col5', name: 'Column 5', width: `${DEFAULT_COLUMN_WIDTH}px` },
+      ]);
+    });
+
+    it('uses rendred widths when columns are modified and initial columns lack widths', () => {
+      const renderedWidth = 105;
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: renderedWidth }));
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1' },
+        { id: 'col2', name: 'Column 2', width: undefined },
+        { id: 'col3', name: 'Column 3', width: '300px' },
+      ];
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      // Add a new column
+      myProps.tableState.ordering = [
+        ...myProps.tableState.ordering,
+        { columnId: 'col4', isHidden: false },
+      ];
+      myProps.columns = [...myProps.columns, { id: 'col4', name: 'Column 4', width: '400px' }];
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: `${renderedWidth}px` },
+        { id: 'col2', name: 'Column 2', width: `${renderedWidth}px` },
+        { id: 'col3', name: 'Column 3', width: '300px' },
+        { id: 'col4', name: 'Column 4', width: '400px' },
+      ]);
+    });
+
+    it('handles adding and removing columns during the same rerender', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+      const { rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      // Add 2 new columns
+      myProps.tableState.ordering = [
+        ...myProps.tableState.ordering,
+        { columnId: 'col4', isHidden: false },
+        { columnId: 'col5', isHidden: false },
+      ];
+      myProps.columns = [
+        ...myProps.columns,
+        { id: 'col4', name: 'Column 4', width: '400px' },
+        { id: 'col5', name: 'Column 5', width: '500px' },
+      ];
+      // Remove one column
+      myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
+      myProps.columns = myProps.columns.slice(1);
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 4')[0].closest('th')).toHaveStyle({
+        width: '400px',
+      });
+      expect(screen.getAllByText('Column 5')[0].closest('th')).toHaveStyle({
+        width: '500px',
       });
     });
 

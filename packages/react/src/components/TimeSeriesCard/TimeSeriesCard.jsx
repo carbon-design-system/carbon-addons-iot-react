@@ -243,9 +243,19 @@ const TimeSeriesCard = ({
   const objectAgnosticThresholds = JSON.stringify(thresholds);
 
   const sampleValues = useMemo(
-    () => generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds),
+    () =>
+      isEditable
+        ? generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds)
+        : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [objectAgnosticSeries, timeDataSourceId, interval, timeRange, objectAgnosticThresholds]
+    [
+      objectAgnosticSeries,
+      timeDataSourceId,
+      interval,
+      timeRange,
+      objectAgnosticThresholds,
+      isEditable,
+    ]
   );
 
   const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
@@ -445,6 +455,9 @@ const TimeSeriesCard = ({
       },
       containerResizable: true,
       tooltip: {
+        truncation: {
+          type: 'none',
+        },
         valueFormatter: (tooltipValue) =>
           chartValueFormatter(tooltipValue, newSize, unit, locale, decimalPrecision),
         customHTML: (...args) =>
@@ -453,7 +466,8 @@ const TimeSeriesCard = ({
             alertRanges,
             mergedI18n.alertDetected,
             showTimeInGMT,
-            tooltipDateFormatPattern
+            tooltipDateFormatPattern,
+            locale
           ),
         groupLabel: mergedI18n.tooltipGroupLabel,
       },

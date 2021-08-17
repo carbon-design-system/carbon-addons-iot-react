@@ -1,8 +1,6 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--bar-chart-container {
-  padding: 0 $spacing-05 $spacing-05;
-  position: absolute;
   width: 100%;
   height: 100%;
 
@@ -32,23 +30,5 @@
   .bx--cc--chart-svg {
     width: 100%;
     height: 100%;
-  }
-}
-
-.#{$iot-prefix}--bar-chart-card {
-  .#{$iot-prefix}--card--title {
-    padding-bottom: $spacing-02;
-    padding-top: $spacing-02;
-    width: 100%;
-
-    span {
-      max-width: calc(100% - 40px);
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-
-  .#{$prefix}--tooltip__trigger {
-    margin-right: $spacing-03;
   }
 }

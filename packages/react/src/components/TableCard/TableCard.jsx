@@ -7,6 +7,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import { spacing01, spacing05 } from '@carbon/layout';
+import classnames from 'classnames';
 
 import dayjs from '../../utils/dayjs';
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
@@ -32,7 +33,7 @@ import {
 } from './tableCardUtils';
 import ThresholdIcon from './ThresholdIcon';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) => (
   <StatefulTable {...rest} data={data} />
@@ -43,56 +44,56 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
   overflow-y: ${(props) => (!props.isExpanded ? 'hidden' : 'auto')};
   padding-bottom: ${(props) => (props.isExpanded ? '3rem' : '')};
   &&& {
-    .bx--pagination {
+    .${prefix}--pagination {
       position: ${(props) => (!props.isExpanded ? 'absolute' : 'fixed')};
       bottom: ${(props) => (!props.isExpanded ? '0px' : '25px')};
       ${(props) => (props.isExpanded ? `width: calc(100% - 50px)` : ``)}
     }
-    .bx--data-table-container {
+    .${prefix}--data-table-content {
       ${(props) =>
         props.data && props.data.length > 0 && !props.isExpanded
-          ? `max-height: 435px;`
+          ? `max-height: 523px;`
           : `height: 90%;`}
     }
 
-    .bx--list-box__menu-item {
+    .${prefix}--list-box__menu-item {
       height: 2rem;
       font-weight: normal;
     }
 
-    .bx--table-toolbar {
+    .${prefix}--table-toolbar {
       padding-bottom: ${spacing01};
       padding-top: 0px;
     }
-    .bx--data-table th:first-of-type,
-    .bx--data-table td:first-of-type {
+    .${prefix}--data-table th:first-of-type,
+    .${prefix}--data-table td:first-of-type {
       padding-left: ${spacing05};
       padding-right: ${spacing05};
     }
-    .bx--data-table thead {
+    .${prefix}--data-table thead {
       display: ${(props) => (!props.showHeader ? 'none' : '')};
       tr {
         height: 2rem;
       }
     }
 
-    .bx--data-table tbody tr {
+    .${prefix}--data-table tbody tr {
       height: 2.5rem;
     }
-    .bx--data-table-container + .bx--pagination {
+    .${prefix}--data-table-content + .${prefix}--pagination {
       border: 1px solid #dfe3e6;
     }
 
-    .bx--toolbar-search-container {
+    .${prefix}--toolbar-search-container {
       margin-left: ${spacing05};
     }
-    .bx--data-table {
+    .${prefix}--data-table {
       ${(props) => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
       td {
         white-space: nowrap;
       }
     }
-    .bx--data-table thead tr:nth-child(2) {
+    .${prefix}--data-table thead tr:nth-child(2) {
       height: 3rem;
 
       th {
@@ -103,13 +104,13 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
           height: 2rem;
         }
       }
-      th div.bx--form-item {
+      th div.${prefix}--form-item {
         display: block;
-        .bx--list-box {
+        .${prefix}--list-box {
           height: auto;
         }
       }
-      th div.bx--list-box {
+      th div.${prefix}--list-box {
         height: 2rem;
       }
     }
@@ -175,6 +176,7 @@ const TableCard = ({
   isLoading,
   testID,
   testId,
+  className,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -608,7 +610,7 @@ const TableCard = ({
   const mergedAvailableActions = {
     ...availableActions,
     expand: isExpandable,
-    range: true,
+    range: availableActions?.range || true,
   };
 
   const cardToolbar = (
@@ -638,6 +640,7 @@ const TableCard = ({
       i18n={mergedI18n}
       resizeHandles={resizeHandles}
       hideHeader
+      className={classnames(`${iotPrefix}--table-card`, className)}
       // Use the Table's loading state rather than Card's
       isLoading={false}
       // TODO: remove deprecated testID in v3.
@@ -646,7 +649,7 @@ const TableCard = ({
     >
       {({ height }) => {
         const numberOfRowsPerPage = Math.max(
-          !isNil(height) && height !== 0 ? Math.floor((height - 48) / 48) : 10,
+          !isNil(height) && height !== 0 ? Math.floor((height - 56) / 56) : 10,
           1 // at least pass 1 row per page
         );
         return (

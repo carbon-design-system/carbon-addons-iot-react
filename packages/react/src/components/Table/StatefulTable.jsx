@@ -50,7 +50,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     options,
     view: {
       toolbar: { customToolbarContent },
-      pagination: { totalItems },
+      pagination: { totalItems: initialTotalItems },
     },
     view: initialState,
     actions: callbackActions,
@@ -81,7 +81,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         data: initialData,
         isLoading,
         view: initialState,
-        totalItems: totalItems || initialData.length,
+        totalItems: initialTotalItems || initialData.length,
         hasUserViewManagement,
       })
     );
@@ -347,7 +347,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const filteredTotalItems =
     filteredCount && filteredCount !== currentlyLoadedDataCount
       ? filteredCount
-      : totalItems || currentlyLoadedDataCount;
+      : view?.pagination?.totalItems || initialTotalItems || currentlyLoadedDataCount;
 
   return filteredData ? (
     <Table
