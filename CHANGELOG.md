@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.92](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.91...v2.146.0-next.92) (2021-08-17)
+
+
+### Bug Fixes
+
+* **stateful-table:** rename totalItems to initialTotalItems ([49e88f4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/49e88f4c9047b4ff841fc6f774e802e6cdf82d9b))
+* **stateful-table:** round page on delete ([6742de0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6742de073777e7a224c057ec6b632e30f065ef9c))
+* **stateful-table:** update pagination properly on deletes ([3fbb86b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3fbb86b354ae09608feb70a299b6035027b47ad1))
+
+
+
+
+
 # [2.146.0-next.91](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.90...v2.146.0-next.91) (2021-08-17)
 
 
