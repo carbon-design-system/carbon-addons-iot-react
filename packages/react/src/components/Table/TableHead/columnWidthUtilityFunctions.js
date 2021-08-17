@@ -121,6 +121,14 @@ export const getIDsOfAddedVisibleColumns = (ordering, currentColumnWidths) => {
 };
 
 /**
+ * Returns true if there are visible columns
+ * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
+ */
+export const hasVisibleColumns = (ordering) => {
+  return ordering.some((col) => !col.isHidden);
+};
+
+/**
  * Returns true if all visible columns have a width.
  * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
  * @param {array} columns The table column props
@@ -179,7 +187,8 @@ export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs
   const newColumnsToShow = colToShowIDs.reduce((accumulator, colToShowId) => {
     const widthOfColumnToShow =
       getExistingColumnWidth(currentColumnWidths, columns, colToShowId) ||
-      getAverageVisibleColumnWidth(visibleColumns);
+      getAverageVisibleColumnWidth(visibleColumns) ||
+      DEFAULT_COLUMN_WIDTH;
     return [...accumulator, { id: colToShowId, width: Math.round(widthOfColumnToShow) }];
   }, []);
   const totalWidthNeeded = newColumnsToShow.reduce((acc, col) => acc + col.width, 0);
@@ -234,6 +243,10 @@ export const calculateWidthOnHide = (currentColumnWidths, ordering, colToHideIDs
  */
 export const adjustLastColumnWidth = (ordering, columns, measuredWidths) => {
   const visibleCols = ordering.filter((col) => !col.isHidden);
+
+  // If there are no visible columns there is nothing to adjust
+  if (!visibleCols.length) return measuredWidths;
+
   const lastIndex = visibleCols.length - 1;
   const lastColumn = columns.find((col) => col.id === visibleCols[lastIndex].columnId);
   const fixedWidth = lastColumn.width ? parseInt(lastColumn.width, 10) : 0;

@@ -41,6 +41,7 @@ import {
   DEFAULT_COLUMN_WIDTH,
   addMissingColumnWidths,
   checkColumnWidthFormat,
+  hasVisibleColumns,
 } from './columnWidthUtilityFunctions';
 
 const { iotPrefix } = settings;
@@ -370,7 +371,7 @@ const TableHead = ({
 
         if (addedVisibleColumnIDs.length > 0 || removedColumnIDs.length > 0) {
           setCurrentColumnWidths(adjustedForRemovedAndAdded);
-        } else if (visibleColumnsHaveWidth(ordering, columns)) {
+        } else if (hasVisibleColumns(ordering) && visibleColumnsHaveWidth(ordering, columns)) {
           const propsColumnWidths = createNewWidthsMap(ordering, columns);
           if (!isEqual(currentColumnWidths, propsColumnWidths)) {
             setCurrentColumnWidths(propsColumnWidths);
