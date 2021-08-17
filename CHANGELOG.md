@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.91](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.90...v2.146.0-next.91) (2021-08-17)
+
+
+### Bug Fixes
+
+* **table:** prevent column widths below min width ([13d27c2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/13d27c2bd574b2e2ce548d79dbbe320485b30541)), closes [#2474](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2474)
+* **table:** snapshot update ([7f34d67](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7f34d6763751b57800088f1d618a0ad14bb04013))
+
+
+
+
+
 # [2.146.0-next.90](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.89...v2.146.0-next.90) (2021-08-16)
 
 

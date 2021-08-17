@@ -1000,10 +1000,7 @@ const Table = (props) => {
           ) : null}
         </CarbonTable>
       </div>
-      {options.hasPagination &&
-      !view.table.loadingState.isLoading &&
-      visibleData &&
-      visibleData.length ? ( // don't show pagination row while loading
+      {options.hasPagination && !view.table.loadingState.isLoading && visibleData?.length ? ( // don't show pagination row while loading
         <Pagination
           pageSize={paginationProps.pageSize}
           pageSizes={paginationProps.pageSizes}
