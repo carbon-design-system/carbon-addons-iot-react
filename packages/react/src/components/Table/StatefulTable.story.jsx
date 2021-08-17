@@ -1,7 +1,7 @@
 import React, { createElement, useMemo, useRef, useState } from 'react';
 import { boolean, text, select, array, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { SettingsAdjust16 } from '@carbon/icons-react';
+import { SettingsAdjust16, TrashCan16 } from '@carbon/icons-react';
 import isEqual from 'lodash/isEqual';
 import assign from 'lodash/assign';
 
@@ -159,6 +159,16 @@ export const SimpleStatefulExample = () => (
       },
       table: {
         selectedIds: array('selectedIds', []),
+      },
+      toolbar: {
+        batchActions: [
+          {
+            iconDescription: 'Delete Item',
+            id: 'delete',
+            labelText: 'Delete',
+            renderIcon: TrashCan16,
+          },
+        ],
       },
     }}
   />
