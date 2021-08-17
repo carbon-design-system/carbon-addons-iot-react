@@ -204,37 +204,24 @@ describe('PageTitleBar', () => {
     expect(screen.queryByLabelText(i18nDefault.tooltipIconDescription)).not.toBeInTheDocument();
   });
 
-  /* TODO: create a cypress test to test this functionality, since all these elements
-     render as zero width and zero height and mocking all the dimensions isn't really
-     going to test the scroll handler like it should.
-  */
-  // eslint-disable-next-line jest/no-commented-out-tests
-  // it('Reacts to scrollY when set to dynamic', () => {
-  //   const { container } = render(
-  //     <div style={{ height: '30rem' }}>
-  //       <PageTitleBar
-  //         breadcrumb={[<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>]}
-  //         title="testTitle"
-  //         headerMode="DYNAMIC"
-  //         description="test"
-  //       />
-  //     </div>
-  //   );
-  //   expect(container.querySelector('.page-title-bar--dynamic--during')).toBeFalsy();
-  //   expect(container.querySelector('.page-title-bar--dynamic--after')).toBeFalsy();
-  //   expect(container.querySelector('.page-title-bar--dynamic--before')).toBeInTheDocument();
-  //   expect(container.getPropertyValue('--scroll-transition-progress')).toEqual(0);
-
-  //   fireEvent.scroll(window, { target: { scrollY: 60 } });
-  //   expect(container.querySelector('.page-title-bar--dynamic--before')).toBeFalsy();
-  //   expect(container.querySelector('.page-title-bar--dynamic--during')).toBeInTheDocument();
-  //   expect(container.querySelector('.page-title-bar--dynamic--after')).toBeFalsy();
-  //   expect(container.getPropertyValue('--scroll-transition-progress')).toEqual(0.2);
-
-  //   fireEvent.scroll(window, { target: { scrollY: 200 } });
-  //   expect(container.querySelector('.page-title-bar--dynamic--before')).toBeFalsy();
-  //   expect(container.querySelector('.page-title-bar--dynamic--during')).toBeFalsy();
-  //   expect(container.getPropertyValue('--scroll-transition-progress')).toEqual(1);
-  //   expect(container.querySelector('.page-title-bar--dynamic--after')).toBeInTheDocument();
-  // });
+  it('renders upperActions and descriptions as react nodes', () => {
+    render(
+      <div style={{ paddingTop: '10rem', height: '200vh' }}>
+        <PageTitleBar
+          breadcrumb={[<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>]}
+          title="testTitle"
+          headerMode="DYNAMIC"
+          description={<p data-testid="test-description">test</p>}
+          testId="page-title-bar"
+          upperActions={
+            <button data-testid="upper-action-delete" type="button">
+              Delete
+            </button>
+          }
+        />
+      </div>
+    );
+    expect(screen.getByTestId('test-description')).toBeVisible();
+    expect(screen.getByTestId('upper-action-delete')).toBeVisible();
+  });
 });

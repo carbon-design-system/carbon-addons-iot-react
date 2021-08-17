@@ -142,10 +142,10 @@ const PageTitleBar = ({
 
       // Detect when sticky overlap begins to start fading out/fading in
       // content based on scroll position
+      /* istanbul ignore else */
       if (breadcrumbRef.current && titleRef.current) {
         const breadcrumbDims = breadcrumbRef.current.getBoundingClientRect();
         const titleDims = titleRef.current.getBoundingClientRect();
-
         if (titleDims.top < breadcrumbDims.bottom) {
           isCondensed = true;
           const distanceLeftToGo = breadcrumbDims.top - titleDims.top;
@@ -229,7 +229,7 @@ const PageTitleBar = ({
     ]
   );
 
-  /* We need the tabs to render outside the header so the tab stickiness will push away
+  /** We need the tabs to render outside the header so the tab stickiness will push away
      the header stickiness naturally with the scroll.
 
      We also want sticky mode to render outside so we can sticky the entire header element
