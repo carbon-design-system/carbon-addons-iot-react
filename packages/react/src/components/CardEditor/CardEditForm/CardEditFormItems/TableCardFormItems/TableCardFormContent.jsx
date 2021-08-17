@@ -4,6 +4,7 @@ import { Edit16, Subtract16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import uuid from 'uuid';
+import hash from 'object-hash';
 
 import { settings } from '../../../../../constants/Settings';
 import {
@@ -331,7 +332,9 @@ const TableCardFormContent = ({
       >
         <ComboBox
           // need to re-gen if selected card changes or if a dataItem is removed from the list
-          key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
+          key={`data-item-select-${hash(validDataItemsForDropdown || {})}-selected_card-id-${
+            cardConfig.id
+          }`}
           id={`${cardConfig.id}_dataSourceIds-combobox`}
           items={validDataItemsForDropdown}
           itemToString={(item) => item?.text}
