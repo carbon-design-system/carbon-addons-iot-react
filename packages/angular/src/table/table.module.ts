@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 
-import { ButtonModule, DialogModule, IconModule, IconService, TableModule } from 'carbon-components-angular';
+import {
+  ButtonModule,
+  DialogModule,
+  IconModule,
+  IconService,
+  TableModule,
+} from 'carbon-components-angular';
 
 import { CommonModule } from '@angular/common';
 import { AITableHeadCell } from './head/table-head-cell.component';
@@ -18,10 +24,6 @@ import Filter16 from '@carbon/icons/es/filter/16';
 })
 export class AITableModule {
   constructor(protected iconService: IconService) {
-    iconService.registerAll([
-      ArrowsVertical16,
-      ArrowDown16,
-      Filter16
-    ]);
+    iconService.registerAll([ArrowsVertical16, ArrowDown16, Filter16]);
   }
 }
