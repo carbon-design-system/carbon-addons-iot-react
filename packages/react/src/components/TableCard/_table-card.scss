@@ -6,8 +6,8 @@
   }
   .#{$iot-prefix}--table-toolbar-secondary-title {
     // title needs to match new card title font size and padding
-    font-size: 1rem;
-    padding-top: 0.75rem;
+    @include type-style('productive-heading-02');
+    padding-top: $spacing-04;
   }
 }
 .#{$iot-prefix}--card--content .#{$iot-prefix}--table-container {
