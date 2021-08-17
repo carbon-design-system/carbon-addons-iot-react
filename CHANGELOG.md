@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.94](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.93...v2.146.0-next.94) (2021-08-17)
+
+
+### Bug Fixes
+
+* **card:** fix resizable border style ([b3f0c9b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b3f0c9bdc722ba6f2b1a9db6c5b1cbac04be71f7))
+* **dashboardeditor:** style fixes needed for tablecard ([ce73eeb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ce73eeba353ce44e1fe815f2d3ea3b409500a8f9))
+
+
+### Features
+
+* **dashboardeditor:** add card selection ([3d06146](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3d061465e113c08ea12ff785bcbf86f562327bcb))
+* **dashboardeditor:** provide callback on card selection in editor ([6429338](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/642933830d0212b7003ca00b2012ab489ec4b577))
+
+
+
+
+
 # [2.146.0-next.93](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.92...v2.146.0-next.93) (2021-08-17)
 
 **Note:** Version bump only for package ibm-ai-applications
