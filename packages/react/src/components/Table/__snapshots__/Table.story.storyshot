@@ -3085,11 +3085,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   data-floating-menu-container={true}
                   id="column-firstName"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <span
                     className="bx--table-header-label"
@@ -3153,11 +3148,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   data-floating-menu-container={true}
                   id="column-lastName"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <span
                     className="bx--table-header-label"
@@ -4165,7 +4155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -4176,11 +4166,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     data-floating-menu-container={true}
                     id="column-string"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "--table-header-width": "",
-                      }
-                    }
                   >
                     <span
                       className="bx--table-header-label"
@@ -4250,7 +4235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -4286,7 +4271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -4297,11 +4282,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     data-floating-menu-container={true}
                     id="column-select"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "--table-header-width": "",
-                      }
-                    }
                   >
                     <span
                       className="bx--table-header-label"
@@ -4368,7 +4348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -4379,11 +4359,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     data-floating-menu-container={true}
                     id="column-status"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "--table-header-width": "",
-                      }
-                    }
                   >
                     <span
                       className="bx--table-header-label"
@@ -4450,7 +4425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -4461,11 +4436,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     data-floating-menu-container={true}
                     id="column-number"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "--table-header-width": "",
-                      }
-                    }
                   >
                     <span
                       className="bx--table-header-label"
@@ -4532,7 +4502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -4543,11 +4513,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     data-floating-menu-container={true}
                     id="column-boolean"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "--table-header-width": "",
-                      }
-                    }
                   >
                     <span
                       className="bx--table-header-label"
@@ -4625,11 +4590,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     data-floating-menu-container={true}
                     id="column-node"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "--table-header-width": "",
-                      }
-                    }
                   >
                     <span
                       className="bx--table-header-label"
@@ -66668,7 +66628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -66707,7 +66667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -66746,7 +66706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -66785,7 +66745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -66824,7 +66784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -66863,7 +66823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -66902,7 +66862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -69042,7 +69002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 scope="col"
                 style={
                   Object {
-                    "width": 0,
+                    "width": 150,
                   }
                 }
               >
@@ -69081,7 +69041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 scope="col"
                 style={
                   Object {
-                    "width": 0,
+                    "width": 150,
                   }
                 }
               >
@@ -69120,7 +69080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 scope="col"
                 style={
                   Object {
-                    "width": 0,
+                    "width": 150,
                   }
                 }
               >
@@ -69159,7 +69119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 scope="col"
                 style={
                   Object {
-                    "width": 0,
+                    "width": 150,
                   }
                 }
               >
@@ -69198,7 +69158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 scope="col"
                 style={
                   Object {
-                    "width": 0,
+                    "width": 150,
                   }
                 }
               >
@@ -69237,7 +69197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 scope="col"
                 style={
                   Object {
-                    "width": 0,
+                    "width": 150,
                   }
                 }
               >
@@ -69276,7 +69236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 scope="col"
                 style={
                   Object {
-                    "width": 0,
+                    "width": 150,
                   }
                 }
               >
@@ -90573,11 +90533,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       data-floating-menu-container={true}
                       id="column-string"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "--table-header-width": "",
-                        }
-                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -90666,11 +90621,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       data-floating-menu-container={true}
                       id="column-select"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "--table-header-width": "",
-                        }
-                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -90734,11 +90684,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       data-floating-menu-container={true}
                       id="column-status"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "--table-header-width": "",
-                        }
-                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -90802,11 +90747,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       data-floating-menu-container={true}
                       id="column-number"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "--table-header-width": "",
-                        }
-                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -90870,11 +90810,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       data-floating-menu-container={true}
                       id="column-boolean"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "--table-header-width": "",
-                        }
-                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -90938,11 +90873,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       data-floating-menu-container={true}
                       id="column-node"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "--table-header-width": "",
-                        }
-                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -99610,7 +99540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </div>
                             <span
                               className="bx--list-box__label"
-                              id="multiselect-field-label-3"
+                              id="multiselect-field-label-4"
                             >
                               Select a filter
                             </span>

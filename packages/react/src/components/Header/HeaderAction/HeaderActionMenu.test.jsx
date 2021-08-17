@@ -26,6 +26,16 @@ describe('HeaderActionMenu', () => {
       },
       {
         metaData: {
+          href: 'http://google.com',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          element: 'a',
+          'data-testid': 'long-menu-item',
+        },
+        content: 'this is my message to you that is really long and should be truncated',
+      },
+      {
+        metaData: {
           onClick: jest.fn(),
           className: 'this',
           element: 'button',
@@ -52,5 +62,20 @@ describe('HeaderActionMenu', () => {
 
     expect(screen.queryByText('Accessibility label')).not.toBeInTheDocument();
     expect(screen.getByText('Some other text')).toBeInTheDocument();
+  });
+
+  it("should add a title to long items that truncate if they don't have one.", () => {
+    jest.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockImplementation(() => 200);
+    jest.spyOn(HTMLElement.prototype, 'scrollWidth', 'get').mockImplementation(() => 400);
+
+    render(<HeaderActionMenu isExpanded {...mockProps} />);
+
+    expect(screen.getByTestId('long-menu-item')).toBeDefined();
+    expect(screen.getByTestId('long-menu-item')).toHaveAttribute(
+      'title',
+      'this is my message to you that is really long and should be truncated'
+    );
+
+    jest.clearAllMocks();
   });
 });
