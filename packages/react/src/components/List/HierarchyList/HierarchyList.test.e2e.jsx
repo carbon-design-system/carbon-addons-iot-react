@@ -79,7 +79,7 @@ const sampleHierarchy = {
   },
 };
 
-describe('PageTitleBar', () => {
+describe('HierarchyList', () => {
   it('handles drag and drop with no selections', () => {
     const onSelect = cy.stub();
     const HierarchyListWithReorder = () => {
