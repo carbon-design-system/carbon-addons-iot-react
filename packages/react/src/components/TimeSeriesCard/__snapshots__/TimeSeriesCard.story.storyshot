@@ -1165,11 +1165,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-floating-menu-container={true}
                           id="column-timestamp"
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
                         >
                           <span
                             className="bx--table-header-label"
@@ -1233,11 +1228,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-floating-menu-container={true}
                           id="column-ENTITY_ID"
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
                         >
                           <span
                             className="bx--table-header-label"
@@ -1301,11 +1291,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-floating-menu-container={true}
                           id="column-temperature"
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
                         >
                           <span
                             className="bx--table-header-label"
@@ -1369,11 +1354,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-floating-menu-container={true}
                           id="column-humidity"
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
                         >
                           <span
                             className="bx--table-header-label"
@@ -1437,11 +1417,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-floating-menu-container={true}
                           id="column-ecount"
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
                         >
                           <span
                             className="bx--table-header-label"
@@ -1505,11 +1480,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-floating-menu-container={true}
                           id="column-devname"
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
                         >
                           <span
                             className="bx--table-header-label"
@@ -1573,11 +1543,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-floating-menu-container={true}
                           id="column-pressure"
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
                         >
                           <span
                             className="bx--table-header-label"
@@ -1641,11 +1606,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-floating-menu-container={true}
                           id="column-status"
                           onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
                         >
                           <span
                             className="bx--table-header-label"

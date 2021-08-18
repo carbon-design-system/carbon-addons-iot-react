@@ -1910,11 +1910,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -1980,11 +1975,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -2050,11 +2040,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -4855,11 +4840,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -4925,11 +4905,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -4995,11 +4970,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -7835,11 +7805,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -7905,11 +7870,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -7975,11 +7935,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -9871,11 +9826,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-timestamp"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -9941,11 +9891,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-Campus_EGL"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -10011,11 +9956,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-peopleCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -10081,11 +10021,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-headCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -10151,11 +10086,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-capacity_EnterpriseBuilding_mean"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -13441,11 +13371,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -13511,11 +13436,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -13581,11 +13501,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -30918,11 +30833,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -30988,11 +30898,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -31058,11 +30963,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
