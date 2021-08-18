@@ -35,6 +35,52 @@ storiesOf('Components/DateTime Picker', module)
 		`,
     props: getProps(),
   }))
+  .add('Basic in Chinese', () => ({
+    template: `
+      <ai-date-time-picker
+        [language]="'zh'"
+        [theme]="(theme ? 'light' : null)"
+        [batchText]="zh"
+        (selectedChange)="selectedChange($event)"
+        (apply)="apply($event)"
+        (cancel)="cancel($event)">
+      </ai-date-time-picker>
+		`,
+    props: getProps({zh: {
+      "ABSOLUTE": "绝对",
+      "RELATIVE": "相对",
+      "CUSTOM_RANGE": "自定义范围",
+      "RELATIVE_TO": "相对于",
+      "START_DATE": "开始日期",
+      "END_DATE": "结束日期",
+      "START_TIME": "开始时间",
+      "END_TIME": "结束时间",
+      "LAST": "最后",
+      "CANCEL": "取消",
+      "APPLY": "提交",
+      "BACK": "返回",
+      "NOW": "现在",
+      "YESTERDAY": "昨天",
+      "YEARS": "年",
+      "MONTHS": "月",
+      "WEEKS": "周",
+      "DAYS": "天",
+      "HOURS": "小时",
+      "MINUTES":"分钟"
+    }}),
+  }))
+  .add('Basic in Japanese', () => ({
+    template: `
+      <ai-date-time-picker
+        [language]="'ja'"
+        [theme]="(theme ? 'light' : null)"
+        (selectedChange)="selectedChange($event)"
+        (apply)="apply($event)"
+        (cancel)="cancel($event)">
+      </ai-date-time-picker>
+		`,
+    props: getProps(),
+  }))
   .add('With preset range selected', () => ({
     template: `
       <ai-date-time-picker
