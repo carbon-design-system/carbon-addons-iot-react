@@ -54,7 +54,7 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
       </div>
     </fieldset>
     <fieldset class="bx--fieldset iot--date-time-picker__menu-formgroup">
-      <legend class="bx--label">{{ batchText.RELATIVE_TO}}</legend>
+      <legend class="bx--label">{{ batchText.RELATIVE_TO }}</legend>
       <div class="iot--date-time-picker__fields-wrapper">
         <ibm-select
           class="bx--form-item"

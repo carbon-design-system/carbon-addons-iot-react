@@ -294,10 +294,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   }
 
   updateI18nTranslationString() {
-    this.i18n.setLocale(
-      this.language,
-      languages.default[this.language]
-    );
+    this.i18n.setLocale(this.language, languages.default[this.language]);
   }
 
   formatCurrentRangeTitle() {
@@ -330,10 +327,16 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     const formatString = 'yyyy-M-d HH:mm';
     const [type, start, end, relativeConfig] = this.selected;
     if (type === 'ABSOLUTE') {
-      return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(end, formatString)}`;
+      return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(
+        end,
+        formatString
+      )}`;
     } else if (type === 'RELATIVE') {
       const [start, end] = getRangeFromRelative(relativeConfig);
-      return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(end, formatString)}`;
+      return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(
+        end,
+        formatString
+      )}`;
     }
   }
 
