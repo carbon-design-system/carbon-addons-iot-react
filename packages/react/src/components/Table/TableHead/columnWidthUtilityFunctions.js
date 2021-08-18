@@ -208,10 +208,8 @@ export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs
     (col) => col.width > MIN_COLUMN_WIDTH
   );
 
-  // const newColsLacking = newColumnsToShow.filter((col) => col.width === MIN_COLUMN_WIDTH);
-
   const adjustedCols = [
-    // There are som scenarios where the new columns don't have an existing width
+    // There are some scenarios where the new columns don't have an existing width
     // and in that case they are adjusted to get a min with assigned.
     ...newWidthColumns,
     // We adjust to shrink existing columns to make room for the new ones.
