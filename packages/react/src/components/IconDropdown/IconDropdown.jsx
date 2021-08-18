@@ -86,6 +86,7 @@ const propTypes = {
   testId: PropTypes.string,
 };
 
+/* istanbul ignore next, ignore the default onChange */
 const defaultPropTypes = {
   columnCount: 4,
   selectedItem: null,
