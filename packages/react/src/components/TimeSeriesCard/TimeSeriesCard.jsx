@@ -552,9 +552,7 @@ const TimeSeriesCard = ({
             })}
           >
             <ChartComponent
-              ref={(el) => {
-                chartRef.current = el;
-              }}
+              ref={chartRef}
               data={chartData}
               options={options}
               width="100%"
