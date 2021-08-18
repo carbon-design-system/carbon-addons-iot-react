@@ -69,18 +69,6 @@ storiesOf('Components/DateTime Picker', module)
       "MINUTES":"分钟"
     }}),
   }))
-  .add('Basic in Japanese', () => ({
-    template: `
-      <ai-date-time-picker
-        [language]="'ja'"
-        [theme]="(theme ? 'light' : null)"
-        (selectedChange)="selectedChange($event)"
-        (apply)="apply($event)"
-        (cancel)="cancel($event)">
-      </ai-date-time-picker>
-		`,
-    props: getProps(),
-  }))
   .add('With preset range selected', () => ({
     template: `
       <ai-date-time-picker
