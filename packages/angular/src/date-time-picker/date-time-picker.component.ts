@@ -11,8 +11,8 @@ import {
 } from '@angular/core';
 import { format, isThisMinute, subHours, subMinutes } from 'date-fns';
 import { getRangeFromRelative } from './date-time-relative.component';
-import * as languages from "flatpickr/dist/l10n/index";
-import { I18n } from "carbon-components-angular/i18n";
+import * as languages from 'flatpickr/dist/l10n/index';
+import { I18n } from 'carbon-components-angular/i18n';
 
 export interface DateTimeRange {
   key: any;
@@ -26,26 +26,26 @@ export interface RelativeRange {
 }
 
 export interface BatchLabelText {
-  ABSOLUTE: string,
-  RELATIVE: string,
-  CUSTOM_RANGE: string,
-  RELATIVE_TO: string,
-  START_DATE: string,
-  END_DATE: string,
-  START_TIME: string,
-  END_TIME: string,
-  LAST: string,
-  CANCEL: string,
-  APPLY: string,
-  BACK: string,
-  NOW: string,
-  YESTERDAY: string,
-  YEARS: string,
-  MONTHS: string,
-  WEEKS: string,
-  DAYS: string,
-  HOURS: string,
-  MINUTES: string,
+  ABSOLUTE: string;
+  RELATIVE: string;
+  CUSTOM_RANGE: string;
+  RELATIVE_TO: string;
+  START_DATE: string;
+  END_DATE: string;
+  START_TIME: string;
+  END_TIME: string;
+  LAST: string;
+  CANCEL: string;
+  APPLY: string;
+  BACK: string;
+  NOW: string;
+  YESTERDAY: string;
+  YEARS: string;
+  MONTHS: string;
+  WEEKS: string;
+  DAYS: string;
+  HOURS: string;
+  MINUTES: string;
 }
 
 export type RelativeDateTimeSelection = ['RELATIVE', ...DateRange, RelativeRange];
@@ -293,7 +293,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     this.updateI18nTranslationString();
   }
 
-  protected updateI18nTranslationString() {
+  updateI18nTranslationString() {
     this.i18n.setLocale(
       this.language,
       languages.default[this.language]
