@@ -39,7 +39,7 @@ const ListItemWrapper = ({
           { [`${iotPrefix}--list-item__large`]: isLargeRow },
           { [`${iotPrefix}--list-item-editable`]: editingStyle }
         )}
-        data_testid={selected ? 'list-item__selected' : null}
+        data-testid={selected ? 'list-item__selected' : null}
         onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
         onClick={() => {
           onSelect(id);

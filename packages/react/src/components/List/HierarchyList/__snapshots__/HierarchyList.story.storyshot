@@ -2714,7 +2714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2754,7 +2754,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2794,7 +2794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2834,7 +2834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2874,7 +2874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2914,7 +2914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2954,7 +2954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2994,7 +2994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3034,7 +3034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3127,7 +3127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3167,7 +3167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3207,7 +3207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3247,7 +3247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3287,7 +3287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3327,7 +3327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3367,7 +3367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3407,7 +3407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3447,7 +3447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -3487,7 +3487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4134,7 +4134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4174,7 +4174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4214,7 +4214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4254,7 +4254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable iot--list-item__selected"
-            data_testid="list-item__selected"
+            data-testid="list-item__selected"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4294,7 +4294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4334,7 +4334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4374,7 +4374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4414,7 +4414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4454,7 +4454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4677,7 +4677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4735,7 +4735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4775,7 +4775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4815,7 +4815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable iot--list-item__selected"
-            data_testid="list-item__selected"
+            data-testid="list-item__selected"
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4855,7 +4855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4895,7 +4895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4935,7 +4935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -4975,7 +4975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -5015,7 +5015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -5055,7 +5055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -5095,7 +5095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -5153,7 +5153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -5552,7 +5552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
