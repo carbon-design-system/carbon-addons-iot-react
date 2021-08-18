@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <div
       className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner iot--time-picker__wrapper--show-underline-minutes"
+      data-testid="time-picker-spinner-wrapper"
     >
       <div
         className="bx--form-item"
@@ -127,6 +128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <div
       className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+      data-testid="time-picker-spinner-wrapper"
     >
       <div
         className="bx--form-item"

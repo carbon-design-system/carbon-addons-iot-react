@@ -210,6 +210,7 @@ const TimePickerSpinner = ({
 
   return (
     <div
+      data-testid={`${testId}-wrapper`}
       className={classnames(`${iotPrefix}--time-picker__wrapper`, {
         [`${iotPrefix}--time-picker__wrapper--with-spinner`]: spinner,
         [`${iotPrefix}--time-picker__wrapper--updown`]: keyUpOrDownPosition > -1,
