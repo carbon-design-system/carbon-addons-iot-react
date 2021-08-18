@@ -204,6 +204,7 @@ export const Default = () => (
       <Link href="www.ibm.com">Favorites</Link>,
     ]}
     isLoading={boolean('isLoading', false)}
+    onCardSelect={action('onCardSelect')}
   />
 );
 

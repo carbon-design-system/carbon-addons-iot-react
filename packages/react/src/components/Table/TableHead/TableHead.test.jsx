@@ -1029,6 +1029,31 @@ describe('TableHead', () => {
         width: '100px',
       });
     });
+
+    it('prevents missing inital column widths from geting a value below the minimum width', () => {
+      const WIDTH_SMALLER_THAN_MIN_WIDTH = 50;
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1' },
+        { id: 'col2', name: 'Column 2', width: undefined },
+        { id: 'col3', name: 'Column 3', width: '800px' },
+      ];
+      mockGetBoundingClientRect.mockImplementation(() => ({
+        width: WIDTH_SMALLER_THAN_MIN_WIDTH,
+      }));
+      render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
+        width: `${DEFAULT_COLUMN_WIDTH}px`,
+      });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
+        width: `${DEFAULT_COLUMN_WIDTH}px`,
+      });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '800px',
+      });
+    });
   });
 
   describe('Column resizing active - preserveColumnWidths', () => {

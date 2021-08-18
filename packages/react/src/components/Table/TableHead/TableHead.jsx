@@ -31,7 +31,6 @@ import {
   createNewWidthsMap,
   calculateWidthOnHide,
   calculateWidthsOnToggle,
-  adjustLastColumnWidth,
   calculateWidthOnShow,
   visibleColumnsHaveWidth,
   getIDsOfAddedVisibleColumns,
@@ -42,6 +41,7 @@ import {
   addMissingColumnWidths,
   checkColumnWidthFormat,
   hasVisibleColumns,
+  adjustInitialColumnWidths,
 } from './columnWidthUtilityFunctions';
 
 const { iotPrefix } = settings;
@@ -292,7 +292,7 @@ const TableHead = ({
     const measureAndAdjustColumns = () => {
       if (hasResize && columns.length) {
         const measuredWidths = measureColumnWidths();
-        const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
+        const adjustedWidths = adjustInitialColumnWidths(ordering, columns, measuredWidths);
         const newWidthsMap = createNewWidthsMap(ordering, currentColumnWidths, adjustedWidths);
         setCurrentColumnWidths(newWidthsMap);
       }
@@ -477,12 +477,7 @@ const TableHead = ({
               hasMultiSort={hasMultiSort}
               hasOverflow={hasOverflow}
               thStyle={{
-                width:
-                  currentColumnWidths[matchingColumnMeta.id] &&
-                  currentColumnWidths[matchingColumnMeta.id].width,
-              }}
-              style={{
-                '--table-header-width': classnames(initialColumnWidths[matchingColumnMeta.id]),
+                width: currentColumnWidths[matchingColumnMeta.id]?.width,
               }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {

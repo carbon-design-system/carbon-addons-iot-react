@@ -73,6 +73,12 @@ function shrinkColumns(shrinkableColumns, widthOfColumnToShow) {
   return shrunkenColumns;
 }
 
+function adjustColumnsBelowMinWidth(measuredWidth) {
+  return measuredWidth.map((widthObj) =>
+    widthObj.width < MIN_COLUMN_WIDTH ? { ...widthObj, width: DEFAULT_COLUMN_WIDTH } : widthObj
+  );
+}
+
 /**
  * Warns the developer in DEV mode if a column width is of incorrect format.
  * @param {array} columns The table column props
@@ -247,15 +253,8 @@ export const calculateWidthOnHide = (currentColumnWidths, ordering, colToHideIDs
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 };
 
-/**
- * If the table isn't wide enough for all columns that has a defined width
- * the browser will will shrink the last column instead of keeping its defined width.
- * This function adjusts the column width to the initial width if that one is larger.
- * @param {*} ordering
- * @param {*} columns
- * @param {*} measuredWidths
- */
-export const adjustLastColumnWidth = (ordering, columns, measuredWidths) => {
+function adjustLastColumnWidth(ordering, columns, measuredWidths) {
+  // This function adjusts the last column width to the initial width if that one is larger.
   const visibleCols = ordering.filter((col) => !col.isHidden);
 
   // If there are no visible columns there is nothing to adjust
@@ -272,6 +271,28 @@ export const adjustLastColumnWidth = (ordering, columns, measuredWidths) => {
     result[lastIndex].width = fixedWidth;
   }
   return result;
+}
+
+/**
+ * When the browser layout engine sets the widths dynamically we need to to make
+ * some adjustments to the last column width and also to column widths below
+ * the allowed minimum.
+ * @param {*} ordering
+ * @param {*} columns
+ * @param {*} measuredWidths
+ */
+export const adjustInitialColumnWidths = (ordering, columns, measuredWidths) => {
+  // If the table isn't wide enough for all columns that has a defined width
+  // the browser will will shrink the last column instead of keeping its defined width.
+  // We therefore eadjust the column width to the initial width if that one is larger.
+  const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
+
+  // If the table-layout is fixed (prop useAutoTableLayoutForResize:false) and the
+  // the table container isn't wide enough to fully render all column header texts the
+  // browser will shrink the columns that don't have a defined width to make them all fit.
+  // It is possible that the new widths are shrunk below our minimum width and in that case
+  // we use the default width instead.
+  return adjustColumnsBelowMinWidth(adjustedWidths);
 };
 
 /**

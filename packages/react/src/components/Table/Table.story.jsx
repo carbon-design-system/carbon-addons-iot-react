@@ -2288,13 +2288,6 @@ export const WithStickyHeaderExperimentalAndCellTooltipCalculation = () => {
         id="table-tooltip"
         triggerId="table-tooltip-trigger"
         triggerText=""
-        menuOffset={(menuBody) => {
-          const container = menuBody.closest('[data-floating-menu-container]');
-          return {
-            top: -container.getBoundingClientRect().y - window.pageYOffset + 4,
-            left: -container.getBoundingClientRect().x - window.pageXOffset + 10,
-          };
-        }}
       >
         <p>This scroll with the table body</p>
       </Tooltip>
