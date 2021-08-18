@@ -10310,6 +10310,7 @@ Map {
       "dataSeriesItemLinks": null,
       "getDefaultCard": null,
       "getValidDataItems": null,
+      "getValidDimensions": null,
       "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
       "i18n": Object {
@@ -10355,6 +10356,7 @@ Map {
       "onCancel": null,
       "onCardChange": null,
       "onCardJsonPreview": null,
+      "onCardSelect": null,
       "onDelete": null,
       "onEditDataItems": null,
       "onExport": null,
@@ -10510,6 +10512,9 @@ Map {
         "type": "func",
       },
       "getValidDataItems": Object {
+        "type": "func",
+      },
+      "getValidDimensions": Object {
         "type": "func",
       },
       "getValidTimeRanges": Object {
@@ -10929,6 +10934,9 @@ Map {
       "onCardJsonPreview": Object {
         "type": "func",
       },
+      "onCardSelect": Object {
+        "type": "func",
+      },
       "onDelete": Object {
         "type": "func",
       },
@@ -10992,6 +11000,7 @@ Map {
       "dataItems": Array [],
       "dataSeriesItemLinks": null,
       "getValidDataItems": null,
+      "getValidDimensions": null,
       "getValidTimeRanges": null,
       "i18n": Object {
         "addCardButton": "Add card",
@@ -11161,6 +11170,9 @@ Map {
         "type": "shape",
       },
       "getValidDataItems": Object {
+        "type": "func",
+      },
+      "getValidDimensions": Object {
         "type": "func",
       },
       "getValidTimeRanges": Object {

@@ -11,7 +11,7 @@ exports[`HeaderActionMenu should render 1`] = `
       aria-label="Accessibility label"
       class="bx--header__menu-item bx--header__menu-title"
       data-testid="menuitem"
-      href=""
+      href="#"
       role="menuitem"
       tabindex="0"
     >
@@ -50,6 +50,22 @@ exports[`HeaderActionMenu should render 1`] = `
             class="bx--text-truncate--end"
           >
             this is my message to you
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="bx--header__menu-item"
+          data-testid="long-menu-item"
+          href="http://google.com"
+          rel="noopener noreferrer"
+          tabindex="0"
+          target="_blank"
+        >
+          <span
+            class="bx--text-truncate--end"
+          >
+            this is my message to you that is really long and should be truncated
           </span>
         </a>
       </li>

@@ -1898,7 +1898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-144"
+                    aria-controls="accordion-item-156"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1928,7 +1928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-144"
+                    id="accordion-item-156"
                   >
                     <div
                       className="toggle-group"
@@ -1976,7 +1976,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-145"
+                    aria-controls="accordion-item-157"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2006,7 +2006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-145"
+                    id="accordion-item-157"
                   >
                     More Map settings
                   </div>
@@ -2017,7 +2017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-146"
+                    aria-controls="accordion-item-158"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2047,7 +2047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-146"
+                    id="accordion-item-158"
                   >
                     Even more settings
                   </div>
@@ -2418,11 +2418,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             data-floating-menu-container={true}
                             id="column-alert"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                             width=""
                           >
                             <span
@@ -2488,11 +2483,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             data-floating-menu-container={true}
                             id="column-hour"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                             width=""
                           >
                             <span
@@ -2558,11 +2548,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             data-floating-menu-container={true}
                             id="column-pressure"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                             width=""
                           >
                             <span

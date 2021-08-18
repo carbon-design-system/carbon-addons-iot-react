@@ -6,10 +6,42 @@ import { Link } from '../..';
 
 import DashboardEditor from './DashboardEditor';
 
+const mockOnImport = jest.fn();
+const mockOnExport = jest.fn();
+const mockOnCancel = jest.fn();
+const mockOnSubmit = jest.fn();
+const mockOnCardChange = jest.fn();
+
+const commonProps = {
+  title: 'My dashboard',
+  headerBreadcrumbs: [
+    <Link href="www.ibm.com">Dashboard library</Link>,
+    <Link href="www.ibm.com">Favorites</Link>,
+  ],
+  onImport: mockOnImport,
+  onExport: mockOnExport,
+  onCancel: mockOnCancel,
+  onSubmit: mockOnSubmit,
+  onDelete: jest.fn(),
+  onCardSelect: jest.fn(),
+  onEditDataItems: jest.fn(),
+  supportedCardTypes: [
+    'TIMESERIES',
+    'SIMPLE_BAR',
+    'GROUPED_BAR',
+    'STACKED_BAR',
+    'VALUE',
+    'IMAGE',
+    'TABLE',
+    'CUSTOM',
+  ],
+};
+
 describe('DashboardEditor', () => {
   const realScrollTo = window.HTMLElement.prototype.scrollTo;
   beforeEach(() => {
     window.HTMLElement.prototype.scrollTo = jest.fn();
+    commonProps.onCardSelect.mockClear();
   });
   afterEach(() => {
     window.HTMLElement.prototype.scrollTo = realScrollTo;
@@ -43,35 +75,6 @@ describe('DashboardEditor', () => {
       ],
     },
     values: { key1: 35 },
-  };
-  const mockOnImport = jest.fn();
-  const mockOnExport = jest.fn();
-  const mockOnCancel = jest.fn();
-  const mockOnSubmit = jest.fn();
-  const mockOnCardChange = jest.fn();
-
-  const commonProps = {
-    title: 'My dashboard',
-    headerBreadcrumbs: [
-      <Link href="www.ibm.com">Dashboard library</Link>,
-      <Link href="www.ibm.com">Favorites</Link>,
-    ],
-    onImport: mockOnImport,
-    onExport: mockOnExport,
-    onCancel: mockOnCancel,
-    onSubmit: mockOnSubmit,
-    onDelete: jest.fn(),
-    onEditDataItems: jest.fn(),
-    supportedCardTypes: [
-      'TIMESERIES',
-      'SIMPLE_BAR',
-      'GROUPED_BAR',
-      'STACKED_BAR',
-      'VALUE',
-      'IMAGE',
-      'TABLE',
-      'CUSTOM',
-    ],
   };
 
   it('should be selectable by testId', () => {
@@ -147,6 +150,8 @@ describe('DashboardEditor', () => {
     fireEvent.mouseDown(cardTitle);
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
@@ -165,6 +170,8 @@ describe('DashboardEditor', () => {
     fireEvent.keyDown(cardTitle, { key: 'Enter' });
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
@@ -183,6 +190,8 @@ describe('DashboardEditor', () => {
     fireEvent.keyDown(cardTitle, { key: 'Space' });
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
@@ -204,6 +213,8 @@ describe('DashboardEditor', () => {
     fireEvent.click(cloneCardBtn);
     // there should now be two cards with the same title
     expect(screen.getAllByText('value card')).toHaveLength(2);
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
   });
 
   it('selecting remove card should remove card', () => {
@@ -240,6 +251,8 @@ describe('DashboardEditor', () => {
     fireEvent.click(timeSeriesBtn);
     // then find the card title that was created, but these will have the same names so check the length
     expect(screen.getAllByTitle('Untitled')).toHaveLength(2);
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
     addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
     fireEvent.click(addCardBtn);
@@ -283,6 +296,8 @@ describe('DashboardEditor', () => {
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
     fireEvent.click(addCardBtn);
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
   });
 
   it('selecting submit should fire onSubmit', () => {

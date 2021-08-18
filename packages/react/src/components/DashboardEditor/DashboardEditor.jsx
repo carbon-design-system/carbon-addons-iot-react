@@ -90,6 +90,12 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  /** if provided, returns an object where the keys are available dimensions which are the dimensions to be allowed
+   * on each card
+   * ex response: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   * getValidDimensions(card)
+   */
+  getValidDimensions: PropTypes.func,
   /** if provided, will update the dashboard json according to its own logic. Is called if a card is edited, or added.
    * Should return an updated card to be rendered
    * onCardChange(updatedCard, template): Card
@@ -123,14 +129,19 @@ const propTypes = {
   isSubmitDisabled: PropTypes.bool,
   /** Whether to set the loading spinner on the submit button */
   isSubmitLoading: PropTypes.bool,
-  /** If provided, runs the function when the user clicks submit in the Card code JSON editor
-   * onValidateCardJson(cardConfig)
-   * @returns Array<string> error strings. return empty array if there is no errors
+
+  /**
+   * Callback called when a card is selected, passes back the selected card id
    */
+  onCardSelect: PropTypes.func,
   /** Callback called when a card determines what icon render based on a named string in card config
    *    example usage: renderIconByName(name = 'my--checkmark--icon', props = { title: 'A checkmark', etc. })
    */
   renderIconByName: PropTypes.func,
+  /** If provided, runs the function when the user clicks submit in the Card code JSON editor
+   * onValidateCardJson(cardConfig)
+   * @returns Array<string> error strings. return empty array if there is no errors
+   */
   onValidateCardJson: PropTypes.func,
   /** callback function to validate the uploaded image */
   onValidateUploadedImage: PropTypes.func,
@@ -316,10 +327,12 @@ const defaultProps = {
   availableImages: [],
   dataItems: [],
   availableDimensions: {},
+  getValidDimensions: null,
   onCardChange: null,
   onImageDelete: null,
   onLayoutChange: null,
   onCardJsonPreview: null,
+  onCardSelect: null,
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -401,8 +414,10 @@ const DashboardEditor = ({
   isSubmitDisabled,
   isSubmitLoading,
   onValidateCardJson,
+  onCardSelect,
   onValidateUploadedImage,
   availableDimensions,
+  getValidDimensions,
   isSummaryDashboard,
   isLoading,
   i18n,
@@ -470,6 +485,19 @@ const DashboardEditor = ({
   }, [scrollContainerRef.current?.scrollHeight, needsScroll]);
 
   /**
+   * callback to parent when the card is selected
+   */
+  const handleCardSelect = useCallback(
+    (id) => {
+      setSelectedCardId(id);
+      if (onCardSelect) {
+        onCardSelect(id);
+      }
+    },
+    [onCardSelect]
+  );
+
+  /**
    * Adds a default, empty card to the preview
    * @param {string} type card type
    */
@@ -490,29 +518,32 @@ const DashboardEditor = ({
         ...dashboardJson,
         cards: [...dashboardJson.cards, cardConfig],
       }));
-      setSelectedCardId(cardConfig.id);
+      handleCardSelect(cardConfig.id);
       setNeedsScroll(true);
     },
-    [customGetDefaultCard, dashboardJson, mergedI18n, onCardChange]
+    [customGetDefaultCard, dashboardJson, handleCardSelect, mergedI18n, onCardChange]
   );
 
   /**
    * Adds a cloned card with a new unique id to the preview and place it next to the original card
    * @param {string} id
    */
-  const duplicateCard = useCallback((id) => {
-    setDashboardJson((dashboard) => {
-      const cardConfig = getDuplicateCard(dashboard.cards.find((card) => card.id === id));
-      const originalCardIndex = dashboard.cards.findIndex((card) => card.id === id);
-      dashboard.cards.splice(originalCardIndex, 0, cardConfig);
-      return {
-        ...dashboard,
-        cards: dashboard.cards,
-      };
-    });
-    setSelectedCardId(id);
-    setNeedsScroll(true);
-  }, []);
+  const duplicateCard = useCallback(
+    (id) => {
+      setDashboardJson((dashboard) => {
+        const cardConfig = getDuplicateCard(dashboard.cards.find((card) => card.id === id));
+        const originalCardIndex = dashboard.cards.findIndex((card) => card.id === id);
+        dashboard.cards.splice(originalCardIndex, 0, cardConfig);
+        return {
+          ...dashboard,
+          cards: dashboard.cards,
+        };
+      });
+      handleCardSelect(id);
+      setNeedsScroll(true);
+    },
+    [handleCardSelect]
+  );
 
   /**
    * Deletes a card from the preview
@@ -733,7 +764,7 @@ const DashboardEditor = ({
                         onValidateUploadedImage={onValidateUploadedImage}
                         onShowImageGallery={handleShowImageGallery}
                         renderIconByName={renderIconByName}
-                        setSelectedCardId={setSelectedCardId}
+                        setSelectedCardId={handleCardSelect}
                       />
                     );
                   })}
@@ -758,7 +789,7 @@ const DashboardEditor = ({
           <CardEditor
             cardConfig={dashboardJson.cards.find((card) => card.id === selectedCardId)}
             isSummaryDashboard={isSummaryDashboard}
-            onShowGallery={() => setSelectedCardId(null)}
+            onShowGallery={() => handleCardSelect(null)}
             onChange={handleOnCardChange}
             getValidDataItems={getValidDataItems}
             getValidTimeRanges={getValidTimeRanges}
@@ -768,6 +799,7 @@ const DashboardEditor = ({
             onCardJsonPreview={onCardJsonPreview}
             supportedCardTypes={supportedCardTypes}
             icons={icons}
+            getValidDimensions={getValidDimensions}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
