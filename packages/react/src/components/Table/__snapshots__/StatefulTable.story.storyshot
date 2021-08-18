@@ -48219,11 +48219,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/StatefulTable Stateful Example with row nesting and fixed columns 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/StatefulTable Stateful Example with row nesting and resizable columns with initial width 1`] = `
 <div
   className="storybook-container"
 >
-  <div>
+  <div
+    style={
+      Object {
+        "width": "auto",
+      }
+    }
+  >
     <div
       className="iot--table-container bx--data-table-container"
       data-testid="table-table-container"
@@ -48454,24 +48460,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           className="bx--data-table-content"
         >
           <table
-            className="bx--data-table iot--data-table--row-actions bx--data-table--no-border"
+            className="bx--data-table iot--data-table--resize iot--data-table--fixed iot--data-table--row-actions bx--data-table--no-border"
             data-testid="table"
             id="table"
             title={null}
           >
             <thead
               data-testid="table-table-head"
-              onMouseMove={null}
-              onMouseUp={null}
+              onMouseMove={[Function]}
+              onMouseUp={[Function]}
             >
               <tr>
                 <th
-                  className="bx--table-expand"
+                  className="bx--table-expand iot--table-expand-resize"
                   data-testid="table-table-head-row-expansion-column"
                   scope="col"
                 />
                 <th
-                  className="iot--table-header-checkbox"
+                  className="iot--table-header-checkbox iot--table-header-checkbox-resize"
                   data-testid="table-table-head-row-selection-column"
                   scope="col"
                   style={Object {}}
@@ -48506,7 +48512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </th>
                 <th
                   align="start"
-                  className="table-header-label-start iot--table-head--table-header"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
                   data-column="string"
                   data-floating-menu-container={true}
                   data-testid="table-table-head-column-string"
@@ -48514,25 +48520,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": undefined,
+                      "width": 150,
                     }
                   }
-                  width="50px"
                 >
                   <span
                     className="bx--table-header-label"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="String long text should get truncated"
                     >
                       String long text should get truncated
                     </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
                   </span>
                 </th>
                 <th
                   align="start"
-                  className="table-header-label-start iot--table-head--table-header"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
                   data-column="date"
                   data-floating-menu-container={true}
                   data-testid="table-table-head-column-date"
@@ -48540,25 +48559,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": undefined,
+                      "width": 150,
                     }
                   }
-                  width="180px"
                 >
                   <span
                     className="bx--table-header-label"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="Date long text should get truncated"
                     >
                       Date long text should get truncated
                     </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
                   </span>
                 </th>
                 <th
                   align="start"
-                  className="table-header-label-start iot--table-head--table-header"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
                   data-column="select"
                   data-floating-menu-container={true}
                   data-testid="table-table-head-column-select"
@@ -48566,25 +48598,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": undefined,
+                      "width": 150,
                     }
                   }
-                  width="120px"
                 >
                   <span
                     className="bx--table-header-label"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="Select long text should get truncated"
                     >
                       Select long text should get truncated
                     </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
                   </span>
                 </th>
                 <th
                   align="start"
-                  className="table-header-label-start iot--table-head--table-header"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
                   data-column="status"
                   data-floating-menu-container={true}
                   data-testid="table-table-head-column-status"
@@ -48592,25 +48637,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": undefined,
+                      "width": 150,
                     }
                   }
-                  width="100px"
                 >
                   <span
                     className="bx--table-header-label"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="Status long text should get truncated"
                     >
                       Status long text should get truncated
                     </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
                   </span>
                 </th>
                 <th
                   align="start"
-                  className="table-header-label-start iot--table-head--table-header"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
                   data-column="number"
                   data-floating-menu-container={true}
                   data-testid="table-table-head-column-number"
@@ -48618,25 +48676,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": undefined,
+                      "width": 150,
                     }
                   }
-                  width="80px"
                 >
                   <span
                     className="bx--table-header-label"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="Number long text should get truncated"
                     >
                       Number long text should get truncated
                     </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
                   </span>
                 </th>
                 <th
                   align="start"
-                  className="table-header-label-start iot--table-head--table-header"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
                   data-column="boolean"
                   data-floating-menu-container={true}
                   data-testid="table-table-head-column-boolean"
@@ -48644,25 +48715,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": undefined,
+                      "width": 150,
                     }
                   }
-                  width="80px"
                 >
                   <span
                     className="bx--table-header-label"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="Boolean long text should get truncated"
                     >
                       Boolean long text should get truncated
                     </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
                   </span>
                 </th>
                 <th
                   align="start"
-                  className="table-header-label-start iot--table-head--table-header"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
                   data-column="node"
                   data-floating-menu-container={true}
                   data-testid="table-table-head-column-node"
@@ -48670,7 +48754,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": undefined,
+                      "width": 150,
                     }
                   }
                 >
@@ -48678,11 +48762,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="bx--table-header-label"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="React Node long text should get truncated"
                     >
                       React Node long text should get truncated
                     </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  className="iot--table-header-expander-column"
+                  data-testid="table-table-head-expander-column"
+                  scope="col"
+                  style={Object {}}
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    
                   </span>
                 </th>
                 <th
@@ -48775,7 +48885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-0-string"
@@ -48786,7 +48896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="toyota toyota toyota 0"
                     >
                       toyota toyota toyota 0
@@ -48795,7 +48905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-0-date"
@@ -48806,7 +48916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1973-03-03T09:46:40.000Z"
                     >
                       1973-03-03T09:46:40.000Z
@@ -48815,7 +48925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-0-select"
@@ -48826,7 +48936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-A"
                     >
                       option-A
@@ -48835,7 +48945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-0-status"
@@ -48846,7 +48956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -48866,7 +48976,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-0-number"
@@ -48879,7 +48989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-0-boolean"
@@ -48890,7 +49000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="true"
                     >
                       true
@@ -48899,7 +49009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-0-node"
@@ -48924,6 +49034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
@@ -49057,7 +49168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-1-string"
@@ -49068,7 +49179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="helping whiteboard as 1"
                     >
                       helping whiteboard as 1
@@ -49077,7 +49188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-1-date"
@@ -49088,7 +49199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1973-03-14T23:33:20.000Z"
                     >
                       1973-03-14T23:33:20.000Z
@@ -49097,7 +49208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-1-select"
@@ -49108,7 +49219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-B"
                     >
                       option-B
@@ -49117,7 +49228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-1-status"
@@ -49128,7 +49239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -49148,7 +49259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-1-number"
@@ -49159,7 +49270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title={1}
                     >
                       1
@@ -49168,7 +49279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-1-boolean"
@@ -49179,7 +49290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="false"
                     >
                       false
@@ -49188,7 +49299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-1-node"
@@ -49213,6 +49324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
@@ -49379,7 +49491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-2-string"
@@ -49390,7 +49502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="whiteboard can eat 2"
                     >
                       whiteboard can eat 2
@@ -49399,7 +49511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-2-date"
@@ -49410,7 +49522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1973-04-18T16:53:20.000Z"
                     >
                       1973-04-18T16:53:20.000Z
@@ -49419,7 +49531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-2-select"
@@ -49430,7 +49542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-C"
                     >
                       option-C
@@ -49439,7 +49551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-2-status"
@@ -49450,7 +49562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -49470,7 +49582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-2-number"
@@ -49481,7 +49593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title={4}
                     >
                       4
@@ -49490,7 +49602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-2-boolean"
@@ -49501,7 +49613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="true"
                     >
                       true
@@ -49510,7 +49622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-2-node"
@@ -49535,6 +49647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
@@ -49701,7 +49814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-3-string"
@@ -49712,7 +49825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="as eat scott 3"
                     >
                       as eat scott 3
@@ -49721,7 +49834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-3-date"
@@ -49732,7 +49845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1973-06-15T13:46:40.000Z"
                     >
                       1973-06-15T13:46:40.000Z
@@ -49741,7 +49854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-3-select"
@@ -49752,7 +49865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-A"
                     >
                       option-A
@@ -49761,7 +49874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-3-status"
@@ -49772,7 +49885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -49792,7 +49905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-3-number"
@@ -49805,7 +49918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-3-boolean"
@@ -49816,7 +49929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="false"
                     >
                       false
@@ -49825,7 +49938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-3-node"
@@ -49850,6 +49963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
@@ -50016,7 +50130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-4-string"
@@ -50027,7 +50141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="can pinocchio whiteboard 4"
                     >
                       can pinocchio whiteboard 4
@@ -50036,7 +50150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-4-date"
@@ -50047,7 +50161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1973-09-04T14:13:20.000Z"
                     >
                       1973-09-04T14:13:20.000Z
@@ -50056,7 +50170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-4-select"
@@ -50067,7 +50181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-B"
                     >
                       option-B
@@ -50076,7 +50190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-4-status"
@@ -50087,7 +50201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -50107,7 +50221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-4-number"
@@ -50118,7 +50232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title={16}
                     >
                       16
@@ -50127,7 +50241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-4-boolean"
@@ -50138,7 +50252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="true"
                     >
                       true
@@ -50147,7 +50261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-4-node"
@@ -50172,6 +50286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
@@ -50305,7 +50420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-5-string"
@@ -50316,7 +50431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="bottle toyota bottle 5"
                     >
                       bottle toyota bottle 5
@@ -50325,7 +50440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-5-date"
@@ -50336,7 +50451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1973-12-17T18:13:20.000Z"
                     >
                       1973-12-17T18:13:20.000Z
@@ -50345,7 +50460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-5-select"
@@ -50356,7 +50471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-C"
                     >
                       option-C
@@ -50365,7 +50480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-5-status"
@@ -50376,7 +50491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -50396,7 +50511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-5-number"
@@ -50407,7 +50522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title={25}
                     >
                       25
@@ -50416,7 +50531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-5-boolean"
@@ -50427,7 +50542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="false"
                     >
                       false
@@ -50436,7 +50551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-5-node"
@@ -50461,6 +50576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
@@ -50627,7 +50743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-6-string"
@@ -50638,7 +50754,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="eat whiteboard pinocchio 6"
                     >
                       eat whiteboard pinocchio 6
@@ -50647,7 +50763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-6-date"
@@ -50658,7 +50774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1974-04-24T01:46:40.000Z"
                     >
                       1974-04-24T01:46:40.000Z
@@ -50667,7 +50783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-6-select"
@@ -50678,7 +50794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-A"
                     >
                       option-A
@@ -50687,7 +50803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-6-status"
@@ -50698,7 +50814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -50718,7 +50834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-6-number"
@@ -50731,7 +50847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-6-boolean"
@@ -50742,7 +50858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="true"
                     >
                       true
@@ -50751,7 +50867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-6-node"
@@ -50776,6 +50892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
@@ -50942,7 +51059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-7-string"
@@ -50953,7 +51070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="chocolate can helping 7"
                     >
                       chocolate can helping 7
@@ -50962,7 +51079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-7-date"
@@ -50973,7 +51090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1974-09-21T12:53:20.000Z"
                     >
                       1974-09-21T12:53:20.000Z
@@ -50982,7 +51099,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-7-select"
@@ -50993,7 +51110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-B"
                     >
                       option-B
@@ -51002,7 +51119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-7-status"
@@ -51013,7 +51130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -51033,7 +51150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-7-number"
@@ -51044,7 +51161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title={49}
                     >
                       49
@@ -51053,7 +51170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-7-boolean"
@@ -51064,7 +51181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="false"
                     >
                       false
@@ -51073,7 +51190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-7-node"
@@ -51098,6 +51215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
@@ -51264,7 +51382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-8-string"
@@ -51275,7 +51393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="pinocchio eat can 8"
                     >
                       pinocchio eat can 8
@@ -51284,7 +51402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-8-date"
@@ -51295,7 +51413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1975-03-14T03:33:20.000Z"
                     >
                       1975-03-14T03:33:20.000Z
@@ -51304,7 +51422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-8-select"
@@ -51315,7 +51433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-C"
                     >
                       option-C
@@ -51324,7 +51442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-8-status"
@@ -51335,7 +51453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -51355,7 +51473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-8-number"
@@ -51366,7 +51484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title={64}
                     >
                       64
@@ -51375,7 +51493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-8-boolean"
@@ -51386,7 +51504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="true"
                     >
                       true
@@ -51395,7 +51513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-8-node"
@@ -51420,6 +51538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
@@ -51553,7 +51672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-9-string"
@@ -51564,7 +51683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="scott pinocchio chocolate 9"
                     >
                       scott pinocchio chocolate 9
@@ -51573,7 +51692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="date"
                   data-offset={0}
                   id="cell-table-row-9-date"
@@ -51584,7 +51703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="1975-09-26T21:46:40.000Z"
                     >
                       1975-09-26T21:46:40.000Z
@@ -51593,7 +51712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-9-select"
@@ -51604,7 +51723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="option-A"
                     >
                       option-A
@@ -51613,7 +51732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="status"
                   data-offset={0}
                   id="cell-table-row-9-status"
@@ -51624,7 +51743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                     >
                       <svg
                         height="10"
@@ -51644,7 +51763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="number"
                   data-offset={0}
                   id="cell-table-row-9-number"
@@ -51657,7 +51776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="boolean"
                   data-offset={0}
                   id="cell-table-row-9-boolean"
@@ -51668,7 +51787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                   >
                     <span
-                      className=""
+                      className="iot--table__cell-text--truncate"
                       title="false"
                     >
                       false
@@ -51677,7 +51796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--truncate"
                   data-column="node"
                   data-offset={0}
                   id="cell-table-row-9-node"
@@ -51702,6 +51821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                   </span>
                 </td>
+                <td />
                 <td
                   className="iot--row-actions-cell--table-cell"
                 >
