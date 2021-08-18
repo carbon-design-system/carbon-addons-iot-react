@@ -48520,7 +48520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -48559,7 +48559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -48598,7 +48598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -48637,7 +48637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -48676,7 +48676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -48715,7 +48715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
@@ -48754,7 +48754,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 0,
+                      "width": 150,
                     }
                   }
                 >
