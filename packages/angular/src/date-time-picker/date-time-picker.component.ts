@@ -316,7 +316,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     const range = this.dateTimeRanges.find((range) => range.key === rangeOrType);
     const [start, end] = range.getRange();
     // TODO: provide a way to customize this for g11n
-    const formatString = this.dateFormat + ' ' + this.timeFormat;
+    const formatString = `${this.dateFormat} ${this.timeFormat}`;
     let endFormatted = format(end, formatString);
     if (isThisMinute(end)) {
       endFormatted = this.batchText.NOW;
@@ -326,7 +326,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
 
   formatCustomRange() {
     // TODO: provide a way to customize this for g11n
-    const formatString = this.dateFormat + ' ' + this.timeFormat;
+    const formatString = `${this.dateFormat} ${this.timeFormat}`;
     const [type, start, end, relativeConfig] = this.selected;
     if (type === 'ABSOLUTE') {
       return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(
