@@ -11,6 +11,8 @@ import {
 } from '@angular/core';
 import { format, isThisMinute, subHours, subMinutes } from 'date-fns';
 import { getRangeFromRelative } from './date-time-relative.component';
+import * as languages from 'flatpickr/dist/l10n/index';
+import { I18n } from 'carbon-components-angular/i18n';
 
 export interface DateTimeRange {
   key: any;
@@ -21,6 +23,29 @@ export interface DateTimeRange {
 export interface RelativeRange {
   last: [number, string];
   relativeTo: [string, string];
+}
+
+export interface BatchLabelText {
+  ABSOLUTE: string;
+  RELATIVE: string;
+  CUSTOM_RANGE: string;
+  RELATIVE_TO: string;
+  START_DATE: string;
+  END_DATE: string;
+  START_TIME: string;
+  END_TIME: string;
+  LAST: string;
+  CANCEL: string;
+  APPLY: string;
+  BACK: string;
+  NOW: string;
+  YESTERDAY: string;
+  YEARS: string;
+  MONTHS: string;
+  WEEKS: string;
+  DAYS: string;
+  HOURS: string;
+  MINUTES: string;
 }
 
 export type RelativeDateTimeSelection = ['RELATIVE', ...DateRange, RelativeRange];
@@ -81,7 +106,7 @@ export type DateRange = [Date, Date];
               class="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
               tabindex="-1"
             >
-              Custom Range
+              {{ batchText.CUSTOM_RANGE }}
             </li>
             <li
               *ngFor="let range of dateTimeRanges"
@@ -104,6 +129,7 @@ export type DateRange = [Date, Date];
             [range]="selected"
             [hasRelative]="hasRelative"
             [hasAbsolute]="hasAbsolute"
+            [batchText]="batchText"
           ></ai-custom-date-time>
         </div>
         <div class="iot--date-time-picker__menu-btn-set">
@@ -115,7 +141,7 @@ export type DateRange = [Date, Date];
             type="button"
             size="field"
           >
-            Back
+            {{ batchText.BACK }}
           </button>
           <button
             *ngIf="!selectingCustomRange"
@@ -125,7 +151,7 @@ export type DateRange = [Date, Date];
             type="button"
             size="field"
           >
-            Cancel
+            {{ batchText.CANCEL }}
           </button>
           <button
             ibmButton="primary"
@@ -134,7 +160,7 @@ export type DateRange = [Date, Date];
             type="button"
             size="field"
           >
-            Apply
+            {{ batchText.APPLY }}
           </button>
         </div>
       </div>
@@ -203,10 +229,40 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       },
     },
   ];
+  /**
+   * Language of the flatpickr calendar.
+   *
+   * For reference of the possible locales:
+   * https://github.com/flatpickr/flatpickr/blob/master/src/l10n/index.ts
+   */
+  @Input() language = 'en';
   @Input() selected: DateTimeSelection = null;
   @Input() hasRelative = true;
   @Input() hasAbsolute = true;
   @Input() theme: 'light' | null = null;
+  @Input() dateFormat = 'yyyy-M-d';
+  @Input() batchText: BatchLabelText = {
+    ABSOLUTE: 'Absolute',
+    RELATIVE: 'Relative',
+    CUSTOM_RANGE: 'Custom Range',
+    RELATIVE_TO: 'Relative to',
+    START_DATE: 'Start date',
+    END_DATE: 'End date',
+    START_TIME: 'Start time',
+    END_TIME: 'End time',
+    LAST: 'Last',
+    CANCEL: 'Cancel',
+    APPLY: 'Apply',
+    BACK: 'back',
+    NOW: 'Now',
+    YESTERDAY: 'Yesterday',
+    YEARS: 'years',
+    MONTHS: 'months',
+    WEEKS: 'weeks',
+    DAYS: 'days',
+    HOURS: 'hours',
+    MINUTES: 'minutes',
+  };
   @Output() selectedChange: EventEmitter<DateTimeSelection> = new EventEmitter();
   @Output() apply: EventEmitter<DateRange> = new EventEmitter();
   @Output() cancel: EventEmitter<void> = new EventEmitter();
@@ -215,12 +271,13 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   previousSelection: DateTimeSelection = null;
   selectingCustomRange = false;
   expanded = false;
+  timeFormat = 'HH:mm';
 
   get tooltipOffset() {
     return { x: 0, y: 4 };
   }
 
-  constructor(protected elementRef: ElementRef) {}
+  constructor(protected elementRef: ElementRef, protected i18n: I18n) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes?.selected?.currentValue) {
@@ -235,6 +292,11 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     if (!this.selected) {
       this.selected = [this.dateTimeRanges[0].key];
     }
+    this.updateI18nTranslationString();
+  }
+
+  updateI18nTranslationString() {
+    this.i18n.setLocale(this.language, languages.default[this.language]);
   }
 
   formatCurrentRangeTitle() {
@@ -254,23 +316,29 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     const range = this.dateTimeRanges.find((range) => range.key === rangeOrType);
     const [start, end] = range.getRange();
     // TODO: provide a way to customize this for g11n
-    const formatString = 'yyyy-M-d HH:mm';
+    const formatString = `${this.dateFormat} ${this.timeFormat}`;
     let endFormatted = format(end, formatString);
     if (isThisMinute(end)) {
-      endFormatted = 'Now';
+      endFormatted = this.batchText.NOW;
     }
-    return `${format(start, formatString)} to ${endFormatted}`;
+    return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${endFormatted}`;
   }
 
   formatCustomRange() {
     // TODO: provide a way to customize this for g11n
-    const formatString = 'yyyy-M-d HH:mm';
+    const formatString = `${this.dateFormat} ${this.timeFormat}`;
     const [type, start, end, relativeConfig] = this.selected;
     if (type === 'ABSOLUTE') {
-      return `${format(start, formatString)} to ${format(end, formatString)}`;
+      return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(
+        end,
+        formatString
+      )}`;
     } else if (type === 'RELATIVE') {
       const [start, end] = getRangeFromRelative(relativeConfig);
-      return `${format(start, formatString)} to ${format(end, formatString)}`;
+      return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(
+        end,
+        formatString
+      )}`;
     }
   }
 
