@@ -48,7 +48,7 @@ export type DateRange = [Date, Date];
         (keydown.space)="togglePicker()"
         [ibmTooltip]="formatCurrentRange()"
         [offset]="tooltipOffset"
-        [disabled]="!formatCurrentRangeTitle()"
+        [disabled]="disableTooltip"
         trigger="hover"
         placement="bottom"
         role="button"
@@ -208,6 +208,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   @Input() hasRelative = true;
   @Input() hasAbsolute = true;
   @Input() theme: 'light' | null = null;
+  @Input() placeholder = 'yyyy-mm-dd HH:mm';
   @Output() selectedChange: EventEmitter<DateTimeSelection> = new EventEmitter();
   @Output() apply: EventEmitter<DateRange> = new EventEmitter();
   @Output() cancel: EventEmitter<void> = new EventEmitter();
@@ -216,6 +217,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   previousSelection: DateTimeSelection = null;
   selectingCustomRange = false;
   expanded = false;
+  disableTooltip = false;
 
   get tooltipOffset() {
     return { x: 0, y: 4 };
@@ -235,13 +237,14 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   ngOnInit() {
     if (!this.selected) {
       this.selected = [null];
+      this.disableTooltip = true;
     }
   }
 
   formatCurrentRangeTitle() {
     const [rangeOrType] = this.selected;
     if (!rangeOrType) {
-      return '';
+      return this.placeholder;
     } else if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
       return this.formatCustomRange();
     }
@@ -252,7 +255,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   formatCurrentRange() {
     const [rangeOrType] = this.selected;
     if (!rangeOrType) {
-      return '';
+      return this.placeholder;
     } else if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
       return this.formatCustomRange();
     }
@@ -314,6 +317,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       this.apply.emit(range.getRange());
     }
     this.expanded = false;
+    this.disableTooltip = false;
   }
 
   onCancel() {
