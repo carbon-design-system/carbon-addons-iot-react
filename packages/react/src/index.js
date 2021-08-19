@@ -116,6 +116,7 @@ export ListBuilder from './components/ListBuilder/ListBuilder';
 export TearSheet from './components/TearSheet/TearSheet';
 export TearSheetWrapper from './components/TearSheet/TearSheetWrapper';
 export MapCard from './components/MapCard/MapCard';
+export RuleBuilder from './components/RuleBuilder/RuleBuilder';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';
