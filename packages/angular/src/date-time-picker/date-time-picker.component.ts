@@ -240,7 +240,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   @Input() hasRelative = true;
   @Input() hasAbsolute = true;
   @Input() theme: 'light' | null = null;
-  @Input() dateFormat: string = 'yyyy-M-d';
+  @Input() dateFormat = 'yyyy-M-d';
   @Input() batchText: BatchLabelText = {
     ABSOLUTE: 'Absolute',
     RELATIVE: 'Relative',
