@@ -123,7 +123,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
           text: PropTypes.string.isRequired,
         })
       ),
-      /** custom filtration function, called back with (columnFilterValue, currentValue) */
+      /** custom filtration function, called back with (columnValue, filterValue) */
       filterFunction: PropTypes.func,
     }),
 
