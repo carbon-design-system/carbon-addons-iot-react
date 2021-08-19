@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { mount } from 'enzyme';
+import { render, screen, fireEvent, createEvent } from '@testing-library/react';
 
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { TextInput } from '../../TextInput';
@@ -246,14 +245,22 @@ describe('TableSaveViewModal', () => {
     expect(screen.getByText('test view description')).toBeInTheDocument();
   });
 
+  it('prevents a form post onSubmit', () => {
+    render(<TableSaveViewModal actions={actions} open viewDescription="test view description" />);
+
+    const submitEvent = createEvent.submit(screen.getByTestId('TableSaveViewModal-form'));
+    const preventDefault = jest.fn();
+    Object.assign(submitEvent, { preventDefault });
+    fireEvent(screen.getByTestId('TableSaveViewModal-form'), submitEvent);
+    expect(preventDefault).toHaveBeenCalled();
+  });
+
   it('can be opened and closed', () => {
-    const wrapper = mount(<TableSaveViewModal actions={actions} open />);
-    expect(wrapper.exists('.bx--modal.is-visible')).toBeTruthy();
+    const { rerender } = render(<TableSaveViewModal actions={actions} open />);
+    expect(screen.getByTestId('TableSaveViewModal')).toHaveClass('is-visible');
+    rerender(<TableSaveViewModal actions={actions} open={false} />);
 
-    wrapper.setProps({ ...wrapper.props(), open: false });
-    wrapper.update();
-
-    expect(wrapper.exists('.bx--modal.is-visible')).toBeFalsy();
+    expect(screen.getByTestId('TableSaveViewModal')).not.toHaveClass('is-visible');
   });
 
   it('i18n string tests', () => {
