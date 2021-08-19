@@ -240,6 +240,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   @Input() hasRelative = true;
   @Input() hasAbsolute = true;
   @Input() theme: 'light' | null = null;
+  @Input() dateFormat: string = 'yyyy-M-d';
   @Input() batchText: BatchLabelText = {
     ABSOLUTE: 'Absolute',
     RELATIVE: 'Relative',
@@ -270,6 +271,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   previousSelection: DateTimeSelection = null;
   selectingCustomRange = false;
   expanded = false;
+  timeFormat = 'HH:mm';
 
   get tooltipOffset() {
     return { x: 0, y: 4 };
@@ -314,7 +316,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     const range = this.dateTimeRanges.find((range) => range.key === rangeOrType);
     const [start, end] = range.getRange();
     // TODO: provide a way to customize this for g11n
-    const formatString = 'yyyy-M-d HH:mm';
+    const formatString = this.dateFormat + ' ' + this.timeFormat;
     let endFormatted = format(end, formatString);
     if (isThisMinute(end)) {
       endFormatted = this.batchText.NOW;
@@ -324,7 +326,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
 
   formatCustomRange() {
     // TODO: provide a way to customize this for g11n
-    const formatString = 'yyyy-M-d HH:mm';
+    const formatString = this.dateFormat + ' ' + this.timeFormat;
     const [type, start, end, relativeConfig] = this.selected;
     if (type === 'ABSOLUTE') {
       return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(
