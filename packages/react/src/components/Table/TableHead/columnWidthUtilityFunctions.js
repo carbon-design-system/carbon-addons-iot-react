@@ -210,7 +210,7 @@ export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs
 
   const adjustedCols = [
     // There are some scenarios where the new columns don't have an existing width
-    // and in that case they are adjusted to get a min with assigned.
+    // and in that case they are adjusted to get a min width assigned.
     ...newWidthColumns,
     // We adjust to shrink existing columns to make room for the new ones.
     ...shrinkColumns(shrinkableColumns, totalWidthNeeded),
