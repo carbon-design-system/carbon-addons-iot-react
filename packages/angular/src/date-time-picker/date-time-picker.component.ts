@@ -48,6 +48,7 @@ export type DateRange = [Date, Date];
         (keydown.space)="togglePicker()"
         [ibmTooltip]="formatCurrentRange()"
         [offset]="tooltipOffset"
+        [disabled]="!formatCurrentRangeTitle()"
         trigger="hover"
         placement="bottom"
         role="button"
@@ -233,13 +234,15 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
 
   ngOnInit() {
     if (!this.selected) {
-      this.selected = [this.dateTimeRanges[0].key];
+      this.selected = [null];
     }
   }
 
   formatCurrentRangeTitle() {
     const [rangeOrType] = this.selected;
-    if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
+    if (!rangeOrType) {
+      return '';
+    } else if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
       return this.formatCustomRange();
     }
     const range = this.dateTimeRanges.find((range) => range.key === rangeOrType);
@@ -248,7 +251,9 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
 
   formatCurrentRange() {
     const [rangeOrType] = this.selected;
-    if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
+    if (!rangeOrType) {
+      return '';
+    } else if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
       return this.formatCustomRange();
     }
     const range = this.dateTimeRanges.find((range) => range.key === rangeOrType);
@@ -348,7 +353,9 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       const selected: HTMLElement = nativeElement.querySelector(
         '.iot--date-time-picker__listitem--preset-selected'
       );
-      setTimeout(() => selected.focus());
+      if (selected) {
+        setTimeout(() => selected.focus());
+      }
     }
   }
 }
