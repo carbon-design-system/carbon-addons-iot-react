@@ -133,6 +133,7 @@ describe('SuiteHeaderAppSwitcher', () => {
       'NAVIGATOR',
       'https://www.ibm.com'
     );
+    jest.restoreAllMocks();
   });
 
   it('shows custom applications', async () => {
