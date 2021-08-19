@@ -120,9 +120,9 @@ describe('Header', () => {
 
       content: React.forwardRef((props, ref) => (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button ref={ref} type="button" {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -194,9 +194,9 @@ describe('Header', () => {
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button ref={ref} type="button" {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -217,10 +217,9 @@ describe('Header', () => {
       className: 'header-panel',
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button type="button" ref={ref} {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -235,10 +234,9 @@ describe('Header', () => {
       className: 'header-panel',
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button type="button" ref={ref} {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -255,9 +253,9 @@ describe('Header', () => {
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button type="button" ref={ref} {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -274,9 +272,9 @@ describe('Header', () => {
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button type="button" ref={ref} {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -296,6 +294,7 @@ describe('Header', () => {
   });
 
   it('should move icons into overflow menu when area too small', () => {
+    jest.useFakeTimers();
     const originalWidth = window.innerWidth;
     Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 375 });
     const originalBounding = Element.prototype.getBoundingClientRect;
@@ -377,7 +376,10 @@ describe('Header', () => {
         y: 0,
       };
     };
-    userEvent.click(overflowMenuButton);
+    act(() => {
+      userEvent.click(overflowMenuButton);
+      jest.runAllTimers();
+    });
     expect(screen.getByText('Watson')).toBeVisible();
     expect(screen.getByText('Custom icon 1')).toBeVisible();
     userEvent.click(screen.getByRole('menuitem', { name: 'help' }));
@@ -390,10 +392,12 @@ describe('Header', () => {
     expect(screen.queryByText('Custom icon 1')).toBeNull();
     act(() => {
       userEvent.click(screen.getByLabelText('Open menu', { selector: 'svg' }));
+      jest.runAllTimers();
     });
     expect(screen.getByText('Watson')).toBeVisible();
     expect(screen.getByText('Custom icon 1')).toBeVisible();
     HTMLElement.prototype.getBoundingClientRect = originalBounding;
     window.innerWidth = originalWidth;
+    jest.useRealTimers();
   });
 });

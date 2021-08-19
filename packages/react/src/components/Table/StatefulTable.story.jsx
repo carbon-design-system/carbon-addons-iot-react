@@ -1,7 +1,7 @@
 import React, { createElement, useMemo, useRef, useState } from 'react';
 import { boolean, text, select, array, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { SettingsAdjust16 } from '@carbon/icons-react';
+import { SettingsAdjust16, TrashCan16 } from '@carbon/icons-react';
 import isEqual from 'lodash/isEqual';
 import assign from 'lodash/assign';
 
@@ -64,7 +64,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
         : undefined,
   }));
   return (
-    <div>
+    <div style={{ width: select('table container width', ['auto', '300px', '800px'], 'auto') }}>
       <StatefulTable
         id="table"
         {...initialState}
@@ -75,7 +75,8 @@ export const StatefulTableWithNestedRowItems = (props) => {
           ...initialState.options,
           hasRowNesting: true,
           hasFilter: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          hasResize: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'alwaysTruncate'),
         }}
         view={{
           ...initialState.view,
@@ -160,6 +161,16 @@ export const SimpleStatefulExample = () => (
       table: {
         selectedIds: array('selectedIds', []),
       },
+      toolbar: {
+        batchActions: [
+          {
+            iconDescription: 'Delete Item',
+            id: 'delete',
+            labelText: 'Delete',
+            renderIcon: TrashCan16,
+          },
+        ],
+      },
     }}
   />
 );
@@ -180,7 +191,7 @@ export const StatefulExampleWithRowNestingAndFixedColumns = () => (
 );
 
 StatefulExampleWithRowNestingAndFixedColumns.storyName =
-  'Stateful Example with row nesting and fixed columns';
+  'Stateful Example with row nesting and resizable columns with initial width';
 
 StatefulExampleWithRowNestingAndFixedColumns.parameters = {
   info: {

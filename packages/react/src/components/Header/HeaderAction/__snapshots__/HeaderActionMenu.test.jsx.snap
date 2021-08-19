@@ -11,7 +11,7 @@ exports[`HeaderActionMenu should render 1`] = `
       aria-label="Accessibility label"
       class="bx--header__menu-item bx--header__menu-title"
       data-testid="menuitem"
-      href=""
+      href="#"
       role="menuitem"
       tabindex="0"
     >
