@@ -462,6 +462,7 @@ describe('SuiteHeader', () => {
     );
     userEvent.click(modalStayLoggedInButton);
     expect(SuiteHeader.defaultProps.onStayLoggedIn).toHaveBeenCalled();
+    jest.resetAllMocks();
   });
 
   it('function i18n props should fallback to suiteName if appName is not given', async () => {
