@@ -832,11 +832,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                       data-floating-menu-container={true}
                                       id="column-temperature"
                                       onClick={[Function]}
-                                      style={
-                                        Object {
-                                          "--table-header-width": "",
-                                        }
-                                      }
                                       width=""
                                     >
                                       <span
@@ -902,11 +897,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                       data-floating-menu-container={true}
                                       id="column-pressure"
                                       onClick={[Function]}
-                                      style={
-                                        Object {
-                                          "--table-header-width": "",
-                                        }
-                                      }
                                       width=""
                                     >
                                       <span
@@ -20118,11 +20108,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     data-floating-menu-container={true}
                                     id="column-temperature"
                                     onClick={[Function]}
-                                    style={
-                                      Object {
-                                        "--table-header-width": "",
-                                      }
-                                    }
                                     width=""
                                   >
                                     <span
@@ -20188,11 +20173,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     data-floating-menu-container={true}
                                     id="column-pressure"
                                     onClick={[Function]}
-                                    style={
-                                      Object {
-                                        "--table-header-width": "",
-                                      }
-                                    }
                                     width=""
                                   >
                                     <span

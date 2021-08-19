@@ -368,15 +368,27 @@ export const tableReducer = (state = {}, action) => {
       const data = filteredData || state.data;
       // only update the data and filtered data if deleted
       if (action.payload === 'delete') {
+        const { selectedIds } = state.view.table;
+        const { pagination } = state.view;
+        const totalItems = pagination.totalItems - selectedIds.length;
+        const numberOfPages = Math.ceil(totalItems / pagination.pageSize);
+        const page = pagination.page > numberOfPages ? numberOfPages : pagination.page;
         return baseTableReducer(
           update(state, {
             data: {
-              $set: state.data.filter((i) => !state.view.table.selectedIds.includes(i.id)),
+              $set: state.data.filter((i) => !selectedIds.includes(i.id)),
             },
             view: {
               table: {
                 filteredData: {
-                  $set: data.filter((i) => !state.view.table.selectedIds.includes(i.id)),
+                  $set: data.filter((i) => !selectedIds.includes(i.id)),
+                },
+              },
+              pagination: {
+                $set: {
+                  ...pagination,
+                  totalItems,
+                  page,
                 },
               },
             },
