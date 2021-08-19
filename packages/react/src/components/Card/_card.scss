@@ -25,7 +25,7 @@ $lineHeightSize: 1.375em;
 }
 
 .#{$iot-prefix}--card--resizing {
-  border: $spacing-01 solid $interactive-02;
+  outline: $spacing-01 solid $interactive-02;
   box-sizing: border-box;
 }
 

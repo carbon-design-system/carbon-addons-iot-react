@@ -100,17 +100,28 @@ class IdleTimer {
   createUserActivityListeners() {
     // Make sure we don't stack up event listeners
     this.cleanUpUserActivityListeners();
+    // Listen for mouse and keuboard events
     window.addEventListener('mousemove', this.eventHandler);
     window.addEventListener('mousedown', this.eventHandler);
     window.addEventListener('scroll', this.eventHandler);
     window.addEventListener('keydown', this.eventHandler);
+    // Listen for mobile (touch) events
+    window.addEventListener('touchstart', this.eventHandler);
+    window.addEventListener('touchend', this.eventHandler);
+    window.addEventListener('touchmove', this.eventHandler);
+    window.addEventListener('touchcancel', this.eventHandler);
   }
 
   cleanUpUserActivityListeners() {
+    // Cleanup all listeners
     window.removeEventListener('mousemove', this.eventHandler);
     window.removeEventListener('mousedown', this.eventHandler);
     window.removeEventListener('scroll', this.eventHandler);
     window.removeEventListener('keydown', this.eventHandler);
+    window.removeEventListener('touchstart', this.eventHandler);
+    window.removeEventListener('touchend', this.eventHandler);
+    window.removeEventListener('touchmove', this.eventHandler);
+    window.removeEventListener('touchcancel', this.eventHandler);
   }
 
   start() {
