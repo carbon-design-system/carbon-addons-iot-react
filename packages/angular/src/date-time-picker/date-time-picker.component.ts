@@ -48,7 +48,7 @@ export type DateRange = [Date, Date];
         (keydown.space)="togglePicker()"
         [ibmTooltip]="formatCurrentRange()"
         [offset]="tooltipOffset"
-        [disabled]="disableTooltip"
+        [disabled]="disabled"
         trigger="hover"
         placement="bottom"
         role="button"
@@ -217,7 +217,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   previousSelection: DateTimeSelection = null;
   selectingCustomRange = false;
   expanded = false;
-  disableTooltip = false;
+  disabled = false;
 
   get tooltipOffset() {
     return { x: 0, y: 4 };
@@ -237,7 +237,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   ngOnInit() {
     if (!this.selected) {
       this.selected = [null];
-      this.disableTooltip = true;
+      this.disabled = true;
     }
   }
 
@@ -317,7 +317,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       this.apply.emit(range.getRange());
     }
     this.expanded = false;
-    this.disableTooltip = false;
+    this.disabled = false;
   }
 
   onCancel() {
