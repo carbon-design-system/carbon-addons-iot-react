@@ -464,7 +464,7 @@ describe('SuiteHeader', () => {
     expect(SuiteHeader.defaultProps.onStayLoggedIn).toHaveBeenCalled();
   });
 
-  it('function i18n props shoudl fallback to suiteName is appName is not given', async () => {
+  it('function i18n props should fallback to suiteName if appName is not given', async () => {
     const surveyTitle = jest.fn();
     const profileLogoutModalBody = jest.fn();
     render(
