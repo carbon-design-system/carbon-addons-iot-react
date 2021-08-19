@@ -1,3 +1,5 @@
 const React = require('react');
 
-module.exports = () => React.createElement('div', { id: 'mock-bar-chart-stacked' });
+module.exports = React.forwardRef((props, ref) =>
+  React.createElement('div', { id: 'mock-bar-chart-stacked', ref })
+);
