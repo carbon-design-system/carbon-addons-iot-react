@@ -229,8 +229,11 @@ const customHelpLinks = [
   {
     metaData: {
       element: 'a',
-      href: 'javascript:void(0)',
-      onClick: () => alert('custom help menu action'),
+      href: '#',
+      onClick: (e) => {
+        e.preventDefault();
+        alert('custom help menu action');
+      },
     },
     content: (
       <span id="yet-another-custom-help-link">
@@ -262,8 +265,11 @@ const customProfileLinks = [
   {
     metaData: {
       element: 'a',
-      href: 'javascript:void(0)',
-      onClick: () => alert('custom profile menu action'),
+      href: '#',
+      onClick: (e) => {
+        e.preventDefault();
+        alert('custom profile menu action');
+      },
     },
     content: (
       <span id="yet-another-custom-profile-link">
