@@ -2132,7 +2132,9 @@ export const WithOptionsToExploreColumnSettings = () => {
   };
   const onColumnResize = (cols) => {
     action('onColumnResize')(cols);
-    setMyColumns(cols);
+    if (selectedTableType === 'Table') {
+      setMyColumns(cols);
+    }
   };
   const onToggleColumnSelection = () => {
     action('onToggleColumnSelection')();
