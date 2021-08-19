@@ -246,8 +246,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="Help"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -422,8 +423,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="user"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -1060,8 +1062,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="car"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -1227,8 +1230,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="Help"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -1473,8 +1477,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="user"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -2109,8 +2114,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="Help"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -2285,8 +2291,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="user"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -2906,8 +2913,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="Help"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -3082,8 +3090,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="user"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -3625,8 +3634,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="Help"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -3801,8 +3811,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="user"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -4697,8 +4708,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="Help"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -4873,8 +4885,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="user"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -5379,8 +5392,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="Help"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -5501,8 +5515,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="user"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -5970,8 +5985,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="Help"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >
@@ -6146,8 +6162,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-label="user"
               className="bx--header__menu-item bx--header__menu-title"
               data-testid="menuitem"
-              href=""
+              href="#"
               onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
               tabIndex={0}
             >

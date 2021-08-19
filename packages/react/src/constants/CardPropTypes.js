@@ -766,7 +766,7 @@ export const CardPropTypes = {
   locale: PropTypes.string,
   /** a way to pass down dashboard grid resize handles, only used by other card types */
   resizeHandles: PropTypes.array,
-  /** Optional callback function that is passed an onChange function and the original cardConfig function.
+  /** Optional callback function that is passed an onChange function and the original cardConfig object.
    * This allows additional information to be passed to be used in the Card Editor for this type.
    * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render * */
   renderEditContent: PropTypes.func,
