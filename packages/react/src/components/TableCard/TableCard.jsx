@@ -549,7 +549,7 @@ const TableCard = ({
                         {item.linkTemplate ? (
                           <>
                             <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
-                              {item ? item.label : '--'}
+                              {item?.label ? item.label : '--'}
                             </p>
                             <Link
                               key={`${item.id}-link`}
@@ -562,7 +562,7 @@ const TableCard = ({
                         ) : (
                           <>
                             <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
-                              {item ? item.label : '--'}
+                              {item?.label ? item.label : '--'}
                             </p>
                             <span key={`${item.id}-value`}>
                               {item
