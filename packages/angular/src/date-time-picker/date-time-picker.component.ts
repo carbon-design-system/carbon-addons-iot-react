@@ -314,7 +314,6 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
 
   updateI18nTranslationString() {
     this.i18n.setLocale(this.language, languages.default[this.language]);
-    console.info(this.i18n.get());
   }
 
   formatCurrentRangeTitle() {
