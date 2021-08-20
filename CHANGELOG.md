@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.109](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.108...v2.146.0-next.109) (2021-08-20)
+
+
+### Bug Fixes
+
+* **table:** cell text position ([2921530](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/292153048aaad63f6ccc5b66c6400d9031b6dfec))
+* **table:** styling on firefox ([d7b810c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d7b810c34941e210721a99a4899920718b45bc1f))
+
+
+### Features
+
+* **table:** add new table model and multi-line headre implementation ([89819da](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/89819dab59872b0c46ed9123aa36e09ac018dc5e))
+
+
+
+
+
 # [2.146.0-next.108](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.107...v2.146.0-next.108) (2021-08-20)
 
 **Note:** Version bump only for package ibm-ai-applications
