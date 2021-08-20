@@ -10,7 +10,7 @@
   "testFiles": "**/*.test.e2e.jsx",
   "viewportWidth": 1670,
   "viewportHeight": 900,
-  "defaultCommandTimeout": 8000,
+  "defaultCommandTimeout": 10000,
   "trashAssetsBeforeRuns": true,
   "videoUploadOnPasses": false,
   "component": {
