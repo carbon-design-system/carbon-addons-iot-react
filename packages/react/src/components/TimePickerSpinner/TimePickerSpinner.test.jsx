@@ -109,7 +109,6 @@ describe('TimePickerSpinner', () => {
     expect(input).toHaveValue('23:00');
   });
 
-  // NOTE: enzyme's `simulate` doesn't really simulate anything.
   // The following test covers the keyboard interaction at a base level, but
   // needs to be improved by testing keyboard focus/interactions in-browser
   // via cypress or similar.
