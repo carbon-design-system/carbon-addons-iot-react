@@ -1172,6 +1172,8 @@ describe('TableCard', () => {
   });
 
   it('should render even with undefined columns', () => {
+    const { error } = console;
+    console.error = jest.fn();
     const onCardAction = jest.fn();
     render(
       <TableCard
@@ -1188,6 +1190,12 @@ describe('TableCard', () => {
     );
 
     expect(screen.getByTestId('TABLE_CARD')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The prop `content.columns` is marked as required in `TableCard`, but its value is `undefined`'
+      )
+    );
+    console.error = error;
   });
 
   it('should render expanded when isExpanded:true', () => {
