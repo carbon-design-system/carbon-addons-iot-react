@@ -1,12 +1,17 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { render, within, screen } from '@testing-library/react';
+import { render, within, screen, createEvent, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Bee32 } from '@carbon/icons-react';
+import fileDownload from 'js-file-download';
 
+import { settings } from '../../constants/Settings';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { tableColumns, tableData, actions2 } from '../../utils/sample';
+import { tableColumns, tableData, actions2, actions1 } from '../../utils/sample';
 
 import TableCard from './TableCard';
+
+const { prefix } = settings;
+jest.mock('js-file-download');
 
 describe('TableCard', () => {
   it('should be selectable by testID or testId', () => {
@@ -131,7 +136,7 @@ describe('TableCard', () => {
       };
     });
 
-    const wrapper = mount(
+    render(
       <TableCard
         title="Open Alerts"
         content={{
@@ -143,13 +148,13 @@ describe('TableCard', () => {
       />
     );
 
-    wrapper.find('.iot--table-card--action-icon').first().simulate('click');
+    userEvent.click(screen.getAllByLabelText('open')[0]);
     expect(onCardAction.mock.calls).toHaveLength(1);
   });
 
   describe('Columns displayed', () => {
     it('XLarge', () => {
-      const wrapper = mount(
+      const { container } = render(
         <TableCard
           title="Open Alerts"
           content={{
@@ -159,11 +164,11 @@ describe('TableCard', () => {
           size={CARD_SIZES.LARGEWIDE}
         />
       );
-      expect(wrapper.find('TableHeader').length).toBe(tableColumns.length);
+      expect(container.querySelectorAll('th').length).toBe(tableColumns.length);
     });
 
     it('Large', () => {
-      const wrapper = mount(
+      const { container } = render(
         <TableCard
           title="Open Alerts"
           content={{
@@ -177,7 +182,7 @@ describe('TableCard', () => {
       const totalColumns = tableColumns.filter(
         (item) => item.priority === 1 || item.priority === 2
       );
-      expect(wrapper.find('TableHeader').length).toBe(totalColumns.length);
+      expect(container.querySelectorAll('th').length).toBe(totalColumns.length);
     });
     it('Large with actions', () => {
       const tableDataWithActions = tableData.map((item) => {
@@ -187,7 +192,7 @@ describe('TableCard', () => {
         };
       });
 
-      const wrapper = mount(
+      const { container } = render(
         <TableCard
           title="Open Alerts"
           content={{
@@ -201,7 +206,7 @@ describe('TableCard', () => {
       const totalColumns = tableColumns.filter(
         (item) => item.priority === 1 || item.priority === 2
       );
-      expect(wrapper.find('TableHeader').length).toBe(totalColumns.length + 1); // +1 for action column
+      expect(container.querySelectorAll('th').length).toBe(totalColumns.length + 1); // +1 for action column
     });
   });
 
@@ -217,7 +222,7 @@ describe('TableCard', () => {
         renderDataFunction: mockRenderFunc,
       },
     ];
-    const wrapper = mount(
+    const { container, rerender } = render(
       <TableCard
         title="Open Alerts"
         content={{
@@ -227,7 +232,7 @@ describe('TableCard', () => {
         size={CARD_SIZES.LARGE}
       />
     );
-    expect(wrapper.find('TableCell .myCustomRenderedCell').length).toBe(1);
+    expect(container.querySelectorAll('.myCustomRenderedCell').length).toBe(1);
     expect(mockRenderFunc).toHaveBeenCalledWith({
       columnId: 'alert',
       row: {
@@ -248,7 +253,7 @@ describe('TableCard', () => {
         priority: 1,
       },
     ];
-    const wrapper2 = mount(
+    rerender(
       <TableCard
         title="Open Alerts"
         content={{
@@ -258,7 +263,7 @@ describe('TableCard', () => {
         size={CARD_SIZES.LARGE}
       />
     );
-    expect(wrapper2.find('TableCell .myCustomRenderedCell').length).toBe(0);
+    expect(container.querySelectorAll('.myCustomRenderedCell').length).toBe(0);
   });
 
   describe('thresholds', () => {
@@ -347,9 +352,8 @@ describe('TableCard', () => {
           severity: 1, // High threshold, medium, or low used for sorting and defined filtration
         },
       ];
-      // First the component needs to be rendered. getByTitle doesn't need to be used
-      // eslint-disable-next-line no-unused-vars
-      const { getByTitle } = render(
+      // First the component needs to be rendered
+      render(
         <TableCard
           id="table-list"
           title="Open Alerts"
@@ -371,12 +375,10 @@ describe('TableCard', () => {
 
       const hourSeverityIndex = 3;
       within(tableHeader[hourSeverityIndex]);
-      // expect(screen.getByTextHour('Hour Severity')).toBeTruthy();
       expect(screen.getByText('Hour Severity')).toBeTruthy();
 
       const pressureSeverityIndex = 5;
       within(tableHeader[pressureSeverityIndex]);
-      // expect(screen.getByTextPressure('Pressure Severity')).toBeTruthy();
       expect(screen.getByText('Pressure Severity')).toBeTruthy();
     });
 
@@ -556,7 +558,7 @@ describe('TableCard', () => {
   });
 
   it('can accept filter options', () => {
-    const wrapper = mount(
+    const { container } = render(
       <TableCard
         title="Open Alerts"
         content={{
@@ -569,7 +571,7 @@ describe('TableCard', () => {
     );
 
     const totalRows = tableData.filter((item) => item.values.alert.match(/failure/));
-    expect(wrapper.find('tr').length).toBe(totalRows.length + 1); // +1 for action column
+    expect(container.querySelectorAll('tr').length).toBe(totalRows.length + 1); // +1 for action column
   });
 
   it('hides low priority columns for LARGE and LARGETHIN sizes', () => {
@@ -783,6 +785,443 @@ describe('TableCard', () => {
       );
 
       expect(screen.queryByText('__There is no data__')).toBeInTheDocument();
+    });
+  });
+
+  it('should call onCardAction when clicking actions in overflow menus', () => {
+    const onCardAction = jest.fn();
+
+    const tableDataWithActions = tableData.map((item) => {
+      return {
+        ...item,
+        actions: actions1,
+      };
+    });
+
+    const { container } = render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableDataWithActions}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+      />
+    );
+
+    const firstRow = container.querySelectorAll('tbody > tr')[0];
+    userEvent.click(within(firstRow).getByLabelText('open and close list of options'));
+    const viewButton = screen.getByText('View');
+    const clickEvent = createEvent.click(viewButton);
+    const mockEventCalls = {
+      stopPropagation: jest.fn(),
+      preventDefault: jest.fn(),
+    };
+    Object.assign(clickEvent, mockEventCalls);
+    fireEvent(viewButton, clickEvent);
+    expect(onCardAction).toHaveBeenCalledWith('table-test', 'TABLE_CARD_ROW_ACTION', {
+      actionId: 'view',
+      rowId: 'row-10',
+    });
+    expect(mockEventCalls.stopPropagation).toHaveBeenCalled();
+    expect(mockEventCalls.preventDefault).toHaveBeenCalled();
+  });
+
+  it('should not render and overflow menu when actionList is empty', () => {
+    const onCardAction = jest.fn();
+
+    const tableDataWithActions = tableData.map((item) => {
+      return {
+        ...item,
+        actions: [],
+      };
+    });
+
+    const { container } = render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableDataWithActions}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+      />
+    );
+
+    const firstRow = container.querySelectorAll('tbody > tr')[0];
+    expect(within(firstRow).queryByLabelText('open and close list of options')).toBeNull();
+  });
+
+  it('should render an action icon that is a node.', () => {
+    const onCardAction = jest.fn();
+
+    const tableDataWithActions = tableData.map((item, index) => {
+      return {
+        ...item,
+        actions:
+          index % 2 === 0
+            ? [
+                {
+                  id: 'custom-icon',
+                  label: 'custom-icon',
+                  icon: () => <Bee32 data-testid="bee-icon" />,
+                },
+              ]
+            : undefined,
+      };
+    });
+
+    render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableDataWithActions.slice(0, 2)}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+      />
+    );
+
+    expect(screen.queryAllByTestId('bee-icon')).toHaveLength(1);
+  });
+
+  it('should filter the table when searching', () => {
+    const onCardAction = jest.fn();
+    const { container } = render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+      />
+    );
+    userEvent.click(screen.getByRole('search'));
+    userEvent.type(screen.getByPlaceholderText('Search'), 'AHI003{enter}');
+    expect(container.querySelectorAll('tbody > tr')).toHaveLength(1);
+    userEvent.click(screen.getByLabelText('Clear search input'));
+    expect(container.querySelectorAll('tbody > tr')).toHaveLength(10);
+  });
+
+  it('should filter the table when filtering', () => {
+    const onCardAction = jest.fn();
+    const { container } = render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+      />
+    );
+    userEvent.click(screen.getByTitle('Filters'));
+    const alertFilterInput = screen.getAllByPlaceholderText('Type and hit enter to apply')[0];
+    expect(alertFilterInput).toHaveAttribute('id', 'alert');
+    expect(alertFilterInput).toBeVisible();
+    userEvent.type(alertFilterInput, 'AHI005{enter}');
+    expect(alertFilterInput).toHaveValue('AHI005');
+    userEvent.click(screen.getByText('AHI005 Asset failure'));
+    expect(container.querySelectorAll('tbody > tr')).toHaveLength(1);
+    userEvent.click(screen.getByText('Clear all filters'));
+    expect(container.querySelectorAll('tbody > tr')).toHaveLength(10);
+  });
+
+  it('should change pages', () => {
+    const onCardAction = jest.fn();
+    const { container } = render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData.slice(0, 11)}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+      />
+    );
+    expect(container.querySelectorAll('tbody > tr')).toHaveLength(10);
+    userEvent.click(screen.getByLabelText('Next page'));
+    expect(container.querySelectorAll('tbody > tr')).toHaveLength(1);
+  });
+
+  it('should call onCardAction when toolbar options are clicked.', () => {
+    const onCardAction = jest.fn();
+    render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: /expand/i }));
+    expect(onCardAction).toHaveBeenLastCalledWith('table-test', 'OPEN_EXPANDED_CARD');
+    userEvent.click(screen.getAllByTitle('Select time range')[0]);
+    userEvent.click(screen.getByText('Last 24 hrs'));
+    expect(onCardAction).toHaveBeenLastCalledWith('table-test', 'CHANGE_TIME_RANGE', {
+      range: 'last24Hours',
+    });
+    userEvent.click(screen.getAllByLabelText('Sort rows by this header in ascending order')[0]);
+  });
+
+  it('should download csv files when download is clicked', () => {
+    const onCardAction = jest.fn();
+    render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData.slice(0, 2)}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: /download/i }));
+    expect(fileDownload).toHaveBeenCalledWith(
+      `alert,count,hour,long_description,pressure\nAHI005 Asset failure,1.2039201932,1563877570000,long description for a given event payload,0,\nAHI003 process need to optimize adjust X variables,1.10329291,1563873970000,long description for a given event payload,2,\n`,
+      'Open Alerts.csv'
+    );
+  });
+
+  it('should show the default `--` in expanded rows with no label (with or without linkTemplates)', () => {
+    const onCardAction = jest.fn();
+    render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+          expandedRows: [
+            {
+              id: 'alert',
+              linkTemplate: {
+                href: 'https://www.ibm.com',
+                target: '_blank',
+              },
+            },
+            {
+              id: 'count',
+            },
+          ],
+        }}
+        values={tableData.slice(0, 2)}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        testID="TABLE_CARD"
+        cardVariables={{
+          company: 'ibm',
+        }}
+      />
+    );
+
+    userEvent.click(screen.getAllByLabelText('Click to expand content')[0]);
+    expect(screen.getAllByText('--')).toHaveLength(2);
+    expect(screen.getAllByText('AHI005 Asset failure')[1]).toHaveAttribute('target', '_blank');
+  });
+
+  it("should hide columns that don't have priority:1 when using a largethin card.", () => {
+    const { error } = console;
+    console.error = jest.fn();
+    const onCardAction = jest.fn();
+    const { container } = render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData.slice(0, 2)}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGETHIN}
+        testID="TABLE_CARD"
+        cardVariables={{
+          company: 'ibm',
+        }}
+      />
+    );
+
+    expect(container.querySelectorAll('th')).toHaveLength(1);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('Invalid prop `size` of value `LARGETHIN` supplied to `TableCard`')
+    );
+    console.error = error;
+  });
+
+  it('fallback to dataSourceId or empty string if no label/dataSourceId is given for the column', () => {
+    const onCardAction = jest.fn();
+    const { rerender } = render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns.map((c) => {
+            if (c.label === 'Alert') {
+              return {
+                ...c,
+                label: undefined,
+              };
+            }
+
+            return c;
+          }),
+        }}
+        values={tableData.slice(0, 2)}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGETHIN}
+        testID="TABLE_CARD"
+        cardVariables={{
+          company: 'ibm',
+        }}
+      />
+    );
+
+    expect(screen.getByTitle('alert')).toBeVisible();
+
+    rerender(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns.map((c) => {
+            if (c.label === 'Alert') {
+              return {
+                ...c,
+                label: undefined,
+                dataSourceId: undefined,
+              };
+            }
+
+            return c;
+          }),
+        }}
+        values={tableData.slice(0, 2)}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGETHIN}
+        testID="TABLE_CARD"
+        cardVariables={{
+          company: 'ibm',
+        }}
+      />
+    );
+
+    expect(screen.queryByTitle('alert')).toBeNull();
+    expect(screen.queryByTitle('Alert')).toBeNull();
+  });
+
+  it('should only show thresholds if showOnContent is true', () => {
+    const onCardAction = jest.fn();
+    const { container } = render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+          thresholds: [
+            {
+              dataSourceId: 'pressure',
+              comparison: '>=',
+              value: 10,
+              severity: 1,
+              label: 'Pressure severity',
+              showSeverityLabel: true,
+              severityLabel: 'TOO HIGH',
+              showOnContent: true,
+            },
+          ],
+        }}
+        values={tableData}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGETHIN}
+        testID="TABLE_CARD"
+      />
+    );
+
+    expect(screen.getAllByTitle(/>= 10/i)).toHaveLength(3);
+    // this is only five, because the other rows with pressure:0 don't
+    // meet the filter. Should 0 be considered a value?
+    expect(container.querySelectorAll('tbody > tr')).toHaveLength(5);
+  });
+
+  it('should render even with undefined columns', () => {
+    const onCardAction = jest.fn();
+    render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: undefined,
+        }}
+        values={[]}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGETHIN}
+        testId="TABLE_CARD"
+      />
+    );
+
+    expect(screen.getByTestId('TABLE_CARD')).toBeDefined();
+  });
+
+  it('should render expanded when isExpanded:true', () => {
+    const onCardAction = jest.fn();
+    render(
+      <TableCard
+        id="table-test"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+          showHeader: false,
+        }}
+        values={tableData.slice(0, 1)}
+        onCardAction={onCardAction}
+        size={CARD_SIZES.LARGE}
+        isExpanded
+      />
+    );
+
+    const styledStatefulTable = screen.getByTestId('table-for-card-table-test-table-container');
+    expect(styledStatefulTable).toHaveStyleRule('overflow-y', 'auto');
+    expect(styledStatefulTable).toHaveStyleRule('padding-bottom', '3rem');
+    expect(styledStatefulTable).toHaveStyleRule('position', 'fixed', {
+      modifier: `&&& .${prefix}--pagination`,
+    });
+    expect(styledStatefulTable).toHaveStyleRule('bottom', '25px', {
+      modifier: `&&& .${prefix}--pagination`,
+    });
+    expect(styledStatefulTable).toHaveStyleRule('width', 'calc(100% - 50px)', {
+      modifier: `&&& .${prefix}--pagination`,
+    });
+
+    expect(styledStatefulTable).toHaveStyleRule('display', 'none', {
+      modifier: `&&& .${prefix}--data-table thead`,
     });
   });
 });
