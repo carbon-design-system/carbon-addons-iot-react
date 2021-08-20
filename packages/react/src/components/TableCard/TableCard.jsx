@@ -200,18 +200,17 @@ const TableCard = ({
     id,
   ]);
 
-  const renderActionCell = (cellItem) => {
-    const actionList = JSON.parse(cellItem.value);
+  const renderActionCell = ({ value: actionList, rowId }) => {
     return actionList && actionList.length === 1 ? (
       React.createElement(
-        typeof actionList[0].icon === 'string' ? icons[actionList[0].icon] : actionList.icon,
+        typeof actionList[0].icon === 'string' ? icons[actionList[0].icon] : actionList[0].icon,
         {
           className: `${iotPrefix}--table-card--action-icon`,
           onClick: (evt) => {
             evt.preventDefault();
             evt.stopPropagation();
             onCardAction(id, 'TABLE_CARD_ROW_ACTION', {
-              rowId: cellItem.rowId,
+              rowId,
               actionId: actionList[0].id,
             });
           },
@@ -237,7 +236,7 @@ const TableCard = ({
                 evt.preventDefault();
                 evt.stopPropagation();
                 onCardAction(id, 'TABLE_CARD_ROW_ACTION', {
-                  rowId: cellItem.rowId,
+                  rowId,
                   actionId: item.id,
                 });
               }}
@@ -453,9 +452,7 @@ const TableCard = ({
         : hasActionColumn || filteredPrecisionColumns.length || thresholds
         ? tableData.map((i) => {
             // if has custom action
-            const action = hasActionColumn
-              ? { actionColumn: JSON.stringify(i.actions || []) }
-              : null;
+            const action = hasActionColumn ? { actionColumn: i.actions || [] } : null;
 
             const matchingThresholds = thresholds
               ? findMatchingThresholds(thresholds, i.values)
