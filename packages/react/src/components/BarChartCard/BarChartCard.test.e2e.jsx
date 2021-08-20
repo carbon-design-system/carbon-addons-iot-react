@@ -52,7 +52,10 @@ describe('BarChartCard', () => {
       />
     );
 
-    cy.get(`.${prefix}--cc--simple-bar > .bar`).eq(0).realHover().should('have.class', 'hovered');
+    cy.get(`.${prefix}--cc--simple-bar > .bar`)
+      .eq(0)
+      .trigger('mouseover')
+      .should('have.class', 'hovered');
     cy.findByLabelText('left axis').contains('Particles').should('have.text', 'Particles (P)');
     cy.get(`.${prefix}--cc--tooltip`).should('not.have.class', 'hidden');
     cy.get(`.${prefix}--cc--tooltip`).invoke('attr', 'aria-hidden').should('equal', 'false');
