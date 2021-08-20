@@ -130,7 +130,7 @@ export type DateRange = [Date, Date];
             [range]="selected"
             [hasRelative]="hasRelative"
             [hasAbsolute]="hasAbsolute"
-            [dateFormat]="dateFormatForAbsolute"
+            [dateFormat]="absoluteDateFormat"
             [placeholder]="dateFormat.toLowerCase()"
             [batchText]="batchText"
           ></ai-custom-date-time>
@@ -277,7 +277,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   expanded = false;
   disabled = false;
   timeFormat = 'HH:mm';
-  dateFormatForAbsolute = 'Y-m-d';
+  absoluteDateFormat = 'Y-m-d';
 
   get tooltipOffset() {
     return { x: 0, y: 4 };
@@ -300,16 +300,16 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       this.disabled = true;
     }
     this.updateI18nTranslationString();
-    this.updateDateFormatForAbsolute();
+    this.updateAbsoluteDateFormat();
   }
 
-  updateDateFormatForAbsolute() {
+  updateAbsoluteDateFormat() {
     // convert current dateFormat to proper format for absolute date picker
     const formatCharacters = this.dateFormat.split('');
     const newDateFormat = formatCharacters
       .filter((char, i) => i === 0 || formatCharacters[i] !== formatCharacters[i - 1])
       .join('');
-    this.dateFormatForAbsolute = newDateFormat.replace('y', 'Y').replace('M', 'm');
+    this.absoluteDateFormat = newDateFormat.replace('y', 'Y').replace('M', 'm');
   }
 
   updateI18nTranslationString() {
