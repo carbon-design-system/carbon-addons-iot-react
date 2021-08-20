@@ -29,6 +29,7 @@ module.exports = {
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
     './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
+    './src/components/TableCard/tableCardUtils.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/Table/Table.jsx': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
