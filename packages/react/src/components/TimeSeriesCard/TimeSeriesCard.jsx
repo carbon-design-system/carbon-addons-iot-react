@@ -234,7 +234,7 @@ const TimeSeriesCard = ({
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, contentWithDefaults, initialValues, others);
-  let chartRef = useRef();
+  const chartRef = useRef(null);
   const previousTick = useRef();
   dayjs.locale(locale);
 
@@ -330,8 +330,8 @@ const TimeSeriesCard = ({
 
   /** This is needed to update the chart when the lines and values change */
   useEffect(() => {
-    if (chartRef && chartRef.chart && !isEqual(chartData, previousChartData)) {
-      chartRef.chart.model.setData(chartData);
+    if (chartRef?.current?.chart && !isEqual(chartData, previousChartData)) {
+      chartRef.current.chart.model.setData(chartData);
     }
   }, [chartData, previousChartData]);
 
@@ -552,9 +552,7 @@ const TimeSeriesCard = ({
             })}
           >
             <ChartComponent
-              ref={(el) => {
-                chartRef = el;
-              }}
+              ref={chartRef}
               data={chartData}
               options={options}
               width="100%"

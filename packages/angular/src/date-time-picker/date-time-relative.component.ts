@@ -29,7 +29,7 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
   selector: 'ai-date-time-relative',
   template: `
     <fieldset class="bx--fieldset iot--date-time-picker__menu-formgroup">
-      <legend class="bx--label">Last</legend>
+      <legend class="bx--label">{{ batchText.LAST }}</legend>
       <div class="iot--date-time-picker__fields-wrapper">
         <ibm-number
           [min]="0"
@@ -44,17 +44,17 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
           (valueChange)="onChange()"
           theme="light"
         >
-          <option value="MINUTES">minutes</option>
-          <option value="HOURS">hours</option>
-          <option value="DAYS">days</option>
-          <option value="WEEKS">weeks</option>
-          <option value="MONTHS">months</option>
-          <option value="YEARS">years</option>
+          <option value="MINUTES">{{ batchText.MINUTES }}</option>
+          <option value="HOURS">{{ batchText.HOURS }}</option>
+          <option value="DAYS">{{ batchText.DAYS }}</option>
+          <option value="WEEKS">{{ batchText.WEEKS }}</option>
+          <option value="MONTHS">{{ batchText.MONTHS }}</option>
+          <option value="YEARS">{{ batchText.YEARS }}</option>
         </ibm-select>
       </div>
     </fieldset>
     <fieldset class="bx--fieldset iot--date-time-picker__menu-formgroup">
-      <legend class="bx--label">Relative to</legend>
+      <legend class="bx--label">{{ batchText.RELATIVE_TO }}</legend>
       <div class="iot--date-time-picker__fields-wrapper">
         <ibm-select
           class="bx--form-item"
@@ -62,7 +62,7 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
           (valueChange)="onChange()"
           theme="light"
         >
-          <option value="YESTERDAY" selected>Yesterday</option>
+          <option value="YESTERDAY" selected>{{ batchText.YESTERDAY }}</option>
         </ibm-select>
         <!-- tmp until we can implement a better time selector -->
         <div class="bx--form-item">
@@ -89,6 +89,7 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
 })
 export class DateTimeRelativeComponent implements OnChanges {
   @Input() value: any[] = null;
+  @Input() batchText: any;
   @Output() valueChange: EventEmitter<RelativeDateValue> = new EventEmitter();
 
   timeToSubtract = 0;
