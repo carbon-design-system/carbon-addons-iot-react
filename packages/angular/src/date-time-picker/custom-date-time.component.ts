@@ -59,7 +59,7 @@ export class CustomDateTimeComponent implements OnChanges {
    *
    * For reference: https://flatpickr.js.org/formatting/
    */
-  @Input() dateFormat: string = 'Y-m-d';
+  @Input() dateFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
   @Output() rangeChange: EventEmitter<DateTimeSelection> = new EventEmitter();
 

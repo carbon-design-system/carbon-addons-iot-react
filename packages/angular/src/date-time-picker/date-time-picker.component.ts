@@ -307,7 +307,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     // convert current dateFormat to proper format for absolute date picker
     const formatCharacters = this.dateFormat.split('');
     const newDateFormat = formatCharacters
-      .filter((char, i) => i == 0 || formatCharacters[i] != formatCharacters[i - 1])
+      .filter((char, i) => i === 0 || formatCharacters[i] !== formatCharacters[i - 1])
       .join('');
     this.dateFormatForAbsolute = newDateFormat.replace('y', 'Y').replace('M', 'm');
   }
