@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { barChartData } from '../../utils/barChartDataSample';
-import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
+import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES, CARD_SIZES } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 
 import {
@@ -10,6 +10,7 @@ import {
   generateTableColumns,
   formatTableData,
   handleTooltip,
+  getMaxTicksPerSize,
 } from './barChartUtils';
 
 describe('barChartUtils', () => {
@@ -734,13 +735,13 @@ describe('barChartUtils', () => {
 
     const defaultTooltip = `<ul class='multi-tooltip'><li>
     <div class="datapoint-tooltip ">
-      
+
       <p class="label">Cities </p>
       <p class="value">San Francisco</p>
     </div>
   </li><li>
     <div class="datapoint-tooltip ">
-      
+
       <p class="label">Particles </p>
       <p class="value">512</p>
     </div>
@@ -823,5 +824,18 @@ describe('barChartUtils', () => {
     </div>
   </li></ul>`.replace(/\s+/g, '')
     );
+  });
+  describe('getMaxTicksPerSize', () => {
+    it('should return the prop number of ticks for all card sizes', () => {
+      expect(getMaxTicksPerSize(CARD_SIZES.MEDIUMTHIN)).toBe(2);
+      expect(getMaxTicksPerSize(CARD_SIZES.MEDIUM)).toBe(4);
+      expect(getMaxTicksPerSize(CARD_SIZES.MEDIUMWIDE)).toBe(6);
+      expect(getMaxTicksPerSize(CARD_SIZES.LARGE)).toBe(6);
+      expect(getMaxTicksPerSize(CARD_SIZES.LARGETHIN)).toBe(6);
+      expect(getMaxTicksPerSize(CARD_SIZES.LARGEWIDE)).toBe(14);
+      expect(getMaxTicksPerSize(CARD_SIZES.SMALL)).toBe(10);
+      expect(getMaxTicksPerSize(CARD_SIZES.SMALLFULL)).toBe(10);
+      expect(getMaxTicksPerSize(CARD_SIZES.SMALLWIDE)).toBe(10);
+    });
   });
 });
