@@ -41,7 +41,8 @@ storiesOf('Components/DateTime Picker', module)
         [language]="'zh'"
         [theme]="(theme ? 'light' : null)"
         [batchText]="zh"
-        [dateFormat]="'yyyy年M月d日'"
+        [dateFormat]="'yyyy年MM月dd日'"
+        [placeholder]="'yyyy年MM月dd日 HH:mm'"
         (selectedChange)="selectedChange($event)"
         (apply)="apply($event)"
         (cancel)="cancel($event)">

@@ -34,6 +34,8 @@ import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.
       (valueChange)="absoluteChange($event)"
       [value]="value"
       [batchText]="batchText"
+      [dateFormat]="dateFormat"
+      [placeholder]="placeholder"
     >
     </ai-date-time-absolute>
   `,
@@ -52,6 +54,13 @@ export class CustomDateTimeComponent implements OnChanges {
   @Input() hasRelative = true;
   @Input() hasAbsolute = true;
   @Input() batchText: any;
+  /**
+   * Format of date
+   *
+   * For reference: https://flatpickr.js.org/formatting/
+   */
+  @Input() dateFormat: string = 'Y-m-d';
+  @Input() placeholder = 'yyyy-mm-dd';
   @Output() rangeChange: EventEmitter<DateTimeSelection> = new EventEmitter();
 
   @HostBinding('class.iot--date-time-picker__custom-wrapper') wrapperClass = true;
