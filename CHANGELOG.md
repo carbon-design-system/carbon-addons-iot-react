@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.106](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.105...v2.146.0-next.106) (2021-08-19)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.105](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.104...v2.146.0-next.105) (2021-08-19)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add customized date format ([9b52103](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9b52103a74c09760c128f301352c69d59b6b65e7))
+* **datetimepicker:** format code ([461fd2a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/461fd2a1485a84ec4dca47b7da3146c0aec423ee))
+* **datetimepicker:** format code ([11e49ea](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/11e49eab3fc118fe93a8f3e2af84a5d250852bb8))
+* **datetimepicker:** format code ([664ac95](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/664ac950bc77dd3b47d184f4e9ea66676f09dc6e))
+* **datetimepicker:** format code ([da493b4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/da493b425d2839eecc26aeee3bad8d5f51e42d2a))
+* **datetimepicker:** remove type ([0a63ecb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0a63ecb49d6100d3a7726b371ad4e25c1ae1626d))
+* **datetimepicker:** update formatString ([6862f7b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6862f7b50dd8530cb0717ab9cb314d346572c2f0))
+
+
+
+
+
+# [2.146.0-next.104](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.103...v2.146.0-next.104) (2021-08-19)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.146.0-next.103](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.102...v2.146.0-next.103) (2021-08-19)
 
 
