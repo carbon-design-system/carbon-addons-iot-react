@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.108](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.107...v2.146.0-next.108) (2021-08-20)
+
+**Note:** Version bump only for package @ai-apps/angular
+
+
+
+
+
 # [2.146.0-next.107](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.106...v2.146.0-next.107) (2021-08-20)
 
 
