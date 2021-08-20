@@ -230,4 +230,71 @@ describe('DashboardEditorCardRenderer', () => {
     );
     expect(screen.getByText(/defaultCard/)).toBeInTheDocument();
   });
+
+  it('should call getValidDataItems when passed', () => {
+    const getValidDataItems = jest.fn();
+    render(
+      <DashboardEditorCardRenderer
+        {...commonProps}
+        size={CARD_SIZES.MEDIUM}
+        getValidDataItems={getValidDataItems}
+      />
+    );
+
+    expect(getValidDataItems).toHaveBeenCalledWith({ size: CARD_SIZES.MEDIUM });
+  });
+
+  // it('should call onCardChange when image card is updated', () => {
+  //   const onCardChange = jest.fn();
+  //   render(
+  //     <DashboardEditorCardRenderer
+  //       {...commonProps}
+  //       size={CARD_SIZES.MEDIUM}
+  //       type="IMAGE"
+  //       onCardChange={onCardChange}
+  //     />
+  //   );
+
+  //   userEvent.click(screen.getByRole('button', { name: 'Add from gallery' }));
+  //   screen.debug(undefined, 30000);
+  //   expect(onCardChange).toHaveBeenCalledWith({ size: CARD_SIZES.MEDIUM });
+  // });
+
+  it('should call onFetchDynamicDemoHotspots when the function is available and dynamic hotspots are passed', () => {
+    const onCardChange = jest.fn();
+
+    const onFetchDynamicDemoHotspots = jest
+      .fn()
+      .mockImplementation(
+        () => new Promise((resolve) => resolve([{ x: 75, y: 10, type: 'text' }]))
+      );
+
+    render(
+      <DashboardEditorCardRenderer
+        {...commonProps}
+        size={CARD_SIZES.MEDIUM}
+        type="IMAGE"
+        onCardChange={onCardChange}
+        content={{
+          src: 'landscape',
+          image: 'landscape',
+          alt: 'Sample image',
+          zoomMax: 10,
+          hasInsertFromUrl: true,
+        }}
+        onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+        values={{
+          hotspots: [
+            {
+              color: 'purple',
+              icon: 'Checkmark',
+              type: 'dynamic',
+            },
+          ],
+        }}
+      />
+    );
+
+    expect(onFetchDynamicDemoHotspots).toHaveBeenCalled();
+  });
 });

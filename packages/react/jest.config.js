@@ -32,6 +32,7 @@ module.exports = {
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/Table/Table.jsx': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
+    './src/components/DashboardEditor/DashboardEditorCardRenderer.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
