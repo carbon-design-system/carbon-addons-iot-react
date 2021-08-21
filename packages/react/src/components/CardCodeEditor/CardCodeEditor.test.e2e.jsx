@@ -58,7 +58,7 @@ describe('CardCodeEditor loaded editor test', () => {
     );
     // wait for script to load. fails intermittently without
     /* eslint-disable-next-line cypress/no-unnecessary-waiting */
-    cy.wait(500);
+    cy.wait(200);
     cy.findByText(/\/\* write your code here \*\//).should('be.visible');
 
     // This component throws a network error with too many calls to the cdn script it loads so adding snapshot to existing instance
