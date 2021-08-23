@@ -25026,6 +25026,325 @@ Map {
       },
     },
   },
+  "RuleBuilder" => Object {
+    "defaultProps": Object {
+      "actionBar": null,
+      "className": null,
+      "defaultTitleText": "Undefined",
+      "filter": Object {
+        "filterAccess": Array [],
+        "filterTags": Array [],
+        "filterUsers": Array [],
+      },
+      "footerButtons": null,
+      "i18n": Object {
+        "addUsersButtonLabel": "Add users",
+        "cancelLabel": "Cancel",
+        "clearFilterTitle": "Clear Filter",
+        "detailsAccordionText": "Details",
+        "editModalHeaderLabel": "Selected users will have edit access",
+        "editorAccessLabel": "Editor access",
+        "filterNameLabel": "Filter Name",
+        "filterTabText": "Filter builder",
+        "groupTypeLabel": "Group",
+        "modalPrimaryButtonLabel": "OK",
+        "nameColumnLabel": "Name",
+        "readModalHeaderLabel": "Selected users will have read access",
+        "readOnlyAccessLabel": "Read only access",
+        "saveLabel": "Save",
+        "sharingAccordionText": "Sharing and permissions",
+        "sharingTabText": "Sharing and preferences",
+        "tagsLabel": "Tags (optional)",
+        "typeColumnLabel": "Type",
+        "userTypeLabel": "User",
+      },
+      "onChange": [Function],
+      "ruleEditor": null,
+      "testId": "rule-builder",
+    },
+    "propTypes": Object {
+      "actionBar": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "actionCallback": Object {
+                  "isRequired": true,
+                  "type": "func",
+                },
+                "actionIcon": Object {
+                  "isRequired": true,
+                  "type": "elementType",
+                },
+                "actionId": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "actionLabel": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "defaultTitleText": Object {
+        "type": "string",
+      },
+      "filter": Object {
+        "args": Array [
+          Object {
+            "filterAccess": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "access": Object {
+                        "args": Array [
+                          Array [
+                            "edit",
+                            "read",
+                          ],
+                        ],
+                        "type": "oneOf",
+                      },
+                      "email": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                      "userName": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "filterColumns": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "id": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "operands": Object {
+                        "args": Array [
+                          Object {
+                            "args": Array [
+                              Object {
+                                "id": Object {
+                                  "isRequired": true,
+                                  "type": "string",
+                                },
+                                "name": Object {
+                                  "isRequired": true,
+                                  "type": "string",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
+                      "renderField": Object {
+                        "type": "func",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+            "filterId": Object {
+              "type": "string",
+            },
+            "filterMetaText": Object {
+              "type": "string",
+            },
+            "filterRules": Object {
+              "args": Array [
+                Object {
+                  "groupLogic": Object {
+                    "args": Array [
+                      Array [
+                        "ALL",
+                        "ANY",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "id": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                },
+              ],
+              "rules": Object {
+                "args": Array [
+                  Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "args": Array [
+                            Object {
+                              "columnId": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "id": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "operand": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "value": Object {
+                                "isRequired": true,
+                                "type": "any",
+                              },
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        [Circular],
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+              "type": "shape",
+            },
+            "filterTags": Object {
+              "type": "array",
+            },
+            "filterTitleText": Object {
+              "type": "string",
+            },
+            "filterUsers": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "email": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                      "userName": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "footerButtons": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "buttonCallback": Object {
+                  "isRequired": true,
+                  "type": "func",
+                },
+                "buttonId": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "buttonLabel": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "addUsers": Object {
+              "type": "string",
+            },
+            "cancelLabel": Object {
+              "type": "string",
+            },
+            "clearFilterTitle": Object {
+              "type": "string",
+            },
+            "editorAccess": Object {
+              "type": "string",
+            },
+            "filterTabText": Object {
+              "type": "string",
+            },
+            "readOnlyAccess": Object {
+              "type": "string",
+            },
+            "saveLabel": Object {
+              "type": "string",
+            },
+            "sharingAndPermissions": Object {
+              "type": "string",
+            },
+            "sharingTabText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "onCancel": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "onSave": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "ruleEditor": Object {
+        "type": "elementType",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+    },
+  },
   "useDNDProviderElement" => Object {},
   "hotspotActionTypes" => Object {
     "currentTypeSwitch": "CURRENT_TYPE_SWITCH",

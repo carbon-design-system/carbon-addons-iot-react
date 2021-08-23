@@ -556,6 +556,179 @@ describe('TableHead', () => {
       ]);
     });
 
+    it('uses last known widths for hidden columns when all  columns in column prop lack width', () => {
+      myProps.options = {
+        hasResize: true,
+        preserveColumnWidths: false,
+      };
+
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1', width: '200px' },
+        { id: 'col2', name: 'Column 2', width: '200px' },
+        { id: 'col3', name: 'Column 3', width: '200px' },
+      ];
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { container, rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: true },
+          { columnId: 'col3', isHidden: true },
+        ],
+      };
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1', width: undefined },
+        { id: 'col2', name: 'Column 2' },
+        { id: 'col3', name: 'Column 3' },
+      ];
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col2', name: 'Column 2', width: '200px' },
+        { id: 'col3', name: 'Column 3', width: '200px' },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: true },
+        { columnId: 'col3', isHidden: true },
+      ]);
+    });
+
+    it('handles column toggle show after all has been hidden, using min width if needed', () => {
+      myProps.options = {
+        hasResize: true,
+        preserveColumnWidths: false,
+      };
+
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1' },
+        { id: 'col2', name: 'Column 2' },
+        { id: 'col3', name: 'Column 3' },
+      ];
+
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: true },
+          { columnId: 'col3', isHidden: true },
+        ],
+      };
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { container, rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
+
+      const columnsAfterToggle = [
+        { id: 'col1', name: 'Column 1', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col2', name: 'Column 2', width: undefined },
+        { id: 'col3', name: 'Column 3', width: undefined },
+      ];
+      const orderingAfterToggle = [
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: true },
+        { columnId: 'col3', isHidden: true },
+      ];
+      expect(myActions.onColumnResize).toHaveBeenCalledWith(columnsAfterToggle);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterToggle);
+
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: orderingAfterToggle,
+      };
+      myProps.columns = columnsAfterToggle;
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 2')
+      );
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col2', name: 'Column 2', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col3', name: 'Column 3', width: undefined },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: true },
+      ]);
+    });
+
+    it('handles column toggle when all columns are hidden and without width', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: true },
+          { columnId: 'col3', isHidden: true },
+        ],
+      };
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1', width: undefined },
+        { id: 'col2', name: 'Column 2' },
+        { id: 'col3', name: 'Column 3' },
+      ];
+
+      myProps.options = {
+        hasResize: true,
+        preserveColumnWidths: false,
+      };
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { container } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      // Show col3 which has no initial column width.
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 3')
+      );
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: undefined },
+        { id: 'col2', name: 'Column 2', width: undefined },
+        { id: 'col3', name: 'Column 3', width: `${MIN_COLUMN_WIDTH}px` },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: true },
+        { columnId: 'col2', isHidden: true },
+        { columnId: 'col3', isHidden: false },
+      ]);
+    });
+
     it('should not add resize handle to the last visible column if there is no expander column', () => {
       myProps.tableState = {
         ...myProps.tableState,
