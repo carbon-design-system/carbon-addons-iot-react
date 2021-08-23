@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { screen, render } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
 
@@ -35,50 +36,50 @@ describe('TableCellRenderer', () => {
   });
 
   it('truncates only for truncateCellText={true}', () => {
-    const wrapper = mount(
+    const { rerender, container } = render(
       <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
 
-    const wrapper2 = mount(
+    rerender(
       <TableCellRenderer wrapText="never" truncateCellText={false}>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
   });
 
   it('does not truncat when wrapText={always}', () => {
-    const wrapper = mount(
+    const { container } = render(
       <TableCellRenderer wrapText="always" truncateCellText>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
   });
 
   it('does not allow wrap when wrapText={never}', () => {
-    const wrapper = mount(
+    const { container } = render(
       <TableCellRenderer wrapText="never" truncateCellText={false}>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
   });
 
   it('allows wrap when wrapText={always}', () => {
-    const wrapper = mount(
+    const { container } = render(
       <TableCellRenderer wrapText="always" truncateCellText={false}>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(0);
   });
 
   it('only truncates children that are strings, numbers or booleans', () => {
-    const wrapper = mount(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -106,21 +107,21 @@ describe('TableCellRenderer', () => {
         </tbody>
       </table>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(3);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(3);
   });
 
   it('only shows tooltip if text is actually truncated', () => {
     setOffsetWidth(10);
     setScrollWidth(20);
 
-    const wrapper = mount(
+    const { container } = render(
       <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(1);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
 
     setOffsetWidth(20);
     setScrollWidth(10);
@@ -142,32 +143,124 @@ describe('TableCellRenderer', () => {
     setScrollWidth(20);
 
     const cellText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
-    const wrapper = mount(
+    const { container } = render(
       <TableCellRenderer wrapText="never" truncateCellText allowTooltip={false}>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
 
     setOffsetWidth(0);
     setScrollWidth(0);
   });
 
   it('locale formats numbers', () => {
-    const wrapper = mount(
+    const { rerender } = render(
       <TableCellRenderer locale="fr" truncateCellText wrapText="never">
         {35.6}
       </TableCellRenderer>
     );
-    expect(wrapper.text()).toContain('35,6'); // french locale should have commas for decimals
+    expect(screen.getByText('35,6')).toBeDefined(); // french locale should have commas for decimals
 
-    const wrapper2 = mount(
+    rerender(
       <TableCellRenderer locale="en" truncateCellText wrapText="never">
         {35.1234567}
       </TableCellRenderer>
     );
-    expect(wrapper2.text()).toContain('35.1234567'); // no limit on the count of decimals
+    expect(screen.getByText('35.1234567')).toBeDefined(); // no limit on the count of decimals
+  });
+
+  describe('warning should be thrown for objects as data without needed functions', () => {
+    const { __DEV__ } = global;
+    const { error } = console;
+    let renderDataFunction;
+
+    beforeEach(() => {
+      renderDataFunction = jest.fn().mockImplementation(() => '124556');
+      global.__DEV__ = true;
+      console.error = jest.fn();
+    });
+
+    afterEach(() => {
+      global.__DEV__ = __DEV__;
+      console.error = error;
+      jest.clearAllMocks();
+    });
+
+    it('should throw warnings if objects are passed as data without a renderer', () => {
+      render(
+        <TableCellRenderer wrapText="never" truncateCellText locale="en" columnId="object">
+          {{ id: '124556' }}
+        </TableCellRenderer>
+      );
+
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `You must supply a 'renderDataFunction' when passing objects as column values.`
+        )
+      );
+    });
+
+    it('should throw warnings if objects are passed as data and are sortable without sortFunction', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          columnId="object"
+          renderDataFunction={renderDataFunction}
+          isSortable
+        >
+          {{ id: '124556' }}
+        </TableCellRenderer>
+      );
+
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `You must supply a 'sortFunction' when isSortable is true and you're passing objects as column values.`
+        )
+      );
+    });
+
+    it('should throw warnings if objects are passed as data and are filterable without filterFunction', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          columnId="object"
+          renderDataFunction={renderDataFunction}
+          isFilterable
+        >
+          {{ id: '124556' }}
+        </TableCellRenderer>
+      );
+
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `You must supply a 'filterFunction' when passing objects as column values and want them filterable.`
+        )
+      );
+    });
+
+    it('should not throw errors when a render function is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          renderDataFunction={renderDataFunction}
+          columnId="object"
+        >
+          {{ id: '124556' }}
+        </TableCellRenderer>
+      );
+
+      expect(console.error).not.toHaveBeenCalled();
+      expect(renderDataFunction).toHaveBeenCalled();
+      expect(screen.getByText('124556')).toBeDefined();
+    });
   });
 });
