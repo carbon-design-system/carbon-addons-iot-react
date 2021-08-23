@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.110](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.109...v2.146.0-next.110) (2021-08-23)
+
+
+### Bug Fixes
+
+* **tile-gallery-item:** fix testId typo ([4fd1d10](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4fd1d1017611d6e290287e0b4645f5420965def4))
+
+
+### Reverts
+
+* Revert "chore(testing): increase coverage on DashboardEditorCardRenderer" ([0a13924](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0a13924cf4cb3573068156a54405e2bf4089a683))
+
+
+
+
+
 # [2.146.0-next.109](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.108...v2.146.0-next.109) (2021-08-20)
 
 
