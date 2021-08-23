@@ -145,7 +145,15 @@ describe('List', () => {
   });
   it('should not call onSelect when editingStyle is set', () => {
     const onSelect = jest.fn();
-    render(<List title="list" items={getListItems(1)} onSelect={onSelect} editingStyle="single" />);
+    render(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        editingStyle="single-nesting"
+        isSelectable
+      />
+    );
     userEvent.click(screen.getByTitle('Item 1'));
     expect(onSelect).not.toHaveBeenCalled();
   });
