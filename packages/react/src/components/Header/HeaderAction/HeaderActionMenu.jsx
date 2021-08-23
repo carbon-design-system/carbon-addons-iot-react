@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
 
 import { ChildContentPropTypes } from '../Header';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const { prefix } = settings;
 
@@ -113,6 +114,7 @@ class HeaderActionMenu extends React.Component {
     // Prevents the a element from navigating to it's href target
     const handleDefaultClick = (event) => {
       event.preventDefault();
+      event.stopPropagation();
       onToggleExpansion();
     };
 
@@ -131,8 +133,8 @@ class HeaderActionMenu extends React.Component {
           aria-haspopup="menu" // eslint-disable-line jsx-a11y/aria-proptypes
           aria-expanded={isExpanded}
           className={classnames(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
-          href=""
-          onKeyDown={this.handleOnKeyDown}
+          href="#"
+          onKeyDown={handleSpecificKeyDown(['Enter', 'Space', 'Escape'], handleDefaultClick)}
           onClick={handleDefaultClick}
           ref={focusRef}
           data-testid="menuitem"
