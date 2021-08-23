@@ -337,6 +337,7 @@ describe('FilterHeaderRow', () => {
     userEvent.type(input, 'test-2{enter}');
     expect(input).toHaveValue('test-2');
     expect(utils.handleEnterKeyDown).toHaveBeenCalled();
+    jest.resetAllMocks();
   });
 
   it("should not display a header when hasRowSelection !== 'multi'", () => {
