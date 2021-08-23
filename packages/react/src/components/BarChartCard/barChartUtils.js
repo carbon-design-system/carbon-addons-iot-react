@@ -4,7 +4,7 @@ import capitalize from 'lodash/capitalize';
 import omit from 'lodash/omit';
 
 import dayjs from '../../utils/dayjs';
-import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
+import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { convertStringsToDOMElement } from '../../utils/componentUtilityFunctions';
 
@@ -591,4 +591,21 @@ export const formatTableData = (
   }
 
   return tableData;
+};
+
+export const getMaxTicksPerSize = (sizeProp) => {
+  switch (sizeProp) {
+    case CARD_SIZES.MEDIUMTHIN:
+      return 2;
+    case CARD_SIZES.MEDIUM:
+      return 4;
+    case CARD_SIZES.MEDIUMWIDE:
+    case CARD_SIZES.LARGE:
+    case CARD_SIZES.LARGETHIN:
+      return 6;
+    case CARD_SIZES.LARGEWIDE:
+      return 14;
+    default:
+      return 10;
+  }
 };
