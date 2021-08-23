@@ -34,6 +34,7 @@ import {
   handleTooltip,
   generateTableColumns,
   formatTableData,
+  getMaxTicksPerSize,
 } from './barChartUtils';
 
 const { iotPrefix } = settings;
@@ -252,22 +253,7 @@ const BarChartCard = ({
   const previousTick = useRef();
   dayjs.locale(locale);
 
-  const maxTicksPerSize = useMemo(() => {
-    switch (sizeProp) {
-      case CARD_SIZES.MEDIUMTHIN:
-        return 2;
-      case CARD_SIZES.MEDIUM:
-        return 4;
-      case CARD_SIZES.MEDIUMWIDE:
-      case CARD_SIZES.LARGE:
-      case CARD_SIZES.LARGETHIN:
-        return 6;
-      case CARD_SIZES.LARGEWIDE:
-        return 14;
-      default:
-        return 10;
-    }
-  }, [sizeProp]);
+  const maxTicksPerSize = useMemo(() => getMaxTicksPerSize(sizeProp), [sizeProp]);
 
   const formatTick = useCallback(
     /** *
