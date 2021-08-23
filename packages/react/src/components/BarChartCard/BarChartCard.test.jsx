@@ -10,6 +10,7 @@ import { barChartData } from '../../utils/barChartDataSample';
 import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 
 import BarChartCard from './BarChartCard';
+import * as barChartUtils from './barChartUtils';
 
 jest.mock('js-file-download');
 
@@ -28,6 +29,7 @@ const barChartCardProps = {
     categoryDataSourceId: 'city',
     layout: BAR_CHART_LAYOUTS.VERTICAL,
     type: BAR_CHART_TYPES.SIMPLE,
+    decimalPrecision: 3,
   },
   values: barChartData.quarters.filter((q) => q.quarter === '2020-Q1'),
   breakpoint: 'lg',
@@ -196,5 +198,29 @@ describe('BarChartCard', () => {
     render(<BarChartCard {...barChartCardProps} values={[]} i18n={i18nTest} />);
     expect(screen.getByText(i18nTest.noDataLabel)).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.noDataLabel)).not.toBeInTheDocument();
+  });
+
+  it('should use generated values if isDashboardPreview or isEditor and series is not empty', () => {
+    jest.spyOn(barChartUtils, 'generateSampleValuesForEditor');
+    const { rerender } = render(<BarChartCard {...barChartCardProps} isDashboardPreview />);
+    expect(barChartUtils.generateSampleValuesForEditor).toHaveBeenCalledWith(
+      [{ dataSourceId: 'particles' }],
+      undefined,
+      undefined,
+      undefined,
+      'city',
+      undefined
+    );
+
+    rerender(<BarChartCard {...barChartCardProps} isDashboardPreview={false} isEditable />);
+    expect(barChartUtils.generateSampleValuesForEditor).toHaveBeenCalledWith(
+      [{ dataSourceId: 'particles' }],
+      undefined,
+      undefined,
+      undefined,
+      'city',
+      undefined
+    );
+    jest.resetAllMocks();
   });
 });
