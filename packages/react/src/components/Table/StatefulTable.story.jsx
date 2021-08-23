@@ -64,7 +64,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
         : undefined,
   }));
   return (
-    <div>
+    <div style={{ width: select('table container width', ['auto', '300px', '800px'], 'auto') }}>
       <StatefulTable
         id="table"
         {...initialState}
@@ -75,7 +75,8 @@ export const StatefulTableWithNestedRowItems = (props) => {
           ...initialState.options,
           hasRowNesting: true,
           hasFilter: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          hasResize: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'alwaysTruncate'),
         }}
         view={{
           ...initialState.view,
@@ -190,7 +191,7 @@ export const StatefulExampleWithRowNestingAndFixedColumns = () => (
 );
 
 StatefulExampleWithRowNestingAndFixedColumns.storyName =
-  'Stateful Example with row nesting and fixed columns';
+  'Stateful Example with row nesting and resizable columns with initial width';
 
 StatefulExampleWithRowNestingAndFixedColumns.parameters = {
   info: {
