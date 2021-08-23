@@ -19,6 +19,7 @@ module.exports = {
     '!src/components/Dashboard/(Dashboard|CardRenderer).jsx',
     '!src/components/MapCard/storyFiles/*.jsx',
     '!src/components/**/*.test.e2e.jsx',
+    '!src/components/StorybookSnapshots.test.js',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
@@ -43,7 +44,7 @@ module.exports = {
     './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
       // https://github.com/carbon-design-system/carbon-charts/issues/594
-      functions: 77,
+      functions: 74,
     },
   },
   globals: {
