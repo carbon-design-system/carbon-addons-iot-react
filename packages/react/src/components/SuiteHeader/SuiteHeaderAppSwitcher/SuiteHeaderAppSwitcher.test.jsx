@@ -133,6 +133,7 @@ describe('SuiteHeaderAppSwitcher', () => {
       'NAVIGATOR',
       'https://www.ibm.com'
     );
+    expect(window.location.href).toBe('https://www.ibm.com');
     jest.restoreAllMocks();
   });
 
