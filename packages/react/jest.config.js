@@ -19,6 +19,7 @@ module.exports = {
     '!src/components/Dashboard/(Dashboard|CardRenderer).jsx',
     '!src/components/MapCard/storyFiles/*.jsx',
     '!src/components/**/*.test.e2e.jsx',
+    '!src/components/StorybookSnapshots.test.js',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
@@ -32,6 +33,7 @@ module.exports = {
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/Table/Table.jsx': all90Covered,
+    './src/components/BarChartCard/barChartUtils.js': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
@@ -42,7 +44,7 @@ module.exports = {
     './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
       // https://github.com/carbon-design-system/carbon-charts/issues/594
-      functions: 77,
+      functions: 74,
     },
   },
   globals: {

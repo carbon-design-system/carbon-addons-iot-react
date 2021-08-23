@@ -73,6 +73,7 @@ export type DateRange = [Date, Date];
         (keydown.space)="togglePicker()"
         [ibmTooltip]="formatCurrentRange()"
         [offset]="tooltipOffset"
+        [disabled]="disabled"
         trigger="hover"
         placement="bottom"
         role="button"
@@ -240,6 +241,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   @Input() hasRelative = true;
   @Input() hasAbsolute = true;
   @Input() theme: 'light' | null = null;
+  @Input() placeholder = 'yyyy-mm-dd HH:mm';
   @Input() dateFormat = 'yyyy-M-d';
   @Input() batchText: BatchLabelText = {
     ABSOLUTE: 'Absolute',
@@ -271,6 +273,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   previousSelection: DateTimeSelection = null;
   selectingCustomRange = false;
   expanded = false;
+  disabled = false;
   timeFormat = 'HH:mm';
 
   get tooltipOffset() {
@@ -290,7 +293,8 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
 
   ngOnInit() {
     if (!this.selected) {
-      this.selected = [this.dateTimeRanges[0].key];
+      this.selected = [null];
+      this.disabled = true;
     }
     this.updateI18nTranslationString();
   }
@@ -301,7 +305,9 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
 
   formatCurrentRangeTitle() {
     const [rangeOrType] = this.selected;
-    if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
+    if (!rangeOrType) {
+      return this.placeholder;
+    } else if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
       return this.formatCustomRange();
     }
     const range = this.dateTimeRanges.find((range) => range.key === rangeOrType);
@@ -310,7 +316,9 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
 
   formatCurrentRange() {
     const [rangeOrType] = this.selected;
-    if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
+    if (!rangeOrType) {
+      return this.placeholder;
+    } else if (rangeOrType === 'RELATIVE' || rangeOrType === 'ABSOLUTE') {
       return this.formatCustomRange();
     }
     const range = this.dateTimeRanges.find((range) => range.key === rangeOrType);
@@ -377,6 +385,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       this.apply.emit(range.getRange());
     }
     this.expanded = false;
+    this.disabled = false;
   }
 
   onCancel() {
@@ -416,7 +425,9 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       const selected: HTMLElement = nativeElement.querySelector(
         '.iot--date-time-picker__listitem--preset-selected'
       );
-      setTimeout(() => selected.focus());
+      if (selected) {
+        setTimeout(() => selected.focus());
+      }
     }
   }
 }
