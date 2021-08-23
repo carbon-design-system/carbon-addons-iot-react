@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { barChartData } from '../../utils/barChartDataSample';
-import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
+import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES, CARD_SIZES } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 
 import {
@@ -10,6 +10,9 @@ import {
   generateTableColumns,
   formatTableData,
   handleTooltip,
+  getMaxTicksPerSize,
+  generateSampleValues,
+  generateSampleValuesForEditor,
 } from './barChartUtils';
 
 describe('barChartUtils', () => {
@@ -734,13 +737,13 @@ describe('barChartUtils', () => {
 
     const defaultTooltip = `<ul class='multi-tooltip'><li>
     <div class="datapoint-tooltip ">
-      
+
       <p class="label">Cities </p>
       <p class="value">San Francisco</p>
     </div>
   </li><li>
     <div class="datapoint-tooltip ">
-      
+
       <p class="label">Particles </p>
       <p class="value">512</p>
     </div>
@@ -823,5 +826,271 @@ describe('barChartUtils', () => {
     </div>
   </li></ul>`.replace(/\s+/g, '')
     );
+  });
+  describe('getMaxTicksPerSize', () => {
+    it('should return the prop number of ticks for all card sizes', () => {
+      expect(getMaxTicksPerSize(CARD_SIZES.MEDIUMTHIN)).toBe(2);
+      expect(getMaxTicksPerSize(CARD_SIZES.MEDIUM)).toBe(4);
+      expect(getMaxTicksPerSize(CARD_SIZES.MEDIUMWIDE)).toBe(6);
+      expect(getMaxTicksPerSize(CARD_SIZES.LARGE)).toBe(6);
+      expect(getMaxTicksPerSize(CARD_SIZES.LARGETHIN)).toBe(6);
+      expect(getMaxTicksPerSize(CARD_SIZES.LARGEWIDE)).toBe(14);
+      expect(getMaxTicksPerSize(CARD_SIZES.SMALL)).toBe(10);
+      expect(getMaxTicksPerSize(CARD_SIZES.SMALLFULL)).toBe(10);
+      expect(getMaxTicksPerSize(CARD_SIZES.SMALLWIDE)).toBe(10);
+    });
+  });
+  describe('generateSampleValues', () => {
+    it('should return the proper count based on the given time grain', () => {
+      [
+        { grain: undefined, expectedCount: 7 },
+        { grain: 'hour', expectedCount: 24 },
+        { grain: 'day', expectedCount: 7 },
+        { grain: 'week', expectedCount: 4 },
+        { grain: 'month', expectedCount: 12 },
+        { grain: 'year', expectedCount: 5 },
+        { grain: 'unknown', expectedCount: 7 },
+      ].forEach(({ grain, expectedCount }) => {
+        const values = generateSampleValues(
+          [
+            {
+              dataSourceId: 'particles',
+              label: 'Particles',
+            },
+          ],
+          'timestamp',
+          grain
+        );
+        expect(values).toHaveLength(expectedCount);
+        expect(values).toEqual(
+          expect.arrayContaining(
+            Array.from(Array(expectedCount)).map(() => ({
+              particles: expect.any(Number),
+              timestamp: expect.any(Number),
+            }))
+          )
+        );
+      });
+      const values = generateSampleValues(
+        [
+          {
+            dataSourceId: 'particles',
+            label: 'Particles',
+          },
+        ],
+        'timestamp',
+        'month',
+        'Last Quarter'
+      );
+      expect(values).toHaveLength(3);
+      expect(values).toEqual(
+        expect.arrayContaining(
+          Array.from(Array(3)).map(() => ({
+            particles: expect.any(Number),
+            timestamp: expect.any(Number),
+          }))
+        )
+      );
+    });
+    it('should return the proper count based on the given time range', () => {
+      const values = generateSampleValues(
+        [
+          {
+            dataSourceId: 'particles',
+            label: 'Particles',
+          },
+        ],
+        'timestamp',
+        'month',
+        'this year'
+      );
+      expect(values).toHaveLength(12);
+      expect(values).toEqual(
+        expect.arrayContaining(
+          Array.from(Array(12)).map(() => ({
+            particles: expect.any(Number),
+            timestamp: expect.any(Number),
+          }))
+        )
+      );
+    });
+    it('should return the proper count based on the given time range with categoryDataSourceId', () => {
+      const values = generateSampleValues(
+        [
+          {
+            dataSourceId: 'particles',
+            label: 'Particles',
+          },
+        ],
+        'timestamp',
+        'month',
+        'this year',
+        'city'
+      );
+      // 48 b/c it generate 4 different data sets as a hard-coded value
+      expect(values).toHaveLength(48);
+      expect(values).toEqual(
+        expect.arrayContaining(
+          Array.from(Array(48)).map(() => ({
+            city: expect.any(String),
+            particles: expect.any(Number),
+            timestamp: expect.any(Number),
+          }))
+        )
+      );
+    });
+    it('should generate random samples of non-timeseries data', () => {
+      const values = generateSampleValues(
+        [
+          {
+            dataSourceId: 'particles',
+            label: 'Particles',
+          },
+        ],
+        undefined,
+        'month',
+        'this year',
+        'city'
+      );
+      // 48 b/c it generate 4 different data sets as a hard-coded value
+      expect(values).toHaveLength(4);
+      expect(values).toEqual(
+        expect.arrayContaining(
+          Array.from(Array(4)).map(() => ({
+            city: expect.any(String),
+            particles: expect.any(Number),
+          }))
+        )
+      );
+    });
+  });
+  describe('generateSampleValuesForEditor', () => {
+    it('should return the proper count based on the given time grain', () => {
+      [
+        { grain: undefined, expectedCount: 7 },
+        { grain: 'hour', expectedCount: 24 },
+        { grain: 'day', expectedCount: 7 },
+        { grain: 'week', expectedCount: 4 },
+        { grain: 'month', expectedCount: 12 },
+        { grain: 'year', expectedCount: 5 },
+        { grain: 'unknown', expectedCount: 7 },
+      ].forEach(({ grain, expectedCount }) => {
+        const values = generateSampleValuesForEditor(
+          [
+            {
+              dataSourceId: 'particles',
+              label: 'Particles',
+            },
+          ],
+          'timestamp',
+          grain
+        );
+        expect(values).toHaveLength(expectedCount);
+        expect(values).toEqual(
+          expect.arrayContaining(
+            Array.from(Array(expectedCount)).map(() => ({
+              particles: expect.any(Number),
+              timestamp: expect.any(Number),
+            }))
+          )
+        );
+      });
+      const values = generateSampleValuesForEditor(
+        [
+          {
+            dataSourceId: 'particles',
+            label: 'Particles',
+          },
+        ],
+        'timestamp',
+        'month',
+        'Last Quarter'
+      );
+      expect(values).toHaveLength(3);
+      expect(values).toEqual(
+        expect.arrayContaining(
+          Array.from(Array(3)).map(() => ({
+            particles: expect.any(Number),
+            timestamp: expect.any(Number),
+          }))
+        )
+      );
+    });
+    it('should return the proper count based on the given time range', () => {
+      const values = generateSampleValuesForEditor(
+        [
+          {
+            dataSourceId: 'particles',
+            label: 'Particles',
+          },
+        ],
+        'timestamp',
+        'month',
+        'this year'
+      );
+      expect(values).toHaveLength(12);
+      expect(values).toEqual(
+        expect.arrayContaining(
+          Array.from(Array(12)).map(() => ({
+            particles: expect.any(Number),
+            timestamp: expect.any(Number),
+          }))
+        )
+      );
+    });
+    it('should return the proper count based on the given time range with categoryDataSourceId', () => {
+      const values = generateSampleValuesForEditor(
+        [
+          {
+            dataSourceId: 'particles',
+            label: 'Particles',
+          },
+        ],
+        'timestamp',
+        'month',
+        'this year',
+        'city',
+        {
+          city: ['New York', 'Sydney', 'Amsterdam', 'San Francisco'],
+        }
+      );
+      // 48 b/c it generate 4 different data sets as a hard-coded value
+      expect(values).toHaveLength(48);
+      expect(values).toEqual(
+        expect.arrayContaining(
+          Array.from(Array(48)).map(() => ({
+            city: expect.any(String),
+            particles: expect.any(Number),
+            timestamp: expect.any(Number),
+          }))
+        )
+      );
+    });
+    it('should generate random samples of non-timeseries data', () => {
+      const values = generateSampleValuesForEditor(
+        [
+          {
+            dataSourceId: 'particles',
+            label: 'Particles',
+          },
+        ],
+        undefined,
+        'month',
+        'this year',
+        'city',
+        {
+          city: ['New York', 'Sydney', 'Amsterdam', 'San Francisco'],
+        }
+      );
+      expect(values).toHaveLength(4);
+      expect(values).toEqual(
+        expect.arrayContaining(
+          Array.from(Array(4)).map(() => ({
+            city: expect.any(String),
+            particles: expect.any(Number),
+          }))
+        )
+      );
+    });
   });
 });
