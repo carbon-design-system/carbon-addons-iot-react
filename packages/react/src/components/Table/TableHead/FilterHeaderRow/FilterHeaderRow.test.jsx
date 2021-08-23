@@ -1,8 +1,10 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { ComboBox, TextInput } from 'carbon-components-react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
+import * as utils from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
 
 import FilterHeaderRow from './FilterHeaderRow';
@@ -129,5 +131,315 @@ describe('FilterHeaderRow', () => {
       />
     );
     expect(container.querySelectorAll('th').length).toEqual(4);
+  });
+
+  it('should derive the new state when new filters are given by props', () => {
+    const { rerender } = render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+        ]}
+        filters={[
+          {
+            columnId: 'col1',
+            value: 'test1',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[0]).toHaveValue('test1');
+    expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[1]).toHaveValue('');
+
+    rerender(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+        ]}
+        filters={[
+          {
+            columnId: 'col1',
+            value: 'test1',
+          },
+          {
+            columnId: 'col2',
+            value: 'test2',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[0]).toHaveValue('test1');
+    expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[1]).toHaveValue('test2');
+    // hitting buttons other than enter doesn't clear the filters
+    fireEvent.keyDown(screen.getAllByTitle('Clear filter')[0], {
+      keyCode: 27,
+      key: 'Escape',
+    });
+    expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[0]).toHaveValue('test1');
+    fireEvent.keyDown(screen.getAllByTitle('Clear filter')[0], {
+      keyCode: 13,
+      key: 'Enter',
+    });
+    expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[0]).toHaveValue('');
+  });
+
+  it('should fallback to hard-coded i18n strings on multiselect when i18n props in columns are falsey', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }, { columnId: 'col3' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+          {
+            id: 'col3',
+            isFilterable: true,
+            isMultiselect: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+              {
+                id: 'three',
+                text: 'Three',
+              },
+            ],
+          },
+        ]}
+        filters={[
+          {
+            columnId: 'col1',
+            value: 'test1',
+          },
+          {
+            columnId: 'col2',
+            value: 'test2',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
+    userEvent.click(screen.getByPlaceholderText('Choose an option'));
+    userEvent.click(screen.getByLabelText('Three'));
+    userEvent.click(screen.getByPlaceholderText('Choose an option'));
+    userEvent.click(screen.getByLabelText('Two'));
+    expect(screen.getByText('2')).toBeVisible();
+  });
+
+  it('call onChange in a ComboBox to set the filters', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }, { columnId: 'col3' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+          {
+            id: 'col3',
+            isFilterable: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+              {
+                id: 'three',
+                text: 'Three',
+              },
+            ],
+          },
+        ]}
+        filters={[
+          {
+            columnId: 'col1',
+            value: 'test1',
+          },
+          {
+            columnId: 'col2',
+            value: 'test2',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
+    userEvent.click(screen.getByPlaceholderText('Choose an option'));
+    userEvent.click(screen.getByText('Three'));
+    expect(screen.getByPlaceholderText('Choose an option')).toHaveValue('Three');
+  });
+
+  it('should apply filters on Enter if !hasFastFilter', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }, { columnId: 'col3' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+          {
+            id: 'col3',
+            isFilterable: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+              {
+                id: 'three',
+                text: 'Three',
+              },
+            ],
+          },
+        ]}
+        filters={[
+          {
+            columnId: 'col1',
+            value: 'test1',
+          },
+          {
+            columnId: 'col2',
+            value: 'test2',
+          },
+        ]}
+        hasFastFilter={false}
+      />
+    );
+
+    const input = screen.getByTitle('test2');
+    userEvent.clear(input);
+    jest.spyOn(utils, 'handleEnterKeyDown');
+    userEvent.type(input, 'test-2{enter}');
+    expect(input).toHaveValue('test-2');
+    expect(utils.handleEnterKeyDown).toHaveBeenCalled();
+  });
+
+  it("should not display a header when hasRowSelection !== 'multi'", () => {
+    const { container } = render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+        ]}
+        tableOptions={{
+          hasRowSelection: 'single',
+        }}
+      />
+    );
+
+    expect(container.querySelectorAll('th')).toHaveLength(3);
+  });
+
+  it('should display an extra header when hasRowExpansion', () => {
+    const { container } = render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+        ]}
+        tableOptions={{
+          hasRowSelection: 'single',
+          hasRowExpansion: true,
+        }}
+        isVisible
+      />
+    );
+
+    expect(container.querySelectorAll('th')).toHaveLength(4);
+  });
+
+  it('should display an extra header when hasRowActions', () => {
+    const { container } = render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+        ]}
+        tableOptions={{
+          hasRowSelection: 'single',
+          hasRowActions: true,
+        }}
+        isVisible
+      />
+    );
+
+    expect(container.querySelectorAll('th')).toHaveLength(4);
+  });
+
+  it('should display three extra headers when all tableOptions are supplied', () => {
+    const { container } = render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+        ]}
+        tableOptions={{
+          hasRowSelection: 'multi',
+          hasRowActions: true,
+          hasRowExpansion: true,
+        }}
+        isVisible
+      />
+    );
+
+    expect(container.querySelectorAll('th')).toHaveLength(6);
+  });
+  it('should nothing when isVisible is false', () => {
+    const { container } = render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+        ]}
+        tableOptions={{
+          hasRowSelection: 'multi',
+          hasRowActions: true,
+          hasRowExpansion: true,
+        }}
+        isVisible={false}
+      />
+    );
+
+    expect(container).toBeEmptyDOMElement();
   });
 });
