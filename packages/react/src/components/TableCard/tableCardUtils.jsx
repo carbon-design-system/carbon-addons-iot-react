@@ -104,6 +104,7 @@ export const handleExpandedItemLinks = (row, expandedRow, cardVariables) => {
       updatedExpandedRow.push({
         ...item,
         linkTemplate: {
+          ...linkTemplate,
           href: variableLink || linkTemplate.href,
         },
       });
