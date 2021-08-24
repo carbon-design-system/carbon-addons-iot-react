@@ -127,6 +127,14 @@ export const getIDsOfAddedVisibleColumns = (ordering, currentColumnWidths) => {
 };
 
 /**
+ * Returns true if there are visible columns
+ * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
+ */
+export const hasVisibleColumns = (ordering) => {
+  return ordering.some((col) => !col.isHidden);
+};
+
+/**
  * Returns true if all visible columns have a width.
  * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
  * @param {array} columns The table column props
@@ -182,18 +190,31 @@ export const addMissingColumnWidths = ({ ordering, columns, currentColumnWidths 
  */
 export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs, columns) => {
   const visibleColumns = getVisibleColumns(currentColumnWidths, ordering, colToShowIDs);
-  const newColumnsToShow = colToShowIDs.reduce((accumulator, colToShowId) => {
+  const newWidthColumns = [];
+
+  const newColumnsToShow = colToShowIDs.map((colToShowId) => {
+    const existingWidth = getExistingColumnWidth(currentColumnWidths, columns, colToShowId);
     const widthOfColumnToShow =
-      getExistingColumnWidth(currentColumnWidths, columns, colToShowId) ||
-      getAverageVisibleColumnWidth(visibleColumns);
-    return [...accumulator, { id: colToShowId, width: Math.round(widthOfColumnToShow) }];
-  }, []);
+      existingWidth || getAverageVisibleColumnWidth(visibleColumns) || MIN_COLUMN_WIDTH;
+    const newColumnToShow = { id: colToShowId, width: Math.round(widthOfColumnToShow) };
+    if (!existingWidth) {
+      newWidthColumns.push(newColumnToShow);
+    }
+    return newColumnToShow;
+  });
+
   const totalWidthNeeded = newColumnsToShow.reduce((acc, col) => acc + col.width, 0);
   const shrinkableColumns = [...newColumnsToShow, ...visibleColumns].filter(
     (col) => col.width > MIN_COLUMN_WIDTH
   );
 
-  const adjustedCols = shrinkColumns(shrinkableColumns, totalWidthNeeded);
+  const adjustedCols = [
+    // There are some scenarios where the new columns don't have an existing width
+    // and in that case they are adjusted to get a min width assigned.
+    ...newWidthColumns,
+    // We adjust to shrink existing columns to make room for the new ones.
+    ...shrinkColumns(shrinkableColumns, totalWidthNeeded),
+  ];
 
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 };
@@ -233,6 +254,10 @@ export const calculateWidthOnHide = (currentColumnWidths, ordering, colToHideIDs
 function adjustLastColumnWidth(ordering, columns, measuredWidths) {
   // This function adjusts the last column width to the initial width if that one is larger.
   const visibleCols = ordering.filter((col) => !col.isHidden);
+
+  // If there are no visible columns there is nothing to adjust
+  if (!visibleCols.length) return measuredWidths;
+
   const lastIndex = visibleCols.length - 1;
   const lastColumn = columns.find((col) => col.id === visibleCols[lastIndex].columnId);
   const fixedWidth = lastColumn.width ? parseInt(lastColumn.width, 10) : 0;

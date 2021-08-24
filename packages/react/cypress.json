@@ -5,13 +5,13 @@
     "coverage": true,
     "failSilently": false
   },
-  "fixturesFolder": false,
   "nodeVersion": "system",
   "testFiles": "**/*.test.e2e.jsx",
   "viewportWidth": 1670,
   "viewportHeight": 900,
   "defaultCommandTimeout": 8000,
   "trashAssetsBeforeRuns": true,
+  "videoUploadOnPasses": false,
   "component": {
     "viewportWidth": 1670,
     "viewportHeight": 900
