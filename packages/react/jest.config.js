@@ -34,6 +34,7 @@ module.exports = {
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/Table/Table.jsx': all90Covered,
+    './src/components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher.jsx': all90Covered,
     './src/components/BarChartCard/barChartUtils.js': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
