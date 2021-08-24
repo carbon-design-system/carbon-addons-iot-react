@@ -148,8 +148,8 @@
       "src/components/FileUploader/stories/*.jsx",
       "src/components/Table/AsyncTable/*.js?(x)",
       "src/components/WizardInline/**/*.js?(x)",
-      "src/components/Page/EditPage.jsx",
       "src/components/Page/PageHero.jsx",
+      "src/components/Page/EditPage.jsx",
       "src/components/Dashboard/Dashboard.jsx",
       "src/components/Dashboard/CardRenderer.jsx",
       "src/components/MapCard/storyFiles/*.jsx",
@@ -342,7 +342,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.146.0-next.120",
+  "version": "2.146.0-next.123",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",
