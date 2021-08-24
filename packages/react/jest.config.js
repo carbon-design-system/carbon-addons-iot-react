@@ -32,6 +32,7 @@ module.exports = {
     './src/components/SuiteHeader/SuiteHeader.jsx': all90Covered,
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
     './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
+    './src/components/TimeSeriesCard/timeSeriesUtils.js': all90Covered,
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/ResourceList/ResourceList.jsx': all90Covered,
