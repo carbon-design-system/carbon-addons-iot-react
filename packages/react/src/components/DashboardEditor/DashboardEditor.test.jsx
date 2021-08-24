@@ -2,10 +2,13 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Link } from '../..';
+import { Link } from '../Link';
+import { settings } from '../../constants/Settings';
+import { CARD_TYPES } from '../../constants/LayoutConstants';
 
 import DashboardEditor from './DashboardEditor';
 
+const { iotPrefix } = settings;
 const mockOnImport = jest.fn();
 const mockOnExport = jest.fn();
 const mockOnCancel = jest.fn();
@@ -440,5 +443,46 @@ describe('DashboardEditor', () => {
     });
     // mock on card change should be called again when the card is edited
     expect(mockOnCardChange).toHaveBeenCalledTimes(2);
+  });
+  it('should set an initial breakpoint when provided', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        breakpointSwitcher={{
+          enabled: true,
+          initialValue: 'SMALL',
+        }}
+      />
+    );
+
+    expect(screen.getByRole('button', { name: 'Small view' })).not.toHaveClass(
+      `${iotPrefix}--icon-switch--unselected`
+    );
+  });
+
+  it('should call getDefaultCard when supplied', () => {
+    const getDefaultCard = jest.fn().mockImplementation(() => ({
+      id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'IMAGE',
+      content: {
+        hideMinimap: true,
+        hideHotspots: false,
+        hideZoomControls: false,
+        displayOption: 'contain',
+      },
+    }));
+    render(<DashboardEditor {...commonProps} getDefaultCard={getDefaultCard} />);
+
+    userEvent.click(screen.getByRole('button', { name: 'Image' }));
+    expect(getDefaultCard).toHaveBeenCalledWith(CARD_TYPES.IMAGE);
+  });
+
+  it('default onFetchDynamicDemoHotspots should return correctly', async () => {
+    jest.spyOn(DashboardEditor.defaultProps, 'onFetchDynamicDemoHotspots');
+    const defaultHotspots = await DashboardEditor.defaultProps.onFetchDynamicDemoHotspots();
+    expect(DashboardEditor.defaultProps.onFetchDynamicDemoHotspots).toHaveBeenCalled();
+    expect(defaultHotspots).toEqual([{ x: 50, y: 50, type: 'fixed' }]);
   });
 });
