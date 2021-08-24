@@ -412,7 +412,7 @@ describe('Table', () => {
   });
 
   it('validate row count function ', () => {
-    const wrapper = mount(
+    render(
       <Table
         columns={tableColumns}
         data={tableData}
@@ -423,17 +423,7 @@ describe('Table', () => {
     );
 
     const rowCounts = view.pagination.totalItems;
-    const renderRowCountField = wrapper
-      .find('Table')
-      .at(0)
-      .props()
-      .i18n.rowCountInHeader(rowCounts);
-    expect(renderRowCountField).toContain('Results:');
-
-    const min = 1;
-    const max = 10;
-    const renderItemRangeField = wrapper.find('Table').at(0).props().i18n.itemsRange(min, max);
-    expect(renderItemRangeField).toContain('items');
+    expect(screen.getByText(`Results: ${rowCounts}`)).toBeVisible();
   });
 
   it('validate show/hide hasRowCountInHeader property ', () => {

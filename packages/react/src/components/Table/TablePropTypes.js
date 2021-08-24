@@ -145,8 +145,6 @@ export const I18NPropTypes = PropTypes.shape({
   pageForwardAria: PropTypes.string,
   pageNumberAria: PropTypes.string,
   itemsPerPage: PropTypes.string,
-  /** (min, max) => `${min}-${max} items` */
-  itemsRange: PropTypes.func,
   /** (min, max, total) => `${min}-${max} of ${total} items` */
   itemsRangeWithTotal: PropTypes.func,
   /** (current, total) => `${current} of ${total} pages` */
@@ -212,7 +210,6 @@ export const defaultI18NPropTypes = {
   pageForwardAria: 'Next page',
   pageNumberAria: 'Page Number',
   itemsPerPage: 'Items per page:',
-  itemsRange: (min, max) => `${min}–${max} items`,
   itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
   pageRange: (current, total) => `${current} of ${total} pages`,
   /** table body */

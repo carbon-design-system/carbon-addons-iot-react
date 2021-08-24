@@ -390,7 +390,6 @@ export const defaultProps = (baseProps) => ({
     pageForwardAria: 'Next page',
     pageNumberAria: 'Page Number',
     itemsPerPage: 'Items per page:',
-    itemsRange: (min, max) => `${min}–${max} items`,
     itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
     pageRange: (current, total) => `${current} of ${total} pages`,
     /** table body */
@@ -1015,7 +1014,6 @@ const Table = (props) => {
           forwardText={i18n.pageForwardAria}
           pageNumberText={i18n.pageNumberAria}
           itemsPerPageText={i18n.itemsPerPage}
-          itemText={i18n.itemsRange}
           itemRangeText={i18n.itemsRangeWithTotal}
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
