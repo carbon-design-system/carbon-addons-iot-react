@@ -39,6 +39,7 @@ module.exports = {
     './src/components/BarChartCard/barChartUtils.js': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
     './src/components/SideNav/SideNav.jsx': all90Covered,
+    './src/components/NavigationBar/NavigationBar.jsx': all90Covered,
     './src/components/TileCatalog/CatalogContent.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
