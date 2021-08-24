@@ -28,6 +28,7 @@ module.exports = {
     './src/components/List/ListItem/ListItemWrapper.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': all90Covered,
     './src/components/Breadcrumb/Breadcrumb.jsx': all90Covered,
+    './src/components/ValueCard/Attribute.jsx': all90Covered,
     './src/components/SuiteHeader/SuiteHeader.jsx': all90Covered,
     './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
     './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
