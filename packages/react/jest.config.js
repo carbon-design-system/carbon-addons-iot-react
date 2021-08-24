@@ -38,6 +38,7 @@ module.exports = {
     './src/components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher.jsx': all90Covered,
     './src/components/BarChartCard/barChartUtils.js': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
+    './src/components/NavigationBar/NavigationBar.jsx': all90Covered,
     './src/components/TileCatalog/CatalogContent.jsx': all90Covered,
     './src/components/ImageCard/ImageUploader.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
