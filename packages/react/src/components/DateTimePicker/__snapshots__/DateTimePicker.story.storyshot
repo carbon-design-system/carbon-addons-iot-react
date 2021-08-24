@@ -1768,7 +1768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     Relative to
                   </legend>
                   <div
-                    className="iot--date-time-picker__fields-wrapper"
+                    className="iot--date-time-picker__fields-wrapper iot--date-time-picker__fields-wrapper--with-gap"
                   >
                     <div
                       className="bx--form-item"
