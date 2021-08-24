@@ -33,6 +33,7 @@ module.exports = {
     './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
+    './src/components/ResourceList/ResourceList.jsx': all90Covered,
     './src/components/Table/Table.jsx': all90Covered,
     './src/components/Table/TableHead/TableHead.jsx': all90Covered,
     './src/components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher.jsx': all90Covered,
