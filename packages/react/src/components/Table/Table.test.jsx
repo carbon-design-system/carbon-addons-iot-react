@@ -979,6 +979,7 @@ describe('Table', () => {
         ...initialState.view,
         table: {
           expandedIds: ['row-3', 'row-7'],
+          selectedIds: ['row-3', 'row-4'],
         },
       },
     };
@@ -1004,7 +1005,7 @@ describe('Table', () => {
     expect(screen.getAllByLabelText(i18nTest.filterAria)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.openMenuAria)[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.batchCancel)[0]).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemsSelected}.*`))).toBeInTheDocument();
+    expect(screen.getByText(`2 ${i18nTest.itemsSelected}`)).toBeInTheDocument();
 
     expect(screen.queryByLabelText(i18nDefault.overflowMenuAria)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.clickToExpandAria)).not.toBeInTheDocument();
@@ -1037,9 +1038,13 @@ describe('Table', () => {
           toolbar: {
             activeBar: 'column',
           },
+          table: {
+            selectedIds: ['row-3'],
+          },
         }}
       />
     );
+    expect(screen.getByText(`1 ${i18nTest.itemSelected}`)).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.columnSelectionConfig)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.columnSelectionConfig)).not.toBeInTheDocument();
   });
@@ -1077,6 +1082,67 @@ describe('Table', () => {
     expect(screen.getAllByText(i18nTest.emptyButtonLabel)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyMessage)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyButtonLabel)).not.toBeInTheDocument();
+  });
+
+  it('has defaults for i18n functions', () => {
+    const additionalProps = {
+      options: {
+        ...initialState.options,
+        hasRowCountInHeader: true,
+      },
+      view: {
+        ...initialState.view,
+        table: {
+          selectedIds: ['row-1', 'row-2'],
+        },
+      },
+    };
+
+    const { rerender } = render(<Table {...initialState} {...additionalProps} isSortable />);
+
+    expect(screen.getByText(i18nDefault.itemsSelected(2))).toBeInTheDocument();
+    expect(screen.getByText(i18nDefault.pageRange(1, 10))).toBeInTheDocument();
+    expect(screen.getByText(i18nDefault.itemsRangeWithTotal(1, 10, 100))).toBeInTheDocument();
+    expect(screen.getByText(i18nDefault.rowCountInHeader(100))).toBeInTheDocument();
+
+    additionalProps.view.table.selectedIds = ['row-1'];
+    rerender(<Table {...initialState} {...additionalProps} isSortable />);
+    expect(screen.getByText(i18nDefault.itemSelected(1))).toBeInTheDocument();
+  });
+
+  it('supports external i18n functions', () => {
+    const i18nFunctions = {
+      itemSelected: (i) => `${i} test-item-selected`,
+      itemsSelected: (i) => `${i} test-items-selected`,
+      itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} test-items`,
+      pageRange: (current, total) => `${current} of ${total} test-pages`,
+      rowCountInHeader: (totalRowCount) => `test-results: ${totalRowCount}`,
+    };
+
+    const additionalProps = {
+      options: {
+        ...initialState.options,
+        hasRowCountInHeader: true,
+      },
+      view: {
+        ...initialState.view,
+        table: {
+          selectedIds: ['row-1', 'row-2'],
+        },
+      },
+    };
+
+    const { rerender } = render(
+      <Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />
+    );
+    expect(screen.getByText(i18nFunctions.itemsSelected(2))).toBeInTheDocument();
+    expect(screen.getByText(i18nFunctions.pageRange(1, 10))).toBeInTheDocument();
+    expect(screen.getByText(i18nFunctions.itemsRangeWithTotal(1, 10, 100))).toBeInTheDocument();
+    expect(screen.getByText(i18nFunctions.rowCountInHeader(100))).toBeInTheDocument();
+
+    additionalProps.view.table.selectedIds = ['row-1'];
+    rerender(<Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />);
+    expect(screen.getByText(i18nFunctions.itemSelected(1))).toBeInTheDocument();
   });
 
   it('Table in modal select all', () => {

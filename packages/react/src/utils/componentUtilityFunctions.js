@@ -21,6 +21,11 @@ import {
 
 import dayjs from './dayjs';
 
+// Returns if the parameter is a function
+function isFunction(variable) {
+  return typeof variable === 'function';
+}
+
 /**
  * Helper function to generate a CSV from an array of table cell data
  * Retrieve the column headers, then match and join the cell values
@@ -70,9 +75,13 @@ export const tableTranslateWithId = (i18n, id, state) => {
     case 'carbon.table.batch.cancel':
       return batchCancel;
     case 'carbon.table.batch.items.selected':
-      return `${state.totalSelected} ${itemsSelected}`;
+      return isFunction(itemsSelected)
+        ? itemsSelected(state.totalSelected)
+        : `${state.totalSelected} ${itemsSelected}`;
     case 'carbon.table.batch.item.selected':
-      return `${state.totalSelected} ${itemSelected}`;
+      return isFunction(itemSelected)
+        ? itemSelected(state.totalSelected)
+        : `${state.totalSelected} ${itemSelected}`;
     case 'carbon.table.toolbar.search.label':
       return i18n.searchLabel;
     case 'carbon.table.toolbar.search.placeholder':

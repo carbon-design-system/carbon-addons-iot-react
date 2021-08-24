@@ -170,8 +170,8 @@ export const I18NPropTypes = PropTypes.shape({
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
   batchCancel: PropTypes.string,
-  itemsSelected: PropTypes.string,
-  itemSelected: PropTypes.string,
+  itemsSelected: PropTypes.oneOf([PropTypes.string, PropTypes.func]),
+  itemSelected: PropTypes.oneOf([PropTypes.string, PropTypes.func]),
   /** Row actions in table body */
   /** I18N label for in progress */
   inProgressText: PropTypes.string,
@@ -232,8 +232,8 @@ export const defaultI18NPropTypes = {
   closeMenuAria: 'Close menu',
   clearSelectionAria: 'Clear selection',
   batchCancel: 'Cancel',
-  itemsSelected: 'items selected',
-  itemSelected: 'item selected',
+  itemsSelected: (selectedCount) => `${selectedCount} items selected`,
+  itemSelected: (selectedCount) => `${selectedCount} item selected`,
   applyButtonText: 'Apply filters',
   cancelButtonText: 'Cancel',
   advancedFilterLabelText: 'Select an existing filter or',

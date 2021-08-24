@@ -412,8 +412,8 @@ export const defaultProps = (baseProps) => ({
     closeMenuAria: 'Close menu',
     clearSelectionAria: 'Clear selection',
     batchCancel: 'Cancel',
-    itemsSelected: 'items selected',
-    itemSelected: 'item selected',
+    itemsSelected: (selectedCount) => `${selectedCount} items selected`,
+    itemSelected: (selectedCount) => `${selectedCount} item selected`,
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
     toggleAggregations: 'Toggle aggregations',
     /** empty state */
