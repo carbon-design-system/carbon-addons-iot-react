@@ -4,8 +4,11 @@ import { Add16, Edit16 } from '@carbon/icons-react';
 
 import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 import { Tag } from '../../Tag';
+import { settings } from '../../../constants/Settings';
 
 import { UnconnectedListItem } from './ListItem';
+
+const { iotPrefix } = settings;
 
 describe('ListItem', () => {
   const commonProps = {
@@ -34,6 +37,24 @@ describe('ListItem', () => {
     );
     expect(screen.getByText('some content')).toBeTruthy();
     expect(screen.getByText('second')).toBeTruthy();
+  });
+
+  it('ListItemWrapper does not show as selected when it has an editingStyle ', () => {
+    const onSelect = jest.fn();
+    render(
+      <UnconnectedListItem
+        id="1"
+        value="test"
+        isSelectable
+        onSelect={onSelect}
+        index={0}
+        editingStyle="multiple"
+        {...commonProps}
+        selected
+      />
+    );
+
+    expect(screen.getByRole('button')).not.toHaveClass(`${iotPrefix}--list-item__selected`);
   });
 
   it('ListItem when isSelectable set to true', () => {
