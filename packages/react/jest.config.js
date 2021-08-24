@@ -25,6 +25,7 @@ module.exports = {
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
   coverageDirectory: 'jest/coverage',
   coverageThreshold: {
+    './src/components/List/ListItem/ListItemWrapper.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': all90Covered,
     './src/components/Breadcrumb/Breadcrumb.jsx': all90Covered,
     './src/components/SuiteHeader/SuiteHeader.jsx': all90Covered,
@@ -33,9 +34,12 @@ module.exports = {
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/Table/Table.jsx': all90Covered,
+    './src/components/Table/TableHead/TableHead.jsx': all90Covered,
+    './src/components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher.jsx': all90Covered,
     './src/components/BarChartCard/barChartUtils.js': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
     './src/components/NavigationBar/NavigationBar.jsx': all90Covered,
+    './src/components/TileCatalog/CatalogContent.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
