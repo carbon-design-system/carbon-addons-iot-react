@@ -414,4 +414,93 @@ describe('SuiteHeader', () => {
     // Make sure the scripts in Walkme component were executed
     await waitFor(() => expect(window._walkmeConfig).toEqual({ smartLoad: true }));
   });
+
+  it('default prop test', async () => {
+    jest.spyOn(SuiteHeader.defaultProps, 'onRouteChange');
+    jest.spyOn(SuiteHeader.defaultProps, 'onSideNavToggled');
+    jest.spyOn(SuiteHeader.defaultProps, 'onStayLoggedIn');
+    render(
+      <SuiteHeader
+        {...commonProps}
+        sideNavProps={{
+          links: [
+            {
+              isEnabled: true,
+              icon: Chip,
+              metaData: {
+                label: 'Devices',
+                href: 'https://google.com',
+                element: 'a',
+                target: '_blank',
+              },
+              linkContent: 'Devices',
+            },
+          ],
+        }}
+        idleTimeoutData={idleTimeoutDataProp}
+        onRouteChange={undefined}
+        onSideNavToggled={undefined}
+        onStayLoggedIn={undefined}
+      />
+    );
+
+    await userEvent.click(screen.getByTitle(`What's new`));
+    expect(SuiteHeader.defaultProps.onRouteChange).toHaveBeenCalled();
+    await userEvent.click(screen.getByRole('button', { name: 'Open menu' }));
+    expect(SuiteHeader.defaultProps.onSideNavToggled).toHaveBeenCalled();
+
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+    const modalStayLoggedInButton = screen.getByText(
+      SuiteHeaderI18N.en.sessionTimeoutModalStayLoggedInButton
+    );
+    userEvent.click(modalStayLoggedInButton);
+    expect(SuiteHeader.defaultProps.onStayLoggedIn).toHaveBeenCalled();
+    jest.resetAllMocks();
+  });
+
+  it('function i18n props should fallback to suiteName if appName is not given', async () => {
+    const surveyTitle = jest.fn();
+    const profileLogoutModalBody = jest.fn();
+    render(
+      <SuiteHeader
+        {...commonProps}
+        appName={undefined}
+        suiteName="PAL"
+        surveyData={{
+          surveyLink: 'https://www.ibm.com',
+          privacyLink: 'https://www.ibm.com',
+        }}
+        i18n={{
+          surveyTitle,
+          profileLogoutModalBody,
+        }}
+      />
+    );
+    expect(surveyTitle).toHaveBeenCalledWith('PAL');
+    userEvent.click(screen.getByTitle('Logout'));
+    expect(profileLogoutModalBody).toHaveBeenCalledWith('PAL', 'Admin User');
+  });
+
+  it('clicking manage profile should call onRouteChange', async () => {
+    const originalHref = window.location.href;
+    const onRouteChange = jest.fn().mockImplementation(() => false);
+    render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
+    userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', 'https://www.ibm.com');
+    expect(window.location.href).toEqual(originalHref);
+
+    onRouteChange.mockImplementation(() => true);
+    userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', 'https://www.ibm.com');
+    expect(window.location.href).toBe('https://www.ibm.com');
+  });
 });

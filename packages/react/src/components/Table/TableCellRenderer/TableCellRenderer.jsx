@@ -9,7 +9,12 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object]),
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.bool,
+    PropTypes.object,
+    PropTypes.array,
+  ]),
   wrapText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   allowTooltip: PropTypes.bool,
@@ -18,7 +23,9 @@ const propTypes = {
   renderDataFunction: PropTypes.func,
   columnId: PropTypes.string,
   rowId: PropTypes.string,
-  row: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object])),
+  row: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object, PropTypes.array])
+  ),
 };
 
 const defaultProps = {
