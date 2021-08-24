@@ -1089,10 +1089,6 @@ describe('Table', () => {
     expect(screen.queryByText(i18nDefault.emptyButtonLabel)).not.toBeInTheDocument();
   });
 
-  it('has default i18n currentPage function', () => {
-    expect(defaultProps({}).i18n.currentPage(2)).toEqual('page 2');
-  });
-
   it('Table in modal select all', () => {
     const inModal = jest.fn();
     const notInModal = jest.fn();

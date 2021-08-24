@@ -391,7 +391,6 @@ export const defaultProps = (baseProps) => ({
     pageNumberAria: 'Page Number',
     itemsPerPage: 'Items per page:',
     itemsRange: (min, max) => `${min}–${max} items`,
-    currentPage: (page) => `page ${page}`,
     itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
     pageRange: (current, total) => `${current} of ${total} pages`,
     /** table body */
@@ -1018,7 +1017,6 @@ const Table = (props) => {
           itemsPerPageText={i18n.itemsPerPage}
           itemText={i18n.itemsRange}
           itemRangeText={i18n.itemsRangeWithTotal}
-          pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}

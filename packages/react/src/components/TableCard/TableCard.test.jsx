@@ -688,7 +688,6 @@ describe('TableCard', () => {
       pageForwardAria: '__Next page__',
       pageNumberAria: '__Page Number__',
       itemsRange: (min, max) => `__${min}–${max} items__`,
-      currentPage: (page) => `__page ${page}__`,
       itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
       pageRange: (current, total) => `__${current} of ${total} pages__`,
       clickToExpandAria: '__Click to expand content__',
