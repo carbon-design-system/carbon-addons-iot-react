@@ -39,10 +39,12 @@ module.exports = {
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/ResourceList/ResourceList.jsx': all90Covered,
     './src/components/Table/Table.jsx': all90Covered,
+    './src/components/IconDropdown/IconDropdown.jsx': all90Covered,
     './src/components/Table/TableHead/TableHead.jsx': all90Covered,
     './src/components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher.jsx': all90Covered,
     './src/components/BarChartCard/barChartUtils.js': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
+    './src/components/ComposedStructuredList/ComposedStructuredList.jsx': all90Covered,
     './src/components/NavigationBar/NavigationBar.jsx': all90Covered,
     './src/components/TileCatalog/CatalogContent.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
@@ -56,6 +58,8 @@ module.exports = {
       // https://github.com/carbon-design-system/carbon-charts/issues/594
       functions: 74,
     },
+    // Deprecated, no need for thresholds to be at 90%
+    './src/components/Dashboard/DashboardHeader.jsx': { branches: 83 },
   },
   globals: {
     __DEV__: false,
