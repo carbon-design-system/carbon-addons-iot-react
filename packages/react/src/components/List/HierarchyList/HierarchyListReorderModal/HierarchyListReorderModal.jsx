@@ -35,10 +35,10 @@ const noop = () => {};
 
 const defaultProps = {
   i18n: {
-    itemsSelected: '%d items selected',
+    itemsSelected: (selectedCount) => `${selectedCount} items selected`,
     itemSelected: '1 item selected',
     itemTitle: 'Move 1 item underneath',
-    itemsTitle: 'Move %d items underneath',
+    itemsTitle: (itemsCount) => `Move ${itemsCount} items underneath`,
     cancel: 'Cancel',
     allRows: 'All rows',
   },
@@ -172,7 +172,10 @@ const HierarchyListReorderModal = ({
       header={{
         title:
           selectedIds.length > 1
-            ? `${i18n.itemsTitle.replace('%d', selectedIds?.length)}`
+            ? typeof i18n.itemsTitle === 'function'
+              ? i18n.itemsTitle(selectedIds.length)
+              : // Kept for backward compatability with existing i18n strings
+                `${i18n.itemsTitle.replace('%d', selectedIds.length)}`
             : `${i18n.itemTitle}`,
       }}
       onClose={() => handleClose(resetSelection, onClose)}

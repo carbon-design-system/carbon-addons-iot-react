@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen, within } from '@testing-library/react';
+import { render, fireEvent, screen, within, waitFor } from '@testing-library/react';
 import debounce from 'lodash/debounce';
 import userEvent from '@testing-library/user-event';
 
@@ -480,6 +480,113 @@ describe('HierarchyList', () => {
     expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
     expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
     expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
+  });
+
+  it('supports i18n strings', async () => {
+    render(
+      <HierarchyList
+        hasSearch
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        editingStyle={EditingStyle.MultipleNesting}
+        i18n={{
+          searchPlaceHolderText: 'test-enter-value',
+          expand: 'test-expand',
+          close: 'test-close',
+          itemsSelected: '%d test-items-selected',
+          move: 'test-move',
+          cancel: 'test-cancel',
+          itemSelected: '1 test-item-selected',
+          allRows: 'test-all-rows',
+          itemTitle: 'test-move 1 item',
+          itemsTitle: 'test-move %d items',
+          modalDescription: 'test-select-a-destination',
+        }}
+      />
+    );
+    expect(screen.getByText('test-enter-value')).toBeInTheDocument();
+    expect(screen.queryAllByRole('button', { name: 'test-expand' })).toHaveLength(6);
+
+    // Expand the 5th category New York Mets
+    userEvent.click(screen.queryAllByRole('button', { name: 'test-expand' })[4]);
+    userEvent.click(screen.queryByTestId('New York Mets_Pete Alonso-checkbox'));
+
+    expect(screen.getByText('test-all-rows')).toBeVisible();
+    expect(screen.getByText('1 test-item-selected')).toBeVisible();
+    expect(screen.queryByText('2 test-items-selected')).not.toBeInTheDocument();
+
+    userEvent.click(screen.queryByTestId('New York Mets_Amed Rosario-checkbox'));
+    expect(screen.getByText('2 test-items-selected')).toBeVisible();
+
+    // Open the dialog
+    userEvent.click(screen.getByRole('button', { name: 'test-move' }));
+    await waitFor(() => expect(screen.getByText('test-move 2 items')).toBeVisible());
+    expect(screen.getByRole('button', { name: 'test-close' })).toBeVisible();
+    expect(screen.getByText('test-select-a-destination')).toBeVisible();
+    expect(screen.getByText('test-all-rows')).toBeVisible();
+  });
+
+  it('has default i18n strings', async () => {
+    const i18nDefaults = HierarchyList.defaultProps.i18n;
+    render(
+      <HierarchyList
+        hasSearch
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        editingStyle={EditingStyle.MultipleNesting}
+      />
+    );
+    expect(screen.getByText(i18nDefaults.searchPlaceHolderText)).toBeInTheDocument();
+    expect(screen.queryAllByRole('button', { name: i18nDefaults.expand })).toHaveLength(6);
+
+    // Expand the 5th category New York Mets
+    userEvent.click(screen.queryAllByRole('button', { name: i18nDefaults.expand })[4]);
+    userEvent.click(screen.queryByTestId('New York Mets_Pete Alonso-checkbox'));
+
+    // expect(screen.getByText(i18nDefaults.allRows)).toBeVisible();
+    expect(screen.getByText(i18nDefaults.itemSelected)).toBeVisible();
+    expect(screen.queryByText('2 items selected')).not.toBeInTheDocument();
+
+    userEvent.click(screen.queryByTestId('New York Mets_Amed Rosario-checkbox'));
+    expect(screen.getByText('2 items selected')).toBeVisible();
+
+    // Open the dialog
+    userEvent.click(screen.getByRole('button', { name: i18nDefaults.move }));
+    await waitFor(() => expect(screen.getByText('Move 2 items underneath')).toBeVisible());
+
+    const modal = screen.getByRole('dialog');
+    expect(within(modal).getByRole('button', { name: i18nDefaults.close })).toBeVisible();
+    expect(screen.getByText(i18nDefaults.modalDescription)).toBeVisible();
+    expect(screen.getByText(i18nDefaults.allRows)).toBeVisible();
+  });
+
+  it('supports i18n functions where needed', async () => {
+    const i18nDefaults = HierarchyList.defaultProps.i18n;
+    render(
+      <HierarchyList
+        hasSearch
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        editingStyle={EditingStyle.MultipleNesting}
+        i18n={{
+          itemsSelected: (i) => `${i} test-items-selected`,
+          itemsTitle: (i) => `test-move ${i} items`,
+        }}
+      />
+    );
+
+    // // Expand the 5th category New York Mets
+    userEvent.click(screen.queryAllByRole('button', { name: i18nDefaults.expand })[4]);
+    userEvent.click(screen.queryByTestId('New York Mets_Pete Alonso-checkbox'));
+    userEvent.click(screen.queryByTestId('New York Mets_Amed Rosario-checkbox'));
+    expect(screen.getByText('2 test-items-selected')).toBeVisible();
+
+    // Open the dialog
+    userEvent.click(screen.getByRole('button', { name: i18nDefaults.move }));
+    await waitFor(() => expect(screen.getByText('test-move 2 items')).toBeVisible());
   });
 
   it('clicking item should fire onSelect', () => {
