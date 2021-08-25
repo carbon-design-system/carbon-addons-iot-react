@@ -170,8 +170,12 @@ export const I18NPropTypes = PropTypes.shape({
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
   batchCancel: PropTypes.string,
-  itemsSelected: PropTypes.oneOf([PropTypes.string, PropTypes.func]),
-  itemSelected: PropTypes.oneOf([PropTypes.string, PropTypes.func]),
+  /** String 'items selected' or function receiving the selectedCount as param:
+   * (selectedCount) => `${selectedCount} items selected` */
+  itemsSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  /** String 'item selected' or function receiving the selectedCount as param:
+   * (selectedCount) => `${selectedCount} item selected` */
+  itemSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   /** Row actions in table body */
   /** I18N label for in progress */
   inProgressText: PropTypes.string,

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { TimePicker } from 'carbon-components-react';
 import { CaretDownGlyph, CaretUpGlyph } from '@carbon/icons-react';
 import classnames from 'classnames';
-import isFunction from 'lodash/isFunction';
 
 import { settings } from '../../constants/Settings';
 import { keyCodes } from '../../constants/KeyCodeConstants';
@@ -65,7 +64,7 @@ const defaultProps = {
 };
 
 const getButtonLabel = (text, timeUnit) =>
-  isFunction(text) ? text(timeUnit) : `${text} ${timeUnit}`;
+  typeof text === 'function' ? text(timeUnit) : `${text} ${timeUnit}`;
 
 const TimePickerSpinner = ({
   spinner,

@@ -84,6 +84,8 @@ const propTypes = {
     dataItem: PropTypes.string,
     edit: PropTypes.string,
     dataItemEditorDataItemCustomLabel: PropTypes.string,
+    /** Function receiving the dataItemSource & dataItemId as params:
+     * (dataItemSource, dataItemId) => `${dataItemSource}: ${dataItemId}` */
     dataItemEditorDataItemHelperText: PropTypes.func,
     dataItemEditorDataItemUnit: PropTypes.string,
     dataItemEditorDataItemFilter: PropTypes.string,

@@ -51,12 +51,20 @@ const propTypes = {
     expand: PropTypes.string,
     close: PropTypes.string,
     itemSelected: PropTypes.string,
+    /** String e.g. '%d items selected' that gets %d replaced by selected count or
+     * function receiving the selectedCount as param:
+     * (selectedCount) => `${selectedCount} items selected` */
     itemsSelected: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     move: PropTypes.string,
     cancel: PropTypes.string,
     allRows: PropTypes.string,
     modalTitle: PropTypes.string,
     modalDescription: PropTypes.string,
+    itemTitle: PropTypes.string,
+    /** String e.g. 'Move %d items underneath' that gets %d replaced by items count or
+     * function receiving the selectedCount as param:
+     * (itemsCount) => `Move ${itemsCount} items underneath` */
+    itemsTitle: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   }),
   /** Displays the List as full height */
   isFullHeight: PropTypes.bool,
