@@ -61726,6 +61726,977 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Table row expansion: with load more  1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--table-container bx--data-table-container"
+    data-testid="my-nested-table-table-container"
+  >
+    <div
+      className="addons-iot-table-container"
+    >
+      <div
+        className="bx--data-table-content"
+      >
+        <table
+          className="bx--data-table bx--data-table--no-border"
+          data-testid="my-nested-table"
+          id="my-nested-table"
+          title={null}
+        >
+          <thead
+            data-testid="my-nested-table-table-head"
+            onMouseMove={null}
+            onMouseUp={null}
+          >
+            <tr>
+              <th
+                className="bx--table-expand"
+                data-testid="my-nested-table-table-head-row-expansion-column"
+                scope="col"
+              />
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="string"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-string"
+                id="column-string"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="String"
+                  >
+                    String
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="date"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-date"
+                id="column-date"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Date"
+                  >
+                    Date
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="select"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-select"
+                id="column-select"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Select"
+                  >
+                    Select
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="secretField"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-secretField"
+                id="column-secretField"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Secret Information"
+                  >
+                    Secret Information
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="status"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-status"
+                id="column-status"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Status"
+                  >
+                    Status
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="number"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-number"
+                id="column-number"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Number"
+                  >
+                    Number
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="boolean"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-boolean"
+                id="column-boolean"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Boolean"
+                  >
+                    Boolean
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="node"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-node"
+                id="column-node"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="React Node"
+                  >
+                    React Node
+                  </span>
+                </span>
+              </th>
+              <th
+                aria-sort="none"
+                className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                data-testid="my-nested-table-table-head-column-object"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <button
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                  data-column="object"
+                  data-floating-menu-container={true}
+                  id="column-object"
+                  onClick={[Function]}
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="Object Id"
+                    >
+                      Object Id
+                    </span>
+                  </span>
+                  <svg
+                    aria-label="Sort rows by this header in ascending order"
+                    className="bx--table-sort__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                    />
+                  </svg>
+                  <svg
+                    aria-label="Sort rows by this header in ascending order"
+                    className="bx--table-sort__icon-unsorted"
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                    />
+                  </svg>
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            aria-live="polite"
+            data-testid="my-nested-table-table-body"
+          >
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
+              data-child-count={4}
+              data-nesting-offset={0}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="as eat scott 3"
+                  >
+                    as eat scott 3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-06-15T13:46:40.000Z"
+                  >
+                    1973-06-15T13:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="qcUSWgwIkI"
+                  >
+                    qcUSWgwIkI
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start iot--table__cell--sortable"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="qcUSW"
+                  >
+                    qcUSW
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iMVZzd"
+              data-child-count={0}
+              data-nesting-offset={0}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="as eat scott 33"
+                  >
+                    as eat scott 33
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="2007-09-05T13:46:40.000Z"
+                  >
+                    2007-09-05T13:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="c8iM4qgaYa"
+                  >
+                    c8iM4qgaYa
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start iot--table__cell--sortable"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="c8iM4"
+                  >
+                    c8iM4
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iMVZzd"
+              data-child-count={0}
+              data-nesting-offset={0}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="as eat scott 63"
+                  >
+                    as eat scott 63
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="2098-12-09T21:46:40.000Z"
+                  >
+                    2098-12-09T21:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="OewGc0QsMs"
+                  >
+                    OewGc0QsMs
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start iot--table__cell--sortable"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="OewGc"
+                  >
+                    OewGc
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Table with custom states states: no data, custom empty, error, and loading 1`] = `
 <div
   className="storybook-container"
@@ -98881,13 +99852,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="table-33-head"
+                          id="table-34-head"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="table-33-head"
+                          htmlFor="table-34-head"
                           title={null}
                         >
                           <span
@@ -99390,13 +100361,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-13"
+                          id="select-row-table-34-row-13"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-13"
+                          htmlFor="select-row-table-34-row-13"
                           title={null}
                         >
                           <span
@@ -99413,7 +100384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-13-string"
+                    id="cell-table-34-row-13-string"
                     offset={0}
                   >
                     <span
@@ -99432,7 +100403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-13-date"
+                    id="cell-table-34-row-13-date"
                     offset={0}
                   >
                     <span
@@ -99451,7 +100422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-13-select"
+                    id="cell-table-34-row-13-select"
                     offset={0}
                   >
                     <span
@@ -99470,7 +100441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-13-status"
+                    id="cell-table-34-row-13-status"
                     offset={0}
                   >
                     <span
@@ -99500,7 +100471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-13-number"
+                    id="cell-table-34-row-13-number"
                     offset={0}
                   >
                     <span
@@ -99519,7 +100490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-13-boolean"
+                    id="cell-table-34-row-13-boolean"
                     offset={0}
                   >
                     <span
@@ -99538,7 +100509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-13-node"
+                    id="cell-table-34-row-13-node"
                     offset={0}
                   >
                     <span
@@ -99565,7 +100536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-13-object"
+                    id="cell-table-34-row-13-object"
                     offset={0}
                   >
                     <span
@@ -99599,13 +100570,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-23"
+                          id="select-row-table-34-row-23"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-23"
+                          htmlFor="select-row-table-34-row-23"
                           title={null}
                         >
                           <span
@@ -99622,7 +100593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-23-string"
+                    id="cell-table-34-row-23-string"
                     offset={0}
                   >
                     <span
@@ -99641,7 +100612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-23-date"
+                    id="cell-table-34-row-23-date"
                     offset={0}
                   >
                     <span
@@ -99660,7 +100631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-23-select"
+                    id="cell-table-34-row-23-select"
                     offset={0}
                   >
                     <span
@@ -99679,7 +100650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-23-status"
+                    id="cell-table-34-row-23-status"
                     offset={0}
                   >
                     <span
@@ -99709,7 +100680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-23-number"
+                    id="cell-table-34-row-23-number"
                     offset={0}
                   >
                     <span
@@ -99728,7 +100699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-23-boolean"
+                    id="cell-table-34-row-23-boolean"
                     offset={0}
                   >
                     <span
@@ -99747,7 +100718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-23-node"
+                    id="cell-table-34-row-23-node"
                     offset={0}
                   >
                     <span
@@ -99774,7 +100745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-23-object"
+                    id="cell-table-34-row-23-object"
                     offset={0}
                   >
                     <span
@@ -99808,13 +100779,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-3"
+                          id="select-row-table-34-row-3"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-3"
+                          htmlFor="select-row-table-34-row-3"
                           title={null}
                         >
                           <span
@@ -99831,7 +100802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-3-string"
+                    id="cell-table-34-row-3-string"
                     offset={0}
                   >
                     <span
@@ -99850,7 +100821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-3-date"
+                    id="cell-table-34-row-3-date"
                     offset={0}
                   >
                     <span
@@ -99869,7 +100840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-3-select"
+                    id="cell-table-34-row-3-select"
                     offset={0}
                   >
                     <span
@@ -99888,7 +100859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-3-status"
+                    id="cell-table-34-row-3-status"
                     offset={0}
                   >
                     <span
@@ -99918,7 +100889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-3-number"
+                    id="cell-table-34-row-3-number"
                     offset={0}
                   >
                     <span
@@ -99930,7 +100901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-3-boolean"
+                    id="cell-table-34-row-3-boolean"
                     offset={0}
                   >
                     <span
@@ -99949,7 +100920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-3-node"
+                    id="cell-table-34-row-3-node"
                     offset={0}
                   >
                     <span
@@ -99976,7 +100947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-3-object"
+                    id="cell-table-34-row-3-object"
                     offset={0}
                   >
                     <span
@@ -100010,13 +100981,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-33"
+                          id="select-row-table-34-row-33"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-33"
+                          htmlFor="select-row-table-34-row-33"
                           title={null}
                         >
                           <span
@@ -100033,7 +101004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-33-string"
+                    id="cell-table-34-row-33-string"
                     offset={0}
                   >
                     <span
@@ -100052,7 +101023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-33-date"
+                    id="cell-table-34-row-33-date"
                     offset={0}
                   >
                     <span
@@ -100071,7 +101042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-33-select"
+                    id="cell-table-34-row-33-select"
                     offset={0}
                   >
                     <span
@@ -100090,7 +101061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-33-status"
+                    id="cell-table-34-row-33-status"
                     offset={0}
                   >
                     <span
@@ -100120,7 +101091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-33-number"
+                    id="cell-table-34-row-33-number"
                     offset={0}
                   >
                     <span
@@ -100132,7 +101103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-33-boolean"
+                    id="cell-table-34-row-33-boolean"
                     offset={0}
                   >
                     <span
@@ -100151,7 +101122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-33-node"
+                    id="cell-table-34-row-33-node"
                     offset={0}
                   >
                     <span
@@ -100178,7 +101149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-33-object"
+                    id="cell-table-34-row-33-object"
                     offset={0}
                   >
                     <span
@@ -100212,13 +101183,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-43"
+                          id="select-row-table-34-row-43"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-43"
+                          htmlFor="select-row-table-34-row-43"
                           title={null}
                         >
                           <span
@@ -100235,7 +101206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-43-string"
+                    id="cell-table-34-row-43-string"
                     offset={0}
                   >
                     <span
@@ -100254,7 +101225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-43-date"
+                    id="cell-table-34-row-43-date"
                     offset={0}
                   >
                     <span
@@ -100273,7 +101244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-43-select"
+                    id="cell-table-34-row-43-select"
                     offset={0}
                   >
                     <span
@@ -100292,7 +101263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-43-status"
+                    id="cell-table-34-row-43-status"
                     offset={0}
                   >
                     <span
@@ -100322,7 +101293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-43-number"
+                    id="cell-table-34-row-43-number"
                     offset={0}
                   >
                     <span
@@ -100341,7 +101312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-43-boolean"
+                    id="cell-table-34-row-43-boolean"
                     offset={0}
                   >
                     <span
@@ -100360,7 +101331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-43-node"
+                    id="cell-table-34-row-43-node"
                     offset={0}
                   >
                     <span
@@ -100387,7 +101358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-43-object"
+                    id="cell-table-34-row-43-object"
                     offset={0}
                   >
                     <span
@@ -100421,13 +101392,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-53"
+                          id="select-row-table-34-row-53"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-53"
+                          htmlFor="select-row-table-34-row-53"
                           title={null}
                         >
                           <span
@@ -100444,7 +101415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-53-string"
+                    id="cell-table-34-row-53-string"
                     offset={0}
                   >
                     <span
@@ -100463,7 +101434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-53-date"
+                    id="cell-table-34-row-53-date"
                     offset={0}
                   >
                     <span
@@ -100482,7 +101453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-53-select"
+                    id="cell-table-34-row-53-select"
                     offset={0}
                   >
                     <span
@@ -100501,7 +101472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-53-status"
+                    id="cell-table-34-row-53-status"
                     offset={0}
                   >
                     <span
@@ -100531,7 +101502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-53-number"
+                    id="cell-table-34-row-53-number"
                     offset={0}
                   >
                     <span
@@ -100550,7 +101521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-53-boolean"
+                    id="cell-table-34-row-53-boolean"
                     offset={0}
                   >
                     <span
@@ -100569,7 +101540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-53-node"
+                    id="cell-table-34-row-53-node"
                     offset={0}
                   >
                     <span
@@ -100596,7 +101567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-53-object"
+                    id="cell-table-34-row-53-object"
                     offset={0}
                   >
                     <span
@@ -100630,13 +101601,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-63"
+                          id="select-row-table-34-row-63"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-63"
+                          htmlFor="select-row-table-34-row-63"
                           title={null}
                         >
                           <span
@@ -100653,7 +101624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-63-string"
+                    id="cell-table-34-row-63-string"
                     offset={0}
                   >
                     <span
@@ -100672,7 +101643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-63-date"
+                    id="cell-table-34-row-63-date"
                     offset={0}
                   >
                     <span
@@ -100691,7 +101662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-63-select"
+                    id="cell-table-34-row-63-select"
                     offset={0}
                   >
                     <span
@@ -100710,7 +101681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-63-status"
+                    id="cell-table-34-row-63-status"
                     offset={0}
                   >
                     <span
@@ -100740,7 +101711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-63-number"
+                    id="cell-table-34-row-63-number"
                     offset={0}
                   >
                     <span
@@ -100752,7 +101723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-63-boolean"
+                    id="cell-table-34-row-63-boolean"
                     offset={0}
                   >
                     <span
@@ -100771,7 +101742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-63-node"
+                    id="cell-table-34-row-63-node"
                     offset={0}
                   >
                     <span
@@ -100798,7 +101769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-63-object"
+                    id="cell-table-34-row-63-object"
                     offset={0}
                   >
                     <span
@@ -100832,13 +101803,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-73"
+                          id="select-row-table-34-row-73"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-73"
+                          htmlFor="select-row-table-34-row-73"
                           title={null}
                         >
                           <span
@@ -100855,7 +101826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-73-string"
+                    id="cell-table-34-row-73-string"
                     offset={0}
                   >
                     <span
@@ -100874,7 +101845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-73-date"
+                    id="cell-table-34-row-73-date"
                     offset={0}
                   >
                     <span
@@ -100893,7 +101864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-73-select"
+                    id="cell-table-34-row-73-select"
                     offset={0}
                   >
                     <span
@@ -100912,7 +101883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-73-status"
+                    id="cell-table-34-row-73-status"
                     offset={0}
                   >
                     <span
@@ -100942,7 +101913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-73-number"
+                    id="cell-table-34-row-73-number"
                     offset={0}
                   >
                     <span
@@ -100961,7 +101932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-73-boolean"
+                    id="cell-table-34-row-73-boolean"
                     offset={0}
                   >
                     <span
@@ -100980,7 +101951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-73-node"
+                    id="cell-table-34-row-73-node"
                     offset={0}
                   >
                     <span
@@ -101007,7 +101978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-73-object"
+                    id="cell-table-34-row-73-object"
                     offset={0}
                   >
                     <span
@@ -101041,13 +102012,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-83"
+                          id="select-row-table-34-row-83"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-83"
+                          htmlFor="select-row-table-34-row-83"
                           title={null}
                         >
                           <span
@@ -101064,7 +102035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-83-string"
+                    id="cell-table-34-row-83-string"
                     offset={0}
                   >
                     <span
@@ -101083,7 +102054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-83-date"
+                    id="cell-table-34-row-83-date"
                     offset={0}
                   >
                     <span
@@ -101102,7 +102073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-83-select"
+                    id="cell-table-34-row-83-select"
                     offset={0}
                   >
                     <span
@@ -101121,7 +102092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-83-status"
+                    id="cell-table-34-row-83-status"
                     offset={0}
                   >
                     <span
@@ -101151,7 +102122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-83-number"
+                    id="cell-table-34-row-83-number"
                     offset={0}
                   >
                     <span
@@ -101170,7 +102141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-83-boolean"
+                    id="cell-table-34-row-83-boolean"
                     offset={0}
                   >
                     <span
@@ -101189,7 +102160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-83-node"
+                    id="cell-table-34-row-83-node"
                     offset={0}
                   >
                     <span
@@ -101216,7 +102187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-83-object"
+                    id="cell-table-34-row-83-object"
                     offset={0}
                   >
                     <span
@@ -101250,13 +102221,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           checked={false}
                           className="bx--checkbox"
                           disabled={false}
-                          id="select-row-table-33-row-93"
+                          id="select-row-table-34-row-93"
                           onChange={[Function]}
                           type="checkbox"
                         />
                         <label
                           className="bx--checkbox-label"
-                          htmlFor="select-row-table-33-row-93"
+                          htmlFor="select-row-table-34-row-93"
                           title={null}
                         >
                           <span
@@ -101273,7 +102244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-center iot--table__cell--sortable"
                     data-column="string"
                     data-offset={0}
-                    id="cell-table-33-row-93-string"
+                    id="cell-table-34-row-93-string"
                     offset={0}
                   >
                     <span
@@ -101292,7 +102263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start"
                     data-column="date"
                     data-offset={0}
-                    id="cell-table-33-row-93-date"
+                    id="cell-table-34-row-93-date"
                     offset={0}
                   >
                     <span
@@ -101311,7 +102282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="select"
                     data-offset={0}
-                    id="cell-table-33-row-93-select"
+                    id="cell-table-34-row-93-select"
                     offset={0}
                   >
                     <span
@@ -101330,7 +102301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="status"
                     data-offset={0}
-                    id="cell-table-33-row-93-status"
+                    id="cell-table-34-row-93-status"
                     offset={0}
                   >
                     <span
@@ -101360,7 +102331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-end iot--table__cell--sortable"
                     data-column="number"
                     data-offset={0}
-                    id="cell-table-33-row-93-number"
+                    id="cell-table-34-row-93-number"
                     offset={0}
                   >
                     <span
@@ -101372,7 +102343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="boolean"
                     data-offset={0}
-                    id="cell-table-33-row-93-boolean"
+                    id="cell-table-34-row-93-boolean"
                     offset={0}
                   >
                     <span
@@ -101391,7 +102362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="node"
                     data-offset={0}
-                    id="cell-table-33-row-93-node"
+                    id="cell-table-34-row-93-node"
                     offset={0}
                   >
                     <span
@@ -101418,7 +102389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="data-table-start iot--table__cell--sortable"
                     data-column="object"
                     data-offset={0}
-                    id="cell-table-33-row-93-object"
+                    id="cell-table-34-row-93-object"
                     offset={0}
                   >
                     <span

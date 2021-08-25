@@ -432,6 +432,7 @@ Map {
         "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
         "itemsSelected": "items selected",
+        "loadMoreText": "Load more",
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortDescending": "Descending",
@@ -2385,6 +2386,9 @@ Map {
             "onRowExpanded": Object {
               "type": "func",
             },
+            "onRowLoadMore": Object {
+              "type": "func",
+            },
             "onRowSelected": Object {
               "type": "func",
             },
@@ -2604,6 +2608,9 @@ Map {
         "type": "oneOf",
       },
       "learnMoreText": Object {
+        "type": "string",
+      },
+      "loadMoreText": Object {
         "type": "string",
       },
       "locale": Object {
@@ -5233,6 +5240,9 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "type": "string",
@@ -20815,10 +20825,12 @@ Map {
       "editingStyle": null,
       "emptyState": "No list items to show",
       "expandedIds": Array [],
+      "handleLoadMore": [Function],
       "handleSelect": [Function],
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
+        "loadMore": "Load more",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
@@ -20879,6 +20891,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "handleLoadMore": Object {
+        "type": "func",
       },
       "handleSelect": Object {
         "type": "func",
@@ -20953,6 +20968,9 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "type": "string",
