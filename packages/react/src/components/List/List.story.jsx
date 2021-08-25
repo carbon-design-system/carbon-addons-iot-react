@@ -648,10 +648,7 @@ export const WithLoadMore = () => {
             },
           ]}
           expandedIds={expandedIds}
-          toggleExpansion={(id) => {
-            console.log('expanding row:', id);
-            setExpandedIds((prev) => [...prev, id]);
-          }}
+          toggleExpansion={(id) => setExpandedIds((prev) => [...prev, id])}
           isLoading={boolean('isLoading', false)}
           handleLoadMore={action('handleLoadMore:')}
         />
