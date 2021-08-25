@@ -5,6 +5,7 @@ import { COLORS } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { barChartData } from '../../utils/barChartDataSample';
 import { findMatchingAlertRange, handleTooltip } from '../../utils/cardUtilityFunctions';
+import dayjs from '../../utils/dayjs';
 
 import {
   generateSampleValues,
@@ -104,6 +105,35 @@ describe('timeSeriesUtils', () => {
         'day'
       );
       expect(sampleValues5).toHaveLength(7);
+
+      const sampleValues6 = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+        'timestamp',
+        'quarter'
+      );
+      expect(sampleValues6).toHaveLength(4);
+
+      const sampleValues7 = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+        'timestamp',
+        'month',
+        'this Quarter'
+      );
+      expect(sampleValues7).toHaveLength(3);
+
+      const sampleValues8 = generateSampleValues(
+        [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+        'timestamp',
+        'unknown'
+      );
+      expect(sampleValues8).toHaveLength(7);
+
+      const sampleValues9 = generateSampleValues(
+        { dataSourceId: 'temperature' },
+        'timestamp',
+        'week'
+      );
+      expect(sampleValues9).toHaveLength(4);
     });
   });
 
@@ -161,6 +191,64 @@ describe('timeSeriesUtils', () => {
     expect(
       formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1572933600000)
     ).toEqual('');
+
+    // day index 0
+    expect(
+      formatGraphTick(1572933600000, 0, [1, 2, 3, 4, 5, 6], 'day', 'en', 1572847200000)
+    ).toEqual('Nov 05');
+
+    // month index 0
+    expect(
+      formatGraphTick(1572933600000, 0, [1, 2, 3, 4, 5, 6], 'month', 'en', 1572847200000)
+    ).toEqual('Nov 2019');
+
+    // year index 0
+    expect(
+      formatGraphTick(1572933600000, 0, [1, 2, 3, 4, 5, 6], 'year', 'en', 1572847200000)
+    ).toEqual('2019');
+
+    // not same year, index 0
+    expect(
+      formatGraphTick(1572933600000, 0, [1, 2, 3, 4, 5, 6], 'year', 'en', 1541397600000)
+    ).toEqual('2019');
+
+    // minute
+    expect(
+      formatGraphTick(1572933600000, 0, [1, 2, 3, 4, 5, 6], 'minute', 'en', 1541397600000)
+    ).toEqual('00:00');
+
+    // unknown
+    expect(
+      formatGraphTick(1572933600000, 0, [1, 2, 3, 4, 5, 6], 'quarter', undefined, 1541397600000)
+    ).toEqual('Nov 05 2019');
+
+    // no locale passed
+    expect(
+      formatGraphTick(1572933600000, 0, [1, 2, 3, 4, 5, 6], 'hour', undefined, 1541397600000)
+    ).toEqual('Nov 05');
+
+    // hour, index 0, with only one tick
+    expect(formatGraphTick(1572933600000, 0, [1], 'hour', undefined, 1541397600000)).toEqual(
+      'Nov 05 00:00'
+    );
+
+    // hour, index 0, with only one tick, changed locale
+    expect(formatGraphTick(1572933600000, 0, [1], 'hour', 'zh', 1541397600000)).toEqual(
+      '11月05日 00:00'
+    );
+    // reset locale after change for rest of tests.
+    dayjs.locale('en');
+
+    // unknown, index 0, changed locale
+    expect(
+      formatGraphTick(1572933600000, 0, [1, 2, 3, 4, 5, 6], 'quarter', 'zh', 1541397600000)
+    ).toEqual('11月05日 2019');
+    // reset locale after change for rest of tests.
+    dayjs.locale('en');
+
+    expect(formatGraphTick(1572933600000, 0, [1], 'hour', undefined, 1541397600000, true)).toEqual(
+      'Nov 05 06:00'
+    );
   });
 
   it('findMatchingAlertRange', () => {
@@ -246,6 +334,41 @@ describe('timeSeriesUtils', () => {
   });
 
   describe('formatChartData', () => {
+    it("handles series that aren't an array", () => {
+      const series = {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+      };
+
+      expect(
+        formatChartData(
+          'timestamp',
+          series,
+          barChartData.timestamps.filter((data) => data.city === 'Amsterdam')
+        )
+      ).toEqual([
+        {
+          date: new Date('2020-02-09T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 447,
+        },
+        {
+          date: new Date('2020-02-10T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 450,
+        },
+        {
+          date: new Date('2020-02-11T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 512,
+        },
+        {
+          date: new Date('2020-02-12T16:23:45.000Z'),
+          group: 'Amsterdam',
+          value: 565,
+        },
+      ]);
+    });
     it('returns properly formatted data without dataFilter set', () => {
       const series = [
         {
@@ -460,6 +583,16 @@ describe('timeSeriesUtils', () => {
       // Default color should be used if no color is passed
       expect(formatColors(omit(series, 'color'))).toEqual({
         scale: { Amsterdam: CHART_COLORS[0] },
+      });
+
+      // loop through the colors if series is an array with no colors passed
+      expect(
+        formatColors([
+          { label: 'Amsterdam', dataSourceId: 'particles' },
+          { label: 'New York', dataSourceId: 'particles' },
+        ])
+      ).toEqual({
+        scale: { Amsterdam: CHART_COLORS[0], 'New York': CHART_COLORS[1] },
       });
     });
   });
