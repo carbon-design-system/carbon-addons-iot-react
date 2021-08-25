@@ -2,8 +2,12 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { settings } from '../../constants/Settings';
+
 import IconDropdown from './IconDropdown';
 import { items } from './IconDropdown.story';
+
+const { iotPrefix } = settings;
 
 const iconDropdownProps = {
   id: 'icon-dropdown-1',
@@ -109,5 +113,34 @@ describe('Icon Dropdown', () => {
     expect(screen.queryByTestId(highlightedTestId)).toBeNull();
     userEvent.hover(screen.getAllByText(itemToHighlight.text)[0]);
     expect(screen.queryByTestId(highlightedTestId)).toBeDefined();
+  });
+
+  it('renders footer at top when direction=top', () => {
+    render(
+      <IconDropdown
+        {...iconDropdownProps}
+        direction="top"
+        helperText="help"
+        items={items}
+        selectedItem={null}
+        actions={{
+          onChangeView: () => {},
+        }}
+        testId="footer-test"
+      />
+    );
+    const itemToHighlight = items[3];
+    userEvent.click(screen.getByText(iconDropdownProps.label));
+    const footer = screen.getByTestId('footer-test-footer');
+    expect(footer).toBeVisible();
+    expect(footer).toHaveStyle('bottom:0');
+    expect(footer).toHaveStyle('padding-bottom:96px');
+    expect(footer).toHaveStyle('padding-top:0');
+    userEvent.hover(screen.getAllByText(itemToHighlight.text)[0]);
+    expect(
+      screen.getByText('Evaluation Chart', {
+        selector: `div.${iotPrefix}--icon-dropdown__selected-icon-label__content`,
+      })
+    ).toBeVisible();
   });
 });
