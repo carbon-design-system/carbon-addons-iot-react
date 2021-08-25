@@ -507,6 +507,7 @@ const DateTimePicker = ({
 
   const onDatePickerClose = (range, single, flatpickr) => {
     // force it to stay open
+    /* istanbul ignore else */
     if (flatpickr) {
       flatpickr.open();
     }
@@ -602,6 +603,7 @@ const DateTimePicker = ({
 
   useEffect(
     () => {
+      /* istanbul ignore else */
       if (defaultValue || humanValue === null) {
         parseDefaultValue(defaultValue);
         setLastAppliedValue(defaultValue);
@@ -615,6 +617,7 @@ const DateTimePicker = ({
     setIsExpanded(false);
     parseDefaultValue(lastAppliedValue);
 
+    /* istanbul ignore else */
     if (onCancel) {
       onCancel();
     }
