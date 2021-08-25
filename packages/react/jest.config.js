@@ -25,6 +25,7 @@ module.exports = {
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
   coverageDirectory: 'jest/coverage',
   coverageThreshold: {
+    './src/components/TimePickerSpinner/TimePickerSpinner.jsx': all90Covered,
     './src/components/List/HierarchyList/HierarchyList.jsx': all90Covered,
     './src/components/ValueCard/ValueRenderer.jsx': all90Covered,
     './src/components/List/ListItem/ListItemWrapper.jsx': all90Covered,
@@ -37,6 +38,7 @@ module.exports = {
     './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
     './src/components/TimeSeriesCard/timeSeriesUtils.js': all90Covered,
     './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
+    './src/components/TableCard/tableCardUtils.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
     './src/components/ResourceList/ResourceList.jsx': all90Covered,
     './src/components/Table/Table.jsx': all90Covered,
