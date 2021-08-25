@@ -84,6 +84,7 @@ const propTypes = {
     dataItem: PropTypes.string,
     edit: PropTypes.string,
     dataItemEditorDataItemCustomLabel: PropTypes.string,
+    dataItemEditorDataItemHelperText: PropTypes.func,
     dataItemEditorDataItemUnit: PropTypes.string,
     dataItemEditorDataItemFilter: PropTypes.string,
     dataItemEditorDataItemThresholds: PropTypes.string,
@@ -109,6 +110,8 @@ const defaultProps = {
     notSet: 'Not set',
     none: 'None',
     dataItemEditorDataItemCustomLabel: 'Custom label',
+    dataItemEditorDataItemHelperText: (dataItemSource, dataItemId) =>
+      `${dataItemSource}: ${dataItemId}`,
     dataItemEditorDataItemUnit: 'Unit',
     dataItemEditorDataItemFilter: 'Data filter',
     dataItemEditorDataItemThresholds: 'Thresholds',
@@ -318,7 +321,10 @@ const DataSeriesFormItemModal = ({
                 })
               }
               value={editDataItem.label}
-              helperText={`${mergedI18n.dataItemSource}: ${editDataItem.dataItemId}`}
+              helperText={mergedI18n.dataItemEditorDataItemHelperText(
+                mergedI18n.dataItemSource,
+                editDataItem.dataItemId
+              )}
             />
           </div>
 
