@@ -624,7 +624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
   >
     <div
       className="iot--list-item iot--list-item__selectable"
-      data_testid={null}
+      data-testid={null}
       onClick={[Function]}
       onKeyPress={[Function]}
       role="button"
