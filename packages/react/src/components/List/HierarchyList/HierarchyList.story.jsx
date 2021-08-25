@@ -76,6 +76,7 @@ export const StatefulListWithNestedSearching = () => (
       i18n={object('i18n', {
         searchPlaceHolderText: 'Search',
       })}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -123,6 +124,7 @@ export const WithDefaultSelectedId = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -191,6 +193,7 @@ export const WithOverflowMenu = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -255,6 +258,7 @@ export const WithNestedReorder = () => {
           hasSearch={boolean('hasSearch', true)}
           onSelect={action('onSelect')}
           hasDeselection={boolean('hasDeselection', true)}
+          hasMultiSelect={boolean('hasMultiSelect', false)}
         />
       </div>
     );
@@ -304,6 +308,7 @@ export const WithDefaultExpandedIds = () => (
       defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -387,6 +392,7 @@ export const WithMixedHierarchies = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -435,6 +441,7 @@ export const WithSelectableCategories = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
