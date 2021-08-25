@@ -1589,6 +1589,56 @@ WithRowExpansionAndActions.parameters = {
   },
 };
 
+export const RowExpansionAndLoadMore = () => {
+  const tableDataNested = tableData
+    .slice(0, number('number of rows in story', 3))
+    .map((i, idx) => ({
+      ...i,
+      children:
+        idx === 0
+          ? [
+              getNewRow(idx, 'A'),
+              {
+                ...getNewRow(idx, 'B'),
+              },
+              getNewRow(idx, 'C'),
+              {
+                ...getNewRow(idx, 'D'),
+                hasLoadMore: true,
+                children: [
+                  getNewRow(0, 'D-1'),
+                  getNewRow(0, 'D-2'),
+                  getNewRow(0, 'D-3'),
+                  getNewRow(0, 'D-3'),
+                  getNewRow(0, 'D-4'),
+                  getNewRow(0, 'D-5'),
+                  getNewRow(0, 'D-6'),
+                ],
+              },
+            ]
+          : undefined,
+    }));
+
+  return (
+    <StatefulTable
+      id="my-nested-table"
+      columns={tableColumns}
+      data={tableDataNested}
+      actions={{
+        table: {
+          onRowLoadMore: action('onRowLoadMore:'),
+        },
+      }}
+      options={{
+        hasRowExpansion: boolean('options.hasRowExpansion', true),
+        hasRowNesting: boolean('options.hasRowNesting', true),
+      }}
+    />
+  );
+};
+
+RowExpansionAndLoadMore.storyName = 'row expansion: with load more ';
+
 export const WithSorting = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;

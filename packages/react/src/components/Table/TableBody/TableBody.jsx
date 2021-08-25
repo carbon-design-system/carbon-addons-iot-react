@@ -13,6 +13,7 @@ import {
 import deprecate from '../../../internal/deprecate';
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
+import TableBodyLoadMoreRow from './TableBodyLoadMoreRow/TableBodyLoadMoreRow';
 
 const { TableBody: CarbonTableBody } = DataTable;
 
@@ -56,6 +57,8 @@ const propTypes = {
   learnMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** I18N label for dismiss */
   dismissText: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** I18N label for load more */
+  loadMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -81,6 +84,7 @@ const propTypes = {
     onRowClicked: PropTypes.func,
     onApplyRowActions: PropTypes.func,
     onRowExpanded: PropTypes.func,
+    onRowLoadMore: PropTypes.func,
   }).isRequired,
   /** What column ordering is currently applied to the table */
   ordering: PropTypes.arrayOf(
@@ -148,6 +152,7 @@ const TableBody = ({
   learnMoreText,
   dismissText,
   actionFailedText,
+  loadMoreText,
   totalColumns,
   actions,
   rowActionsState,
@@ -273,7 +278,7 @@ const TableBody = ({
     const rowHasSingleRowEditMode = !!(myRowActionState && myRowActionState.isEditMode);
     const isSelectable = rowEditMode || someRowHasSingleRowEditMode ? false : row.isSelectable;
 
-    const rowElement = (
+    const rowElement = !row.isLoadMoreRow ? (
       <TableBodyRow
         langDir={langDir}
         key={row.id}
@@ -324,9 +329,33 @@ const TableBody = ({
         values={row.values}
         showExpanderColumn={showExpanderColumn}
       />
+    ) : (
+      <TableBodyLoadMoreRow
+        id={row.id}
+        ordering={orderingMap}
+        loadMoreText={loadMoreText}
+        nestingLevel={nestingLevel}
+        tableActions={{
+          ...pick(
+            actions,
+            'onApplyRowAction',
+            'onRowExpanded',
+            'onRowClicked',
+            'onClearRowError',
+            'onRowLoadMore'
+          ),
+          onRowSelected,
+        }}
+      />
     );
     return shouldShowChildren
-      ? [rowElement].concat(row.children.map((childRow) => renderRow(childRow, nestingLevel + 1)))
+      ? [rowElement]
+          .concat(row.children.map((childRow) => renderRow(childRow, nestingLevel + 1)))
+          .concat(
+            row.hasLoadMore
+              ? renderRow({ id: `loadMore--${row.id}`, isLoadMoreRow: true }, nestingLevel)
+              : []
+          )
       : rowElement;
   };
 

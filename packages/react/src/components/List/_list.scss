@@ -61,3 +61,19 @@
 .#{$iot-prefix}--list--skeleton {
   margin: $spacing-03 0 $spacing-03 $spacing-05;
 }
+
+.load-more-row {
+  justify-content: center;
+  cursor: pointer;
+  &:hover {
+    background: $hover-ui;
+  }
+  span {
+    @include type-style('body-short-01');
+
+    color: $interactive-01;
+    svg {
+      vertical-align: middle;
+    }
+  }
+}

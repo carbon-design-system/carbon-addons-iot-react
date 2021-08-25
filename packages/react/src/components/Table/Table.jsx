@@ -445,6 +445,7 @@ export const defaultProps = (baseProps) => ({
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
+    loadMoreText: 'Load more',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -926,7 +927,8 @@ const Table = (props) => {
                   'actionFailedText',
                   'learnMoreText',
                   'dismissText',
-                  'selectRowAria'
+                  'selectRowAria',
+                  'loadMoreText'
                 )}
                 totalColumns={totalColumns}
                 {...pick(
@@ -948,7 +950,8 @@ const Table = (props) => {
                   'onApplyRowAction',
                   'onClearRowError',
                   'onRowExpanded',
-                  'onRowClicked'
+                  'onRowClicked',
+                  'onRowLoadMore'
                 )}
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-body`}

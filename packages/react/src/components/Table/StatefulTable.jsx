@@ -146,6 +146,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onRowClicked,
     onSelectAll,
     onRowExpanded,
+    onRowLoadMore,
     onApplyRowAction,
     onClearRowError,
     onEmptyStateAction,
@@ -274,6 +275,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onRowExpanded: (rowId, isExpanded) => {
         dispatch(tableRowExpand(rowId, isExpanded));
         callbackParent(onRowExpanded, rowId, isExpanded);
+      },
+      onRowLoadMore: (rowId) => {
+        callbackParent(onRowLoadMore, rowId);
       },
       onApplyRowAction: async (actionId, rowId) => {
         const action = state.data && getRowAction(state.data, actionId, rowId);

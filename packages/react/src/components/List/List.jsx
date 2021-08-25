@@ -1,7 +1,7 @@
 import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Bee32 } from '@carbon/icons-react';
+import { Bee32, ArrowDown16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
@@ -25,6 +25,7 @@ export const ListItemPropTypes = {
   }),
   children: PropTypes.arrayOf(PropTypes.object),
   isSelectable: PropTypes.bool,
+  hasLoadMore: PropTypes.bool,
 };
 
 const propTypes = {
@@ -83,6 +84,8 @@ const propTypes = {
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   testId: PropTypes.string,
+
+  handleLoadMore: PropTypes.func,
 };
 
 const defaultProps = {
@@ -99,6 +102,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
+    loadMore: 'Load more',
   },
   iconPosition: 'left',
   pagination: null,
@@ -113,6 +117,7 @@ const defaultProps = {
   },
   emptyState: 'No list items to show',
   testId: 'list',
+  handleLoadMore: () => {},
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -144,10 +149,12 @@ const List = forwardRef((props, ref) => {
     itemWillMove,
     emptyState,
     testId,
+    handleLoadMore,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const selectedItemRef = ref;
   const ListHeader = overrides?.header?.component || DefaultListHeader;
+
   const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item?.children && item.children.length > 0;
     const isSelected = selectedIds.some((id) => item.id === id);
@@ -208,14 +215,34 @@ const List = forwardRef((props, ref) => {
         />
       </div>,
       ...(hasChildren && isExpanded
-        ? item.children.map((child, nestedIndex) => {
-            return renderItemAndChildren(
-              child,
-              nestedIndex,
-              item.id,
-              getAdjustedNestingLevel(item?.children, level)
-            );
-          })
+        ? item.children
+            .map((child, nestedIndex) => {
+              return renderItemAndChildren(
+                child,
+                nestedIndex,
+                item.id,
+                getAdjustedNestingLevel(item?.children, level)
+              );
+            })
+            .concat(
+              item.hasLoadMore
+                ? [
+                    <div
+                      key={`${item.id}-list-item-parent-loading`}
+                      className={`${iotPrefix}--list-item load-more-row`}
+                      onClick={() => handleLoadMore(`loadMore--${item.id}`)}
+                      onKeyPress={() => handleLoadMore(`loadMore--${item.id}`)}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <span>
+                        {mergedI18n.loadMore} &nbsp;
+                        <ArrowDown16 />
+                      </span>
+                    </div>,
+                  ]
+                : []
+            )
         : []),
     ];
   };

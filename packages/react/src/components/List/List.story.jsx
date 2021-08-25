@@ -620,3 +620,45 @@ export const WithPagination = () => (
 );
 
 WithPagination.storyName = 'with pagination';
+
+export const WithLoadMore = () => {
+  const ListWithExpandIds = () => {
+    const [expandedIds, setExpandedIds] = useState([]);
+    return (
+      <div style={{ width: 400 }}>
+        <List
+          title="Sports Teams"
+          iconPosition="left"
+          items={[
+            {
+              id: 'org',
+              content: { value: 'Organization' },
+              children: [
+                { id: 'site-01', content: { value: 'Site 1' } },
+                {
+                  id: 'site-02',
+                  content: { value: 'Site 2' },
+                  children: [
+                    { id: 'system-01', content: { value: 'System 1' } },
+                    { id: 'system-02', content: { value: 'System 2' } },
+                  ],
+                  hasLoadMore: true,
+                },
+              ],
+            },
+          ]}
+          expandedIds={expandedIds}
+          toggleExpansion={(id) => {
+            console.log('expanding row:', id);
+            setExpandedIds((prev) => [...prev, id]);
+          }}
+          isLoading={boolean('isLoading', false)}
+          handleLoadMore={action('handleLoadMore:')}
+        />
+      </div>
+    );
+  };
+  return <ListWithExpandIds />;
+};
+
+WithLoadMore.storyName = 'with load more';
