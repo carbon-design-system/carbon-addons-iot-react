@@ -366,4 +366,25 @@ describe('RuleBuilderEditor', () => {
       ],
     });
   });
+
+  it('should call the default onChange when none given', () => {
+    jest.spyOn(RuleBuilderEditor.defaultProps, 'onChange');
+    const { container } = render(<RuleBuilderEditor columns={columns} />);
+
+    expect(screen.getByTestId('rule-builder-editor')).toBeDefined();
+    expect(container.querySelectorAll(`.${iotPrefix}--rule-builder-rule`).length).toEqual(1);
+    const groupLogic = screen.getByText('ALL');
+    expect(groupLogic).toBeDefined();
+    userEvent.click(groupLogic);
+    userEvent.click(screen.getAllByText('ANY')[0]);
+
+    expect(RuleBuilderEditor.defaultProps.onChange).toBeCalledTimes(1);
+    expect(RuleBuilderEditor.defaultProps.onChange).toBeCalledWith(
+      expect.objectContaining({
+        id: expect.stringMatching(/[a-zA-Z0-9]/),
+        groupLogic: 'ANY',
+        rules: expect.arrayContaining([NEW_RULE_MATCH]),
+      })
+    );
+  });
 });
