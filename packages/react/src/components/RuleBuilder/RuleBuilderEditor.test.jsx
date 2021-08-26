@@ -386,5 +386,6 @@ describe('RuleBuilderEditor', () => {
         rules: expect.arrayContaining([NEW_RULE_MATCH]),
       })
     );
+    jest.resetAllMocks();
   });
 });
