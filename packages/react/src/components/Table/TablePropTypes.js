@@ -145,10 +145,6 @@ export const I18NPropTypes = PropTypes.shape({
   pageForwardAria: PropTypes.string,
   pageNumberAria: PropTypes.string,
   itemsPerPage: PropTypes.string,
-  /** (min, max) => `${min}-${max} items` */
-  itemsRange: PropTypes.func,
-  /** page => `page ${page}` */
-  currentPage: PropTypes.func,
   /** (min, max, total) => `${min}-${max} of ${total} items` */
   itemsRangeWithTotal: PropTypes.func,
   /** (current, total) => `${current} of ${total} pages` */
@@ -174,8 +170,12 @@ export const I18NPropTypes = PropTypes.shape({
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
   batchCancel: PropTypes.string,
-  itemsSelected: PropTypes.string,
-  itemSelected: PropTypes.string,
+  /** String 'items selected' or function receiving the selectedCount as param:
+   * (selectedCount) => `${selectedCount} items selected` */
+  itemsSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  /** String 'item selected' or function receiving the selectedCount as param:
+   * (selectedCount) => `${selectedCount} item selected` */
+  itemSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   /** Row actions in table body */
   /** I18N label for in progress */
   inProgressText: PropTypes.string,
@@ -214,8 +214,6 @@ export const defaultI18NPropTypes = {
   pageForwardAria: 'Next page',
   pageNumberAria: 'Page Number',
   itemsPerPage: 'Items per page:',
-  itemsRange: (min, max) => `${min}–${max} items`,
-  currentPage: (page) => `page ${page}`,
   itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
   pageRange: (current, total) => `${current} of ${total} pages`,
   /** table body */
@@ -238,8 +236,8 @@ export const defaultI18NPropTypes = {
   closeMenuAria: 'Close menu',
   clearSelectionAria: 'Clear selection',
   batchCancel: 'Cancel',
-  itemsSelected: 'items selected',
-  itemSelected: 'item selected',
+  itemsSelected: (selectedCount) => `${selectedCount} items selected`,
+  itemSelected: (selectedCount) => `${selectedCount} item selected`,
   applyButtonText: 'Apply filters',
   cancelButtonText: 'Cancel',
   advancedFilterLabelText: 'Select an existing filter or',
