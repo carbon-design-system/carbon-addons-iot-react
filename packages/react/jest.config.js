@@ -64,6 +64,7 @@ module.exports = {
       functions: 74,
     },
     // Deprecated, no need for thresholds to be at 90%
+    './src/components/Hero/Hero.jsx': { statements: 83, branches: 40, functions: 50, lines: 83 },
     './src/components/Dashboard/DashboardHeader.jsx': { branches: 83 },
   },
   globals: {
