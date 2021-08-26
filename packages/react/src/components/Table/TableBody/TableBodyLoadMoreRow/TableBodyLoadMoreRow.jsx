@@ -4,10 +4,9 @@ import { DataTable } from 'carbon-components-react';
 import { ArrowDown16 } from '@carbon/icons-react';
 import styled from 'styled-components';
 
-import { settings } from '../../../../constants/Settings';
+import { COLORS } from '../../../../styles/styles';
 
 const { TableRow, TableCell } = DataTable;
-const { prefix } = settings;
 
 const propTypes = {
   /** The unique row id */
@@ -46,29 +45,6 @@ const defaultProps = {
   nestingLevel: 0,
 };
 
-const StyledTableRow = styled(({ isSelectable, isEditMode, ...others }) => (
-  <TableRow {...others} />
-))`
-  &&& {
-    .${prefix}--checkbox {
-      ${(props) => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
-    }
-    :hover {
-      td {
-        ${(props) =>
-          props.isSelectable === false && !props.isEditMode
-            ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
-            : ``} /* turn off hover states if the row is set not selectable */
-      }
-      ${(props) =>
-        props.isSelectable === false && !props.isEditMode
-          ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
-          : ``} /* turn off hover states if the row is set not selectable */
-    }
-
-
-`;
-
 const StyledTableCell = styled(({ ...props }) => <TableCell {...props} />)`
   &&& {
     cursor: pointer;
@@ -78,7 +54,7 @@ const StyledTableCell = styled(({ ...props }) => <TableCell {...props} />)`
 
 const StyledSpan = styled(({ ...props }) => <span {...props} />)`
   &&& {
-    color: #0f62fe;
+    color: ${COLORS.blue60};
     svg {
       vertical-align: middle;
     }
@@ -109,9 +85,9 @@ const TableBodyLoadMoreRow = ({
   );
 
   return (
-    <StyledTableRow key={id} isSelected={false} isSelectable isEditMode={false}>
+    <TableRow key={id} isSelected={false} isSelectable isEditMode={false}>
       {tableCells}
-    </StyledTableRow>
+    </TableRow>
   );
 };
 
