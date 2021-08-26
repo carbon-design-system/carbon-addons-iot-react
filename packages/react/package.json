@@ -209,7 +209,7 @@
     "warning": "^4.0.3"
   },
   "peerDependencies": {
-    "d3": ">=5.0.0 <=5.14.2",
+    "d3": ">=5.0.0 <=5.16.0",
     "react": ">=16.14.0",
     "react-dom": ">=16.14.0"
   },
@@ -284,7 +284,7 @@
     "cypress-file-upload": "^5.0.8",
     "cypress-image-diff-js": "^1.10.3",
     "cypress-real-events": "^1.5.0",
-    "d3": ">=5.0.0 <=5.14.2",
+    "d3": ">=5.0.0 <=5.16.0",
     "deepdash": "^5.1.2",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.14.0",
