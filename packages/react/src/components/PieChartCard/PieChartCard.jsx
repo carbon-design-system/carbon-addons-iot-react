@@ -184,8 +184,6 @@ const PieChartCard = ({
       },
       resizable: true,
       tooltip: {
-        // Will work properly after upgrade to @carbon/charts-react 0.38.2, please see
-        // https://github.com/carbon-design-system/carbon-charts/issues/808
         customHTML: customTooltip,
       },
     },
