@@ -48,6 +48,8 @@ module.exports = {
     './src/components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher.jsx': all90Covered,
     './src/components/BarChartCard/barChartUtils.js': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
+    './src/components/HotspotEditorModal/HotspotTextStyleTab/HotspotTextStyleTab.jsx': all90Covered,
+    './src/components/DashboardEditor/DashboardEditorHeader/DashboardEditorHeader.jsx': all90Covered,
     './src/components/SideNav/SideNav.jsx': all90Covered,
     './src/components/ComposedStructuredList/ComposedStructuredList.jsx': all90Covered,
     './src/components/NavigationBar/NavigationBar.jsx': all90Covered,
