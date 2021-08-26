@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Checkbox } from '../..';
 
@@ -135,5 +136,50 @@ describe('List', () => {
     const emptyComponent = <div data-testid="emptyState">{emptyText}</div>;
     render(<List title="list" hasEmptyState emptyState={emptyComponent} />);
     expect(screen.getByTestId('emptyState').textContent).toEqual(emptyText);
+  });
+
+  it('calls handleLoadMore when load more row clicked', () => {
+    const mockLoadMore = jest.fn();
+    render(
+      <List
+        title="Sports Teams"
+        items={[
+          {
+            id: 'org',
+            content: { value: 'Organization' },
+            children: [
+              { id: 'site-01', content: { value: 'Site 1' } },
+              {
+                id: 'site-02',
+                content: { value: 'Site 2' },
+                children: [
+                  { id: 'system-01', content: { value: 'System 1' } },
+                  { id: 'system-02', content: { value: 'System 2' } },
+                ],
+                hasLoadMore: true,
+              },
+            ],
+          },
+        ]}
+        expandedIds={['org', 'site-02']}
+        handleLoadMore={mockLoadMore}
+      />
+    );
+    expect(mockLoadMore).not.toHaveBeenCalled();
+    userEvent.click(screen.getByRole('button', { name: 'Load more' }));
+    expect(mockLoadMore).toHaveBeenCalledWith('loadMore--site-02');
+    fireEvent.keyPress(screen.getByRole('button', { name: 'Load more' }), {
+      key: 'Enter',
+      code: 13,
+      charCode: 13,
+    });
+    expect(mockLoadMore).toHaveBeenCalledTimes(2);
+  });
+  it('loading', () => {
+    const mockTestId = 'testId';
+    render(<List title="Sports Teams" items={[]} isLoading testId={mockTestId} />);
+
+    expect(screen.getByText('Sports Teams')).toBeInTheDocument();
+    expect(screen.getByTestId(`${mockTestId}-loading`)).toBeInTheDocument();
   });
 });

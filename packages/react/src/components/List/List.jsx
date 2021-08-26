@@ -295,7 +295,11 @@ const List = forwardRef((props, ref) => {
           {!isLoading ? (
             <>{listItems.length ? listItems : emptyContent}</>
           ) : (
-            <SkeletonText className={`${iotPrefix}--list--skeleton`} width="90%" />
+            <SkeletonText
+              className={`${iotPrefix}--list--skeleton`}
+              width="90%"
+              data-testid={`${testId}-loading`}
+            />
           )}
         </div>
         {pagination && !isLoading ? (
