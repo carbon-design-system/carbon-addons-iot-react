@@ -414,7 +414,6 @@ Map {
         "closeMenuAria": "Close menu",
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage Columns",
-        "currentPage": [Function],
         "downloadIconDescription": "Download table content",
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
@@ -427,11 +426,10 @@ Map {
         "filterButtonAria": "Filters",
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
-        "itemSelected": "item selected",
+        "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
-        "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
-        "itemsSelected": "items selected",
+        "itemsSelected": [Function],
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortDescending": "Descending",
@@ -975,9 +973,6 @@ Map {
             "columnSelectionConfig": Object {
               "type": "string",
             },
-            "currentPage": Object {
-              "type": "func",
-            },
             "dismissText": Object {
               "type": "string",
             },
@@ -1006,19 +1001,36 @@ Map {
               "type": "string",
             },
             "itemSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "itemsPerPage": Object {
               "type": "string",
-            },
-            "itemsRange": Object {
-              "type": "func",
             },
             "itemsRangeWithTotal": Object {
               "type": "func",
             },
             "itemsSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "learnMoreText": Object {
               "type": "string",
@@ -1723,7 +1735,6 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "createNewAdvancedFilterText": "create a new advanced filter",
-        "currentPage": [Function],
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
@@ -1734,11 +1745,10 @@ Map {
         "filterButtonAria": "Filters",
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
-        "itemSelected": "item selected",
+        "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
-        "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
-        "itemsSelected": "items selected",
+        "itemsSelected": [Function],
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortCloseMenu": "Close menu",
@@ -1982,9 +1992,6 @@ Map {
             "columnSelectionConfig": Object {
               "type": "string",
             },
-            "currentPage": Object {
-              "type": "func",
-            },
             "dismissText": Object {
               "type": "string",
             },
@@ -2013,19 +2020,36 @@ Map {
               "type": "string",
             },
             "itemSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "itemsPerPage": Object {
               "type": "string",
-            },
-            "itemsRange": Object {
-              "type": "func",
             },
             "itemsRangeWithTotal": Object {
               "type": "func",
             },
             "itemsSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "learnMoreText": Object {
               "type": "string",
@@ -3314,7 +3338,17 @@ Map {
               "type": "number",
             },
             "totalItemsText": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -3433,7 +3467,6 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "createNewAdvancedFilterText": "create a new advanced filter",
-        "currentPage": [Function],
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
@@ -3444,11 +3477,10 @@ Map {
         "filterButtonAria": "Filters",
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
-        "itemSelected": "item selected",
+        "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
-        "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
-        "itemsSelected": "items selected",
+        "itemsSelected": [Function],
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortCloseMenu": "Close menu",
@@ -3680,10 +3712,30 @@ Map {
               "type": "string",
             },
             "itemSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "itemsSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "searchLabel": Object {
               "type": "string",
@@ -4569,7 +4621,17 @@ Map {
         "type": "number",
       },
       "totalItemsText": Object {
-        "type": "string",
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "func",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
     },
   },
@@ -5087,8 +5149,8 @@ Map {
         "expand": "Expand",
         "itemSelected": "1 item selected",
         "itemTitle": "Move 1 item underneath",
-        "itemsSelected": "%d items selected",
-        "itemsTitle": "Move %d items underneath",
+        "itemsSelected": [Function],
+        "itemsTitle": [Function],
         "modalDescription": "Select a destination",
         "move": "Move",
         "searchPlaceHolderText": "Enter a value",
@@ -5169,8 +5231,37 @@ Map {
             "expand": Object {
               "type": "string",
             },
-            "itemsSelected": Object {
+            "itemSelected": Object {
               "type": "string",
+            },
+            "itemTitle": Object {
+              "type": "string",
+            },
+            "itemsSelected": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "itemsTitle": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "modalDescription": Object {
               "type": "string",
@@ -6429,13 +6520,33 @@ Map {
         "args": Array [
           Object {
             "decrement": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hours": Object {
               "type": "string",
             },
             "increment": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "minutes": Object {
               "type": "string",
@@ -21035,7 +21146,17 @@ Map {
               "type": "number",
             },
             "totalItemsText": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
