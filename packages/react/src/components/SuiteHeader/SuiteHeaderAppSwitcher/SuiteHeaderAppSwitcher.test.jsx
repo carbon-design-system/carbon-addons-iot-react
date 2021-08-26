@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -109,13 +108,58 @@ describe('SuiteHeaderAppSwitcher', () => {
   it('shows loading state', async () => {
     delete window.location;
     window.location = { href: '' };
-    const wrapper = mount(
+    render(
       <SuiteHeaderAppSwitcher
         allApplicationsLink="https://www.ibm.com"
         noAccessLink="https://www.ibm.com"
       />
     );
     // Expect skeletons
-    expect(wrapper.find('[data-testid="suite-header-app-switcher--loading"]')).toHaveLength(1);
+    expect(screen.getByTestId('suite-header-app-switcher--loading')).toBeVisible();
+  });
+
+  it('calls the default onRouteChange', async () => {
+    jest.spyOn(SuiteHeaderAppSwitcher.defaultProps, 'onRouteChange');
+    render(
+      <SuiteHeaderAppSwitcher
+        allApplicationsLink="https://www.ibm.com"
+        noAccessLink="https://www.ibm.com"
+        customApplications={[]}
+      />
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'All applications' }));
+    expect(SuiteHeaderAppSwitcher.defaultProps.onRouteChange).toHaveBeenCalledWith(
+      'NAVIGATOR',
+      'https://www.ibm.com'
+    );
+    expect(window.location.href).toBe('https://www.ibm.com');
+    jest.restoreAllMocks();
+  });
+
+  it('shows custom applications', async () => {
+    const onRouteChange = jest.fn();
+    render(
+      <SuiteHeaderAppSwitcher
+        allApplicationsLink="https://www.ibm.com"
+        noAccessLink="https://www.ibm.com"
+        customApplications={[
+          {
+            id: 'custom',
+            name: 'Custom application',
+            href: 'https://www.ibm.com',
+            isExternal: false,
+          },
+        ]}
+        onRouteChange={onRouteChange}
+      />
+    );
+
+    const customAppButton = screen.getByRole('button', { name: 'Custom application' });
+    expect(customAppButton).toBeVisible();
+    await userEvent.click(customAppButton);
+    expect(onRouteChange).toHaveBeenCalledWith('APPLICATION', 'https://www.ibm.com', {
+      appId: 'custom',
+    });
   });
 });

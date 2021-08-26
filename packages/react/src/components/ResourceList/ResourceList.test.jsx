@@ -1,10 +1,14 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import Edit16 from '@carbon/icons-react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { spacing02 } from '@carbon/layout';
+
+import { settings } from '../../constants/Settings';
 
 import ResourceList from './ResourceList';
 
+const { prefix } = settings;
 const resourceData = [
   {
     id: 'row-0',
@@ -49,7 +53,7 @@ describe('ResourceList', () => {
   // handle click function test
   it('onRowClick', () => {
     const onRowClick = jest.fn();
-    const wrapper = mount(
+    render(
       <ResourceList
         design="normal"
         data={resourceData}
@@ -58,12 +62,13 @@ describe('ResourceList', () => {
       />
     );
 
-    wrapper.find('label[onClick]').first().simulate('click');
-    expect(onRowClick.mock.calls).toHaveLength(1);
+    userEvent.click(screen.getByLabelText('Item A'));
+    expect(onRowClick).toHaveBeenCalledWith('row-0');
   });
+
   it('customAction', () => {
     const actionClick = jest.fn();
-    const wrapper = mount(
+    render(
       <ResourceList
         design="normal"
         data={resourceData}
@@ -74,11 +79,11 @@ describe('ResourceList', () => {
         }}
       />
     );
-    wrapper.find('button[onClick]').first().simulate('click');
-    expect(actionClick.mock.calls).toHaveLength(1);
+    userEvent.click(screen.getAllByRole('button', { name: 'Configure' })[0]);
+    expect(actionClick).toHaveBeenCalledTimes(1);
   });
   it('extraContent', () => {
-    const wrapper = mount(
+    render(
       <ResourceList
         design="normal"
         data={resourceData}
@@ -86,8 +91,33 @@ describe('ResourceList', () => {
         extraContent={resourceData.map((i) => i.id)}
       />
     );
-    expect(wrapper.find('div.bx--structured-list-td').first().contains(resourceData[0].id)).toEqual(
-      true
+    expect(screen.getByText('row-0')).toBeVisible();
+  });
+
+  it('should set onClick to null when no onRowClick passed', () => {
+    render(
+      <ResourceList
+        design="normal"
+        data={resourceData}
+        currentItemId="row-2"
+        extraContent={resourceData.map((i) => i.id)}
+        onRowClick={undefined}
+      />
     );
+
+    userEvent.click(screen.getByText('Item A'));
+    expect(screen.getByLabelText('Item A')).not.toHaveAttribute('onClick');
+  });
+
+  it('should render inline', () => {
+    render(<ResourceList design="inline" data={resourceData} />);
+
+    const row = screen.getByText('Item A');
+    expect(row).toBeVisible();
+    expect(row.parentNode).toHaveClass(`${prefix}--structured-list-td`);
+    expect(row.nextSibling).toHaveClass(`${prefix}--structured-list-td`);
+    expect(row.nextSibling).toHaveStyleRule('font-weight', 'normal');
+    expect(row.nextSibling).toHaveStyleRule('padding-left', '0px !important');
+    expect(row.nextSibling).toHaveStyleRule('padding-top', `${spacing02} !important`);
   });
 });
