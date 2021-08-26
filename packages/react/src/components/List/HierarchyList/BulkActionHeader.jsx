@@ -17,7 +17,10 @@ const BulkActionHeader = ({
   <div className={className}>
     <div className={`${iotPrefix}--hierarchy-list-bulk-header--title`}>
       {editModeSelectedIds.length > 1
-        ? i18n.itemsSelected.replace('%d', editModeSelectedIds.length)
+        ? typeof i18n.itemsSelected === 'function'
+          ? i18n.itemsSelected(editModeSelectedIds.length)
+          : // Kept for backward compatability with existing i18n strings
+            i18n.itemsSelected.replace('%d', editModeSelectedIds.length)
         : i18n.itemSelected}
     </div>
     <div className={`${iotPrefix}--hierarchy-list-bulk-header--button-container`}>

@@ -521,6 +521,38 @@ describe('DataSeriesFormItemModal', () => {
     expect(unitLabel).toBeInTheDocument();
     expect(dataFilterLabel).toBeInTheDocument();
   });
+  it('supports default and i18n for dataItemEditorDataItemHelperText', () => {
+    const { rerender } = render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={valueCardConfig}
+        editDataItem={{
+          dataItemId: 'test-key1',
+        }}
+      />
+    );
+
+    expect(screen.getByText('Data item source: test-key1')).toBeInTheDocument();
+
+    rerender(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        i18n={{
+          dataItemSource: 'test-data-item-source',
+          dataItemEditorDataItemHelperText: (dataItemSource, dataItemId) =>
+            `${dataItemSource} - ${dataItemId}`,
+        }}
+        showEditor
+        cardConfig={valueCardConfig}
+        editDataItem={{
+          dataItemId: 'test-key1',
+        }}
+      />
+    );
+
+    expect(screen.getByText('test-data-item-source - test-key1')).toBeInTheDocument();
+  });
   it('Adds a custom label in a value card', () => {
     render(
       <DataSeriesFormItemModal
