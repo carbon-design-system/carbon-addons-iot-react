@@ -32,7 +32,7 @@ import DashboardEditor from './DashboardEditor';
 export const Experimental = () => <StoryNotice componentName="DashboardEditor" experimental />;
 Experimental.storyName = experimentalStoryTitle;
 
-const images = [
+export const images = [
   {
     id: 'assemblyline',
     src: assemblyline,
@@ -164,6 +164,7 @@ export default {
   parameters: {
     component: DashboardEditor,
   },
+  excludeStories: ['images'],
 };
 
 export const Default = () => (
