@@ -49,6 +49,7 @@ module.exports = {
     './src/components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher.jsx': all90Covered,
     './src/components/BarChartCard/barChartUtils.js': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
+    './src/components/DashboardEditor/DashboardEditorHeader/DashboardEditorHeader.jsx': all90Covered,
     './src/components/SideNav/SideNav.jsx': all90Covered,
     './src/components/ComposedStructuredList/ComposedStructuredList.jsx': all90Covered,
     './src/components/NavigationBar/NavigationBar.jsx': all90Covered,
@@ -65,6 +66,7 @@ module.exports = {
       functions: 74,
     },
     // Deprecated, no need for thresholds to be at 90%
+    './src/components/Hero/Hero.jsx': { statements: 83, branches: 40, functions: 50, lines: 83 },
     './src/components/Dashboard/DashboardHeader.jsx': { branches: 83 },
   },
   globals: {
