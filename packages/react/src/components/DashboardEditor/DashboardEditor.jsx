@@ -490,6 +490,7 @@ const DashboardEditor = ({
   const handleCardSelect = useCallback(
     (id) => {
       setSelectedCardId(id);
+      /* istanbul ignore else */
       if (onCardSelect) {
         onCardSelect(id);
       }
@@ -572,6 +573,7 @@ const DashboardEditor = ({
         cardConfig.content.imgState === 'new' &&
         !imagesToUpload.some((image) => image.id === cardConfig.content.id)
       ) {
+        /* istanbul ignore else */
         if (cardConfig.content.id && cardConfig.content.src) {
           setImagesToUpload((prevImagesToUpload) => [
             ...prevImagesToUpload,
