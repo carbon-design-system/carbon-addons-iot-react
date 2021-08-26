@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@4tw/cypress-drag-drop@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@4tw/cypress-drag-drop/-/cypress-drag-drop-1.8.0.tgz#f2990a414b18445cc117540ba6aba6994ecdd0e8"
+  integrity sha512-hPg9JvG3f+rzunVj6cZjgHaNtZ8JMbHBwD00PZjyl6/ysqyZzeR74b8yWUF0zohWcCG9bHVu666EhotOiIKhZw==
+
 "@angular-builders/custom-webpack@11.1.1":
   version "11.1.1"
   resolved "https://registry.yarnpkg.com/@angular-builders/custom-webpack/-/custom-webpack-11.1.1.tgz#5ef535f5c51cb2f5a27f53fcfab54176cd1d14d4"

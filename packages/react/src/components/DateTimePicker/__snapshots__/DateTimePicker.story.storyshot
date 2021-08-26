@@ -548,6 +548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   >
                     <div
                       className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+                      data-testid="time-picker-spinner-wrapper"
                     >
                       <div
                         className="bx--form-item"
@@ -653,6 +654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     </div>
                     <div
                       className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+                      data-testid="time-picker-spinner-wrapper"
                     >
                       <div
                         className="bx--form-item"
@@ -1028,6 +1030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   >
                     <div
                       className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+                      data-testid="time-picker-spinner-wrapper"
                     >
                       <div
                         className="bx--form-item"
@@ -1133,6 +1136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     </div>
                     <div
                       className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+                      data-testid="time-picker-spinner-wrapper"
                     >
                       <div
                         className="bx--form-item"
@@ -1829,6 +1833,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     </div>
                     <div
                       className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+                      data-testid="time-picker-spinner-wrapper"
                     >
                       <div
                         className="bx--form-item"
