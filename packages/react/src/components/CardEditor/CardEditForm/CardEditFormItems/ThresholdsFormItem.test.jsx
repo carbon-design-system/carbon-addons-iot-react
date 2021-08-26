@@ -242,4 +242,25 @@ describe('ThresholdsFormItem', () => {
       },
     ]);
   });
+
+  it('sets 0 if threshold.value is undefined', () => {
+    render(
+      <ThresholdsFormItem
+        {...commonProps}
+        thresholds={[
+          {
+            value: undefined,
+            comparison: '>',
+            color: 'red',
+            icon: 'Warning',
+          },
+        ]}
+      />
+    );
+    expect(
+      screen.getByRole('spinbutton', {
+        name: 'Numeric input field with increment and decrement buttons',
+      })
+    ).toHaveValue(0);
+  });
 });
