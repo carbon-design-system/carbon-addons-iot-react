@@ -11706,10 +11706,10 @@ d3-zoom@1:
     d3-selection "1"
     d3-transition "1"
 
-"d3@>=5.0.0 <=5.16.0":
-  version "5.16.0"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-5.16.0.tgz#9c5e8d3b56403c79d4ed42fbd62f6113f199c877"
-  integrity sha512-4PL5hHaHwX4m7Zr1UapXW23apo6pexCgdetdJ5kTmADpG/7T9Gkxw0M0tf/pjoB63ezCCm0u5UaFYy2aMt0Mcw==
+"d3@>=5.0.0 <=5.14.2":
+  version "5.14.2"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-5.14.2.tgz#a3fb3af016d362aaf4dacbe618ae949c1744b8c4"
+  integrity sha512-Ccipa9XrYW5N0QkP6u0Qb8kU6WekIXBiDenmZm1zLvuq/9pBBhRCJLCICEOsH5Og4B0Xw02bhqGkK5VN/oPH0w==
   dependencies:
     d3-array "1"
     d3-axis "1"
