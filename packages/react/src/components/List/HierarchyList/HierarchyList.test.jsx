@@ -545,7 +545,6 @@ describe('HierarchyList', () => {
     userEvent.click(screen.queryAllByRole('button', { name: i18nDefaults.expand })[4]);
     userEvent.click(screen.queryByTestId('New York Mets_Pete Alonso-checkbox'));
 
-    // expect(screen.getByText(i18nDefaults.allRows)).toBeVisible();
     expect(screen.getByText(i18nDefaults.itemSelected)).toBeVisible();
     expect(screen.queryByText('2 items selected')).not.toBeInTheDocument();
 
