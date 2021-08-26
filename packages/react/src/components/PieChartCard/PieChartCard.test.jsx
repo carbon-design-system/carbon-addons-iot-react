@@ -1,7 +1,9 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
-
 import '@testing-library/jest-dom/extend-expect';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import fileDownload from 'js-file-download';
+
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import Table from '../Table/Table';
@@ -9,7 +11,7 @@ import Table from '../Table/Table';
 import PieChartCard, { formatColors } from './PieChartCard';
 
 jest.unmock('@carbon/charts-react');
-
+jest.mock('js-file-download');
 const chartDataExample = [
   {
     group: '2V2N 9KYPM',
@@ -343,5 +345,38 @@ describe('PieChartCard', () => {
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
+  });
+
+  it('onCsvDownload should fire when download button is clicked', async () => {
+    render(<PieChartCard {...pieChartCardProps} isExpanded />);
+    // First check that the button appeared
+    const downloadBtn = screen.getByTestId('download-button');
+    expect(downloadBtn).toBeTruthy();
+    // click the button
+    userEvent.click(downloadBtn);
+    // This means the csvDownloadHandler is firing
+    expect(fileDownload).toHaveBeenCalledWith(
+      `J9DZ F37AP,Misc,JQAI 2M4L1,YEL48 Q6XK YEL48,L22I P66EP L22I P66EP,2V2N 9KYPM\n50,40,20,15,10,1,\n`,
+      'Schools.csv'
+    );
+  });
+
+  it('should show custom tooltip even when editable', () => {
+    const customTooltip = jest.fn().mockImplementation(() => 'custom-tooltip-test');
+    const { container } = render(
+      <PieChartCard
+        {...pieChartCardProps}
+        content={{
+          ...pieChartCardProps.content,
+          customTooltip,
+        }}
+        isExpanded
+        isEditable
+      />
+    );
+    const firstSlice = container.querySelectorAll('.slice')[0];
+    userEvent.hover(firstSlice);
+    expect(firstSlice).toHaveClass('hovered');
+    expect(screen.getByText('custom-tooltip-test')).toBeVisible();
   });
 });
