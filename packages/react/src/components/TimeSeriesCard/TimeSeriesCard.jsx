@@ -490,6 +490,9 @@ const TimeSeriesCard = ({
       timeScale: {
         addSpaceOnEdges: !isNil(addSpaceOnEdges) ? addSpaceOnEdges : 1,
       },
+      toolbar: {
+        enabled: false,
+      },
     }),
     [
       xLabel,
