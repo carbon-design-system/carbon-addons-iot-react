@@ -158,7 +158,7 @@ describe(
       });
 
       it('should hide header action actions in a small viewport', () => {
-        cy.viewport(606, viewportHeight);
+        cy.viewport(500, viewportHeight);
         const onClick = cy.stub();
         mount(
           <Header
