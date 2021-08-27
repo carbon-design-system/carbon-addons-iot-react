@@ -44,6 +44,7 @@ module.exports = {
     './src/components/Card/CardRangePicker.jsx': all90Covered,
     './src/components/TableCard/tableCardUtils.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
+    './src/components/Dropdown/Dropdown.jsx': all90Covered,
     './src/components/Table/StatefulTable.jsx': all90Covered,
     './src/components/Table/statefulTableUtilities.js': all90Covered,
     './src/components/ResourceList/ResourceList.jsx': all90Covered,
@@ -60,6 +61,7 @@ module.exports = {
     './src/components/ComposedStructuredList/ComposedStructuredList.jsx': all90Covered,
     './src/components/NavigationBar/NavigationBar.jsx': all90Covered,
     './src/components/TileCatalog/CatalogContent.jsx': all90Covered,
+    './src/components/ImageCard/ImageUploader.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
