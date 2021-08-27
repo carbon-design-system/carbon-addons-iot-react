@@ -300,7 +300,7 @@ describe('Header', () => {
     const { container } = render(
       <Header {...HeaderPropsWithoutOnClick} shortAppName={undefined} appName={undefined} />
     );
-    expect(container.querySelectorAll(`${iotPrefix}--header__short-name`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--header__short-name`)).toHaveLength(0);
   });
 
   it('should not display an action item if isActionItemVisible returns false', () => {

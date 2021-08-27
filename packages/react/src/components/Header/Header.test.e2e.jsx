@@ -102,7 +102,7 @@ describe('Header', () => {
     cy.viewport(viewportWidth, viewportHeight);
   });
   context('header icons and overflow menu tests', () => {
-    it('should should header action icons at a large enough viewport', () => {
+    it('should show header action icons at a large enough viewport', () => {
       cy.viewport(607, viewportHeight);
       mount(<Header {...commonProps} />);
 
@@ -177,16 +177,11 @@ describe('Header', () => {
         .should(() => {
           expect(onClick).to.have.been.called;
         });
-
       cy.findByRole('button', { name: 'open and close list of options' })
         .find('svg')
         .invoke('attr', 'description')
         .should('eq', 'Open menu');
-      // click the left side specifically to _not_ click the svg element right in the center
-      // to ensure overflow also opens when clicking the button element.
-      cy.findByRole('button', { name: 'open and close list of options' }).click(5, 5, {
-        force: true,
-      });
+      cy.findByRole('button', { name: 'open and close list of options' }).click();
       cy.findByRole('menuitem', { name: 'help' }).should('be.visible').click();
       cy.findByRole('button', { name: 'help' })
         .find('svg')
@@ -210,6 +205,13 @@ describe('Header', () => {
         .should('eq', 'Close menu');
       cy.findByRole('menuitem', { name: 'user' }).click();
       cy.findByRole('button', { name: 'open and close list of options' }).should('be.visible');
+
+      // click the left side specifically to _not_ click the svg element right in the center
+      // to ensure overflow also opens when clicking the button element.
+      cy.findByRole('button', { name: 'open and close list of options' }).click(5, 5, {
+        force: true,
+      });
+      cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
     });
 
     it('should not show action items in overflow menu when isActionItemVisible returned false', () => {

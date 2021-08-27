@@ -111,7 +111,6 @@ const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) =
               <OverflowMenu
                 useAutoPositioning
                 onClick={({ target }) => {
-                  console.log({ target, tagName: target.tagName });
                   if (target.tagName === 'BUTTON') {
                     setOverflowOpen((prev) => !prev);
                   } else {
