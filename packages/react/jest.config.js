@@ -55,6 +55,7 @@ module.exports = {
     './src/components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher.jsx': all90Covered,
     './src/components/BarChartCard/barChartUtils.js': all90Covered,
     './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
+    './src/components/HotspotEditorModal/HotspotEditorModal.jsx': all90Covered,
     './src/components/Header/HeaderAction/HeaderAction.jsx': all90Covered,
     './src/components/HotspotEditorModal/HotspotTextStyleTab/HotspotTextStyleTab.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditorHeader/DashboardEditorHeader.jsx': all90Covered,
