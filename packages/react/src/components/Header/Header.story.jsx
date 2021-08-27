@@ -219,6 +219,11 @@ export const SmallBreakpoint = () => (
           label: 'A Hidden Icon',
           onClick: action('click fired'),
           btnContent: <Bullhorn16 fill="white" description="A Hidden Icon" />,
+        },
+        {
+          label: 'HiddenByClass',
+          onClick: action('click fired'),
+          btnContent: <Bullhorn16 fill="white" description="A Hidden Icon" />,
           className: 'isReallyHidden',
         },
         {
