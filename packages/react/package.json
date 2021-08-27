@@ -167,8 +167,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "@carbon/charts": "0.41.11",
-    "@carbon/charts-react": "0.41.11",
+    "@carbon/charts": "0.41.98-d3v5-latest-0.1",
+    "@carbon/charts-react": "0.41.98-d3v5-latest-0.1",
     "@carbon/colors": "10.28.0",
     "@carbon/icons-react": "10.35.0",
     "@carbon/layout": "10.27.0",
@@ -342,12 +342,10 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.146.0-next.130",
+  "version": "2.146.0-next.151",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",
-    "flatpickr": "4.6.1",
-    "@carbon/charts": "0.41.11",
-    "@carbon/charts-react": "0.41.11"
+    "flatpickr": "4.6.1"
   }
 }
