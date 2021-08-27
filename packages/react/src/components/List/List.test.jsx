@@ -1,11 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Checkbox } from '../..';
+import { settings } from '../../constants/Settings';
 
 import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
 
+const { iotPrefix } = settings;
 const defaultEmptyText = 'No list items to show';
 
 describe('List', () => {
@@ -135,5 +138,23 @@ describe('List', () => {
     const emptyComponent = <div data-testid="emptyState">{emptyText}</div>;
     render(<List title="list" hasEmptyState emptyState={emptyComponent} />);
     expect(screen.getByTestId('emptyState').textContent).toEqual(emptyText);
+  });
+  it('should show skeleton text when loading', () => {
+    const { container } = render(<List title="list" items={getListItems(1)} isLoading />);
+    expect(container.querySelectorAll(`.${iotPrefix}--list--skeleton`)).toHaveLength(1);
+  });
+  it('should not call onSelect when editingStyle is set', () => {
+    const onSelect = jest.fn();
+    render(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        editingStyle="single-nesting"
+        isSelectable
+      />
+    );
+    userEvent.click(screen.getByTitle('Item 1'));
+    expect(onSelect).not.toHaveBeenCalled();
   });
 });
