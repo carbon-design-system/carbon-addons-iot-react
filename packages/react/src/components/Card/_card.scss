@@ -120,6 +120,10 @@ $lineHeightSize: 1.375em;
   height: var(--card-content-height);
   overflow-x: visible;
   overflow-y: visible;
+
+  .#{$prefix}--cc--chart-wrapper {
+    background-color: inherit;
+  }
 }
 
 .#{$iot-prefix}--card--content--expanded {
