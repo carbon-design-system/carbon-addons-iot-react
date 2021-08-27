@@ -8643,6 +8643,7 @@ Map {
         "whatsNew": "What's new",
       },
       "idleTimeoutData": null,
+      "isActionItemVisible": [Function],
       "isAdminView": false,
       "onRouteChange": [Function],
       "onSideNavToggled": [Function],
@@ -8950,6 +8951,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isActionItemVisible": Object {
+        "type": "func",
       },
       "isAdminView": Object {
         "type": "bool",
