@@ -107,7 +107,7 @@ const HeaderAction = ({
   };
 
   /**
-   * Close expanded menu when ESC is pressed, then return focus to menu button
+   * Toggles expanded state and return focus to menu button
    */
   const handleHeaderKeyDown = (event) => {
     // Handle keydowns for opening and closing the menus
