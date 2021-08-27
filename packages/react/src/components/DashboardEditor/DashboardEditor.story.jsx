@@ -27,6 +27,7 @@ import large_portrait from '../ImageGalleryModal/images/large_portrait.png'; // 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 import SimpleList from '../List/SimpleList/SimpleList';
 
+import DashboardEditorDefaultCardRenderer from './DashboardEditorDefaultCardRenderer';
 import DashboardEditor from './DashboardEditor';
 
 export const Experimental = () => <StoryNotice componentName="DashboardEditor" experimental />;
@@ -832,27 +833,23 @@ export const CustomCardPreviewRenderer = () => (
       <Link href="www.ibm.com">Favorites</Link>,
     ]}
     renderCardPreview={(
-      cardConfig,
-      cardProps,
+      cardConfig, // eslint-disable-line no-unused-vars
+      // the original card config, mostly useless, would remove if I could
+      cardProps, // the updated card props with the correct position etc
       // These props are not used, but they could be to create your own implementation
       onSelectCard, // eslint-disable-line no-unused-vars
       onDuplicateCard, // eslint-disable-line no-unused-vars
       onRemoveCard, // eslint-disable-line no-unused-vars
-      isSelected // eslint-disable-line no-unused-vars
+      isSelected, // eslint-disable-line no-unused-vars
+      onShowImageGallery, // eslint-disable-line no-unused-vars
+      availableDimensions
     ) => {
-      return cardConfig.type === 'CUSTOM' ? (
-        <Card
-          key={cardConfig.id}
-          id={cardConfig.id}
-          size={cardConfig.size}
-          title={cardConfig.title}
-          isEditable
-          {...cardProps}
-        >
+      return cardProps.type === 'CUSTOM' ? (
+        <Card key={cardProps.id} isEditable {...cardProps}>
           <div style={{ padding: '1rem' }}>
             This content is rendered by the renderCardPreview function. The &quot;value&quot;
             property on the card will be rendered here:
-            <h3>{cardConfig.value}</h3>
+            <h3>{cardProps.value}</h3>
           </div>
 
           {
@@ -860,7 +857,14 @@ export const CustomCardPreviewRenderer = () => (
             cardProps.children
           }
         </Card>
-      ) : undefined;
+      ) : (
+        // if not a custom card you can use the default card renderer, but you can translate and add your own changes to the card JSON
+        <DashboardEditorDefaultCardRenderer
+          card={{ ...cardProps, title: `my custom title: ${cardProps.title}` }}
+          key={cardProps.id}
+          availableDimensions={availableDimensions}
+        />
+      );
     }}
     isLoading={boolean('isLoading', false)}
   />
