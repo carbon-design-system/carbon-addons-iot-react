@@ -94,141 +94,150 @@ const commonProps = {
   ],
 };
 
-describe('Header', () => {
-  const viewportWidth = 1670;
-  const viewportHeight = 900;
-  afterEach(() => {
-    // reset viewport to defaults after each test
-    cy.viewport(viewportWidth, viewportHeight);
-  });
-  context('header icons and overflow menu tests', () => {
-    it('should show header action icons at a large enough viewport', () => {
-      cy.viewport(607, viewportHeight);
-      mount(<Header {...commonProps} />);
-
-      cy.findByLabelText('Announcements').should('be.visible');
-      cy.findByRole('button', { name: 'help' })
-        .should('be.visible')
-        .click()
-        .find('svg')
-        .invoke('attr', 'description')
-        .should('eq', 'Help icon');
-      cy.findByLabelText('Header Panel')
-        .should('be.visible')
-        .findByText('JohnDoe@ibm.com')
-        .should('be.visible');
-      cy.findByRole('button', { name: 'help' })
-        .click()
-        .findByLabelText('Header Panel')
-        .should('not.exist');
+describe(
+  'Header',
+  {
+    retries: {
+      runMode: 5,
+      openMode: 5,
+    },
+  },
+  () => {
+    const viewportWidth = 1670;
+    const viewportHeight = 900;
+    afterEach(() => {
+      // reset viewport to defaults after each test
+      cy.viewport(viewportWidth, viewportHeight);
     });
+    context('header icons and overflow menu tests', () => {
+      it('should show header action icons at a large enough viewport', () => {
+        cy.viewport(607, viewportHeight);
+        mount(<Header {...commonProps} />);
 
-    it('should only hide header action actions in a small viewport when visible buttons intersect', () => {
-      cy.viewport(607, viewportHeight);
-      mount(
-        <>
-          <style>{`.isReallyHidden { display: none !important; }`}</style>
+        cy.findByLabelText('Announcements').should('be.visible');
+        cy.findByRole('button', { name: 'help' })
+          .should('be.visible')
+          .click()
+          .find('svg')
+          .invoke('attr', 'description')
+          .should('eq', 'Help icon');
+        cy.findByLabelText('Header Panel')
+          .should('be.visible')
+          .findByText('JohnDoe@ibm.com')
+          .should('be.visible');
+        cy.findByRole('button', { name: 'help' })
+          .click()
+          .findByLabelText('Header Panel')
+          .should('not.exist');
+      });
+
+      it('should only hide header action actions in a small viewport when visible buttons intersect', () => {
+        cy.viewport(607, viewportHeight);
+        mount(
+          <>
+            <style>{`.isReallyHidden { display: none !important; }`}</style>
+            <Header
+              {...commonProps}
+              actionItems={[
+                {
+                  label: 'HiddenButton',
+                  btnContent: <Checkbox16 fill="white" description="HiddenButton" />,
+                  className: 'isReallyHidden',
+                },
+                ...commonProps.actionItems,
+              ]}
+            />
+          </>
+        );
+
+        cy.findByLabelText('HiddenButton').should('not.be.visible');
+        cy.findByLabelText('Announcements').should('be.visible');
+        cy.findByRole('button', { name: 'help' }).should('be.visible');
+        cy.findByRole('button', { name: 'open and close list of options' }).should('not.exist');
+        cy.findByRole('menuitem', { name: 'user' }).should('be.visible');
+      });
+
+      it('should hide header action actions in a small viewport', () => {
+        cy.viewport(606, viewportHeight);
+        const onClick = cy.stub();
+        mount(
           <Header
             {...commonProps}
-            actionItems={[
-              {
-                label: 'HiddenButton',
-                btnContent: <Checkbox16 fill="white" description="HiddenButton" />,
-                className: 'isReallyHidden',
-              },
-              ...commonProps.actionItems,
-            ]}
+            actionItems={commonProps.actionItems.map((item, index) => {
+              if (index === 0) {
+                return {
+                  ...item,
+                  onClick,
+                };
+              }
+
+              return item;
+            })}
           />
-        </>
-      );
+        );
 
-      cy.findByLabelText('HiddenButton').should('not.be.visible');
-      cy.findByLabelText('Announcements').should('be.visible');
-      cy.findByRole('button', { name: 'help' }).should('be.visible');
-      cy.findByRole('button', { name: 'open and close list of options' }).should('not.exist');
-      cy.findByRole('menuitem', { name: 'user' }).should('be.visible');
-    });
+        cy.findByLabelText('Announcements').should('not.exist');
+        cy.findByRole('button', { name: 'help' }).should('not.exist');
+        cy.findByRole('button', { name: 'open and close list of options' }).click();
+        cy.findByRole('menuitem', { name: 'Announcements' })
+          .should('be.visible')
+          .click()
+          .should(() => {
+            expect(onClick).to.have.been.called;
+          });
+        cy.findByRole('button', { name: 'open and close list of options' })
+          .find('svg')
+          .invoke('attr', 'description')
+          .should('eq', 'Open menu');
+        cy.findByRole('button', { name: 'open and close list of options' }).click();
+        cy.findByRole('menuitem', { name: 'help' }).should('be.visible').click();
+        cy.findByRole('button', { name: 'help' })
+          .find('svg')
+          .invoke('attr', 'description')
+          .should('eq', 'Close menu');
+        cy.findByLabelText('Header Panel')
+          .should('be.visible')
+          .findByText('JohnDoe@ibm.com')
+          .should('be.visible');
+        cy.findByRole('button', { name: 'help' })
+          .click()
+          .findByLabelText('Header Panel')
+          .should('not.exist');
 
-    it('should hide header action actions in a small viewport', () => {
-      cy.viewport(606, viewportHeight);
-      const onClick = cy.stub();
-      mount(
-        <Header
-          {...commonProps}
-          actionItems={commonProps.actionItems.map((item, index) => {
-            if (index === 0) {
-              return {
-                ...item,
-                onClick,
-              };
-            }
+        cy.findByRole('button', { name: 'open and close list of options' }).click();
+        cy.findByRole('menuitem', { name: 'user' }).click();
+        cy.findByText('JohnDoe@ibm.com').should('be.visible');
+        cy.findByRole('menuitem', { name: 'user' })
+          .find('svg')
+          .invoke('attr', 'description')
+          .should('eq', 'Close menu');
+        cy.findByRole('menuitem', { name: 'user' }).click();
+        cy.findByRole('button', { name: 'open and close list of options' }).should('be.visible');
 
-            return item;
-          })}
-        />
-      );
-
-      cy.findByLabelText('Announcements').should('not.exist');
-      cy.findByRole('button', { name: 'help' }).should('not.exist');
-      cy.findByRole('button', { name: 'open and close list of options' }).click();
-      cy.findByRole('menuitem', { name: 'Announcements' })
-        .should('be.visible')
-        .click()
-        .should(() => {
-          expect(onClick).to.have.been.called;
+        // click the left side specifically to _not_ click the svg element right in the center
+        // to ensure overflow also opens when clicking the button element.
+        cy.findByRole('button', { name: 'open and close list of options' }).click(5, 5, {
+          force: true,
         });
-      cy.findByRole('button', { name: 'open and close list of options' })
-        .find('svg')
-        .invoke('attr', 'description')
-        .should('eq', 'Open menu');
-      cy.findByRole('button', { name: 'open and close list of options' }).click();
-      cy.findByRole('menuitem', { name: 'help' }).should('be.visible').click();
-      cy.findByRole('button', { name: 'help' })
-        .find('svg')
-        .invoke('attr', 'description')
-        .should('eq', 'Close menu');
-      cy.findByLabelText('Header Panel')
-        .should('be.visible')
-        .findByText('JohnDoe@ibm.com')
-        .should('be.visible');
-      cy.findByRole('button', { name: 'help' })
-        .click()
-        .findByLabelText('Header Panel')
-        .should('not.exist');
-
-      cy.findByRole('button', { name: 'open and close list of options' }).click();
-      cy.findByRole('menuitem', { name: 'user' }).click();
-      cy.findByText('JohnDoe@ibm.com').should('be.visible');
-      cy.findByRole('menuitem', { name: 'user' })
-        .find('svg')
-        .invoke('attr', 'description')
-        .should('eq', 'Close menu');
-      cy.findByRole('menuitem', { name: 'user' }).click();
-      cy.findByRole('button', { name: 'open and close list of options' }).should('be.visible');
-
-      // click the left side specifically to _not_ click the svg element right in the center
-      // to ensure overflow also opens when clicking the button element.
-      cy.findByRole('button', { name: 'open and close list of options' }).click(5, 5, {
-        force: true,
-      });
-      cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
-    });
-
-    it('should not show action items in overflow menu when isActionItemVisible returned false', () => {
-      cy.viewport(500, viewportHeight);
-      const isActionItemVisible = cy.stub().callsFake((label) => {
-        if (label === 'Custom icon 1') {
-          return false;
-        }
-
-        return true;
+        cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
       });
 
-      mount(<Header {...commonProps} isActionItemVisible={isActionItemVisible} />);
+      it('should not show action items in overflow menu when isActionItemVisible returned false', () => {
+        cy.viewport(500, viewportHeight);
+        const isActionItemVisible = cy.stub().callsFake((label) => {
+          if (label === 'Custom icon 1') {
+            return false;
+          }
 
-      cy.findByRole('button', { name: 'open and close list of options' }).click();
-      cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
-      cy.findByRole('menuitem', { name: 'Custom icon 1' }).should('not.exist');
+          return true;
+        });
+
+        mount(<Header {...commonProps} isActionItemVisible={isActionItemVisible} />);
+
+        cy.findByRole('button', { name: 'open and close list of options' }).click();
+        cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
+        cy.findByRole('menuitem', { name: 'Custom icon 1' }).should('not.exist');
+      });
     });
-  });
-});
+  }
+);
