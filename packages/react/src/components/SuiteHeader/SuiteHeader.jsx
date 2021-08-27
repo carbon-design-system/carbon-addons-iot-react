@@ -117,6 +117,7 @@ const defaultProps = {
   walkmePath: null,
   walkmeLang: 'en',
   testId: 'suite-header',
+  isActionItemVisible: () => true,
 };
 
 const propTypes = {
@@ -169,7 +170,7 @@ const propTypes = {
   testId: PropTypes.string,
 
   // eslint-disable-next-line react/forbid-foreign-prop-types
-  ...Header.propTypes,
+  isActionItemVisible: Header.propTypes.isActionItemVisible,
 };
 
 const SuiteHeader = ({
