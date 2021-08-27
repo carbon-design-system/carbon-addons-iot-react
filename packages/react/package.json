@@ -3,7 +3,7 @@
   "engines": {
     "node": "12.x || 14.x"
   },
-  "browser": "lib/index.js",
+  "browser": "es/index.js",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "umd/carbon-addons-iot-react.js",
