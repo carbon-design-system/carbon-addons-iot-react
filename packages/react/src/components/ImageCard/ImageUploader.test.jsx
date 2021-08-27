@@ -205,4 +205,64 @@ describe('ImageUploader', () => {
 
     global.fetch = undefined;
   });
+
+  it('will show an error if fetch throws an error', async () => {
+    global.fetch = jest.fn().mockImplementation(
+      () =>
+        new Promise((resolve, reject) => {
+          reject(new Error('BOOM!'));
+        })
+    );
+    render(<ImageUploader hasInsertFromUrl width={300} />);
+    userEvent.click(screen.getByText(/Insert from URL/));
+    userEvent.type(screen.getByPlaceholderText('Type or insert URL'), 'https://www.ibm.com');
+    userEvent.click(screen.getByRole('button', { name: 'OK' }));
+    expect(fetch).toHaveBeenCalled();
+    expect(await screen.findByText('Upload error:')).toBeVisible();
+    expect(screen.getByText('BOOM!')).toBeVisible();
+
+    global.fetch = undefined;
+  });
+
+  it('will call the default onUpload with a valid url', async () => {
+    jest.spyOn(ImageUploader.defaultProps, 'onUpload');
+    const abPromise = new Promise((resolve) => {
+      resolve(new ArrayBuffer(Buffer.from('a'.repeat(10)).length));
+    });
+    global.fetch = jest.fn().mockImplementation(
+      () =>
+        new Promise((resolve) => {
+          resolve({
+            ok: true,
+            arrayBuffer: () => abPromise,
+          });
+        })
+    );
+    render(<ImageUploader hasInsertFromUrl width={300} />);
+    userEvent.click(screen.getByText(/Insert from URL/));
+    userEvent.type(
+      screen.getByPlaceholderText('Type or insert URL'),
+      'https://www.ibm.com/image.png'
+    );
+    userEvent.click(screen.getByRole('button', { name: 'OK' }));
+
+    await act(() => abPromise);
+    expect(fetch).toHaveBeenCalledWith('https://www.ibm.com/image.png');
+    expect(ImageUploader.defaultProps.onUpload).toHaveBeenCalledWith({
+      dataURL: 'data:image/png;base64,AAAAAAAAAAAAAA==',
+      files: { addedFiles: expect.arrayContaining([expect.any(File)]) },
+    });
+
+    global.fetch = undefined;
+    jest.resetAllMocks();
+  });
+
+  it('will call default onBrowseClick', () => {
+    jest.spyOn(ImageUploader.defaultProps, 'onBrowseClick');
+    render(<ImageUploader width={300} />);
+    userEvent.click(screen.getByRole('button', { name: 'Add from gallery' }));
+    expect(ImageUploader.defaultProps.onBrowseClick).toHaveBeenCalled();
+
+    jest.resetAllMocks();
+  });
 });
