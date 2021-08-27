@@ -77,8 +77,9 @@ const propTypes = {
     openMenu: PropTypes.string,
     closeMenu: PropTypes.string,
   }),
-
   testId: PropTypes.string,
+  /** Returns true, if the icon should be shown. (itemLabel) => {} */
+  isActionItemVisible: PropTypes.func,
 };
 
 export const APP_SWITCHER = 'AppSwitcher';
@@ -99,6 +100,7 @@ const defaultProps = {
     closeMenu: 'Close menu',
   },
   testId: 'header',
+  isActionItemVisible: () => true,
 };
 
 /**
@@ -119,6 +121,7 @@ const Header = ({
   appSwitcherLabel,
   i18n,
   testId,
+  isActionItemVisible,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const theShortAppName = shortAppName || appName;
@@ -168,6 +171,7 @@ const Header = ({
         actionItems={actionItems}
         i18n={mergedI18n}
         testId={`${testId}-action-group`}
+        isActionItemVisible={isActionItemVisible}
       />
     </CarbonHeader>
   );
