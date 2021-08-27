@@ -1,8 +1,14 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import omit from 'lodash/omit';
+import userEvent from '@testing-library/user-event';
+
+import { settings } from '../../../../constants/Settings';
+import { CARD_TYPES } from '../../../../constants/LayoutConstants';
 
 import DataSeriesFormItemModal from './DataSeriesFormItemModal';
+
+const { iotPrefix } = settings;
 
 describe('DataSeriesFormItemModal', () => {
   beforeEach(() => {
@@ -986,5 +992,267 @@ describe('DataSeriesFormItemModal', () => {
       .getByText('Customize data series')
       .closest('.iot--composed-modal--large');
     expect(largeContainer).toBeInTheDocument();
+  });
+
+  it('should show static aggregation methods when isSummaryDashboard:true', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={{
+          ...editTimeseriesDataItem,
+          aggregationMethod: ['min'],
+        }}
+        editDataSeries={editDataSeriesTimeSeries}
+        isSummaryDashboard
+        validDataItems={[
+          {
+            dataSourceId: 'temperature',
+            aggregationMethod: 'min',
+            grain: 'hourly',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByText('MIN')).toBeVisible();
+    expect(screen.getByText('Hourly')).toBeVisible();
+  });
+
+  it("should fallback to an empty string when editDataItem.aggregationMethod doesn't exist", () => {
+    const { container } = render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+        isSummaryDashboard
+        validDataItems={[
+          {
+            dataSourceId: 'temperature',
+            aggregationMethod: 'min',
+            grain: 'hourly',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByText('Aggregation method')).toBeVisible();
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--card-edit-form--input-group--item-half-content`)
+    ).toHaveLength(1);
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--card-edit-form--input-group--item-half-content`)[0]
+    ).toHaveTextContent('');
+  });
+
+  it('should call setEditDataItem when changing units on an IMAGE card.', () => {
+    const setEditDataItem = jest.fn();
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={{
+          id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+          title: 'Untitled',
+          size: 'MEDIUM',
+          type: 'IMAGE',
+          content: {
+            hideMinimap: true,
+            hideHotspots: false,
+            hideZoomControls: false,
+            displayOption: 'contain',
+          },
+        }}
+        setEditDataItem={setEditDataItem}
+      />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Example: %'), '℉');
+    expect(setEditDataItem).toHaveBeenCalledWith({ unit: '℉' });
+  });
+
+  it('should call setEditDataItem when changing precision on an IMAGE card.', () => {
+    const setEditDataItem = jest.fn();
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={{
+          id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+          title: 'Untitled',
+          size: 'MEDIUM',
+          type: 'IMAGE',
+          content: {
+            hideMinimap: true,
+            hideHotspots: false,
+            hideZoomControls: false,
+            displayOption: 'contain',
+          },
+        }}
+        setEditDataItem={setEditDataItem}
+      />
+    );
+
+    userEvent.click(screen.getByText('Not set'));
+    userEvent.click(screen.getByText('3'));
+    expect(setEditDataItem).toHaveBeenCalledWith({ precision: 3 });
+  });
+
+  it('should call setEditDataItem and remove precision when unsetting precision on an IMAGE card.', () => {
+    const setEditDataItem = jest.fn();
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={{
+          id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+          title: 'Untitled',
+          size: 'MEDIUM',
+          type: 'IMAGE',
+          content: {
+            hideMinimap: true,
+            hideHotspots: false,
+            hideZoomControls: false,
+            displayOption: 'contain',
+          },
+        }}
+        editDataItem={{
+          precision: 3,
+        }}
+        setEditDataItem={setEditDataItem}
+      />
+    );
+
+    userEvent.click(screen.getByText('3'));
+    userEvent.click(screen.getByText('Not set'));
+    expect(setEditDataItem).toHaveBeenCalledWith({});
+  });
+
+  it("should fallback to 'Not set' on a VALUE card when no precision given", () => {
+    const setEditDataItem = jest.fn();
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={{
+          id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+          title: 'Untitled',
+          size: 'MEDIUM',
+          type: CARD_TYPES.VALUE,
+          content: {},
+        }}
+        editDataItem={{
+          aggregationMethod: 'min',
+        }}
+        setEditDataItem={setEditDataItem}
+      />
+    );
+
+    expect(screen.getByText('Not set')).toBeVisible();
+  });
+
+  it('should call setEditDataItem when changing thresholds on VALUE cards', () => {
+    const setEditDataItem = jest.fn();
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={{
+          id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+          title: 'Untitled',
+          size: 'MEDIUM',
+          type: CARD_TYPES.VALUE,
+          content: {},
+        }}
+        editDataItem={{}}
+        setEditDataItem={setEditDataItem}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Add threshold' }));
+    expect(setEditDataItem).toHaveBeenLastCalledWith({
+      thresholds: [{ color: '#da1e28', comparison: '>', icon: 'Warning alt', value: 0 }],
+    });
+    userEvent.click(screen.getByLabelText('Increment number'));
+    expect(setEditDataItem).toHaveBeenLastCalledWith({
+      thresholds: [{ color: '#da1e28', comparison: '>', icon: 'Warning alt', value: 1 }],
+    });
+  });
+
+  it('should call setEditDataItem and onChange when submitting', () => {
+    const setEditDataItem = jest.fn();
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={{
+          id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+          title: 'Untitled',
+          size: 'MEDIUM',
+          type: CARD_TYPES.VALUE,
+          content: {
+            attributes: [
+              {
+                label: 'Tagpath',
+                dataSourceId: 'footTraffic',
+              },
+            ],
+          },
+        }}
+        editDataItem={{}}
+        setEditDataItem={setEditDataItem}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Add threshold' }));
+    userEvent.click(screen.getByLabelText('Increment number'));
+    userEvent.click(screen.getByRole('button', { name: 'Save' }));
+    expect(setEditDataItem).toHaveBeenLastCalledWith({});
+    expect(setEditDataItem).toHaveBeenCalledTimes(3);
+    expect(commonProps.onChange).toHaveBeenCalledWith({
+      content: { attributes: [{ dataSourceId: 'footTraffic', label: 'Tagpath' }, {}] },
+      id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+      size: 'MEDIUM',
+      title: 'Untitled',
+      type: 'VALUE',
+    });
+  });
+
+  it('should simply return editDataItem as the new card on save when using an IMAGE card', () => {
+    const setEditDataItem = jest.fn();
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={{
+          id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+          title: 'Untitled',
+          size: 'MEDIUM',
+          type: CARD_TYPES.IMAGE,
+          content: {
+            hideMinimap: true,
+            hideHotspots: false,
+            hideZoomControls: false,
+            displayOption: 'contain',
+          },
+        }}
+        editDataItem={{}}
+        setEditDataItem={setEditDataItem}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Add threshold' }));
+    userEvent.click(screen.getByLabelText('Increment number'));
+    userEvent.click(screen.getByText('Not set'));
+    userEvent.click(screen.getByText('3'));
+    userEvent.click(screen.getByRole('button', { name: 'Save' }));
+    expect(setEditDataItem).toHaveBeenCalledTimes(4);
+    expect(setEditDataItem).toHaveBeenLastCalledWith({});
+    // called with an empty object since editDataItem is passed as {}
+    // and IMAGE cards just return what was given.
+    expect(commonProps.onChange).toHaveBeenCalledWith({});
   });
 });
