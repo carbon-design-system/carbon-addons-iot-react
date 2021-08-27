@@ -7,11 +7,16 @@
   - [Using native `fetch` to retrieve data](#using-native-fetch-to-retrieve-data)
   - [Using provided data fetching util](#using-provided-data-fetching-util)
   - [Using provided data fetching hook (recommended)](#using-provided-data-fetching-hook-recommended)
+  - [Hiding an icon from the action menu](#hiding-an-icon-from-the-action-menu)
 - [Props](#props)
 - [Feedback](#feedback)
 - External Links
   - [Design specs](https://pages.github.ibm.com/ai-applications/design/components/buttons/usage)
   - [Source Code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/MenuButton)
+
+## Getting started
+
+The SuiteHeader can be imported as `import {SuiteHeader} from 'carbon-addons-iot-react';`. It has it's own custom props, but then also uses all props from the header.
 
 ## Examples of usage
 
@@ -127,6 +132,90 @@ const SuiteHeaderWithDataFetchingHookExample = () => {
     />
   );
 };
+```
+
+### Hiding an icon from the action menu
+
+You can hide actionItems in the header by passing an isActionItemVisible function. This function is passed
+the label of each function and allow you to determine if it should be rendered or not.
+
+```jsx
+import { SuiteHeader } from 'carbon-addons-iot-react';
+
+<SuiteHeader
+  suiteName="Application Suite"
+  appName="Application Name"
+  userDisplayName="Admin User"
+  username="adminuser"
+  routes={{
+    profile: 'https://www.ibm.com',
+    navigator: 'https://www.ibm.com',
+    admin: 'https://www.ibm.com',
+    logout: 'https://www.ibm.com',
+    whatsNew: 'https://www.ibm.com',
+    gettingStarted: 'https://www.ibm.com',
+    documentation: 'https://www.ibm.com',
+    requestEnhancement: 'https://www.ibm.com',
+    support: 'https://www.ibm.com',
+    about: 'https://www.ibm.com',
+  }}
+  applications={[
+    {
+      id: 'monitor',
+      name: 'Monitor',
+      href: 'https://www.ibm.com',
+    },
+    {
+      id: 'health',
+      name: 'Health',
+      href: 'https://ibm.com',
+      isExternal: true,
+    },
+  ]}
+  customActionItems={[
+    {
+      label: 'aHiddenIcon',
+      btnContent: <ScreenOff16 id="hidden-button" fill="white" description="hidden-button-icon" />,
+    },
+    {
+      label: 'bell',
+      btnContent: (
+        <span id="bell-icon">
+          <NotificationOn id="notification-button" fill="white" description="Icon" />
+        </span>
+      ),
+    },
+    {
+      label: 'bee',
+      hasHeaderPanel: true,
+      btnContent: (
+        <span id="bee-icon">
+          <Bee fill="white" description="bee-icon" />
+        </span>
+      ),
+    },
+  ]}
+  customApplications={[
+    {
+      id: 'customapp1',
+      name: 'Custom Application',
+      href: 'https://www.ibm.com',
+    },
+    {
+      id: 'customapp2',
+      name: 'Another Custom Application',
+      href: 'https://google.com',
+      isExternal: true,
+    },
+  ]}
+  isActionItemVisible={(label) => {
+    if (label === 'aHiddenIcon' || label === 'AppSwitcher') {
+      return false;
+    }
+
+    return true;
+  }}
+/>;
 ```
 
 ## Props

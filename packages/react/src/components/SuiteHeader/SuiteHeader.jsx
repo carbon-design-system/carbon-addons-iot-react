@@ -166,8 +166,10 @@ const propTypes = {
   walkmePath: PropTypes.string,
   /** Walkme language code */
   walkmeLang: PropTypes.string,
-
   testId: PropTypes.string,
+
+  // eslint-disable-next-line react/forbid-foreign-prop-types
+  ...Header.propTypes,
 };
 
 const SuiteHeader = ({
