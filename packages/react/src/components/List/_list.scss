@@ -62,9 +62,13 @@
   margin: $spacing-03 0 $spacing-03 $spacing-05;
 }
 
-.load-more-row {
+.#{$iot-prefix}--load-more-row {
   justify-content: center;
   cursor: pointer;
+  width: 100%;
+  border: none;
+  background: $ui-01;
+
   &:hover {
     background: $hover-ui;
   }
@@ -74,6 +78,7 @@
     color: $interactive-01;
     svg {
       vertical-align: middle;
+      margin-left: $spacing-04;
     }
   }
 }

@@ -1,0 +1,17 @@
+@import '../../../../globals/vars';
+
+.#{$iot-prefix}--load-more-cell {
+  text-align: center !important;
+  cursor: pointer;
+  width: 100%;
+
+  span {
+    @include type-style('body-short-01');
+
+    color: $interactive-01;
+    svg {
+      vertical-align: middle;
+      margin-left: $spacing-04;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React, { createElement, useMemo, useRef, useState } from 'react';
-import { boolean, text, select, array, object } from '@storybook/addon-knobs';
+import { boolean, text, select, array, object, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { SettingsAdjust16, TrashCan16 } from '@carbon/icons-react';
 import isEqual from 'lodash/isEqual';
@@ -1341,3 +1341,53 @@ export const WithMultiSorting = () => {
 };
 
 WithMultiSorting.storyName = 'with multi-sorting';
+
+export const RowExpansionAndLoadMore = () => {
+  const tableDataNested = tableData
+    .slice(0, number('number of rows in story', 3))
+    .map((i, idx) => ({
+      ...i,
+      children:
+        idx === 0
+          ? [
+              getNewRow(idx, 'A'),
+              {
+                ...getNewRow(idx, 'B'),
+              },
+              getNewRow(idx, 'C'),
+              {
+                ...getNewRow(idx, 'D'),
+                hasLoadMore: true,
+                children: [
+                  getNewRow(0, 'D-1'),
+                  getNewRow(0, 'D-2'),
+                  getNewRow(0, 'D-3'),
+                  getNewRow(0, 'D-3'),
+                  getNewRow(0, 'D-4'),
+                  getNewRow(0, 'D-5'),
+                  getNewRow(0, 'D-6'),
+                ],
+              },
+            ]
+          : undefined,
+    }));
+
+  return (
+    <StatefulTable
+      id="my-nested-table"
+      columns={tableColumns}
+      data={tableDataNested}
+      actions={{
+        table: {
+          onRowLoadMore: action('onRowLoadMore:'),
+        },
+      }}
+      options={{
+        hasRowExpansion: boolean('options.hasRowExpansion', true),
+        hasRowNesting: boolean('options.hasRowNesting', true),
+      }}
+    />
+  );
+};
+
+RowExpansionAndLoadMore.storyName = 'row expansion: with load more ';

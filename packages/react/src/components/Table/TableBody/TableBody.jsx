@@ -332,20 +332,11 @@ const TableBody = ({
     ) : (
       <TableBodyLoadMoreRow
         id={row.id}
-        ordering={orderingMap}
+        tableId={tableId}
+        testId={testId}
         loadMoreText={loadMoreText}
-        nestingLevel={nestingLevel}
-        tableActions={{
-          ...pick(
-            actions,
-            'onApplyRowAction',
-            'onRowExpanded',
-            'onRowClicked',
-            'onClearRowError',
-            'onRowLoadMore'
-          ),
-          onRowSelected,
-        }}
+        totalColumns={totalColumns}
+        onRowLoadMore={actions?.onRowLoadMore}
       />
     );
     return shouldShowChildren

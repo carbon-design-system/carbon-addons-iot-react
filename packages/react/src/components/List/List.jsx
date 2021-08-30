@@ -25,6 +25,7 @@ export const ListItemPropTypes = {
   }),
   children: PropTypes.arrayOf(PropTypes.object),
   isSelectable: PropTypes.bool,
+  /** boolean to define load more row is needed */
   hasLoadMore: PropTypes.bool,
 };
 
@@ -84,7 +85,7 @@ const propTypes = {
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   testId: PropTypes.string,
-
+  /** call back function when load more row is clicked */
   handleLoadMore: PropTypes.func,
 };
 
@@ -227,19 +228,18 @@ const List = forwardRef((props, ref) => {
             .concat(
               item.hasLoadMore
                 ? [
-                    <div
+                    <button
                       key={`${item.id}-list-item-parent-loading`}
-                      className={`${iotPrefix}--list-item load-more-row`}
-                      onClick={() => handleLoadMore(`loadMore--${item.id}`)}
-                      onKeyPress={() => handleLoadMore(`loadMore--${item.id}`)}
-                      role="button"
-                      tabIndex={0}
+                      className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
+                      onClick={() => handleLoadMore(item.id)}
+                      type="button"
+                      data-testid={`${testId}-${item.id}-load-more`}
                     >
                       <span>
-                        {mergedI18n.loadMore} &nbsp;
+                        {mergedI18n.loadMore}
                         <ArrowDown16 />
                       </span>
-                    </div>,
+                    </button>,
                   ]
                 : []
             )

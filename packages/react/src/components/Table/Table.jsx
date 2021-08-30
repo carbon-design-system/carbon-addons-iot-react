@@ -271,6 +271,9 @@ const propTypes = {
       /* (index) => {} */
       onRemoveMultiSortColumn: PropTypes.func,
       onTableErrorStateAction: PropTypes.func,
+
+      /** */
+      onRowLoadMore: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -443,6 +446,7 @@ export const defaultProps = (baseProps) => ({
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
+    /* table load more */
     loadMoreText: 'Load more',
   },
   error: null,
