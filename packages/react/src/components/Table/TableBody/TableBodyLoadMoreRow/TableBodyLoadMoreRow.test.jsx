@@ -4,10 +4,6 @@ import userEvent from '@testing-library/user-event';
 
 import TableBodyLoadMoreRow from './TableBodyLoadMoreRow';
 
-const mockActions = {
-  onRowLoadMore: jest.fn(),
-};
-
 const tableRowProps = {
   id: 'tableRow01',
   tableId: 'tableId',
@@ -17,15 +13,12 @@ const tableRowProps = {
 };
 
 describe('TableBodyLoadMoreRow', () => {
-  afterEach(() => {
-    mockActions.onRowLoadMore.mockClear();
-  });
-
   it('calls onRowLoadMore when load more id clicked', () => {
+    const mockLoadMore = jest.fn();
     render(
       <TableBodyLoadMoreRow
         {...tableRowProps}
-        tableActions={mockActions}
+        onRowLoadMore={mockLoadMore}
         options={{
           hasRowExpansion: true,
         }}
@@ -34,8 +27,8 @@ describe('TableBodyLoadMoreRow', () => {
         container: document.body.appendChild(document.createElement('tbody')),
       }
     );
-    expect(mockActions.onRowLoadMore).not.toHaveBeenCalled();
+    expect(mockLoadMore).not.toHaveBeenCalled();
     userEvent.click(screen.getByRole('cell', { name: 'Load more' }));
-    expect(mockActions.onRowLoadMore).toHaveBeenCalledWith(tableRowProps.id);
+    expect(mockLoadMore).toHaveBeenCalledWith(tableRowProps.id);
   });
 });
