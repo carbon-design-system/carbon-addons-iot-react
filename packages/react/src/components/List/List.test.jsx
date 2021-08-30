@@ -42,7 +42,6 @@ describe('List', () => {
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
 
-  // TODO: write tests that actually test selection
   it('List to have default handleSelect', () => {
     const onSelect = jest.fn();
     const items = [
@@ -104,7 +103,6 @@ describe('List', () => {
     jest.resetAllMocks();
   });
 
-  // TODO: write tests that actually test selection
   it('List to have default toggleExpansion', () => {
     const onExpanded = jest.fn();
     const items = [
