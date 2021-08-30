@@ -14,10 +14,10 @@ import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.
   template: `
     <div class="bx--form-item" *ngIf="hasRelative && hasAbsolute">
       <fieldset class="bx--fieldset">
-        <legend class="bx--label">Custom range</legend>
+        <legend class="bx--label">{{ batchText.CUSTOM_RANGE }}</legend>
         <ibm-radio-group [(ngModel)]="mode">
-          <ibm-radio value="relative">Relative</ibm-radio>
-          <ibm-radio value="absolute">Absolute</ibm-radio>
+          <ibm-radio value="relative">{{ batchText.RELATIVE }}</ibm-radio>
+          <ibm-radio value="absolute">{{ batchText.ABSOLUTE }}</ibm-radio>
         </ibm-radio-group>
       </fieldset>
     </div>
@@ -26,12 +26,16 @@ import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.
       *ngIf="mode === 'relative' && hasRelative"
       (valueChange)="relativeChange($event)"
       [value]="value"
+      [batchText]="batchText"
     >
     </ai-date-time-relative>
     <ai-date-time-absolute
       *ngIf="mode === 'absolute' && hasAbsolute"
       (valueChange)="absoluteChange($event)"
       [value]="value"
+      [batchText]="batchText"
+      [dateFormat]="dateFormat"
+      [placeholder]="placeholder"
     >
     </ai-date-time-absolute>
   `,
@@ -49,6 +53,14 @@ export class CustomDateTimeComponent implements OnChanges {
   @Input() range: DateTimeSelection = null;
   @Input() hasRelative = true;
   @Input() hasAbsolute = true;
+  @Input() batchText: any;
+  /**
+   * Format of date
+   *
+   * For reference: https://flatpickr.js.org/formatting/
+   */
+  @Input() dateFormat = 'Y-m-d';
+  @Input() placeholder = 'yyyy-mm-dd';
   @Output() rangeChange: EventEmitter<DateTimeSelection> = new EventEmitter();
 
   @HostBinding('class.iot--date-time-picker__custom-wrapper') wrapperClass = true;
