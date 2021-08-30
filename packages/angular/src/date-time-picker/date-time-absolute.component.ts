@@ -1,12 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChange,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { format, setHours, setMinutes } from 'date-fns';
 
 @Component({
@@ -16,9 +8,11 @@ import { format, setHours, setMinutes } from 'date-fns';
       <div class="bx--form-item">
         <ibm-date-picker
           [range]="true"
-          label="Start date"
-          rangeLabel="End date"
+          [label]="batchText.START_DATE"
+          [rangeLabel]="batchText.END_DATE"
+          [dateFormat]="dateFormat"
           [(ngModel)]="dateRange"
+          [placeholder]="placeholder"
           (valueChange)="onChange()"
           theme="light"
         >
@@ -29,12 +23,12 @@ import { format, setHours, setMinutes } from 'date-fns';
       <div class="iot--date-time-picker__fields-wrapper">
         <!-- tmp until we can implement a better time selector -->
         <div class="bx--form-item" style="margin-right: 1rem">
-          <label class="bx--label">Start time</label>
+          <label class="bx--label">{{ batchText.START_TIME }}</label>
           <input ibmText type="time" [(ngModel)]="startTime" (change)="onChange()" theme="light" />
         </div>
         <!-- tmp until we can implement a better time selector -->
         <div class="bx--form-item">
-          <label class="bx--label">End time</label>
+          <label class="bx--label">{{ batchText.END_TIME }}</label>
           <input ibmText type="time" [(ngModel)]="endTime" (change)="onChange()" theme="light" />
         </div>
       </div>
@@ -90,6 +84,9 @@ export class DateTimeAbsoluteComponent implements OnChanges {
   dateRange = null;
 
   @Input() value = [];
+  @Input() batchText: any;
+  @Input() dateFormat = 'Y-m-d';
+  @Input() placeholder = 'yyyy-mm-dd';
   @Output() valueChange: EventEmitter<[Date, Date]> = new EventEmitter();
 
   ngOnChanges(changes: SimpleChanges) {
