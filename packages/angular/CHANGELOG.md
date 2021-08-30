@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.152](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.151...v2.146.0-next.152) (2021-08-30)
+
+
+### Bug Fixes
+
+* **datetimepicker:** fix absolute date picker format ([b5b44dd](https://github.com/IBM/carbon-components-angular/commit/b5b44ddaf24fc8f593e6a520dba1cd8844dffbac))
+* **datetimepicker:** format code ([ae709ba](https://github.com/IBM/carbon-components-angular/commit/ae709ba57ca6934125e10d5012831d71399aa68a))
+* **datetimepicker:** format code ([2194a15](https://github.com/IBM/carbon-components-angular/commit/2194a154e8786a0cd38ea8d7be4215ce467f834e))
+* **datetimepicker:** remove console.log ([9da1832](https://github.com/IBM/carbon-components-angular/commit/9da1832f6d283dbef42863557e9ce257b063b7eb))
+* **datetimepicker:** rename ([e435cf6](https://github.com/IBM/carbon-components-angular/commit/e435cf6b49fe2d24d525b7cc544c3112ac47ba46))
+
+
+
+
+
 # [2.146.0-next.109](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.108...v2.146.0-next.109) (2021-08-20)
 
 
