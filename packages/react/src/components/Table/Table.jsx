@@ -272,7 +272,7 @@ const propTypes = {
       onRemoveMultiSortColumn: PropTypes.func,
       onTableErrorStateAction: PropTypes.func,
 
-      /** */
+      /** call back function for when load more row is clicked  (rowId) => {} */
       onRowLoadMore: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */

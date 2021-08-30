@@ -85,7 +85,7 @@ const propTypes = {
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   testId: PropTypes.string,
-  /** call back function when load more row is clicked */
+  /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
 };
 
