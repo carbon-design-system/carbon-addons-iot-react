@@ -185,4 +185,36 @@ describe('CardEditor', () => {
     userEvent.click(openEditorBtn);
     userEvent.click(screen.getByRole('button', { name: 'Save' }));
   });
+
+  it('should call onChange when changing the Time range', () => {
+    render(
+      <CardEditor
+        cardConfig={defaultCard}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
+      />
+    );
+    userEvent.click(screen.getByText('Select a time range'));
+    userEvent.click(screen.getByText('Last 7 days'));
+    expect(actions.onChange).toHaveBeenLastCalledWith({
+      dataSource: { range: { count: -1, interval: 'week', type: 'rolling' } },
+      id: 'card-0001',
+      size: 'SMALL',
+      timeRange: 'last7Days',
+      title: 'New card',
+      type: 'VALUE',
+    });
+    userEvent.click(screen.getByText('Last 7 days'));
+    userEvent.click(screen.getByText('This week'));
+    expect(actions.onChange).toHaveBeenLastCalledWith({
+      dataSource: { range: { count: -1, interval: 'week', type: 'periodToDate' } },
+      id: 'card-0001',
+      size: 'SMALL',
+      timeRange: 'thisWeek',
+      title: 'New card',
+      type: 'VALUE',
+    });
+  });
 });
