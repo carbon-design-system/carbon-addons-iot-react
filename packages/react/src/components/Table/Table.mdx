@@ -1025,57 +1025,55 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 
 ### i18n Prop
 
-| Name                             | Type   | Default                  | Description                                            |
-| :------------------------------- | :----- | :----------------------- | :----------------------------------------------------- |
-| pageBackwardAria                 | string |                          | pagination                                             |
-| pageForwardAria                  | string |                          |
-| pageNumberAria                   | string |                          |
-| itemsPerPage                     | string |                          |
-| itemsRange                       | func   |                          | (min, max) => `${min}-${max} items`                    |
-| currentPage                      | func   |                          | (page) => `page ${page}`                               |
-| itemsRangeWithTotal              | func   |                          | (min, max, total) => `${min}-${max} of ${total} items` |
-| pageRange                        | func   |                          | (current, total) => `${current} of ${total} pages`     |
-| overflowMenuAria                 | string |                          |
-| clickToExpandAria                | string |                          |
-| clickToCollapseAria              | string |                          |
-| selectAllAria                    | string |                          |
-| selectRowAria                    | string |                          |
-| searchLabel                      | string |                          | toolbar                                                |
-| searchPlaceholder                | string |                          |
-| clearAllFilters                  | string |                          |
-| columnSelectionButtonAria        | string |                          |
-| columnSelectionConfig            | string |                          |
-| filterButtonAria                 | string |                          |
-| editButtonAria                   | string |                          |
-| clearFilterAria                  | string |                          |
-| filterAria                       | string |                          |
-| downloadIconDescription          | string |                          |
-| openMenuAria                     | string |                          |
-| closeMenuAria                    | string |                          |
-| clearSelectionAria               | string |                          |
-| batchCancel                      | string |                          |
-| itemsSelected                    | string |                          |
-| itemSelected                     | string |                          |
-| inProgressText                   | string |                          | I18N label for in progress                             |
-| actionFailedText                 | string |                          | I18N label for action failed                           |
-| learnMoreText                    | string |                          | I18N label for learn more                              |
-| dismissText                      | string |                          | I18N label for dismiss                                 |
-| filterNone                       | string |                          |                                                        |
-| filterAscending                  | string |                          |                                                        |
-| filterDescending                 | string |                          |                                                        |
-| rowCountInHeader                 | func   |                          |                                                        |
-| multiSortModalTitle              | string | 'Select columns to sort' |                                                        |
-| multiSortModalPrimaryLabel       | string | 'Sort'                   |                                                        |
-| multiSortModalSecondaryLabel     | string | 'Cancel'                 |                                                        |
-| multiSortSelectColumnLabel       | string | 'Select a column'        |                                                        |
-| multiSortSelectColumnSortByTitle | string | 'Sort by'                |                                                        |
-| multiSortSelectColumnThenByTitle | string | 'Then by'                |                                                        |
-| multiSortDirectionLabel          | string | 'Select a direction'     |                                                        |
-| multiSortDirectionTitle          | string | 'Sort order'             |                                                        |
-| multiSortAddColumn               | string | 'Add column'             |                                                        |
-| multiSortRemoveColumn            | string | 'Remove column'          |                                                        |
-| multiSortAscending               | string | 'Ascending'              |                                                        |
-| multiSortDescending              | string | 'Descending'             |                                                        |
+| Name                             | Type         | Default                  | Description                                            |
+| :------------------------------- | :----------- | :----------------------- | :----------------------------------------------------- |
+| pageBackwardAria                 | string       |                          | pagination                                             |
+| pageForwardAria                  | string       |                          |
+| pageNumberAria                   | string       |                          |
+| itemsPerPage                     | string       |                          |
+| itemsRangeWithTotal              | func         |                          | (min, max, total) => `${min}-${max} of ${total} items` |
+| pageRange                        | func         |                          | (current, total) => `${current} of ${total} pages`     |
+| overflowMenuAria                 | string       |                          |
+| clickToExpandAria                | string       |                          |
+| clickToCollapseAria              | string       |                          |
+| selectAllAria                    | string       |                          |
+| selectRowAria                    | string       |                          |
+| searchLabel                      | string       |                          | toolbar                                                |
+| searchPlaceholder                | string       |                          |
+| clearAllFilters                  | string       |                          |
+| columnSelectionButtonAria        | string       |                          |
+| columnSelectionConfig            | string       |                          |
+| filterButtonAria                 | string       |                          |
+| editButtonAria                   | string       |                          |
+| clearFilterAria                  | string       |                          |
+| filterAria                       | string       |                          |
+| downloadIconDescription          | string       |                          |
+| openMenuAria                     | string       |                          |
+| closeMenuAria                    | string       |                          |
+| clearSelectionAria               | string       |                          |
+| batchCancel                      | string       |                          |
+| itemsSelected                    | string, func |                          | (selectedCount) => `${selectedCount} items selected`   |
+| itemSelected                     | string, func |                          | (selectedCount) => `${selectedCount} item selected`    |
+| inProgressText                   | string       |                          | I18N label for in progress                             |
+| actionFailedText                 | string       |                          | I18N label for action failed                           |
+| learnMoreText                    | string       |                          | I18N label for learn more                              |
+| dismissText                      | string       |                          | I18N label for dismiss                                 |
+| filterNone                       | string       |                          |                                                        |
+| filterAscending                  | string       |                          |                                                        |
+| filterDescending                 | string       |                          |                                                        |
+| rowCountInHeader                 | func         |                          |                                                        |
+| multiSortModalTitle              | string       | 'Select columns to sort' |                                                        |
+| multiSortModalPrimaryLabel       | string       | 'Sort'                   |                                                        |
+| multiSortModalSecondaryLabel     | string       | 'Cancel'                 |                                                        |
+| multiSortSelectColumnLabel       | string       | 'Select a column'        |                                                        |
+| multiSortSelectColumnSortByTitle | string       | 'Sort by'                |                                                        |
+| multiSortSelectColumnThenByTitle | string       | 'Then by'                |                                                        |
+| multiSortDirectionLabel          | string       | 'Select a direction'     |                                                        |
+| multiSortDirectionTitle          | string       | 'Sort order'             |                                                        |
+| multiSortAddColumn               | string       | 'Add column'             |                                                        |
+| multiSortRemoveColumn            | string       | 'Remove column'          |                                                        |
+| multiSortAscending               | string       | 'Ascending'              |                                                        |
+| multiSortDescending              | string       | 'Descending'             |                                                        |
 
 ## Source Code
 
