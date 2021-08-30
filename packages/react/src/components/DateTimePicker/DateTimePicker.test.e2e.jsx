@@ -23,16 +23,16 @@ describe('DateTimePicker', () => {
       />
     );
 
-    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').realClick();
+    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
 
     cy.findByText('Custom range').should('be.visible');
     cy.findByText('August').should('be.visible');
     cy.findByLabelText('Year').should('have.value', '2021');
-    cy.findByLabelText('August 8, 2021').realClick();
+    cy.findByLabelText('August 8, 2021').click();
     cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
     cy.findByText('Apply')
-      .realClick()
+      .click()
       .should(() => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
