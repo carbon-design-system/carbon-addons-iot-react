@@ -16,9 +16,20 @@ const propTypes = {
   selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   /** Internationalization text */
   i18n: PropTypes.shape({
+    /** String e.g. '%d items selected' that gets %d replaced by selected count or
+     * function receiving the selectedCount as param:
+     * (selectedCount) => `${selectedCount} items selected` */
+    itemsSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    itemSelected: PropTypes.string,
+    itemTitle: PropTypes.string,
+    /** String e.g. 'Move %d items underneath' that gets %d replaced by items count or
+     * function receiving the selectedCount as param:
+     * (itemsCount) => `Move ${itemsCount} items underneath` */
+    itemsTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     allRows: PropTypes.string,
     modalTitle: PropTypes.string,
     modalDescription: PropTypes.string,
+    cancel: PropTypes.string,
   }),
   /**   Close the dialog */
   onClose: PropTypes.func.isRequired,
@@ -35,10 +46,10 @@ const noop = () => {};
 
 const defaultProps = {
   i18n: {
-    itemsSelected: '%d items selected',
+    itemsSelected: (selectedCount) => `${selectedCount} items selected`,
     itemSelected: '1 item selected',
     itemTitle: 'Move 1 item underneath',
-    itemsTitle: 'Move %d items underneath',
+    itemsTitle: (itemsCount) => `Move ${itemsCount} items underneath`,
     cancel: 'Cancel',
     allRows: 'All rows',
   },
@@ -172,7 +183,10 @@ const HierarchyListReorderModal = ({
       header={{
         title:
           selectedIds.length > 1
-            ? `${i18n.itemsTitle.replace('%d', selectedIds?.length)}`
+            ? typeof i18n.itemsTitle === 'function'
+              ? i18n.itemsTitle(selectedIds.length)
+              : // Kept for backward compatability with existing i18n strings
+                `${i18n.itemsTitle.replace('%d', selectedIds.length)}`
             : `${i18n.itemTitle}`,
       }}
       onClose={() => handleClose(resetSelection, onClose)}

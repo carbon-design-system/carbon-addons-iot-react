@@ -390,8 +390,6 @@ export const defaultProps = (baseProps) => ({
     pageForwardAria: 'Next page',
     pageNumberAria: 'Page Number',
     itemsPerPage: 'Items per page:',
-    itemsRange: (min, max) => `${min}–${max} items`,
-    currentPage: (page) => `page ${page}`,
     itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
     pageRange: (current, total) => `${current} of ${total} pages`,
     /** table body */
@@ -414,8 +412,8 @@ export const defaultProps = (baseProps) => ({
     closeMenuAria: 'Close menu',
     clearSelectionAria: 'Clear selection',
     batchCancel: 'Cancel',
-    itemsSelected: 'items selected',
-    itemSelected: 'item selected',
+    itemsSelected: (selectedCount) => `${selectedCount} items selected`,
+    itemSelected: (selectedCount) => `${selectedCount} item selected`,
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
     toggleAggregations: 'Toggle aggregations',
     /** empty state */
@@ -1016,9 +1014,7 @@ const Table = (props) => {
           forwardText={i18n.pageForwardAria}
           pageNumberText={i18n.pageNumberAria}
           itemsPerPageText={i18n.itemsPerPage}
-          itemText={i18n.itemsRange}
           itemRangeText={i18n.itemsRangeWithTotal}
-          pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}

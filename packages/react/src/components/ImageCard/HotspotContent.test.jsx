@@ -206,6 +206,17 @@ describe('HotspotContent', () => {
     });
     expect(onChange).toHaveBeenCalledWith({ title: 'abc' });
   });
+
+  it('it handles editing without provided callback', () => {
+    render(<HotspotContent id="content" title="" isTitleEditable />);
+    const titleInputElement = screen.getByTestId('content-title-test');
+    expect(titleInputElement).toBeInTheDocument();
+    userEvent.type(titleInputElement, 'abc');
+    fireEvent.blur(titleInputElement, {
+      currentTarget: { value: titleInputElement.value },
+    });
+    expect(screen.getByText('abc')).toBeInTheDocument();
+  });
   it('activates text input when editable title is clicked', () => {
     render(<HotspotContent id="content" title="my title" isTitleEditable />);
     fireEvent.click(screen.getByText('my title'));
