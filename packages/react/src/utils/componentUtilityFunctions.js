@@ -70,9 +70,13 @@ export const tableTranslateWithId = (i18n, id, state) => {
     case 'carbon.table.batch.cancel':
       return batchCancel;
     case 'carbon.table.batch.items.selected':
-      return `${state.totalSelected} ${itemsSelected}`;
+      return typeof itemsSelected === 'function'
+        ? itemsSelected(state.totalSelected)
+        : `${state.totalSelected} ${itemsSelected}`;
     case 'carbon.table.batch.item.selected':
-      return `${state.totalSelected} ${itemSelected}`;
+      return typeof itemSelected === 'function'
+        ? itemSelected(state.totalSelected)
+        : `${state.totalSelected} ${itemSelected}`;
     case 'carbon.table.toolbar.search.label':
       return i18n.searchLabel;
     case 'carbon.table.toolbar.search.placeholder':

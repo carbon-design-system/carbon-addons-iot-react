@@ -139,19 +139,17 @@ class FilterHeaderRow extends Component {
     onApplyFilter(filterValues);
   };
 
+  // when a user clicks or hits ENTER, we'll clear the input
   handleClearFilter = (event, column) => {
-    // when a user clicks or hits ENTER, we'll clear the input
-    if (event.keyCode === 13 || !event.keyCode) {
-      this.setState(
-        (state) => ({
-          filterValues: {
-            ...state.filterValues,
-            [column.id]: '',
-          },
-        }),
-        this.handleApplyFilter
-      );
-    }
+    this.setState(
+      (state) => ({
+        filterValues: {
+          ...state.filterValues,
+          [column.id]: '',
+        },
+      }),
+      this.handleApplyFilter
+    );
   };
 
   handleTranslation = (idToTranslate) => {
@@ -222,7 +220,7 @@ class FilterHeaderRow extends Component {
                     translateWithId={this.handleTranslation}
                     items={memoizeColumnOptions(column.options)}
                     label={column.placeholderText || 'Choose an option'}
-                    itemToString={(item) => (item ? item.text : '')}
+                    itemToString={(item) => item.text}
                     initialSelectedItems={
                       Array.isArray(columnStateValue)
                         ? columnStateValue.map((value) =>
