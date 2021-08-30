@@ -10,7 +10,6 @@ import {
   Select,
   SelectItem,
   NumberInput,
-  TooltipDefinition,
   OrderedList,
   ListItem,
 } from 'carbon-components-react';
@@ -21,6 +20,8 @@ import uuid from 'uuid';
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
 import dayjs from '../../utils/dayjs';
+import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
+import { Tooltip } from '../Tooltip';
 
 const { iotPrefix } = settings;
 
@@ -305,6 +306,7 @@ const DateTimePicker = ({
   const [relativeValue, setRelativeValue] = useState(null);
   const [absoluteValue, setAbsoluteValue] = useState(null);
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
 
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
@@ -475,8 +477,12 @@ const DateTimePicker = ({
     [absoluteValue, relativeValue]
   );
 
-  const onFieldClick = () => {
-    setIsExpanded(!isExpanded);
+  const onFieldClick = (e) => {
+    if (e.key === 'Escape') {
+      setIsExpanded(false);
+    } else {
+      setIsExpanded(!isExpanded);
+    }
   };
 
   useEffect(() => {
@@ -701,6 +707,10 @@ const DateTimePicker = ({
     ? renderPresetTooltipText(currentValue)
     : getIntervalValue();
 
+  const toggleTooltip = () => {
+    setIsTooltipOpen((prev) => !prev);
+  };
+
   return (
     <div
       data-testid={testId}
@@ -717,25 +727,30 @@ const DateTimePicker = ({
           className={`${iotPrefix}--date-time-picker__field`}
           role="button"
           onClick={onFieldClick}
-          onKeyPress={onFieldClick}
+          onKeyDown={handleSpecificKeyDown(['Enter', ' ', 'Escape'], onFieldClick)}
+          onFocus={toggleTooltip}
+          onBlur={toggleTooltip}
           tabIndex={0}
         >
           {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
             <span title={humanValue}>{humanValue}</span>
-          ) : humanValue ? (
-            <TooltipDefinition
-              align="start"
-              direction="bottom"
-              tooltipText={tooltipValue}
-              triggerClassName=""
-            >
-              {humanValue}
-            </TooltipDefinition>
-          ) : null}
+          ) : (
+            humanValue || null
+          )}
           <Calendar16
             aria-label={strings.calendarLabel}
             className={`${iotPrefix}--date-time-picker__icon`}
           />
+          {!isExpanded && isTooltipOpen ? (
+            <Tooltip
+              open={isTooltipOpen}
+              showIcon={false}
+              focusTrap={false}
+              triggerClassName={`${iotPrefix}--date-time-picker__tooltip-trigger`}
+            >
+              {tooltipValue}
+            </Tooltip>
+          ) : null}
         </div>
         <div
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {
