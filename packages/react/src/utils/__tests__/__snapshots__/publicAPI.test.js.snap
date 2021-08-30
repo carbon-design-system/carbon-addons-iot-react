@@ -588,6 +588,9 @@ Map {
                   "onRowExpanded": Object {
                     "type": "func",
                   },
+                  "onRowLoadMore": Object {
+                    "type": "func",
+                  },
                   "onRowSelected": Object {
                     "type": "func",
                   },
@@ -806,6 +809,9 @@ Map {
                     ],
                   ],
                   "type": "oneOfType",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "isRequired": true,
@@ -1034,6 +1040,9 @@ Map {
               "type": "oneOfType",
             },
             "learnMoreText": Object {
+              "type": "string",
+            },
+            "loadMoreText": Object {
               "type": "string",
             },
             "multiSortAddColumn": Object {
@@ -2055,6 +2064,9 @@ Map {
             "learnMoreText": Object {
               "type": "string",
             },
+            "loadMoreText": Object {
+              "type": "string",
+            },
             "multiSortAddColumn": Object {
               "type": "string",
             },
@@ -2717,6 +2729,9 @@ Map {
                     ],
                   ],
                   "type": "oneOfType",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "isRequired": true,
@@ -3577,6 +3592,9 @@ Map {
                     ],
                   ],
                   "type": "oneOfType",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "isRequired": true,
