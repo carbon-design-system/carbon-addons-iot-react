@@ -10,7 +10,9 @@ import { format, setHours, setMinutes } from 'date-fns';
           [range]="true"
           [label]="batchText.START_DATE"
           [rangeLabel]="batchText.END_DATE"
+          [dateFormat]="dateFormat"
           [(ngModel)]="dateRange"
+          [placeholder]="placeholder"
           (valueChange)="onChange()"
           theme="light"
         >
@@ -83,6 +85,8 @@ export class DateTimeAbsoluteComponent implements OnChanges {
 
   @Input() value = [];
   @Input() batchText: any;
+  @Input() dateFormat = 'Y-m-d';
+  @Input() placeholder = 'yyyy-mm-dd';
   @Output() valueChange: EventEmitter<[Date, Date]> = new EventEmitter();
 
   ngOnChanges(changes: SimpleChanges) {
