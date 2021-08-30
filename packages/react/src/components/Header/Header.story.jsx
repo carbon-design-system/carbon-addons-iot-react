@@ -251,9 +251,9 @@ export const SmallBreakpoint = () => (
       appName={text('appName', 'Maximo Application Suite')}
       shortAppName={text('shortAppName', 'Maximo')}
       subtitle={text('subtitle', 'Manage')}
-      isActionItemVisible={(label) => {
-        action('isActionItemVisible')(label);
-        if (label === 'A Hidden Icon') {
+      isActionItemVisible={(item) => {
+        action('isActionItemVisible')(item);
+        if (item.label === 'A Hidden Icon') {
           return false;
         }
 

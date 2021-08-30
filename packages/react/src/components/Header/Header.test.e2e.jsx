@@ -224,8 +224,8 @@ describe(
 
       it('should not show action items in overflow menu when isActionItemVisible returned false', () => {
         cy.viewport(500, viewportHeight);
-        const isActionItemVisible = cy.stub().callsFake((label) => {
-          if (label === 'Custom icon 1') {
+        const isActionItemVisible = cy.stub().callsFake((item) => {
+          if (item.label === 'Custom icon 1') {
             return false;
           }
 

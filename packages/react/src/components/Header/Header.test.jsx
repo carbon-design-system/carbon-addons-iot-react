@@ -313,7 +313,11 @@ describe('Header', () => {
       />
     );
     expect(isActionItemVisible).toHaveBeenCalledTimes(1);
-    expect(isActionItemVisible).toHaveBeenCalledWith('user');
+    expect(isActionItemVisible).toHaveBeenCalledWith({
+      btnContent: expect.anything(),
+      label: 'user',
+      onClick: undefined,
+    });
   });
   it('should render if actionItems is empty', () => {
     render(<Header {...HeaderPropsWithoutOnClick} actionItems={[]} />);

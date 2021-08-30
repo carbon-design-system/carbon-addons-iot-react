@@ -8409,6 +8409,9 @@ Map {
                 "hasHeaderPanel": Object {
                   "type": "bool",
                 },
+                "id": Object {
+                  "type": "string",
+                },
                 "label": Object {
                   "isRequired": true,
                   "type": "string",
@@ -8730,6 +8733,9 @@ Map {
                 },
                 "hasHeaderPanel": Object {
                   "type": "bool",
+                },
+                "id": Object {
+                  "type": "string",
                 },
                 "label": Object {
                   "isRequired": true,

@@ -22,7 +22,7 @@ const propTypes = {
   }),
 
   testId: PropTypes.string,
-  /** Returns true, if the icon should be shown. (itemLabel) => {} */
+  /** Returns true, if the icon should be shown. (actionItem) => {} */
   isActionItemVisible: PropTypes.func.isRequired,
 };
 
@@ -149,7 +149,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) =
                 }
               >
                 {overflowItems.map((child, i) => {
-                  if (!isActionItemVisible(child.label)) {
+                  if (!isActionItemVisible(child)) {
                     return null;
                   }
 
@@ -225,7 +225,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) =
             // otherwise, if we have enough space to show all the items,
             // simple render them in the header as expected.
             actionItems
-              .filter((item) => isActionItemVisible(item.label))
+              .filter((item) => isActionItemVisible(item))
               .map((item, i) => (
                 <HeaderAction
                   item={item}

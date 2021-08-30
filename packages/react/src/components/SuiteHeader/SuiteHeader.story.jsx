@@ -499,8 +499,8 @@ export const HeaderWithCustomActionItems = () => (
     customHelpLinks={customHelpLinks}
     customProfileLinks={customProfileLinks}
     customApplications={customApplications}
-    isActionItemVisible={(label) => {
-      if (label === 'aHiddenIcon' || label === 'AppSwitcher') {
+    isActionItemVisible={(item) => {
+      if (item.label === 'aHiddenIcon' || item.id === 'app-switcher') {
         return false;
       }
 

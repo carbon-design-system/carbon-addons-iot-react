@@ -137,7 +137,7 @@ const SuiteHeaderWithDataFetchingHookExample = () => {
 ### Hiding an icon from the action menu
 
 You can hide actionItems in the header by passing an isActionItemVisible function. This function is passed
-the label of each function and allow you to determine if it should be rendered or not.
+the actionItem object and allows you to determine if it should be rendered or not.
 
 ```jsx
 import { SuiteHeader } from 'carbon-addons-iot-react';
@@ -208,8 +208,8 @@ import { SuiteHeader } from 'carbon-addons-iot-react';
       isExternal: true,
     },
   ]}
-  isActionItemVisible={(label) => {
-    if (label === 'aHiddenIcon' || label === 'AppSwitcher') {
+  isActionItemVisible={(item) => {
+    if (item.label === 'aHiddenIcon' || item.label === 'AppSwitcher') {
       return false;
     }
 
@@ -244,7 +244,7 @@ import { SuiteHeader } from 'carbon-addons-iot-react';
 | customApplications                                   | arrayOf  | []                                | Array of custom applications                                                                                                                                |
 | walkmePath                                           | string   | null                              | Path to Walkme entry point                                                                                                                                  |
 | walkmeLang                                           | string   | 'en'                              | Walkme language code                                                                                                                                        |
-| isActionItemVisible                                  | function | () => true                        | Is passed the label of the item being rendered and returns a boolean if it should be in the DOM. (label) => {}                                              |
+| isActionItemVisible                                  | function | () => true                        | Is passed the actionItem object being rendered and returns a boolean if it should be in the DOM. (actionItem) => {}                                         |
 
 ## Feedback
 

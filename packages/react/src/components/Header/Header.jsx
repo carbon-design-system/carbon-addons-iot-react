@@ -36,6 +36,8 @@ export const HeaderActionItemPropTypes = {
   /** content to render in the action panel */
   childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
   onClick: PropTypes.func,
+  /** a string id that can be used by the isActionItemVisible function to determine if an item should be shown */
+  id: PropTypes.string,
 };
 
 export const HeaderPanelPropTypes = {
@@ -78,7 +80,7 @@ const propTypes = {
     closeMenu: PropTypes.string,
   }),
   testId: PropTypes.string,
-  /** Returns true, if the icon should be shown. (itemLabel) => {} */
+  /** Returns true, if the icon should be shown. (actionItem) => {} */
   isActionItemVisible: PropTypes.func,
 };
 
@@ -130,6 +132,7 @@ const Header = ({
     : [
         ...actionItemsProp,
         {
+          id: 'app-switcher',
           label: appSwitcherLabel,
           hasHeaderPanel: true,
           btnContent: (
