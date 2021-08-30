@@ -25,8 +25,9 @@ export const SimplePaginationPropTypes = {
   onPage: PropTypes.func.isRequired,
   /** total number of items */
   totalItems: PropTypes.number,
-  /** Internationalized label for the word 'Items' */
-  totalItemsText: PropTypes.string,
+  /** Internationalized label for the word 'Items' or function receiving
+   * a param for the total: (total) => `${total} items`} */
+  totalItemsText: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   // eslint-disable-next-line react/require-default-props
   testID: deprecate(
     PropTypes.string,
@@ -71,7 +72,9 @@ const SimplePagination = ({
     <div className={`${iotPrefix}-simple-pagination-container`} data-testid={testID || testId}>
       {totalItems ? (
         <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
-          {`${totalItems} ${totalItemsText}`}
+          {typeof totalItemsText === 'function'
+            ? totalItemsText(totalItems)
+            : `${totalItems} ${totalItemsText}`}
         </span>
       ) : null}
       <div className={`${iotPrefix}-simple-pagination-page-bar`}>
