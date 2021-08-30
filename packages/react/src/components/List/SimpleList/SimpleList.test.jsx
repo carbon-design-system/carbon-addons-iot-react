@@ -1,10 +1,13 @@
 import React from 'react';
 import { render, fireEvent, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../constants/Settings';
-import { EditingStyle } from '../../../utils/DragAndDropUtils';
+import * as dndUtils from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
+
+const { EditingStyle } = dndUtils;
 
 const { iotPrefix } = settings;
 
@@ -238,5 +241,29 @@ describe('SimpleList', () => {
 
     expect(newData[0].content.value).toEqual('Item 2');
     expect(newData[1].content.value).toEqual('Item 1');
+  });
+
+  it('calls handle edit mode select when editStyle is set', () => {
+    jest.spyOn(dndUtils, 'handleEditModeSelect');
+    render(
+      <SimpleList
+        title="Simple list"
+        hasSearch
+        items={getListItems(2)}
+        pageSize="sm"
+        editingStyle={EditingStyle.Multiple}
+      />
+    );
+    userEvent.click(screen.getByTestId('1-checkbox'));
+    expect(dndUtils.handleEditModeSelect).toBeCalledWith(
+      [
+        { content: { value: 'Item 1' }, id: '1', isSelectable: true },
+        { content: { value: 'Item 2' }, id: '2', isSelectable: true },
+      ],
+      [],
+      '1',
+      null
+    );
+    jest.resetAllMocks();
   });
 });

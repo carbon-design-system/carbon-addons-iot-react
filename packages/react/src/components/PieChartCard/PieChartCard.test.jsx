@@ -197,20 +197,20 @@ describe('PieChartCard', () => {
       'cat F': 'orange',
     };
 
-    render(
+    const { container } = render(
       <PieChartCard
         {...pieChartCardProps}
         content={{ colors: colorsMap, groupDataSourceId: 'category' }}
       />
     );
 
-    const slices = screen.getAllByRole('group')[0].getElementsByClassName('slice');
+    const slices = container.querySelectorAll('.slice');
     const orderedColors = chartDataExample
       .sort((a, b) => b.value - a.value)
       .map((data) => colorsMap[data.category]);
 
     for (let index = 0; index < orderedColors.length; index += 1) {
-      expect(slices.item(index).getAttribute('fill')).toEqual(orderedColors[index]);
+      expect(slices.item(index)).toHaveStyle(`fill:${orderedColors[index]}`);
     }
     await waitFor(() => {
       expect(error).toHaveBeenCalledWith(
@@ -261,7 +261,7 @@ describe('PieChartCard', () => {
       'cat A': 'red',
       'cat B': 'green',
     };
-    render(
+    const { container } = render(
       <PieChartCard
         {...pieChartCardProps}
         isEditable
@@ -271,14 +271,14 @@ describe('PieChartCard', () => {
     expect(screen.getByText('Sample 0')).toBeVisible();
     expect(screen.getByText('Sample 1')).toBeVisible();
 
-    const slices = screen.getAllByRole('group')[0].getElementsByClassName('slice');
-    const firstSliceColor = slices.item(0).getAttribute('fill');
-    const secondSliceColor = slices.item(1).getAttribute('fill');
+    const slices = container.querySelectorAll('.slice');
+    const firstSliceColor = slices.item(0).getAttribute('style');
+    const secondSliceColor = slices.item(1).getAttribute('style');
 
     // The sample values are random and the pie chart orders the slices after
     // the value so we don't know the order of the colors in this test.
-    expect([firstSliceColor, secondSliceColor]).toContain('red');
-    expect([firstSliceColor, secondSliceColor]).toContain('green');
+    expect([firstSliceColor, secondSliceColor]).toContain('fill: red;');
+    expect([firstSliceColor, secondSliceColor]).toContain('fill: green;');
 
     await waitFor(() => {
       expect(error).toHaveBeenCalledWith(

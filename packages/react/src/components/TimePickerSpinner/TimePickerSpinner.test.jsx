@@ -29,6 +29,49 @@ describe('TimePickerSpinner', () => {
     expect(screen.getByTestId('time_picker_spinner-down-button')).toBeDefined();
   });
 
+  it('offers i18n functions where needed', () => {
+    // Test the defaults
+    const { rerender } = render(<TimePickerSpinner {...timePickerProps} spinner />);
+    expect(screen.getByTitle('Increment hours')).toBeVisible();
+    expect(screen.getByLabelText('Increment hours')).toBeVisible();
+    expect(screen.getByTitle('Decrement hours')).toBeVisible();
+    expect(screen.getByLabelText('Decrement hours')).toBeVisible();
+
+    // Test using strings
+    rerender(
+      <TimePickerSpinner
+        {...timePickerProps}
+        spinner
+        i18n={{
+          increment: 'test-increment',
+          decrement: 'test-decrement',
+          hours: 'test-hours',
+        }}
+      />
+    );
+    expect(screen.getByTitle('test-increment test-hours')).toBeVisible();
+    expect(screen.getByLabelText('test-increment test-hours')).toBeVisible();
+    expect(screen.getByTitle('test-decrement test-hours')).toBeVisible();
+    expect(screen.getByLabelText('test-decrement test-hours')).toBeVisible();
+
+    // Test using functions
+    rerender(
+      <TimePickerSpinner
+        {...timePickerProps}
+        spinner
+        i18n={{
+          increment: (timeUnit) => `test-increment ${timeUnit}`,
+          decrement: (timeUnit) => `test-decrement ${timeUnit}`,
+          hours: 'test-hours',
+        }}
+      />
+    );
+    expect(screen.getByTitle('test-increment test-hours')).toBeVisible();
+    expect(screen.getByLabelText('test-increment test-hours')).toBeVisible();
+    expect(screen.getByTitle('test-decrement test-hours')).toBeVisible();
+    expect(screen.getByLabelText('test-decrement test-hours')).toBeVisible();
+  });
+
   it('with spinner', () => {
     render(<TimePickerSpinner {...timePickerProps} spinner />);
     expect(screen.queryAllByRole('button')).toHaveLength(2);

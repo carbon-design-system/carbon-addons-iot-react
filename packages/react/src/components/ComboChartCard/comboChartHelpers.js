@@ -242,6 +242,9 @@ export const useChartOptions = (content) => {
             },
           }
         : {}),
+      toolbar: {
+        enabled: false,
+      },
     };
 
     options.data = merge(options.data, { loading: isLoading });
