@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.152](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.151...v2.146.0-next.152) (2021-08-30)
+
+
+### Bug Fixes
+
+* **datetimepicker:** fix absolute date picker format ([b5b44dd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b5b44ddaf24fc8f593e6a520dba1cd8844dffbac))
+* **datetimepicker:** fix lint error ([f67aaf2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f67aaf204c3154e3a7b5542aab5496e7ebaee211))
+* **datetimepicker:** fix lint error ([1a9d22a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1a9d22a8f7e86e5134afef415b5c144e5ee00bf3))
+* **datetimepicker:** format code ([ae709ba](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ae709ba57ca6934125e10d5012831d71399aa68a))
+* **datetimepicker:** format code ([2194a15](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2194a154e8786a0cd38ea8d7be4215ce467f834e))
+* **datetimepicker:** remove console.log ([9da1832](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9da1832f6d283dbef42863557e9ce257b063b7eb))
+* **datetimepicker:** rename ([e435cf6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e435cf6b49fe2d24d525b7cc544c3112ac47ba46))
+
+
+
+
+
+# [2.146.0-next.151](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.150...v2.146.0-next.151) (2021-08-27)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.150](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.149...v2.146.0-next.150) (2021-08-27)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.149](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.148...v2.146.0-next.149) (2021-08-27)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.146.0-next.148](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.147...v2.146.0-next.148) (2021-08-27)
 
 **Note:** Version bump only for package ibm-ai-applications
