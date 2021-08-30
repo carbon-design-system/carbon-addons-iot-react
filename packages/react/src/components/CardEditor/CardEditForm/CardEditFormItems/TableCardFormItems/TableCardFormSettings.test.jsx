@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
 
@@ -176,5 +177,80 @@ describe('TableCardFormSettings', () => {
         content: expect.objectContaining({ allowNavigation: false }),
       })
     );
+  });
+
+  it('should call onChange when setting column sort', () => {
+    const mockOnChange = jest.fn();
+    render(
+      <TableCardFormSettings
+        {...{
+          ...commonProps,
+          cardConfig: {
+            ...commonProps.cardConfig,
+            content: {
+              ...commonProps.cardConfig.content,
+              columns: [
+                {
+                  dataItemId: 'temperature',
+                  dataSourceId: 'temperature',
+                  label: 'Temperature',
+                },
+                {
+                  dataItemId: 'pressure',
+                  dataSourceId: 'pressure',
+                  label: 'Pressure',
+                },
+              ],
+            },
+          },
+        }}
+        onChange={mockOnChange}
+      />
+    );
+
+    expect(mockOnChange).not.toHaveBeenCalled();
+    userEvent.click(screen.getByText('Ascending'));
+    expect(mockOnChange).toHaveBeenCalledWith({
+      content: {
+        allowNavigation: true,
+        columns: [
+          {
+            dataItemId: 'temperature',
+            dataSourceId: 'temperature',
+            label: 'Temperature',
+          },
+          {
+            sort: 'ASC',
+          },
+        ],
+        showHeader: true,
+      },
+      id: 'id',
+      size: 'LARGE',
+      title: 'My Table Card',
+      type: 'TABLE',
+    });
+  });
+
+  it('dataItems should default to an empty array and no sort options available if columns is not an array', () => {
+    const mockOnChange = jest.fn();
+    render(
+      <TableCardFormSettings
+        {...{
+          ...commonProps,
+          cardConfig: {
+            ...commonProps.cardConfig,
+            content: {
+              ...commonProps.cardConfig.content,
+              columns: undefined,
+            },
+          },
+        }}
+        onChange={mockOnChange}
+      />
+    );
+
+    expect(screen.queryByText('Ascending')).toBeNull();
+    expect(screen.queryByText('Descending')).toBeNull();
   });
 });
