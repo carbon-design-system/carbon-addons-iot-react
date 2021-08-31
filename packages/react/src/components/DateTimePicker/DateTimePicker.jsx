@@ -398,14 +398,16 @@ const DateTimePicker = ({
       }
       case PICKER_KINDS.ABSOLUTE: {
         let startDate = dayjs(value.absolute.start);
-        if (value.absolute.startTime) {
+        // wait to parse it until fully typed
+        if (value.absolute.startTime && value.absolute.startTime.length === 5) {
           startDate = startDate.hours(value.absolute.startTime.split(':')[0]);
           startDate = startDate.minutes(value.absolute.startTime.split(':')[1]);
         }
         returnValue.absolute.start = new Date(startDate.valueOf());
         if (value.absolute.end) {
           let endDate = dayjs(value.absolute.end);
-          if (value.absolute.endTime) {
+          // wait to parse it until fully typed
+          if (value.absolute.endTime && value.absolute.endTime.length === 5) {
             endDate = endDate.hours(value.absolute.endTime.split(':')[0]);
             endDate = endDate.minutes(value.absolute.endTime.split(':')[1]);
           }
