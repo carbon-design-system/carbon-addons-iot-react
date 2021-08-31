@@ -135,10 +135,10 @@ export class AIListBuilderModel {
 
   private subscriptions = new Subscription();
 
-  protected getAddedItems(items: AIListBuilderItem[]) {
+  protected createAddedItems(items: AIListBuilderItem[]) {
     return items.reduce((addedItems: AIListItem[], item) => {
       if (item.hasChildren()) {
-        const addedChildren = this.getAddedItems(item.items);
+        const addedChildren = this.createAddedItems(item.items);
 
         if (addedChildren.length > 0) {
           if (item.added) {
@@ -146,7 +146,7 @@ export class AIListBuilderModel {
               ...addedItems,
               new AIListItem({
                 value: item.value,
-                expanded: item.expanded,
+                expanded: true,
                 items: addedChildren,
                 rowActions: item.addedItemRowActions,
                 rowActionsContext: item.addedItemRowActionsContext,
@@ -164,7 +164,7 @@ export class AIListBuilderModel {
           ...addedItems,
           new AIListItem({
             value: item.value,
-            expanded: item.expanded,
+            expanded: true,
             rowActions: item.addedItemRowActions,
             rowActionsContext: item.addedItemRowActionsContext,
             ...item.addedItemProps,
@@ -183,7 +183,7 @@ export class AIListBuilderModel {
       }
 
       const subscription = item.addedChange.subscribe(() => {
-        this._addedItems = this.getAddedItems(this._items);
+        this._addedItems = this.createAddedItems(this._items);
       });
 
       this.subscriptions.add(subscription);

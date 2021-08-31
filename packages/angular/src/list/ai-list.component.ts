@@ -28,7 +28,7 @@ import { SelectionType } from './list.types';
         >
         </ng-container>
         <div
-          *ngIf="!items || items.length < 1"
+          *ngIf="!items || items.length < 1 || noItemsDisplayed"
           class="iot--list--empty-state"
           [ngClass]="{ 'iot--list--empty-state__full-height': isFullHeight }"
           (drop)="isDragging ? handleDrop(null, 0) : undefined"
@@ -178,6 +178,10 @@ export class AIListComponent implements OnInit {
 
   @Output() isDraggingChange = new EventEmitter<boolean>();
   @Output() draggedItemChange = new EventEmitter<AIListItem>();
+
+  get noItemsDisplayed() {
+    return this.items.every((item) => !item.includes(this.searchString));
+  }
 
   searchString = '';
 
