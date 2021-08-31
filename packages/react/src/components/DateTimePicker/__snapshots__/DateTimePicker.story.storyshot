@@ -16,6 +16,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       className="iot--date-time-picker__wrapper"
       data-testid="date-time-picker"
       id="datetimepicker-iot--date-time-picker__wrapper"
+      onKeyDown={[Function]}
     >
       <div
         className="iot--date-time-picker__box "
@@ -26,7 +27,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           role="button"
@@ -199,6 +200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       className="iot--date-time-picker__wrapper"
       data-testid="date-time-picker"
       id="datetimepicker-iot--date-time-picker__wrapper"
+      onKeyDown={[Function]}
     >
       <div
         className="iot--date-time-picker__box iot--date-time-picker__box--light"
@@ -209,7 +211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           role="button"
@@ -382,6 +384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       className="iot--date-time-picker__wrapper"
       data-testid="date-time-picker"
       id="datetimepicker25-iot--date-time-picker__wrapper"
+      onKeyDown={[Function]}
     >
       <div
         className="iot--date-time-picker__box "
@@ -392,7 +395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           role="button"
@@ -453,6 +456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         id="datetimepicker25-relative"
                         name="datetimepicker25-radiogroup"
                         onChange={[Function]}
+                        onKeyDown={[Function]}
                         type="radio"
                         value="RELATIVE"
                       />
@@ -871,6 +875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       className="iot--date-time-picker__wrapper"
       data-testid="date-time-picker"
       id="datetimepicker-iot--date-time-picker__wrapper"
+      onKeyDown={[Function]}
     >
       <div
         className="iot--date-time-picker__box "
@@ -881,7 +886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           role="button"
@@ -942,6 +947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         id="datetimepicker-relative"
                         name="datetimepicker-radiogroup"
                         onChange={[Function]}
+                        onKeyDown={[Function]}
                         type="radio"
                         value="RELATIVE"
                       />
@@ -1360,6 +1366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       className="iot--date-time-picker__wrapper"
       data-testid="date-time-picker"
       id="datetimepicker-iot--date-time-picker__wrapper"
+      onKeyDown={[Function]}
     >
       <div
         className="iot--date-time-picker__box "
@@ -1370,7 +1377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           role="button"
@@ -1543,6 +1550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       className="iot--date-time-picker__wrapper"
       data-testid="date-time-picker"
       id="datetimepicker-iot--date-time-picker__wrapper"
+      onKeyDown={[Function]}
     >
       <div
         className="iot--date-time-picker__box "
@@ -1553,7 +1561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           role="button"
@@ -1614,6 +1622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         id="datetimepicker-relative"
                         name="datetimepicker-radiogroup"
                         onChange={[Function]}
+                        onKeyDown={[Function]}
                         type="radio"
                         value="RELATIVE"
                       />
@@ -2080,6 +2089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       className="iot--date-time-picker__wrapper"
       data-testid="date-time-picker"
       id="datetimepicker-iot--date-time-picker__wrapper"
+      onKeyDown={[Function]}
     >
       <div
         className="iot--date-time-picker__box "
@@ -2090,7 +2100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           role="button"
@@ -2255,6 +2265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       className="iot--date-time-picker__wrapper"
       data-testid="date-time-picker"
       id="datetimepicker-iot--date-time-picker__wrapper"
+      onKeyDown={[Function]}
     >
       <div
         className="iot--date-time-picker__box "
@@ -2265,7 +2276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           role="button"
