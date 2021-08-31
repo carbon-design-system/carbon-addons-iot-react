@@ -23,8 +23,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__field"
           data-testid="date-time-picker__field"
+          onBlur={[Function]}
           onClick={[Function]}
-          onKeyPress={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           role="button"
           tabIndex={0}
         >
@@ -74,51 +78,67 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             className="iot--date-time-picker__menu-scroll"
           >
-            <ol
-              className="bx--list--ordered"
+            <div
+              onKeyDown={[Function]}
             >
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+              <ol
+                className="bx--list--ordered"
               >
-                2018-10-28 07:04 to Now
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
-                onClick={[Function]}
-              >
-                Custom Range
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                onClick={[Function]}
-              >
-                Last 30 minutes
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 1 hour
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 6 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 12 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 24 hours
-              </li>
-            </ol>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+                >
+                  2018-10-28 07:04 to Now
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Custom Range
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 30 minutes
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 1 hour
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 6 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 12 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 24 hours
+                </li>
+              </ol>
+            </div>
           </div>
           <div
             className="iot--date-time-picker__menu-btn-set"
@@ -131,6 +151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -146,6 +167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -184,8 +206,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__field"
           data-testid="date-time-picker__field"
+          onBlur={[Function]}
           onClick={[Function]}
-          onKeyPress={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           role="button"
           tabIndex={0}
         >
@@ -235,51 +261,67 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             className="iot--date-time-picker__menu-scroll"
           >
-            <ol
-              className="bx--list--ordered"
+            <div
+              onKeyDown={[Function]}
             >
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+              <ol
+                className="bx--list--ordered"
               >
-                2018-10-28 07:04 to Now
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
-                onClick={[Function]}
-              >
-                Custom Range
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                onClick={[Function]}
-              >
-                Last 30 minutes
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 1 hour
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 6 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 12 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 24 hours
-              </li>
-            </ol>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+                >
+                  2018-10-28 07:04 to Now
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Custom Range
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 30 minutes
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 1 hour
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 6 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 12 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 24 hours
+                </li>
+              </ol>
+            </div>
           </div>
           <div
             className="iot--date-time-picker__menu-btn-set"
@@ -292,6 +334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -307,6 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -345,8 +389,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__field"
           data-testid="date-time-picker__field"
+          onBlur={[Function]}
           onClick={[Function]}
-          onKeyPress={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           role="button"
           tabIndex={0}
         >
@@ -431,6 +479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         id="datetimepicker25-absolute"
                         name="datetimepicker25-radiogroup"
                         onChange={[Function]}
+                        onKeyDown={[Function]}
                         type="radio"
                         value="ABSOLUTE"
                       />
@@ -774,6 +823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -789,6 +839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -827,8 +878,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__field"
           data-testid="date-time-picker__field"
+          onBlur={[Function]}
           onClick={[Function]}
-          onKeyPress={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           role="button"
           tabIndex={0}
         >
@@ -913,6 +968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         id="datetimepicker-absolute"
                         name="datetimepicker-radiogroup"
                         onChange={[Function]}
+                        onKeyDown={[Function]}
                         type="radio"
                         value="ABSOLUTE"
                       />
@@ -1256,6 +1312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -1271,6 +1328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -1309,8 +1367,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__field"
           data-testid="date-time-picker__field"
+          onBlur={[Function]}
           onClick={[Function]}
-          onKeyPress={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           role="button"
           tabIndex={0}
         >
@@ -1360,51 +1422,67 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             className="iot--date-time-picker__menu-scroll"
           >
-            <ol
-              className="bx--list--ordered"
+            <div
+              onKeyDown={[Function]}
             >
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+              <ol
+                className="bx--list--ordered"
               >
-                2018-10-27 19:34 to Now
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
-                onClick={[Function]}
-              >
-                Custom Range
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 30 minutes
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 1 hour
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 6 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                onClick={[Function]}
-              >
-                Last 12 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 24 hours
-              </li>
-            </ol>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+                >
+                  2018-10-27 19:34 to Now
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Custom Range
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 30 minutes
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 1 hour
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 6 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 12 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 24 hours
+                </li>
+              </ol>
+            </div>
           </div>
           <div
             className="iot--date-time-picker__menu-btn-set"
@@ -1417,6 +1495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -1432,6 +1511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -1470,8 +1550,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__field"
           data-testid="date-time-picker__field"
+          onBlur={[Function]}
           onClick={[Function]}
-          onKeyPress={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           role="button"
           tabIndex={0}
         >
@@ -1556,6 +1640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         id="datetimepicker-absolute"
                         name="datetimepicker-radiogroup"
                         onChange={[Function]}
+                        onKeyDown={[Function]}
                         type="radio"
                         value="ABSOLUTE"
                       />
@@ -1586,7 +1671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     Last
                   </legend>
                   <div
-                    className="iot--date-time-picker__fields-wrapper"
+                    className="iot--date-time-picker__fields-wrapper iot--date-time-picker__fields-wrapper--with-gap"
                   >
                     <div
                       className="bx--form-item"
@@ -1947,6 +2032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -1962,6 +2048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -2000,8 +2087,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__field"
           data-testid="date-time-picker__field"
+          onBlur={[Function]}
           onClick={[Function]}
-          onKeyPress={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           role="button"
           tabIndex={0}
         >
@@ -2051,45 +2142,59 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             className="iot--date-time-picker__menu-scroll"
           >
-            <ol
-              className="bx--list--ordered"
+            <div
+              onKeyDown={[Function]}
             >
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+              <ol
+                className="bx--list--ordered"
               >
-                2018-10-27 19:34 to Now
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 30 minutes
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 1 hour
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 6 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                onClick={[Function]}
-              >
-                Last 12 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 24 hours
-              </li>
-            </ol>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+                >
+                  2018-10-27 19:34 to Now
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 30 minutes
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 1 hour
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 6 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 12 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 24 hours
+                </li>
+              </ol>
+            </div>
           </div>
           <div
             className="iot--date-time-picker__menu-btn-set"
@@ -2102,6 +2207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -2117,6 +2223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -2155,8 +2262,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__field"
           data-testid="date-time-picker__field"
+          onBlur={[Function]}
           onClick={[Function]}
-          onKeyPress={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           role="button"
           tabIndex={0}
         >
@@ -2206,51 +2317,67 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           <div
             className="iot--date-time-picker__menu-scroll"
           >
-            <ol
-              className="bx--list--ordered"
+            <div
+              onKeyDown={[Function]}
             >
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+              <ol
+                className="bx--list--ordered"
               >
-                2018-10-27 19:34 to Now
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
-                onClick={[Function]}
-              >
-                Custom Range
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 30 minutes
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 1 hour
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 6 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
-                onClick={[Function]}
-              >
-                Last 12 hours
-              </li>
-              <li
-                className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
-                onClick={[Function]}
-              >
-                Last 24 hours
-              </li>
-            </ol>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--current"
+                >
+                  2018-10-27 19:34 to Now
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--custom"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Custom Range
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 30 minutes
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 1 hour
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 6 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset iot--date-time-picker__listitem--preset-selected"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 12 hours
+                </li>
+                <li
+                  className="bx--list__item iot--date-time-picker__listitem iot--date-time-picker__listitem--preset"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  Last 24 hours
+                </li>
+              </ol>
+            </div>
           </div>
           <div
             className="iot--date-time-picker__menu-btn-set"
@@ -2263,6 +2390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -2278,6 +2406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onKeyUp={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}

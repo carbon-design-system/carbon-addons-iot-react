@@ -12,6 +12,7 @@ import {
   NumberInput,
   OrderedList,
   ListItem,
+  TooltipDefinition,
 } from 'carbon-components-react';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
@@ -336,7 +337,7 @@ const DateTimePicker = ({
   };
 
   const handleDatePickerRef = useCallback((node) => {
-    if (document.activeElement.getAttribute('value') === PICKER_KINDS.ABSOLUTE) {
+    if (document.activeElement?.getAttribute('value') === PICKER_KINDS.ABSOLUTE) {
       previousActiveElement.current = document.activeElement;
     }
 
@@ -789,10 +790,12 @@ const DateTimePicker = ({
   };
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       data-testid={testId}
       id={`${id}-${iotPrefix}--date-time-picker__wrapper`}
       className={`${iotPrefix}--date-time-picker__wrapper`}
+      onKeyDown={handleSpecificKeyDown(['Escape'], () => setIsExpanded(false))}
     >
       <div
         className={`${iotPrefix}--date-time-picker__box ${
@@ -804,10 +807,8 @@ const DateTimePicker = ({
           className={`${iotPrefix}--date-time-picker__field`}
           role="button"
           onClick={onFieldInteraction}
-          onKeyDown={handleSpecificKeyDown(
-            ['Enter', ' ', 'Escape', 'ArrowDown'],
-            onFieldInteraction
-          )}
+          /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
+          onKeyUp={handleSpecificKeyDown(['Enter', ' ', 'Escape', 'ArrowDown'], onFieldInteraction)}
           onFocus={toggleTooltip}
           onBlur={toggleTooltip}
           onMouseEnter={toggleTooltip}
@@ -816,9 +817,16 @@ const DateTimePicker = ({
         >
           {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
             <span title={humanValue}>{humanValue}</span>
-          ) : (
-            humanValue || null
-          )}
+          ) : humanValue ? (
+            <TooltipDefinition
+              align="start"
+              direction="bottom"
+              tooltipText={tooltipValue}
+              triggerClassName=""
+            >
+              {humanValue}
+            </TooltipDefinition>
+          ) : null}
           <Calendar16
             aria-label={strings.calendarLabel}
             className={`${iotPrefix}--date-time-picker__icon`}
