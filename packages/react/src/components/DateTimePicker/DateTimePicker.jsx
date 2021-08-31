@@ -492,10 +492,14 @@ const DateTimePicker = ({
   );
 
   const getFocusableSiblings = () => {
-    const siblings = document.activeElement.parentNode.querySelectorAll('[tabindex]');
-    return Array.from(siblings).filter(
-      (sibling) => parseInt(sibling.getAttribute('tabindex'), 10) !== -1
-    );
+    if (presetListRef?.current) {
+      const siblings = presetListRef.current.querySelectorAll('[tabindex]');
+      return Array.from(siblings).filter(
+        (sibling) => parseInt(sibling.getAttribute('tabindex'), 10) !== -1
+      );
+    }
+
+    return [];
   };
 
   const onFieldInteraction = ({ key }) => {
@@ -552,9 +556,16 @@ const DateTimePicker = ({
     }
   };
 
-  const onNavigateRadioButton = () => {
-    setCustomRangeKind(PICKER_KINDS.RELATIVE);
-    document.activeElement.parentNode.previousSibling.querySelector('input[type="radio"]').focus();
+  const onNavigateRadioButton = (e) => {
+    if (e.target.getAttribute('id').includes('absolute')) {
+      setCustomRangeKind(PICKER_KINDS.RELATIVE);
+      document.activeElement.parentNode.previousSibling
+        .querySelector('input[type="radio"]')
+        .focus();
+    } else {
+      setCustomRangeKind(PICKER_KINDS.ABSOLUTE);
+      document.activeElement.parentNode.nextSibling.querySelector('input[type="radio"]').focus();
+    }
   };
 
   useEffect(() => {
@@ -917,6 +928,10 @@ const DateTimePicker = ({
                         value={PICKER_KINDS.RELATIVE}
                         id={`${id}-relative`}
                         labelText={strings.relativeLabel}
+                        onKeyDown={handleSpecificKeyDown(
+                          ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
+                          onNavigateRadioButton
+                        )}
                       />
                       <RadioButton
                         value={PICKER_KINDS.ABSOLUTE}
