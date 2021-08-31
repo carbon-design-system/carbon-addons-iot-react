@@ -167,8 +167,20 @@
         .#{$iot-prefix}--date-time-picker__fields-wrapper {
           display: flex;
           align-items: flex-end;
+
+          &--with-gap {
+            gap: $spacing-05;
+          }
+
           .#{$prefix}--label {
             margin-bottom: 0;
+          }
+
+          &--without-time {
+            .#{$prefix}--select-input__wrapper {
+              flex: 0.5;
+              width: auto;
+            }
           }
         }
 
