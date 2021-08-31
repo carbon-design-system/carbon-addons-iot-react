@@ -730,6 +730,8 @@ const DateTimePicker = ({
           onKeyDown={handleSpecificKeyDown(['Enter', ' ', 'Escape'], onFieldClick)}
           onFocus={toggleTooltip}
           onBlur={toggleTooltip}
+          onMouseEnter={toggleTooltip}
+          onMouseLeave={toggleTooltip}
           tabIndex={0}
         >
           {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
@@ -747,6 +749,7 @@ const DateTimePicker = ({
               showIcon={false}
               focusTrap={false}
               triggerClassName={`${iotPrefix}--date-time-picker__tooltip-trigger`}
+              className={`${iotPrefix}--date-time-picker__tooltip`}
             >
               {tooltipValue}
             </Tooltip>
