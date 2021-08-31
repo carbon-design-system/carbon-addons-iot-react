@@ -739,6 +739,7 @@ const DateTimePicker = ({
           strings.toNowLabel
         }`;
       }
+      return humanValue;
     }
     return '';
   };
