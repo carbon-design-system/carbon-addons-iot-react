@@ -36,14 +36,18 @@ export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDi
   if (menuRect) {
     switch (overflow) {
       case 'top-right-bottom':
-        x = isSplitButton ? (isRtl ? buttonX : buttonX - primaryButtonWidth) : buttonX;
+        x = isSplitButton
+          ? isRtl
+            ? buttonRect.left - menuWidth + scrollXOffset
+            : primaryButtonRect.left - menuWidth
+          : buttonX;
         y = buttonY;
         break;
       case 'top-bottom-left':
       case 'top-bottom':
         x = isSplitButton
           ? isRtl
-            ? buttonX + buttonWidth + primaryButtonWidth
+            ? primaryButtonRect.right + scrollXOffset
             : buttonX + buttonWidth
           : buttonX + buttonWidth;
         y = buttonY;
