@@ -574,6 +574,8 @@ const DateTimePicker = ({
       newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
       newAbsolute.end = end;
       newAbsolute.endDate = dayjs(newAbsolute.end).format('MM/DD/YYYY');
+    } else {
+      setFocusOnFirstField(false);
     }
 
     newAbsolute.start = start;
@@ -1084,6 +1086,8 @@ const DateTimePicker = ({
                 size="field"
                 {...others}
                 onClick={toggleIsCustomRange}
+                /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
+                onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
               >
                 {strings.backBtnLabel}
               </Button>
@@ -1091,9 +1095,11 @@ const DateTimePicker = ({
               <Button
                 kind="secondary"
                 className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-cancel`}
-                onClick={onCancelClick}
                 size="field"
                 {...others}
+                onClick={onCancelClick}
+                /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
+                onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
               >
                 {strings.cancelBtnLabel}
               </Button>
@@ -1103,6 +1109,8 @@ const DateTimePicker = ({
               className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
               {...others}
               onClick={onApplyClick}
+              /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
+              onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
               size="field"
             >
               {strings.applyBtnLabel}
