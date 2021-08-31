@@ -311,6 +311,7 @@ const DateTimePicker = ({
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
   const relativeSelect = useRef(null);
+  const presetListRef = useRef(null);
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -477,14 +478,66 @@ const DateTimePicker = ({
     [absoluteValue, relativeValue]
   );
 
-  const onFieldClick = (e) => {
-    if (e.key === 'Escape') {
-      setIsExpanded(false);
-    } else {
-      setIsExpanded(!isExpanded);
+  const getFocusableSiblings = () => {
+    const siblings = document.activeElement.parentNode.querySelectorAll('[tabindex]');
+    return Array.from(siblings).filter(
+      (sibling) => parseInt(sibling.getAttribute('tabindex'), 10) !== -1
+    );
+  };
+
+  const onFieldInteraction = ({ key }) => {
+    switch (key) {
+      case 'Escape':
+        setIsExpanded(false);
+        break;
+      case 'ArrowDown':
+        if (presetListRef?.current) {
+          const listItems = getFocusableSiblings();
+          if (listItems?.[0]?.focus) {
+            listItems[0].focus();
+          }
+        }
+        break;
+      default:
+        setIsExpanded(!isExpanded);
+        break;
     }
   };
 
+  const moveToPreviousElement = () => {
+    const siblings = getFocusableSiblings();
+    const index = siblings.findIndex((elem) => elem === document.activeElement);
+    const previous = siblings[index - 1];
+    if (previous) {
+      previous.focus();
+    } else {
+      siblings[siblings.length - 1].focus();
+    }
+  };
+
+  const moveToNextElement = () => {
+    const siblings = getFocusableSiblings();
+    const index = siblings.findIndex((elem) => elem === document.activeElement);
+    const next = siblings[index + 1];
+    if (next) {
+      next.focus();
+    } else {
+      siblings[0].focus();
+    }
+  };
+
+  const onNavigatePresets = ({ key }) => {
+    switch (key) {
+      case 'ArrowUp':
+        moveToPreviousElement();
+        break;
+      case 'ArrowDown':
+        moveToNextElement();
+        break;
+      default:
+        break;
+    }
+  };
   useEffect(() => {
     if (datePickerElem && datePickerElem.inputField && datePickerElem.toInputField) {
       if (focusOnFirstField) {
@@ -726,8 +779,11 @@ const DateTimePicker = ({
           data-testid={`${testId}__field`}
           className={`${iotPrefix}--date-time-picker__field`}
           role="button"
-          onClick={onFieldClick}
-          onKeyDown={handleSpecificKeyDown(['Enter', ' ', 'Escape'], onFieldClick)}
+          onClick={onFieldInteraction}
+          onKeyDown={handleSpecificKeyDown(
+            ['Enter', ' ', 'Escape', 'ArrowDown'],
+            onFieldInteraction
+          )}
           onFocus={toggleTooltip}
           onBlur={toggleTooltip}
           onMouseEnter={toggleTooltip}
@@ -763,40 +819,52 @@ const DateTimePicker = ({
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
-              <OrderedList nested={false}>
-                {tooltipValue ? (
-                  <ListItem
-                    className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
-                  >
-                    {tooltipValue}
-                  </ListItem>
-                ) : null}
-                {showCustomRangeLink ? (
-                  <ListItem
-                    onClick={toggleIsCustomRange}
-                    className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}
-                  >
-                    {strings.customRangeLinkLabel}
-                  </ListItem>
-                ) : null}
-                {presets.map((preset, i) => {
-                  return (
+              // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+              <div
+                ref={presetListRef}
+                onKeyDown={handleSpecificKeyDown(['ArrowUp', 'ArrowDown'], onNavigatePresets)}
+              >
+                <OrderedList nested={false}>
+                  {tooltipValue ? (
                     <ListItem
-                      key={i}
-                      onClick={() => onPresetClick(preset)}
-                      className={classnames(
-                        `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
-                        {
-                          [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
-                            selectedPreset === (preset.id ?? preset.offset),
-                        }
-                      )}
+                      className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
                     >
-                      {strings.presetLabels[i] || preset.label}
+                      {tooltipValue}
                     </ListItem>
-                  );
-                })}
-              </OrderedList>
+                  ) : null}
+                  {showCustomRangeLink ? (
+                    <ListItem
+                      onClick={toggleIsCustomRange}
+                      onKeyDown={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
+                      className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}
+                      tabIndex={0}
+                    >
+                      {strings.customRangeLinkLabel}
+                    </ListItem>
+                  ) : null}
+                  {presets.map((preset, i) => {
+                    return (
+                      <ListItem
+                        key={i}
+                        onClick={() => onPresetClick(preset)}
+                        onKeyDown={handleSpecificKeyDown(['Enter', ' '], () =>
+                          onPresetClick(preset)
+                        )}
+                        tabIndex={0}
+                        className={classnames(
+                          `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
+                          {
+                            [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
+                              selectedPreset === (preset.id ?? preset.offset),
+                          }
+                        )}
+                      >
+                        {strings.presetLabels[i] || preset.label}
+                      </ListItem>
+                    );
+                  })}
+                </OrderedList>
+              </div>
             ) : (
               <div className={`${iotPrefix}--date-time-picker__custom-wrapper`}>
                 {showRelativeOption ? (
