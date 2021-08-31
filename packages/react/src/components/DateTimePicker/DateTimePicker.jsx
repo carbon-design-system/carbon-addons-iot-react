@@ -786,7 +786,11 @@ const DateTimePicker = ({
     : getIntervalValue();
 
   const toggleTooltip = () => {
-    setIsTooltipOpen((prev) => !prev);
+    if (isExpanded) {
+      setIsTooltipOpen(false);
+    } else {
+      setIsTooltipOpen((prev) => !prev);
+    }
   };
 
   return (
