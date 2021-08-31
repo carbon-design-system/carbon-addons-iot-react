@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SelectionType } from '../ai-list.component';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { SelectionType } from '../list.types';
 import { AIListItem } from './ai-list-item.class';
 import { ChevronUp16, Draggable16 } from '@carbon/icons';
 import { IconService } from 'carbon-components-angular';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'ai-list-item',
@@ -110,7 +111,7 @@ import { IconService } from 'carbon-components-angular';
     </div>
   `,
 })
-export class AIListItemComponent implements OnInit {
+export class AIListItemComponent implements OnInit, OnDestroy {
   @Input() item: AIListItem;
   /**
    * Nesting level of the list item. Determines the amount of space the item will be indented
@@ -140,11 +141,21 @@ export class AIListItemComponent implements OnInit {
    */
   @Output() itemSelected = new EventEmitter<any>();
 
+  selectSubscription: Subscription;
+
   constructor(protected iconService: IconService) {}
 
   ngOnInit() {
     this.iconService.register(ChevronUp16);
     this.iconService.register(Draggable16);
+
+    this.selectSubscription = this.item.onSelect.subscribe(() => {
+      this.itemSelected.emit();
+    });
+  }
+
+  ngOnDestroy() {
+    this.selectSubscription.unsubscribe();
   }
 
   handleSelect(select: boolean) {

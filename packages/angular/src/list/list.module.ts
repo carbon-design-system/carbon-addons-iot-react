@@ -9,6 +9,7 @@ import { AIListTargetDirective } from './list-item/ai-list-target.directive';
 import { AIListItemWrapperComponent } from './list-item/ai-list-item-wrapper.component';
 
 export { AIListItem } from './list-item/ai-list-item.class';
+export { SelectionType } from './list.types';
 
 @NgModule({
   declarations: [

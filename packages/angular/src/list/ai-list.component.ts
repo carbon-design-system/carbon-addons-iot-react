@@ -2,11 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@an
 import { AIListItem } from './list-item/ai-list-item.class';
 import { IconService } from 'carbon-components-angular';
 import { Bee32 } from '@carbon/icons';
-
-export enum SelectionType {
-  SINGLE = 'single',
-  MULTI = 'multi',
-}
+import { SelectionType } from './list.types';
 
 @Component({
   selector: 'ai-list',
@@ -33,7 +29,8 @@ export enum SelectionType {
         </ng-container>
         <div
           *ngIf="!items || items.length < 1"
-          class="iot--list--empty-state iot--list--empty-state__full-height"
+          class="iot--list--empty-state"
+          [ngClass]="{ 'iot--list--empty-state__full-height': isFullHeight }"
           (drop)="isDragging ? handleDrop(null, 0) : undefined"
           (dragover)="$event.preventDefault()"
         >
@@ -46,7 +43,6 @@ export enum SelectionType {
         </div>
       </div>
     </div>
-
     <ng-template #listItemTemplateRef let-data>
       <!-- Render item -->
       <ng-container *ngIf="data.item.id && !isArray(data.item) && data.item.includes(searchString)">
@@ -74,7 +70,6 @@ export enum SelectionType {
           </ai-list-item>
         </ai-list-item-wrapper>
       </ng-container>
-
       <!-- Item has children -->
       <ng-container *ngIf="!isArray(data.item) && data.item.hasChildren() && data.item.expanded">
         <ng-container
@@ -90,7 +85,6 @@ export enum SelectionType {
           }"
         ></ng-container>
       </ng-container>
-
       <!-- Top level item -->
       <ng-container *ngIf="isArray(data.item)">
         <ng-container
@@ -119,6 +113,8 @@ export class AIListComponent implements OnInit {
    * Indicates whether or not items in the list can be dragged into new positions.
    */
   @Input() itemsDraggable: boolean;
+
+  @Input() allowDropOutsideParents = true;
 
   @Input() set isDragging(isDragging: boolean) {
     let shouldEmit = false;
@@ -178,6 +174,7 @@ export class AIListComponent implements OnInit {
    * If a `hasSearch` is true, this is emitted when search value is changed.
    */
   @Output() onSearch = new EventEmitter<string>();
+  @Output() selected = new EventEmitter<any>();
 
   @Output() isDraggingChange = new EventEmitter<boolean>();
   @Output() draggedItemChange = new EventEmitter<AIListItem>();
@@ -219,13 +216,17 @@ export class AIListComponent implements OnInit {
   }
 
   handleDragOver(dragEvent: DragEvent, receiver: AIListItem) {
+    const isDroppingWithinParent =
+      (receiver !== null && receiver.hasItemAsFirstChild(this.draggedItem)) ||
+      (receiver === null && this.items.some((listItem) => listItem === this.draggedItem));
     // Only allow dropping if:
     // 1. The dragged item is not being dropped onto one of its' own children.
     // 2. The dragged item is not being dropped onto itself.
     if (
       this.draggedItem &&
       !this.draggedItem.hasItem(receiver) &&
-      (receiver === null || receiver.id !== this.draggedItem.id)
+      (receiver === null || receiver.id !== this.draggedItem.id) &&
+      (this.allowDropOutsideParents || isDroppingWithinParent)
     ) {
       dragEvent.preventDefault();
     }
@@ -248,6 +249,7 @@ export class AIListComponent implements OnInit {
     } else {
       this.onSingleSelect(this.items, selectedItem.id);
     }
+    this.selected.emit(selectedItem);
   }
 
   handleSearch(searchString: string) {

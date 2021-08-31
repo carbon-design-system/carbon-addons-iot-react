@@ -1,4 +1,4 @@
-import { TemplateRef } from '@angular/core';
+import { EventEmitter, TemplateRef } from '@angular/core';
 
 export class AIListItem {
   /**
@@ -63,6 +63,8 @@ export class AIListItem {
 
   size: 'md' | 'lg' = 'md';
 
+  onSelect = new EventEmitter<boolean>();
+
   /**
    * Indicates whether or not the item can be dragged into a different position.
    */
@@ -118,8 +120,12 @@ export class AIListItem {
     this.expanded = expanded;
   }
 
-  select(selected = true) {
+  select(selected = true, shouldEmit = false) {
     this.selected = selected;
+
+    if (shouldEmit) {
+      this.onSelect.emit(this.selected);
+    }
   }
 
   setIndeterminate(indeterminate = true) {
@@ -150,6 +156,14 @@ export class AIListItem {
     }
 
     return this.id === item.id || this.items.some((listItem) => listItem.hasItem(item));
+  }
+
+  hasItemAsFirstChild(item: AIListItem) {
+    if (item === undefined || item === null) {
+      return false;
+    }
+
+    return this.items.some((listItem) => item.id === listItem.id);
   }
 
   hasChildren() {
