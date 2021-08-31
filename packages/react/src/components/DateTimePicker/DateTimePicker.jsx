@@ -916,7 +916,12 @@ const DateTimePicker = ({
                       legendText={strings.lastLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
-                      <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                      <div
+                        className={classnames(
+                          `${iotPrefix}--date-time-picker__fields-wrapper`,
+                          `${iotPrefix}--date-time-picker__fields-wrapper--with-gap`
+                        )}
+                      >
                         <NumberInput
                           id={`${id}-last-number`}
                           invalidText={strings.invalidNumberLabel}
