@@ -312,6 +312,7 @@ const DateTimePicker = ({
   const [datePickerElem, setDatePickerElem] = useState(null);
   const relativeSelect = useRef(null);
   const presetListRef = useRef(null);
+  const previousActiveElement = useRef(null);
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -335,6 +336,10 @@ const DateTimePicker = ({
   };
 
   const handleDatePickerRef = useCallback((node) => {
+    if (document.activeElement.getAttribute('value') === PICKER_KINDS.ABSOLUTE) {
+      previousActiveElement.current = document.activeElement;
+    }
+
     setDatePickerElem(node);
   }, []);
 
@@ -350,6 +355,11 @@ const DateTimePicker = ({
             .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
             .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
           dp.appendChild(datePickerElem.cal.calendarContainer);
+        }
+
+        if (previousActiveElement.current) {
+          previousActiveElement.current.focus();
+          previousActiveElement.current = null;
         }
       }
     }, 0);
@@ -538,6 +548,12 @@ const DateTimePicker = ({
         break;
     }
   };
+
+  const onNavigateRadioButton = () => {
+    setCustomRangeKind(PICKER_KINDS.RELATIVE);
+    document.activeElement.parentNode.previousSibling.querySelector('input[type="radio"]').focus();
+  };
+
   useEffect(() => {
     if (datePickerElem && datePickerElem.inputField && datePickerElem.toInputField) {
       if (focusOnFirstField) {
@@ -886,6 +902,10 @@ const DateTimePicker = ({
                         value={PICKER_KINDS.ABSOLUTE}
                         id={`${id}-absolute`}
                         labelText={strings.absoluteLabel}
+                        onKeyDown={handleSpecificKeyDown(
+                          ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
+                          onNavigateRadioButton
+                        )}
                       />
                     </RadioButtonGroup>
                   </FormGroup>
