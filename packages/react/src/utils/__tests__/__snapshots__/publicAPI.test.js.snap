@@ -430,7 +430,7 @@ Map {
         "itemsPerPage": "Items per page:",
         "itemsRangeWithTotal": [Function],
         "itemsSelected": [Function],
-        "loadMoreText": "Load more",
+        "loadMoreText": "Load more...",
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortDescending": "Descending",
@@ -511,6 +511,7 @@ Map {
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
           "loadingState": Object {
+            "isLoadingMore": false,
             "rowCount": 5,
           },
           "ordering": undefined,
@@ -1511,6 +1512,9 @@ Map {
                         "isLoading": Object {
                           "type": "bool",
                         },
+                        "isLoadingMore": Object {
+                          "type": "bool",
+                        },
                         "rowCount": Object {
                           "type": "number",
                         },
@@ -2391,6 +2395,7 @@ Map {
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
+      "isLoadingMore": false,
       "langDir": "ltr",
       "locale": null,
       "overflowMenuAria": "More actions",
@@ -2633,6 +2638,9 @@ Map {
       },
       "inProgressText": Object {
         "type": "string",
+      },
+      "isLoadingMore": Object {
+        "type": "bool",
       },
       "langDir": Object {
         "args": Array [
@@ -20959,13 +20967,14 @@ Map {
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
-        "loadMore": "Load more",
+        "loadMore": "Load more...",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
+      "isLoadingMore": false,
       "itemWillMove": [Function],
       "items": Array [],
       "onItemMoved": [Function],
@@ -21036,6 +21045,9 @@ Map {
             "expand": Object {
               "type": "string",
             },
+            "loadMore": Object {
+              "type": "string",
+            },
             "searchPlaceHolderText": Object {
               "type": "string",
             },
@@ -21059,6 +21071,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isLoadingMore": Object {
         "type": "bool",
       },
       "itemWillMove": Object {

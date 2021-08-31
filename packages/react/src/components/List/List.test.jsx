@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Checkbox } from '../..';
@@ -183,16 +183,12 @@ describe('List', () => {
         ]}
         expandedIds={['org', 'site-02']}
         handleLoadMore={mockLoadMore}
+        testId="test-list"
       />
     );
     expect(mockLoadMore).not.toHaveBeenCalled();
-    userEvent.click(screen.getByRole('button', { name: 'Load more' }));
-    expect(mockLoadMore).toHaveBeenCalledWith('loadMore--site-02');
-    fireEvent.keyPress(screen.getByRole('button', { name: 'Load more' }), {
-      key: 'Enter',
-      code: 13,
-      charCode: 13,
-    });
-    expect(mockLoadMore).toHaveBeenCalledTimes(2);
+    userEvent.click(screen.getByTestId('test-list-site-02-load-more'));
+    expect(mockLoadMore).toHaveBeenCalledWith('site-02');
+    expect(mockLoadMore).toHaveBeenCalledTimes(1);
   });
 });
