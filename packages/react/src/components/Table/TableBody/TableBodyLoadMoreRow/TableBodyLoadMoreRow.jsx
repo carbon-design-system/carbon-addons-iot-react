@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable } from 'carbon-components-react';
-import { ArrowDown16 } from '@carbon/icons-react';
+import { DataTable, Loading } from 'carbon-components-react';
 
 import { settings } from '../../../../constants/Settings';
 
@@ -21,6 +20,8 @@ const propTypes = {
   onRowLoadMore: PropTypes.func.isRequired,
   /** I18N label for load more */
   loadMoreText: PropTypes.string.isRequired,
+  /** boolean to decide if is in loading state or not */
+  isLoadingMore: PropTypes.bool.isRequired,
 };
 
 const TableBodyLoadMoreRow = ({
@@ -30,6 +31,7 @@ const TableBodyLoadMoreRow = ({
   onRowLoadMore,
   loadMoreText,
   totalColumns,
+  isLoadingMore,
 }) => {
   const tableCells = (
     <TableCell
@@ -39,10 +41,10 @@ const TableBodyLoadMoreRow = ({
       className={`${iotPrefix}--load-more-cell`}
       data-testid={`${testId}-${id}-load-more`}
     >
-      <span>
+      <div className={`${iotPrefix}--load-more-cell--content`}>
+        {isLoadingMore ? <Loading small withOverlay={false} /> : null}
         {loadMoreText}
-        <ArrowDown16 />
-      </span>
+      </div>
     </TableCell>
   );
 

@@ -206,6 +206,7 @@ const propTypes = {
       loadingState: PropTypes.shape({
         isLoading: PropTypes.bool,
         rowCount: PropTypes.number,
+        isLoadingMore: PropTypes.bool,
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
@@ -343,6 +344,7 @@ export const defaultProps = (baseProps) => ({
       ordering: baseProps.columns && baseProps.columns.map((i) => ({ columnId: i.id })),
       loadingState: {
         rowCount: 5,
+        isLoadingMore: false,
       },
       singleRowEditButtons: null,
     },
@@ -447,7 +449,7 @@ export const defaultProps = (baseProps) => ({
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
     /* table load more */
-    loadMoreText: 'Load more',
+    loadMoreText: 'Load more...',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -958,6 +960,7 @@ const Table = (props) => {
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-body`}
                 showExpanderColumn={showExpanderColumn}
+                isLoadingMore={view.table.loadingState.isLoadingMore}
               />
             ) : (
               <EmptyTable

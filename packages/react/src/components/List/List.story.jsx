@@ -624,6 +624,7 @@ WithPagination.storyName = 'with pagination';
 export const WithLoadMore = () => {
   const ListWithExpandIds = () => {
     const [expandedIds, setExpandedIds] = useState([]);
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
     return (
       <div style={{ width: 400 }}>
         <List
@@ -650,7 +651,11 @@ export const WithLoadMore = () => {
           expandedIds={expandedIds}
           toggleExpansion={(id) => setExpandedIds((prev) => [...prev, id])}
           isLoading={boolean('isLoading', false)}
-          handleLoadMore={action('handleLoadMore:')}
+          handleLoadMore={() => {
+            action('handleLoadMore:');
+            setIsLoadingMore(true);
+          }}
+          isLoadingMore={isLoadingMore}
         />
       </div>
     );

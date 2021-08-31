@@ -68,17 +68,17 @@
   width: 100%;
   border: none;
   background: $ui-01;
+  &--content {
+    display: flex;
+    justify-content: center;
+    @include type-style('body-short-01');
+    color: $interactive-01;
 
+    div:first-child {
+      margin-right: $spacing-04;
+    }
+  }
   &:hover {
     background: $hover-ui;
-  }
-  span {
-    @include type-style('body-short-01');
-
-    color: $interactive-01;
-    svg {
-      vertical-align: middle;
-      margin-left: $spacing-04;
-    }
   }
 }

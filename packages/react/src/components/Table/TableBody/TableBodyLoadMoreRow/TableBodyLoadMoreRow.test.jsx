@@ -7,9 +7,10 @@ import TableBodyLoadMoreRow from './TableBodyLoadMoreRow';
 const tableRowProps = {
   id: 'tableRow01',
   tableId: 'tableId',
-  ordering: [{ columnId: 'col1', isHidden: false }],
-  loadMoreText: 'Load more',
-  nestingLevel: 1,
+  testId: 'table-test',
+  totalColumns: 5,
+  loadMoreText: 'Load more...',
+  isLoadingMore: false,
 };
 
 describe('TableBodyLoadMoreRow', () => {

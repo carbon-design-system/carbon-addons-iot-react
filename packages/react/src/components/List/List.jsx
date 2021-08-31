@@ -1,7 +1,8 @@
 import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Bee32, ArrowDown16 } from '@carbon/icons-react';
+import { Bee32 } from '@carbon/icons-react';
+import { Loading } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
@@ -60,6 +61,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** boolean that define if load more row is currently loading */
+  isLoadingMore: PropTypes.bool,
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   /** i18n strings */
@@ -67,6 +70,7 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
+    loadMore: PropTypes.string,
   }),
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
@@ -99,11 +103,12 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
+  isLoadingMore: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
-    loadMore: 'Load more',
+    loadMore: 'Load more...',
   },
   iconPosition: 'left',
   pagination: null,
@@ -146,6 +151,7 @@ const List = forwardRef((props, ref) => {
     editingStyle,
     isLargeRow,
     isLoading,
+    isLoadingMore,
     onItemMoved,
     itemWillMove,
     emptyState,
@@ -235,10 +241,10 @@ const List = forwardRef((props, ref) => {
                       type="button"
                       data-testid={`${testId}-${item.id}-load-more`}
                     >
-                      <span>
+                      <div className={`${iotPrefix}--load-more-row--content`}>
+                        {isLoadingMore ? <Loading small withOverlay={false} /> : null}
                         {mergedI18n.loadMore}
-                        <ArrowDown16 />
-                      </span>
+                      </div>
                     </button>,
                   ]
                 : []

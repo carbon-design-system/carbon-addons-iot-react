@@ -541,6 +541,7 @@ export const tableReducer = (state = {}, action) => {
               $set: {
                 isLoading: action.payload.isLoading,
                 rowCount: get(state, 'view.table.loadingState.rowCount') || 0,
+                isLoadingMore: get(state, 'view.table.loadingState.isLoadingMore') || false,
               },
             },
             // Reset the selection to the previous values

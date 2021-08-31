@@ -5,13 +5,13 @@
   cursor: pointer;
   width: 100%;
 
-  span {
+  &--content {
+    display: flex;
+    justify-content: center;
     @include type-style('body-short-01');
-
     color: $interactive-01;
-    svg {
-      vertical-align: middle;
-      margin-left: $spacing-04;
+    div:first-child {
+      margin-right: $spacing-04;
     }
   }
 }

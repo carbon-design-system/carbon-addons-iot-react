@@ -109,6 +109,8 @@ const propTypes = {
     `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   testId: PropTypes.string,
+  /** boolean to decide if load more row is in loading state or not */
+  isLoadingMore: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -135,6 +137,7 @@ const defaultProps = {
   langDir: 'ltr',
   showExpanderColumn: false,
   testId: '',
+  isLoadingMore: false,
 };
 
 const TableBody = ({
@@ -173,6 +176,7 @@ const TableBody = ({
   testID,
   testId,
   showExpanderColumn,
+  isLoadingMore,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -337,6 +341,7 @@ const TableBody = ({
         loadMoreText={loadMoreText}
         totalColumns={totalColumns}
         onRowLoadMore={actions?.onRowLoadMore}
+        isLoadingMore={isLoadingMore}
       />
     );
     return shouldShowChildren

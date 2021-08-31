@@ -166,9 +166,9 @@ export const tableRowExpand = (rowId, isExpanded, instanceId = null) => ({
 /**
  * rowCount: The number of rows currently being loaded
  */
-export const tableLoadingSet = (isLoading, rowCount, instanceId = null) => ({
+export const tableLoadingSet = (isLoading, isLoadingMore, rowCount, instanceId = null) => ({
   type: TABLE_LOADING_SET,
-  payload: { isLoading, rowCount },
+  payload: { isLoading, rowCount, isLoadingMore },
   instanceId,
 });
 

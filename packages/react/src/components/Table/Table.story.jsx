@@ -1987,6 +1987,7 @@ export const WithTableStates = () => {
   const loadingState = object('loadingState', {
     isLoading: false,
     rowCount: 7,
+    isLoadingMore: false,
   });
 
   const showErrorState = boolean('Show Custom Error State', false);
@@ -2364,3 +2365,71 @@ WithStickyHeaderExperimentalAndCellTooltipCalculation.parameters = {
     text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
   },
 };
+
+export const RowExpansionAndLoadMore = () => {
+  const TableWithState = () => {
+    const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+    const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
+
+    const tableDataNested = tableData
+      .slice(0, number('number of rows in story', 3))
+      .map((i, idx) => ({
+        ...i,
+        children:
+          idx === 0
+            ? [
+                getNewRow(idx, 'A'),
+                {
+                  ...getNewRow(idx, 'B'),
+                },
+                getNewRow(idx, 'C'),
+                {
+                  ...getNewRow(idx, 'D'),
+                  hasLoadMore: true,
+                  children: [
+                    getNewRow(0, 'D-1'),
+                    getNewRow(0, 'D-2'),
+                    getNewRow(0, 'D-3'),
+                    getNewRow(0, 'D-4'),
+                    getNewRow(0, 'D-5'),
+                    getNewRow(0, 'D-6'),
+                  ],
+                },
+              ]
+            : undefined,
+      }));
+
+    return (
+      <MyTable
+        id="my-nested-table"
+        columns={tableColumns}
+        data={tableDataNested}
+        actions={{
+          table: {
+            onRowLoadMore: (id) => {
+              action('onRowLoadMore:', id);
+              setIsLoadingMore(true);
+            },
+          },
+        }}
+        options={{
+          hasRowExpansion: boolean('options.hasRowExpansion', true),
+          hasRowNesting: boolean('options.hasRowNesting', true),
+        }}
+        view={{
+          table: {
+            loadingState: {
+              isLoadingMore,
+            },
+            expandedIds: [tableDataNested[0].id, tableDataNested[0].children[3].id],
+          },
+        }}
+      />
+    );
+  };
+
+  return <TableWithState />;
+};
+
+RowExpansionAndLoadMore.storyName = 'row expansion: with load more ';
