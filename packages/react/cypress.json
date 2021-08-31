@@ -7,13 +7,13 @@
   },
   "nodeVersion": "system",
   "testFiles": "**/*.test.e2e.jsx",
-  "viewportWidth": 1670,
+  "viewportWidth": 1680,
   "viewportHeight": 900,
   "defaultCommandTimeout": 8000,
   "trashAssetsBeforeRuns": true,
   "videoUploadOnPasses": false,
   "component": {
-    "viewportWidth": 1670,
+    "viewportWidth": 1680,
     "viewportHeight": 900
   }
 }
