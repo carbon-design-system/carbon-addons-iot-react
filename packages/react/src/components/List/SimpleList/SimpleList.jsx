@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -102,21 +102,79 @@ const SimpleList = ({
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
   const numberOfItems = filteredItems.length;
-  let rowPerPage = numberOfItems;
-  switch (pageSize) {
-    case 'sm':
-      rowPerPage = 5;
-      break;
-    case 'lg':
-      rowPerPage = 10;
-      break;
-    case 'xl':
-    default:
-      rowPerPage = 20;
-      break;
-  }
+  const rowPerPage = useMemo(() => {
+    if (!hasPagination) {
+      return numberOfItems;
+    }
+
+    switch (pageSize) {
+      case 'sm':
+        return 5;
+      case 'lg':
+        return 10;
+      case 'xl':
+      default:
+        return 20;
+    }
+  }, [hasPagination, numberOfItems, pageSize]);
+
+  const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
+
+  const handleSearch = useCallback(
+    (searchTerm) => {
+      setSearchValue(searchTerm);
+      const searchFilteredItems = items.filter((item) => {
+        if (item.content.value !== '' && item.content.value !== undefined) {
+          if (
+            item.content.secondaryValue !== '' &&
+            item.content.secondaryValue !== undefined &&
+            typeof item.content.secondaryValue === 'string'
+          ) {
+            return (
+              item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||
+              item.content.secondaryValue.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+            );
+          }
+          return item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
+        }
+        return false;
+      });
+      setFilteredItems(searchFilteredItems);
+      setSearchValue(searchTerm);
+      if (pageSize !== null) {
+        setItemsToShow(searchFilteredItems.slice(0, rowPerPage));
+      }
+    },
+    [items, pageSize, rowPerPage]
+  );
+
+  const onPage = useCallback(
+    (page) => {
+      const rowUpperLimit = page * rowPerPage;
+      const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
+      setCurrentPageNumber(page);
+      setItemsToShow(currentItemsOnPage);
+    },
+    [filteredItems, rowPerPage]
+  );
+
+  const maxPage = Math.ceil(numberOfItems / rowPerPage);
+
+  useEffect(() => {
+    setFilteredItems(items);
+    if (searchValue) {
+      handleSearch(searchValue);
+    }
+  }, [items, handleSearch, searchValue]);
+
+  useEffect(() => {
+    if (currentPageNumber > maxPage) {
+      onPage(1);
+    }
+  }, [currentPageNumber, maxPage, onPage, pageSize]);
 
   const handleSelect = (id, parentId) => {
     if (editingStyle) {
@@ -131,24 +189,6 @@ const SimpleList = ({
         onSelect(id, parentId);
       }
     }
-  };
-
-  const [currentPageNumber, setCurrentPageNumber] = useState(1);
-
-  const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
-
-  const onPage = (page) => {
-    const rowUpperLimit = page * rowPerPage;
-    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
-    setCurrentPageNumber(page);
-    setItemsToShow(currentItemsOnPage);
-  };
-
-  const pagination = {
-    page: currentPageNumber,
-    onPage,
-    maxPage: Math.ceil(numberOfItems / rowPerPage),
-    pageOfPagesText: (page) => mergedI18n.pageOfPagesText(page),
   };
 
   const onItemMoved = (dragId, hoverId, target) => {
@@ -175,31 +215,7 @@ const SimpleList = ({
           ? {
               value: searchValue,
               onChange: (evt) => {
-                setSearchValue(evt.target.value);
-                const searchTerm = evt.target.value === undefined ? '' : evt.target.value;
-                const searchFilteredItems = items.filter((item) => {
-                  if (item.content.value !== '' && item.content.value !== undefined) {
-                    if (
-                      item.content.secondaryValue !== '' &&
-                      item.content.secondaryValue !== undefined &&
-                      typeof item.content.secondaryValue === 'string'
-                    ) {
-                      return (
-                        item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||
-                        item.content.secondaryValue
-                          .toLowerCase()
-                          .search(searchTerm.toLowerCase()) !== -1
-                      );
-                    }
-                    return item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
-                  }
-                  return false;
-                });
-                setFilteredItems(searchFilteredItems);
-                setSearchValue(searchTerm);
-                if (pageSize !== null) {
-                  setItemsToShow(searchFilteredItems.slice(0, rowPerPage));
-                }
+                handleSearch(evt.target.value);
               },
             }
           : null
@@ -207,8 +223,17 @@ const SimpleList = ({
       buttons={buttons}
       i18n={mergedI18n}
       isFullHeight={isFullHeight}
-      items={pageSize != null ? itemsToShow : filteredItems}
-      pagination={hasPagination ? pagination : null}
+      items={pageSize !== null ? itemsToShow : filteredItems}
+      pagination={
+        hasPagination
+          ? {
+              page: currentPageNumber,
+              onPage,
+              maxPage,
+              pageOfPagesText: (page) => mergedI18n.pageOfPagesText(page),
+            }
+          : null
+      }
       selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
       handleSelect={handleSelect}
       isLargeRow={isLargeRow}
