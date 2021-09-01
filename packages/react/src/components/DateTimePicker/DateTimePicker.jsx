@@ -509,6 +509,7 @@ const DateTimePicker = ({
 
   const onDatePickerClose = (range, single, flatpickr) => {
     // force it to stay open
+    /* istanbul ignore else */
     if (flatpickr) {
       flatpickr.open();
     }
@@ -604,6 +605,7 @@ const DateTimePicker = ({
 
   useEffect(
     () => {
+      /* istanbul ignore else */
       if (defaultValue || humanValue === null) {
         parseDefaultValue(defaultValue);
         setLastAppliedValue(defaultValue);
@@ -617,6 +619,7 @@ const DateTimePicker = ({
     setIsExpanded(false);
     parseDefaultValue(lastAppliedValue);
 
+    /* istanbul ignore else */
     if (onCancel) {
       onCancel();
     }
@@ -855,7 +858,15 @@ const DateTimePicker = ({
                       legendText={strings.relativeToLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
-                      <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                      <div
+                        className={classnames(
+                          `${iotPrefix}--date-time-picker__fields-wrapper`,
+                          `${iotPrefix}--date-time-picker__fields-wrapper--with-gap`,
+                          {
+                            [`${iotPrefix}--date-time-picker__fields-wrapper--without-time`]: !hasTimeInput,
+                          }
+                        )}
+                      >
                         <Select
                           {...others}
                           ref={relativeSelect}
