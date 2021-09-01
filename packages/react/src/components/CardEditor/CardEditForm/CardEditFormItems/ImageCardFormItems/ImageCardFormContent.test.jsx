@@ -45,4 +45,32 @@ describe('ImageCardFormContent', () => {
     expect(screen.queryByText('Hotspots')).toBeNull();
     expect(mockOnChange).toHaveBeenCalledTimes(1);
   });
+  it('should set an empty array of hotspots if none given', () => {
+    const mockOnChange = jest.fn();
+    render(
+      <ImageCardFormContent
+        onChange={mockOnChange}
+        cardConfig={{
+          content: {
+            id: 'imageid',
+            src: 'imagesrc',
+          },
+        }}
+        translateWithId={jest.fn()}
+      />
+    );
+    // Open up the hotspot modal
+    userEvent.click(screen.getByText('Edit image'));
+    expect(screen.getByText('Hotspots')).toBeInTheDocument();
+    expect(mockOnChange).toHaveBeenCalledTimes(1);
+    expect(mockOnChange).toHaveBeenCalledWith({
+      content: {
+        id: 'imageid',
+        src: 'imagesrc',
+      },
+      values: {
+        hotspots: [],
+      },
+    });
+  });
 });
