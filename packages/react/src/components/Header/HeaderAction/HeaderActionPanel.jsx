@@ -50,6 +50,7 @@ const HeaderActionPanel = ({
   focusRef,
   renderLabel,
   i18n,
+  inOverflow,
 }) => {
   const mergedI18n = useMemo(
     () => ({
@@ -72,7 +73,7 @@ const HeaderActionPanel = ({
       >
         {renderLabel ? (
           item.label
-        ) : isExpanded ? (
+        ) : isExpanded && inOverflow ? (
           <Close16 fill={white} description={mergedI18n.closeMenu} />
         ) : (
           item.btnContent
