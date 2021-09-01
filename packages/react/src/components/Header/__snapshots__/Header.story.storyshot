@@ -384,11 +384,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                     className="bx--app-switcher header-panel"
                     onKeyDown={[Function]}
                   >
-                    <a
-                      href="#"
+                    <button
+                      type="button"
                     >
                       Header panel content
-                    </a>
+                    </button>
                   </a>
                 </li>
               </ul>
