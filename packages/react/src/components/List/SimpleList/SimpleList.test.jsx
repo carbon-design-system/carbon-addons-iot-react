@@ -418,4 +418,20 @@ describe('SimpleList', () => {
     userEvent.click(screen.getByTitle('Item 1'));
     expect(onSelect).toHaveBeenCalledTimes(1);
   });
+
+  it('should update the number of items visible when changing pagination props', () => {
+    const { rerender } = render(
+      <SimpleList title="Simple list" hasSearch items={getListItems(30)} pageSize="sm" />
+    );
+
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(30)} pageSize="lg" />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(10);
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(30)} pageSize="xl" />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(20);
+    rerender(
+      <SimpleList title="Simple list" hasSearch items={getListItems(30)} hasPagination={false} />
+    );
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(30);
+  });
 });

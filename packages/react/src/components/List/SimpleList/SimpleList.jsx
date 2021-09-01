@@ -163,6 +163,10 @@ const SimpleList = ({
 
   const maxPage = Math.ceil(numberOfItems / rowPerPage);
 
+  /**
+   * Then the items array updates, make sure to update the filteredItems, but also re-apply
+   * search values if there were any.
+   */
   useEffect(() => {
     setFilteredItems(items);
     if (searchValue) {
@@ -170,6 +174,20 @@ const SimpleList = ({
     }
   }, [items, handleSearch, searchValue]);
 
+  /**
+   * to maintain the correct page and items from that page, we must update the
+   * itemsToShow array based on the current page and the number of rows shown based on
+   * the pageSize prop.
+   */
+  useEffect(() => {
+    const startIndex = (currentPageNumber - 1) * rowPerPage;
+    setItemsToShow(filteredItems.slice(startIndex, startIndex + rowPerPage));
+  }, [currentPageNumber, filteredItems, rowPerPage]);
+
+  /**
+   * If we were on a higher page and the number of items drop, we need to ensure we
+   * reset to the first page when the number of items drops below our previous max page.
+   */
   useEffect(() => {
     if (currentPageNumber > maxPage) {
       onPage(1);
