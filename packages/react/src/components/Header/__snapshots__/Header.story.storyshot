@@ -179,7 +179,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   className="action-btn__headerpanel-li"
                 >
                   <a
-                    element="a"
                     href="http://google.com"
                     onKeyDown={[Function]}
                     rel="noopener noreferrer"
@@ -194,7 +193,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   <button
                     className="this"
-                    element="button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                   >
@@ -384,7 +382,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   <a
                     className="bx--app-switcher header-panel"
-                    element="a"
                     onKeyDown={[Function]}
                   >
                     <a
@@ -1477,7 +1474,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   className="action-btn__headerpanel-li"
                 >
                   <a
-                    element="a"
                     href="http://google.com"
                     onKeyDown={[Function]}
                     rel="noopener noreferrer"
@@ -1492,7 +1488,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   <button
                     className="this"
-                    element="button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                   >

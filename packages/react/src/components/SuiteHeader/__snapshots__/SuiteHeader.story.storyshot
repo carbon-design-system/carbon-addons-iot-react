@@ -622,7 +622,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               >
                 <a
                   className="bx--app-switcher undefined"
-                  element="a"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -996,7 +995,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  element="a"
                   href="http://google.com"
                   onKeyDown={[Function]}
                   rel="noopener noreferrer"
@@ -1014,7 +1012,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  element="a"
                   href="http://google.com"
                   onKeyDown={[Function]}
                   rel="noopener noreferrer"
@@ -1032,7 +1029,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 className="action-btn__headerpanel-li"
               >
                 <button
-                  element="button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                 >
@@ -2329,7 +2325,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               >
                 <a
                   className="bx--app-switcher undefined"
-                  element="a"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -3140,7 +3135,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               >
                 <a
                   className="bx--app-switcher undefined"
-                  element="a"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -3873,7 +3867,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               >
                 <a
                   className="bx--app-switcher undefined"
-                  element="a"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -4959,7 +4952,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               >
                 <a
                   className="bx--app-switcher undefined"
-                  element="a"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -5584,7 +5576,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               >
                 <a
                   className="bx--app-switcher undefined"
-                  element="a"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -6256,7 +6247,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               >
                 <a
                   className="bx--app-switcher undefined"
-                  element="a"
                   onKeyDown={[Function]}
                 >
                   <ul
