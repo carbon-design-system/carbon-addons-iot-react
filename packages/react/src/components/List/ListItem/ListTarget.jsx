@@ -47,6 +47,7 @@ const ListTarget = ({ connectDropTarget, targetPosition, targetSize, isOver }) =
         height: `${height}%`,
       }}
       ref={(instance) => {
+        /* istanbul ignore else */
         if (connectDropTarget) {
           connectDropTarget(instance);
         }
