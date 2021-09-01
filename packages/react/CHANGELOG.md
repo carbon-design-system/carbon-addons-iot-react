@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.165](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.164...v2.146.0-next.165) (2021-09-01)
+
+
+### Bug Fixes
+
+* **list:** remove comments ([f046b30](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f046b3035cee84a07b79b8f9a2ccd988e870c8af))
+* **side-nav:** add slight delay on hover open transition ([85d9120](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/85d9120182f757c1dc1c35ff85b4d84d9d20a08b))
+* **sidenav:** added stateful example in storybook ([e90c56c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e90c56ce7653baf79925d35205b3161d1ab701de))
+* **table-card:** adjust padding on empty state for medium cards ([c49d72f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c49d72f0d5ff9cf6f00799cfb53a8b5fc725d2cf))
+* **table-card:** adjust story to allow medium/mediumwide cards ([3a6d7e3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3a6d7e382de65ea8f2227285eedeef568bb87e32))
+* **tile-catalog-new:** update tests, fix minor css bug ([441168c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/441168cb28f50db71d77818d56c68d96845a885d))
+
+
+
+
+
 # [2.146.0-next.164](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.163...v2.146.0-next.164) (2021-09-01)
 
 **Note:** Version bump only for package carbon-addons-iot-react
