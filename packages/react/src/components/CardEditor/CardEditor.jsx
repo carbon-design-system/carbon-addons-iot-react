@@ -53,7 +53,7 @@ const propTypes = {
    * This allows you to add things to the edit form that are not in the main card JSON.  This is a better
    * way to add custom editor props to the Card.
    */
-  onCardEditFormRender: PropTypes.func,
+  onRenderCardEditForm: PropTypes.func,
   /** if provided, allows the consumer to make changes to the cardConfig for preview in the JSON editor modal.
    * onCardJsonPreview(card)
    */
@@ -163,7 +163,7 @@ const defaultProps = {
   getValidDataItems: null,
   getValidTimeRanges: null,
   onCardJsonPreview: null,
-  onCardEditFormRender: null,
+  onRenderCardEditForm: null,
   dataItems: [],
   availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
@@ -192,7 +192,7 @@ const CardEditor = ({
   supportedCardTypes,
   availableDimensions: availableDimensionsProp,
   getValidDimensions,
-  onCardEditFormRender,
+  onRenderCardEditForm,
   icons,
   i18n,
   currentBreakpoint,
@@ -223,8 +223,8 @@ const CardEditor = ({
   const showGallery = isNil(cardConfig);
 
   const finalCardToEdit = useMemo(
-    () => (onCardEditFormRender && cardConfig ? onCardEditFormRender(cardConfig) : cardConfig),
-    [cardConfig, onCardEditFormRender]
+    () => (onRenderCardEditForm && cardConfig ? onRenderCardEditForm(cardConfig) : cardConfig),
+    [cardConfig, onRenderCardEditForm]
   );
   return (
     <div

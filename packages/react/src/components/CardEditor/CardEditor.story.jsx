@@ -473,7 +473,7 @@ export const DynamicallyAddSpecialContentToCardEditForm = () => (
         },
       }}
       // dynamically adds the custom edit content at render time
-      onCardEditFormRender={(cardConfig) => ({
+      onRenderCardEditForm={(cardConfig) => ({
         ...cardConfig,
         renderEditContent: (onChange, cardConfig) =>
           renderCustomDataTypeSelector(onChange, cardConfig, dataTypes, dataTypes[1]),

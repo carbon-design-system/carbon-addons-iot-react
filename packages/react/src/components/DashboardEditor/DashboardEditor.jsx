@@ -101,7 +101,7 @@ const propTypes = {
    * It is called with the card prop JSON and you return the updated cardConfig.
    * This callback function allows you to add elements for the form to render that are not passed in the main dashboard card JSON
    */
-  onCardEditFormRender: PropTypes.func,
+  onRenderCardEditForm: PropTypes.func,
   /** if provided, will update the dashboard json according to its own logic. Is called if a card is edited, or added.
    * Should return an updated card to be rendered
    * onCardChange(updatedCard, template): Card
@@ -323,7 +323,7 @@ const defaultProps = {
   renderHeader: null,
   renderIconByName: renderDefaultIconByName,
   renderCardPreview: () => null,
-  onCardEditFormRender: () => null,
+  onRenderCardEditForm: () => null,
   headerBreadcrumbs: null,
   notification: null,
   title: '',
@@ -401,7 +401,7 @@ const DashboardEditor = ({
   breakpointSwitcher,
   renderHeader,
   renderCardPreview,
-  onCardEditFormRender,
+  onRenderCardEditForm,
   renderIconByName,
   getValidDataItems,
   getValidTimeRanges,
@@ -801,7 +801,7 @@ const DashboardEditor = ({
             isSummaryDashboard={isSummaryDashboard}
             onShowGallery={() => handleCardSelect(null)}
             onChange={handleOnCardChange}
-            onCardEditFormRender={onCardEditFormRender}
+            onRenderCardEditForm={onRenderCardEditForm}
             getValidDataItems={getValidDataItems}
             getValidTimeRanges={getValidTimeRanges}
             dataItems={dataItems}
