@@ -151,12 +151,24 @@ class HeaderActionMenu extends React.Component {
             const fallbackTitle = this.menuItemRefs?.[index]?.current?.textContent ?? '';
             const title =
               childItem.metaData?.title ?? (childIsOverflowing ? fallbackTitle : undefined);
+            const onKeyDownClick = (e) => e.target.click();
+            const onClick =
+              childItem.metaData?.element === 'a' && !childItem.metaData?.onClick
+                ? undefined
+                : childItem.metaData?.onClick || (() => {});
+
+            const onKeyDown = childItem?.metaData?.onKeyDown
+              ? childItem.metaData.onKeyDown
+              : onClick || onKeyDownClick;
+
             return (
               <HeaderMenuItem
                 ref={this.menuItemRefs[index]}
                 key={`menu-item-${label + index}-child`}
                 {...childItem.metaData}
                 title={title}
+                onClick={onClick}
+                onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
               >
                 {childItem.content}
               </HeaderMenuItem>

@@ -7,6 +7,7 @@ import { Close16 } from '@carbon/icons-react';
 import { white } from '@carbon/colors';
 
 import { APP_SWITCHER } from '../Header';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 import { HeaderActionPropTypes } from './HeaderAction';
 
@@ -96,11 +97,29 @@ const HeaderActionPanel = ({
         <ul aria-label={item.label}>
           {item.childContent.map((childItem, k) => {
             const ChildElement = childItem?.metaData?.element || 'a';
+            const onKeyDownClick = (e) => e.target.click();
+
+            // otherwise if the item is an A and doesn't have an onClick event
+            // do nothing. An A tag doesn't need an onClick handler.
+            const onClick =
+              ChildElement === 'a' && !childItem?.metaData?.onClick
+                ? undefined
+                : // otherwise, if an onClick exists use that, or fallback to a noop.
+                  childItem?.metaData?.onClick || (() => {});
+
+            // if item has onKeyDown use that otherwise, fallback to onClick if it exists
+            // or create a custom handler to trigger the click
+            const onKeyDown = childItem?.metaData?.onKeyDown
+              ? childItem.metaData.onKeyDown
+              : onClick || onKeyDownClick;
+
             return (
               <li key={`listitem-${item.label}-${k}`} className="action-btn__headerpanel-li">
                 <ChildElement
                   key={`headerpanelmenu-item-${item.label}-${index}-child-${k}`}
                   {...childItem.metaData}
+                  onClick={onClick}
+                  onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
                 >
                   {childItem.content}
                 </ChildElement>
