@@ -131,6 +131,19 @@ describe('ValueCard', () => {
     expect(screen.queryByText('10,000.0')).toBeTruthy();
   });
 
+  it('should render a span when no onAttributeClick provided', () => {
+    render(
+      <ValueCard
+        id="myIdTest"
+        title="Health score"
+        content={{ attributes: [{ label: 'title', dataSourceId: 'v', precision: 2 }] }}
+        size={CARD_SIZES.SMALL}
+        values={{ v: 10000 }}
+      />
+    );
+    expect(screen.queryByText('10,000.00').tagName).toEqual('SPAN');
+  });
+
   it('should use onAttributeClick when provided', () => {
     const onAttributeClick = jest.fn();
     render(
@@ -145,10 +158,11 @@ describe('ValueCard', () => {
     );
     const button = screen.queryByText('10,000.00');
     userEvent.click(button);
+    expect(button.tagName).toEqual('BUTTON');
     expect(onAttributeClick).toHaveBeenCalledWith({ dataSourceId: 'v', value: 10000 });
   });
 
-  it('should should PREVIEW_DATA as secondary value when editable', () => {
+  it('should show PREVIEW_DATA as secondary value when editable', () => {
     render(
       <ValueCard
         id="myIdTest"
