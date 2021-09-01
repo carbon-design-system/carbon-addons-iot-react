@@ -66,4 +66,23 @@ describe('BarChartCardFormSettings', () => {
 
     expect(mockOnChange).toHaveBeenCalled();
   });
+  it('handles layout onChange', () => {
+    render(<BarChartCardFormSettings cardConfig={barChartConfig} onChange={mockOnChange} />);
+
+    userEvent.click(screen.getByText('Horizontal'));
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      content: {
+        layout: 'HORIZONTAL',
+        series: [{ color: 'red', dataSourceId: 'temperature', label: 'Temperature' }],
+        type: 'SIMPLE',
+        xLabel: 'Time',
+        yLabel: 'Temperature (˚F)',
+      },
+      id: 'BarChart',
+      size: 'MEDIUM',
+      title: 'BarChartCard',
+      type: 'BAR',
+    });
+  });
 });

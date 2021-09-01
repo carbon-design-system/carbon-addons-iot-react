@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.163](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.162...v2.146.0-next.163) (2021-09-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.162](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.161...v2.146.0-next.162) (2021-09-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.161](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.160...v2.146.0-next.161) (2021-09-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.160](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.159...v2.146.0-next.160) (2021-09-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.159](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.158...v2.146.0-next.159) (2021-09-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.158](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.157...v2.146.0-next.158) (2021-09-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.157](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.156...v2.146.0-next.157) (2021-09-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.146.0-next.156](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.155...v2.146.0-next.156) (2021-09-01)
 
 **Note:** Version bump only for package ibm-ai-applications
