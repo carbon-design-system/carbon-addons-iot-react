@@ -18,6 +18,12 @@
     line-height: $line-height;
     @include multiline-text-overflow($max-lines, $line-height);
     word-break: break-all;
+    /* override default button styles to match span visuals when using a button */
+    &.#{$prefix}--btn {
+      padding: 0;
+      flex: 1;
+      white-space: nowrap;
+    }
 
     &--vertical {
       text-align: left;

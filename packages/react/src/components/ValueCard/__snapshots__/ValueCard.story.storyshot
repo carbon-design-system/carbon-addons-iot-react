@@ -233,19 +233,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   100
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -283,19 +293,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-1-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   50
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -391,19 +411,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   89
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -441,19 +471,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-1-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   76.7
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -491,19 +531,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-2-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   76
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -541,19 +591,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-3-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   50
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -591,19 +651,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-4-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   0.567
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -699,19 +769,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   Good
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -749,19 +829,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value"
-                  data-testid="Card-attribute-1-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   Healthy
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -799,19 +889,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value"
-                  data-testid="Card-attribute-2-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   None
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -849,19 +949,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value"
-                  data-testid="Card-attribute-3-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   Unbearable
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -957,19 +1067,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   --
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1007,19 +1127,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-1-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   --
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1115,19 +1245,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1223,19 +1363,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   89
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1273,19 +1423,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-1-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   76.7
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1323,19 +1483,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-2-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   76
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1373,19 +1543,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-3-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   76
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1423,19 +1603,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-4-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   76
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1473,19 +1663,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-5-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   Australia
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1523,19 +1723,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-6-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   76
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1652,19 +1862,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   345,678,234,234,234,240
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1723,19 +1943,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-1-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   456,778,234,234,234,240.0
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1794,19 +2024,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                  data-testid="Card-attribute-2-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   88,888,678,234,234,240,000.0
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -1917,19 +2157,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   Unhealthy
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -2043,19 +2293,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   70
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"
@@ -2151,19 +2411,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               <div
                 className="iot--value-card__value-renderer--wrapper"
               >
-                <span
-                  className="iot--value-card__value-renderer--value"
-                  data-testid="Card-attribute-0-value"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
-                      "--value-renderer-color": null,
+                      "--value-renderer-color": "#0f62fe",
                       "--value-renderer-font-size": "42px",
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  tabIndex={0}
+                  type="button"
                 >
                   13,572
-                </span>
+                </button>
               </div>
               <span
                 className="iot--value-card__attribute-unit"

@@ -118,6 +118,8 @@ export const ValueCardPropTypes = {
   fontSize: PropTypes.number,
   /** option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool,
+  /** Callback fired when an attribute is clicked to take further action like opening a modal */
+  onAttributeClick: PropTypes.func,
 };
 
 export const TableCardPropTypes = {
