@@ -1,8 +1,11 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import StatefulPageWizard from './StatefulPageWizard';
 import { content, StepValidationWizard } from './PageWizard.story';
+import PageWizardStepTitle from './PageWizardStep/PageWizardStepTitle';
+import PageWizardStep from './PageWizardStep/PageWizardStep';
 
 describe('StatefulPageWizard', () => {
   it('button events during first step (no validation)', () => {
@@ -170,5 +173,34 @@ describe('StatefulPageWizard', () => {
     });
     fireEvent.click(screen.getByText('Second Step'));
     expect(screen.queryByText('First name and Last name cannot be empty')).toBeFalsy();
+  });
+
+  it('should not move to next or previous step if disabled', () => {
+    const mocks = {
+      onNext: jest.fn(),
+      onClose: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
+      onBack: jest.fn(),
+    };
+
+    render(
+      <StatefulPageWizard currentStepId="step2" {...mocks}>
+        <PageWizardStep id="step1" label="First Step" key="step1" disabled>
+          <PageWizardStepTitle>Step 1: Define the data</PageWizardStepTitle>
+        </PageWizardStep>
+        <PageWizardStep id="step2" key="step2" label="Second Step">
+          <PageWizardStepTitle>Step 2: Pick the contents</PageWizardStepTitle>
+        </PageWizardStep>
+        <PageWizardStep id="step3" key="step3" label="Third Step" disabled>
+          <PageWizardStepTitle>Step 3: Finish</PageWizardStepTitle>
+        </PageWizardStep>
+      </StatefulPageWizard>
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Back' }));
+    expect(mocks.onBack).toHaveBeenCalledWith('step2');
+    userEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(mocks.onBack).toHaveBeenCalledWith('step2');
   });
 });
