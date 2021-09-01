@@ -786,5 +786,235 @@ describe('MenuButton', () => {
         })
       ).toEqual({ x: 480.484375, y: 456 });
     });
+
+    it('should position a split button in the top-right of a small window correctly', () => {
+      Object.defineProperty(window, 'innerHeight', {
+        writable: true,
+        configurable: true,
+        value: 321,
+      });
+      Object.defineProperty(window, 'innerWidth', {
+        writable: true,
+        configurable: true,
+        value: 1052,
+      });
+
+      const button = generateMenuButton({
+        bottom: 112,
+        height: 48,
+        left: 925,
+        right: 973,
+        top: 64,
+        width: 48,
+        x: 925,
+        y: 64,
+      });
+
+      const primaryButton = document.createElement('button');
+      primaryButton.getBoundingClientRect = () => ({
+        bottom: 112,
+        height: 48,
+        left: 802.5625,
+        right: 925,
+        top: 64,
+        width: 122.4375,
+        x: 802.5625,
+        y: 64,
+      });
+      Object.defineProperty(button, 'previousSibling', {
+        get() {
+          return primaryButton;
+        },
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Create',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 594.5625, y: 64 });
+    });
+
+    it('should position a split button in the top-right of a small window in rtl correctly', () => {
+      Object.defineProperty(window, 'innerHeight', {
+        writable: true,
+        configurable: true,
+        value: 321,
+      });
+      Object.defineProperty(window, 'innerWidth', {
+        writable: true,
+        configurable: true,
+        value: 1052,
+      });
+
+      const button = generateMenuButton({
+        bottom: 112,
+        height: 48,
+        left: 808.5625,
+        right: 856.5625,
+        top: 64,
+        width: 48,
+        x: 808.5625,
+        y: 64,
+      });
+
+      const primaryButton = document.createElement('button');
+      primaryButton.getBoundingClientRect = () => ({
+        bottom: 112,
+        height: 48,
+        left: 802.5625,
+        right: 925,
+        top: 64,
+        width: 122.4375,
+        x: 802.5625,
+        y: 64,
+      });
+      Object.defineProperty(button, 'previousSibling', {
+        get() {
+          return primaryButton;
+        },
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Create',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
+        })
+      ).toEqual({ x: 600.5625, y: 64 });
+    });
+  });
+
+  it('should position a split button in the top-left of a small window correctly', () => {
+    Object.defineProperty(window, 'innerHeight', {
+      writable: true,
+      configurable: true,
+      value: 321,
+    });
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 1052,
+    });
+
+    const button = generateMenuButton({
+      bottom: 112,
+      height: 48,
+      left: 186.4375,
+      right: 234.4375,
+      top: 64,
+      width: 48,
+      x: 186.4375,
+      y: 64,
+    });
+
+    const primaryButton = document.createElement('button');
+    primaryButton.getBoundingClientRect = () => ({
+      bottom: 112,
+      height: 48,
+      left: 802.5625,
+      right: 925,
+      top: 64,
+      width: 122.4375,
+      x: 802.5625,
+      y: 64,
+    });
+    Object.defineProperty(button, 'previousSibling', {
+      get() {
+        return primaryButton;
+      },
+    });
+
+    expect(
+      MenuButtonUtils.getMenuPosition({
+        label: 'Create',
+        buttonRef: { current: button },
+        onPrimaryActionClick: jest.fn(),
+      })
+    ).toEqual({ x: 234.4375, y: 64 });
+  });
+
+  it('should position a split button in the top-left of a small window in rtl correctly', () => {
+    Object.defineProperty(window, 'innerHeight', {
+      writable: true,
+      configurable: true,
+      value: 321,
+    });
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 1052,
+    });
+
+    const button = generateMenuButton({
+      bottom: 112,
+      height: 48,
+      left: 186.4375,
+      right: 234.4375,
+      top: 64,
+      width: 48,
+      x: 186.4375,
+      y: 64,
+    });
+
+    const primaryButton = document.createElement('button');
+    primaryButton.getBoundingClientRect = () => ({
+      bottom: 112,
+      height: 48,
+      left: 802.5625,
+      right: 925,
+      top: 64,
+      width: 122.4375,
+      x: 802.5625,
+      y: 64,
+    });
+    Object.defineProperty(button, 'previousSibling', {
+      get() {
+        return primaryButton;
+      },
+    });
+
+    expect(
+      MenuButtonUtils.getMenuPosition({
+        label: 'Create',
+        buttonRef: { current: button },
+        onPrimaryActionClick: jest.fn(),
+      })
+    ).toEqual({ x: 234.4375, y: 64 });
+  });
+
+  it("should fallback to hard-coded defaults if refs aren't passed", () => {
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: undefined,
+    });
+    Object.defineProperty(window, 'innerHeight', {
+      writable: true,
+      configurable: true,
+      value: undefined,
+    });
+
+    const button = generateMenuButton({
+      bottom: 96,
+      height: 48,
+      left: 170.4375,
+      right: 218.4375,
+      top: 48,
+      width: 48,
+      x: 170.4375,
+      y: 48,
+    });
+    button.nextSibling.getBoundingClientRect.mockImplementation(() => undefined);
+
+    expect(
+      MenuButtonUtils.getMenuPosition({
+        label: 'Actions',
+        buttonRef: { current: button },
+        onPrimaryActionClick: jest.fn(),
+      })
+    ).toEqual({ x: 170.4375, y: 96 });
   });
 });
