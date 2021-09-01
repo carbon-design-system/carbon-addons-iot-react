@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.166](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.165...v2.146.0-next.166) (2021-09-01)
+
+
+### Bug Fixes
+
+* **header:** add hidden icon to story ([4ae4451](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4ae44511a932aaa883be702bb5e17738edf1712e))
+* **header:** fix typos and minor mistakes ([f7df54e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f7df54e2ce54e5087260bf4ddf28a41c2b59a6cb))
+* **header:** increase test retries, tun off jest eslint rule for e2e ([2004f99](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2004f99ee20f8dff714917c661397e4541d7490b))
+* **header:** only change to close icon when triggered from overflow ([a804c37](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a804c3766ca6a7f5287ed9c4ec9846cf272ceaba))
+* **header:** reduce e2e test size to make test more consistent ([877b0de](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/877b0deb69ee01e70fb14a402b4dbad298fc1057))
+* **header:** update snapshots ([acc4214](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/acc4214ee435610b8f91ed3ea94e512bd67f50bc))
+
+
+### Features
+
+* **header:** add hidden by class example in Header story ([723042f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/723042fd11c8edac3ce4ae2cb4cdfa17efad9367))
+* **header:** add isActionItemVisible callback to hide icons ([ddd66c4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ddd66c4bef2400f38bdb62173ad5bd8782c857d8))
+* **header:** pass the whole actionItem to isActionItemVisible function ([34550b6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/34550b6eac2181711029b982f512b41ac53c2283))
+* **suiteheader:** add isActionItemVisible to proptypes and docs ([7e2fdd0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e2fdd07626c8dbb768a7fb4670fff4c68cca2b5))
+
+
+
+
+
 # [2.146.0-next.165](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.164...v2.146.0-next.165) (2021-09-01)
 
 
