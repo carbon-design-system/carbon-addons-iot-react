@@ -323,7 +323,7 @@ const defaultProps = {
   renderHeader: null,
   renderIconByName: renderDefaultIconByName,
   renderCardPreview: () => null,
-  onRenderCardEditForm: () => null,
+  onRenderCardEditForm: null,
   headerBreadcrumbs: null,
   notification: null,
   title: '',

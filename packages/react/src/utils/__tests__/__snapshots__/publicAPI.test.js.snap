@@ -10475,7 +10475,7 @@ Map {
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
-      "onRenderCardEditForm": [Function],
+      "onRenderCardEditForm": null,
       "onSubmit": null,
       "onValidateCardJson": null,
       "onValidateUploadedImage": null,
