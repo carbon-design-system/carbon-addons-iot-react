@@ -42,23 +42,123 @@ describe('List', () => {
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
 
-  // TODO: write tests that actually test selection
   it('List to have default handleSelect', () => {
-    expect(UnconnectedList.defaultProps.handleSelect).toBeDefined();
-    UnconnectedList.defaultProps.handleSelect();
+    const onSelect = jest.fn();
+    const items = [
+      ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
+        id: team,
+        isCategory: true,
+        content: {
+          value: team,
+        },
+        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+            secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+          },
+          isSelectable: true,
+        })),
+      })),
+      ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
+        id: team,
+        isCategory: true,
+        content: {
+          value: team,
+        },
+        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+            secondaryValue: sampleHierarchy.MLB['National League'][team][player],
+          },
+          isSelectable: true,
+        })),
+      })),
+    ];
+    const { rerender } = render(
+      <UnconnectedList
+        title="list"
+        items={items}
+        expandedIds={['New York Yankees', 'Atlanta Braves']}
+        handleSelect={onSelect}
+      />
+    );
+    userEvent.click(screen.getByText('DJ LeMahieu'));
+    expect(onSelect).toHaveBeenCalledWith('New York Yankees_DJ LeMahieu', 'New York Yankees');
+
+    jest.spyOn(UnconnectedList.defaultProps, 'handleSelect');
+    rerender(
+      <UnconnectedList
+        title="list"
+        items={items}
+        expandedIds={['New York Yankees', 'Atlanta Braves']}
+      />
+    );
+    userEvent.click(screen.getByText('Luke Voit'));
+    expect(UnconnectedList.defaultProps.handleSelect).toHaveBeenCalledWith(
+      'New York Yankees_Luke Voit',
+      'New York Yankees'
+    );
+    jest.resetAllMocks();
   });
 
-  // TODO: write tests that actually test selection
   it('List to have default toggleExpansion', () => {
-    expect(UnconnectedList.defaultProps.toggleExpansion).toBeDefined();
-    UnconnectedList.defaultProps.toggleExpansion();
+    const onExpanded = jest.fn();
+    const items = [
+      ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
+        id: team,
+        isCategory: true,
+        content: {
+          value: team,
+        },
+        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+            secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+          },
+          isSelectable: true,
+        })),
+      })),
+      ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
+        id: team,
+        isCategory: true,
+        content: {
+          value: team,
+        },
+        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+            secondaryValue: sampleHierarchy.MLB['National League'][team][player],
+          },
+          isSelectable: true,
+        })),
+      })),
+    ];
+    const { rerender } = render(
+      <UnconnectedList title="list" items={items} toggleExpansion={onExpanded} />
+    );
+
+    userEvent.click(screen.getAllByTitle('Expand')[0]);
+    expect(onExpanded).toHaveBeenCalledWith('Chicago White Sox');
+    jest.spyOn(UnconnectedList.defaultProps, 'toggleExpansion');
+    rerender(<UnconnectedList title="list" items={items} />);
+    userEvent.click(screen.getAllByTitle('Expand')[0]);
+    expect(UnconnectedList.defaultProps.toggleExpansion).toHaveBeenCalledWith('Chicago White Sox');
+    jest.resetAllMocks();
   });
 
   it('List when selectedIds is set', () => {
-    const renderedElement = render(
-      <UnconnectedList title="list" items={getListItems(5)} selectedIds={['1', '2']} />
-    );
-    expect(renderedElement.container.innerHTML).toBeTruthy();
+    render(<UnconnectedList title="list" items={getListItems(5)} selectedIds={['1', '2']} />);
+
+    const selected = screen.getAllByTestId('list-item__selected');
+    expect(selected).toHaveLength(2);
+    expect(selected[0]).toHaveClass(`${iotPrefix}--list-item__selected`);
+    expect(selected[0]).toHaveTextContent('Item 1');
+    expect(selected[1]).toHaveClass(`${iotPrefix}--list-item__selected`);
+    expect(selected[1]).toHaveTextContent('Item 2');
   });
 
   it('List hasChildren and expanded', () => {
@@ -143,6 +243,31 @@ describe('List', () => {
     const { container } = render(<List title="list" items={getListItems(1)} isLoading />);
     expect(container.querySelectorAll(`.${iotPrefix}--list--skeleton`)).toHaveLength(1);
   });
+  it('should show pagination only after loaded', () => {
+    const onPage = jest.fn();
+    const { container, rerender } = render(
+      <List
+        title="list"
+        items={getListItems(8)}
+        isLoading
+        pagination={{ page: 1, totalItems: 8, maxPage: 2, onPage }}
+      />
+    );
+    expect(container.querySelectorAll(`.${iotPrefix}--list--skeleton`)).toHaveLength(1);
+    expect(screen.queryByLabelText('Next page')).toBeNull();
+    rerender(
+      <List
+        title="list"
+        items={getListItems(8)}
+        isLoading={false}
+        pagination={{ page: 1, totalItems: 8, maxPage: 2, onPage }}
+      />
+    );
+    expect(container.querySelectorAll(`.${iotPrefix}--list--skeleton`)).toHaveLength(0);
+    expect(screen.getByLabelText('Next page')).toBeVisible();
+    userEvent.click(screen.getByLabelText('Next page'));
+    expect(onPage).toBeCalledWith(2);
+  });
   it('should not call onSelect when editingStyle is set', () => {
     const onSelect = jest.fn();
     render(
@@ -156,5 +281,20 @@ describe('List', () => {
     );
     userEvent.click(screen.getByTitle('Item 1'));
     expect(onSelect).not.toHaveBeenCalled();
+  });
+
+  it('should call onSelect when editingStyle is set to multiple', () => {
+    const onSelect = jest.fn();
+    render(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        editingStyle="multiple"
+        isSelectable
+      />
+    );
+    userEvent.click(screen.getByTestId('1-checkbox'));
+    expect(onSelect).toHaveBeenCalledWith('1', null);
   });
 });

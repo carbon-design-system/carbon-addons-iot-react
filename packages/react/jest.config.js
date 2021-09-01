@@ -33,6 +33,7 @@ module.exports = {
     './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': all90Covered,
     './src/components/List/List.jsx': all90Covered,
     './src/components/Breadcrumb/Breadcrumb.jsx': all90Covered,
+    './src/components/CardEditor/CardEditForm/CardEditFormItems/ImageCardFormItems/ImageCardFormContent.jsx': all90Covered,
     './src/components/ValueCard/Attribute.jsx': all90Covered,
     './src/components/SuiteHeader/SuiteHeader.jsx': all90Covered,
     './src/components/Table/TableManageViewsModal/TableManageViewsModal.jsx': all90Covered,

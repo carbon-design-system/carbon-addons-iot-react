@@ -23,7 +23,11 @@ export default {
 };
 
 export const WithMultipleActions = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+  const size = select(
+    'size',
+    [CARD_SIZES.MEDIUM, CARD_SIZES.MEDIUMWIDE, CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGEWIDE
+  );
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
   const tableDataWithActions = tableData.map((item) => {
