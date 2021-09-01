@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Add16, Close16, Edit16 } from '@carbon/icons-react';
-import { boolean, select, text } from '@storybook/addon-knobs';
+import { boolean, select, text, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
@@ -140,7 +140,7 @@ export const Basic = () => (
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
-      items={getListItems(30)}
+      items={getListItems(number('items to render', 30))}
       isFullHeight={boolean('isFullHeight', true)}
       pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
       isLoading={boolean('isLoading', false)}
