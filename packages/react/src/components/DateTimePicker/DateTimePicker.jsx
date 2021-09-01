@@ -336,6 +336,12 @@ const DateTimePicker = ({
     },
   };
 
+  /**
+   * A callback ref to capture the DateTime node. When a user changes from Relative to Absolute
+   * the calendar would capture focus and move the users position adding confusion to where they
+   * are on the page. This also checks if they're currently focused on the Absolute radio button
+   * and captures it so focus can be restored after the calendar has been reparented below.
+   */
   const handleDatePickerRef = useCallback((node) => {
     if (document.activeElement?.getAttribute('value') === PICKER_KINDS.ABSOLUTE) {
       previousActiveElement.current = document.activeElement;
@@ -358,6 +364,7 @@ const DateTimePicker = ({
           dp.appendChild(datePickerElem.cal.calendarContainer);
         }
 
+        // if we were focused on the Absolute radio button previously, restore focus to it.
         if (previousActiveElement.current) {
           previousActiveElement.current.focus();
           previousActiveElement.current = null;
@@ -507,6 +514,8 @@ const DateTimePicker = ({
       case 'Escape':
         setIsExpanded(false);
         break;
+      // if the input box is focused and a down arrow is pressed this
+      // moves focus to the first item in the preset list that has a tabindex
       case 'ArrowDown':
         if (presetListRef?.current) {
           const listItems = getFocusableSiblings();
@@ -521,6 +530,10 @@ const DateTimePicker = ({
     }
   };
 
+  /**
+   * Moves up the preset list to the previous focusable element or wraps around to the bottom
+   * if already at the top.
+   */
   const moveToPreviousElement = () => {
     const siblings = getFocusableSiblings();
     const index = siblings.findIndex((elem) => elem === document.activeElement);
@@ -532,6 +545,10 @@ const DateTimePicker = ({
     }
   };
 
+  /**
+   * Moves down the preset list to the next focusable element or wraps around to the top
+   * if already at the bottom
+   */
   const moveToNextElement = () => {
     const siblings = getFocusableSiblings();
     const index = siblings.findIndex((elem) => elem === document.activeElement);
@@ -556,6 +573,11 @@ const DateTimePicker = ({
     }
   };
 
+  /**
+   * Allows navigation back and forth between the radio buttons for Relative/Absolute
+   *
+   * @param {KeyboardEvent} e
+   */
   const onNavigateRadioButton = (e) => {
     if (e.target.getAttribute('id').includes('absolute')) {
       setCustomRangeKind(PICKER_KINDS.RELATIVE);
@@ -796,6 +818,10 @@ const DateTimePicker = ({
     ? renderPresetTooltipText(currentValue)
     : getIntervalValue();
 
+  /**
+   * Shows and hides the tooltip with the humanValue (Relative) or full-range (Absolute) when
+   * the user focuses or hovers on the input
+   */
   const toggleTooltip = () => {
     if (isExpanded) {
       setIsTooltipOpen(false);
@@ -805,6 +831,7 @@ const DateTimePicker = ({
   };
 
   return (
+    // Escape handler added to allow pressing escape to close the picker from any via event bubbling
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       data-testid={testId}
@@ -866,6 +893,7 @@ const DateTimePicker = ({
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
+              // Catch bubbled Up/Down keys from the preset list and move focus.
               // eslint-disable-next-line jsx-a11y/no-static-element-interactions
               <div
                 ref={presetListRef}
