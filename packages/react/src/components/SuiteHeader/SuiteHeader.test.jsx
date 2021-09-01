@@ -933,8 +933,8 @@ describe('SuiteHeader', () => {
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
     expect(HTMLAnchorElement.prototype.click).not.toHaveBeenCalled();
     expect(onClick).not.toHaveBeenCalled();
-    expect(onKeyDown).not.toHaveBeenCalled();
     expect(onRouteChange).not.toHaveBeenCalled();
+    expect(onKeyDown).toHaveBeenCalled();
     jest.resetAllMocks();
   });
 });
