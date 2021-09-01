@@ -1289,6 +1289,114 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with long text, no units, no click handler 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1rem4",
+        "width": "252px",
+      }
+    }
+  >
+    <div
+      className="iot--card iot--value-card__horizontal iot--card--wrapper"
+      data-testid="Card"
+      id="facilitycard"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "144px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Tagpath"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Tagpath
+          </div>
+        </span>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "96px",
+          }
+        }
+      >
+        <div
+          className="iot--value-card__content-wrapper"
+        >
+          <div
+            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+            style={
+              Object {
+                "--value-card-attribute-width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--value-card__attribute-label"
+            >
+              <span
+                data-testid="Card-attribute-0-threshold-label"
+              >
+                Tagpath
+              </span>
+            </div>
+            <div
+              className="iot--value-card__attribute"
+            >
+              <div
+                className="iot--value-card__value-renderer--wrapper"
+              >
+                <span
+                  className="iot--value-card__value-renderer--value"
+                  data-testid="Card-attribute-0-value"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                      "--value-renderer-font-size": "42px",
+                      "--value-renderer-max-lines": 1,
+                    }
+                  }
+                >
+                  rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu
+                </span>
+              </div>
+              <span
+                className="iot--value-card__attribute-unit"
+                data-testid="Card-attribute-0-unit"
+                style={
+                  Object {
+                    "--default-font-size": "1.25rem",
+                  }
+                }
+              >
+                
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with six data points 1`] = `
 <div
   className="storybook-container"
