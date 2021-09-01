@@ -10475,6 +10475,7 @@ Map {
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
+      "onRenderCardEditForm": [Function],
       "onSubmit": null,
       "onValidateCardJson": null,
       "onValidateUploadedImage": null,
@@ -11069,6 +11070,9 @@ Map {
       "onLayoutChange": Object {
         "type": "func",
       },
+      "onRenderCardEditForm": Object {
+        "type": "func",
+      },
       "onSubmit": Object {
         "type": "func",
       },
@@ -11103,6 +11107,7 @@ Map {
       },
     },
   },
+  "DashboardEditorDefaultCardRenderer" => Object {},
   "CardEditor" => Object {
     "defaultProps": Object {
       "availableDimensions": Object {},
@@ -11126,6 +11131,7 @@ Map {
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
       "onEditDataItems": null,
+      "onRenderCardEditForm": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -11331,6 +11337,9 @@ Map {
         "type": "func",
       },
       "onEditDataItems": Object {
+        "type": "func",
+      },
+      "onRenderCardEditForm": Object {
         "type": "func",
       },
       "onShowGallery": Object {
