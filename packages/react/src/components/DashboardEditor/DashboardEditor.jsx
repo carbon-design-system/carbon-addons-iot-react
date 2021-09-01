@@ -762,7 +762,6 @@ const DashboardEditor = ({
                         isResizable={isCardResizable}
                         i18n={mergedI18n}
                         isSelected={isSelected}
-                        getValidDataItems={getValidDataItems}
                         availableDimensions={availableDimensions}
                         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
                         renderCardPreview={renderCardPreview}
