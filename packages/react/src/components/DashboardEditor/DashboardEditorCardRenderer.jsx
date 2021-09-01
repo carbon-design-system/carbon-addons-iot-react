@@ -16,32 +16,29 @@ import DashboardEditorDefaultCardRenderer from './DashboardEditorDefaultCardRend
  *
  * This component is needed to cache the style object for performance reasons because unfortunately, the style object changes with every render from React Grid Layout
  */
-const CachedEditorCardRenderer = ({ style, children, getValidDataItems, dataItems, ...others }) => {
+const CachedEditorCardRenderer = ({ style, children, ...others }) => {
   const [cachedStyle, setCachedStyle] = useState(style);
   const [cachedChildren, setCachedChildren] = useState(children);
-  const dataItemsForCard = useMemo(
-    () => (getValidDataItems ? getValidDataItems(others) : dataItems),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [dataItems]
-  );
   const previousStyle = usePrevious(style);
 
+  // Unfortunately the react-grid-layout creates a new style object every render
   useEffect(() => {
     if (!isEqual(style, previousStyle)) {
       setCachedStyle(style);
     }
   }, [previousStyle, style]);
 
+  // Unfortunately the react-grid keeps putting a new child object every render, only need to refresh if it's resizable
   useEffect(
     () => {
       setCachedChildren(children);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [others.isResizable] // Unfortunately the react-grid keeps putting a new child object every render, only need to refresh if it's resizable
+    [others.isResizable]
   );
 
   return (
-    <DashboardEditorCardRenderer {...others} dataItems={dataItemsForCard} style={cachedStyle}>
+    <DashboardEditorCardRenderer {...others} style={cachedStyle}>
       {
         cachedChildren // this is a performance enhancement because the children were always being recreated
       }

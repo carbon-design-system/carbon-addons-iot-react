@@ -763,7 +763,6 @@ const DashboardEditor = ({
                         i18n={mergedI18n}
                         isSelected={isSelected}
                         getValidDataItems={getValidDataItems}
-                        dataItems={dataItems}
                         availableDimensions={availableDimensions}
                         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
                         renderCardPreview={renderCardPreview}
