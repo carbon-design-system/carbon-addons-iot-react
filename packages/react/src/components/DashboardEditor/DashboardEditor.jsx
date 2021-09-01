@@ -61,12 +61,6 @@ const propTypes = {
                         isSelected: Boolean): Node
    */
   renderCardPreview: PropTypes.func,
-  /**
-   * if provided this is called to render the card form on the right side of the editor.
-   * It is called with the card prop JSON and you return the updated cardConfig.
-   * This callback function allows you to add elements for the form to render that are not passed in the main dashboard card JSON
-   */
-  renderCardEditForm: PropTypes.func,
   /** if provided, renders array elements inside of BreadcrumbItem in header */
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
   /** if provided, renders node underneath the header and above the dashboard grid */
@@ -102,6 +96,12 @@ const propTypes = {
    * getValidDimensions(card)
    */
   getValidDimensions: PropTypes.func,
+  /**
+   * if provided this is called before the card form is rendered on the right side of the editor.
+   * It is called with the card prop JSON and you return the updated cardConfig.
+   * This callback function allows you to add elements for the form to render that are not passed in the main dashboard card JSON
+   */
+  onCardEditFormRender: PropTypes.func,
   /** if provided, will update the dashboard json according to its own logic. Is called if a card is edited, or added.
    * Should return an updated card to be rendered
    * onCardChange(updatedCard, template): Card
@@ -323,7 +323,7 @@ const defaultProps = {
   renderHeader: null,
   renderIconByName: renderDefaultIconByName,
   renderCardPreview: () => null,
-  renderCardEditForm: () => null,
+  onCardEditFormRender: () => null,
   headerBreadcrumbs: null,
   notification: null,
   title: '',
@@ -401,7 +401,7 @@ const DashboardEditor = ({
   breakpointSwitcher,
   renderHeader,
   renderCardPreview,
-  renderCardEditForm,
+  onCardEditFormRender,
   renderIconByName,
   getValidDataItems,
   getValidTimeRanges,
@@ -801,7 +801,7 @@ const DashboardEditor = ({
             isSummaryDashboard={isSummaryDashboard}
             onShowGallery={() => handleCardSelect(null)}
             onChange={handleOnCardChange}
-            renderCardEditForm={renderCardEditForm}
+            onCardEditFormRender={onCardEditFormRender}
             getValidDataItems={getValidDataItems}
             getValidTimeRanges={getValidTimeRanges}
             dataItems={dataItems}
