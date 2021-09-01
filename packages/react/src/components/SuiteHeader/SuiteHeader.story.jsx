@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
-import { Switcher24 } from '@carbon/icons-react';
+import { ScreenOff16, Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
@@ -102,6 +102,10 @@ const sideNavLinks = [
 ];
 
 const customActionItems = [
+  {
+    label: 'aHiddenIcon',
+    btnContent: <ScreenOff16 id="hidden-button" fill="white" description="hidden-button-icon" />,
+  },
   {
     label: 'bell',
     btnContent: (
@@ -495,10 +499,17 @@ export const HeaderWithCustomActionItems = () => (
     customHelpLinks={customHelpLinks}
     customProfileLinks={customProfileLinks}
     customApplications={customApplications}
+    isActionItemVisible={(item) => {
+      if (item.label === 'aHiddenIcon' || item.id === 'app-switcher') {
+        return false;
+      }
+
+      return true;
+    }}
   />
 );
 
-HeaderWithCustomActionItems.storyName = 'Header with custom action items';
+HeaderWithCustomActionItems.storyName = 'Header with custom action items and hidden icons';
 
 export const HeaderWithSurveyNotification = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
