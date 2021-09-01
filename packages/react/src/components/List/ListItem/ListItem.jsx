@@ -126,6 +126,7 @@ const ListItem = ({
 
   const handleExpansionClick = (event) => {
     event.stopPropagation();
+    /* istanbul ignore else */
     if (isExpandable) {
       onExpand(id);
     }
