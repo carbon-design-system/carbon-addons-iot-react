@@ -39,7 +39,7 @@ const rowActionsOverFlowMenu = [
   </OverflowMenu>,
 ];
 
-const getListItemsWithActions = (num) =>
+export const getListItemsWithActions = (num) =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
@@ -127,7 +127,7 @@ export default {
     },
   },
 
-  excludeStories: ['getListItems'],
+  excludeStories: ['getListItems', 'getListItemsWithActions'],
 };
 
 export const Basic = () => (
