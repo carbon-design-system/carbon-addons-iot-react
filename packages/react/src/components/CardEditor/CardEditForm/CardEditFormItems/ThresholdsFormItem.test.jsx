@@ -249,7 +249,51 @@ describe('ThresholdsFormItem', () => {
         {...commonProps}
         thresholds={[
           {
-            value: undefined,
+           value: undefined,
+            comparison: '>',
+            color: 'red',
+            icon: 'Warning',   
+          },
+        ]}
+      />
+    ); 
+    expect(
+      screen.getByRole('spinbutton', {
+        name: 'Numeric input field with increment and decrement buttons',
+      })
+    ).toHaveValue(0);
+  });
+
+  it("should fallback to > on a comparison dropdown when a comparison doesn't exist", () => {
+    render(
+      <ThresholdsFormItem
+        {...commonProps}
+        thresholds={[
+          {
+            value: 25,
+            color: 'red',
+            icon: 'Warning',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByText('>')).toBeVisible();
+  });
+
+  it('should remove the existing threshold when clicking the trash can', () => {
+    render(
+      <ThresholdsFormItem
+        {...commonProps}
+        thresholds={[
+          {
+            value: 5,
+            comparison: '>',
+            color: 'red',
+            icon: 'Warning',
+          },
+          {
+            value: 1,
             comparison: '>',
             color: 'red',
             icon: 'Warning',
@@ -257,10 +301,44 @@ describe('ThresholdsFormItem', () => {
         ]}
       />
     );
-    expect(
-      screen.getByRole('spinbutton', {
-        name: 'Numeric input field with increment and decrement buttons',
-      })
-    ).toHaveValue(0);
+
+    userEvent.click(screen.getAllByRole('button', { name: 'Remove' })[0]);
+    expect(commonProps.onChange).toHaveBeenCalledWith([
+      {
+        value: 1,
+        comparison: '>',
+        color: 'red',
+        icon: 'Warning',
+      },
+    ]);
+  });
+
+  it('should fallback to the value when creating a number fails in the onChange handler', () => {
+    render(
+      <ThresholdsFormItem
+        {...commonProps}
+        thresholds={[
+          {
+            value: 5,
+            comparison: '>',
+            color: 'red',
+            icon: 'Warning',
+          },
+        ]}
+      />
+    );
+
+    fireEvent.change(
+      screen.getByLabelText('Numeric input field with increment and decrement buttons'),
+      { target: { value: '000' } }
+    );
+    expect(commonProps.onChange).toHaveBeenCalledWith([
+      {
+        value: '000',
+        comparison: '>',
+        color: 'red',
+        icon: 'Warning',
+      },
+    ]);
   });
 });

@@ -28,6 +28,23 @@ const secondTearSheetCommonProps = {
 };
 
 describe('TearSheetWrapper', () => {
+  it('should be selectable by testId', () => {
+    const { rerender } = render(
+      <TearSheetWrapper isOpen={false}>
+        <TearSheet {...commonProps} testId="tearsheet" />
+      </TearSheetWrapper>
+    );
+    expect(screen.getByTestId('tearsheet-close-button-0')).toBeInTheDocument();
+
+    rerender(
+      <TearSheetWrapper isOpen={false}>
+        <TearSheet {...commonProps} />
+      </TearSheetWrapper>
+    );
+
+    expect(screen.getByTestId(`tearSheetCloseBtn0`)).toBeInTheDocument();
+  });
+
   it('renders closed TearSheetWrapper', () => {
     render(
       <TearSheetWrapper isOpen={false}>
