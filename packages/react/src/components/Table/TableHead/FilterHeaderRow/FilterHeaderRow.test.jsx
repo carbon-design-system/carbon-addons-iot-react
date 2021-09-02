@@ -318,7 +318,42 @@ describe('FilterHeaderRow', () => {
       />
     );
 
-    expect(screen.getByTestId('combo-wrapper')).toHaveClass('iot--combobox__menu--fit-content');
+    expect(screen.getByTestId('combo-wrapper')).toHaveClass(
+      `${iotPrefix}--combobox__menu--fit-content`
+    );
+  });
+
+  it('allows MultiSelect menu to fit the widths of the items ', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[
+          {
+            id: 'col1',
+            isFilterable: true,
+            isMultiselect: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    expect(
+      screen
+        .getByRole('combobox')
+        .closest(`.${iotPrefix}--filterheader-multiselect__menu--fit-content`)
+    ).toBeInTheDocument();
   });
 
   it('opens the combobox menu to the left if the filter is in the last column ', () => {
@@ -375,13 +410,85 @@ describe('FilterHeaderRow', () => {
     );
 
     const firstColumnCombobox = screen.getAllByTestId('combo-wrapper')[0];
-    expect(firstColumnCombobox).not.toHaveClass('iot--combobox__menu--left');
+    expect(firstColumnCombobox).not.toHaveClass(`${iotPrefix}--combobox__menu--left`);
 
     const middleColumnCombobox = screen.getAllByTestId('combo-wrapper')[1];
-    expect(middleColumnCombobox).not.toHaveClass('iot--combobox__menu--left');
+    expect(middleColumnCombobox).not.toHaveClass(`${iotPrefix}--combobox__menu--left`);
 
     const lastColumnCombobox = screen.getAllByTestId('combo-wrapper')[2];
-    expect(lastColumnCombobox).toHaveClass('iot--combobox__menu--left');
+    expect(lastColumnCombobox).toHaveClass(`${iotPrefix}--combobox__menu--left`);
+  });
+
+  it('opens the MultiSelect menu to the left if the filter is in the last column ', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }, { columnId: 'col3' }]}
+        columns={[
+          {
+            id: 'col1',
+            isFilterable: true,
+            isMultiselect: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+          {
+            id: 'col2',
+            isFilterable: true,
+            isMultiselect: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+          {
+            id: 'col3',
+            isFilterable: true,
+            isMultiselect: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    const firstColumnMultiSelect = screen.getAllByRole('combobox')[0];
+    expect(
+      firstColumnMultiSelect.closest(`.${iotPrefix}--filterheader-multiselect__menu--left`)
+    ).toBeNull();
+
+    const middleColumnMultiSelect = screen.getAllByRole('combobox')[1];
+    expect(
+      middleColumnMultiSelect.closest(`.${iotPrefix}--filterheader-multiselect__menu--left`)
+    ).toBeNull();
+
+    const lastColumnMultiSelect = screen.getAllByRole('combobox')[2];
+    expect(
+      lastColumnMultiSelect.closest(`.${iotPrefix}--filterheader-multiselect__menu--left`)
+    ).toBeTruthy();
   });
 
   it('should apply filters on Enter if !hasFastFilter', () => {

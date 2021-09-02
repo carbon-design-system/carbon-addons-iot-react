@@ -213,7 +213,13 @@ class FilterHeaderRow extends Component {
               column.isMultiselect ? (
                 <MultiSelect.Filterable
                   key={columnStateValue}
-                  className={`${iotPrefix}--filterheader-multiselect`}
+                  className={classnames(
+                    `${iotPrefix}--filterheader-multiselect`,
+                    `${iotPrefix}--filterheader-multiselect__menu--fit-content`,
+                    {
+                      [`${iotPrefix}--filterheader-multiselect__menu--left`]: isLastColumn,
+                    }
+                  )}
                   id={`column-${i}`}
                   aria-label={filterText}
                   placeholder={column.placeholderText || 'Choose an option'}
