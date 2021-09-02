@@ -129,9 +129,8 @@ const SimpleList = ({
       const searchFilteredItems = items.filter((item) => {
         if (item.content.value !== '' && item.content.value !== undefined) {
           if (
-            item.content.secondaryValue !== '' &&
-            item.content.secondaryValue !== undefined &&
-            typeof item.content.secondaryValue === 'string'
+            typeof item.content.secondaryValue === 'string' &&
+            item.content.secondaryValue !== ''
           ) {
             return (
               item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||
@@ -164,7 +163,7 @@ const SimpleList = ({
   const maxPage = Math.ceil(numberOfItems / rowPerPage);
 
   /**
-   * Then the items array updates, make sure to update the filteredItems, but also re-apply
+   * When the items array updates, make sure to update the filteredItems, but also re-apply
    * search values if there were any.
    */
   useEffect(() => {
