@@ -13,22 +13,12 @@
   }
 }
 
-.#{$iot-prefix}--filter-header-row--header-width {
-  min-width: var('--table-header-width');
-  max-width: var('--table-header-width');
-  overflow-x: var('--table-header-is-select-column');
-  text-overflow: ellipsis;
-
-  .#{$prefix}--list-box input[role='combobox'] {
-    /* need to save enough room for clear and dropdown button */
-    padding-right: 4rem;
-    min-width: calc(var('--table-header-width') - 10px);
-    max-width: calc(var('--table-header-width') - 10px);
-  }
-
-  .#{$prefix}--form-item.bx--combo-box {
-    min-width: calc(var('--table-header-width') - 10px);
-    max-width: calc(var('--table-header-width') - 10px);
+.#{$prefix}--data-table th.#{$iot-prefix}--filter-header-row--header {
+  padding-right: 1px;
+  padding-left: 1px;
+  .#{$prefix}--table-header-label {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -77,5 +67,9 @@
         background-color: transparent;
       }
     }
+  }
+
+  .#{$iot-prefix}--combobox {
+    padding-top: 0;
   }
 }

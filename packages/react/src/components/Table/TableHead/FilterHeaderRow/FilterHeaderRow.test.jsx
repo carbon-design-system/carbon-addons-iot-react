@@ -287,6 +287,103 @@ describe('FilterHeaderRow', () => {
     expect(screen.getByPlaceholderText('Choose an option')).toHaveValue('Three');
   });
 
+  it('allows combobox menu to fit the widths of the items ', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }, { columnId: 'col3' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+          {
+            id: 'col3',
+            isFilterable: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+              {
+                id: 'three',
+                text: 'Three',
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByTestId('combo-wrapper')).toHaveClass('iot--combobox__menu--fit-content');
+  });
+
+  it('opens the combobox menu to the left if the filter is in the last column ', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }, { columnId: 'col3' }]}
+        columns={[
+          {
+            id: 'col1',
+            isFilterable: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+          {
+            id: 'col2',
+            isFilterable: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+          {
+            id: 'col3',
+            isFilterable: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    const firstColumnCombobox = screen.getAllByTestId('combo-wrapper')[0];
+    expect(firstColumnCombobox).not.toHaveClass('iot--combobox__menu--left');
+
+    const middleColumnCombobox = screen.getAllByTestId('combo-wrapper')[1];
+    expect(middleColumnCombobox).not.toHaveClass('iot--combobox__menu--left');
+
+    const lastColumnCombobox = screen.getAllByTestId('combo-wrapper')[2];
+    expect(lastColumnCombobox).toHaveClass('iot--combobox__menu--left');
+  });
+
   it('should apply filters on Enter if !hasFastFilter', () => {
     render(
       <FilterHeaderRow

@@ -21468,11 +21468,13 @@ Map {
       "disabled": false,
       "editOptionText": "Create",
       "hasMultiValue": false,
+      "horizontalDirection": "right",
       "itemToElement": null,
       "itemToString": [Function],
       "items": Array [],
       "light": false,
       "loading": false,
+      "menuFitContent": false,
       "onBlur": null,
       "onInputChange": null,
       "shouldFilterItem": [Function],
@@ -21551,6 +21553,15 @@ Map {
       "helperText": Object {
         "type": "string",
       },
+      "horizontalDirection": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "id": Object {
         "isRequired": true,
         "type": "string",
@@ -21588,6 +21599,9 @@ Map {
         "type": "bool",
       },
       "loading": Object {
+        "type": "bool",
+      },
+      "menuFitContent": Object {
         "type": "bool",
       },
       "onBlur": Object {

@@ -27,7 +27,10 @@ const propTypes = {
   hasMultiValue: PropTypes.bool,
   // On submit/enter, new items should be added to the listbox
   addToList: PropTypes.bool,
-
+  // If true the menu will expand in width to fit the content
+  menuFitContent: PropTypes.bool,
+  // The horizontal offset direction of the menu. Relevant if menuFitContent is active
+  horizontalDirection: PropTypes.oneOf(['left', 'right']),
   testId: PropTypes.string,
 };
 
@@ -43,6 +46,8 @@ const defaultProps = {
   onInputChange: null,
   onBlur: null,
   testId: 'combo',
+  menuFitContent: false,
+  horizontalDirection: 'right',
 };
 
 const ComboBox = ({
@@ -64,6 +69,8 @@ const ComboBox = ({
   shouldFilterItem,
   onBlur,
   testId,
+  menuFitContent,
+  horizontalDirection,
   ...rest
 }) => {
   // Ref for the combobox input
@@ -202,13 +209,14 @@ const ComboBox = ({
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className={classnames(
-        `${iotPrefix}--combobox`,
-        { [wrapperClassName]: wrapperClassName },
-        { [`${iotPrefix}--combobox-add`]: inputValue },
-        { [`${iotPrefix}--combobox-size-${size}`]: size },
-        { [`${iotPrefix}--combobox-helper-text`]: helperText }
-      )}
+      className={classnames(`${iotPrefix}--combobox`, {
+        [wrapperClassName]: wrapperClassName,
+        [`${iotPrefix}--combobox-add`]: inputValue,
+        [`${iotPrefix}--combobox-size-${size}`]: size,
+        [`${iotPrefix}--combobox-helper-text`]: helperText,
+        [`${iotPrefix}--combobox__menu--fit-content`]: menuFitContent,
+        [`${iotPrefix}--combobox__menu--left`]: horizontalDirection === 'left',
+      })}
       onKeyDown={handleOnKeypress}
       onBlur={handleOnBlur}
       data-testid={`${testId}-wrapper`}

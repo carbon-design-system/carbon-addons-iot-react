@@ -3,9 +3,12 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { keyCodes } from '../../constants/KeyCodeConstants';
+import { settings } from '../../constants/Settings';
 
 import ComboBox from './ComboBox';
 import { items } from './ComboBox.story';
+
+const { iotPrefix } = settings;
 
 const defaultProps = {
   items,
@@ -220,5 +223,17 @@ describe('ComboBox', () => {
     userEvent.click(screen.getByRole('button', { name: 'Open' }));
     userEvent.click(screen.getByText('Option 1'));
     expect(defaultProps.onChange).toHaveBeenCalledWith([{ id: 0, text: 'Option 1' }]);
+  });
+
+  it('can fit menu to content', () => {
+    render(<ComboBox {...defaultProps} menuFitContent />);
+    expect(screen.getByTestId('combo-wrapper')).toHaveClass(
+      `${iotPrefix}--combobox__menu--fit-content`
+    );
+  });
+
+  it('can have the menu expand to the left', () => {
+    render(<ComboBox {...defaultProps} menuFitContent horizontalDirection="left" />);
+    expect(screen.getByTestId('combo-wrapper')).toHaveClass(`${iotPrefix}--combobox__menu--left`);
   });
 });
