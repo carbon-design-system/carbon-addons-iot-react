@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.168](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.167...v2.146.0-next.168) (2021-09-02)
+
+
+### Bug Fixes
+
+* **date-time-picker:** allow keyboard navigation of presets ([9b03832](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9b0383201c2f5f0038294f98cd1255f25e34c3af))
+* **date-time-picker:** fix date selection for absolute range ([6d55fc8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6d55fc8091886bb97b5ee1263bf12f9e554bfc46))
+* **date-time-picker:** fix keyboard triggering buttons in absolute mode ([50f9aa8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/50f9aa88edf5a9a4051bfde687524aa3b6cf6937))
+* **date-time-picker:** jest tests pass again ([d9b6740](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d9b6740d179229bf69cb450334c971de3f235ef2))
+* **date-time-picker:** keep focus on absolute radio button at first ([fe6b3e7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fe6b3e71cd9487798b55853cca545766f0e5ad9f))
+* **date-time-picker:** keyboard navigation bugs found in testing ([525cc90](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/525cc90ccff94c0e86d88cba7ebec7f5d913d701))
+* **date-time-picker:** show tooltip on focus ([5bd6373](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5bd6373e5dc7f72a278ac58a4266c6f4f189e404))
+* **date-time-picker:** show tooltip on hover ([f96d6cb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f96d6cb58b00adbb55647a780b38cf97f9c11f5c))
+* **date-time-picker:** spacing issues ([a291be7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a291be76b55ab223b3b43b2434bbd794c3ee5fdc))
+* **date-time-picker:** style tooltip based on designs ([7535bc3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7535bc3c42e0c656951757769a100e27e4f7f86c))
+* **repo:** match cypress width to taht passed as env in CI ([6ea17b5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6ea17b55c59f179f2e8790519332d967cab1d30e))
+
+
+### Features
+
+* **date-time-picker:** show tooltip with absolute value, too ([27b6871](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/27b68713164e4a07868346399dc0fedba019e442))
+
+
+
+
+
 # [2.146.0-next.167](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.166...v2.146.0-next.167) (2021-09-02)
 
 
