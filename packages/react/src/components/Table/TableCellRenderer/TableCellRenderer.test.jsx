@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -100,19 +99,17 @@ describe('TableCellRenderer', () => {
     setOffsetWidth(10);
     setScrollWidth(20);
 
-    const wrapper = mount(
+    const { rerender, container } = render(
       <TableCellRenderer cellTextOverflow="truncate">{cellText}</TableCellRenderer>
     );
-    expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(1);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
 
     setOffsetWidth(20);
     setScrollWidth(10);
-    const wrapper2 = mount(
-      <TableCellRenderer cellTextOverflow="truncate">{cellText}</TableCellRenderer>
-    );
-    expect(wrapper2.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    rerender(<TableCellRenderer cellTextOverflow="truncate">{cellText}</TableCellRenderer>);
+    expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
 
     setOffsetWidth(0);
     setScrollWidth(0);
@@ -123,31 +120,31 @@ describe('TableCellRenderer', () => {
     setScrollWidth(20);
 
     const cellText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
-    const wrapper = mount(
+    const { container } = render(
       <TableCellRenderer cellTextOverflow="truncate" allowTooltip={false}>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
 
     setOffsetWidth(0);
     setScrollWidth(0);
   });
 
   it('locale formats numbers', () => {
-    const wrapper = mount(
+    const { rerender } = render(
       <TableCellRenderer locale="fr" truncateCellText wrapText="never">
         {35.6}
       </TableCellRenderer>
     );
-    expect(wrapper.text()).toContain('35,6'); // french locale should have commas for decimals
+    expect(screen.getByText('35,6')).toBeInTheDocument(); // french locale should have commas for decimals
 
-    const wrapper2 = mount(
+    rerender(
       <TableCellRenderer locale="en" truncateCellText wrapText="never">
         {35.1234567}
       </TableCellRenderer>
     );
-    expect(wrapper2.text()).toContain('35.1234567'); // no limit on the count of decimals
+    expect(screen.getByText('35.1234567')).toBeInTheDocument(); // no limit on the count of decimals
   });
 });
