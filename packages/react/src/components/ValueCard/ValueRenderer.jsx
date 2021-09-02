@@ -84,6 +84,7 @@ const ValueRenderer = ({
       // otherwise, trucate the first line
       '--value-renderer-max-lines': fontSize < 20 ? 2 : 1,
     },
+    title: renderValue,
   };
 
   return (
