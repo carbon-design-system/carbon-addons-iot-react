@@ -6,6 +6,7 @@ import { settings } from '../../../constants/Settings';
 import * as dndUtils from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
+import { getListItemsWithActions } from './SimpleList.story';
 
 const { EditingStyle } = dndUtils;
 
@@ -265,5 +266,172 @@ describe('SimpleList', () => {
       null
     );
     jest.resetAllMocks();
+  });
+
+  it('should change the list when items are changed via props', () => {
+    const { rerender } = render(
+      <SimpleList title="Simple list" hasSearch items={getListItems(2)} />
+    );
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(2);
+
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(3)} />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(3);
+  });
+
+  it('should change the list when items are changed via props and maintain search filters', () => {
+    const { rerender } = render(
+      <SimpleList title="Simple list" hasSearch items={getListItems(2)} />
+    );
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(2);
+    userEvent.type(screen.getByRole('searchbox'), '2');
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(1);
+
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(3)} />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(1);
+  });
+
+  it('should change the list when items are changed via props and maintain pagination', () => {
+    const { rerender } = render(
+      <SimpleList title="Simple list" hasSearch items={getListItems(10)} pageSize="sm" />
+    );
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 5')).toBeVisible();
+    expect(screen.getByText('Page 1')).toBeVisible();
+    expect(screen.getByRole('button', { name: 'Prev page' })).toHaveClass(
+      `${iotPrefix}-addons-simple-pagination-button-disabled`
+    );
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 10')).toBeVisible();
+    expect(screen.getByText('Page 2')).toBeVisible();
+
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(15)} pageSize="sm" />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 10')).toBeVisible();
+    expect(screen.getByText('Page 2')).toBeVisible();
+
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 15')).toBeVisible();
+    expect(screen.getByText('Page 3')).toBeVisible();
+    expect(screen.getByRole('button', { name: 'Next page' })).toHaveClass(
+      `${iotPrefix}-addons-simple-pagination-button-disabled`
+    );
+
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(5)} pageSize="sm" />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 5')).toBeVisible();
+    expect(screen.getByText('Page 1')).toBeVisible();
+    expect(screen.queryByRole('button', { name: 'Next page' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Prev page' })).toBeNull();
+  });
+
+  it('should change the list when items are changed via props and maintain both pagination and search', () => {
+    const { rerender } = render(
+      <SimpleList title="Simple list" hasSearch items={getListItems(15)} pageSize="sm" />
+    );
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 5')).toBeVisible();
+    expect(screen.getByText('Page 1')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 10')).toBeVisible();
+    expect(screen.getByText('Page 2')).toBeVisible();
+
+    userEvent.type(screen.getByRole('searchbox'), '5');
+
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(50)} pageSize="sm" />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 5')).toBeVisible();
+    expect(screen.getByText('Item 15')).toBeVisible();
+    expect(screen.getByText('Item 25')).toBeVisible();
+    expect(screen.getByText('Item 35')).toBeVisible();
+    expect(screen.getByText('Item 45')).toBeVisible();
+    expect(screen.getByText('Page 1')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getByText('Item 50')).toBeVisible();
+    expect(screen.getByText('Page 2')).toBeVisible();
+    expect(screen.getByRole('button', { name: 'Next page' })).toHaveClass(
+      `${iotPrefix}-addons-simple-pagination-button-disabled`
+    );
+
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(5)} pageSize="sm" />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(1);
+    expect(screen.getByText('Item 5')).toBeVisible();
+    expect(screen.getByText('Page 1')).toBeVisible();
+    expect(screen.queryByRole('button', { name: 'Next page' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Prev page' })).toBeNull();
+  });
+
+  it('should change the list when items are changed via props with icons', () => {
+    const { rerender } = render(
+      <SimpleList title="Simple list" hasSearch items={getListItemsWithActions(10)} pageSize="sm" />
+    );
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 5')).toBeVisible();
+    expect(screen.getByText('Page 1')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    expect(screen.getByText('Item 10')).toBeVisible();
+    expect(screen.getByText('Page 2')).toBeVisible();
+    rerender(
+      <SimpleList title="Simple list" hasSearch items={getListItemsWithActions(20)} pageSize="lg" />
+    );
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(10);
+    expect(screen.getByText('Item 10')).toBeVisible();
+    expect(screen.getByText('Page 1')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(10);
+    expect(screen.getByText('Item 20')).toBeVisible();
+    expect(screen.getByText('Page 2')).toBeVisible();
+  });
+
+  it('should fallback to an empty string if the search event has no value', () => {
+    render(<SimpleList title="Simple list" hasSearch items={getListItems(10)} pageSize="sm" />);
+
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+      target: { value: null },
+    });
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+  });
+
+  it('should not render pagination when hasPagination:false even when pageSize given', () => {
+    render(
+      <SimpleList
+        title="Simple list"
+        hasSearch
+        items={getListItems(10)}
+        pageSize="sm"
+        hasPagination={false}
+      />
+    );
+
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(10);
+  });
+
+  it('should call onselect when provided', () => {
+    const onSelect = jest.fn();
+    render(
+      <SimpleList title="Simple list" hasSearch items={getListItems(10)} onSelect={onSelect} />
+    );
+
+    userEvent.click(screen.getByTitle('Item 1'));
+    expect(onSelect).toHaveBeenCalledTimes(1);
+  });
+
+  it('should update the number of items visible when changing pagination props', () => {
+    const { rerender } = render(
+      <SimpleList title="Simple list" hasSearch items={getListItems(30)} pageSize="sm" />
+    );
+
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(30)} pageSize="lg" />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(10);
+    rerender(<SimpleList title="Simple list" hasSearch items={getListItems(30)} pageSize="xl" />);
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(20);
+    rerender(
+      <SimpleList title="Simple list" hasSearch items={getListItems(30)} hasPagination={false} />
+    );
+    expect(screen.getAllByTitle(/Item /)).toHaveLength(30);
   });
 });
