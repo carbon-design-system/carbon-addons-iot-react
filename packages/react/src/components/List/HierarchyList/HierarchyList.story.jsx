@@ -241,11 +241,7 @@ export const WithNestedReorder = () => {
           title={text('Title', 'MLB Expanded List')}
           defaultSelectedId={text('Default Selected Id', 'New York Mets_Pete Alonso')}
           items={items}
-          editingStyle={select(
-            'Editing Style',
-            [EditingStyle.SingleNesting, EditingStyle.MultipleNesting],
-            EditingStyle.SingleNesting
-          )}
+          editingStyle={EditingStyle.MultipleNesting}
           pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
           isLoading={boolean('isLoading', false)}
           isLargeRow={boolean('isLargeRow', false)}
