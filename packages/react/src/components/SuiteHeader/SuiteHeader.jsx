@@ -117,6 +117,7 @@ const defaultProps = {
   walkmePath: null,
   walkmeLang: 'en',
   testId: 'suite-header',
+  isActionItemVisible: () => true,
 };
 
 const propTypes = {
@@ -166,8 +167,11 @@ const propTypes = {
   walkmePath: PropTypes.string,
   /** Walkme language code */
   walkmeLang: PropTypes.string,
-
   testId: PropTypes.string,
+
+  /** a function that will be passed the actionItem object and returns a boolean to determine if that item should be shown */
+  // eslint-disable-next-line react/forbid-foreign-prop-types
+  isActionItemVisible: Header.propTypes.isActionItemVisible,
 };
 
 const SuiteHeader = ({
@@ -367,6 +371,7 @@ const SuiteHeader = ({
         actionItems={[
           ...customActionItems,
           {
+            id: 'admin',
             label: mergedI18N.administrationIcon,
             className: [
               'admin-icon',
@@ -398,6 +403,7 @@ const SuiteHeader = ({
             },
           },
           {
+            id: 'help',
             label: mergedI18N.help,
             onClick: () => {},
             btnContent: (
@@ -462,6 +468,7 @@ const SuiteHeader = ({
                 ],
           },
           {
+            id: 'user',
             label: 'user',
             btnContent: (
               <span id="suite-header-action-item-profile">

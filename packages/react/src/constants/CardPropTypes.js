@@ -769,7 +769,7 @@ export const CardPropTypes = {
   /** Optional callback function that is passed an onChange function and the original cardConfig object.
    * This allows additional information to be passed to be used in the Card Editor for this type.
    * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render
-   * DEPRECATED: we recommend doing this dynamically with the CardEditor onRenderCardEditForm property
+   * We recommend doing this dynamically with the CardEditor onRenderCardEditForm property rather than hardcoding it in the Card JSON
    * * */
   renderEditContent: PropTypes.func,
   footerContent: PropTypes.elementType,
