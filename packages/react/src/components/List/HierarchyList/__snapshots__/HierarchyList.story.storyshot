@@ -906,89 +906,66 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       data-testid="list"
     >
       <div
-        className="iot--list-header-container"
-        data-testid="list-header"
+        className="iot--hierarchy-list-bulk-header"
       >
         <div
-          className="iot--list-header"
+          className="iot--hierarchy-list-bulk-header--title"
         >
-          <div
-            className="iot--list-header--title"
-          >
-            MLB Expanded List
-          </div>
-          <div
-            className="iot--list-header--btn-container"
-          />
+          1 item selected
         </div>
         <div
-          className="iot--list-header--search"
+          className="iot--hierarchy-list-bulk-header--button-container"
         >
-          <div
-            aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
-            role="search"
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--hierarchy-list-bulk-header--button iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
           >
-            <div
-              className="bx--search-magnifier"
+            Move
+            <svg
+              aria-hidden={true}
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                className="bx--search-magnifier-icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                />
-              </svg>
-            </div>
-            <label
-              className="bx--label"
-              htmlFor="iot--list-header--search"
-              id="iot--list-header--search-search"
-            >
-              Enter a value
-            </label>
-            <input
-              autoComplete="off"
-              className="bx--search-input"
-              data-testid="list-header-search-input"
-              id="iot--list-header--search"
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              placeholder="Enter a value"
-              role="searchbox"
-              type="text"
-              value=""
-            />
-            <button
-              aria-label="Clear search input"
-              className="bx--search-close bx--search-close--hidden"
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                />
-              </svg>
-            </button>
-          </div>
+              <path
+                d="M25 11L23.59 12.41 26.17 15 17 15 17 5.83 19.59 8.41 21 7 16 2 11 7 12.41 8.41 15 5.83 15 15 5.83 15 8.41 12.41 7 11 2 16 7 21 8.41 19.59 5.83 17 15 17 15 26.17 12.41 23.59 11 25 16 30 21 25 19.59 23.59 17 26.17 17 17 26.17 17 23.59 19.59 25 21 30 16 25 11z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--hierarchy-list-bulk-header--divider"
+          />
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--hierarchy-list-bulk-header--button-no-icon iot--btn bx--btn bx--btn--primary"
+            data-testid="Button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
         </div>
       </div>
       <div
@@ -1059,6 +1036,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               <div
                 className="iot--list-item--content"
               >
+                <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="Chicago White Sox-checkbox"
+                      id="Chicago White Sox-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="Chicago White Sox-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -1143,6 +1148,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--content"
               >
                 <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Yankees-checkbox"
+                      id="New York Yankees-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Yankees-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div
                   className="iot--list-item--content--values"
                 >
                   <div
@@ -1225,6 +1258,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               <div
                 className="iot--list-item--content"
               >
+                <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="Houston Astros-checkbox"
+                      id="Houston Astros-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="Houston Astros-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -1309,6 +1370,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--content"
               >
                 <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="Atlanta Braves-checkbox"
+                      id="Atlanta Braves-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="Atlanta Braves-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div
                   className="iot--list-item--content--values"
                 >
                   <div
@@ -1392,6 +1481,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--content"
               >
                 <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Mets-checkbox"
+                      id="New York Mets-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div
                   className="iot--list-item--content--values"
                 >
                   <div
@@ -1456,6 +1573,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               <div
                 className="iot--list-item--content"
               >
+                <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Mets_Jeff McNeil-checkbox"
+                      id="New York Mets_Jeff McNeil-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets_Jeff McNeil-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -1522,6 +1667,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--content"
               >
                 <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Mets_Amed Rosario-checkbox"
+                      id="New York Mets_Amed Rosario-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets_Amed Rosario-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div
                   className="iot--list-item--content--values"
                 >
                   <div
@@ -1586,6 +1759,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               <div
                 className="iot--list-item--content"
               >
+                <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Mets_Michael Conforto is a super duper long name that will get cut off-checkbox"
+                      id="New York Mets_Michael Conforto is a super duper long name that will get cut off-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets_Michael Conforto is a super duper long name that will get cut off-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -1652,6 +1853,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--content"
               >
                 <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={true}
+                      className="bx--checkbox"
+                      data-testid="New York Mets_Pete Alonso-checkbox"
+                      id="New York Mets_Pete Alonso-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets_Pete Alonso-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div
                   className="iot--list-item--content--values"
                 >
                   <div
@@ -1716,6 +1945,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               <div
                 className="iot--list-item--content"
               >
+                <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Mets_Wilson Ramos-checkbox"
+                      id="New York Mets_Wilson Ramos-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets_Wilson Ramos-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -1782,6 +2039,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--content"
               >
                 <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Mets_Robinson Cano-checkbox"
+                      id="New York Mets_Robinson Cano-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets_Robinson Cano-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div
                   className="iot--list-item--content--values"
                 >
                   <div
@@ -1846,6 +2131,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               <div
                 className="iot--list-item--content"
               >
+                <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Mets_JD Davis-checkbox"
+                      id="New York Mets_JD Davis-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets_JD Davis-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -1912,6 +2225,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--content"
               >
                 <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Mets_Brandon Nimmo-checkbox"
+                      id="New York Mets_Brandon Nimmo-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets_Brandon Nimmo-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div
                   className="iot--list-item--content--values"
                 >
                   <div
@@ -1976,6 +2317,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               <div
                 className="iot--list-item--content"
               >
+                <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="New York Mets_Jacob Degrom-checkbox"
+                      id="New York Mets_Jacob Degrom-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="New York Mets_Jacob Degrom-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -2059,6 +2428,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               <div
                 className="iot--list-item--content"
               >
+                <div
+                  className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      data-testid="Washington Nationals-checkbox"
+                      id="Washington Nationals-checkbox"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="Washington Nationals-checkbox"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text"
+                      >
+                        
+                      </span>
+                    </label>
+                  </div>
+                </div>
                 <div
                   className="iot--list-item--content--values"
                 >
