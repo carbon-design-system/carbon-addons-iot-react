@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.167](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.166...v2.146.0-next.167) (2021-09-02)
+
+
+### Bug Fixes
+
+* **internal:** fix fullwidthwrapper to use correct styles ([d660b0a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d660b0a065334bf2904ddfa129288631ab61750d))
+* **rule-builder:** fix minor css to prevent container overflowing ([5a82dc5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5a82dc5ed0c0511549378a1d2e0c18d7e06c4447))
+
+
+
+
+
 # [2.146.0-next.166](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.165...v2.146.0-next.166) (2021-09-01)
 
 
