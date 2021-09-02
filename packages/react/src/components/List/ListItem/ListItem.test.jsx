@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Add16, Edit16 } from '@carbon/icons-react';
+import userEvent from '@testing-library/user-event';
 
 import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 import { Tag } from '../../Tag';
@@ -279,5 +280,113 @@ describe('ListItem', () => {
     const targets = screen.getAllByTestId('list-target');
 
     expect(targets.length).toEqual(2);
+  });
+
+  it('should throw a warning in DEV mode when rowActions is an array', () => {
+    const { __DEV__ } = global;
+    global.__DEV__ = true;
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    render(<UnconnectedListItem rowActions={[]} />);
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'You have passed an array of nodes to ListItem as rowActions.  This can cause performance problems and has been deprecated.  You should pass a render function instead.'
+      )
+    );
+    global.__DEV__ = __DEV__;
+  });
+
+  it('should call onExpand onClick if isExpandable:true', () => {
+    const onExpand = jest.fn();
+    const { rerender } = render(
+      <UnconnectedListItem id="test-item" value="Test item" isExpandable onExpand={onExpand} />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Expand' }));
+
+    expect(onExpand).toHaveBeenCalledWith('test-item');
+    onExpand.mockClear();
+
+    // don't call if disabled is true
+    rerender(
+      <UnconnectedListItem
+        disabled
+        id="test-item"
+        value="Test item"
+        isExpandable
+        onExpand={onExpand}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Expand' }));
+    expect(onExpand).not.toHaveBeenCalled();
+  });
+
+  it('should render rowActions when passed a function', () => {
+    const rowActions = jest.fn();
+    render(<UnconnectedListItem id="test-item" value="Test item" rowActions={rowActions} />);
+
+    expect(rowActions).toHaveBeenCalled();
+  });
+
+  it('should render secondaryValue when passed a function', () => {
+    const secondaryValue = jest.fn();
+    render(
+      <UnconnectedListItem id="test-item" value="Test item" secondaryValue={secondaryValue} />
+    );
+
+    expect(secondaryValue).toHaveBeenCalled();
+    expect(screen.getByTitle('Test item--secondary-value')).toBeVisible();
+  });
+
+  it('should render secondaryValue when passed a function in a large row', () => {
+    const secondaryValue = jest.fn();
+    render(
+      <UnconnectedListItem
+        id="test-item"
+        value="Test item"
+        isLargeRow
+        secondaryValue={secondaryValue}
+      />
+    );
+
+    expect(secondaryValue).toHaveBeenCalled();
+    expect(screen.getByTitle('Test item--secondary-value')).toBeVisible();
+  });
+
+  it('should render a large row without secondary value', () => {
+    const { container } = render(
+      <UnconnectedListItem id="test-item" value="Test item" isLargeRow />
+    );
+
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--list-item--content--values--main__large`)
+    ).toHaveLength(1);
+    expect(
+      container.querySelectorAll(`${iotPrefix}--list-item--content--values--value__large`)
+    ).toHaveLength(0);
+  });
+
+  it('should render secondaryValue when passed a value', () => {
+    render(<UnconnectedListItem id="test-item" value="Test item" secondaryValue="secondary" />);
+
+    expect(screen.getByTitle('secondary')).toBeVisible();
+  });
+
+  it('should render with nestinging levels ', () => {
+    const { container } = render(
+      <UnconnectedListItem
+        id="test-item"
+        value="Test item"
+        secondaryValue="secondary"
+        nestingLevel={1}
+      />
+    );
+
+    expect(screen.getByTitle('secondary')).toBeVisible();
+    expect(container.querySelectorAll(`.${iotPrefix}--list-item--nesting-offset`)).toHaveLength(1);
+    expect(container.querySelector(`.${iotPrefix}--list-item--nesting-offset`)).toHaveStyle(
+      'width:32px'
+    );
   });
 });

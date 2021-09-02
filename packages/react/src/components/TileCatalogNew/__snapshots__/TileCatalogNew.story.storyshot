@@ -123,6 +123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       defaultValue=""
                       id="iot--tile-catalog--tile-canvas--header--select"
                       onChange={[Function]}
+                      role="listbox"
                     />
                     <svg
                       aria-hidden={true}
@@ -468,6 +469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       defaultValue=""
                       id="iot--tile-catalog--tile-canvas--header--select"
                       onChange={[Function]}
+                      role="listbox"
                     />
                     <svg
                       aria-hidden={true}
@@ -716,6 +718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       defaultValue=""
                       id="iot--tile-catalog--tile-canvas--header--select"
                       onChange={[Function]}
+                      role="listbox"
                     />
                     <svg
                       aria-hidden={true}
@@ -913,6 +916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       defaultValue=""
                       id="iot--tile-catalog--tile-canvas--header--select"
                       onChange={[Function]}
+                      role="listbox"
                     />
                     <svg
                       aria-hidden={true}
@@ -1113,6 +1117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       defaultValue="Choose from options"
                       id="iot--tile-catalog--tile-canvas--header--select"
                       onChange={[Function]}
+                      role="listbox"
                     >
                       <option
                         className="bx--select-option"
@@ -1572,6 +1577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       defaultValue=""
                       id="iot--tile-catalog--tile-canvas--header--select"
                       onChange={[Function]}
+                      role="listbox"
                     />
                     <svg
                       aria-hidden={true}
@@ -2480,6 +2486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       defaultValue="Choose from options"
                       id="iot--tile-catalog--tile-canvas--header--select"
                       onChange={[Function]}
+                      role="listbox"
                     >
                       <option
                         className="bx--select-option"

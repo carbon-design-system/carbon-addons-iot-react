@@ -85,8 +85,9 @@ const StatefulPageWizard = ({
   const currentStepIndex = steps.findIndex((i) => i.id === currentStepId);
 
   const getNextStep = () => {
-    let nextStep;
+    let nextStep = steps[currentStepIndex];
     let idx = currentStepIndex + 1;
+    /* istanbul ignore else, if current is last, the next button isn't in the DOM, so this cannot be triggered */
     if (idx < steps.length) {
       for (idx; idx < steps.length; idx += 1) {
         if (steps[idx].disabled !== true) {
@@ -99,8 +100,9 @@ const StatefulPageWizard = ({
   };
 
   const getPreviousStep = () => {
-    let prevStep;
+    let prevStep = steps[currentStepIndex];
     let idx = currentStepIndex - 1;
+    /* istanbul ignore else, if current is first, the previous button isn't in the DOM, so this cannot be triggered */
     if (idx >= 0) {
       for (idx; idx >= 0; idx -= 1) {
         if (steps[idx].disabled !== true) {

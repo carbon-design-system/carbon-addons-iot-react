@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, createElement, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
 import { Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
@@ -219,3 +219,107 @@ SideNavComponent.parameters = {
   `,
   },
 };
+
+export const SideNavComponentWithState = () => {
+  const [linksState, setLinksState] = useState([]);
+  const onSideNavMenuItemClick = (linkLabel) => {
+    setLinksState((currentLinks) =>
+      currentLinks.map((group) => {
+        return {
+          ...group,
+          childContent: group.childContent.map((child) => ({
+            ...child,
+            isActive: linkLabel === child.metaData.label,
+          })),
+        };
+      })
+    );
+  };
+
+  useEffect(() => {
+    setLinksState([
+      {
+        isEnabled: true,
+        icon: Dashboard,
+        metaData: {
+          label: 'Dashboards',
+          element: 'button',
+        },
+        linkContent: 'Dashboards',
+        childContent: [
+          {
+            metaData: {
+              label: 'Link 1',
+              title: 'Link 1',
+              onClick: () => onSideNavMenuItemClick('Link 1'),
+              element: 'button',
+            },
+            content: 'Link 1',
+          },
+          {
+            metaData: {
+              label: 'Link 2',
+              title: 'Link 2',
+              onClick: () => onSideNavMenuItemClick('Link 2'),
+            },
+            content: 'Link 2',
+          },
+        ],
+      },
+      {
+        isEnabled: true,
+        icon: Group,
+        metaData: {
+          label: 'Members',
+          element: 'button',
+        },
+        linkContent: 'Members',
+        childContent: [
+          {
+            metaData: {
+              label: 'Link 3',
+              title: 'Link 3',
+              onClick: () => onSideNavMenuItemClick('Link 3'),
+              element: 'button',
+            },
+            content: 'Link 3',
+            isActive: true,
+          },
+          {
+            metaData: {
+              label: 'Link 4',
+              title: 'Link 4',
+              onClick: () => onSideNavMenuItemClick('Link 4'),
+              element: 'button',
+            },
+            content: 'Link 4',
+            isActive: false,
+          },
+        ],
+      },
+    ]);
+  }, []);
+
+  return (
+    <FullWidthWrapper withPadding={false}>
+      <HeaderContainer
+        render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+          <>
+            <Header
+              {...HeaderProps}
+              isSideNavExpanded={isSideNavExpanded}
+              onClickSideNavExpand={onClickSideNavExpand}
+            />
+            <SideNav links={linksState} isSideNavExpanded={isSideNavExpanded} />
+            <div className={`${iotPrefix}--main-content`}>
+              <PageTitleBar title="Title" description="Description" />
+            </div>
+          </>
+        )}
+      />
+    </FullWidthWrapper>
+  );
+};
+
+SideNavComponentWithState.decorators = [createElement];
+SideNavComponentWithState.storyName = 'SideNav component with state';

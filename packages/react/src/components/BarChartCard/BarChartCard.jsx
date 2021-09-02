@@ -359,6 +359,9 @@ const BarChartCard = ({
             },
           }
         : {}),
+      toolbar: {
+        enabled: false,
+      },
     }),
     [
       xLabel,
