@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.169](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.168...v2.146.0-next.169) (2021-09-02)
+
+
+### Bug Fixes
+
+* **simple-list:** add useEffect to update items shown ([5c1a4d3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5c1a4d3ff41a2f1453a65bcaf797f80bf73aa705))
+* **simple-list:** fix list updates when props change ([b95d060](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b95d0609ae86a3f6cc34375e01a902f7e723ae98))
+* **simple-list:** pr review feedback changes ([90df381](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/90df3815f1fd0b8917bc89e13a40283aa5a8fb53))
+
+
+
+
+
 # [2.146.0-next.168](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.167...v2.146.0-next.168) (2021-09-02)
 
 
