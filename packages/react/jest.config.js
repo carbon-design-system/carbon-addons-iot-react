@@ -25,6 +25,7 @@ module.exports = {
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
   coverageDirectory: 'jest/coverage',
   coverageThreshold: {
+    './src/components/DashboardEditor/editorUtils.jsx': all90Covered,
     './src/components/Card/Card.jsx': all90Covered,
     './src/components/TimePickerSpinner/TimePickerSpinner.jsx': all90Covered,
     './src/components/List/HierarchyList/HierarchyList.jsx': all90Covered,
