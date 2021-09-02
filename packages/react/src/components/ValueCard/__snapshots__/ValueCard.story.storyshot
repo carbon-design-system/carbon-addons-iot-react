@@ -252,6 +252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="100"
                   type="button"
                 >
                   100
@@ -312,6 +313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="50"
                   type="button"
                 >
                   50
@@ -430,6 +432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="89"
                   type="button"
                 >
                   89
@@ -490,6 +493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="76.7"
                   type="button"
                 >
                   76.7
@@ -550,6 +554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="76"
                   type="button"
                 >
                   76
@@ -610,6 +615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="50"
                   type="button"
                 >
                   50
@@ -670,6 +676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="0.567"
                   type="button"
                 >
                   0.567
@@ -788,6 +795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="Good"
                   type="button"
                 >
                   Good
@@ -848,6 +856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="Healthy"
                   type="button"
                 >
                   Healthy
@@ -908,6 +917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="None"
                   type="button"
                 >
                   None
@@ -968,6 +978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="Unbearable"
                   type="button"
                 >
                   Unbearable
@@ -1086,6 +1097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="--"
                   type="button"
                 >
                   --
@@ -1146,6 +1158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="--"
                   type="button"
                 >
                   --
@@ -1161,124 +1174,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                 }
               >
                 Wh
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with long text and no units 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "margin": "1rem4",
-        "width": "252px",
-      }
-    }
-  >
-    <div
-      className="iot--card iot--value-card__horizontal iot--card--wrapper"
-      data-testid="Card"
-      id="facilitycard"
-      role="presentation"
-      style={
-        Object {
-          "--card-default-height": "144px",
-        }
-      }
-    >
-      <div
-        className="iot--card--header"
-        data-testid="Card-header"
-      >
-        <span
-          className="iot--card--title"
-          data-testid="Card-title"
-          title="Tagpath"
-        >
-          <div
-            className="iot--card--title--text"
-          >
-            Tagpath
-          </div>
-        </span>
-      </div>
-      <div
-        className="iot--card--content"
-        data-testid="Card-content"
-        style={
-          Object {
-            "--card-content-height": "96px",
-          }
-        }
-      >
-        <div
-          className="iot--value-card__content-wrapper"
-        >
-          <div
-            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
-            style={
-              Object {
-                "--value-card-attribute-width": "100%",
-              }
-            }
-          >
-            <div
-              className="iot--value-card__attribute-label"
-            >
-              <span
-                data-testid="Card-attribute-0-threshold-label"
-              >
-                Tagpath
-              </span>
-            </div>
-            <div
-              className="iot--value-card__attribute"
-            >
-              <div
-                className="iot--value-card__value-renderer--wrapper"
-              >
-                <button
-                  aria-describedby={null}
-                  aria-pressed={null}
-                  className="iot--value-card__value-renderer--value iot--btn bx--btn bx--btn--ghost"
-                  data-testid="Button"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "--value-renderer-color": "#0f62fe",
-                      "--value-renderer-font-size": "42px",
-                      "--value-renderer-max-lines": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  type="button"
-                >
-                  rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu
-                </button>
-              </div>
-              <span
-                className="iot--value-card__attribute-unit"
-                data-testid="Card-attribute-0-unit"
-                style={
-                  Object {
-                    "--default-font-size": "1.25rem",
-                  }
-                }
-              >
-                
               </span>
             </div>
           </div>
@@ -1373,6 +1268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                       "--value-renderer-max-lines": 1,
                     }
                   }
+                  title="rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu"
                 >
                   rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu
                 </span>
@@ -1490,6 +1386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="89"
                   type="button"
                 >
                   89
@@ -1550,6 +1447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="76.7"
                   type="button"
                 >
                   76.7
@@ -1610,6 +1508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="76"
                   type="button"
                 >
                   76
@@ -1670,6 +1569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="76"
                   type="button"
                 >
                   76
@@ -1730,6 +1630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="76"
                   type="button"
                 >
                   76
@@ -1790,6 +1691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="Australia"
                   type="button"
                 >
                   Australia
@@ -1850,6 +1752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="76"
                   type="button"
                 >
                   76
@@ -1989,6 +1892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="345,678,234,234,234,240"
                   type="button"
                 >
                   345,678,234,234,234,240
@@ -2070,6 +1974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="456,778,234,234,234,240.0"
                   type="button"
                 >
                   456,778,234,234,234,240.0
@@ -2151,6 +2056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="88,888,678,234,234,240,000.0"
                   type="button"
                 >
                   88,888,678,234,234,240,000.0
@@ -2284,6 +2190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="Unhealthy"
                   type="button"
                 >
                   Unhealthy
@@ -2420,6 +2327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="70"
                   type="button"
                 >
                   70
@@ -2538,6 +2446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                     }
                   }
                   tabIndex={0}
+                  title="13,572"
                   type="button"
                 >
                   13,572
