@@ -249,14 +249,14 @@ describe('ThresholdsFormItem', () => {
         {...commonProps}
         thresholds={[
           {
-           value: undefined,
+            value: undefined,
             comparison: '>',
             color: 'red',
-            icon: 'Warning',   
+            icon: 'Warning',
           },
         ]}
       />
-    ); 
+    );
     expect(
       screen.getByRole('spinbutton', {
         name: 'Numeric input field with increment and decrement buttons',
