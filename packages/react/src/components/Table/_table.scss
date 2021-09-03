@@ -61,14 +61,14 @@ html[dir='rtl'] {
   }
   .empty-table-cell--default {
     --height-threshold: 500px;
-    --is-large-card: min(1px, max(var(--card-content-height) - var(--height-threshold), 0px));
+    --is-large-card: Min(1px, Max(var(--card-content-height) - var(--height-threshold), 0px));
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     // 3rem since we can't multiply 1px * 3rem in calc
     // stylelint-disable-next-line declaration-property-unit-blacklist
-    padding: max(calc(48 * var(--is-large-card)), 0px);
+    padding: Max(calc(48 * var(--is-large-card)), 0px);
     svg {
       margin: $spacing-05;
     }
