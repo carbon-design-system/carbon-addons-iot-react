@@ -47,6 +47,7 @@ module.exports = {
     './src/components/Card/CardRangePicker.jsx': all90Covered,
     './src/components/TableCard/tableCardUtils.jsx': all90Covered,
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
+    './src/components/MapCard/ScrollingControls.jsx': all90Covered,
     './src/components/Dropdown/Dropdown.jsx': all90Covered,
     './src/components/Table/StatefulTable.jsx': all90Covered,
     './src/components/Table/statefulTableUtilities.js': all90Covered,
