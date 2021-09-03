@@ -41,6 +41,8 @@ const DashboardEditorDefaultCardRenderer = ({ card: cardProps, availableDimensio
 
   // if our card isn't valid render the default
   if (!isCardJsonValid(cardProps)) {
+    // eslint-disable-next-line no-console
+    console.warn(`Warning: The card JSON for ${cardProps.id} is invalid.`);
     return renderDefaultCard(cardProps);
   }
 

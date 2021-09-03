@@ -204,7 +204,10 @@ const DashboardEditorCardRenderer = React.memo(
               ...cardProps,
               values: {
                 ...cardProps.values,
-                hotspots: cardProps.values?.hotspots?.concat(dynamicHotspots),
+                // add the calculated dynamic hotspots with x and y coordinates, but filter out the configured dynamic hotstpots
+                hotspots: cardProps.values?.hotspots
+                  ?.concat(dynamicHotspots)
+                  ?.filter((hotspot) => hotspot.type !== 'dynamic'),
               },
             },
       [cardProps, dynamicHotspots]
