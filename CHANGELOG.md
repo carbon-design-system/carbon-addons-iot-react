@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.171](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.170...v2.146.0-next.171) (2021-09-03)
+
+
+### Bug Fixes
+
+* **empty-state:** node-sass build errors with `max` ([d7effee](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d7effeef414205312e316ebe978e43016b8d9829))
+
+
+
+
+
 # [2.146.0-next.170](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.169...v2.146.0-next.170) (2021-09-02)
 
 **Note:** Version bump only for package ibm-ai-applications
