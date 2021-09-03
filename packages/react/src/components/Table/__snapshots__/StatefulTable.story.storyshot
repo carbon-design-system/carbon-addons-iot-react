@@ -46874,7 +46874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                 />
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="string"
                   scope="col"
                 >
@@ -46944,7 +46944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="date"
                   scope="col"
                 >
@@ -46990,7 +46990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="select"
                   scope="col"
                 >
@@ -47107,7 +47107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="status"
                   scope="col"
                 >
@@ -47118,7 +47118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="number"
                   scope="col"
                 >
@@ -47164,7 +47164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="boolean"
                   scope="col"
                 >
@@ -47210,7 +47210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="node"
                   scope="col"
                 >
@@ -47221,7 +47221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="object"
                   scope="col"
                 >
@@ -55624,7 +55624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                 />
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="string"
                   scope="col"
                 >
@@ -55694,7 +55694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="date"
                   scope="col"
                 >
@@ -55740,7 +55740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="select"
                   scope="col"
                 >
@@ -55857,7 +55857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="status"
                   scope="col"
                 >
@@ -55868,7 +55868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="number"
                   scope="col"
                 >
@@ -55914,7 +55914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="boolean"
                   scope="col"
                 >
@@ -55960,7 +55960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="node"
                   scope="col"
                 >
@@ -55971,7 +55971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </th>
                 <th
-                  className="iot--tableheader-filter iot--filter-header-row--header"
+                  className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="object"
                   scope="col"
                 >
