@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { AIListItem } from '../list';
 
 export class AIListBuilderItem extends AIListItem {
-  items: AIListBuilderItem[];
+  items: AIListBuilderItem[] = [];
 
   /**
    * Checks whether the item should be included in the added items list.
@@ -120,6 +120,7 @@ export class AIListBuilderModel {
     }
 
     this._items = items;
+    this._addedItems = this.createAddedItems(items);
 
     this.subscriptions.unsubscribe();
     this.subscriptions = new Subscription();

@@ -12,6 +12,36 @@ export type HeaderType = number | 'select' | 'expand';
  */
 export class AITableModel implements PaginationModel {
   /**
+   * Manually set data length in case the data in the table doesn't
+   * correctly reflect all the data that table is to display.
+   *
+   * Example: if you have multiple pages of data that table will display
+   * but you're loading one at a time.
+   *
+   * Set to `null` to reset to default behavior.
+   */
+  set totalDataLength(length: number) {
+    // if this function is called without a parameter we need to set to null to avoid having undefined != null
+    this._totalDataLength = length || null;
+  }
+
+  /**
+   * Total length of data that table has access to, or the amount manually set
+   */
+  get totalDataLength() {
+    // if manually set data length
+    if (this._totalDataLength !== null && this._totalDataLength >= 0) {
+      return this._totalDataLength;
+    }
+
+    // if empty dataset
+    if (this._data && this._data.length === 1 && this._data[0].length === 0) {
+      return 0;
+    }
+
+    return this._data.length;
+  }
+  /**
    * The number of models instantiated, used for (among other things) unique id generation
    */
   protected static COUNT = 0;
@@ -55,50 +85,19 @@ export class AITableModel implements PaginationModel {
   isLoading = false;
 
   /**
+   * Contains information about the header cells of the table.
+   */
+  header: TableHeaderItem[][] = [[]];
+
+  /**
    * Absolute total number of rows of the table.
    */
   protected _totalDataLength: number;
 
   /**
-   * Manually set data length in case the data in the table doesn't
-   * correctly reflect all the data that table is to display.
-   *
-   * Example: if you have multiple pages of data that table will display
-   * but you're loading one at a time.
-   *
-   * Set to `null` to reset to default behavior.
-   */
-  set totalDataLength(length: number) {
-    // if this function is called without a parameter we need to set to null to avoid having undefined != null
-    this._totalDataLength = length || null;
-  }
-
-  /**
-   * Total length of data that table has access to, or the amount manually set
-   */
-  get totalDataLength() {
-    // if manually set data length
-    if (this._totalDataLength !== null && this._totalDataLength >= 0) {
-      return this._totalDataLength;
-    }
-
-    // if empty dataset
-    if (this._data && this._data.length === 1 && this._data[0].length === 0) {
-      return 0;
-    }
-
-    return this._data.length;
-  }
-
-  /**
    * Used in `data`
    */
   protected _data: TableItem[][] = [[]];
-
-  /**
-   * Contains information about the header cells of the table.
-   */
-  protected header: TableHeaderItem[][] = [[]];
 
   /**
    * The number of models instantiated, this is to make sure each table has a different
@@ -897,7 +896,7 @@ export class AITableModel implements PaginationModel {
    */
   protected projectedRowLength(itemArray: any[]) {
     // `any[]` should be `TableItem[] | TableHeaderItem[]` but typescript
-    return itemArray.reduce((len, item) => len + (item.colSpan || 1), 0);
+    return itemArray.reduce((len, item) => len + (item?.colSpan || 1), 0);
   }
 
   /**
@@ -913,7 +912,7 @@ export class AITableModel implements PaginationModel {
     let index = 0;
     for (let i = 0; i < list.length; i++) {
       const item = list[i];
-      index += item.colSpan || 1;
+      index += item ? item?.colSpan || 1 : 0;
       if (index > projectedIndex) {
         return i;
       }
@@ -934,10 +933,13 @@ export class AITableModel implements PaginationModel {
     let startingIndex = 0;
     for (let i = 0; i < actualIndex; i++) {
       const item = list[i];
-      startingIndex += item.colSpan || 1;
+      startingIndex += item ? item?.colSpan || 1 : 0;
     }
 
-    return new Array(list[actualIndex].colSpan).fill(0).map((_, index) => startingIndex + index);
+    const item = list[actualIndex];
+    return new Array(item ? item?.colSpan || 1 : 0)
+      .fill(0)
+      .map((_, index) => startingIndex + index);
   }
 
   protected projectedIndicesToActualIndices(

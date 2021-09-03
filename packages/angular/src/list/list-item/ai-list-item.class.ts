@@ -56,6 +56,8 @@ export class AIListItem {
    */
   indeterminate = false;
 
+  itemMetaData: any;
+
   /**
    * Optional nested items.
    */

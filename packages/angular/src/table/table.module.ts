@@ -5,6 +5,7 @@ import {
   DialogModule,
   IconModule,
   IconService,
+  ModalModule,
   TableModule,
 } from 'carbon-components-angular';
 
@@ -16,11 +17,26 @@ import { AITableComponent } from './table.component';
 import ArrowsVertical16 from '@carbon/icons/es/arrows--vertical/16';
 import ArrowDown16 from '@carbon/icons/es/arrow--down/16';
 import Filter16 from '@carbon/icons/es/filter/16';
+import { AIColumnCustomizationModal } from './column-customization/column-customization-modal.component';
+import { ListBuilderModule } from '../list-builder';
 
 @NgModule({
-  declarations: [AITableComponent, AITableHeadComponent, AITableHeadCell],
-  imports: [DialogModule, ButtonModule, CommonModule, TableModule, IconModule],
-  exports: [AITableComponent, AITableHeadComponent, AITableHeadCell],
+  declarations: [
+    AIColumnCustomizationModal,
+    AITableComponent,
+    AITableHeadComponent,
+    AITableHeadCell,
+  ],
+  imports: [
+    DialogModule,
+    ButtonModule,
+    CommonModule,
+    ListBuilderModule,
+    ModalModule,
+    TableModule,
+    IconModule,
+  ],
+  exports: [AIColumnCustomizationModal, AITableComponent, AITableHeadComponent, AITableHeadCell],
 })
 export class AITableModule {
   constructor(protected iconService: IconService) {
