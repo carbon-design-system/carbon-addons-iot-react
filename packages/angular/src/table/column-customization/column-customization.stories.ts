@@ -49,16 +49,25 @@ complexModel.setHeader([
     new TableHeaderItem({ data: 'h31', rowSpan: 2 }),
     new TableHeaderItem({ data: 'h32', rowSpan: 3 }),
     new TableHeaderItem({ data: 'h33' }),
+    null,
   ],
   [
     new TableHeaderItem({ data: 'h12', rowSpan: 2 }),
     new TableHeaderItem({ data: 'h222' }),
     new TableHeaderItem({ data: 'h331' }),
+    null,
+    null,
+    null,
+    null,
   ],
   [
     new TableHeaderItem({ data: 'h223' }),
     new TableHeaderItem({ data: 'h312' }),
     new TableHeaderItem({ data: 'h332' }),
+    null,
+    null,
+    null,
+    null,
   ],
 ]);
 
@@ -69,7 +78,17 @@ storiesOf('Components/Table/Column customization', module)
     })
   )
   .addDecorator(withKnobs)
-  .add('Basic', () => {
+  .add('Simple multi header', () => {
+    return {
+      template: `
+			<ai-column-customization-modal [model]="model"></ai-column-customization-modal>
+		`,
+      props: {
+        model: simpleModel,
+      },
+    };
+  })
+  .add('Complex multi header', () => {
     return {
       template: `
 			<ai-column-customization-modal [model]="model"></ai-column-customization-modal>
