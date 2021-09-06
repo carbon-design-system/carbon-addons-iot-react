@@ -26,6 +26,7 @@ module.exports = {
   coverageDirectory: 'jest/coverage',
   coverageThreshold: {
     './src/components/DashboardEditor/editorUtils.jsx': all90Covered,
+    './src/components/Table/baseTableReducer.js': all90Covered,
     './src/components/Card/Card.jsx': all90Covered,
     './src/components/TimePickerSpinner/TimePickerSpinner.jsx': all90Covered,
     './src/components/List/HierarchyList/HierarchyList.jsx': all90Covered,
