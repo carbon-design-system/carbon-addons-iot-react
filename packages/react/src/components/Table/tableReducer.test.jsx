@@ -29,6 +29,12 @@ describe('table reducer', () => {
   it('nothing', () => {
     expect(tableReducer(undefined, { type: 'BOGUS' })).toEqual({});
   });
+  it('return the same state if there is a missmatching instanceId', () => {
+    // We use an action that will be forwarded to the base reducer
+    expect(tableReducer(initialState, tablePageChange({ page: 3, pageSize: 10 }, 'id1'))).toBe(
+      initialState
+    );
+  });
   it('row action tests', () => {
     const updatedRowActionState = tableReducer(initialState, tableRowActionStart('row-1'));
     const newRowActions = updatedRowActionState.view.table.rowActions;
@@ -96,6 +102,9 @@ describe('table reducer', () => {
     it('TABLE_TOOLBAR_TOGGLE ', () => {
       const updatedState = tableReducer(initialState, tableToolbarToggle('column'));
       expect(updatedState.view.toolbar.activeBar).toEqual('column');
+
+      const updatedState2 = tableReducer(updatedState, tableToolbarToggle('column'));
+      expect(updatedState2.view.toolbar.activeBar).not.toEqual('column');
     });
     it('TABLE_SEARCH_APPLY filter should search data', () => {
       const searchString = 'searchString';
@@ -171,6 +180,39 @@ describe('table reducer', () => {
         tableSortedNone.view.table.filteredData
       );
     });
+
+    it('TABLE_COLUMN_SORT multisort', () => {
+      const multiSortState = merge({}, initialState, {
+        view: {
+          table: {
+            sort: [
+              {
+                columnId: 'string',
+                direction: 'ASC',
+              },
+              {
+                columnId: 'date',
+                direction: 'ASC',
+              },
+            ],
+          },
+        },
+      });
+      const sortColumnAction = tableColumnSort('string');
+      const tableSorted = tableReducer(multiSortState, sortColumnAction);
+
+      expect(tableSorted.view.table.sort).toEqual([
+        {
+          columnId: 'string',
+          direction: 'DESC',
+        },
+        {
+          columnId: 'date',
+          direction: 'ASC',
+        },
+      ]);
+    });
+
     it('TABLE_COLUMN_SORT custom sort function', () => {
       const sortColumnAction = tableColumnSort(tableColumns[4].id);
       const mockSortFunction = jest.fn().mockReturnValue(initialState.data);
