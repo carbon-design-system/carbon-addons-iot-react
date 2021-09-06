@@ -42,8 +42,13 @@ const TableBodyLoadMoreRow = ({
         className={`${iotPrefix}--load-more-cell`}
         data-testid={`${testId}-${id}-load-more`}
       >
-        <Button onClick={() => onRowLoadMore(id)} kind="ghost" loading={isLoadingMore}>
-          <div className={`${iotPrefix}--load-more-cell--content`}>{loadMoreText}</div>
+        <Button
+          className={`${iotPrefix}--load-more-cell--content`}
+          onClick={() => onRowLoadMore(id)}
+          kind="ghost"
+          loading={isLoadingMore}
+        >
+          {loadMoreText}
         </Button>
       </TableCell>
     </TableRow>

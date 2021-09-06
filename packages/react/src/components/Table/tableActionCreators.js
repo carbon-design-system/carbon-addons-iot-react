@@ -33,7 +33,7 @@ export const TABLE_MULTI_SORT_CANCEL = 'TABLE_MULTI_SORT_CANCEL';
 export const TABLE_MULTI_SORT_CLEAR = 'TABLE_MULTI_SORT_CLEAR';
 export const TABLE_MULTI_SORT_ADD_COLUMN = 'TABLE_MULTI_SORT_ADD_COLUMN';
 export const TABLE_MULTI_SORT_REMOVE_COLUMN = 'TABLE_MULTI_SORT_REMOVE_COLUMN';
-
+export const TABLE_ROW_LOAD_MORE = 'TABLE_ROW_LOAD_MORE';
 export const tableRegister = ({
   data,
   isLoading,
@@ -232,4 +232,9 @@ export const tableAddMultiSortColumn = (index) => ({
 export const tableRemoveMultiSortColumn = (index) => ({
   type: TABLE_MULTI_SORT_REMOVE_COLUMN,
   payload: index,
+});
+
+export const tableRowLoadMore = (rowId) => ({
+  type: TABLE_ROW_LOAD_MORE,
+  payload: rowId,
 });

@@ -2370,7 +2370,7 @@ export const RowExpansionAndLoadMore = () => {
   const TableWithState = () => {
     const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
     const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-    const [isLoadingMore, setIsLoadingMore] = useState(false);
+    const [loadingMoreIds, setLoadingMoreIds] = useState([]);
 
     const tableDataNested = tableData
       .slice(0, number('number of rows in story', 3))
@@ -2387,14 +2387,12 @@ export const RowExpansionAndLoadMore = () => {
                 {
                   ...getNewRow(idx, 'D'),
                   hasLoadMore: true,
-                  children: [
-                    getNewRow(0, 'D-1'),
-                    getNewRow(0, 'D-2'),
-                    getNewRow(0, 'D-3'),
-                    getNewRow(0, 'D-4'),
-                    getNewRow(0, 'D-5'),
-                    getNewRow(0, 'D-6'),
-                  ],
+                  children: [getNewRow(0, 'D-1'), getNewRow(0, 'D-2'), getNewRow(0, 'D-3')],
+                },
+                {
+                  ...getNewRow(idx, 'E'),
+                  hasLoadMore: true,
+                  children: [getNewRow(0, 'E-1'), getNewRow(0, 'E-2'), getNewRow(0, 'E-3')],
                 },
               ]
             : undefined,
@@ -2408,8 +2406,10 @@ export const RowExpansionAndLoadMore = () => {
         actions={{
           table: {
             onRowLoadMore: (id) => {
-              setIsLoadingMore(true);
-              return action('onRowLoadMore:', id);
+              action('onRowLoadMore:', id);
+              if (selectedTableType !== 'StatefulTable') {
+                setLoadingMoreIds((prev) => [...prev, id]);
+              }
             },
           },
         }}
@@ -2419,10 +2419,12 @@ export const RowExpansionAndLoadMore = () => {
         }}
         view={{
           table: {
-            loadingState: {
-              isLoadingMore,
-            },
-            expandedIds: [tableDataNested[0].id, tableDataNested[0].children[3].id],
+            expandedIds: [
+              tableDataNested[0].id,
+              tableDataNested[0].children[3].id,
+              tableDataNested[0].children[4].id,
+            ],
+            loadingMoreIds: selectedTableType !== 'StatefulTable' ? loadingMoreIds : [],
           },
         }}
       />

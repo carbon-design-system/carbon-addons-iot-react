@@ -6,12 +6,10 @@
   width: 100%;
 
   &--content {
-    display: flex;
-    justify-content: center;
     @include type-style('body-short-01');
-    color: $interactive-01;
-    div:first-child {
-      margin-right: $spacing-04;
-    }
+    color: $interactive-01 !important;
+    min-width: 100%;
+    display: flex;
+    justify-content: center !important;
   }
 }

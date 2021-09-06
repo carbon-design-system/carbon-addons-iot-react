@@ -61,8 +61,6 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
-  /** boolean that define if load more row is currently loading */
-  isLoadingMore: PropTypes.bool,
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   /** i18n strings */
@@ -91,6 +89,8 @@ const propTypes = {
   testId: PropTypes.string,
   /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
+  /** Array with rowIds that are with loading active */
+  loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -103,7 +103,6 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
-  isLoadingMore: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
@@ -114,6 +113,7 @@ const defaultProps = {
   pagination: null,
   selectedIds: [],
   expandedIds: [],
+  loadingMoreIds: [],
   items: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
@@ -151,12 +151,12 @@ const List = forwardRef((props, ref) => {
     editingStyle,
     isLargeRow,
     isLoading,
-    isLoadingMore,
     onItemMoved,
     itemWillMove,
     emptyState,
     testId,
     handleLoadMore,
+    loadingMoreIds,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const selectedItemRef = ref;
@@ -166,6 +166,7 @@ const List = forwardRef((props, ref) => {
     const hasChildren = item?.children && item.children.length > 0;
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
+    const isLoadingMore = loadingMoreIds.includes(item.id);
 
     const {
       content: { value, secondaryValue, icon, rowActions, tags },

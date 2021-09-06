@@ -72,4 +72,12 @@
     @include type-style('body-short-01');
     color: $interactive-01;
   }
+  .#{prefix}--loading__stroke {
+    stroke: $interactive-01;
+  }
+  &.#{$prefix}--btn--disabled,
+  .#{$prefix}--btn--disabled:focus,
+  .#{$prefix}--btn--disabled:hover {
+    border-bottom: 1px solid $decorative-01;
+  }
 }

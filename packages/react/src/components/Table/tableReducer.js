@@ -43,6 +43,7 @@ import {
   TABLE_MULTI_SORT_ADD_COLUMN,
   TABLE_MULTI_SORT_REMOVE_COLUMN,
   TABLE_MULTI_SORT_CLEAR,
+  TABLE_ROW_LOAD_MORE,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -541,7 +542,6 @@ export const tableReducer = (state = {}, action) => {
               $set: {
                 isLoading: action.payload.isLoading,
                 rowCount: get(state, 'view.table.loadingState.rowCount') || 0,
-                isLoadingMore: get(state, 'view.table.loadingState.isLoadingMore') || false,
               },
             },
             // Reset the selection to the previous values
@@ -553,6 +553,9 @@ export const tableReducer = (state = {}, action) => {
             },
             isSelectAllSelected: {
               $set: view ? view.table.isSelectAllSelected : false,
+            },
+            loadingMoreIds: {
+              $set: view ? view.table.loadingMoreIds : [],
             },
           },
         },
@@ -736,6 +739,19 @@ export const tableReducer = (state = {}, action) => {
 
     case TABLE_MULTI_SORT_REMOVE_COLUMN: {
       return state;
+    }
+
+    case TABLE_ROW_LOAD_MORE: {
+      console.log('TABLE_ROW_LOAD_MORE:', state);
+      return update(state, {
+        view: {
+          table: {
+            loadingMoreIds: {
+              $set: [...state.view.table.loadingMoreIds, action.payload],
+            },
+          },
+        },
+      });
     }
 
     // Actions that are handled by the base reducer

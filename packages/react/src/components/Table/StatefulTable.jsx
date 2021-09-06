@@ -36,6 +36,7 @@ import {
   tableAddMultiSortColumn,
   tableRemoveMultiSortColumn,
   tableClearMultiSortColumns,
+  tableRowLoadMore,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -117,6 +118,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       return nonElements;
     }),
     initialState.table.expandedIds,
+    initialState.table.loadingMoreIds,
     initialState.table.loadingState,
   ]);
 
@@ -252,6 +254,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
       onRowLoadMore: (rowId) => {
+        dispatch(tableRowLoadMore(rowId));
         callbackParent(onRowLoadMore, rowId);
       },
       onApplyRowAction: async (actionId, rowId) => {

@@ -109,13 +109,14 @@ const propTypes = {
     `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   testId: PropTypes.string,
-  /** boolean to decide if load more row is in loading state or not */
-  isLoadingMore: PropTypes.bool,
+  /** Array with rowIds that are with loading active */
+  loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
 };
 
 const defaultProps = {
   expandedIds: [],
   selectedIds: [],
+  loadingMoreIds: [],
   selectRowAria: 'Select row',
   overflowMenuAria: 'More actions',
   clickToExpandAria: 'Click to expand.',
@@ -137,7 +138,6 @@ const defaultProps = {
   langDir: 'ltr',
   showExpanderColumn: false,
   testId: '',
-  isLoadingMore: false,
 };
 
 const TableBody = ({
@@ -147,6 +147,7 @@ const TableBody = ({
   expandedIds,
   expandedRows,
   selectedIds,
+  loadingMoreIds,
   selectRowAria,
   overflowMenuAria,
   clickToExpandAria,
@@ -176,7 +177,6 @@ const TableBody = ({
   testID,
   testId,
   showExpanderColumn,
-  isLoadingMore,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -341,7 +341,7 @@ const TableBody = ({
         loadMoreText={loadMoreText}
         totalColumns={totalColumns}
         onRowLoadMore={actions?.onRowLoadMore}
-        isLoadingMore={isLoadingMore}
+        isLoadingMore={loadingMoreIds.includes(row.id)}
       />
     );
     return shouldShowChildren

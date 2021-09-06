@@ -210,6 +210,8 @@ const propTypes = {
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
+      /** Array with rowIds that are with loading active */
+      loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -347,6 +349,7 @@ export const defaultProps = (baseProps) => ({
         isLoadingMore: false,
       },
       singleRowEditButtons: null,
+      loadingMoreIds: [],
     },
   },
   actions: {
@@ -523,6 +526,7 @@ const Table = (props) => {
     view.table.isSelectAllSelected,
     view.table.isSelectAllIndeterminate,
     view.table.selectedIds,
+    view.table.loadingMoreIds,
     view.table.sort,
     view.table.ordering,
     // Remove the error as it's a React.Element/Node which can not be compared
@@ -922,6 +926,7 @@ const Table = (props) => {
                 columns={visibleColumns}
                 expandedIds={view.table.expandedIds}
                 selectedIds={view.table.selectedIds}
+                loadingMoreIds={view.table.loadingMoreIds}
                 {...pick(
                   i18n,
                   'overflowMenuAria',
