@@ -226,14 +226,32 @@ describe('ComboBox', () => {
   });
 
   it('can fit menu to content', () => {
-    render(<ComboBox {...defaultProps} menuFitContent />);
+    const { rerender } = render(<ComboBox {...defaultProps} menuFitContent />);
     expect(screen.getByTestId('combo-wrapper')).toHaveClass(
+      `${iotPrefix}--combobox__menu--fit-content`
+    );
+    rerender(<ComboBox {...defaultProps} />);
+    expect(screen.getByTestId('combo-wrapper')).not.toHaveClass(
       `${iotPrefix}--combobox__menu--fit-content`
     );
   });
 
-  it('can have the menu expand to the left', () => {
-    render(<ComboBox {...defaultProps} menuFitContent horizontalDirection="left" />);
+  it('can have the menu expand to the left or right', () => {
+    const { rerender } = render(
+      <ComboBox {...defaultProps} menuFitContent horizontalDirection="left" />
+    );
     expect(screen.getByTestId('combo-wrapper')).toHaveClass(`${iotPrefix}--combobox__menu--left`);
+
+    rerender(<ComboBox {...defaultProps} menuFitContent horizontalDirection="right" />);
+    expect(screen.getByTestId('combo-wrapper')).not.toHaveClass(
+      `${iotPrefix}--combobox__menu--left`
+    );
+  });
+
+  it('expands the menu to the right by default', () => {
+    render(<ComboBox {...defaultProps} menuFitContent />);
+    expect(screen.getByTestId('combo-wrapper')).not.toHaveClass(
+      `${iotPrefix}--combobox__menu--left`
+    );
   });
 });
