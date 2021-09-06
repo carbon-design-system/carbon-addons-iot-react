@@ -17091,7 +17091,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   className="storybook-container"
 >
   <div
-    style={Object {}}
+    style={
+      Object {
+        "width": "calc(100vw - 6rem)",
+      }
+    }
   >
     <div
       className="bx--modal iot--manage-views-modal iot--composed-modal"

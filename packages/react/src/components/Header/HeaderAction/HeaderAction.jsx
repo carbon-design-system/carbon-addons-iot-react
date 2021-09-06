@@ -40,6 +40,7 @@ export const HeaderActionPropTypes = {
   i18n: PropTypes.shape({
     closeMenu: PropTypes.string,
   }),
+  inOverflow: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -50,6 +51,7 @@ const defaultProps = {
   i18n: {
     closeMenu: 'Close menu',
   },
+  inOverflow: false,
 };
 
 /**
@@ -70,6 +72,7 @@ const HeaderAction = ({
   defaultExpanded,
   onClose,
   i18n,
+  inOverflow,
 }) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const parentContainerRef = useRef(null);
@@ -118,6 +121,7 @@ const HeaderAction = ({
       toggleExpandedState();
 
       // Return focus to menu button when the user hits ESC.
+      /* istanbul ignore else */
       if (menuButtonRef && menuButtonRef.current) {
         menuButtonRef.current.focus();
       }
@@ -145,6 +149,7 @@ const HeaderAction = ({
             index={index}
             renderLabel={renderLabel}
             i18n={mergedI18n}
+            inOverflow={inOverflow}
           />
         ) : (
           // otherwise render a submenu type dropdown
@@ -152,13 +157,13 @@ const HeaderAction = ({
             className={`${carbonPrefix}--header-action-btn`}
             key={`menu-item-${item.label}`}
             aria-label={item.label}
-            renderMenuContent={() =>
-              isExpanded ? (
+            renderMenuContent={() => {
+              return isExpanded && inOverflow ? (
                 <Close16 fill={white} description={mergedI18n.closeMenu} />
               ) : (
                 item.btnContent
-              )
-            }
+              );
+            }}
             menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
             isExpanded={isExpanded}
             ref={menuButtonRef}

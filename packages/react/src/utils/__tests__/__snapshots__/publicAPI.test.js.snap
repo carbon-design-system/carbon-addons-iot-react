@@ -8396,6 +8396,7 @@ Map {
         "mainHeader": "main header",
         "openMenu": "Open menu",
       },
+      "isActionItemVisible": [Function],
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -8443,6 +8444,9 @@ Map {
                 },
                 "hasHeaderPanel": Object {
                   "type": "bool",
+                },
+                "id": Object {
+                  "type": "string",
                 },
                 "label": Object {
                   "isRequired": true,
@@ -8500,6 +8504,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isActionItemVisible": Object {
+        "type": "func",
       },
       "onClickSideNavExpand": Object {
         "type": "func",
@@ -8675,6 +8682,7 @@ Map {
         "whatsNew": "What's new",
       },
       "idleTimeoutData": null,
+      "isActionItemVisible": [Function],
       "isAdminView": false,
       "onRouteChange": [Function],
       "onSideNavToggled": [Function],
@@ -8761,6 +8769,9 @@ Map {
                 },
                 "hasHeaderPanel": Object {
                   "type": "bool",
+                },
+                "id": Object {
+                  "type": "string",
                 },
                 "label": Object {
                   "isRequired": true,
@@ -8982,6 +8993,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isActionItemVisible": Object {
+        "type": "func",
       },
       "isAdminView": Object {
         "type": "bool",
