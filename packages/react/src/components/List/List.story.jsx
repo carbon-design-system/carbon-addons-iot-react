@@ -651,8 +651,8 @@ export const WithLoadMore = () => {
           expandedIds={expandedIds}
           toggleExpansion={(id) => setExpandedIds((prev) => [...prev, id])}
           isLoading={boolean('isLoading', false)}
-          handleLoadMore={() => {
-            action('handleLoadMore:');
+          handleLoadMore={(id) => {
+            action('handleLoadMore:', id);
             setIsLoadingMore(true);
           }}
           isLoadingMore={isLoadingMore}

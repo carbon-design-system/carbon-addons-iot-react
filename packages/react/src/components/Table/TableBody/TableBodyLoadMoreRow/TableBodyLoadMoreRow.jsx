@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Loading } from 'carbon-components-react';
+import { DataTable } from 'carbon-components-react';
 
 import { settings } from '../../../../constants/Settings';
+import { Button } from '../../../..';
 
 const { TableRow, TableCell } = DataTable;
 const { iotPrefix } = settings;
@@ -33,24 +34,18 @@ const TableBodyLoadMoreRow = ({
   totalColumns,
   isLoadingMore,
 }) => {
-  const tableCells = (
-    <TableCell
-      key={`${tableId}-${id}-row-load-more-cell`}
-      colSpan={totalColumns}
-      onClick={() => onRowLoadMore(id)}
-      className={`${iotPrefix}--load-more-cell`}
-      data-testid={`${testId}-${id}-load-more`}
-    >
-      <div className={`${iotPrefix}--load-more-cell--content`}>
-        {isLoadingMore ? <Loading small withOverlay={false} /> : null}
-        {loadMoreText}
-      </div>
-    </TableCell>
-  );
-
   return (
     <TableRow key={id} isSelected={false} isSelectable isEditMode={false}>
-      {tableCells}
+      <TableCell
+        key={`${tableId}-${id}-row-load-more-cell`}
+        colSpan={totalColumns}
+        className={`${iotPrefix}--load-more-cell`}
+        data-testid={`${testId}-${id}-load-more`}
+      >
+        <Button onClick={() => onRowLoadMore(id)} kind="ghost" loading={isLoadingMore}>
+          <div className={`${iotPrefix}--load-more-cell--content`}>{loadMoreText}</div>
+        </Button>
+      </TableCell>
     </TableRow>
   );
 };

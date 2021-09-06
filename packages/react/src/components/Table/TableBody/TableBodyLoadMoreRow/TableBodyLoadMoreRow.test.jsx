@@ -14,7 +14,7 @@ const tableRowProps = {
 };
 
 describe('TableBodyLoadMoreRow', () => {
-  it('calls onRowLoadMore when load more id clicked', () => {
+  it('calls onRowLoadMore when load more is clicked', () => {
     const mockLoadMore = jest.fn();
     render(
       <TableBodyLoadMoreRow

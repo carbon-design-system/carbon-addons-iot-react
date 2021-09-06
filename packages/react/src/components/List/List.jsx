@@ -2,13 +2,13 @@ import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Bee32 } from '@carbon/icons-react';
-import { Loading } from 'carbon-components-react';
+// import { Button } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { SkeletonText } from '../SkeletonText';
 import { EditingStyle, editingStyleIsMultiple, DragAndDrop } from '../../utils/DragAndDropUtils';
-import { Checkbox } from '../..';
+import { Checkbox, Button } from '../..';
 import { OverridePropTypes } from '../../constants/SharedPropTypes';
 
 import ListItem from './ListItem/ListItem';
@@ -234,18 +234,18 @@ const List = forwardRef((props, ref) => {
             .concat(
               item.hasLoadMore
                 ? [
-                    <button
+                    <Button
                       key={`${item.id}-list-item-parent-loading`}
                       className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
                       onClick={() => handleLoadMore(item.id)}
-                      type="button"
                       data-testid={`${testId}-${item.id}-load-more`}
+                      kind="ghost"
+                      loading={isLoadingMore}
                     >
                       <div className={`${iotPrefix}--load-more-row--content`}>
-                        {isLoadingMore ? <Loading small withOverlay={false} /> : null}
                         {mergedI18n.loadMore}
                       </div>
-                    </button>,
+                    </Button>,
                   ]
                 : []
             )

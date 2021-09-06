@@ -2408,8 +2408,8 @@ export const RowExpansionAndLoadMore = () => {
         actions={{
           table: {
             onRowLoadMore: (id) => {
-              action('onRowLoadMore:', id);
               setIsLoadingMore(true);
+              return action('onRowLoadMore:', id);
             },
           },
         }}
