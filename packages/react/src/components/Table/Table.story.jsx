@@ -1,11 +1,4 @@
-import React, {
-  useState,
-  useLayoutEffect,
-  useMemo,
-  useEffect,
-  useCallback,
-  createElement,
-} from 'react';
+import React, { useState, useMemo, useEffect, useCallback, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select, array, object } from '@storybook/addon-knobs';
 import Arrow from '@carbon/icons-react/lib/arrow--right/16';
@@ -591,6 +584,16 @@ export default {
 export const BasicDumbTable = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
+  const hasColumnSelection = boolean(
+    'Enables choosing which columns are visible or drag-and-drop reorder them (options.hasColumnSelection)',
+    false
+  );
+
+  const hasColumnSelectionConfig = boolean(
+    'Enables choosing which columns are visible or drag-and-drop reorder them and adds callback to manage which columns are available to the table (options.hasColumnSelectionConfig)',
+    false
+  );
   return (
     <MyTable
       id="table"
@@ -609,10 +612,8 @@ export const BasicDumbTable = () => {
           'Aggregates column values and displays in a footer row (options.hasAggregations)',
           true
         ),
-        hasColumnSelection: boolean(
-          'Enables choosing which columns are available (options.hasColumnSelection)',
-          false
-        ),
+        hasColumnSelection,
+        hasColumnSelectionConfig,
         hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', false),
         hasMultiSort: boolean(
           'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
@@ -660,6 +661,12 @@ export const BasicDumbTable = () => {
             },
           ],
         },
+        toolbar: {
+          activeBar: hasColumnSelection || hasColumnSelectionConfig ? 'column' : undefined,
+        },
+      }}
+      i18n={{
+        columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__'),
       }}
     />
   );
@@ -2260,48 +2267,6 @@ WithOptionsToExploreColumnSettings.parameters = {
     propTables: false,
   },
 };
-
-export const WithResizeAndNoInitialColumns = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-
-  // Initial render is an empty columns array, which is updated after the first render
-  const [columns, setColumns] = useState([]);
-  useLayoutEffect(() => {
-    setColumns(
-      tableColumns.map((i, idx) => ({
-        width: idx % 2 === 0 ? '100px' : '100px',
-        ...i,
-      }))
-    );
-  }, []);
-
-  const hasColumnSelectionConfig = boolean('options.hasColumnSelectionConfig', false);
-  return (
-    <MyTable
-      id="table"
-      options={{
-        hasResize: boolean('options.hasResize', true),
-        wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
-        hasColumnSelectionConfig,
-      }}
-      columns={columns}
-      data={tableData}
-      actions={tableActions}
-      view={{
-        toolbar: {
-          activeBar: hasColumnSelectionConfig ? 'column' : undefined,
-        },
-      }}
-      i18n={{
-        columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__'),
-      }}
-    />
-  );
-};
-
-WithResizeAndNoInitialColumns.storyName = 'with resize on no initial columns and column selection';
-WithResizeAndNoInitialColumns.decorators = [createElement];
 
 export const HorizontalScrollCustomWidth = () => {
   const tableColumnsConcat = [
