@@ -1720,7 +1720,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <div
                     className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
                     data-testid="Card"
-                    id="Custom"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -9904,12 +9903,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <span
                       className="iot--card--title"
                       data-testid="Card-title"
-                      title="Default rendered card"
+                      title="my custom title: Default rendered card"
                     >
                       <div
                         className="iot--card--title--text"
                       >
-                        Default rendered card
+                        my custom title: Default rendered card
                       </div>
                     </span>
                     <div
