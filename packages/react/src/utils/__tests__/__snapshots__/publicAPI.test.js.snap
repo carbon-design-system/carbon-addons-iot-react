@@ -13793,6 +13793,7 @@ Map {
       "fontSize": 42,
       "isNumberValueCompact": false,
       "locale": "en",
+      "onAttributeClick": null,
       "size": "MEDIUM",
       "testId": "Card",
       "values": null,
@@ -14629,6 +14630,9 @@ Map {
       },
       "locale": Object {
         "type": "string",
+      },
+      "onAttributeClick": Object {
+        "type": "func",
       },
       "onBlur": Object {
         "type": "func",
