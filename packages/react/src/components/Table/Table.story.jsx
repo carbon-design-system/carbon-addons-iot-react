@@ -1616,7 +1616,7 @@ export const WithSorting = () => {
           options={{
             hasFilter: boolean('options.hasFilter', false),
             hasPagination: boolean('options.hasPagination', true),
-            hasRowSelection: boolean('options.hasRowSelection', 'multi'),
+            hasRowSelection: select('options.hasRowSelection', ['single', 'multi', false], 'multi'),
             hasAggregations: boolean('options.hasAggregations', true),
             hasMultiSort,
           }}
