@@ -2,9 +2,16 @@
 
 .#{$iot-prefix}--value-card__value-renderer {
   &--wrapper {
-    overflow: hidden;
     text-overflow: ellipsis;
     display: flex;
+
+    .#{$iot-prefix}--value-card__attribute-wrapper--horizontal & {
+      width: 100%;
+    }
+
+    .#{$iot-prefix}--value-card__content-wrapper--vertical & {
+      overflow: hidden;
+    }
   }
 
   &--value {
@@ -20,7 +27,7 @@
     word-break: break-all;
     /* override default button styles to match span visuals when using a button */
     &.#{$prefix}--btn {
-      padding: 0;
+      padding: $spacing-01;
       flex: 1;
       white-space: nowrap;
     }
