@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.177](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.176...v2.146.0-next.177) (2021-09-07)
+
+
+### Bug Fixes
+
+* **empty-state:** adjust padding/sizing on EmptyState elements ([c7e187d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c7e187d8ecea960fa5cd5a36418e42e72e638cb3))
+* **table:** removed css that did not and should not work ([e1bdb0f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e1bdb0f2840e58c519340ad50b9369ad10a67410)), closes [#1683](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1683)
+
+
+
+
+
 # [2.146.0-next.176](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.175...v2.146.0-next.176) (2021-09-07)
 
 
