@@ -22,6 +22,16 @@ import {
   tableRowActionComplete,
   tableRowActionEdit,
   tableRowActionError,
+  tableAdvancedFiltersToggle,
+  tableAdvancedFiltersRemove,
+  tableAdvancedFiltersChange,
+  tableAdvancedFiltersCreate,
+  tableAdvancedFiltersCancel,
+  tableAdvancedFiltersApply,
+  tableToggleAggregations,
+  tableSaveMultiSortColumns,
+  tableCancelMultiSortColumns,
+  tableClearMultiSortColumns,
 } from './tableActionCreators';
 import { initialState, tableColumns } from './Table.story';
 
@@ -112,6 +122,31 @@ describe('table reducer', () => {
       // Apply the search
       expect(updatedState.view.toolbar.search.defaultValue).toEqual(searchString);
       expect(updatedState.view.pagination.page).toEqual(1);
+    });
+
+    it('TABLE_ADVANCED_FILTER_TOGGLE', () => {
+      const openState = merge({}, initialState, {
+        view: { toolbar: { advancedFilterFlyoutOpen: true } },
+      });
+      const toggleAction = tableAdvancedFiltersToggle();
+      const closedState = tableReducer(openState, toggleAction);
+      expect(closedState.view.toolbar.advancedFilterFlyoutOpen).toBe(false);
+
+      const newOpenState = tableReducer(closedState, toggleAction);
+      expect(newOpenState.view.toolbar.advancedFilterFlyoutOpen).toBe(true);
+    });
+
+    it('TABLE_TOGGLE_AGGREGATIONS', () => {
+      const showingState = merge({}, initialState, {
+        view: { aggregations: { isHidden: false } },
+      });
+
+      const toggleAction = tableToggleAggregations();
+      const hiddenState = tableReducer(showingState, toggleAction);
+      expect(hiddenState.view.aggregations.isHidden).toBe(true);
+
+      const newShowingState = tableReducer(hiddenState, toggleAction);
+      expect(newShowingState.view.aggregations.isHidden).toBe(false);
     });
   });
   describe('table actions', () => {
@@ -231,6 +266,80 @@ describe('table reducer', () => {
       const columnHideAction = tableColumnOrder([{ columnId: tableColumns[0].id, isHidden: true }]);
       const tableWithHiddenColumn = tableReducer(initialState, columnHideAction);
       expect(tableWithHiddenColumn.view.table.ordering[0].isHidden).toBe(true);
+    });
+
+    it('TABLE_MULTI_SORT_SAVE', () => {
+      expect(initialState.view.table.filteredData).toBeUndefined();
+      const sortConf = [
+        {
+          columnId: 'select',
+          direction: 'DESC',
+        },
+        {
+          columnId: 'string',
+          direction: 'DESC',
+        },
+      ];
+      const multiSortAction = tableSaveMultiSortColumns(sortConf);
+      const newState = tableReducer(initialState, multiSortAction);
+      expect(newState.view.table.sort).toEqual(sortConf);
+      expect(newState.view.table.filteredData[0].id).toEqual('row-82');
+      expect(newState.view.table.showMultiSortModal).toBe(false);
+
+      const newSortConf = [
+        {
+          columnId: 'select',
+          direction: 'DESC',
+        },
+        {
+          columnId: 'string',
+          direction: 'ASC',
+        },
+      ];
+      const newMultiSortAction = tableSaveMultiSortColumns(newSortConf);
+      const newState2 = tableReducer(initialState, newMultiSortAction);
+      expect(newState2.view.table.sort).toEqual(newSortConf);
+      expect(newState2.view.table.filteredData[0].id).toEqual('row-34');
+      expect(newState.view.table.showMultiSortModal).toBe(false);
+    });
+
+    it('TABLE_MULTI_SORT_CANCEL', () => {
+      const openState = merge({}, initialState, {
+        view: { table: { showMultiSortModal: true } },
+      });
+      const multiSortCancelAction = tableCancelMultiSortColumns();
+      const cancelledState = tableReducer(openState, multiSortCancelAction);
+      expect(cancelledState.view.table.showMultiSortModal).toBe(false);
+
+      const cancelledState2 = tableReducer(cancelledState, multiSortCancelAction);
+      expect(cancelledState2.view.table.showMultiSortModal).toBe(false);
+    });
+
+    it('TABLE_MULTI_SORT_CLEAR', () => {
+      const openState = merge({}, initialState, {
+        view: {
+          table: {
+            filteredData: ['bogus data'],
+            showMultiSortModal: true,
+            sort: [
+              {
+                columnId: 'select',
+                direction: 'DESC',
+              },
+              {
+                columnId: 'string',
+                direction: 'ASC',
+              },
+            ],
+          },
+        },
+      });
+
+      const multiSortClearAction = tableClearMultiSortColumns();
+      const clearedState = tableReducer(openState, multiSortClearAction);
+      expect(clearedState.view.table.showMultiSortModal).toBe(false);
+      expect(clearedState.view.table.sort).toBeUndefined();
+      expect(clearedState.view.table.filteredData).toHaveLength(14);
     });
   });
   describe('Table Row Operations', () => {
@@ -556,5 +665,55 @@ describe('filter, search and sort', () => {
     expect(sortedResultDesc[1]).toEqual(mockData[2]);
     // low
     expect(sortedResultDesc[2]).toEqual(mockData[1]);
+  });
+
+  it('TABLE_ADVANCED_FILTER_REMOVE', () => {
+    const myState = merge({}, initialState, {
+      view: { selectedAdvancedFilterIds: ['id1', 'id2'] },
+    });
+    const removeAction = tableAdvancedFiltersRemove('id1');
+    const newState = tableReducer(myState, removeAction);
+    expect(newState.view.selectedAdvancedFilterIds).toEqual(['id2']);
+  });
+
+  it('TABLE_ADVANCED_FILTER_CHANGE', () => {
+    const changeAction = tableAdvancedFiltersChange();
+    const state = tableReducer(initialState, changeAction);
+    expect(state).toBe(initialState);
+  });
+
+  it('TABLE_ADVANCED_FILTER_CREATE', () => {
+    const changeAction = tableAdvancedFiltersCreate();
+    const state = tableReducer(initialState, changeAction);
+    expect(state).toBe(initialState);
+  });
+
+  it('TABLE_ADVANCED_FILTER_CANCEL', () => {
+    const openState = merge({}, initialState, {
+      view: { toolbar: { advancedFilterFlyoutOpen: true } },
+    });
+    const changeAction = tableAdvancedFiltersCancel();
+    const cancelledState = tableReducer(openState, changeAction);
+    expect(cancelledState.view.toolbar.advancedFilterFlyoutOpen).toBe(false);
+
+    const cancelledState2 = tableReducer(cancelledState, changeAction);
+    expect(cancelledState2.view.toolbar.advancedFilterFlyoutOpen).toBe(false);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY', () => {
+    const myState = merge({}, initialState, {
+      view: { advancedFilters: [] },
+    });
+    expect(myState.view.table.filteredData).toBeUndefined();
+
+    const filterState = {
+      simple: { select: 'option-C', string: 'whiteboard' },
+      advanced: { filterIds: ['story-filter'] },
+    };
+    const applyAction = tableAdvancedFiltersApply(filterState);
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.toolbar.advancedFilterFlyoutOpen).toBe(false);
+    expect(newState.view.selectedAdvancedFilterIds).toEqual([]);
+    expect(newState.view.table.filteredData).toHaveLength(13);
   });
 });

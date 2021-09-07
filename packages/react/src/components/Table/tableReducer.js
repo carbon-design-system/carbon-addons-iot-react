@@ -593,12 +593,11 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_ADVANCED_FILTER_CANCEL: {
-      const isOpen = state.view.toolbar.advancedFilterFlyoutOpen === true;
       return update(state, {
         view: {
           toolbar: {
             $set: {
-              advancedFilterFlyoutOpen: !isOpen,
+              advancedFilterFlyoutOpen: false,
             },
           },
         },
