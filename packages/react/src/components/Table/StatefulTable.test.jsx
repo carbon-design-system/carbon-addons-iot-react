@@ -5,6 +5,8 @@ import pick from 'lodash/pick';
 import { screen, render, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { settings } from '../../constants/Settings';
+
 import * as reducer from './baseTableReducer';
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
@@ -12,6 +14,8 @@ import { StatefulTableWithNestedRowItems } from './StatefulTable.story';
 import { mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
 import { initialState, tableData } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
+
+const { iotPrefix } = settings;
 
 describe('stateful table with real reducer', () => {
   it('should clear filters', async () => {
@@ -802,5 +806,62 @@ describe('stateful table with real reducer', () => {
     ]);
 
     jest.resetAllMocks();
+  });
+
+  it('should render a loading state without columns', () => {
+    const { container } = render(
+      <StatefulTable
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const headerRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row--head`
+    );
+    expect(headerRows).toHaveLength(1);
+    expect(headerRows[0].querySelectorAll('td')).toHaveLength(3);
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+  });
+
+  it('should show data after loading is finished', () => {
+    const { container, rerender } = render(
+      <StatefulTable
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+    expect(screen.queryByTitle('String')).toBeNull();
+    expect(screen.queryByTitle('Date')).toBeNull();
+
+    rerender(
+      <StatefulTable
+        id="loading-table"
+        columns={initialState.columns}
+        data={initialState.data}
+        view={{ table: { loadingState: { isLoading: false, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--table-skeleton-with-headers--table-row`)
+    ).toHaveLength(0);
+
+    // 100 rows plus the header
+    expect(container.querySelectorAll('tr')).toHaveLength(101);
+    expect(screen.getByTitle('String')).toBeVisible();
+    expect(screen.getByTitle('Date')).toBeVisible();
   });
 });

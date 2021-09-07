@@ -61730,6 +61730,530 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Table with async column loading 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--table-container bx--data-table-container"
+    data-testid="loading-table-table-container"
+  >
+    <section
+      aria-label="data table toolbar"
+      className="bx--table-toolbar"
+      data-testid="loading-table-table-toolbar"
+    >
+      <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="loading-table-table-toolbar-batch-actions"
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span>
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div
+        className="bx--toolbar-content iot--table-toolbar-content"
+        data-testid="loading-table-table-toolbar-content"
+      >
+        <div
+          aria-labelledby="loading-table-toolbar-search-search"
+          className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+          role="search"
+        >
+          <div
+            className="bx--search-magnifier"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--search-magnifier-icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+              />
+            </svg>
+          </div>
+          <label
+            className="bx--label"
+            htmlFor="loading-table-toolbar-search"
+            id="loading-table-toolbar-search-search"
+          >
+            Search
+          </label>
+          <input
+            autoComplete="off"
+            className="bx--search-input"
+            data-testid="loading-table-table-toolbar-search"
+            id="loading-table-toolbar-search"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Search"
+            role="searchbox"
+            tabIndex="0"
+            type="text"
+            value=""
+          />
+          <button
+            aria-label="Clear search input"
+            className="bx--search-close bx--search-close--hidden"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+          data-testid="filter-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          title="Filters"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            aria-label="Filters"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
+            />
+          </svg>
+        </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          aria-label="open and close list of options"
+          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu"
+          data-testid="table-head--overflow"
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          open={false}
+          type="button"
+        >
+          <svg
+            aria-label="open and close list of options"
+            className="bx--overflow-menu__icon iot--table-toolbar-aggregations__overflow-icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="16"
+              cy="8"
+              r="2"
+            />
+            <circle
+              cx="16"
+              cy="16"
+              r="2"
+            />
+            <circle
+              cx="16"
+              cy="24"
+              r="2"
+            />
+            <title>
+              open and close list of options
+            </title>
+          </svg>
+        </button>
+      </div>
+    </section>
+    <div
+      className="addons-iot-table-container"
+    >
+      <div
+        className="bx--data-table-content"
+      >
+        <table
+          className="bx--data-table bx--data-table--no-border"
+          data-testid="loading-table"
+          id="loading-table"
+          title={null}
+        >
+          <tbody
+            aria-live="polite"
+            data-testid="loading-table-table-skeleton"
+          >
+            <tr
+              className="iot--table-skeleton-with-headers--table-row iot--table-skeleton-with-headers--table-row--head"
+            >
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+          </tbody>
+          <tfoot
+            className="iot-table-foot"
+            data-testid="loading-table-table-foot"
+          >
+            <tr />
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Table with custom states states: no data, custom empty, error, and loading 1`] = `
 <div
   className="storybook-container"

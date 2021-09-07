@@ -616,6 +616,13 @@ export const BasicDumbTable = () => (
           },
         ],
       },
+      table: {
+        loadingState: {
+          isLoading: boolean('isLoading', false),
+          rowCount: number('rowCount', 7),
+          columnCount: number('columnCount', 6),
+        },
+      },
     }}
   />
 );
@@ -2364,3 +2371,56 @@ WithStickyHeaderExperimentalAndCellTooltipCalculation.parameters = {
     text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
   },
 };
+
+export const AsyncColumnLoading = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
+  const [columns, setColumns] = useState([]);
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setColumns(tableColumns);
+      setData(tableData);
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
+  return (
+    <MyTable
+      id="loading-table"
+      columns={columns}
+      data={data}
+      options={{
+        hasAggregations: boolean('hasAggregations', true),
+        hasSearch: boolean('hasSearch', true),
+        hasFilter: boolean('hasFilter', true),
+        hasPagination: boolean('hasPagination', true),
+        hasRowEdit: boolean('hasRowEdit', false),
+      }}
+      view={{
+        aggregations: {
+          label: 'Total:',
+          columns: [
+            {
+              id: 'number',
+              align: 'start',
+              isSortable: false,
+            },
+          ],
+        },
+        table: {
+          loadingState: {
+            isLoading,
+            rowCount: number('rowCount', 10),
+            columnCount: number('columnCount', 9),
+          },
+        },
+      }}
+    />
+  );
+};
+AsyncColumnLoading.storyName = 'with async column loading';
+AsyncColumnLoading.decorators = [createElement];
