@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.176](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.175...v2.146.0-next.176) (2021-09-07)
+
+
+### Bug Fixes
+
+* **value-card:** fix padding on buttons when onAttributeClick is passed ([672426d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/672426d5a7903eb9b47308f4e40ac6254b92e0c2))
+
+
+### Features
+
+* **value-card:** add title to rendered values ([0539448](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/05394481b8b6b906eabe82a4c2190560f9810aee))
+* **value-card:** adding onAttributeClick callback and tests ([c889630](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c88963071d97233d9e3b3e3d1cfc56a0484628e4))
+
+
+
+
+
 # [2.146.0-next.175](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.174...v2.146.0-next.175) (2021-09-07)
 
 
