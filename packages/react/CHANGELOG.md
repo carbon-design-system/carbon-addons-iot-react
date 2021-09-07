@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.178](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.177...v2.146.0-next.178) (2021-09-07)
+
+
+### Features
+
+* **table:** allow lazy-loading columns ([eb2e4cc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eb2e4ccf8181fd1052d0d2b1738665d0ff26c9e1))
+
+
+
+
+
 # [2.146.0-next.177](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.176...v2.146.0-next.177) (2021-09-07)
 
 
