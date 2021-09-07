@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.179](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.178...v2.146.0-next.179) (2021-09-07)
+
+
+### Bug Fixes
+
+* **repo:** use es build instead of lib in browser ([ad60d94](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ad60d94ea8ad4d2742298de206773e81f4a0b67f))
+
+
+
+
+
 # [2.146.0-next.178](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.177...v2.146.0-next.178) (2021-09-07)
 
 
