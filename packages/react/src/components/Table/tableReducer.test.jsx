@@ -702,18 +702,237 @@ describe('filter, search and sort', () => {
 
   it('TABLE_ADVANCED_FILTER_APPLY', () => {
     const myState = merge({}, initialState, {
-      view: { advancedFilters: [] },
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'story-filter',
+            filterTitleText: 'test filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'rsiru4rjba',
+                  columnId: 'date',
+                  operand: 'CONTAINS',
+                  value: '19',
+                },
+                {
+                  id: '34bvyub9jq',
+                  columnId: 'boolean',
+                  operand: 'NEQ',
+                  value: 'true',
+                },
+                {
+                  id: '89h2eiuhd9c',
+                  columnId: 'number',
+                  operand: 'GT',
+                  value: 100,
+                },
+              ],
+            },
+          },
+        ],
+      },
     });
     expect(myState.view.table.filteredData).toBeUndefined();
 
-    const filterState = {
+    const actionPayload = {
       simple: { select: 'option-C', string: 'whiteboard' },
       advanced: { filterIds: ['story-filter'] },
     };
-    const applyAction = tableAdvancedFiltersApply(filterState);
+    const applyAction = tableAdvancedFiltersApply(actionPayload);
     const newState = tableReducer(myState, applyAction);
     expect(newState.view.toolbar.advancedFilterFlyoutOpen).toBe(false);
-    expect(newState.view.selectedAdvancedFilterIds).toEqual([]);
-    expect(newState.view.table.filteredData).toHaveLength(13);
+    expect(newState.view.selectedAdvancedFilterIds).toEqual(['story-filter']);
+    expect(newState.view.table.filteredData).toHaveLength(1);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - NEQ', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'date',
+                  operand: 'CONTAINS',
+                  value: '19',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(38);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - LT', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'number',
+                  operand: 'LT',
+                  value: '100',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(1);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - LTOET', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'number',
+                  operand: 'LTOET',
+                  value: '100',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(2);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - EQ', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'string',
+                  operand: 'EQ',
+                  value: 'as eat scott 3',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(1);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - GTOET', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'number',
+                  operand: 'GTOET',
+                  value: '100',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(65);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - GT', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'number',
+                  operand: 'GT',
+                  value: '100',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(64);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - CONTAINS', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'string',
+                  operand: 'CONTAINS',
+                  value: 'scott',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(20);
   });
 });
