@@ -4,7 +4,7 @@ import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-import { Button, InlineLoading } from '../../..';
+import { Button, InlineLoading, DragAndDrop } from '../../..';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
@@ -266,6 +266,14 @@ export const WithNestedReorder = () => {
 
   return <HierarchyListWithReorder />;
 };
+
+WithNestedReorder.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const WithDefaultExpandedIds = () => (
   <div style={{ width: 400, height: 400 }}>

@@ -16,20 +16,13 @@ const propTypes = {
   selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   /** Internationalization text */
   i18n: PropTypes.shape({
-    /** String e.g. '%d items selected' that gets %d replaced by selected count or
-     * function receiving the selectedCount as param:
-     * (selectedCount) => `${selectedCount} items selected` */
-    itemsSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    itemSelected: PropTypes.string,
     itemTitle: PropTypes.string,
     /** String e.g. 'Move %d items underneath' that gets %d replaced by items count or
      * function receiving the selectedCount as param:
      * (itemsCount) => `Move ${itemsCount} items underneath` */
     itemsTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     allRows: PropTypes.string,
-    modalTitle: PropTypes.string,
     modalDescription: PropTypes.string,
-    cancel: PropTypes.string,
   }),
   /**   Close the dialog */
   onClose: PropTypes.func.isRequired,
@@ -46,11 +39,8 @@ const noop = () => {};
 
 const defaultProps = {
   i18n: {
-    itemsSelected: (selectedCount) => `${selectedCount} items selected`,
-    itemSelected: '1 item selected',
     itemTitle: 'Move 1 item underneath',
     itemsTitle: (itemsCount) => `Move ${itemsCount} items underneath`,
-    cancel: 'Cancel',
     allRows: 'All rows',
   },
   sendingData: null,
