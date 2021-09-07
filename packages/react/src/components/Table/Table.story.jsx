@@ -588,37 +588,82 @@ export default {
   ],
 };
 
-export const BasicDumbTable = () => (
-  <Table
-    id="table"
-    secondaryTitle={text('secondaryTitle', 'Basic `dumb` table')}
-    useZebraStyles={boolean('useZebraStyles', false)}
-    lightweight={boolean('lightweight', false)}
-    tooltip={<div>Now with custom tooltip content!</div>}
-    columns={tableColumns}
-    data={tableData}
-    actions={tableActions}
-    options={{
-      hasAggregations: boolean('hasAggregations', true),
-      hasSearch: boolean('hasSearch', false),
-      hasFilter: boolean('hasFilter', false),
-      hasPagination: boolean('hasPagination', false),
-      hasRowEdit: boolean('hasRowEdit', false),
-    }}
-    view={{
-      aggregations: {
-        label: 'Total:',
-        columns: [
-          {
-            id: 'number',
-            align: 'start',
-            isSortable: false,
-          },
-        ],
-      },
-    }}
-  />
-);
+export const BasicDumbTable = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  return (
+    <MyTable
+      id="table"
+      secondaryTitle={text(
+        'Title shown in bar above header row (secondaryTitle)',
+        'Basic `dumb` table'
+      )}
+      useZebraStyles={boolean('Alternate colors in table rows (useZebraStyles)', false)}
+      lightweight={boolean('Show an alternate header style (lightweight)', false)}
+      tooltip={<div>Now with custom tooltip content!</div>}
+      columns={tableColumns}
+      data={tableData}
+      actions={tableActions}
+      options={{
+        hasAggregations: boolean(
+          'Aggregates column values and displays in a footer row (options.hasAggregations)',
+          true
+        ),
+        hasColumnSelection: boolean(
+          'Enables choosing which columns are available (options.hasColumnSelection)',
+          false
+        ),
+        hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', false),
+        hasMultiSort: boolean(
+          'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
+          false
+        ),
+        hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
+        hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
+        hasRowExpansion: boolean(
+          'Enables expanding rows to show additional content (options.hasRowExpansion)',
+          false
+        ),
+        hasRowNesting: boolean(
+          'Enables rows to have nested rows within (options.hasRowNesting)',
+          false
+        ),
+        hasRowSelection: select(
+          'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+          ['multi', 'single', false],
+          'multi'
+        ),
+        hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
+        hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
+        preserveColumnWidths: boolean(
+          'Preserve column widths when resizing (options.preserveColumnWidths)',
+          false
+        ),
+        useAutoTableLayoutForResize: boolean(
+          'Removes table-layout:fixed to allow resizable tables (options.useAutoTableLayoutForResize)',
+          false
+        ),
+        wrapCellText: select(
+          'Choose how text should wrap witin columns (options.wrapCellText)',
+          selectTextWrapping,
+          'always'
+        ),
+      }}
+      view={{
+        aggregations: {
+          label: 'Total:',
+          columns: [
+            {
+              id: 'number',
+              align: 'start',
+              isSortable: false,
+            },
+          ],
+        },
+      }}
+    />
+  );
+};
 
 BasicDumbTable.storyName = 'basic `dumb` table';
 
@@ -662,6 +707,9 @@ BasicDumbTable.parameters = {
 };
 
 export const TableExampleWithCreateSaveViews = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   // The initial default state for this story is one with no active filters
   // and no default search value etc, i.e. a view all scenario.
   const baseState = {
@@ -1018,7 +1066,7 @@ export const TableExampleWithCreateSaveViews = () => {
     <FullWidthWrapper>
       {renderManageViewsModal()}
       {renderSaveViewModal()}
-      <Table
+      <MyTable
         key={`table-story-${selectedView?.id}`}
         id="table"
         {...baseState}
@@ -1110,7 +1158,7 @@ export const TableExampleWithCreateSaveViews = () => {
   );
 };
 
-TableExampleWithCreateSaveViews.storyName = 'Table Example with Create & Save Views';
+TableExampleWithCreateSaveViews.storyName = 'with create & save view management';
 TableExampleWithCreateSaveViews.decorators = [createElement];
 
 TableExampleWithCreateSaveViews.parameters = {
@@ -1292,7 +1340,7 @@ export const BasicTableWithFullRowEditExample = () => {
   );
 };
 
-BasicTableWithFullRowEditExample.storyName = 'Basic table with full rowEdit example';
+BasicTableWithFullRowEditExample.storyName = 'with full rowEdit example';
 BasicTableWithFullRowEditExample.decorators = [createElement];
 
 BasicTableWithFullRowEditExample.parameters = {
@@ -1425,15 +1473,17 @@ export const RowSelectionAndBatchActions = () => {
   );
 };
 
-RowSelectionAndBatchActions.storyName =
-  'with row selection: single or multi-select and batch actions';
+RowSelectionAndBatchActions.storyName = 'with row selection and batch actions';
 
 export const WithRowExpansionAndActions = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   const renderDataFunction = ({ value }) => (
     <div style={{ color: value === 'BROKEN' ? 'red' : 'black' }}>{value}</div>
   );
   return (
-    <Table
+    <MyTable
       id="table"
       columns={tableColumns.map((c) => ({
         ...c,
@@ -1507,7 +1557,7 @@ export const WithRowExpansionAndActions = () => {
   );
 };
 
-WithRowExpansionAndActions.storyName = 'row expansion: with actions';
+WithRowExpansionAndActions.storyName = 'with row expansion, custom cell renderer, and actions';
 
 WithRowExpansionAndActions.parameters = {
   info: {
@@ -1683,8 +1733,11 @@ export const WithFilters = () => {
       true
     )
   );
+
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   return (
-    <Table
+    <MyTable
       id="table"
       columns={tableColumns}
       data={filteredData}
@@ -1718,6 +1771,9 @@ export const WithFilters = () => {
 WithFilters.storyName = 'with filtering and custom toolbar content';
 
 export const WithAdvancedFilters = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   const operands = {
     IN: (a, b) => a.includes(b),
     NEQ: (a, b) => a !== b,
@@ -1923,7 +1979,7 @@ export const WithAdvancedFilters = () => {
   return (
     <>
       <StoryNotice experimental componentName="Table with advancedFilters" />
-      <Table
+      <MyTable
         id="table"
         columns={tableColumns}
         data={filteredData}
@@ -1964,6 +2020,9 @@ export const WithAdvancedFilters = () => {
 WithAdvancedFilters.storyName = '☢️ with advanced filtering';
 
 export const WithTableStates = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   const emptyState = (
     <div key="empty-state">
       <h1 key="empty-state-heading">Custom empty state</h1>
@@ -1984,14 +2043,9 @@ export const WithTableStates = () => {
     />
   );
 
-  const loadingState = object('loadingState', {
-    isLoading: false,
-    rowCount: 7,
-  });
-
   const showErrorState = boolean('Show Custom Error State', false);
   return (
-    <Table
+    <MyTable
       id="table"
       columns={tableColumns}
       data={showErrorState ? tableData.slice(0, 20) : []}
@@ -2001,7 +2055,10 @@ export const WithTableStates = () => {
           ordering: defaultOrdering,
           emptyState: boolean('Show Custom Empty State', false) ? emptyState : undefined,
           errorState: showErrorState ? errorState : undefined,
-          loadingState,
+          loadingState: {
+            isLoading: boolean('isLoading', false),
+            rowCount: number('rowCount', 7),
+          },
         },
       }}
       options={{ hasPagination: true }}
@@ -2297,18 +2354,20 @@ export const FilteredSortedPaginatedTableWithAsynchronousDataSource = () => {
   return <AsyncTable fetchData={apiClient.getData} />;
 };
 
-FilteredSortedPaginatedTableWithAsynchronousDataSource.storyName =
-  'Filtered/Sorted/Paginated table with asynchronous data source';
+FilteredSortedPaginatedTableWithAsynchronousDataSource.storyName = 'with asynchronous data source';
 
 FilteredSortedPaginatedTableWithAsynchronousDataSource.parameters = {
   info: {
     text:
-      'This is an example of how to use the <Table> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
+      'This is an example of how to use the <MyTable> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
     source: false,
   },
 };
 
 export const WithStickyHeaderExperimentalAndCellTooltipCalculation = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   const renderDataFunction = ({ value }) => (
     <div style={{ position: 'relative' }} data-floating-menu-container>
       {value}
@@ -2326,7 +2385,8 @@ export const WithStickyHeaderExperimentalAndCellTooltipCalculation = () => {
   );
   return (
     <div>
-      <Table
+      <StoryNotice experimental componentName="Table with stickyHeader" />
+      <MyTable
         id="table"
         columns={tableColumns.map((i) => ({
           ...i,
@@ -2356,7 +2416,7 @@ export const WithStickyHeaderExperimentalAndCellTooltipCalculation = () => {
 };
 
 WithStickyHeaderExperimentalAndCellTooltipCalculation.storyName =
-  'with sticky header (experimental) and cell tooltip calculation';
+  '☢️ with sticky header and cell tooltip calculation';
 
 WithStickyHeaderExperimentalAndCellTooltipCalculation.parameters = {
   centered: { disable: true },
