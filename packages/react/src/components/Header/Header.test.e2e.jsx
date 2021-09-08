@@ -238,6 +238,32 @@ describe(
         cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
         cy.findByRole('menuitem', { name: 'Custom icon 1' }).should('not.exist');
       });
+
+      it('should get width from documentElement when innerWidth fails', () => {
+        cy.viewport(500, viewportHeight);
+        let originalWidth;
+        cy.window().then((win) => {
+          originalWidth = win.innerWidth;
+          Object.defineProperty(win, 'innerWidth', {
+            writable: true,
+            configurable: true,
+            value: undefined,
+          });
+        });
+
+        mount(<Header {...commonProps} />);
+
+        cy.findByRole('button', { name: 'open and close list of options' }).click();
+        cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
+        // I don't know if this is actually necessary in cypress, but just to be safe.
+        cy.window().then((win) => {
+          Object.defineProperty(win, 'innerWidth', {
+            writable: true,
+            configurable: true,
+            value: originalWidth,
+          });
+        });
+      });
     });
   }
 );

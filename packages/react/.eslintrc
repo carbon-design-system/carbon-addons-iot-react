@@ -137,6 +137,7 @@
         "jest/expect-expect": "off",
         "jest/valid-expect": "off",
         "jest/valid-describe": "off",
+        "jest/valid-expect-in-promise": "off",
         "no-unused-expressions": "off",
         "testing-library/prefer-screen-queries": "off",
         "import/no-extraneous-dependencies": "off",

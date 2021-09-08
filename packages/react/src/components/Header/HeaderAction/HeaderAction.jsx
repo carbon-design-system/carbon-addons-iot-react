@@ -9,6 +9,7 @@ import { white } from '@carbon/colors';
 import { keyCodes } from '../../../constants/KeyCodeConstants';
 import { HeaderActionItemPropTypes } from '../Header';
 import deprecate from '../../../internal/deprecate';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 import HeaderActionMenu from './HeaderActionMenu';
 import HeaderActionPanel from './HeaderActionPanel';
@@ -178,6 +179,8 @@ const HeaderAction = ({
     );
   }
 
+  const onClick = item.onClick || (() => {});
+  const onKeyDown = item.onKeyDown || onClick;
   // Otherwise render a simple menu button with no wrapper div
   return (
     <HeaderGlobalAction
@@ -185,7 +188,8 @@ const HeaderAction = ({
       key={`menu-item-${item.label}-global-${index}`}
       data-testid={`menu-item-${item.label}-global`}
       aria-label={item.label}
-      onClick={item.onClick || (() => {})}
+      onClick={onClick}
+      onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
     >
       {renderLabel ? item.label : item.btnContent}
     </HeaderGlobalAction>

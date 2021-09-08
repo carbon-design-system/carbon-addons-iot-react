@@ -143,10 +143,9 @@ const headerPanel = {
   className: 'header-panel',
 
   content: React.forwardRef((props, ref) => (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-    <a href="#" ref={ref} {...props}>
+    <button type="button" ref={ref} {...props}>
       Header panel content
-    </a>
+    </button>
   )),
 };
 
