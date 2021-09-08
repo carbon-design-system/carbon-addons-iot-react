@@ -45,6 +45,8 @@ const propTypes = {
   /** number of attributes */
   attributeCount: PropTypes.number.isRequired,
   testId: PropTypes.string,
+  /** callback when the attribute is clicked to trigger further action like opening a modal */
+  onValueClick: PropTypes.func,
 };
 
 const defaultProps = {
@@ -56,6 +58,7 @@ const defaultProps = {
   customFormatter: null,
   isEditable: false,
   testId: 'attribute',
+  onValueClick: null,
 };
 
 const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
@@ -65,7 +68,7 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { label, unit, thresholds, precision },
+  attribute: { label, unit, thresholds, precision, dataSourceId },
   attributeCount,
   customFormatter,
   isEditable,
@@ -77,6 +80,7 @@ const Attribute = ({
   fontSize,
   isNumberValueCompact,
   testId,
+  onValueClick,
 }) => {
   // matching threshold will be the first match in the list, or a value of null if not isEditable
   const matchingThreshold = thresholds
@@ -148,6 +152,8 @@ const Attribute = ({
             fontSize={fontSize}
             isNumberValueCompact={isNumberValueCompact}
             testId={`${testId}-value`}
+            dataSourceId={dataSourceId}
+            onClick={onValueClick}
           />
           <UnitRenderer unit={unit} testId={`${testId}-unit`} />
         </div>

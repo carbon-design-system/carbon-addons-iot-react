@@ -3,7 +3,7 @@
   "engines": {
     "node": "12.x || 14.x"
   },
-  "browser": "lib/index.js",
+  "browser": "es/index.js",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "umd/carbon-addons-iot-react.js",
@@ -343,7 +343,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.146.0-next.174",
+  "version": "2.146.0-next.179",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",
