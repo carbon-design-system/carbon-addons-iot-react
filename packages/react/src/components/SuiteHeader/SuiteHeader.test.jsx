@@ -1,4 +1,4 @@
-import { act, render, screen, waitFor, within } from '@testing-library/react';
+import { act, render, screen, waitFor, within, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
@@ -502,5 +502,439 @@ describe('SuiteHeader', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
     expect(onRouteChange).toHaveBeenCalledWith('PROFILE', 'https://www.ibm.com');
     expect(window.location.href).toBe('https://www.ibm.com');
+  });
+
+  it('should handle keyboard navigation for actionItems and panel links', async () => {
+    const onRouteChange = jest.fn().mockImplementation(() => true);
+    render(
+      <SuiteHeader
+        {...commonProps}
+        onRouteChange={onRouteChange}
+        customActionItems={[
+          {
+            label: 'chip',
+            hasHeaderPanel: true,
+            btnContent: (
+              <span id="chip-icon">
+                <Chip
+                  fill="white"
+                  description="chip-icon"
+                  className="bx--header__menu-item bx--header__menu-title"
+                />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is a title',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'a',
+                },
+                content: <span id="a-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLAnchorElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
+    expect(HTMLAnchorElement.prototype.click).toHaveBeenCalledTimes(1);
+    expect(onRouteChange).not.toHaveBeenCalled();
+    jest.resetAllMocks();
+  });
+
+  it('should handle keyboard navigation for actionItems and panel button with onClick', async () => {
+    const onRouteChange = jest.fn().mockImplementation(() => true);
+    const onClick = jest.fn();
+    render(
+      <SuiteHeader
+        {...commonProps}
+        onRouteChange={onRouteChange}
+        customActionItems={[
+          {
+            label: 'chip',
+            hasHeaderPanel: true,
+            btnContent: (
+              <span id="chip-icon">
+                <Chip
+                  fill="white"
+                  description="chip-icon"
+                  className="bx--header__menu-item bx--header__menu-title"
+                />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is a title',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'button',
+                  onClick,
+                },
+                content: <span id="a-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLButtonElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
+    expect(HTMLButtonElement.prototype.click).not.toHaveBeenCalled();
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onRouteChange).not.toHaveBeenCalled();
+    jest.resetAllMocks();
+  });
+
+  it('should handle keyboard navigation for actionItems and panel button without onClick', async () => {
+    const onRouteChange = jest.fn().mockImplementation(() => true);
+    render(
+      <SuiteHeader
+        {...commonProps}
+        onRouteChange={onRouteChange}
+        customActionItems={[
+          {
+            label: 'chip',
+            hasHeaderPanel: true,
+            btnContent: (
+              <span id="chip-icon">
+                <Chip
+                  fill="white"
+                  description="chip-icon"
+                  className="bx--header__menu-item bx--header__menu-title"
+                />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is a title',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'button',
+                },
+                content: <span id="a-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLButtonElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
+    expect(HTMLButtonElement.prototype.click).not.toHaveBeenCalled();
+    expect(onRouteChange).not.toHaveBeenCalled();
+    jest.resetAllMocks();
+  });
+
+  it('should handle keyboard navigation for actionItems and panel links with onClick', async () => {
+    const onRouteChange = jest.fn().mockImplementation(() => true);
+    const onClick = jest.fn();
+    render(
+      <SuiteHeader
+        {...commonProps}
+        onRouteChange={onRouteChange}
+        customActionItems={[
+          {
+            label: 'chip',
+            hasHeaderPanel: true,
+            btnContent: (
+              <span id="chip-icon">
+                <Chip
+                  fill="white"
+                  description="chip-icon"
+                  className="bx--header__menu-item bx--header__menu-title"
+                />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is a title',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'a',
+                  onClick,
+                },
+                content: <span id="a-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLAnchorElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
+    expect(HTMLAnchorElement.prototype.click).not.toHaveBeenCalled();
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onRouteChange).not.toHaveBeenCalled();
+    jest.resetAllMocks();
+  });
+
+  it('should handle keyboard navigation for actionItems and menu links', async () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        customActionItems={[
+          {
+            label: 'chip',
+            btnContent: (
+              <span id="chip-icon">
+                <Chip fill="white" description="chip-icon" />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is my message to you',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'a',
+                },
+                content: <span id="another-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLAnchorElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
+    expect(HTMLAnchorElement.prototype.click).toHaveBeenCalledTimes(1);
+    jest.resetAllMocks();
+  });
+
+  it('should handle keyboard navigation for actionItems and menu buttons', async () => {
+    const onClick = jest.fn();
+    render(
+      <SuiteHeader
+        {...commonProps}
+        customActionItems={[
+          {
+            label: 'chip',
+            btnContent: (
+              <span id="chip-icon">
+                <Chip fill="white" description="chip-icon" />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is my message to you',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'button',
+                  onClick,
+                },
+                content: <span id="another-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLButtonElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
+    expect(HTMLButtonElement.prototype.click).not.toHaveBeenCalled();
+    expect(onClick).toHaveBeenCalledTimes(1);
+    jest.resetAllMocks();
+  });
+
+  it('should handle keyboard navigation for actionItems and menu buttons without an onClick', async () => {
+    render(
+      <SuiteHeader
+        {...commonProps}
+        customActionItems={[
+          {
+            label: 'chip',
+            btnContent: (
+              <span id="chip-icon">
+                <Chip fill="white" description="chip-icon" />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is my message to you',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'button',
+                },
+                content: <span id="another-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLButtonElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
+    expect(HTMLButtonElement.prototype.click).not.toHaveBeenCalled();
+    jest.resetAllMocks();
+  });
+
+  it('should handle keyboard navigation for actionItems and menu links with onClick', async () => {
+    const onClick = jest.fn();
+    render(
+      <SuiteHeader
+        {...commonProps}
+        customActionItems={[
+          {
+            label: 'chip',
+            btnContent: (
+              <span id="chip-icon">
+                <Chip fill="white" description="chip-icon" />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is my message to you',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'a',
+                  onClick,
+                },
+                content: <span id="another-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLAnchorElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
+    expect(HTMLAnchorElement.prototype.click).not.toHaveBeenCalled();
+    expect(onClick).toHaveBeenCalledTimes(1);
+    jest.resetAllMocks();
+  });
+
+  it('should handle keyboard navigation for actionItems and menu links with onClick and onKeyDown', async () => {
+    const onClick = jest.fn();
+    const onKeyDown = jest.fn();
+    render(
+      <SuiteHeader
+        {...commonProps}
+        customActionItems={[
+          {
+            label: 'chip',
+            btnContent: (
+              <span id="chip-icon">
+                <Chip fill="white" description="chip-icon" />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is my message to you',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'a',
+                  onClick,
+                  onKeyDown,
+                },
+                content: <span id="another-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByRole('menuitem', { name: 'chip' }), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLAnchorElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is my message to you'), { key: 'Enter' });
+    expect(HTMLAnchorElement.prototype.click).not.toHaveBeenCalled();
+    expect(onClick).not.toHaveBeenCalled();
+    expect(onKeyDown).toHaveBeenCalledTimes(1);
+    jest.resetAllMocks();
+  });
+
+  it('should handle keyboard navigation for actionItems and panel links with onClick and onKeyDown', async () => {
+    const onRouteChange = jest.fn().mockImplementation(() => true);
+    const onClick = jest.fn();
+    const onKeyDown = jest.fn();
+    render(
+      <SuiteHeader
+        {...commonProps}
+        onRouteChange={onRouteChange}
+        customActionItems={[
+          {
+            label: 'chip',
+            hasHeaderPanel: true,
+            btnContent: (
+              <span id="chip-icon">
+                <Chip
+                  fill="white"
+                  description="chip-icon"
+                  className="bx--header__menu-item bx--header__menu-title"
+                />
+              </span>
+            ),
+            childContent: [
+              {
+                metaData: {
+                  href: 'https://www.ibm.com',
+                  title: 'this is a title',
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  element: 'a',
+                  onClick,
+                  onKeyDown,
+                },
+                content: <span id="a-message">this is my message to you</span>,
+              },
+            ],
+          },
+        ]}
+      />
+    );
+
+    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    expect(screen.getByText('this is my message to you')).toBeVisible();
+    jest.spyOn(HTMLAnchorElement.prototype, 'click');
+    fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
+    expect(HTMLAnchorElement.prototype.click).not.toHaveBeenCalled();
+    expect(onClick).not.toHaveBeenCalled();
+    expect(onRouteChange).not.toHaveBeenCalled();
+    expect(onKeyDown).toHaveBeenCalled();
+    jest.resetAllMocks();
   });
 });
