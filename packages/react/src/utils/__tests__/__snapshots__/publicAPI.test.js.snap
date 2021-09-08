@@ -1524,9 +1524,6 @@ Map {
                         "isLoading": Object {
                           "type": "bool",
                         },
-                        "isLoadingMore": Object {
-                          "type": "bool",
-                        },
                         "rowCount": Object {
                           "type": "number",
                         },
