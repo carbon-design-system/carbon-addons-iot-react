@@ -510,6 +510,7 @@ Map {
         "table": Object {
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
+          "loadingMoreIds": Array [],
           "loadingState": Object {
             "isLoadingMore": false,
             "rowCount": 5,
@@ -1506,6 +1507,14 @@ Map {
                   "isSelectAllSelected": Object {
                     "type": "bool",
                   },
+                  "loadingMoreIds": Object {
+                    "args": Array [
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
                   "loadingState": Object {
                     "args": Array [
                       Object {
@@ -2395,8 +2404,8 @@ Map {
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
-      "isLoadingMore": false,
       "langDir": "ltr",
+      "loadingMoreIds": Array [],
       "locale": null,
       "overflowMenuAria": "More actions",
       "rowActionsState": Array [],
@@ -2639,9 +2648,6 @@ Map {
       "inProgressText": Object {
         "type": "string",
       },
-      "isLoadingMore": Object {
-        "type": "bool",
-      },
       "langDir": Object {
         "args": Array [
           Array [
@@ -2656,6 +2662,14 @@ Map {
       },
       "loadMoreText": Object {
         "type": "string",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
       },
       "locale": Object {
         "type": "string",
@@ -20988,9 +21002,9 @@ Map {
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
-      "isLoadingMore": false,
       "itemWillMove": [Function],
       "items": Array [],
+      "loadingMoreIds": Array [],
       "onItemMoved": [Function],
       "overrides": null,
       "pagination": null,
@@ -21087,9 +21101,6 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
-      "isLoadingMore": Object {
-        "type": "bool",
-      },
       "itemWillMove": Object {
         "type": "func",
       },
@@ -21139,6 +21150,14 @@ Map {
               },
             ],
             "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
           },
         ],
         "type": "arrayOf",
@@ -32406,6 +32425,7 @@ Map {
     "TABLE_ROW_ACTION_START": "TABLE_ROW_ACTION_START",
     "TABLE_ROW_CLICK": "TABLE_ROW_CLICK",
     "TABLE_ROW_EXPAND": "TABLE_ROW_EXPAND",
+    "TABLE_ROW_LOAD_MORE": "TABLE_ROW_LOAD_MORE",
     "TABLE_ROW_SELECT": "TABLE_ROW_SELECT",
     "TABLE_ROW_SELECT_ALL": "TABLE_ROW_SELECT_ALL",
     "TABLE_SEARCH_APPLY": "TABLE_SEARCH_APPLY",
@@ -32439,6 +32459,7 @@ Map {
     "tableRowActionStart": Object {},
     "tableRowClick": Object {},
     "tableRowExpand": Object {},
+    "tableRowLoadMore": Object {},
     "tableRowSelect": Object {},
     "tableRowSelectAll": Object {},
     "tableSaveMultiSortColumns": Object {},

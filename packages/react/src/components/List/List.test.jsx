@@ -328,7 +328,8 @@ describe('List', () => {
       />
     );
     expect(mockLoadMore).not.toHaveBeenCalled();
-    userEvent.click(screen.getByTestId('test-list-site-02-load-more'));
+    userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+    // userEvent.click(screen.getByTestId('test-list-site-02-load-more'));
     expect(mockLoadMore).toHaveBeenCalledWith('site-02');
     expect(mockLoadMore).toHaveBeenCalledTimes(1);
   });

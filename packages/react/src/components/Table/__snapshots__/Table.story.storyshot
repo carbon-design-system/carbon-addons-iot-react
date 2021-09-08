@@ -63769,26 +63769,53 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 gNcEWg"
-              data-child-count={0}
-              data-nesting-offset={32}
+              isEditMode={false}
+              isSelectable={true}
+            >
+              <td
+                className="iot--load-more-cell"
+                colSpan={10}
+                data-testid="my-nested-table-table-body-loadMore--row-0_D-load-more"
+              >
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--load-more-cell--content iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Load more...
+                </button>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row bx--expandable-row TableBodyRow__StyledTableExpandRowExpanded-sc-103itxu-3 hkTPKC"
+              data-nesting-offset={16}
               data-parent-row={true}
               data-row-nesting={true}
               onClick={[Function]}
             >
               <td
                 className="bx--table-expand"
+                data-previous-value="collapsed"
                 headers="expand"
               >
                 <button
-                  aria-label="Click to expand content"
+                  aria-label="Click to collapse content"
                   className="bx--table-expand__button"
                   onClick={[Function]}
-                  title="Click to expand content"
+                  title="Click to collapse content"
                   type="button"
                 >
                   <svg
-                    aria-label="Click to expand content"
+                    aria-label="Click to collapse content"
                     className="bx--table-expand__svg"
                     fill="currentColor"
                     focusable="false"
@@ -63809,18 +63836,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 align="start"
                 className="data-table-start"
                 data-column="string"
-                data-offset={32}
-                id="cell-my-nested-table-row-0_D-4-string"
-                offset={32}
+                data-offset={16}
+                id="cell-my-nested-table-row-0_E-string"
+                offset={16}
               >
                 <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 fRNuSp"
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ldXASM"
                 >
                   <span
                     className=""
-                    title="toyota toyota toyota 0D-4"
+                    title="toyota toyota toyota 0E"
                   >
-                    toyota toyota toyota 0D-4
+                    toyota toyota toyota 0E
                   </span>
                 </span>
               </td>
@@ -63829,7 +63856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="date"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-4-date"
+                id="cell-my-nested-table-row-0_E-date"
                 offset={0}
               >
                 <span
@@ -63848,7 +63875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="select"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-4-select"
+                id="cell-my-nested-table-row-0_E-select"
                 offset={0}
               >
                 <span
@@ -63867,7 +63894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="secretField"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-4-secretField"
+                id="cell-my-nested-table-row-0_E-secretField"
                 offset={0}
               >
                 <span
@@ -63875,9 +63902,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <span
                     className=""
-                    title="AAAAAAAAAAD-4"
+                    title="AAAAAAAAAAE"
                   >
-                    AAAAAAAAAAD-4
+                    AAAAAAAAAAE
                   </span>
                 </span>
               </td>
@@ -63886,7 +63913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="status"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-4-status"
+                id="cell-my-nested-table-row-0_E-status"
                 offset={0}
               >
                 <span
@@ -63916,7 +63943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="number"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-4-number"
+                id="cell-my-nested-table-row-0_E-number"
                 offset={0}
               >
                 <span
@@ -63928,7 +63955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="boolean"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-4-boolean"
+                id="cell-my-nested-table-row-0_E-boolean"
                 offset={0}
               >
                 <span
@@ -63947,7 +63974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="node"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-4-node"
+                id="cell-my-nested-table-row-0_E-node"
                 offset={0}
               >
                 <span
@@ -63974,7 +64001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start iot--table__cell--sortable"
                 data-column="object"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-4-object"
+                id="cell-my-nested-table-row-0_E-object"
                 offset={0}
               >
                 <span
@@ -64031,7 +64058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="string"
                 data-offset={32}
-                id="cell-my-nested-table-row-0_D-5-string"
+                id="cell-my-nested-table-row-0_E-1-string"
                 offset={32}
               >
                 <span
@@ -64039,9 +64066,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <span
                     className=""
-                    title="toyota toyota toyota 0D-5"
+                    title="toyota toyota toyota 0E-1"
                   >
-                    toyota toyota toyota 0D-5
+                    toyota toyota toyota 0E-1
                   </span>
                 </span>
               </td>
@@ -64050,7 +64077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="date"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-5-date"
+                id="cell-my-nested-table-row-0_E-1-date"
                 offset={0}
               >
                 <span
@@ -64069,7 +64096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="select"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-5-select"
+                id="cell-my-nested-table-row-0_E-1-select"
                 offset={0}
               >
                 <span
@@ -64088,7 +64115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="secretField"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-5-secretField"
+                id="cell-my-nested-table-row-0_E-1-secretField"
                 offset={0}
               >
                 <span
@@ -64096,9 +64123,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <span
                     className=""
-                    title="AAAAAAAAAAD-5"
+                    title="AAAAAAAAAAE-1"
                   >
-                    AAAAAAAAAAD-5
+                    AAAAAAAAAAE-1
                   </span>
                 </span>
               </td>
@@ -64107,7 +64134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="status"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-5-status"
+                id="cell-my-nested-table-row-0_E-1-status"
                 offset={0}
               >
                 <span
@@ -64137,7 +64164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="number"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-5-number"
+                id="cell-my-nested-table-row-0_E-1-number"
                 offset={0}
               >
                 <span
@@ -64149,7 +64176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="boolean"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-5-boolean"
+                id="cell-my-nested-table-row-0_E-1-boolean"
                 offset={0}
               >
                 <span
@@ -64168,7 +64195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="node"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-5-node"
+                id="cell-my-nested-table-row-0_E-1-node"
                 offset={0}
               >
                 <span
@@ -64195,7 +64222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start iot--table__cell--sortable"
                 data-column="object"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-5-object"
+                id="cell-my-nested-table-row-0_E-1-object"
                 offset={0}
               >
                 <span
@@ -64252,7 +64279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="string"
                 data-offset={32}
-                id="cell-my-nested-table-row-0_D-6-string"
+                id="cell-my-nested-table-row-0_E-2-string"
                 offset={32}
               >
                 <span
@@ -64260,9 +64287,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <span
                     className=""
-                    title="toyota toyota toyota 0D-6"
+                    title="toyota toyota toyota 0E-2"
                   >
-                    toyota toyota toyota 0D-6
+                    toyota toyota toyota 0E-2
                   </span>
                 </span>
               </td>
@@ -64271,7 +64298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="date"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-6-date"
+                id="cell-my-nested-table-row-0_E-2-date"
                 offset={0}
               >
                 <span
@@ -64290,7 +64317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="select"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-6-select"
+                id="cell-my-nested-table-row-0_E-2-select"
                 offset={0}
               >
                 <span
@@ -64309,7 +64336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="secretField"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-6-secretField"
+                id="cell-my-nested-table-row-0_E-2-secretField"
                 offset={0}
               >
                 <span
@@ -64317,9 +64344,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <span
                     className=""
-                    title="AAAAAAAAAAD-6"
+                    title="AAAAAAAAAAE-2"
                   >
-                    AAAAAAAAAAD-6
+                    AAAAAAAAAAE-2
                   </span>
                 </span>
               </td>
@@ -64328,7 +64355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="status"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-6-status"
+                id="cell-my-nested-table-row-0_E-2-status"
                 offset={0}
               >
                 <span
@@ -64358,7 +64385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="number"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-6-number"
+                id="cell-my-nested-table-row-0_E-2-number"
                 offset={0}
               >
                 <span
@@ -64370,7 +64397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="boolean"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-6-boolean"
+                id="cell-my-nested-table-row-0_E-2-boolean"
                 offset={0}
               >
                 <span
@@ -64389,7 +64416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start"
                 data-column="node"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-6-node"
+                id="cell-my-nested-table-row-0_E-2-node"
                 offset={0}
               >
                 <span
@@ -64416,7 +64443,228 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="data-table-start iot--table__cell--sortable"
                 data-column="object"
                 data-offset={0}
-                id="cell-my-nested-table-row-0_D-6-object"
+                id="cell-my-nested-table-row-0_E-2-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 gNcEWg"
+              data-child-count={0}
+              data-nesting-offset={32}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={32}
+                id="cell-my-nested-table-row-0_E-3-string"
+                offset={32}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 fRNuSp"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0E-3"
+                  >
+                    toyota toyota toyota 0E-3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAE-3"
+                  >
+                    AAAAAAAAAAE-3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start iot--table__cell--sortable"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-object"
                 offset={0}
               >
                 <span
@@ -64438,14 +64686,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 className="iot--load-more-cell"
                 colSpan={10}
-                data-testid="my-nested-table-table-body-loadMore--row-0_D-load-more"
-                onClick={[Function]}
+                data-testid="my-nested-table-table-body-loadMore--row-0_E-load-more"
               >
-                <div
-                  className="iot--load-more-cell--content"
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--load-more-cell--content iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={0}
+                  type="button"
                 >
                   Load more...
-                </div>
+                </button>
               </td>
             </tr>
             <tr

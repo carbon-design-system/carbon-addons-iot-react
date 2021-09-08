@@ -29,7 +29,7 @@ describe('TableBodyLoadMoreRow', () => {
       }
     );
     expect(mockLoadMore).not.toHaveBeenCalled();
-    userEvent.click(screen.getByTestId(`${tableRowProps.testId}-${tableRowProps.id}-load-more`));
+    userEvent.click(screen.getByRole('button', { name: tableRowProps.loadMoreText }));
     expect(mockLoadMore).toHaveBeenCalledWith(tableRowProps.id);
   });
 });
