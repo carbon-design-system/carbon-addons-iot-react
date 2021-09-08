@@ -152,11 +152,17 @@ class HeaderActionMenu extends React.Component {
             const title =
               childItem.metaData?.title ?? (childIsOverflowing ? fallbackTitle : undefined);
             const onKeyDownClick = (e) => e.target.click();
+
+            // if the item is an A and doesn't have an onClick event
+            // do nothing. An A tag doesn't need an onClick handler.
             const onClick =
               childItem.metaData?.element === 'a' && !childItem.metaData?.onClick
                 ? undefined
-                : childItem.metaData?.onClick || (() => {});
+                : // otherwise, if an onClick exists use that, or fallback to a noop.
+                  childItem.metaData?.onClick || (() => {});
 
+            // if item has onKeyDown use that otherwise, fallback to onClick if it exists
+            // or create a custom handler to trigger the click
             const onKeyDown = childItem?.metaData?.onKeyDown
               ? childItem.metaData.onKeyDown
               : onClick || onKeyDownClick;

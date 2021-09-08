@@ -101,7 +101,7 @@ const HeaderActionPanel = ({
             const ChildElement = element || 'a';
             const onKeyDownClick = (e) => e.target.click();
 
-            // otherwise if the item is an A and doesn't have an onClick event
+            // if the item is an A and doesn't have an onClick event
             // do nothing. An A tag doesn't need an onClick handler.
             const onClick =
               ChildElement === 'a' && !metaData?.onClick
@@ -111,9 +111,7 @@ const HeaderActionPanel = ({
 
             // if item has onKeyDown use that otherwise, fallback to onClick if it exists
             // or create a custom handler to trigger the click
-            const onKeyDown = metaData?.onKeyDown
-              ? childItem.metaData.onKeyDown
-              : onClick || onKeyDownClick;
+            const onKeyDown = metaData?.onKeyDown ? metaData.onKeyDown : onClick || onKeyDownClick;
 
             return (
               <li key={`listitem-${item.label}-${k}`} className="action-btn__headerpanel-li">
