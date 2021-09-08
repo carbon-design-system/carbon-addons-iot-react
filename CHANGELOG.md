@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.180](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.179...v2.146.0-next.180) (2021-09-08)
+
+
+### Bug Fixes
+
+* **statefultable:** increased coverage and fixed a reducer action ([ccc87af](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ccc87afbb2f6e241b2165c755f990e0059512def)), closes [#2802](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2802)
+
+
+
+
+
 # [2.146.0-next.179](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.178...v2.146.0-next.179) (2021-09-07)
 
 
