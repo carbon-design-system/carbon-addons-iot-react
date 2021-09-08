@@ -502,7 +502,11 @@ export const initialState = {
     hasColumnSelection: true,
     shouldExpandOnRowClick: false,
     hasRowEdit: true,
-    wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+    wrapCellText: select(
+      'Choose how text should wrap witin columns (options.wrapCellText)',
+      selectTextWrapping,
+      'always'
+    ),
   },
   view: {
     filters: [
@@ -609,7 +613,11 @@ export const BasicDumbTable = () => {
         ),
         hasColumnSelection,
         hasColumnSelectionConfig,
-        hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', false),
+        hasFilter: select(
+          'Enables filtering columns by value (options.hasFilter)',
+          ['onKeyPress', 'onEnterAndBlur', true, false],
+          true
+        ),
         hasMultiSort: boolean(
           'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
           false
@@ -938,12 +946,12 @@ export const TableExampleWithCreateSaveViews = () => {
             setViewToSave(viewToEdit);
           },
           onDelete,
-          onClearError: action('onClearManageViewsModalError'),
+          onClearError: action('TableManageViewsModal: onClearManageViewsModalError'),
           onClose: () => setManageViewsModalOpen(false),
         }}
         defaultViewId={defaultViewId}
-        error={select('error', [undefined, 'My error msg'], undefined)}
-        isLoading={boolean('isLoading', false)}
+        error={select('TableManageViewsModal: error', [undefined, 'My error msg'], undefined)}
+        isLoading={boolean('TableManageViewsModal: isLoading', false)}
         open={manageViewsModalOpen}
         views={manageViewsCurrentPageItems}
         pagination={{
@@ -1058,14 +1066,14 @@ export const TableExampleWithCreateSaveViews = () => {
             onClose: () => {
               setViewToSave(undefined);
             },
-            onClearError: action('onClearError'),
-            onChange: action('onChange'),
+            onClearError: action('TableSaveViewModal: onClearError'),
+            onChange: action('TableSaveViewModal: onChange'),
           }}
-          sendingData={boolean('sendingData', false)}
-          error={select('error', [undefined, 'My error msg'], undefined)}
+          sendingData={boolean('TableSaveViewModal: sendingData', false)}
+          error={select('TableSaveViewModal: error', [undefined, 'My error msg'], undefined)}
           open
-          titleInputInvalid={boolean('titleInputInvalid', false)}
-          titleInputInvalidText={text('titleInputInvalidText', undefined)}
+          titleInputInvalid={boolean('TableSaveViewModal: titleInputInvalid', false)}
+          titleInputInvalidText={text('TableSaveViewModal: titleInputInvalidText', undefined)}
           viewDescription={getDescription(viewToSave.props.view)}
           initialFormValues={{
             title: viewToSave.title,
@@ -1161,12 +1169,20 @@ export const TableExampleWithCreateSaveViews = () => {
           },
         }}
         isSortable
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           ...baseState.options,
           hasResize: true,
-          hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          hasFilter: select(
+            'hasFilter',
+            ['onKeyPress', 'onEnterAndBlur', true, false],
+            'onKeyPress'
+          ),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
           // Enables the behaviour in Table required
           // to fully implement Create and Save Views
           hasUserViewManagement: true,
@@ -1475,7 +1491,11 @@ export const RowSelectionAndBatchActions = () => {
       }))}
       actions={tableActions}
       options={{
-        hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', true),
+        hasFilter: select(
+          'Enables filtering columns by value (options.hasFilter)',
+          ['onKeyPress', 'onEnterAndBlur', true, false],
+          'onKeyPress'
+        ),
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
         hasRowSelection,
         hasRowExpansion: boolean(
@@ -2364,7 +2384,11 @@ export const HorizontalScrollCustomWidth = () => {
         id="table"
         columns={tableColumns.concat(tableColumnsConcat)}
         options={{
-          hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', true),
+          hasFilter: select(
+            'Enables filtering columns by value (options.hasFilter)',
+            ['onKeyPress', 'onEnterAndBlur', true, false],
+            'onKeyPress'
+          ),
           hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
           wrapCellText: select(
             'Choose how text should wrap witin columns (options.wrapCellText)',
@@ -2445,7 +2469,11 @@ export const AsyncColumnLoading = () => {
           true
         ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', true),
-        hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', true),
+        hasFilter: select(
+          'Enables filtering columns by value (options.hasFilter)',
+          ['onKeyPress', 'onEnterAndBlur', true, false],
+          'onKeyPress'
+        ),
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
       }}
       view={{

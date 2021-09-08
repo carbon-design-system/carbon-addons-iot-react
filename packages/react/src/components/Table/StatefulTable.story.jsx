@@ -70,7 +70,10 @@ export const StatefulTableWithNestedRowItems = (props) => {
       <MyTable
         id="table"
         {...initialState}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
         columns={tableColumnsFixedWidth}
         data={tableData}
         options={{
@@ -78,7 +81,11 @@ export const StatefulTableWithNestedRowItems = (props) => {
           hasRowNesting: true,
           hasFilter: true,
           hasResize: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'alwaysTruncate'),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'alwaysTruncate'
+          ),
         }}
         view={{
           ...initialState.view,
@@ -88,7 +95,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
           },
         }}
         actions={tableActions}
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         {...props}
       />
     </div>
@@ -293,7 +300,10 @@ export const StatefulExampleWithSingleNestedHierarchy = () => {
       <MyTable
         id="table"
         {...initialState}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
         columns={tableColumns}
         data={tableData}
         options={{
@@ -304,10 +314,14 @@ export const StatefulExampleWithSingleNestedHierarchy = () => {
               true
             ),
           },
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
         }}
         actions={tableActions}
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
       />
     </div>
   );
@@ -379,14 +393,22 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => {
           width: '150px',
         }))}
         actions={tableActions}
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           hasAggregations: true,
-          hasPagination: boolean('hasPagination', true),
-          hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+          hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
+          hasRowSelection: select(
+            'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+            ['multi', 'single'],
+            'multi'
+          ),
           hasRowExpansion: false,
           hasResize: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
           preserveColumnWidths: true,
         }}
         view={{
@@ -399,7 +421,12 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => {
               },
             ],
           },
-          table: { selectedIds: array('selectedIds', []) },
+          table: {
+            selectedIds: array(
+              'An array of currently selected rowIds (view.table.selectedIds)',
+              []
+            ),
+          },
         }}
       />
     </FullWidthWrapper>
@@ -426,7 +453,10 @@ export const SimpleStatefulExampleWithAlignment = () => {
       <MyTable
         id="table"
         {...initialState}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
         columns={tableColumnsWithAlignment.map((c, idx) => ({
           ...c,
           width: idx % 2 === 0 ? '100px' : '200px',
@@ -437,12 +467,26 @@ export const SimpleStatefulExampleWithAlignment = () => {
           isSelectable: index % 3 !== 0,
         }))}
         actions={tableActions}
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
-          hasRowSelection: select('options.hasRowSelection', ['multi', 'single'], 'multi'),
-          hasRowExpansion: boolean('options.hasRowExpansion', false),
+          hasRowSelection: select(
+            'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+            ['multi', 'single', false],
+            'multi'
+          ),
+          hasRowExpansion: boolean(
+            'Enables expanding rows to show additional content (options.hasRowExpansion)',
+            false
+          ),
         }}
-        view={{ table: { selectedIds: array('selectedIds', []) } }}
+        view={{
+          table: {
+            selectedIds: array(
+              'An array of currently selected rowIds (view.table.selectedIds)',
+              []
+            ),
+          },
+        }}
       />
     </FullWidthWrapper>
   );
@@ -466,18 +510,29 @@ export const StatefulExampleWithEveryThirdRowUnselectable = () => {
     <MyTable
       id="table"
       {...initialState}
-      secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+      secondaryTitle={text(
+        'Title shown in bar above header row (secondaryTitle)',
+        `Row count: ${initialState.data.length}`
+      )}
       data={initialState.data.map((eachRow, index) => ({
         ...eachRow,
         isSelectable: index % 3 !== 0,
       }))}
       actions={tableActions}
-      lightweight={boolean('lightweight', false)}
+      lightweight={boolean('Show an alternate header style (lightweight)', false)}
       options={{
-        hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+        hasRowSelection: select(
+          'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+          ['multi', 'single', false],
+          'multi'
+        ),
         hasRowExpansion: false,
       }}
-      view={{ table: { selectedIds: array('selectedIds', []) } }}
+      view={{
+        table: {
+          selectedIds: array('An array of currently selected rowIds (view.table.selectedIds)', []),
+        },
+      }}
     />
   );
 };
@@ -524,7 +579,10 @@ export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => {
             ),
           },
         }}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
         actions={{
           ...tableActions,
           toolbar: {
@@ -532,12 +590,20 @@ export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => {
             onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, 'my table data'),
           },
         }}
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           ...initialState.options,
           hasResize: true,
-          hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          hasFilter: select(
+            'Enables filtering columns by value (options.hasFilter)',
+            ['onKeyPress', 'onEnterAndBlur', true, false],
+            'onKeyPress'
+          ),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
           hasSingleRowEdit: true,
         }}
       />
@@ -816,12 +882,12 @@ export const StatefulExampleWithCreateSaveViews = () => {
             setViewToSave(viewToEdit);
           },
           onDelete,
-          onClearError: action('onClearManageViewsModalError'),
+          onClearError: action('TableManageViewsModal: onClearManageViewsModalError'),
           onClose: () => setManageViewsModalOpen(false),
         }}
         defaultViewId={defaultViewId}
-        error={select('error', [undefined, 'My error msg'], undefined)}
-        isLoading={boolean('isLoading', false)}
+        error={select('TableManageViewsModal: error', [undefined, 'My error msg'], undefined)}
+        isLoading={boolean('TableManageViewsModal: isLoading', false)}
         open={manageViewsModalOpen}
         views={manageViewsCurrentPageItems}
         pagination={{
@@ -939,14 +1005,14 @@ export const StatefulExampleWithCreateSaveViews = () => {
             onClose: () => {
               setViewToSave(undefined);
             },
-            onClearError: action('onClearError'),
-            onChange: action('onChange'),
+            onClearError: action('TableSaveViewModal: onClearError'),
+            onChange: action('TableSaveViewModal: onChange'),
           }}
-          sendingData={boolean('sendingData', false)}
-          error={select('error', [undefined, 'My error msg'], undefined)}
+          sendingData={boolean('TableSaveViewModal: sendingData', false)}
+          error={select('TableSaveViewModal: error', [undefined, 'My error msg'], undefined)}
           open
-          titleInputInvalid={boolean('titleInputInvalid', false)}
-          titleInputInvalidText={text('titleInputInvalidText', undefined)}
+          titleInputInvalid={boolean('TableSaveViewModal: titleInputInvalid', false)}
+          titleInputInvalidText={text('TableSaveViewModal: titleInputInvalidText', undefined)}
           viewDescription={getDescription(viewToSave.props.view)}
           initialFormValues={{
             title: viewToSave.title,
@@ -1003,12 +1069,20 @@ export const StatefulExampleWithCreateSaveViews = () => {
           ...tableActions,
           onUserViewModified,
         }}
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           ...defaultState.options,
           hasResize: true,
-          hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          hasFilter: select(
+            'Enables filtering columns by value (options.hasFilter)',
+            ['onKeyPress', 'onEnterAndBlur', true, false],
+            'onKeyPress'
+          ),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
           // Enables the behaviour in StatefulTable and Table required
           // to fully implement Create and Save Views
           hasUserViewManagement: true,
@@ -1065,7 +1139,10 @@ export const WithPreFilledSearch = () => {
       </Button>
       <MyTable
         id="table"
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
         style={{ maxWidth: '300px' }}
         columns={tableColumns.slice(0, 2)}
         data={tableData}
@@ -1083,7 +1160,10 @@ export const WithPreFilledSearch = () => {
           },
         }}
         i18n={{
-          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+          emptyButtonLabelWithFilters: text(
+            'i18n strings for translation (i18n.emptyButtonLabel)',
+            '__Clear all filters__'
+          ),
         }}
       />
     </>
