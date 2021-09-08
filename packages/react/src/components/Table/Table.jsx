@@ -12,6 +12,7 @@ import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
+import experimental from '../../internal/experimental';
 
 import {
   TableColumnsPropTypes,
@@ -53,6 +54,9 @@ const propTypes = {
   data: TableRowPropTypes.isRequired,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
+
+  /** Experimental: Turns on the carbon sticky-header feature. */
+  stickyHeader: experimental('stickyHeader'),
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     /** If true allows the table to aggregate values of columns in a special row */
