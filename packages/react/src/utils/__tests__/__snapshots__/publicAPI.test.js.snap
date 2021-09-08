@@ -1252,6 +1252,7 @@ Map {
       "secondaryTitle": Object {
         "type": "string",
       },
+      "stickyHeader": [Function],
       "testId": Object {
         "type": "string",
       },
