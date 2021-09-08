@@ -1096,16 +1096,13 @@ WithPreFilledSearch.parameters = {
 };
 
 export const StatefulTableWithAdvancedFilters = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-
   const [showBuilder, setShowBuilder] = useState(false);
 
   const [advancedFilters, setAdvancedFilters] = useState([
     {
       filterId: 'story-filter',
       /** Text for main tilte of page */
-      filterTitleText: 'Story Filter',
+      filterTitleText: 'date CONTAINS 19, boolean=true',
       /** Text for metadata for the filter */
       filterMetaText: `last updated: 2021-03-11 15:34:01`,
       /** tags associated with particular filter */
@@ -1192,7 +1189,7 @@ export const StatefulTableWithAdvancedFilters = () => {
     {
       filterId: 'next-filter',
       /** Text for main tilte of page */
-      filterTitleText: 'Next Filter',
+      filterTitleText: 'select=Option c, boolean=false',
       /** Text for metadata for the filter */
       filterMetaText: `last updated: 2021-03-11 15:34:01`,
       /** tags associated with particular filter */
@@ -1283,7 +1280,7 @@ export const StatefulTableWithAdvancedFilters = () => {
       <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
 
       <div style={{ position: 'relative' }}>
-        <MyTable
+        <StatefulTable
           id="table"
           columns={tableColumns}
           data={tableData}

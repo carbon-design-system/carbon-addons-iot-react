@@ -585,6 +585,12 @@ export const BasicDumbTable = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
 
+  const secondaryTitle = text(
+    'Title shown in bar above header row (secondaryTitle)',
+    'Basic `dumb` table'
+  );
+  const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
+  const lightweight = boolean('Show an alternate header style (lightweight)', false);
   const hasColumnSelection = boolean(
     'Enables choosing which columns are visible or drag-and-drop reorder them (options.hasColumnSelection)',
     false
@@ -597,12 +603,9 @@ export const BasicDumbTable = () => {
   return (
     <MyTable
       id="table"
-      secondaryTitle={text(
-        'Title shown in bar above header row (secondaryTitle)',
-        'Basic `dumb` table'
-      )}
-      useZebraStyles={boolean('Alternate colors in table rows (useZebraStyles)', false)}
-      lightweight={boolean('Show an alternate header style (lightweight)', false)}
+      secondaryTitle={secondaryTitle}
+      useZebraStyles={useZebraStyles}
+      lightweight={lightweight}
       tooltip={<div>Now with custom tooltip content!</div>}
       columns={tableColumns}
       data={tableData}
@@ -1794,9 +1797,6 @@ export const WithFilters = () => {
 WithFilters.storyName = 'with filtering and custom toolbar content';
 
 export const WithAdvancedFilters = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-
   const operands = {
     IN: (a, b) => a.includes(b),
     NEQ: (a, b) => a !== b,
@@ -2002,7 +2002,7 @@ export const WithAdvancedFilters = () => {
   return (
     <>
       <StoryNotice experimental componentName="Table with advancedFilters" />
-      <MyTable
+      <Table
         id="table"
         columns={tableColumns}
         data={filteredData}
