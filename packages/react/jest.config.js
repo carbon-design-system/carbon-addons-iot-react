@@ -25,7 +25,10 @@ module.exports = {
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
   coverageDirectory: 'jest/coverage',
   coverageThreshold: {
+    './src/components/List/ListItem/ListItem.jsx': all90Covered,
     './src/components/DashboardEditor/editorUtils.jsx': all90Covered,
+    './src/components/Table/baseTableReducer.js': all90Covered,
+    './src/components/Table/tableReducer.js': all90Covered,
     './src/components/Card/Card.jsx': all90Covered,
     './src/components/TimePickerSpinner/TimePickerSpinner.jsx': all90Covered,
     './src/components/List/HierarchyList/HierarchyList.jsx': all90Covered,
@@ -67,6 +70,7 @@ module.exports = {
     './src/components/ComposedStructuredList/ComposedStructuredList.jsx': all90Covered,
     './src/components/NavigationBar/NavigationBar.jsx': all90Covered,
     './src/components/TileCatalog/CatalogContent.jsx': all90Covered,
+    './src/components/CardEditor/CardEditForm/CardEditFormItems/ThresholdsFormItem.jsx': all90Covered,
     './src/components/ImageCard/ImageUploader.jsx': all90Covered,
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
     './src/components/BarChartCard/BarChartCard.jsx': {

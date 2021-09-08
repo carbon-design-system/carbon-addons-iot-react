@@ -512,7 +512,7 @@ Map {
           "isSelectAllSelected": undefined,
           "loadingMoreIds": Array [],
           "loadingState": Object {
-            "isLoadingMore": false,
+            "columnCount": 5,
             "rowCount": 5,
           },
           "ordering": undefined,
@@ -1518,6 +1518,9 @@ Map {
                   "loadingState": Object {
                     "args": Array [
                       Object {
+                        "columnCount": Object {
+                          "type": "number",
+                        },
                         "isLoading": Object {
                           "type": "bool",
                         },
@@ -3440,6 +3443,7 @@ Map {
   },
   "TableSkeletonWithHeaders" => Object {
     "defaultProps": Object {
+      "columnCount": 5,
       "columns": Array [],
       "hasRowActions": false,
       "hasRowExpansion": false,
@@ -3449,6 +3453,9 @@ Map {
       "testId": "",
     },
     "propTypes": Object {
+      "columnCount": Object {
+        "type": "number",
+      },
       "columns": Object {
         "args": Array [
           Object {
@@ -10539,6 +10546,7 @@ Map {
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
+      "onRenderCardEditForm": null,
       "onSubmit": null,
       "onValidateCardJson": null,
       "onValidateUploadedImage": null,
@@ -11133,6 +11141,9 @@ Map {
       "onLayoutChange": Object {
         "type": "func",
       },
+      "onRenderCardEditForm": Object {
+        "type": "func",
+      },
       "onSubmit": Object {
         "type": "func",
       },
@@ -11167,6 +11178,7 @@ Map {
       },
     },
   },
+  "DashboardEditorDefaultCardRenderer" => Object {},
   "CardEditor" => Object {
     "defaultProps": Object {
       "availableDimensions": Object {},
@@ -11190,6 +11202,7 @@ Map {
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
       "onEditDataItems": null,
+      "onRenderCardEditForm": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -11395,6 +11408,9 @@ Map {
         "type": "func",
       },
       "onEditDataItems": Object {
+        "type": "func",
+      },
+      "onRenderCardEditForm": Object {
         "type": "func",
       },
       "onShowGallery": Object {
@@ -13834,6 +13850,7 @@ Map {
       "fontSize": 42,
       "isNumberValueCompact": false,
       "locale": "en",
+      "onAttributeClick": null,
       "size": "MEDIUM",
       "testId": "Card",
       "values": null,
@@ -14670,6 +14687,9 @@ Map {
       },
       "locale": Object {
         "type": "string",
+      },
+      "onAttributeClick": Object {
+        "type": "func",
       },
       "onBlur": Object {
         "type": "func",

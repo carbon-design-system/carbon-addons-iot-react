@@ -206,7 +206,7 @@ const propTypes = {
       loadingState: PropTypes.shape({
         isLoading: PropTypes.bool,
         rowCount: PropTypes.number,
-        isLoadingMore: PropTypes.bool,
+        columnCount: PropTypes.number,
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
@@ -346,7 +346,7 @@ export const defaultProps = (baseProps) => ({
       ordering: baseProps.columns && baseProps.columns.map((i) => ({ columnId: i.id })),
       loadingState: {
         rowCount: 5,
-        isLoadingMore: false,
+        columnCount: 5,
       },
       singleRowEditButtons: null,
       loadingMoreIds: [],
@@ -837,61 +837,63 @@ const Table = (props) => {
           })}
           {...others}
         >
-          <TableHead
-            {...others}
-            i18n={i18n}
-            lightweight={lightweight}
-            options={{
-              ...pick(
-                options,
-                'hasAggregations',
-                'hasColumnSelectionConfig',
-                'hasResize',
-                'hasRowActions',
-                'hasRowExpansion',
-                'hasRowNesting',
-                'hasSingleRowEdit',
-                'hasRowSelection',
-                'useAutoTableLayoutForResize',
-                'hasMultiSort',
-                'preserveColumnWidths'
-              ),
-              wrapCellText: options.wrapCellText,
-              truncateCellText: useCellTextTruncate,
-            }}
-            columns={columns}
-            filters={view.filters}
-            actions={{
-              ...pick(actions.toolbar, 'onApplyFilter'),
-              ...pick(
-                actions.table,
-                'onSelectAll',
-                'onChangeSort',
-                'onChangeOrdering',
-                'onColumnSelectionConfig',
-                'onOverflowItemClicked'
-              ),
-              onColumnResize: handleOnColumnResize,
-            }}
-            selectAllText={i18n.selectAllAria}
-            clearFilterText={i18n.clearFilterAria}
-            filterText={i18n.filterAria}
-            clearSelectionText={i18n.clearSelectionAria}
-            openMenuText={i18n.openMenuAria}
-            closeMenuText={i18n.closeMenuAria}
-            tableId={id || tableId}
-            tableState={{
-              isDisabled: rowEditMode || singleRowEditMode,
-              activeBar: view.toolbar.activeBar,
-              filters: view.filters,
-              ...view.table,
-              selection: { isSelectAllSelected, isSelectAllIndeterminate },
-            }}
-            hasFastFilter={options?.hasFilter === 'onKeyPress'}
-            // TODO: remove id in v3
-            testId={`${id || testId}-table-head`}
-            showExpanderColumn={showExpanderColumn}
-          />
+          {columns.length ? (
+            <TableHead
+              {...others}
+              i18n={i18n}
+              lightweight={lightweight}
+              options={{
+                ...pick(
+                  options,
+                  'hasAggregations',
+                  'hasColumnSelectionConfig',
+                  'hasResize',
+                  'hasRowActions',
+                  'hasRowExpansion',
+                  'hasRowNesting',
+                  'hasSingleRowEdit',
+                  'hasRowSelection',
+                  'useAutoTableLayoutForResize',
+                  'hasMultiSort',
+                  'preserveColumnWidths'
+                ),
+                wrapCellText: options.wrapCellText,
+                truncateCellText: useCellTextTruncate,
+              }}
+              columns={columns}
+              filters={view.filters}
+              actions={{
+                ...pick(actions.toolbar, 'onApplyFilter'),
+                ...pick(
+                  actions.table,
+                  'onSelectAll',
+                  'onChangeSort',
+                  'onChangeOrdering',
+                  'onColumnSelectionConfig',
+                  'onOverflowItemClicked'
+                ),
+                onColumnResize: handleOnColumnResize,
+              }}
+              selectAllText={i18n.selectAllAria}
+              clearFilterText={i18n.clearFilterAria}
+              filterText={i18n.filterAria}
+              clearSelectionText={i18n.clearSelectionAria}
+              openMenuText={i18n.openMenuAria}
+              closeMenuText={i18n.closeMenuAria}
+              tableId={id || tableId}
+              tableState={{
+                isDisabled: rowEditMode || singleRowEditMode,
+                activeBar: view.toolbar.activeBar,
+                filters: view.filters,
+                ...view.table,
+                selection: { isSelectAllSelected, isSelectAllIndeterminate },
+              }}
+              hasFastFilter={options?.hasFilter === 'onKeyPress'}
+              // TODO: remove id in v3
+              testId={`${id || testId}-table-head`}
+              showExpanderColumn={showExpanderColumn}
+            />
+          ) : null}
 
           {
             // Table contents
@@ -900,6 +902,7 @@ const Table = (props) => {
                 columns={visibleColumns}
                 {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
                 rowCount={view.table.loadingState.rowCount}
+                columnCount={view.table.loadingState.columnCount}
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-skeleton`}
                 showExpanderColumn={showExpanderColumn}

@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import classnames from 'classnames';
+import { blue60 } from '@carbon/colors';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import { formatNumberWithPrecision } from '../../utils/cardUtilityFunctions';
+import Button from '../Button';
 
 import { BASE_CLASS_NAME, PREVIEW_DATA } from './valueCardUtils';
 
@@ -19,6 +21,9 @@ const propTypes = {
   /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool.isRequired,
   testId: PropTypes.string,
+  /** callback to trigger further action when clicking the value */
+  onClick: PropTypes.func,
+  dataSourceId: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -28,6 +33,7 @@ const defaultProps = {
   locale: 'en',
   customFormatter: null,
   testId: 'value',
+  onClick: null,
 };
 
 /**
@@ -45,6 +51,8 @@ const ValueRenderer = ({
   fontSize,
   isNumberValueCompact,
   testId,
+  onClick,
+  dataSourceId,
 }) => {
   let renderValue = value;
   if (typeof value === 'boolean') {
@@ -64,23 +72,30 @@ const ValueRenderer = ({
 
   renderValue = isNil(customFormatter) ? renderValue : customFormatter(renderValue, value);
 
+  const commonProps = {
+    'data-testid': testId,
+    className: classnames(`${BASE_CLASS_NAME}__value-renderer--value`, {
+      [`${BASE_CLASS_NAME}__value-renderer--value--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
+    }),
+    style: {
+      '--value-renderer-font-size': `${fontSize}px`,
+      '--value-renderer-color': color || (onClick && blue60),
+      // if the font size is small enough to fit in the boundary box, wrap to 2 lines
+      // otherwise, trucate the first line
+      '--value-renderer-max-lines': fontSize < 20 ? 2 : 1,
+    },
+    title: renderValue,
+  };
+
   return (
     <div className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}>
-      <span
-        data-testid={testId}
-        className={classnames(`${BASE_CLASS_NAME}__value-renderer--value`, {
-          [`${BASE_CLASS_NAME}__value-renderer--value--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
-        })}
-        style={{
-          '--value-renderer-font-size': `${fontSize}px`,
-          '--value-renderer-color': color,
-          // if the font size is small enough to fit in the boundary box, wrap to 2 lines
-          // otherwise, trucate the first line
-          '--value-renderer-max-lines': fontSize < 20 ? 2 : 1,
-        }}
-      >
-        {renderValue}
-      </span>
+      {onClick ? (
+        <Button {...commonProps} onClick={() => onClick({ dataSourceId, value })} kind="ghost">
+          {renderValue}
+        </Button>
+      ) : (
+        <span {...commonProps}>{renderValue}</span>
+      )}
     </div>
   );
 };

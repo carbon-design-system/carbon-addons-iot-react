@@ -542,6 +542,7 @@ export const tableReducer = (state = {}, action) => {
               $set: {
                 isLoading: action.payload.isLoading,
                 rowCount: get(state, 'view.table.loadingState.rowCount') || 0,
+                columnCount: get(state, 'view.table.loadingState.columnCount') || 0,
               },
             },
             // Reset the selection to the previous values
@@ -597,12 +598,11 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_ADVANCED_FILTER_CANCEL: {
-      const isOpen = state.view.toolbar.advancedFilterFlyoutOpen === true;
       return update(state, {
         view: {
           toolbar: {
             $set: {
-              advancedFilterFlyoutOpen: !isOpen,
+              advancedFilterFlyoutOpen: false,
             },
           },
         },

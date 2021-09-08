@@ -77,9 +77,15 @@ describe('ListItem', () => {
     expect(onSelect).toHaveBeenCalledTimes(1);
   });
 
-  it('ListItem when isSelectable is set to true and onClick will trigger onSelect', () => {
+  it('handles onSelect callback when clicked and isSelectable is set to true', () => {
     const onSelect = jest.fn();
-    render(
+    const { rerender } = render(
+      <UnconnectedListItem id="1" value="" isSelectable index={0} {...commonProps} />
+    );
+    // It handles absence of onSelect callback
+    fireEvent.click(screen.getAllByRole('button')[0]);
+
+    rerender(
       <UnconnectedListItem
         id="1"
         value=""
@@ -93,9 +99,18 @@ describe('ListItem', () => {
     expect(onSelect).toHaveBeenCalledTimes(1);
   });
 
-  it('ListItem when is Expandable set to true', () => {
+  it('handles onExpand callback when expand button gets enter key press', () => {
     const onExpand = jest.fn();
-    render(
+    const { rerender } = render(
+      <UnconnectedListItem id="1" value="" isExpandable index={0} {...commonProps} />
+    );
+    // It handles absence of onExpand callback
+    fireEvent.keyPress(screen.getAllByRole('button')[0], {
+      key: 'Enter',
+      charCode: 13,
+    });
+
+    rerender(
       <UnconnectedListItem
         id="1"
         value=""
@@ -112,7 +127,7 @@ describe('ListItem', () => {
     expect(onExpand).toHaveBeenCalledTimes(1);
   });
 
-  it('ListItem when is Expandable set to true and onClick will trigger onExpand', () => {
+  it('calls onExpand when expand button is clicked', () => {
     const onExpand = jest.fn();
     render(
       <UnconnectedListItem

@@ -243,12 +243,13 @@ describe('ThresholdsFormItem', () => {
     ]);
   });
 
-  it("should fallback to 0 on a number input when value doesn't exist", () => {
+  it('sets 0 if threshold.value is undefined', () => {
     render(
       <ThresholdsFormItem
         {...commonProps}
         thresholds={[
           {
+            value: undefined,
             comparison: '>',
             color: 'red',
             icon: 'Warning',
@@ -256,12 +257,10 @@ describe('ThresholdsFormItem', () => {
         ]}
       />
     );
-
     expect(
-      screen.getByLabelText('Numeric input field with increment and decrement buttons')
-    ).toBeVisible();
-    expect(
-      screen.getByLabelText('Numeric input field with increment and decrement buttons')
+      screen.getByRole('spinbutton', {
+        name: 'Numeric input field with increment and decrement buttons',
+      })
     ).toHaveValue(0);
   });
 

@@ -3,7 +3,7 @@
   "engines": {
     "node": "12.x || 14.x"
   },
-  "browser": "lib/index.js",
+  "browser": "es/index.js",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "umd/carbon-addons-iot-react.js",
@@ -156,9 +156,7 @@
       "src/components/BarChartCard/barChartUtils.js",
       "src/components/ComboChartCard/comboChartHelpers.js",
       "src/components/Table/Table.test.helpers.js",
-      "src/components/Table/TablePropTypes.js",
-      "src/components/Table/baseTableReducer.js",
-      "src/components/Table/tableReducer.js"
+      "src/components/Table/TablePropTypes.js"
     ],
     "branches": 80,
     "lines": 80,
@@ -343,7 +341,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.146.0-next.171",
+  "version": "2.146.0-next.181",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",

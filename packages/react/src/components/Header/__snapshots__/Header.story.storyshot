@@ -84,6 +84,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onKeyDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
@@ -178,8 +179,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   className="action-btn__headerpanel-li"
                 >
                   <a
-                    element="a"
                     href="http://google.com"
+                    onKeyDown={[Function]}
                     rel="noopener noreferrer"
                     target="_blank"
                     title="this is a title"
@@ -192,8 +193,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   <button
                     className="this"
-                    element="button"
                     onClick={[Function]}
+                    onKeyDown={[Function]}
                   >
                     <span>
                       JohnDoe@ibm.com
@@ -270,6 +271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <a
                     className="bx--header__menu-item"
                     href="http://google.com"
+                    onKeyDown={[Function]}
                     rel="noopener noreferrer"
                     tabIndex={0}
                     target="_blank"
@@ -288,6 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <button
                     className="bx--header__menu-item"
                     onClick={[Function]}
+                    onKeyDown={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -379,13 +382,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   <a
                     className="bx--app-switcher header-panel"
-                    element="a"
+                    onKeyDown={[Function]}
                   >
-                    <a
-                      href="#"
+                    <button
+                      type="button"
                     >
                       Header panel content
-                    </a>
+                    </button>
                   </a>
                 </li>
               </ul>
@@ -477,6 +480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
@@ -636,6 +640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <a
                     className="bx--header__menu-item"
                     href="http://google.com"
+                    onKeyDown={[Function]}
                     rel="noopener noreferrer"
                     tabIndex={0}
                     target="_blank"
@@ -654,6 +659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <button
                     className="bx--header__menu-item"
                     onClick={[Function]}
+                    onKeyDown={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -821,6 +827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <a
                     className="bx--header__menu-item"
                     href="http://google.com"
+                    onKeyDown={[Function]}
                     rel="noopener noreferrer"
                     tabIndex={0}
                     target="_blank"
@@ -839,6 +846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <button
                     className="bx--header__menu-item"
                     onClick={[Function]}
+                    onKeyDown={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -1028,6 +1036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <a
                     className="bx--header__menu-item"
                     href="http://google.com"
+                    onKeyDown={[Function]}
                     rel="noopener noreferrer"
                     tabIndex={0}
                     target="_blank"
@@ -1046,6 +1055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <button
                     className="bx--header__menu-item"
                     onClick={[Function]}
+                    onKeyDown={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -1179,6 +1189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onKeyDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
@@ -1216,6 +1227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onKeyDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
@@ -1253,6 +1265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onKeyDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
@@ -1290,6 +1303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onKeyDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
@@ -1327,6 +1341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onKeyDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
@@ -1364,6 +1379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onKeyDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
@@ -1458,8 +1474,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   className="action-btn__headerpanel-li"
                 >
                   <a
-                    element="a"
                     href="http://google.com"
+                    onKeyDown={[Function]}
                     rel="noopener noreferrer"
                     target="_blank"
                     title="this is a title"
@@ -1472,8 +1488,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 >
                   <button
                     className="this"
-                    element="button"
                     onClick={[Function]}
+                    onKeyDown={[Function]}
                   >
                     <span>
                       JohnDoe@ibm.com
@@ -1550,6 +1566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <a
                     className="bx--header__menu-item"
                     href="http://google.com"
+                    onKeyDown={[Function]}
                     rel="noopener noreferrer"
                     tabIndex={0}
                     target="_blank"
@@ -1568,6 +1585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <button
                     className="bx--header__menu-item"
                     onClick={[Function]}
+                    onKeyDown={[Function]}
                     tabIndex={0}
                   >
                     <span
