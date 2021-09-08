@@ -91378,22 +91378,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           onChange={null}
         >
           <div
-            aria-label="Story Filter Story Filter"
+            aria-label="date CONTAINS 19, boolean=true date CONTAINS 19, boolean=true"
             className="bx--tag bx--tag--filter"
             data-testid="table-filter-tag-story-filter"
             id="tag-30"
           >
             <span
               className="bx--tag__label"
-              title="Story Filter"
+              title="date CONTAINS 19, boolean=true"
             >
-              Story Filter
+              date CONTAINS 19, boolean=true
             </span>
             <button
               aria-labelledby="tag-30"
               className="bx--tag__close-icon"
               onClick={[Function]}
-              title="Story Filter"
+              title="date CONTAINS 19, boolean=true"
               type="button"
             >
               <svg
