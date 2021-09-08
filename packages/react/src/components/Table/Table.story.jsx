@@ -11,15 +11,7 @@ import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
 import { firstBy } from 'thenby';
 
-import {
-  Tooltip,
-  TextInput,
-  Checkbox,
-  ToastNotification,
-  Button,
-  FormGroup,
-  Form,
-} from '../../index';
+import { TextInput, Checkbox, ToastNotification, Button, FormGroup, Form } from '../../index';
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
@@ -2342,67 +2334,6 @@ FilteredSortedPaginatedTableWithAsynchronousDataSource.parameters = {
     text:
       'This is an example of how to use the <MyTable> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
     source: false,
-  },
-};
-
-export const WithStickyHeaderExperimentalAndCellTooltipCalculation = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-
-  const renderDataFunction = ({ value }) => (
-    <div style={{ position: 'relative' }} data-floating-menu-container>
-      {value}
-      <Tooltip
-        direction="right"
-        tabIndex={0}
-        tooltipId="table-tooltip"
-        id="table-tooltip"
-        triggerId="table-tooltip-trigger"
-        triggerText=""
-      >
-        <p>This scroll with the table body</p>
-      </Tooltip>
-    </div>
-  );
-  return (
-    <div>
-      <StoryNotice experimental componentName="Table with stickyHeader" />
-      <MyTable
-        id="table"
-        columns={tableColumns.map((i) => ({
-          ...i,
-          renderDataFunction: i.renderDataFunction || renderDataFunction,
-        }))}
-        data={tableData}
-        actions={tableActions}
-        stickyHeader
-        options={{
-          hasFilter: true,
-          hasPagination: true,
-          hasRowSelection: 'multi',
-        }}
-        view={{
-          filters: [],
-          table: {
-            ordering: defaultOrdering,
-            sort: {
-              columnId: 'string',
-              direction: 'ASC',
-            },
-          },
-        }}
-      />
-    </div>
-  );
-};
-
-WithStickyHeaderExperimentalAndCellTooltipCalculation.storyName =
-  '☢️ with sticky header and cell tooltip calculation';
-
-WithStickyHeaderExperimentalAndCellTooltipCalculation.parameters = {
-  centered: { disable: true },
-  info: {
-    text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
   },
 };
 

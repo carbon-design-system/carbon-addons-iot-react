@@ -374,7 +374,10 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => {
       <MyTable
         id="table"
         {...initialState}
-        columns={tableColumnsWithOverflowMenu}
+        columns={tableColumnsWithOverflowMenu.map((c) => ({
+          ...c,
+          width: '150px',
+        }))}
         actions={tableActions}
         lightweight={boolean('lightweight', false)}
         options={{
@@ -384,6 +387,7 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => {
           hasRowExpansion: false,
           hasResize: true,
           wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          preserveColumnWidths: true,
         }}
         view={{
           aggregations: {
@@ -1359,6 +1363,7 @@ export const WithMultiSorting = () => {
     <MyTable
       columns={tableColumns.map((i, idx) => ({
         ...i,
+        width: '200px',
         isSortable: idx !== 1,
         align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
       }))}
@@ -1368,10 +1373,11 @@ export const WithMultiSorting = () => {
         hasFilter: false,
         hasPagination: true,
         hasRowSelection: 'multi',
-        hasAggregations: true,
+        hasAggregations: false,
         hasMultiSort: true,
         hasResize: true,
         hasColumnSelection: true,
+        preserveColumnWidths: true,
       }}
       view={{
         filters: [],
