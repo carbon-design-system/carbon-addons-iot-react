@@ -1347,8 +1347,14 @@ export const BasicTableWithFullRowEditExample = () => {
           toolbar: { onShowRowEdit: onShowMultiRowEdit },
         }}
         options={{
-          hasRowEdit: boolean('hasRowEdit', true),
-          hasSingleRowEdit: boolean('hasSingleRowEdit', true),
+          hasRowEdit: boolean(
+            'Enables row editing for the entire table (options.hasRowEdit)',
+            true
+          ),
+          hasSingleRowEdit: boolean(
+            'Enables row editing for a single row (options.hasSingleRowEdit)',
+            true
+          ),
           hasRowActions: true,
           hasPagination: true,
         }}
@@ -1425,15 +1431,27 @@ BasicTableWithFullRowEditExample.parameters = {
 export const RowSelectionAndBatchActions = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const hasRowSelection = select('options.hasRowSelection', ['single', 'multi'], 'multi');
+  const hasRowSelection = select(
+    'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+    ['multi', 'single', false],
+    'multi'
+  );
   const selectedIds =
     hasRowSelection === 'multi'
-      ? array('view.table.selectedIds', ['row-3', 'row-4', 'row-6', 'row-7'])
-      : array('view.table.selectedIds', ['row-3']);
+      ? array('An array of currently selected rowIds (view.table.selectedIds)', [
+          'row-3',
+          'row-4',
+          'row-6',
+          'row-7',
+        ])
+      : array('An array of currently selected rowIds (view.table.selectedIds)', ['row-3']);
   return (
     <MyTable
       id="table"
-      secondaryTitle={text('secondaryTitle', `Row count: ${initialState.data.length}`)}
+      secondaryTitle={text(
+        'Title shown in bar above header row (secondaryTitle)',
+        `Row count: ${initialState.data.length}`
+      )}
       columns={tableColumns}
       data={tableData.slice(0, number('number of rows in story', 10)).map((i, idx) => ({
         ...i,
@@ -1457,11 +1475,17 @@ export const RowSelectionAndBatchActions = () => {
       }))}
       actions={tableActions}
       options={{
-        hasFilter: boolean('options.hasFilter', true),
-        hasPagination: boolean('options.hasPagination', true),
+        hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', true),
+        hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
         hasRowSelection,
-        hasRowExpansion: boolean('options.hasRowExpansion', true),
-        hasRowNesting: boolean('options.hasRowNesting', true),
+        hasRowExpansion: boolean(
+          'Enables expanding rows to show additional content (options.hasRowExpansion)',
+          true
+        ),
+        hasRowNesting: boolean(
+          'Enables rows to have nested rows within (options.hasRowNesting)',
+          true
+        ),
       }}
       view={{
         filters: [],
@@ -1477,13 +1501,21 @@ export const RowSelectionAndBatchActions = () => {
         },
         table: {
           ordering: defaultOrdering,
-          isSelectAllSelected: select('isSelectAllSelected', [undefined, true, false], undefined),
-          isSelectAllIndeterminate: select(
-            'isSelectAllIndeterminate',
+          isSelectAllSelected: select(
+            'Manages the state of the Select All checkbox (view.table.isSelectAllSelected)',
             [undefined, true, false],
             undefined
           ),
-          expandedIds: array('view.table.expandedIds', ['row-3', 'row-7', 'row-7_B']),
+          isSelectAllIndeterminate: select(
+            'Is the Select All checkbox in in indeterminate state? (view.table.isSelectAllIndeterminate)',
+            [undefined, true, false],
+            undefined
+          ),
+          expandedIds: array('An array of current expanded rowIds (view.table.expandedIds)', [
+            'row-3',
+            'row-7',
+            'row-7_B',
+          ]),
           selectedIds,
         },
       }}
@@ -1500,6 +1532,7 @@ export const WithRowExpansionAndActions = () => {
   const renderDataFunction = ({ value }) => (
     <div style={{ color: value === 'BROKEN' ? 'red' : 'black' }}>{value}</div>
   );
+
   return (
     <MyTable
       id="table"
@@ -1660,15 +1693,19 @@ WithRowExpansionAndActions.parameters = {
 export const WithSorting = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const hasMultiSort = boolean('options.hasMultiSort', false);
+  const hasMultiSort = boolean(
+    'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
+    false
+  );
 
-  const sortedData = hasMultiSort
-    ? tableData.slice(0, 10).sort(
-        firstBy((row) => row.values.select).thenBy((row) => {
-          return row.values.string;
-        })
-      )
-    : getSortedData(tableData, 'string', 'ASC');
+  const sortedData =
+    hasMultiSort && selectedTableType === 'Table'
+      ? tableData.slice(0, 10).sort(
+          firstBy((row) => row.values.select).thenBy((row) => {
+            return row.values.string;
+          })
+        )
+      : getSortedData(tableData, 'string', 'ASC');
   return (
     <FullWidthWrapper>
       <style>{`#custom-row-height table tr { height: 5rem;}`}</style>
@@ -1682,10 +1719,20 @@ export const WithSorting = () => {
           data={sortedData}
           actions={tableActions}
           options={{
-            hasFilter: boolean('options.hasFilter', false),
-            hasPagination: boolean('options.hasPagination', true),
-            hasRowSelection: select('options.hasRowSelection', ['single', 'multi', false], 'multi'),
-            hasAggregations: boolean('options.hasAggregations', true),
+            hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', false),
+            hasPagination: boolean(
+              'Enables pagination for the table (options.hasPagination)',
+              false
+            ),
+            hasRowSelection: select(
+              'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+              ['multi', 'single', false],
+              'multi'
+            ),
+            hasAggregations: boolean(
+              'Aggregates column values and displays in a footer row (options.hasAggregations)',
+              true
+            ),
             hasMultiSort,
           }}
           view={{
@@ -1733,16 +1780,19 @@ export const WithFilters = () => {
     'instructions',
     "By changing the value in a filter to a value that doesn't it exist will show the no results screen"
   );
-  const filters = object('view.filters', [
-    {
-      columnId: 'string',
-      value: 'whiteboard',
-    },
-    {
-      columnId: 'select',
-      value: 'option-B',
-    },
-  ]);
+  const filters = object(
+    'An array of filter objects for the columns to be filtered by (view.filters)',
+    [
+      {
+        columnId: 'string',
+        value: 'whiteboard',
+      },
+      {
+        columnId: 'select',
+        value: 'option-B',
+      },
+    ]
+  );
 
   const filteredData = tableData.filter(({ values }) =>
     // return false if a value doesn't match a valid filter
@@ -2049,7 +2099,7 @@ export const WithTableStates = () => {
     <EmptyState
       icon="error"
       title="Error occured while loading"
-      body={text('error', 'Error message')}
+      body={text('error state message', 'Error message')}
       action={{
         label: 'Reload',
         onClick: action('onErrorStateAction'),
@@ -2071,8 +2121,14 @@ export const WithTableStates = () => {
           emptyState: boolean('Show Custom Empty State', false) ? emptyState : undefined,
           errorState: showErrorState ? errorState : undefined,
           loadingState: {
-            isLoading: boolean('isLoading', false),
-            rowCount: number('rowCount', 7),
+            isLoading: boolean(
+              'Show the loading state for the table (view.table.loadingState.isLoading)',
+              false
+            ),
+            rowCount: number(
+              'The number of skeleton rows to be included in the loading state (view.table.loadingState.rowCount)',
+              7
+            ),
           },
         },
       }}
@@ -2233,11 +2289,24 @@ export const WithOptionsToExploreColumnSettings = () => {
         <MyTable
           id="table"
           options={{
-            hasColumnSelection: boolean('options.hasColumnSelection', true),
-            hasResize: boolean('options.hasResize', true),
-            wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
-            useAutoTableLayoutForResize: boolean('options.useAutoTableLayoutForResize', false),
-            preserveColumnWidths: boolean('options.preserveColumnWidths', true),
+            hasColumnSelection: boolean(
+              'Enables choosing which columns are visible or drag-and-drop reorder them (options.hasColumnSelection)',
+              true
+            ),
+            hasResize: boolean('Enables resizing of column widths (options.hasResize)', true),
+            wrapCellText: select(
+              'Choose how text should wrap witin columns (options.wrapCellText)',
+              selectTextWrapping,
+              'always'
+            ),
+            useAutoTableLayoutForResize: boolean(
+              'Removes table-layout:fixed to allow resizable tables (options.useAutoTableLayoutForResize)',
+              false
+            ),
+            preserveColumnWidths: boolean(
+              'Preserve column widths when resizing (options.preserveColumnWidths)',
+              true
+            ),
             hasPagination: true,
           }}
           columns={myColumns}
@@ -2295,10 +2364,17 @@ export const HorizontalScrollCustomWidth = () => {
         id="table"
         columns={tableColumns.concat(tableColumnsConcat)}
         options={{
-          hasFilter: boolean('options.hasFilter', true),
-          hasPagination: boolean('options.hasPagination', true),
-          wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
-          hasOnlyPageData: boolean('options.hasOnlyPageData', true),
+          hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', true),
+          hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
+          hasOnlyPageData: boolean(
+            'Change pagination behavior to assume data prop only contains data necessary for the current page (options.hasOnlyPageData)',
+            true
+          ),
         }}
         data={tableData.slice(25, 45)}
         actions={tableActions}
@@ -2308,12 +2384,15 @@ export const HorizontalScrollCustomWidth = () => {
             { columnId: 'select', value: 'option-B' },
           ],
           toolbar: { activeBar: 'filter' },
-          pagination: object('view.pagination', {
-            pageSize: 10,
-            pageSizes: [10, 20, 30],
-            page: 8267,
-            totalItems: 97532,
-          }),
+          pagination: object(
+            'An object representing the pagination props for the table (view.pagination)',
+            {
+              pageSize: 10,
+              pageSizes: [10, 20, 30],
+              page: 8267,
+              totalItems: 97532,
+            }
+          ),
         }}
       />
     </div>
@@ -2346,11 +2425,13 @@ export const AsyncColumnLoading = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setColumns(tableColumns);
       setData(tableData);
       setIsLoading(false);
     }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -2359,11 +2440,13 @@ export const AsyncColumnLoading = () => {
       columns={columns}
       data={data}
       options={{
-        hasAggregations: boolean('hasAggregations', true),
-        hasSearch: boolean('hasSearch', true),
-        hasFilter: boolean('hasFilter', true),
-        hasPagination: boolean('hasPagination', true),
-        hasRowEdit: boolean('hasRowEdit', false),
+        hasAggregations: boolean(
+          'Aggregates column values and displays in a footer row (options.hasAggregations)',
+          true
+        ),
+        hasSearch: boolean('Enable searching on the table values (options.hasSearch)', true),
+        hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', true),
+        hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
       }}
       view={{
         aggregations: {
@@ -2379,8 +2462,14 @@ export const AsyncColumnLoading = () => {
         table: {
           loadingState: {
             isLoading,
-            rowCount: number('rowCount', 10),
-            columnCount: number('columnCount', 9),
+            rowCount: number(
+              'The number of skeleton rows to be included in the loading state (view.table.loadingState.rowCount)',
+              10
+            ),
+            columnCount: number(
+              'The number of skeleton columns to be included in the loading state (view.table.loadingState.columnCount)',
+              9
+            ),
           },
         },
       }}
