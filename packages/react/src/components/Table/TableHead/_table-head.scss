@@ -138,8 +138,6 @@
 
     .#{$prefix}--table-header-label {
       height: 100%;
-      min-width: var(--table-header-width);
-      max-width: var(--table-header-width);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

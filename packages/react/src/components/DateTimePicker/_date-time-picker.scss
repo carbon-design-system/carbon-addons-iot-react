@@ -38,7 +38,6 @@
   }
 
   .#{$prefix}--number {
-    margin-right: $spacing-05;
     .#{$prefix}--number__input-wrapper {
       input {
         min-width: 8.5rem;
@@ -119,6 +118,15 @@
         transition: transform $duration--fast-01 carbon--motion(standard);
         cursor: pointer;
       }
+
+      .#{$iot-prefix}--date-time-picker__tooltip-trigger {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        pointer-events: none;
+      }
     }
 
     .#{$iot-prefix}--date-time-picker__menu {
@@ -150,6 +158,10 @@
         .#{$iot-prefix}--date-time-picker__custom-wrapper {
           padding-top: 1rem;
           padding-bottom: 2rem;
+
+          .#{$prefix}--radio-button-wrapper:not(:last-of-type) {
+            margin-right: $spacing-06;
+          }
         }
 
         .#{$iot-prefix}--date-time-picker__fields-wrapper {
@@ -269,4 +281,8 @@ html[dir='rtl'] {
       }
     }
   }
+}
+
+.#{$iot-prefix}--date-time-picker__tooltip {
+  padding: $spacing-02 $spacing-05;
 }

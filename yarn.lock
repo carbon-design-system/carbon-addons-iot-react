@@ -7828,6 +7828,14 @@ ajv@^7.0.3:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
+ally.js@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/ally.js/-/ally.js-1.4.1.tgz#9fb7e6ba58efac4ee9131cb29aa9ee3b540bcf1e"
+  integrity sha1-n7fmuljvrE7pExyymqnuO1QLzx4=
+  dependencies:
+    css.escape "^1.5.0"
+    platform "1.3.3"
+
 alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
@@ -11271,7 +11279,7 @@ css-what@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.2.tgz#c0876d9d0480927d7d4920dcd72af3595649554d"
 
-css.escape@^1.5.1:
+css.escape@^1.5.0, css.escape@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
   integrity sha1-QuJ9T6BK4y+TGktNQZH6nN3ul8s=
@@ -11461,6 +11469,13 @@ cypress-image-diff-js@^1.10.3:
     handlebars "^4.7.6"
     pixelmatch "^5.1.0"
     pngjs "^3.4.0"
+
+cypress-plugin-tab@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/cypress-plugin-tab/-/cypress-plugin-tab-1.0.5.tgz#a40714148104004bb05ed62b1bf46bb544f8eb4a"
+  integrity sha512-QtTJcifOVwwbeMP3hsOzQOKf3EqKsLyjtg9ZAGlYDntrCRXrsQhe4ZQGIthRMRLKpnP6/tTk6G0gJ2sZUfRliQ==
+  dependencies:
+    ally.js "^1.4.1"
 
 cypress-real-events@^1.5.0:
   version "1.5.0"
@@ -21216,6 +21231,11 @@ pkg-up@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
+platform@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/platform/-/platform-1.3.3.tgz#646c77011899870b6a0903e75e997e8e51da7461"
+  integrity sha1-ZGx3ARiZhwtqCQPnXpl+jlHadGE=
+
 please-upgrade-node@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/please-upgrade-node/-/please-upgrade-node-3.0.2.tgz#7b9eaeca35aa4a43d6ebdfd10616c042f9a83acc"
@@ -25570,9 +25590,9 @@ tapable@^2.2.0:
   integrity sha512-FBk4IesMV1rBxX2tfiK8RAmogtWn53puLOQlvO8XuwlgxcYbP4mVPS9Ph4aeamSyyVjOl24aYWAuc8U5kCVwMw==
 
 tar@^4.4.10, tar@^4.4.12, tar@^4.4.8:
-  version "4.4.17"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-4.4.17.tgz#44be5e3fa8353ee1d11db3b1401561223a5c3985"
-  integrity sha512-q7OwXq6NTdcYIa+k58nEMV3j1euhDhGCs/VRw9ymx/PbH0jtIM2+VTgDE/BW3rbLkrBUXs5fzEKgic5oUciu7g==
+  version "4.4.19"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-4.4.19.tgz#2e4d7263df26f2b914dee10c825ab132123742f3"
+  integrity sha512-a20gEsvHnWe0ygBY8JbxoM4w3SJdhc7ZAuxkLqh+nvNQN2IOt0B5lLgM490X5Hl8FF0dl0tOf2ewFYAlIFgzVA==
   dependencies:
     chownr "^1.1.4"
     fs-minipass "^1.2.7"
