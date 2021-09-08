@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.181](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.180...v2.146.0-next.181) (2021-09-08)
+
+
+### Bug Fixes
+
+* **header:** add onKeyDown handlers to allow keyboard navigation ([0677fd9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0677fd92a6f4556a101c7bf568a97ead2b8bedf1))
+* **header:** fix header story to not include A tag in A tag ([4cd6699](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4cd66999685bcb3c14af38f0f827c51b923f7c0d))
+* **header:** prevent 'element' from being passed as attribute ([7019dd6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7019dd6e61e65e6f578e48cb6a08227f29fa4b7c))
+
+
+
+
+
 # [2.146.0-next.180](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.179...v2.146.0-next.180) (2021-09-08)
 
 
