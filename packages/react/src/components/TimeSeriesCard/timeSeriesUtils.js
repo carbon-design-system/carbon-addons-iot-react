@@ -129,7 +129,7 @@ export const generateTableSampleValues = (id, columns) => {
 /** *
  * timestamp of current value
  * index of current value
- * ticks: array of current ticks
+ * ticks: array of current ticks or a single string with part of the date
  * interval: the type of interval formatting to use
  * locale: the current locale,
  * previousTickTimestamp
