@@ -9,6 +9,7 @@ import {
   TableRowPropTypes,
   TableColumnsPropTypes,
   RowActionsStatePropTypes,
+  CellTextOverflowPropType,
 } from '../TablePropTypes';
 import deprecate from '../../../internal/deprecate';
 
@@ -68,8 +69,7 @@ const propTypes = {
     }),
   ]),
   hasRowActions: PropTypes.bool,
-  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
-  truncateCellText: PropTypes.bool.isRequired,
+  cellTextOverflow: CellTextOverflowPropType,
   /** the current state of the row actions */
   rowActionsState: RowActionsStatePropTypes,
   shouldExpandOnRowClick: PropTypes.bool,
@@ -131,6 +131,7 @@ const defaultProps = {
   langDir: 'ltr',
   showExpanderColumn: false,
   testId: '',
+  cellTextOverflow: null,
 };
 
 const TableBody = ({
@@ -158,8 +159,7 @@ const TableBody = ({
   shouldExpandOnRowClick,
   shouldLazyRender,
   ordering,
-  wrapCellText,
-  truncateCellText,
+  cellTextOverflow,
   locale,
   rowEditMode,
   singleRowEditButtons,
@@ -311,8 +311,7 @@ const TableBody = ({
           hasRowNesting,
           hasRowActions,
           shouldExpandOnRowClick,
-          wrapCellText,
-          truncateCellText,
+          cellTextOverflow,
         }}
         nestingLevel={nestingLevel}
         nestingChildCount={row.children ? row.children.length : 0}

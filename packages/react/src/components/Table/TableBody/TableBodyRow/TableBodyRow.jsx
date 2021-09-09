@@ -11,9 +11,11 @@ import {
   RowActionPropTypes,
   RowActionErrorPropTypes,
   TableColumnsPropTypes,
+  CellTextOverflowPropType,
 } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 import { COLORS } from '../../../../styles/styles';
+import { CELL_TEXT_OVERFLOW } from '../../Table';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
 const { prefix, iotPrefix } = settings;
@@ -57,8 +59,7 @@ const propTypes = {
       }),
     ]),
     shouldExpandOnRowClick: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
-    truncateCellText: PropTypes.bool.isRequired,
+    cellTextOverflow: CellTextOverflowPropType,
   }),
 
   /** The unique row id */
@@ -128,7 +129,7 @@ const defaultProps = {
   rowDetails: null,
   nestingLevel: 0,
   nestingChildCount: 0,
-  options: {},
+  options: { cellTextOverflow: null },
   rowEditMode: false,
   singleRowEditMode: false,
   singleRowEditButtons: null,
@@ -380,8 +381,7 @@ const TableBodyRow = ({
     hasRowActions,
     hasRowNesting,
     shouldExpandOnRowClick,
-    wrapCellText,
-    truncateCellText,
+    cellTextOverflow,
   },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
@@ -468,7 +468,8 @@ const TableBodyRow = ({
             offset={offset}
             align={align}
             className={classnames(`data-table-${align}`, {
-              [`${iotPrefix}--table__cell--truncate`]: truncateCellText,
+              [`${iotPrefix}--table__cell--truncate`]:
+                cellTextOverflow === CELL_TEXT_OVERFLOW.TRUNCATE,
               [`${iotPrefix}--table__cell--sortable`]: sortable,
             })}
             width={initialColumnWidth}
@@ -483,8 +484,7 @@ const TableBodyRow = ({
                 })
               ) : (
                 <TableCellRenderer
-                  wrapText={wrapCellText}
-                  truncateCellText={truncateCellText}
+                  cellTextOverflow={cellTextOverflow}
                   locale={locale}
                   renderDataFunction={col.renderDataFunction}
                   columnId={col.columnId}
