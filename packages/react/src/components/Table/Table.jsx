@@ -116,6 +116,9 @@ const propTypes = {
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
   }),
 
+  /** Size prop from Carbon to shrink row height (and header height in some instances) */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
   view: PropTypes.shape({
     aggregations: PropTypes.shape({
@@ -318,6 +321,7 @@ export const defaultProps = (baseProps) => ({
     shouldLazyRender: false,
     wrapCellText: 'always',
   },
+  size: undefined,
   view: {
     aggregations: { columns: [] },
     pagination: {

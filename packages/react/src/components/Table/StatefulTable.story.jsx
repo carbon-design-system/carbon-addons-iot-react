@@ -76,6 +76,11 @@ export const StatefulTableWithNestedRowItems = (props) => {
         )}
         columns={tableColumnsFixedWidth}
         data={tableData}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         options={{
           ...initialState.options,
           hasRowNesting: true,
@@ -145,6 +150,11 @@ export const SimpleStatefulExample = () => {
       style={{ maxWidth: select('table width', ['auto', '300px'], 'auto') }}
       useZebraStyles={boolean('Alternate colors in table rows (useZebraStyles)', false)}
       lightweight={boolean('Show an alternate header style (lightweight)', false)}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       options={{
         hasAggregations: boolean(
           'Aggregates column values and displays in a footer row (options.hasAggregations)',
@@ -306,6 +316,11 @@ export const StatefulExampleWithSingleNestedHierarchy = () => {
         )}
         columns={tableColumns}
         data={tableData}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         options={{
           ...initialState.options,
           hasRowNesting: {
@@ -394,6 +409,11 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => {
         }))}
         actions={tableActions}
         lightweight={boolean('Show an alternate header style (lightweight)', false)}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         options={{
           hasAggregations: true,
           hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
@@ -466,6 +486,11 @@ export const SimpleStatefulExampleWithAlignment = () => {
           ...eachRow,
           isSelectable: index % 3 !== 0,
         }))}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         actions={tableActions}
         lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
@@ -520,6 +545,11 @@ export const StatefulExampleWithEveryThirdRowUnselectable = () => {
       }))}
       actions={tableActions}
       lightweight={boolean('Show an alternate header style (lightweight)', false)}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       options={{
         hasRowSelection: select(
           'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
@@ -591,6 +621,11 @@ export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => {
           },
         }}
         lightweight={boolean('Show an alternate header style (lightweight)', false)}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         options={{
           ...initialState.options,
           hasResize: true,
@@ -1070,6 +1105,11 @@ export const StatefulExampleWithCreateSaveViews = () => {
           onUserViewModified,
         }}
         lightweight={boolean('Show an alternate header style (lightweight)', false)}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         options={{
           ...defaultState.options,
           hasResize: true,
@@ -1152,6 +1192,11 @@ export const WithPreFilledSearch = () => {
           hasPagination: true,
           hasRowSelection: 'single',
         }}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           toolbar: {
             search: {
@@ -1382,6 +1427,11 @@ export const StatefulTableWithAdvancedFilters = () => {
             hasRowSelection: 'multi',
             hasAdvancedFilter: true,
           }}
+          size={select(
+            'Sets the height of the table rows (size)',
+            ['xs', 'sm', 'md', 'lg', 'xl'],
+            'lg'
+          )}
           view={{
             filters: [
               {
@@ -1449,6 +1499,11 @@ export const WithMultiSorting = () => {
       }))}
       data={tableData}
       actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       options={{
         hasFilter: false,
         hasPagination: true,

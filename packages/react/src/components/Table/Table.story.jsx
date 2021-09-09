@@ -153,7 +153,6 @@ export const tableColumns = [
   {
     id: 'object',
     name: 'Object Id',
-    isSortable: true,
     renderDataFunction: ({ value }) => {
       return value?.id;
     },
@@ -606,6 +605,11 @@ export const BasicDumbTable = () => {
       columns={tableColumns}
       data={tableData}
       actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       options={{
         hasAggregations: boolean(
           'Aggregates column values and displays in a footer row (options.hasAggregations)',
@@ -1097,6 +1101,11 @@ export const TableExampleWithCreateSaveViews = () => {
         id="table"
         {...baseState}
         columns={currentTableState.columns}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           ...currentTableState.view,
           // The TableViewDropdown should be inserted as customToolbarContent
@@ -1347,6 +1356,11 @@ export const BasicTableWithFullRowEditExample = () => {
       <Table
         id="table"
         secondaryTitle="My editable table"
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           toolbar: {
             activeBar: showRowEditBar ? 'rowEdit' : undefined,
@@ -1490,6 +1504,11 @@ export const RowSelectionAndBatchActions = () => {
             : undefined,
       }))}
       actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       options={{
         hasFilter: select(
           'Enables filtering columns by value (options.hasFilter)',
@@ -1595,6 +1614,11 @@ export const WithRowExpansionAndActions = () => {
         hasRowExpansion: true,
         hasRowActions: true,
       }}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       view={{
         filters: [],
         table: {
@@ -1835,6 +1859,11 @@ export const WithFilters = () => {
         hasPagination: true,
         hasRowSelection: 'multi',
       }}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       view={{
         filters,
         pagination: {
@@ -2074,6 +2103,11 @@ export const WithAdvancedFilters = () => {
           hasRowSelection: 'multi',
           hasAdvancedFilter: true,
         }}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           filters: [
             {
@@ -2135,6 +2169,11 @@ export const WithTableStates = () => {
       columns={tableColumns}
       data={showErrorState ? tableData.slice(0, 20) : []}
       actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       view={{
         table: {
           ordering: defaultOrdering,
@@ -2330,6 +2369,11 @@ export const WithOptionsToExploreColumnSettings = () => {
             hasPagination: true,
           }}
           columns={myColumns}
+          size={select(
+            'Sets the height of the table rows (size)',
+            ['xs', 'sm', 'md', 'lg', 'xl'],
+            'lg'
+          )}
           view={{
             filters: [],
             table: {
@@ -2402,6 +2446,11 @@ export const HorizontalScrollCustomWidth = () => {
         }}
         data={tableData.slice(25, 45)}
         actions={tableActions}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           filters: [
             { columnId: 'string', value: 'whiteboard' },
@@ -2476,6 +2525,11 @@ export const AsyncColumnLoading = () => {
         ),
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
       }}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       view={{
         aggregations: {
           label: 'Total:',
