@@ -173,6 +173,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   >
                     Grid
                   </div>
+                  <span
+                    className="iot--icon-switch__divider"
+                  />
                   <svg
                     aria-hidden="true"
                     aria-label="Grid"
@@ -212,6 +215,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   >
                     List
                   </div>
+                  <span
+                    className="iot--icon-switch__divider"
+                  />
                   <svg
                     aria-hidden="true"
                     aria-label="List"
@@ -1349,6 +1355,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   >
                     Grid
                   </div>
+                  <span
+                    className="iot--icon-switch__divider"
+                  />
                   <svg
                     aria-hidden="true"
                     aria-label="Grid"
@@ -1388,6 +1397,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                   >
                     List
                   </div>
+                  <span
+                    className="iot--icon-switch__divider"
+                  />
                   <svg
                     aria-hidden="true"
                     aria-label="List"

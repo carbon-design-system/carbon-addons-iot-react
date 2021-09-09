@@ -21364,7 +21364,9 @@ Map {
   "IconSwitch" => Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
+      "children": undefined,
       "className": undefined,
+      "disabled": false,
       "light": false,
       "name": "",
       "onClick": undefined,
@@ -21374,8 +21376,14 @@ Map {
       "testId": "icon-switch",
     },
     "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
       "className": Object {
         "type": "string",
+      },
+      "disabled": Object {
+        "type": "bool",
       },
       "index": Object {
         "isRequired": true,
