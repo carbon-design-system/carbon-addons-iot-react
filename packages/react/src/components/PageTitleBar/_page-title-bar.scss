@@ -85,7 +85,7 @@
       margin-right: $spacing-05;
     }
 
-    .#{$prefix}--btn + .#{$prefix}--btn--secondary {
+    .#{$prefix}--btn + .#{$prefix}--btn--secondary:not(.#{$iot-prefix}--icon-switch) {
       margin-left: $spacing-05;
     }
 
