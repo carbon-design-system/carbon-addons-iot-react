@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.182](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.181...v2.146.0-next.182) (2021-09-10)
+
+
+### Bug Fixes
+
+* **combocharthelpers:** removed non functional zoom code ([db8e581](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/db8e581de230501144cf447746df5fa743b571fc))
+
+
+
+
+
 # [2.146.0-next.181](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.180...v2.146.0-next.181) (2021-09-08)
 
 
