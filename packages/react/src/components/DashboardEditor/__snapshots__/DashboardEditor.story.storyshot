@@ -437,7 +437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-describedby={null}
                             aria-pressed={null}
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                             data-testid="ComposedModal-grid-switch"
                             disabled={false}
                             onBlur={[Function]}
@@ -3295,7 +3295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -4640,7 +4640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -7435,7 +7435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-describedby={null}
                     aria-pressed={null}
-                    className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    className="iot--icon-switch iot--icon-switch--default iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="dashboard-editor-header-fit-to-screen-switch"
                     disabled={false}
                     onBlur={[Function]}
@@ -7952,7 +7952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -9617,7 +9617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -11051,7 +11051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-describedby={null}
                             aria-pressed={null}
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                             data-testid="ComposedModal-grid-switch"
                             disabled={false}
                             onBlur={[Function]}
@@ -12397,7 +12397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -14259,7 +14259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-describedby={null}
                     aria-pressed={null}
-                    className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    className="iot--icon-switch iot--icon-switch--default iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="dashboard-editor-header-fit-to-screen-switch"
                     disabled={false}
                     onBlur={[Function]}
@@ -14776,7 +14776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -16674,7 +16674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <button
                       aria-describedby={null}
                       aria-pressed={null}
-                      className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="dashboard-editor-header-fit-to-screen-switch"
                       disabled={false}
                       onBlur={[Function]}
@@ -17191,7 +17191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-describedby={null}
                             aria-pressed={null}
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                             data-testid="ComposedModal-grid-switch"
                             disabled={false}
                             onBlur={[Function]}
@@ -18440,7 +18440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -19811,7 +19811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -23008,7 +23008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
