@@ -595,6 +595,11 @@ export const BasicDumbTable = () => {
     'Enables choosing which columns are visible or drag-and-drop reorder them and adds callback to manage which columns are available to the table (options.hasColumnSelectionConfig)',
     false
   );
+
+  const hasMultiSort = boolean(
+    'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
+    false
+  );
   return (
     <MyTable
       id="table"
@@ -602,7 +607,14 @@ export const BasicDumbTable = () => {
       useZebraStyles={useZebraStyles}
       lightweight={lightweight}
       tooltip={<div>Now with custom tooltip content!</div>}
-      columns={tableColumns}
+      columns={
+        hasMultiSort
+          ? tableColumns.map((c, i) => ({
+              ...c,
+              isSortable: i !== 1,
+            }))
+          : tableColumns
+      }
       data={tableData}
       actions={tableActions}
       size={select(
@@ -622,10 +634,7 @@ export const BasicDumbTable = () => {
           ['onKeyPress', 'onEnterAndBlur', true, false],
           true
         ),
-        hasMultiSort: boolean(
-          'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
-          false
-        ),
+        hasMultiSort,
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
         hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
         hasRowExpansion: boolean(
@@ -686,6 +695,21 @@ export const BasicDumbTable = () => {
               6
             ),
           },
+          sort: hasMultiSort
+            ? [
+                {
+                  columnId: 'select',
+                  direction: 'ASC',
+                },
+                {
+                  columnId: 'string',
+                  direction: 'ASC',
+                },
+              ]
+            : {
+                columnId: 'string',
+                direction: 'ASC',
+              },
         },
       }}
       i18n={{
