@@ -154,7 +154,6 @@
       "src/components/Dashboard/CardRenderer.jsx",
       "src/components/MapCard/storyFiles/*.jsx",
       "src/components/BarChartCard/barChartUtils.js",
-      "src/components/ComboChartCard/comboChartHelpers.js",
       "src/components/Table/Table.test.helpers.js",
       "src/components/Table/TablePropTypes.js"
     ],
