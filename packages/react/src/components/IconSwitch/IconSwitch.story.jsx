@@ -74,7 +74,9 @@ export default {
 };
 
 export const Unselected = () => {
-  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default, 'size');
+  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default);
+  const isDisabled = boolean('disabled', false);
+  const isLight = boolean('light', false);
   return (
     <IconSwitch
       name="one"
@@ -84,6 +86,8 @@ export const Unselected = () => {
       renderIcon={listIcons[size]}
       size={size}
       index={0}
+      disabled={isDisabled}
+      light={isLight}
     />
   );
 };
@@ -97,7 +101,9 @@ Unselected.parameters = {
 };
 
 export const Selected = () => {
-  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default, 'size');
+  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default);
+  const isDisabled = boolean('disabled', false);
+  const isLight = boolean('light', false);
   return (
     <IconSwitch
       name="one"
@@ -108,6 +114,8 @@ export const Selected = () => {
       renderIcon={listIcons[size]}
       size={size}
       index={0}
+      disabled={isDisabled}
+      light={isLight}
     />
   );
 };
@@ -123,6 +131,7 @@ Selected.parameters = {
 export const ExampleUsedInContentSwitcherTwoIcons = () => {
   const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default);
   const isDisabled = boolean('disabled', false);
+  const isLight = boolean('light', false);
   return (
     <ContentSwitcher
       className={`${iotPrefix}--content-switcher--icon`}
@@ -138,6 +147,7 @@ export const ExampleUsedInContentSwitcherTwoIcons = () => {
         size={size}
         index={0}
         disabled={isDisabled}
+        light={isLight}
       />
       <IconSwitch
         name="two"
@@ -148,6 +158,7 @@ export const ExampleUsedInContentSwitcherTwoIcons = () => {
         size={size}
         index={0}
         disabled={isDisabled}
+        light={isLight}
       />
     </ContentSwitcher>
   );

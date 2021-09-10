@@ -10,37 +10,24 @@ $icon-switch-size-large: $spacing-09;
   border-bottom: 1px solid $ui-05;
   position: relative;
 
-  &__divider {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    height: $spacing-05;
-    width: 1px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    background-color: $ui-03;
-
-    :focus & {
-      background-color: $focus;
-    }
-
-    .#{$iot-prefix}--icon-switch--selected & {
-      background-color: $ui-05;
-    }
-  }
-
-  &:disabled {
+  &:focus {
+    border: 1px solid;
     &,
-    &:hover {
-      background-color: $disabled-03;
-      color: $disabled-02;
+    & + .#{$iot-prefix}--icon-switch {
+      .#{$iot-prefix}--icon-switch__divider {
+        display: none;
+      }
     }
   }
 
   &:first-child {
-    border-right: 0;
     border-top-left-radius: $spacing-02;
     border-bottom-left-radius: $spacing-02;
+    border-left: 1px solid $ui-05;
+
+    &:focus {
+      border-radius: 1px 0 0 1px;
+    }
 
     .#{$iot-prefix}--icon-switch__divider {
       display: none;
@@ -48,27 +35,20 @@ $icon-switch-size-large: $spacing-09;
   }
 
   &:last-child {
-    border: 1px solid $ui-05;
     border-top-right-radius: $spacing-02;
     border-bottom-right-radius: $spacing-02;
-    border-left: 0;
+    border-right: 1px solid $ui-05;
+
+    &:focus {
+      border-radius: 0 1px 1px 0;
+    }
   }
 
+  // hide the divider if only two icons
   &:first-child + &:last-child {
     .#{$iot-prefix}--icon-switch__divider {
       display: none;
     }
-  }
-
-  &.#{$iot-prefix}--icon-switch--selected + &.#{$iot-prefix}--icon-switch--selected {
-    .#{$iot-prefix}--icon-switch__divider {
-      background-color: $icon-03;
-    }
-  }
-
-  &:focus {
-    border-radius: 1px 0 0 1px;
-    border: 1px solid;
   }
 
   .#{$prefix}--btn__icon {
@@ -100,139 +80,6 @@ $icon-switch-size-large: $spacing-09;
     padding: 0 0 0 $spacing-05;
   }
 
-  &--light {
-    background-color: transparent;
-    color: $icon-02;
-    border: 1px solid $ui-05;
-
-    &:focus {
-      color: $icon-02;
-    }
-
-    &.#{$iot-prefix}--icon-switch--selected {
-      .#{$iot-prefix}--icon-switch__divider {
-        background-color: transparent;
-      }
-
-      + .#{$iot-prefix}--icon-switch--unselected {
-        .#{$iot-prefix}--icon-switch__divider {
-          display: none;
-        }
-      }
-    }
-
-    .#{$iot-prefix}--icon-switch__divider {
-      background-color: $ui-04;
-    }
-
-    &:first-child {
-      border: 1px solid $ui-05;
-      border-top-left-radius: $spacing-02;
-      border-bottom-left-radius: $spacing-02;
-
-      .#{$iot-prefix}--icon-switch__divider {
-        display: none;
-      }
-    }
-
-    &:last-child {
-      border: 1px solid $ui-05;
-      border-top-right-radius: $spacing-02;
-      border-bottom-right-radius: $spacing-02;
-    }
-
-    &:hover {
-      color: $icon-02;
-      background-color: transparent;
-    }
-
-    &:disabled {
-      &,
-      &:hover {
-        background-color: $disabled-01;
-        border-color: $disabled-02;
-        color: $disabled-02;
-      }
-    }
-
-    // fix borders being too wide when multiple IconSwitches are used w/o a ContentSwitcher
-    // ie. HotspotTextStyleTab
-    &.#{$iot-prefix}--icon-switch--selected + &.#{$iot-prefix}--icon-switch--selected {
-      border-left: 0;
-    }
-  }
-
-  &--unselected {
-    background-color: transparent;
-    color: $icon-01;
-
-    &:disabled {
-      &,
-      &:hover {
-        background-color: transparent;
-        border-color: $disabled-02;
-        color: $disabled-02;
-      }
-    }
-
-    &:hover {
-      color: $icon-01;
-      background-color: $hover-ui;
-    }
-
-    &:focus {
-      color: $icon-01;
-      border: 1px solid;
-    }
-
-    &:first-of-type {
-      border-left: 1px solid $ui-05;
-    }
-  }
-  &--unselected--light {
-    background-color: $ui-03;
-    color: $icon-02;
-    border: 1px solid $ui-03;
-
-    &:first-child {
-      border-top-left-radius: $spacing-02;
-      border-bottom-left-radius: $spacing-02;
-
-      .#{$iot-prefix}--icon-switch__divider {
-        display: none;
-      }
-    }
-
-    &:last-child {
-      border: 1px solid $ui-03;
-      border-top-right-radius: $spacing-02;
-      border-bottom-right-radius: $spacing-02;
-      border-left: 0;
-    }
-
-    &:disabled {
-      &,
-      &:hover {
-        background-color: $ui-02;
-        border-color: $ui-02;
-        color: $disabled-02;
-      }
-    }
-
-    &:hover {
-      color: $icon-02;
-      background-color: $hover-ui;
-    }
-
-    &:focus {
-      color: $icon-02;
-      border: 1px solid;
-    }
-
-    &:first-of-type {
-      border: 1px solid $ui-03;
-    }
-  }
   &.#{$prefix}--btn {
     &:not(:focus) {
       &:hover {
@@ -246,6 +93,108 @@ $icon-switch-size-large: $spacing-09;
   }
 }
 
+.#{$iot-prefix}--icon-switch--unselected {
+  background-color: transparent;
+  color: $icon-01;
+
+  &:focus {
+    color: $icon-01;
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    background-color: transparent;
+    border-color: $disabled-02;
+    color: $disabled-02;
+
+    .#{$iot-prefix}--icon-switch__divider {
+      background-color: $ui-03;
+    }
+  }
+
+  &.#{$iot-prefix}--icon-switch--unselected--light {
+    background-color: $ui-03;
+    color: $icon-02;
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: $ui-02;
+      border-color: $disabled-02;
+      color: $disabled-02;
+    }
+  }
+}
+
+.#{$iot-prefix}--icon-switch__divider {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: $spacing-05;
+  width: 1px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  background-color: $ui-03;
+
+  :focus & {
+    background-color: $focus;
+  }
+
+  .#{$iot-prefix}--icon-switch--selected & {
+    background-color: $ui-05;
+  }
+
+  .#{$iot-prefix}--icon-switch--light & {
+    background-color: $ui-04;
+  }
+
+  // hide the divider when a selected icon (in light mode)
+  .#{$iot-prefix}--icon-switch--selected.#{$iot-prefix}--icon-switch--light & {
+    display: none;
+  }
+
+  // hide the divider when a selected icon (in light mode) is beside an unselected icon
+  .#{$iot-prefix}--icon-switch--selected.#{$iot-prefix}--icon-switch--light
+    + .#{$iot-prefix}--icon-switch--unselected
+    & {
+    display: none;
+  }
+}
+
+.#{$iot-prefix}--icon-switch--selected {
+  &:disabled,
+  &:disabled:hover {
+    background-color: $disabled-03;
+    border-color: $disabled-02;
+    color: $disabled-02;
+  }
+
+  &.#{$iot-prefix}--icon-switch--light {
+    background-color: transparent;
+    color: $icon-02;
+    border: 1px solid $ui-05;
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: $disabled-01;
+      border-color: $disabled-02;
+      color: $disabled-02;
+    }
+  }
+}
+
+.#{$iot-prefix}--icon-switch--selected + .#{$iot-prefix}--icon-switch--selected {
+  .#{$iot-prefix}--icon-switch__divider {
+    background-color: $icon-03;
+  }
+}
+
+// fix borders being too wide when multiple IconSwitches are used w/o a ContentSwitcher
+// ie. HotspotTextStyleTab
+.#{$iot-prefix}--icon-switch--light.#{$iot-prefix}--icon-switch--selected
+  + .#{$iot-prefix}--icon-switch--light.#{$iot-prefix}--icon-switch--selected {
+  border-left: 0;
+}
+
 // bx--content-switcher has justify-content: spread-evently which does not look right when
 // using icon switchers. Use this class to override this behaviour
 .#{$iot-prefix}--content-switcher--icon {
@@ -254,14 +203,71 @@ $icon-switch-size-large: $spacing-09;
 
 html[dir='rtl'] {
   .#{$iot-prefix}--icon-switch {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-right-radius: $spacing-02;
+      border-bottom-right-radius: $spacing-02;
+      border-right: 1px solid;
+      border-left: 0;
+
+      &:focus {
+        border-radius: 0 1px 1px 0;
+      }
+
+      &:last-child {
+        border-right: 1px solid;
+      }
+    }
+
+    &:last-child {
+      border-top-left-radius: $spacing-02;
+      border-bottom-left-radius: $spacing-02;
+      border-right: 0;
+      border-left: 0;
+
+      &:focus {
+        border-radius: 1px 0 0 1px;
+      }
+    }
+
+    .#{$iot-prefix}--icon-switch__divider {
+      right: 0;
+      left: unset;
+    }
+
     &--small {
-      padding: 0 $icon-switch-size-small/4 0 0;
+      padding: 0 $spacing-03 0 0;
     }
     &--default {
-      padding: 0 $icon-switch-size-default/4 0 0;
+      padding: 0 $spacing-04 0 0;
     }
     &--large {
-      padding: 0 $icon-switch-size-large/4 0 0;
+      padding: 0 $spacing-05 0 0;
+    }
+
+    &--unselected + .#{$iot-prefix}--icon-switch--selected {
+      .#{$iot-prefix}--icon-switch__divider {
+        display: none;
+      }
+    }
+
+    &--light,
+    &--unselected {
+      &:last-child {
+        border-left: 1px solid;
+      }
+    }
+  }
+
+  // fix borders being too wide when multiple IconSwitches are used w/o a ContentSwitcher
+  // ie. HotspotTextStyleTab
+  .#{$iot-prefix}--icon-switch--light.#{$iot-prefix}--icon-switch--selected
+    + .#{$iot-prefix}--icon-switch--light.#{$iot-prefix}--icon-switch--selected {
+    border: 1px solid;
+
+    &:last-child {
+      border-right: 0;
     }
   }
 }
