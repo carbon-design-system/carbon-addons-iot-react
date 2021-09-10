@@ -13,7 +13,7 @@ $icon-switch-size-large: $spacing-09;
   &__divider {
     position: absolute;
     top: 50%;
-    right: 0;
+    left: 0;
     height: $spacing-05;
     width: 1px;
     transform: translateY(-50%);
@@ -22,6 +22,10 @@ $icon-switch-size-large: $spacing-09;
 
     :focus & {
       background-color: $focus;
+    }
+
+    .#{$iot-prefix}--icon-switch--selected & {
+      background-color: $ui-05;
     }
   }
 
@@ -48,9 +52,17 @@ $icon-switch-size-large: $spacing-09;
     border-top-right-radius: $spacing-02;
     border-bottom-right-radius: $spacing-02;
     border-left: 0;
+  }
 
+  &:first-child + &:last-child {
     .#{$iot-prefix}--icon-switch__divider {
       display: none;
+    }
+  }
+
+  &.#{$iot-prefix}--icon-switch--selected + &.#{$iot-prefix}--icon-switch--selected {
+    .#{$iot-prefix}--icon-switch__divider {
+      background-color: $icon-03;
     }
   }
 
@@ -97,8 +109,20 @@ $icon-switch-size-large: $spacing-09;
       color: $icon-02;
     }
 
+    &.#{$iot-prefix}--icon-switch--selected {
+      .#{$iot-prefix}--icon-switch__divider {
+        background-color: transparent;
+      }
+
+      + .#{$iot-prefix}--icon-switch--unselected {
+        .#{$iot-prefix}--icon-switch__divider {
+          display: none;
+        }
+      }
+    }
+
     .#{$iot-prefix}--icon-switch__divider {
-      color: $ui-04;
+      background-color: $ui-04;
     }
 
     &:first-child {
@@ -115,14 +139,11 @@ $icon-switch-size-large: $spacing-09;
       border: 1px solid $ui-05;
       border-top-right-radius: $spacing-02;
       border-bottom-right-radius: $spacing-02;
-
-      .#{$iot-prefix}--icon-switch__divider {
-        display: none;
-      }
     }
 
     &:hover {
-      color: $hover-selected-ui;
+      color: $icon-02;
+      background-color: transparent;
     }
 
     &:disabled {
@@ -132,6 +153,12 @@ $icon-switch-size-large: $spacing-09;
         border-color: $disabled-02;
         color: $disabled-02;
       }
+    }
+
+    // fix borders being too wide when multiple IconSwitches are used w/o a ContentSwitcher
+    // ie. HotspotTextStyleTab
+    &.#{$iot-prefix}--icon-switch--selected + &.#{$iot-prefix}--icon-switch--selected {
+      border-left: 0;
     }
   }
 
@@ -181,10 +208,6 @@ $icon-switch-size-large: $spacing-09;
       border-top-right-radius: $spacing-02;
       border-bottom-right-radius: $spacing-02;
       border-left: 0;
-
-      .#{$iot-prefix}--icon-switch__divider {
-        display: none;
-      }
     }
 
     &:disabled {

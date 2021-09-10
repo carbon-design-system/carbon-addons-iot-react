@@ -54,6 +54,7 @@ const IconSwitch = React.forwardRef((props, ref) => {
     className,
     `${iotPrefix}--icon-switch`,
     `${iotPrefix}--icon-switch--${size}`,
+    { [`${iotPrefix}--icon-switch--selected`]: selected },
     { [`${iotPrefix}--icon-switch--light`]: light },
     { [`${iotPrefix}--icon-switch--unselected`]: !selected },
     { [`${iotPrefix}--icon-switch--unselected--light`]: light && !selected }
