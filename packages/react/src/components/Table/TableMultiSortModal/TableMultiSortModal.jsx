@@ -268,7 +268,7 @@ const TableMultiSortModal = ({
                   ? i18n.multiSortSelectColumnSortByTitle
                   : i18n.multiSortSelectColumnThenByTitle
               }
-              defaultValue={defaultColumn.id}
+              defaultValue={defaultColumn?.id}
             >
               {multiSortColumns.map((col) => (
                 <SelectItem
