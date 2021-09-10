@@ -161,4 +161,49 @@ describe('IdleLogoutConfirmationModal', () => {
     });
     expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity);
   });
+
+  it("user clicks 'Stay logged in' on the idle logout confirmation dialog", async () => {
+    jest.spyOn(IdleLogoutConfirmationModal.defaultProps, 'onStayLoggedIn');
+    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => false} />);
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+    });
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+    const modalStayLoggedInButton = within(
+      screen.getByTestId('idle-logout-confirmation')
+    ).getByText(SuiteHeaderI18N.en.sessionTimeoutModalStayLoggedInButton);
+    await userEvent.click(modalStayLoggedInButton);
+    expect(IdleLogoutConfirmationModal.defaultProps.onStayLoggedIn).toHaveBeenCalled();
+    jest.restoreAllMocks();
+  });
+
+  it('should restart the timer when cookie changes', async () => {
+    jest.spyOn(IdleLogoutConfirmationModal.defaultProps, 'onStayLoggedIn');
+    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => false} />);
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+    });
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+    expect(IdleLogoutConfirmationModal.defaultProps.onStayLoggedIn).not.toHaveBeenCalled();
+
+    // Simulate a timestamp cookie that is in the future (another tab could have updated it)
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() + 1000}`,
+    });
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+
+    expect(IdleLogoutConfirmationModal.defaultProps.onStayLoggedIn).toHaveBeenCalled();
+    jest.restoreAllMocks();
+  });
 });
