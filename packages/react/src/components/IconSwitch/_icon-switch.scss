@@ -11,7 +11,6 @@ $icon-switch-size-large: $spacing-09;
   position: relative;
 
   &:focus {
-    border: 1px solid;
     &,
     & + .#{$iot-prefix}--icon-switch {
       .#{$iot-prefix}--icon-switch__divider {
@@ -257,6 +256,10 @@ html[dir='rtl'] {
       &:last-child {
         border-left: 1px solid;
       }
+    }
+
+    &--selected {
+      border-color: $ui-05;
     }
   }
 
