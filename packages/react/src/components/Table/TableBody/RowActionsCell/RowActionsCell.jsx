@@ -188,6 +188,7 @@ class RowActionsCell extends React.Component {
                           [`${iotPrefix}--action-overflow-item--initialFocus`]:
                             actionIndex === firstSelectableItemIndex,
                         })}
+                        data-testid={`${tableId}-${id}-row-actions-cell-overflow-menu-item-${action.id}`}
                         key={`${id}-row-actions-button-${action.id}`}
                         onClick={(e) => onClick(e, id, action.id, onApplyRowAction)}
                         requireTitle={!action.renderIcon}
