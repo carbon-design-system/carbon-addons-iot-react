@@ -348,8 +348,8 @@ const TableBody = ({
       ? [rowElement]
           .concat(row.children.map((childRow) => renderRow(childRow, nestingLevel + 1)))
           .concat(
-            row.hasLoadMore
-              ? renderRow({ id: `loadMore--${row.id}`, isLoadMoreRow: true }, nestingLevel)
+            row.hasLoadMore && row.children.length > 0
+              ? renderRow({ id: row.id, isLoadMoreRow: true }, nestingLevel)
               : []
           )
       : rowElement;

@@ -13,6 +13,7 @@ import { getTableColumns, mockActions, getNestedRows, getNestedRowIds } from './
 import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
+import TableBodyLoadMoreRow from './TableBody/TableBodyLoadMoreRow/TableBodyLoadMoreRow';
 import TableHead from './TableHead/TableHead';
 import { initialState } from './Table.story';
 
@@ -740,7 +741,7 @@ describe('Table', () => {
       render(<Table columns={columns} data={[tableData[0]]} options={options} />);
     };
 
-    it('wraps cell text when there are no otions', () => {
+    it('wraps cell text when there are no options', () => {
       render(<Table columns={tableColumns} data={[tableData[0]]} options={false} />);
       expectWrapping();
       expectNoTruncation();
@@ -2266,5 +2267,11 @@ describe('Table', () => {
     expect(container.querySelectorAll('tr')).toHaveLength(21);
     expect(screen.getByTitle('String')).toBeVisible();
     expect(screen.getByTitle('Date')).toBeVisible();
+  });
+  it('should render Load more row', () => {
+    const wrapper = mount(<Table columns={tableColumns} data={getNestedRows()} />);
+    expect(wrapper.find(TableBodyLoadMoreRow)).toBeTruthy();
+    wrapper.find('.iot--load-more-cell--content').at(0).simulate('click');
+    expect(mockActions.table.onRowLoadMore).toHaveBeenCalled();
   });
 });

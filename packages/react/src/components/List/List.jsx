@@ -2,7 +2,6 @@ import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Bee32 } from '@carbon/icons-react';
-// import { Button } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
@@ -89,7 +88,7 @@ const propTypes = {
   testId: PropTypes.string,
   /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
-  /** Array with rowIds that are with loading active */
+  /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
 };
 

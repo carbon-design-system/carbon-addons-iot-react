@@ -742,7 +742,6 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_ROW_LOAD_MORE: {
-      console.log('TABLE_ROW_LOAD_MORE:', state);
       return update(state, {
         view: {
           table: {

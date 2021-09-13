@@ -2430,17 +2430,16 @@ export const RowExpansionAndLoadMore = () => {
     const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
     const [loadingMoreIds, setLoadingMoreIds] = useState([]);
 
-    const tableDataNested = tableData
-      .slice(0, number('number of rows in story', 3))
-      .map((i, idx) => ({
+    const [tableDataNested, setTableDataNested] = useState(
+      tableData.slice(0, number('number of rows in story', 3)).map((i, idx) => ({
         ...i,
         children:
           idx === 0
             ? [
                 getNewRow(idx, 'A'),
-                {
-                  ...getNewRow(idx, 'B'),
-                },
+
+                getNewRow(idx, 'B'),
+
                 getNewRow(idx, 'C'),
                 {
                   ...getNewRow(idx, 'D'),
@@ -2454,7 +2453,27 @@ export const RowExpansionAndLoadMore = () => {
                 },
               ]
             : undefined,
-      }));
+      }))
+    );
+
+    const addDataTimeout = (id) =>
+      setTimeout(() => {
+        setTableDataNested((prevTable) => {
+          const dataUpdated = [...prevTable];
+          const indexChildren = dataUpdated[0].children.findIndex((i) => i.id === id);
+          dataUpdated[0].children[indexChildren] = {
+            ...dataUpdated[0].children[indexChildren],
+            hasLoadMore: false,
+            children: [
+              ...dataUpdated[0].children[indexChildren].children,
+              getNewRow(0, `${id.split('_').pop()}-4`),
+              getNewRow(0, `${id.split('_').pop()}-5`),
+              getNewRow(0, `${id.split('_').pop()}-6 `),
+            ],
+          };
+          return dataUpdated;
+        });
+      }, 2000);
 
     return (
       <MyTable
@@ -2468,6 +2487,7 @@ export const RowExpansionAndLoadMore = () => {
               if (selectedTableType !== 'StatefulTable') {
                 setLoadingMoreIds((prev) => [...prev, id]);
               }
+              addDataTimeout(id);
             },
           },
         }}

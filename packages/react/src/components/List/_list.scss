@@ -69,7 +69,6 @@
   border: none;
   background: $ui-01;
   &--content {
-    @include type-style('body-short-01');
     color: $interactive-01;
   }
   .#{prefix}--loading__stroke {
