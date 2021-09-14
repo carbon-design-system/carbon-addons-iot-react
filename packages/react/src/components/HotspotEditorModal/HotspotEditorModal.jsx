@@ -625,13 +625,7 @@ const HotspotEditorModal = ({
       <div>
         <ContentSwitcher
           onChange={(e) => {
-            switchCurrentType(
-              e.name === 'labels'
-                ? hotspotTypes.TEXT
-                : dynamicHotspotSourceX && dynamicHotspotSourceY
-                ? hotspotTypes.DYNAMIC
-                : hotspotTypes.FIXED
-            );
+            switchCurrentType(e.name === 'labels' ? hotspotTypes.TEXT : hotspotTypes.FIXED);
           }}
           selectedIndex={currentType === hotspotTypes.TEXT ? 1 : 0}
           data-testid={`${testId}-content-switcher`}

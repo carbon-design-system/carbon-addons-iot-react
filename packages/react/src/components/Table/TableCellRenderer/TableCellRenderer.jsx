@@ -78,7 +78,6 @@ const TableCellRenderer = ({
   const withTooltip = (element, tooltipForExtraInformation) => {
     return tooltip ? (
       <TooltipDefinition
-        showIcon={false}
         triggerClassName={`${iotPrefix}--table__cell-tooltip`}
         tooltipText={tooltipForExtraInformation}
         id="table-header-tooltip"

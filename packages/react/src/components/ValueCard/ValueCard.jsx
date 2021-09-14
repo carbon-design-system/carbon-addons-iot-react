@@ -44,6 +44,7 @@ const ValueCard = ({
   isNumberValueCompact,
   testID,
   testId,
+  onAttributeClick,
   ...others
 }) => {
   const availableActions = {
@@ -126,6 +127,7 @@ const ValueCard = ({
               isNumberValueCompact={isNumberValueCompact}
               // TODO: remove deprecated 'testID' in v3.
               testId={`${testID || testId}-attribute-${index}`}
+              onValueClick={onAttributeClick}
             />
           ))
         ) : (
@@ -157,6 +159,7 @@ ValueCard.defaultProps = {
   isNumberValueCompact: false,
   // TODO: fix this default in V3, so that cards are unique not inherited from the base Card
   testId: 'Card',
+  onAttributeClick: null,
 };
 
 export default ValueCard;

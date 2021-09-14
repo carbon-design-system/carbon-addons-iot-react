@@ -133,7 +133,7 @@ const TableManageViewsList = ({
     const { id } = view;
     return {
       content: {
-        rowActions: rowActionsRenderer(view, { ...props, i18n, testID }),
+        rowActions: () => rowActionsRenderer(view, { ...props, i18n, testID }),
         secondaryValue: rowDescriptionInterpolation(view),
         tags: rowTagsRenderer(view, { ...props, defaultViewId, i18n }),
         value: rowTitleInterpolation(view, publicLabelText, privateLabelText),

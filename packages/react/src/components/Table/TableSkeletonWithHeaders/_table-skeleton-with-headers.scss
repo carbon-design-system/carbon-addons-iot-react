@@ -5,4 +5,22 @@
     border: 1px solid #dfe3e6;
     background: inherit;
   }
+
+  .#{$prefix}--skeleton__text {
+    margin-bottom: 0;
+  }
+
+  &--head {
+    td {
+      background-color: $ui-03;
+    }
+
+    .#{$prefix}--skeleton__text {
+      background: $ui-04;
+
+      &:before {
+        background: $text-03;
+      }
+    }
+  }
 }

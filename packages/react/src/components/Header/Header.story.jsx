@@ -143,10 +143,9 @@ const headerPanel = {
   className: 'header-panel',
 
   content: React.forwardRef((props, ref) => (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-    <a href="#" ref={ref} {...props}>
+    <button type="button" ref={ref} {...props}>
       Header panel content
-    </a>
+    </button>
   )),
 };
 
@@ -209,9 +208,23 @@ HeaderSubtitle.storyName = 'header subtitle';
 
 export const SmallBreakpoint = () => (
   <div style={{ width: '100%', height: '100vh' }}>
+    <style>{`.isReallyHidden {
+      display: none !important;
+    }`}</style>
     <Header
       {...HeaderProps}
       actionItems={[
+        {
+          label: 'A Hidden Icon',
+          onClick: action('click fired'),
+          btnContent: <Bullhorn16 fill="white" description="A Hidden Icon" />,
+        },
+        {
+          label: 'HiddenByClass',
+          onClick: action('click fired'),
+          btnContent: <Bullhorn16 fill="white" description="A Hidden Icon" />,
+          className: 'isReallyHidden',
+        },
         {
           label: 'Announcements',
           onClick: action('click fired'),
@@ -237,6 +250,14 @@ export const SmallBreakpoint = () => (
       appName={text('appName', 'Maximo Application Suite')}
       shortAppName={text('shortAppName', 'Maximo')}
       subtitle={text('subtitle', 'Manage')}
+      isActionItemVisible={(item) => {
+        action('isActionItemVisible')(item);
+        if (item.label === 'A Hidden Icon') {
+          return false;
+        }
+
+        return true;
+      }}
     />
   </div>
 );

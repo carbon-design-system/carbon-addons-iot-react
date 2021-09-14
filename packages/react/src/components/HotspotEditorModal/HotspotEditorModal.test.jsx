@@ -133,6 +133,55 @@ describe('HotspotEditorModal', () => {
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
+  it('shows correct content when the main  tab is clicked', async () => {
+    const { i18n } = HotspotEditorModal.defaultProps;
+    const onSave = jest.fn();
+    const onFetchDynamicDemoHotspots = jest.fn().mockImplementation(() => {
+      return new Promise((resolve) => resolve(getDemoDynamicHotspots()));
+    });
+
+    render(
+      <HotspotEditorModal
+        backgroundColors={getSelectableColors()}
+        borderColors={getSelectableColors()}
+        cardConfig={getCardConfig()}
+        dataItems={getDataItems()}
+        defaultHotspotType="fixed"
+        fontColors={getSelectableColors()}
+        hotspotIconFillColors={getSelectableColors()}
+        hotspotIcons={getSelectableIcons()}
+        label={landscape}
+        onClose={jest.fn()}
+        onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+        onSave={onSave}
+      />
+    );
+
+    // Let the callback onFetchDynamicDemoHotspots finish
+    await waitFor(() => expect(screen.queryByText(loading)).toBeFalsy());
+
+    expect(screen.getByRole('tab', { name: i18n.fixedTypeDataSourceTabLabelText })).toBeVisible();
+    expect(screen.getByRole('tab', { name: i18n.fixedTypeTooltipTabLabelText })).toBeVisible();
+    expect(screen.queryByRole('tab', { name: i18n.textStyleLabelText })).not.toBeInTheDocument();
+
+    // Switch main tab to Labels
+    userEvent.click(screen.getByRole('tab', { name: i18n.labelsText }));
+    await waitFor(() =>
+      expect(screen.getByRole('tab', { name: i18n.textStyleLabelText })).toBeVisible()
+    );
+    expect(
+      screen.queryByRole('tab', { name: i18n.fixedTypeTooltipTabLabelText })
+    ).not.toBeInTheDocument();
+
+    // Switch main tab back to Hotspots
+    userEvent.click(screen.getByRole('tab', { name: i18n.hotspotsText }));
+    await waitFor(() =>
+      expect(screen.getByRole('tab', { name: i18n.fixedTypeTooltipTabLabelText })).toBeVisible()
+    );
+    expect(screen.getByRole('tab', { name: i18n.fixedTypeDataSourceTabLabelText })).toBeVisible();
+    expect(screen.queryByRole('tab', { name: i18n.textStyleLabelText })).not.toBeInTheDocument();
+  });
+
   it('should be selectable by testId', async () => {
     const { rerender } = render(
       <HotspotEditorModal

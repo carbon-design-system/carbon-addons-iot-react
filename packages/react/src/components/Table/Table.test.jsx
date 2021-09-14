@@ -181,11 +181,24 @@ describe('Table', () => {
     const { rerender } = render(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={tableData.slice(0, 1)}
         expandedData={expandedData}
         actions={mockActions}
-        options={options}
-        view={view}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+              },
+            ],
+          },
+        }}
         testId="__table__"
       />
     );
@@ -199,15 +212,34 @@ describe('Table', () => {
     expect(screen.getByTestId('__table__-table-head-column-string')).toBeDefined();
     expect(screen.getByTestId('__table__-table-body')).toBeDefined();
     expect(screen.getByTestId('__table__-table-head-row-expansion-column')).toBeDefined();
-
+    expect(screen.getByTestId('table-head--overflow')).toBeDefined();
+    userEvent.click(screen.getByTestId('table-head--overflow'));
+    expect(
+      screen.getByTestId(`__table__-table-toolbar-toolbar-overflow-menu-item-aggregations`)
+    ).toBeDefined();
+    // close menu
+    userEvent.click(screen.getByTestId('table-head--overflow'));
     rerender(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={tableData.slice(0, 1)}
         expandedData={expandedData}
         actions={mockActions}
-        options={options}
-        view={view}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+              },
+            ],
+          },
+        }}
         id="__TABLE__"
       />
     );
@@ -222,6 +254,11 @@ describe('Table', () => {
     expect(screen.getByTestId('__TABLE__-table-head-column-string')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-body')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-head-row-expansion-column')).toBeDefined();
+    expect(screen.getByTestId('table-head--overflow')).toBeDefined();
+    userEvent.click(screen.getByTestId('table-head--overflow'));
+    expect(
+      screen.getByTestId(`__TABLE__-table-toolbar-toolbar-overflow-menu-item-aggregations`)
+    ).toBeDefined();
   });
 
   it('limits the number of pagination select options', () => {
@@ -412,7 +449,7 @@ describe('Table', () => {
   });
 
   it('validate row count function ', () => {
-    const wrapper = mount(
+    render(
       <Table
         columns={tableColumns}
         data={tableData}
@@ -423,17 +460,7 @@ describe('Table', () => {
     );
 
     const rowCounts = view.pagination.totalItems;
-    const renderRowCountField = wrapper
-      .find('Table')
-      .at(0)
-      .props()
-      .i18n.rowCountInHeader(rowCounts);
-    expect(renderRowCountField).toContain('Results:');
-
-    const min = 1;
-    const max = 10;
-    const renderItemRangeField = wrapper.find('Table').at(0).props().i18n.itemsRange(min, max);
-    expect(renderItemRangeField).toContain('items');
+    expect(screen.getByText(`Results: ${rowCounts}`)).toBeVisible();
   });
 
   it('validate show/hide hasRowCountInHeader property ', () => {
@@ -989,6 +1016,7 @@ describe('Table', () => {
         ...initialState.view,
         table: {
           expandedIds: ['row-3', 'row-7'],
+          selectedIds: ['row-3', 'row-4'],
         },
       },
     };
@@ -1014,7 +1042,7 @@ describe('Table', () => {
     expect(screen.getAllByLabelText(i18nTest.filterAria)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.openMenuAria)[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.batchCancel)[0]).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemsSelected}.*`))).toBeInTheDocument();
+    expect(screen.getByText(`2 ${i18nTest.itemsSelected}`)).toBeInTheDocument();
 
     expect(screen.queryByLabelText(i18nDefault.overflowMenuAria)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.clickToExpandAria)).not.toBeInTheDocument();
@@ -1047,9 +1075,13 @@ describe('Table', () => {
           toolbar: {
             activeBar: 'column',
           },
+          table: {
+            selectedIds: ['row-3'],
+          },
         }}
       />
     );
+    expect(screen.getByText(`1 ${i18nTest.itemSelected}`)).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.columnSelectionConfig)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.columnSelectionConfig)).not.toBeInTheDocument();
   });
@@ -1089,8 +1121,65 @@ describe('Table', () => {
     expect(screen.queryByText(i18nDefault.emptyButtonLabel)).not.toBeInTheDocument();
   });
 
-  it('has default i18n currentPage function', () => {
-    expect(defaultProps({}).i18n.currentPage(2)).toEqual('page 2');
+  it('has defaults for i18n functions', () => {
+    const additionalProps = {
+      options: {
+        ...initialState.options,
+        hasRowCountInHeader: true,
+      },
+      view: {
+        ...initialState.view,
+        table: {
+          selectedIds: ['row-1', 'row-2'],
+        },
+      },
+    };
+
+    const { rerender } = render(<Table {...initialState} {...additionalProps} isSortable />);
+
+    expect(screen.getByText(i18nDefault.itemsSelected(2))).toBeInTheDocument();
+    expect(screen.getByText(i18nDefault.pageRange(1, 10))).toBeInTheDocument();
+    expect(screen.getByText(i18nDefault.itemsRangeWithTotal(1, 10, 100))).toBeInTheDocument();
+    expect(screen.getByText(i18nDefault.rowCountInHeader(100))).toBeInTheDocument();
+
+    additionalProps.view.table.selectedIds = ['row-1'];
+    rerender(<Table {...initialState} {...additionalProps} isSortable />);
+    expect(screen.getByText(i18nDefault.itemSelected(1))).toBeInTheDocument();
+  });
+
+  it('supports external i18n functions', () => {
+    const i18nFunctions = {
+      itemSelected: (i) => `${i} test-item-selected`,
+      itemsSelected: (i) => `${i} test-items-selected`,
+      itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} test-items`,
+      pageRange: (current, total) => `${current} of ${total} test-pages`,
+      rowCountInHeader: (totalRowCount) => `test-results: ${totalRowCount}`,
+    };
+
+    const additionalProps = {
+      options: {
+        ...initialState.options,
+        hasRowCountInHeader: true,
+      },
+      view: {
+        ...initialState.view,
+        table: {
+          selectedIds: ['row-1', 'row-2'],
+        },
+      },
+    };
+
+    const { rerender } = render(
+      <Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />
+    );
+    expect(screen.getByText(i18nFunctions.itemsSelected(2))).toBeInTheDocument();
+    expect(screen.getByText(i18nFunctions.pageRange(1, 10))).toBeInTheDocument();
+    expect(screen.getByText(i18nFunctions.itemsRangeWithTotal(1, 10, 100))).toBeInTheDocument();
+    expect(screen.getByText(i18nFunctions.rowCountInHeader(100))).toBeInTheDocument();
+
+    additionalProps.view.table.selectedIds = ['row-1'];
+    rerender(<Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />);
+    expect(screen.getByText(i18nFunctions.itemSelected(1))).toBeInTheDocument();
   });
 
   it('Table in modal select all', () => {
@@ -2157,5 +2246,62 @@ describe('Table', () => {
         },
       });
     });
+  });
+
+  it('should render a loading state without columns', () => {
+    const { container } = render(
+      <Table
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const headerRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row--head`
+    );
+    expect(headerRows).toHaveLength(1);
+    expect(headerRows[0].querySelectorAll('td')).toHaveLength(3);
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+  });
+
+  it('should show data after loading is finished', () => {
+    const { container, rerender } = render(
+      <Table
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+    expect(screen.queryByTitle('String')).toBeNull();
+    expect(screen.queryByTitle('Date')).toBeNull();
+
+    rerender(
+      <Table
+        id="loading-table"
+        columns={tableColumns}
+        data={tableData}
+        view={{ table: { loadingState: { isLoading: false, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--table-skeleton-with-headers--table-row`)
+    ).toHaveLength(0);
+
+    // 20 rows plus the header
+    expect(container.querySelectorAll('tr')).toHaveLength(21);
+    expect(screen.getByTitle('String')).toBeVisible();
+    expect(screen.getByTitle('Date')).toBeVisible();
   });
 });

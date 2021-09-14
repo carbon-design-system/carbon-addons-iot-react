@@ -414,7 +414,6 @@ Map {
         "closeMenuAria": "Close menu",
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage Columns",
-        "currentPage": [Function],
         "downloadIconDescription": "Download table content",
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
@@ -427,11 +426,10 @@ Map {
         "filterButtonAria": "Filters",
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
-        "itemSelected": "item selected",
+        "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
-        "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
-        "itemsSelected": "items selected",
+        "itemsSelected": [Function],
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortDescending": "Descending",
@@ -485,6 +483,7 @@ Map {
         "wrapCellText": "always",
       },
       "secondaryTitle": null,
+      "size": undefined,
       "testId": null,
       "title": null,
       "tooltip": null,
@@ -512,6 +511,7 @@ Map {
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
           "loadingState": Object {
+            "columnCount": 5,
             "rowCount": 5,
           },
           "ordering": undefined,
@@ -975,9 +975,6 @@ Map {
             "columnSelectionConfig": Object {
               "type": "string",
             },
-            "currentPage": Object {
-              "type": "func",
-            },
             "dismissText": Object {
               "type": "string",
             },
@@ -1006,19 +1003,36 @@ Map {
               "type": "string",
             },
             "itemSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "itemsPerPage": Object {
               "type": "string",
-            },
-            "itemsRange": Object {
-              "type": "func",
             },
             "itemsRangeWithTotal": Object {
               "type": "func",
             },
             "itemsSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "learnMoreText": Object {
               "type": "string",
@@ -1239,6 +1253,19 @@ Map {
       "secondaryTitle": Object {
         "type": "string",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "stickyHeader": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -1486,6 +1513,9 @@ Map {
                   "loadingState": Object {
                     "args": Array [
                       Object {
+                        "columnCount": Object {
+                          "type": "number",
+                        },
                         "isLoading": Object {
                           "type": "bool",
                         },
@@ -1723,7 +1753,6 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "createNewAdvancedFilterText": "create a new advanced filter",
-        "currentPage": [Function],
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
@@ -1734,11 +1763,10 @@ Map {
         "filterButtonAria": "Filters",
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
-        "itemSelected": "item selected",
+        "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
-        "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
-        "itemsSelected": "items selected",
+        "itemsSelected": [Function],
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortCloseMenu": "Close menu",
@@ -1982,9 +2010,6 @@ Map {
             "columnSelectionConfig": Object {
               "type": "string",
             },
-            "currentPage": Object {
-              "type": "func",
-            },
             "dismissText": Object {
               "type": "string",
             },
@@ -2013,19 +2038,36 @@ Map {
               "type": "string",
             },
             "itemSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "itemsPerPage": Object {
               "type": "string",
-            },
-            "itemsRange": Object {
-              "type": "func",
             },
             "itemsRangeWithTotal": Object {
               "type": "func",
             },
             "itemsSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "learnMoreText": Object {
               "type": "string",
@@ -3314,7 +3356,17 @@ Map {
               "type": "number",
             },
             "totalItemsText": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -3362,6 +3414,7 @@ Map {
   },
   "TableSkeletonWithHeaders" => Object {
     "defaultProps": Object {
+      "columnCount": 5,
       "columns": Array [],
       "hasRowActions": false,
       "hasRowExpansion": false,
@@ -3371,6 +3424,9 @@ Map {
       "testId": "",
     },
     "propTypes": Object {
+      "columnCount": Object {
+        "type": "number",
+      },
       "columns": Object {
         "args": Array [
           Object {
@@ -3433,7 +3489,6 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "createNewAdvancedFilterText": "create a new advanced filter",
-        "currentPage": [Function],
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
@@ -3444,11 +3499,10 @@ Map {
         "filterButtonAria": "Filters",
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
-        "itemSelected": "item selected",
+        "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
-        "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
-        "itemsSelected": "items selected",
+        "itemsSelected": [Function],
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortCloseMenu": "Close menu",
@@ -3680,10 +3734,30 @@ Map {
               "type": "string",
             },
             "itemSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "itemsSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "searchLabel": Object {
               "type": "string",
@@ -4569,7 +4643,17 @@ Map {
         "type": "number",
       },
       "totalItemsText": Object {
-        "type": "string",
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "func",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
     },
   },
@@ -5087,8 +5171,8 @@ Map {
         "expand": "Expand",
         "itemSelected": "1 item selected",
         "itemTitle": "Move 1 item underneath",
-        "itemsSelected": "%d items selected",
-        "itemsTitle": "Move %d items underneath",
+        "itemsSelected": [Function],
+        "itemsTitle": [Function],
         "modalDescription": "Select a destination",
         "move": "Move",
         "searchPlaceHolderText": "Enter a value",
@@ -5169,8 +5253,37 @@ Map {
             "expand": Object {
               "type": "string",
             },
-            "itemsSelected": Object {
+            "itemSelected": Object {
               "type": "string",
+            },
+            "itemTitle": Object {
+              "type": "string",
+            },
+            "itemsSelected": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "itemsTitle": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "modalDescription": Object {
               "type": "string",
@@ -6429,13 +6542,33 @@ Map {
         "args": Array [
           Object {
             "decrement": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hours": Object {
               "type": "string",
             },
             "increment": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "minutes": Object {
               "type": "string",
@@ -8249,6 +8382,7 @@ Map {
         "mainHeader": "main header",
         "openMenu": "Open menu",
       },
+      "isActionItemVisible": [Function],
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -8296,6 +8430,9 @@ Map {
                 },
                 "hasHeaderPanel": Object {
                   "type": "bool",
+                },
+                "id": Object {
+                  "type": "string",
                 },
                 "label": Object {
                   "isRequired": true,
@@ -8353,6 +8490,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isActionItemVisible": Object {
+        "type": "func",
       },
       "onClickSideNavExpand": Object {
         "type": "func",
@@ -8528,6 +8668,7 @@ Map {
         "whatsNew": "What's new",
       },
       "idleTimeoutData": null,
+      "isActionItemVisible": [Function],
       "isAdminView": false,
       "onRouteChange": [Function],
       "onSideNavToggled": [Function],
@@ -8614,6 +8755,9 @@ Map {
                 },
                 "hasHeaderPanel": Object {
                   "type": "bool",
+                },
+                "id": Object {
+                  "type": "string",
                 },
                 "label": Object {
                   "isRequired": true,
@@ -8835,6 +8979,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isActionItemVisible": Object {
+        "type": "func",
       },
       "isAdminView": Object {
         "type": "bool",
@@ -10364,6 +10511,7 @@ Map {
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
+      "onRenderCardEditForm": null,
       "onSubmit": null,
       "onValidateCardJson": null,
       "onValidateUploadedImage": null,
@@ -10958,6 +11106,9 @@ Map {
       "onLayoutChange": Object {
         "type": "func",
       },
+      "onRenderCardEditForm": Object {
+        "type": "func",
+      },
       "onSubmit": Object {
         "type": "func",
       },
@@ -10992,6 +11143,7 @@ Map {
       },
     },
   },
+  "DashboardEditorDefaultCardRenderer" => Object {},
   "CardEditor" => Object {
     "defaultProps": Object {
       "availableDimensions": Object {},
@@ -11015,6 +11167,7 @@ Map {
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
       "onEditDataItems": null,
+      "onRenderCardEditForm": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -11220,6 +11373,9 @@ Map {
         "type": "func",
       },
       "onEditDataItems": Object {
+        "type": "func",
+      },
+      "onRenderCardEditForm": Object {
         "type": "func",
       },
       "onShowGallery": Object {
@@ -13659,6 +13815,7 @@ Map {
       "fontSize": 42,
       "isNumberValueCompact": false,
       "locale": "en",
+      "onAttributeClick": null,
       "size": "MEDIUM",
       "testId": "Card",
       "values": null,
@@ -14495,6 +14652,9 @@ Map {
       },
       "locale": Object {
         "type": "string",
+      },
+      "onAttributeClick": Object {
+        "type": "func",
       },
       "onBlur": Object {
         "type": "func",
@@ -21035,7 +21195,17 @@ Map {
               "type": "number",
             },
             "totalItemsText": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],

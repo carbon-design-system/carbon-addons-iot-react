@@ -69,8 +69,8 @@ const propTypes = {
     searchLabel: PropTypes.string,
     searchPlaceholder: PropTypes.string,
     batchCancel: PropTypes.string,
-    itemsSelected: PropTypes.string,
-    itemSelected: PropTypes.string,
+    itemsSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    itemSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     filterNone: PropTypes.string,
     filterAscending: PropTypes.string,
     filterDescending: PropTypes.string,
@@ -400,6 +400,7 @@ const TableToolbar = ({
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
             >
               <OverflowMenuItem
+                data-testid={`${testID || testId}-toolbar-overflow-menu-item-aggregations`}
                 itemText={i18n.toggleAggregations}
                 key="table-aggregations-overflow-item"
                 // wrapping in function to prevent error in netlify storybook deploys.

@@ -1,7 +1,23 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import { settings } from '../../constants/Settings';
 
 import FlyoutMenu, { FlyoutMenuDirection } from './FlyoutMenu';
+
+const { iotPrefix } = settings;
+
+const generateBoundingClientRect = ({ x, y, height = 50, width = 50 }) => () => ({
+  x,
+  y,
+  height,
+  width,
+  top: y,
+  bottom: y + height,
+  left: x,
+  right: x + width,
+});
 
 describe('FlyoutMenu', () => {
   it('Renders an open flyout menu with a default footer', () => {
@@ -274,5 +290,191 @@ describe('FlyoutMenu', () => {
     );
 
     expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__right-end');
+  });
+
+  it('should set tooltip visibility when hideTooltip:false', () => {
+    render(
+      <FlyoutMenu
+        direction={FlyoutMenuDirection.RightEnd}
+        iconDescription="Helpful description"
+        hideTooltip={false}
+      />
+    );
+
+    expect(screen.queryByTestId('flyout-menu-container')).toHaveStyle(
+      '--tooltip-visibility:visible'
+    );
+  });
+
+  it('should use custom menuOffset function to determine position if provided', () => {
+    const menuOffset = jest.fn().mockImplementation(() => ({ top: 0, left: 0 }));
+    render(
+      <FlyoutMenu
+        defaultOpen
+        direction={FlyoutMenuDirection.RightEnd}
+        iconDescription="Helpful description"
+        hideTooltip={false}
+        menuOffset={menuOffset}
+      />
+    );
+
+    expect(menuOffset).toHaveBeenLastCalledWith(
+      expect.any(HTMLElement),
+      FlyoutMenuDirection.RightEnd,
+      expect.any(HTMLElement),
+      false
+    );
+  });
+
+  it('should use menuOffset (even if only left is given) to determine position', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: 200,
+        y: 200,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+
+    const { rerender } = render(
+      <FlyoutMenu
+        direction={FlyoutMenuDirection.RightEnd}
+        iconDescription="Helpful description"
+        hideTooltip={false}
+        defaultOpen
+      />
+    );
+
+    expect(screen.getByTestId('flyout-menu')).toHaveStyle('top:-30px');
+    expect(screen.getByTestId('flyout-menu')).toHaveStyle('left:276px');
+
+    rerender(
+      <FlyoutMenu
+        direction={FlyoutMenuDirection.RightEnd}
+        iconDescription="Helpful description"
+        hideTooltip={false}
+        defaultOpen
+        menuOffset={{
+          left: 100,
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('flyout-menu')).toHaveStyle('top:-30px');
+    expect(screen.getByTestId('flyout-menu')).toHaveStyle('left:376px');
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('should calculate position in RTL correctly', () => {
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.dir = 'rtl';
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: 200,
+        y: 200,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+
+    render(
+      <FlyoutMenu
+        direction={FlyoutMenuDirection.RightEnd}
+        iconDescription="Helpful description"
+        hideTooltip={false}
+        defaultOpen
+        menuOffset={{
+          top: 15,
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('flyout-menu')).toHaveStyle('top:-15px');
+    expect(screen.getByTestId('flyout-menu')).toHaveStyle('left:554px');
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it("shouldn't use menuOffset at all if it's not a function or object", () => {
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.dir = 'rtl';
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: 200,
+        y: 200,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    render(
+      <FlyoutMenu
+        direction={FlyoutMenuDirection.RightEnd}
+        iconDescription="Helpful description"
+        hideTooltip={false}
+        defaultOpen
+        menuOffset={false}
+      />
+    );
+
+    expect(screen.getByTestId('flyout-menu')).toHaveStyle('top:-30px');
+    expect(screen.getByTestId('flyout-menu')).toHaveStyle('left:554px');
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Failed prop type: Invalid prop `menuOffset` supplied to `FlyoutMenu`'
+      )
+    );
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+    jest.resetAllMocks();
+  });
+
+  it('should call onClick when passed a function', () => {
+    const onClick = jest.fn();
+    render(
+      <FlyoutMenu
+        direction={FlyoutMenuDirection.RightEnd}
+        iconDescription="Helpful description"
+        hideTooltip={false}
+        buttonProps={{
+          onClick,
+        }}
+      />
+    );
+
+    userEvent.click(screen.getAllByRole('button', { name: 'Helpful description' })[0]);
+    expect(onClick).toHaveBeenCalled();
+  });
+
+  it('should be in a controlled state when passed isOpen', () => {
+    render(
+      <FlyoutMenu
+        direction={FlyoutMenuDirection.RightEnd}
+        iconDescription="Helpful description"
+        isOpen
+      />
+    );
+
+    expect(screen.getByTestId('flyout-menu')).toHaveClass(`${iotPrefix}--flyout-menu--body__open`);
+  });
+
+  it('should render in a portal when renderInPortal:true', () => {
+    render(
+      <FlyoutMenu
+        direction={FlyoutMenuDirection.RightEnd}
+        iconDescription="Helpful description"
+        isOpen
+        renderInPortal
+      />
+    );
+
+    // since it's in a portal, the tooltip will _not_ be a child of the flyout-menu-container
+    expect(
+      screen.getByTestId('flyout-menu-container').querySelectorAll(`#flyout-tooltip`)
+    ).toHaveLength(0);
   });
 });

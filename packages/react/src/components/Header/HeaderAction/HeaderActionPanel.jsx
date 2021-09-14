@@ -7,6 +7,7 @@ import { Close16 } from '@carbon/icons-react';
 import { white } from '@carbon/colors';
 
 import { APP_SWITCHER } from '../Header';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 import { HeaderActionPropTypes } from './HeaderAction';
 
@@ -49,6 +50,7 @@ const HeaderActionPanel = ({
   focusRef,
   renderLabel,
   i18n,
+  inOverflow,
 }) => {
   const mergedI18n = useMemo(
     () => ({
@@ -71,7 +73,7 @@ const HeaderActionPanel = ({
       >
         {renderLabel ? (
           item.label
-        ) : isExpanded ? (
+        ) : isExpanded && inOverflow ? (
           <Close16 fill={white} description={mergedI18n.closeMenu} />
         ) : (
           item.btnContent
@@ -95,12 +97,29 @@ const HeaderActionPanel = ({
       >
         <ul aria-label={item.label}>
           {item.childContent.map((childItem, k) => {
-            const ChildElement = childItem?.metaData?.element || 'a';
+            const { element, ...metaData } = childItem?.metaData ?? {};
+            const ChildElement = element || 'a';
+            const onKeyDownClick = (e) => e.target.click();
+
+            // if the item is an A and doesn't have an onClick event
+            // do nothing. An A tag doesn't need an onClick handler.
+            const onClick =
+              ChildElement === 'a' && !metaData?.onClick
+                ? undefined
+                : // otherwise, if an onClick exists use that, or fallback to a noop.
+                  metaData?.onClick || (() => {});
+
+            // if item has onKeyDown use that otherwise, fallback to onClick if it exists
+            // or create a custom handler to trigger the click
+            const onKeyDown = metaData?.onKeyDown ? metaData.onKeyDown : onClick || onKeyDownClick;
+
             return (
               <li key={`listitem-${item.label}-${k}`} className="action-btn__headerpanel-li">
                 <ChildElement
                   key={`headerpanelmenu-item-${item.label}-${index}-child-${k}`}
-                  {...childItem.metaData}
+                  {...metaData}
+                  onClick={onClick}
+                  onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
                 >
                   {childItem.content}
                 </ChildElement>
