@@ -24,8 +24,8 @@
   // Default for when fit-content is active and the menu is wider than the input
   // is that the menu expands to the right. This style makes it expand to the left
   // unless we are in RTL mode.
-  &.#{$iot-prefix}--combobox__menu--left {
-    @include list-box-menu-left();
+  &.#{$iot-prefix}--combobox__menu--flip-horizontal {
+    @include list-box-menu-flip-horizontal();
   }
 
   // Placement of the editOptionText

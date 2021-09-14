@@ -21468,7 +21468,7 @@ Map {
       "disabled": false,
       "editOptionText": "Create",
       "hasMultiValue": false,
-      "horizontalDirection": "right",
+      "horizontalDirection": "end",
       "itemToElement": null,
       "itemToString": [Function],
       "items": Array [],
@@ -21556,8 +21556,8 @@ Map {
       "horizontalDirection": Object {
         "args": Array [
           Array [
-            "left",
-            "right",
+            "start",
+            "end",
           ],
         ],
         "type": "oneOf",

@@ -356,7 +356,7 @@ describe('FilterHeaderRow', () => {
     ).toBeInTheDocument();
   });
 
-  it('opens the combobox menu to the left if the filter is in the last column ', () => {
+  it('opens the combobox menu flipped to the left if the filter is in the last column ', () => {
     render(
       <FilterHeaderRow
         showExpanderColumn
@@ -410,16 +410,16 @@ describe('FilterHeaderRow', () => {
     );
 
     const firstColumnCombobox = screen.getAllByTestId('combo-wrapper')[0];
-    expect(firstColumnCombobox).not.toHaveClass(`${iotPrefix}--combobox__menu--left`);
+    expect(firstColumnCombobox).not.toHaveClass(`${iotPrefix}--combobox__menu--flip-horizontal`);
 
     const middleColumnCombobox = screen.getAllByTestId('combo-wrapper')[1];
-    expect(middleColumnCombobox).not.toHaveClass(`${iotPrefix}--combobox__menu--left`);
+    expect(middleColumnCombobox).not.toHaveClass(`${iotPrefix}--combobox__menu--flip-horizontal`);
 
     const lastColumnCombobox = screen.getAllByTestId('combo-wrapper')[2];
-    expect(lastColumnCombobox).toHaveClass(`${iotPrefix}--combobox__menu--left`);
+    expect(lastColumnCombobox).toHaveClass(`${iotPrefix}--combobox__menu--flip-horizontal`);
   });
 
-  it('opens the MultiSelect menu to the left if the filter is in the last column ', () => {
+  it('opens the MultiSelect menu flipped to the left if the filter is in the last column ', () => {
     render(
       <FilterHeaderRow
         showExpanderColumn
@@ -477,17 +477,23 @@ describe('FilterHeaderRow', () => {
 
     const firstColumnMultiSelect = screen.getAllByRole('combobox')[0];
     expect(
-      firstColumnMultiSelect.closest(`.${iotPrefix}--filterheader-multiselect__menu--left`)
+      firstColumnMultiSelect.closest(
+        `.${iotPrefix}--filterheader-multiselect__menu--flip-horizontal`
+      )
     ).toBeNull();
 
     const middleColumnMultiSelect = screen.getAllByRole('combobox')[1];
     expect(
-      middleColumnMultiSelect.closest(`.${iotPrefix}--filterheader-multiselect__menu--left`)
+      middleColumnMultiSelect.closest(
+        `.${iotPrefix}--filterheader-multiselect__menu--flip-horizontal`
+      )
     ).toBeNull();
 
     const lastColumnMultiSelect = screen.getAllByRole('combobox')[2];
     expect(
-      lastColumnMultiSelect.closest(`.${iotPrefix}--filterheader-multiselect__menu--left`)
+      lastColumnMultiSelect.closest(
+        `.${iotPrefix}--filterheader-multiselect__menu--flip-horizontal`
+      )
     ).toBeTruthy();
   });
 

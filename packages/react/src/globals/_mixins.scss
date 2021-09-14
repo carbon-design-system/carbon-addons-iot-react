@@ -50,7 +50,7 @@
   }
 }
 
-@mixin list-box-menu-left() {
+@mixin list-box-menu-flip-horizontal() {
   .#{$prefix}--list-box__menu {
     left: unset;
     right: 0;

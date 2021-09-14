@@ -217,7 +217,7 @@ class FilterHeaderRow extends Component {
                     `${iotPrefix}--filterheader-multiselect`,
                     `${iotPrefix}--filterheader-multiselect__menu--fit-content`,
                     {
-                      [`${iotPrefix}--filterheader-multiselect__menu--left`]: isLastColumn,
+                      [`${iotPrefix}--filterheader-multiselect__menu--flip-horizontal`]: isLastColumn,
                     }
                   )}
                   id={`column-${i}`}
@@ -253,7 +253,7 @@ class FilterHeaderRow extends Component {
               ) : (
                 <ComboBox
                   menuFitContent
-                  horizontalDirection={isLastColumn ? 'left' : 'right'}
+                  horizontalDirection={isLastColumn ? 'start' : 'end'}
                   key={columnStateValue}
                   className={`${iotPrefix}--filterheader-combo`}
                   id={`column-${i}`}

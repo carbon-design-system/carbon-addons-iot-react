@@ -238,20 +238,22 @@ describe('ComboBox', () => {
 
   it('can have the menu expand to the left or right', () => {
     const { rerender } = render(
-      <ComboBox {...defaultProps} menuFitContent horizontalDirection="left" />
+      <ComboBox {...defaultProps} menuFitContent horizontalDirection="start" />
     );
-    expect(screen.getByTestId('combo-wrapper')).toHaveClass(`${iotPrefix}--combobox__menu--left`);
+    expect(screen.getByTestId('combo-wrapper')).toHaveClass(
+      `${iotPrefix}--combobox__menu--flip-horizontal`
+    );
 
-    rerender(<ComboBox {...defaultProps} menuFitContent horizontalDirection="right" />);
+    rerender(<ComboBox {...defaultProps} menuFitContent horizontalDirection="end" />);
     expect(screen.getByTestId('combo-wrapper')).not.toHaveClass(
-      `${iotPrefix}--combobox__menu--left`
+      `${iotPrefix}--combobox__menu--flip-horizontal`
     );
   });
 
-  it('expands the menu to the right by default', () => {
+  it('expands the menu to the right (right) by default', () => {
     render(<ComboBox {...defaultProps} menuFitContent />);
     expect(screen.getByTestId('combo-wrapper')).not.toHaveClass(
-      `${iotPrefix}--combobox__menu--left`
+      `${iotPrefix}--combobox__menu--flip-horizontal`
     );
   });
 });

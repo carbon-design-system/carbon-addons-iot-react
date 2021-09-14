@@ -57,8 +57,8 @@ const props = () => ({
   menuFitContent: boolean('Menu fits content (menuFitContent)', false),
   horizontalDirection: select(
     'Horizontal direction (horizontalDirection)',
-    ['left', 'right'],
-    'right'
+    ['start', 'end'],
+    'end'
   ),
 });
 
