@@ -413,7 +413,6 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     switch (event.key) {
       case 'ArrowUp': {
         const prev = target.previousElementSibling as HTMLElement;
-        console.log(prev);
         if (prev?.hasAttribute('tabindex')) {
           target.tabIndex = -1;
           prev.tabIndex = 0;
