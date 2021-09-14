@@ -518,6 +518,7 @@ const TableHead = ({
                   {hasOverflow &&
                     matchingColumnMeta.overflowMenuItems.map((menuItem) => (
                       <OverflowMenuItem
+                        data-testid={`${testID || testId}-column-overflow-menu-item-${menuItem.id}`}
                         itemText={menuItem.text}
                         key={`${columnIndex}--overflow-item-${menuItem.id}`}
                         onClick={(e) => handleOverflowItemClick(e, menuItem)}
@@ -525,6 +526,7 @@ const TableHead = ({
                     ))}
                   {hasMultiSort && (
                     <OverflowMenuItem
+                      data-testid={`${testID || testId}-column-overflow-menu-item-multi-sort`}
                       itemText={i18n.multiSortOverflowItem}
                       key={`${columnIndex}--overflow-item-multi-sort`}
                       onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}

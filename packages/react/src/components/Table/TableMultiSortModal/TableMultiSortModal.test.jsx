@@ -12,6 +12,9 @@ const callbacks = {
   onClearMultiSortColumns: jest.fn(),
 };
 describe('TableMultiSortModal', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
   it('should be selectable by testId', () => {
     render(
       <TableMultiSortModal
@@ -263,5 +266,55 @@ describe('TableMultiSortModal', () => {
     userEvent.click(screen.getAllByText('__Ascending__')[0]);
     expect(screen.queryAllByText('__Ascending__')).not.toBeNull();
     expect(screen.queryAllByText('__Descending__')).not.toBeNull();
+  });
+  it('should fallback to a defaultDirection', () => {
+    render(
+      <TableMultiSortModal
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+            isSortable: true,
+          },
+          {
+            id: 'select',
+            name: 'Select',
+            isSortable: true,
+          },
+          {
+            id: 'number',
+            name: 'Number',
+            isSortable: true,
+          },
+        ]}
+        ordering={[
+          {
+            columnId: 'string',
+            isHidden: false,
+          },
+          {
+            columnId: 'select',
+            isHidden: false,
+          },
+          {
+            columnId: 'number',
+            isHidden: false,
+          },
+        ]}
+        actions={callbacks}
+        sort={[
+          {
+            columnId: 'string',
+          },
+        ]}
+        showMultiSortModal
+        testId="multi_sort_modal"
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Sort' }));
+    expect(callbacks.onSaveMultiSortColumns).toHaveBeenCalledWith([
+      { columnId: 'string', direction: 'ASC' },
+    ]);
   });
 });

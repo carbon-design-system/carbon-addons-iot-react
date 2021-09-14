@@ -36,6 +36,8 @@ export const HeaderActionItemPropTypes = {
   /** content to render in the action panel */
   childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
   onClick: PropTypes.func,
+  /** a string id that can be used by the isActionItemVisible function to determine if an item should be shown */
+  id: PropTypes.string,
 };
 
 export const HeaderPanelPropTypes = {
@@ -77,8 +79,9 @@ const propTypes = {
     openMenu: PropTypes.string,
     closeMenu: PropTypes.string,
   }),
-
   testId: PropTypes.string,
+  /** Returns true, if the icon should be shown. (actionItem) => {} */
+  isActionItemVisible: PropTypes.func,
 };
 
 export const APP_SWITCHER = 'AppSwitcher';
@@ -99,6 +102,7 @@ const defaultProps = {
     closeMenu: 'Close menu',
   },
   testId: 'header',
+  isActionItemVisible: () => true,
 };
 
 /**
@@ -119,6 +123,7 @@ const Header = ({
   appSwitcherLabel,
   i18n,
   testId,
+  isActionItemVisible,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const theShortAppName = shortAppName || appName;
@@ -127,6 +132,7 @@ const Header = ({
     : [
         ...actionItemsProp,
         {
+          id: 'app-switcher',
           label: appSwitcherLabel,
           hasHeaderPanel: true,
           btnContent: (
@@ -168,6 +174,7 @@ const Header = ({
         actionItems={actionItems}
         i18n={mergedI18n}
         testId={`${testId}-action-group`}
+        isActionItemVisible={isActionItemVisible}
       />
     </CarbonHeader>
   );

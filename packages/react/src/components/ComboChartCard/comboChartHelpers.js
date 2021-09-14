@@ -13,11 +13,7 @@ import {
 } from '../../utils/cardUtilityFunctions';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { formatGraphTick } from '../TimeSeriesCard/timeSeriesUtils';
-import {
-  CARD_SIZES,
-  TIME_SERIES_TYPES,
-  ZOOM_BAR_ENABLED_CARD_SIZES,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import dayjs from '../../utils/dayjs';
 
 /**
@@ -65,7 +61,7 @@ const configureAxes = (content) => {
   /** *
    * timestamp of current value
    * index of current value
-   * ticks: array of current ticks
+   * ticks: array of current ticks or a single string with part of the date, e.g. month or year & month
    */
   const formatTick = (timestamp, index, ticks) => {
     const previousTimestamp = previousTick.current;
@@ -190,7 +186,6 @@ export const useChartOptions = (content) => {
       decimalPrecision,
       i18n,
       isEditable,
-      isExpanded,
       isLoading,
       locale,
       series,
@@ -200,7 +195,6 @@ export const useChartOptions = (content) => {
       tooltipDateFormatPattern,
       unit,
       values,
-      zoomBar,
     } = content;
 
     const options = {
@@ -228,20 +222,6 @@ export const useChartOptions = (content) => {
         groupLabel: i18n.tooltipGroupLabel,
         totalLabel: i18n.tooltipTotalLabel,
       },
-      // zoomBar should only be enabled for time-based charts
-      ...(zoomBar?.enabled &&
-      timeDataSourceId &&
-      (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
-        ? {
-            zoomBar: {
-              top: {
-                enabled: zoomBar.enabled,
-                initialZoomDomain: zoomBar.initialZoomDomain,
-                type: zoomBar.view || 'slider_view', // default to slider view
-              },
-            },
-          }
-        : {}),
       toolbar: {
         enabled: false,
       },

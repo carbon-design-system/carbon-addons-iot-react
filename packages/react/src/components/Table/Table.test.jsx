@@ -181,11 +181,24 @@ describe('Table', () => {
     const { rerender } = render(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={tableData.slice(0, 1)}
         expandedData={expandedData}
         actions={mockActions}
-        options={options}
-        view={view}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+              },
+            ],
+          },
+        }}
         testId="__table__"
       />
     );
@@ -199,15 +212,34 @@ describe('Table', () => {
     expect(screen.getByTestId('__table__-table-head-column-string')).toBeDefined();
     expect(screen.getByTestId('__table__-table-body')).toBeDefined();
     expect(screen.getByTestId('__table__-table-head-row-expansion-column')).toBeDefined();
-
+    expect(screen.getByTestId('table-head--overflow')).toBeDefined();
+    userEvent.click(screen.getByTestId('table-head--overflow'));
+    expect(
+      screen.getByTestId(`__table__-table-toolbar-toolbar-overflow-menu-item-aggregations`)
+    ).toBeDefined();
+    // close menu
+    userEvent.click(screen.getByTestId('table-head--overflow'));
     rerender(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={tableData.slice(0, 1)}
         expandedData={expandedData}
         actions={mockActions}
-        options={options}
-        view={view}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+              },
+            ],
+          },
+        }}
         id="__TABLE__"
       />
     );
@@ -222,6 +254,11 @@ describe('Table', () => {
     expect(screen.getByTestId('__TABLE__-table-head-column-string')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-body')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-head-row-expansion-column')).toBeDefined();
+    expect(screen.getByTestId('table-head--overflow')).toBeDefined();
+    userEvent.click(screen.getByTestId('table-head--overflow'));
+    expect(
+      screen.getByTestId(`__TABLE__-table-toolbar-toolbar-overflow-menu-item-aggregations`)
+    ).toBeDefined();
   });
 
   it('limits the number of pagination select options', () => {
@@ -2209,5 +2246,62 @@ describe('Table', () => {
         },
       });
     });
+  });
+
+  it('should render a loading state without columns', () => {
+    const { container } = render(
+      <Table
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const headerRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row--head`
+    );
+    expect(headerRows).toHaveLength(1);
+    expect(headerRows[0].querySelectorAll('td')).toHaveLength(3);
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+  });
+
+  it('should show data after loading is finished', () => {
+    const { container, rerender } = render(
+      <Table
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+    expect(screen.queryByTitle('String')).toBeNull();
+    expect(screen.queryByTitle('Date')).toBeNull();
+
+    rerender(
+      <Table
+        id="loading-table"
+        columns={tableColumns}
+        data={tableData}
+        view={{ table: { loadingState: { isLoading: false, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--table-skeleton-with-headers--table-row`)
+    ).toHaveLength(0);
+
+    // 20 rows plus the header
+    expect(container.querySelectorAll('tr')).toHaveLength(21);
+    expect(screen.getByTitle('String')).toBeVisible();
+    expect(screen.getByTitle('Date')).toBeVisible();
   });
 });

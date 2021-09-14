@@ -626,10 +626,13 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
     case CARD_TYPES.IMAGE:
       dataSection = [...(content.hotspots || [])];
 
-      editDataItemIndex = dataSection[hotspotIndex].content.attributes.findIndex(
-        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
-      );
-      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = editDataItem;
+      if (dataSection.length) {
+        editDataItemIndex = dataSection[hotspotIndex].content.attributes.findIndex(
+          (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+        );
+        dataSection[hotspotIndex].content.attributes[editDataItemIndex] = editDataItem;
+      }
+
       return {
         ...cardConfig,
         content: { ...content, hotspots: dataSection },

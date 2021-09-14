@@ -16,13 +16,7 @@ const FullWidthWrapper = ({ withPadding, style, children }) => {
         ...style,
       };
 
-  return (
-    <div
-      style={children && children.type && children.type.name !== 'DeprecationNotice' ? styles : {}}
-    >
-      {children}
-    </div>
-  );
+  return <div style={children?.type?.name === 'DeprecationNotice' ? {} : styles}>{children}</div>;
 };
 
 FullWidthWrapper.propTypes = {

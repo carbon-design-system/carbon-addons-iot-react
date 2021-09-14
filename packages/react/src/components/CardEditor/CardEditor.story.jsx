@@ -386,9 +386,9 @@ const renderCustomDataTypeSelector = (onChange, card, dataTypes, selectedDataTyp
   ];
 };
 
+const dataTypes = ['DataType1', 'DataType2'];
 export const TableCardWithCustom = () => {
   const StatefulTableEditor = () => {
-    const dataTypes = ['DataType1', 'DataType2'];
     const [localCardState, setLocalCardState] = useState({
       renderEditContent: (onChange, cardConfig) =>
         renderCustomDataTypeSelector(onChange, cardConfig, dataTypes, dataTypes[1]),
@@ -444,3 +444,45 @@ export const TableCardWithCustom = () => {
 };
 
 TableCardWithCustom.storyName = 'custom edit content for table card';
+
+export const DynamicallyAddSpecialContentToCardEditForm = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      cardConfig={{
+        title: 'Table card with dynamic custom edit content',
+        id: `table card`,
+        size: CARD_SIZES.LARGEWIDE,
+        type: CARD_TYPES.TABLE,
+        content: {
+          columns: [
+            { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
+            { dataSourceId: 'Campus_EGL', label: 'Campus' },
+            {
+              dataSourceId: 'peopleCount_EnterpriseBuilding_mean',
+              label: 'People',
+            },
+            {
+              dataSourceId: 'headCount_EnterpriseBuilding_mean',
+              label: 'Headcount',
+            },
+            {
+              dataSourceId: 'capacity_EnterpriseBuilding_mean',
+              label: 'capacity',
+            },
+          ],
+        },
+      }}
+      // dynamically adds the custom edit content at render time
+      onRenderCardEditForm={(cardConfig) => ({
+        ...cardConfig,
+        renderEditContent: (onChange, cardConfig) =>
+          renderCustomDataTypeSelector(onChange, cardConfig, dataTypes, dataTypes[1]),
+      })}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+DynamicallyAddSpecialContentToCardEditForm.storyName = 'Dynamically add edit form content';

@@ -3,7 +3,7 @@
   "engines": {
     "node": "12.x || 14.x"
   },
-  "browser": "lib/index.js",
+  "browser": "es/index.js",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "umd/carbon-addons-iot-react.js",
@@ -54,7 +54,7 @@
     "test:e2e:update": "cypress-image-diff -u",
     "test:e2e": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct --browser chrome --config video=false,screenshotOnRunFailure=false",
     "test:e2e:interactive": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress open-ct --browser chrome --config video=false,screenshotOnRunFailure=false",
-    "test:e2e:ci": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct  --browser chrome --headless --config watchForFileChanges=false,retries=3 --record video=false,screenshotOnRunFailure=false",
+    "test:e2e:ci": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct  --browser chrome --headless --config watchForFileChanges=false --record video=false,screenshotOnRunFailure=false",
     "reports:clean": "rimraf .nyc_output reports",
     "reports:copy": "mkdir reports || true && cp cypress/coverage/coverage-final.json reports/from-cypress.json && cp jest/coverage/coverage-final.json reports/from-jest.json",
     "reports:combine": "mkdir .nyc_output || true && npx nyc merge reports && mv coverage.json .nyc_output/out.json && npx nyc report --check-coverage --per-file --report-dir coverage",
@@ -154,11 +154,8 @@
       "src/components/Dashboard/CardRenderer.jsx",
       "src/components/MapCard/storyFiles/*.jsx",
       "src/components/BarChartCard/barChartUtils.js",
-      "src/components/ComboChartCard/comboChartHelpers.js",
       "src/components/Table/Table.test.helpers.js",
-      "src/components/Table/TablePropTypes.js",
-      "src/components/Table/baseTableReducer.js",
-      "src/components/Table/tableReducer.js"
+      "src/components/Table/TablePropTypes.js"
     ],
     "branches": 80,
     "lines": 80,
@@ -283,6 +280,7 @@
     "cypress": "^7.5.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-image-diff-js": "^1.10.3",
+    "cypress-plugin-tab": "^1.0.5",
     "cypress-real-events": "^1.5.0",
     "d3": ">=5.0.0 <=5.14.2",
     "deepdash": "^5.1.2",
@@ -342,7 +340,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.146.0-next.151",
+  "version": "2.146.0-next.183",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",
