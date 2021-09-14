@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.183](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.182...v2.146.0-next.183) (2021-09-13)
+
+
+### Bug Fixes
+
+* **table:** fix crash if hasMultisort:true without sortable columns ([ea72ce2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ea72ce252e96eec01e9a202c47021dcdb3b40678))
+* **table:** remove padding from checkbox at small sizes ([94837bf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/94837bfee982519dc3f68c2ea17d32fed1167b45))
+
+
+### Features
+
+* **table:** enable size prop to be used in header/footer ([83672b2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/83672b2c68a482a6e60c3efbd1bd46986a0f043a))
+
+
+
+
+
+# [2.146.0-next.182](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.181...v2.146.0-next.182) (2021-09-10)
+
+
+### Bug Fixes
+
+* **combocharthelpers:** removed non functional zoom code ([db8e581](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/db8e581de230501144cf447746df5fa743b571fc))
+
+
+
+
+
 # [2.146.0-next.181](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.180...v2.146.0-next.181) (2021-09-08)
 
 

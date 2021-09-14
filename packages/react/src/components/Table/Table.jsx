@@ -12,6 +12,7 @@ import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
+import experimental from '../../internal/experimental';
 
 import {
   TableColumnsPropTypes,
@@ -53,6 +54,9 @@ const propTypes = {
   data: TableRowPropTypes.isRequired,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
+
+  /** Experimental: Turns on the carbon sticky-header feature. */
+  stickyHeader: experimental('stickyHeader'),
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     /** If true allows the table to aggregate values of columns in a special row */
@@ -111,6 +115,9 @@ const propTypes = {
      */
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
   }),
+
+  /** Size prop from Carbon to shrink row height (and header height in some instances) */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
   view: PropTypes.shape({
@@ -314,6 +321,7 @@ export const defaultProps = (baseProps) => ({
     shouldLazyRender: false,
     wrapCellText: 'always',
   },
+  size: undefined,
   view: {
     aggregations: { columns: [] },
     pagination: {

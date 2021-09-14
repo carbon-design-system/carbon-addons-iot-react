@@ -483,6 +483,7 @@ Map {
         "wrapCellText": "always",
       },
       "secondaryTitle": null,
+      "size": undefined,
       "testId": null,
       "title": null,
       "tooltip": null,
@@ -1252,6 +1253,19 @@ Map {
       "secondaryTitle": Object {
         "type": "string",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "stickyHeader": [Function],
       "testId": Object {
         "type": "string",
       },
