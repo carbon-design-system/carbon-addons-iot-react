@@ -1775,9 +1775,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 data-testid="date-time-picker__field"
               >
                 <span
-                  title="10/28/2018 13:10 to 10/28/2018 13:30"
+                  title="2018-10-28 13:10 to 2018-10-28 13:30"
                 >
-                  10/28/2018 13:10 to 10/28/2018 13:30
+                  2018-10-28 13:10 to 2018-10-28 13:30
                 </span>
               </div>
               <div

@@ -105,7 +105,7 @@ const defaultProps = {
     settingsLabel: 'Settings',
   },
   testId: 'card-toolbar',
-  dateTimeMask: 'MM/DD/YYYY HH:mm',
+  dateTimeMask: 'YYYY-MM-DD HH:mm',
 };
 
 const CardToolbar = ({

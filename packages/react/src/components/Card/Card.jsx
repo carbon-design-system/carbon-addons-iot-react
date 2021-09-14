@@ -241,7 +241,7 @@ export const defaultProps = {
   tabIndex: undefined,
   testId: CardWrapper.defaultProps.testId,
   footerContent: undefined,
-  dateTimeMask: 'MM/DD/YYYY HH:mm',
+  dateTimeMask: 'YYYY-MM-DD HH:mm',
 };
 
 /** Dumb component that renders the card basics */

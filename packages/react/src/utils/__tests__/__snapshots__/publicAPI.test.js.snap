@@ -11795,7 +11795,7 @@ Map {
         "xl": 16,
         "xs": 4,
       },
-      "dateTimeMask": "MM/DD/YYYY HH:mm",
+      "dateTimeMask": "YYYY-MM-DD HH:mm",
       "footerContent": undefined,
       "hasTitleWrap": false,
       "hideHeader": false,
