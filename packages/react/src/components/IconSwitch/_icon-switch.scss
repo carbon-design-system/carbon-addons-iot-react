@@ -13,7 +13,7 @@ $icon-switch-size-large: $spacing-09;
   &:focus {
     &,
     & + .#{$iot-prefix}--icon-switch {
-      .#{$iot-prefix}--icon-switch__divider {
+      .#{$iot-prefix}--icon-switch__divider:after {
         display: none;
       }
     }
@@ -28,7 +28,7 @@ $icon-switch-size-large: $spacing-09;
       border-radius: 1px 0 0 1px;
     }
 
-    .#{$iot-prefix}--icon-switch__divider {
+    .#{$iot-prefix}--icon-switch__divider:after {
       display: none;
     }
   }
@@ -45,7 +45,7 @@ $icon-switch-size-large: $spacing-09;
 
   // hide the divider if only two icons
   &:first-child + &:last-child {
-    .#{$iot-prefix}--icon-switch__divider {
+    .#{$iot-prefix}--icon-switch__divider:after {
       display: none;
     }
   }
@@ -106,7 +106,7 @@ $icon-switch-size-large: $spacing-09;
     border-color: $disabled-02;
     color: $disabled-02;
 
-    .#{$iot-prefix}--icon-switch__divider {
+    .#{$iot-prefix}--icon-switch__divider:after {
       background-color: $ui-03;
     }
   }
@@ -126,35 +126,44 @@ $icon-switch-size-large: $spacing-09;
 
 .#{$iot-prefix}--icon-switch__divider {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  height: $spacing-05;
-  width: 1px;
-  transform: translateY(-50%);
+  right: 0;
+  bottom: 0;
   pointer-events: none;
-  background-color: $ui-03;
 
-  :focus & {
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: $spacing-05;
+    width: 1px;
+    transform: translateY(-50%);
+    background-color: $ui-03;
+  }
+
+  :focus &:after {
     background-color: $focus;
   }
 
-  .#{$iot-prefix}--icon-switch--selected & {
+  .#{$iot-prefix}--icon-switch--selected &:after {
     background-color: $ui-05;
   }
 
-  .#{$iot-prefix}--icon-switch--light & {
+  .#{$iot-prefix}--icon-switch--light &:after {
     background-color: $ui-04;
   }
 
   // hide the divider when a selected icon (in light mode)
-  .#{$iot-prefix}--icon-switch--selected.#{$iot-prefix}--icon-switch--light & {
+  .#{$iot-prefix}--icon-switch--selected.#{$iot-prefix}--icon-switch--light &:after {
     display: none;
   }
 
   // hide the divider when a selected icon (in light mode) is beside an unselected icon
   .#{$iot-prefix}--icon-switch--selected.#{$iot-prefix}--icon-switch--light
     + .#{$iot-prefix}--icon-switch--unselected
-    & {
+    &:after {
     display: none;
   }
 }
@@ -170,19 +179,39 @@ $icon-switch-size-large: $spacing-09;
   &.#{$iot-prefix}--icon-switch--light {
     background-color: transparent;
     color: $icon-02;
-    border: 1px solid $ui-05;
+
+    .#{$iot-prefix}--icon-switch__divider {
+      border-left: 1px solid $ui-05;
+      border-right: 1px solid $ui-05;
+    }
 
     &:disabled,
     &:disabled:hover {
       background-color: $disabled-01;
       border-color: $disabled-02;
       color: $disabled-02;
+
+      .#{$iot-prefix}--icon-switch__divider {
+        border-color: $disabled-02;
+      }
+    }
+
+    &:first-child {
+      .#{$iot-prefix}--icon-switch__divider {
+        border-left: 0;
+      }
+    }
+
+    &:last-child {
+      .#{$iot-prefix}--icon-switch__divider {
+        border-right: 0;
+      }
     }
   }
 }
 
 .#{$iot-prefix}--icon-switch--selected + .#{$iot-prefix}--icon-switch--selected {
-  .#{$iot-prefix}--icon-switch__divider {
+  .#{$iot-prefix}--icon-switch__divider:after {
     background-color: $icon-03;
   }
 }
@@ -230,7 +259,7 @@ html[dir='rtl'] {
       }
     }
 
-    .#{$iot-prefix}--icon-switch__divider {
+    .#{$iot-prefix}--icon-switch__divider:after {
       right: 0;
       left: unset;
     }
@@ -246,7 +275,7 @@ html[dir='rtl'] {
     }
 
     &--unselected + .#{$iot-prefix}--icon-switch--selected {
-      .#{$iot-prefix}--icon-switch__divider {
+      .#{$iot-prefix}--icon-switch__divider:after {
         display: none;
       }
     }
@@ -260,6 +289,18 @@ html[dir='rtl'] {
 
     &--selected {
       border-color: $ui-05;
+
+      &:first-child {
+        .#{$iot-prefix}--icon-switch__divider {
+          border-right: 0;
+        }
+      }
+
+      &:last-child {
+        .#{$iot-prefix}--icon-switch__divider {
+          border-left: 0;
+        }
+      }
     }
   }
 
