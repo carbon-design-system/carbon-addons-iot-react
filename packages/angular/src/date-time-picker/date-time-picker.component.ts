@@ -267,7 +267,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     DAYS: 'days',
     HOURS: 'hours',
     MINUTES: 'minutes',
-    RANGE_SEPARATOR: 'to'
+    RANGE_SEPARATOR: 'to',
   };
   @Output() selectedChange: EventEmitter<DateTimeSelection> = new EventEmitter();
   @Output() apply: EventEmitter<DateRange> = new EventEmitter();

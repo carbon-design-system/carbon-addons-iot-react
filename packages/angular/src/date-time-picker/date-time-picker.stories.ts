@@ -70,7 +70,7 @@ storiesOf('Components/DateTime Picker', module)
         DAYS: '天',
         HOURS: '小时',
         MINUTES: '分钟',
-        RANGE_SEPARATOR: '至'
+        RANGE_SEPARATOR: '至',
       },
     }),
   }))
