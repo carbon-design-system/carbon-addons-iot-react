@@ -400,6 +400,7 @@ const TableToolbar = ({
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
             >
               <OverflowMenuItem
+                data-testid={`${testID || testId}-toolbar-overflow-menu-item-aggregations`}
                 itemText={i18n.toggleAggregations}
                 key="table-aggregations-overflow-item"
                 // wrapping in function to prevent error in netlify storybook deploys.

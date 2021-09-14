@@ -325,6 +325,9 @@ describe('RowActionsCell', () => {
       );
 
       expect(screen.getByLabelText('Edit icon label', { selector: 'svg' })).toBeVisible();
+      expect(
+        screen.getByTestId('tableId-rowId-row-actions-cell-overflow-menu-item-edit')
+      ).toBeVisible();
     });
   });
 });

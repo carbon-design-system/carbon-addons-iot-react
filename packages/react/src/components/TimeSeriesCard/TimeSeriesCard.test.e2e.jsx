@@ -106,8 +106,8 @@ describe('TimeSeriesCard', () => {
       />
     );
 
-    cy.get('.chart-grid-backdrop').first().trigger('mousemove', 797, 271, { which: 1 });
-    cy.get('.chart-grid-backdrop').first().trigger('mouseover', 797, 271, { which: 1 });
+    cy.get('.chart-grid-backdrop').first().trigger('mousemove', 802, 271, { which: 1 });
+    cy.get('.chart-grid-backdrop').first().trigger('mouseover', 802, 271, { which: 1 });
 
     cy.get(`.${prefix}--cc--tooltip`).should('not.have.class', 'hidden');
     cy.get(`.${prefix}--cc--tooltip`).invoke('attr', 'aria-hidden').should('equal', 'false');
