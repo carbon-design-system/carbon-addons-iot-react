@@ -623,4 +623,32 @@ describe('DateTimePicker', () => {
     userEvent.click(screen.getByText('Relative'));
     expect(screen.getByText('Quarter')).toBeVisible();
   });
+
+  it('should disable apply button when number input is invalid', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeEnabled();
+    const numberInput = screen.queryByRole('spinbutton', {
+      name: 'Numeric input field with increment and decrement buttons',
+    });
+    expect(numberInput).toBeValid();
+
+    // Empty value is invalid
+    userEvent.type(numberInput, '{backspace}');
+    expect(numberInput).toBeInvalid();
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
+
+    // 0 is valid
+    userEvent.type(numberInput, '1');
+    expect(numberInput).toBeValid();
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeEnabled();
+
+    // -1 is invalid
+    userEvent.type(numberInput, '{backspace}-1');
+    expect(numberInput).toBeInvalid();
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
+  });
 });
