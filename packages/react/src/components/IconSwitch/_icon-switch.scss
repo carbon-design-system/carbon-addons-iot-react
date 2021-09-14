@@ -236,7 +236,7 @@ html[dir='rtl'] {
     &:first-child {
       border-top-right-radius: $spacing-02;
       border-bottom-right-radius: $spacing-02;
-      border-right: 1px solid;
+      border-right: 1px solid $ui-05;
       border-left: 0;
 
       &:focus {
@@ -290,15 +290,19 @@ html[dir='rtl'] {
     &--selected {
       border-color: $ui-05;
 
-      &:first-child {
-        .#{$iot-prefix}--icon-switch__divider {
-          border-right: 0;
+      &.#{$iot-prefix}--icon-switch--light {
+        &:first-child {
+          .#{$iot-prefix}--icon-switch__divider {
+            border-right: 0;
+            border-left: 1px solid $ui-05;
+          }
         }
-      }
 
-      &:last-child {
-        .#{$iot-prefix}--icon-switch__divider {
-          border-left: 0;
+        &:last-child {
+          .#{$iot-prefix}--icon-switch__divider {
+            border-left: 0;
+            border-right: 1px solid $ui-05;
+          }
         }
       }
     }
