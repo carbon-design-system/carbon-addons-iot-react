@@ -1,0 +1,1 @@
+export const VISUAL_REGRESSION_TEST_THRESHOLD = 0.1;
