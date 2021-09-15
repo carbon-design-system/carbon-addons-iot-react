@@ -407,6 +407,7 @@ const BarChartCard = ({
       isResizable={isResizable}
       resizeHandles={resizeHandles}
       timeRange={timeRange}
+      locale={locale}
       // TODO: remove deprecated testID in v3.
       testId={testID || testId}
       {...others}
