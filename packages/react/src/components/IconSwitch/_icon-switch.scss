@@ -19,13 +19,19 @@ $icon-switch-size-large: $spacing-09;
     }
   }
 
+  &:hover:not(.#{$iot-prefix}--icon-switch--light) {
+    .#{$iot-prefix}--icon-switch__divider:after {
+      display: none;
+    }
+  }
+
   &:first-child {
     border-top-left-radius: $spacing-02;
     border-bottom-left-radius: $spacing-02;
     border-left: 1px solid $ui-05;
 
     &:focus {
-      border-radius: 1px 0 0 1px;
+      border-radius: $spacing-02 0 0 $spacing-02;
     }
 
     .#{$iot-prefix}--icon-switch__divider:after {
@@ -39,7 +45,7 @@ $icon-switch-size-large: $spacing-09;
     border-right: 1px solid $ui-05;
 
     &:focus {
-      border-radius: 0 1px 1px 0;
+      border-radius: 0 $spacing-02 $spacing-02 0;
     }
   }
 
@@ -185,6 +191,12 @@ $icon-switch-size-large: $spacing-09;
       border-right: 1px solid $ui-05;
     }
 
+    &:focus {
+      .#{$iot-prefix}--icon-switch__divider {
+        border-color: $focus;
+      }
+    }
+
     &:disabled,
     &:disabled:hover {
       background-color: $disabled-01;
@@ -240,7 +252,7 @@ html[dir='rtl'] {
       border-left: 0;
 
       &:focus {
-        border-radius: 0 1px 1px 0;
+        border-radius: 0 $spacing-02 $spacing-02 0;
       }
 
       &:last-child {
@@ -255,7 +267,7 @@ html[dir='rtl'] {
       border-left: 0;
 
       &:focus {
-        border-radius: 1px 0 0 1px;
+        border-radius: $spacing-02 0 0 $spacing-02;
       }
     }
 
