@@ -369,4 +369,42 @@ describe('Card', () => {
     rerender(<Card {...cardProps} size={CARD_SIZES.SMALLWIDE} error />);
     expect(screen.getByText('Data error.')).toBeVisible();
   });
+
+  it('should render the prop locale on a date time picker card', () => {
+    render(
+      <Card
+        title="Card with date picker"
+        id="facilitycard-with-date-picker"
+        size={CARD_SIZES.MEDIUM}
+        isLoading={false}
+        isEmpty={false}
+        isEditable={false}
+        isExpanded={false}
+        locale="fr"
+        breakpoint="lg"
+        availableActions={{
+          range: 'iconOnly',
+        }}
+        timeRangeOptions={{
+          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
+          lastHour: { label: 'Last Hour', offset: 60 * 60 },
+        }}
+      />
+    );
+
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    userEvent.click(screen.getByText('Custom Range'));
+    userEvent.click(screen.getByLabelText('Absolute'));
+    expect(screen.getByText('lun')).toBeVisible();
+    expect(screen.getByText('mar')).toBeVisible();
+    expect(screen.getByText('mer')).toBeVisible();
+    expect(screen.getByText('jeu')).toBeVisible();
+    expect(screen.getByText('ven')).toBeVisible();
+    expect(screen.getByText('sam')).toBeVisible();
+    expect(screen.getByText('dim')).toBeVisible();
+  });
 });

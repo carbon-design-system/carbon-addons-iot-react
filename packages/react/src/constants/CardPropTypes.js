@@ -775,4 +775,5 @@ export const CardPropTypes = {
    * * */
   renderEditContent: PropTypes.func,
   footerContent: PropTypes.elementType,
+  dateTimeMask: PropTypes.string,
 };
