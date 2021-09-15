@@ -68,6 +68,15 @@ jobs:
           HEIGHT: 900
           WIDTH: 1680
 
+      - name: Archive visual diff report
+        if: ${{ failure() }} && steps.changes.outputs.react == 'true'
+        uses: actions/upload-artifact@v2
+        with:
+          name: visual-diff-report
+          path: |
+            packages/react/cypress-visual-report
+            packages/react/cypress-visual-screenshots
+
       - name: Copy, combine, and report coverage
         if: steps.changes.outputs.react == 'true'
         run: |
