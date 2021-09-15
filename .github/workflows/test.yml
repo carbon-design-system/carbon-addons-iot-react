@@ -3,8 +3,60 @@ name: Test
 on: [push, pull_request]
 
 jobs:
-  test-react:
-    name: Test React
+  react-jest-test:
+    name: React Jest test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
+      - name: Increase watchers
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        if: steps.changes.outputs.react == 'true'
+        with:
+          node-version: '14.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        if: steps.changes.outputs.react == 'true'
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
+
+      - name: Run Jest tests, collect coverage
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react
+          yarn test:ci
+
+      - name: Archive coverage artifacts
+        if: ${{ success() }} && steps.changes.outputs.react == 'true'
+        uses: actions/upload-artifact@v2
+        with:
+          name: jest/coverage/coverage-final.json
+
+  react-cypress-test:
+    name: React Cypress test
     runs-on: ubuntu-latest
 
     steps:
@@ -52,12 +104,6 @@ jobs:
           yarn lerna run --stream postinstall
           yarn lerna link
 
-      - name: Run Jest tests, collect coverage
-        if: steps.changes.outputs.react == 'true'
-        run: |
-          cd packages/react
-          yarn test:ci
-
       - name: Run Cypress tests, collect coverage
         if: steps.changes.outputs.react == 'true'
         run: |
@@ -67,6 +113,15 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           HEIGHT: 900
           WIDTH: 1680
+
+  combine-reports:
+    name: Combine Coverage Reports
+    runs-on: ubuntu-latest
+    needs: [react-cypress-test, react-jest-test]
+
+    steps:
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v2
 
       - name: Copy, combine, and report coverage
         if: steps.changes.outputs.react == 'true'

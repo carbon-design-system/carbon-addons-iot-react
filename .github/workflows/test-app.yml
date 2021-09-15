@@ -1,0 +1,87 @@
+name: Test
+
+on: [push, pull_request]
+
+jobs:
+  build-pal:
+    name: Build PAL
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
+      - name: Increase watchers
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        if: steps.changes.outputs.react == 'true'
+        with:
+          node-version: '14.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        if: steps.changes.outputs.react == 'true'
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
+
+      - name: Run build
+        if: steps.changes.outputs.react == 'true'
+        run: yarn build
+
+      - name: Archive build artifacts
+        if: ${{ success() }} && steps.changes.outputs.react == 'true'
+        uses: actions/upload-artifact@v2
+
+  create-test-app:
+    name: Create test app
+    needs: build-pal
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run cli command
+        run: |
+          npx create-iot-react-app test-app
+
+      - name: Archive build artifacts
+        if: ${{ success() }} && steps.changes.outputs.react == 'true'
+        uses: actions/upload-artifact@v2
+
+  build-app:
+    name: Link and build app
+    needs: create-test-app
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download all build artifacts
+        uses: actions/download-artifact@v2
+
+      - name: Link dependencies
+        run: |
+          cd packages/react
+          yarn link
+          cd ../..
+
+      - name: Run build
+        run: |
+          cd test-app
+          yarn link carbon-addons-iot-react
+          yarn build
