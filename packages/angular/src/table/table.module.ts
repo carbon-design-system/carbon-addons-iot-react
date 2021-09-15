@@ -19,9 +19,11 @@ import ArrowDown16 from '@carbon/icons/es/arrow--down/16';
 import Filter16 from '@carbon/icons/es/filter/16';
 import { AIColumnCustomizationModal } from './column-customization/column-customization-modal.component';
 import { ListBuilderModule } from '../list-builder';
+import { AIColumnCustomizationButton } from './column-customization/column-customization-button.component';
 
 @NgModule({
   declarations: [
+    AIColumnCustomizationButton,
     AIColumnCustomizationModal,
     AITableComponent,
     AITableHeadComponent,
@@ -36,7 +38,14 @@ import { ListBuilderModule } from '../list-builder';
     TableModule,
     IconModule,
   ],
-  exports: [AIColumnCustomizationModal, AITableComponent, AITableHeadComponent, AITableHeadCell],
+  exports: [
+    AIColumnCustomizationButton,
+    AIColumnCustomizationModal,
+    AITableComponent,
+    AITableHeadComponent,
+    AITableHeadCell,
+  ],
+  entryComponents: [AIColumnCustomizationModal],
 })
 export class AITableModule {
   constructor(protected iconService: IconService) {

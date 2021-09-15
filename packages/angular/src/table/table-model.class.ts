@@ -588,15 +588,16 @@ export class AITableModel implements PaginationModel {
     for (let i = 0; i < rowCount; i++) {
       this._data[i].splice(rci, 1);
     }
-    // update header if not already set by user
-    if (this.header.length > 0 && this.header[0].length > this._data[0].length) {
-      for (let i = 0; i < this.header.length; i++) {
-        const headerRow = this.header[i];
-        headerRow.splice(rci, 1);
-      }
-    }
-
+    this.deleteHeader(rci, 0);
     this.dataChange.next();
+  }
+
+  deleteHeader(index: number, rowIndex = 0) {
+    const availableHeaderItems = this.header.map((headerRow) =>
+      headerRow.filter((headerItem) => headerItem !== null).map((headerItem) => headerItem)
+    );
+
+    this.deleteHeaderColumn(this.header[0], availableHeaderItems, index, rowIndex);
   }
 
   /**
@@ -912,7 +913,7 @@ export class AITableModel implements PaginationModel {
     let index = 0;
     for (let i = 0; i < list.length; i++) {
       const item = list[i];
-      index += item ? item?.colSpan || 1 : 0;
+      index += item?.colSpan || 1;
       if (index > projectedIndex) {
         return i;
       }
@@ -933,13 +934,11 @@ export class AITableModel implements PaginationModel {
     let startingIndex = 0;
     for (let i = 0; i < actualIndex; i++) {
       const item = list[i];
-      startingIndex += item ? item?.colSpan || 1 : 0;
+      startingIndex += item?.colSpan || 1;
     }
 
     const item = list[actualIndex];
-    return new Array(item ? item?.colSpan || 1 : 0)
-      .fill(0)
-      .map((_, index) => startingIndex + index);
+    return new Array(item?.colSpan || 1).fill(0).map((_, index) => startingIndex + index);
   }
 
   protected projectedIndicesToActualIndices(
@@ -970,5 +969,63 @@ export class AITableModel implements PaginationModel {
       list.splice.apply(list, [index, 0].concat(block));
       list.splice(blockStart, blockEnd - blockStart + 1);
     }
+  }
+
+  /**
+   * @param headerChildren Header row that is being iterated over in a recursive step. This should be initialized to the first header row.
+   * @param availableHeaderItems All header items which have not been checked yet. This is needed to account for rowSpans.
+   * @param colIndexToRemove Column index of item to remove. Begins removing items directly underneath this item.
+   * @param rowIndexRowRemove Row index of the item to remove. Begins removing items directly underneath this item.
+   * @param rowIndex Row index of `headerChildren`.
+   * @param shouldRemoveChildren `true` if items below a particular `headerItem` should be removed `false` if not.
+   */
+  protected deleteHeaderColumn(
+    headerChildren: TableHeaderItem[],
+    availableHeaderItems: TableHeaderItem[][],
+    colIndexToRemove: number,
+    rowIndexRowRemove: number,
+    rowIndex = 0,
+    shouldRemoveChildren = false
+  ) {
+    headerChildren.forEach((headerItem: TableHeaderItem) => {
+      const colIndex = this.header[rowIndex].indexOf(headerItem);
+      const shouldRemoveItem =
+        shouldRemoveChildren || (colIndex === colIndexToRemove && rowIndex === rowIndexRowRemove);
+      if (shouldRemoveItem) {
+        this.header[rowIndex].splice(colIndex, 1);
+      }
+
+      if (headerItem === null) {
+        return;
+      }
+
+      const colSpan = headerItem?.colSpan || 1;
+      const rowSpan = headerItem?.rowSpan || 1;
+
+      if (rowIndex + rowSpan >= this.header.length) {
+        return;
+      }
+
+      let spaceLeft = colSpan;
+      const availableChildren = availableHeaderItems[rowIndex + rowSpan];
+      const children = [];
+
+      while (spaceLeft > 0 && availableChildren.length) {
+        const nextChild = availableChildren.shift();
+        spaceLeft -= nextChild?.colSpan || 1;
+        children.push(nextChild);
+      }
+
+      if (children.length) {
+        this.deleteHeaderColumn(
+          children,
+          availableHeaderItems,
+          colIndexToRemove,
+          rowIndexRowRemove,
+          rowIndex + rowSpan,
+          shouldRemoveItem
+        );
+      }
+    });
   }
 }

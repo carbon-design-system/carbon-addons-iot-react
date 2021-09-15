@@ -73,12 +73,14 @@ export class AIListBuilderComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit() {
-    Object.assign(this.listComponent, this.listComponent, this.listProps);
-    Object.assign(
-      this.addedItemsListComponent,
-      this.addedItemsListComponent,
-      this.addedItemsListProps
-    );
+    setTimeout(() => {
+      Object.assign(this.listComponent, this.listComponent, this.listProps);
+      Object.assign(
+        this.addedItemsListComponent,
+        this.addedItemsListComponent,
+        this.addedItemsListProps
+      );
+    });
 
     this.setItemRowActions(
       this.model.items,

@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { BaseModal, TableHeaderItem } from 'carbon-components-angular';
+import { Component, Inject } from '@angular/core';
+import { BaseModal, ModalService, TableHeaderItem } from 'carbon-components-angular';
 import { AIListItem } from 'src/list';
 import { AIListBuilderItem, AIListBuilderModel } from 'src/list-builder';
 import { AITableModel } from '../table-model.class';
@@ -7,7 +7,7 @@ import { AITableModel } from '../table-model.class';
 @Component({
   selector: 'ai-column-customization-modal',
   template: `
-    <ibm-modal open="true" [hasScrollingContent]="false" (overlaySelected)="closeModal()">
+    <ibm-modal [open]="open" [hasScrollingContent]="false" (overlaySelected)="closeModal()">
       <ibm-modal-header (closeSelect)="closeModal()">
         <h3>Customize columns</h3>
         <p>
@@ -19,12 +19,8 @@ import { AITableModel } from '../table-model.class';
         <ai-list-builder
           [model]="listBuilderModel"
           addingMethod="multi-select"
-          [listProps]="{
-            title: 'Available columns'
-          }"
-          [addedItemsListProps]="{
-            title: 'Selected columns'
-          }"
+          [listProps]="listProps"
+          [addedItemsListProps]="addedItemsListProps"
         >
         </ai-list-builder>
       </section>
@@ -38,22 +34,30 @@ import { AITableModel } from '../table-model.class';
   `,
 })
 export class AIColumnCustomizationModal extends BaseModal {
-  @Input() set model(tableModel: AITableModel) {
-    this._model = tableModel;
-    this.listBuilderModel.items = this.headerToListItems(this.model.header);
-  }
-
-  get model() {
-    return this._model;
-  }
-
   listBuilderModel = new AIListBuilderModel();
 
   protected _model: AITableModel;
 
+  constructor(
+    @Inject('model') public model = new AITableModel(),
+    @Inject('listProps')
+    public listProps = {
+      title: 'Available columns',
+    },
+    @Inject('addedItemsListProps')
+    public addedItemsListProps = {
+      title: 'Selected columns',
+    },
+    protected modalService: ModalService
+  ) {
+    super();
+    this.listBuilderModel.items = this.headerToListItems(model.header);
+  }
+
   updateColumns() {
     this.moveColumns(this.listBuilderModel.addedItems);
     this.listBuilderModel.items = this.headerToListItems(this.model.header);
+    this.closeModal();
   }
 
   protected headerToListItems(header: TableHeaderItem[][]) {
@@ -156,6 +160,13 @@ export class AIColumnCustomizationModal extends BaseModal {
       return;
     }
 
+    for (let i = 0; i < this.model.header[0].length; i++) {
+      const headerItem = this.model.header[0][i];
+      if (headerItem !== null && !newHeader[0].includes(headerItem)) {
+        this.model.deleteColumn(i);
+      }
+    }
+
     // Move items to their new positions
     newHeader.forEach((newHeaderRow, rowIndex) => {
       const headerRow = this.model.header[rowIndex];
@@ -168,17 +179,11 @@ export class AIColumnCustomizationModal extends BaseModal {
         const prevItem = colIndex > 0 ? newHeaderRow[colIndex - 1] : newHeaderRow[colIndex];
 
         const indexFrom = headerRow.findIndex((headerItem) => headerItem === newHeaderItem);
-        const indexTo =
+        let indexTo =
           headerRow.findIndex((headerItem) => headerItem === prevItem) + (colIndex > 0 ? 1 : 0);
 
         this.model.moveColumn(indexFrom, indexTo, rowIndex);
       });
-    });
-
-    this.model.header[0].forEach((headerItem, colIndex) => {
-      if (headerItem !== null && !newHeader[0].includes(headerItem)) {
-        this.model.deleteColumn(colIndex);
-      }
     });
   }
 
