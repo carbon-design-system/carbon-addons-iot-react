@@ -91,6 +91,8 @@ module.exports = (on, config) => {
   const width = 1680;
   const height = 900;
   on('before:browser:launch', (browser = {}, launchOptions) => {
+    console.log('launching browser %s is headless? %s', browser.name, browser.isHeadless);
+    console.log('setting the browser window size to %d x %d', width, height);
     /* eslint-disable dot-notation, no-param-reassign */
     if (browser.name === 'chrome' || browser.name === 'chromium') {
       launchOptions.args.push(`--window-size=${width},${height}`);
