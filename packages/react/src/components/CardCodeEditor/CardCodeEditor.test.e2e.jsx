@@ -2,8 +2,6 @@ import React from 'react';
 import { mount } from '@cypress/react';
 import { onlyOn } from '@cypress/skip-test';
 
-import { VISUAL_REGRESSION_TEST_THRESHOLD } from '../../internal/constants';
-
 import CardCodeEditor from './CardCodeEditor';
 
 let onCopy;
@@ -65,10 +63,7 @@ describe('CardCodeEditor loaded editor test', () => {
 
     // This component throws a network error with too many calls to the cdn script it loads so adding snapshot to existing instance
     onlyOn('headless', () => {
-      cy.findByTestId('ComposedModal').compareSnapshot(
-        'CardCodeEditor',
-        VISUAL_REGRESSION_TEST_THRESHOLD
-      );
+      cy.findByTestId('ComposedModal').compareSnapshot('CardCodeEditor', 0.1);
     });
   });
 });
