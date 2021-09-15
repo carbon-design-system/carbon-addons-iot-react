@@ -69,6 +69,7 @@ jobs:
           WIDTH: 1680
 
       - name: Archive visual diff report
+        if: ${{ failure() }} && steps.changes.outputs.react == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: visual-diff-report
