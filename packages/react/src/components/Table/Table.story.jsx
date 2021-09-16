@@ -487,10 +487,12 @@ export const initialState = {
       },
     ].filter((i) => i),
   })),
-  expandedData: tableData.map((data) => ({
-    rowId: data.id,
-    content: <RowExpansionContent rowId={data.id} />,
-  })),
+  expandedData: [
+    {
+      rowId: 'row-1',
+      content: <div>HELLO CONTENT</div>,
+    },
+  ],
   options: {
     hasFilter: true,
     hasSearch: true,
