@@ -128,6 +128,16 @@ jobs:
     needs: [react-cypress-test, react-jest-test]
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v2
 
