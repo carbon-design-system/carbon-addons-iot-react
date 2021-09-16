@@ -77,10 +77,10 @@ storiesOf('Components/DateTime Picker', module)
     template: `
       <ai-date-time-picker
         [theme]="(theme ? 'light' : null)"
+        [flatpickrOptions]="flatpickrOptions"
         (selectedChange)="selectedChange($event)"
         (apply)="apply($event)"
-        (cancel)="cancel($event)"
-        [flatpickrOptions]="flatpickrOptions">
+        (cancel)="cancel($event)">
       </ai-date-time-picker>
 		`,
     props: getProps({
