@@ -20,6 +20,7 @@ module.exports = {
     '!src/components/MapCard/storyFiles/*.jsx',
     '!src/components/**/*.test.e2e.jsx',
     '!src/components/StorybookSnapshots.test.js',
+    '!src/components/Table/Table.test.helpers.jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
