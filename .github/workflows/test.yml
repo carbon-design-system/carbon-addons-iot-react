@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jest-coverage
-          path: packages/react/jest/coverage/coverage-final.json
+          path: packages/react/jest
 
   react-cypress-test:
     name: React Cypress test
@@ -120,7 +120,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: cypress-coverage
-          path: packages/react/cypress/coverage/coverage-final.json
+          path: packages/react/cypress
 
   combine-reports:
     name: Combine Coverage Reports
@@ -132,9 +132,7 @@ jobs:
         uses: actions/download-artifact@v2
 
       - name: Copy, combine, and report coverage
-        run: |
-          cd packages/react
-          yarn reports
+        run: yarn reports
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
