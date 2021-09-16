@@ -142,7 +142,9 @@ jobs:
         uses: actions/download-artifact@v2
 
       - name: Copy, combine, and report coverage
-        run: yarn reports
+        run: |
+        cd packages/react
+        yarn reports
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
