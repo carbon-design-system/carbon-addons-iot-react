@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  test:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./packages/react/cypress-visual-screenshots:/carbon-addons-iot-react/cypress-visual-screenshots
+      - ./packages/react/cypress-visual-report:/carbon-addons-iot-react/cypress-visual-report
