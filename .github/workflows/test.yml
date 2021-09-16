@@ -53,7 +53,8 @@ jobs:
         if: ${{ success() }} && steps.changes.outputs.react == 'true'
         uses: actions/upload-artifact@v2
         with:
-          name: jest/coverage/coverage-final.json
+          name: jest-coverage
+          path: packages/react/jest/coverage/coverage-final.json
 
   react-cypress-test:
     name: React Cypress test
@@ -113,6 +114,13 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           HEIGHT: 900
           WIDTH: 1680
+
+      - name: Archive coverage artifacts
+        if: ${{ success() }} && steps.changes.outputs.react == 'true'
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-coverage
+          path: packages/react/cypress/coverage/coverage-final.json
 
   combine-reports:
     name: Combine Coverage Reports
