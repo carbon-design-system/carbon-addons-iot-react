@@ -132,6 +132,7 @@ export type DateRange = [Date, Date];
             [hasAbsolute]="hasAbsolute"
             [dateFormat]="absoluteDateFormat"
             [placeholder]="dateFormat.toLowerCase()"
+            [flatpickrOptions]="flatpickrOptions"
             [batchText]="batchText"
           ></ai-custom-date-time>
         </div>
@@ -245,6 +246,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   @Input() theme: 'light' | null = null;
   @Input() placeholder = 'yyyy-mm-dd HH:mm';
   @Input() dateFormat = 'yyyy-MM-dd';
+  @Input() flatpickrOptions;
   @Input() batchText: BatchLabelText = {
     ABSOLUTE: 'Absolute',
     RELATIVE: 'Relative',
