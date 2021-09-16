@@ -85,8 +85,8 @@ storiesOf('Components/DateTime Picker', module)
 		`,
     props: getProps({
       flatpickrOptions: {
-        maxDate: 'today'
-      }
+        maxDate: 'today',
+      },
     }),
   }))
   .add('With preset range selected', () => ({
