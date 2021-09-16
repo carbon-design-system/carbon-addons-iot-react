@@ -561,7 +561,7 @@ describe('Table visual regression tests', () => {
 
     // This component throws a network error with too many calls to the cdn script it loads so adding snapshot to existing instance
     onlyOn('headless', () => {
-      cy.findByTestId('all-tables').compareSnapshot('table');
+      cy.findByTestId('all-tables').compareSnapshot('table', 0.131767);
       // cy.findByTestId('snapshot-1').compareSnapshot('snapshot-1');
       // cy.findByTestId('snapshot-2').compareSnapshot('snapshot-2');
       // cy.findByTestId('snapshot-3').compareSnapshot('snapshot-3');
