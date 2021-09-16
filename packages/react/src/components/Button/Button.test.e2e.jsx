@@ -12,7 +12,7 @@ describe('Button', () => {
   onlyOn('headless', () => {
     it('matches image snapshot', () => {
       mount(<Button {...commonProps}>Click Me</Button>);
-      cy.findByText(/Click Me/).compareSnapshot('Button', 0.16);
+      cy.findByText(/Click Me/).compareSnapshot('Button');
     });
 
     it('Ghost button matches image snapshot', () => {
@@ -21,7 +21,7 @@ describe('Button', () => {
           Click Me
         </Button>
       );
-      cy.findByText(/Click Me/).compareSnapshot('Ghost_Button', 0.16);
+      cy.findByText(/Click Me/).compareSnapshot('Ghost_Button');
     });
   });
 });

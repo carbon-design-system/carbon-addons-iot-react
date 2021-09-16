@@ -9,6 +9,12 @@ jobs:
     container: cypress/browsers:node14.17.0-chrome91-ff89
 
     steps:
+      - name: Upgrade git
+        run: |
+          echo deb "http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list
+          apt-get update
+          apt-get install -y git/buster-backports
+
       - name: Checkout code
         uses: actions/checkout@v2
 
