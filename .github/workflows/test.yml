@@ -6,7 +6,9 @@ jobs:
   test-react:
     name: Test React
     runs-on: ubuntu-latest
-    container: cypress/browsers:node14.17.0-chrome91-ff89
+    container:
+      image: cypress/browsers:node14.17.0-chrome91-ff89
+      options: --privileged
 
     steps:
       - name: Upgrade git
