@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.146.0-next.185](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.184...v2.146.0-next.185) (2021-09-16)
+
+
+### Bug Fixes
+
+* **suite-header:** btn--primary icon colors ([00710ae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/00710ae1b5f382fa934c8222836656f42728b0b8))
+
+
+
+
+
 # [2.146.0-next.184](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.183...v2.146.0-next.184) (2021-09-15)
 
 
