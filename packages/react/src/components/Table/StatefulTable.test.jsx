@@ -11,11 +11,12 @@ import * as reducer from './baseTableReducer';
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import { StatefulTableWithNestedRowItems } from './StatefulTable.story';
-import { mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
+import { getMockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
 import { initialState, tableData } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
 
 const { iotPrefix } = settings;
+const mockActions = getMockActions(jest.fn);
 
 describe('stateful table with real reducer', () => {
   it('should clear filters', async () => {
