@@ -132,14 +132,12 @@ jobs:
         uses: actions/download-artifact@v2
 
       - name: Copy, combine, and report coverage
-        if: steps.changes.outputs.react == 'true'
         run: |
           cd packages/react
           yarn reports
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
-        if: steps.changes.outputs.react == 'true'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: './packages/react/coverage/lcov.info'
