@@ -38,7 +38,7 @@ describe('Table visual regression tests', () => {
             hasAggregations: true,
             hasColumnSelection: true,
             hasColumnSelectionConfig: true,
-            hasFilter: true,
+            // hasFilter: true,
             // hasMultiSort: true,
             hasPagination: true,
             hasResize: true,
