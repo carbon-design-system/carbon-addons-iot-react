@@ -225,7 +225,7 @@ If you're adding a new component or making visual changes to an existing compone
 
 Once that is installed and running, you can run `yarn test:e2e:images` to build the docker container, install all dependencies, and run the cypress visual regression tests. These tests will compare your changes against the existing baseline images in `packages/react/cypress-visual-screenshots/baseline`.
 
-If this is a new component and no baseline images exist, cypress will create them, and you can commit them for use in future tests. However, if there are differences, the tests will fail. If intentional changes to the component cause this failure, you'll need to run `yarn test:e2e:update` to replace the existing baseline images with these newly created images. Commit these changes into git and push. The new images will become the baseline for all future comparisons.
+If this is a new component, you'll want to add it to the "kitchen-sink" cypress test that combines many components in a single image for testing. This addition, or making visual changes to existing components, will cause the tests to fail. If intentional changes to the component cause this failure, you'll need to run `yarn test:e2e:update` to replace the existing baseline images with these newly created images. Commit these changes into git and push. The new images will become the baseline for all future comparisons.
 
 ### Minimum code coverage
 
