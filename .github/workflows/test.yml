@@ -143,8 +143,8 @@ jobs:
 
       - name: Copy, combine, and report coverage
         run: |
-        cd packages/react
-        yarn reports
+          cd packages/react
+          yarn reports
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
