@@ -49,7 +49,7 @@ const values = {
 };
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ ImageCard' : 'Watson IoT/ImageCard',
+  title: '1 - Watson IoT/ImageCard',
 
   parameters: {
     component: ImageCard,
@@ -58,16 +58,18 @@ export default {
 
 export const Basic = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: spacing06,
       }}
     >
       <ImageCard
         title={text('title', 'Image')}
         id="image-hotspots"
+        breakpoint={breakpoint}
         content={object('content', content)}
         values={{
           hotspots: [
@@ -117,7 +119,6 @@ export const Basic = () => {
             },
           ],
         }}
-        breakpoint="lg"
         size={size}
         onCardAction={action('onCardAction')}
       />
@@ -125,8 +126,76 @@ export const Basic = () => {
   );
 };
 
-Basic.story = {
-  name: 'basic',
+Basic.storyName = 'basic';
+
+export const WidthDisplayOptions = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
+  const myContent = { ...content, displayOption: myDisplayOption };
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize(breakpoint, size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <ImageCard
+        title={text('title', 'Image')}
+        id="image-hotspots"
+        breakpoint={breakpoint}
+        content={myContent}
+        values={{
+          hotspots: [
+            {
+              x: 0,
+              y: 0,
+              content: <span style={{ padding: spacing03 }}>0:0</span>,
+              color: 'green',
+              width: 20,
+              height: 20,
+            },
+            {
+              x: 0,
+              y: 99.99,
+              content: <span style={{ padding: spacing03 }}>0:99</span>,
+              color: 'green',
+              width: 20,
+              height: 20,
+            },
+            {
+              x: 99.99,
+              y: 99.99,
+              content: <span style={{ padding: spacing03 }}>99:99</span>,
+              color: 'green',
+              width: 20,
+              height: 20,
+            },
+            {
+              x: 99.99,
+              y: 0,
+              content: <span style={{ padding: spacing03 }}>99:0</span>,
+              color: 'green',
+              width: 20,
+              height: 20,
+            },
+          ],
+        }}
+        size={size}
+        onCardAction={action('onCardAction')}
+      />
+    </div>
+  );
+};
+
+WidthDisplayOptions.story = {
+  name: 'with displayOptions',
 };
 
 export const CustomRenderIconByName = () => {
@@ -164,9 +233,7 @@ export const CustomRenderIconByName = () => {
   );
 };
 
-CustomRenderIconByName.story = {
-  name: 'custom renderIconByName',
-};
+CustomRenderIconByName.storyName = 'custom renderIconByName';
 
 export const IsEditable = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -191,9 +258,7 @@ export const IsEditable = () => {
   );
 };
 
-IsEditable.story = {
-  name: 'isEditable (experimental)',
-};
+IsEditable.storyName = 'isEditable (experimental)';
 
 export const HotspotsAreLoading = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -218,9 +283,7 @@ export const HotspotsAreLoading = () => {
   );
 };
 
-HotspotsAreLoading.story = {
-  name: 'hotspots are loading',
-};
+HotspotsAreLoading.storyName = 'hotspots are loading';
 
 export const Error = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -246,9 +309,7 @@ export const Error = () => {
   );
 };
 
-Error.story = {
-  name: 'error',
-};
+Error.storyName = 'error';
 
 export const ErrorLoadingImage = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -274,9 +335,7 @@ export const ErrorLoadingImage = () => {
   );
 };
 
-ErrorLoadingImage.story = {
-  name: 'error loading image',
-};
+ErrorLoadingImage.storyName = 'error loading image';
 
 export const ValidationError = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
@@ -302,6 +361,4 @@ export const ValidationError = () => {
   );
 };
 
-ValidationError.story = {
-  name: 'image upload error',
-};
+ValidationError.storyName = 'image upload error';

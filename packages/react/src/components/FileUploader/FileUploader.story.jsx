@@ -122,7 +122,7 @@ const props = {
 };
 
 export default {
-  title: 'FileUploader',
+  title: '3 - Carbon/FileUploader',
   decorators: [withKnobs],
 
   parameters: {
@@ -183,15 +183,16 @@ _FileUploaderDropContainer.parameters = {
 export const DragAndDropUploadContainerExampleApplication = () =>
   require('./stories/drop-container').default(props.fileUploaderDropContainer());
 
-DragAndDropUploadContainerExampleApplication.story = {
-  name: 'Drag and drop upload container example application',
-  parameters: {
-    info: {
-      text: 'Example application with drag and drop file uploader',
-    },
+DragAndDropUploadContainerExampleApplication.storyName =
+  'Drag and drop upload container example application';
+
+DragAndDropUploadContainerExampleApplication.parameters = {
+  info: {
+    text: 'Example application with drag and drop file uploader',
   },
-  decorators: [createElement],
 };
+
+DragAndDropUploadContainerExampleApplication.decorators = [createElement];
 
 export const Skeleton = () => (
   <div style={{ width: '500px' }}>

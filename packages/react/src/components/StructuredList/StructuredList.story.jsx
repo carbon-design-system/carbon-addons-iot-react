@@ -23,7 +23,7 @@ import {
 const { prefix } = settings;
 
 export default {
-  title: 'StructuredList',
+  title: '3 - Carbon/StructuredList',
 
   parameters: {
     component: StructuredListWrapper,

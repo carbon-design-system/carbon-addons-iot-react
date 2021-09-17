@@ -38,30 +38,33 @@ const propTypes = {
       })
     ).isRequired,
   }).isRequired,
-  testID: PropTypes.string,
+  testId: PropTypes.string,
+  showExpanderColumn: PropTypes.bool,
 };
 
 const defaultProps = {
   options: {},
-  testID: 'table-foot',
+  testId: 'table-foot',
+  showExpanderColumn: false,
 };
 
 const TableFoot = ({
-  testID,
+  testId,
   options: { hasRowExpansion, hasRowSelection, hasRowActions },
   tableState: { aggregations, ordering },
+  showExpanderColumn,
 }) => {
   const visibleColumns = ordering.filter((col) => !col.isHidden);
 
   return (
-    <tfoot className={`${iotPrefix}-table-foot`} data-testid={testID}>
+    <tfoot className={`${iotPrefix}-table-foot`} data-testid={testId}>
       <TableRow>
         {hasRowExpansion ? <TableCell key="row-expansion" /> : null}
         {hasRowSelection === 'multi' ? <TableCell key="row-selection" /> : null}
         {visibleColumns.map((orderedCol, index) => {
           const aggregated = aggregations.columns.find((col) => orderedCol.columnId === col.id);
           const isLabelCell = !aggregated && index === 0;
-          const cellTestId = `${testID}-aggregation-${orderedCol.columnId}`;
+          const cellTestId = `${testId}-aggregation-${orderedCol.columnId}`;
           const cellKey = `${orderedCol.columnId}${index}`;
 
           return isLabelCell ? (
@@ -94,6 +97,7 @@ const TableFoot = ({
           );
         })}
         {hasRowActions ? <TableCell /> : null}
+        {showExpanderColumn ? <TableCell data-testid={`${testId}-expander-column`} /> : null}
       </TableRow>
     </tfoot>
   );

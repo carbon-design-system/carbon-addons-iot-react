@@ -14,6 +14,7 @@ import warning from 'warning';
 import { settings } from '../../constants/Settings';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import Button from '../Button';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -76,8 +77,14 @@ export const ComposedModalPropTypes = {
   onSubmit: PropTypes.func,
   /** Hide the footer */
   passiveModal: PropTypes.bool,
+  // TODO: remove deprecated testID in v3.
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 /**
@@ -114,7 +121,7 @@ class ComposedModal extends React.Component {
     header: {},
     iconDescription: 'Close',
     passiveModal: false,
-    testID: 'ComposedModal',
+    testId: 'ComposedModal',
   };
 
   componentDidUpdate(prevProps) {
@@ -154,7 +161,9 @@ class ComposedModal extends React.Component {
       submitFailed,
       invalid,
       passiveModal,
+      // TODO: remove deprecated testID in v3.
       testID,
+      testId,
       ...props
     } = this.props;
     const { label, title, helpText } = header;
@@ -172,7 +181,8 @@ class ComposedModal extends React.Component {
     ) : (
       <CarbonComposedModal
         {...props}
-        data-testid={testID}
+        // TODO: remove deprecated testID in v3.
+        data-testid={testID || testId}
         open={open}
         onClose={this.doNotClose}
         data-floating-menu-container // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
@@ -211,6 +221,7 @@ class ComposedModal extends React.Component {
             kind="error"
             onCloseButtonClick={this.handleClearError}
             className={`${iotPrefix}--composed-modal--inline-notification`}
+            data-testid={`${testID || testId}-notification`}
           />
         ) : null}
         {!passiveModal ? (
@@ -222,7 +233,7 @@ class ComposedModal extends React.Component {
                 <Button
                   kind="secondary"
                   onClick={onClose}
-                  testID={`${testID}-modal-secondary-button`}
+                  testId={`${testID || testId}-modal-secondary-button`}
                 >
                   {(footer && footer.secondaryButtonLabel) || 'Cancel'}
                 </Button>
@@ -235,7 +246,9 @@ class ComposedModal extends React.Component {
                       typeof sendingData === 'string'
                     }
                     onClick={onSubmit}
-                    testID={`${testID}-modal-${type === 'warn' ? 'danger' : 'primary'}-button`}
+                    testId={`${testID || testId}-modal-${
+                      type === 'warn' ? 'danger' : 'primary'
+                    }-button`}
                   >
                     {(footer && footer.primaryButtonLabel) || 'Save'}
                   </Button>

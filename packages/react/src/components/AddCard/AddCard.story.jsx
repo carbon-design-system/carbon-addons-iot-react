@@ -9,7 +9,7 @@ const AddCardProps = {
 };
 
 export default {
-  title: 'Watson IoT/AddCard',
+  title: '1 - Watson IoT/AddCard',
 
   parameters: {
     component: AddCard,
@@ -18,6 +18,4 @@ export default {
 
 export const HandlesClick = () => <AddCard {...AddCardProps} />;
 
-HandlesClick.story = {
-  name: 'handles click',
-};
+HandlesClick.storyName = 'handles click';

@@ -1,2283 +1,3833 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots Editable with text hotspot 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageHotspots Editable with text hotspot 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "height": "300px",
+        "width": "450px",
       }
     }
   >
     <div
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onMouseOut={[Function]}
       style={
         Object {
-          "height": "300px",
-          "width": "450px",
+          "background": "#eee",
+          "height": "100%",
+          "overflow": "hidden",
+          "position": "relative",
+          "textAlign": "center",
+          "width": "100%",
         }
       }
     >
-      <div
-        onBlur={[Function]}
-        onContextMenu={[Function]}
-        onMouseOut={[Function]}
+      <img
+        alt="Sample image"
+        className="iot--image-card-img"
+        id={null}
+        onLoad={[Function]}
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        src="landscape.jpg"
         style={
           Object {
-            "background": "#eee",
-            "height": "100%",
-            "overflow": "hidden",
+            "cursor": "auto",
+            "height": "auto",
+            "left": undefined,
+            "objectFit": null,
             "position": "relative",
-            "textAlign": "center",
-            "width": "100%",
+            "top": undefined,
+            "width": "auto",
+          }
+        }
+      />
+      <div
+        data-testid="null-hotspots-container"
+        style={
+          Object {
+            "left": undefined,
+            "margin": "auto",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "right": "auto",
           }
         }
       >
-        <img
-          alt="Sample image"
-          className="iot--image-card-img"
-          id={null}
-          onLoad={[Function]}
-          onMouseDown={[Function]}
-          onMouseMove={[Function]}
-          onMouseUp={[Function]}
-          src="landscape.jpg"
-          style={
-            Object {
-              "cursor": "auto",
-              "height": "auto",
-              "left": undefined,
-              "objectFit": null,
-              "position": "relative",
-              "top": undefined,
-              "width": "auto",
-            }
-          }
-        />
         <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-0"
+          icon={null}
           style={
             Object {
-              "left": undefined,
-              "margin": "auto",
-              "pointerEvents": "none",
-              "position": "absolute",
-              "right": "auto",
-              "top": undefined,
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 0,
             }
           }
         >
           <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-10-20"
-            icon="warning"
+            aria-labelledby="hotspot-0-0"
+            className="bx--tooltip__label"
+            id="hotspot-0-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-0-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-0-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-0"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 0,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-0"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-10-20"
+          icon="warning"
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 10,
+              "--y-pos": 20,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-10-20"
+            className="bx--tooltip__label"
+            id="hotspot-10-20"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-text"
+          data-testid="hotspot-26-75"
+          icon={null}
+          style={
+            Object {
+              "--height": undefined,
+              "--width": undefined,
+              "--x-pos": 26,
+              "--y-pos": 75,
+            }
+          }
+        >
+          <div
+            className="iot--text-hotspot"
+            onClick={[Function]}
+            role="complementary"
             style={
               Object {
-                "--height": 20,
-                "--width": 20,
-                "--x-pos": 10,
-                "--y-pos": 20,
+                "--background-color": "rgba( 0, 255, 0, 0.5)",
+                "--border-color": "#FFFF00",
+                "--border-width": 8,
+                "--title-font-color": "#006666",
+                "--title-font-size": 16,
+                "--title-font-style": "normal",
+                "--title-font-weight": "bold",
+                "--title-text-decoration-line": "none",
               }
             }
           >
             <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-10-20"
-              className="bx--tooltip__label"
-              id="hotspot-10-20"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+              className="iot--hotspot-content"
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
-                fill="white"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
+              <h4
+                title="Facility rooms"
               >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
+                Facility rooms
+              </h4>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Temperature
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    35.4
+                  </span>
+                </div>
+              </div>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Humidity
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    99.0
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-10"
-            icon="warning"
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 10,
-              }
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-10"
+          icon="warning"
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 10,
             }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-50-10"
+            className="bx--tooltip__label"
+            id="hotspot-50-10"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-10"
-              className="bx--tooltip__label"
-              id="hotspot-50-10"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="blue"
+              focusable="false"
+              height={25}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-30-40"
+          icon={null}
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 30,
+              "--y-pos": 40,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-30-40"
+            className="bx--tooltip__label"
+            id="hotspot-30-40"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
                 fill="blue"
-                focusable="false"
-                height={25}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={25}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
-            </div>
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
           </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-30-40"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 30,
-                "--y-pos": 40,
-              }
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-60"
+          icon={null}
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 60,
             }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-50-60"
+            className="bx--tooltip__label"
+            id="hotspot-50-60"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-30-40"
-              className="bx--tooltip__label"
-              id="hotspot-30-40"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              height={25}
+              width={25}
             >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="blue"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="green"
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
           </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-text"
+          data-testid="hotspot-75-10"
+          icon={null}
+          style={
+            Object {
+              "--height": undefined,
+              "--width": undefined,
+              "--x-pos": 75,
+              "--y-pos": 10,
+            }
+          }
+        >
           <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-60"
-            icon={null}
+            className="iot--text-hotspot"
+            onClick={[Function]}
+            role="complementary"
             style={
               Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 60,
+                "--background-color": "rgba( 153, 153, 153, 0.5)",
+                "--border-color": "#e0e0e0",
+                "--border-width": 0,
+                "--title-font-color": "#161616",
+                "--title-font-size": 24,
+                "--title-font-style": "normal",
+                "--title-font-weight": "normal",
+                "--title-text-decoration-line": "none",
               }
             }
           >
             <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-60"
-              className="bx--tooltip__label"
-              id="hotspot-50-60"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+              className="iot--hotspot-content"
             >
-              <svg
-                height={25}
-                width={25}
+              <h4
+                title="Storage"
               >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="green"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
+                Storage
+              </h4>
             </div>
           </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--selected iot--hotspot-container--is-text"
+          data-testid="hotspot-75-40"
+          icon={null}
+          style={
+            Object {
+              "--height": undefined,
+              "--width": undefined,
+              "--x-pos": 75,
+              "--y-pos": 40,
+            }
+          }
+        >
           <div
-            className="iot--hotspot-container iot--hotspot-container--is-text"
-            data-testid="hotspot-26-68"
-            icon={null}
+            className="iot--text-hotspot"
+            onClick={[Function]}
+            role="complementary"
             style={
               Object {
-                "--height": undefined,
-                "--width": undefined,
-                "--x-pos": 26,
-                "--y-pos": 68,
+                "--background-color": "rgba( 255, 255, 255, 0.9)",
+                "--border-color": "#DDDDDD",
+                "--border-width": 1,
+                "--title-font-color": "#161616",
+                "--title-font-size": 14,
+                "--title-font-style": "normal",
+                "--title-font-weight": "normal",
+                "--title-text-decoration-line": "none",
               }
             }
           >
             <div
-              className="iot--text-hotspot"
-              onClick={[Function]}
-              role="complementary"
-              style={
-                Object {
-                  "--background-color": "rgba( 0, 255, 0, 0.5)",
-                  "--border-color": "#FFFF00",
-                  "--border-width": 8,
-                  "--title-font-color": "#006666",
-                  "--title-font-size": 16,
-                  "--title-font-style": "normal",
-                  "--title-font-weight": "bold",
-                  "--title-text-decoration-line": "none",
-                }
-              }
+              className="iot--hotspot-content"
             >
               <div
-                className="iot--hotspot-content"
-              >
-                <h4
-                  title="Facility rooms"
-                >
-                  Facility rooms
-                </h4>
-                <div
-                  className="iot--hotspot-content-attribute"
-                >
-                  <div
-                    className="iot--hotspot-content-label-section"
-                  >
-                    <span
-                      className="iot--hotspot-content-label"
-                    >
-                      Temperature
-                      :
-                    </span>
-                  </div>
-                  <div
-                    className="iot--hotspot-content-threshold-section"
-                  >
-                    <span
-                      className="iot--hotspot-content-threshold"
-                      style={
-                        Object {
-                          "--threshold-color": "inherit ",
-                          "--threshold-padding": "0rem",
-                        }
-                      }
-                    >
-                      35.4
-                    </span>
-                  </div>
-                </div>
-                <div
-                  className="iot--hotspot-content-attribute"
-                >
-                  <div
-                    className="iot--hotspot-content-label-section"
-                  >
-                    <span
-                      className="iot--hotspot-content-label"
-                    >
-                      Humidity
-                      :
-                    </span>
-                  </div>
-                  <div
-                    className="iot--hotspot-content-threshold-section"
-                  >
-                    <span
-                      className="iot--hotspot-content-threshold"
-                      style={
-                        Object {
-                          "--threshold-color": "inherit ",
-                          "--threshold-padding": "0rem",
-                        }
-                      }
-                    >
-                      99.0
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-text"
-            data-testid="hotspot-75-10"
-            icon={null}
-            style={
-              Object {
-                "--height": undefined,
-                "--width": undefined,
-                "--x-pos": 75,
-                "--y-pos": 10,
-              }
-            }
-          >
-            <div
-              className="iot--text-hotspot"
-              onClick={[Function]}
-              role="complementary"
-              style={
-                Object {
-                  "--background-color": "rgba( 153, 153, 153, 0.5)",
-                  "--border-color": "#e0e0e0",
-                  "--border-width": 0,
-                  "--title-font-color": "#161616",
-                  "--title-font-size": 24,
-                  "--title-font-style": "normal",
-                  "--title-font-weight": "normal",
-                  "--title-text-decoration-line": "none",
-                }
-              }
-            >
-              <div
-                className="iot--hotspot-content"
-              >
-                <h4
-                  title="Storage"
-                >
-                  Storage
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--selected iot--hotspot-container--is-text"
-            data-testid="hotspot-75-40"
-            icon={null}
-            style={
-              Object {
-                "--height": undefined,
-                "--width": undefined,
-                "--x-pos": 75,
-                "--y-pos": 40,
-              }
-            }
-          >
-            <div
-              className="iot--text-hotspot"
-              onClick={[Function]}
-              role="complementary"
-              style={
-                Object {
-                  "--background-color": "rgba( 255, 255, 255, 0.9)",
-                  "--border-color": "#DDDDDD",
-                  "--border-width": 1,
-                  "--title-font-color": "#161616",
-                  "--title-font-size": 14,
-                  "--title-font-style": "normal",
-                  "--title-font-weight": "normal",
-                  "--title-text-decoration-line": "none",
-                }
-              }
-            >
-              <div
-                className="iot--hotspot-content"
+                className="iot--hotspot-content-title-wrapper--editable"
               >
                 <div
-                  className="iot--hotspot-content-title-wrapper--editable"
+                  className="bx--form-item bx--text-input-wrapper"
                 >
                   <div
-                    className="bx--form-item bx--text-input-wrapper"
+                    className="bx--text-input__field-outer-wrapper"
                   >
                     <div
-                      className="bx--text-input__field-outer-wrapper"
+                      className="bx--text-input__field-wrapper"
+                      data-invalid={null}
                     >
-                      <div
-                        className="bx--text-input__field-wrapper"
-                        data-invalid={null}
-                      >
-                        <input
-                          className="bx--text-input iot--hotspot-content-title-input"
-                          data-testid="hotspot-content-75-40-title-test"
-                          defaultValue=""
-                          disabled={false}
-                          id="hotspot-content-75-40-title"
-                          onBlur={[Function]}
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          placeholder="Enter label"
-                          title="Enter label"
-                          type="text"
-                        />
-                      </div>
+                      <input
+                        className="bx--text-input iot--hotspot-content-title-input"
+                        data-testid="hotspot-content-75-40-title-test"
+                        defaultValue=""
+                        disabled={false}
+                        id="hotspot-content-75-40-title"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        placeholder="Enter label"
+                        title="Enter label"
+                        type="text"
+                      />
                     </div>
                   </div>
                 </div>
-                <h4
-                  className="iot--hotspot-content-title__visually-hidden"
+              </div>
+              <h4
+                className="iot--hotspot-content-title__visually-hidden"
+              >
+                
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "bottom": 10,
+            "pointerEvents": "auto",
+            "position": "absolute",
+            "right": 10,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom in"
+          type="button"
+        >
+          +
+        </button>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom out"
+          type="button"
+        >
+          -
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageHotspots image smaller than card, minimap and zoomcontrols should be hidden 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": "560px",
+        "width": "560px",
+      }
+    }
+  >
+    <div
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onMouseOut={[Function]}
+      style={
+        Object {
+          "background": "#eee",
+          "height": "100%",
+          "overflow": "hidden",
+          "position": "relative",
+          "textAlign": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <img
+        alt="Sample image"
+        className="iot--image-card-img"
+        id={null}
+        onLoad={[Function]}
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        src="MunichBuilding.png"
+        style={
+          Object {
+            "cursor": "auto",
+            "height": "auto",
+            "left": undefined,
+            "objectFit": null,
+            "position": "relative",
+            "top": undefined,
+            "width": "auto",
+          }
+        }
+      />
+      <div
+        data-testid="null-hotspots-container"
+        style={
+          Object {
+            "left": undefined,
+            "margin": "auto",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "right": "auto",
+          }
+        }
+      >
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-0"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 0,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-0-0"
+            className="bx--tooltip__label"
+            id="hotspot-0-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-0-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-0-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-0"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 0,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-0"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-10-20"
+          icon="warning"
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 10,
+              "--y-pos": 20,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-10-20"
+            className="bx--tooltip__label"
+            id="hotspot-10-20"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-text"
+          data-testid="hotspot-26-75"
+          icon={null}
+          style={
+            Object {
+              "--height": undefined,
+              "--width": undefined,
+              "--x-pos": 26,
+              "--y-pos": 75,
+            }
+          }
+        >
+          <div
+            className="iot--text-hotspot"
+            onClick={[Function]}
+            role="complementary"
+            style={
+              Object {
+                "--background-color": "rgba( 0, 255, 0, 0.5)",
+                "--border-color": "#FFFF00",
+                "--border-width": 8,
+                "--title-font-color": "#006666",
+                "--title-font-size": 16,
+                "--title-font-style": "normal",
+                "--title-font-weight": "bold",
+                "--title-text-decoration-line": "none",
+              }
+            }
+          >
+            <div
+              className="iot--hotspot-content"
+            >
+              <h4
+                title="Facility rooms"
+              >
+                Facility rooms
+              </h4>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
                 >
-                  
-                </h4>
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Temperature
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    35.4
+                  </span>
+                </div>
+              </div>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Humidity
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    99.0
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-10"
+          icon="warning"
           style={
             Object {
-              "bottom": 10,
-              "pointerEvents": "auto",
-              "position": "absolute",
-              "right": 10,
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 10,
             }
           }
         >
-          <button
+          <div
+            aria-labelledby="hotspot-50-10"
+            className="bx--tooltip__label"
+            id="hotspot-50-10"
+            onBlur={[Function]}
             onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom in"
-            type="button"
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            +
-          </button>
-          <br />
-          <button
-            onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom out"
-            type="button"
-          >
-            -
-          </button>
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="blue"
+              focusable="false"
+              height={25}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
         </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-30-40"
+          icon={null}
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 30,
+              "--y-pos": 40,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-30-40"
+            className="bx--tooltip__label"
+            id="hotspot-30-40"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="blue"
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-60"
+          icon={null}
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 60,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-50-60"
+            className="bx--tooltip__label"
+            id="hotspot-50-60"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="green"
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "bottom": 10,
+            "pointerEvents": "auto",
+            "position": "absolute",
+            "right": 10,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom in"
+          type="button"
+        >
+          +
+        </button>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom out"
+          type="button"
+        >
+          -
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots image smaller than card, minimap and zoomcontrols should be hidden 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageHotspots landscape image & landscape container 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "height": "300px",
+        "width": "450px",
       }
     }
   >
     <div
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onMouseOut={[Function]}
       style={
         Object {
-          "height": "560px",
-          "width": "560px",
+          "background": "#eee",
+          "height": "100%",
+          "overflow": "hidden",
+          "position": "relative",
+          "textAlign": "center",
+          "width": "100%",
         }
       }
     >
-      <div
-        onBlur={[Function]}
-        onMouseOut={[Function]}
+      <img
+        alt="Sample image"
+        className="iot--image-card-img"
+        id={null}
+        onLoad={[Function]}
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        src="landscape.jpg"
         style={
           Object {
-            "background": "#eee",
-            "height": "100%",
-            "overflow": "hidden",
+            "cursor": "auto",
+            "height": "auto",
+            "left": undefined,
+            "objectFit": null,
             "position": "relative",
-            "textAlign": "center",
-            "width": "100%",
+            "top": undefined,
+            "width": "auto",
+          }
+        }
+      />
+      <div
+        data-testid="null-hotspots-container"
+        style={
+          Object {
+            "left": undefined,
+            "margin": "auto",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "right": "auto",
           }
         }
       >
-        <img
-          alt="Sample image"
-          className="iot--image-card-img"
-          id={null}
-          onLoad={[Function]}
-          onMouseDown={[Function]}
-          onMouseMove={[Function]}
-          onMouseUp={[Function]}
-          src="MunichBuilding.png"
-          style={
-            Object {
-              "cursor": "auto",
-              "height": "auto",
-              "left": undefined,
-              "objectFit": null,
-              "position": "relative",
-              "top": undefined,
-              "width": "auto",
-            }
-          }
-        />
         <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-0"
+          icon={null}
           style={
             Object {
-              "left": undefined,
-              "margin": "auto",
-              "pointerEvents": "none",
-              "position": "absolute",
-              "right": "auto",
-              "top": undefined,
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 0,
             }
           }
         >
           <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-10-20"
-            icon="warning"
+            aria-labelledby="hotspot-0-0"
+            className="bx--tooltip__label"
+            id="hotspot-0-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-0-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-0-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-0"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 0,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-0"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-10-20"
+          icon="warning"
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 10,
+              "--y-pos": 20,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-10-20"
+            className="bx--tooltip__label"
+            id="hotspot-10-20"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-text"
+          data-testid="hotspot-26-75"
+          icon={null}
+          style={
+            Object {
+              "--height": undefined,
+              "--width": undefined,
+              "--x-pos": 26,
+              "--y-pos": 75,
+            }
+          }
+        >
+          <div
+            className="iot--text-hotspot"
+            onClick={[Function]}
+            role="complementary"
             style={
               Object {
-                "--height": 20,
-                "--width": 20,
-                "--x-pos": 10,
-                "--y-pos": 20,
+                "--background-color": "rgba( 0, 255, 0, 0.5)",
+                "--border-color": "#FFFF00",
+                "--border-width": 8,
+                "--title-font-color": "#006666",
+                "--title-font-size": 16,
+                "--title-font-style": "normal",
+                "--title-font-weight": "bold",
+                "--title-text-decoration-line": "none",
               }
             }
           >
             <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-10-20"
-              className="bx--tooltip__label"
-              id="hotspot-10-20"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+              className="iot--hotspot-content"
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
-                fill="white"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
+              <h4
+                title="Facility rooms"
               >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
+                Facility rooms
+              </h4>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Temperature
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    35.4
+                  </span>
+                </div>
+              </div>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Humidity
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    99.0
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-10"
-            icon="warning"
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 10,
-              }
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-10"
+          icon="warning"
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 10,
             }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-50-10"
+            className="bx--tooltip__label"
+            id="hotspot-50-10"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-10"
-              className="bx--tooltip__label"
-              id="hotspot-50-10"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="blue"
+              focusable="false"
+              height={25}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-30-40"
+          icon={null}
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 30,
+              "--y-pos": 40,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-30-40"
+            className="bx--tooltip__label"
+            id="hotspot-30-40"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
                 fill="blue"
-                focusable="false"
-                height={25}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={25}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-30-40"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 30,
-                "--y-pos": 40,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-30-40"
-              className="bx--tooltip__label"
-              id="hotspot-30-40"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="blue"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-60"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 60,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-60"
-              className="bx--tooltip__label"
-              id="hotspot-50-60"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="green"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
           </div>
         </div>
         <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-60"
+          icon={null}
           style={
             Object {
-              "bottom": 10,
-              "pointerEvents": "auto",
-              "position": "absolute",
-              "right": 10,
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 60,
             }
           }
         >
-          <button
+          <div
+            aria-labelledby="hotspot-50-60"
+            className="bx--tooltip__label"
+            id="hotspot-50-60"
+            onBlur={[Function]}
             onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom in"
-            type="button"
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            +
-          </button>
-          <br />
-          <button
-            onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom out"
-            type="button"
-          >
-            -
-          </button>
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="green"
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
+          </div>
         </div>
+      </div>
+      <div
+        style={
+          Object {
+            "bottom": 10,
+            "pointerEvents": "auto",
+            "position": "absolute",
+            "right": 10,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom in"
+          type="button"
+        >
+          +
+        </button>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom out"
+          type="button"
+        >
+          -
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots landscape image & landscape container 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageHotspots landscape image & portrait container 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "height": "300px",
+        "width": "250px",
       }
     }
   >
     <div
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onMouseOut={[Function]}
       style={
         Object {
-          "height": "300px",
-          "width": "450px",
+          "background": "#eee",
+          "height": "100%",
+          "overflow": "hidden",
+          "position": "relative",
+          "textAlign": "center",
+          "width": "100%",
         }
       }
     >
-      <div
-        onBlur={[Function]}
-        onMouseOut={[Function]}
+      <img
+        alt="Sample image"
+        className="iot--image-card-img"
+        id={null}
+        onLoad={[Function]}
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        src="landscape.jpg"
         style={
           Object {
-            "background": "#eee",
-            "height": "100%",
-            "overflow": "hidden",
+            "cursor": "auto",
+            "height": "auto",
+            "left": undefined,
+            "objectFit": null,
             "position": "relative",
-            "textAlign": "center",
-            "width": "100%",
+            "top": undefined,
+            "width": "auto",
+          }
+        }
+      />
+      <div
+        data-testid="null-hotspots-container"
+        style={
+          Object {
+            "left": undefined,
+            "margin": "auto",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "right": "auto",
           }
         }
       >
-        <img
-          alt="Sample image"
-          className="iot--image-card-img"
-          id={null}
-          onLoad={[Function]}
-          onMouseDown={[Function]}
-          onMouseMove={[Function]}
-          onMouseUp={[Function]}
-          src="landscape.jpg"
-          style={
-            Object {
-              "cursor": "auto",
-              "height": "auto",
-              "left": undefined,
-              "objectFit": null,
-              "position": "relative",
-              "top": undefined,
-              "width": "auto",
-            }
-          }
-        />
         <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-0"
+          icon={null}
           style={
             Object {
-              "left": undefined,
-              "margin": "auto",
-              "pointerEvents": "none",
-              "position": "absolute",
-              "right": "auto",
-              "top": undefined,
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 0,
             }
           }
         >
           <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-10-20"
-            icon="warning"
+            aria-labelledby="hotspot-0-0"
+            className="bx--tooltip__label"
+            id="hotspot-0-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-0-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-0-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-0"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 0,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-0"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-10-20"
+          icon="warning"
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 10,
+              "--y-pos": 20,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-10-20"
+            className="bx--tooltip__label"
+            id="hotspot-10-20"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-text"
+          data-testid="hotspot-26-75"
+          icon={null}
+          style={
+            Object {
+              "--height": undefined,
+              "--width": undefined,
+              "--x-pos": 26,
+              "--y-pos": 75,
+            }
+          }
+        >
+          <div
+            className="iot--text-hotspot"
+            onClick={[Function]}
+            role="complementary"
             style={
               Object {
-                "--height": 20,
-                "--width": 20,
-                "--x-pos": 10,
-                "--y-pos": 20,
+                "--background-color": "rgba( 0, 255, 0, 0.5)",
+                "--border-color": "#FFFF00",
+                "--border-width": 8,
+                "--title-font-color": "#006666",
+                "--title-font-size": 16,
+                "--title-font-style": "normal",
+                "--title-font-weight": "bold",
+                "--title-text-decoration-line": "none",
               }
             }
           >
             <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-10-20"
-              className="bx--tooltip__label"
-              id="hotspot-10-20"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+              className="iot--hotspot-content"
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
-                fill="white"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
+              <h4
+                title="Facility rooms"
               >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
+                Facility rooms
+              </h4>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Temperature
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    35.4
+                  </span>
+                </div>
+              </div>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Humidity
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    99.0
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-10"
-            icon="warning"
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 10,
-              }
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-10"
+          icon="warning"
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 10,
             }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-50-10"
+            className="bx--tooltip__label"
+            id="hotspot-50-10"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-10"
-              className="bx--tooltip__label"
-              id="hotspot-50-10"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="blue"
+              focusable="false"
+              height={25}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-30-40"
+          icon={null}
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 30,
+              "--y-pos": 40,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-30-40"
+            className="bx--tooltip__label"
+            id="hotspot-30-40"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
                 fill="blue"
-                focusable="false"
-                height={25}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={25}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-30-40"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 30,
-                "--y-pos": 40,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-30-40"
-              className="bx--tooltip__label"
-              id="hotspot-30-40"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="blue"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-60"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 60,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-60"
-              className="bx--tooltip__label"
-              id="hotspot-50-60"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="green"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
           </div>
         </div>
         <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-60"
+          icon={null}
           style={
             Object {
-              "bottom": 10,
-              "pointerEvents": "auto",
-              "position": "absolute",
-              "right": 10,
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 60,
             }
           }
         >
-          <button
+          <div
+            aria-labelledby="hotspot-50-60"
+            className="bx--tooltip__label"
+            id="hotspot-50-60"
+            onBlur={[Function]}
             onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom in"
-            type="button"
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            +
-          </button>
-          <br />
-          <button
-            onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom out"
-            type="button"
-          >
-            -
-          </button>
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="green"
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
+          </div>
         </div>
+      </div>
+      <div
+        style={
+          Object {
+            "bottom": 10,
+            "pointerEvents": "auto",
+            "position": "absolute",
+            "right": 10,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom in"
+          type="button"
+        >
+          +
+        </button>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom out"
+          type="button"
+        >
+          -
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots landscape image & portrait container 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageHotspots portrait image & landscape container 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "height": "300px",
+        "width": "450px",
       }
     }
   >
     <div
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onMouseOut={[Function]}
       style={
         Object {
-          "height": "300px",
-          "width": "250px",
+          "background": "#eee",
+          "height": "100%",
+          "overflow": "hidden",
+          "position": "relative",
+          "textAlign": "center",
+          "width": "100%",
         }
       }
     >
-      <div
-        onBlur={[Function]}
-        onMouseOut={[Function]}
+      <img
+        alt="Sample image"
+        className="iot--image-card-img"
+        id={null}
+        onLoad={[Function]}
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        src="portrait.jpg"
         style={
           Object {
-            "background": "#eee",
-            "height": "100%",
-            "overflow": "hidden",
+            "cursor": "auto",
+            "height": "auto",
+            "left": undefined,
+            "objectFit": null,
             "position": "relative",
-            "textAlign": "center",
-            "width": "100%",
+            "top": undefined,
+            "width": "auto",
+          }
+        }
+      />
+      <div
+        data-testid="null-hotspots-container"
+        style={
+          Object {
+            "left": undefined,
+            "margin": "auto",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "right": "auto",
           }
         }
       >
-        <img
-          alt="Sample image"
-          className="iot--image-card-img"
-          id={null}
-          onLoad={[Function]}
-          onMouseDown={[Function]}
-          onMouseMove={[Function]}
-          onMouseUp={[Function]}
-          src="landscape.jpg"
-          style={
-            Object {
-              "cursor": "auto",
-              "height": "auto",
-              "left": undefined,
-              "objectFit": null,
-              "position": "relative",
-              "top": undefined,
-              "width": "auto",
-            }
-          }
-        />
         <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-0"
+          icon={null}
           style={
             Object {
-              "left": undefined,
-              "margin": "auto",
-              "pointerEvents": "none",
-              "position": "absolute",
-              "right": "auto",
-              "top": undefined,
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 0,
             }
           }
         >
           <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-10-20"
-            icon="warning"
+            aria-labelledby="hotspot-0-0"
+            className="bx--tooltip__label"
+            id="hotspot-0-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-0-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-0-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 99.9,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-0"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 0,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-0"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-10-20"
+          icon="warning"
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 10,
+              "--y-pos": 20,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-10-20"
+            className="bx--tooltip__label"
+            id="hotspot-10-20"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-text"
+          data-testid="hotspot-26-75"
+          icon={null}
+          style={
+            Object {
+              "--height": undefined,
+              "--width": undefined,
+              "--x-pos": 26,
+              "--y-pos": 75,
+            }
+          }
+        >
+          <div
+            className="iot--text-hotspot"
+            onClick={[Function]}
+            role="complementary"
             style={
               Object {
-                "--height": 20,
-                "--width": 20,
-                "--x-pos": 10,
-                "--y-pos": 20,
+                "--background-color": "rgba( 0, 255, 0, 0.5)",
+                "--border-color": "#FFFF00",
+                "--border-width": 8,
+                "--title-font-color": "#006666",
+                "--title-font-size": 16,
+                "--title-font-style": "normal",
+                "--title-font-weight": "bold",
+                "--title-text-decoration-line": "none",
               }
             }
           >
             <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-10-20"
-              className="bx--tooltip__label"
-              id="hotspot-10-20"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+              className="iot--hotspot-content"
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
-                fill="white"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
+              <h4
+                title="Facility rooms"
               >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
+                Facility rooms
+              </h4>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Temperature
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    35.4
+                  </span>
+                </div>
+              </div>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Humidity
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    99.0
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-10"
-            icon="warning"
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 10,
-              }
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-10"
+          icon="warning"
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 10,
             }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-50-10"
+            className="bx--tooltip__label"
+            id="hotspot-50-10"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-10"
-              className="bx--tooltip__label"
-              id="hotspot-50-10"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="blue"
+              focusable="false"
+              height={25}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-30-40"
+          icon={null}
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 30,
+              "--y-pos": 40,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-30-40"
+            className="bx--tooltip__label"
+            id="hotspot-30-40"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
                 fill="blue"
-                focusable="false"
-                height={25}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={25}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-30-40"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 30,
-                "--y-pos": 40,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-30-40"
-              className="bx--tooltip__label"
-              id="hotspot-30-40"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="blue"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-60"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 60,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-60"
-              className="bx--tooltip__label"
-              id="hotspot-50-60"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="green"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
           </div>
         </div>
         <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-60"
+          icon={null}
           style={
             Object {
-              "bottom": 10,
-              "pointerEvents": "auto",
-              "position": "absolute",
-              "right": 10,
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 60,
             }
           }
         >
-          <button
+          <div
+            aria-labelledby="hotspot-50-60"
+            className="bx--tooltip__label"
+            id="hotspot-50-60"
+            onBlur={[Function]}
             onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom in"
-            type="button"
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            +
-          </button>
-          <br />
-          <button
-            onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom out"
-            type="button"
-          >
-            -
-          </button>
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="green"
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
+          </div>
         </div>
+      </div>
+      <div
+        style={
+          Object {
+            "bottom": 10,
+            "pointerEvents": "auto",
+            "position": "absolute",
+            "right": 10,
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom in"
+          type="button"
+        >
+          +
+        </button>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
+            }
+          }
+          title="Zoom out"
+          type="button"
+        >
+          -
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots portrait image & landscape container 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageHotspots portrait image & portrait container 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "height": "300px",
+        "width": "225px",
       }
     }
   >
     <div
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onMouseOut={[Function]}
       style={
         Object {
-          "height": "300px",
-          "width": "450px",
+          "background": "#eee",
+          "height": "100%",
+          "overflow": "hidden",
+          "position": "relative",
+          "textAlign": "center",
+          "width": "100%",
         }
       }
     >
-      <div
-        onBlur={[Function]}
-        onMouseOut={[Function]}
+      <img
+        alt="Sample image"
+        className="iot--image-card-img"
+        id={null}
+        onLoad={[Function]}
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        src="portrait.jpg"
         style={
           Object {
-            "background": "#eee",
-            "height": "100%",
-            "overflow": "hidden",
+            "cursor": "auto",
+            "height": "auto",
+            "left": undefined,
+            "objectFit": null,
             "position": "relative",
-            "textAlign": "center",
-            "width": "100%",
+            "top": undefined,
+            "width": "auto",
+          }
+        }
+      />
+      <div
+        data-testid="null-hotspots-container"
+        style={
+          Object {
+            "left": undefined,
+            "margin": "auto",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "right": "auto",
           }
         }
       >
-        <img
-          alt="Sample image"
-          className="iot--image-card-img"
-          id={null}
-          onLoad={[Function]}
-          onMouseDown={[Function]}
-          onMouseMove={[Function]}
-          onMouseUp={[Function]}
-          src="portrait.jpg"
-          style={
-            Object {
-              "cursor": "auto",
-              "height": "auto",
-              "left": undefined,
-              "objectFit": null,
-              "position": "relative",
-              "top": undefined,
-              "width": "auto",
-            }
-          }
-        />
         <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-0"
+          icon={null}
           style={
             Object {
-              "left": undefined,
-              "margin": "auto",
-              "pointerEvents": "none",
-              "position": "absolute",
-              "right": "auto",
-              "top": undefined,
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 0,
             }
           }
         >
           <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-10-20"
-            icon="warning"
-            style={
-              Object {
-                "--height": 20,
-                "--width": 20,
-                "--x-pos": 10,
-                "--y-pos": 20,
-              }
-            }
+            aria-labelledby="hotspot-0-0"
+            className="bx--tooltip__label"
+            id="hotspot-0-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-10-20"
-              className="bx--tooltip__label"
-              id="hotspot-10-20"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              height={20}
+              width={20}
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
-                fill="white"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
-            </div>
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
           </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-10"
-            icon="warning"
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 10,
-              }
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-0-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 0,
+              "--y-pos": 99.9,
             }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-0-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-0-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-10"
-              className="bx--tooltip__label"
-              id="hotspot-50-10"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              height={20}
+              width={20}
             >
-              <svg
-                aria-hidden={true}
-                aria-label=""
-                fill="blue"
-                focusable="false"
-                height={25}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={25}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
-            </div>
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
           </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-30-40"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 30,
-                "--y-pos": 40,
-              }
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-99.9"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 99.9,
             }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-99.9-99.9"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-99.9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-30-40"
-              className="bx--tooltip__label"
-              id="hotspot-30-40"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              height={20}
+              width={20}
             >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="blue"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
           </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-99.9-0"
+          icon={null}
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 99.9,
+              "--y-pos": 0,
+            }
+          }
+        >
           <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-60"
-            icon={null}
+            aria-labelledby="hotspot-99.9-0"
+            className="bx--tooltip__label"
+            id="hotspot-99.9-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={20}
+              width={20}
+            >
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                opacity="1"
+                r={9}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={10}
+                cy={10}
+                fill="green"
+                opacity="0.7"
+                r={9}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-10-20"
+          icon="warning"
+          style={
+            Object {
+              "--height": 20,
+              "--width": 20,
+              "--x-pos": 10,
+              "--y-pos": 20,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-10-20"
+            className="bx--tooltip__label"
+            id="hotspot-10-20"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-text"
+          data-testid="hotspot-26-75"
+          icon={null}
+          style={
+            Object {
+              "--height": undefined,
+              "--width": undefined,
+              "--x-pos": 26,
+              "--y-pos": 75,
+            }
+          }
+        >
+          <div
+            className="iot--text-hotspot"
+            onClick={[Function]}
+            role="complementary"
             style={
               Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 60,
+                "--background-color": "rgba( 0, 255, 0, 0.5)",
+                "--border-color": "#FFFF00",
+                "--border-width": 8,
+                "--title-font-color": "#006666",
+                "--title-font-size": 16,
+                "--title-font-style": "normal",
+                "--title-font-weight": "bold",
+                "--title-text-decoration-line": "none",
               }
             }
           >
             <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-60"
-              className="bx--tooltip__label"
-              id="hotspot-50-60"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+              className="iot--hotspot-content"
             >
-              <svg
-                height={25}
-                width={25}
+              <h4
+                title="Facility rooms"
               >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="green"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
+                Facility rooms
+              </h4>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Temperature
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    35.4
+                  </span>
+                </div>
+              </div>
+              <div
+                className="iot--hotspot-content-attribute"
+              >
+                <div
+                  className="iot--hotspot-content-label-section"
+                >
+                  <span
+                    className="iot--hotspot-content-label"
+                  >
+                    Humidity
+                    :
+                  </span>
+                </div>
+                <div
+                  className="iot--hotspot-content-threshold-section"
+                >
+                  <span
+                    className="iot--hotspot-content-threshold"
+                    style={
+                      Object {
+                        "--threshold-color": "inherit ",
+                        "--threshold-padding": "0rem",
+                      }
+                    }
+                  >
+                    99.0
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div
+          className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-10"
+          icon="warning"
           style={
             Object {
-              "bottom": 10,
-              "pointerEvents": "auto",
-              "position": "absolute",
-              "right": 10,
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 10,
             }
           }
         >
-          <button
+          <div
+            aria-labelledby="hotspot-50-10"
+            className="bx--tooltip__label"
+            id="hotspot-50-10"
+            onBlur={[Function]}
             onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom in"
-            type="button"
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            +
-          </button>
-          <br />
-          <button
+            <svg
+              aria-hidden={true}
+              aria-label=""
+              data-testid="card-icon"
+              fill="blue"
+              focusable="false"
+              height={25}
+              preserveAspectRatio="xMidYMid meet"
+              title=""
+              viewBox="0 0 32 32"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+                fill="none"
+              />
+              <path
+                d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-30-40"
+          icon={null}
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 30,
+              "--y-pos": 40,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-30-40"
+            className="bx--tooltip__label"
+            id="hotspot-30-40"
+            onBlur={[Function]}
             onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom out"
-            type="button"
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            -
-          </button>
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="blue"
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-container iot--hotspot-container--is-fixed"
+          data-testid="hotspot-50-60"
+          icon={null}
+          style={
+            Object {
+              "--height": 25,
+              "--width": 25,
+              "--x-pos": 50,
+              "--y-pos": 60,
+            }
+          }
+        >
+          <div
+            aria-labelledby="hotspot-50-60"
+            className="bx--tooltip__label"
+            id="hotspot-50-60"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              height={25}
+              width={25}
+            >
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="none"
+                opacity="1"
+                r={11.5}
+                stroke="white"
+                strokeWidth="2"
+              />
+              <circle
+                cx={12.5}
+                cy={12.5}
+                fill="green"
+                opacity="0.7"
+                r={11.5}
+                stroke="none"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots portrait image & portrait container 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "height": "300px",
-          "width": "225px",
-        }
-      }
-    >
       <div
-        onBlur={[Function]}
-        onMouseOut={[Function]}
         style={
           Object {
-            "background": "#eee",
-            "height": "100%",
-            "overflow": "hidden",
-            "position": "relative",
-            "textAlign": "center",
-            "width": "100%",
+            "bottom": 10,
+            "pointerEvents": "auto",
+            "position": "absolute",
+            "right": 10,
           }
         }
       >
-        <img
-          alt="Sample image"
-          className="iot--image-card-img"
-          id={null}
-          onLoad={[Function]}
-          onMouseDown={[Function]}
-          onMouseMove={[Function]}
-          onMouseUp={[Function]}
-          src="portrait.jpg"
+        <button
+          onClick={[Function]}
           style={
             Object {
-              "cursor": "auto",
-              "height": "auto",
-              "left": undefined,
-              "objectFit": null,
-              "position": "relative",
-              "top": undefined,
-              "width": "auto",
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
             }
           }
-        />
-        <div
-          style={
-            Object {
-              "left": undefined,
-              "margin": "auto",
-              "pointerEvents": "none",
-              "position": "absolute",
-              "right": "auto",
-              "top": undefined,
-            }
-          }
+          title="Zoom in"
+          type="button"
         >
-          <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-10-20"
-            icon="warning"
-            style={
-              Object {
-                "--height": 20,
-                "--width": 20,
-                "--x-pos": 10,
-                "--y-pos": 20,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-10-20"
-              className="bx--tooltip__label"
-              id="hotspot-10-20"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                aria-hidden={true}
-                aria-label=""
-                fill="white"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-10"
-            icon="warning"
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 10,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-10"
-              className="bx--tooltip__label"
-              id="hotspot-50-10"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                aria-hidden={true}
-                aria-label=""
-                fill="blue"
-                focusable="false"
-                height={25}
-                preserveAspectRatio="xMidYMid meet"
-                title=""
-                viewBox="0 0 32 32"
-                width={25}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                  fill="none"
-                />
-                <path
-                  d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-30-40"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 30,
-                "--y-pos": 40,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-30-40"
-              className="bx--tooltip__label"
-              id="hotspot-30-40"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="blue"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-container iot--hotspot-container--is-fixed"
-            data-testid="hotspot-50-60"
-            icon={null}
-            style={
-              Object {
-                "--height": 25,
-                "--width": 25,
-                "--x-pos": 50,
-                "--y-pos": 60,
-              }
-            }
-          >
-            <div
-              aria-describedby={null}
-              aria-labelledby="hotspot-50-60"
-              className="bx--tooltip__label"
-              id="hotspot-50-60"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                height={25}
-                width={25}
-              >
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="none"
-                  opacity="1"
-                  r={11.5}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx={12.5}
-                  cy={12.5}
-                  fill="green"
-                  opacity="0.7"
-                  r={11.5}
-                  stroke="none"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
+          +
+        </button>
+        <button
+          onClick={[Function]}
           style={
             Object {
-              "bottom": 10,
-              "pointerEvents": "auto",
-              "position": "absolute",
-              "right": 10,
+              "alignItems": "center",
+              "background": "#fff",
+              "border": "none",
+              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+              "display": "flex",
+              "height": "25px",
+              "justifyContent": "center",
+              "width": "25px",
             }
           }
+          title="Zoom out"
+          type="button"
         >
-          <button
-            onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom in"
-            type="button"
-          >
-            +
-          </button>
-          <br />
-          <button
-            onClick={[Function]}
-            style={
-              Object {
-                "background": "#fff",
-                "border": "none",
-                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                "height": "25px",
-                "width": "25px",
-              }
-            }
-            title="Zoom out"
-            type="button"
-          >
-            -
-          </button>
-        </div>
+          -
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

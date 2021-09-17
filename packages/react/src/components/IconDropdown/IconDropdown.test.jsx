@@ -2,16 +2,34 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { settings } from '../../constants/Settings';
+
 import IconDropdown from './IconDropdown';
 import { items } from './IconDropdown.story';
 
+const { iotPrefix } = settings;
+
 const iconDropdownProps = {
   id: 'icon-dropdown-1',
+  dropdownId: 'icon-dropdown-1',
   label: 'Icon Dropdown menu options',
   items,
 };
 
 describe('Icon Dropdown', () => {
+  it('should be selectable by testId', () => {
+    render(
+      <IconDropdown
+        items={items}
+        {...iconDropdownProps}
+        actions={{
+          onChangeView: () => {},
+        }}
+        testId="ICON_DROPDOWN"
+      />
+    );
+    expect(screen.getByTestId('ICON_DROPDOWN')).toBeDefined();
+  });
   it('Renders default', () => {
     render(
       <IconDropdown
@@ -22,28 +40,22 @@ describe('Icon Dropdown', () => {
         }}
       />
     );
-
     const renderedLabel = screen.queryByText(iconDropdownProps.label);
-
     expect(renderedLabel).toBeDefined();
   });
-
   it('Renders selected item', () => {
     render(
       <IconDropdown
         {...iconDropdownProps}
-        selectedViewId={items[0].id}
+        selectedItem={items[0]}
         actions={{
           onChangeView: () => {},
         }}
       />
     );
-
-    const selectedItem = screen.queryByText(items[0].text);
-
+    const selectedItem = screen.queryAllByText(items[0].text)[0];
     expect(selectedItem).toBeDefined();
   });
-
   it('Renders icon buttons', () => {
     render(
       <IconDropdown
@@ -53,19 +65,13 @@ describe('Icon Dropdown', () => {
         }}
       />
     );
-
     const renderedLabel = screen.queryByText(iconDropdownProps.label);
-
     fireEvent.click(renderedLabel);
-
     expect(screen.queryByTestId(`dropdown-button__${items[3].id}`)).toBeDefined();
-
     expect(screen.queryByTestId(`dropdown-button__${items[5].id}`)).toBeDefined();
   });
-
   it('icon handles callback', () => {
     let selectedItem = null;
-
     render(
       <IconDropdown
         {...iconDropdownProps}
@@ -74,48 +80,67 @@ describe('Icon Dropdown', () => {
         }}
       />
     );
-
     const itemToSelect = items[3];
-
     fireEvent.click(screen.getByText(iconDropdownProps.label));
     fireEvent.click(screen.queryAllByText(itemToSelect.text)[0]);
-
     expect(selectedItem.id).toEqual(itemToSelect.id);
   });
-
   it('renders correct footer', () => {
     const renderFooter = (item) => {
       return <div data-testid={`test-${item.text}`}>{item.text}</div>;
     };
-
     const itemsWithFooter = items.map((item) => {
       return {
         ...item,
         footer: renderFooter(item),
       };
     });
-
     render(
       <IconDropdown
         {...iconDropdownProps}
         helperText="help"
         items={itemsWithFooter}
-        selectedViewId={null}
+        selectedItem={null}
         actions={{
           onChangeView: () => {},
         }}
       />
     );
-
     const itemToHighlight = items[3];
     const highlightedTestId = `test-${itemToHighlight.text}`;
-
     expect(screen.queryByTestId(highlightedTestId)).toBeNull();
-
     fireEvent.click(screen.getByText(iconDropdownProps.label));
     expect(screen.queryByTestId(highlightedTestId)).toBeNull();
-
     userEvent.hover(screen.getAllByText(itemToHighlight.text)[0]);
     expect(screen.queryByTestId(highlightedTestId)).toBeDefined();
+  });
+
+  it('renders footer at top when direction=top', () => {
+    render(
+      <IconDropdown
+        {...iconDropdownProps}
+        direction="top"
+        helperText="help"
+        items={items}
+        selectedItem={null}
+        actions={{
+          onChangeView: () => {},
+        }}
+        testId="footer-test"
+      />
+    );
+    const itemToHighlight = items[3];
+    userEvent.click(screen.getByText(iconDropdownProps.label));
+    const footer = screen.getByTestId('footer-test-footer');
+    expect(footer).toBeVisible();
+    expect(footer).toHaveStyle('bottom:0');
+    expect(footer).toHaveStyle('padding-bottom:96px');
+    expect(footer).toHaveStyle('padding-top:0');
+    userEvent.hover(screen.getAllByText(itemToHighlight.text)[0]);
+    expect(
+      screen.getByText('Evaluation Chart', {
+        selector: `div.${iotPrefix}--icon-dropdown__selected-icon-label__content`,
+      })
+    ).toBeVisible();
   });
 });

@@ -8,6 +8,7 @@ import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 import List from '../../List/List';
 import Button from '../../Button';
 import { SimplePaginationPropTypes } from '../../SimplePagination/SimplePagination';
+import deprecate from '../../../internal/deprecate';
 
 import { ViewsPropType } from './SharedTableManageViewsModalPropTypes';
 
@@ -16,7 +17,7 @@ const { iotPrefix } = settings;
 const renderButton = (id, onClick, icon, key, iconText) => (
   <Button
     key={key}
-    testID={key}
+    testId={key}
     hasIconOnly
     iconDescription={iconText}
     kind="ghost"
@@ -87,8 +88,14 @@ const propTypes = {
   rowTitleInterpolation: PropTypes.func,
   /** Function prop that takes a view and returns the description as a string */
   rowDescriptionInterpolation: PropTypes.func,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   /** The views to currently be displayed */
   views: ViewsPropType.isRequired,
 };
@@ -102,7 +109,7 @@ const defaultProps = {
   rowDescriptionInterpolation: undefined,
   rowTagsRenderer: undefined,
   rowTitleInterpolation: undefined,
-  testID: 'TableManageViewsList',
+  testId: 'TableManageViewsList',
 };
 
 const TableManageViewsList = ({
@@ -116,6 +123,7 @@ const TableManageViewsList = ({
   rowTagsRenderer = getRowTags,
   rowTitleInterpolation = getRowTitle,
   testID,
+  testId,
   views,
   ...props
 }) => {
@@ -125,7 +133,7 @@ const TableManageViewsList = ({
     const { id } = view;
     return {
       content: {
-        rowActions: rowActionsRenderer(view, { ...props, i18n, testID }),
+        rowActions: () => rowActionsRenderer(view, { ...props, i18n, testID }),
         secondaryValue: rowDescriptionInterpolation(view),
         tags: rowTagsRenderer(view, { ...props, defaultViewId, i18n }),
         value: rowTitleInterpolation(view, publicLabelText, privateLabelText),
@@ -136,7 +144,7 @@ const TableManageViewsList = ({
 
   return (
     <MyList
-      testID={testID}
+      testID={testID || testId}
       className={`${iotPrefix}--manage-views-list`}
       isFullHeight
       isLargeRow

@@ -16,7 +16,7 @@ import Button from '../Button';
 import { Accordion, AccordionItem, AccordionSkeleton } from '.';
 
 export default {
-  title: 'Accordion',
+  title: '3 - Carbon/Accordion',
   component: Accordion,
   subcomponents: {
     AccordionItem,

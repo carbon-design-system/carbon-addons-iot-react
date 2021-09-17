@@ -4,7 +4,7 @@ import { text, object } from '@storybook/addon-knobs';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher';
 
 export default {
-  title: 'Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher',
+  title: '1 - Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher',
 
   parameters: {
     component: SuiteHeaderAppSwitcher,
@@ -33,9 +33,7 @@ export const Default = () => (
   </div>
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const NoApplications = () => (
   <div style={{ width: '15rem', background: 'white' }}>
@@ -47,9 +45,7 @@ export const NoApplications = () => (
   </div>
 );
 
-NoApplications.story = {
-  name: 'No applications',
-};
+NoApplications.storyName = 'No applications';
 
 export const LoadingState = () => (
   <div style={{ width: '15rem', background: 'white' }}>
@@ -60,6 +56,4 @@ export const LoadingState = () => (
   </div>
 );
 
-LoadingState.story = {
-  name: 'Loading state',
-};
+LoadingState.storyName = 'Loading state';

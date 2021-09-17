@@ -4,7 +4,12 @@ import { boolean } from '@storybook/addon-knobs';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Card from '../Card/Card';
-import { CARD_DIMENSIONS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  CARD_DIMENSIONS,
+  CARD_SIZES,
+  CARD_TYPES,
+  CARD_ACTIONS,
+} from '../../constants/LayoutConstants';
 import { chartData, tableColumns, tableData } from '../../utils/sample';
 import PieChartCard from '../PieChartCard/PieChartCard';
 import ValueCard from '../ValueCard/ValueCard';
@@ -14,8 +19,38 @@ import ImageCard from '../ImageCard/ImageCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import ListCard from '../ListCard/ListCard';
+import MapboxCard from '../MapCard/storyFiles/MapboxExample';
+import data from '../MapCard/storyFiles/data.json';
+import options from '../MapCard/storyFiles/mapOptions';
 
 import DashboardGrid from './DashboardGrid';
+
+const MapboxExample = ({ ...props }) => {
+  const [settingsOpen, setSettingsOpen] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
+  const handleOnCardAction = (id, actionType) => {
+    if (actionType === CARD_ACTIONS.CLOSE_EXPANDED_CARD) {
+      setIsExpanded(false);
+    } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
+      setIsExpanded(true);
+    } else if (actionType === CARD_ACTIONS.ON_SETTINGS_CLICK) {
+      setSettingsOpen((oldSettingsState) => !oldSettingsState);
+    }
+  };
+  return (
+    <MapboxCard
+      data={data}
+      options={options}
+      isLegendFullWidth={boolean('isLegendFullWidth', false)}
+      onCardAction={handleOnCardAction}
+      availableActions={{ expand: true, settings: true }}
+      isSettingPanelOpen={settingsOpen}
+      isExpanded={isExpanded}
+      {...props}
+    />
+  );
+};
 
 const Cards = [
   <Card
@@ -59,7 +94,7 @@ const commonGridProps = {
 };
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ Dashboard Grid' : 'Watson IoT/Dashboard Grid',
+  title: '1 - Watson IoT/Dashboard Grid',
 };
 
 export const DashboardDefaultLayouts = () => {
@@ -76,16 +111,14 @@ export const DashboardDefaultLayouts = () => {
   );
 };
 
-DashboardDefaultLayouts.story = {
-  name: 'dashboard, default layouts',
+DashboardDefaultLayouts.storyName = 'dashboard, default layouts';
 
-  parameters: {
-    info: {
-      text: `
-    This is the simplest way to use the dashboard grid, just pass it a set of cards and let it figure out it's own layout to use.
-    # Component Overview
-    `,
-    },
+DashboardDefaultLayouts.parameters = {
+  info: {
+    text: `
+  This is the simplest way to use the dashboard grid, just pass it a set of cards and let it figure out it's own layout to use.
+  # Component Overview
+  `,
   },
 };
 
@@ -102,16 +135,14 @@ export const DashboardIsEditable = () => {
   );
 };
 
-DashboardIsEditable.story = {
-  name: 'dashboard, is Editable',
+DashboardIsEditable.storyName = 'dashboard, is Editable';
 
-  parameters: {
-    info: {
-      text: `
-      The onLayoutChange handler is triggered as you drag and drop the cards around
-      # Component Overview
-      `,
-    },
+DashboardIsEditable.parameters = {
+  info: {
+    text: `
+    The onLayoutChange handler is triggered as you drag and drop the cards around
+    # Component Overview
+    `,
   },
 };
 
@@ -144,18 +175,16 @@ export const DashboardCustomLayout = () => {
   );
 };
 
-DashboardCustomLayout.story = {
-  name: 'dashboard, custom layout',
+DashboardCustomLayout.storyName = 'dashboard, custom layout';
 
-  parameters: {
-    info: {
-      text: `
-      The breakpoint property tells the dashboard which
-      layout to use. You should listen to the onBreakpointChange event to keep
-      track of which breakpoint is currently being used in your local components state, and pass back in the breakpoint accordingly.
-      # Component Overview
-      `,
-    },
+DashboardCustomLayout.parameters = {
+  info: {
+    text: `
+    The breakpoint property tells the dashboard which
+    layout to use. You should listen to the onBreakpointChange event to keep
+    track of which breakpoint is currently being used in your local components state, and pass back in the breakpoint accordingly.
+    # Component Overview
+    `,
   },
 };
 
@@ -318,16 +347,14 @@ export const DashboardAllCardSizes = () => {
   );
 };
 
-DashboardAllCardSizes.story = {
-  name: 'dashboard, all card sizes',
+DashboardAllCardSizes.storyName = 'dashboard, all card sizes';
 
-  parameters: {
-    info: {
-      text: `
-    This is the simplest way to use the dashboard grid, just pass it a set of cards and let it figure out it's own layout to use.
-    # Component Overview
-    `,
-    },
+DashboardAllCardSizes.parameters = {
+  info: {
+    text: `
+  This is the simplest way to use the dashboard grid, just pass it a set of cards and let it figure out it's own layout to use.
+  # Component Overview
+  `,
   },
 };
 
@@ -376,59 +403,58 @@ export const DashboardResizableCard = () => {
   );
 };
 
-DashboardResizableCard.story = {
-  name: 'dashboard, resizable card',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      source: true,
-      text: `
-      This story demonstrates how a card can be resizable by dragging. During reszie the cards' size prop is
-      automatically updated to match the new size.
-      See the source code for the full example.
+DashboardResizableCard.storyName = 'dashboard, resizable card';
+DashboardResizableCard.decorators = [createElement];
 
-      ~~~js
-      const [currentSize, setCurrentSize] = useState(CARD_SIZES.SMALL);
-      const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
-      const isResizable = boolean('isResizable', false);
-      const layouts = {
-        max: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
-        xl: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
-        lg: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
-        md: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
-        sm: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
-        xs: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
-      };
+DashboardResizableCard.parameters = {
+  info: {
+    source: true,
+    text: `
+    This story demonstrates how a card can be resizable by dragging. During reszie the cards' size prop is
+    automatically updated to match the new size.
+    See the source code for the full example.
 
-      return (
-        <Fragment>
-          The card is resizable by dragging and the cards' size prop is
-          automatically updated to match the new size during the drag process.
-          <FullWidthWrapper>
-            <DashboardGrid
-              layouts={layouts}
-              breakpoint={currentBreakpoint}
-              onBreakpointChange={(newBreakpoint) =>
-                setCurrentBreakpoint(newBreakpoint)
-              }
-              onCardSizeChange={(cardSizeData, gridData) => {
-                const { size } = cardSizeData;
-                setCurrentSize(size);
-              }}
-              onResizeStop={() => {}}>
-              <Card
-                title={'Card -' + currentSize}
-                id="card"
-                isResizable={isResizable}
-                key="card"
-                size={currentSize}></Card>
-            </DashboardGrid>
-          </FullWidthWrapper>
-        </Fragment>
-      );
-      ~~~
-    `,
-    },
+    ~~~js
+    const [currentSize, setCurrentSize] = useState(CARD_SIZES.SMALL);
+    const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
+    const isResizable = boolean('isResizable', false);
+    const layouts = {
+      max: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
+      xl: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
+      lg: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
+      md: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
+      sm: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
+      xs: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
+    };
+
+    return (
+      <Fragment>
+        The card is resizable by dragging and the cards' size prop is
+        automatically updated to match the new size during the drag process.
+        <FullWidthWrapper>
+          <DashboardGrid
+            layouts={layouts}
+            breakpoint={currentBreakpoint}
+            onBreakpointChange={(newBreakpoint) =>
+              setCurrentBreakpoint(newBreakpoint)
+            }
+            onCardSizeChange={(cardSizeData, gridData) => {
+              const { size } = cardSizeData;
+              setCurrentSize(size);
+            }}
+            onResizeStop={() => {}}>
+            <Card
+              title={'Card -' + currentSize}
+              id="card"
+              isResizable={isResizable}
+              key="card"
+              size={currentSize}></Card>
+          </DashboardGrid>
+        </FullWidthWrapper>
+      </Fragment>
+    );
+    ~~~
+  `,
   },
 };
 
@@ -582,6 +608,7 @@ export const DashboardAllCardsAsResizable = () => {
     valueCard: CARD_SIZES.SMALLWIDE,
     gaugeCard: CARD_SIZES.MEDIUMTHIN,
     pieChartCard: CARD_SIZES.MEDIUM,
+    mapCard: CARD_SIZES.LARGEWIDE,
     tableCard: CARD_SIZES.LARGE,
     imageCard: CARD_SIZES.LARGE,
     timeSeriesCard: CARD_SIZES.LARGETHIN,
@@ -649,6 +676,13 @@ export const DashboardAllCardsAsResizable = () => {
       size={currentSizes.pieChartCard}
       isResizable={isResizable}
       values={pieChartCardValues}
+    />,
+    <MapboxExample
+      isResizable={isResizable}
+      id="mapCard"
+      key="mapCard"
+      title={`MapCard - ${currentSizes.mapCard}`}
+      size={currentSizes.mapCard}
     />,
     <TableCard
       title={`TableCard - ${currentSizes.tableCard}`}
@@ -729,6 +763,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
     ],
     xl: [
@@ -740,6 +775,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
     ],
     lg: [
@@ -751,6 +787,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
     ],
     md: [
@@ -762,6 +799,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
       { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'mapCard', x: 4, y: 4, w: 8, h: 4 },
       { i: 'barChartCard', x: 8, y: 8, w: 8, h: 4 },
     ],
     sm: [
@@ -773,6 +811,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
+      { i: 'mapCard', x: 4, y: 0, w: 4, h: 4 },
       { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
     ],
     xs: [
@@ -784,6 +823,7 @@ export const DashboardAllCardsAsResizable = () => {
       { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
       { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
+      { i: 'mapCard', x: 4, y: 0, w: 4, h: 4 },
       { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
     ],
   };
@@ -805,6 +845,10 @@ export const DashboardAllCardsAsResizable = () => {
         case 'tableCard':
           cardLayoutCopy.minW = CARD_DIMENSIONS.LARGE.max.w;
           cardLayoutCopy.minH = CARD_DIMENSIONS.LARGE.max.h;
+          break;
+        case 'mapCard':
+          cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUM.max.w;
+          cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUM.max.h;
           break;
         case 'imageCard':
           cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUMTHIN.max.w;
@@ -845,18 +889,17 @@ export const DashboardAllCardsAsResizable = () => {
   );
 };
 
-DashboardAllCardsAsResizable.story = {
-  name: 'dashboard, all cards as resizable',
-  decorators: [createElement],
-  parameters: {
-    info: {
-      source: true,
-      text: `
-      This story demonstrates how all cards can be resizable by dragging. During reszie the cards' size prop is
-      automatically updated to match the new size. Some cards have a minimal size defined.
+DashboardAllCardsAsResizable.storyName = 'dashboard, all cards as resizable';
+DashboardAllCardsAsResizable.decorators = [createElement];
 
-      See the source code for the full example.
-    `,
-    },
+DashboardAllCardsAsResizable.parameters = {
+  info: {
+    source: true,
+    text: `
+    This story demonstrates how all cards can be resizable by dragging. During reszie the cards' size prop is
+    automatically updated to match the new size. Some cards have a minimal size defined.
+
+    See the source code for the full example.
+  `,
   },
 };

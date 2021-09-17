@@ -7,7 +7,7 @@ import AccordionItemDefer from './AccordionItemDefer';
 import { Accordion, AccordionItem } from '.';
 
 export default {
-  title: 'Watson IoT/AccordionItemDefer',
+  title: '1 - Watson IoT/AccordionItemDefer',
   component: AccordionItemDefer,
   parameters: {
     info: {

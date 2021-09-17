@@ -9,7 +9,7 @@ import React from 'react';
 import { FormItem, NumberInput } from 'carbon-components-react';
 
 export default {
-  title: 'FormItem',
+  title: '3 - Carbon/FormItem',
 
   parameters: {
     component: FormItem,
@@ -22,10 +22,8 @@ export const Default = () => (
   </FormItem>
 );
 
-Default.story = {
-  parameters: {
-    info: {
-      text: 'Form item.',
-    },
+Default.parameters = {
+  info: {
+    text: 'Form item.',
   },
 };

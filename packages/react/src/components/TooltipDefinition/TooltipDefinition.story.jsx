@@ -32,7 +32,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'TooltipDefinition',
+  title: '3 - Carbon/TooltipDefinition',
   decorators: [withKnobs],
 
   parameters: {

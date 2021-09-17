@@ -1,212 +1,186 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/DynamicHotspotSourcePicker Example with externaly managed state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/DynamicHotspotSourcePicker Example with externaly managed state 1`] = `
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
+  <div>
+    <div
+      className="iot--dynamic-hotspot-source-picker"
+      data-testid="dynamic-hotspot-source-picker"
+    >
       <div
-        className="iot--dynamic-hotspot-source-picker"
-        data-testid="dynamic-hotspot-source-picker"
+        className="bx--dropdown__wrapper bx--list-box__wrapper"
+        data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+      >
+        <label
+          className="bx--label"
+          htmlFor="downshift-0-toggle-button"
+          id="downshift-0-label"
+        >
+          X coordinate
+        </label>
+        <div
+          className="bx--dropdown bx--list-box"
+          id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-0-label downshift-0-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-0-toggle-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
+          >
+            <span
+              className="bx--list-box__label"
+            >
+              Select data item
+            </span>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title />
+              </svg>
+            </div>
+          </button>
+          <div
+            aria-labelledby="downshift-0-label"
+            className="bx--list-box__menu"
+            id="downshift-0-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+      </div>
+      <div
+        className="bx--dropdown__wrapper bx--list-box__wrapper"
+        data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+      >
+        <label
+          className="bx--label"
+          htmlFor="downshift-1-toggle-button"
+          id="downshift-1-label"
+        >
+          Y coordinate
+        </label>
+        <div
+          className="bx--dropdown bx--list-box"
+          id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-1-label downshift-1-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-1-toggle-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
+          >
+            <span
+              className="bx--list-box__label"
+            >
+              Select data item
+            </span>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title />
+              </svg>
+            </div>
+          </button>
+          <div
+            aria-labelledby="downshift-1-label"
+            className="bx--list-box__menu"
+            id="downshift-1-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+      </div>
+      <button
+        aria-describedby={null}
+        className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
+        data-testid="dynamic-hotspot-source-picker-clear-dropdown"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
       >
         <div
-          className="bx--dropdown__wrapper bx--list-box__wrapper"
-          data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+          className="bx--assistive-text"
+          onMouseEnter={[Function]}
         >
-          <label
-            className="bx--label"
-            htmlFor="downshift-0-toggle-button"
-            id="downshift-0-label"
-          >
-            X coordinate
-          </label>
-          <div
-            className="bx--dropdown bx--list-box"
-            id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-          >
-            <button
-              aria-disabled={false}
-              aria-expanded={false}
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label downshift-0-toggle-button"
-              className="bx--list-box__field"
-              disabled={false}
-              id="downshift-0-toggle-button"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              type="button"
-            >
-              <span
-                className="bx--list-box__label"
-              >
-                Select data item
-              </span>
-              <div
-                className="bx--list-box__menu-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  name="chevron--down"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                  />
-                  <title />
-                </svg>
-              </div>
-            </button>
-            <div
-              aria-labelledby="downshift-0-label"
-              className="bx--list-box__menu"
-              id="downshift-0-menu"
-              onBlur={[Function]}
-              onKeyDown={[Function]}
-              onMouseLeave={[Function]}
-              role="listbox"
-              tabIndex={-1}
-            />
-          </div>
+          Clear coordinate sources
         </div>
-        <div
-          className="bx--dropdown__wrapper bx--list-box__wrapper"
-          data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+        <svg
+          aria-hidden="true"
+          aria-label="Clear coordinate sources"
+          className="bx--btn__icon"
+          fill="currentColor"
+          focusable="false"
+          height={32}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          viewBox="0 0 32 32"
+          width={32}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <label
-            className="bx--label"
-            htmlFor="downshift-1-toggle-button"
-            id="downshift-1-label"
-          >
-            Y coordinate
-          </label>
-          <div
-            className="bx--dropdown bx--list-box"
-            id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-          >
-            <button
-              aria-disabled={false}
-              aria-expanded={false}
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-1-label downshift-1-toggle-button"
-              className="bx--list-box__field"
-              disabled={false}
-              id="downshift-1-toggle-button"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              type="button"
-            >
-              <span
-                className="bx--list-box__label"
-              >
-                Select data item
-              </span>
-              <div
-                className="bx--list-box__menu-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  name="chevron--down"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                  />
-                  <title />
-                </svg>
-              </div>
-            </button>
-            <div
-              aria-labelledby="downshift-1-label"
-              className="bx--list-box__menu"
-              id="downshift-1-menu"
-              onBlur={[Function]}
-              onKeyDown={[Function]}
-              onMouseLeave={[Function]}
-              role="listbox"
-              tabIndex={-1}
-            />
-          </div>
-        </div>
-        <button
-          className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-          data-testid="dynamic-hotspot-source-picker-clear-dropdown"
-          disabled={false}
-          onClick={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span
-            className="bx--assistive-text"
-          >
-            Clear coordinate sources
-          </span>
-          <svg
-            aria-hidden="true"
-            aria-label="Clear coordinate sources"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={32}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={32}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
-            />
-          </svg>
-        </button>
-      </div>
+          <path
+            d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
+          />
+        </svg>
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

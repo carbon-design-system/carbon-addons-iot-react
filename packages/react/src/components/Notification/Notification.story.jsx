@@ -35,7 +35,7 @@ const notificationProps = () => ({
 });
 
 export default {
-  title: 'Notifications',
+  title: '3 - Carbon/Notifications',
   decorators: [withKnobs],
 
   parameters: {

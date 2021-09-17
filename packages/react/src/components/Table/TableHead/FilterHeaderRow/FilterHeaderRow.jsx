@@ -74,7 +74,9 @@ class FilterHeaderRow extends Component {
     /** should we filter as the user types or after they press enter */
     hasFastFilter: PropTypes.bool,
 
-    testID: PropTypes.string,
+    testId: PropTypes.string,
+    /** shows an additional column that can expand/shrink as the table is resized  */
+    showExpanderColumn: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -90,7 +92,7 @@ class FilterHeaderRow extends Component {
     closeMenuText: 'Close menu',
     lightweight: false,
     hasFastFilter: true,
-    testID: '',
+    testId: '',
   };
 
   state = {
@@ -137,19 +139,17 @@ class FilterHeaderRow extends Component {
     onApplyFilter(filterValues);
   };
 
+  // when a user clicks or hits ENTER, we'll clear the input
   handleClearFilter = (event, column) => {
-    // when a user clicks or hits ENTER, we'll clear the input
-    if (event.keyCode === 13 || !event.keyCode) {
-      this.setState(
-        (state) => ({
-          filterValues: {
-            ...state.filterValues,
-            [column.id]: '',
-          },
-        }),
-        this.handleApplyFilter
-      );
-    }
+    this.setState(
+      (state) => ({
+        filterValues: {
+          ...state.filterValues,
+          [column.id]: '',
+        },
+      }),
+      this.handleApplyFilter
+    );
   };
 
   handleTranslation = (idToTranslate) => {
@@ -179,11 +179,12 @@ class FilterHeaderRow extends Component {
       lightweight,
       isDisabled,
       hasFastFilter,
-      testID,
+      testId,
+      showExpanderColumn,
     } = this.props;
     const { filterValues } = this.state;
     return isVisible ? (
-      <TableRow data-testid={testID}>
+      <TableRow data-testid={testId}>
         {hasRowSelection === 'multi' ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}
@@ -219,7 +220,7 @@ class FilterHeaderRow extends Component {
                     translateWithId={this.handleTranslation}
                     items={memoizeColumnOptions(column.options)}
                     label={column.placeholderText || 'Choose an option'}
-                    itemToString={(item) => (item ? item.text : '')}
+                    itemToString={(item) => item.text}
                     initialSelectedItems={
                       Array.isArray(columnStateValue)
                         ? columnStateValue.map((value) =>
@@ -356,6 +357,12 @@ class FilterHeaderRow extends Component {
           })}
         {hasRowActions ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
+        ) : null}
+        {showExpanderColumn ? (
+          <TableHeader
+            data-testid={`${testId}-expander-column`}
+            className={`${iotPrefix}--filter-header-row--header`}
+          />
         ) : null}
       </TableRow>
     ) : null;

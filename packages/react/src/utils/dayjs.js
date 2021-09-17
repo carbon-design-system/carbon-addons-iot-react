@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import originalDayJS from 'dayjs';
 
 const localizedFormat = require('dayjs/plugin/localizedFormat');
 const utc = require('dayjs/plugin/utc');
@@ -6,6 +6,7 @@ const pluralGetSet = require('dayjs/plugin/pluralGetSet');
 const timezone = require('dayjs/plugin/timezone');
 const localeData = require('dayjs/plugin/localeData');
 
+const dayjs = originalDayJS;
 dayjs.extend(localizedFormat); // gives the 'L' formatting ability for .format
 dayjs.extend(utc); // gives .utc() and .local()
 dayjs.extend(pluralGetSet); // gives .hour .minute get/set ability

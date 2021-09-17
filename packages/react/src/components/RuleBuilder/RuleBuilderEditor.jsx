@@ -63,6 +63,7 @@ const propTypes = {
     addRule: PropTypes.string,
     addGroup: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -72,9 +73,10 @@ const defaultProps = {
     addRule: 'Add rule',
     addGroup: 'Add group',
   },
+  testId: 'rule-builder-editor',
 };
 
-const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n }) => {
+const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n, testId }) => {
   const [tree, setTree] = React.useState(defaultRules);
 
   const mergedI18n = React.useMemo(
@@ -87,79 +89,67 @@ const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n }) => {
 
   const handleAddRule = React.useCallback(
     (ruleId, isGroup = false) => () => {
-      setTree((prev) => {
-        const newTree = {
-          ...prev,
-          rules: addRule(prev.rules, ruleId, isGroup),
-        };
-
-        onChange(newTree);
-
-        return newTree;
-      });
+      const newTree = {
+        ...tree,
+        rules: addRule(tree.rules, ruleId, isGroup),
+      };
+      setTree(newTree);
+      onChange(newTree);
     },
-    [onChange]
+    [onChange, tree]
   );
 
   const handleRemoveRule = React.useCallback(
     (ruleId) => () => {
-      setTree((prev) => {
-        const newTree = {
-          ...prev,
-          rules: filterRulesById([...prev.rules], ruleId),
-        };
-
-        onChange(newTree);
-
-        return newTree;
-      });
+      const newTree = {
+        ...tree,
+        rules: filterRulesById([...tree.rules], ruleId),
+      };
+      setTree(newTree);
+      onChange(newTree);
     },
-    [onChange]
+    [onChange, tree]
   );
 
   const handleChange = React.useCallback(
     (changed, isRoot) => {
-      setTree((prev) => {
-        if (!isRoot) {
-          const path = findRulePathById(prev.rules, changed.id);
-          const rule = getRuleByPath(prev.rules, path);
+      let newTree;
+      if (!isRoot) {
+        const path = findRulePathById(tree.rules, changed.id);
+        const rule = getRuleByPath(tree.rules, path);
 
-          const newTree = {
-            ...prev,
-            rules: updateRuleAtPath(
-              prev.rules,
-              {
-                ...rule,
-                ...changed,
-              },
-              path
-            ),
-          };
-
-          onChange(newTree);
-          return newTree;
-        }
-
-        const newTree = {
-          ...prev,
+        newTree = {
+          ...tree,
+          rules: updateRuleAtPath(
+            tree.rules,
+            {
+              ...rule,
+              ...changed,
+            },
+            path
+          ),
+        };
+      } else {
+        newTree = {
+          ...tree,
           ...changed,
         };
-
-        onChange(newTree);
-        return newTree;
-      });
+      }
+      setTree(newTree);
+      onChange(newTree);
     },
-    [onChange]
+    [onChange, tree]
   );
 
   return (
-    <div data-testid="rule-builder-editor">
+    <div data-testid={testId}>
       <RuleBuilderHeader
         id={tree.id}
         groupLogic={tree.groupLogic}
         onAddRule={handleAddRule}
         onChange={handleChange}
         i18n={mergedI18n}
+        testId={`${testId}-header`}
       />
       {tree.rules.map((rule) => {
         return (
@@ -171,6 +161,7 @@ const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n }) => {
             onChange={handleChange}
             columns={columns}
             i18n={mergedI18n}
+            testId={`${testId}-rule-${rule.id}`}
           />
         );
       })}

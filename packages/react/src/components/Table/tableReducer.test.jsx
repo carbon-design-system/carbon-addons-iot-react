@@ -22,12 +22,28 @@ import {
   tableRowActionComplete,
   tableRowActionEdit,
   tableRowActionError,
+  tableAdvancedFiltersToggle,
+  tableAdvancedFiltersRemove,
+  tableAdvancedFiltersChange,
+  tableAdvancedFiltersCreate,
+  tableAdvancedFiltersCancel,
+  tableAdvancedFiltersApply,
+  tableToggleAggregations,
+  tableSaveMultiSortColumns,
+  tableCancelMultiSortColumns,
+  tableClearMultiSortColumns,
 } from './tableActionCreators';
 import { initialState, tableColumns } from './Table.story';
 
 describe('table reducer', () => {
   it('nothing', () => {
     expect(tableReducer(undefined, { type: 'BOGUS' })).toEqual({});
+  });
+  it('return the same state if there is a missmatching instanceId', () => {
+    // We use an action that will be forwarded to the base reducer
+    expect(tableReducer(initialState, tablePageChange({ page: 3, pageSize: 10 }, 'id1'))).toBe(
+      initialState
+    );
   });
   it('row action tests', () => {
     const updatedRowActionState = tableReducer(initialState, tableRowActionStart('row-1'));
@@ -96,6 +112,9 @@ describe('table reducer', () => {
     it('TABLE_TOOLBAR_TOGGLE ', () => {
       const updatedState = tableReducer(initialState, tableToolbarToggle('column'));
       expect(updatedState.view.toolbar.activeBar).toEqual('column');
+
+      const updatedState2 = tableReducer(updatedState, tableToolbarToggle('column'));
+      expect(updatedState2.view.toolbar.activeBar).not.toEqual('column');
     });
     it('TABLE_SEARCH_APPLY filter should search data', () => {
       const searchString = 'searchString';
@@ -103,6 +122,31 @@ describe('table reducer', () => {
       // Apply the search
       expect(updatedState.view.toolbar.search.defaultValue).toEqual(searchString);
       expect(updatedState.view.pagination.page).toEqual(1);
+    });
+
+    it('TABLE_ADVANCED_FILTER_TOGGLE', () => {
+      const openState = merge({}, initialState, {
+        view: { toolbar: { advancedFilterFlyoutOpen: true } },
+      });
+      const toggleAction = tableAdvancedFiltersToggle();
+      const closedState = tableReducer(openState, toggleAction);
+      expect(closedState.view.toolbar.advancedFilterFlyoutOpen).toBe(false);
+
+      const newOpenState = tableReducer(closedState, toggleAction);
+      expect(newOpenState.view.toolbar.advancedFilterFlyoutOpen).toBe(true);
+    });
+
+    it('TABLE_TOGGLE_AGGREGATIONS', () => {
+      const showingState = merge({}, initialState, {
+        view: { aggregations: { isHidden: false } },
+      });
+
+      const toggleAction = tableToggleAggregations();
+      const hiddenState = tableReducer(showingState, toggleAction);
+      expect(hiddenState.view.aggregations.isHidden).toBe(true);
+
+      const newShowingState = tableReducer(hiddenState, toggleAction);
+      expect(newShowingState.view.aggregations.isHidden).toBe(false);
     });
   });
   describe('table actions', () => {
@@ -171,6 +215,39 @@ describe('table reducer', () => {
         tableSortedNone.view.table.filteredData
       );
     });
+
+    it('TABLE_COLUMN_SORT multisort', () => {
+      const multiSortState = merge({}, initialState, {
+        view: {
+          table: {
+            sort: [
+              {
+                columnId: 'string',
+                direction: 'ASC',
+              },
+              {
+                columnId: 'date',
+                direction: 'ASC',
+              },
+            ],
+          },
+        },
+      });
+      const sortColumnAction = tableColumnSort('string');
+      const tableSorted = tableReducer(multiSortState, sortColumnAction);
+
+      expect(tableSorted.view.table.sort).toEqual([
+        {
+          columnId: 'string',
+          direction: 'DESC',
+        },
+        {
+          columnId: 'date',
+          direction: 'ASC',
+        },
+      ]);
+    });
+
     it('TABLE_COLUMN_SORT custom sort function', () => {
       const sortColumnAction = tableColumnSort(tableColumns[4].id);
       const mockSortFunction = jest.fn().mockReturnValue(initialState.data);
@@ -190,25 +267,87 @@ describe('table reducer', () => {
       const tableWithHiddenColumn = tableReducer(initialState, columnHideAction);
       expect(tableWithHiddenColumn.view.table.ordering[0].isHidden).toBe(true);
     });
+
+    it('TABLE_MULTI_SORT_SAVE', () => {
+      expect(initialState.view.table.filteredData).toBeUndefined();
+      const sortConf = [
+        {
+          columnId: 'select',
+          direction: 'DESC',
+        },
+        {
+          columnId: 'string',
+          direction: 'DESC',
+        },
+      ];
+      const multiSortAction = tableSaveMultiSortColumns(sortConf);
+      const newState = tableReducer(initialState, multiSortAction);
+      expect(newState.view.table.sort).toEqual(sortConf);
+      expect(newState.view.table.filteredData[0].id).toEqual('row-82');
+      expect(newState.view.table.showMultiSortModal).toBe(false);
+
+      const newSortConf = [
+        {
+          columnId: 'select',
+          direction: 'DESC',
+        },
+        {
+          columnId: 'string',
+          direction: 'ASC',
+        },
+      ];
+      const newMultiSortAction = tableSaveMultiSortColumns(newSortConf);
+      const newState2 = tableReducer(initialState, newMultiSortAction);
+      expect(newState2.view.table.sort).toEqual(newSortConf);
+      expect(newState2.view.table.filteredData[0].id).toEqual('row-34');
+      expect(newState.view.table.showMultiSortModal).toBe(false);
+    });
+
+    it('TABLE_MULTI_SORT_CANCEL', () => {
+      const openState = merge({}, initialState, {
+        view: { table: { showMultiSortModal: true } },
+      });
+      const multiSortCancelAction = tableCancelMultiSortColumns();
+      const cancelledState = tableReducer(openState, multiSortCancelAction);
+      expect(cancelledState.view.table.showMultiSortModal).toBe(false);
+
+      const cancelledState2 = tableReducer(cancelledState, multiSortCancelAction);
+      expect(cancelledState2.view.table.showMultiSortModal).toBe(false);
+    });
+
+    it('TABLE_MULTI_SORT_CLEAR', () => {
+      const openState = merge({}, initialState, {
+        view: {
+          table: {
+            filteredData: ['bogus data'],
+            showMultiSortModal: true,
+            sort: [
+              {
+                columnId: 'select',
+                direction: 'DESC',
+              },
+              {
+                columnId: 'string',
+                direction: 'ASC',
+              },
+            ],
+          },
+        },
+      });
+
+      const multiSortClearAction = tableClearMultiSortColumns();
+      const clearedState = tableReducer(openState, multiSortClearAction);
+      expect(clearedState.view.table.showMultiSortModal).toBe(false);
+      expect(clearedState.view.table.sort).toBeUndefined();
+      expect(clearedState.view.table.filteredData).toHaveLength(14);
+    });
   });
   describe('Table Row Operations', () => {
     it('TABLE_ROW_SELECT', () => {
       expect(initialState.view.table.selectedIds).toEqual([]);
 
-      // Negative case where I unselect a row
-      const tableWithNoRowsSelected = tableReducer(
-        initialState,
-        tableRowSelect('row-1', false, 'multi')
-      );
-      expect(tableWithNoRowsSelected.view.table.selectedIds).toEqual([]);
-      expect(tableWithNoRowsSelected.view.table.isSelectAllSelected).toEqual(false);
-      expect(tableWithNoRowsSelected.view.table.isSelectAllIndeterminate).toEqual(false);
-
       // Select a row
-      const tableWithSelectedRow = tableReducer(
-        initialState,
-        tableRowSelect('row-1', true, 'multi')
-      );
+      const tableWithSelectedRow = tableReducer(initialState, tableRowSelect(['row-1'], 'multi'));
       expect(tableWithSelectedRow.view.table.selectedIds).toEqual(['row-1']);
       expect(tableWithSelectedRow.view.table.isSelectAllSelected).toEqual(false);
       expect(tableWithSelectedRow.view.table.isSelectAllIndeterminate).toEqual(true);
@@ -216,7 +355,7 @@ describe('table reducer', () => {
       // Unselect the row
       const tableWithUnSelectedRow = tableReducer(
         tableWithSelectedRow,
-        tableRowSelect('row-1', false, 'multi')
+        tableRowSelect([], 'multi')
       );
       expect(tableWithUnSelectedRow.view.table.selectedIds).toEqual([]);
       expect(tableWithUnSelectedRow.view.table.isSelectAllSelected).toEqual(false);
@@ -239,7 +378,7 @@ describe('table reducer', () => {
       // Select a row
       const tableWithSelectedRow = tableReducer(
         updatedInitialState,
-        tableRowSelect('row-1', true, 'single')
+        tableRowSelect(['row-1'], 'single')
       );
       expect(tableWithSelectedRow.view.table.selectedIds).toEqual(['row-1']);
       expect(tableWithSelectedRow.view.table.isSelectAllSelected).toEqual(false);
@@ -257,7 +396,7 @@ describe('table reducer', () => {
             },
           },
         },
-        tableRowSelect('row-2', true, 'single')
+        tableRowSelect(['row-2'], 'single')
       );
       expect(tableWithPreviouslySelectedRow.view.table.selectedIds).toEqual(['row-2']);
       expect(tableWithPreviouslySelectedRow.view.table.isSelectAllSelected).toEqual(false);
@@ -441,5 +580,359 @@ describe('filter, search and sort', () => {
       )
     ).toHaveLength(3);
     expect(mockSortFunction).toHaveBeenCalled();
+  });
+
+  it('filterSearchAndSort with multisort and custom sort function', () => {
+    const mockData = [
+      { values: { number: 10, node: <Add20 />, severity: 'High', null: null } },
+      { values: { number: 10, node: <Add20 />, severity: 'Low', null: null } },
+      {
+        values: { number: 10, node: <Add20 />, severity: 'Medium', null: null },
+      },
+    ];
+
+    const mockSortFunction = jest.fn(({ data, columnId, direction }) => {
+      const sortedData = data.slice();
+
+      sortedData.sort((a, b) => {
+        const aSev = a.values[columnId];
+        const bSev = b.values[columnId];
+        let compare = -1;
+        switch (`${aSev}-${bSev}`) {
+          case 'Low-Medium':
+          case 'Low-High':
+          case 'Medium-High':
+            compare = -1;
+            break;
+          case 'Medium-Low':
+          case 'High-Low':
+          case 'High-Medium':
+            compare = 1;
+            break;
+          default:
+            compare = 0;
+            break;
+        }
+
+        return direction === 'ASC' ? compare : -compare;
+      });
+
+      return sortedData;
+    });
+
+    const sortedResult = filterSearchAndSort(
+      mockData.slice(),
+      [
+        { columnId: 'number', direction: 'ASC' },
+        { columnId: 'severity', direction: 'ASC' },
+      ],
+      {},
+      [],
+      [
+        { id: 'severity', sortFunction: mockSortFunction, isSortable: true },
+        { id: 'number', isSortable: true },
+      ]
+    );
+    expect(sortedResult).toHaveLength(3);
+    expect(mockSortFunction).toHaveBeenCalled();
+
+    // low
+    expect(sortedResult[0]).toEqual(mockData[1]);
+    // medium
+    expect(sortedResult[1]).toEqual(mockData[2]);
+    // high
+    expect(sortedResult[2]).toEqual(mockData[0]);
+
+    // flip the direction now
+    const sortedResultDesc = filterSearchAndSort(
+      mockData.slice(),
+      [
+        { columnId: 'number', direction: 'ASC' },
+        { columnId: 'severity', direction: 'DESC' },
+      ],
+      {},
+      [],
+      [
+        { id: 'severity', sortFunction: mockSortFunction, isSortable: true },
+        { id: 'number', isSortable: true },
+      ]
+    );
+    expect(sortedResultDesc).toHaveLength(3);
+    expect(mockSortFunction).toHaveBeenCalled();
+    // high
+    expect(sortedResultDesc[0]).toEqual(mockData[0]);
+    // medium
+    expect(sortedResultDesc[1]).toEqual(mockData[2]);
+    // low
+    expect(sortedResultDesc[2]).toEqual(mockData[1]);
+  });
+
+  it('TABLE_ADVANCED_FILTER_REMOVE', () => {
+    const myState = merge({}, initialState, {
+      view: { selectedAdvancedFilterIds: ['id1', 'id2'] },
+    });
+    const removeAction = tableAdvancedFiltersRemove('id1');
+    const newState = tableReducer(myState, removeAction);
+    expect(newState.view.selectedAdvancedFilterIds).toEqual(['id2']);
+  });
+
+  it('TABLE_ADVANCED_FILTER_CHANGE', () => {
+    const changeAction = tableAdvancedFiltersChange();
+    const state = tableReducer(initialState, changeAction);
+    expect(state).toBe(initialState);
+  });
+
+  it('TABLE_ADVANCED_FILTER_CREATE', () => {
+    const changeAction = tableAdvancedFiltersCreate();
+    const state = tableReducer(initialState, changeAction);
+    expect(state).toBe(initialState);
+  });
+
+  it('TABLE_ADVANCED_FILTER_CANCEL', () => {
+    const openState = merge({}, initialState, {
+      view: { toolbar: { advancedFilterFlyoutOpen: true } },
+    });
+    const changeAction = tableAdvancedFiltersCancel();
+    const cancelledState = tableReducer(openState, changeAction);
+    expect(cancelledState.view.toolbar.advancedFilterFlyoutOpen).toBe(false);
+
+    const cancelledState2 = tableReducer(cancelledState, changeAction);
+    expect(cancelledState2.view.toolbar.advancedFilterFlyoutOpen).toBe(false);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'story-filter',
+            filterTitleText: 'test filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'rsiru4rjba',
+                  columnId: 'date',
+                  operand: 'CONTAINS',
+                  value: '19',
+                },
+                {
+                  id: '34bvyub9jq',
+                  columnId: 'boolean',
+                  operand: 'NEQ',
+                  value: 'true',
+                },
+                {
+                  id: '89h2eiuhd9c',
+                  columnId: 'number',
+                  operand: 'GT',
+                  value: 100,
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+    expect(myState.view.table.filteredData).toBeUndefined();
+
+    const actionPayload = {
+      simple: { select: 'option-C', string: 'whiteboard' },
+      advanced: { filterIds: ['story-filter'] },
+    };
+    const applyAction = tableAdvancedFiltersApply(actionPayload);
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.toolbar.advancedFilterFlyoutOpen).toBe(false);
+    expect(newState.view.selectedAdvancedFilterIds).toEqual(['story-filter']);
+    expect(newState.view.table.filteredData).toHaveLength(1);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - NEQ', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'date',
+                  operand: 'CONTAINS',
+                  value: '19',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(38);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - LT', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'number',
+                  operand: 'LT',
+                  value: '100',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(1);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - LTOET', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'number',
+                  operand: 'LTOET',
+                  value: '100',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(2);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - EQ', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'string',
+                  operand: 'EQ',
+                  value: 'as eat scott 3',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(1);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - GTOET', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'number',
+                  operand: 'GTOET',
+                  value: '100',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(65);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - GT', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'number',
+                  operand: 'GT',
+                  value: '100',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(64);
+  });
+
+  it('TABLE_ADVANCED_FILTER_APPLY - CONTAINS', () => {
+    const myState = merge({}, initialState, {
+      view: {
+        advancedFilters: [
+          {
+            filterId: 'test-filter',
+            filterRules: {
+              groupLogic: 'ALL',
+              rules: [
+                {
+                  id: 'testContains',
+                  columnId: 'string',
+                  operand: 'CONTAINS',
+                  value: 'scott',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
+    const newState = tableReducer(myState, applyAction);
+    expect(newState.view.table.filteredData).toHaveLength(20);
   });
 });

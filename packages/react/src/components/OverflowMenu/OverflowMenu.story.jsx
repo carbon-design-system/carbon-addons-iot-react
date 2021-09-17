@@ -8,11 +8,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
 
 import { OverflowMenuItem } from '../OverflowMenuItem';
 
-import OverflowREADME from './README.md';
+import OverflowMenuREADME from './OverflowMenu.mdx';
 
 import { OverflowMenu } from '.';
 
@@ -21,7 +20,7 @@ const directions = {
   'Top of the trigger button (top)': 'top',
 };
 
-const props = {
+const defaultProps = {
   menu: () => ({
     direction: select('Menu direction (direction)', directions, 'bottom'),
     ariaLabel: text('ARIA label (ariaLabel)', 'Menu'),
@@ -46,7 +45,7 @@ const props = {
 OverflowMenu.displayName = 'OverflowMenu';
 
 export default {
-  title: 'Watson IoT/OverflowMenu',
+  title: '1 - Watson IoT/OverflowMenu',
   decorators: [withKnobs],
 
   parameters: {
@@ -54,6 +53,10 @@ export default {
 
     subcomponents: {
       OverflowMenuItem,
+    },
+
+    docs: {
+      page: OverflowMenuREADME,
     },
   },
 };
@@ -74,19 +77,19 @@ const OverflowMenuExample = ({ overflowMenuProps, overflowMenuItemProps }) => (
   </>
 );
 
-export const Basic = withReadme(OverflowREADME, () => (
-  <OverflowMenu {...props.menu()}>
-    <OverflowMenuItem {...props.menuItem()} itemText="Option 1" />
+export const Basic = () => (
+  <OverflowMenu {...defaultProps.menu()}>
+    <OverflowMenuItem {...defaultProps.menuItem()} itemText="Option 1" />
     <OverflowMenuItem
-      {...props.menuItem()}
+      {...defaultProps.menuItem()}
       itemText="Option 2 is an example of a really long string and how we recommend handling this"
       requireTitle
     />
-    <OverflowMenuItem {...props.menuItem()} itemText="Option 3" />
-    <OverflowMenuItem {...props.menuItem()} itemText="Option 4" />
-    <OverflowMenuItem {...props.menuItem()} itemText="Danger option" hasDivider isDelete />
+    <OverflowMenuItem {...defaultProps.menuItem()} itemText="Option 3" />
+    <OverflowMenuItem {...defaultProps.menuItem()} itemText="Option 4" />
+    <OverflowMenuItem {...defaultProps.menuItem()} itemText="Danger option" hasDivider isDelete />
   </OverflowMenu>
-));
+);
 
 Basic.storyName = 'basic';
 
@@ -99,18 +102,18 @@ Basic.parameters = {
   },
 };
 
-export const WithLinks = withReadme(OverflowREADME, () => (
-  <OverflowMenu {...props.menu()}>
+export const WithLinks = () => (
+  <OverflowMenu {...defaultProps.menu()}>
     <OverflowMenuItem
       {...{
-        ...props.menuItem(),
+        ...defaultProps.menuItem(),
         href: 'https://www.ibm.com',
       }}
       itemText="Option 1"
     />
     <OverflowMenuItem
       {...{
-        ...props.menuItem(),
+        ...defaultProps.menuItem(),
         href: 'https://www.ibm.com',
       }}
       itemText="Option 2 is an example of a really long string and how we recommend handling this"
@@ -118,21 +121,21 @@ export const WithLinks = withReadme(OverflowREADME, () => (
     />
     <OverflowMenuItem
       {...{
-        ...props.menuItem(),
+        ...defaultProps.menuItem(),
         href: 'https://www.ibm.com',
       }}
       itemText="Option 3"
     />
     <OverflowMenuItem
       {...{
-        ...props.menuItem(),
+        ...defaultProps.menuItem(),
         href: 'https://www.ibm.com',
       }}
       itemText="Option 4"
     />
     <OverflowMenuItem
       {...{
-        ...props.menuItem(),
+        ...defaultProps.menuItem(),
         href: 'https://www.ibm.com',
       }}
       itemText="Danger option"
@@ -140,7 +143,7 @@ export const WithLinks = withReadme(OverflowREADME, () => (
       isDelete
     />
   </OverflowMenu>
-));
+);
 
 WithLinks.storyName = 'with links';
 
@@ -154,27 +157,27 @@ WithLinks.parameters = {
   },
 };
 
-export const CustomTrigger = withReadme(OverflowREADME, () => (
+export const CustomTrigger = () => (
   <OverflowMenu
     {...{
-      ...props.menu(),
+      ...defaultProps.menu(),
       ariaLabel: null,
       style: { width: 'auto' },
       // eslint-disable-next-line react/display-name
       renderIcon: () => <div style={{ padding: '0 1rem' }}>Menu</div>,
     }}
   >
-    <OverflowMenuItem {...props.menuItem()} itemText="Option 1" />
+    <OverflowMenuItem {...defaultProps.menuItem()} itemText="Option 1" />
     <OverflowMenuItem
-      {...props.menuItem()}
+      {...defaultProps.menuItem()}
       itemText="Option 2 is an example of a really long string and how we recommend handling this"
       requireTitle
     />
-    <OverflowMenuItem {...props.menuItem()} itemText="Option 3" />
-    <OverflowMenuItem {...props.menuItem()} itemText="Option 4" />
-    <OverflowMenuItem {...props.menuItem()} itemText="Danger option" hasDivider isDelete />
+    <OverflowMenuItem {...defaultProps.menuItem()} itemText="Option 3" />
+    <OverflowMenuItem {...defaultProps.menuItem()} itemText="Option 4" />
+    <OverflowMenuItem {...defaultProps.menuItem()} itemText="Danger option" hasDivider isDelete />
   </OverflowMenu>
-));
+);
 
 CustomTrigger.storyName = 'custom trigger';
 
@@ -186,7 +189,7 @@ CustomTrigger.parameters = {
   },
 };
 
-export const AutoPositioningExample = withReadme(OverflowREADME, () => (
+export const AutoPositioningExample = () => (
   <div
     style={{
       display: 'flex',
@@ -206,12 +209,12 @@ export const AutoPositioningExample = withReadme(OverflowREADME, () => (
       >
         <OverflowMenuExample
           overflowMenuProps={{
-            ...props.menu(),
+            ...defaultProps.menu(),
             flipped: true,
             direction: 'top',
             useAutoPositioning: true,
           }}
-          overflowMenuItemProps={props.menuItem()}
+          overflowMenuItemProps={defaultProps.menuItem()}
         />
       </div>
       <div
@@ -224,11 +227,11 @@ export const AutoPositioningExample = withReadme(OverflowREADME, () => (
       >
         <OverflowMenuExample
           overflowMenuProps={{
-            ...props.menu(),
+            ...defaultProps.menu(),
             direction: 'top',
             useAutoPositioning: true,
           }}
-          overflowMenuItemProps={props.menuItem()}
+          overflowMenuItemProps={defaultProps.menuItem()}
         />
       </div>
       <div
@@ -241,12 +244,12 @@ export const AutoPositioningExample = withReadme(OverflowREADME, () => (
       >
         <OverflowMenuExample
           overflowMenuProps={{
-            ...props.menu(),
+            ...defaultProps.menu(),
             flipped: false,
             direction: 'top',
             useAutoPositioning: true,
           }}
-          overflowMenuItemProps={props.menuItem()}
+          overflowMenuItemProps={defaultProps.menuItem()}
         />
       </div>
     </div>
@@ -261,10 +264,10 @@ export const AutoPositioningExample = withReadme(OverflowREADME, () => (
       >
         <OverflowMenuExample
           overflowMenuProps={{
-            ...props.menu(),
+            ...defaultProps.menu(),
             useAutoPositioning: true,
           }}
-          overflowMenuItemProps={props.menuItem()}
+          overflowMenuItemProps={defaultProps.menuItem()}
         />
       </div>
       <div
@@ -277,10 +280,10 @@ export const AutoPositioningExample = withReadme(OverflowREADME, () => (
       >
         <OverflowMenuExample
           overflowMenuProps={{
-            ...props.menu(),
+            ...defaultProps.menu(),
             useAutoPositioning: true,
           }}
-          overflowMenuItemProps={props.menuItem()}
+          overflowMenuItemProps={defaultProps.menuItem()}
         />
       </div>
       <div
@@ -293,10 +296,10 @@ export const AutoPositioningExample = withReadme(OverflowREADME, () => (
       >
         <OverflowMenuExample
           overflowMenuProps={{
-            ...props.menu(),
+            ...defaultProps.menu(),
             useAutoPositioning: true,
           }}
-          overflowMenuItemProps={props.menuItem()}
+          overflowMenuItemProps={defaultProps.menuItem()}
         />
       </div>
     </div>
@@ -311,10 +314,10 @@ export const AutoPositioningExample = withReadme(OverflowREADME, () => (
       >
         <OverflowMenuExample
           overflowMenuProps={{
-            ...props.menu(),
+            ...defaultProps.menu(),
             useAutoPositioning: true,
           }}
-          overflowMenuItemProps={props.menuItem()}
+          overflowMenuItemProps={defaultProps.menuItem()}
         />
       </div>
       <div
@@ -327,10 +330,10 @@ export const AutoPositioningExample = withReadme(OverflowREADME, () => (
       >
         <OverflowMenuExample
           overflowMenuProps={{
-            ...props.menu(),
+            ...defaultProps.menu(),
             useAutoPositioning: true,
           }}
-          overflowMenuItemProps={props.menuItem()}
+          overflowMenuItemProps={defaultProps.menuItem()}
         />
       </div>
       <div
@@ -343,25 +346,23 @@ export const AutoPositioningExample = withReadme(OverflowREADME, () => (
       >
         <OverflowMenuExample
           overflowMenuProps={{
-            ...props.menu(),
+            ...defaultProps.menu(),
             useAutoPositioning: true,
           }}
-          overflowMenuItemProps={props.menuItem()}
+          overflowMenuItemProps={defaultProps.menuItem()}
         />
       </div>
     </div>
   </div>
-));
+);
 
-AutoPositioningExample.story = {
-  name: 'auto positioning',
+AutoPositioningExample.storyName = 'auto positioning';
 
-  parameters: {
-    info: {
-      text: `
-          Overflow Menu is used when additional options are available to the user and there is a space constraint.
-          Create Overflow Menu Item components for each option on the menu.
-        `,
-    },
+AutoPositioningExample.parameters = {
+  info: {
+    text: `
+        Overflow Menu is used when additional options are available to the user and there is a space constraint.
+        Create Overflow Menu Item components for each option on the menu.
+      `,
   },
 };

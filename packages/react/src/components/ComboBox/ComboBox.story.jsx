@@ -132,7 +132,7 @@ const ControlledComboBoxApp = ({ onBlur, ...props }) => {
 const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
 
 export default {
-  title: 'Watson IoT/ComboBox',
+  title: '1 - Watson IoT/ComboBox',
   decorators: [withKnobs],
 
   parameters: {
@@ -148,12 +148,10 @@ export const Default = () => (
   </Wrapper>
 );
 
-Default.story = {
-  parameters: {
-    info: {
-      text: 'ComboBox',
-      propTablesExclude: [Wrapper],
-    },
+Default.parameters = {
+  info: {
+    text: 'ComboBox',
+    propTablesExclude: [Wrapper],
   },
 };
 
@@ -168,28 +166,24 @@ export const ItemsAsComponents = () => (
   </Wrapper>
 );
 
-ItemsAsComponents.story = {
-  name: 'Items as components',
+ItemsAsComponents.storyName = 'Items as components';
 
-  parameters: {
-    info: {
-      text: 'ComboBox',
-      propTablesExclude: [Wrapper],
-    },
+ItemsAsComponents.parameters = {
+  info: {
+    text: 'ComboBox',
+    propTablesExclude: [Wrapper],
   },
 };
 
 export const ApplicationLevelControlForSelection = () => <ControlledComboBoxApp {...props()} />;
 
-ApplicationLevelControlForSelection.story = {
-  name: 'application-level control for selection',
+ApplicationLevelControlForSelection.storyName = 'application-level control for selection';
 
-  parameters: {
-    info: {
-      text: `Controlled ComboBox example application`,
-      propTables: [ComboBox],
-      propTablesExclude: [ControlledComboBoxApp],
-    },
+ApplicationLevelControlForSelection.parameters = {
+  info: {
+    text: `Controlled ComboBox example application`,
+    propTables: [ComboBox],
+    propTablesExclude: [ControlledComboBoxApp],
   },
 };
 
@@ -204,15 +198,13 @@ export const ExperimentalMultiValueTags = () => (
   </Wrapper>
 );
 
-ExperimentalMultiValueTags.story = {
-  name: 'multi-value tags',
+ExperimentalMultiValueTags.storyName = 'multi-value tags';
 
-  parameters: {
-    info: {
-      text:
-        'This variation of the ComboBox is experimental. By setting `hasMultiValue` to true, when an item is selected it will create a persistent tag above the ComboBox. If the entered text does not match an item in the list, it will be added to the list.',
-      propTablesExclude: [Wrapper],
-    },
+ExperimentalMultiValueTags.parameters = {
+  info: {
+    text:
+      'This variation of the ComboBox is experimental. By setting `hasMultiValue` to true, when an item is selected it will create a persistent tag above the ComboBox. If the entered text does not match an item in the list, it will be added to the list.',
+    propTablesExclude: [Wrapper],
   },
 };
 
@@ -227,15 +219,13 @@ export const ExperimentalAddNewItemsToList = () => (
   </Wrapper>
 );
 
-ExperimentalAddNewItemsToList.story = {
-  name: 'add new items to list',
+ExperimentalAddNewItemsToList.storyName = 'add new items to list';
 
-  parameters: {
-    info: {
-      text:
-        'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
-      propTablesExclude: [Wrapper],
-    },
+ExperimentalAddNewItemsToList.parameters = {
+  info: {
+    text:
+      'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
+    propTablesExclude: [Wrapper],
   },
 };
 
@@ -247,14 +237,13 @@ export const CustomOnBlurFunctionAutomaticallyAddsItemToTheList = () => {
   );
 };
 
-CustomOnBlurFunctionAutomaticallyAddsItemToTheList.story = {
-  name: 'Custom onBlur function automatically adds item to the list',
+CustomOnBlurFunctionAutomaticallyAddsItemToTheList.storyName =
+  'Custom onBlur function automatically adds item to the list';
 
-  parameters: {
-    info: {
-      text:
-        'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
-      propTablesExclude: [Wrapper],
-    },
+CustomOnBlurFunctionAutomaticallyAddsItemToTheList.parameters = {
+  info: {
+    text:
+      'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
+    propTablesExclude: [Wrapper],
   },
 };

@@ -17,14 +17,20 @@ import {
   cyan90,
 } from '@carbon/colors';
 
+import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
+
 import HotspotTextStyleTab from './HotspotTextStyleTab';
+import HotspotTextStyleTabREADME from './HotspotTextStyleTabREADME.mdx';
 
 export default {
-  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab',
+  title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab',
   decorators: [withKnobs],
 
   parameters: {
     component: HotspotTextStyleTab,
+    docs: {
+      page: HotspotTextStyleTabREADME,
+    },
   },
 };
 
@@ -78,31 +84,42 @@ export const Default = () => {
   );
 };
 
-Default.story = {
-  name: 'default',
+Default.storyName = 'Example with externaly managed state';
 
-  parameters: {
-    info: {
-      propTables: [HotspotTextStyleTab],
-      text: `This is an example of the <HotspotTextStyleTab> HotSpot sub component. The state needs to be managed by the consuming application.
+export const UsingHotspotStateHook = () => {
+  const WithState = () => {
+    const {
+      selectedHotspot,
+      deleteSelectedHotspot,
+      updateTextHotspotStyle,
+    } = useHotspotEditorState({
+      initialState: { selectedHotspot: { type: hotspotTypes.TEXT } },
+    });
 
-      ~~~js
-    const [formValues, setFormValues] = useState({});
+    return (
+      <HotspotTextStyleTab
+        minFontSize={1}
+        maxFontSize={50}
+        minOpacity={0}
+        maxOpacity={100}
+        minBorderWidth={0}
+        maxBorderWidth={50}
+        fontColors={colors}
+        backgroundColors={colors}
+        borderColors={colors}
+        formValues={selectedHotspot}
+        onChange={updateTextHotspotStyle}
+        onDelete={deleteSelectedHotspot}
+        translateWithId={() => {}}
+      />
+    );
+  };
 
-      return (
-        <HotspotTextStyleTab
-          fontColors={colors}
-          backgroundColors={colors}
-          borderColors={colors}
-          formValues={formValues}
-          onChange={(change) => {
-            setFormValues(merge({}, formValues, change));
-            action('onChange')(change);
-          }}
-        />
-      );
-      ~~~
-      `,
-    },
-  },
+  return (
+    <div style={{ maxWidth: '500px' }}>
+      <WithState />
+    </div>
+  );
 };
+
+UsingHotspotStateHook.storyName = 'Using HotspotStateHook';

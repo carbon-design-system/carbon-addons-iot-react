@@ -78,7 +78,7 @@ const StatefulFilterTags = ({ tags }) => {
 };
 
 export default {
-  title: 'Watson IoT/FilterTags',
+  title: '1 - Watson IoT/FilterTags',
 
   parameters: {
     component: FilterTags,
@@ -89,12 +89,10 @@ export default {
 
 export const DefaultExample = () => <StatefulFilterTags tags={tagData} />;
 
-DefaultExample.story = {
-  parameters: {
-    info: {
-      propTables: [FilterTags],
-      propTablesExclude: [StatefulFilterTags],
-    },
+DefaultExample.parameters = {
+  info: {
+    propTables: [FilterTags],
+    propTablesExclude: [StatefulFilterTags],
   },
 };
 
@@ -114,14 +112,12 @@ export const WithHasOverflowSetToFalse = () => (
   </FilterTags>
 );
 
-WithHasOverflowSetToFalse.story = {
-  name: 'With hasOverflow set to false',
+WithHasOverflowSetToFalse.storyName = 'With hasOverflow set to false';
 
-  parameters: {
-    info: {
-      propTables: [FilterTags],
-      propTablesExclude: [Tag],
-    },
+WithHasOverflowSetToFalse.parameters = {
+  info: {
+    propTables: [FilterTags],
+    propTablesExclude: [Tag],
   },
 };
 
@@ -141,13 +137,11 @@ export const WithTagContainerProp = () => (
   </FilterTags>
 );
 
-WithTagContainerProp.story = {
-  name: 'With tagContainer prop',
+WithTagContainerProp.storyName = 'With tagContainer prop';
 
-  parameters: {
-    info: {
-      propTables: [FilterTags],
-      propTablesExclude: [Tag],
-    },
+WithTagContainerProp.parameters = {
+  info: {
+    propTables: [FilterTags],
+    propTablesExclude: [Tag],
   },
 };

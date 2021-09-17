@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  unstable_ContextMenuItem as ContextMenuItem,
-  unstable_ContextMenuDivider as ContextMenuDivider,
-  unstable_ContextMenuRadioGroup as ContextMenuRadioGroup,
-  unstable_ContextMenuSelectableItem as ContextMenuSelectableItem,
+  unstable_MenuItem as MenuItem,
+  unstable_MenuDivider as MenuDivider,
+  unstable_MenuRadioGroup as MenuRadioGroup,
+  unstable_MenuSelectableItem as MenuSelectableItem,
 } from 'carbon-components-react';
 import { ChevronDown16, ChevronUp16, Copy16, TrashCan16 } from '@carbon/icons-react';
 import { render, screen } from '@testing-library/react';
@@ -26,40 +26,35 @@ const callbacks = {
   delete: jest.fn(),
 };
 const menuItems = [
-  <ContextMenuSelectableItem
+  <MenuSelectableItem
     key="publish"
     label="Publish"
     initialChecked={false}
     onChange={callbacks.publish}
   />,
-  <ContextMenuDivider key="div-1" />,
-  <ContextMenuItem
-    key="duplicate"
-    renderIcon={Copy16}
-    label="Duplicate"
-    onClick={callbacks.duplicate}
-  />,
-  <ContextMenuDivider key="div-2" />,
-  <ContextMenuItem key="share" label="Share with">
-    <ContextMenuRadioGroup
+  <MenuDivider key="div-1" />,
+  <MenuItem key="duplicate" renderIcon={Copy16} label="Duplicate" onClick={callbacks.duplicate} />,
+  <MenuDivider key="div-2" />,
+  <MenuItem key="share" label="Share with">
+    <MenuRadioGroup
       label="Shared with"
       items={['None', 'Product Team', 'Organization', 'Company']}
       initialSelectedItem="None"
       onChange={callbacks.share}
     />
-  </ContextMenuItem>,
-  <ContextMenuDivider key="div-3" />,
-  <ContextMenuItem key="export" label="Export">
-    <ContextMenuItem label="CSV" onClick={callbacks.csv} />
-    <ContextMenuItem label="JSON" onClick={callbacks.json} />
-  </ContextMenuItem>,
-  <ContextMenuItem
+  </MenuItem>,
+  <MenuDivider key="div-3" />,
+  <MenuItem key="export" label="Export">
+    <MenuItem label="CSV" onClick={callbacks.csv} />
+    <MenuItem label="JSON" onClick={callbacks.json} />
+  </MenuItem>,
+  <MenuItem
     key="disabled"
     label={<span title="You must have proper credentials to use this option.">Disabled</span>}
     disabled
   />,
-  <ContextMenuDivider key="div-4" />,
-  <ContextMenuItem
+  <MenuDivider key="div-4" />,
+  <MenuItem
     key="delete"
     label="Delete"
     renderIcon={TrashCan16}
@@ -143,14 +138,10 @@ describe('MenuButton', () => {
   it('should be open the menu when clicking the button in single button mode', () => {
     const { container } = render(<MenuButton label="Create">{menuItems}</MenuButton>);
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByRole('button', { name: 'Create' }));
     expect(screen.getByText('Publish')).toBeVisible();
-    expect(container.querySelector(`.${prefix}--context-menu`)).toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should be open the menu when clicking the secondary button split button mode', () => {
@@ -160,14 +151,10 @@ describe('MenuButton', () => {
       </MenuButton>
     );
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByLabelText('open menu button'));
     expect(screen.getByText('Publish')).toBeVisible();
-    expect(container.querySelector(`.${prefix}--context-menu`)).toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should not open when clicking the primary action of a split button', () => {
@@ -177,14 +164,10 @@ describe('MenuButton', () => {
       </MenuButton>
     );
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByRole('button', { name: 'Create' }));
     expect(callbacks.primary).toHaveBeenCalled();
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should close the menu when clicking a child item with an onClick handler', () => {
@@ -194,19 +177,13 @@ describe('MenuButton', () => {
       </MenuButton>
     );
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByLabelText('open menu button'));
 
-    expect(container.querySelector(`.${prefix}--context-menu`)).toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByTitle('Duplicate'));
     expect(callbacks.duplicate).toHaveBeenCalled();
-    expect(container.querySelector(`.${prefix}--context-menu`)).not.toHaveClass(
-      `${prefix}--context-menu--open`
-    );
+    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should show a warning when using an icon without an icon description', () => {
@@ -809,5 +786,235 @@ describe('MenuButton', () => {
         })
       ).toEqual({ x: 480.484375, y: 456 });
     });
+
+    it('should position a split button in the top-right of a small window correctly', () => {
+      Object.defineProperty(window, 'innerHeight', {
+        writable: true,
+        configurable: true,
+        value: 321,
+      });
+      Object.defineProperty(window, 'innerWidth', {
+        writable: true,
+        configurable: true,
+        value: 1052,
+      });
+
+      const button = generateMenuButton({
+        bottom: 112,
+        height: 48,
+        left: 925,
+        right: 973,
+        top: 64,
+        width: 48,
+        x: 925,
+        y: 64,
+      });
+
+      const primaryButton = document.createElement('button');
+      primaryButton.getBoundingClientRect = () => ({
+        bottom: 112,
+        height: 48,
+        left: 802.5625,
+        right: 925,
+        top: 64,
+        width: 122.4375,
+        x: 802.5625,
+        y: 64,
+      });
+      Object.defineProperty(button, 'previousSibling', {
+        get() {
+          return primaryButton;
+        },
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Create',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+        })
+      ).toEqual({ x: 594.5625, y: 64 });
+    });
+
+    it('should position a split button in the top-right of a small window in rtl correctly', () => {
+      Object.defineProperty(window, 'innerHeight', {
+        writable: true,
+        configurable: true,
+        value: 321,
+      });
+      Object.defineProperty(window, 'innerWidth', {
+        writable: true,
+        configurable: true,
+        value: 1052,
+      });
+
+      const button = generateMenuButton({
+        bottom: 112,
+        height: 48,
+        left: 808.5625,
+        right: 856.5625,
+        top: 64,
+        width: 48,
+        x: 808.5625,
+        y: 64,
+      });
+
+      const primaryButton = document.createElement('button');
+      primaryButton.getBoundingClientRect = () => ({
+        bottom: 112,
+        height: 48,
+        left: 802.5625,
+        right: 925,
+        top: 64,
+        width: 122.4375,
+        x: 802.5625,
+        y: 64,
+      });
+      Object.defineProperty(button, 'previousSibling', {
+        get() {
+          return primaryButton;
+        },
+      });
+
+      expect(
+        MenuButtonUtils.getMenuPosition({
+          label: 'Create',
+          buttonRef: { current: button },
+          onPrimaryActionClick: jest.fn(),
+          langDir: 'rtl',
+        })
+      ).toEqual({ x: 600.5625, y: 64 });
+    });
+  });
+
+  it('should position a split button in the top-left of a small window correctly', () => {
+    Object.defineProperty(window, 'innerHeight', {
+      writable: true,
+      configurable: true,
+      value: 321,
+    });
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 1052,
+    });
+
+    const button = generateMenuButton({
+      bottom: 112,
+      height: 48,
+      left: 186.4375,
+      right: 234.4375,
+      top: 64,
+      width: 48,
+      x: 186.4375,
+      y: 64,
+    });
+
+    const primaryButton = document.createElement('button');
+    primaryButton.getBoundingClientRect = () => ({
+      bottom: 112,
+      height: 48,
+      left: 802.5625,
+      right: 925,
+      top: 64,
+      width: 122.4375,
+      x: 802.5625,
+      y: 64,
+    });
+    Object.defineProperty(button, 'previousSibling', {
+      get() {
+        return primaryButton;
+      },
+    });
+
+    expect(
+      MenuButtonUtils.getMenuPosition({
+        label: 'Create',
+        buttonRef: { current: button },
+        onPrimaryActionClick: jest.fn(),
+      })
+    ).toEqual({ x: 234.4375, y: 64 });
+  });
+
+  it('should position a split button in the top-left of a small window in rtl correctly', () => {
+    Object.defineProperty(window, 'innerHeight', {
+      writable: true,
+      configurable: true,
+      value: 321,
+    });
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 1052,
+    });
+
+    const button = generateMenuButton({
+      bottom: 112,
+      height: 48,
+      left: 186.4375,
+      right: 234.4375,
+      top: 64,
+      width: 48,
+      x: 186.4375,
+      y: 64,
+    });
+
+    const primaryButton = document.createElement('button');
+    primaryButton.getBoundingClientRect = () => ({
+      bottom: 112,
+      height: 48,
+      left: 802.5625,
+      right: 925,
+      top: 64,
+      width: 122.4375,
+      x: 802.5625,
+      y: 64,
+    });
+    Object.defineProperty(button, 'previousSibling', {
+      get() {
+        return primaryButton;
+      },
+    });
+
+    expect(
+      MenuButtonUtils.getMenuPosition({
+        label: 'Create',
+        buttonRef: { current: button },
+        onPrimaryActionClick: jest.fn(),
+      })
+    ).toEqual({ x: 234.4375, y: 64 });
+  });
+
+  it("should fallback to hard-coded defaults if refs aren't passed", () => {
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: undefined,
+    });
+    Object.defineProperty(window, 'innerHeight', {
+      writable: true,
+      configurable: true,
+      value: undefined,
+    });
+
+    const button = generateMenuButton({
+      bottom: 96,
+      height: 48,
+      left: 170.4375,
+      right: 218.4375,
+      top: 48,
+      width: 48,
+      x: 170.4375,
+      y: 48,
+    });
+    button.nextSibling.getBoundingClientRect.mockImplementation(() => undefined);
+
+    expect(
+      MenuButtonUtils.getMenuPosition({
+        label: 'Actions',
+        buttonRef: { current: button },
+        onPrimaryActionClick: jest.fn(),
+      })
+    ).toEqual({ x: 170.4375, y: 96 });
   });
 });

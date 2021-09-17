@@ -311,7 +311,7 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
         'multi-select-column': [],
       },
     });
-    userEvent.click(screen.getAllByLabelText('Multi-Select Column')[1]);
+    userEvent.click(screen.getByLabelText('Multi-Select Column'));
     userEvent.click(within(screen.getByTestId('advanced-filter-flyout')).getByText('option-X'));
     userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
     expect(handleApplyFilter).toHaveBeenLastCalledWith({
@@ -436,5 +436,239 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
         'multi-select-column': ['option-X', 'option-Y'],
       },
     });
+  });
+
+  it('should update the filter state and call onApply when new props are passed.', () => {
+    const onApplyAdvancedFilter = jest.fn();
+    const onCancelAdvancedFilter = jest.fn();
+    const { rerender } = render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter,
+          onCancelAdvancedFilter,
+        }}
+        columns={[
+          {
+            id: 'test-column',
+            name: 'Test Column',
+            isFilterable: true,
+            placeholderText: 'place-holder-text-for-test-column',
+          },
+          {
+            id: 'string-column',
+            name: 'String Column',
+            isFilterable: true,
+            placeholderText: 'place-holder-text-for-string-column',
+          },
+        ]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'test-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'string-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'test-column',
+              value: 'test',
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+        }}
+      />
+    );
+
+    expect(screen.getByLabelText('Test Column')).toBeVisible();
+    userEvent.click(screen.getByLabelText('Test Column'));
+    expect(screen.getByLabelText('Test Column')).toHaveValue('test');
+
+    rerender(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter,
+          onCancelAdvancedFilter,
+        }}
+        columns={[
+          {
+            id: 'test-column',
+            name: 'Test Column',
+            isFilterable: true,
+            placeholderText: 'place-holder-text-for-test-column',
+          },
+          {
+            id: 'string-column',
+            name: 'String Column',
+            isFilterable: true,
+            placeholderText: 'place-holder-text-for-string-column',
+          },
+        ]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'test-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'string-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'test-column',
+              value: 'test',
+            },
+            {
+              columnId: 'string-column',
+              value: 'string',
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+        }}
+      />
+    );
+    expect(onApplyAdvancedFilter).toHaveBeenCalled();
+  });
+
+  it("should not clear filters on 'Enter' if isDisabled:true", () => {
+    const onApplyAdvancedFilter = jest.fn();
+    const onCancelAdvancedFilter = jest.fn();
+    render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter,
+          onCancelAdvancedFilter,
+        }}
+        columns={[
+          {
+            id: 'test-column',
+            name: 'Test Column',
+            isFilterable: true,
+            placeholderText: 'place-holder-text-for-test-column',
+          },
+        ]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'test-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'test-column',
+              value: 'test',
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+        }}
+        isDisabled
+      />
+    );
+
+    userEvent.type(screen.getByTitle('Clear filter'), '{enter}', { skipClick: true });
+    expect(onApplyAdvancedFilter).not.toBeCalled();
+  });
+
+  it('should set initial selected value on multiselect from value passed in columns', () => {
+    const onApplyAdvancedFilter = jest.fn();
+    const onCancelAdvancedFilter = jest.fn();
+    render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter,
+          onCancelAdvancedFilter,
+        }}
+        columns={[
+          {
+            id: 'test-column',
+            name: 'Test Column',
+            isFilterable: true,
+            placeholderText: 'place-holder-text-for-test-column',
+            isMultiselect: true,
+            options: [
+              {
+                id: 'test-column-value',
+                text: 'test-column-value',
+              },
+              {
+                id: 'another-test-column-value',
+                text: 'Another test column value',
+              },
+            ],
+          },
+          {
+            id: 'string-column',
+            name: 'String Column',
+            isFilterable: true,
+            placeholderText: 'place-holder-text-for-string-column',
+            isMultiselect: true,
+            options: [
+              {
+                id: 'string-column-value',
+                text: 'string-column-value',
+              },
+              {
+                id: 'another-string-column-value',
+                text: 'Another string column value',
+              },
+            ],
+          },
+        ]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'test-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'string-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'test-column',
+              value: 'test-column-value',
+            },
+            {
+              columnId: 'string-column',
+              value: [
+                {
+                  id: 'string-column-value',
+                  text: 'string-column-value',
+                },
+              ],
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+        }}
+        isDisabled
+      />
+    );
+
+    const selected = screen.getAllByTitle('1');
+    expect(selected).toHaveLength(2);
+    expect(selected[0]).toBeVisible();
+    expect(selected[1]).toBeVisible();
+    userEvent.click(screen.getByLabelText('Test Column'));
+    expect(screen.getByText('test-column-value')).toHaveAttribute(
+      'data-contained-checkbox-state',
+      'true'
+    );
+    userEvent.click(screen.getByLabelText('String Column'));
+    expect(screen.getByText('string-column-value')).toHaveAttribute(
+      'data-contained-checkbox-state',
+      'true'
+    );
   });
 });

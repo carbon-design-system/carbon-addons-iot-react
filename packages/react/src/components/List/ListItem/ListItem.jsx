@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
@@ -87,6 +87,7 @@ const ListItemDefaultProps = {
   i18n: {
     expand: 'Expand',
     close: 'Close',
+    dragHandle: 'Drag handle',
   },
   selectedItemRef: null,
   tags: null,
@@ -121,8 +122,11 @@ const ListItem = ({
   itemWillMove,
   dragPreviewText,
 }) => {
+  const mergedI18n = useMemo(() => ({ ...ListItemDefaultProps.i18n, ...i18n }), [i18n]);
+
   const handleExpansionClick = (event) => {
     event.stopPropagation();
+    /* istanbul ignore else */
     if (isExpandable) {
       onExpand(id);
     }
@@ -140,7 +144,7 @@ const ListItem = ({
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
         style={{
-          width: `${nestingLevel * 30}px`,
+          width: `${nestingLevel * 32}px`,
         }}
       />
     ) : null;
@@ -151,17 +155,19 @@ const ListItem = ({
       <div
         role="button"
         tabIndex={0}
-        className={`${iotPrefix}--list-item--expand-icon`}
-        onClick={handleExpansionClick}
+        className={classnames(`${iotPrefix}--list-item--expand-icon`, {
+          [`${iotPrefix}--list-item--expand-icon__disabled`]: disabled,
+        })}
+        onClick={!disabled ? handleExpansionClick : undefined}
         data-testid="expand-icon"
-        aria-label={expanded ? i18n.close : i18n.expand}
-        title={expanded ? i18n.close : i18n.expand}
+        aria-label={expanded ? mergedI18n.close : mergedI18n.expand}
+        title={expanded ? mergedI18n.close : mergedI18n.expand}
         onKeyPress={(event) => event.key === 'Enter' && handleExpansionClick(event)}
       >
         {expanded ? (
-          <ChevronUp16 aria-label={`${i18n.close}-icon`} />
+          <ChevronUp16 aria-label={`${mergedI18n.close}-icon`} />
         ) : (
-          <ChevronDown16 aria-label={`${i18n.expand}-icon`} />
+          <ChevronDown16 aria-label={`${mergedI18n.expand}-icon`} />
         )}
       </div>
     ) : null;
@@ -200,10 +206,14 @@ const ListItem = ({
 
   const dragIcon = () =>
     editingStyle ? (
-      <Draggable16
-        className={classnames(`${iotPrefix}--list-item--handle`)}
-        data-testid="list-item-editable"
-      />
+      <div title={mergedI18n.dragHandle}>
+        <Draggable16
+          className={classnames(`${iotPrefix}--list-item--handle`, {
+            [`${iotPrefix}--list-item--handle__disabled`]: disabled,
+          })}
+          data-testid="list-item-editable"
+        />
+      </div>
     ) : null;
 
   return (

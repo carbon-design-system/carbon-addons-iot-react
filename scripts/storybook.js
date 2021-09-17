@@ -36,18 +36,53 @@ if (!storyPackages.includes(packageToRun)) {
   packageToRun = 'react';
 }
 
-const runYarn = (command, packageToRun) => {
-  const childProcess = spawn('yarn', [command], {
-    stdio: 'inherit',
-    cwd: resolve('packages', packageToRun),
-  });
-  childProcess.on('exit', () => {
-    process.exit(0);
+const runCmd = (name, args = [], spawnConf = {}) => {
+  return new Promise((resolve, reject) => {
+    const conf = Object.assign(
+      {},
+      {
+        stdio: 'inherit',
+      },
+      spawnConf
+    );
+
+    const cmd = spawn(name, args, conf);
+
+    cmd.on('exit', (code) => {
+      if (code !== 0) {
+        reject(code);
+      }
+
+      resolve({
+        code,
+      });
+    });
   });
 };
 
-if (args['--build']) {
-  runYarn('build:storybook', packageToRun);
-} else {
-  runYarn('storybook', packageToRun);
-}
+const runYarn = (command, packageToRun) => {
+  return runCmd('yarn', [command], {
+    cwd: resolve('packages', packageToRun),
+  });
+};
+
+const main = async () => {
+  try {
+    if (process.env.CI) {
+      await runCmd('yarn', ['lerna', 'run', '--stream', 'postinstall']);
+      await runCmd('yarn', ['lerna', 'link']);
+    }
+    if (args['--build']) {
+      await runYarn('build:storybook', packageToRun);
+    } else {
+      await runYarn('storybook', packageToRun);
+    }
+  } catch (errorCode) {
+    // check for code (may be null) and check if it has a non-zero value
+    process.exit(errorCode);
+  }
+  // in all other cases we can just exit(0), node should handle re-throwing other signals for us
+  process.exit(0);
+};
+
+main().catch(console.error);

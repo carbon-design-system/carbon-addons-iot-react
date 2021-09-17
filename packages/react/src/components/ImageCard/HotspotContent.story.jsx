@@ -9,7 +9,7 @@ import HotspotContent from './HotspotContent';
 const mockValues = object('values', { temperature: 35.35, humidity: 99 });
 
 export default {
-  title: 'Watson IoT/HotspotContent',
+  title: '1 - Watson IoT/HotspotContent',
 
   parameters: {
     component: HotspotContent,
@@ -34,9 +34,7 @@ export const Basic = () => {
   );
 };
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
 export const BasicWithUnitsAndPrecision = () => {
   return (
@@ -64,9 +62,7 @@ export const BasicWithUnitsAndPrecision = () => {
   );
 };
 
-BasicWithUnitsAndPrecision.story = {
-  name: 'basic with units and precision',
-};
+BasicWithUnitsAndPrecision.storyName = 'basic with units and precision';
 
 export const WithThresholds = () => {
   return (
@@ -109,13 +105,11 @@ export const WithThresholds = () => {
   );
 };
 
-WithThresholds.story = {
-  name: 'with thresholds',
+WithThresholds.storyName = 'with thresholds';
 
-  parameters: {
-    knobs: {
-      escapeHTML: false, // needed for greater than less than
-    },
+WithThresholds.parameters = {
+  knobs: {
+    escapeHTML: false, // needed for greater than less than
   },
 };
 
@@ -168,12 +162,10 @@ export const Locale = () => {
   );
 };
 
-Locale.story = {
-  name: 'locale',
+Locale.storyName = 'locale';
 
-  parameters: {
-    knobs: {
-      escapeHTML: false, // needed for greater than less than
-    },
+Locale.parameters = {
+  knobs: {
+    escapeHTML: false, // needed for greater than less than
   },
 };

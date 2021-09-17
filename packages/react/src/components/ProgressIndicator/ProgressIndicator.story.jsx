@@ -15,7 +15,7 @@ const items = [
   {
     id: 'step1',
     label: 'First step is very, very long',
-    secondaryLabel: 'Optional label',
+    secondaryLabel: 'Optional label is very, very long',
     description: 'This is displayed when step icon is hovered',
   },
   {
@@ -49,7 +49,7 @@ const items = [
 ];
 
 export default {
-  title: 'Watson IoT/ProgressIndicator',
+  title: '1 - Watson IoT/ProgressIndicator',
 
   parameters: {
     component: ProgressIndicator,
@@ -67,29 +67,29 @@ export const Stateful = () => (
   />
 );
 
-Stateful.story = {
-  name: 'stateful',
+Stateful.storyName = 'stateful';
+
+export const Presentation = () => {
+  const spaceEquallyFlag = boolean('spaceEqually', false);
+  return (
+    <ProgressIndicator
+      items={items}
+      currentItemId={select(
+        'id',
+        items.map((item) => item.id),
+        items[0].id
+      )}
+      onClickItem={action('onClickItem')}
+      stepWidth={!spaceEquallyFlag ? number('stepWidth', 6) : null}
+      showLabels={boolean('showlabels', true)}
+      isVerticalMode={boolean('isVerticalMode', false)}
+      isClickable={boolean('isClickable', true)}
+      spaceEqually={spaceEquallyFlag}
+    />
+  );
 };
 
-export const Presentation = () => (
-  <ProgressIndicator
-    items={items}
-    currentItemId={select(
-      'id',
-      items.map((item) => item.id),
-      items[0].id
-    )}
-    onClickItem={action('onClickItem')}
-    stepWidth={number('stepWidth', 6)}
-    showLabels={boolean('showlabels', true)}
-    isVerticalMode={boolean('isVerticalMode', false)}
-    isClickable={boolean('isClickable', true)}
-  />
-);
-
-Presentation.story = {
-  name: 'presentation',
-};
+Presentation.storyName = 'presentation';
 
 export const PresentationVertical = () => (
   <ProgressIndicator
@@ -105,9 +105,7 @@ export const PresentationVertical = () => (
   />
 );
 
-PresentationVertical.story = {
-  name: 'presentation vertical',
-};
+PresentationVertical.storyName = 'presentation vertical';
 
 export const HideLabelsAndDefaultStepWidth = () => (
   <ProgressIndicator
@@ -124,21 +122,17 @@ export const HideLabelsAndDefaultStepWidth = () => (
   />
 );
 
-HideLabelsAndDefaultStepWidth.story = {
-  name: 'hideLabels and default stepWidth',
-};
+HideLabelsAndDefaultStepWidth.storyName = 'hideLabels and default stepWidth';
 
 export const Skeleton = () => <ProgressIndicatorSkeleton />;
 
-Skeleton.story = {
-  name: 'skeleton',
+Skeleton.storyName = 'skeleton';
 
-  parameters: {
-    info: {
-      text: `
-              Placeholder skeleton state to use when content is loading.
-          `,
-    },
+Skeleton.parameters = {
+  info: {
+    text: `
+            Placeholder skeleton state to use when content is loading.
+        `,
   },
 };
 
@@ -203,11 +197,10 @@ export const CarbonDefaultProgressIndicator = () => (
   </CarbonProgressIndicator>
 );
 
-CarbonDefaultProgressIndicator.story = {
-  name: 'carbon progress indicator',
-  parameters: {
-    info: {
-      text: `The default Carbon Progress Indicator component.`,
-    },
+CarbonDefaultProgressIndicator.storyName = 'carbon progress indicator';
+
+CarbonDefaultProgressIndicator.parameters = {
+  info: {
+    text: `The default Carbon Progress Indicator component.`,
   },
 };

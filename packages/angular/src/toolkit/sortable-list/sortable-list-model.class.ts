@@ -8,7 +8,7 @@ import { Content } from '../table-settings/table-settings-model.class';
 import { SortableListComponent } from './sortable-list.component';
 
 export interface ListOptionOptions {
-  content?: Content;
+  content?: any;
   template?: TemplateRef<any>;
   order?: number;
   options?: SortableListOption[];
@@ -19,7 +19,7 @@ export class SortableListOption {
   disabled: boolean;
   order: number;
   options: SortableListOption[];
-  content: Content;
+  content: any;
   template: TemplateRef<any>;
   protected contentSubject = new BehaviorSubject(null);
   protected contentSubscription = new Subscription();
@@ -37,7 +37,7 @@ export class SortableListOption {
     return this.content;
   }
 
-  setContent(content: Content) {
+  setContent(content: any) {
     if (isObservable(content)) {
       this.contentSubscription.unsubscribe();
       this.contentSubscription = content.subscribe((value) => {
@@ -64,7 +64,7 @@ export class SortableListOption {
 }
 
 export interface SortableListOptions extends SettingOptions {
-  content?: Content;
+  content?: any;
   template?: TemplateRef<any>;
   options: SortableListOption[];
 }

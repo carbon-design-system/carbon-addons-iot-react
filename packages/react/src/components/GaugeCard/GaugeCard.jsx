@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import classnames from 'classnames';
 import { gray20, yellow } from '@carbon/colors';
 
-import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
+import { CARD_CONTENT_PADDING, CARD_SIZES } from '../../constants/LayoutConstants';
 import { CardPropTypes, GaugeCardPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
 import DataStateRenderer from '../Card/DataStateRenderer';
@@ -10,10 +10,12 @@ import { settings } from '../../constants/Settings';
 import { getResizeHandles } from '../../utils/cardUtilityFunctions';
 
 const { iotPrefix } = settings;
+
+const STROKE_SIZE = 8;
 // r value of the circle in SVG
-const radius = 36;
+const radius = 30;
 // radius doubled plus stroke
-const gaugeSize = radius * 2 + 8;
+const gaugeSize = radius * 2 + STROKE_SIZE;
 // circumference of SVG.
 const circum = 2 * Math.PI * radius;
 export const getStrokeDash = (value = 0) => {
@@ -62,6 +64,9 @@ const GaugeCard = ({
   size,
   className,
   dataState,
+  // TODO: remove deprecated testID in v3.
+  testID,
+  testId,
   ...others
 }) => {
   const [loadedState, setLoadedState] = useState(false);
@@ -79,8 +84,9 @@ const GaugeCard = ({
     : {
         paddingTop: 0,
         paddingRight: CARD_CONTENT_PADDING,
-        paddingBottom: 0,
+        paddingBottom: CARD_CONTENT_PADDING,
         paddingLeft: CARD_CONTENT_PADDING,
+        rowGap: size === CARD_SIZES.SMALL ? 0 : '1rem',
       };
 
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
@@ -92,6 +98,8 @@ const GaugeCard = ({
       title={title}
       size={size}
       resizeHandles={resizeHandles}
+      // TODO: remove deprecated testID in v3.
+      testId={testID || testId}
       {...others}
       tooltip={tooltip}
       isLoading={isLoading}
@@ -104,7 +112,7 @@ const GaugeCard = ({
             const valueLength =
               values[gauge.dataSourceId] && values[gauge.dataSourceId].toString().length;
             return (
-              <React.Fragment key={`${iotPrefix}-gauge-${i}`}>
+              <Fragment key={`${iotPrefix}-gauge-${i}`}>
                 <svg
                   aria-labelledby="gauge-label"
                   className={classnames(
@@ -146,14 +154,13 @@ const GaugeCard = ({
                       { [`${iotPrefix}--gauge-value-lg`]: valueLength <= 2 }
                     )}
                     x={gaugeSize / 2}
-                    y="33"
+                    y={gaugeSize / 2 + STROKE_SIZE}
                     textAnchor="middle"
                   >
                     <tspan>{values[gauge.dataSourceId]}</tspan>
                     <tspan>{gauge.units}</tspan>
                   </text>
                 </svg>
-
                 {values[gauge.trend.dataSourceId] && (
                   <div
                     className={classnames(`${iotPrefix}--gauge-trend`, {
@@ -167,7 +174,7 @@ const GaugeCard = ({
                     </p>
                   </div>
                 )}
-              </React.Fragment>
+              </Fragment>
             );
           })}
       </div>

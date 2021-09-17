@@ -466,14 +466,12 @@ const commonDashboardProps = {
 };
 
 export default {
-  title: 'Watson IoT/🚫 Dashboard',
+  title: '1 - Watson IoT/🚫 Dashboard',
   excludeStories: ['originalCards'],
 };
 
 export const Deprecated = () => <StoryNotice componentName="Dashboard" />;
-Deprecated.story = {
-  name: deprecatedStoryTitle,
-};
+Deprecated.storyName = deprecatedStoryTitle;
 
 export const BasicDashboard = () => {
   return (
@@ -483,25 +481,23 @@ export const BasicDashboard = () => {
   );
 };
 
-BasicDashboard.story = {
-  name: 'basic dashboard',
+BasicDashboard.storyName = 'basic dashboard';
 
-  parameters: {
-    info: {
-      text: `
-      ## Data Fetching
-      To wire this dashboard to your own backend, implement the onFetchData callback to retrieve data for each card.
-      You will be passed an object containing all of the card props (including the currently selected range of the card) and can use these to determine which data to fetch.
+BasicDashboard.parameters = {
+  info: {
+    text: `
+    ## Data Fetching
+    To wire this dashboard to your own backend, implement the onFetchData callback to retrieve data for each card.
+    You will be passed an object containing all of the card props (including the currently selected range of the card) and can use these to determine which data to fetch.
 
-      Return a promise that will resolve into an updated card object with data values
-      For instance you could return {...card, values: [{timestamp: 1234123123,temperature: 35.5}]}
+    Return a promise that will resolve into an updated card object with data values
+    For instance you could return {...card, values: [{timestamp: 1234123123,temperature: 35.5}]}
 
-      If you want to trigger all the cards of the dashboard to load from an outside event (like a change in the data range that the dashboard is displaying), set the isLoading bit to true.
-      Once all the cards have finished loading the setIsLoading(false) will be called from the Dashboard.
+    If you want to trigger all the cards of the dashboard to load from an outside event (like a change in the data range that the dashboard is displaying), set the isLoading bit to true.
+    Once all the cards have finished loading the setIsLoading(false) will be called from the Dashboard.
 
-      # Component Overview
-      `,
-    },
+    # Component Overview
+    `,
   },
 };
 
@@ -513,9 +509,7 @@ export const BasicWithoutLastUpdatedHeader = () => {
   );
 };
 
-BasicWithoutLastUpdatedHeader.story = {
-  name: 'basic - without last updated header',
-};
+BasicWithoutLastUpdatedHeader.storyName = 'basic - without last updated header';
 
 export const CustomActions = () => {
   return (
@@ -529,9 +523,7 @@ export const CustomActions = () => {
   );
 };
 
-CustomActions.story = {
-  name: 'custom actions',
-};
+CustomActions.storyName = 'custom actions';
 
 export const Sidebar = () => {
   return (
@@ -550,9 +542,7 @@ export const Sidebar = () => {
   );
 };
 
-Sidebar.story = {
-  name: 'sidebar',
-};
+Sidebar.storyName = 'sidebar';
 
 export const I18NLabels = () => {
   return (
@@ -644,9 +634,7 @@ export const I18NLabels = () => {
   );
 };
 
-I18NLabels.story = {
-  name: 'i18n labels',
-};
+I18NLabels.storyName = 'i18n labels';
 
 export const FullScreenTableCard = () => {
   const data = [...Array(35)].map((id, index) => ({
@@ -696,9 +684,7 @@ export const FullScreenTableCard = () => {
   );
 };
 
-FullScreenTableCard.story = {
-  name: 'full screen table card',
-};
+FullScreenTableCard.storyName = 'full screen table card';
 
 export const FullScreenLineCard = () => {
   const data = getIntervalChartData('day', 7, { min: 10, max: 100 }, 100);
@@ -724,9 +710,7 @@ export const FullScreenLineCard = () => {
   );
 };
 
-FullScreenLineCard.story = {
-  name: 'full screen line card',
-};
+FullScreenLineCard.storyName = 'full screen line card';
 
 export const LineCardWithNoOptions = () => {
   const data = getIntervalChartData('day', 7, { min: 10, max: 100 }, 100);
@@ -756,9 +740,7 @@ export const LineCardWithNoOptions = () => {
   );
 };
 
-LineCardWithNoOptions.story = {
-  name: 'line card with no options',
-};
+LineCardWithNoOptions.storyName = 'line card with no options';
 
 export const FullScreenBarChartCard = () => {
   const data = getIntervalChartData('day', 7, { min: 10, max: 100 }, 100);
@@ -801,9 +783,7 @@ export const FullScreenBarChartCard = () => {
   );
 };
 
-FullScreenBarChartCard.story = {
-  name: 'full screen bar chart card',
-};
+FullScreenBarChartCard.storyName = 'full screen bar chart card';
 
 export const FullScreenImageCard = () => {
   const content = {
@@ -829,9 +809,7 @@ export const FullScreenImageCard = () => {
   );
 };
 
-FullScreenImageCard.story = {
-  name: 'full screen image card',
-};
+FullScreenImageCard.storyName = 'full screen image card';
 
 export const OnlyValueCards = () => {
   const numberThresholds = [
@@ -1320,9 +1298,7 @@ export const OnlyValueCards = () => {
   );
 };
 
-OnlyValueCards.story = {
-  name: 'only value cards',
-};
+OnlyValueCards.storyName = 'only value cards';
 
 export const WithCustomCards = () => {
   return (
@@ -1542,6 +1518,4 @@ export const WithCustomCards = () => {
   );
 };
 
-WithCustomCards.story = {
-  name: 'with custom cards',
-};
+WithCustomCards.storyName = 'with custom cards';

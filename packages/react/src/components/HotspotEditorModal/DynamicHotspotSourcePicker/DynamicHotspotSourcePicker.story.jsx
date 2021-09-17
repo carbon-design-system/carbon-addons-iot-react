@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
 
 import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker';
+import DynamicHotspotSourcePickerREADME from './DynamicHotspotSourcePickerREADME.mdx';
 
 const dataItems = [
   {
@@ -16,10 +17,13 @@ const dataItems = [
 ];
 
 export default {
-  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal/DynamicHotspotSourcePicker',
+  title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/DynamicHotspotSourcePicker',
   decorators: [withKnobs],
   parameters: {
     component: DynamicHotspotSourcePicker,
+    docs: {
+      page: DynamicHotspotSourcePickerREADME,
+    },
   },
 };
 
@@ -47,7 +51,7 @@ export const WithStateInStory = () => {
             setXSourceId(undefined);
             setYSourceId(undefined);
           }}
-          translateWithId={jest.fn()}
+          translateWithId={() => {}}
         />
       </div>
     );
@@ -56,16 +60,4 @@ export const WithStateInStory = () => {
   return <WithState />;
 };
 
-WithStateInStory.story = {
-  name: 'Example with externaly managed state',
-  parameters: {
-    info: {
-      text: `
-      ~~~js
-
-      ~~~
-      `,
-      propTables: [DynamicHotspotSourcePicker],
-    },
-  },
-};
+WithStateInStory.storyName = 'Example with externaly managed state';

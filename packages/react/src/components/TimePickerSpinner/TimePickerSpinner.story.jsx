@@ -5,7 +5,7 @@ import { spacing05 } from '@carbon/layout';
 import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
 
 export default {
-  title: 'Watson IoT/TimePickerSpinner',
+  title: '1 - Watson IoT/TimePickerSpinner',
 
   parameters: {
     component: TimePickerSpinner,
@@ -29,9 +29,7 @@ export const WithSpinner = () => {
   );
 };
 
-WithSpinner.story = {
-  name: 'With spinner',
-};
+WithSpinner.storyName = 'With spinner';
 
 export const DefaultTimeGroupToMinutes = () => {
   return (
@@ -47,6 +45,4 @@ export const DefaultTimeGroupToMinutes = () => {
   );
 };
 
-DefaultTimeGroupToMinutes.story = {
-  name: 'Default timeGroup to minutes',
-};
+DefaultTimeGroupToMinutes.storyName = 'Default timeGroup to minutes';

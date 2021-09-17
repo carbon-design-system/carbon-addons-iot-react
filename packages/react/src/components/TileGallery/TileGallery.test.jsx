@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import { galleryData } from './TileGallery.story';
 import TileGalleryItem from './TileGalleryItem';
@@ -10,6 +11,62 @@ import TileGallery from './TileGallery';
 import StatefulTileGallery from './StatefulTileGallery';
 
 describe('TileGallery', () => {
+  it('should be selectable by testId', () => {
+    const { rerender } = render(
+      <TileGalleryItem
+        title="title"
+        mode="list"
+        testId="tile_gallery_item"
+        afterContent={<div>Hi!</div>}
+      />
+    );
+
+    expect(screen.getByTestId('tile_gallery_item')).toBeDefined();
+    expect(screen.getByTestId('tile_gallery_item-overflow-menu')).toBeDefined();
+
+    rerender(
+      <TileGallerySection title="Section 1" onClick={jest.fn()} testId="tile_gallery_section">
+        <TileGalleryItem title="title" />
+      </TileGallerySection>
+    );
+
+    expect(screen.getByTestId('tile_gallery_section')).toBeDefined();
+    expect(screen.getByTestId('tile_gallery_section-items')).toBeDefined();
+    expect(screen.getByTestId('tile_gallery_section-accordion')).toBeDefined();
+    expect(screen.getByTestId('tile_gallery_section-accordion-item')).toBeDefined();
+    expect(screen.getByTestId('tile-gallery-item')).toBeDefined();
+
+    rerender(<TileGalleryViewSwitcher onChange={jest.fn()} testId="tile_gallery_switcher" />);
+    expect(screen.getByTestId('tile_gallery_switcher')).toBeDefined();
+    expect(screen.getByTestId('tile_gallery_switcher-list-switch')).toBeDefined();
+    expect(screen.getByTestId('tile_gallery_switcher-grid-switch')).toBeDefined();
+
+    const onClick = jest.fn();
+    rerender(
+      <StatefulTileGallery
+        title="Dashboard"
+        hasSearch
+        hasSwitcher
+        hasButton
+        buttonText="Create"
+        galleryData={galleryData.map((gd) => ({
+          ...gd,
+          galleryItems: gd.galleryItems.map((gi) => ({ ...gi, onClick })),
+        }))}
+        testId="stateful_tile_gallery"
+      />
+    );
+    expect(screen.getByTestId('stateful_tile_gallery')).toBeDefined();
+    expect(screen.getByTestId('stateful_tile_gallery-page-title-bar')).toBeDefined();
+    expect(screen.getByTestId('stateful_tile_gallery-extra-content')).toBeDefined();
+    expect(screen.getByTestId('stateful_tile_gallery-search-input')).toBeDefined();
+    expect(screen.getByTestId('stateful_tile_gallery-switcher')).toBeDefined();
+    expect(screen.getByTestId('stateful_tile_gallery-switcher-grid-switch')).toBeDefined();
+    expect(screen.getByTestId('stateful_tile_gallery-switcher-list-switch')).toBeDefined();
+    expect(screen.getByTestId('stateful_tile_gallery-section-id1')).toBeDefined();
+    expect(screen.getByTestId('stateful_tile_gallery-section-id1-item-0')).toBeDefined();
+  });
+
   it('TileGalleryItem mode list', () => {
     const wrapper = mount(<TileGalleryItem title="title" mode="list" />);
 
@@ -169,7 +226,6 @@ describe('TileGallery', () => {
 
     // Change Tile Item mode
     wrapper.find('button.bx--content-switcher-btn').first().simulate('click');
-    // console.log(`component::: ${noExtraWrapper.find('TileGallerySearch').debug()}`);
 
     // test have changes mode prop
     expect(wrapper.find('TileGalleryItem').first().props().mode).toEqual('list');

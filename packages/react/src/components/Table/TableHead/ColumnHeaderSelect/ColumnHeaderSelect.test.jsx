@@ -10,6 +10,9 @@ describe('ColumnHeaderSelect', () => {
     const connectDropTarget = jest.fn();
     render(
       <UnconnectedColumnHeaderSelect
+        index={0}
+        isOver={false}
+        moveItem={jest.fn()}
         columnId="test"
         isDisabled
         onClick={handleClick}

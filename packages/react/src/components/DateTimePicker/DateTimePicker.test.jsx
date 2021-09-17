@@ -1,18 +1,22 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import '@testing-library/jest-dom/extend-expect';
+import { settings } from '../../constants/Settings';
 import dayjs from '../../utils/dayjs';
-
-import DateTimePicker, {
+import {
   INTERVAL_VALUES,
   RELATIVE_VALUES,
   PRESET_VALUES,
   PICKER_KINDS,
-} from './DateTimePicker';
+} from '../../constants/DateConstants';
+
+import DateTimePicker from './DateTimePicker';
 import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePicker.story';
+
+const { iotPrefix } = settings;
 
 const defaultPresets = [
   ...PRESET_VALUES,
@@ -36,10 +40,11 @@ const i18n = {
 describe('DateTimePicker', () => {
   beforeEach(() => {
     jest.useFakeTimers();
+    jest.clearAllMocks();
   });
 
   afterEach(() => {
-    console.error.mockClear();
+    jest.clearAllMocks();
   });
 
   beforeAll(() => {
@@ -47,7 +52,7 @@ describe('DateTimePicker', () => {
   });
 
   afterAll(() => {
-    console.error.mockRestore();
+    jest.resetAllMocks();
   });
 
   it('should not blow up if correct object is passed as default value', () => {
@@ -299,7 +304,9 @@ describe('DateTimePicker', () => {
     wrapper.find('.bx--number__control-btn.up-icon').first().simulate('click');
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
-      `${today.format('YYYY-MM-DD')} 08:56 to ${today.format('YYYY-MM-DD')} 08:57`
+      `${today.subtract(1, 'minute').format('YYYY-MM-DD HH:mm')} to ${today.format(
+        'YYYY-MM-DD HH:mm'
+      )}`
     );
   });
 
@@ -487,5 +494,161 @@ describe('DateTimePicker', () => {
     expect(
       screen.queryByTitle(new RegExp(`.*\\s${i18nDefault.toLabel}\\s.*`))
     ).not.toBeInTheDocument();
+  });
+
+  it('should parse default values with start/end', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: '2021-08-01 12:34',
+            end: '2021-08-06 10:49',
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByText('2021-08-01 12:34 to 2021-08-06 10:49')).toBeVisible();
+  });
+
+  it('should not render a time picker if hasTimeInput:false', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2021, 7, 1, 12, 34, 0),
+            end: new Date(2021, 7, 6, 10, 49, 0),
+          },
+        }}
+      />
+    );
+
+    userEvent.click(screen.getByText('2021-08-01 12:34 to 2021-08-06 10:49'));
+    expect(screen.queryByLabelText('Start time')).toBeNull();
+    expect(screen.queryByLabelText('End time')).toBeNull();
+  });
+
+  it('should fallback to minute intervals if none given in a relative defaultValue', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.RELATIVE,
+          timeRangeValue: {
+            lastNumber: 20,
+            relativeToWhen: RELATIVE_VALUES.TODAY,
+            relativeToTime: '13:30',
+          },
+        }}
+      />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.getByText('minutes')).toBeVisible();
+  });
+  it('should render light when given', () => {
+    const { container } = render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.RELATIVE,
+          timeRangeValue: {
+            lastNumber: 20,
+            relativeToWhen: RELATIVE_VALUES.TODAY,
+            relativeToTime: '13:30',
+          },
+        }}
+        light
+      />
+    );
+    jest.runAllTimers();
+
+    expect(container.querySelectorAll(`.${iotPrefix}--date-time-picker__box--light`)).toHaveLength(
+      1
+    );
+  });
+  it('should fallback to 00:00 for absolute times when none given', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Custom Range'));
+    userEvent.click(screen.getByText('Absolute'));
+    expect(screen.getAllByTestId('time-picker-spinner')[0]).toHaveValue('00:00');
+  });
+  it('should not show the Custom Range link when showCustomRangeLink:false', () => {
+    render(
+      <DateTimePicker {...dateTimePickerProps} showCustomRangeLink={false} id="picker-test" />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.queryByText('Custom Range')).toBeNull();
+  });
+  it('should show relative labels', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        relatives={[
+          {
+            label: 'Quarter',
+            value: 'quarter',
+          },
+        ]}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: '2021-08-01 12:34',
+            end: '2021-08-06 10:49',
+          },
+        }}
+        id="picker-test"
+      />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Relative'));
+    expect(screen.getByText('Quarter')).toBeVisible();
+  });
+
+  it('should disable apply button when number input is invalid', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeEnabled();
+    const numberInput = screen.queryByRole('spinbutton', {
+      name: 'Numeric input field with increment and decrement buttons',
+    });
+    expect(numberInput).toBeValid();
+
+    // Empty value is invalid
+    userEvent.type(numberInput, '{backspace}');
+    expect(numberInput).toBeInvalid();
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
+
+    // 0 is valid
+    userEvent.type(numberInput, '1');
+    expect(numberInput).toBeValid();
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeEnabled();
+
+    // -1 is invalid
+    userEvent.type(numberInput, '{backspace}-1');
+    expect(numberInput).toBeInvalid();
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
   });
 });

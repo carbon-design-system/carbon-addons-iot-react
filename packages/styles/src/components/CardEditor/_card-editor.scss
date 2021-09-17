@@ -15,13 +15,16 @@
     h5 {
       padding: 0 $spacing-03;
     }
-    button.gallery-button {
-      /* make ghost button stretch full width */
-      height: calc(100% - 0.5rem);
+  }
+
+  &--footer {
+    border-top: solid 1px $ui-03;
+    & > button {
       justify-content: space-between;
       width: 100%;
     }
   }
+
   &--content {
     flex: 1;
     height: 100%;

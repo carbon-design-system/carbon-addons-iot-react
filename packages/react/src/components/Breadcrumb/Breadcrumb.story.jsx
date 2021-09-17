@@ -34,7 +34,7 @@ const PolyfillWarning = () => (
 );
 
 export default {
-  title: 'Watson IoT/Breadcrumb',
+  title: '1 - Watson IoT/Breadcrumb',
   decorators: [withKnobs],
 
   parameters: {
@@ -52,29 +52,25 @@ export const Default = () => {
   );
 };
 
-Default.story = {
-  name: 'default',
+Default.storyName = 'default';
 
-  parameters: {
-    info: {
-      text: `
-        Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired.
-      `,
-    },
+Default.parameters = {
+  info: {
+    text: `
+      Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired.
+    `,
   },
 };
 
 export const Skeleton = () => <BreadcrumbSkeleton />;
 
-Skeleton.story = {
-  name: 'skeleton',
+Skeleton.storyName = 'skeleton';
 
-  parameters: {
-    info: {
-      text: `
-            Placeholder skeleton state to use when content is loading.
-            `,
-    },
+Skeleton.parameters = {
+  info: {
+    text: `
+          Placeholder skeleton state to use when content is loading.
+          `,
   },
 };
 
@@ -90,14 +86,12 @@ export const CurrentPageWithAriaCurrent = () => (
   </Breadcrumb>
 );
 
-CurrentPageWithAriaCurrent.story = {
-  name: 'current page with aria-current',
+CurrentPageWithAriaCurrent.storyName = 'current page with aria-current';
 
-  parameters: {
-    info: {
-      text:
-        'You can specify a BreadcrumbItem component as the current page with the `aria-current` prop by specifying `aria-current="page"`',
-    },
+CurrentPageWithAriaCurrent.parameters = {
+  info: {
+    text:
+      'You can specify a BreadcrumbItem component as the current page with the `aria-current` prop by specifying `aria-current="page"`',
   },
 };
 
@@ -139,14 +133,12 @@ export const HasOverflow = () => {
   );
 };
 
-HasOverflow.story = {
-  name: 'hasOverflow',
+HasOverflow.storyName = 'hasOverflow';
 
-  parameters: {
-    info: {
-      text: `
-        Breadcrumbs can be automatically collapsed into an overflow menu by toggling 'hasOverflow'. Note, this requires the containing application to provide a polyfill for ResizeObserver!
-      `,
-    },
+HasOverflow.parameters = {
+  info: {
+    text: `
+      Breadcrumbs can be automatically collapsed into an overflow menu by toggling 'hasOverflow'. Note, this requires the containing application to provide a polyfill for ResizeObserver!
+    `,
   },
 };

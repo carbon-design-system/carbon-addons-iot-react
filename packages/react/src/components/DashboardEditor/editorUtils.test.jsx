@@ -13,6 +13,7 @@ import {
   handleDataSeriesChange,
   handleDataItemEdit,
   renderDefaultIconByName,
+  handleKeyDown,
 } from './editorUtils';
 
 describe('editorUtils', () => {
@@ -154,6 +155,7 @@ describe('editorUtils', () => {
       const defaultCard = getDefaultCard(CARD_TYPES.IMAGE, i18n);
       expect(defaultCard.type).toEqual(CARD_TYPES.IMAGE);
       expect(defaultCard.content).toBeDefined();
+      expect(defaultCard.content.displayOption).toEqual('contain');
     });
     it('should return CustomCard', () => {
       const defaultCard = getDefaultCard(CARD_TYPES.CUSTOM, i18n);
@@ -198,6 +200,9 @@ describe('editorUtils', () => {
     });
     it('should return sm', () => {
       expect(renderBreakpointInfo('sm', i18n)).toEqual('Sm');
+    });
+    it('should return Lg as default', () => {
+      expect(renderBreakpointInfo('', i18n)).toEqual('Lg');
     });
   });
   describe('formatSeries', () => {
@@ -768,6 +773,49 @@ describe('editorUtils', () => {
     });
   });
   describe('handleDataItemEdit', () => {
+    it('handles keydown', () => {
+      const onSelectCard = jest.fn();
+      handleKeyDown({ key: 'Esc' }, onSelectCard, 'test-id1');
+      expect(onSelectCard).not.toHaveBeenCalled();
+      handleKeyDown({ key: 'Enter' }, onSelectCard, 'test-id2');
+      expect(onSelectCard).toHaveBeenCalledWith('test-id2');
+      handleKeyDown({ key: 'Space' }, onSelectCard, 'test-id3');
+      expect(onSelectCard).toHaveBeenCalledWith('test-id3');
+    });
+
+    //   DONUT, CUSTOM, GAUGE LIST PIE
+    it('returns unmodified cardConfig for some cards', () => {
+      const mockDonutCard = {
+        type: CARD_TYPES.DONUT,
+        content: 'not modified',
+      };
+      expect(handleDataItemEdit(null, mockDonutCard, null, null)).toBe(mockDonutCard);
+
+      const mockCustomCard = {
+        type: CARD_TYPES.CUSTOM,
+        content: 'not modified',
+      };
+      expect(handleDataItemEdit(null, mockCustomCard, null, null)).toBe(mockCustomCard);
+
+      const mockGaugeCard = {
+        type: CARD_TYPES.GAUGE,
+        content: 'not modified',
+      };
+      expect(handleDataItemEdit(null, mockGaugeCard, null, null)).toBe(mockGaugeCard);
+
+      const mockListCard = {
+        type: CARD_TYPES.LIST,
+        content: 'not modified',
+      };
+      expect(handleDataItemEdit(null, mockListCard, null, null)).toBe(mockListCard);
+
+      const mockPieCard = {
+        type: CARD_TYPES.PIE,
+        content: 'not modified',
+      };
+      expect(handleDataItemEdit(null, mockPieCard, null, null)).toBe(mockPieCard);
+    });
+
     it('should correctly format the data in Image Card', () => {
       const mockImageCard = {
         type: CARD_TYPES.IMAGE,
@@ -846,6 +894,15 @@ describe('editorUtils', () => {
             },
           ],
         },
+      });
+
+      // Test without hotspots prop
+      delete mockImageCard.content.hotspots;
+      const newCardWithoutHotspots = handleDataItemEdit(editDataItem, mockImageCard, null, 0);
+
+      expect(newCardWithoutHotspots).toEqual({
+        type: CARD_TYPES.IMAGE,
+        content: { hotspots: [] },
       });
     });
 
@@ -976,6 +1033,41 @@ describe('editorUtils', () => {
               dataSourceId: 'key2',
               unit: 'F',
               label: 'Updated Key 2',
+            },
+          ],
+        },
+      });
+
+      // Data item not within attributes
+      const editDataItemNotInContent = {
+        dataItemId: 'key3',
+        dataSourceId: 'key3',
+        unit: 'F',
+        label: 'Updated Key 3',
+      };
+      expect(handleDataItemEdit(editDataItemNotInContent, mockValueCard)).toEqual({
+        id: 'Standard',
+        title: 'value card',
+        type: 'VALUE',
+        size: 'MEDIUM',
+        content: {
+          attributes: [
+            {
+              dataItemId: 'key1',
+              dataSourceId: 'key1',
+              unit: '%',
+              label: 'Key 1',
+            },
+            {
+              dataSourceId: 'key2',
+              unit: 'lb',
+              label: 'Key 2',
+            },
+            {
+              dataItemId: 'key3',
+              dataSourceId: 'key3',
+              unit: 'F',
+              label: 'Updated Key 3',
             },
           ],
         },

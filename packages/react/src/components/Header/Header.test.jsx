@@ -2,9 +2,12 @@ import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { User20, Help20 } from '@carbon/icons-react';
 
+import { settings } from '../../constants/Settings';
 import { keyCodes } from '../../constants/KeyCodeConstants';
 
 import Header, { APP_SWITCHER } from './Header';
+
+const { iotPrefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
@@ -30,11 +33,11 @@ describe('Header', () => {
         ),
         childContent: [
           {
-            onCLick: () => console.log('hi'),
+            onClick: jest.fn(),
             content: <p>This is a link</p>,
           },
           {
-            onCLick: () => console.log('hi'),
+            onClick: jest.fn(),
             content: (
               <React.Fragment>
                 <span>
@@ -89,11 +92,19 @@ describe('Header', () => {
     actionItems: [
       {
         label: 'user',
-        onCLick: undefined,
+        onClick: undefined,
         btnContent: <User20 fill="white" description="Icon" />,
       },
     ],
   };
+
+  it('should be selectable by testId', () => {
+    render(<Header {...HeaderProps} hasSideNav testId="__header__" />);
+    expect(screen.getByTestId('__header__')).toBeDefined();
+    expect(screen.getByTestId('__header__-menu-button')).toBeDefined();
+    expect(screen.getByTestId('__header__-name')).toBeDefined();
+    expect(screen.getByTestId('__header__-action-group')).toBeDefined();
+  });
 
   it('should render', () => {
     const { container } = render(<Header {...HeaderProps} />);
@@ -111,9 +122,9 @@ describe('Header', () => {
 
       content: React.forwardRef((props, ref) => (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button ref={ref} type="button" {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -185,9 +196,9 @@ describe('Header', () => {
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button ref={ref} type="button" {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -208,10 +219,9 @@ describe('Header', () => {
       className: 'header-panel',
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button type="button" ref={ref} {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -226,15 +236,16 @@ describe('Header', () => {
       className: 'header-panel',
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button type="button" ref={ref} {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuTrigger = screen.getByTestId('menuitem');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
+    expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
+    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.HOME });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
@@ -246,16 +257,16 @@ describe('Header', () => {
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button type="button" ref={ref} {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuTrigger = screen.getByTitle('help');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
+    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 
@@ -265,9 +276,9 @@ describe('Header', () => {
       // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" ref={ref} {...props}>
+        <button type="button" ref={ref} {...props}>
           Header panel content
-        </a>
+        </button>
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
@@ -284,5 +295,32 @@ describe('Header', () => {
     const menuItem = screen.getByLabelText('user');
     fireEvent.click(menuItem);
     expect(screen.getByLabelText('user')).toBeTruthy();
+  });
+  it('should not display the shortname if none given', () => {
+    const { container } = render(
+      <Header {...HeaderPropsWithoutOnClick} shortAppName={undefined} appName={undefined} />
+    );
+    expect(container.querySelectorAll(`.${iotPrefix}--header__short-name`)).toHaveLength(0);
+  });
+
+  it('should not display an action item if isActionItemVisible returns false', () => {
+    const isActionItemVisible = jest.fn().mockImplementation(() => false);
+    render(
+      <Header
+        {...HeaderPropsWithoutOnClick}
+        actionItems={[...HeaderPropsWithoutOnClick.actionItems]}
+        isActionItemVisible={isActionItemVisible}
+      />
+    );
+    expect(isActionItemVisible).toHaveBeenCalledTimes(1);
+    expect(isActionItemVisible).toHaveBeenCalledWith({
+      btnContent: expect.anything(),
+      label: 'user',
+      onClick: undefined,
+    });
+  });
+  it('should render if actionItems is empty', () => {
+    render(<Header {...HeaderPropsWithoutOnClick} actionItems={[]} />);
+    expect(screen.getByText('IBM')).toBeVisible();
   });
 });

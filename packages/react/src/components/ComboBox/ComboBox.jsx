@@ -2,8 +2,10 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { ComboBox as CarbonComboBox, Tag } from 'carbon-components-react';
+import pick from 'lodash/pick';
 
 import { settings } from '../../constants/Settings';
+import { filterValidAttributes } from '../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -25,6 +27,8 @@ const propTypes = {
   hasMultiValue: PropTypes.bool,
   // On submit/enter, new items should be added to the listbox
   addToList: PropTypes.bool,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -38,6 +42,7 @@ const defaultProps = {
   items: [],
   onInputChange: null,
   onBlur: null,
+  testId: 'combo',
 };
 
 const ComboBox = ({
@@ -58,6 +63,7 @@ const ComboBox = ({
   helperText,
   shouldFilterItem,
   onBlur,
+  testId,
   ...rest
 }) => {
   // Ref for the combobox input
@@ -77,7 +83,7 @@ const ComboBox = ({
 
     // only focus input if the tags or list have increased
     if (prevTagAndListCount.current < currentTagAndListCount) {
-      comboRef.current.textInput.current.focus();
+      comboRef.current.focus();
     }
 
     // Store the value for the next render
@@ -156,7 +162,7 @@ const ComboBox = ({
   // https://github.com/carbon-design-system/carbon/issues/6613
   const handleOnKeypress = (evt) => {
     // Current value of input
-    const currentValue = comboRef.current.textInput.current.value.trim();
+    const currentValue = comboRef.current.value.trim();
     if (evt.key === 'Enter' && currentValue) {
       const newItem = {
         id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
@@ -205,11 +211,11 @@ const ComboBox = ({
       )}
       onKeyDown={handleOnKeypress}
       onBlur={handleOnBlur}
-      data-testid="combo-wrapper"
+      data-testid={`${testId}-wrapper`}
       data-edit-option-text={editOptionText}
     >
       <CarbonComboBox
-        data-testid="combo-box"
+        data-testid={`${testId}-box`}
         id={id}
         key={`tags:${tagItems.length} listItems:${listItems.length}`}
         size={size}
@@ -222,10 +228,29 @@ const ComboBox = ({
         disabled={disabled || (loading !== undefined && loading !== false)}
         helperText={helperText}
         shouldFilterItem={hasMultiValue || addToList ? shouldFilterItemForTags : shouldFilterItem}
-        {...rest}
+        {...pick(
+          rest,
+          'ariaLabel',
+          'direction',
+          'downshiftProps',
+          'initialSelectedItem',
+          'invalid',
+          'invalidText',
+          'itemToElement',
+          'light',
+          'onToggleClick',
+          'placeholder',
+          'selectedItem',
+          'titleText',
+          'translateWithId',
+          'type',
+          'warn',
+          'warnText'
+        )}
+        {...filterValidAttributes(rest)}
       />
       {hasMultiValue ? (
-        <ul data-testid="combo-tags" className={`${iotPrefix}--combobox-tags`}>
+        <ul data-testid={`${testId}-tags`} className={`${iotPrefix}--combobox-tags`}>
           {tagItems.map((item, idx) => (
             <li key={`li-${item?.id}-${idx}`}>
               <Tag

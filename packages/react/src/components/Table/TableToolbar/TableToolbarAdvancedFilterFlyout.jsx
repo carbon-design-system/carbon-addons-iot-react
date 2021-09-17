@@ -214,16 +214,13 @@ const TableToolbarAdvancedFilterFlyout = ({
   });
 
   const handleClearFilter = useCallback((event, { id }) => {
-    // when a user clicks or hits ENTER, we'll clear the input
-    if (event.keyCode === 13 || !event.keyCode) {
-      setFilterState((prev) => ({
-        ...prev,
-        simple: {
-          ...prev.simple,
-          [id]: '',
-        },
-      }));
-    }
+    setFilterState((prev) => ({
+      ...prev,
+      simple: {
+        ...prev.simple,
+        [id]: '',
+      },
+    }));
   }, []);
 
   const handleTranslation = useCallback(
@@ -302,7 +299,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                 >
                   {aRow.map((aColumn, columnIndex) => {
                     const column = columns.find((item) => aColumn.columnId === item.id);
-                    const { value: columnStateValue } =
+                    const { value: columnFilterValue } =
                       filters?.find((filter) => filter.columnId === column.id) ?? {};
                     const filterColumnOptions = (options) => {
                       options.sort((a, b) => {
@@ -317,7 +314,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                         return (
                           <MultiSelect.Filterable
                             className={`${iotPrefix}--filter-flyout__simple-field`}
-                            key={columnStateValue}
+                            key={`${columnIndex}-${columnFilterValue}`}
                             id={`column-${rowIndex}-${columnIndex}`}
                             aria-label={filterAria}
                             placeholder={column.placeholderText || 'Choose an option'}
@@ -327,12 +324,12 @@ const TableToolbarAdvancedFilterFlyout = ({
                             itemToString={itemToString('text')}
                             titleText={column.name}
                             initialSelectedItems={
-                              Array.isArray(columnStateValue)
-                                ? columnStateValue.map((value) =>
+                              Array.isArray(columnFilterValue)
+                                ? columnFilterValue.map((value) =>
                                     typeof value !== 'object' ? { id: value, text: value } : value
                                   )
-                                : columnStateValue
-                                ? [{ id: columnStateValue, text: columnStateValue }]
+                                : columnFilterValue
+                                ? [{ id: columnFilterValue, text: columnFilterValue }]
                                 : []
                             }
                             onChange={(evt) => {
@@ -353,16 +350,16 @@ const TableToolbarAdvancedFilterFlyout = ({
                       return (
                         <ComboBox
                           className={`${iotPrefix}--filter-flyout__simple-field`}
-                          key={columnStateValue}
+                          key={columnFilterValue}
                           id={`column-${columnIndex}`}
                           aria-label={filterAria}
                           translateWithId={handleTranslation}
                           items={memoizeColumnOptions(column.options)}
                           itemToString={itemToString('text')}
                           initialSelectedItem={{
-                            id: columnStateValue,
+                            id: columnFilterValue,
                             text: (
-                              column.options.find((option) => option.id === columnStateValue) || {
+                              column.options.find((option) => option.id === columnFilterValue) || {
                                 text: '',
                               }
                             ).text,
@@ -407,7 +404,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                               };
                             });
                           }}
-                          value={filterState?.simple?.[column.id]}
+                          defaultValue={filterState?.simple?.[column.id]}
                         />
                         {filterState?.simple?.[column.id] ? (
                           <div

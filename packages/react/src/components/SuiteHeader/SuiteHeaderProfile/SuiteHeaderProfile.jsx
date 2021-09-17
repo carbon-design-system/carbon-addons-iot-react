@@ -5,6 +5,7 @@ import { ButtonSkeleton } from 'carbon-components-react';
 import { Button } from '../../../index';
 import { SkeletonText } from '../../SkeletonText';
 import { settings } from '../../../constants/Settings';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const defaultProps = {
   username: '',
@@ -15,6 +16,7 @@ const defaultProps = {
     profileButton: 'Manage profile',
     logoutButton: 'Log out',
   },
+  testId: 'suite-header-profile',
 };
 
 const propTypes = {
@@ -27,9 +29,17 @@ const propTypes = {
     profileButton: PropTypes.string,
     logoutButton: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
-const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLogout, i18n }) => {
+const SuiteHeaderProfile = ({
+  displayName,
+  username,
+  onProfileClick,
+  onRequestLogout,
+  i18n,
+  testId,
+}) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-profile`;
   const chipText = (displayName || '')
@@ -37,7 +47,7 @@ const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLo
     .map((i) => i.charAt(0))
     .join('');
   return (
-    <div className={baseClassName}>
+    <div data-testid={testId} className={baseClassName}>
       <h5>{mergedI18N.profileTitle}</h5>
       {username ? (
         <>
@@ -58,19 +68,16 @@ const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLo
             <Button
               kind="secondary"
               size="small"
-              testID="suite-header-profile--profile"
+              testId={`${testId}--profile`}
               onClick={onProfileClick}
+              onKeyDown={handleSpecificKeyDown(['Enter', ' '], onProfileClick)}
             >
               {mergedI18N.profileButton}
             </Button>
           </div>
           {onRequestLogout && (
             <div className={`${baseClassName}--logout`}>
-              <Button
-                kind="secondary"
-                testID="suite-header-profile--logout"
-                onClick={onRequestLogout}
-              >
+              <Button kind="secondary" testId={`${testId}--logout`} onClick={onRequestLogout}>
                 {mergedI18N.logoutButton}
               </Button>
             </div>

@@ -47,6 +47,31 @@ describe('TableManageViewsModal', () => {
     jest.clearAllMocks();
   });
 
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(
+      <TableManageViewsModal views={testViews} actions={actions} open testID={testID} />
+    );
+    expect(screen.getByTestId(testID)).toBeDefined();
+    rerender(
+      <TableManageViewsModal views={testViews} actions={actions} open testId={`${testID}-two`} />
+    );
+    expect(screen.getByTestId(`${testID}-two`)).toBeDefined();
+  });
+
+  it('works when action callbacks are missing', () => {
+    render(<TableManageViewsModal views={testViews} actions={{}} open testID={testID} />);
+
+    const editButton = screen.getAllByLabelText(i18n.editIconText)[0];
+    fireEvent.click(editButton);
+    expect(actions.onEdit).not.toHaveBeenCalled();
+
+    const deleteButton = screen.getAllByLabelText(i18n.deleteIconText)[0];
+    fireEvent.click(deleteButton);
+    const confirmDeleteButton = screen.getByText(i18n.deleteWarningConfirm);
+    fireEvent.click(confirmDeleteButton);
+    expect(actions.onDelete).not.toHaveBeenCalled();
+  });
+
   it('shows the search input', () => {
     render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
     expect(screen.getByPlaceholderText(i18n.searchPlaceholderText)).toBeVisible();

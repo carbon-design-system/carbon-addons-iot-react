@@ -3,6 +3,7 @@ import { sortStates } from 'carbon-components-react/es/components/DataTable/stat
 import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
 import warning from 'warning';
+import { firstBy } from 'thenby';
 
 import {
   GUTTER,
@@ -69,9 +70,13 @@ export const tableTranslateWithId = (i18n, id, state) => {
     case 'carbon.table.batch.cancel':
       return batchCancel;
     case 'carbon.table.batch.items.selected':
-      return `${state.totalSelected} ${itemsSelected}`;
+      return typeof itemsSelected === 'function'
+        ? itemsSelected(state.totalSelected)
+        : `${state.totalSelected} ${itemsSelected}`;
     case 'carbon.table.batch.item.selected':
-      return `${state.totalSelected} ${itemSelected}`;
+      return typeof itemSelected === 'function'
+        ? itemSelected(state.totalSelected)
+        : `${state.totalSelected} ${itemSelected}`;
     case 'carbon.table.toolbar.search.label':
       return i18n.searchLabel;
     case 'carbon.table.toolbar.search.placeholder':
@@ -114,45 +119,55 @@ export const handleEnterKeyDown = (evt, callback) => {
   }
 };
 
-export const defaultFunction = (name) => () => console.info(`${name} not implemented`); // eslint-disable-line no-console
+export const defaultFunction = (name) => () => {
+  if (!process?.env?.JEST_WORKER_ID) {
+    // eslint-disable-next-line no-console
+    console.info(`${name} not implemented`);
+  }
+};
+
+export const sortTableData = (columnId, isTimestampColumn) => (a, b) => {
+  if (isNil(a)) {
+    return 1;
+  }
+  if (isNil(b)) {
+    return -1;
+  }
+  if (isTimestampColumn) {
+    // support the sort if we have column with timestamp
+    const dateA = dayjs(a);
+    const dateB = dayjs(b);
+
+    if (dateA < dateB) {
+      return -1;
+    }
+    if (dateA > dateB) {
+      return 1;
+    }
+  }
+  if (typeof a === 'string' && !Number(a)) {
+    return a.localeCompare(b);
+  }
+  if (Number(a) < Number(b)) {
+    return -1;
+  }
+  if (Number(a) > Number(b)) {
+    return 1;
+  }
+
+  return 0;
+};
 
 export const getSortedData = (inputData, columnId, direction, isTimestampColumn) => {
   // clone inputData because sort mutates the array
   const sortedData = inputData.map((i) => i);
 
-  return sortedData.sort((a, b) => {
-    const val = direction === 'ASC' ? -1 : 1;
-    if (isNil(a.values[columnId])) {
-      return 1;
-    }
-    if (isNil(b.values[columnId])) {
-      return -1;
-    }
-    if (isTimestampColumn) {
-      // support the sort if we have column with timestamp
-      const dateA = dayjs(a.values[columnId]);
-      const dateB = dayjs(b.values[columnId]);
-
-      if (dateA < dateB) {
-        return val;
-      }
-      if (dateA > dateB) {
-        return -val;
-      }
-    }
-    if (typeof a.values[columnId] === 'string' && !Number(a.values[columnId])) {
-      const compare = a.values[columnId].localeCompare(b.values[columnId]);
-      return direction === 'ASC' ? compare : -compare;
-    }
-    if (Number(a.values[columnId]) < Number(b.values[columnId])) {
-      return val;
-    }
-    if (Number(a.values[columnId]) > Number(b.values[columnId])) {
-      return -val;
-    }
-
-    return 0;
-  });
+  return sortedData.sort(
+    firstBy((row) => row.values[columnId], {
+      cmp: sortTableData(columnId, isTimestampColumn),
+      direction: direction === 'ASC' ? 'asc' : 'desc',
+    })
+  );
 };
 
 /**
@@ -166,12 +181,19 @@ export const stopPropagationAndCallback = (evt, callback, ...args) => {
   callback(...args);
 };
 
-// Dashboard layout
-const gridHeight = 200;
+/**
+ * Determines the smallest possible height that the dashboard can be while fitting all cards
+ * Cards have a max height of 16 units
+ * @param {array} cards list of cards
+ */
+export const getGridHeight = (cards) => cards.length * 16;
 
-export const printGrid = (grid) => {
+/**
+ * Utility function that prints out the grid at the correct orientation
+ */
+export const printGrid = (grid, cards) => {
   let result = '';
-  for (let j = 0; j < gridHeight; j += 1) {
+  for (let j = 0; j < getGridHeight(cards); j += 1) {
     for (let i = 0; i < grid.length; i += 1) {
       result += `${grid[i][j]} `;
     }
@@ -181,7 +203,7 @@ export const printGrid = (grid) => {
 };
 
 /**
- *
+ * Checks to see if the bounds of a card (given x/y coordinates and width/height) fit the grid
  * @param {*} x  the current x location of a card
  * @param {*} y  the current y location of a card
  * @param {*} w  current width of a card
@@ -207,13 +229,16 @@ export const canFit = (x, y, w, h, grid) => {
  * @param {*} cardDimensions double object of card height and width keyed by card size and layout (see CARD_DIMENSIONS)
  * returns
  */
-export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) => {
+export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions, existingLayout) => {
   let currX = 0;
   let currY = 0;
+
+  // This grid is used to determine where a card can fit in the layout
   const grid = Array(dashboardColumns[layoutName])
     .fill(0)
-    .map(() => Array(gridHeight).fill(0));
+    .map(() => Array(getGridHeight(cards)).fill(0));
 
+  // This function updates the grid to reflect a card
   const placeCard = (x, y, w, h, num) => {
     for (let i = x; i < x + w; i += 1) {
       for (let j = y; j < y + h; j += 1) {
@@ -224,19 +249,48 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
 
   const layout = cards
     .map((card, index) => {
-      const { w, h } = cardDimensions[card.size][layoutName];
+      const { w, h } = cardDimensions[card.size][layoutName]; // These are width and height based on card.size.
+
+      // Handle pre-existing cards
+      const existingCardLayout = existingLayout?.find(({ i }) => i === card.id);
+      if (existingCardLayout) {
+        const { x, y } = existingCardLayout; // coordinates of a card that already exists
+        // Need to 'try' here because we will get an error if the user passes a layout that doesn't work
+        try {
+          // Need to place each existing card into the grid so that new cards know their bounds
+          placeCard(x, y, w, h, index + 1);
+        } catch (err) {
+          // In this case, since we didn't explicitly place it, react-grid-layout will handle it for us
+          // eslint-disable-next-line no-console
+          console.error('Error displaying user defined layout: ', err);
+        }
+        return {
+          ...existingCardLayout,
+          w,
+          h,
+        };
+      }
+
+      // Handle new cards
       while (!canFit(currX, currY, w, h, grid)) {
+        // checks each position of the grid to see if the card fits, updating the currX and currY along the way
         currX += 1;
         if (currX > dashboardColumns[layoutName]) {
           currX = 0;
           currY += 1;
-          if (currY > gridHeight) {
+          if (currY > getGridHeight(cards)) {
             return null;
           }
         }
       }
-      placeCard(currX, currY, w, h, index + 1);
-      // printGrid(grid);
+      // Need to 'try' here because we will get an error if the user passes a layout that doesn't work
+      try {
+        placeCard(currX, currY, w, h, index + 1);
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.error('Error displaying user defined layout: ', err);
+      }
+
       const cardLayout = {
         i: card.id,
         x: currX,
@@ -248,7 +302,7 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
       return cardLayout;
     })
     .filter((i) => i !== null);
-  // printGrid(grid);
+
   return layout;
 };
 
@@ -391,4 +445,17 @@ export const isNumberValidForMinMax = (value, min, max) => {
     }
   }
   return valid;
+};
+
+/**
+ * Given an array of keys and a callback, fire the callback only when the event.key matches one of the keys included in the array
+ *
+ * @param {string[]} keys An array of key names you want to match and fire the callback on
+ * @param {func} callback A callback to be fired when the specific keys are pressed
+ * @returns void
+ */
+export const handleSpecificKeyDown = (keys, callback) => (evt) => {
+  if (keys.includes(evt.key)) {
+    callback(evt);
+  }
 };

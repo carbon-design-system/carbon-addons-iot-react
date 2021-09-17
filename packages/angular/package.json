@@ -1,6 +1,6 @@
 {
   "name": "@ai-apps/angular",
-  "version": "2.145.0",
+  "version": "2.146.0-next.152",
   "description": "AI Applications PAL in Angular",
   "main": "index.js",
   "scripts": {
@@ -56,19 +56,19 @@
     "@angular/platform-browser": "11.1.1",
     "@angular/platform-browser-dynamic": "11.1.1",
     "@angular/router": "11.1.1",
-    "@babel/core": "7.4.3",
-    "@storybook/addon-actions": "6.2.3",
-    "@storybook/addon-knobs": "6.2.3",
-    "@storybook/addon-links": "6.2.3",
-    "@storybook/addon-storysource": "6.2.3",
-    "@storybook/addons": "6.2.3",
-    "@storybook/angular": "6.2.3",
-    "@storybook/theming": "6.2.3",
+    "@babel/core": "^7.13.16",
+    "@storybook/addon-actions": "^6.2.3",
+    "@storybook/addon-knobs": "^6.2.3",
+    "@storybook/addon-links": "^6.2.3",
+    "@storybook/addon-storysource": "^6.2.3",
+    "@storybook/addons": "^6.2.3",
+    "@storybook/angular": "^6.2.3",
+    "@storybook/theming": "^6.2.3",
     "@types/jasmine": "2.8.2",
     "@types/node": "11.13.0",
-    "ai-apps-monorepo-utils": "^2.145.0",
-    "babel-loader": "8.0.5",
-    "carbon-components-angular": "4.40.1",
+    "ai-apps-monorepo-utils": "^2.145.1-next.0",
+    "babel-loader": "^8.2.2",
+    "carbon-components-angular": "4.53.5",
     "codelyzer": "5.0.0",
     "core-js": "2.6.11",
     "element-closest-polyfill": "1.0.0",
@@ -87,7 +87,7 @@
     "lodash-es": "4.17.15",
     "ng-packagr": "11.1.4",
     "rxjs": "6.5.3",
-    "sass": "^1.26.10",
+    "sass": "^1.32.11",
     "ts-helpers": "1.1.2",
     "tsickle": "0.35.0",
     "tslib": "1.9.3",
@@ -98,9 +98,11 @@
     "zone.js": "0.11.3"
   },
   "dependencies": {
-    "@ai-apps/styles": "^2.145.0",
+    "@ai-apps/styles": "^2.146.0-next.109",
     "@carbon/icons": "10.20.0",
     "@carbon/telemetry": "0.0.0-alpha.6",
-    "flatpickr": "4.6.1"
+    "date-fns": "^2.22.1",
+    "flatpickr": "4.6.1",
+    "gulp-sass": "^5.0.0"
   }
 }

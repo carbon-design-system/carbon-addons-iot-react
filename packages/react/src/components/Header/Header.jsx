@@ -36,6 +36,8 @@ export const HeaderActionItemPropTypes = {
   /** content to render in the action panel */
   childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
   onClick: PropTypes.func,
+  /** a string id that can be used by the isActionItemVisible function to determine if an item should be shown */
+  id: PropTypes.string,
 };
 
 export const HeaderPanelPropTypes = {
@@ -50,6 +52,11 @@ const propTypes = {
   prefix: PropTypes.string,
   /** Name to follow the IBM prefix up top, left */
   appName: PropTypes.string.isRequired,
+
+  /** Short name to follow the IBM prefix at top, left on smaller breakpoints */
+  // eslint-disable-next-line react/require-default-props, uses appName is none provided
+  shortAppName: PropTypes.string,
+
   /** Optional prop that provides additional app information */
   subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   /** Add a class name to Header */
@@ -70,7 +77,11 @@ const propTypes = {
   i18n: PropTypes.shape({
     mainHeader: PropTypes.string,
     openMenu: PropTypes.string,
+    closeMenu: PropTypes.string,
   }),
+  testId: PropTypes.string,
+  /** Returns true, if the icon should be shown. (actionItem) => {} */
+  isActionItemVisible: PropTypes.func,
 };
 
 export const APP_SWITCHER = 'AppSwitcher';
@@ -88,7 +99,10 @@ const defaultProps = {
   i18n: {
     mainHeader: 'main header',
     openMenu: 'Open menu',
+    closeMenu: 'Close menu',
   },
+  testId: 'header',
+  isActionItemVisible: () => true,
 };
 
 /**
@@ -96,6 +110,7 @@ const defaultProps = {
  */
 const Header = ({
   appName,
+  shortAppName,
   subtitle,
   className,
   actionItems: actionItemsProp,
@@ -107,14 +122,17 @@ const Header = ({
   url,
   appSwitcherLabel,
   i18n,
+  testId,
+  isActionItemVisible,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-
+  const theShortAppName = shortAppName || appName;
   const actionItems = !headerPanel
     ? actionItemsProp
     : [
         ...actionItemsProp,
         {
+          id: 'app-switcher',
           label: appSwitcherLabel,
           hasHeaderPanel: true,
           btnContent: (
@@ -136,16 +154,28 @@ const Header = ({
       ];
 
   return (
-    <CarbonHeader className={className} aria-label={mergedI18n.mainHeader}>
+    <CarbonHeader data-testid={testId} className={className} aria-label={mergedI18n.mainHeader}>
       <SkipToContent href={skipto} />
       {hasSideNav && (
-        <HeaderMenuButton aria-label={mergedI18n.openMenu} onClick={onClickSideNavExpand} />
+        <HeaderMenuButton
+          data-testid={`${testId}-menu-button`}
+          aria-label={mergedI18n.openMenu}
+          onClick={onClickSideNavExpand}
+        />
       )}
-      <HeaderName href={url} prefix={prefix}>
-        {appName}
+      <HeaderName data-testid={`${testId}-name`} href={url} prefix={prefix}>
+        <span>{appName}</span>
+        {theShortAppName ? (
+          <span className={`${iotPrefix}--header__short-name`}>{theShortAppName}</span>
+        ) : null}
         {subtitle ? <div className={`${iotPrefix}--header__subtitle`}>{subtitle}</div> : null}
       </HeaderName>
-      <HeaderActionGroup actionItems={actionItems} />
+      <HeaderActionGroup
+        actionItems={actionItems}
+        i18n={mergedI18n}
+        testId={`${testId}-action-group`}
+        isActionItemVisible={isActionItemVisible}
+      />
     </CarbonHeader>
   );
 };

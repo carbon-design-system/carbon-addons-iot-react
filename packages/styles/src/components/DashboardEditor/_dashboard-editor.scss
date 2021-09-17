@@ -109,6 +109,7 @@
       // 3rem for the navbar, 100px for the PageTitleBar header
       min-height: calc(100vh - 7rem - 100px);
       background-color: $ui-background;
+      padding-top: 1rem;
     }
   }
 

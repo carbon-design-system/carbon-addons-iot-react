@@ -52,55 +52,54 @@ $shadow: 0.4rem;
 
     .#{$prefix}--tooltip__content {
       position: relative;
+      max-width: 480px;
     }
 
     // Box shadow cover with all its various positons
     &.#{$iot-prefix}--flyout-menu--body__open .#{$prefix}--tooltip__content::after {
       content: '';
       position: absolute;
-      top: -$shadow-plus-padding;
-      left: -1rem;
+      top: -$shadow;
+      left: 0;
     }
 
     &.#{$iot-prefix}--flyout-menu--body__bottom-end .#{$prefix}--tooltip__content::after {
       left: unset;
-      right: -1rem;
+      right: 0;
     }
 
     &.#{$iot-prefix}--flyout-menu--body__top-start .#{$prefix}--tooltip__content::after {
       top: unset;
-      bottom: -$shadow-plus-padding;
+      bottom: -$shadow;
+      left: 0;
     }
 
     &.#{$iot-prefix}--flyout-menu--body__top-end .#{$prefix}--tooltip__content::after {
-      bottom: -$shadow-plus-padding;
+      bottom: -$shadow;
       left: unset;
-      right: -1rem;
+      right: 0;
       top: unset;
     }
 
     &.#{$iot-prefix}--flyout-menu--body__left-start .#{$prefix}--tooltip__content::after {
       left: unset;
-      right: -$shadow-plus-padding;
-      top: -1rem;
+      right: -$shadow;
+      top: 0;
     }
 
     &.#{$iot-prefix}--flyout-menu--body__left-end .#{$prefix}--tooltip__content::after {
-      left: unset;
-      right: -$shadow-plus-padding;
-      bottom: -1rem;
-      top: unset;
+      display: none;
     }
 
     &.#{$iot-prefix}--flyout-menu--body__right-start .#{$prefix}--tooltip__content::after {
-      top: -1rem;
-      left: -$shadow-plus-padding;
+      top: 0;
+      left: -$shadow;
     }
 
     &.#{$iot-prefix}--flyout-menu--body__right-end .#{$prefix}--tooltip__content::after {
       top: unset;
-      bottom: -1rem;
-      left: -$shadow-plus-padding;
+      bottom: 0;
+      left: -$shadow;
     }
 
     &.#{$iot-prefix}--flyout-menu--body__bottom-start,
@@ -225,11 +224,12 @@ $shadow: 0.4rem;
   }
 
   &__bottom-container {
-    border-top: 1px solid $carbon--gray-40;
-
-    padding-top: $spacing-04;
-    margin-top: $spacing-04;
     min-width: 15.4rem;
+    display: flex;
+
+    > * {
+      flex-grow: 1;
+    }
 
     > button.#{$iot-prefix}--btn {
       padding-right: 60px;
@@ -240,25 +240,25 @@ $shadow: 0.4rem;
     min-height: 64px;
     width: 100%;
   }
-
-  [dir='rtl'] &__submit,
-  &__cancel {
-    margin-right: $spacing-04;
-  }
-
-  [dir='rtl'] &__cancel,
-  &__submit {
-    margin-right: 0;
-  }
 }
 
 .#{$iot-prefix}--flyout-menu--body.#{$prefix}--tooltip {
   min-width: unset;
   max-width: unset;
+  padding: 0;
+}
+
+.#{$iot-prefix}--flyout-menu--content {
+  padding: $spacing-05 $spacing-05 $spacing-09 $spacing-05;
 }
 
 .#{$iot-prefix}--flyout-menu--trigger-button {
   color: $icon-01;
+
+  &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger svg,
+  &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger:hover svg {
+    fill: $gray-70;
+  }
 
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light) & {
     background-color: $ui-01;
@@ -287,6 +287,6 @@ $shadow: 0.4rem;
   // What are we doing with these tool tips for buttons. We will want to be consistent across all button types.
   .#{$prefix}--assistive-text,
   &.#{$prefix}--tooltip--a11y::before {
-    visibility: hidden;
+    visibility: var(--tooltip-visibility);
   }
 }

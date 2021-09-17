@@ -2,7 +2,8 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, object, array } from '@storybook/addon-knobs';
 
-import { DataScientistIcon, EmptystateDefaultIcon } from '../../icons/components';
+import { DataScientistIcon } from '../../icons/components';
+import { EmptystateDefaultIcon } from '../../icons/static';
 import {
   NumberInput,
   TextInput,
@@ -26,14 +27,13 @@ import large_portrait from '../ImageGalleryModal/images/large_portrait.png'; // 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 import SimpleList from '../List/SimpleList/SimpleList';
 
+import DashboardEditorDefaultCardRenderer from './DashboardEditorDefaultCardRenderer';
 import DashboardEditor from './DashboardEditor';
 
 export const Experimental = () => <StoryNotice componentName="DashboardEditor" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
-const images = [
+export const images = [
   {
     id: 'assemblyline',
     src: assemblyline,
@@ -159,12 +159,13 @@ const mockDataItems = [
 ];
 
 export default {
-  title: 'Watson IoT Experimental/☢️ DashboardEditor',
+  title: '2 - Watson IoT Experimental/☢️ DashboardEditor',
   decorators: [withKnobs],
 
   parameters: {
     component: DashboardEditor,
   },
+  excludeStories: ['images'],
 };
 
 export const Default = () => (
@@ -177,7 +178,6 @@ export const Default = () => (
       headerEditTitleButton: 'Edit title updated',
     }}
     onAddImage={action('onAddImage')}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -206,12 +206,11 @@ export const Default = () => (
       <Link href="www.ibm.com">Favorites</Link>,
     ]}
     isLoading={boolean('isLoading', false)}
+    onCardSelect={action('onCardSelect')}
   />
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const WithInitialValue = () => (
   <DashboardEditor
@@ -272,7 +271,7 @@ export const WithInitialValue = () => (
         {
           id: 'Timeseries',
           title: 'Timeseries',
-          size: 'MEDIUMWIDE',
+          size: 'MEDIUM',
           type: 'TIMESERIES',
           content: {
             series: [
@@ -325,62 +324,64 @@ export const WithInitialValue = () => (
       ],
       layouts: {
         lg: [
-          { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-          { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+          { i: 'Table', x: 0, y: 0 },
+          { i: 'Custom', x: 8, y: 0 },
           {
-            h: 2,
             i: 'Standard',
-            w: 4,
             x: 12,
             y: 0,
           },
           {
-            h: 2,
             i: 'Timeseries',
-            w: 8,
             x: 1,
             y: 4,
+          },
+          {
+            i: 'Bar',
+            x: 1,
+            y: 8,
           },
         ],
         md: [
-          { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-          { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+          { i: 'Table', x: 0, y: 0 },
+          { i: 'Custom', x: 0, y: 4 },
           {
-            h: 2,
             i: 'Standard',
-            w: 4,
-            x: 12,
-            y: 0,
+            x: 0,
+            y: 6,
           },
           {
-            h: 2,
             i: 'Timeseries',
-            w: 8,
-            x: 1,
-            y: 4,
+            x: 0,
+            y: 8,
+          },
+          {
+            i: 'Bar',
+            x: 0,
+            y: 10,
           },
         ],
-        xl: [
-          { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-          { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+        sm: [
+          { i: 'Table', x: 0, y: 0 },
+          { i: 'Custom', x: 4, y: 0 },
           {
-            h: 2,
             i: 'Standard',
-            w: 4,
-            x: 12,
-            y: 0,
+            x: 4,
+            y: 2,
           },
           {
-            h: 2,
             i: 'Timeseries',
-            w: 8,
             x: 1,
             y: 4,
+          },
+          {
+            i: 'Bar',
+            x: 1,
+            y: 6,
           },
         ],
       },
     }}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -409,9 +410,11 @@ export const WithInitialValue = () => (
   />
 );
 
-WithInitialValue.story = {
-  name: 'with initialValue',
-};
+WithInitialValue.storyName = 'with initialValue';
+
+export const WithEditableTitle = () => <DashboardEditor title="Custom dashboard" isTitleEditable />;
+
+WithEditableTitle.namd = 'with editable title';
 
 export const SummaryDashboardWithInitialValue = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
@@ -473,7 +476,7 @@ export const SummaryDashboardWithInitialValue = () => (
           {
             id: 'Timeseries',
             title: 'Timeseries',
-            size: 'MEDIUMWIDE',
+            size: 'MEDIUM',
             type: 'TIMESERIES',
             content: {
               series: [
@@ -526,68 +529,71 @@ export const SummaryDashboardWithInitialValue = () => (
         ],
         layouts: {
           lg: [
-            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 8, y: 0 },
             {
-              h: 2,
               i: 'Standard',
-              w: 4,
-              x: 12,
-              y: 0,
+              x: 8,
+              y: 2,
             },
             {
-              h: 2,
               i: 'Timeseries',
-              w: 8,
-              x: 1,
+              x: 0,
               y: 4,
+            },
+            {
+              i: 'Bar',
+              x: 0,
+              y: 6,
             },
           ],
           md: [
-            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 0, y: 4 },
             {
-              h: 2,
               i: 'Standard',
-              w: 4,
-              x: 12,
-              y: 0,
+              x: 0,
+              y: 6,
             },
             {
-              h: 2,
               i: 'Timeseries',
-              w: 8,
-              x: 1,
-              y: 4,
+              x: 0,
+              y: 8,
+            },
+            {
+              i: 'Bar',
+              x: 0,
+              y: 10,
             },
           ],
-          xl: [
-            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
-            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+          sm: [
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 4, y: 0 },
             {
-              h: 2,
               i: 'Standard',
-              w: 4,
-              x: 12,
-              y: 0,
+              x: 4,
+              y: 2,
             },
             {
-              h: 2,
               i: 'Timeseries',
-              w: 8,
-              x: 1,
+              x: 0,
+              y: 4,
+            },
+            {
+              i: 'Bar',
+              x: 4,
               y: 4,
             },
           ],
         },
       }}
-      onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
       onExport={action('onExport')}
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
       onLayoutChange={action('onLayoutChange')}
+      onEditDataItems={action('onEditDataItems')}
       supportedCardTypes={[
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -611,9 +617,7 @@ export const SummaryDashboardWithInitialValue = () => (
   </div>
 );
 
-SummaryDashboardWithInitialValue.story = {
-  name: 'Summary Dashboard with initialValue',
-};
+SummaryDashboardWithInitialValue.storyName = 'Summary Dashboard with initialValue';
 
 export const WithCustomOnCardChange = () => (
   <DashboardEditor
@@ -651,7 +655,6 @@ export const WithCustomOnCardChange = () => (
       ],
       layouts: {},
     }}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -682,16 +685,13 @@ export const WithCustomOnCardChange = () => (
   />
 );
 
-WithCustomOnCardChange.story = {
-  name: 'with custom onCardChange',
-};
+WithCustomOnCardChange.storyName = 'with custom onCardChange';
 
 export const WithNotifications = () => (
   <DashboardEditor
     isSubmitDisabled={boolean('isSubmitDisabled', false)}
     isSubmitLoading={boolean('isSubmitLoading', false)}
     title={text('title', 'My dashboard')}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -737,9 +737,7 @@ export const WithNotifications = () => (
   />
 );
 
-WithNotifications.story = {
-  name: 'with notifications',
-};
+WithNotifications.storyName = 'with notifications';
 
 export const WithBreakpointSwitcher = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
@@ -748,7 +746,6 @@ export const WithBreakpointSwitcher = () => (
       isSubmitLoading={boolean('isSubmitLoading', false)}
       title={text('title', 'My dashboard')}
       onAddImage={action('onAddImage')}
-      onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
       onExport={action('onExport')}
       onDelete={action('onDelete')}
@@ -774,9 +771,7 @@ export const WithBreakpointSwitcher = () => (
   </div>
 );
 
-WithBreakpointSwitcher.story = {
-  name: 'with breakpoint switcher',
-};
+WithBreakpointSwitcher.storyName = 'with breakpoint switcher';
 
 export const CustomCardPreviewRenderer = () => (
   <DashboardEditor
@@ -815,7 +810,6 @@ export const CustomCardPreviewRenderer = () => (
       ],
       layouts: {},
     })}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -840,27 +834,23 @@ export const CustomCardPreviewRenderer = () => (
       <Link href="www.ibm.com">Favorites</Link>,
     ]}
     renderCardPreview={(
-      cardConfig,
-      cardProps,
+      cardConfig, // eslint-disable-line no-unused-vars
+      // the original card config, mostly useless, would remove if I could
+      cardProps, // the updated card props with the correct position etc
       // These props are not used, but they could be to create your own implementation
       onSelectCard, // eslint-disable-line no-unused-vars
       onDuplicateCard, // eslint-disable-line no-unused-vars
       onRemoveCard, // eslint-disable-line no-unused-vars
-      isSelected // eslint-disable-line no-unused-vars
+      isSelected, // eslint-disable-line no-unused-vars
+      onShowImageGallery, // eslint-disable-line no-unused-vars
+      availableDimensions
     ) => {
-      return cardConfig.type === 'CUSTOM' ? (
-        <Card
-          key={cardConfig.id}
-          id={cardConfig.id}
-          size={cardConfig.size}
-          title={cardConfig.title}
-          isEditable
-          {...cardProps}
-        >
+      return cardProps.type === 'CUSTOM' ? (
+        <Card key={cardProps.id} isEditable {...cardProps}>
           <div style={{ padding: '1rem' }}>
             This content is rendered by the renderCardPreview function. The &quot;value&quot;
             property on the card will be rendered here:
-            <h3>{cardConfig.value}</h3>
+            <h3>{cardProps.value}</h3>
           </div>
 
           {
@@ -868,15 +858,20 @@ export const CustomCardPreviewRenderer = () => (
             cardProps.children
           }
         </Card>
-      ) : undefined;
+      ) : (
+        // if not a custom card you can use the default card renderer, but you can translate and add your own changes to the card JSON
+        <DashboardEditorDefaultCardRenderer
+          card={{ ...cardProps, title: `my custom title: ${cardProps.title}` }}
+          key={cardProps.id}
+          availableDimensions={availableDimensions}
+        />
+      );
     }}
     isLoading={boolean('isLoading', false)}
   />
 );
 
-CustomCardPreviewRenderer.story = {
-  name: 'custom card preview renderer',
-};
+CustomCardPreviewRenderer.storyName = 'custom card preview renderer';
 
 export const CustomHeaderRenderer = () => (
   <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
@@ -887,9 +882,7 @@ export const CustomHeaderRenderer = () => (
   </div>
 );
 
-CustomHeaderRenderer.story = {
-  name: 'custom header renderer',
-};
+CustomHeaderRenderer.storyName = 'custom header renderer';
 
 export const isLoading = () => (
   <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
@@ -897,9 +890,7 @@ export const isLoading = () => (
   </div>
 );
 
-isLoading.story = {
-  name: 'isLoading',
-};
+isLoading.storyName = 'isLoading';
 
 export const I18N = () => (
   <DashboardEditor
@@ -908,7 +899,6 @@ export const I18N = () => (
     dataItems={mockDataItems}
     availableImages={images}
     onAddImage={action('onAddImage')}
-    onEditTitle={action('onEditTitle')}
     onImport={action('onImport')}
     onExport={action('onExport')}
     onDelete={action('onDelete')}
@@ -1178,9 +1168,7 @@ export const I18N = () => (
   />
 );
 
-I18N.story = {
-  name: 'i18n',
-};
+I18N.storyName = 'i18n';
 
 export const WithCustomCards = () => {
   // Render the elements to show in the content editor side panel
@@ -1349,7 +1337,6 @@ export const WithCustomCards = () => {
       }}
       icons={{ CUSTOM1: <DataScientistIcon />, CUSTOM2: <EmptystateDefaultIcon /> }}
       onAddImage={action('onAddImage')}
-      onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
       onExport={action('onExport')}
       onDelete={action('onDelete')}
@@ -1391,6 +1378,87 @@ export const WithCustomCards = () => {
   );
 };
 
-WithCustomCards.story = {
-  name: 'With custom cards',
+WithCustomCards.storyName = 'With custom cards';
+
+export const withGetDefaultCard = () => {
+  const renderDefaultCard = ({ cardContent }) => <h5>{cardContent || 'My custom 1 content'}</h5>;
+
+  return (
+    <DashboardEditor
+      title={text('title', 'My dashboard')}
+      getValidDataItems={() => mockDataItems}
+      dataItems={mockDataItems}
+      availableImages={images}
+      onAddImage={action('onAddImage')}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onImageDelete={action('onImageDelete')}
+      onLayoutChange={action('onLayoutChange')}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
+      availableDimensions={{
+        deviceid: ['73000', '73001', '73002'],
+        manufacturer: ['rentech', 'GHI Industries'],
+      }}
+      onCardChange={(cardConfig) => {
+        if (cardConfig.type === 'MYCUSTOMCARD') {
+          return {
+            ...cardConfig,
+            content: renderDefaultCard(cardConfig),
+          };
+        }
+        return cardConfig;
+      }}
+      getDefaultCard={(type) => {
+        switch (type) {
+          case 'MYCUSTOMCARD':
+            return {
+              id: 'custom1Id',
+              type: 'MYCUSTOMCARD',
+              title: 'My custom 1',
+              size: 'MEDIUM',
+              content: renderDefaultCard,
+              renderEditContent: (onChange, cardConfig) => [
+                {
+                  header: { title: 'Edit custom 1', tooltip: { tooltipText: 'tooltip' } },
+                  content: (
+                    <TextInput
+                      onChange={(e) => onChange({ ...cardConfig, cardContent: e.target.value })}
+                    />
+                  ),
+                },
+              ],
+            };
+          case 'MYCUSTOMCARD2':
+            return {
+              id: 'custom2Id',
+              type: 'MYCUSTOMCARD2',
+              title: 'My custom 2',
+              size: 'MEDIUMTHIN',
+              content: () => <h5>My custom 2 content</h5>,
+            };
+          default:
+            return {
+              id: 'defaultId',
+              title: 'defaultCard',
+              size: 'MEDIUM',
+              content: () => <h5>Default card</h5>,
+            };
+        }
+      }}
+      supportedCardTypes={array('supportedCardTypes', ['MYCUSTOMCARD', 'MYCUSTOMCARD2'])}
+      breakpointSwitcher={{ enabled: true }}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      isLoading={boolean('isLoading', false)}
+    />
+  );
 };
+
+withGetDefaultCard.storyName = 'With get default card';

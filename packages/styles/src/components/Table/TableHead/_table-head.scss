@@ -33,6 +33,19 @@
     }
   }
 
+  .#{$iot-prefix}--table-header-label__sort-order {
+    position: absolute;
+    bottom: $spacing-04;
+    right: $spacing-04;
+    font-size: 0.667rem;
+    font-weight: bold;
+
+    html[dir='rtl'] & {
+      left: $spacing-03;
+      right: unset;
+    }
+  }
+
   .column-header__btn {
     margin: 0 $spacing-05 $spacing-05 0;
     max-height: $spacing-07;
@@ -88,6 +101,11 @@
     min-width: 40px;
   }
 
+  .#{$iot-prefix}--table-header-expander-column {
+    width: auto;
+    padding: 0;
+  }
+
   .#{$iot-prefix}--tableheader-filter > .#{$prefix}--table-header-label {
     overflow: visible;
   }
@@ -106,6 +124,12 @@
   &--overflow {
     margin: auto 0;
     flex-shrink: 0;
+
+    .#{$prefix}--table-sort:focus &:hover {
+      margin-top: -2px;
+      margin-bottom: -2px;
+      background-color: $gray-40;
+    }
   }
 
   &--table-header {
@@ -126,6 +150,10 @@
     &--with-overflow {
       .#{$prefix}--table-header-label {
         padding-right: 0;
+      }
+
+      .#{$prefix}--overflow-menu-options:after {
+        width: 3rem;
       }
     }
   }

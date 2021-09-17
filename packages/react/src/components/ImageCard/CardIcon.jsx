@@ -13,12 +13,17 @@ const propTypes = {
   color: PropTypes.string.isRequired,
   width: PropTypes.number,
   height: PropTypes.number,
+  testId: PropTypes.string,
+};
+
+const defaultProps = {
+  testId: 'card-icon',
 };
 
 /** This component calls out to our renderIconByName callback function with the icon name OR fails over to our legacy card icons from our legacy icon bundle */
 /* We test the implementation and do not want to trigger this console in our test logs */
 /* istanbul ignore next */
-const CardIcon = ({ icon, renderIconByName, title, color, width, height, className }) => {
+const CardIcon = ({ icon, renderIconByName, title, color, width, height, className, testId }) => {
   if (__DEV__ && !renderIconByName && !icons[icon]) {
     warning(
       false,
@@ -38,6 +43,7 @@ const CardIcon = ({ icon, renderIconByName, title, color, width, height, classNa
         width,
         height,
         tabIndex: '0',
+        'data-testid': testId,
       })
     ) : (
       <Icon
@@ -47,10 +53,12 @@ const CardIcon = ({ icon, renderIconByName, title, color, width, height, classNa
         height={height}
         title={title}
         aria-label={title}
+        data-testid={testId}
       />
     )
   ) : null;
 };
 
 CardIcon.propTypes = propTypes;
+CardIcon.defaultProps = defaultProps;
 export default CardIcon;

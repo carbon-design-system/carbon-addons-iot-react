@@ -18,6 +18,7 @@ import {
 import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -29,6 +30,8 @@ const colorPropType = PropTypes.shape({
 const propTypes = {
   /** Array of colors to be shown */
   colors: PropTypes.arrayOf(colorPropType),
+  /** True disables the control */
+  disabled: PropTypes.bool,
   /** The label of the Dropdown, defaults to 'Select a color' */
   label: PropTypes.string,
   /** True if the dropdown should hide the color names that display next to the color box */
@@ -45,8 +48,14 @@ const propTypes = {
   translateWithId: PropTypes.func,
   /** The selected color, use to set initial color */
   selectedColor: colorPropType,
+  // TODO: remove deprecated testID in v3.
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id used if needed for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -64,17 +73,19 @@ const defaultProps = {
     { carbonColor: teal50, name: 'teal50' },
     { carbonColor: cyan90, name: 'cyan90' },
   ],
+  disabled: false,
   label: 'Select a color',
   hideLabels: false,
   light: false,
   selectedColor: undefined,
-  testID: undefined,
+  testId: 'color-dropdown',
   titleText: 'Color',
   translateWithId: undefined,
 };
 
 const ColorDropdown = ({
   colors,
+  disabled,
   id,
   label,
   hideLabels,
@@ -82,7 +93,9 @@ const ColorDropdown = ({
   onChange,
   selectedColor: selectedColorProp,
   titleText,
+  // TODO: remove deprecated testID in v3.
   testID,
+  testId,
   translateWithId,
 }) => {
   React.useEffect(() => {
@@ -129,7 +142,8 @@ const ColorDropdown = ({
       selectedItem={selectedColor}
       titleText={titleText}
       type="default"
-      test-id={testID}
+      data-testid={testID || testId}
+      disabled={disabled}
     />
   );
 };

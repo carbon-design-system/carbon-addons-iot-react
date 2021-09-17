@@ -298,22 +298,22 @@ semver bump: **minor**
 
 ```diff
 - function ExportedComponent({ message }) {
-+ function ExportedComponent({ testID, message }) {
++ function ExportedComponent({ testId, message }) {
   return (
     <>
 -     <span>{message}</span>
-+     <span data-testid={testID}>{message}</span>
++     <span data-testid={testId}>{message}</span>
     </>
   );
 }
 
 ExportedComponent.propTypes = {
   message: PropTypes.string,
-+ testID: PropTypes.string,
++ testId: PropTypes.string,
 };
 ExportedComponent.defaultProps = {
   message: '',
-+ testID: 'ExportedComponent',
++ testId: 'ExportedComponent',
 };
 ```
 
@@ -322,23 +322,23 @@ ExportedComponent.defaultProps = {
 semver bump: **major**
 
 ```diff
-function ExportedComponent({ testID, message }) {
+function ExportedComponent({ testId, message }) {
   return (
     <>
       <span>{message}</span>
-      <span data-testid={testID}>{message}</span>
+      <span data-testid={testId}>{message}</span>
     </>
   );
 }
 
 ExportedComponent.propTypes = {
   message: PropTypes.string,
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 ExportedComponent.defaultProps = {
   message: '',
-- testID: 'ExportedComponent',
-+ testID: 'ExportedComponentNewName',
+- testId: 'ExportedComponent',
++ testId: 'ExportedComponentNewName',
 };
 ```
 
@@ -347,12 +347,12 @@ ExportedComponent.defaultProps = {
 semver bump: **major**
 
 ```diff
-function ExportedComponent({ testID, message }) {
+function ExportedComponent({ testId, message }) {
   return (
 -  <>
-+  <div data-testid={testID}>
++  <div data-testid={testId}>
       <span>{message}</span>
--      <span data-testid={testID}>{message}</span>
+-      <span data-testid={testId}>{message}</span>
 +      <span>{message}</span>
 -  </>
 +  <div/>
@@ -361,11 +361,11 @@ function ExportedComponent({ testID, message }) {
 
 ExportedComponent.propTypes = {
   message: PropTypes.string,
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 ExportedComponent.defaultProps = {
   message: '',
-  testID: 'ExportedComponent',
+  testId: 'ExportedComponent',
 };
 ```
 

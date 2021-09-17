@@ -71,12 +71,21 @@ const commonOptions = {
   values: comboHealthData,
 };
 
-/* 
+/*
   FYI: the underlying Carbon Charts controls have been mocked.
   Check __mocks__/@carbon/charts-react/ for details
 */
 
 describe('ComboChartCard', () => {
+  it('is selectable by testID ot testId ', () => {
+    const { rerender } = render(
+      <ComboChartCard {...commonOptions} testID="COMBO_CHART_CARD_TEST" />
+    );
+    expect(screen.getByTestId('COMBO_CHART_CARD_TEST')).toBeDefined();
+    rerender(<ComboChartCard {...commonOptions} testID="combo-chart-card-test" />);
+    expect(screen.getByTestId('combo-chart-card-test')).toBeDefined();
+  });
+
   it('Renders basic card ', () => {
     render(<ComboChartCard {...commonOptions} />);
     expect(screen.queryByText(commonOptions.title)).toBeDefined();

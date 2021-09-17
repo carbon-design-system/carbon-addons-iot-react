@@ -147,6 +147,7 @@ const propTypes = {
     dismissText: PropTypes.string,
   }),
   ...omit(DashboardGridPropTypes, ['children', 'breakpoint']),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -237,6 +238,7 @@ const defaultProps = {
   timeGrain: null,
   isLoading: false,
   setIsLoading: null,
+  testId: 'dashboard',
 };
 
 /**
@@ -280,6 +282,7 @@ const Dashboard = ({
   renderIconByName,
   onFetchData,
   timeGrain,
+  testId,
 }) => {
   if (__DEV__) {
     warning(
@@ -367,7 +370,7 @@ const Dashboard = ({
   );
 
   return (
-    <div className={className}>
+    <div data-testid={testId} className={className}>
       <DashboardHeader
         title={title}
         description={description}
@@ -378,15 +381,21 @@ const Dashboard = ({
         lastUpdated={lastUpdated}
         actions={actions}
         onDashboardAction={onDashboardAction}
+        testId={`${testId}-header`}
       />
       <div style={{ display: 'flex' }}>
-        {sidebar && <div style={{ flex: 0 }}>{sidebar}</div>}
+        {sidebar && (
+          <div data-testid={`${testId}-sidebar`} style={{ flex: 0 }}>
+            {sidebar}
+          </div>
+        )}
         <DashboardGrid
           layouts={layouts}
           onLayoutChange={onLayoutChange}
           isEditable={isEditable}
           breakpoint={breakpoint}
           onBreakpointChange={cachedOnBreakpointChange}
+          testId={`${testId}-grid`}
         >
           {gridContents}
         </DashboardGrid>

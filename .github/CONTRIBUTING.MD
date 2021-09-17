@@ -134,6 +134,47 @@ Do not use `styled-components`. Any components using it should be refactored to
 the sass partial approach. This helps promote consistency with the Carbon Design
 System.
 
+## Documenting new components
+
+Components should have a file named `{Component}.mdx` in their root directory. This file should minimally contain a few sections detailing the props and how to use the component. It can also contain simple examples of various states of the component. These examples can also link to existing stories and be used interactively within the docs tab. See [addon-docs readme for more details](https://github.com/storybookjs/storybook/blob/next/addons/docs/README.md).
+
+An minimal doc file should include:
+
+```md
+# `ExampleComponent` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Props](#props)
+- [Feedback](#feedback)
+- External Links
+  - [Source Code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ExampleComponent)
+
+## Getting started
+
+A quick introduction to the component and an example import for how to use it.
+
+`import { ExampleComponent } from 'carbon-addons-iot-react';`
+
+\```jsx
+<ExampleComponent testId="an example test id" propOne={1}/>
+\```
+
+## Props
+
+A Prop table detailing the various props that can be passed to this component, their types, defaults, and description.
+
+| Name   | Type   | Default             | Description                  |
+| :----- | :----- | :------------------ | :--------------------------- |
+| testId | string | 'component-test-id' | The test id of the component |
+
+## Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ExampleComponent/ExampleComponent.mdx).
+```
+
 ## Adding new SVG images
 
 If SVG files need to be added that are not already distributed by Carbon, please

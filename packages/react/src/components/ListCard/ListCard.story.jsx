@@ -275,7 +275,7 @@ class ListCardExtraContentLong extends Component {
 }
 
 export default {
-  title: 'Watson IoT/ListCard',
+  title: '1 - Watson IoT/ListCard',
 
   parameters: {
     component: ListCard,
@@ -288,9 +288,7 @@ export const Basic = () => {
   return <ListCardSimple id="ListCard" title={text('Text', 'Simple List with Icon')} size={size} />;
 };
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
 export const WithExtraContent = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
@@ -304,9 +302,7 @@ export const WithExtraContent = () => {
   );
 };
 
-WithExtraContent.story = {
-  name: 'with extra content',
-};
+WithExtraContent.storyName = 'with extra content';
 
 export const WithExtraLongContent = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
@@ -320,9 +316,7 @@ export const WithExtraLongContent = () => {
   );
 };
 
-WithExtraLongContent.story = {
-  name: 'with extra long content',
-};
+WithExtraLongContent.storyName = 'with extra long content';
 
 export const Empty = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -340,6 +334,4 @@ export const Empty = () => {
   );
 };
 
-Empty.story = {
-  name: 'empty',
-};
+Empty.storyName = 'empty';

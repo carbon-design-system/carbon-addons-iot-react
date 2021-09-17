@@ -35,22 +35,36 @@ const mockItems = [
   { id: 'step5', label: 'Fifth Step' },
 ];
 
-test('simulate onClick on isClickable', () => {
-  render(<ProgressIndicator items={mockItems} isClickable />);
-  const beforeClick = screen.getAllByTitle('First Step')[0].children[0];
-  screen.getByTestId('iot--progress-step-button-main-second-step').click();
-  expect(screen.getAllByTitle('First Step')[0].children[0]).not.toContain(beforeClick);
-});
+describe('ProgressIndicator', () => {
+  it('should be selectable by testId', () => {
+    render(<ProgressIndicator items={mockItems} isClickable testId="progress_indicator" />);
+    expect(screen.getAllByTestId('progress_indicator')).toBeDefined();
+  });
 
-test('check last number of step', () => {
-  render(<ProgressIndicator items={mockItems} />);
-  // Check if last step is number 5
-  expect(screen.getAllByTitle('Fifth Step')[0].children[0].textContent).toEqual('5');
-});
+  it('simulate onClick on isClickable', () => {
+    render(<ProgressIndicator items={mockItems} isClickable />);
+    const beforeClick = screen.getAllByTitle('First Step')[0].children[0];
+    screen.getByTestId('iot--progress-step-button-main-second-step').click();
+    expect(screen.getAllByTitle('First Step')[0].children[0]).not.toContain(beforeClick);
+  });
 
-test('handleChange', () => {
-  const mockOnClickItem = jest.fn();
-  render(<ProgressIndicator items={mockItems} onClickItem={mockOnClickItem} isClickable />);
-  screen.getByTestId('iot--progress-step-button-main-second-step').click();
-  expect(mockOnClickItem).toHaveBeenCalledWith('step2');
+  it('check last number of step', () => {
+    render(<ProgressIndicator items={mockItems} />);
+    // Check if last step is number 5
+    expect(screen.getAllByTitle('Fifth Step')[0].children[0].textContent).toEqual('5');
+  });
+
+  it('handleChange', () => {
+    const mockOnClickItem = jest.fn();
+    render(<ProgressIndicator items={mockItems} onClickItem={mockOnClickItem} isClickable />);
+    screen.getByTestId('iot--progress-step-button-main-second-step').click();
+    expect(mockOnClickItem).toHaveBeenCalledWith('step2');
+  });
+
+  it('should make steps spaced equally within available flex container ', () => {
+    render(<ProgressIndicator items={mockItems} spaceEqually />);
+    screen.getAllByRole('listitem').forEach((eachli) => {
+      expect(eachli).toHaveStyle(`flex-grow: 1`);
+    });
+  });
 });

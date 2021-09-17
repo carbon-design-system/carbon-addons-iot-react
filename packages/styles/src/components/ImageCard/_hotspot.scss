@@ -35,22 +35,22 @@ $selected-border: solid $selected-border-width $interactive-04;
   }
   &.#{$iot-prefix}--hotspot-container--has-icon {
     .bx--tooltip__label {
-      border: solid 1px #aaa;
+      border: solid 1px $gray-40;
       cursor: pointer;
       padding: $spacing-02;
-      background: white;
+      background: $white-0;
       opacity: 0.9;
       border-radius: 4px;
-      box-shadow: 0 0 8px #777;
+      @include box-shadow();
     }
   }
 
   .bx--tooltip__label {
     display: flex;
     cursor: pointer;
-    box-shadow: 0 0 4px #999;
     border-radius: 13px;
     background: none;
+    @include box-shadow();
   }
 }
 

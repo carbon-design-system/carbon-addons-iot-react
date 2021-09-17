@@ -32,7 +32,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'Slider',
+  title: '3 - Carbon/Slider',
   decorators: [withKnobs],
 
   parameters: {

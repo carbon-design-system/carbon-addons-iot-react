@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TearSheet Default 1`] = `
+<div
+  className="storybook-container"
+>
+  <button
+    aria-describedby={null}
+    aria-pressed={null}
+    className="iot--btn bx--btn bx--btn--primary"
+    data-testid="Button"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "margin": "8rem 0 0 8rem",
+      }
+    }
+    tabIndex={0}
+    type="button"
+  >
+    Show TearSheet
+  </button>
+  <div
+    className="iot--tear-sheet-wrapper"
+    data-testid="iot--tear-sheet-wrapper"
+  >
+    <div
+      className="iot--tear-sheet-wrapper--container"
+      data-testid="container-0"
+      id="container-0"
+      onClick={[Function]}
+    >
+      <div
+        className="iot--tear-sheet"
+        data-testid="iot--tear-sheet-0"
+      >
+        <div
+          className="iot--tear-sheet--header"
+        >
+          <button
+            aria-describedby={null}
+            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-end"
+            data-testid="tearSheetCloseBtn0"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Close
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Close"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+          <h2>
+            First sheet
+          </h2>
+          <span
+            className="iot--tear-sheet--header--description"
+          >
+            Generic description
+          </span>
+        </div>
+        <div
+          className="iot--tear-sheet--content"
+        >
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "height": "100%",
+              }
+            }
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--tertiary"
+              data-testid="Button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "margin": "2rem 2rem 0",
+                  "maxWidth": "13rem",
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              Open 2nd sheet
+            </button>
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--tertiary"
+              data-testid="Button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "marginLeft": "2rem",
+                  "maxWidth": "13rem",
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              Set header additional content
+            </button>
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--tertiary"
+              data-testid="Button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "marginLeft": "2rem",
+                  "maxWidth": "13rem",
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              Clear header additional content
+            </button>
+            <div
+              style={
+                Object {
+                  "borderTop": "1px solid #e0e0e0",
+                  "display": "flex",
+                  "justifyContent": "flex-end",
+                  "marginTop": "auto",
+                }
+              }
+            >
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--secondary"
+                data-testid="Button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "height": "4rem",
+                    "width": "17rem",
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                Close
+              </button>
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "height": "4rem",
+                    "width": "17rem",
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="iot--tear-sheet-wrapper--container"
+      data-testid="container-1"
+      id="container-1"
+      onClick={[Function]}
+    >
+      <div
+        className="iot--tear-sheet"
+        data-testid="iot--tear-sheet-1"
+      >
+        <div
+          className="iot--tear-sheet--header"
+        >
+          <button
+            aria-describedby={null}
+            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-end"
+            data-testid="tearSheetCloseBtn1"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Close
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Close"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+          <h2>
+            Second sheet
+          </h2>
+          <span
+            className="iot--tear-sheet--header--description"
+          >
+            Generic description
+          </span>
+        </div>
+        <div
+          className="iot--tear-sheet--content"
+        >
+          <div
+            style={
+              Object {
+                "display": "inline-flex",
+                "flexDirection": "column",
+                "height": "100%",
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "padding": "1rem 2rem",
+                }
+              }
+            >
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--primary"
+                data-testid="Button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "marginBottom": "2rem",
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                Close all TearSheets
+              </button>
+              <h1>
+                Lorem ipsum dolor
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "padding": "1rem 0",
+                  }
+                }
+              >
+                sit amet
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus convallis mi, et finibus leo volutpat sit amet. Nam consectetur, felis eu fermentum commodo, augue massa hendrerit leo, vel suscipit erat ante vitae enim. Ut congue massa ante, viverra convallis est ultrices ac. Morbi sem massa, dictum id felis ut, ullamcorper aliquet nisl. Nulla feugiat lectus sodales neque pulvinar maximus. Sed consequat ipsum ac dignissim consequat. Nulla blandit, tellus non dignissim consectetur, augue enim placerat arcu, vitae volutpat massa urna sit amet tortor. Duis eleifend, nisi ac feugiat cursus, nibh libero facilisis orci, nec efficitur massa eros ut augue. Mauris lectus ligula, lacinia quis dolor sit amet, consectetur tristique turpis. Morbi venenatis commodo feugiat. Sed laoreet ultricies elementum. In et nisl porttitor, accumsan felis consequat, efficitur tortor. Aliquam egestas, diam id vestibulum convallis, justo nibh placerat libero, a vehicula nibh turpis ac mauris. Sed non justo turpis.
+              </p>
+              <h1>
+                Lorem ipsum dolor
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "padding": "1rem 0",
+                  }
+                }
+              >
+                sit amet
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus convallis mi, et finibus leo volutpat sit amet. Nam consectetur, felis eu fermentum commodo, augue massa hendrerit leo, vel suscipit erat ante vitae enim. Ut congue massa ante, viverra convallis est ultrices ac. Morbi sem massa, dictum id felis ut, ullamcorper aliquet nisl. Nulla feugiat lectus sodales neque pulvinar maximus. Sed consequat ipsum ac dignissim consequat. Nulla blandit, tellus non dignissim consectetur, augue enim placerat arcu, vitae volutpat massa urna sit amet tortor. Duis eleifend, nisi ac feugiat cursus, nibh libero facilisis orci, nec efficitur massa eros ut augue. Mauris lectus ligula, lacinia quis dolor sit amet, consectetur tristique turpis. Morbi venenatis commodo feugiat. Sed laoreet ultricies elementum. In et nisl porttitor, accumsan felis consequat, efficitur tortor. Aliquam egestas, diam id vestibulum convallis, justo nibh placerat libero, a vehicula nibh turpis ac mauris. Sed non justo turpis.
+              </p>
+              <h1>
+                Lorem ipsum dolor
+              </h1>
+              <h2
+                style={
+                  Object {
+                    "padding": "1rem 0",
+                  }
+                }
+              >
+                sit amet
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus convallis mi, et finibus leo volutpat sit amet. Nam consectetur, felis eu fermentum commodo, augue massa hendrerit leo, vel suscipit erat ante vitae enim. Ut congue massa ante, viverra convallis est ultrices ac. Morbi sem massa, dictum id felis ut, ullamcorper aliquet nisl. Nulla feugiat lectus sodales neque pulvinar maximus. Sed consequat ipsum ac dignissim consequat. Nulla blandit, tellus non dignissim consectetur, augue enim placerat arcu, vitae volutpat massa urna sit amet tortor. Duis eleifend, nisi ac feugiat cursus, nibh libero facilisis orci, nec efficitur massa eros ut augue. Mauris lectus ligula, lacinia quis dolor sit amet, consectetur tristique turpis. Morbi venenatis commodo feugiat. Sed laoreet ultricies elementum. In et nisl porttitor, accumsan felis consequat, efficitur tortor. Aliquam egestas, diam id vestibulum convallis, justo nibh placerat libero, a vehicula nibh turpis ac mauris. Sed non justo turpis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

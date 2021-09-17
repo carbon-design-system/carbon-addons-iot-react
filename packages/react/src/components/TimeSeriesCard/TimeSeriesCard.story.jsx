@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select, object, boolean } from '@storybook/addon-knobs';
+import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { spacing05 } from '@carbon/layout';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
@@ -8,6 +8,7 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { getIntervalChartData, chartData } from '../../utils/sample';
 
 import TimeSeriesCard from './TimeSeriesCard';
+import TimeSeriesCardREADME from './TimeSeriesCard.mdx';
 
 const commonProps = {
   id: 'facility-temperature',
@@ -15,36 +16,43 @@ const commonProps = {
 };
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ TimeSeriesCard' : 'Watson IoT/TimeSeriesCard',
+  title: __DEV__ ? '1 - Watson IoT/⚠️ TimeSeriesCard' : '1 - Watson IoT/TimeSeriesCard',
   parameters: {
     component: TimeSeriesCard,
+    docs: {
+      page: TimeSeriesCardREADME,
+    },
   },
 };
 
 export const SinglePoint = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: spacing05 + 4,
       }}
     >
       <TimeSeriesCard
         {...commonProps}
-        title={text('title', 'Temperature')}
+        title={text('title', 'Temperature {a-variable}')}
         isLoading={boolean('isLoading', false)}
         isExpanded={boolean('isExpanded', false)}
+        cardVariables={object('cardVariables', {
+          'a-variable': 'with variables',
+        })}
         content={object('content', {
           series: [
             {
-              label: 'Temperature',
+              label: 'Temperature {a-variable}',
               dataSourceId: 'temperature',
             },
           ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
+          xLabel: 'Time {a-variable}',
+          yLabel: 'Temperature {a-variable} (˚F)',
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
@@ -52,9 +60,10 @@ export const SinglePoint = () => {
           decimalPrecision: 1,
           showLegend: true,
         })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
         interval={interval}
-        breakpoint="lg"
+        breakpoint={breakpoint}
         size={size}
         showTimeInGMT={boolean('showTimeInGMT', false)}
         onCardAction={action('onCardAction')}
@@ -64,138 +73,58 @@ export const SinglePoint = () => {
   );
 };
 
-SinglePoint.story = {
-  name: 'single point',
-};
+SinglePoint.storyName = 'with single point and variables';
 
-export const WithVariables = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
+export const SingleLineIntervalDataChoices = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  const interval = select(
+    'interval',
+    ['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year'],
+    'minute'
+  );
   return (
-    <div
-      style={{
-        width: `${getCardMinSize('lg', size).x}px`,
-        margin: spacing05 + 4,
-      }}
-    >
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <TimeSeriesCard
         {...commonProps}
-        title={text('title', 'Temperature {not-working}')}
+        title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
         isExpanded={boolean('isExpanded', false)}
-        cardVariables={object('Variables', {
-          'not-working': 'working',
-        })}
-        content={object('content', {
+        content={{
           series: [
             {
-              label: 'Temperature {not-working}',
+              label: 'Temperature',
               dataSourceId: 'temperature',
             },
           ],
-          xLabel: 'Time {not-working}',
-          yLabel: 'Temperature {not-working} (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
+          xLabel: 'Time',
+          yLabel: 'Temperature',
+          includeZeroOnXaxis: false,
+          includeZeroOnYaxis: false,
+          unit: text('content.unit', '˚F'),
           timeDataSourceId: 'timestamp',
+          zoomBar: {
+            enabled: boolean('content.zoomBar.enabled', true),
+            axes: 'top',
+            view: select('content.zoomBar.view', ['slider_view', 'graph_view'], 'slider_view'),
+          },
           addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
+        }}
+        // key is a simple storybook hack to force the chart to re-render when zoomBar changes,
+        // otherwise carbon-charts won't automatically re-render it (even in their own stories).
+        key={boolean('content.zoomBar.enabled', true) ? 'with zoombar' : 'without zoom bar'}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
+        values={getIntervalChartData(
+          interval,
+          number('numberOfDataPoints', 15),
+          {
+            min: number('minimumDataPointRange', 470000),
+            max: number('maximumDataPointRange', 480000),
+          },
+          100
+        )}
         interval={interval}
-        showTimeInGMT={boolean('showTimeInGMT', false)}
-        breakpoint="lg"
-        size={size}
-        onCardAction={action('onCardAction')}
-        tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
-      />
-    </div>
-  );
-};
-
-WithVariables.story = {
-  name: 'with variables',
-
-  parameters: {
-    info: {
-      text: `
-    # Passing variables
-    To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
-    Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
-    Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
-    `,
-    },
-  },
-};
-
-export const MediumSingleLineIntervalHour = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div
-      style={{
-        width: `${getCardMinSize('lg', size).x}px`,
-        margin: spacing05 + 4,
-      }}
-    >
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-        })}
-        values={getIntervalChartData('hour', 10, { min: 10, max: 100 }, 100)}
-        interval="hour"
-        breakpoint="lg"
-        size={size}
-        onCardAction={action('onCardAction')}
-        tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
-      />
-    </div>
-  );
-};
-
-MediumSingleLineIntervalHour.story = {
-  name: 'medium / single line - interval hour',
-};
-
-export const MultiLineNoXYLabel = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
-        interval="day"
-        breakpoint="lg"
+        breakpoint={breakpoint}
         size={size}
         onCardAction={action('onCardAction')}
       />
@@ -203,57 +132,25 @@ export const MultiLineNoXYLabel = () => {
   );
 };
 
-MultiLineNoXYLabel.story = {
-  name: 'multi line - (No X/Y Label)',
-};
+SingleLineIntervalDataChoices.storyName =
+  'with single line, intervals, configurable data points, and zoomBar';
 
-export const MediumSingleLineIntervalMonthYearSameYear = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
-        interval="month"
-        breakpoint="lg"
-        size={size}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
+export const MultiLineIntervalDataChoices = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  const interval = select(
+    'interval',
+    ['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year'],
+    'minute'
   );
-};
-
-MediumSingleLineIntervalMonthYearSameYear.story = {
-  name: 'medium / single line - interval month (Year/ Same Year)',
-};
-
-export const MediumMultipleLineIntervalMonthYearSameYear = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <TimeSeriesCard
         {...commonProps}
-        title={text('title', 'Temperature')}
+        title={text('title', 'Temperature, Humidity, eCount, and Pressure')}
         isLoading={boolean('isLoading', false)}
         isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
+        content={{
           series: [
             {
               label: 'Temperature',
@@ -272,153 +169,38 @@ export const MediumMultipleLineIntervalMonthYearSameYear = () => {
               dataSourceId: 'pressure',
             },
           ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
+          xLabel: text('content.xLabel', 'Time'),
+          yLabel: text('content.yLabel', ''),
+          includeZeroOnXaxis: false,
+          includeZeroOnYaxis: false,
+          unit: text('content.unit', ''),
           timeDataSourceId: 'timestamp',
+          zoomBar: {
+            enabled: boolean('content.zoomBar.enabled', true),
+            axes: 'top',
+            view: select('content.zoomBar.view', ['slider_view', 'graph_view'], 'slider_view'),
+          },
           addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
-        interval="month"
-        breakpoint="lg"
-        size={size}
-      />
-    </div>
-  );
-};
-
-MediumMultipleLineIntervalMonthYearSameYear.story = {
-  name: 'medium / multiple line - interval month (Year/ Same Year)',
-};
-
-export const MediumSingleLineIntervalYearTwoDataPoint = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-            {
-              label: 'Pressure',
-              dataSourceId: 'pressure',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('year', 2, { min: 10, max: 100 }, 100)}
-        interval="year"
-        breakpoint="lg"
-        size={size}
-      />
-    </div>
-  );
-};
-
-MediumSingleLineIntervalYearTwoDataPoint.story = {
-  name: 'medium / single line - interval year (Two data point)',
-};
-
-export const MediumMultiLineNoXYLabel = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
-  return (
-    <div
-      style={{
-        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
-        margin: spacing05 + 4,
-      }}
-    >
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-            {
-              label: 'Pressure',
-              dataSourceId: 'pressure',
-            },
-            {
-              label: 'Humidity',
-              dataSourceId: 'humidity',
-            },
-            {
-              label: 'Count',
-              dataSourceId: 'ecount',
-            },
-          ],
-          xLabel: '',
-          yLabel: '',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData(interval, 12, { min: 10, max: 100 }, 100)}
+        }}
+        // key is a simple storybook hack to force the chart to re-render when zoomBar changes,
+        // otherwise carbon-charts won't automatically re-render it (even in their own stories).
+        key={
+          boolean('content.zoomBar.enabled', true)
+            ? `with zoombar-${size}`
+            : `without zoom bar-${size}`
+        }
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
+        values={getIntervalChartData(
+          interval,
+          number('numberOfDataPoints', 15),
+          {
+            min: number('minimumDataPointRange', 10),
+            max: number('maximumDataPointRange', 100),
+          },
+          10
+        )}
         interval={interval}
-        showTimeInGMT={boolean('showTimeInGMT', false)}
-        breakpoint="lg"
-        size={size}
-        tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
-      />
-    </div>
-  );
-};
-
-MediumMultiLineNoXYLabel.story = {
-  name: 'medium / multi line - (No X/Y Label)',
-};
-
-export const LargeSingleLineIntervalHourSameDay = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: false,
-          includeZeroOnYaxis: false,
-          timeDataSourceId: 'timestamp',
-          zoomBar: {
-            enabled: true,
-            axes: 'top',
-            // initialZoomDomain: []
-          },
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('minute', 15, { min: 4700000, max: 4800000 }, 100)}
-        interval="minute"
-        breakpoint="lg"
+        breakpoint={breakpoint}
         size={size}
         onCardAction={action('onCardAction')}
       />
@@ -426,218 +208,17 @@ export const LargeSingleLineIntervalHourSameDay = () => {
   );
 };
 
-LargeSingleLineIntervalHourSameDay.story = {
-  name: 'large / single line - interval hour (Same day)',
-};
-
-export const LargeSingleLineIntervalDayWeek = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('day', 7, { min: 10, max: 100 }, 100)}
-        interval="day"
-        breakpoint="lg"
-        size={size}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-LargeSingleLineIntervalDayWeek.story = {
-  name: 'large / single line - interval day (Week)',
-};
-
-export const LargeSingleLineIntervalDayMonth = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
-        interval="day"
-        breakpoint="lg"
-        size={size}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-LargeSingleLineIntervalDayMonth.story = {
-  name: 'large / single line - interval day (Month)',
-};
-
-export const LargeSingleLineIntervalMonthYearDiffYear = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          zoomBar: {
-            enabled: true,
-            axes: 'top',
-            // initialZoomDomain: []
-          },
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
-        interval="month"
-        breakpoint="lg"
-        size={size}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-LargeSingleLineIntervalMonthYearDiffYear.story = {
-  name: 'large / single line - interval month (Year/ Diff Year)',
-};
-
-export const LargeSingleLineYearIntervalOneDataPoint = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature',
-          includeZeroOnXaxis: false,
-          includeZeroOnYaxis: false,
-          timeDataSourceId: 'timestamp',
-          zoomBar: {
-            enabled: true,
-            axes: 'top',
-            // initialZoomDomain: []
-          },
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('year', 10, { min: 10, max: 100 }, 100)}
-        interval="year"
-        breakpoint="lg"
-        size={size}
-      />
-    </div>
-  );
-};
-
-LargeSingleLineYearIntervalOneDataPoint.story = {
-  name: 'large / single line - year interval (One data point)',
-};
-
-export const LargeMultiLineNoInterval = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-            {
-              label: 'Pressure',
-              dataSourceId: 'pressure',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          zoomBar: {
-            enabled: true,
-            axes: 'top',
-            // initialZoomDomain: []
-          },
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
-        breakpoint="lg"
-        size={size}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-LargeMultiLineNoInterval.story = {
-  name: 'large / multi line - no interval',
-};
+MultiLineIntervalDataChoices.storyName =
+  'with multiple lines, intervals, configurable data points, and zoomBar';
 
 export const CustomColors = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
     <div
       style={{
-        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
         margin: spacing05 + 4,
       }}
     >
@@ -666,9 +247,10 @@ export const CustomColors = () => {
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
         })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         values={getIntervalChartData(interval, 12, { min: 10, max: 100 }, 100)}
         interval={interval}
-        breakpoint="lg"
+        breakpoint={breakpoint}
         showTimeInGMT={boolean('showTimeInGMT', false)}
         size={size}
         onCardAction={action('onCardAction')}
@@ -677,99 +259,11 @@ export const CustomColors = () => {
   );
 };
 
-CustomColors.story = {
-  name: 'custom colors',
-};
-
-export const LargeUnits = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  return (
-    <div
-      style={{
-        width: `${getCardMinSize('lg', size).x}px`,
-        margin: spacing05 + 4,
-      }}
-    >
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-              color: text('color', COLORS.MAGENTA),
-            },
-          ],
-          unit: '˚F',
-          xLabel: 'Time',
-          yLabel: 'Temperature',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 100)}
-        interval="day"
-        breakpoint="lg"
-        size={size}
-        showTimeInGMT={boolean('showTimeInGMT', false)}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-LargeUnits.story = {
-  name: 'large / units',
-};
-
-export const WithZoomBar = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          zoomBar: {
-            enabled: true,
-            axes: 'top',
-            view: 'slider_view',
-          },
-          addSpaceOnEdges: 1,
-        })}
-        values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
-        interval="month"
-        breakpoint="lg"
-        size={size}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-WithZoomBar.story = {
-  name: 'with zoomBar',
-};
+CustomColors.storyName = 'with custom colors';
 
 export const DomainRange = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   const data = getIntervalChartData('day', 50, { min: 10, max: 100 }, 100);
   const timestamps = data.map((d) => d.timestamp);
   const minDate = new Date(Math.min(...timestamps));
@@ -777,7 +271,7 @@ export const DomainRange = () => {
   minDate.setDate(day + 10);
 
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -797,10 +291,11 @@ export const DomainRange = () => {
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
         })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         values={data}
         availableActions={{ range: true }}
         interval="hour"
-        breakpoint="lg"
+        breakpoint={breakpoint}
         size={size}
         onCardAction={action('onCardAction')}
         domainRange={[minDate.valueOf(), Math.max(...timestamps)]}
@@ -809,55 +304,15 @@ export const DomainRange = () => {
   );
 };
 
-DomainRange.story = {
-  name: 'domainRange',
-};
-
-export const Empty = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  return (
-    <div
-      style={{
-        width: `${getCardMinSize('lg', size).x}px`,
-        margin: spacing05 + 4,
-      }}
-    >
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-              color: COLORS.PURPLE,
-            },
-          ],
-          timeDataSourceId: 'timestamp',
-        })}
-        interval="hour"
-        showTimeInGMT={boolean('showTimeInGMT', false)}
-        breakpoint="lg"
-        values={[]}
-        size={size}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-Empty.story = {
-  name: 'empty',
-};
+DomainRange.storyName = 'with domainRange';
 
 export const HighlightAlertRanges = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: spacing05 + 4,
       }}
     >
@@ -888,7 +343,7 @@ export const HighlightAlertRanges = () => {
             {
               startTimestamp: 1572313622000,
               endTimestamp: 1572824320000,
-              color: '#FFFF00',
+              color: '#FFCC00',
               details: 'Less severe',
             },
           ],
@@ -899,9 +354,10 @@ export const HighlightAlertRanges = () => {
             view: 'graph_view',
           },
         })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         values={getIntervalChartData('day', 7, { min: 10, max: 100 }, 100, 1572824320000)}
         interval="hour"
-        breakpoint="lg"
+        breakpoint={breakpoint}
         showTimeInGMT={boolean('showTimeInGMT', false)}
         size={size}
         onCardAction={action('onCardAction')}
@@ -910,16 +366,15 @@ export const HighlightAlertRanges = () => {
   );
 };
 
-HighlightAlertRanges.story = {
-  name: 'highlight alert ranges',
-};
+HighlightAlertRanges.storyName = 'with highlight alert ranges';
 
 export const EmptyForARange = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: spacing05 + 4,
       }}
     >
@@ -941,9 +396,10 @@ export const EmptyForARange = () => {
           includeZeroOnYaxis: true,
           addSpaceOnEdges: 1,
         })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         range="day"
         interval="hour"
-        breakpoint="lg"
+        breakpoint={breakpoint}
         showTimeInGMT={boolean('showTimeInGMT', false)}
         values={chartData.events.slice(0, 20)}
         size={size}
@@ -953,64 +409,15 @@ export const EmptyForARange = () => {
   );
 };
 
-EmptyForARange.story = {
-  name: 'empty for a range',
-};
-
-export const LotsOfDots = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
-  return (
-    <div
-      style={{
-        width: `${getCardMinSize('lg', size).x}px`,
-        margin: spacing05 + 4,
-      }}
-    >
-      <TimeSeriesCard
-        {...commonProps}
-        title={text('title', 'Temperature')}
-        isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpanded', false)}
-        content={object('content', {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
-          timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
-          zoomBar: {
-            enabled: true,
-            axes: 'top',
-            view: 'graph_view',
-          },
-        })}
-        values={getIntervalChartData('day', 2000, { min: 10, max: 100 }, 100, 1572824320000)}
-        interval="hour"
-        breakpoint="lg"
-        showTimeInGMT={boolean('showTimeInGMT', false)}
-        size={size}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-LotsOfDots.story = {
-  name: 'lots of dots',
-};
+EmptyForARange.storyName = 'with empty for a range';
 
 export const IsEditable = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: spacing05 + 4,
       }}
     >
@@ -1045,8 +452,9 @@ export const IsEditable = () => {
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
         })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         interval={select('interval', ['hour', 'day', 'week', 'month', 'year'], 'hour')}
-        breakpoint="lg"
+        breakpoint={breakpoint}
         showTimeInGMT={boolean('showTimeInGMT', false)}
         size={size}
         onCardAction={action('onCardAction')}
@@ -1055,12 +463,11 @@ export const IsEditable = () => {
   );
 };
 
-IsEditable.story = {
-  name: 'isEditable',
-};
+IsEditable.storyName = 'with isEditable';
 
 export const IsExpanded = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   // needs static data so that the snapshot will always retain the same values
   const staticData = [
     {
@@ -1125,7 +532,7 @@ export const IsExpanded = () => {
     },
   ];
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -1162,25 +569,25 @@ export const IsExpanded = () => {
           },
           addSpaceOnEdges: 1,
         })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         values={staticData}
         interval="month"
-        breakpoint="lg"
+        breakpoint={breakpoint}
         size={size}
       />
     </div>
   );
 };
 
-IsExpanded.story = {
-  name: 'isExpanded',
-};
+IsExpanded.storyName = 'with isExpanded';
 
 export const DataFilter = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: spacing05 + 4,
       }}
     >
@@ -1218,6 +625,7 @@ export const DataFilter = () => {
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
         })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
           (acc, dataPoint) => {
             // make "two devices worth of data" so that we can filter
@@ -1233,7 +641,7 @@ export const DataFilter = () => {
         )}
         interval="day"
         showTimeInGMT={boolean('showTimeInGMT', false)}
-        breakpoint="lg"
+        breakpoint={breakpoint}
         size={size}
         onCardAction={action('onCardAction')}
       />
@@ -1241,16 +649,17 @@ export const DataFilter = () => {
   );
 };
 
-DataFilter.story = {
-  name: 'dataFilter',
-};
+DataFilter.storyName = 'with dataFilter';
 
-export const Locale = () => {
+export const Thresholds = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
+  const values = getIntervalChartData(interval, 20, { min: 10, max: 100 }, 100);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: spacing05 + 4,
       }}
     >
@@ -1259,6 +668,7 @@ export const Locale = () => {
         title={text('title', 'Pressure')}
         isLoading={boolean('isLoading', false)}
         isExpanded={boolean('isExpanded', false)}
+        isEditable
         content={object('content', {
           series: [
             {
@@ -1274,11 +684,15 @@ export const Locale = () => {
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
+          thresholds: [
+            { axis: 'y', value: values[0].pressure, fillColor: 'red', label: 'Alert 1' },
+            { axis: 'x', value: values[0].timestamp, fillColor: '#ffcc00', label: 'Alert 2' },
+          ],
         })}
-        locale={select('locale', ['fr', 'en'], 'fr')}
-        values={getIntervalChartData('day', 12, { min: 10, max: 100000 }, 100)}
-        interval="day"
-        breakpoint="lg"
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
+        values={values}
+        interval={interval}
+        breakpoint={breakpoint}
         showTimeInGMT={boolean('showTimeInGMT', false)}
         size={size}
         onCardAction={action('onCardAction')}
@@ -1290,6 +704,4 @@ export const Locale = () => {
   );
 };
 
-Locale.story = {
-  name: 'locale',
-};
+Thresholds.storyName = 'with thresholds';

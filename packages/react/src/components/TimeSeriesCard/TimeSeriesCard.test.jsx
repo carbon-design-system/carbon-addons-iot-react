@@ -36,6 +36,32 @@ const timeSeriesCardProps = {
 };
 
 describe('TimeSeriesCard', () => {
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(
+      <TimeSeriesCard
+        {...timeSeriesCardProps}
+        size={CARD_SIZES.MEDIUM}
+        isExpanded
+        testID="TIME_SERIES_CARD"
+      />
+    );
+
+    expect(screen.getByTestId('TIME_SERIES_CARD')).toBeDefined();
+    expect(screen.getByTestId('TimeSeries-table')).toBeDefined();
+
+    rerender(
+      <TimeSeriesCard
+        {...timeSeriesCardProps}
+        size={CARD_SIZES.MEDIUM}
+        isExpanded
+        testId="time_series_card"
+      />
+    );
+
+    expect(screen.getByTestId('time_series_card')).toBeDefined();
+    expect(screen.getByTestId('TimeSeries-table')).toBeDefined();
+  });
+
   it('does not show line chart when loading', () => {
     let wrapper = mount(
       <TimeSeriesCard {...timeSeriesCardProps} isLoading size={CARD_SIZES.MEDIUM} />
@@ -67,6 +93,11 @@ describe('TimeSeriesCard', () => {
   });
 
   it('type bar shows', () => {
+    const originalDev = global.__DEV__;
+    const originalError = console.error;
+    const error = jest.fn();
+    console.error = error;
+    global.__DEV__ = true;
     const wrapper = mount(
       <TimeSeriesCard
         {...timeSeriesCardProps}
@@ -78,6 +109,14 @@ describe('TimeSeriesCard', () => {
       />
     );
     expect(wrapper.find('#mock-bar-chart-stacked')).toHaveLength(1);
+    expect(error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
+      )
+    );
+
+    console.error = originalError;
+    global.__DEV__ = originalDev;
   });
 
   it('show line chart when only 1 color is set', () => {
@@ -195,7 +234,7 @@ describe('TimeSeriesCard', () => {
     const { container } = render(<TimeSeriesCard {...props} />);
 
     expect(screen.getByText('Temperature')).toBeInTheDocument();
-    expect(screen.getByText('Timestamp')).toBeInTheDocument();
+    expect(screen.queryAllByText('Timestamp')[0]).toBeInTheDocument();
     expect(container.querySelector('#mock-line-chart')).toBeInTheDocument();
     userEvent.click(screen.getByLabelText('Download table content'));
     expect(fileDownload).toHaveBeenCalledWith(

@@ -32,6 +32,7 @@ const IconSwitch = React.forwardRef((props, ref) => {
     size,
     text,
     light,
+    testId,
     ...other
   } = props;
 
@@ -70,6 +71,7 @@ const IconSwitch = React.forwardRef((props, ref) => {
       kind="secondary"
       hasIconOnly
       tooltipPosition="top"
+      data-testid={testId}
       {...other}
       {...commonProps}
     />
@@ -139,6 +141,8 @@ IconSwitch.propTypes = {
    *  Light version
    */
   light: PropTypes.bool,
+
+  testId: PropTypes.string,
 };
 
 IconSwitch.defaultProps = {
@@ -149,6 +153,7 @@ IconSwitch.defaultProps = {
   light: false,
   onClick: undefined,
   onKeyDown: undefined,
+  testId: 'icon-switch',
 };
 
 export default IconSwitch;

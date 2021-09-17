@@ -82,7 +82,7 @@ const props = {
 TextInput.displayName = 'TextInput';
 
 export default {
-  title: 'TextInput',
+  title: '3 - Carbon/TextInput',
   decorators: [withKnobs],
 
   parameters: {
@@ -97,16 +97,14 @@ export const Default = () => (
   />
 );
 
-Default.story = {
-  parameters: {
-    info: {
-      text: `
-          Text fields enable the user to interact with and input data. A single line
-          field is used when the input anticipated by the user is a single line of
-          text as opposed to a paragraph.
-          The default type is 'text' and its value can be either 'string' or 'number'.
-        `,
-    },
+Default.parameters = {
+  info: {
+    text: `
+        Text fields enable the user to interact with and input data. A single line
+        field is used when the input anticipated by the user is a single line of
+        text as opposed to a paragraph.
+        The default type is 'text' and its value can be either 'string' or 'number'.
+      `,
   },
 };
 
@@ -119,15 +117,13 @@ export const TogglePasswordVisibility = () => {
   );
 };
 
-TogglePasswordVisibility.story = {
-  name: 'Toggle password visibility',
+TogglePasswordVisibility.storyName = 'Toggle password visibility';
 
-  parameters: {
-    info: {
-      text: `
-        Text field with password visibility toggle.
-      `,
-    },
+TogglePasswordVisibility.parameters = {
+  info: {
+    text: `
+      Text field with password visibility toggle.
+    `,
   },
 };
 
@@ -147,15 +143,13 @@ export const FullyControlledTogglePasswordVisibility = () => {
   );
 };
 
-FullyControlledTogglePasswordVisibility.story = {
-  name: 'Fully controlled toggle password visibility',
+FullyControlledTogglePasswordVisibility.storyName = 'Fully controlled toggle password visibility';
 
-  parameters: {
-    info: {
-      text: `
-      Fully controlled text field with password visibility toggle.
-    `,
-    },
+FullyControlledTogglePasswordVisibility.parameters = {
+  info: {
+    text: `
+    Fully controlled text field with password visibility toggle.
+  `,
   },
 };
 
@@ -172,14 +166,12 @@ export const Skeleton = () => (
   </div>
 );
 
-Skeleton.story = {
-  name: 'skeleton',
+Skeleton.storyName = 'skeleton';
 
-  parameters: {
-    info: {
-      text: `
-          Placeholder skeleton state to use when content is loading.
-          `,
-    },
+Skeleton.parameters = {
+  info: {
+    text: `
+        Placeholder skeleton state to use when content is loading.
+        `,
   },
 };

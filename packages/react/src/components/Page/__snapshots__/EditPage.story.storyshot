@@ -1,587 +1,476 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage isLoading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 EditPage isLoading 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "calc(100vw - 6rem)",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
+      className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+      data-testid="edit-page"
     >
       <div
-        className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+        className="Hero__StyledHero-nej8yx-0 fTphDS"
+        data-testid="edit-page-hero"
       >
-        <div
-          className="Hero__StyledHero-nej8yx-0 fTphDS"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "30%",
-              }
+        <p
+          className="bx--skeleton__text"
+          data-testid="edit-page-hero-loading"
+          style={
+            Object {
+              "width": "30%",
             }
-          />
-        </div>
-        <div
-          className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "30%",
-              }
-            }
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage normal 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
-    >
-      <div
-        className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
-      >
-        <div
-          className="Hero__StyledHero-nej8yx-0 fTphDS"
-        >
-          <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
-          >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 bbRUKN"
-            >
-              Page Title
-            </div>
-            <button
-              aria-label="Close,"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>
-                  Close,
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div
-          className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
-        >
-          <div>
-            child
-          </div>
-        </div>
-        <div
-          className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
-        >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage with blurb 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
-    >
-      <div
-        className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
-      >
-        <div
-          className="Hero__StyledHero-nej8yx-0 fTphDS"
-        >
-          <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
-          >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 bbRUKN"
-            >
-              Page Title
-            </div>
-            <button
-              aria-label="Close,"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>
-                  Close,
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
-          </div>
-          <p
-            className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
-          >
-            My blurrrrbbbb!!
-          </p>
-        </div>
-        <div
-          className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
-        >
-          <div>
-            child
-          </div>
-        </div>
-        <div
-          className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
-        >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage with breadcrumb 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
-    >
-      <div
-        className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
-      >
-        <div
-          className="Hero__StyledHero-nej8yx-0 fTphDS"
-        >
-          <div
-            className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
-          >
-            <nav
-              aria-label="Breadcrumb"
-              className="Hero__StyledBreadcrumb-nej8yx-5 kRUzlm"
-            >
-              <ol
-                className="bx--breadcrumb"
-              >
-                <li
-                  className="bx--breadcrumb-item"
-                >
-                  <a
-                    className="bx--link"
-                    href="/"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                >
-                  <a
-                    className="bx--link"
-                    href="/"
-                  >
-                    Type
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                >
-                  <span
-                    className="bx--link"
-                  >
-                    Instance
-                  </span>
-                </li>
-              </ol>
-            </nav>
-            <div
-              className="Hero__StyledRightContent-nej8yx-4 cCeABe"
-            />
-          </div>
-          <div
-            className="Hero__StyledTitleSection-nej8yx-1 djCalR"
-          >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 bbRUKN"
-            >
-              Page Title
-            </div>
-            <button
-              aria-label="Close,"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>
-                  Close,
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div
-          className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
-        >
-          <div>
-            child
-          </div>
-        </div>
-        <div
-          className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
-        >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/🚫 EditPage ️⛔ Deprecation Notice  1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
-    >
-      <div
-        className="bx--toast-notification bx--toast-notification--warning"
-        kind="warning"
-        role="alert"
-        style={
-          Object {
-            "marginBottom": "0.5rem",
-            "minWidth": "30rem",
           }
-        }
+        />
+      </div>
+      <div
+        className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
       >
-        <svg
-          aria-hidden={true}
-          className="bx--toast-notification__icon"
-          fill="currentColor"
-          focusable="false"
-          height={20}
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 20 20"
-          width={20}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1	s1,0.4,1,1S10.6,16,10,16z"
-          />
-          <path
-            d="M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S10.6,16,10,16z"
-            data-icon-path="inner-path"
-            opacity="0"
-          />
-          <title>
-            warning icon
-          </title>
-        </svg>
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "30%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 EditPage normal 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": "calc(100vw - 6rem)",
+      }
+    }
+  >
+    <div
+      className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+      data-testid="edit-page"
+    >
+      <div
+        className="Hero__StyledHero-nej8yx-0 fTphDS"
+        data-testid="edit-page-hero"
+      >
         <div
-          className="bx--toast-notification__details"
+          className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
         >
-          <h3
-            className="bx--toast-notification__title"
-          >
-            Deprecation Notice
-          </h3>
           <div
-            className="bx--toast-notification__subtitle"
+            className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+            data-testid="edit-page-hero-title"
           >
-            EditPage has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
+            Page Title
           </div>
+          <button
+            aria-label="Close,"
+            className="bx--modal-close"
+            data-modal-close={true}
+            data-testid="edit-page-hero-close-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg
+              className="bx--modal-close__icon"
+              height="10"
+              viewBox="0 0 10 10"
+              width="10"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>
+                Close,
+              </title>
+              <path
+                d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                fillRule="nonzero"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
+        data-testid="edit-page-content"
+      >
+        <div>
+          child
+        </div>
+      </div>
+      <div
+        className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 EditPage with blurb 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": "calc(100vw - 6rem)",
+      }
+    }
+  >
+    <div
+      className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+      data-testid="edit-page"
+    >
+      <div
+        className="Hero__StyledHero-nej8yx-0 fTphDS"
+        data-testid="edit-page-hero"
+      >
+        <div
+          className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+        >
           <div
-            className="bx--toast-notification__caption"
+            className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+            data-testid="edit-page-hero-title"
           >
-            Refactor usages of EditPage to use PageWizard instead.
+            Page Title
           </div>
+          <button
+            aria-label="Close,"
+            className="bx--modal-close"
+            data-modal-close={true}
+            data-testid="edit-page-hero-close-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg
+              className="bx--modal-close__icon"
+              height="10"
+              viewBox="0 0 10 10"
+              width="10"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>
+                Close,
+              </title>
+              <path
+                d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                fillRule="nonzero"
+              />
+            </svg>
+          </button>
+        </div>
+        <p
+          className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
+          data-testid="edit-page-hero-description"
+        >
+          My blurrrrbbbb!!
+        </p>
+      </div>
+      <div
+        className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
+        data-testid="edit-page-content"
+      >
+        <div>
+          child
+        </div>
+      </div>
+      <div
+        className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 EditPage with breadcrumb 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": "calc(100vw - 6rem)",
+      }
+    }
+  >
+    <div
+      className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+      data-testid="edit-page"
+    >
+      <div
+        className="Hero__StyledHero-nej8yx-0 fTphDS"
+        data-testid="edit-page-hero"
+      >
+        <div
+          className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
+        >
+          <nav
+            aria-label="Breadcrumb"
+            className="Hero__StyledBreadcrumb-nej8yx-5 kRUzlm"
+          >
+            <ol
+              className="bx--breadcrumb"
+            >
+              <li
+                className="bx--breadcrumb-item"
+              >
+                <a
+                  className="bx--link"
+                  href="/"
+                >
+                  Home
+                </a>
+              </li>
+              <li
+                className="bx--breadcrumb-item"
+              >
+                <a
+                  className="bx--link"
+                  href="/"
+                >
+                  Type
+                </a>
+              </li>
+              <li
+                className="bx--breadcrumb-item"
+              >
+                <span
+                  className="bx--link"
+                >
+                  Instance
+                </span>
+              </li>
+            </ol>
+          </nav>
+          <div
+            className="Hero__StyledRightContent-nej8yx-4 cCeABe"
+          />
+        </div>
+        <div
+          className="Hero__StyledTitleSection-nej8yx-1 djCalR"
+        >
+          <div
+            className="Hero__StyledTitle-nej8yx-2 bbRUKN"
+            data-testid="edit-page-hero-title"
+          >
+            Page Title
+          </div>
+          <button
+            aria-label="Close,"
+            className="bx--modal-close"
+            data-modal-close={true}
+            data-testid="edit-page-hero-close-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg
+              className="bx--modal-close__icon"
+              height="10"
+              viewBox="0 0 10 10"
+              width="10"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>
+                Close,
+              </title>
+              <path
+                d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                fillRule="nonzero"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
+        data-testid="edit-page-content"
+      >
+        <div>
+          child
+        </div>
+      </div>
+      <div
+        className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 EditPage ️⛔ Deprecation Notice  1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": "calc(100vw - 6rem)",
+      }
+    }
+  >
+    <div
+      className="bx--toast-notification bx--toast-notification--warning"
+      kind="warning"
+      role="alert"
+      style={
+        Object {
+          "marginBottom": "0.5rem",
+          "minWidth": "30rem",
+        }
+      }
+    >
+      <svg
+        aria-hidden={true}
+        className="bx--toast-notification__icon"
+        fill="currentColor"
+        focusable="false"
+        height={20}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 20 20"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1	s1,0.4,1,1S10.6,16,10,16z"
+        />
+        <path
+          d="M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S10.6,16,10,16z"
+          data-icon-path="inner-path"
+          opacity="0"
+        />
+        <title>
+          warning icon
+        </title>
+      </svg>
+      <div
+        className="bx--toast-notification__details"
+      >
+        <h3
+          className="bx--toast-notification__title"
+        >
+          Deprecation Notice
+        </h3>
+        <div
+          className="bx--toast-notification__subtitle"
+        >
+          EditPage has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
+        </div>
+        <div
+          className="bx--toast-notification__caption"
+        >
+          Refactor usages of EditPage to use PageWizard instead.
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

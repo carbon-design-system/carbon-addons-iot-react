@@ -69,10 +69,14 @@ const propTypes = {
   totalColumns: PropTypes.number.isRequired,
 
   /** contents of the row each object value is a renderable node keyed by column id */
-  values: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool])).isRequired,
+  values: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object, PropTypes.array])
+  ).isRequired,
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
+  /** is the row currently in an indeterminate state, i.e. some but not all children are checked */
+  isIndeterminate: PropTypes.bool,
   /** is the row currently expanded */
   isExpanded: PropTypes.bool,
   /** optional row details */
@@ -110,10 +114,13 @@ const propTypes = {
    * direction of document
    */
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
+  /** shows an additional column that can expand/shrink as the table is resized  */
+  showExpanderColumn: PropTypes.bool,
 };
 
 const defaultProps = {
   isSelected: false,
+  isIndeterminate: false,
   isExpanded: false,
   selectRowAria: 'Select row',
   overflowMenuAria: 'More actions',
@@ -381,6 +388,7 @@ const TableBodyRow = ({
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
   isSelected,
+  isIndeterminate,
   selectRowAria,
   overflowMenuAria,
   clickToExpandAria,
@@ -400,6 +408,7 @@ const TableBodyRow = ({
   rowEditMode,
   singleRowEditMode,
   singleRowEditButtons,
+  showExpanderColumn,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -427,6 +436,7 @@ const TableBodyRow = ({
             id={`select-row-${tableId}-${id}`}
             labelText={selectRowAria}
             hideLabel
+            indeterminate={isIndeterminate}
             checked={isSelected}
             disabled={isSelectable === false}
           />
@@ -479,6 +489,10 @@ const TableBodyRow = ({
                   truncateCellText={truncateCellText}
                   locale={locale}
                   renderDataFunction={col.renderDataFunction}
+                  isSortable={col.isSortable}
+                  sortFunction={col.sortFunction}
+                  isFilterable={col.filter}
+                  filterFunction={col.filter?.filterFunction}
                   columnId={col.columnId}
                   rowId={id}
                   row={values}
@@ -490,6 +504,8 @@ const TableBodyRow = ({
           </TableCell>
         ) : null;
       })}
+      {showExpanderColumn ? <TableCell key={`${tableId}-${id}-row-expander-cell`} /> : null}
+
       {hasRowActions && rowActions ? (
         <RowActionsCell
           id={id}

@@ -30,6 +30,18 @@ const commonProps = {
 };
 
 describe('ListBuilder', () => {
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(<ListBuilder {...commonProps} testID="LIST_BUILDER" />);
+
+    expect(screen.getByTestId('LIST_BUILDER')).toBeDefined();
+    expect(screen.getByTestId('LIST_BUILDER__all')).toBeDefined();
+    expect(screen.getByTestId('LIST_BUILDER__selected')).toBeDefined();
+    rerender(<ListBuilder {...commonProps} testID="list_builder" />);
+
+    expect(screen.getByTestId('list_builder')).toBeDefined();
+    expect(screen.getByTestId('list_builder__all')).toBeDefined();
+    expect(screen.getByTestId('list_builder__selected')).toBeDefined();
+  });
   it('should call add when clicking the add arrow on the full list', () => {
     render(<ListBuilder {...commonProps} />);
 

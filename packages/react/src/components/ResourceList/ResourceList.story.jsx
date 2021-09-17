@@ -51,7 +51,7 @@ class ResourceListSimple extends Component {
 }
 
 export default {
-  title: 'Watson IoT/ResourceList',
+  title: '1 - Watson IoT/ResourceList',
 
   parameters: {
     component: ResourceList,
@@ -60,9 +60,7 @@ export default {
 
 export const Default = () => <ResourceListSimple />;
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const WithExtraContent = () => (
   <ResourceListSimple
@@ -75,9 +73,7 @@ export const WithExtraContent = () => (
   />
 );
 
-WithExtraContent.story = {
-  name: 'with extra content',
-};
+WithExtraContent.storyName = 'with extra content';
 
 export const WithAction = () => (
   <ResourceList
@@ -91,6 +87,4 @@ export const WithAction = () => (
   />
 );
 
-WithAction.story = {
-  name: 'with action',
-};
+WithAction.storyName = 'with action';

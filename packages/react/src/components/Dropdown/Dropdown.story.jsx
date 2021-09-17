@@ -84,7 +84,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'Watson IoT/Dropdown',
+  title: '1 - Watson IoT/Dropdown',
   decorators: [withKnobs],
   parameters: {
     component: Dropdown,
@@ -147,9 +147,7 @@ export const WithIcons = () => {
   );
 };
 
-WithIcons.story = {
-  name: 'with icons and labels',
-};
+WithIcons.storyName = 'with icons and labels';
 
 export const Skeleton = () => (
   <div style={{ width: 300 }}>

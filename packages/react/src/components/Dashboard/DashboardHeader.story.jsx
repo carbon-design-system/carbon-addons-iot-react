@@ -11,13 +11,11 @@ import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 import DashboardHeader from './DashboardHeader';
 
 export default {
-  title: 'Watson IoT/🚫 Dashboard Header',
+  title: '1 - Watson IoT/🚫 Dashboard Header',
 };
 
 export const Deprecated = () => <StoryNotice componentName="DashboardHeader" />;
-Deprecated.story = {
-  name: deprecatedStoryTitle,
-};
+Deprecated.storyName = deprecatedStoryTitle;
 
 export const Basic = () => {
   return (
@@ -31,9 +29,7 @@ export const Basic = () => {
   );
 };
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
 export const WithFilter = () => {
   return (
@@ -62,9 +58,7 @@ export const WithFilter = () => {
   );
 };
 
-WithFilter.story = {
-  name: 'with filter',
-};
+WithFilter.storyName = 'with filter';
 
 export const WithCustomActions = () => {
   return (
@@ -83,9 +77,7 @@ export const WithCustomActions = () => {
   );
 };
 
-WithCustomActions.story = {
-  name: 'with custom actions',
-};
+WithCustomActions.storyName = 'with custom actions';
 
 export const WithFilterAndCustomActions = () => {
   return (
@@ -121,9 +113,7 @@ export const WithFilterAndCustomActions = () => {
   );
 };
 
-WithFilterAndCustomActions.story = {
-  name: 'with filter and custom actions',
-};
+WithFilterAndCustomActions.storyName = 'with filter and custom actions';
 
 export const WithCustomActionsComponent = () => {
   return (
@@ -143,6 +133,4 @@ export const WithCustomActionsComponent = () => {
   );
 };
 
-WithCustomActionsComponent.story = {
-  name: 'with custom actions component',
-};
+WithCustomActionsComponent.storyName = 'with custom actions component';

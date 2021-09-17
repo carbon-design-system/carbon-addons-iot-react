@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
 
@@ -9,11 +9,10 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 
 import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
+import HotspotEditorModalREADME from './HotspotEditorModalREADME.mdx';
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 const selectableIcons = [
   {
@@ -52,16 +51,19 @@ const cardConfig = {
 
 const dataItems = [
   {
+    dataItemId: 'temp_last',
     dataSourceId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
   },
   {
+    dataItemId: 'temperature',
     dataSourceId: 'temperature',
     label: 'Temperature',
     unit: '°',
   },
   {
+    dataItemId: 'pressure',
     dataSourceId: 'pressure',
     label: 'Pressure',
     unit: 'psi',
@@ -89,16 +91,27 @@ const getDemoHotspots = (reqObj) => {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal',
+  title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal',
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorModal,
+    docs: {
+      inlineStories: false,
+      page: HotspotEditorModalREADME,
+    },
   },
 };
 
 export const Empty = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <HotspotEditorModal
+      key={myDisplayOption}
       backgroundColors={selectableColors}
       borderColors={selectableColors}
       cardConfig={cardConfig}
@@ -111,20 +124,21 @@ export const Empty = () => {
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
+      displayOption={myDisplayOption}
     />
   );
 };
-Empty.story = {
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
-};
 
 export const EmptyWithGetValidDataItemsCallback = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <HotspotEditorModal
+      key={myDisplayOption}
       backgroundColors={selectableColors}
       borderColors={selectableColors}
       cardConfig={cardConfig}
@@ -141,24 +155,63 @@ export const EmptyWithGetValidDataItemsCallback = () => {
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
+      displayOption={myDisplayOption}
     />
   );
 };
-EmptyWithGetValidDataItemsCallback.story = {
-  name: 'Empty with getValidDataItems callback',
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
-};
+EmptyWithGetValidDataItemsCallback.storyName = 'Empty with getValidDataItems callback';
 
-export const WidthExistingHotspots = () => {
+export const WithExistingHotspots = () => {
   const myCardConfig = {
     ...cardConfig,
     values: {
       ...cardConfig.values,
       hotspots: [
+        {
+          x: 45,
+          y: 25,
+          color: green50,
+          content: <span style={{ padding: '1rem' }}>content is an element</span>,
+        },
+        {
+          x: 65,
+          y: 75,
+          type: 'text',
+          color: green50,
+          content: <span>content is an element</span>,
+        },
+        {
+          x: 0,
+          y: 0,
+          content: <span>0:0</span>,
+          color: 'green',
+          width: 20,
+          height: 20,
+        },
+        {
+          x: 0,
+          y: 99.9,
+          content: <span>0:99</span>,
+          color: 'green',
+          width: 20,
+          height: 20,
+        },
+        {
+          x: 99.9,
+          y: 99.9,
+          content: <span>99:99</span>,
+          color: 'green',
+          width: 20,
+          height: 20,
+        },
+        {
+          x: 99.9,
+          y: 0,
+          content: <span>99:0</span>,
+          color: 'green',
+          width: 20,
+          height: 20,
+        },
         {
           x: 75,
           y: 10,
@@ -204,8 +257,15 @@ export const WidthExistingHotspots = () => {
     },
   };
 
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <HotspotEditorModal
+      key={myDisplayOption}
       availableDimensions={{
         manufacturer: ['Rentech', 'GHI Industries'],
         deviceid: ['73000', '73001', '73002'],
@@ -222,19 +282,12 @@ export const WidthExistingHotspots = () => {
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
+      displayOption={myDisplayOption}
     />
   );
 };
-WidthExistingHotspots.story = {
-  parameters: {
-    text: '',
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
-};
 
-export const WidthExistingDynamicHotspots = () => {
+export const WithExistingDynamicHotspots = () => {
   const myCardConfig = {
     ...cardConfig,
     values: {
@@ -252,8 +305,15 @@ export const WidthExistingDynamicHotspots = () => {
     },
   };
 
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <HotspotEditorModal
+      key={myDisplayOption}
       backgroundColors={selectableColors}
       borderColors={selectableColors}
       cardConfig={myCardConfig}
@@ -268,13 +328,7 @@ export const WidthExistingDynamicHotspots = () => {
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
       showTooManyHotspotsInfo={boolean('showTooManyHotspotsInfo', true)}
+      displayOption={myDisplayOption}
     />
   );
-};
-WidthExistingDynamicHotspots.story = {
-  parameters: {
-    info: {
-      propTables: [HotspotEditorModal],
-    },
-  },
 };

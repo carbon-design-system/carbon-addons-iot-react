@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import { SimpleBarChart, StackedBarChart, GroupedBarChart } from '@carbon/charts-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
@@ -22,6 +22,8 @@ import {
 } from '../../utils/cardUtilityFunctions';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+import dayjs from '../../utils/dayjs';
+import { formatGraphTick } from '../TimeSeriesCard/timeSeriesUtils';
 
 import {
   generateSampleValues,
@@ -32,6 +34,7 @@ import {
   handleTooltip,
   generateTableColumns,
   formatTableData,
+  getMaxTicksPerSize,
 } from './barChartUtils';
 
 const { iotPrefix } = settings;
@@ -83,6 +86,9 @@ const BarChartCard = ({
   timeRange,
   showTimeInGMT,
   tooltipDateFormatPattern,
+  // TODO: remove deprecated testID in v3.
+  testID,
+  testId,
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
@@ -244,6 +250,34 @@ const BarChartCard = ({
     [categoryDataSourceId, chartData, timeDataSourceId, type, values]
   );
 
+  const previousTick = useRef();
+  dayjs.locale(locale);
+
+  const maxTicksPerSize = useMemo(() => getMaxTicksPerSize(sizeProp), [sizeProp]);
+
+  const formatTick = useCallback(
+    /** *
+     * timestamp of current value
+     * index of current value
+     * ticks: array of current ticks
+     */
+    (timestamp, index, ticks) => {
+      const previousTimestamp = previousTick.current;
+      // store current in the previous tick
+      previousTick.current = timestamp;
+      return formatGraphTick(
+        timestamp,
+        index,
+        ticks,
+        interval,
+        locale,
+        previousTimestamp,
+        showTimeInGMT
+      );
+    },
+    [interval, locale, showTimeInGMT]
+  );
+
   const options = useMemo(
     () => ({
       animations: false,
@@ -267,7 +301,12 @@ const BarChartCard = ({
                     chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
                 },
               }
-            : {}),
+            : {
+                ticks: {
+                  number: maxTicksPerSize,
+                  formatter: formatTick,
+                },
+              }),
         },
         left: {
           title: `${yLabel || ''} ${
@@ -301,7 +340,7 @@ const BarChartCard = ({
         valueFormatter: (tooltipValue) =>
           chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
         customHTML: (...args) =>
-          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
+          handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern, locale),
         groupLabel: mergedI18n.tooltipGroupLabel,
         totalLabel: mergedI18n.tooltipTotalLabel,
       },
@@ -320,32 +359,37 @@ const BarChartCard = ({
             },
           }
         : {}),
+      toolbar: {
+        enabled: false,
+      },
     }),
     [
+      xLabel,
+      layout,
+      unit,
+      scaleType,
+      type,
+      timeDataSourceId,
       axes.bottomAxesMapsTo,
       axes.leftAxesMapsTo,
-      chartData.length,
-      colors,
-      decimalPrecision,
       domainRange,
+      decimalPrecision,
+      maxTicksPerSize,
+      formatTick,
+      yLabel,
+      legendPosition,
+      chartData.length,
+      isEditable,
+      truncation,
+      colors,
       mergedI18n.tooltipGroupLabel,
       mergedI18n.tooltipTotalLabel,
-      isEditable,
-      isExpanded,
-      layout,
-      locale,
-      scaleType,
-      showTimeInGMT,
-      size,
-      timeDataSourceId,
-      tooltipDateFormatPattern,
-      truncation,
-      type,
-      unit,
-      xLabel,
-      yLabel,
       zoomBar,
-      legendPosition,
+      size,
+      isExpanded,
+      locale,
+      showTimeInGMT,
+      tooltipDateFormatPattern,
     ]
   );
 
@@ -363,6 +407,9 @@ const BarChartCard = ({
       isResizable={isResizable}
       resizeHandles={resizeHandles}
       timeRange={timeRange}
+      locale={locale}
+      // TODO: remove deprecated testID in v3.
+      testId={testID || testId}
       {...others}
     >
       {!isAllValuesEmpty ? (

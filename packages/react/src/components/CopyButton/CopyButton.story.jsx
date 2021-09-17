@@ -19,7 +19,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'CopyButton',
+  title: '3 - Carbon/CopyButton',
   decorators: [withKnobs],
 
   parameters: {

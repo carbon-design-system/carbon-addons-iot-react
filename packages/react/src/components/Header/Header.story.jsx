@@ -4,6 +4,7 @@ import { text } from '@storybook/addon-knobs';
 import NotificationOn from '@carbon/icons-react/lib/notification/16';
 import HeaderHelp from '@carbon/icons-react/lib/help/16';
 import Avatar from '@carbon/icons-react/lib/user--avatar/16';
+import { Bullhorn16, Checkbox16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';
@@ -142,18 +143,20 @@ const headerPanel = {
   className: 'header-panel',
 
   content: React.forwardRef((props, ref) => (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-    <a href="#" ref={ref} {...props}>
+    <button type="button" ref={ref} {...props}>
       Header panel content
-    </a>
+    </button>
   )),
 };
 
 export default {
-  title: 'Watson IoT/Header',
+  title: '1 - Watson IoT/Header',
 
   parameters: {
     component: Header,
+    docs: {
+      inlineStories: false,
+    },
   },
 };
 
@@ -169,9 +172,7 @@ export const HeaderActionButtonsWithDropdowns = () => (
   </div>
 );
 
-HeaderActionButtonsWithDropdowns.story = {
-  name: 'Header action buttons with dropdowns',
-};
+HeaderActionButtonsWithDropdowns.storyName = 'Header action buttons with dropdowns';
 
 export const HeaderSubmenu = () => (
   <div style={{ width: '100%', height: '100vh' }}>
@@ -179,9 +180,7 @@ export const HeaderSubmenu = () => (
   </div>
 );
 
-HeaderSubmenu.story = {
-  name: 'header submenu',
-};
+HeaderSubmenu.storyName = 'header submenu';
 
 export const HeaderNoSubmenu = () => (
   <Header
@@ -197,9 +196,7 @@ export const HeaderNoSubmenu = () => (
   />
 );
 
-HeaderNoSubmenu.story = {
-  name: 'Header no submenu',
-};
+HeaderNoSubmenu.storyName = 'Header no submenu';
 
 export const HeaderSubtitle = () => (
   <div style={{ width: '100%', height: '100vh' }}>
@@ -207,9 +204,65 @@ export const HeaderSubtitle = () => (
   </div>
 );
 
-HeaderSubtitle.story = {
-  name: 'header subtitle',
-};
+HeaderSubtitle.storyName = 'header subtitle';
+
+export const SmallBreakpoint = () => (
+  <div style={{ width: '100%', height: '100vh' }}>
+    <style>{`.isReallyHidden {
+      display: none !important;
+    }`}</style>
+    <Header
+      {...HeaderProps}
+      actionItems={[
+        {
+          label: 'A Hidden Icon',
+          onClick: action('click fired'),
+          btnContent: <Bullhorn16 fill="white" description="A Hidden Icon" />,
+        },
+        {
+          label: 'HiddenByClass',
+          onClick: action('click fired'),
+          btnContent: <Bullhorn16 fill="white" description="A Hidden Icon" />,
+          className: 'isReallyHidden',
+        },
+        {
+          label: 'Announcements',
+          onClick: action('click fired'),
+          btnContent: <Bullhorn16 fill="white" description="Announcements" />,
+        },
+        {
+          label: 'Custom icon 1',
+          onClick: action('click fired'),
+          btnContent: <Checkbox16 fill="white" description="icon" />,
+        },
+        {
+          label: 'Custom icon 2',
+          onClick: action('click fired'),
+          btnContent: <Checkbox16 fill="white" description="icon" />,
+        },
+        {
+          label: 'Custom icon 3',
+          onClick: action('click fired'),
+          btnContent: <Checkbox16 fill="white" description="icon" />,
+        },
+        ...HeaderProps.actionItems,
+      ]}
+      appName={text('appName', 'Maximo Application Suite')}
+      shortAppName={text('shortAppName', 'Maximo')}
+      subtitle={text('subtitle', 'Manage')}
+      isActionItemVisible={(item) => {
+        action('isActionItemVisible')(item);
+        if (item.label === 'A Hidden Icon') {
+          return false;
+        }
+
+        return true;
+      }}
+    />
+  </div>
+);
+
+SmallBreakpoint.storyName = 'small breakpoint';
 
 export const HeaderComponentSubtitle = () => (
   <div style={{ width: '100%', height: '100vh' }}>
@@ -219,7 +272,7 @@ export const HeaderComponentSubtitle = () => (
       subtitle={
         <div>
           {'Monitor'}
-          <span style={{ 'margin-left': '1rem' }}>
+          <span style={{ marginLeft: '1rem' }}>
             <Tag>Admin Mode</Tag>
           </span>
         </div>
@@ -228,6 +281,4 @@ export const HeaderComponentSubtitle = () => (
   </div>
 );
 
-HeaderComponentSubtitle.story = {
-  name: 'header subtitle component',
-};
+HeaderComponentSubtitle.storyName = 'header subtitle component';

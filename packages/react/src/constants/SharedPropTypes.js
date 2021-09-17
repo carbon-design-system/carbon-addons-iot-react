@@ -1,7 +1,15 @@
 import PropTypes from 'prop-types';
 
+/** The prop types available for components using the overrides pattern.
+ * A subcomponent can be overidden in two ways, by having its input (i.e. the props) overridden
+ * or by having the component class or function itseld be overridden. The overrides pattern can be used with
+ * nesting, i.e. to override the subcomponent or a subcomponent.
+ */
 export const OverridePropTypes = PropTypes.shape({
+  /** props should be an object with properties (or a function returning an object) that is used to override the original props
+   * received by the specified sub component. */
   props: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  /** component should be a drop in replacement component for the subcomponent */
   component: PropTypes.elementType,
 });
 
@@ -111,3 +119,14 @@ export const HotspotPropTypes = {
   /** For text hotspots, the border width in px, e.g. 12  */
   borderWidth: PropTypes.number,
 };
+
+export const ButtonIconPropType = PropTypes.oneOfType([
+  PropTypes.shape({
+    width: PropTypes.string,
+    height: PropTypes.string,
+    viewBox: PropTypes.string.isRequired,
+    svgData: PropTypes.object.isRequired,
+  }),
+  PropTypes.object, // Could be a react icon name
+  PropTypes.element,
+]);

@@ -1,702 +1,884 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab Example with externaly managed state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab Example using the HotspotStateHook 1`] = `
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
-      <div
-        className="iot--hotspot-editor-tooltip-tab"
+  <div>
+    <div
+      className="iot--hotspot-editor-tooltip-tab"
+    >
+      <form
+        className="iot--hotspot-editor--tooltip-form"
+        data-testid="HotspotEditorTooltipTab"
+        onSubmit={[Function]}
       >
-        <form
-          className="iot--hotspot-editor--tooltip-form"
-          data-testid="HotspotEditorTooltipTab"
-          onSubmit={[Function]}
+        <div
+          className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
         >
-          <div
-            className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+          <label
+            className="bx--label"
+            htmlFor="tooltip-form-title"
           >
-            <label
-              className="bx--label"
-              htmlFor="tooltip-form-title"
-            >
-              Title
-            </label>
-            <div
-              className="bx--text-input__field-outer-wrapper"
-            >
-              <div
-                className="bx--text-input__field-wrapper"
-                data-invalid={null}
-              >
-                <input
-                  className="bx--text-input bx--text__input bx--text-input--light"
-                  data-testid="HotspotEditorTooltipTab-title-input"
-                  disabled={false}
-                  id="tooltip-form-title"
-                  name="title"
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  placeholder="Enter title for the tooltip"
-                  title="Enter title for the tooltip"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
+            Title
+          </label>
           <div
-            className="bx--form-item"
+            className="bx--text-input__field-outer-wrapper"
           >
-            <label
-              className="bx--label"
-              htmlFor="tooltip-form-description"
-            >
-              Description
-            </label>
             <div
-              className="bx--text-area__wrapper"
+              className="bx--text-input__field-wrapper"
               data-invalid={null}
             >
-              <textarea
-                aria-describedby={null}
-                aria-invalid={null}
-                className="bx--text-area bx--text-area--light"
-                cols={50}
+              <input
+                className="bx--text-input bx--text__input bx--text-input--light"
+                data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
-                id="tooltip-form-description"
-                name="description"
+                id="tooltip-form-title"
+                name="title"
                 onChange={[Function]}
                 onClick={[Function]}
-                placeholder="Enter description for the tooltip"
-                rows={4}
+                placeholder="Enter title for the tooltip"
+                title="Enter title for the tooltip"
+                type="text"
                 value=""
               />
             </div>
           </div>
-          <div
-            className="iot--icon-color-container"
-            style={
-              Object {
-                "--icon-fill-color": "currentcolor",
-              }
-            }
+        </div>
+        <div
+          className="bx--form-item"
+        >
+          <label
+            className="bx--label"
+            htmlFor="tooltip-form-description"
           >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
+            Description
+          </label>
+          <div
+            className="bx--text-area__wrapper"
+            data-invalid={null}
+          >
+            <textarea
+              aria-describedby={null}
+              aria-invalid={null}
+              className="bx--text-area bx--text-area--light"
+              cols={50}
+              disabled={false}
+              id="tooltip-form-description"
+              name="description"
+              onChange={[Function]}
+              onClick={[Function]}
+              placeholder="Enter description for the tooltip"
+              rows={4}
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="iot--icon-color-container"
+          style={
+            Object {
+              "--icon-fill-color": "currentcolor",
+            }
+          }
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="dropdown"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-0-toggle-button"
+              id="downshift-0-label"
             >
-              <label
-                className="bx--label"
-                htmlFor="downshift-0-toggle-button"
-                id="downshift-0-label"
-              >
-                Icon
-              </label>
-              <div
-                className="bx--dropdown iot--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                id="tooltip-form-icon"
+              Icon
+            </label>
+            <div
+              className="bx--dropdown iot--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="tooltip-form-icon"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                type="button"
               >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-0-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
+                <span
+                  className="bx--list-box__label"
                 >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    Select an icon
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title />
-                    </svg>
-                  </div>
-                </button>
+                  Select an icon
+                </span>
                 <div
-                  aria-labelledby="downshift-0-label"
-                  className="bx--list-box__menu"
-                  id="downshift-0-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title="Select a color"
-            >
-              <label
-                className="bx--label"
-                htmlFor="downshift-1-toggle-button"
-                id="downshift-1-label"
-              >
-                Color
-              </label>
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
               <div
-                className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                id="tooltip-form-color"
-                onClick={[Function]}
+                aria-labelledby="downshift-0-label"
+                className="bx--list-box__menu"
+                id="downshift-0-menu"
+                onBlur={[Function]}
                 onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-1-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    Select a color
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title />
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-1-label"
-                  className="bx--list-box__menu"
-                  id="downshift-1-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
             </div>
           </div>
-        </form>
-        <div
-          className="iot--hotspot-editor-tooltip-tab__delete-button-container"
-        >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title="Select a color"
           >
-            Delete hotspot
-            <svg
-              aria-hidden="true"
-              aria-label="Delete this hotspot"
-              className="bx--btn__icon"
-              fill="currentColor"
-              focusable="false"
-              height={32}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={32}
-              xmlns="http://www.w3.org/2000/svg"
+            <label
+              className="bx--label"
+              htmlFor="downshift-1-toggle-button"
+              id="downshift-1-label"
             >
-              <path
-                d="M12 12H14V24H12zM18 12H20V24H18z"
+              Color
+            </label>
+            <div
+              className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="tooltip-form-color"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-1-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  Select a color
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-1-label"
+                className="bx--list-box__menu"
+                id="downshift-1-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
               />
-              <path
-                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-              />
-            </svg>
-          </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab With Info Message 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
+      </form>
       <div
-        className="iot--hotspot-editor-tooltip-tab"
+        className="iot--hotspot-editor-tooltip-tab__delete-button-container"
       >
-        <div
-          className="iot--hotspot-editor--tooltip-info-message"
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
         >
+          Delete hotspot
           <svg
-            aria-hidden={true}
+            aria-hidden="true"
+            aria-label="Delete this hotspot"
+            className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
-            height={24}
+            height={32}
             preserveAspectRatio="xMidYMid meet"
+            role="img"
             viewBox="0 0 32 32"
-            width={24}
+            width={32}
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
-              fill="none"
+              d="M12 12H14V24H12zM18 12H20V24H18z"
             />
             <path
-              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
+              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
             />
           </svg>
-          <p>
-            Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
-          </p>
-        </div>
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab With Preset Values And Custom Colors 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab Example with externaly managed state 1`] = `
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
-      <div
-        className="iot--hotspot-editor-tooltip-tab"
+  <div>
+    <div
+      className="iot--hotspot-editor-tooltip-tab"
+    >
+      <form
+        className="iot--hotspot-editor--tooltip-form"
+        data-testid="HotspotEditorTooltipTab"
+        onSubmit={[Function]}
       >
-        <form
-          className="iot--hotspot-editor--tooltip-form"
-          data-testid="HotspotEditorTooltipTab"
-          onSubmit={[Function]}
+        <div
+          className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
         >
-          <div
-            className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+          <label
+            className="bx--label"
+            htmlFor="tooltip-form-title"
           >
-            <label
-              className="bx--label"
-              htmlFor="tooltip-form-title"
-            >
-              Title
-            </label>
-            <div
-              className="bx--text-input__field-outer-wrapper"
-            >
-              <div
-                className="bx--text-input__field-wrapper"
-                data-invalid={null}
-              >
-                <input
-                  className="bx--text-input bx--text__input bx--text-input--light"
-                  data-testid="HotspotEditorTooltipTab-title-input"
-                  disabled={false}
-                  id="tooltip-form-title"
-                  name="title"
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  placeholder="Enter title for the tooltip"
-                  title="Enter title for the tooltip"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
+            Title
+          </label>
           <div
-            className="bx--form-item"
+            className="bx--text-input__field-outer-wrapper"
           >
-            <label
-              className="bx--label"
-              htmlFor="tooltip-form-description"
-            >
-              Description
-            </label>
             <div
-              className="bx--text-area__wrapper"
+              className="bx--text-input__field-wrapper"
               data-invalid={null}
             >
-              <textarea
-                aria-describedby={null}
-                aria-invalid={null}
-                className="bx--text-area bx--text-area--light"
-                cols={50}
+              <input
+                className="bx--text-input bx--text__input bx--text-input--light"
+                data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
-                id="tooltip-form-description"
-                name="description"
+                id="tooltip-form-title"
+                name="title"
                 onChange={[Function]}
                 onClick={[Function]}
-                placeholder="Enter description for the tooltip"
-                rows={4}
+                placeholder="Enter title for the tooltip"
+                title="Enter title for the tooltip"
+                type="text"
                 value=""
               />
             </div>
           </div>
-          <div
-            className="iot--icon-color-container"
-            style={
-              Object {
-                "--icon-fill-color": "#24a148",
-              }
-            }
+        </div>
+        <div
+          className="bx--form-item"
+        >
+          <label
+            className="bx--label"
+            htmlFor="tooltip-form-description"
           >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
+            Description
+          </label>
+          <div
+            className="bx--text-area__wrapper"
+            data-invalid={null}
+          >
+            <textarea
+              aria-describedby={null}
+              aria-invalid={null}
+              className="bx--text-area bx--text-area--light"
+              cols={50}
+              disabled={false}
+              id="tooltip-form-description"
+              name="description"
+              onChange={[Function]}
+              onClick={[Function]}
+              placeholder="Enter description for the tooltip"
+              rows={4}
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="iot--icon-color-container"
+          style={
+            Object {
+              "--icon-fill-color": "currentcolor",
+            }
+          }
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="dropdown"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-0-toggle-button"
+              id="downshift-0-label"
             >
-              <label
-                className="bx--label"
-                htmlFor="downshift-0-toggle-button"
-                id="downshift-0-label"
-              >
-                Icon
-              </label>
-              <div
-                className="bx--dropdown iot--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                id="tooltip-form-icon"
+              Icon
+            </label>
+            <div
+              className="bx--dropdown iot--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="tooltip-form-icon"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                type="button"
               >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-0-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
+                <span
+                  className="bx--list-box__label"
                 >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    <div
-                      className="iot--dropdown__item"
-                      title="Information square filled"
-                    >
-                      <div
-                        className="iot--dropdown__label"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          fill="currentColor"
-                          focusable="false"
-                          height={24}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={24}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
-                            fill="none"
-                          />
-                          <path
-                            d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
-                          />
-                        </svg>
-                        <div
-                          className="iot--dropdown__label__content"
-                        >
-                          Information square filled
-                        </div>
-                      </div>
-                    </div>
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title />
-                    </svg>
-                  </div>
-                </button>
+                  Select an icon
+                </span>
                 <div
-                  aria-labelledby="downshift-0-label"
-                  className="bx--list-box__menu"
-                  id="downshift-0-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title="Select a color"
-            >
-              <label
-                className="bx--label"
-                htmlFor="downshift-1-toggle-button"
-                id="downshift-1-label"
-              >
-                Color
-              </label>
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
               <div
-                className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                id="tooltip-form-color"
-                onClick={[Function]}
+                aria-labelledby="downshift-0-label"
+                className="bx--list-box__menu"
+                id="downshift-0-menu"
+                onBlur={[Function]}
                 onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-1-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    <div
-                      className="iot--color-dropdown__item"
-                      title="green"
-                    >
-                      <div
-                        className="iot--color-dropdown__item-border"
-                      >
-                        <div
-                          className="iot--color-dropdown__color-sample"
-                          style={
-                            Object {
-                              "backgroundColor": "#24a148",
-                            }
-                          }
-                          title="#24a148"
-                        />
-                        <div
-                          className="iot--color-dropdown__color-name"
-                        >
-                          green
-                        </div>
-                      </div>
-                    </div>
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title />
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-1-label"
-                  className="bx--list-box__menu"
-                  id="downshift-1-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
             </div>
           </div>
-        </form>
-        <div
-          className="iot--hotspot-editor-tooltip-tab__delete-button-container"
-        >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title="Select a color"
           >
-            Delete hotspot
-            <svg
-              aria-hidden="true"
-              aria-label="Delete this hotspot"
-              className="bx--btn__icon"
-              fill="currentColor"
-              focusable="false"
-              height={32}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={32}
-              xmlns="http://www.w3.org/2000/svg"
+            <label
+              className="bx--label"
+              htmlFor="downshift-1-toggle-button"
+              id="downshift-1-label"
             >
-              <path
-                d="M12 12H14V24H12zM18 12H20V24H18z"
+              Color
+            </label>
+            <div
+              className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="tooltip-form-color"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-1-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  Select a color
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-1-label"
+                className="bx--list-box__menu"
+                id="downshift-1-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
               />
-              <path
-                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-              />
-            </svg>
-          </button>
+            </div>
+          </div>
         </div>
+      </form>
+      <div
+        className="iot--hotspot-editor-tooltip-tab__delete-button-container"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Delete hotspot
+          <svg
+            aria-hidden="true"
+            aria-label="Delete this hotspot"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={32}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={32}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 12H14V24H12zM18 12H20V24H18z"
+            />
+            <path
+              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab With Info Message 1`] = `
+<div
+  className="storybook-container"
+>
+  <div>
+    <div
+      className="iot--hotspot-editor-tooltip-tab"
+    >
+      <div
+        className="iot--hotspot-editor--tooltip-info-message"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={24}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+            fill="none"
+          />
+          <path
+            d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
+          />
+        </svg>
+        <p>
+          Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab With Preset Values And Custom Colors 1`] = `
+<div
+  className="storybook-container"
+>
+  <div>
+    <div
+      className="iot--hotspot-editor-tooltip-tab"
+    >
+      <form
+        className="iot--hotspot-editor--tooltip-form"
+        data-testid="HotspotEditorTooltipTab"
+        onSubmit={[Function]}
+      >
+        <div
+          className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+        >
+          <label
+            className="bx--label"
+            htmlFor="tooltip-form-title"
+          >
+            Title
+          </label>
+          <div
+            className="bx--text-input__field-outer-wrapper"
+          >
+            <div
+              className="bx--text-input__field-wrapper"
+              data-invalid={null}
+            >
+              <input
+                className="bx--text-input bx--text__input bx--text-input--light"
+                data-testid="HotspotEditorTooltipTab-title-input"
+                disabled={false}
+                id="tooltip-form-title"
+                name="title"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder="Enter title for the tooltip"
+                title="Enter title for the tooltip"
+                type="text"
+                value="West building"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="bx--form-item"
+        >
+          <label
+            className="bx--label"
+            htmlFor="tooltip-form-description"
+          >
+            Description
+          </label>
+          <div
+            className="bx--text-area__wrapper"
+            data-invalid={null}
+          >
+            <textarea
+              aria-describedby={null}
+              aria-invalid={null}
+              className="bx--text-area bx--text-area--light"
+              cols={50}
+              disabled={false}
+              id="tooltip-form-description"
+              name="description"
+              onChange={[Function]}
+              onClick={[Function]}
+              placeholder="Enter description for the tooltip"
+              rows={4}
+              value="This is the largest building there is"
+            />
+          </div>
+        </div>
+        <div
+          className="iot--icon-color-container"
+          style={
+            Object {
+              "--icon-fill-color": "#24a148",
+            }
+          }
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="dropdown"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-0-toggle-button"
+              id="downshift-0-label"
+            >
+              Icon
+            </label>
+            <div
+              className="bx--dropdown iot--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="tooltip-form-icon"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-0-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  <div
+                    className="iot--dropdown__item"
+                    title="Information square filled"
+                  >
+                    <div
+                      className="iot--dropdown__label"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                          fill="none"
+                        />
+                        <path
+                          d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
+                        />
+                      </svg>
+                      <div
+                        className="iot--dropdown__label__content"
+                      >
+                        Information square filled
+                      </div>
+                    </div>
+                  </div>
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-0-label"
+                className="bx--list-box__menu"
+                id="downshift-0-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title="Select a color"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-1-toggle-button"
+              id="downshift-1-label"
+            >
+              Color
+            </label>
+            <div
+              className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="tooltip-form-color"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-1-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="green"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#24a148",
+                          }
+                        }
+                        title="#24a148"
+                      />
+                      <div
+                        className="iot--color-dropdown__color-name"
+                      >
+                        green
+                      </div>
+                    </div>
+                  </div>
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-1-label"
+                className="bx--list-box__menu"
+                id="downshift-1-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+      <div
+        className="iot--hotspot-editor-tooltip-tab__delete-button-container"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Delete hotspot
+          <svg
+            aria-hidden="true"
+            aria-label="Delete this hotspot"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={32}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={32}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 12H14V24H12zM18 12H20V24H18z"
+            />
+            <path
+              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;

@@ -18,10 +18,13 @@ const commonWizardProps = {
 };
 
 export default {
-  title: 'Watson IoT/WizardModal',
+  title: '1 - Watson IoT/WizardModal',
 
   parameters: {
     component: WizardModal,
+    docs: {
+      inlineStories: false,
+    },
 
     info: `
   Extends ComposedModal to add Carbon's ProgressIndicator and Wizard pages and local state.  Refer to the ComposedModal component for additional props that can be passed
@@ -57,9 +60,7 @@ export const BasicWizardModal = () => (
   />
 );
 
-BasicWizardModal.story = {
-  name: 'basic wizard modal',
-};
+BasicWizardModal.storyName = 'basic wizard modal';
 
 export const CustomFooter = () => (
   <StyledWizard
@@ -95,9 +96,7 @@ export const CustomFooter = () => (
   />
 );
 
-CustomFooter.story = {
-  name: 'custom footer',
-};
+CustomFooter.storyName = 'custom footer';
 
 export const SendingData = () => (
   <WizardModal
@@ -128,6 +127,4 @@ export const SendingData = () => (
   />
 );
 
-SendingData.story = {
-  name: 'sending data',
-};
+SendingData.storyName = 'sending data';

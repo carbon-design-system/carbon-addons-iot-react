@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { Add16, Close16, Edit16 } from '@carbon/icons-react';
-import { boolean, select, text } from '@storybook/addon-knobs';
+import { boolean, select, text, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
-import { withReadme } from 'storybook-readme';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
-import SimpleListREADME from './README.md';
+import SimpleListREADME from './SimpleList.mdx';
 
 export const getListItems = (num) =>
   Array(num)
@@ -40,7 +39,7 @@ const rowActionsOverFlowMenu = [
   </OverflowMenu>,
 ];
 
-const getListItemsWithActions = (num) =>
+export const getListItemsWithActions = (num) =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
@@ -119,36 +118,40 @@ const buttonsToRender = [
 ];
 
 export default {
-  title: 'Watson IoT/SimpleList',
+  title: '1 - Watson IoT/SimpleList',
 
   parameters: {
     component: SimpleList,
+    docs: {
+      page: SimpleListREADME,
+    },
   },
 
-  excludeStories: ['getListItems'],
+  excludeStories: ['getListItems', 'getListItemsWithActions'],
 };
 
-export const Basic = withReadme(SimpleListREADME, () => (
+export const Basic = () => (
   <div style={{ width: 500 }}>
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
-      items={getListItems(30)}
+      items={getListItems(number('items to render', 30))}
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
       isLoading={boolean('isLoading', false)}
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
-export const TallListIsFullHeightTrue = withReadme(SimpleListREADME, () => (
+export const ListWithEmptyRow = () => (
   <div
     style={{
       width: 500,
@@ -159,134 +162,24 @@ export const TallListIsFullHeightTrue = withReadme(SimpleListREADME, () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
-      isFullHeight
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-        pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(3)}
-      isLoading={boolean('isLoading', false)}
-    />
-  </div>
-));
-
-TallListIsFullHeightTrue.story = {
-  name: 'tall list (isFullHeight = true)',
-};
-
-export const TallListIsFullHeightFalse = withReadme(SimpleListREADME, () => (
-  <div
-    style={{
-      width: 500,
-      height: 500,
-      background: '#fee',
-      padding: spacing03,
-    }}
-  >
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-        pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(3)}
-      isLoading={boolean('isLoading', false)}
-    />
-  </div>
-));
-
-TallListIsFullHeightFalse.story = {
-  name: 'tall list (isFullHeight = false)',
-};
-
-export const ListWithOverflowGrow = withReadme(SimpleListREADME, () => (
-  <div
-    style={{
-      width: 500,
-      height: 500,
-      background: '#fee',
-      padding: spacing03,
-    }}
-  >
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-        pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(20)}
-      pageSize="xl"
-      isLoading={boolean('isLoading', false)}
-    />
-  </div>
-));
-
-ListWithOverflowGrow.story = {
-  name: 'list with overflow grow',
-};
-
-export const ListWithPageSize = withReadme(SimpleListREADME, () => (
-  <div
-    style={{
-      width: 500,
-      height: 500,
-      background: '#fee',
-      padding: spacing03,
-    }}
-  >
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-        pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(20)}
-      pageSize="sm"
-      isLoading={boolean('isLoading', false)}
-    />
-  </div>
-));
-
-ListWithPageSize.story = {
-  name: 'list with pageSize',
-};
-
-export const ListWithEmptyRow = withReadme(SimpleListREADME, () => (
-  <div
-    style={{
-      width: 500,
-      height: 500,
-      background: '#fee',
-      padding: spacing03,
-    }}
-  >
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={listItemsWithEmptyRow}
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
       isLoading={boolean('isLoading', false)}
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
-ListWithEmptyRow.story = {
-  name: 'list with empty row',
-};
+ListWithEmptyRow.storyName = 'list with empty row';
 
-export const ListWithLargeRow = withReadme(SimpleListREADME, () => (
+export const ListWithLargeRow = () => (
   <div
     style={{
       width: 500,
@@ -297,25 +190,25 @@ export const ListWithLargeRow = withReadme(SimpleListREADME, () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getFatRowListItems(20)}
-      pageSize="sm"
-      isLargeRow
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
-ListWithLargeRow.story = {
-  name: 'list with large row',
-};
+ListWithLargeRow.storyName = 'list with large row';
 
-export const ListWithMultipleActions = withReadme(SimpleListREADME, () => (
+export const ListWithMultipleActions = () => (
   <div
     style={{
       width: 500,
@@ -326,24 +219,24 @@ export const ListWithMultipleActions = withReadme(SimpleListREADME, () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getListItemsWithActions(5)}
-      pageSize="sm"
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
       isLoading={boolean('isLoading', false)}
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
-ListWithMultipleActions.story = {
-  name: 'list with multiple actions',
-};
+ListWithMultipleActions.storyName = 'list with multiple actions';
 
-export const ListWithOverflowMenu = withReadme(SimpleListREADME, () => (
+export const ListWithOverflowMenu = () => (
   <div
     style={{
       width: 500,
@@ -354,24 +247,24 @@ export const ListWithOverflowMenu = withReadme(SimpleListREADME, () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getListItemsWithOverflowMenu(5)}
-      pageSize="sm"
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
       isLoading={boolean('isLoading', false)}
+      hasPagination={boolean('hasPagination', true)}
     />
   </div>
-));
+);
 
-ListWithOverflowMenu.story = {
-  name: 'list with overflow menu',
-};
+ListWithOverflowMenu.storyName = 'list with overflow menu';
 
-export const LargeRowListWithMultipleActions = withReadme(SimpleListREADME, () => (
+export const LargeRowListWithMultipleActions = () => (
   <div
     style={{
       width: 500,
@@ -382,25 +275,25 @@ export const LargeRowListWithMultipleActions = withReadme(SimpleListREADME, () =
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getFatRowListItemsWithActions(5)}
-      pageSize="sm"
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
+      hasPagination={boolean('hasPagination', true)}
       isLargeRow
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
-LargeRowListWithMultipleActions.story = {
-  name: 'large row list with multiple actions',
-};
+LargeRowListWithMultipleActions.storyName = 'large row list with multiple actions';
 
-export const LargeRowListWithOverflowMenu = withReadme(SimpleListREADME, () => (
+export const LargeRowListWithOverflowMenu = () => (
   <div
     style={{
       width: 500,
@@ -411,23 +304,23 @@ export const LargeRowListWithOverflowMenu = withReadme(SimpleListREADME, () => (
   >
     <SimpleList
       title={text('Text', 'Simple List')}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       i18n={{
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
       items={getFatRowListItemsWithOverflowMenu(5)}
-      pageSize="sm"
+      isFullHeight={boolean('isFullHeight', true)}
+      pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
+      hasPagination={boolean('hasPagination', true)}
       isLargeRow
       isLoading={boolean('isLoading', false)}
     />
   </div>
-));
+);
 
-LargeRowListWithOverflowMenu.story = {
-  name: 'large row list with overflow menu',
-};
+LargeRowListWithOverflowMenu.storyName = 'large row list with overflow menu';
 
 export const ListWithReorder = () => {
   const SimpleListWithReorder = () => {
@@ -437,7 +330,7 @@ export const ListWithReorder = () => {
       <div style={{ width: 500 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
-          hasSearch
+          hasSearch={boolean('hasSearch', true)}
           i18n={{
             searchPlaceHolderText: 'Enter a search',
             pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
@@ -445,7 +338,10 @@ export const ListWithReorder = () => {
           }}
           buttons={buttonsToRender}
           items={items}
+          isFullHeight={boolean('isFullHeight', true)}
+          pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
           isLoading={boolean('isLoading', false)}
+          hasPagination={boolean('hasPagination', true)}
           editingStyle={select(
             'Editing Style',
             [EditingStyle.Single, EditingStyle.Multiple],
@@ -462,32 +358,4 @@ export const ListWithReorder = () => {
   return <SimpleListWithReorder />;
 };
 
-ListWithReorder.story = {
-  name: 'list with reorder',
-};
-
-export const HiddenPagination = withReadme(SimpleListREADME, () => (
-  <div style={{ width: 500 }}>
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-      }}
-      buttons={buttonsToRender}
-      items={getListItems(5)}
-      isLoading={boolean('isLoading', false)}
-      hasPagination={false}
-    />
-  </div>
-));
-
-HiddenPagination.story = {
-  name: 'hidden pagination',
-
-  parameters: {
-    info: {
-      text: `Optionally hide the pagination by passing 'hasPagination: false'`,
-    },
-  },
-};
+ListWithReorder.storyName = 'with reorder';

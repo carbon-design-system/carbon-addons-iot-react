@@ -73,6 +73,8 @@ const propTypes = {
   buttonKind: PropTypes.oneOf(ButtonKinds),
   /** Button content */
   buttonText: PropTypes.string,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -94,6 +96,7 @@ const defaultProps = {
   buttonClassName: null,
   buttonKind: 'primary',
   buttonText: null,
+  testId: 'stateful-tile-gallery',
 };
 
 const doesGalleryItemMatch = (galleryItem, searchString) => {
@@ -115,17 +118,19 @@ const StatefulTileGallery = ({
   buttonClassName,
   buttonKind,
   buttonText,
+  testId,
 }) => {
   const [search, setSearch] = useState();
   const [thumbnails, setThumbnails] = useState(true);
 
   return (
     <PageTitleBar
+      testId={`${testId}-page-title-bar`}
       title={title}
       description={description}
       className={className}
       extraContent={
-        <div className="extra-content">
+        <div data-testid={`${testId}-extra-content`} className="extra-content">
           {hasSearch ? (
             <TileGallerySearch
               searchValue={search}
@@ -136,6 +141,7 @@ const StatefulTileGallery = ({
                 placeHolderText: i18n.searchPlaceHolderText,
                 closeButtonText: i18n.searchBloseButtonText,
               }}
+              testId={`${testId}-search-input`}
             />
           ) : null}
           {hasSwitcher ? (
@@ -143,6 +149,7 @@ const StatefulTileGallery = ({
               onChange={(event) => setThumbnails(get(event, 'name') !== 'list')}
               selectedIndex={thumbnails ? 1 : 0}
               i18n={i18n}
+              testId={`${testId}-switcher`}
             />
           ) : null}
           {hasButton ? (
@@ -153,14 +160,19 @@ const StatefulTileGallery = ({
         </div>
       }
       content={
-        <TileGallery>
+        <TileGallery testId={testId}>
           {galleryData.map((item) => {
             const items = item.galleryItems.filter((galleryItem) =>
               doesGalleryItemMatch(galleryItem, search)
             );
             return (
-              <TileGallerySection key={item.id} title={item.sectionTitle} i18n={i18n}>
-                {items.map((galleryItem) => {
+              <TileGallerySection
+                key={item.id}
+                title={item.sectionTitle}
+                i18n={i18n}
+                testId={`${testId}-section-${item.id}`}
+              >
+                {items.map((galleryItem, i) => {
                   return (
                     <TileGalleryItem
                       key={`item-${galleryItem.title}-${Math.random()}`}
@@ -174,6 +186,7 @@ const StatefulTileGallery = ({
                       afterContent={galleryItem.afterContent}
                       thumbnail={galleryItem.thumbnail}
                       href={galleryItem.href}
+                      testId={`${testId}-section-${item.id}-item-${i}`}
                     />
                   );
                 })}

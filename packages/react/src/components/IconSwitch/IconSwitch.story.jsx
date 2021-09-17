@@ -22,7 +22,7 @@ const listIcons = {
 };
 
 export default {
-  title: 'Watson IoT/IconSwitch',
+  title: '1 - Watson IoT/IconSwitch',
   decorators: [withKnobs],
 
   parameters: {
@@ -45,13 +45,11 @@ export const Unselected = () => {
   );
 };
 
-Unselected.story = {
-  name: 'unselected',
+Unselected.storyName = 'unselected';
 
-  parameters: {
-    info: {
-      text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
-    },
+Unselected.parameters = {
+  info: {
+    text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
   },
 };
 
@@ -71,13 +69,11 @@ export const Selected = () => {
   );
 };
 
-Selected.story = {
-  name: 'selected',
+Selected.storyName = 'selected';
 
-  parameters: {
-    info: {
-      text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
-    },
+Selected.parameters = {
+  info: {
+    text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
   },
 };
 
@@ -114,9 +110,7 @@ export const ExampleUsedInContentSwitcher = () => {
   );
 };
 
-ExampleUsedInContentSwitcher.story = {
-  name: 'example - used in ContentSwitcher',
-};
+ExampleUsedInContentSwitcher.storyName = 'example - used in ContentSwitcher';
 
 export const ExampleUsedInContentSwitcherLightVersion = () => {
   const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default, 'size');
@@ -153,6 +147,5 @@ export const ExampleUsedInContentSwitcherLightVersion = () => {
   );
 };
 
-ExampleUsedInContentSwitcherLightVersion.story = {
-  name: 'example - used in ContentSwitcher light version ',
-};
+ExampleUsedInContentSwitcherLightVersion.storyName =
+  'example - used in ContentSwitcher light version ';

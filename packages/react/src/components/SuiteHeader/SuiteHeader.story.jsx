@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
-import { Switcher24 } from '@carbon/icons-react';
+import { ScreenOff16, Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
@@ -16,6 +16,7 @@ import { Tag } from '../Tag';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
+import SuiteHeaderREADME from './SuiteHeader.mdx';
 
 const sideNavLinks = [
   {
@@ -102,6 +103,10 @@ const sideNavLinks = [
 
 const customActionItems = [
   {
+    label: 'aHiddenIcon',
+    btnContent: <ScreenOff16 id="hidden-button" fill="white" description="hidden-button-icon" />,
+  },
+  {
     label: 'bell',
     btnContent: (
       <span id="bell-icon">
@@ -134,6 +139,20 @@ const customActionItems = [
       },
       {
         metaData: {
+          href: 'http://google.com',
+          title: 'this is a title',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          element: 'a',
+        },
+        content: (
+          <span id="a-message">
+            this is my really long message to you that should be truncated...
+          </span>
+        ),
+      },
+      {
+        metaData: {
           element: 'button',
         },
         content: (
@@ -156,12 +175,26 @@ const customActionItems = [
       {
         metaData: {
           href: 'http://google.com',
-          title: 'this is a title',
+          title: 'this is my message to you',
           target: '_blank',
           rel: 'noopener noreferrer',
           element: 'a',
         },
         content: <span id="another-message">this is my message to you</span>,
+      },
+      {
+        metaData: {
+          href: 'http://google.com',
+          title: 'this is my really long message to you that should be truncated...',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          element: 'a',
+        },
+        content: (
+          <span id="another-message">
+            this is my really long message to you that should be truncated...
+          </span>
+        ),
       },
       {
         metaData: {
@@ -203,7 +236,11 @@ const customHelpLinks = [
       href: 'javascript:void(0)',
       onClick: () => alert('custom help menu action'),
     },
-    content: <span id="yet-another-custom-help-link">{'{Yet another custom help link}'}</span>,
+    content: (
+      <span id="yet-another-custom-help-link">
+        {'{Yet another custom help link that is really long and should be truncated...}'}
+      </span>
+    ),
   },
 ];
 
@@ -233,7 +270,9 @@ const customProfileLinks = [
       onClick: () => alert('custom profile menu action'),
     },
     content: (
-      <span id="yet-another-custom-profile-link">{'{Yet another custom profile link}'}</span>
+      <span id="yet-another-custom-profile-link">
+        {'{Yet another custom profile link that is really long and should be truncated...}'}
+      </span>
     ),
   },
 ];
@@ -253,10 +292,13 @@ const customApplications = [
 ];
 
 export default {
-  title: 'Watson IoT/SuiteHeader',
+  title: '1 - Watson IoT/SuiteHeader',
 
   parameters: {
     component: SuiteHeader,
+    docs: {
+      page: SuiteHeaderREADME,
+    },
   },
 };
 
@@ -301,9 +343,7 @@ export const Default = () => {
   );
 };
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const HeaderWithExtraContent = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -346,9 +386,7 @@ export const HeaderWithExtraContent = () => {
   );
 };
 
-HeaderWithExtraContent.story = {
-  name: 'Header with extra content',
-};
+HeaderWithExtraContent.storyName = 'Header with extra content';
 
 export const HeaderWithSideNav = () => (
   <SuiteHeader
@@ -387,9 +425,7 @@ export const HeaderWithSideNav = () => (
   />
 );
 
-HeaderWithSideNav.story = {
-  name: 'Header with side nav',
-};
+HeaderWithSideNav.storyName = 'Header with side nav';
 
 export const HeaderWithCustomSideNav = () => (
   <SuiteHeader
@@ -426,9 +462,7 @@ export const HeaderWithCustomSideNav = () => (
     onSideNavToggled={() => alert('onSideNavToggled')}
   />
 );
-HeaderWithCustomSideNav.story = {
-  name: 'Header with application-controlled side nav',
-};
+HeaderWithCustomSideNav.storyName = 'Header with application-controlled side nav';
 
 export const HeaderWithCustomActionItems = () => (
   <SuiteHeader
@@ -465,12 +499,17 @@ export const HeaderWithCustomActionItems = () => (
     customHelpLinks={customHelpLinks}
     customProfileLinks={customProfileLinks}
     customApplications={customApplications}
+    isActionItemVisible={(item) => {
+      if (item.label === 'aHiddenIcon' || item.id === 'app-switcher') {
+        return false;
+      }
+
+      return true;
+    }}
   />
 );
 
-HeaderWithCustomActionItems.story = {
-  name: 'Header with custom action items',
-};
+HeaderWithCustomActionItems.storyName = 'Header with custom action items and hidden icons';
 
 export const HeaderWithSurveyNotification = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -523,64 +562,60 @@ export const HeaderWithSurveyNotification = () => {
   );
 };
 
+HeaderWithSurveyNotification.storyName = 'Header with survey notification';
+
 export const LoadingState = () => {
   return <SuiteHeader suiteName="Application Suite" appName="Application Name" />;
 };
 
-LoadingState.story = {
-  name: 'Loading state',
-};
+LoadingState.storyName = 'Loading state';
 
-/* Sample of SuiteHeader usage with data fetching
-
-export const HeaderWithDataFetching = () => {
-  const StatefulExample = () => {
-    const [data, setData] = useState({
-      username: null,
-      userDisplayName: null,
-      email: null,
-      routes: null,
-      applications: null,
-      showSurvey: false,
-    });
-    useEffect(() => {
-      fetch('http://localhost:3001/internal/uiresources?id=masthead&lang=en&surveyId=test', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
+export const HeaderWithIdleLogoutConfirmation = () => (
+  <>
+    <SuiteHeader
+      suiteName="Application Suite"
+      appName="Application Name"
+      userDisplayName="Admin User"
+      username="adminuser"
+      routes={{
+        profile: 'https://www.ibm.com',
+        navigator: 'https://www.ibm.com',
+        admin: 'https://www.ibm.com',
+        logout: 'https://www.ibm.com',
+        logoutInactivity: 'https://www.ibm.com',
+        whatsNew: 'https://www.ibm.com',
+        gettingStarted: 'https://www.ibm.com',
+        documentation: 'https://www.ibm.com',
+        requestEnhancement: 'https://www.ibm.com',
+        support: 'https://www.ibm.com',
+        about: 'https://www.ibm.com',
+      }}
+      idleTimeoutData={{
+        timeout: 10,
+        countdown: 10,
+        cookieName: '_user_inactivity_timeout',
+      }}
+      applications={[
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com',
         },
-      })
-        .then((res) => res.json())
-        .then((resJson) => {
-          if (resJson.error || resJson.exception) {
-            return null;
-          }
-          return setData(resJson);
-        });
-    }, []);
+        {
+          id: 'health',
+          name: 'Health',
+          href: 'https://google.com',
+          isExternal: true,
+        },
+      ]}
+    />
+    <p>The logout confirmation dialog will show up after 10 seconds of inactivity.</p>
+    <p>
+      {
+        'Open this story in another tab, wait for the dialog to show up in both tabs, then click "Stay logged in" to see the other dialog go away.'
+      }
+    </p>
+  </>
+);
 
-    return (
-      <SuiteHeader
-        suiteName="Application Suite"
-        appName="Application Name"
-        userDisplayName={data.userDisplayName}
-        username={data.username}
-        routes={data.routes}
-        applications={data.applications}
-        i18n={data.i18n}
-        surveyData={data.surveyData}
-      />
-    );
-  };
-  return <StatefulExample />;
-};
-
-HeaderWithDataFetching.story = {
-  name: 'Header with data fetching',
-};
-
-*/
-
-HeaderWithSurveyNotification.story = {
-  name: 'Header with survey notification',
-};
+HeaderWithIdleLogoutConfirmation.storyName = 'Header with idle user detection';

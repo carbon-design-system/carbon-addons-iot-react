@@ -11,6 +11,7 @@ describe('CardEditor', () => {
     onAddCard: jest.fn(),
     onShowGallery: jest.fn(),
     onChange: jest.fn(),
+    onEditDataItems: jest.fn(),
   };
   const defaultCard = {
     id: 'card-0001',
@@ -19,6 +20,36 @@ describe('CardEditor', () => {
     type: 'VALUE',
   };
 
+  it('is selectable by testID and testId', () => {
+    const { rerender } = render(
+      <CardEditor
+        supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
+        testID="CARD_EDITOR"
+      />
+    );
+
+    expect(screen.getByTestId('CARD_EDITOR')).toBeTruthy();
+
+    rerender(
+      <CardEditor
+        supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
+        testId="card-editor"
+        isSummaryDashboard
+      />
+    );
+    expect(screen.getByTestId('card-editor')).toBeTruthy();
+    expect(screen.getByTestId('card-editor-card-gallery-list')).toBeTruthy();
+    expect(screen.getByTestId('Button')).toBeTruthy();
+  });
+
   it('fires onAddCard when user clicks on item in list', () => {
     render(
       <CardEditor
@@ -26,6 +57,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
       />
     );
     const addTableCardBtn = screen.getByTitle('Data table');
@@ -40,6 +72,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
       />
     );
     userEvent.type(screen.getByRole('textbox', { name: 'Card title' }), 'z');
@@ -64,6 +97,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
       />
     );
     userEvent.type(screen.getByLabelText('Description (Optional)'), 'z');
@@ -82,6 +116,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
       />
     );
     userEvent.click(
@@ -93,7 +128,7 @@ describe('CardEditor', () => {
   });
 
   it('shows gallery when no card is defined', () => {
-    render(<CardEditor />);
+    render(<CardEditor onShowGallery={jest.fn()} onChange={jest.fn()} onAddCard={jest.fn()} />);
 
     expect(screen.getByText('Gallery')).toBeTruthy();
   });
@@ -112,6 +147,9 @@ describe('CardEditor', () => {
           VALUE: inDomText,
           COOL_NEW_CARD: inDomText,
         }}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
         supportedCardTypes={['VALUE', 'COOL_NEW_CARD']}
         icons={{
           VALUE: <EscalatorDown data-testid={testId} />,
@@ -132,6 +170,7 @@ describe('CardEditor', () => {
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
       />
     );
     const openEditorBtn = screen.getByRole('button', {
@@ -145,5 +184,37 @@ describe('CardEditor', () => {
     userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
     userEvent.click(openEditorBtn);
     userEvent.click(screen.getByRole('button', { name: 'Save' }));
+  });
+
+  it('should call onChange when changing the Time range', () => {
+    render(
+      <CardEditor
+        cardConfig={defaultCard}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+        onEditDataItems={actions.onEditDataItems}
+      />
+    );
+    userEvent.click(screen.getByText('Select a time range'));
+    userEvent.click(screen.getByText('Last 7 days'));
+    expect(actions.onChange).toHaveBeenLastCalledWith({
+      dataSource: { range: { count: -1, interval: 'week', type: 'rolling' } },
+      id: 'card-0001',
+      size: 'SMALL',
+      timeRange: 'last7Days',
+      title: 'New card',
+      type: 'VALUE',
+    });
+    userEvent.click(screen.getByText('Last 7 days'));
+    userEvent.click(screen.getByText('This week'));
+    expect(actions.onChange).toHaveBeenLastCalledWith({
+      dataSource: { range: { count: -1, interval: 'week', type: 'periodToDate' } },
+      id: 'card-0001',
+      size: 'SMALL',
+      timeRange: 'thisWeek',
+      title: 'New card',
+      type: 'VALUE',
+    });
   });
 });

@@ -1,243 +1,246 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListCard basic 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "1.5rem",
+        "width": "520px",
       }
     }
   >
     <div
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="ListCard"
+      onScroll={[Function]}
+      role="presentation"
       style={
         Object {
-          "margin": "1.5rem",
-          "width": "520px",
+          "--card-default-height": "304px",
         }
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="ListCard"
-        onScroll={[Function]}
-        role="presentation"
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Simple List with Icon"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Simple List with Icon
+          </div>
+        </span>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-content-height": "256px",
           }
         }
       >
         <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Simple List with Icon"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Simple List with Icon
-            </div>
-          </span>
-        </div>
-        <div
-          className="iot--card--content"
+          className="list-card"
           style={
             Object {
-              "--card-content-height": "256px",
+              "paddingBottom": 0,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 0,
             }
           }
         >
           <div
-            className="list-card"
-            style={
-              Object {
-                "paddingBottom": 0,
-                "paddingLeft": 16,
-                "paddingRight": 16,
-                "paddingTop": 0,
-              }
-            }
+            aria-label="Structured list section"
+            className="bx--structured-list"
+            role="table"
           >
             <div
-              aria-label="Structured list section"
-              className="bx--structured-list"
-              role="table"
+              className="bx--structured-list-tbody"
+              data-testid="Card-list-body"
+              onKeyDown={[Function]}
+              role="rowgroup"
             >
               <div
-                className="bx--structured-list-tbody"
-                onKeyDown={[Function]}
-                role="rowgroup"
+                className="bx--structured-list-row"
+                role="row"
               >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      <a
-                        className="bx--link"
-                        href="https://internetofthings.ibmcloud.com/"
-                        rel="noopener"
-                        style={
-                          Object {
-                            "display": "inherit",
-                          }
+                    <a
+                      className="bx--link"
+                      href="https://internetofthings.ibmcloud.com/"
+                      rel="noopener"
+                      style={
+                        Object {
+                          "display": "inherit",
                         }
-                        target="_blank"
-                      >
-                        Row content 1
-                      </a>
-                    </div>
+                      }
+                      target="_blank"
+                    >
+                      Row content 1
+                    </a>
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      <a
-                        className="bx--link"
-                        href="https://internetofthings.ibmcloud.com/"
-                        rel="noopener"
-                        style={
-                          Object {
-                            "display": "inherit",
-                          }
+                    <a
+                      className="bx--link"
+                      href="https://internetofthings.ibmcloud.com/"
+                      rel="noopener"
+                      style={
+                        Object {
+                          "display": "inherit",
                         }
-                        target="_blank"
-                      >
-                        Row content 2
-                      </a>
-                    </div>
+                      }
+                      target="_blank"
+                    >
+                      Row content 2
+                    </a>
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      Row content 3
-                    </div>
+                    Row content 3
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      <a
-                        className="bx--link"
-                        href="https://internetofthings.ibmcloud.com/"
-                        rel="noopener"
-                        style={
-                          Object {
-                            "display": "inherit",
-                          }
+                    <a
+                      className="bx--link"
+                      href="https://internetofthings.ibmcloud.com/"
+                      rel="noopener"
+                      style={
+                        Object {
+                          "display": "inherit",
                         }
-                        target="_blank"
-                      >
-                        Row content 4
-                      </a>
-                    </div>
-                    <div
-                      className="list-card--item--extra-content"
+                      }
+                      target="_blank"
                     >
-                      <svg
-                        height="10"
-                        width="30"
-                      >
-                        <circle
-                          cx="5"
-                          cy="5"
-                          fill="red"
-                          r="3"
-                          stroke="none"
-                          strokeWidth="1"
-                        />
-                      </svg>
-                    </div>
+                      Row content 4
+                    </a>
+                  </div>
+                  <div
+                    className="list-card--item--extra-content"
+                  >
+                    <svg
+                      height="10"
+                      width="30"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="red"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      Row content 5
-                    </div>
+                    Row content 5
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      Row content 6
-                    </div>
+                    Row content 6
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      Row content 7
-                    </div>
+                    Row content 7
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      Row content 8
-                    </div>
+                    Row content 8
                   </div>
                 </div>
               </div>
@@ -247,298 +250,244 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListCard empty 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListCard empty 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": 20,
+        "width": "250px",
       }
     }
   >
     <div
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="ListCard"
+      onScroll={[Function]}
+      role="presentation"
       style={
         Object {
-          "margin": 20,
-          "width": "250px",
+          "--card-default-height": "304px",
         }
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="ListCard"
-        onScroll={[Function]}
-        role="presentation"
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Simple List with Icon"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Simple List with Icon
+          </div>
+        </span>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-content-height": "256px",
           }
         }
       >
         <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Simple List with Icon"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Simple List with Icon
-            </div>
-          </span>
-        </div>
-        <div
-          className="iot--card--content"
+          className="iot--card--empty-message-wrapper"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-padding": "16px",
             }
           }
         >
-          <div
-            className="iot--card--empty-message-wrapper"
-            style={
-              Object {
-                "--card-content-padding": "16px",
-              }
-            }
-          >
-            No data is available for this time range.
-          </div>
+          No data is available for this time range.
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListCard with extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListCard with extra content 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "1.5rem",
+        "width": "1056px",
       }
     }
   >
     <div
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="ListCard"
+      onScroll={[Function]}
+      role="presentation"
       style={
         Object {
-          "margin": "1.5rem",
-          "width": "1056px",
+          "--card-default-height": "304px",
         }
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="ListCard"
-        onScroll={[Function]}
-        role="presentation"
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="List with extra content"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            List with extra content
+          </div>
+        </span>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-content-height": "256px",
           }
         }
       >
         <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="List with extra content"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              List with extra content
-            </div>
-          </span>
-        </div>
-        <div
-          className="iot--card--content"
+          className="list-card"
           style={
             Object {
-              "--card-content-height": "256px",
+              "paddingBottom": 0,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 0,
             }
           }
         >
           <div
-            className="list-card"
-            style={
-              Object {
-                "paddingBottom": 0,
-                "paddingLeft": 16,
-                "paddingRight": 16,
-                "paddingTop": 0,
-              }
-            }
+            aria-label="Structured list section"
+            className="bx--structured-list"
+            role="table"
           >
             <div
-              aria-label="Structured list section"
-              className="bx--structured-list"
-              role="table"
+              className="bx--structured-list-tbody"
+              data-testid="Card-list-body"
+              onKeyDown={[Function]}
+              role="rowgroup"
             >
               <div
-                className="bx--structured-list-tbody"
-                onKeyDown={[Function]}
-                role="rowgroup"
+                className="bx--structured-list-row"
+                role="row"
               >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      <a
-                        className="bx--link"
-                        href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html"
-                        rel="noopener"
-                        style={
-                          Object {
-                            "display": "inherit",
-                          }
+                    <a
+                      className="bx--link"
+                      href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html"
+                      rel="noopener"
+                      style={
+                        Object {
+                          "display": "inherit",
                         }
-                        target="_blank"
-                      >
-                        Explore entity metrics in the data lake
-                      </a>
-                    </div>
-                    <div
-                      className="list-card--item--extra-content"
+                      }
+                      target="_blank"
                     >
-                      <span>
-                        View your device data in the entity view of the main Watson IoT Platform dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored in the data lake for later retrieval and processing.
-                      </span>
-                    </div>
+                      Explore entity metrics in the data lake
+                    </a>
+                  </div>
+                  <div
+                    className="list-card--item--extra-content"
+                  >
+                    <span>
+                      View your device data in the entity view of the main Watson IoT Platform dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored in the data lake for later retrieval and processing.
+                    </span>
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      <a
-                        className="bx--link"
-                        href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html"
-                        rel="noopener"
-                        style={
-                          Object {
-                            "display": "inherit",
-                          }
+                    <a
+                      className="bx--link"
+                      href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html"
+                      rel="noopener"
+                      style={
+                        Object {
+                          "display": "inherit",
                         }
-                        target="_blank"
-                      >
-                        Perform simple calculations on your entity metrics
-                      </a>
-                    </div>
-                    <div
-                      className="list-card--item--extra-content"
+                      }
+                      target="_blank"
                     >
-                      <span>
-                        Process your entity metrics by running simple or complex calculations to create calculated metrics.
-                      </span>
-                    </div>
+                      Perform simple calculations on your entity metrics
+                    </a>
+                  </div>
+                  <div
+                    className="list-card--item--extra-content"
+                  >
+                    <span>
+                      Process your entity metrics by running simple or complex calculations to create calculated metrics.
+                    </span>
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      <a
-                        className="bx--link"
-                        href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html"
-                        rel="noopener"
-                        style={
-                          Object {
-                            "display": "inherit",
-                          }
+                    <a
+                      className="bx--link"
+                      href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html"
+                      rel="noopener"
+                      style={
+                        Object {
+                          "display": "inherit",
                         }
-                        target="_blank"
-                      >
-                        View entity metrics in a monitoring dashboard
-                      </a>
-                    </div>
-                    <div
-                      className="list-card--item--extra-content"
+                      }
+                      target="_blank"
                     >
-                      <span>
-                        Visualize your entity metrics in monitoring dashboards to get an overview of your data.
-                      </span>
-                    </div>
+                      View entity metrics in a monitoring dashboard
+                    </a>
+                  </div>
+                  <div
+                    className="list-card--item--extra-content"
+                  >
+                    <span>
+                      Visualize your entity metrics in monitoring dashboards to get an overview of your data.
+                    </span>
                   </div>
                 </div>
               </div>
@@ -548,204 +497,179 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListCard with extra long content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListCard with extra long content 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "1.5rem",
+        "width": "1056px",
       }
     }
   >
     <div
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="ListCard"
+      onScroll={[Function]}
+      role="presentation"
       style={
         Object {
-          "margin": "1.5rem",
-          "width": "1056px",
+          "--card-default-height": "304px",
         }
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="ListCard"
-        onScroll={[Function]}
-        role="presentation"
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="List with extra long content"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            List with extra long content
+          </div>
+        </span>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-content-height": "256px",
           }
         }
       >
         <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="List with extra long content"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              List with extra long content
-            </div>
-          </span>
-        </div>
-        <div
-          className="iot--card--content"
+          className="list-card"
           style={
             Object {
-              "--card-content-height": "256px",
+              "paddingBottom": 0,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "paddingTop": 0,
             }
           }
         >
           <div
-            className="list-card"
-            style={
-              Object {
-                "paddingBottom": 0,
-                "paddingLeft": 16,
-                "paddingRight": 16,
-                "paddingTop": 0,
-              }
-            }
+            aria-label="Structured list section"
+            className="bx--structured-list"
+            role="table"
           >
             <div
-              aria-label="Structured list section"
-              className="bx--structured-list"
-              role="table"
+              className="bx--structured-list-tbody"
+              data-testid="Card-list-body"
+              onKeyDown={[Function]}
+              role="rowgroup"
             >
               <div
-                className="bx--structured-list-tbody"
-                onKeyDown={[Function]}
-                role="rowgroup"
+                className="bx--structured-list-row"
+                role="row"
               >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      <a
-                        className="bx--link"
-                        href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html"
-                        rel="noopener"
-                        style={
-                          Object {
-                            "display": "inherit",
-                          }
+                    <a
+                      className="bx--link"
+                      href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html"
+                      rel="noopener"
+                      style={
+                        Object {
+                          "display": "inherit",
                         }
-                        target="_blank"
-                      >
-                        Explore entity metrics in the data lake
-                      </a>
-                    </div>
-                    <div
-                      className="list-card--item--extra-content"
+                      }
+                      target="_blank"
                     >
-                      <span>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid cumque in quam qui ut vero facilis autem. Laudantium enim accusantium facere nemo aspernatur repudiandae at, incidunt adipisci consequuntur ut, non, sint delectus labore id quaerat debitis quia veritatis autem aliquid voluptates? Quam perspiciatis aperiam perferendis incidunt rerum magni ratione iusto porro natus cumque omnis velit dolores, ipsa veniam! Maiores libero quam nam fugiat, voluptatum fuga ex architecto, enim similique quod, voluptates qui voluptas blanditiis tempora dolor assumenda quos numquam temporibus.
-                      </span>
-                    </div>
+                      Explore entity metrics in the data lake
+                    </a>
+                  </div>
+                  <div
+                    className="list-card--item--extra-content"
+                  >
+                    <span>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid cumque in quam qui ut vero facilis autem. Laudantium enim accusantium facere nemo aspernatur repudiandae at, incidunt adipisci consequuntur ut, non, sint delectus labore id quaerat debitis quia veritatis autem aliquid voluptates? Quam perspiciatis aperiam perferendis incidunt rerum magni ratione iusto porro natus cumque omnis velit dolores, ipsa veniam! Maiores libero quam nam fugiat, voluptatum fuga ex architecto, enim similique quod, voluptates qui voluptas blanditiis tempora dolor assumenda quos numquam temporibus.
+                    </span>
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      <a
-                        className="bx--link"
-                        href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html"
-                        rel="noopener"
-                        style={
-                          Object {
-                            "display": "inherit",
-                          }
+                    <a
+                      className="bx--link"
+                      href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html"
+                      rel="noopener"
+                      style={
+                        Object {
+                          "display": "inherit",
                         }
-                        target="_blank"
-                      >
-                        Perform simple calculations on your entity metrics
-                      </a>
-                    </div>
-                    <div
-                      className="list-card--item--extra-content"
+                      }
+                      target="_blank"
                     >
-                      <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus id nulla porro temporibus excepturi cupiditate rem voluptatibus aspernatur minima quasi autem labore, quaerat facilis perferendis quas iste quae, voluptatem, possimus dicta fugit. Voluptatem similique odio necessitatibus delectus non itaque fugiat, saepe consectetur impedit, harum cupiditate velit repellendus assumenda, vel quasi eveniet at vero voluptate asperiores maxime quas. Error, nemo, nobis recusandae totam quod provident pariatur ipsum exercitationem nihil, doloremque consequuntur. Possimus assumenda odit nesciunt veritatis, maxime quae. Hic unde quasi quas recusandae obcaecati repellendus officia aperiam sunt, aut, minus quod vero provident, velit blanditiis necessitatibus laudantium nihil tempore nostrum impedit porro enim. Enim ipsam quasi iure perferendis repellat saepe vero, voluptate tenetur consequatur necessitatibus excepturi accusamus asperiores nam hic sapiente!
-                      </span>
-                    </div>
+                      Perform simple calculations on your entity metrics
+                    </a>
+                  </div>
+                  <div
+                    className="list-card--item--extra-content"
+                  >
+                    <span>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus id nulla porro temporibus excepturi cupiditate rem voluptatibus aspernatur minima quasi autem labore, quaerat facilis perferendis quas iste quae, voluptatem, possimus dicta fugit. Voluptatem similique odio necessitatibus delectus non itaque fugiat, saepe consectetur impedit, harum cupiditate velit repellendus assumenda, vel quasi eveniet at vero voluptate asperiores maxime quas. Error, nemo, nobis recusandae totam quod provident pariatur ipsum exercitationem nihil, doloremque consequuntur. Possimus assumenda odit nesciunt veritatis, maxime quae. Hic unde quasi quas recusandae obcaecati repellendus officia aperiam sunt, aut, minus quod vero provident, velit blanditiis necessitatibus laudantium nihil tempore nostrum impedit porro enim. Enim ipsam quasi iure perferendis repellat saepe vero, voluptate tenetur consequatur necessitatibus excepturi accusamus asperiores nam hic sapiente!
+                    </span>
                   </div>
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
                 <div
-                  className="bx--structured-list-row"
+                  className="list-card--item bx--structured-list-td"
+                  role="cell"
                 >
                   <div
-                    className="list-card--item bx--structured-list-td"
-                    role="cell"
+                    className="list-card--item--value"
                   >
-                    <div
-                      className="list-card--item--value"
-                    >
-                      <a
-                        className="bx--link"
-                        href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html"
-                        rel="noopener"
-                        style={
-                          Object {
-                            "display": "inherit",
-                          }
+                    <a
+                      className="bx--link"
+                      href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html"
+                      rel="noopener"
+                      style={
+                        Object {
+                          "display": "inherit",
                         }
-                        target="_blank"
-                      >
-                        View entity metrics in a monitoring dashboard
-                      </a>
-                    </div>
-                    <div
-                      className="list-card--item--extra-content"
+                      }
+                      target="_blank"
                     >
-                      <span>
-                        Visualize your entity metrics in monitoring dashboards to get an overview of your data.
-                      </span>
-                    </div>
+                      View entity metrics in a monitoring dashboard
+                    </a>
+                  </div>
+                  <div
+                    className="list-card--item--extra-content"
+                  >
+                    <span>
+                      Visualize your entity metrics in monitoring dashboards to get an overview of your data.
+                    </span>
                   </div>
                 </div>
               </div>
@@ -755,28 +679,5 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListC
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

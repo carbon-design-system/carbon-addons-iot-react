@@ -24,7 +24,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'SkeletonPlaceholder',
+  title: '3 - Carbon/SkeletonPlaceholder',
   decorators: [withKnobs],
 
   parameters: {

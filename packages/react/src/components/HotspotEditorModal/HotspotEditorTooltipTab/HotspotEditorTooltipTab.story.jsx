@@ -4,7 +4,10 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
 
+import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
+
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
+import HotspotEditorTooltipTabREADME from './HotspotEditorTooltipTabREADME.mdx';
 
 const selectableIcons = [
   {
@@ -26,10 +29,13 @@ const colors = [
 ];
 
 export default {
-  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab',
+  title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorTooltipTab',
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorTooltipTab,
+    docs: {
+      page: HotspotEditorTooltipTabREADME,
+    },
   },
 };
 
@@ -49,6 +55,7 @@ export const WithStateInStory = () => {
         <HotspotEditorTooltipTab
           showInfoMessage={boolean('showInfoMessage', false)}
           hotspotIcons={selectableIcons}
+          hotspotIconFillColors={colors}
           formValues={formValues}
           onChange={handleOnChange}
           onDelete={action('onDelete')}
@@ -61,34 +68,40 @@ export const WithStateInStory = () => {
   return <WithState />;
 };
 
-WithStateInStory.story = {
-  name: 'Example with externaly managed state',
-  parameters: {
-    info: {
-      text: `
-      ~~~js
-      const WithState = () => {
-        const [formValues, setFormValues] = useState({});
-        return (
-          <div>
-            <HotspotEditorTooltipTab
-              showInfoMessage={boolean('showInfoMessage', false)}
-              hotspotIcons={selectableIcons}
-              formValues={formValues}
-              onChange={(change) => {
-                setFormValues({ ...formValues, ...change });
-                action('onChange')(change);
-              }}
-              onDelete={action('onDelete')}/>
-          </div>
-        );
-      };
-      ~~~
-      `,
-      propTables: [HotspotEditorTooltipTab],
-    },
-  },
+WithStateInStory.storyName = 'Example with externaly managed state';
+
+export const WithHotspotStateHook = () => {
+  const WithStateHook = () => {
+    const { selectedHotspot, deleteSelectedHotspot, updateHotspotTooltip } = useHotspotEditorState({
+      initialState: {
+        selectedHotspot: {
+          type: hotspotTypes.FIXED,
+          content: {},
+        },
+        currentType: hotspotTypes.FIXED,
+      },
+    });
+
+    return (
+      <div>
+        <HotspotEditorTooltipTab
+          showDeleteButton={!(selectedHotspot?.type === hotspotTypes.DYNAMIC)}
+          showInfoMessage={!selectedHotspot}
+          hotspotIcons={selectableIcons}
+          hotspotIconFillColors={colors}
+          formValues={selectedHotspot}
+          onChange={updateHotspotTooltip}
+          onDelete={deleteSelectedHotspot}
+          translateWithId={() => {}}
+        />
+      </div>
+    );
+  };
+
+  return <WithStateHook />;
 };
+
+WithHotspotStateHook.storyName = 'Example using the HotspotStateHook';
 
 export const WithPresetValuesAndCustomColors = () => {
   return (
@@ -98,10 +111,12 @@ export const WithPresetValuesAndCustomColors = () => {
         hotspotIconFillColors={colors}
         hotspotIcons={selectableIcons}
         formValues={{
-          color: colors[1],
-          description: 'This is the largest building there is',
+          content: {
+            title: 'West building',
+            description: 'This is the largest building there is',
+          },
           icon: selectableIcons[0],
-          title: 'West building',
+          color: colors[1],
         }}
         onChange={action('onChange')}
         onDelete={action('onDelete')}
@@ -117,6 +132,7 @@ export const WithInfoMessage = () => {
       <HotspotEditorTooltipTab
         showInfoMessage={boolean('showInfoMessage', true)}
         hotspotIcons={selectableIcons}
+        hotspotIconFillColors={colors}
         formValues={{}}
         onChange={action('onChange')}
         onDelete={action('onDelete')}

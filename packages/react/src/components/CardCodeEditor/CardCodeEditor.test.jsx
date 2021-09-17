@@ -6,6 +6,35 @@ import CardCodeEditor from './CardCodeEditor';
 import { isValidCallback } from './CardCodeEditor.story';
 
 describe('CardEditor', () => {
+  it('is selectable by testID or testId', async () => {
+    const handleOnCopy = jest.fn();
+    const { rerender } = render(
+      <CardCodeEditor
+        onSubmit={isValidCallback}
+        onCopy={handleOnCopy}
+        initialValue="/* write your code here */"
+        onClose={() => {}}
+        testID="CARD_CODE_EDITOR"
+      />
+    );
+    expect(screen.getByTestId('CARD_CODE_EDITOR')).toBeTruthy();
+
+    rerender(
+      <CardCodeEditor
+        onSubmit={isValidCallback}
+        onCopy={handleOnCopy}
+        initialValue="/* write your code here */"
+        onClose={() => {}}
+        testId="card-code-editor"
+        error="an error"
+      />
+    );
+    expect(screen.getByTestId('card-code-editor')).toBeTruthy();
+    expect(screen.getByTestId('ComposedModal')).toBeTruthy();
+    expect(screen.getByTestId('card-code-editor-expand-button')).toBeTruthy();
+    expect(screen.getByTestId('card-code-editor-copy-button')).toBeTruthy();
+  });
+
   it('should show error notification editor value is invalid', async () => {
     const handleOnCopy = jest.fn();
     const { container } = render(
@@ -18,6 +47,7 @@ describe('CardEditor', () => {
     );
     const save = screen.queryByText('Save');
     userEvent.click(save);
+    expect(screen.getByTestId('card-code-editor-notification')).toBeTruthy();
     await waitFor(() => expect(screen.queryByRole('alert')).toBeTruthy());
     userEvent.click(container.querySelector('.bx--inline-notification__close-button'));
     await waitFor(() => expect(screen.queryByRole('alert')).toBeFalsy());
@@ -33,7 +63,7 @@ describe('CardEditor', () => {
         onClose={() => {}}
       />
     );
-    const expand = screen.queryByText('Expand');
+    const expand = screen.queryByLabelText('Expand');
     userEvent.click(expand);
     await waitFor(() =>
       expect(container.querySelector('.iot--editor__expanded')).toBeInTheDocument()

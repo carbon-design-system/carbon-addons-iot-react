@@ -14,12 +14,14 @@ import {
   OverridePropTypes,
   ColorPropType,
 } from '../../../constants/SharedPropTypes';
+import { getOverrides } from '../../../utils/componentUtilityFunctions';
+import deprecate from '../../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
 const propTypes = {
   /** Array of selectable color objects */
-  hotspotIconFillColors: PropTypes.arrayOf(ColorPropType),
+  hotspotIconFillColors: PropTypes.arrayOf(ColorPropType).isRequired,
   /** Array of selectable icon objects. Use icon size 24 for the icon */
   hotspotIcons: PropTypes.arrayOf(HotspotIconPropType),
   /** The state values of the controlled form elements e.g. { title: 'My hotspot 1', description: 'Lorem ipsum' } */
@@ -41,6 +43,7 @@ const propTypes = {
     titleInputPlaceholderText: PropTypes.string,
     descriptionTextareaLabelText: PropTypes.string,
     descriptionTextareaPlaceholderText: PropTypes.string,
+    iconDropdownTitleText: PropTypes.string,
     iconDropdownLabelText: PropTypes.string,
     colorDropdownLabelText: PropTypes.string,
     colorDropdownTitleText: PropTypes.string,
@@ -65,12 +68,16 @@ const propTypes = {
   showDeleteButton: PropTypes.bool,
   /** Shows the info message if true */
   showInfoMessage: PropTypes.bool,
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
-  hotspotIconFillColors: undefined,
   hotspotIcons: [],
   formValues: {},
   i18n: {
@@ -91,7 +98,7 @@ const defaultProps = {
   primaryInputId: undefined,
   showInfoMessage: false,
   showDeleteButton: true,
-  testID: 'HotspotEditorTooltipTab',
+  testId: 'HotspotEditorTooltipTab',
 };
 
 const preventFormSubmission = (e) => e.preventDefault();
@@ -123,7 +130,9 @@ const HotspotEditorTooltipTab = ({
   overrides,
   showInfoMessage,
   showDeleteButton,
+  // TODO: remove the deprecated testID prop in v3
   testID,
+  testId,
   translateWithId,
 }) => {
   const {
@@ -141,6 +150,7 @@ const HotspotEditorTooltipTab = ({
   } = merge({}, defaultProps.i18n, i18n);
 
   const currentIconColor = formValues.color?.carbonColor ?? formValues.color ?? 'currentcolor';
+  const hasNonEditableContent = React.isValidElement(formValues?.content);
 
   const renderInfoMessage = () => (
     <div className={`${iotPrefix}--hotspot-editor--tooltip-info-message`}>
@@ -196,12 +206,13 @@ const HotspotEditorTooltipTab = ({
         <>
           <form
             className={`${iotPrefix}--hotspot-editor--tooltip-form`}
-            data-testid={testID}
+            data-testid={testID || testId}
             onSubmit={preventFormSubmission}
           >
             <MyTitleTextInput
+              disabled={hasNonEditableContent}
               name="title"
-              data-testid={`${testID}-title-input`}
+              data-testid={`${testID || testId}-title-input`}
               value={formValues.content?.title || ''}
               id={primaryInputId || 'tooltip-form-title'}
               labelText={titleInputLabelText}
@@ -211,9 +222,10 @@ const HotspotEditorTooltipTab = ({
               }}
               placeholder={titleInputPlaceholderText}
               type="text"
-              {...overrides?.titleTextInput?.props}
+              {...getOverrides(overrides?.titleTextInput?.props)}
             />
             <MyDecriptionTextArea
+              disabled={hasNonEditableContent}
               name="description"
               id="tooltip-form-description"
               labelText={descriptionTextareaLabelText}
@@ -223,7 +235,7 @@ const HotspotEditorTooltipTab = ({
               }}
               placeholder={descriptionTextareaPlaceholderText}
               value={formValues.content?.description || ''}
-              {...overrides?.decriptionTextArea?.props}
+              {...getOverrides(overrides?.decriptionTextArea?.props)}
             />
             {renderColorIconContainer()}
           </form>

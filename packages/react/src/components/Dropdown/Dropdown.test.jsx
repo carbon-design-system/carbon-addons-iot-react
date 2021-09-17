@@ -2,12 +2,14 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { items } from '../IconDropdown/IconDropdown.story';
+import { settings } from '../../constants/Settings';
 
 import Dropdown from './Dropdown';
 
+const { prefix } = settings;
+
 const iconDropdownProps = {
   id: 'icon-dropdown-1',
-  dropdownId: 'dropdown-id-1',
   label: 'Icon Dropdown menu options',
   items,
 };
@@ -28,6 +30,18 @@ const itemsWithoutIcons = [
 ];
 
 describe('Dropdown with Icon and Labels', () => {
+  it('should be selectable with testId', () => {
+    const { rerender } = render(
+      <Dropdown items={itemsWithoutIcons} {...iconDropdownProps} data-testid="dropdown_test" />
+    );
+
+    expect(screen.getAllByTestId('dropdown_test')).toBeDefined();
+
+    rerender(<Dropdown items={itemsWithoutIcons} {...iconDropdownProps} testId="dropdown_TEST" />);
+
+    expect(screen.getAllByTestId('dropdown_TEST')).toBeDefined();
+  });
+
   it('Renders default', () => {
     render(<Dropdown items={itemsWithoutIcons} {...iconDropdownProps} />);
 
@@ -37,7 +51,7 @@ describe('Dropdown with Icon and Labels', () => {
   });
 
   it('Renders selected item', () => {
-    render(<Dropdown {...iconDropdownProps} selectedViewId={items[0].id} />);
+    render(<Dropdown {...iconDropdownProps} selectedItem={items[0]} />);
 
     const selectedItem = screen.queryByText(items[0].text);
 
@@ -116,5 +130,24 @@ describe('Dropdown with Icon and Labels', () => {
 
     fireEvent.click(screen.getByText(iconDropdownProps.label));
     expect(screen.getByText(items[0].text)).toBeDefined();
+  });
+
+  it('renders an empty string if item is falsey', () => {
+    const items = [
+      {
+        id: 'one',
+        text: 'one',
+      },
+      {
+        id: 'two',
+        text: 'two',
+      },
+      false,
+    ];
+
+    const { container } = render(<Dropdown {...iconDropdownProps} items={items} />);
+
+    fireEvent.click(screen.getByText(iconDropdownProps.label));
+    expect(container.querySelectorAll(`.${prefix}--list-box__menu-item__option`)).toHaveLength(3);
   });
 });

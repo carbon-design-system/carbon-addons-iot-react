@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { green50 } from '@carbon/colors';
 import { Help24 } from '@carbon/icons-react';
 
@@ -207,6 +208,136 @@ describe('ThresholdsFormItem', () => {
         comparison: '>',
         color: 'red',
         icon: 'Error',
+      },
+    ]);
+  });
+  it("should allow text input when comparison is '='", () => {
+    render(<ThresholdsFormItem {...commonProps} thresholds={thresholds} />);
+
+    const comparisonInput = screen.getAllByLabelText('Open menu')[4];
+    expect(comparisonInput).toBeInTheDocument();
+
+    fireEvent.click(comparisonInput);
+
+    const equalsOperator = screen.getByText('=');
+    expect(equalsOperator).toBeInTheDocument();
+
+    fireEvent.click(equalsOperator);
+    expect(mockOnChange).toHaveBeenCalledWith([
+      {
+        value: 5,
+        comparison: '=',
+        color: 'red',
+        icon: 'Warning',
+      },
+    ]);
+    expect(screen.getByTestId('threshold-0-text-input')).toBeDefined();
+    userEvent.type(screen.getByTestId('threshold-0-text-input'), '{backspace}orange');
+    expect(mockOnChange).toHaveBeenLastCalledWith([
+      {
+        value: 'orange',
+        comparison: '=',
+        color: 'red',
+        icon: 'Warning',
+      },
+    ]);
+  });
+
+  it('sets 0 if threshold.value is undefined', () => {
+    render(
+      <ThresholdsFormItem
+        {...commonProps}
+        thresholds={[
+          {
+            value: undefined,
+            comparison: '>',
+            color: 'red',
+            icon: 'Warning',
+          },
+        ]}
+      />
+    );
+    expect(
+      screen.getByRole('spinbutton', {
+        name: 'Numeric input field with increment and decrement buttons',
+      })
+    ).toHaveValue(0);
+  });
+
+  it("should fallback to > on a comparison dropdown when a comparison doesn't exist", () => {
+    render(
+      <ThresholdsFormItem
+        {...commonProps}
+        thresholds={[
+          {
+            value: 25,
+            color: 'red',
+            icon: 'Warning',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByText('>')).toBeVisible();
+  });
+
+  it('should remove the existing threshold when clicking the trash can', () => {
+    render(
+      <ThresholdsFormItem
+        {...commonProps}
+        thresholds={[
+          {
+            value: 5,
+            comparison: '>',
+            color: 'red',
+            icon: 'Warning',
+          },
+          {
+            value: 1,
+            comparison: '>',
+            color: 'red',
+            icon: 'Warning',
+          },
+        ]}
+      />
+    );
+
+    userEvent.click(screen.getAllByRole('button', { name: 'Remove' })[0]);
+    expect(commonProps.onChange).toHaveBeenCalledWith([
+      {
+        value: 1,
+        comparison: '>',
+        color: 'red',
+        icon: 'Warning',
+      },
+    ]);
+  });
+
+  it('should fallback to the value when creating a number fails in the onChange handler', () => {
+    render(
+      <ThresholdsFormItem
+        {...commonProps}
+        thresholds={[
+          {
+            value: 5,
+            comparison: '>',
+            color: 'red',
+            icon: 'Warning',
+          },
+        ]}
+      />
+    );
+
+    fireEvent.change(
+      screen.getByLabelText('Numeric input field with increment and decrement buttons'),
+      { target: { value: '000' } }
+    );
+    expect(commonProps.onChange).toHaveBeenCalledWith([
+      {
+        value: '000',
+        comparison: '>',
+        color: 'red',
+        icon: 'Warning',
       },
     ]);
   });

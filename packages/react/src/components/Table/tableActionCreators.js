@@ -26,6 +26,13 @@ export const TABLE_ADVANCED_FILTER_REMOVE = 'TABLE_ADVANCED_FILTER_REMOVE';
 export const TABLE_ADVANCED_FILTER_CHANGE = 'TABLE_ADVANCED_FILTER_CHANGE';
 export const TABLE_ADVANCED_FILTER_TOGGLE = 'TABLE_ADVANCED_FILTER_TOGGLE';
 export const TABLE_ADVANCED_FILTER_APPLY = 'TABLE_ADVANCED_FILTER_APPLY';
+export const TABLE_TOGGLE_AGGREGATIONS = 'TABLE_TOGGLE_AGGREGATIONS';
+export const TABLE_MULTI_SORT_TOGGLE_MODAL = 'TABLE_MULTI_SORT_TOGGLE_MODAL';
+export const TABLE_MULTI_SORT_SAVE = 'TABLE_MULTI_SORT_SAVE';
+export const TABLE_MULTI_SORT_CANCEL = 'TABLE_MULTI_SORT_CANCEL';
+export const TABLE_MULTI_SORT_CLEAR = 'TABLE_MULTI_SORT_CLEAR';
+export const TABLE_MULTI_SORT_ADD_COLUMN = 'TABLE_MULTI_SORT_ADD_COLUMN';
+export const TABLE_MULTI_SORT_REMOVE_COLUMN = 'TABLE_MULTI_SORT_REMOVE_COLUMN';
 
 export const tableRegister = ({
   data,
@@ -131,9 +138,9 @@ export const tableRowActionError = (rowId, error, instanceId = null) => ({
 });
 
 /** Select a row of the table */
-export const tableRowSelect = (rowId, isSelected, hasRowSelection, instanceId = null) => ({
+export const tableRowSelect = (selectedIds, hasRowSelection, instanceId = null) => ({
   type: TABLE_ROW_SELECT,
-  payload: { rowId, isSelected, hasRowSelection },
+  payload: { selectedIds, hasRowSelection },
   instanceId,
 });
 
@@ -194,4 +201,35 @@ export const tableAdvancedFiltersChange = () => ({
 export const tableAdvancedFiltersApply = (filterState) => ({
   type: TABLE_ADVANCED_FILTER_APPLY,
   payload: filterState,
+});
+
+export const tableToggleAggregations = () => ({
+  type: TABLE_TOGGLE_AGGREGATIONS,
+});
+
+export const tableMultiSortToggleModal = () => ({
+  type: TABLE_MULTI_SORT_TOGGLE_MODAL,
+});
+
+export const tableSaveMultiSortColumns = (sortColumns) => ({
+  type: TABLE_MULTI_SORT_SAVE,
+  payload: sortColumns,
+});
+
+export const tableCancelMultiSortColumns = () => ({
+  type: TABLE_MULTI_SORT_CANCEL,
+});
+
+export const tableClearMultiSortColumns = () => ({
+  type: TABLE_MULTI_SORT_CLEAR,
+});
+
+export const tableAddMultiSortColumn = (index) => ({
+  type: TABLE_MULTI_SORT_ADD_COLUMN,
+  payload: index,
+});
+
+export const tableRemoveMultiSortColumn = (index) => ({
+  type: TABLE_MULTI_SORT_REMOVE_COLUMN,
+  payload: index,
 });

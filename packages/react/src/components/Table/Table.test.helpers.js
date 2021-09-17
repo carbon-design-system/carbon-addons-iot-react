@@ -22,6 +22,7 @@ export const mockActions = {
     onApplyRowAction: jest.fn(),
     onEmptyStateAction: jest.fn(),
     onChangeOrdering: jest.fn(),
+    onColumnResize: jest.fn(),
   },
 };
 
@@ -52,4 +53,72 @@ export const getTableColumns = (selectData) => [
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
   },
+];
+
+const getNewRow = (idx, suffix = '') => ({
+  id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
+  values: {
+    string: `test string ${idx} ${suffix}`,
+  },
+});
+
+export const getNestedRows = () => {
+  return Array(3)
+    .fill(0)
+    .map((i, idx) => ({
+      id: `row-${idx}`,
+      values: {
+        string: `row-${idx}`,
+      },
+      children:
+        idx !== 1
+          ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
+          : idx === 1
+          ? [
+              getNewRow(idx, 'A', true),
+              {
+                ...getNewRow(idx, 'B'),
+                children: [
+                  getNewRow(idx, 'B-1', true),
+                  {
+                    ...getNewRow(idx, 'B-2'),
+                    children: [getNewRow(idx, 'B-2-A', true), getNewRow(idx, 'B-2-B', true)],
+                  },
+                  getNewRow(idx, 'B-3', true),
+                ],
+              },
+              getNewRow(idx, 'C', true),
+              {
+                ...getNewRow(idx, 'D', true),
+                children: [
+                  getNewRow(idx, 'D-1', true),
+                  getNewRow(idx, 'D-2', true),
+                  getNewRow(idx, 'D-3', true),
+                ],
+              },
+            ]
+          : undefined,
+    }));
+};
+
+export const getNestedRowIds = () => [
+  'row-0',
+  'row-0_A',
+  'row-0_B',
+  'row-1',
+  'row-1_A',
+  'row-1_B',
+  'row-1_B-1',
+  'row-1_B-2',
+  'row-1_B-2-A',
+  'row-1_B-2-B',
+  'row-1_B-3',
+  'row-1_C',
+  'row-1_D',
+  'row-1_D-1',
+  'row-1_D-2',
+  'row-1_D-3',
+  'row-2',
+  'row-2_A',
+  'row-2_B',
 ];

@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { Apps16 } from '@carbon/icons-react';
+import { Apps16, Data_116 as Data116 } from '@carbon/icons-react';
 import isNil from 'lodash/isNil';
 import warning from 'warning';
 
 import { Button } from '../../index';
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
+import deprecate from '../../internal/deprecate';
 
 import CardGalleryList from './CardGalleryList/CardGalleryList';
 import CardEditForm from './CardEditForm/CardEditForm';
@@ -44,11 +45,15 @@ const propTypes = {
   }),
   /** Callback function when user clicks Show Gallery */
   onShowGallery: PropTypes.func.isRequired,
-  /** Callback function when form data changes */
+  /** Callback function when form data changes, passes the updated card configuration */
   onChange: PropTypes.func.isRequired,
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
-
+  /** optional function passes the card props being edited and you can updated the card props
+   * This allows you to add things to the edit form that are not in the main card JSON.  This is a better
+   * way to add custom editor props to the Card.
+   */
+  onRenderCardEditForm: PropTypes.func,
   /** if provided, allows the consumer to make changes to the cardConfig for preview in the JSON editor modal.
    * onCardJsonPreview(card)
    */
@@ -72,6 +77,12 @@ const propTypes = {
       label: PropTypes.string,
     })
   ),
+  /** if provided, returns an object where the keys are available dimensions which are the dimensions to be allowed
+   * on each card
+   * ex response: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   * getValidDimensions(card)
+   */
+  getValidDimensions: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -111,11 +122,18 @@ const propTypes = {
     galleryHeader: PropTypes.string,
     addCardButton: PropTypes.string,
     searchPlaceHolderText: PropTypes.string,
+    editDataItems: PropTypes.string,
   }),
   currentBreakpoint: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
+  // TODO: remove deprecated testID in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
     simpleBar: PropTypes.string,
@@ -127,6 +145,7 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
+  onEditDataItems: PropTypes.func,
 };
 
 const defaultProps = {
@@ -138,10 +157,13 @@ const defaultProps = {
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
     searchPlaceHolderText: 'Enter a search',
+    editDataItems: 'Edit data items',
   },
+  getValidDimensions: null,
   getValidDataItems: null,
   getValidTimeRanges: null,
   onCardJsonPreview: null,
+  onRenderCardEditForm: null,
   dataItems: [],
   availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
@@ -149,8 +171,9 @@ const defaultProps = {
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
   isSummaryDashboard: false,
-  testID: 'card-editor',
+  testId: 'card-editor',
   dataSeriesItemLinks: null,
+  onEditDataItems: null,
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -167,14 +190,19 @@ const CardEditor = ({
   onValidateCardJson,
   onCardJsonPreview,
   supportedCardTypes,
-  availableDimensions,
+  availableDimensions: availableDimensionsProp,
+  getValidDimensions,
+  onRenderCardEditForm,
   icons,
   i18n,
   currentBreakpoint,
+  // TODO: remove deprecated testID in v3
   testID,
+  testId,
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
+  onEditDataItems,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -186,28 +214,29 @@ const CardEditor = ({
   }, []);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
+  const availableDimensions = useMemo(
+    () => (getValidDimensions ? getValidDimensions(cardConfig) : availableDimensionsProp),
+    [availableDimensionsProp, cardConfig, getValidDimensions]
+  );
+
   // show the gallery if no card is being edited
   const showGallery = isNil(cardConfig);
 
+  const finalCardToEdit = useMemo(
+    () => (onRenderCardEditForm && cardConfig ? onRenderCardEditForm(cardConfig) : cardConfig),
+    [cardConfig, onRenderCardEditForm]
+  );
   return (
-    <div className={baseClassName} data-testid={testID}>
-      {!showGallery ? (
-        <div className={`${baseClassName}--header`}>
-          <Button
-            className="gallery-button"
-            kind="ghost"
-            size="small"
-            renderIcon={Apps16}
-            onClick={onShowGallery}
-          >
-            {mergedI18n.addCardButton}
-          </Button>
-        </div>
-      ) : (
+    <div
+      className={baseClassName}
+      // TODO: remove deprecated testID in v3
+      data-testid={testID || testId}
+    >
+      {showGallery ? (
         <div className={`${baseClassName}--header`}>
           <h2 className={`${baseClassName}--header--title`}>{mergedI18n.galleryHeader}</h2>
         </div>
-      )}
+      ) : null}
       <div className={`${baseClassName}--content`}>
         {showGallery ? (
           <CardGalleryList
@@ -215,11 +244,12 @@ const CardEditor = ({
             onAddCard={onAddCard}
             supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
-            data-testid={`${testID}-card-gallery-list`}
+            // TODO: remove deprecated testID in v3
+            testId={`${testID || testId}-card-gallery-list`}
           />
         ) : (
           <CardEditForm
-            cardConfig={cardConfig}
+            cardConfig={finalCardToEdit}
             isSummaryDashboard={isSummaryDashboard}
             onChange={onChange}
             dataItems={dataItems}
@@ -235,6 +265,36 @@ const CardEditor = ({
           />
         )}
       </div>
+      {showGallery ? null : (
+        <div className={`${baseClassName}--footer`}>
+          <Button
+            kind="ghost"
+            size="small"
+            renderIcon={Apps16}
+            onClick={onShowGallery}
+            // TODO: remove deprecated testID in v3 and pass testId to overrride defaults
+            // testId={`${testID || testId}-add-card-button`}
+          >
+            {mergedI18n.addCardButton}
+          </Button>
+        </div>
+      )}
+      {isSummaryDashboard ? (
+        <div className={`${baseClassName}--footer`}>
+          <Button
+            key="edit-data-item"
+            kind="ghost"
+            size="small"
+            renderIcon={Data116}
+            onClick={onEditDataItems}
+            iconDescription={mergedI18n.editDataItems}
+            // TODO: remove deprecated testID in v3
+            // testId={`${testID || testId}-edit-button`}
+          >
+            {mergedI18n.editDataItems}
+          </Button>
+        </div>
+      ) : null}
     </div>
   );
 };

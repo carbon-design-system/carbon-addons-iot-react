@@ -34,7 +34,6 @@ const propTypes = {
     hideZoom: PropTypes.string,
     zoomLevel: PropTypes.string,
     fit: PropTypes.string,
-    fill: PropTypes.string,
     stretch: PropTypes.string,
     selectAColor: PropTypes.string,
   }),
@@ -51,7 +50,6 @@ const defaultProps = {
     hideZoom: 'Hide zoom controls',
     zoomLevel: 'Max zoom level',
     fit: 'Fit',
-    fill: 'Fill',
     stretch: 'Stretch',
     selectAColor: 'Select a color',
   },
@@ -101,12 +99,6 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
               value="contain"
               id={`${baseClassName}--input-radio-1`}
               labelText={mergedI18n.fit}
-            />
-            <RadioButton
-              data-testid={`${baseClassName}--input-radio2`}
-              value="cover"
-              id={`${baseClassName}--input-radio-2`}
-              labelText={mergedI18n.fill}
             />
             <RadioButton
               data-testid={`${baseClassName}--input-radio3`}

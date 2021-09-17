@@ -1,67 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/AddCard handles click 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/AddCard handles click 1`] = `
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <a
-      className="bx--link bx--tile bx--tile--clickable iot-add-card"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      rel={null}
-    >
-      <p
-        className="iot-addcard-title"
-      >
-        Click me
-      </p>
-      <svg
-        aria-hidden={true}
-        description="Click me"
-        fill="#161616"
-        focusable="false"
-        height={20}
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 32 32"
-        width={20}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-        />
-      </svg>
-    </a>
-  </div>
-  <button
-    className="info__show-button"
+  <a
+    className="bx--link bx--tile bx--tile--clickable iot-add-card"
+    data-testid="add-card-tile"
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onKeyDown={[Function]}
+    rel={null}
   >
-    Show Info
-  </button>
+    <p
+      className="iot-addcard-title"
+    >
+      Click me
+    </p>
+    <svg
+      aria-hidden={true}
+      description="Click me"
+      fill="#161616"
+      focusable="false"
+      height={20}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 32 32"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+      />
+    </svg>
+  </a>
 </div>
 `;

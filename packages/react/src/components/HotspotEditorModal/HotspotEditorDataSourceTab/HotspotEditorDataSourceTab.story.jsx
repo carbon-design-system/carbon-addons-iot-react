@@ -1,46 +1,54 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
-import { spacing04 } from '@carbon/layout';
-import omit from 'lodash/omit';
+import update from 'immutability-helper';
 
 import imageFile from '../../ImageCard/landscape.jpg';
 import { CARD_SIZES, CARD_TYPES } from '../../../constants/LayoutConstants';
-import { handleDataSeriesChange, handleDataItemEdit } from '../../DashboardEditor/editorUtils';
+import { useHotspotEditorState } from '../hooks/hotspotStateHook';
 
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab';
+import HotspotEditorDataSourceTabREADME from './HotspotEditorDataSourceTabREADME.mdx';
 
 export default {
-  title: 'Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab',
+  title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab',
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorDataSourceTab,
+    docs: {
+      page: HotspotEditorDataSourceTabREADME,
+    },
   },
 };
 
 const dataItems = [
   {
     dataSourceId: 'temp_last',
+    dataItemId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
   },
   {
     dataSourceId: 'temperature',
+    dataItemId: 'temperature',
     label: 'Temperature',
     unit: '°',
   },
   {
     dataSourceId: 'pressure',
+    dataItemId: 'pressure',
     label: 'Pressure',
     unit: 'psi',
   },
   {
     dataSourceId: 'elevators',
+    dataItemId: 'elevators',
     label: 'Elevators',
     unit: 'floor',
   },
   {
     dataSourceId: 'other_metric',
+    dataItemId: 'other_metric',
     label: 'Other metric',
     unit: 'lbs',
   },
@@ -53,11 +61,13 @@ const cardConfig = {
   content: {
     hotspots: [
       {
-        title: 'pressure',
         x: 45,
         y: 25,
         color: '#0f0',
-        content: <span style={{ padding: spacing04 }}>Stairs</span>,
+        content: {
+          title: 'Stairs',
+          attributes: [],
+        },
       },
     ],
   },
@@ -83,41 +93,30 @@ const cardConfigWithPresets = {
           attributes: [
             {
               dataSourceId: 'temp_last',
+              dataItemId: 'temp_last',
               label: '{high} temp',
               unit: '{unitVar}',
             },
             {
               dataSourceId: 'temperature',
-              label: 'Temperature',
+              dataItemId: 'temperature',
+              label: 'Temperature in Celsius',
               unit: '°',
             },
             {
               dataSourceId: 'pressure',
+              dataItemId: 'pressure',
               label: 'Pressure',
               unit: 'psi',
             },
             {
               dataSourceId: 'elevators',
+              dataItemId: 'elevators',
               label: 'Elevators',
               unit: 'floor',
             },
           ],
         },
-      },
-      {
-        title: 'pressure',
-        x: 45,
-        y: 25,
-        color: '#0f0',
-        content: <span style={{ padding: spacing04 }}>Stairs</span>,
-      },
-      {
-        title: 'temperature',
-        label: 'Temperature',
-        x: 45,
-        y: 50,
-        color: '#00f',
-        content: <span style={{ padding: spacing04 }}>Vent Fan</span>,
       },
     ],
   },
@@ -141,27 +140,25 @@ const cardConfigWithPresets = {
 
 export const WithStateInStory = () => {
   const WithState = () => {
-    const [cardConfigState, setCardConfigState] = useState(cardConfig);
+    const { selectedHotspot, updateHotspotDataSource } = useHotspotEditorState({
+      initialState: {
+        selectedHotspot: cardConfig.content.hotspots[0],
+      },
+    });
+
     return (
       <div>
         <HotspotEditorDataSourceTab
-          hotspot={cardConfigState.content.hotspots[0]}
-          thresholds={cardConfigState.thresholds}
-          cardConfig={cardConfigState}
+          hotspot={selectedHotspot}
+          cardConfig={update(cardConfig, {
+            content: {
+              hotspots: { $set: [selectedHotspot] },
+            },
+          })}
           dataItems={dataItems}
           translateWithId={() => {}}
           onChange={(newData) => {
-            if (Array.isArray(newData)) {
-              setCardConfigState({
-                ...cardConfigState,
-                ...handleDataSeriesChange(newData, cardConfigState, null, 0),
-              });
-            } else {
-              setCardConfigState({
-                ...cardConfigState,
-                ...omit(handleDataItemEdit(newData, cardConfigState, null, 0), 'hotspotIndex'),
-              });
-            }
+            updateHotspotDataSource(newData);
             action('onChange')(newData);
           }}
         />
@@ -172,58 +169,29 @@ export const WithStateInStory = () => {
   return <WithState />;
 };
 
-WithStateInStory.story = {
-  name: 'Example with no hotspots',
-  parameters: {
-    info: {
-      text: `
-      ~~~js
-      const WithState = () => {
-        const [cardConfigState, setCardConfigState] = useState(cardConfig);
-        return (
-          <div>
-            <HotspotEditorDataSourceTab
-              title='pressure'
-              cardConfig={cardConfigState}
-              dataItems={dataItems}
-              onChange={(newCard) => {
-                setCardConfigState({ ...cardConfigState, ...newCard });
-                action('onChange')(newCard);
-              }}
-            />
-          </div>
-        );
-      };
-      ~~~
-      `,
-      propTables: [HotspotEditorDataSourceTab],
-    },
-  },
-};
+WithStateInStory.storyName = 'Example with state in story';
 
 export const WithPresetValues = () => {
   const WithState = () => {
-    const [cardConfigState, setCardConfigState] = useState(cardConfigWithPresets);
+    const { selectedHotspot, updateHotspotDataSource } = useHotspotEditorState({
+      initialState: {
+        selectedHotspot: cardConfigWithPresets.content.hotspots[0],
+      },
+    });
+
     return (
       <div>
         <HotspotEditorDataSourceTab
-          hotspot={cardConfigState.content.hotspots[0]}
-          thresholds={cardConfigState.thresholds}
-          cardConfig={cardConfigState}
+          hotspot={selectedHotspot}
+          cardConfig={update(cardConfigWithPresets, {
+            content: {
+              hotspots: { $set: [selectedHotspot] },
+            },
+          })}
           dataItems={dataItems}
           translateWithId={() => {}}
           onChange={(newData) => {
-            if (Array.isArray(newData)) {
-              setCardConfigState({
-                ...cardConfigState,
-                ...handleDataSeriesChange(newData, cardConfigState, null, 0),
-              });
-            } else {
-              setCardConfigState({
-                ...cardConfigState,
-                ...omit(handleDataItemEdit(newData, cardConfigState, null, 0), 'hotspotIndex'),
-              });
-            }
+            updateHotspotDataSource(newData);
             action('onChange')(newData);
           }}
         />
@@ -234,31 +202,4 @@ export const WithPresetValues = () => {
   return <WithState />;
 };
 
-WithPresetValues.story = {
-  name: 'With preset values',
-  parameters: {
-    info: {
-      text: `
-      ~~~js
-      const WithState = () => {
-        const [cardConfigState, setCardConfigState] = useState(cardConfig);
-        return (
-          <div>
-            <HotspotEditorDataSourceTab
-              title='pressure'
-              cardConfig={cardConfigState}
-              dataItems={dataItems}
-              onChange={(newCard) => {
-                setCardConfigState({ ...cardConfigState, ...newCard });
-                action('onChange')(newCard);
-              }}
-            />
-          </div>
-        );
-      };
-      ~~~
-      `,
-      propTables: [HotspotEditorDataSourceTab],
-    },
-  },
-};
+WithPresetValues.storyName = 'With preset values';

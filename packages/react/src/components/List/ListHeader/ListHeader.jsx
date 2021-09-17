@@ -16,6 +16,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -28,11 +29,12 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
   },
   title: null,
+  testId: 'list-header',
 };
 
-const ListHeader = ({ title, buttons, search, i18n }) => {
+const ListHeader = ({ title, buttons, search, i18n, testId }) => {
   return (
-    <div className={`${iotPrefix}--list-header-container`}>
+    <div data-testid={testId} className={`${iotPrefix}--list-header-container`}>
       {title || (buttons && buttons.length > 0) ? (
         <div className={`${iotPrefix}--list-header`}>
           <div className={`${iotPrefix}--list-header--title`}>{title}</div>
@@ -48,6 +50,7 @@ const ListHeader = ({ title, buttons, search, i18n }) => {
             size="sm"
             value={search.value}
             labelText={i18n.searchPlaceHolderText}
+            data-testid={`${testId}-search-input`}
           />
         </div>
       ) : null}

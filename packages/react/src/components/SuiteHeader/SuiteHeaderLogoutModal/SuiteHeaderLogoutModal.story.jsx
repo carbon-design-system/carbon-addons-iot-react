@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal';
 
 export default {
-  title: 'Watson IoT/SuiteHeader/SuiteHeaderLogoutModal',
+  title: '1 - Watson IoT/SuiteHeader/SuiteHeaderLogoutModal',
 
   parameters: {
     component: SuiteHeaderLogoutModal,
@@ -22,6 +22,4 @@ export const Default = () => (
   />
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';

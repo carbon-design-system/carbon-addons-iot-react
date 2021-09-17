@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
 import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/es/components/UIShell';
+import { Close16 } from '@carbon/icons-react';
+import { white } from '@carbon/colors';
 
 import { APP_SWITCHER } from '../Header';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 import { HeaderActionPropTypes } from './HeaderAction';
 
@@ -24,8 +27,14 @@ const propTypes = {
 };
 
 const defaultProps = {
-  // eslint-disable-next-line react/default-props-match-prop-types
+  // disabled b/c these are pulled in via the HeaderActionPropTypes above.
+  /* eslint-disable react/default-props-match-prop-types */
   isExpanded: false,
+  renderLabel: false,
+  i18n: {
+    closeMenu: 'close menu',
+  },
+  /* eslint-enable react/default-props-match-prop-types */
 };
 
 /**
@@ -33,7 +42,23 @@ const defaultProps = {
  * It has no local state.
  * It calls the onToggleExpansion when it should be opened or closed
  */
-const HeaderActionPanel = ({ item, index, onToggleExpansion, isExpanded, focusRef }) => {
+const HeaderActionPanel = ({
+  item,
+  index,
+  onToggleExpansion,
+  isExpanded,
+  focusRef,
+  renderLabel,
+  i18n,
+  inOverflow,
+}) => {
+  const mergedI18n = useMemo(
+    () => ({
+      ...defaultProps.i18n,
+      ...i18n,
+    }),
+    [i18n]
+  );
   return (
     <>
       <HeaderGlobalAction
@@ -46,7 +71,13 @@ const HeaderActionPanel = ({ item, index, onToggleExpansion, isExpanded, focusRe
         onClick={() => onToggleExpansion()}
         ref={focusRef}
       >
-        {item.btnContent}
+        {renderLabel ? (
+          item.label
+        ) : isExpanded && inOverflow ? (
+          <Close16 fill={white} description={mergedI18n.closeMenu} />
+        ) : (
+          item.btnContent
+        )}
       </HeaderGlobalAction>
       <HeaderPanel
         data-testid="action-btn__panel"
@@ -66,12 +97,29 @@ const HeaderActionPanel = ({ item, index, onToggleExpansion, isExpanded, focusRe
       >
         <ul aria-label={item.label}>
           {item.childContent.map((childItem, k) => {
-            const ChildElement = childItem?.metaData?.element || 'a';
+            const { element, ...metaData } = childItem?.metaData ?? {};
+            const ChildElement = element || 'a';
+            const onKeyDownClick = (e) => e.target.click();
+
+            // if the item is an A and doesn't have an onClick event
+            // do nothing. An A tag doesn't need an onClick handler.
+            const onClick =
+              ChildElement === 'a' && !metaData?.onClick
+                ? undefined
+                : // otherwise, if an onClick exists use that, or fallback to a noop.
+                  metaData?.onClick || (() => {});
+
+            // if item has onKeyDown use that otherwise, fallback to onClick if it exists
+            // or create a custom handler to trigger the click
+            const onKeyDown = metaData?.onKeyDown ? metaData.onKeyDown : onClick || onKeyDownClick;
+
             return (
               <li key={`listitem-${item.label}-${k}`} className="action-btn__headerpanel-li">
                 <ChildElement
                   key={`headerpanelmenu-item-${item.label}-${index}-child-${k}`}
-                  {...childItem.metaData}
+                  {...metaData}
+                  onClick={onClick}
+                  onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
                 >
                   {childItem.content}
                 </ChildElement>

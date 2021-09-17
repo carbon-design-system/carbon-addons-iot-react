@@ -226,7 +226,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: actions-condensed-start;
@@ -302,8 +302,15 @@
         }
       }
     }
+    .#{$prefix}--text-input {
+      margin-right: $spacing-05;
+      [dir='rtl'] & {
+        margin-right: unset;
+        margin-left: $spacing-05;
+      }
+    }
 
-    &--edit {
+    &--edit.#{$prefix}--btn.#{$prefix}--btn--field {
       margin-left: $spacing-05;
       [dir='rtl'] & {
         margin-left: unset;

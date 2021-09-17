@@ -24,11 +24,13 @@ export const CardRangePickerPropTypes = {
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element])
   ).isRequired,
   cardWidth: PropTypes.number,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   timeRange: null,
   cardWidth: undefined,
+  testId: 'card-range-picker',
 };
 
 const CardRangePicker = ({
@@ -37,6 +39,7 @@ const CardRangePicker = ({
   timeRangeOptions,
   onCardAction,
   cardWidth,
+  testId,
 }) => {
   const [timeRange, setTimeRange] = useState(timeRangeProp);
 
@@ -51,11 +54,14 @@ const CardRangePicker = ({
   return (
     <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
       <ToolbarItem>
-        {cardWidth > 400 ? (
-          <div id="timeRange" className={`${iotPrefix}--card--toolbar-timerange-label`}>
-            {timeRangeOptions[timeRange] || i18n.defaultLabel}
-          </div>
-        ) : null}
+        <div
+          id="timeRange"
+          className={classnames(`${iotPrefix}--card--toolbar-timerange-label`, {
+            [`${iotPrefix}--card--toolbar-timerange-label--hidden`]: cardWidth < 400,
+          })}
+        >
+          {timeRangeOptions[timeRange] || i18n.defaultLabel}
+        </div>
 
         <OverflowMenu
           className={classnames(`${iotPrefix}--card--toolbar-date-range-action`)}
@@ -64,6 +70,7 @@ const CardRangePicker = ({
           iconDescription={i18n.selectTimeRangeLabel}
           menuOptionsClass={`${iotPrefix}--card--overflow`}
           renderIcon={EventSchedule16}
+          data-testid={testId}
         >
           <OverflowMenuItem
             key="default"

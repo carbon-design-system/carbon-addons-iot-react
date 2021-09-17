@@ -104,7 +104,7 @@ function UncontrolledTooltipExample() {
 }
 
 export default {
-  title: 'Watson IoT/Tooltip',
+  title: '1 - Watson IoT/Tooltip',
   decorators: [withKnobs],
 
   parameters: {

@@ -1,7 +1,6 @@
 import React from 'react';
-import { mount, render } from 'enzyme';
 import { Switcher24, Chip24, Group24 } from '@carbon/icons-react';
-import { render as testLibraryRender, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import SideNav from './SideNav';
 
@@ -61,11 +60,12 @@ describe('SideNav', () => {
       childContent: [
         {
           metaData: {
-            label: 'Devices',
+            label: 'Members sub menu',
             onClick: jest.fn(),
             element: 'button',
           },
-          content: 'Yet another link',
+          content: 'Members sub menu',
+          isActive: true,
         },
       ],
     },
@@ -153,16 +153,21 @@ describe('SideNav', () => {
     };
   });
 
+  it('should be selectable by testId', () => {
+    render(<SideNav {...mockProps} testId="side_nav" />);
+    expect(screen.getByTestId('side_nav')).toBeDefined();
+    expect(screen.getByTestId('side_nav-link-0')).toBeDefined();
+    expect(screen.getByTestId('side_nav-menu-item-2')).toBeDefined();
+  });
+
   it('should render two levels of navigation links', () => {
-    const wrapper = mount(<SideNav {...mockProps} />);
-    expect(render(wrapper.find('ul'))).toHaveLength(2);
+    const { container } = render(<SideNav {...mockProps} />);
+    expect(container.querySelectorAll('ul')).toHaveLength(2);
   });
 
   it('should render an button tag for a subNav', () => {
-    const wrapper = mount(<SideNav {...mockProps} />);
-    expect(render(wrapper.find('ul').first().childAt(2)).children().first()[0].name).toEqual(
-      'button'
-    );
+    render(<SideNav {...mockProps} />);
+    expect(screen.getByTestId('side-nav-menu-item-2').nodeName).toEqual('BUTTON');
   });
 
   it('should render one level of navigation links', () => {
@@ -170,8 +175,8 @@ describe('SideNav', () => {
       links: links2,
       'aria-label': 'Side navigation',
     };
-    const wrapper = mount(<SideNav {...mockProps} />);
-    expect(render(wrapper.find('ul'))).toHaveLength(1);
+    const { container } = render(<SideNav {...mockProps} />);
+    expect(container.querySelectorAll('ul')).toHaveLength(1);
   });
 
   it('should still render an a tag', () => {
@@ -179,9 +184,8 @@ describe('SideNav', () => {
       links: links2,
       'aria-label': 'Side navigation',
     };
-    const wrapper = mount(<SideNav {...mockProps} />);
-
-    expect(render(wrapper.find('ul').first().childAt(0)).children().first()[0].name).toEqual('a');
+    render(<SideNav {...mockProps} />);
+    expect(screen.getByLabelText('Boards').nodeName).toEqual('A');
   });
 
   it('should not render a subNav or its button', () => {
@@ -189,7 +193,7 @@ describe('SideNav', () => {
       links: links2,
       'aria-label': 'Side navigation',
     };
-    testLibraryRender(<SideNav {...mockProps} />);
+    render(<SideNav {...mockProps} />);
     expect(screen.queryByRole('button')).toBeNull();
   });
 
@@ -197,9 +201,14 @@ describe('SideNav', () => {
     mockProps = {
       links: linksDisabled,
     };
-    testLibraryRender(<SideNav {...mockProps} />);
+    render(<SideNav {...mockProps} />);
     expect(screen.queryByText('Boards')).toBeNull();
     expect(screen.queryByText('Devices')).toBeDefined();
     expect(screen.queryByText('Members')).toBeDefined();
+  });
+
+  it('parent item with active child should be active', () => {
+    render(<SideNav {...mockProps} />);
+    expect(screen.getByText('Members').closest('li')).toHaveClass('bx--side-nav__item--active');
   });
 });

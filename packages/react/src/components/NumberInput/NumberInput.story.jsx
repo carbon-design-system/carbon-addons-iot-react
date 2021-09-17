@@ -49,7 +49,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'NumberInput',
+  title: '3 - Carbon/NumberInput',
   component: NumberInput,
   decorators: [withKnobs],
 

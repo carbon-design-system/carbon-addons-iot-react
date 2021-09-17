@@ -4,6 +4,7 @@
 @import 'TableSkeletonWithHeaders/table-skeleton-with-headers';
 @import 'TableCellRenderer/table-cell-renderer';
 @import 'TableDetailWizard/table-detail-wizard';
+@import 'TableMultiSortModal/table-multi-sort-modal';
 @import '../../globals/vars';
 
 table.#{$prefix}--side-nav--data-table {
@@ -59,12 +60,15 @@ html[dir='rtl'] {
     background: inherit;
   }
   .empty-table-cell--default {
+    --height-threshold: 500px;
+    --is-large-card: Min(1px, Max(var(--card-content-height) - var(--height-threshold), 0px));
     display: flex;
-    align-items: center;
-    justify-content: middle;
+    align-items: flex-start;
+    justify-content: center;
     flex-direction: column;
-    padding: $spacing-09;
-
+    // 3rem since we can't multiply 1px * 3rem in calc
+    // stylelint-disable-next-line declaration-property-unit-blacklist
+    padding: Max(calc(48 * var(--is-large-card)), 0px);
     svg {
       margin: $spacing-05;
     }
@@ -98,4 +102,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   &.#{$iot-prefix}--table-toolbar-button-active {
     @include box-shadow;
   }
+}
+
+// regression fix for tiny expand chrevron on some expandable table rows
+.#{$prefix}--data-table thead th.#{$prefix}--table-expand,
+.#{$prefix}--data-table tbody td.#{$prefix}--table-expand {
+  height: $spacing-07;
+  width: $spacing-08;
 }

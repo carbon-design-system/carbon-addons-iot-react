@@ -31,7 +31,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'Link',
+  title: '3 - Carbon/Link',
   decorators: [withKnobs],
 
   parameters: {

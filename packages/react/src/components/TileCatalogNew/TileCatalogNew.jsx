@@ -47,6 +47,7 @@ const propTypes = {
     placeHolderText: PropTypes.string,
     error: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -67,6 +68,7 @@ const defaultProps = {
     error: 'An error has occurred. Please make sure your catalog has content.',
   },
   tiles: [],
+  testId: 'tile-catalog-new',
 };
 
 const TileCatalogNew = ({
@@ -85,6 +87,7 @@ const TileCatalogNew = ({
   error,
   i18n,
   className,
+  testId,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -94,6 +97,7 @@ const TileCatalogNew = ({
 
   const renderGrid = () => (
     <div
+      data-testid={`${testId}-grid`}
       className={`${iotPrefix}--tile-catalog--grid-container`}
       style={{
         '--columns': minTileWidth
@@ -121,7 +125,7 @@ const TileCatalogNew = ({
     !minTileWidth && !isLoading ? Math.ceil(tiles.length / (numRows * numColumns)) > 1 : null;
 
   return (
-    <div className={className}>
+    <div data-testid={testId} className={className}>
       <div className={`${iotPrefix}--tile-catalog--canvas-container`}>
         <div className={`${iotPrefix}--tile-catalog--tile-canvas`}>
           {/* {featuredTile ? (
@@ -132,9 +136,15 @@ const TileCatalogNew = ({
               <div className="tile-catalog--tile-canvas--featured-tile">{featuredTile}</div>
             </div>
           ) : null} */}
-          <div className={`${iotPrefix}--tile-catalog--tile-canvas--header`}>
+          <div
+            data-testid={`${testId}-header`}
+            className={`${iotPrefix}--tile-catalog--tile-canvas--header`}
+          >
             {title ? (
-              <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--title`}>
+              <div
+                data-testid={`${testId}-title`}
+                className={`${iotPrefix}--tile-catalog--tile-canvas--header--title`}
+              >
                 {title}
               </div>
             ) : null}
@@ -143,6 +153,7 @@ const TileCatalogNew = ({
                 placeholder={i18n.searchPlaceHolderText}
                 onChange={onSearch}
                 className={`${iotPrefix}--tile-catalog--tile-canvas--header--search`}
+                data-testid={`${testId}-search-input`}
               />
             ) : null}
             <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--select`}>
@@ -152,6 +163,8 @@ const TileCatalogNew = ({
                   onChange={(evt) => onSort(evt.target.value)}
                   defaultValue={selectedSortOption}
                   labelText=""
+                  data-testid={`${testId}-sort-select`}
+                  role="listbox"
                 >
                   {sortOptions.map((option) => (
                     <SelectItem key={option.id} text={option.text} value={option.id} />
@@ -163,7 +176,10 @@ const TileCatalogNew = ({
           {tiles.length > 0 && !error ? (
             <div className={`${iotPrefix}--tile-catalog--tile-canvas--content`}>{renderGrid()}</div>
           ) : (
-            <Tile className={`${iotPrefix}--tile-catalog--empty-tile`}>
+            <Tile
+              data-testid={`${testId}-empty`}
+              className={`${iotPrefix}--tile-catalog--empty-tile`}
+            >
               <>
                 <Bee32 />
                 <p>{error || i18n.error}</p>
@@ -177,6 +193,7 @@ const TileCatalogNew = ({
                 page={currentPage}
                 numPages={Math.ceil(tiles.length / (numRows * numColumns))}
                 onChange={(newPage) => setCurrentPage(newPage)}
+                testId={`${testId}-pagination`}
               />
             ) : null}
           </div>

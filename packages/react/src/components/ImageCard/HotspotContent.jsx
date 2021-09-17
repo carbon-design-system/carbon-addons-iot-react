@@ -84,7 +84,7 @@ const HotspotContent = ({
         <div className={`${iotPrefix}--hotspot-content-title-wrapper--editable`}>
           <TextInput
             className={`${iotPrefix}--hotspot-content-title-input`}
-            defaultValue={title}
+            defaultValue={typeof title === 'string' ? title : ''}
             id={`${id}-title`}
             data-testid={`${id}-title-test`}
             ref={titleInputFocusRef}

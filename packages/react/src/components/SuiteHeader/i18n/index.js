@@ -29,6 +29,10 @@ const SuiteHeaderI18N = {
     // surveyTitle: (solutionName) => `Enjoying ${solutionName}?`,
     surveyText: 'Click here to help us improve the product',
     surveyPrivacyPolicy: 'Privacy Policy',
+    sessionTimeoutModalHeading: 'Session Timeout',
+    sessionTimeoutModalBody: 'You will be logged out due to inactivity in {countdown} seconds.',
+    sessionTimeoutModalLogoutButton: 'Log out',
+    sessionTimeoutModalStayLoggedInButton: 'Stay logged in',
   },
 };
 

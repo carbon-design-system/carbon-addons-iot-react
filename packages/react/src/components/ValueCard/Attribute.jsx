@@ -44,6 +44,9 @@ const propTypes = {
   isNumberValueCompact: PropTypes.bool.isRequired,
   /** number of attributes */
   attributeCount: PropTypes.number.isRequired,
+  testId: PropTypes.string,
+  /** callback when the attribute is clicked to trigger further action like opening a modal */
+  onValueClick: PropTypes.func,
 };
 
 const defaultProps = {
@@ -54,6 +57,8 @@ const defaultProps = {
   locale: 'en',
   customFormatter: null,
   isEditable: false,
+  testId: 'attribute',
+  onValueClick: null,
 };
 
 const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
@@ -63,7 +68,7 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { label, unit, thresholds, precision },
+  attribute: { label, unit, thresholds, precision, dataSourceId },
   attributeCount,
   customFormatter,
   isEditable,
@@ -74,6 +79,8 @@ const Attribute = ({
   value,
   fontSize,
   isNumberValueCompact,
+  testId,
+  onValueClick,
 }) => {
   // matching threshold will be the first match in the list, or a value of null if not isEditable
   const matchingThreshold = thresholds
@@ -128,9 +135,10 @@ const Attribute = ({
               title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
               renderIconByName={renderIconByName}
               icon={matchingThreshold.icon}
+              testId={`${testId}-threshold-icon`}
             />
           ) : null}
-          <span>{label}</span>
+          <span data-testid={`${testId}-threshold-label`}>{label}</span>
         </div>
 
         <div className={`${BEM_BASE}`}>
@@ -143,20 +151,32 @@ const Attribute = ({
             customFormatter={customFormatter}
             fontSize={fontSize}
             isNumberValueCompact={isNumberValueCompact}
+            testId={`${testId}-value`}
+            dataSourceId={dataSourceId}
+            onClick={onValueClick}
           />
-          <UnitRenderer unit={unit} />
+          <UnitRenderer unit={unit} testId={`${testId}-unit`} />
         </div>
         {!isNil(secondaryValue) ? (
           <div
+            data-testid={`${testId}-secondary-value`}
             className={`${BEM_BASE}-secondary-value`}
             style={{
               '--secondary-value-color': secondaryValue.color || '#777',
             }}
           >
             {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-              <CaretUp16 className={`${BEM_BASE}_trend-icon`} aria-label="trending up" />
+              <CaretUp16
+                className={`${BEM_BASE}_trend-icon`}
+                aria-label="trending up"
+                data-testid={`${testId}-trending-up`}
+              />
             ) : secondaryValue.trend === 'down' ? (
-              <CaretDown16 className={`${BEM_BASE}_trend-icon`} aria-label="trending down" />
+              <CaretDown16
+                className={`${BEM_BASE}_trend-icon`}
+                aria-label="trending down"
+                data-testid={`${testId}-trending-down`}
+              />
             ) : null}
             {secondaryValue.value}
           </div>

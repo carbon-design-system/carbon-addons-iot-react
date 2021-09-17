@@ -1,0 +1,156 @@
+# `HotspotEditorDataSourceTab` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Handling the onChange callback](#handling-the-onchange-callback)
+- [Props](#props)
+- [Prop i18n](#prop-i18n)
+- [Prop cardConfig](#prop-cardconfig)
+- [Feedback](#feedback)
+
+## Getting started
+
+The HotspotEditorDataSourceTab is part of the HotspotModalEditor and lets the user select the data source items used to render the content of a specific hotspot, e.g. a temperature or some other metric. The state is managed outside the component via the `onChange` callback.
+
+Each selected source item can be customized when it comes to how it should be displayed, e.g. a custom label, unit, decimal places.
+
+```jsx
+import { HotspotEditorDataSourceTab } from 'carbon-addons-iot-react';
+
+const cardConfig = {
+  title: 'Floor Map',
+  id: 'floor map picture',
+  size: 'MEDIUM',
+  type: 'IMAGE',
+  content: {
+    hotspots: [
+      {
+        x: 45,
+        y: 25,
+        color: '#0f0',
+        content: {
+          title: 'Stairs',
+          attributes: [],
+        },
+      },
+    ],
+  },
+};
+
+// The HotspotEditorModal's custom state manager hook used here is not required but
+// makes handling the state changes much easier
+const { selectedHotspot, updateHotspotDataSource } = useHotspotEditorState({
+  initialState: {
+    selectedHotspot: cardConfig.content.hotspots[0],
+  },
+});
+
+<HotspotEditorDataSourceTab
+  hotspot={selectedHotspot}
+  // An up to date cardConfig object is needed because the component internally
+  // makes use of DataSeriesFormItemModal
+  cardConfig={update(cardConfig, {
+    content: {
+      hotspots: { $set: [selectedHotspot] },
+    },
+  })}
+  dataItems={[
+    {
+      dataSourceId: 'temperature',
+      dataItemId: 'temperature',
+      label: 'Temperature',
+      unit: '°',
+    },
+    {
+      dataSourceId: 'pressure',
+      dataItemId: 'pressure',
+      label: 'Pressure',
+      unit: 'psi',
+    },
+  ]}
+  translateWithId={() => {}}
+  onChange={(newData) => {
+    // Preferable handled using the provided reducer function
+    // updateHotspotDataSource
+    updateHotspotDataSource(newData);
+  }}
+/>;
+```
+
+## handling the onChange callback
+
+The callback signature has been designed to be a direct fit with the `updateHotspotDataSource` reducer function.
+When selecting or deselecting one or more data items the `onChange` function is called with an
+object with the prop attributes holding _all_ the currently selected data items with their default settings.
+
+```jsx
+{
+  attributes: [
+    { dataSourceId: 'pressure', dataItemId: 'pressure', label: 'Pressure', unit: 'psi' },
+    { dataSourceId: 'temperature', dataItemId: 'temperature', label: 'Temperature', unit: '°' },
+  ];
+}
+```
+
+When the configuration of a selected source is modified the callback will be an object with all the latest properties of that source.
+
+```jsx
+{
+  dataSourceId: 'temperature',
+  dataItemId: 'temperature',
+  label: 'Temperature in Celsius',
+  unit:  '°'
+}
+```
+
+## Props
+
+| Name                                                       | Type                                                                                                           | Default                      | Description                                                                                                                                                                                               |
+| :--------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- | :--------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <span style={{color: "#31a148"}}>hotspot\*</span>          | shape({ <br /> &nbsp;&nbsp;content: shape({ <br /> &nbsp;&nbsp;attributes: arrayOf(object) <br /> }) <br /> }) |                              | The hotspot for which the data source settings should be changed.                                                                                                                                         |
+| <span style={{color: "#31a148"}}>cardConfig\*</span>       | shape([Prop cardConfig](#prop-cardconfig)                                                                      |                              | This prop is mainly needed since the HotspotEditorDataSourceTab internally makes use of DataSeriesFormItemModal which has its API designed around the card config                                         |
+| i18n                                                       | shape([Prop i18n](#prop-i18n)                                                                                  |                              |                                                                                                                                                                                                           |
+| <span style={{color: "#31a148"}}>translateWithId \*</span> | function                                                                                                       |                              | Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component                                                                                                             |
+| <span style={{color: "#31a148"}}>onChange \*</span>        | function                                                                                                       |                              | callback when image input value changes                                                                                                                                                                   |
+| testId                                                     | string                                                                                                         | 'HotspotEditorDataSourceTab' | Id that can be used for testing                                                                                                                                                                           |
+| dataItems                                                  | arrayOf                                                                                                        | []                           | An array of data source items that can be selected for the specified hotspot                                                                                                                              |
+| availableDimensions                                        | shape                                                                                                          | {}                           | An object where the keys are available dimensions and the values are the values available for those dimensions ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] } |
+
+### Prop i18n
+
+These props can also be passed as part of the i18n prop of the HotspotModalEditor component.
+
+| Name                               | Type   | Default             | Description |
+| :--------------------------------- | :----- | :------------------ | :---------- |
+| selectDataItemsText                | string | 'Select data items' |             |
+| dataItemText                       | string | 'Data items'        |             |
+| editText                           | string | 'Edit'              |             |
+| dataItemEditorDataItemTitle        | string | 'Data items'        |             |
+| dataItemEditorDataItemCustomLabel  | string | 'Custom label'      |             |
+| dataItemEditorDataItemUnit         | string | 'Unit'              |             |
+| dataItemEditorDataItemFilter       | string | 'Data filter'       |             |
+| dataItemEditorDataItemThresholds   | string | 'Thresholds'        |             |
+| dataItemEditorDataItemAddThreshold | string | 'Add threshold'     |             |
+| primaryButtonLabelText             | string | 'Update'            |             |
+| secondaryButtonLabelText           | string | 'Cancel'            |             |
+
+### Prop cardConfig
+
+This prop is mainly needed since the HotspotEditorDataSourceTab internally makes use of DataSeriesFormItemModal which has its API designed around the card config.
+
+| Name        | Type                                                                                                                                                                                                                                                              | Default | Description                                                                                                                                             |
+| :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| content     | shape({ <br />&nbsp;&nbsp;alt: string, <br />&nbsp;&nbsp;src: string, <br />&nbsp;&nbsp;image: string, <br />&nbsp;&nbsp;hideMinimap: bool, <br />&nbsp;&nbsp;hideHotspots: bool, <br />&nbsp;&nbsp;hideZoomControls: bool, id: <br />&nbsp;&nbsp;string <br />}) |         |                                                                                                                                                         |
+| description | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| id          | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| size        | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| title       | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| thresholds  | arrayOf(shape({ <br />&nbsp;&nbsp;dataSourceId: string, <br />&nbsp;&nbsp;comparison: string, <br />&nbsp;&nbsp;value: number, <br />&nbsp;&nbsp;color: string, <br />&nbsp;&nbsp;icon: string <br />}))                                                          |         | If this prop is present the HotspotEditorModal will place new and existing thresholds here instead of under each hotspot in cardConfig.values.hotspots. |
+| type        | string                                                                                                                                                                                                                                                            |         |                                                                                                                                                         |
+| values      | shape({ <br />&nbsp;&nbsp;hotspots: arrayOf(object) <br />})                                                                                                                                                                                                      |         |                                                                                                                                                         |
+
+## Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/HotspotEditorDataSourceTab/README.md).

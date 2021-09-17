@@ -14,6 +14,8 @@ import { settings } from 'carbon-components';
 import Button from '../Button';
 import { TextInput } from '../TextInput';
 
+import ModalREADME from './Modal.mdx';
+
 import { Modal } from '.';
 
 const { prefix } = settings;
@@ -134,10 +136,13 @@ const ModalStateManager = ({ renderLauncher: LauncherContent, children: ModalCon
 };
 
 export default {
-  title: 'Modal',
+  title: '3 - Carbon/Modal',
   decorators: [withKnobs],
   parameters: {
     component: Modal,
+    docs: {
+      page: ModalREADME,
+    },
   },
 };
 

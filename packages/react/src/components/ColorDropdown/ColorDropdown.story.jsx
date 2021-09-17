@@ -8,12 +8,10 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 import ColorDropdown from './ColorDropdown';
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 export default {
-  title: 'Watson IoT Experimental/☢️ ColorDropdown',
+  title: '2 - Watson IoT Experimental/☢️ ColorDropdown',
   decorators: [withKnobs],
   parameters: {
     component: ColorDropdown,
@@ -29,6 +27,7 @@ export const DefaultExample = () => (
       light={boolean('light', false)}
       titleText={text('titleText', 'Color')}
       onChange={action('onChange')}
+      disabled={boolean('disabled', false)}
     />
   </div>
 );
@@ -74,11 +73,9 @@ export const NoLabelsExample = () => (
   </div>
 );
 
-DefaultExample.story = {
-  parameters: {
-    info: {
-      propTables: [ColorDropdown],
-      propTablesExclude: [],
-    },
+DefaultExample.parameters = {
+  info: {
+    propTables: [ColorDropdown],
+    propTablesExclude: [],
   },
 };

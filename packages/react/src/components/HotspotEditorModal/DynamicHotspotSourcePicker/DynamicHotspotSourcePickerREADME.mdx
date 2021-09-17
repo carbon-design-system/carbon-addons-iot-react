@@ -1,0 +1,83 @@
+# `DynamicHotspotSourcePicker` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Props](#props)
+- [Prop i18n](#prop-i18n)
+- [Feedback](#feedback)
+
+## Getting started
+
+The DynamicHotspotSourcePicker is part of the HotspotModalEditor and lets a user pick the x and y coordinates of dynamic hotspots. The state of the dropdowns are handled outside the component and passed as `selectedSourceIdX` and `selectedSourceIdY`. Changes are emitted via the `onYValueChange` and `onXValueChange`.
+
+```jsx
+import { DynamicHotspotSourcePicker } from 'carbon-addons-iot-react';
+
+const dataItems = [
+  {
+    dataSourceId: 'temperature',
+    label: 'Temperature',
+  },
+  {
+    dataSourceId: 'pressure',
+    label: 'Pressure',
+  },
+];
+
+const [xSourceId, setXSourceId] = useState();
+const [ySourceId, setYSourceId] = useState();
+
+<DynamicHotspotSourcePicker
+  selectedSourceIdX={xSourceId}
+  selectedSourceIdY={ySourceId}
+  dataSourceItems={dataItems}
+  onXValueChange={(newValue) => {
+    setXSourceId(newValue);
+  }}
+  onYValueChange={(newValue) => {
+    setYSourceId(newValue);
+  }}
+  onClear={() => {
+    setXSourceId(undefined);
+    setYSourceId(undefined);
+  }}
+  translateWithId={() => {}}
+/>;
+```
+
+## Props
+
+| Name                                                       | Type                                                                                         | Default                         | Description                                                                                     |
+| :--------------------------------------------------------- | :------------------------------------------------------------------------------------------- | :------------------------------ | :---------------------------------------------------------------------------------------------- |
+| <span style={{color: "#31a148"}}>dataSourceItems \*</span> | arrayOf(shape({ <br />dataSourceId:PropTypes.string, <br />label:PropTypes.string <br /> })) |                                 | List of data source objects. The same list is used for both the x and the y coordinate dropdown |
+| id                                                         | string                                                                                       | 'dynamic-hotspot-source-picker' |                                                                                                 |
+| <span style={{color: "#31a148"}}>onClear \*</span>         | function                                                                                     |                                 | totally clear the dynamic hotspots                                                              |
+| <span style={{color: "#31a148"}}>onXValueChange \*</span>  | function                                                                                     |                                 |                                                                                                 |
+| <span style={{color: "#31a148"}}>onYValueChange \*</span>  | function                                                                                     |                                 |                                                                                                 |
+| selectedSourceIdX                                          | string                                                                                       | undefined                       |                                                                                                 |
+| selectedSourceIdY                                          | string                                                                                       | undefined                       |                                                                                                 |
+| testId                                                     | string                                                                                       | 'dynamic-hotspot-source-picker' |                                                                                                 |
+| i18n                                                       | shape([Prop i18n](#prop-i18n))                                                               |                                 |                                                                                                 |
+| <span style={{color: "#31a148"}}>translateWithId \*</span> | function                                                                                     |                                 |                                                                                                 |
+
+### Prop i18n
+
+These props can also be passed as part of the i18n prop of the HotspotModalEditor component.
+
+| Name                         | Type   | Default                    | Description |
+| :--------------------------- | :----- | :------------------------- | :---------- |
+| clearIconDescription         | string | 'Clear coordinate sources' |             |
+| xCoordinateDropdownTitleText | string | 'X coordinate'             |             |
+| xCoordinateDropdownLabelText | string | 'Select data item'         |             |
+| yCoordinateDropdownTitleText | string | 'Y coordinate'             |             |
+| yCoordinateDropdownLabelText | string | 'Select data item'         |             |
+
+## Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/DynamicHotspotSourcePicker/README.md).
+
+```
+
+```

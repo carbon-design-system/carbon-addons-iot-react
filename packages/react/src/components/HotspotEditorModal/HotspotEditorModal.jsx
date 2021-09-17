@@ -61,7 +61,7 @@ const propTypes = {
     title: PropTypes.string,
     /**
      * If this prop is present the HotspotEditorModal will place new and existing thresholds here
-     * instead of under the each hotspot in cardConfig.values.hotspots.
+     * instead of under each hotspot in cardConfig.values.hotspots.
      */
     thresholds: PropTypes.arrayOf(
       PropTypes.shape({
@@ -96,6 +96,8 @@ const propTypes = {
     hotspotTypes.TEXT,
     hotspotTypes.DYNAMIC,
   ]),
+  /** value for object-fit property - 'contain' or 'fill' */
+  displayOption: PropTypes.string,
 
   /** Array of selectable color objects for text hotspot font */
   fontColors: PropTypes.arrayOf(ColorPropType),
@@ -157,7 +159,10 @@ const propTypes = {
     textTypeDataSourceTabLabelText: PropTypes.string,
     tooManyHotspotsInfoText: PropTypes.string,
   }),
+  /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -169,6 +174,7 @@ const defaultProps = {
   defaultBorderWidth: 0,
   defaultFontSize: 12,
   defaultHotspotType: hotspotTypes.FIXED,
+  displayOption: null,
   fontColors: selectableColors,
   getValidDataItems: undefined,
   hotspotIconFillColors: validThresholdColors,
@@ -211,6 +217,7 @@ const defaultProps = {
         return 'Close menu';
     }
   },
+  testId: 'hotspot-editor-modal',
 };
 
 const getSelectedHotspotsList = (selectedHotspot, hotspots) => {
@@ -231,6 +238,7 @@ const HotspotEditorModal = ({
   defaultBackgroundOpacity,
   defaultFontSize,
   defaultHotspotType,
+  displayOption,
   fontColors,
   getValidDataItems,
   hotspotIconFillColors,
@@ -250,8 +258,8 @@ const HotspotEditorModal = ({
   open,
   showTooManyHotspotsInfo,
   i18n,
-
   translateWithId,
+  testId,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -294,6 +302,7 @@ const HotspotEditorModal = ({
     },
   });
 
+  const hasNonEditableContent = React.isValidElement(selectedHotspot?.content);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const {
@@ -433,6 +442,7 @@ const HotspotEditorModal = ({
         translateWithId={translateWithId}
         dataItems={myDataItems}
         onChange={updateHotspotDataSource}
+        testId={`${testId}-data-source-tab`}
       />
     ) : null;
   };
@@ -455,15 +465,22 @@ const HotspotEditorModal = ({
           selectedSourceIdY={dynamicHotspotSourceY}
           onClear={clearDynamicHotspotsSource}
           translateWithId={translateWithId}
+          // TODO: pass testId in v3 to override defaults
+          // testId={`${testId}-hotspot-source-picker`}
         />
         {showTooManyHotspotsInfo ? (
-          <InlineNotification kind="info" title={tooManyHotspotsInfoText} />
+          <InlineNotification
+            kind="info"
+            title={tooManyHotspotsInfoText}
+            data-testid={`${testId}-too-many-hotspots-notification`}
+          />
         ) : null}
 
         {dynamicHotspotsLoading ? (
           <InlineLoading
             className={`${iotPrefix}--hotspot-editor-modal__dynamic-loading`}
             description={loadingDynamicHotspotsText}
+            data-testid={`${testId}-loading-hotspots`}
           />
         ) : (
           <Tabs selected={0}>
@@ -490,9 +507,12 @@ const HotspotEditorModal = ({
                   infoMessageText: fixedTypeTooltipInfoText,
                 }}
                 translateWithId={translateWithId}
+                testId={`${testId}-tooltip-tab`}
               />
             </Tab>
-            <Tab label={fixedTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
+            <Tab disabled={hasNonEditableContent} label={fixedTypeDataSourceTabLabelText}>
+              {hasNonEditableContent ? null : renderDataSourceTab()}
+            </Tab>
           </Tabs>
         )}
       </>
@@ -501,7 +521,7 @@ const HotspotEditorModal = ({
 
   const renderTextHotspotPage = () => {
     return (
-      <Tabs selected={0}>
+      <Tabs selected={0} data-testid={`${testId}-hotspot-text-tabs`}>
         <Tab label={textStyleLabelText}>
           <HotspotTextStyleTab
             maxBorderWidth={maxBorderWidth}
@@ -537,13 +557,17 @@ const HotspotEditorModal = ({
             translateWithId={translateWithId}
           />
         </Tab>
-        <Tab label={textTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
+        <Tab disabled={hasNonEditableContent} label={textTypeDataSourceTabLabelText}>
+          {hasNonEditableContent ? null : renderDataSourceTab()}
+        </Tab>
       </Tabs>
     );
   };
 
   return (
     <ComposedModal
+      // TODO: pass testId in v3 to override defaults
+      // testId={testId}
       className={`${iotPrefix}--hotspot-editor-modal`}
       header={{
         label,
@@ -592,6 +616,7 @@ const HotspotEditorModal = ({
                 src={cardConfig.content.src}
                 id={imageId}
                 width={size.width}
+                displayOption={displayOption}
               />
             )}
           </div>
@@ -600,18 +625,23 @@ const HotspotEditorModal = ({
       <div>
         <ContentSwitcher
           onChange={(e) => {
-            switchCurrentType(
-              e.name === 'labels'
-                ? hotspotTypes.TEXT
-                : dynamicHotspotSourceX && dynamicHotspotSourceY
-                ? hotspotTypes.DYNAMIC
-                : hotspotTypes.FIXED
-            );
+            switchCurrentType(e.name === 'labels' ? hotspotTypes.TEXT : hotspotTypes.FIXED);
           }}
           selectedIndex={currentType === hotspotTypes.TEXT ? 1 : 0}
+          data-testid={`${testId}-content-switcher`}
         >
-          <Switch key="hotspots" name="hotspots" text={hotspotsText} />
-          <Switch key="labels" name="labels" text={labelsText} />
+          <Switch
+            key="hotspots"
+            name="hotspots"
+            text={hotspotsText}
+            data-testid={`${testId}-hotspots-switch`}
+          />
+          <Switch
+            key="labels"
+            name="labels"
+            text={labelsText}
+            data-testid={`${testId}-labels-switch`}
+          />
         </ContentSwitcher>
         {currentType === hotspotTypes.TEXT ? renderTextHotspotPage() : renderHotspotsPage()}
       </div>

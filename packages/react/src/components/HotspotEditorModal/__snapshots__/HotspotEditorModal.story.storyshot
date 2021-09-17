@@ -1,1311 +1,417 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal Empty 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal Empty 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
-      data-floating-menu-container={true}
-      data-testid="ComposedModal"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-      <div
-        aria-label="landscape.jpg"
-        aria-modal="true"
-        className="bx--modal-container"
-        role="dialog"
-      >
-        <div
-          className="bx--modal-header"
-        >
-          <h2
-            className="bx--modal-header__label bx--type-delta"
-          >
-            landscape.jpg
-          </h2>
-          <h3
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Edit image
-          </h3>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-content"
-        >
-          <div />
-          <div>
-            <div
-              className="bx--content-switcher"
-              onChange={[Function]}
-              role="tablist"
-            >
-              <button
-                aria-selected={true}
-                className="bx--content-switcher-btn bx--content-switcher--selected"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="tab"
-                tabIndex="0"
-                type="button"
-              >
-                <span
-                  className="bx--content-switcher__label"
-                >
-                  Hotspots
-                </span>
-              </button>
-              <button
-                aria-selected={false}
-                className="bx--content-switcher-btn"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="tab"
-                tabIndex="-1"
-                type="button"
-              >
-                <span
-                  className="bx--content-switcher__label"
-                >
-                  Labels
-                </span>
-              </button>
-            </div>
-            <div
-              className="iot--dynamic-hotspot-source-picker"
-              data-testid="dynamic-hotspot-source-picker"
-            >
-              <div
-                className="bx--dropdown__wrapper bx--list-box__wrapper"
-                data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="downshift-0-toggle-button"
-                  id="downshift-0-label"
-                >
-                  X coordinate
-                </label>
-                <div
-                  className="bx--dropdown bx--list-box"
-                  id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  <button
-                    aria-disabled={false}
-                    aria-expanded={false}
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                    className="bx--list-box__field"
-                    disabled={false}
-                    id="downshift-0-toggle-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <span
-                      className="bx--list-box__label"
-                    >
-                      Select data item
-                    </span>
-                    <div
-                      className="bx--list-box__menu-icon"
-                    >
-                      <svg
-                        aria-label="Open menu"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        name="chevron--down"
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                        <title>
-                          Open menu
-                        </title>
-                      </svg>
-                    </div>
-                  </button>
-                  <div
-                    aria-labelledby="downshift-0-label"
-                    className="bx--list-box__menu"
-                    id="downshift-0-menu"
-                    onBlur={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseLeave={[Function]}
-                    role="listbox"
-                    tabIndex={-1}
-                  />
-                </div>
-              </div>
-              <div
-                className="bx--dropdown__wrapper bx--list-box__wrapper"
-                data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="downshift-1-toggle-button"
-                  id="downshift-1-label"
-                >
-                  Y coordinate
-                </label>
-                <div
-                  className="bx--dropdown bx--list-box"
-                  id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  <button
-                    aria-disabled={false}
-                    aria-expanded={false}
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                    className="bx--list-box__field"
-                    disabled={false}
-                    id="downshift-1-toggle-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <span
-                      className="bx--list-box__label"
-                    >
-                      Select data item
-                    </span>
-                    <div
-                      className="bx--list-box__menu-icon"
-                    >
-                      <svg
-                        aria-label="Open menu"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        name="chevron--down"
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                        <title>
-                          Open menu
-                        </title>
-                      </svg>
-                    </div>
-                  </button>
-                  <div
-                    aria-labelledby="downshift-1-label"
-                    className="bx--list-box__menu"
-                    id="downshift-1-menu"
-                    onBlur={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseLeave={[Function]}
-                    role="listbox"
-                    tabIndex={-1}
-                  />
-                </div>
-              </div>
-              <button
-                className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-                data-testid="dynamic-hotspot-source-picker-clear-dropdown"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Clear coordinate sources
-                </span>
-                <svg
-                  aria-hidden="true"
-                  aria-label="Clear coordinate sources"
-                  className="bx--btn__icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="bx--tabs--scrollable"
-              onScroll={[Function]}
-              selected={0}
-            >
-              <button
-                aria-hidden="true"
-                aria-label="Scroll left"
-                className="bx--tab--overflow-nav-button--hidden"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="-1"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-                  />
-                </svg>
-              </button>
-              <ul
-                className="bx--tabs--scrollable__nav"
-                role="tablist"
-                tabIndex={-1}
-              >
-                <li
-                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="presentation"
-                >
-                  <button
-                    aria-controls="tab-11__panel"
-                    aria-selected={true}
-                    className="bx--tabs--scrollable__nav-link"
-                    href="#"
-                    id="tab-11"
-                    role="tab"
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Tooltip
-                  </button>
-                </li>
-                <li
-                  className="bx--tabs--scrollable__nav-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="presentation"
-                >
-                  <button
-                    aria-controls="tab-12__panel"
-                    aria-selected={false}
-                    className="bx--tabs--scrollable__nav-link"
-                    href="#"
-                    id="tab-12"
-                    role="tab"
-                    tabIndex={-1}
-                    type="button"
-                  >
-                    Data source
-                  </button>
-                </li>
-              </ul>
-              <button
-                aria-hidden="true"
-                aria-label="Scroll right"
-                className="bx--tab--overflow-nav-button--hidden"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="-1"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="bx--tab-content"
-              hidden={false}
-              role="tabpanel"
-              selected={true}
-              tabIndex={0}
-            >
-              <div
-                className="iot--hotspot-editor-tooltip-tab"
-              >
-                <div
-                  className="iot--hotspot-editor--tooltip-info-message"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
-                      fill="none"
-                    />
-                    <path
-                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
-                    />
-                  </svg>
-                  <p>
-                    Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="bx--tab-content"
-              hidden={true}
-              role="tabpanel"
-              selected={false}
-              tabIndex={0}
-            />
-          </div>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-        >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="ComposedModal-modal-secondary-button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary"
-            data-testid="ComposedModal-modal-primary-button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
+    className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="ComposedModal"
+    onBlur={[Function]}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal Empty with getValidDataItems callback 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
-      data-floating-menu-container={true}
-      data-testid="ComposedModal"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
     >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
+      Focus sentinel
+    </span>
+    <div
+      aria-label="landscape.jpg"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
       <div
-        aria-label="landscape.jpg"
-        aria-modal="true"
-        className="bx--modal-container"
-        role="dialog"
+        className="bx--modal-header"
       >
-        <div
-          className="bx--modal-header"
+        <h2
+          className="bx--modal-header__label bx--type-delta"
         >
-          <h2
-            className="bx--modal-header__label bx--type-delta"
-          >
-            landscape.jpg
-          </h2>
-          <h3
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Edit image
-          </h3>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-content"
+          landscape.jpg
+        </h2>
+        <h3
+          className="bx--modal-header__heading bx--type-beta"
         >
-          <div />
-          <div>
-            <div
-              className="bx--content-switcher"
-              onChange={[Function]}
-              role="tablist"
-            >
-              <button
-                aria-selected={true}
-                className="bx--content-switcher-btn bx--content-switcher--selected"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="tab"
-                tabIndex="0"
-                type="button"
-              >
-                <span
-                  className="bx--content-switcher__label"
-                >
-                  Hotspots
-                </span>
-              </button>
-              <button
-                aria-selected={false}
-                className="bx--content-switcher-btn"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="tab"
-                tabIndex="-1"
-                type="button"
-              >
-                <span
-                  className="bx--content-switcher__label"
-                >
-                  Labels
-                </span>
-              </button>
-            </div>
-            <div
-              className="iot--dynamic-hotspot-source-picker"
-              data-testid="dynamic-hotspot-source-picker"
-            >
-              <div
-                className="bx--dropdown__wrapper bx--list-box__wrapper"
-                data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="downshift-0-toggle-button"
-                  id="downshift-0-label"
-                >
-                  X coordinate
-                </label>
-                <div
-                  className="bx--dropdown bx--list-box"
-                  id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  <button
-                    aria-disabled={false}
-                    aria-expanded={false}
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                    className="bx--list-box__field"
-                    disabled={false}
-                    id="downshift-0-toggle-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <span
-                      className="bx--list-box__label"
-                    >
-                      Select data item
-                    </span>
-                    <div
-                      className="bx--list-box__menu-icon"
-                    >
-                      <svg
-                        aria-label="Open menu"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        name="chevron--down"
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                        <title>
-                          Open menu
-                        </title>
-                      </svg>
-                    </div>
-                  </button>
-                  <div
-                    aria-labelledby="downshift-0-label"
-                    className="bx--list-box__menu"
-                    id="downshift-0-menu"
-                    onBlur={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseLeave={[Function]}
-                    role="listbox"
-                    tabIndex={-1}
-                  />
-                </div>
-              </div>
-              <div
-                className="bx--dropdown__wrapper bx--list-box__wrapper"
-                data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="downshift-1-toggle-button"
-                  id="downshift-1-label"
-                >
-                  Y coordinate
-                </label>
-                <div
-                  className="bx--dropdown bx--list-box"
-                  id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  <button
-                    aria-disabled={false}
-                    aria-expanded={false}
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                    className="bx--list-box__field"
-                    disabled={false}
-                    id="downshift-1-toggle-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <span
-                      className="bx--list-box__label"
-                    >
-                      Select data item
-                    </span>
-                    <div
-                      className="bx--list-box__menu-icon"
-                    >
-                      <svg
-                        aria-label="Open menu"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        name="chevron--down"
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                        <title>
-                          Open menu
-                        </title>
-                      </svg>
-                    </div>
-                  </button>
-                  <div
-                    aria-labelledby="downshift-1-label"
-                    className="bx--list-box__menu"
-                    id="downshift-1-menu"
-                    onBlur={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseLeave={[Function]}
-                    role="listbox"
-                    tabIndex={-1}
-                  />
-                </div>
-              </div>
-              <button
-                className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-                data-testid="dynamic-hotspot-source-picker-clear-dropdown"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Clear coordinate sources
-                </span>
-                <svg
-                  aria-hidden="true"
-                  aria-label="Clear coordinate sources"
-                  className="bx--btn__icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="bx--tabs--scrollable"
-              onScroll={[Function]}
-              selected={0}
-            >
-              <button
-                aria-hidden="true"
-                aria-label="Scroll left"
-                className="bx--tab--overflow-nav-button--hidden"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="-1"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-                  />
-                </svg>
-              </button>
-              <ul
-                className="bx--tabs--scrollable__nav"
-                role="tablist"
-                tabIndex={-1}
-              >
-                <li
-                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="presentation"
-                >
-                  <button
-                    aria-controls="tab-13__panel"
-                    aria-selected={true}
-                    className="bx--tabs--scrollable__nav-link"
-                    href="#"
-                    id="tab-13"
-                    role="tab"
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Tooltip
-                  </button>
-                </li>
-                <li
-                  className="bx--tabs--scrollable__nav-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="presentation"
-                >
-                  <button
-                    aria-controls="tab-14__panel"
-                    aria-selected={false}
-                    className="bx--tabs--scrollable__nav-link"
-                    href="#"
-                    id="tab-14"
-                    role="tab"
-                    tabIndex={-1}
-                    type="button"
-                  >
-                    Data source
-                  </button>
-                </li>
-              </ul>
-              <button
-                aria-hidden="true"
-                aria-label="Scroll right"
-                className="bx--tab--overflow-nav-button--hidden"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="-1"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="bx--tab-content"
-              hidden={false}
-              role="tabpanel"
-              selected={true}
-              tabIndex={0}
-            >
-              <div
-                className="iot--hotspot-editor-tooltip-tab"
-              >
-                <div
-                  className="iot--hotspot-editor--tooltip-info-message"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
-                      fill="none"
-                    />
-                    <path
-                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
-                    />
-                  </svg>
-                  <p>
-                    Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="bx--tab-content"
-              hidden={true}
-              role="tabpanel"
-              selected={false}
-              tabIndex={0}
+          Edit image
+        </h3>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
             />
-          </div>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-        >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="ComposedModal-modal-secondary-button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary"
-            data-testid="ComposedModal-modal-primary-button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
+          </svg>
+        </button>
       </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal Width Existing Dynamic Hotspots 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
-      data-floating-menu-container={true}
-      data-testid="ComposedModal"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
       <div
-        aria-label="landscape.jpg"
-        aria-modal="true"
-        className="bx--modal-container"
-        role="dialog"
+        className="bx--modal-content"
       >
-        <div
-          className="bx--modal-header"
-        >
-          <h2
-            className="bx--modal-header__label bx--type-delta"
+        <div />
+        <div>
+          <div
+            className="bx--content-switcher"
+            data-testid="hotspot-editor-modal-content-switcher"
+            onChange={[Function]}
+            role="tablist"
           >
-            landscape.jpg
-          </h2>
-          <h3
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Edit image
-          </h3>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-selected={true}
+              className="bx--content-switcher-btn bx--content-switcher--selected"
+              data-testid="hotspot-editor-modal-hotspots-switch"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex="0"
+              type="button"
             >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-content"
-        >
-          <div />
-          <div>
+              <span
+                className="bx--content-switcher__label"
+                title="Hotspots"
+              >
+                Hotspots
+              </span>
+            </button>
+            <button
+              aria-selected={false}
+              className="bx--content-switcher-btn"
+              data-testid="hotspot-editor-modal-labels-switch"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex="-1"
+              type="button"
+            >
+              <span
+                className="bx--content-switcher__label"
+                title="Labels"
+              >
+                Labels
+              </span>
+            </button>
+          </div>
+          <div
+            className="iot--dynamic-hotspot-source-picker"
+            data-testid="dynamic-hotspot-source-picker"
+          >
             <div
-              className="bx--content-switcher"
-              onChange={[Function]}
+              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+            >
+              <label
+                className="bx--label"
+                htmlFor="downshift-0-toggle-button"
+                id="downshift-0-label"
+              >
+                X coordinate
+              </label>
+              <div
+                className="bx--dropdown bx--list-box"
+                id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <button
+                  aria-disabled={false}
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                  className="bx--list-box__field"
+                  disabled={false}
+                  id="downshift-0-toggle-button"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="bx--list-box__label"
+                  >
+                    Select data item
+                  </span>
+                  <div
+                    className="bx--list-box__menu-icon"
+                  >
+                    <svg
+                      aria-label="Open menu"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      name="chevron--down"
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                      <title>
+                        Open menu
+                      </title>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  aria-labelledby="downshift-0-label"
+                  className="bx--list-box__menu"
+                  id="downshift-0-menu"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseLeave={[Function]}
+                  role="listbox"
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+            >
+              <label
+                className="bx--label"
+                htmlFor="downshift-1-toggle-button"
+                id="downshift-1-label"
+              >
+                Y coordinate
+              </label>
+              <div
+                className="bx--dropdown bx--list-box"
+                id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <button
+                  aria-disabled={false}
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                  className="bx--list-box__field"
+                  disabled={false}
+                  id="downshift-1-toggle-button"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="bx--list-box__label"
+                  >
+                    Select data item
+                  </span>
+                  <div
+                    className="bx--list-box__menu-icon"
+                  >
+                    <svg
+                      aria-label="Open menu"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      name="chevron--down"
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                      <title>
+                        Open menu
+                      </title>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  aria-labelledby="downshift-1-label"
+                  className="bx--list-box__menu"
+                  id="downshift-1-menu"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseLeave={[Function]}
+                  role="listbox"
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <button
+              aria-describedby={null}
+              className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
+              data-testid="dynamic-hotspot-source-picker-clear-dropdown"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Clear coordinate sources
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Clear coordinate sources"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tabs--scrollable"
+            onScroll={[Function]}
+            selected={0}
+          >
+            <button
+              aria-hidden="true"
+              aria-label="Scroll left"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                />
+              </svg>
+            </button>
+            <ul
+              className="bx--tabs--scrollable__nav"
               role="tablist"
+              tabIndex={-1}
             >
-              <button
-                aria-selected={true}
-                className="bx--content-switcher-btn bx--content-switcher--selected"
+              <li
+                className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="tab"
-                tabIndex="0"
-                type="button"
+                role="presentation"
               >
-                <span
-                  className="bx--content-switcher__label"
+                <button
+                  aria-selected={true}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  role="tab"
+                  tabIndex={0}
+                  type="button"
                 >
-                  Hotspots
-                </span>
-              </button>
-              <button
-                aria-selected={false}
-                className="bx--content-switcher-btn"
+                  Tooltip
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="tab"
-                tabIndex="-1"
-                type="button"
+                role="presentation"
               >
-                <span
-                  className="bx--content-switcher__label"
+                <button
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
                 >
-                  Labels
-                </span>
-              </button>
-            </div>
+                  Data source
+                </button>
+              </li>
+            </ul>
+            <button
+              aria-hidden="true"
+              aria-label="Scroll right"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+            tabIndex={0}
+          >
             <div
-              className="iot--dynamic-hotspot-source-picker"
-              data-testid="dynamic-hotspot-source-picker"
+              className="iot--hotspot-editor-tooltip-tab"
             >
               <div
-                className="bx--dropdown__wrapper bx--list-box__wrapper"
-                data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="downshift-2-toggle-button"
-                  id="downshift-2-label"
-                >
-                  X coordinate
-                </label>
-                <div
-                  className="bx--dropdown bx--list-box"
-                  id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  <button
-                    aria-disabled={false}
-                    aria-expanded={false}
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                    className="bx--list-box__field"
-                    disabled={false}
-                    id="downshift-2-toggle-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <span
-                      className="bx--list-box__label"
-                    >
-                      {high} temp
-                    </span>
-                    <div
-                      className="bx--list-box__menu-icon"
-                    >
-                      <svg
-                        aria-label="Open menu"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        name="chevron--down"
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                        <title>
-                          Open menu
-                        </title>
-                      </svg>
-                    </div>
-                  </button>
-                  <div
-                    aria-labelledby="downshift-2-label"
-                    className="bx--list-box__menu"
-                    id="downshift-2-menu"
-                    onBlur={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseLeave={[Function]}
-                    role="listbox"
-                    tabIndex={-1}
-                  />
-                </div>
-              </div>
-              <div
-                className="bx--dropdown__wrapper bx--list-box__wrapper"
-                data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="downshift-3-toggle-button"
-                  id="downshift-3-label"
-                >
-                  Y coordinate
-                </label>
-                <div
-                  className="bx--dropdown bx--list-box"
-                  id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  <button
-                    aria-disabled={false}
-                    aria-expanded={false}
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-3-label downshift-3-toggle-button"
-                    className="bx--list-box__field"
-                    disabled={false}
-                    id="downshift-3-toggle-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <span
-                      className="bx--list-box__label"
-                    >
-                      Temperature
-                    </span>
-                    <div
-                      className="bx--list-box__menu-icon"
-                    >
-                      <svg
-                        aria-label="Open menu"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        name="chevron--down"
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                        <title>
-                          Open menu
-                        </title>
-                      </svg>
-                    </div>
-                  </button>
-                  <div
-                    aria-labelledby="downshift-3-label"
-                    className="bx--list-box__menu"
-                    id="downshift-3-menu"
-                    onBlur={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseLeave={[Function]}
-                    role="listbox"
-                    tabIndex={-1}
-                  />
-                </div>
-              </div>
-              <button
-                className="iot--dynamic-hotspot-source-picker__clear-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-                data-testid="dynamic-hotspot-source-picker-clear-dropdown"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Clear coordinate sources
-                </span>
-                <svg
-                  aria-hidden="true"
-                  aria-label="Clear coordinate sources"
-                  className="bx--btn__icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="bx--inline-notification bx--inline-notification--info"
-              kind="info"
-              role="alert"
-            >
-              <div
-                className="bx--inline-notification__details"
+                className="iot--hotspot-editor--tooltip-info-message"
               >
                 <svg
                   aria-hidden={true}
-                  className="bx--inline-notification__icon"
                   fill="currentColor"
                   focusable="false"
-                  height={20}
+                  height={24}
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 32 32"
-                  width={20}
+                  width={24}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1315,752 +421,1563 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <path
                     d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                   />
-                  <title>
-                    info icon
-                  </title>
                 </svg>
-                <div
-                  className="bx--inline-notification__text-wrapper"
-                >
-                  <p
-                    className="bx--inline-notification__title"
-                  >
-                    There are more hotspots than can be shown
-                  </p>
-                  <div
-                    className="bx--inline-notification__subtitle"
-                  />
-                </div>
-              </div>
-              <button
-                aria-label="closes notification"
-                className="bx--inline-notification__close-button"
-                onClick={[Function]}
-                title="closes notification"
-                type="button"
-              >
-                <svg
-                  aria-label="close notification"
-                  className="bx--inline-notification__close-icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={20}
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  viewBox="0 0 32 32"
-                  width={20}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              aria-live="assertive"
-              className="bx--inline-loading iot--hotspot-editor-modal__dynamic-loading"
-            >
-              <div
-                className="bx--inline-loading__animation"
-              >
-                <div
-                  aria-atomic="true"
-                  aria-labelledby="loading-id-5"
-                  aria-live="assertive"
-                  className="bx--loading bx--loading--small"
-                >
-                  <label
-                    className="bx--visually-hidden"
-                    id="loading-id-5"
-                  >
-                    Active loading indicator
-                  </label>
-                  <svg
-                    className="bx--loading__svg"
-                    viewBox="0 0 100 100"
-                  >
-                    <title>
-                      Active loading indicator
-                    </title>
-                    <circle
-                      className="bx--loading__background"
-                      cx="50%"
-                      cy="50%"
-                      r="42"
-                    />
-                    <circle
-                      className="bx--loading__stroke"
-                      cx="50%"
-                      cy="50%"
-                      r="42"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div
-                className="bx--inline-loading__text"
-              >
-                Locating hotspots
+                <p>
+                  Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
+                </p>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-        >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="ComposedModal-modal-secondary-button"
-            disabled={false}
-            onClick={[Function]}
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
             tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
-            data-testid="ComposedModal-modal-primary-button"
-            disabled={true}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
+          />
         </div>
       </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
-        Focus sentinel
-      </span>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="ComposedModal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="ComposedModal-modal-primary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
     </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal Width Existing Hotspots 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal Empty with getValidDataItems callback 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
-      data-floating-menu-container={true}
-      data-testid="ComposedModal"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-      <div
-        aria-label="landscape.jpg"
-        aria-modal="true"
-        className="bx--modal-container"
-        role="dialog"
-      >
-        <div
-          className="bx--modal-header"
-        >
-          <h2
-            className="bx--modal-header__label bx--type-delta"
-          >
-            landscape.jpg
-          </h2>
-          <h3
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Edit image
-          </h3>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-content"
-        >
-          <div />
-          <div>
-            <div
-              className="bx--content-switcher"
-              onChange={[Function]}
-              role="tablist"
-            >
-              <button
-                aria-selected={true}
-                className="bx--content-switcher-btn bx--content-switcher--selected"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="tab"
-                tabIndex="0"
-                type="button"
-              >
-                <span
-                  className="bx--content-switcher__label"
-                >
-                  Hotspots
-                </span>
-              </button>
-              <button
-                aria-selected={false}
-                className="bx--content-switcher-btn"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="tab"
-                tabIndex="-1"
-                type="button"
-              >
-                <span
-                  className="bx--content-switcher__label"
-                >
-                  Labels
-                </span>
-              </button>
-            </div>
-            <div
-              className="iot--dynamic-hotspot-source-picker"
-              data-testid="dynamic-hotspot-source-picker"
-            >
-              <div
-                className="bx--dropdown__wrapper bx--list-box__wrapper"
-                data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="downshift-0-toggle-button"
-                  id="downshift-0-label"
-                >
-                  X coordinate
-                </label>
-                <div
-                  className="bx--dropdown bx--list-box"
-                  id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  <button
-                    aria-disabled={false}
-                    aria-expanded={false}
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                    className="bx--list-box__field"
-                    disabled={false}
-                    id="downshift-0-toggle-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <span
-                      className="bx--list-box__label"
-                    >
-                      Select data item
-                    </span>
-                    <div
-                      className="bx--list-box__menu-icon"
-                    >
-                      <svg
-                        aria-label="Open menu"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        name="chevron--down"
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                        <title>
-                          Open menu
-                        </title>
-                      </svg>
-                    </div>
-                  </button>
-                  <div
-                    aria-labelledby="downshift-0-label"
-                    className="bx--list-box__menu"
-                    id="downshift-0-menu"
-                    onBlur={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseLeave={[Function]}
-                    role="listbox"
-                    tabIndex={-1}
-                  />
-                </div>
-              </div>
-              <div
-                className="bx--dropdown__wrapper bx--list-box__wrapper"
-                data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="downshift-1-toggle-button"
-                  id="downshift-1-label"
-                >
-                  Y coordinate
-                </label>
-                <div
-                  className="bx--dropdown bx--list-box"
-                  id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  <button
-                    aria-disabled={false}
-                    aria-expanded={false}
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                    className="bx--list-box__field"
-                    disabled={false}
-                    id="downshift-1-toggle-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <span
-                      className="bx--list-box__label"
-                    >
-                      Select data item
-                    </span>
-                    <div
-                      className="bx--list-box__menu-icon"
-                    >
-                      <svg
-                        aria-label="Open menu"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        name="chevron--down"
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                        <title>
-                          Open menu
-                        </title>
-                      </svg>
-                    </div>
-                  </button>
-                  <div
-                    aria-labelledby="downshift-1-label"
-                    className="bx--list-box__menu"
-                    id="downshift-1-menu"
-                    onBlur={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseLeave={[Function]}
-                    role="listbox"
-                    tabIndex={-1}
-                  />
-                </div>
-              </div>
-              <button
-                className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-                data-testid="dynamic-hotspot-source-picker-clear-dropdown"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Clear coordinate sources
-                </span>
-                <svg
-                  aria-hidden="true"
-                  aria-label="Clear coordinate sources"
-                  className="bx--btn__icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="bx--tabs--scrollable"
-              onScroll={[Function]}
-              selected={0}
-            >
-              <button
-                aria-hidden="true"
-                aria-label="Scroll left"
-                className="bx--tab--overflow-nav-button--hidden"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="-1"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-                  />
-                </svg>
-              </button>
-              <ul
-                className="bx--tabs--scrollable__nav"
-                role="tablist"
-                tabIndex={-1}
-              >
-                <li
-                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="presentation"
-                >
-                  <button
-                    aria-controls="tab-15__panel"
-                    aria-selected={true}
-                    className="bx--tabs--scrollable__nav-link"
-                    href="#"
-                    id="tab-15"
-                    role="tab"
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Tooltip
-                  </button>
-                </li>
-                <li
-                  className="bx--tabs--scrollable__nav-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="presentation"
-                >
-                  <button
-                    aria-controls="tab-16__panel"
-                    aria-selected={false}
-                    className="bx--tabs--scrollable__nav-link"
-                    href="#"
-                    id="tab-16"
-                    role="tab"
-                    tabIndex={-1}
-                    type="button"
-                  >
-                    Data source
-                  </button>
-                </li>
-              </ul>
-              <button
-                aria-hidden="true"
-                aria-label="Scroll right"
-                className="bx--tab--overflow-nav-button--hidden"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="-1"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="bx--tab-content"
-              hidden={false}
-              role="tabpanel"
-              selected={true}
-              tabIndex={0}
-            >
-              <div
-                className="iot--hotspot-editor-tooltip-tab"
-              >
-                <div
-                  className="iot--hotspot-editor--tooltip-info-message"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
-                      fill="none"
-                    />
-                    <path
-                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
-                    />
-                  </svg>
-                  <p>
-                    Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="bx--tab-content"
-              hidden={true}
-              role="tabpanel"
-              selected={false}
-              tabIndex={0}
-            />
-          </div>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-        >
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="ComposedModal-modal-secondary-button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary"
-            data-testid="ComposedModal-modal-primary-button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
+    className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="ComposedModal"
+    onBlur={[Function]}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal ️⚠️ Experimental Notice  1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--toast-notification bx--toast-notification--warning-alt"
-      kind="warning-alt"
-      role="alert"
-      style={
-        Object {
-          "marginBottom": "0.5rem",
-          "minWidth": "30rem",
-        }
-      }
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
     >
-      <svg
-        aria-hidden={true}
-        className="bx--toast-notification__icon"
-        fill="currentColor"
-        focusable="false"
-        height={20}
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 32 32"
-        width={20}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-          fill="none"
-        />
-        <path
-          d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-        />
-        <title>
-          warning-alt icon
-        </title>
-      </svg>
+      Focus sentinel
+    </span>
+    <div
+      aria-label="landscape.jpg"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
       <div
-        className="bx--toast-notification__details"
+        className="bx--modal-header"
       >
+        <h2
+          className="bx--modal-header__label bx--type-delta"
+        >
+          landscape.jpg
+        </h2>
         <h3
-          className="bx--toast-notification__title"
+          className="bx--modal-header__heading bx--type-beta"
         >
-          Experimental Component Notice
+          Edit image
         </h3>
-        <div
-          className="bx--toast-notification__subtitle"
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
         >
-          <span>
-            ColorDropdown
-             is an
-             
-            <a
-              href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        <div />
+        <div>
+          <div
+            className="bx--content-switcher"
+            data-testid="hotspot-editor-modal-content-switcher"
+            onChange={[Function]}
+            role="tablist"
+          >
+            <button
+              aria-selected={true}
+              className="bx--content-switcher-btn bx--content-switcher--selected"
+              data-testid="hotspot-editor-modal-hotspots-switch"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex="0"
+              type="button"
             >
-              experimental component
-            </a>
-             
-            and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
-          </span>
+              <span
+                className="bx--content-switcher__label"
+                title="Hotspots"
+              >
+                Hotspots
+              </span>
+            </button>
+            <button
+              aria-selected={false}
+              className="bx--content-switcher-btn"
+              data-testid="hotspot-editor-modal-labels-switch"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex="-1"
+              type="button"
+            >
+              <span
+                className="bx--content-switcher__label"
+                title="Labels"
+              >
+                Labels
+              </span>
+            </button>
+          </div>
+          <div
+            className="iot--dynamic-hotspot-source-picker"
+            data-testid="dynamic-hotspot-source-picker"
+          >
+            <div
+              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+            >
+              <label
+                className="bx--label"
+                htmlFor="downshift-0-toggle-button"
+                id="downshift-0-label"
+              >
+                X coordinate
+              </label>
+              <div
+                className="bx--dropdown bx--list-box"
+                id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <button
+                  aria-disabled={false}
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                  className="bx--list-box__field"
+                  disabled={false}
+                  id="downshift-0-toggle-button"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="bx--list-box__label"
+                  >
+                    Select data item
+                  </span>
+                  <div
+                    className="bx--list-box__menu-icon"
+                  >
+                    <svg
+                      aria-label="Open menu"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      name="chevron--down"
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                      <title>
+                        Open menu
+                      </title>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  aria-labelledby="downshift-0-label"
+                  className="bx--list-box__menu"
+                  id="downshift-0-menu"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseLeave={[Function]}
+                  role="listbox"
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+            >
+              <label
+                className="bx--label"
+                htmlFor="downshift-1-toggle-button"
+                id="downshift-1-label"
+              >
+                Y coordinate
+              </label>
+              <div
+                className="bx--dropdown bx--list-box"
+                id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <button
+                  aria-disabled={false}
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                  className="bx--list-box__field"
+                  disabled={false}
+                  id="downshift-1-toggle-button"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="bx--list-box__label"
+                  >
+                    Select data item
+                  </span>
+                  <div
+                    className="bx--list-box__menu-icon"
+                  >
+                    <svg
+                      aria-label="Open menu"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      name="chevron--down"
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                      <title>
+                        Open menu
+                      </title>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  aria-labelledby="downshift-1-label"
+                  className="bx--list-box__menu"
+                  id="downshift-1-menu"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseLeave={[Function]}
+                  role="listbox"
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <button
+              aria-describedby={null}
+              className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
+              data-testid="dynamic-hotspot-source-picker-clear-dropdown"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Clear coordinate sources
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Clear coordinate sources"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tabs--scrollable"
+            onScroll={[Function]}
+            selected={0}
+          >
+            <button
+              aria-hidden="true"
+              aria-label="Scroll left"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                />
+              </svg>
+            </button>
+            <ul
+              className="bx--tabs--scrollable__nav"
+              role="tablist"
+              tabIndex={-1}
+            >
+              <li
+                className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-selected={true}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  role="tab"
+                  tabIndex={0}
+                  type="button"
+                >
+                  Tooltip
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Data source
+                </button>
+              </li>
+            </ul>
+            <button
+              aria-hidden="true"
+              aria-label="Scroll right"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+            tabIndex={0}
+          >
+            <div
+              className="iot--hotspot-editor-tooltip-tab"
+            >
+              <div
+                className="iot--hotspot-editor--tooltip-info-message"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                    fill="none"
+                  />
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
+                  />
+                </svg>
+                <p>
+                  Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+            tabIndex={0}
+          />
         </div>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="ComposedModal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="ComposedModal-modal-primary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal With Existing Dynamic Hotspots 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="ComposedModal"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-label="landscape.jpg"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <h2
+          className="bx--modal-header__label bx--type-delta"
+        >
+          landscape.jpg
+        </h2>
+        <h3
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Edit image
+        </h3>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        <div />
+        <div>
+          <div
+            className="bx--content-switcher"
+            data-testid="hotspot-editor-modal-content-switcher"
+            onChange={[Function]}
+            role="tablist"
+          >
+            <button
+              aria-selected={true}
+              className="bx--content-switcher-btn bx--content-switcher--selected"
+              data-testid="hotspot-editor-modal-hotspots-switch"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="bx--content-switcher__label"
+                title="Hotspots"
+              >
+                Hotspots
+              </span>
+            </button>
+            <button
+              aria-selected={false}
+              className="bx--content-switcher-btn"
+              data-testid="hotspot-editor-modal-labels-switch"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex="-1"
+              type="button"
+            >
+              <span
+                className="bx--content-switcher__label"
+                title="Labels"
+              >
+                Labels
+              </span>
+            </button>
+          </div>
+          <div
+            className="iot--dynamic-hotspot-source-picker"
+            data-testid="dynamic-hotspot-source-picker"
+          >
+            <div
+              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+            >
+              <label
+                className="bx--label"
+                htmlFor="downshift-2-toggle-button"
+                id="downshift-2-label"
+              >
+                X coordinate
+              </label>
+              <div
+                className="bx--dropdown bx--list-box"
+                id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <button
+                  aria-disabled={false}
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-2-label downshift-2-toggle-button"
+                  className="bx--list-box__field"
+                  disabled={false}
+                  id="downshift-2-toggle-button"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="bx--list-box__label"
+                  >
+                    {high} temp
+                  </span>
+                  <div
+                    className="bx--list-box__menu-icon"
+                  >
+                    <svg
+                      aria-label="Open menu"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      name="chevron--down"
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                      <title>
+                        Open menu
+                      </title>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  aria-labelledby="downshift-2-label"
+                  className="bx--list-box__menu"
+                  id="downshift-2-menu"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseLeave={[Function]}
+                  role="listbox"
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+            >
+              <label
+                className="bx--label"
+                htmlFor="downshift-3-toggle-button"
+                id="downshift-3-label"
+              >
+                Y coordinate
+              </label>
+              <div
+                className="bx--dropdown bx--list-box"
+                id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <button
+                  aria-disabled={false}
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-3-label downshift-3-toggle-button"
+                  className="bx--list-box__field"
+                  disabled={false}
+                  id="downshift-3-toggle-button"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="bx--list-box__label"
+                  >
+                    Temperature
+                  </span>
+                  <div
+                    className="bx--list-box__menu-icon"
+                  >
+                    <svg
+                      aria-label="Open menu"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      name="chevron--down"
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                      <title>
+                        Open menu
+                      </title>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  aria-labelledby="downshift-3-label"
+                  className="bx--list-box__menu"
+                  id="downshift-3-menu"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseLeave={[Function]}
+                  role="listbox"
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <button
+              aria-describedby={null}
+              className="iot--dynamic-hotspot-source-picker__clear-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
+              data-testid="dynamic-hotspot-source-picker-clear-dropdown"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Clear coordinate sources
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Clear coordinate sources"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--inline-notification bx--inline-notification--info"
+            data-testid="hotspot-editor-modal-too-many-hotspots-notification"
+            kind="info"
+            role="alert"
+          >
+            <div
+              className="bx--inline-notification__details"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--inline-notification__icon"
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                  fill="none"
+                />
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
+                />
+                <title>
+                  info icon
+                </title>
+              </svg>
+              <div
+                className="bx--inline-notification__text-wrapper"
+              >
+                <p
+                  className="bx--inline-notification__title"
+                >
+                  There are more hotspots than can be shown
+                </p>
+                <div
+                  className="bx--inline-notification__subtitle"
+                />
+              </div>
+            </div>
+            <button
+              aria-label="closes notification"
+              className="bx--inline-notification__close-button"
+              onClick={[Function]}
+              title="closes notification"
+              type="button"
+            >
+              <svg
+                aria-label="close notification"
+                className="bx--inline-notification__close-icon"
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            aria-live="assertive"
+            className="bx--inline-loading iot--hotspot-editor-modal__dynamic-loading"
+            data-testid="hotspot-editor-modal-loading-hotspots"
+          >
+            <div
+              className="bx--inline-loading__animation"
+            >
+              <div
+                aria-atomic="true"
+                aria-labelledby="loading-id-4"
+                aria-live="assertive"
+                className="bx--loading bx--loading--small"
+              >
+                <label
+                  className="bx--visually-hidden"
+                  id="loading-id-4"
+                >
+                  Active loading indicator
+                </label>
+                <svg
+                  className="bx--loading__svg"
+                  viewBox="0 0 100 100"
+                >
+                  <title>
+                    Active loading indicator
+                  </title>
+                  <circle
+                    className="bx--loading__background"
+                    cx="50%"
+                    cy="50%"
+                    r="42"
+                  />
+                  <circle
+                    className="bx--loading__stroke"
+                    cx="50%"
+                    cy="50%"
+                    r="42"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              className="bx--inline-loading__text"
+            >
+              Locating hotspots
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="ComposedModal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+          data-testid="ComposedModal-modal-primary-button"
+          disabled={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal With Existing Hotspots 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--modal is-visible iot--hotspot-editor-modal iot--composed-modal--full-screen iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="ComposedModal"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-label="landscape.jpg"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <h2
+          className="bx--modal-header__label bx--type-delta"
+        >
+          landscape.jpg
+        </h2>
+        <h3
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Edit image
+        </h3>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        <div />
+        <div>
+          <div
+            className="bx--content-switcher"
+            data-testid="hotspot-editor-modal-content-switcher"
+            onChange={[Function]}
+            role="tablist"
+          >
+            <button
+              aria-selected={true}
+              className="bx--content-switcher-btn bx--content-switcher--selected"
+              data-testid="hotspot-editor-modal-hotspots-switch"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="bx--content-switcher__label"
+                title="Hotspots"
+              >
+                Hotspots
+              </span>
+            </button>
+            <button
+              aria-selected={false}
+              className="bx--content-switcher-btn"
+              data-testid="hotspot-editor-modal-labels-switch"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex="-1"
+              type="button"
+            >
+              <span
+                className="bx--content-switcher__label"
+                title="Labels"
+              >
+                Labels
+              </span>
+            </button>
+          </div>
+          <div
+            className="iot--dynamic-hotspot-source-picker"
+            data-testid="dynamic-hotspot-source-picker"
+          >
+            <div
+              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              data-testid="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+            >
+              <label
+                className="bx--label"
+                htmlFor="downshift-0-toggle-button"
+                id="downshift-0-label"
+              >
+                X coordinate
+              </label>
+              <div
+                className="bx--dropdown bx--list-box"
+                id="dynamic-hotspot-source-picker-x-coordinate-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <button
+                  aria-disabled={false}
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                  className="bx--list-box__field"
+                  disabled={false}
+                  id="downshift-0-toggle-button"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="bx--list-box__label"
+                  >
+                    Select data item
+                  </span>
+                  <div
+                    className="bx--list-box__menu-icon"
+                  >
+                    <svg
+                      aria-label="Open menu"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      name="chevron--down"
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                      <title>
+                        Open menu
+                      </title>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  aria-labelledby="downshift-0-label"
+                  className="bx--list-box__menu"
+                  id="downshift-0-menu"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseLeave={[Function]}
+                  role="listbox"
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              data-testid="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+            >
+              <label
+                className="bx--label"
+                htmlFor="downshift-1-toggle-button"
+                id="downshift-1-label"
+              >
+                Y coordinate
+              </label>
+              <div
+                className="bx--dropdown bx--list-box"
+                id="dynamic-hotspot-source-picker-y-coordinate-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <button
+                  aria-disabled={false}
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                  className="bx--list-box__field"
+                  disabled={false}
+                  id="downshift-1-toggle-button"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="bx--list-box__label"
+                  >
+                    Select data item
+                  </span>
+                  <div
+                    className="bx--list-box__menu-icon"
+                  >
+                    <svg
+                      aria-label="Open menu"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      name="chevron--down"
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                      <title>
+                        Open menu
+                      </title>
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  aria-labelledby="downshift-1-label"
+                  className="bx--list-box__menu"
+                  id="downshift-1-menu"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseLeave={[Function]}
+                  role="listbox"
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <button
+              aria-describedby={null}
+              className="iot--dynamic-hotspot-source-picker__clear-button iot--dynamic-hotspot-source-picker__clear-button--invisible iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
+              data-testid="dynamic-hotspot-source-picker-clear-dropdown"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Clear coordinate sources
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Clear coordinate sources"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 27H30V29H7zM27.38 10.51L19.45 2.59a2 2 0 00-2.83 0l-14 14a2 2 0 000 2.83L7.13 24h9.59L27.38 13.34A2 2 0 0027.38 10.51zM15.89 22H8L4 18l6.31-6.31 7.93 7.92zm3.76-3.76l-7.92-7.93L18 4 26 11.93z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tabs--scrollable"
+            onScroll={[Function]}
+            selected={0}
+          >
+            <button
+              aria-hidden="true"
+              aria-label="Scroll left"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+                />
+              </svg>
+            </button>
+            <ul
+              className="bx--tabs--scrollable__nav"
+              role="tablist"
+              tabIndex={-1}
+            >
+              <li
+                className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-selected={true}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  role="tab"
+                  tabIndex={0}
+                  type="button"
+                >
+                  Tooltip
+                </button>
+              </li>
+              <li
+                className="bx--tabs--scrollable__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+              >
+                <button
+                  aria-disabled={false}
+                  aria-selected={false}
+                  className="bx--tabs--scrollable__nav-link"
+                  href="#"
+                  role="tab"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Data source
+                </button>
+              </li>
+            </ul>
+            <button
+              aria-hidden="true"
+              aria-label="Scroll right"
+              className="bx--tab--overflow-nav-button--hidden"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              tabIndex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+            tabIndex={0}
+          >
+            <div
+              className="iot--hotspot-editor-tooltip-tab"
+            >
+              <div
+                className="iot--hotspot-editor--tooltip-info-message"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                    fill="none"
+                  />
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
+                  />
+                </svg>
+                <p>
+                  Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+            tabIndex={0}
+          />
+        </div>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="ComposedModal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="ComposedModal-modal-primary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal ️⚠️ Experimental Notice  1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--toast-notification bx--toast-notification--warning-alt"
+    kind="warning-alt"
+    role="alert"
+    style={
+      Object {
+        "marginBottom": "0.5rem",
+        "minWidth": "30rem",
+      }
+    }
+  >
+    <svg
+      aria-hidden={true}
+      className="bx--toast-notification__icon"
+      fill="currentColor"
+      focusable="false"
+      height={20}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 32 32"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        fill="none"
+      />
+      <path
+        d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+      />
+      <title>
+        warning-alt icon
+      </title>
+    </svg>
+    <div
+      className="bx--toast-notification__details"
+    >
+      <h3
+        className="bx--toast-notification__title"
+      >
+        Experimental Component Notice
+      </h3>
+      <div
+        className="bx--toast-notification__subtitle"
+      >
+        <span>
+          ColorDropdown
+           is an
+           
+          <a
+            href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
+          >
+            experimental component
+          </a>
+           
+          and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
+        </span>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

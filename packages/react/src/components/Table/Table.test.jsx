@@ -9,10 +9,9 @@ import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
 
-import { getTableColumns, mockActions } from './Table.test.helpers';
+import { getTableColumns, mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
-import EmptyTable from './EmptyTable/EmptyTable';
 import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
 import TableHead from './TableHead/TableHead';
 import { initialState } from './Table.story';
@@ -141,7 +140,7 @@ describe('Table', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
   afterEach(() => {
-    console.error.mockClear();
+    jest.clearAllMocks();
   });
   afterAll(() => {
     console.error.mockRestore();
@@ -177,6 +176,90 @@ describe('Table', () => {
       content: <RowExpansionContent rowId="row-1" />,
     },
   ];
+
+  it('should be selectable with testId or id', () => {
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+              },
+            ],
+          },
+        }}
+        testId="__table__"
+      />
+    );
+    expect(screen.getByTestId('__table__')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-container')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-toolbar')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-toolbar-content')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-toolbar-batch-actions')).toBeDefined();
+    expect(screen.getByTestId('download-button')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-head')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-head-column-string')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-body')).toBeDefined();
+    expect(screen.getByTestId('__table__-table-head-row-expansion-column')).toBeDefined();
+    expect(screen.getByTestId('table-head--overflow')).toBeDefined();
+    userEvent.click(screen.getByTestId('table-head--overflow'));
+    expect(
+      screen.getByTestId(`__table__-table-toolbar-toolbar-overflow-menu-item-aggregations`)
+    ).toBeDefined();
+    // close menu
+    userEvent.click(screen.getByTestId('table-head--overflow'));
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+              },
+            ],
+          },
+        }}
+        id="__TABLE__"
+      />
+    );
+
+    expect(screen.getByTestId('__TABLE__')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-container')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-toolbar')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-toolbar-content')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-toolbar-batch-actions')).toBeDefined();
+    expect(screen.getByTestId('download-button')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-head')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-head-column-string')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-body')).toBeDefined();
+    expect(screen.getByTestId('__TABLE__-table-head-row-expansion-column')).toBeDefined();
+    expect(screen.getByTestId('table-head--overflow')).toBeDefined();
+    userEvent.click(screen.getByTestId('table-head--overflow'));
+    expect(
+      screen.getByTestId(`__TABLE__-table-toolbar-toolbar-overflow-menu-item-aggregations`)
+    ).toBeDefined();
+  });
 
   it('limits the number of pagination select options', () => {
     // 100 records should have 10 pages. With max pages option we expect 5.
@@ -237,45 +320,136 @@ describe('Table', () => {
   });
 
   it('custom emptystate only renders with no filters', () => {
-    const wrapper = mount(
+    const { rerender } = render(
       <Table
         columns={tableColumns}
         data={[]}
         actions={mockActions}
         options={options}
         view={merge({}, view, {
-          table: { emptyState: <div id="customEmptyState">emptyState</div> },
+          table: { emptyState: <div id="customEmptyState">My empty state</div> },
         })}
       />
     );
     // Should render the custom empty state
-    expect(wrapper.find('#customEmptyState')).toHaveLength(1);
+    expect(screen.getByText('My empty state')).toBeTruthy();
 
-    const wrapper2 = mount(
+    rerender(
       <Table
         columns={tableColumns}
         data={[]}
         actions={mockActions}
         options={options}
-        i18n={{ emptyButtonLabelWithFilters: 'Clear all filters' }}
+        i18n={{ emptyButtonLabelWithFilters: 'Clear all my filters' }}
         view={merge({}, view, {
           filters: [{ columnId: 'col', value: 'value' }],
-          table: { emptyState: <div id="customEmptyState">emptyState</div> },
+          table: { emptyState: <div id="customEmptyState">My empty state</div> },
         })}
       />
     );
     // Should not render the empty state
-    expect(wrapper2.find('#customEmptyState')).toHaveLength(0);
+    expect(screen.queryByText('My empty state')).not.toBeTruthy();
 
-    // Click the button and make sure the right action fires
-    const emptyTable = wrapper2.find(EmptyTable);
-    emptyTable.find('button').simulate('click');
+    userEvent.click(screen.getByRole('button', { name: 'Clear all my filters' }));
     expect(mockActions.toolbar.onApplySearch).toHaveBeenCalled();
     expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalled();
   });
 
+  it('can handle missing actions for custom emptystate with filters', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={[]}
+        actions={{}}
+        options={options}
+        i18n={{ emptyButtonLabelWithFilters: 'Clear all my filters' }}
+        view={merge({}, view, {
+          filters: [{ columnId: 'col', value: 'value' }],
+          table: { emptyState: <div id="customEmptyState">My empty state</div> },
+        })}
+      />
+    );
+    userEvent.click(screen.getByRole('button', { name: 'Clear all my filters' }));
+    expect(mockActions.toolbar.onApplySearch).not.toHaveBeenCalled();
+    expect(mockActions.toolbar.onClearAllFilters).not.toHaveBeenCalled();
+  });
+
+  it('triggers onColumnResize callback when column is toggled', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn();
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+    const ordering = [
+      { columnId: 'col1', isHidden: false },
+      { columnId: 'col2', isHidden: false },
+      { columnId: 'col3', isHidden: false },
+    ];
+    const columns = [
+      { id: 'col1', name: 'Column 1', width: '100px' },
+      { id: 'col2', name: 'Column 2', width: '100px' },
+      { id: 'col3', name: 'Column 3', width: '100px' },
+    ];
+
+    render(
+      <Table
+        columns={columns}
+        data={[{ id: 'row-1', values: { col1: 'a', col2: 'b', col3: 'c' } }]}
+        actions={mockActions}
+        options={{ hasResize: true, hasColumnSelection: true }}
+        view={{ table: { ordering }, toolbar: { activeBar: 'column' } }}
+      />
+    );
+
+    const toggleHideCol2Button = screen.getAllByText('Column 2')[1];
+    fireEvent.click(toggleHideCol2Button);
+
+    expect(mockActions.table.onColumnResize).toHaveBeenCalledWith([
+      { id: 'col1', name: 'Column 1', width: '150px' },
+      { id: 'col2', name: 'Column 2', width: '100px' },
+      { id: 'col3', name: 'Column 3', width: '150px' },
+    ]);
+
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('does not trigger onColumnResize callback when column is toggled and preserveColumnWidths:true', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn();
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+    const ordering = [
+      { columnId: 'col1', isHidden: false },
+      { columnId: 'col2', isHidden: false },
+      { columnId: 'col3', isHidden: false },
+    ];
+    const columns = [
+      { id: 'col1', name: 'Column 1', width: '100px' },
+      { id: 'col2', name: 'Column 2', width: '100px' },
+      { id: 'col3', name: 'Column 3', width: '100px' },
+    ];
+
+    render(
+      <Table
+        columns={columns}
+        data={[{ id: 'row-1', values: { col1: 'a', col2: 'b', col3: 'c' } }]}
+        actions={mockActions}
+        options={{ hasResize: true, hasColumnSelection: true, preserveColumnWidths: true }}
+        view={{ table: { ordering }, toolbar: { activeBar: 'column' } }}
+      />
+    );
+
+    const toggleHideCol2Button = screen.getAllByText('Column 2')[1];
+    fireEvent.click(toggleHideCol2Button);
+
+    expect(mockActions.table.onColumnResize).not.toHaveBeenCalled();
+
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
   it('validate row count function ', () => {
-    const wrapper = mount(
+    render(
       <Table
         columns={tableColumns}
         data={tableData}
@@ -286,17 +460,7 @@ describe('Table', () => {
     );
 
     const rowCounts = view.pagination.totalItems;
-    const renderRowCountField = wrapper
-      .find('Table')
-      .at(0)
-      .props()
-      .i18n.rowCountInHeader(rowCounts);
-    expect(renderRowCountField).toContain('Results:');
-
-    const min = 1;
-    const max = 10;
-    const renderItemRangeField = wrapper.find('Table').at(0).props().i18n.itemsRange(min, max);
-    expect(renderItemRangeField).toContain('items');
+    expect(screen.getByText(`Results: ${rowCounts}`)).toBeVisible();
   });
 
   it('validate show/hide hasRowCountInHeader property ', () => {
@@ -613,6 +777,13 @@ describe('Table', () => {
       render(<Table columns={columns} data={[tableData[0]]} options={options} />);
     };
 
+    it('wraps cell text when there are no otions', () => {
+      render(<Table columns={tableColumns} data={[tableData[0]]} options={false} />);
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
+
     it('wraps cell text by default', () => {
       renderDefaultTable();
       expectWrapping();
@@ -845,6 +1016,7 @@ describe('Table', () => {
         ...initialState.view,
         table: {
           expandedIds: ['row-3', 'row-7'],
+          selectedIds: ['row-3', 'row-4'],
         },
       },
     };
@@ -870,7 +1042,7 @@ describe('Table', () => {
     expect(screen.getAllByLabelText(i18nTest.filterAria)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.openMenuAria)[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.batchCancel)[0]).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemsSelected}.*`))).toBeInTheDocument();
+    expect(screen.getByText(`2 ${i18nTest.itemsSelected}`)).toBeInTheDocument();
 
     expect(screen.queryByLabelText(i18nDefault.overflowMenuAria)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.clickToExpandAria)).not.toBeInTheDocument();
@@ -903,9 +1075,13 @@ describe('Table', () => {
           toolbar: {
             activeBar: 'column',
           },
+          table: {
+            selectedIds: ['row-3'],
+          },
         }}
       />
     );
+    expect(screen.getByText(`1 ${i18nTest.itemSelected}`)).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.columnSelectionConfig)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.columnSelectionConfig)).not.toBeInTheDocument();
   });
@@ -943,6 +1119,67 @@ describe('Table', () => {
     expect(screen.getAllByText(i18nTest.emptyButtonLabel)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyMessage)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyButtonLabel)).not.toBeInTheDocument();
+  });
+
+  it('has defaults for i18n functions', () => {
+    const additionalProps = {
+      options: {
+        ...initialState.options,
+        hasRowCountInHeader: true,
+      },
+      view: {
+        ...initialState.view,
+        table: {
+          selectedIds: ['row-1', 'row-2'],
+        },
+      },
+    };
+
+    const { rerender } = render(<Table {...initialState} {...additionalProps} isSortable />);
+
+    expect(screen.getByText(i18nDefault.itemsSelected(2))).toBeInTheDocument();
+    expect(screen.getByText(i18nDefault.pageRange(1, 10))).toBeInTheDocument();
+    expect(screen.getByText(i18nDefault.itemsRangeWithTotal(1, 10, 100))).toBeInTheDocument();
+    expect(screen.getByText(i18nDefault.rowCountInHeader(100))).toBeInTheDocument();
+
+    additionalProps.view.table.selectedIds = ['row-1'];
+    rerender(<Table {...initialState} {...additionalProps} isSortable />);
+    expect(screen.getByText(i18nDefault.itemSelected(1))).toBeInTheDocument();
+  });
+
+  it('supports external i18n functions', () => {
+    const i18nFunctions = {
+      itemSelected: (i) => `${i} test-item-selected`,
+      itemsSelected: (i) => `${i} test-items-selected`,
+      itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} test-items`,
+      pageRange: (current, total) => `${current} of ${total} test-pages`,
+      rowCountInHeader: (totalRowCount) => `test-results: ${totalRowCount}`,
+    };
+
+    const additionalProps = {
+      options: {
+        ...initialState.options,
+        hasRowCountInHeader: true,
+      },
+      view: {
+        ...initialState.view,
+        table: {
+          selectedIds: ['row-1', 'row-2'],
+        },
+      },
+    };
+
+    const { rerender } = render(
+      <Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />
+    );
+    expect(screen.getByText(i18nFunctions.itemsSelected(2))).toBeInTheDocument();
+    expect(screen.getByText(i18nFunctions.pageRange(1, 10))).toBeInTheDocument();
+    expect(screen.getByText(i18nFunctions.itemsRangeWithTotal(1, 10, 100))).toBeInTheDocument();
+    expect(screen.getByText(i18nFunctions.rowCountInHeader(100))).toBeInTheDocument();
+
+    additionalProps.view.table.selectedIds = ['row-1'];
+    rerender(<Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />);
+    expect(screen.getByText(i18nFunctions.itemSelected(1))).toBeInTheDocument();
   });
 
   it('Table in modal select all', () => {
@@ -1135,184 +1372,439 @@ describe('Table', () => {
     expect(screen.queryAllByTestId('table-head--overflow').length).toBe(5);
   });
 
-  it('automatically checks "select all" if all rows are selected', () => {
-    const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map((row) => row.id);
-    const { rerender } = render(
-      <Table
-        id="tableid1"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds },
-        }}
-      />
-    );
+  describe('Row selection', () => {
+    const getTableColumns = () => [
+      {
+        id: 'string',
+        name: 'String',
+        isSortable: false,
+      },
+    ];
 
-    const selectAllCheckbox = screen.getByLabelText('Select all items');
-    expect(selectAllCheckbox).toBeInTheDocument();
-    expect(selectAllCheckbox).toHaveProperty('checked', true);
+    it('selects all child rows when a parent row is selected', () => {
+      const onRowSelectedMock = jest.fn();
+      render(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: [],
+              expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    rerender(
-      <Table
-        id="tableid2"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds: selectedIds.slice(1, 5) },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
-  });
+      const row0Checkbox = screen.getAllByLabelText(i18nDefault.selectRowAria)[
+        getNestedRowIds().indexOf('row-0')
+      ];
+      fireEvent.click(row0Checkbox);
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-0', true, [
+        'row-0',
+        'row-0_A',
+        'row-0_B',
+      ]);
 
-  it('overrides automatic "select all" check if "isSelectAllSelected" is used', () => {
-    const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map((row) => row.id);
-    const { rerender } = render(
-      <Table
-        id="tableid1"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: {
-            selectedIds: selectedIds.slice(1, 5),
-            isSelectAllSelected: true,
-          },
-        }}
-      />
-    );
+      const row1Checkbox = screen.getAllByLabelText(i18nDefault.selectRowAria)[
+        getNestedRowIds().indexOf('row-1')
+      ];
+      fireEvent.click(row1Checkbox);
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-1', true, [
+        'row-1',
+        'row-1_A',
+        'row-1_B',
+        'row-1_B-1',
+        'row-1_B-2',
+        'row-1_B-2-A',
+        'row-1_B-2-B',
+        'row-1_B-3',
+        'row-1_C',
+        'row-1_D',
+        'row-1_D-1',
+        'row-1_D-2',
+        'row-1_D-3',
+      ]);
+    });
 
-    const selectAllCheckbox = screen.getByLabelText('Select all items');
-    expect(selectAllCheckbox).toBeInTheDocument();
-    expect(selectAllCheckbox).toHaveProperty('checked', true);
+    it('selects the parent if all child rows are selected', () => {
+      const onRowSelectedMock = jest.fn();
+      const { rerender } = render(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: ['row-0_A'],
+              expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    rerender(
-      <Table
-        id="tableid2"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds, isSelectAllSelected: false },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
-  });
+      fireEvent.click(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-0_B')]
+      );
 
-  it('automatically marks "select all" as Indeterminate if some but not all rows are selected', () => {
-    const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map((row) => row.id);
-    const onApplyBatchAction = jest.fn();
-    const { rerender } = render(
-      <Table
-        id="tableid1"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds: selectedIds.slice(1, 5) },
-          toolbar: {
-            batchActions: [
-              {
-                id: 'test-batch-action',
-                labelText: 'test batch action',
-                iconDescription: 'test batch action',
-              },
-            ],
-          },
-        }}
-        actions={{
-          toolbar: {
-            onApplyBatchAction,
-          },
-        }}
-      />
-    );
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-0_B', true, [
+        'row-0',
+        'row-0_A',
+        'row-0_B',
+      ]);
 
-    const selectAllCheckbox = screen.getByLabelText('Select all items');
-    expect(selectAllCheckbox).toBeInTheDocument();
-    expect(selectAllCheckbox).toHaveProperty('indeterminate', true);
+      rerender(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: [
+                'row-1_A',
+                'row-1_B-1',
+                'row-1_B-2-B',
+                'row-1_B-3',
+                'row-1_C',
+                'row-1_D',
+                'row-1_D-1',
+                'row-1_D-2',
+                'row-1_D-3',
+              ],
+              expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    // add extra check to ensure onApplyBatchAction is called correctly to help
-    // us meet test requirements.
-    const alertAction = screen.getByRole('button', { name: 'test batch action' });
-    expect(alertAction).toBeVisible();
-    userEvent.click(alertAction);
-    expect(onApplyBatchAction).toHaveBeenCalledWith('test-batch-action');
+      fireEvent.click(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[
+          getNestedRowIds().indexOf('row-1_B-2-A')
+        ]
+      );
 
-    rerender(
-      <Table
-        id="tableid2"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: { selectedIds },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
-  });
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-1_B-2-A', true, [
+        'row-1',
+        'row-1_A',
+        'row-1_B',
+        'row-1_B-1',
+        'row-1_B-2',
+        'row-1_B-2-A',
+        'row-1_B-2-B',
+        'row-1_B-3',
+        'row-1_C',
+        'row-1_D',
+        'row-1_D-1',
+        'row-1_D-2',
+        'row-1_D-3',
+      ]);
+    });
 
-  it('overrides automatically indeterminate state for "select all" if "isSelectAllSelected" or "isSelectAllIndeterminate" is used', () => {
-    const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map((row) => row.id);
-    const selectionThatWouldCauseAnIndeterminateState = selectedIds.slice(1, 5);
-    const { rerender } = render(
-      <Table
-        id="tableid1"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: {
-            selectedIds: selectionThatWouldCauseAnIndeterminateState,
-            isSelectAllSelected: false,
-          },
-        }}
-      />
-    );
+    it('deselects all child rows and parent rows when a row is deselected', () => {
+      const onRowSelectedMock = jest.fn();
+      const allRows = getNestedRows();
+      const row0AndChildren = ['row-0', 'row-0_A', 'row-0_B'];
+      const row1AndChildren = [
+        'row-1',
+        'row-1_A',
+        'row-1_B',
+        'row-1_B-1',
+        'row-1_B-2',
+        'row-1_B-2-A',
+        'row-1_B-2-B',
+        'row-1_B-3',
+        'row-1_C',
+        'row-1_D',
+        'row-1_D-1',
+        'row-1_D-2',
+        'row-1_D-3',
+      ];
+      const expandedIds = ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'];
+      const { rerender } = render(
+        <Table
+          columns={getTableColumns()}
+          data={allRows}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: [...row0AndChildren, ...row1AndChildren],
+              expandedIds,
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    const selectAllCheckbox = screen.getByLabelText('Select all items');
-    expect(selectAllCheckbox).toBeInTheDocument();
-    expect(selectAllCheckbox).toHaveProperty('indeterminate', false);
+      const row0Checkbox = screen.getAllByLabelText(i18nDefault.selectRowAria)[
+        getNestedRowIds().indexOf('row-0')
+      ];
+      fireEvent.click(row0Checkbox);
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-0', false, [...row1AndChildren]);
 
-    rerender(
-      <Table
-        id="tableid2"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: {
-            selectedIds: selectionThatWouldCauseAnIndeterminateState,
-            isSelectAllSelected: true,
-          },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+      rerender(
+        <Table
+          columns={tableColumns}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: [...row1AndChildren],
+              expandedIds,
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
 
-    rerender(
-      <Table
-        id="tableid3"
-        columns={tableColumns}
-        data={rows}
-        options={{ hasRowSelection: 'multi' }}
-        view={{
-          table: {
-            selectedIds: selectionThatWouldCauseAnIndeterminateState,
-            isSelectAllIndeterminate: false,
-          },
-        }}
-      />
-    );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+      const row1BCheckbox = screen.getAllByLabelText(i18nDefault.selectRowAria)[
+        getNestedRowIds().indexOf('row-1_B')
+      ];
+      fireEvent.click(row1BCheckbox);
+
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-1_B', false, [
+        'row-1_A',
+        'row-1_C',
+        'row-1_D',
+        'row-1_D-1',
+        'row-1_D-2',
+        'row-1_D-3',
+      ]);
+    });
+
+    it('shows selected as indeterminate if some but not all children are selected', () => {
+      const onRowSelectedMock = jest.fn();
+      render(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+          view={{
+            table: {
+              selectedIds: ['row-0_B', 'row-1_B-2-B'],
+              expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
+      expect(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-0')]
+      ).toBePartiallyChecked();
+      expect(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-1')]
+      ).toBePartiallyChecked();
+      expect(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-1_B')]
+      ).toBePartiallyChecked();
+      expect(
+        screen.getAllByLabelText(i18nDefault.selectRowAria)[getNestedRowIds().indexOf('row-1_B-2')]
+      ).toBePartiallyChecked();
+    });
+
+    it('new selection replaces previous in single hasRowSelection mode', () => {
+      const onRowSelectedMock = jest.fn();
+      const initialSelection = ['row-0'];
+      render(
+        <Table
+          columns={getTableColumns()}
+          data={getNestedRows()}
+          options={{ hasRowSelection: 'single', hasRowNesting: false }}
+          view={{
+            table: {
+              selectedIds: initialSelection,
+            },
+          }}
+          actions={{ table: { onRowSelected: onRowSelectedMock } }}
+        />
+      );
+      const row1 = screen.getByText('row-1');
+      fireEvent.click(row1);
+      expect(onRowSelectedMock).toHaveBeenCalledWith('row-1', true, ['row-1']);
+    });
+
+    it('automatically checks "select all" if all rows are selected', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const { rerender } = render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds },
+          }}
+        />
+      );
+
+      const selectAllCheckbox = screen.getByLabelText('Select all items');
+      expect(selectAllCheckbox).toBeInTheDocument();
+      expect(selectAllCheckbox).toHaveProperty('checked', true);
+
+      rerender(
+        <Table
+          id="tableid2"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds: selectedIds.slice(1, 5) },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+    });
+
+    it('overrides automatic "select all" check if "isSelectAllSelected" is used', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const { rerender } = render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: {
+              selectedIds: selectedIds.slice(1, 5),
+              isSelectAllSelected: true,
+            },
+          }}
+        />
+      );
+
+      const selectAllCheckbox = screen.getByLabelText('Select all items');
+      expect(selectAllCheckbox).toBeInTheDocument();
+      expect(selectAllCheckbox).toHaveProperty('checked', true);
+
+      rerender(
+        <Table
+          id="tableid2"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds, isSelectAllSelected: false },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+    });
+
+    it('automatically marks "select all" as Indeterminate if some but not all rows are selected', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const onApplyBatchAction = jest.fn();
+      const { rerender } = render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds: selectedIds.slice(1, 5) },
+            toolbar: {
+              batchActions: [
+                {
+                  id: 'test-batch-action',
+                  labelText: 'test batch action',
+                  iconDescription: 'test batch action',
+                },
+              ],
+            },
+          }}
+          actions={{
+            toolbar: {
+              onApplyBatchAction,
+            },
+          }}
+        />
+      );
+
+      const selectAllCheckbox = screen.getByLabelText('Select all items');
+      expect(selectAllCheckbox).toBeInTheDocument();
+      expect(selectAllCheckbox).toHaveProperty('indeterminate', true);
+
+      // add extra check to ensure onApplyBatchAction is called correctly to help
+      // us meet test requirements.
+      const alertAction = screen.getByRole('button', { name: 'test batch action' });
+      expect(alertAction).toBeVisible();
+      userEvent.click(alertAction);
+      expect(onApplyBatchAction).toHaveBeenCalledWith('test-batch-action');
+
+      rerender(
+        <Table
+          id="tableid2"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    });
+
+    it('overrides automatically indeterminate state for "select all" if "isSelectAllSelected" or "isSelectAllIndeterminate" is used', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const selectionThatWouldCauseAnIndeterminateState = selectedIds.slice(1, 5);
+      const { rerender } = render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: {
+              selectedIds: selectionThatWouldCauseAnIndeterminateState,
+              isSelectAllSelected: false,
+            },
+          }}
+        />
+      );
+
+      const selectAllCheckbox = screen.getByLabelText('Select all items');
+      expect(selectAllCheckbox).toBeInTheDocument();
+      expect(selectAllCheckbox).toHaveProperty('indeterminate', false);
+
+      rerender(
+        <Table
+          id="tableid2"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: {
+              selectedIds: selectionThatWouldCauseAnIndeterminateState,
+              isSelectAllSelected: true,
+            },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+
+      rerender(
+        <Table
+          id="tableid3"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: {
+              selectedIds: selectionThatWouldCauseAnIndeterminateState,
+              isSelectAllIndeterminate: false,
+            },
+          }}
+        />
+      );
+      expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    });
   });
 
   describe('Foot', () => {
@@ -1344,6 +1836,8 @@ describe('Table', () => {
         return `${sum + 1}`;
       });
 
+      const onToggleAggregations = jest.fn();
+
       render(
         <Table
           id="test"
@@ -1351,6 +1845,11 @@ describe('Table', () => {
           data={tableData}
           tooltip="this is a tooltip"
           options={{ hasAggregations: true }}
+          actions={{
+            toolbar: {
+              onToggleAggregations,
+            },
+          }}
           view={{
             aggregations: {
               columns: [
@@ -1360,6 +1859,9 @@ describe('Table', () => {
                 },
               ],
             },
+          }}
+          i18n={{
+            toggleAggregations: '__Toggle aggregations__',
           }}
         />
       );
@@ -1373,9 +1875,8 @@ describe('Table', () => {
 
       userEvent.click(overflow);
 
-      userEvent.click(screen.getByText('Toggle Aggregations'));
-      // should throw, because the footer isn't in the document anymore.
-      expect(() => screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`)).toThrow();
+      userEvent.click(screen.getByText('__Toggle aggregations__'));
+      expect(onToggleAggregations).toHaveBeenCalled();
 
       // simple extra test to confirm the tooltip is there and help us
       // meet testing requirements.
@@ -1422,6 +1923,23 @@ describe('Table', () => {
         expect.stringContaining(
           `Only one of props 'options.hasFilter' or 'options.hasAdvancedFilter' can be specified in 'Table'.`
         )
+      );
+      global.__DEV__ = __DEV__;
+    });
+
+    it('throws an error when hasAdvancedFilter is not boolean or undefined', () => {
+      const { __DEV__ } = global;
+      global.__DEV__ = true;
+      render(
+        <Table
+          id="test"
+          columns={tableColumns}
+          data={tableData}
+          options={{ hasAdvancedFilter: 'true' }}
+        />
+      );
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(`'options.hasAdvancedFilter' should be a boolean or undefined.`)
       );
       global.__DEV__ = __DEV__;
     });
@@ -1728,5 +2246,62 @@ describe('Table', () => {
         },
       });
     });
+  });
+
+  it('should render a loading state without columns', () => {
+    const { container } = render(
+      <Table
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const headerRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row--head`
+    );
+    expect(headerRows).toHaveLength(1);
+    expect(headerRows[0].querySelectorAll('td')).toHaveLength(3);
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+  });
+
+  it('should show data after loading is finished', () => {
+    const { container, rerender } = render(
+      <Table
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+    expect(screen.queryByTitle('String')).toBeNull();
+    expect(screen.queryByTitle('Date')).toBeNull();
+
+    rerender(
+      <Table
+        id="loading-table"
+        columns={tableColumns}
+        data={tableData}
+        view={{ table: { loadingState: { isLoading: false, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--table-skeleton-with-headers--table-row`)
+    ).toHaveLength(0);
+
+    // 20 rows plus the header
+    expect(container.querySelectorAll('tr')).toHaveLength(21);
+    expect(screen.getByTitle('String')).toBeVisible();
+    expect(screen.getByTitle('Date')).toBeVisible();
   });
 });

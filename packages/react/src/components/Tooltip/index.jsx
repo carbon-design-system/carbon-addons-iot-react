@@ -52,7 +52,7 @@ const getTooltipMenuOffset = (menuBody, menuDirection) => {
   };
 };
 
-export const Tooltip = ({ direction, menuOffset, useAutoPositioning, ...props }) => {
+export const Tooltip = ({ direction, menuOffset, useAutoPositioning, testId, ...props }) => {
   const [calculateMenuOffset, { adjustedDirection }] = usePopoverPositioning({
     direction,
     menuOffset: menuOffset || getTooltipMenuOffset,
@@ -60,18 +60,25 @@ export const Tooltip = ({ direction, menuOffset, useAutoPositioning, ...props })
   });
 
   return (
-    <CarbonTooltip {...props} menuOffset={calculateMenuOffset} direction={adjustedDirection} />
+    <CarbonTooltip
+      data-testid={testId}
+      {...props}
+      menuOffset={calculateMenuOffset}
+      direction={adjustedDirection}
+    />
   );
 };
 
 Tooltip.propTypes = {
   ...CarbonTooltip.propTypes,
   useAutoPositioning: PropTypes.bool,
+  testId: PropTypes.string,
 };
 
 Tooltip.defaultProps = {
   ...CarbonTooltip.defaultProps,
   useAutoPositioning: false,
+  testId: 'tooltip',
 };
 
 export default Tooltip;

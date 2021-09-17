@@ -16,7 +16,7 @@ import { Checkbox, CheckboxSkeleton } from '.';
 const { prefix } = settings;
 
 export default {
-  title: 'Checkbox',
+  title: '3 - Carbon/Checkbox',
   component: Checkbox,
   subcomponents: {
     CheckboxSkeleton,

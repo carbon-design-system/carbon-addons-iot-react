@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { settings } from '../../constants/Settings';
 import Button from '../Button';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /**
@@ -28,7 +31,7 @@ const propTypes = {
    */
   iconDescription: PropTypes.string.isRequired,
 
-  testID: PropTypes.string.isRequired,
+  testId: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -39,18 +42,19 @@ const defaultProps = {
 
 export const SingleMenuButton = React.forwardRef(
   (
-    { onSecondaryActionClick, onPrimaryActionClick, label, iconDescription, renderIcon, testID },
+    { onSecondaryActionClick, onPrimaryActionClick, label, iconDescription, renderIcon, testId },
     ref
   ) => {
     return (
       <Button
         ref={ref}
+        className={`${iotPrefix}--menu-button__trigger`}
         onClick={label ? onPrimaryActionClick : onSecondaryActionClick}
         iconDescription={iconDescription}
         renderIcon={renderIcon}
         hasIconOnly={!label}
         kind={!label ? 'ghost' : 'primary'}
-        testID={label ? `${testID}-single` : `${testID}-icon`}
+        testId={label ? `${testId}-single` : `${testId}-icon`}
       >
         {label}
       </Button>

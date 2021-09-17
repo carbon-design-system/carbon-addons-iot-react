@@ -2,14 +2,20 @@ import { mount } from 'enzyme';
 import React from 'react';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import { screen, render, fireEvent } from '@testing-library/react';
+import { screen, render, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { settings } from '../../constants/Settings';
+
+import * as reducer from './baseTableReducer';
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
-import { mockActions } from './Table.test.helpers';
-import { initialState, StatefulTableWithNestedRowItems } from './Table.story';
+import { StatefulTableWithNestedRowItems } from './StatefulTable.story';
+import { mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
+import { initialState, tableData } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
+
+const { iotPrefix } = settings;
 
 describe('stateful table with real reducer', () => {
   it('should clear filters', async () => {
@@ -23,7 +29,6 @@ describe('stateful table with real reducer', () => {
     expect(screen.queryByDisplayValue('whiteboard')).not.toBeInTheDocument();
     expect(screen.queryByDisplayValue('option-B')).not.toBeInTheDocument();
   });
-
   it('verify stateful table can support loading state', () => {
     const statefulTable = mount(
       <StatefulTable
@@ -35,7 +40,6 @@ describe('stateful table with real reducer', () => {
     );
     expect(statefulTable.find(TableSkeletonWithHeaders)).toHaveLength(1);
   });
-
   it('stateful table verify page change', () => {
     const statefulTable = mount(
       <StatefulTable
@@ -54,8 +58,7 @@ describe('stateful table with real reducer', () => {
     statefulTable.find('button.bx--pagination__button--forward').simulate('click');
     expect(statefulTable.text()).toContain('100 of 100');
   });
-
-  it('should show singleRowEditButtons when choosing to edit a row', () => {
+  it('should show singleRowEditButtons when choosing to edit a row', async () => {
     const statefulTable = mount(
       <StatefulTable
         {...merge({}, initialState, {
@@ -73,40 +76,32 @@ describe('stateful table with real reducer', () => {
         actions={mockActions}
       />
     );
-
     expect(statefulTable.text()).not.toContain('myButtons');
+    await act(async () => {
+      await statefulTable.find(RowActionsCell).first().props().onApplyRowAction('edit', 'row-1');
+    });
 
-    return statefulTable
-      .find(RowActionsCell)
-      .first()
-      .props()
-      .onApplyRowAction('edit', 'row-1')
-      .then(() => {
-        expect(true).toBeTruthy();
-        expect(statefulTable.text()).toContain('myButtons');
-      });
+    expect(true).toBeTruthy();
+    expect(statefulTable.text()).toContain('myButtons');
   });
-
-  it('render nestedRows', () => {
+  it('render nestedRows', async () => {
     const tableId = 'tableId';
     render(<StatefulTableWithNestedRowItems id={tableId} actions={mockActions} />);
-
     expect(screen.queryByText('whiteboard can eat 2A')).toBeNull();
-
-    fireEvent.click(
+    userEvent.click(
       screen
         .getByText('whiteboard can eat 2')
         .closest('tr')
         .querySelector('.bx--table-expand__button')
     );
-
     expect(screen.getByText('whiteboard can eat 2A')).toBeTruthy();
-
-    fireEvent.click(screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`));
-    fireEvent.click(screen.getByText('Add'));
+    userEvent.click(screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`));
+    await act(async () => {
+      const addBtn = await screen.findByText('Add');
+      userEvent.click(addBtn);
+    });
 
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
-
     userEvent.click(
       screen
         .getByText('can pinocchio whiteboard 4')
@@ -127,10 +122,12 @@ describe('stateful table with real reducer', () => {
     );
     expect(screen.getByText('can pinocchio whiteboard 4B-2-B')).toBeTruthy();
     userEvent.click(screen.getByTestId(`${tableId}-row-4_B-2-B-row-actions-cell-overflow`));
-    userEvent.click(screen.getByText('Add'));
+    await act(async () => {
+      const addBtn = await screen.findByText('Add');
+      userEvent.click(addBtn);
+    });
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
   });
-
   it('multiselect should filter properly with pre-selected filter', async () => {
     render(
       <StatefulTable
@@ -169,7 +166,6 @@ describe('stateful table with real reducer', () => {
         }}
       />
     );
-
     // start off with a filter of option-B.
     // Note: each options length count has an extra item due to the multiselect having the same title attribute as the row cell
     const initialFilteredRowsOptionA = screen.queryByTitle('option-A');
@@ -180,12 +176,10 @@ describe('stateful table with real reducer', () => {
     expect(initialFilteredRowsOptionB).toHaveLength(10);
     expect(initialFilteredRowsOptionC).toBeNull();
     expect(initialItemCount).toBeInTheDocument();
-
     // next add an additional filter with option-A
     // open the multiselect
     userEvent.click(screen.getByPlaceholderText('pick an option'));
     userEvent.click(screen.getByRole('option', { name: 'option-A' })); // fire click on option-A in our multiselect
-
     const secondFilteredRowsOptionA = screen.queryAllByTitle('option-A');
     const secondFilteredRowsOptionB = screen.queryAllByTitle('option-B');
     const secondFilteredRowsOptionC = screen.queryByTitle('option-C');
@@ -194,12 +188,10 @@ describe('stateful table with real reducer', () => {
     expect(secondFilteredRowsOptionB).toHaveLength(5);
     expect(secondFilteredRowsOptionC).toBeNull();
     expect(secondItemCount).toBeInTheDocument();
-
     // next remove filter for option-B
     // open the multiselect
     userEvent.click(screen.getAllByPlaceholderText('pick an option')[0]);
     userEvent.click(screen.getByRole('option', { name: 'option-B' })); // fire click on option-B in our multiselect
-
     const thirdFilteredRowsOptionA = screen.queryAllByTitle('option-A');
     const thirdFilteredRowsOptionB = screen.queryByTitle('option-B');
     const thirdFilteredRowsOptionC = screen.queryByTitle('option-C');
@@ -208,12 +200,10 @@ describe('stateful table with real reducer', () => {
     expect(thirdFilteredRowsOptionB).toBeNull();
     expect(thirdFilteredRowsOptionC).toBeNull();
     expect(thirdItemCount).toBeInTheDocument();
-
     // next clear all filters from the multiselect
     const clearSelectBox = screen.getByLabelText('Clear selection');
     expect(clearSelectBox).toBeInTheDocument();
     userEvent.click(clearSelectBox);
-
     const fourthFilteredRowsOptionA = screen.queryAllByTitle('option-A');
     const fourthFilteredRowsOptionB = screen.queryAllByTitle('option-B');
     const fourthFilteredRowsOptionC = screen.queryAllByTitle('option-C');
@@ -223,7 +213,6 @@ describe('stateful table with real reducer', () => {
     expect(fourthFilteredRowsOptionC).toHaveLength(3);
     expect(fourthItemCount).toBeInTheDocument();
   });
-
   it('multiselect should filter properly with no pre-selected filters', async () => {
     render(
       <StatefulTable
@@ -271,7 +260,6 @@ describe('stateful table with real reducer', () => {
         }}
       />
     );
-
     // start off with no filters.
     const initialFilteredRowsOptionA = screen.getAllByTitle('option-A');
     const initialFilteredRowsOptionB = screen.getAllByTitle('option-B');
@@ -282,12 +270,10 @@ describe('stateful table with real reducer', () => {
     expect(initialFilteredRowsOptionB).toHaveLength(3);
     expect(initialFilteredRowsOptionC).toHaveLength(3);
     expect(initialItemCount).toBeInTheDocument();
-
     // next add an a filter with option-A
     // open the multiselect
     userEvent.click(screen.getAllByPlaceholderText('pick an option')[0]);
     userEvent.click(screen.getByRole('option', { name: 'option-A' })); // fire click on option-A in our multiselect
-
     const secondFilteredRowsOptionA = screen.queryAllByTitle('option-A');
     const secondFilteredRowsOptionB = screen.queryByTitle('option-B');
     const secondFilteredRowsOptionC = screen.queryByTitle('option-C');
@@ -296,12 +282,10 @@ describe('stateful table with real reducer', () => {
     expect(secondFilteredRowsOptionB).toBeNull();
     expect(secondFilteredRowsOptionC).toBeNull();
     expect(secondItemCount).toBeInTheDocument();
-
     // next clear all filters from the multiselect
     const clearSelectBox = screen.getByLabelText('Clear selection');
     expect(clearSelectBox).toBeInTheDocument();
     fireEvent.click(clearSelectBox);
-
     const fourthFilteredRowsOptionA = await screen.findAllByTitle('option-A');
     const fourthFilteredRowsOptionB = await screen.findAllByTitle('option-B');
     const fourthFilteredRowsOptionC = await screen.findAllByTitle('option-C');
@@ -310,11 +294,9 @@ describe('stateful table with real reducer', () => {
     expect(fourthFilteredRowsOptionB).toHaveLength(3);
     expect(fourthFilteredRowsOptionC).toHaveLength(3);
     expect(fourthItemCount).toBeInTheDocument();
-
     userEvent.click(screen.getByTitle('Select'));
     expect(mockActions.table.onChangeSort).toHaveBeenCalledWith('select', undefined);
   });
-
   it('re-renders custom toolbar elements', () => {
     const tableId = 'tableId';
     const TestComp = ({ myMessage }) => {
@@ -335,14 +317,11 @@ describe('stateful table with real reducer', () => {
         />
       );
     };
-
     const { rerender } = render(<AppWrapper message="message1" />);
     expect(screen.queryByText('message1')).toBeVisible();
-
     rerender(<AppWrapper message="message2" />);
     expect(screen.queryByText('message2')).toBeVisible();
   });
-
   it('returns columns, view and search value in callback onUserViewModified', () => {
     let viewProps;
     const onUserViewModified = jest
@@ -363,7 +342,6 @@ describe('stateful table with real reducer', () => {
           },
         };
       });
-
     render(
       <StatefulTable
         {...merge({}, initialState, {
@@ -374,9 +352,7 @@ describe('stateful table with real reducer', () => {
         data={[initialState.data[0]]}
       />
     );
-
     fireEvent.click(screen.getByText('Clear all filters'));
-
     expect(viewProps).toEqual({
       columns: initialState.columns,
       view: {
@@ -391,10 +367,8 @@ describe('stateful table with real reducer', () => {
         },
       },
     });
-
     const searchField = screen.queryByRole('searchbox');
     fireEvent.change(searchField, { target: { value: 'testval1' } });
-
     expect(viewProps).toEqual({
       columns: initialState.columns,
       view: {
@@ -410,7 +384,6 @@ describe('stateful table with real reducer', () => {
       },
     });
   });
-
   it('stateful table total items can be set independently', () => {
     const totalItems = 500;
     render(
@@ -426,17 +399,14 @@ describe('stateful table with real reducer', () => {
         )}
       />
     );
-
     expect(initialState.data.length).toEqual(100);
     expect(screen.queryByText('1–10 of 500 items')).toBeTruthy();
   });
-
   it('stateful table every third row unselectable', () => {
     const modifiedData = initialState.data.map((eachRow, index) => ({
       ...eachRow,
       isSelectable: index % 3 !== 0,
     }));
-
     const dataCount = modifiedData.filter((data) => data.isSelectable).length;
     render(
       <StatefulTable
@@ -449,7 +419,6 @@ describe('stateful table with real reducer', () => {
         view={{ table: { selectedIds: [] } }}
       />
     );
-
     // check if checkboxes displayed correctly
     const checkboxes = screen.getAllByLabelText('Select row');
     checkboxes.forEach((box, i) => {
@@ -459,17 +428,14 @@ describe('stateful table with real reducer', () => {
         expect(box).toHaveProperty('disabled', true);
       }
     });
-
     // select all elements
     const selectAllCheckbox = screen.getByLabelText('Select all items');
     expect(selectAllCheckbox).toBeInTheDocument();
     expect(selectAllCheckbox).toHaveProperty('checked', false);
     fireEvent.click(selectAllCheckbox);
-
     // check that only selectable items are counted
     expect(selectAllCheckbox).toHaveProperty('checked', true);
     expect(screen.getByText(`${dataCount} items selected`)).toBeInTheDocument();
-
     // check if selectable checkboxes checked
     checkboxes.forEach((box, i) => {
       if (i % 3 !== 0) {
@@ -479,7 +445,6 @@ describe('stateful table with real reducer', () => {
       }
     });
   });
-
   it('should use callback fallbacks when props not passed', () => {
     expect(() =>
       render(
@@ -495,7 +460,6 @@ describe('stateful table with real reducer', () => {
       )
     ).not.toThrowError();
   });
-
   describe('AdvancedFilters', () => {
     it('properly filters the table when advancedRules have simple logic', async () => {
       const { container } = render(
@@ -563,10 +527,8 @@ describe('stateful table with real reducer', () => {
           }}
         />
       );
-
       expect(container.querySelectorAll('tbody > tr')).toHaveLength(3);
     });
-
     it('properly filters the table when advancedRules have complex logic', async () => {
       const { container } = render(
         <StatefulTable
@@ -635,9 +597,271 @@ describe('stateful table with real reducer', () => {
           }}
         />
       );
-
       expect(container.querySelectorAll('tbody > tr')).toHaveLength(10);
       expect(screen.getByText('1–10 of 11 items')).toBeVisible();
     });
+  });
+  it('properly changes state of child and parent row selections', () => {
+    const onRowSelectedMock = jest.fn();
+    const selectRowLabel = 'Select row';
+    render(
+      <StatefulTable
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+            isSortable: false,
+          },
+        ]}
+        data={getNestedRows()}
+        options={{ hasRowSelection: 'multi', hasRowNesting: true }}
+        view={{
+          table: {
+            selectedIds: [],
+            expandedIds: ['row-0', 'row-1', 'row-1_B', 'row-1_B-2', 'row-1_D'],
+          },
+        }}
+        actions={{ table: { onRowSelected: onRowSelectedMock } }}
+      />
+    );
+    fireEvent.click(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-2')]
+    );
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1')]
+    ).toBePartiallyChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_A')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B')]
+    ).toBePartiallyChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-1')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-2')]
+    ).toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-2-A')]
+    ).toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-2-B')]
+    ).toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-3')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_B-3')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_C')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_D')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_D-1')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_D-2')]
+    ).not.toBeChecked();
+    expect(
+      screen.getAllByLabelText(selectRowLabel)[getNestedRowIds().indexOf('row-1_D-3')]
+    ).not.toBeChecked();
+    expect(onRowSelectedMock).toHaveBeenCalledWith('row-1_B-2', true, [
+      'row-1_B-2',
+      'row-1_B-2-A',
+      'row-1_B-2-B',
+    ]);
+  });
+
+  it('should open the multi-sort modal', () => {
+    render(
+      <StatefulTable
+        id="multi-sort-table"
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+            isSortable: true,
+          },
+          {
+            id: 'boolean',
+            name: 'Boolean',
+            isSortable: true,
+          },
+        ]}
+        options={{
+          hasMultiSort: true,
+        }}
+        data={tableData.slice(0, 2)}
+      />
+    );
+
+    userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[0]);
+    userEvent.click(screen.getByText('Multi-sort'));
+    expect(screen.getByText('Select columns to sort')).toBeVisible();
+  });
+
+  it('should only update resize state when hasUserViewManagement:true', () => {
+    const onColumnResize = jest.fn();
+    jest.spyOn(reducer, 'baseTableReducer');
+    const { rerender } = render(
+      <StatefulTable
+        id="multi-sort-table"
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+          },
+          {
+            id: 'boolean',
+            name: 'Boolean',
+          },
+        ]}
+        options={{
+          hasUserViewManagement: true,
+          hasResize: true,
+        }}
+        data={tableData.slice(0, 2)}
+        actions={{
+          table: {
+            onColumnResize,
+          },
+        }}
+      />
+    );
+
+    const resizeFirstColumn = () => {
+      const handles = screen.getAllByLabelText('Resize column');
+      fireEvent.mouseDown(handles[0]);
+      fireEvent.mouseMove(handles[0], {
+        clientX: 196,
+      });
+      fireEvent.mouseUp(handles[0]);
+    };
+
+    resizeFirstColumn();
+
+    expect(reducer.baseTableReducer).toHaveBeenLastCalledWith(
+      // table state.
+      expect.objectContaining({
+        columns: [
+          { id: 'string', name: 'String' },
+          { id: 'boolean', name: 'Boolean' },
+        ],
+      }),
+      // dispatched action
+      expect.objectContaining({
+        instanceId: null,
+        payload: [
+          { id: 'string', name: 'String', width: '200px' },
+          { id: 'boolean', name: 'Boolean', width: '100px' },
+        ],
+        type: 'TABLE_COLUMN_RESIZE',
+      })
+    );
+
+    expect(onColumnResize).toHaveBeenCalledWith([
+      { id: 'string', name: 'String', width: '200px' },
+      { id: 'boolean', name: 'Boolean', width: '100px' },
+    ]);
+
+    jest.clearAllMocks();
+
+    rerender(
+      <StatefulTable
+        id="multi-sort-table"
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+          },
+          {
+            id: 'boolean',
+            name: 'Boolean',
+          },
+        ]}
+        options={{
+          hasUserViewManagement: false,
+          hasResize: true,
+        }}
+        data={tableData.slice(0, 2)}
+        actions={{
+          table: {
+            onColumnResize,
+          },
+        }}
+      />
+    );
+
+    resizeFirstColumn();
+
+    expect(reducer.baseTableReducer).not.toHaveBeenCalled();
+
+    expect(onColumnResize).toHaveBeenCalledWith([
+      { id: 'string', name: 'String', width: '200px' },
+      { id: 'boolean', name: 'Boolean', width: '100px' },
+    ]);
+
+    jest.resetAllMocks();
+  });
+
+  it('should render a loading state without columns', () => {
+    const { container } = render(
+      <StatefulTable
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const headerRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row--head`
+    );
+    expect(headerRows).toHaveLength(1);
+    expect(headerRows[0].querySelectorAll('td')).toHaveLength(3);
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+  });
+
+  it('should show data after loading is finished', () => {
+    const { container, rerender } = render(
+      <StatefulTable
+        id="loading-table"
+        columns={[]}
+        data={[]}
+        view={{ table: { loadingState: { isLoading: true, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+
+    const allRows = container.querySelectorAll(
+      `.${iotPrefix}--table-skeleton-with-headers--table-row`
+    );
+    expect(allRows).toHaveLength(10);
+    expect(screen.queryByTitle('String')).toBeNull();
+    expect(screen.queryByTitle('Date')).toBeNull();
+
+    rerender(
+      <StatefulTable
+        id="loading-table"
+        columns={initialState.columns}
+        data={initialState.data}
+        view={{ table: { loadingState: { isLoading: false, rowCount: 10, columnCount: 3 } } }}
+      />
+    );
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--table-skeleton-with-headers--table-row`)
+    ).toHaveLength(0);
+
+    // 100 rows plus the header
+    expect(container.querySelectorAll('tr')).toHaveLength(101);
+    expect(screen.getByTitle('String')).toBeVisible();
+    expect(screen.getByTitle('Date')).toBeVisible();
   });
 });

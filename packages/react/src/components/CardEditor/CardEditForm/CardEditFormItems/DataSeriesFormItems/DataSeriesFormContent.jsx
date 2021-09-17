@@ -1,9 +1,10 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import omit from 'lodash/omit';
 import isEmpty from 'lodash/isEmpty';
 import uuid from 'uuid';
+import hash from 'object-hash';
 
 import { settings } from '../../../../../constants/Settings';
 import {
@@ -260,6 +261,8 @@ const DataSeriesFormItem = ({
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
 
+  const removedItemsCountRef = useRef(0);
+
   const validDataItems = useMemo(
     () => (getValidDataItems ? getValidDataItems(cardConfig, selectedTimeRange) : dataItems),
     [cardConfig, dataItems, getValidDataItems, selectedTimeRange]
@@ -298,7 +301,13 @@ const DataSeriesFormItem = ({
           selectedItems.length > 1
             ? omit(cardConfig, 'content.categoryDataSourceId')
             : cardConfig;
-        const newCard = handleDataSeriesChange(selectedItems, card, setEditDataSeries);
+        const newCard = handleDataSeriesChange(
+          selectedItems,
+          card,
+          setEditDataSeries,
+          undefined,
+          removedItemsCountRef
+        );
         setSelectedDataItems(selectedItems.map(({ dataSourceId }) => dataSourceId));
         onChange(newCard);
       }
@@ -311,6 +320,7 @@ const DataSeriesFormItem = ({
       const dataItemWithMetaData = validDataItems?.find(
         ({ dataItemId }) => dataItemId === dataItem.dataItemId
       );
+      const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
       // need to reset the card to include the latest dataSection
       onChange({
         ...cardConfig,
@@ -326,7 +336,7 @@ const DataSeriesFormItem = ({
         ...dataItem,
         ...(cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
           ? {
-              color: dataItem.color || DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
+              color: dataItem.color || DATAITEM_COLORS_OPTIONS[colorIndex],
             }
           : {}),
       });
@@ -340,6 +350,7 @@ const DataSeriesFormItem = ({
       const filteredItems = dataSection.filter(
         (item) => item.dataSourceId !== dataItem.dataSourceId
       );
+      removedItemsCountRef.current += 1;
       setSelectedDataItems(filteredItems.map((item) => item.dataSourceId));
       setRemovedDataItems([...removedDataItems, dataItem]);
       setEditDataSeries(filteredItems);
@@ -359,8 +370,8 @@ const DataSeriesFormItem = ({
   const dataItemListItems = useMemo(
     () =>
       dataSection?.map((dataItem, i) => {
-        const iconColorOption =
-          dataItem.color || DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+        const colorIndex = (i + removedItemsCountRef.current) % DATAITEM_COLORS_OPTIONS.length;
+        const iconColorOption = dataItem.color || DATAITEM_COLORS_OPTIONS[colorIndex];
         return {
           id: dataItem.dataSourceId,
           content: {
@@ -442,11 +453,11 @@ const DataSeriesFormItem = ({
           translateWithId={translateWithId}
         />
       )}
-      {canMultiSelectDataItems ? (
-        <div className={`${baseClassName}--input`}>
+      <div className={`${baseClassName}--input`}>
+        {canMultiSelectDataItems ? (
           <ComboBox
             // need to re-gen if selected card changes or if a dataItem is removed from the list
-            key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
+            key={`data-item-select-${hash(validDataItems)}-selected_card-id-${cardConfig.id}`}
             data-testid="editor--data-series--combobox"
             id={`${cardConfig.id}_dataSourceIds-combobox`}
             items={formatDataItemsForDropdown(validDataItems)}
@@ -466,10 +477,8 @@ const DataSeriesFormItem = ({
             onChange={handleSimpleDataSeriesChange}
             light
           />
-        </div>
-      ) : (
-        // Can't select more than one dataItem
-        <div className={`${baseClassName}--input`}>
+        ) : (
+          // Can't select more than one dataItem
           <Dropdown
             id={`${cardConfig.id}_dataSourceId`}
             direction="bottom"
@@ -501,8 +510,9 @@ const DataSeriesFormItem = ({
               onChange(newCard);
             }}
           />
-        </div>
-      )}
+        )}
+      </div>
+
       <List
         className={`${baseClassName}--data-item-list`}
         key={`data-item-list${selectedDataItems.length}`}

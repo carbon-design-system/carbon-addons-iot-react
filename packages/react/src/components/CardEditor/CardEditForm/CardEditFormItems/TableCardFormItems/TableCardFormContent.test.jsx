@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
 
@@ -31,6 +32,7 @@ const commonProps = {
     deviceid: ['73000', '73001'],
   },
   onChange: mockOnChange,
+  selectedTimeRange: 'this week',
   setSelectedDataItems: jest.fn(),
   translateWithId: jest.fn((id) => {
     switch (id) {
@@ -455,7 +457,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Manufacturer')).toBeDefined();
 
     // Popup the Data Item Editor
-    fireEvent.click(screen.queryAllByText('Edit')[1]);
+    fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
     expect(screen.queryByText('Customize data series')).toBeDefined();
     fireEvent.click(screen.queryByText(/Add threshold/));
     fireEvent.click(screen.queryByText('Save'));
@@ -504,7 +506,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Manufacturer')).toBeDefined();
 
     // Popup the Data Item Editor
-    fireEvent.click(screen.queryAllByText('Edit')[1]);
+    fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
     expect(screen.queryByText('Customize data series')).toBeDefined();
     fireEvent.click(screen.queryByText('Save'));
     expect(mockOnChange).toHaveBeenCalledWith({
@@ -513,5 +515,103 @@ describe('TableCardFormContent', () => {
         ...mockCardConfig.content,
       },
     });
+  });
+  it('should set thresholds in dataSection if they exist', () => {
+    const mockOnChange = jest.fn();
+    const mockCardConfig = {
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Manufacturer',
+            dataSourceId: 'manufacturer',
+            type: 'DIMENSION',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+        thresholds: [
+          {
+            color: '#da1e28',
+            comparison: '>',
+            dataSourceId: 'manufacturer',
+            icon: 'Warning alt',
+            value: 1,
+          },
+        ],
+      },
+    };
+    render(
+      <TableCardFormContent {...commonProps} onChange={mockOnChange} cardConfig={mockCardConfig} />
+    );
+
+    userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
+    expect(screen.getByTitle('#da1e28')).toBeVisible();
+  });
+  it("should fallback to dataItemId if label isn't given in column", () => {
+    const mockOnChange = jest.fn();
+    const mockCardConfig = {
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Manufacturer',
+            dataSourceId: 'manufacturer',
+            type: 'DIMENSION',
+          },
+          { dataItemId: '__temperature__', dataSourceId: 'temperature' },
+        ],
+        thresholds: [
+          {
+            color: '#da1e28',
+            comparison: '>',
+            dataSourceId: 'manufacturer',
+            icon: 'Warning alt',
+            value: 1,
+          },
+        ],
+      },
+    };
+    render(
+      <TableCardFormContent {...commonProps} onChange={mockOnChange} cardConfig={mockCardConfig} />
+    );
+
+    expect(screen.getByTitle('__temperature__')).toBeVisible();
+  });
+  it('should not render groupBy dimensions if availableDimensions is empty', () => {
+    const mockOnChange = jest.fn();
+    render(
+      <TableCardFormContent {...commonProps} onChange={mockOnChange} availableDimensions={{}} />
+    );
+
+    expect(screen.queryByTitle('Select dimension(s)')).toBeNull();
+  });
+  it('should render hrefs in tooltips from dataSeriesItemLinks', () => {
+    const mockOnChange = jest.fn();
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        onChange={mockOnChange}
+        dataSeriesItemLinks={{
+          table: 'https://www.ibm.com',
+        }}
+        i18n={{
+          dataItemEditorSectionTooltipLinkText: 'Click here!',
+        }}
+      />
+    );
+
+    userEvent.click(screen.getAllByRole('button')[0]);
+    expect(screen.getByText('Click here!')).toBeVisible();
+    expect(screen.getByText('Click here!')).toHaveAttribute('href', 'https://www.ibm.com');
   });
 });

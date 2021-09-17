@@ -143,7 +143,7 @@ export const galleryData = [
 ];
 
 export default {
-  title: 'Watson IoT/TileGallery',
+  title: '1 - Watson IoT/TileGallery',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 
   parameters: {
@@ -164,9 +164,7 @@ export const _StatefulTileGallery = () => (
   />
 );
 
-_StatefulTileGallery.story = {
-  name: 'Stateful TileGallery',
-};
+_StatefulTileGallery.storyName = 'Stateful TileGallery';
 
 export const BasicExample = () => (
   <FullWidthWrapper>
@@ -174,9 +172,7 @@ export const BasicExample = () => (
   </FullWidthWrapper>
 );
 
-BasicExample.story = {
-  name: 'basic example ',
-};
+BasicExample.storyName = 'basic example ';
 
 export const TileGalleryItemGrid = () => (
   <TileGalleryItem
@@ -192,9 +188,7 @@ export const TileGalleryItemGrid = () => (
   />
 );
 
-TileGalleryItemGrid.story = {
-  name: 'TileGalleryItem - Grid',
-};
+TileGalleryItemGrid.storyName = 'TileGalleryItem - Grid';
 
 export const TileGalleryItemList = () => (
   <TileGalleryItem
@@ -207,23 +201,18 @@ export const TileGalleryItemList = () => (
   />
 );
 
-TileGalleryItemList.story = {
-  name: 'TileGalleryItem - List',
-};
+TileGalleryItemList.storyName = 'TileGalleryItem - List';
 
 export const _TileGalleryViewSwitcher = () => <TileGalleryViewSwitcher />;
 
-_TileGalleryViewSwitcher.story = {
-  name: 'TileGalleryViewSwitcher',
-};
+_TileGalleryViewSwitcher.storyName = 'TileGalleryViewSwitcher';
 
 export const TileGallerySectionWithTileGalleryItemGrid = () => (
   <FullWidthWrapper>{content}</FullWidthWrapper>
 );
 
-TileGallerySectionWithTileGalleryItemGrid.story = {
-  name: 'TileGallerySection with TileGalleryItem Grid',
-};
+TileGallerySectionWithTileGalleryItemGrid.storyName =
+  'TileGallerySection with TileGalleryItem Grid';
 
 export const TileGallerySectionWithTileGalleryItemI18N = () => (
   <StatefulTileGallery
@@ -273,6 +262,5 @@ export const TileGallerySectionWithTileGalleryItemI18N = () => (
   />
 );
 
-TileGallerySectionWithTileGalleryItemI18N.story = {
-  name: 'TileGallerySection with TileGalleryItem - i18n',
-};
+TileGallerySectionWithTileGalleryItemI18N.storyName =
+  'TileGallerySection with TileGalleryItem - i18n';

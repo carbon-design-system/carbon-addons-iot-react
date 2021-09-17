@@ -16,39 +16,34 @@ const commonEditPageProps = {
 const breadcrumb = [<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>];
 
 export default {
-  title: 'Watson IoT/🚫 EditPage',
+  title: '1 - Watson IoT/🚫 EditPage',
+  parameters: {
+    docs: {
+      inlineStories: false,
+    },
+  },
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 
 export const Deprecated = () => (
   <StoryNotice componentName="EditPage" replacementComponentName="PageWizard" />
 );
-Deprecated.story = {
-  name: deprecatedStoryTitle,
-};
+Deprecated.storyName = deprecatedStoryTitle;
 
 export const Normal = () => <EditPage {...commonEditPageProps} />;
 
-Normal.story = {
-  name: 'normal',
-};
+Normal.storyName = 'normal';
 
 export const IsLoading = () => <EditPage {...commonEditPageProps} isLoading />;
 
-IsLoading.story = {
-  name: 'isLoading',
-};
+IsLoading.storyName = 'isLoading';
 
 export const WithBlurb = () => (
   <EditPage {...commonEditPageProps} blurb={text('blurb', 'My blurrrrbbbb!!')} />
 );
 
-WithBlurb.story = {
-  name: 'with blurb',
-};
+WithBlurb.storyName = 'with blurb';
 
 export const WithBreadcrumb = () => <EditPage {...commonEditPageProps} breadcrumb={breadcrumb} />;
 
-WithBreadcrumb.story = {
-  name: 'with breadcrumb',
-};
+WithBreadcrumb.storyName = 'with breadcrumb';

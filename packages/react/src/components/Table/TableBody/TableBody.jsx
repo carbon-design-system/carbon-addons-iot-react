@@ -10,10 +10,27 @@ import {
   TableColumnsPropTypes,
   RowActionsStatePropTypes,
 } from '../TablePropTypes';
+import deprecate from '../../../internal/deprecate';
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
 
 const { TableBody: CarbonTableBody } = DataTable;
+
+/**
+ * Use this function to traverse the tree structure of a set of table rows using Depth-first search (DFS)
+ * and apply some function on each row. The function is applied once the recursion starts back-tracking.
+ * @param rows The root node of your search space, an array of rows.
+ * @param functionToApply Any function that should be applied on every row. Params are a row and an optional aggregatorObj.
+ * @param aggregatorObj Used as a container to aggregate the result (e.g. a count or needle) if needed.
+ */
+const tableTraverser = (rows, functionToApply, aggregatorObj) => {
+  rows.forEach((row) => {
+    if (row.children) {
+      tableTraverser(row.children, functionToApply, aggregatorObj);
+    }
+    functionToApply(row, aggregatorObj);
+  });
+};
 
 const propTypes = {
   /** The unique id of the table */
@@ -79,8 +96,15 @@ const propTypes = {
    * direction of document
    */
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
-
-  testID: PropTypes.string,
+  /** shows an additional column that can expand/shrink as the table is resized  */
+  showExpanderColumn: PropTypes.bool,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -105,7 +129,8 @@ const defaultProps = {
   rowEditMode: false,
   singleRowEditButtons: null,
   langDir: 'ltr',
-  testID: '',
+  showExpanderColumn: false,
+  testId: '',
 };
 
 const TableBody = ({
@@ -139,7 +164,10 @@ const TableBody = ({
   rowEditMode,
   singleRowEditButtons,
   langDir,
+  // TODO: remove deprecated 'testID' in v3
   testID,
+  testId,
+  showExpanderColumn,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -151,7 +179,91 @@ const TableBody = ({
     [columns, ordering]
   );
 
+  const findAllAncestorRows = (childId, myRows) => {
+    const result = [];
+    const applyFunc = (row, ancestors) => {
+      const lastChildId = result[result.length - 1]?.id || childId;
+      const currentRowIsParent = row.children?.filter((child) => child.id === lastChildId).length;
+      if (currentRowIsParent) {
+        ancestors.push(row);
+      }
+    };
+    tableTraverser(myRows, applyFunc, result);
+    return result;
+  };
+
+  const findAllChildRowIds = ({ children = [] }) => {
+    const result = [];
+    tableTraverser(children, (row, aggr) => aggr.push(row.id), result);
+    return result;
+  };
+
+  const findRow = (rowId, myRows) => {
+    const result = [];
+    const applyFunc = (row, aggr) => {
+      if (row.id === rowId) {
+        aggr.push(row);
+      }
+    };
+    tableTraverser(myRows, applyFunc, result);
+    return result[0];
+  };
+
+  const updateChildIdSelection = (triggeringRowId, myRows, selection) => {
+    const row = findRow(triggeringRowId, myRows);
+    const childRowIds = findAllChildRowIds(row);
+    const triggeringRowSelected = selection.includes(triggeringRowId);
+
+    return triggeringRowSelected
+      ? [...new Set(selection.concat(childRowIds))]
+      : selection.filter((id) => !childRowIds.includes(id));
+  };
+
+  const updateAncestorSelection = (allAncestorRows, selection) => {
+    const newSelection = [...selection];
+    allAncestorRows.forEach((ancestorRow) => {
+      if (ancestorRow.children.every((child) => newSelection.includes(child.id))) {
+        newSelection.push(ancestorRow.id);
+      } else if (newSelection.includes(ancestorRow.id)) {
+        newSelection.splice(newSelection.indexOf(ancestorRow.id), 1);
+      }
+    });
+    return newSelection;
+  };
+
+  const onRowSelected = (rowId, selected) => {
+    if (hasRowSelection === 'single') {
+      actions.onRowSelected(rowId, selected, selected ? [rowId] : []);
+    } else {
+      const allAncestorRows = findAllAncestorRows(rowId, rows) || [];
+      const withNewSelection = selected
+        ? [...selectedIds, rowId]
+        : selectedIds.filter((id) => id !== rowId);
+      const withUpdatedAncestors = updateAncestorSelection(allAncestorRows, withNewSelection);
+      const withUpdatedChildren = updateChildIdSelection(rowId, rows, withUpdatedAncestors);
+      actions.onRowSelected(rowId, selected, withUpdatedChildren.sort());
+    }
+  };
+
+  const getIndeterminateRowSelectionIds = (myRows, mySelectedIds) => {
+    const result = [];
+    if (hasRowNesting && mySelectedIds.length) {
+      const applyFunc = (row, indeterminateList) => {
+        const allChildren = findAllChildRowIds(row);
+        const allAreSelected = allChildren.every((childId) => mySelectedIds.includes(childId));
+        const someAreSelected =
+          !allAreSelected && allChildren.some((childId) => mySelectedIds.includes(childId));
+        if (someAreSelected) {
+          indeterminateList.push(row.id);
+        }
+      };
+      tableTraverser(myRows, applyFunc, result);
+    }
+    return result;
+  };
+
   const someRowHasSingleRowEditMode = rowActionsState.some((rowAction) => rowAction.isEditMode);
+  const indeterminateSelectionIds = getIndeterminateRowSelectionIds(rows, selectedIds);
 
   const renderRow = (row, nestingLevel = 0) => {
     const isRowExpanded = expandedIds.includes(row.id);
@@ -168,6 +280,7 @@ const TableBody = ({
         isExpanded={isRowExpanded}
         isSelectable={isSelectable}
         isSelected={selectedIds.includes(row.id)}
+        isIndeterminate={indeterminateSelectionIds.includes(row.id)}
         rowEditMode={rowEditMode}
         singleRowEditMode={rowHasSingleRowEditMode}
         singleRowEditButtons={singleRowEditButtons}
@@ -203,16 +316,13 @@ const TableBody = ({
         }}
         nestingLevel={nestingLevel}
         nestingChildCount={row.children ? row.children.length : 0}
-        tableActions={pick(
-          actions,
-          'onRowSelected',
-          'onApplyRowAction',
-          'onRowExpanded',
-          'onRowClicked',
-          'onClearRowError'
-        )}
+        tableActions={{
+          ...pick(actions, 'onApplyRowAction', 'onRowExpanded', 'onRowClicked', 'onClearRowError'),
+          onRowSelected,
+        }}
         rowActions={row.rowActions}
         values={row.values}
+        showExpanderColumn={showExpanderColumn}
       />
     );
     return shouldShowChildren
@@ -221,7 +331,7 @@ const TableBody = ({
   };
 
   return (
-    <CarbonTableBody data-testID={testID}>
+    <CarbonTableBody data-testid={testID || testId}>
       {rows.map((row) => {
         return shouldLazyRender ? (
           <VisibilitySensor

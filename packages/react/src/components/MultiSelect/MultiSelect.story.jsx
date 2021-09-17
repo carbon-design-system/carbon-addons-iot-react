@@ -9,11 +9,10 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text, object } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
 
 import { Checkbox } from '../Checkbox';
 
-import readme from './README.md';
+import MultiSelectREADME from './MultiSelect.mdx';
 
 import { MultiSelect } from '.';
 
@@ -100,7 +99,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'MultiSelect',
+  title: '3 - Carbon/MultiSelect',
   decorators: [withKnobs],
 
   parameters: {
@@ -108,10 +107,13 @@ export default {
     subcomponents: {
       'MultiSelect.Filterable': MultiSelect.Filterable,
     },
+    docs: {
+      page: MultiSelectREADME,
+    },
   },
 };
 
-export const Default = withReadme(readme, () => {
+export const Default = () => {
   const { listBoxMenuIconTranslationIds, selectionFeedback, ...multiSelectProps } = props();
   return (
     <div style={{ width: 300 }}>
@@ -124,7 +126,7 @@ export const Default = withReadme(readme, () => {
       />
     </div>
   );
-});
+};
 
 Default.storyName = 'default';
 
@@ -136,7 +138,7 @@ Default.parameters = {
   },
 };
 
-export const WithInitialSelectedItems = withReadme(readme, () => {
+export const WithInitialSelectedItems = () => {
   const { listBoxMenuIconTranslationIds, selectionFeedback, ...multiSelectProps } = props();
 
   return (
@@ -151,7 +153,7 @@ export const WithInitialSelectedItems = withReadme(readme, () => {
       />
     </div>
   );
-});
+};
 
 WithInitialSelectedItems.storyName = 'with initial selected items';
 
@@ -163,7 +165,7 @@ WithInitialSelectedItems.parameters = {
   },
 };
 
-export const _Filterable = withReadme(readme, () => {
+export const _Filterable = () => {
   const { listBoxMenuIconTranslationIds, selectionFeedback, ...multiSelectProps } = props();
 
   return (
@@ -181,7 +183,7 @@ export const _Filterable = withReadme(readme, () => {
       />
     </div>
   );
-});
+};
 
 _Filterable.storyName = 'filterable';
 
@@ -193,7 +195,7 @@ _Filterable.parameters = {
   },
 };
 
-export const WithChangeOnClose = withReadme(readme, () => {
+export const WithChangeOnClose = () => {
   const { listBoxMenuIconTranslationIds, selectionFeedback, ...multiSelectProps } = props();
 
   const [hasFocus, setHasFocus] = useState(false);
@@ -231,4 +233,4 @@ export const WithChangeOnClose = withReadme(readme, () => {
       />
     </div>
   );
-});
+};

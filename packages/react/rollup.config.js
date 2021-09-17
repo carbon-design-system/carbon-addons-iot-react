@@ -1,13 +1,13 @@
-import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import replace from 'rollup-plugin-replace';
+import babel from '@rollup/plugin-babel';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import replace from '@rollup/plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
 import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
-import json from 'rollup-plugin-json';
+import json from '@rollup/plugin-json';
 
 const packageJson = require('./package.json');
 
@@ -33,38 +33,25 @@ export default [
     preserveModules: true,
     output: [
       {
+        dir: 'es',
+        format: 'esm',
+        preserveModulesRoot: 'src',
+      },
+      {
         dir: 'lib',
         name: 'CarbonAddonsIoTReact',
         format: 'cjs',
-      },
-      {
-        dir: 'es',
-        format: 'esm',
+        preserveModulesRoot: 'src',
+        exports: 'auto',
       },
     ],
     external,
     plugins: [
-      resolve({ mainFields: ['module', 'main'], extensions }),
-      commonjs({
-        namedExports: {
-          'react/index.js': [
-            'Children',
-            'Component',
-            'PureComponent',
-            'Fragment',
-            'PropTypes',
-            'createElement',
-          ],
-          'react-dom/index.js': ['render'],
-          'react-is/index.js': ['isForwardRef'],
-          'core-js': 'CoreJs',
-        },
-
-        include: '/node_modules/',
-      }),
+      resolve({ extensions }),
+      commonjs({ include: /node_modules/ }),
       babel({
-        exclude: 'node_modules/**',
-        runtimeHelpers: true,
+        exclude: /node_modules/,
+        babelHelpers: 'runtime',
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify(env),
@@ -144,33 +131,11 @@ export default [
         extensions,
       }),
       commonjs({
-        namedExports: {
-          'react-js': ['isValidElementType'],
-          'node_modules/carbon-components-react/lib/components/UIShell/index.js': [
-            'Header',
-            'HeaderName',
-            'HeaderMenu',
-            'HeaderMenuButton',
-            'HeaderGlobalBar',
-            'HeaderGlobalAction',
-            'SkipToContent',
-            'HeaderMenuItem',
-            'HeaderNavigation',
-            'HeaderPanel',
-            'SideNav',
-            'SideNavItems',
-            'SideNavLink',
-            'SideNavMenu',
-            'SideNavMenuItem',
-            'SideNavFooter',
-          ],
-        },
-
         include: /node_modules/,
       }),
       babel({
         exclude: /node_modules/,
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify(env),
@@ -219,10 +184,21 @@ export default [
             ],
             dest: ['es/node_modules', 'lib/node_modules'],
           },
-          // Copy CSS
+          // Copy CSS from tmp to ./lib/css, 'lib/css' folder is kept b/c flatten:false
           {
-            src: ['lib/css/'],
+            src: ['tmp/lib/css/'],
             dest: ['./'],
+          },
+        ],
+        verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
+      }),
+      copy({
+        flatten: true,
+        targets: [
+          // Copy CSS from tmp to ./css, 'lib/css' folder isn't kept because flatten:true.
+          {
+            src: 'tmp/lib/css/*',
+            dest: './css/',
           },
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging

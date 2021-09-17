@@ -3,6 +3,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import merge from 'lodash/merge';
 import get from 'lodash/get';
 
+import { getRowAction } from './statefulTableUtilities';
 import { tableReducer } from './tableReducer';
 import {
   tableRegister,
@@ -28,6 +29,13 @@ import {
   tableAdvancedFiltersApply,
   tableAdvancedFiltersCancel,
   tableAdvancedFiltersCreate,
+  tableToggleAggregations,
+  tableMultiSortToggleModal,
+  tableSaveMultiSortColumns,
+  tableCancelMultiSortColumns,
+  tableAddMultiSortColumn,
+  tableRemoveMultiSortColumn,
+  tableClearMultiSortColumns,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -43,7 +51,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     options,
     view: {
       toolbar: { customToolbarContent },
-      pagination: { totalItems },
+      pagination: { totalItems: initialTotalItems },
     },
     view: initialState,
     actions: callbackActions,
@@ -74,7 +82,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         data: initialData,
         isLoading,
         view: initialState,
-        totalItems: totalItems || initialData.length,
+        totalItems: initialTotalItems || initialData.length,
         hasUserViewManagement,
       })
     );
@@ -131,6 +139,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onApplyAdvancedFilter,
     onCancelAdvancedFilter,
     onCreateAdvancedFilter,
+    onToggleAggregations,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -144,33 +153,12 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onChangeOrdering,
     onColumnResize,
     onOverflowItemClicked,
+    onSaveMultiSortColumns,
+    onCancelMultiSortColumns,
+    onClearMultiSortColumns,
+    onAddMultiSortColumn,
+    onRemoveMultiSortColumn,
   } = table || {};
-
-  const getRowAction = (data, actionId, rowId) => {
-    let item;
-    for (let idx = 0; idx < data.length; idx += 1) {
-      const element = data[idx];
-      if (element.id === rowId) {
-        item = element.rowActions.find((action) => action.id === actionId);
-        if (item) {
-          break;
-        }
-        if (Array.isArray(element?.children)) {
-          item = getRowAction(element.children, actionId, rowId);
-          if (item) {
-            break;
-          }
-        }
-      }
-      if (Array.isArray(element?.children)) {
-        item = getRowAction(element.children, actionId, rowId);
-        if (item) {
-          break;
-        }
-      }
-    }
-    return item;
-  };
 
   // In addition to updating the store, I always callback to the parent in case they want to do something
   const actions = {
@@ -233,6 +221,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableAdvancedFiltersCreate());
         callbackParent(onCreateAdvancedFilter);
       },
+      onToggleAggregations: () => {
+        dispatch(tableToggleAggregations());
+        callbackParent(onToggleAggregations);
+      },
       onDownloadCSV,
     },
     table: {
@@ -241,9 +233,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableColumnSort(column, columns));
         callbackParent(onChangeSort, column, sortDirection);
       },
-      onRowSelected: (rowId, isSelected) => {
-        dispatch(tableRowSelect(rowId, isSelected, options.hasRowSelection));
-        callbackParent(onRowSelected, rowId, isSelected);
+      onRowSelected: (rowId, isSelected, newSelectedIds) => {
+        dispatch(tableRowSelect(newSelectedIds, options.hasRowSelection));
+        // Params rowId & isSelected kept for backwards compatability
+        callbackParent(onRowSelected, rowId, isSelected, newSelectedIds);
       },
       onRowClicked: (rowId) => {
         // This action doesn't update our table state, it's up to the user
@@ -292,7 +285,30 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onColumnResize, resizedColumns);
       },
       onOverflowItemClicked: (id) => {
+        if (id === 'multi-sort') {
+          dispatch(tableMultiSortToggleModal());
+        }
         callbackParent(onOverflowItemClicked, id);
+      },
+      onSaveMultiSortColumns: (sortColumns) => {
+        dispatch(tableSaveMultiSortColumns(sortColumns));
+        callbackParent(onSaveMultiSortColumns, sortColumns);
+      },
+      onCancelMultiSortColumns: () => {
+        dispatch(tableCancelMultiSortColumns());
+        callbackParent(onCancelMultiSortColumns);
+      },
+      onClearMultiSortColumns: () => {
+        dispatch(tableClearMultiSortColumns());
+        callbackParent(onClearMultiSortColumns);
+      },
+      onAddMultiSortColumn: (index) => {
+        dispatch(tableAddMultiSortColumn(index));
+        callbackParent(onAddMultiSortColumn, index);
+      },
+      onRemoveMultiSortColumn: (index) => {
+        dispatch(tableRemoveMultiSortColumn(index));
+        callbackParent(onRemoveMultiSortColumn, index);
       },
     },
     onUserViewModified: (viewConfiguration) => {
@@ -306,7 +322,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const filteredTotalItems =
     filteredCount && filteredCount !== currentlyLoadedDataCount
       ? filteredCount
-      : totalItems || currentlyLoadedDataCount;
+      : view?.pagination?.totalItems || initialTotalItems || currentlyLoadedDataCount;
 
   return filteredData ? (
     <Table

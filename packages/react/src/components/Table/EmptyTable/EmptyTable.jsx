@@ -5,6 +5,7 @@ import { DataTable } from 'carbon-components-react';
 import EmptyState from '../../EmptyState';
 import { settings } from '../../../constants/Settings';
 import { EmptyStatePropTypes } from '../TablePropTypes';
+import deprecate from '../../../internal/deprecate';
 
 const { TableBody, TableCell, TableRow } = DataTable;
 const { iotPrefix } = settings;
@@ -17,13 +18,19 @@ const propTypes = {
   totalColumns: PropTypes.number.isRequired,
   isFiltered: PropTypes.bool.isRequired,
   onEmptyStateAction: PropTypes.func,
-  testID: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   id: 'EmptyTable',
   onEmptyStateAction: null,
-  testID: '',
+  testId: '',
 };
 
 const EmptyTable = ({
@@ -40,9 +47,15 @@ const EmptyTable = ({
     messageBody,
     messageWithFiltersBody,
   },
+  // TODO: remove deprecated 'testID' in v3
   testID,
+  testId,
 }) => (
-  <TableBody id={id} data-testid={testID}>
+  <TableBody
+    id={id}
+    // TODO: remove deprecated 'testID' in v3
+    data-testid={testID || testId}
+  >
     <TableRow className={`${iotPrefix}--empty-table--table-row`}>
       <TableCell colSpan={totalColumns}>
         {React.isValidElement(emptyState) ? (

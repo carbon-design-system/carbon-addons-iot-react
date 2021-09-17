@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import SuiteHeaderProfile from './SuiteHeaderProfile';
 
 export default {
-  title: 'Watson IoT/SuiteHeader/SuiteHeaderProfile',
+  title: '1 - Watson IoT/SuiteHeader/SuiteHeaderProfile',
 
   parameters: {
     component: SuiteHeaderProfile,
@@ -25,9 +25,7 @@ export const Default = () => (
   </div>
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const LoadingState = () => (
   <div style={{ width: '15rem' }}>
@@ -40,9 +38,7 @@ export const LoadingState = () => (
   </div>
 );
 
-LoadingState.story = {
-  name: 'Loading state',
-};
+LoadingState.storyName = 'Loading state';
 
 export const NoLogoutButton = () => (
   <div style={{ width: '15rem' }}>
@@ -56,9 +52,7 @@ export const NoLogoutButton = () => (
   </div>
 );
 
-NoLogoutButton.story = {
-  name: 'No log out button',
-};
+NoLogoutButton.storyName = 'No log out button';
 
 export const NoLogoutButtonLoadingState = () => (
   <div style={{ width: '15rem' }}>
@@ -70,6 +64,4 @@ export const NoLogoutButtonLoadingState = () => (
   </div>
 );
 
-NoLogoutButtonLoadingState.story = {
-  name: 'Loading state (no log out button)',
-};
+NoLogoutButtonLoadingState.storyName = 'Loading state (no log out button)';

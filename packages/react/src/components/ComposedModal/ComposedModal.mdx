@@ -1,0 +1,134 @@
+# `ComposedModal` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Large modal](#large-modal)
+- [Error state](#error-state)
+- [Sending data](#sending-data)
+- [No footer](#no-footer)
+- [Props](#props)
+- [External links](#external-links)
+  - [Source Code](#source-code)
+  - [Feedback](#feedback)
+
+## Getting Started
+
+Renders a carbon modal dialog. This dialog adds these additional features on top of the base carbon dialog:
+
+- adds header.helpText prop to explain dialog
+- adds type prop for warning and error type dialogs
+- adds isLarge prop for large and small class styling dialogs
+- adds isFetchingData props for loading state
+- adds error and dataError prop to display notification about error at bottom of dialog
+- if submitFailed prop, it will find and scroll the failing carbon element into view
+- shows spinner on primary dialog button if sendingData prop is true
+
+We also prevent the dialog from closing if you click outside it.
+This dialog can be decorated by reduxDialog HoC and/or reduxForm HoC to automatically populate the fields below marked as
+REDUXFORM or REDUXDIALOG
+
+```jsx
+import { ComposedModal } from 'carbon-addons-iot-react';
+```
+
+## Large modal
+
+```jsx
+<ComposedModal
+  isLarge
+  header={{
+    label: 'Big Modal',
+    title: 'Needs a lot of space to contain all the info',
+  }}
+  onSubmit={() => {}}
+  onClose={() => {}}
+>
+  Lots of really wide content here...
+</ComposedModal>
+```
+
+## Error state
+
+```jsx
+<ComposedModal
+  error="Error sending data to server"
+  header={{
+    label: 'DataError',
+    title: 'Cannot communicate with server',
+  }}
+  onSubmit={() => {}}
+  onClose={() => {}}
+  onClearError={() => {}}
+>
+  body content
+</ComposedModal>
+```
+
+## Sending data
+
+```jsx
+<ComposedModal
+  sendingData
+  header={{
+    label: 'Sending data',
+    title: 'We are submitting data to the backend',
+  }}
+  onSubmit={() => {}}
+  onClose={() => {}}
+/>
+```
+
+## No footer
+
+```jsx
+<ComposedModal
+  header={{
+    label: 'No footer',
+    title: 'Dialog without footer',
+  }}
+  passiveModal
+  onClose={() => {}}
+/>
+```
+
+## Props
+
+| Name                                               | Type                                           | Default         | Description                                                                                                                                                                  |
+| :------------------------------------------------- | :--------------------------------------------- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| header                                             | shape                                          | {}              | Header Props label: goes on top of the dialog title: Heading of the dialog helpText, additional information will stay at the top of the screen when scrolling dialog content |
+| header.label                                       | node                                           |                 | goes on top of the dialog                                                                                                                                                    |
+| header.title                                       | node                                           |                 | Heading of the dialog                                                                                                                                                        |
+| header.helpText                                    | node                                           |                 | additional information will stay at the top of the screen when scrolling dialog content                                                                                      |
+| iconDescription                                    | string                                         | 'Close'         | ability to add translation string to close icon                                                                                                                              |
+| children                                           | node                                           | null            | Content to render inside Modal                                                                                                                                               |
+| footer                                             | element, shape                                 | null            | Footer Props Either supply your own footer element or supply an object with button labels and submit handlers and we will make a footer with two buttons for you             |
+| footer.primaryButtonLabel                          | string                                         | 'Save'          |                                                                                                                                                                              |
+| footer.secondaryButtonLabel                        | string                                         | 'Cancel'        |                                                                                                                                                                              |
+| footer.isPrimaryButtonHidden                       | bool                                           | false           | should the primary button be hidden (i.e. only show Cancel)                                                                                                                  |
+| footer.isPrimaryButtonDisabled                     | bool                                           | false           | should the primary button be disabled                                                                                                                                        |
+| type                                               | enum:<br/>&nbsp;'warn'<br/>&nbsp;'normal'<br/> | null            | Type of dialog, affects colors, styles of dialog                                                                                                                             |
+| isLarge                                            | bool                                           | false           | Whether this particular dialog needs to be very large                                                                                                                        |
+| isFullScreen                                       | bool                                           | false           | Whether this particular dialog needs to be full width                                                                                                                        |
+| open                                               | bool                                           | true            | Should the dialog be open or not                                                                                                                                             |
+| <span style={{color: "#31a148"}}>onClose \*</span> | function                                       |                 | Close the dialog                                                                                                                                                             |
+| sendingData                                        | bool, string                                   | null            | Is data currently being sent to the backend                                                                                                                                  |
+| isFetchingData                                     | bool                                           | false           | Is my data actively loading?                                                                                                                                                 |
+| error                                              | string                                         | null            | Form Error Details                                                                                                                                                           |
+| onClearError                                       | function                                       | null            | Clear the currently shown error, triggered if the user closes the ErrorNotification                                                                                          |
+| submitFailed                                       | bool                                           | false           | Did the form submission fail                                                                                                                                                 |
+| invalid                                            | bool                                           | false           | Is the form currently invalid                                                                                                                                                |
+| onSubmit                                           | function                                       | null            | Callback to submit the dialog/form                                                                                                                                           |
+| passiveModal                                       | bool                                           | false           | Hide the footer                                                                                                                                                              |
+| testId                                             | string                                         | 'ComposedModal' | Id that can be used for testing                                                                                                                                              |
+
+## External Links
+
+### Source Code
+
+[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ComposedModal)
+
+### Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ComposedModal/ComposedModal.mdx).

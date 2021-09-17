@@ -1,1228 +1,293 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem basic w/ knobs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem basic w/ knobs 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": 400,
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
+      className="iot--list-item"
     >
       <div
-        className="iot--list-item"
+        className="iot--list-item--content"
       >
         <div
-          className="iot--list-item--content"
+          className="iot--list-item--content--values"
         >
           <div
-            className="iot--list-item--content--values"
+            className="iot--list-item--content--values--main"
           >
             <div
-              className="iot--list-item--content--values--main"
+              className="iot--list-item--content--values--value"
+              title="List Item"
             >
-              <div
-                className="iot--list-item--content--values--value"
-                title="List Item"
-              >
-                List Item
-              </div>
+              List Item
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem testing isLargeRow overflow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem testing isLargeRow overflow 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": 400,
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
+      className="iot--list-item iot--list-item__large"
     >
       <div
-        className="iot--list-item iot--list-item__large"
+        className="iot--list-item--content iot--list-item--content__large"
       >
         <div
-          className="iot--list-item--content iot--list-item--content__large"
+          className="iot--list-item--content--values iot--list-item--content--values__large"
         >
           <div
-            className="iot--list-item--content--values iot--list-item--content--values__large"
+            className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
           >
             <div
-              className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
+              className="iot--list-item--content--values--value"
+              title="List Item this could be a reaaaaaaaaaaally really long value"
             >
-              <div
-                className="iot--list-item--content--values--value"
-                title="List Item this could be a reaaaaaaaaaaally really long value"
-              >
-                List Item this could be a reaaaaaaaaaaally really long value
-              </div>
+              List Item this could be a reaaaaaaaaaaally really long value
             </div>
-            <div
-              className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-              title="With isLargeRow, the secondary value serves primarily as a description field for the list item.  If the content is too wide for the list item, it will be visible in a tooltip."
-            >
-              With isLargeRow, the secondary value serves primarily as a description field for the list item.  If the content is too wide for the list item, it will be visible in a tooltip.
-            </div>
+          </div>
+          <div
+            className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+            title="With isLargeRow, the secondary value serves primarily as a description field for the list item.  If the content is too wide for the list item, it will be visible in a tooltip."
+          >
+            With isLargeRow, the secondary value serves primarily as a description field for the list item.  If the content is too wide for the list item, it will be visible in a tooltip.
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem testing secondaryValue overflow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem testing secondaryValue overflow 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": 400,
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
+      className="iot--list-item iot--list-item__large"
     >
       <div
-        className="iot--list-item iot--list-item__large"
+        className="iot--list-item--content iot--list-item--content__large"
       >
         <div
-          className="iot--list-item--content iot--list-item--content__large"
+          className="iot--list-item--content--values iot--list-item--content--values__large"
         >
           <div
-            className="iot--list-item--content--values iot--list-item--content--values__large"
+            className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
           >
             <div
-              className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
+              className="iot--list-item--content--values--value"
+              title="List Item this could be a really long value that can't quite fit"
             >
-              <div
-                className="iot--list-item--content--values--value"
-                title="List Item this could be a really long value that can't quite fit"
-              >
-                List Item this could be a really long value that can't quite fit
-              </div>
+              List Item this could be a really long value that can't quite fit
             </div>
-            <div
-              className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-              title="Secondary Value could also be a really, extraordinarily long value"
-            >
-              Secondary Value could also be a really, extraordinarily long value
-            </div>
+          </div>
+          <div
+            className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+            title="Secondary Value could also be a really, extraordinarily long value"
+          >
+            Secondary Value could also be a really, extraordinarily long value
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with OverflowMenu row actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with OverflowMenu row actions 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": 400,
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
+      className="iot--list-item"
     >
       <div
-        className="iot--list-item"
-      >
-        <div
-          aria-label="Expand"
-          className="iot--list-item--expand-icon"
-          data-testid="expand-icon"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          role="button"
-          tabIndex={0}
-          title="Expand"
-        >
-          <svg
-            aria-label="Expand-icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 16 16"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-            />
-          </svg>
-        </div>
-        <div
-          className="iot--list-item--content"
-        >
-          <div
-            className="iot--list-item--content--values"
-          >
-            <div
-              className="iot--list-item--content--values--main"
-            >
-              <div
-                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                title="List Item with really long values does it ellipse when I get really long text"
-              >
-                List Item with really long values does it ellipse when I get really long text
-              </div>
-              <div
-                className="iot--list-item--content--row-actions"
-              >
-                <button
-                  aria-expanded={false}
-                  aria-haspopup={true}
-                  aria-label="open and close list of options"
-                  className="bx--overflow-menu"
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  type="button"
-                >
-                  <svg
-                    aria-label="open and close list of options"
-                    className="bx--overflow-menu__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="16"
-                      cy="8"
-                      r="2"
-                    />
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="2"
-                    />
-                    <circle
-                      cx="16"
-                      cy="24"
-                      r="2"
-                    />
-                    <title>
-                      open and close list of options
-                    </title>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with Tags 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
-    >
-      <div
-        className="iot--list-item"
-      >
-        <div
-          className="iot--list-item--content"
-        >
-          <div
-            className="iot--list-item--content--values"
-          >
-            <div
-              className="iot--list-item--content--values--main"
-            >
-              <div
-                className="iot--list-item--content--values--value"
-                title="List Item"
-              >
-                List Item
-              </div>
-              <div>
-                <div
-                  className="bx--tag bx--tag--blue"
-                  id="tag-24"
-                >
-                  
-                  <span
-                    title="default"
-                  >
-                    default
-                  </span>
-                </div>
-                <div
-                  className="bx--tag bx--tag--disabled bx--tag--red"
-                  id="tag-25"
-                >
-                  
-                  <span
-                    title="disabled tag"
-                  >
-                    disabled tag
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with disabled 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
-    >
-      <div
-        className="iot--list-item"
-      >
-        <div
-          className="iot--list-item--content"
-        >
-          <div
-            className="iot--list-item--content--values"
-          >
-            <div
-              className="iot--list-item--content--values--main"
-            >
-              <div
-                className="iot--list-item--content--values--value iot--list-item--content--values__disabled iot--list-item--content--values--value__with-actions"
-                title="List Item"
-              >
-                List Item
-              </div>
-              <div
-                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions iot--list-item--content--values__disabled"
-                title="Secondary Value"
-              >
-                Secondary Value
-              </div>
-              <div
-                className="iot--list-item--content--row-actions"
-              >
-                <button
-                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-                  data-testid="Button"
-                  disabled={true}
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "black",
-                    }
-                  }
-                  tabIndex={0}
-                  type="button"
-                >
-                  <span
-                    className="bx--assistive-text"
-                  >
-                    Edit
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    aria-label="Edit"
-                    className="bx--btn__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with icon 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
-    >
-      <div
-        className="iot--list-item"
-      >
-        <div
-          className="iot--list-item--content"
-        >
-          <div
-            className="iot--list-item--content--icon iot--list-item--content--icon__left"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,3.3l1.4,2.8l0.2,0.5l0.5,0.1l3.1,0.4L11,9.2l-0.4,0.4l0.1,0.5l0.5,3.1l-2.8-1.4L8,11.5l-0.5,0.2l-2.8,1.4l0.5-3.1	l0.1-0.5L5,9.2L2.8,7l3.1-0.4l0.5-0.1L6.6,6L8,3.3 M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7	L8,1z"
-              />
-            </svg>
-          </div>
-          <div
-            className="iot--list-item--content--values"
-          >
-            <div
-              className="iot--list-item--content--values--main"
-            >
-              <div
-                className="iot--list-item--content--values--value"
-                title="List Item"
-              >
-                List Item
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with isCategory 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
-    >
-      <div
-        className="iot--list-item"
-      >
-        <div
-          aria-label="Expand"
-          className="iot--list-item--expand-icon"
-          data-testid="expand-icon"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          role="button"
-          tabIndex={0}
-          title="Expand"
-        >
-          <svg
-            aria-label="Expand-icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 16 16"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-            />
-          </svg>
-        </div>
-        <div
-          className="iot--list-item--content"
-        >
-          <div
-            className="iot--list-item--content--values"
-          >
-            <div
-              className="iot--list-item--content--values--main"
-            >
-              <div
-                className="iot--list-item--content--values--value iot--list-item--category"
-                title="List Item"
-              >
-                List Item
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with isExpandable 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
-    >
-      <div
-        className="iot--list-item"
-      >
-        <div
-          aria-label="Expand"
-          className="iot--list-item--expand-icon"
-          data-testid="expand-icon"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          role="button"
-          tabIndex={0}
-          title="Expand"
-        >
-          <svg
-            aria-label="Expand-icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 16 16"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-            />
-          </svg>
-        </div>
-        <div
-          className="iot--list-item--content"
-        >
-          <div
-            className="iot--list-item--content--values"
-          >
-            <div
-              className="iot--list-item--content--values--main"
-            >
-              <div
-                className="iot--list-item--content--values--value"
-                title="Expandable List Item"
-              >
-                Expandable List Item
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with isLargeRow 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
-    >
-      <div
-        className="iot--list-item iot--list-item__large"
-      >
-        <div
-          className="iot--list-item--content iot--list-item--content__large"
-        >
-          <div
-            className="iot--list-item--content--values iot--list-item--content--values__large"
-          >
-            <div
-              className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
-            >
-              <div
-                className="iot--list-item--content--values--value"
-                title="List Item"
-              >
-                List Item
-              </div>
-            </div>
-            <div
-              className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-              title="With isLargeRow, the secondary value serves primarily as a description field for the list item"
-            >
-              With isLargeRow, the secondary value serves primarily as a description field for the list item
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with isSelectable 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
-    >
-      <div
-        className="iot--list-item iot--list-item__selectable"
-        data_testid={null}
+        aria-label="Expand"
+        className="iot--list-item--expand-icon"
+        data-testid="expand-icon"
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
         tabIndex={0}
+        title="Expand"
       >
-        <div
-          className="iot--list-item--content"
+        <svg
+          aria-label="Expand-icon"
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          viewBox="0 0 16 16"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <div
-            className="iot--list-item--content--values"
-          >
-            <div
-              className="iot--list-item--content--values--main"
-            >
-              <div
-                className="iot--list-item--content--values--value"
-                title="Selectable List Item"
-              >
-                Selectable List Item
-              </div>
-            </div>
-          </div>
-        </div>
+          <path
+            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+          />
+        </svg>
       </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with secondaryValue 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
-    >
       <div
-        className="iot--list-item"
+        className="iot--list-item--content"
       >
         <div
-          className="iot--list-item--content"
+          className="iot--list-item--content--values"
         >
           <div
-            className="iot--list-item--content--values"
+            className="iot--list-item--content--values--main"
           >
             <div
-              className="iot--list-item--content--values--main"
+              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+              title="List Item with really long values does it ellipse when I get really long text"
             >
-              <div
-                className="iot--list-item--content--values--value"
-                title="List Item"
-              >
-                List Item
-              </div>
-              <div
-                className="iot--list-item--content--values--value"
-                title="Secondary Value"
-              >
-                Secondary Value
-              </div>
+              List Item with really long values does it ellipse when I get really long text
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with single row action 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
-    >
-      <div
-        className="iot--list-item"
-      >
-        <div
-          className="iot--list-item--content"
-        >
-          <div
-            className="iot--list-item--content--values"
-          >
             <div
-              className="iot--list-item--content--values--main"
+              className="iot--list-item--content--row-actions"
             >
-              <div
-                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                title="List Item"
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="open and close list of options"
+                className="bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                type="button"
               >
-                List Item
-              </div>
-              <div
-                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                title="Secondary Value"
-              >
-                Secondary Value
-              </div>
-              <div
-                className="iot--list-item--content--row-actions"
-              >
-                <button
-                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-                  data-testid="Button"
-                  disabled={false}
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "black",
-                    }
-                  }
-                  tabIndex={0}
-                  type="button"
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <span
-                    className="bx--assistive-text"
-                  >
-                    Edit
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    aria-label="Edit"
-                    className="bx--btn__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                    />
-                  </svg>
-                </button>
-              </div>
+                  <circle
+                    cx="16"
+                    cy="8"
+                    r="2"
+                  />
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="2"
+                  />
+                  <circle
+                    cx="16"
+                    cy="24"
+                    r="2"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListItem with value 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with Tags 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": 400,
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": 400,
-        }
-      }
+      className="iot--list-item"
     >
       <div
-        className="iot--list-item"
+        className="iot--list-item--content"
       >
         <div
-          className="iot--list-item--content"
+          className="iot--list-item--content--values"
         >
           <div
-            className="iot--list-item--content--values"
+            className="iot--list-item--content--values--main"
           >
             <div
-              className="iot--list-item--content--values--main"
+              className="iot--list-item--content--values--value"
+              title="List Item"
             >
+              List Item
+            </div>
+            <div>
               <div
-                className="iot--list-item--content--values--value"
-                title="List Item"
+                className="bx--tag bx--tag--blue"
+                disabled={null}
+                id="tag-24"
               >
-                List Item
+                
+                <span
+                  title="default"
+                >
+                  default
+                </span>
+              </div>
+              <div
+                className="bx--tag bx--tag--disabled bx--tag--red"
+                disabled={null}
+                id="tag-25"
+              >
+                
+                <span
+                  title="disabled tag"
+                >
+                  disabled tag
+                </span>
               </div>
             </div>
           </div>
@@ -1230,28 +295,529 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ListI
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with disabled 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
     style={
       Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
+        "width": 400,
       }
     }
-    type="button"
   >
-    Show Info
-  </button>
+    <div
+      className="iot--list-item"
+    >
+      <div
+        className="iot--list-item--content"
+      >
+        <div
+          className="iot--list-item--content--values"
+        >
+          <div
+            className="iot--list-item--content--values--main"
+          >
+            <div
+              className="iot--list-item--content--values--value iot--list-item--content--values__disabled iot--list-item--content--values--value__with-actions"
+              title="List Item"
+            >
+              List Item
+            </div>
+            <div
+              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions iot--list-item--content--values__disabled"
+              title="Secondary Value"
+            >
+              Secondary Value
+            </div>
+            <div
+              className="iot--list-item--content--row-actions"
+            >
+              <button
+                aria-describedby={null}
+                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "black",
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Edit
+                </div>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Edit"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with icon 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list-item"
+    >
+      <div
+        className="iot--list-item--content"
+      >
+        <div
+          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,3.3l1.4,2.8l0.2,0.5l0.5,0.1l3.1,0.4L11,9.2l-0.4,0.4l0.1,0.5l0.5,3.1l-2.8-1.4L8,11.5l-0.5,0.2l-2.8,1.4l0.5-3.1	l0.1-0.5L5,9.2L2.8,7l3.1-0.4l0.5-0.1L6.6,6L8,3.3 M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7	L8,1z"
+            />
+          </svg>
+        </div>
+        <div
+          className="iot--list-item--content--values"
+        >
+          <div
+            className="iot--list-item--content--values--main"
+          >
+            <div
+              className="iot--list-item--content--values--value"
+              title="List Item"
+            >
+              List Item
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with isCategory 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list-item"
+    >
+      <div
+        aria-label="Expand"
+        className="iot--list-item--expand-icon"
+        data-testid="expand-icon"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        role="button"
+        tabIndex={0}
+        title="Expand"
+      >
+        <svg
+          aria-label="Expand-icon"
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          viewBox="0 0 16 16"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+          />
+        </svg>
+      </div>
+      <div
+        className="iot--list-item--content"
+      >
+        <div
+          className="iot--list-item--content--values"
+        >
+          <div
+            className="iot--list-item--content--values--main"
+          >
+            <div
+              className="iot--list-item--content--values--value iot--list-item--category"
+              title="List Item"
+            >
+              List Item
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with isExpandable 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list-item"
+    >
+      <div
+        aria-label="Expand"
+        className="iot--list-item--expand-icon"
+        data-testid="expand-icon"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        role="button"
+        tabIndex={0}
+        title="Expand"
+      >
+        <svg
+          aria-label="Expand-icon"
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          viewBox="0 0 16 16"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+          />
+        </svg>
+      </div>
+      <div
+        className="iot--list-item--content"
+      >
+        <div
+          className="iot--list-item--content--values"
+        >
+          <div
+            className="iot--list-item--content--values--main"
+          >
+            <div
+              className="iot--list-item--content--values--value"
+              title="Expandable List Item"
+            >
+              Expandable List Item
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with isLargeRow 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list-item iot--list-item__large"
+    >
+      <div
+        className="iot--list-item--content iot--list-item--content__large"
+      >
+        <div
+          className="iot--list-item--content--values iot--list-item--content--values__large"
+        >
+          <div
+            className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
+          >
+            <div
+              className="iot--list-item--content--values--value"
+              title="List Item"
+            >
+              List Item
+            </div>
+          </div>
+          <div
+            className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+            title="With isLargeRow, the secondary value serves primarily as a description field for the list item"
+          >
+            With isLargeRow, the secondary value serves primarily as a description field for the list item
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with isSelectable 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list-item iot--list-item__selectable"
+      data-testid={null}
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      <div
+        className="iot--list-item--content"
+      >
+        <div
+          className="iot--list-item--content--values"
+        >
+          <div
+            className="iot--list-item--content--values--main"
+          >
+            <div
+              className="iot--list-item--content--values--value"
+              title="Selectable List Item"
+            >
+              Selectable List Item
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with secondaryValue 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list-item"
+    >
+      <div
+        className="iot--list-item--content"
+      >
+        <div
+          className="iot--list-item--content--values"
+        >
+          <div
+            className="iot--list-item--content--values--main"
+          >
+            <div
+              className="iot--list-item--content--values--value"
+              title="List Item"
+            >
+              List Item
+            </div>
+            <div
+              className="iot--list-item--content--values--value"
+              title="Secondary Value"
+            >
+              Secondary Value
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with single row action 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list-item"
+    >
+      <div
+        className="iot--list-item--content"
+      >
+        <div
+          className="iot--list-item--content--values"
+        >
+          <div
+            className="iot--list-item--content--values--main"
+          >
+            <div
+              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+              title="List Item"
+            >
+              List Item
+            </div>
+            <div
+              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+              title="Secondary Value"
+            >
+              Secondary Value
+            </div>
+            <div
+              className="iot--list-item--content--row-actions"
+            >
+              <button
+                aria-describedby={null}
+                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                data-testid="Button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "black",
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Edit
+                </div>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Edit"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with value 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list-item"
+    >
+      <div
+        className="iot--list-item--content"
+      >
+        <div
+          className="iot--list-item--content--values"
+        >
+          <div
+            className="iot--list-item--content--values--main"
+          >
+            <div
+              className="iot--list-item--content--values--value"
+              title="List Item"
+            >
+              List Item
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

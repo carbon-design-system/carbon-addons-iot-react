@@ -48,8 +48,10 @@ export const RowActionsStatePropTypes = PropTypes.arrayOf(
 export const EmptyStatePropTypes = PropTypes.oneOfType([
   PropTypes.shape({
     message: PropTypes.node.isRequired,
+    messageBody: PropTypes.node,
     /* Show a different message if no content is in the table matching the filters */
     messageWithFilters: PropTypes.node,
+    messageWithFiltersBody: PropTypes.node,
     /* If a label is not provided, no action button will be rendered */
     buttonLabel: PropTypes.node,
     /* Show a different button label if no content is in the table matching the filters */
@@ -121,7 +123,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
           text: PropTypes.string.isRequired,
         })
       ),
-      /** custom filtration function, called back with (columnFilterValue, currentValue) */
+      /** custom filtration function, called back with (columnValue, filterValue) */
       filterFunction: PropTypes.func,
     }),
 
@@ -143,10 +145,6 @@ export const I18NPropTypes = PropTypes.shape({
   pageForwardAria: PropTypes.string,
   pageNumberAria: PropTypes.string,
   itemsPerPage: PropTypes.string,
-  /** (min, max) => `${min}-${max} items` */
-  itemsRange: PropTypes.func,
-  /** page => `page ${page}` */
-  currentPage: PropTypes.func,
   /** (min, max, total) => `${min}-${max} of ${total} items` */
   itemsRangeWithTotal: PropTypes.func,
   /** (current, total) => `${current} of ${total} pages` */
@@ -172,8 +170,12 @@ export const I18NPropTypes = PropTypes.shape({
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
   batchCancel: PropTypes.string,
-  itemsSelected: PropTypes.string,
-  itemSelected: PropTypes.string,
+  /** String 'items selected' or function receiving the selectedCount as param:
+   * (selectedCount) => `${selectedCount} items selected` */
+  itemsSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  /** String 'item selected' or function receiving the selectedCount as param:
+   * (selectedCount) => `${selectedCount} item selected` */
+  itemSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   /** Row actions in table body */
   /** I18N label for in progress */
   inProgressText: PropTypes.string,
@@ -187,6 +189,23 @@ export const I18NPropTypes = PropTypes.shape({
   filterAscending: PropTypes.string,
   filterDescending: PropTypes.string,
   rowCountInHeader: PropTypes.func,
+  toggleAggregations: PropTypes.string,
+  multiSortModalTitle: PropTypes.string,
+  multiSortModalPrimaryLabel: PropTypes.string,
+  multiSortModalSecondaryLabel: PropTypes.string,
+  multiSortSelectColumnLabel: PropTypes.string,
+  multiSortSelectColumnSortByTitle: PropTypes.string,
+  multiSortSelectColumnThenByTitle: PropTypes.string,
+  multiSortDirectionLabel: PropTypes.string,
+  multiSortDirectionTitle: PropTypes.string,
+  multiSortAddColumn: PropTypes.string,
+  multiSortRemoveColumn: PropTypes.string,
+  multiSortAscending: PropTypes.string,
+  multiSortDescending: PropTypes.string,
+  multiSortCloseModal: PropTypes.string,
+  multiSortClearAll: PropTypes.string,
+  multiSortOpenMenu: PropTypes.string,
+  multiSortCloseMenu: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
@@ -195,8 +214,6 @@ export const defaultI18NPropTypes = {
   pageForwardAria: 'Next page',
   pageNumberAria: 'Page Number',
   itemsPerPage: 'Items per page:',
-  itemsRange: (min, max) => `${min}–${max} items`,
-  currentPage: (page) => `page ${page}`,
   itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
   pageRange: (current, total) => `${current} of ${total} pages`,
   /** table body */
@@ -219,8 +236,8 @@ export const defaultI18NPropTypes = {
   closeMenuAria: 'Close menu',
   clearSelectionAria: 'Clear selection',
   batchCancel: 'Cancel',
-  itemsSelected: 'items selected',
-  itemSelected: 'item selected',
+  itemsSelected: (selectedCount) => `${selectedCount} items selected`,
+  itemSelected: (selectedCount) => `${selectedCount} item selected`,
   applyButtonText: 'Apply filters',
   cancelButtonText: 'Cancel',
   advancedFilterLabelText: 'Select an existing filter or',
@@ -237,6 +254,22 @@ export const defaultI18NPropTypes = {
   filterAscending: 'Sort rows by this header in ascending order',
   filterDescending: 'Sort rows by this header in descending order',
   rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
+  toggleAggregations: 'Toggle aggregations',
+  multiSortModalTitle: 'Select columns to sort',
+  multiSortModalPrimaryLabel: 'Sort',
+  multiSortModalSecondaryLabel: 'Cancel',
+  multiSortSelectColumnLabel: 'Select a column',
+  multiSortSelectColumnSortByTitle: 'Sort by',
+  multiSortSelectColumnThenByTitle: 'Then by',
+  multiSortDirectionLabel: 'Select a direction',
+  multiSortDirectionTitle: 'Sort order',
+  multiSortAddColumn: 'Add column',
+  multiSortRemoveColumn: 'Remove column',
+  multiSortAscending: 'Ascending',
+  multiSortDescending: 'Descending',
+  multiSortCloseModal: 'Close',
+  multiSortOpenMenu: 'Open menu',
+  multiSortCloseMenu: 'Close menu',
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
@@ -252,3 +285,8 @@ export const TableSearchPropTypes = PropTypes.shape({
 
 /** Which toolbar is currently active */
 export const ActiveTableToolbarPropType = PropTypes.oneOf(['column', 'filter', 'rowEdit']);
+
+export const TableSortPropType = PropTypes.shape({
+  columnId: PropTypes.string,
+  direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
+});

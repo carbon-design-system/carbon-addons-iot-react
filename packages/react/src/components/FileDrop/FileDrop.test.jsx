@@ -170,6 +170,15 @@ describe('FileDrop', () => {
     window.FileReader = originalFileReader;
     jest.clearAllMocks();
   });
+
+  it('should be selectable by testId', () => {
+    render(<FileDrop {...dragAndDropProps} testId="FILE_DROP" />);
+    expect(screen.getByTestId('FILE_DROP')).toBeDefined();
+    expect(screen.getByTestId('FILE_DROP-file-input')).toBeDefined();
+    expect(screen.getByTestId('FILE_DROP-title')).toBeDefined();
+    expect(screen.getByTestId('FILE_DROP-drop-zone')).toBeDefined();
+  });
+
   it('should handle a file being dropped into the dropzone', () => {
     const file = new File(['a-test-image'], 'a-test-image.png', {
       type: 'image/png',

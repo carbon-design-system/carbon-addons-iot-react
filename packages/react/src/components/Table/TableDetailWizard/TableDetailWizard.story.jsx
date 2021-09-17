@@ -138,7 +138,7 @@ export const itemsAndComponents = items.map((item, i) => ({
 }));
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ TableDetailWizard' : 'Watson IoT/TableDetailWizard',
+  title: '1 - Watson IoT/TableDetailWizard',
 
   parameters: {
     component: TableDetailWizard,
@@ -162,9 +162,7 @@ export const StatefulExample = () => (
   />
 );
 
-StatefulExample.story = {
-  name: 'Stateful example',
-};
+StatefulExample.storyName = 'Stateful example';
 
 export const Static = () => (
   <TableDetailWizard
@@ -198,6 +196,4 @@ export const WithError = () => (
   />
 );
 
-WithError.story = {
-  name: 'with error',
-};
+WithError.storyName = 'with error';

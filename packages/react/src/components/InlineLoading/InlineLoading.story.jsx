@@ -25,7 +25,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'InlineLoading',
+  title: '3 - Carbon/InlineLoading',
   decorators: [withKnobs],
 
   parameters: {

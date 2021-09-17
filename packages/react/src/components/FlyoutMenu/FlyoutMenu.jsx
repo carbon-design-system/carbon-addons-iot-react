@@ -44,7 +44,9 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__cancel`}
       kind="secondary"
-      testID="flyout-menu-cancel"
+      // TODO: in v3 pass testId from parent and insert here to allow it to be configurable
+      // ie. `${testId}-menu-cancel`
+      testId="flyout-menu-cancel"
       onClick={() => {
         setIsOpen(false);
 
@@ -59,7 +61,9 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     <Button
       className={`${iotPrefix}--flyout-menu__submit`}
       aria-label={i18n.applyButtonText}
-      testID="flyout-menu-apply"
+      // TODO: in v3 pass testId from parent and insert here to allow it to be configurable
+      // ie. `${testId}-menu-cancel`
+      testId="flyout-menu-apply"
       onClick={() => {
         setIsOpen(false);
         if (onApply) {
@@ -89,7 +93,9 @@ const FlyoutMenu = ({
   triggerId,
   tabIndex,
   tooltipClassName,
+  tooltipContentClassName,
   passive,
+  tooltipFocusTrap,
   hideTooltip,
   customFooter: CustomFooter,
   onApply,
@@ -97,6 +103,7 @@ const FlyoutMenu = ({
   useAutoPositioning,
   onChange,
   isOpen,
+  renderInPortal,
 }) => {
   const [isControlledOpen, setIsOpen] = useState(defaultOpen);
   const [tooltipDirection, setTooltipDirection] = useState(getTooltipDirection(direction));
@@ -105,11 +112,11 @@ const FlyoutMenu = ({
   const getFlyoutMenuOffset = React.useCallback(
     (tooltipElement, flyoutDirection, tooltipButtonElement, flipped) => {
       let topOffset = 0;
-      let leftOffset = 0;
+      let leftOffset = -2;
 
       const caretWidth = 16;
-      const caretHeight = 14;
-      const borderWidth = 1;
+      const caretHeight = 12;
+      const borderWidth = 2;
 
       const tooltipContent = tooltipElement.querySelector('[role="dialog"]');
       const tooltipWidth = tooltipContent ? tooltipContent.getBoundingClientRect().width : 0;
@@ -120,42 +127,43 @@ const FlyoutMenu = ({
 
       switch (flyoutDirection) {
         case FlyoutMenuDirection.LeftStart:
-          topOffset = tooltipHeight / 2 + caretHeight - borderWidth;
+          topOffset = tooltipHeight / 2 - 2 * borderWidth - borderWidth;
           rtlOffset = 0;
           break;
 
         // off
         case FlyoutMenuDirection.LeftEnd:
           topOffset =
-            -tooltipHeight / 2 + caretHeight + caretWidth - borderWidth - (48 - buttonWidth);
+            -tooltipHeight / 2 + 2 * caretHeight + caretWidth - (48 - buttonWidth) + borderWidth;
+          leftOffset = -caretWidth / 2;
           rtlOffset = 0;
           break;
         case FlyoutMenuDirection.RightStart:
-          topOffset = tooltipHeight / 2 + borderWidth;
+          topOffset = tooltipHeight / 2 - caretHeight - 2 * borderWidth;
           rtlOffset = -rtlOffset;
           break;
 
         // off
         case FlyoutMenuDirection.RightEnd:
-          topOffset = caretWidth - tooltipHeight / 2 + borderWidth - (48 - buttonWidth);
+          topOffset = -tooltipHeight / 2 + 2 * caretWidth + borderWidth;
           rtlOffset = -rtlOffset;
           break;
         case FlyoutMenuDirection.TopStart:
-          leftOffset = caretWidth + tooltipWidth / 2;
+          leftOffset = tooltipWidth / 2;
           topOffset = caretHeight;
           break;
         case FlyoutMenuDirection.TopEnd:
-          leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
-          topOffset = caretHeight;
+          leftOffset = -tooltipWidth / 2 + buttonWidth;
+          topOffset = caretHeight - 2 * borderWidth;
           break;
         case FlyoutMenuDirection.BottomEnd:
-          topOffset = -caretHeight;
-          leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
+          topOffset = -caretHeight + 2 * borderWidth;
+          leftOffset = -tooltipWidth / 2 + buttonWidth;
           break;
         default:
           // Bottom Start
-          leftOffset = caretWidth + tooltipWidth / 2;
-          topOffset = -caretHeight;
+          leftOffset = tooltipWidth / 2;
+          topOffset = -caretHeight - 2 * borderWidth;
       }
 
       if (document.dir === 'rtl') {
@@ -211,6 +219,7 @@ const FlyoutMenu = ({
 
   return (
     <div
+      data-testid={`${testId}-container`}
       style={{
         '--tooltip-visibility': hideTooltip ? 'hidden' : 'visible',
       }}
@@ -232,7 +241,7 @@ const FlyoutMenu = ({
         disabled={disabled}
         hasIconOnly
         kind="ghost"
-        testID={`${testId}-button`}
+        testId={`${testId}-button`}
         size={buttonSize}
         renderIcon={renderIcon}
         onClick={() => {
@@ -243,7 +252,10 @@ const FlyoutMenu = ({
         }}
       />
       {
-        <div className={`${iotPrefix}--flyout-menu--tooltip-anchor`} data-floating-menu-container>
+        <div
+          className={`${iotPrefix}--flyout-menu--tooltip-anchor`}
+          {...(!renderInPortal ? { 'data-floating-menu-container': true } : {})}
+        >
           <Tooltip
             disabled={disabled}
             className={classnames(
@@ -260,6 +272,7 @@ const FlyoutMenu = ({
             iconDescription={iconDescription}
             data-testid={testId}
             showIcon={false}
+            focusTrap={tooltipFocusTrap}
             open={typeof isOpen === 'boolean' ? isOpen : isControlledOpen}
             direction={tooltipDirection}
             menuOffset={calculateMenuOffset}
@@ -270,13 +283,14 @@ const FlyoutMenu = ({
             useAutoPositioning={false}
             onChange={onChange}
           >
-            <div>
+            <div
+              className={classnames(`${iotPrefix}--flyout-menu--content`, tooltipContentClassName)}
+            >
               {children}
-
-              {!passive && (
-                <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
-              )}
             </div>
+            {!passive && (
+              <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
+            )}
           </Tooltip>
         </div>
       }
@@ -306,6 +320,16 @@ const propTypes = {
    * The CSS class names of the flyout menu.
    */
   tooltipClassName: PropTypes.string,
+
+  /**
+   * The CSS class names of the tooltip content.
+   */
+  tooltipContentClassName: PropTypes.string,
+
+  /**
+   * whether to send focus to the tooltip when it's expanded
+   */
+  tooltipFocusTrap: PropTypes.bool,
 
   /**
    * Where to put the flyout menu, relative to the trigger UI.
@@ -402,6 +426,9 @@ const propTypes = {
   }),
 
   isOpen: PropTypes.bool,
+
+  /** by default the flyout menu will render as a child, if you set this to true it will render outside of the current DOM in a portal */
+  renderInPortal: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -413,6 +440,8 @@ const defaultProps = {
   defaultOpen: false,
   children: undefined,
   tooltipClassName: '',
+  tooltipContentClassName: '',
+  tooltipFocusTrap: true,
   passive: false,
   hideTooltip: true,
   customFooter: null,
@@ -434,6 +463,7 @@ const defaultProps = {
   light: true,
   useAutoPositioning: false,
   onChange: () => {},
+  renderInPortal: false,
 };
 
 FlyoutMenu.propTypes = propTypes;

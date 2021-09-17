@@ -4,13 +4,13 @@ import { Content } from './table-settings-model.class';
 
 export interface TableSettingsPaneOptions {
   settings?: BaseSetting[];
-  content?: Content;
-  title: Content;
+  content?: any;
+  title: any;
 }
 
 export class TableSettingsPane {
-  content?: Content;
-  title: Content;
+  content?: any;
+  title: any;
   protected settings: BaseSetting[] = [];
 
   constructor(options: TableSettingsPaneOptions) {

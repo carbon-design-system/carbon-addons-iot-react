@@ -1,5 +1,7 @@
 @import '~carbon-components/scss/globals/scss/vars';
 
+$hoverBgColor: #2c2c2c;
+
 .#{$prefix}--header {
   .#{$prefix}--skip-to-content:focus {
     min-width: 240px;
@@ -15,6 +17,33 @@
 
   & .#{$prefix}--header__name {
     padding-left: $spacing-03;
+    min-width: 150px;
+    display: inline-flex;
+
+    > span.#{$prefix}--header__name--prefix {
+      white-space: nowrap;
+      overflow: visible;
+      display: initial;
+    }
+
+    > span {
+      display: none;
+      @media (min-width: 672px) {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: initial;
+      }
+    }
+
+    > span.#{$iot-prefix}--header__short-name {
+      white-space: nowrap;
+      display: initial;
+
+      @media (min-width: 672px) {
+        display: none;
+      }
+    }
   }
 
   &__menu-title[role='menuitem'][aria-expanded='true'] + &__menu {
@@ -31,6 +60,60 @@
     border-color: $ui-01;
     outline: none;
   }
+
+  .#{$iot-prefix}--header__overflow-menu-container {
+    position: relative;
+  }
+
+  .#{$prefix}--overflow-menu {
+    &:hover {
+      background-color: $gray-90;
+    }
+    &--open {
+      background-color: $gray-90;
+    }
+
+    &-options {
+      background-color: $gray-90;
+
+      &::after {
+        background-color: $gray-90;
+        width: $spacing-09;
+      }
+
+      &__btn {
+        color: $shell-header-text-02;
+        background-color: $gray-90;
+        text-decoration: none;
+      }
+    }
+
+    &__icon {
+      fill: $ui-01;
+    }
+
+    .#{$prefix}--header__submenu.#{$prefix}--header-action-btn {
+      padding: 0;
+
+      .#{$prefix}--header__menu-item.#{$prefix}--header__menu-title {
+        justify-content: flex-start;
+        padding-left: $spacing-05;
+        padding-right: $spacing-05;
+        text-decoration: none;
+        color: $shell-header-text-02;
+      }
+    }
+
+    .#{$prefix}--header-action-btn {
+      height: 100%;
+      width: 100%;
+      justify-content: flex-start;
+      padding-left: $spacing-05;
+      padding-right: $spacing-05;
+      text-decoration: none;
+      color: $shell-header-text-02;
+    }
+  }
 }
 
 .#{$iot-prefix}--header__subtitle {
@@ -39,6 +122,18 @@
   padding: $spacing-01 $spacing-05;
   color: $disabled-02;
   margin-left: $spacing-05;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.#{$prefix}--overflow-menu {
+  align-items: center;
+  display: inline-flex;
+  height: 3rem;
+  justify-content: center;
+  width: 3rem;
+  padding: 0;
 }
 
 .#{$prefix}--header-action-btn {
@@ -49,11 +144,30 @@
   width: 3rem;
   padding: 0;
 
-  .#{$prefix}--header__menu-item[role='menuitem'] {
-    height: 100%;
-    justify-content: center;
-    padding: 0;
-    width: 100%;
+  &.#{$prefix}--btn--primary {
+    background-color: $ui-05;
+
+    &:hover {
+      background-color: $hoverBgColor;
+    }
+
+    &.#{$prefix}--btn:focus {
+      outline-color: $ui-01;
+      border-color: $ui-01;
+      box-shadow: none;
+    }
+  }
+
+  .#{$prefix}--header__menu-item {
+    &[role='menuitem'] {
+      height: 100%;
+      justify-content: center;
+      padding: 0;
+      width: 100%;
+    }
+    span {
+      display: inline;
+    }
   }
 
   span {

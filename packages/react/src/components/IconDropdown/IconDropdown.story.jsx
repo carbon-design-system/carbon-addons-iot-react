@@ -17,9 +17,7 @@ import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice'
 import IconDropdown from './IconDropdown';
 
 export const Experimental = () => <StoryNotice componentName="IconDropdown" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 export const items = [
   {
@@ -84,7 +82,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'Watson IoT Experimental/☢️ IconDropdown',
+  title: '2 - Watson IoT Experimental/☢️ IconDropdown',
   decorators: [withKnobs],
   parameters: {
     component: IconDropdown,
@@ -132,6 +130,4 @@ export const _Default = () => {
   return <DefaultExample />;
 };
 
-_Default.story = {
-  name: 'default',
-};
+_Default.storyName = 'default';

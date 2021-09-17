@@ -15,22 +15,18 @@ const commonPageHeroProps = {
 };
 
 export default {
-  title: 'Watson IoT/🚫 PageHero',
+  title: '1 - Watson IoT/🚫 PageHero',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 
 export const Deprecated = () => (
   <StoryNotice componentName="PageHero" replacementComponentName="Hero" />
 );
-Deprecated.story = {
-  name: deprecatedStoryTitle,
-};
+Deprecated.storyName = deprecatedStoryTitle;
 
 export const Normal = () => <PageHero {...commonPageHeroProps} />;
 
-Normal.story = {
-  name: 'normal',
-};
+Normal.storyName = 'normal';
 
 export const NormalWithContentSwitcher = () => (
   <PageHero
@@ -52,28 +48,20 @@ export const NormalWithContentSwitcher = () => (
   />
 );
 
-NormalWithContentSwitcher.story = {
-  name: 'normal with content switcher',
-};
+NormalWithContentSwitcher.storyName = 'normal with content switcher';
 
 export const WithSection = () => <PageHero {...commonPageHeroProps} section="Explore" />;
 
-WithSection.story = {
-  name: 'with section',
-};
+WithSection.storyName = 'with section';
 
 export const HasBreadcrumb = () => (
   <PageHero {...commonPageHeroProps} crumb={<div>breadcrumb/mybread</div>} />
 );
 
-HasBreadcrumb.story = {
-  name: 'has breadcrumb',
-};
+HasBreadcrumb.storyName = 'has breadcrumb';
 
 export const HasLeftContent = () => (
   <PageHero {...commonPageHeroProps} leftContent={<div>Left Content</div>} />
 );
 
-HasLeftContent.story = {
-  name: 'has left content',
-};
+HasLeftContent.storyName = 'has left content';

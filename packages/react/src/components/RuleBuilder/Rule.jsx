@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Button, Dropdown } from 'carbon-components-react';
+import { Dropdown } from 'carbon-components-react';
 import { Add32, Subtract32, TextNewLine32 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
+import Button from '../Button';
 
 import GroupLogic from './GroupLogic';
 import {
@@ -276,7 +277,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
           tooltipPosition="top"
           iconDescription="Remove rule"
           onClick={onRemoveRule(ruleId)}
-          data-testid={`${ruleId}-remove-rule-button`}
+          testId={`${ruleId}-remove-rule-button`}
         />
         <Button
           hasIconOnly
@@ -285,7 +286,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
           tooltipPosition="top"
           iconDescription="Add new rule"
           onClick={onAddRule(ruleId)}
-          data-testid={`${ruleId}-add-rule-button`}
+          testId={`${ruleId}-add-rule-button`}
         />
         <Button
           hasIconOnly
@@ -294,7 +295,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
           tooltipPosition="top"
           iconDescription="Add new rule group"
           onClick={onAddRule(ruleId, true)}
-          data-testid={`${ruleId}-add-group-button`}
+          testId={`${ruleId}-add-group-button`}
         />
       </div>
     </div>

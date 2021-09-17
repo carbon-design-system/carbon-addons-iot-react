@@ -1,0 +1,171 @@
+# `HotspotEditorTooltipTab` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Handling state changes](#handling-state-changes)
+- [Icons](#icons)
+- [Colors](#colors)
+- [Props](#props)
+- [Prop formValues](#prop-formvalues)
+- [Prop i18n](#prop-i18n)
+- [Feedback](#feedback)
+
+## Getting started
+
+HotspotEditorTooltipTab allows the user to change the title, description and icon of a hotspot of type 'fixed' or 'dynamic', but for hotspots of type 'text' these settings should not be available. The title and description are shown in the tooltip and the icons will be displayed directly on the image as the trigger button for the tooltip. If the `showInfoMessage` is true then no form controls are shown, only the text from the `infoMessageText`. The HotspotEditorTooltipTab is stateless and is controlled by the HotspotEditorModal or other parent depending on architecture.
+
+The component uses the [overrides pattern](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/docs/guides/overrides-pattern.md) to allow modification of the subcomponents titleTextInput and decriptionTextArea.
+
+This code example uses the hotspotStateHook to manage the state of the component. This is recommended but not required.
+
+```jsx
+import {
+  HotspotEditorTooltipTab,
+  hotspotTypes,
+  useHotspotEditorState,
+} from 'carbon-addons-iot-react';
+import { red50, green50, blue50 } from '@carbon/colors';
+import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
+
+const selectableIcons = [
+  {
+    id: 'InformationSquareFilled24',
+    icon: InformationSquareFilled24,
+    text: 'Information square filled',
+  },
+  {
+    id: 'InformationFilled24',
+    icon: InformationFilled24,
+    text: 'Information filled',
+  },
+];
+
+const colors = [
+  { carbonColor: red50, name: 'red' },
+  { carbonColor: green50, name: 'green' },
+  { carbonColor: blue50, name: 'blue' },
+];
+
+const { selectedHotspot, deleteSelectedHotspot, updateHotspotTooltip } = useHotspotEditorState({
+  initialState: {
+    selectedHotspot: {
+      type: hotspotTypes.FIXED,
+      content: {},
+    },
+  },
+});
+
+<HotspotEditorTooltipTab
+  showDeleteButton={!(selectedHotspot?.type === hotspotTypes.DYNAMIC)}
+  showInfoMessage={!selectedHotspot}
+  hotspotIcons={selectableIcons}
+  hotspotIconFillColors={colors}
+  formValues={selectedHotspot}
+  onChange={updateHotspotTooltip}
+  onDelete={deleteSelectedHotspot}
+  translateWithId={() => {}}
+/>;
+```
+
+## Handling state changes
+
+The component has two callbacks, `onChange` that is called for each change of the fields e.g.
+
+```jsx
+{
+  color: '#24a148';
+}
+```
+
+and the `onDelete` which is used to delete the hotspot entirely. To update the state of the text field and dropdowns the prop object `formValues` is used to describe the state of the complete form. The prop object is a subset of and structured the same way as the Hotspot type so you can pass in the latest version of your hotspot as the formValues. Below is an example of the expected formValues object:
+
+```jsx
+{
+  content: {
+    title: 'My Device'
+    description: 'Here is my description',
+  },
+  /** Can be an icon object or just the name if  there is a matching icon in the hotspotIcons array */
+  icon: 'InformationSquareFilled24',
+  /** Can be a colorPropType object or just the carbonColor prop of a colorPropType object */
+  color: '#24a148',
+}
+```
+
+The easiest way to handle state changes is by using the hotspotStateHook as described in the code example above.
+
+## Icons
+
+The available icons for the dropdown are defined by the prop `hotspotIcons`. The hotspotIcons is
+an array of objects with an id, the actual icon and the text you choose to be displayed in the color dropdown. When used in the formValues state object the icon can be the icon object described here, e.g.
+
+```jsx
+{
+  id: 'InformationSquareFilled24',
+  icon: InformationSquareFilled24,
+  text: 'Information square filled',
+},
+```
+
+or just the icon itself.
+
+# Colors
+
+The colors for the dropdown are defined by the prop `hotspotIconFillColors`. The hotspotIconFillColors is an array of objects with the official carbon color and the display name you choose. When used in the formValues state object the color can be the color object described here, e.g.
+
+```jsx
+{ carbonColor: '#24a148', name: 'green' }
+```
+
+or just the color value string `#24a148`.
+
+## Props
+
+| Name                                                             | Type                                                                                                                   | Default                   | Description                                                                                                                                                                          |
+| :--------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- | :------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <span style={{color: "#31a148"}}>hotspotIconFillColors \*</span> | arrayOf(shape({ <br />&nbsp;&nbsp;carbonColor:string, <br />&nbsp;&nbsp; name:string, <br /> }))                       |                           | Array of selectable color objects                                                                                                                                                    |
+| hotspotIcons                                                     | arrayOf(shape({ <br /> &nbsp;&nbsp;id:string, <br /> &nbsp;&nbsp;icon:object, <br /> &nbsp;&nbsp;text:string<br /> })) | []                        | Array of selectable icon objects. Use icon size 24 for the icon                                                                                                                      |
+| formValues                                                       | shape([formValues](#prop-formvalues))                                                                                  | {}                        | The state values of the controlled form elements e.g. { title: 'My hotspot 1', description: 'Lorem ipsum' }                                                                          |
+| i18n                                                             | shape([i18n](#prop-i18n))                                                                                              |                           | Internationalisation strings                                                                                                                                                         |
+| <span style={{color: "#31a148"}}>translateWithId \*</span>       | function                                                                                                               |                           |                                                                                                                                                                                      |
+| <span style={{color: "#31a148"}}>onChange \*</span>              | function                                                                                                               |                           | Callback for when any of the form element's value changes                                                                                                                            |
+| <span style={{color: "#31a148"}}>onDelete \*</span>              | function                                                                                                               |                           | Callback for when the delete button is clicked                                                                                                                                       |
+| overrides                                                        | shape                                                                                                                  | undefined                 | Used to overide the internal components and props for the subcomponents titleTextInput and decriptionTextArea if need should arise to manage defaultValue, length or validation etc. |
+| primaryInputId                                                   | string                                                                                                                 | undefined                 | The id of the form element that should be initially focused                                                                                                                          |
+| showDeleteButton                                                 | bool                                                                                                                   | true                      | Show the delete hotspot button                                                                                                                                                       |
+| showInfoMessage                                                  | bool                                                                                                                   | false                     | Shows the info message if true                                                                                                                                                       |
+| testId                                                           | string                                                                                                                 | 'HotspotEditorTooltipTab' | Id that can be used for testing                                                                                                                                                      |
+
+### Prop i18n
+
+These props can also be passed as part of the i18n prop of the HotspotModalEditor component.
+
+| Name                               | Type   | Default                                                                                                                                                        | Description |
+| :--------------------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------- |
+| deleteButtonLabelText              | string | 'Delete hotspot'                                                                                                                                               |             |
+| deleteButtonIconDescriptionText    | string | 'Delete this hotspot'                                                                                                                                          |             |
+| titleInputLabelText                | string | 'Title'                                                                                                                                                        |             |
+| titleInputPlaceholderText          | string | 'Enter title for the tooltip'                                                                                                                                  |             |
+| descriptionTextareaLabelText       | string | 'Description'                                                                                                                                                  |             |
+| descriptionTextareaPlaceholderText | string | 'Enter description for the tooltip'                                                                                                                            |             |
+| iconDropdownTitleText              | string | 'Icon'                                                                                                                                                         |             |
+| iconDropdownLabelText              | string | 'Select an icon'                                                                                                                                               |             |
+| colorDropdownLabelText             | string | 'Select a color'                                                                                                                                               |             |
+| colorDropdownTitleText             | string | 'Color'                                                                                                                                                        |             |
+| infoMessageText                    | string | 'Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataItems and create hotspots at those positions.' |             |
+
+### Prop formValues
+
+The formValues prop object is a subset of and structured the same way as the Hotspot type so you can pass in the latest version of your hotspot as the formValues.
+
+| Name    | Type                                                                                    | Default | Description                                                                                  |
+| :------ | :-------------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------- |
+| content | shape({ <br /> &nbsp;&nbsp;title:string, <br /> &nbsp;&nbsp;description:string<br /> }) |         | Optional object containing the title and or description                                      |
+| icon    | object, string                                                                          |         | Can be an icon object or just the name if there is a matching icon in the hotspotIcons array |
+| color   | ColorPropType, string                                                                   |         | Can be a colorPropType object or just the carbonColor prop of a colorPropType object         |
+
+## Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/HotspotEditorModal/HotspotEditorTooltipTab/README.md).

@@ -93,6 +93,26 @@ const TimeSeriesCardPropTypes = {
     legendPosition: PropTypes.string,
     /** carbon charts legend truncation options */
     truncation: TruncationPropTypes,
+    /** if there are alerts associated with this chart (used to markup datapoints), this is a start/end set of alert ranges for each alert */
+    alertRanges: PropTypes.arrayOf(
+      PropTypes.shape({
+        endTimestamp: PropTypes.number,
+        startTimestamp: PropTypes.number,
+        /** color of the alert */
+        color: PropTypes.string,
+        /** more information about the alert */
+        details: PropTypes.string,
+      })
+    ),
+    /** set of thresholds these render dotted lines on the graph to indicate that the line values might be crossing logical thresholds */
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        axis: PropTypes.oneOf(['x', 'y']),
+        value: PropTypes.number,
+        label: PropTypes.string,
+        fillColor: PropTypes.string,
+      })
+    ),
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -125,6 +145,13 @@ const TimeSeriesCardPropTypes = {
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the dayjs formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -175,6 +202,9 @@ const TimeSeriesCard = ({
   domainRange,
   tooltipDateFormatPattern,
   showTimeInGMT,
+  // TODO: remove deprecated 'testID' in v3
+  testID,
+  testId,
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
@@ -200,16 +230,32 @@ const TimeSeriesCard = ({
       legendPosition,
       addSpaceOnEdges,
       truncation,
+      thresholds,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, contentWithDefaults, initialValues, others);
-  let chartRef = useRef();
+  const chartRef = useRef(null);
   const previousTick = useRef();
   dayjs.locale(locale);
 
+  // Workaround since downstream consumers might keep regenerating the series object and useMemo does a direct in-memory comparison for the object
+  const objectAgnosticSeries = JSON.stringify(series);
+  const objectAgnosticThresholds = JSON.stringify(thresholds);
+
   const sampleValues = useMemo(
-    () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
-    [series, timeDataSourceId, interval, timeRange]
+    () =>
+      isEditable
+        ? generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds)
+        : [],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+      objectAgnosticSeries,
+      timeDataSourceId,
+      interval,
+      timeRange,
+      objectAgnosticThresholds,
+      isEditable,
+    ]
   );
 
   const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
@@ -284,8 +330,8 @@ const TimeSeriesCard = ({
 
   /** This is needed to update the chart when the lines and values change */
   useEffect(() => {
-    if (chartRef && chartRef.chart && !isEqual(chartData, previousChartData)) {
-      chartRef.chart.model.setData(chartData);
+    if (chartRef?.current?.chart && !isEqual(chartData, previousChartData)) {
+      chartRef.current.chart.model.setData(chartData);
     }
   }, [chartData, previousChartData]);
 
@@ -380,6 +426,9 @@ const TimeSeriesCard = ({
             number: maxTicksPerSize,
             formatter: formatTick,
           },
+          ...(thresholds?.some((threshold) => threshold.axis === 'x')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'x') }
+            : {}),
           includeZero: includeZeroOnXaxis,
           ...(domainRange ? { domain: domainRange } : {}),
         },
@@ -390,8 +439,8 @@ const TimeSeriesCard = ({
             formatter: (axisValue) =>
               chartValueFormatter(axisValue, newSize, null, locale, decimalPrecision),
           },
-          ...(chartType !== TIME_SERIES_TYPES.BAR
-            ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
+          ...(thresholds?.some((threshold) => threshold.axis === 'y')
+            ? { thresholds: thresholds?.filter((threshold) => threshold.axis === 'y') }
             : {}),
           stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
           includeZero: includeZeroOnYaxis,
@@ -406,6 +455,9 @@ const TimeSeriesCard = ({
       },
       containerResizable: true,
       tooltip: {
+        truncation: {
+          type: 'none',
+        },
         valueFormatter: (tooltipValue) =>
           chartValueFormatter(tooltipValue, newSize, unit, locale, decimalPrecision),
         customHTML: (...args) =>
@@ -414,7 +466,8 @@ const TimeSeriesCard = ({
             alertRanges,
             mergedI18n.alertDetected,
             showTimeInGMT,
-            tooltipDateFormatPattern
+            tooltipDateFormatPattern,
+            locale
           ),
         groupLabel: mergedI18n.tooltipGroupLabel,
       },
@@ -437,11 +490,15 @@ const TimeSeriesCard = ({
       timeScale: {
         addSpaceOnEdges: !isNil(addSpaceOnEdges) ? addSpaceOnEdges : 1,
       },
+      toolbar: {
+        enabled: false,
+      },
     }),
     [
       xLabel,
       maxTicksPerSize,
       formatTick,
+      thresholds,
       includeZeroOnXaxis,
       domainRange,
       yLabel,
@@ -479,12 +536,14 @@ const TimeSeriesCard = ({
       i18n={mergedI18n}
       timeRange={timeRange}
       {...others}
+      locale={locale}
       isExpanded={isExpanded}
       isEditable={isEditable}
       isEmpty={isChartDataEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
       isLoading={isLoading}
       resizeHandles={resizeHandles}
+      testId={testID || testId}
     >
       {!isChartDataEmpty ? (
         <>
@@ -497,17 +556,17 @@ const TimeSeriesCard = ({
             })}
           >
             <ChartComponent
-              ref={(el) => {
-                chartRef = el;
-              }}
+              ref={chartRef}
               data={chartData}
               options={options}
               width="100%"
               height="100%"
+              key={`thresholds-key${thresholds?.length ? objectAgnosticThresholds : ''}`} // have to regen the component if thresholds change
             />
           </div>
           {isExpanded ? (
             <StatefulTable
+              testId={`${testId}-table`}
               id="TimeSeries-table"
               className={`${iotPrefix}--time-series-card--stateful-table`}
               columns={tableColumns}
@@ -550,7 +609,10 @@ const TimeSeriesCard = ({
   );
 };
 
-TimeSeriesCard.propTypes = { ...CardPropTypes, ...TimeSeriesCardPropTypes };
+TimeSeriesCard.propTypes = {
+  ...CardPropTypes,
+  ...TimeSeriesCardPropTypes,
+};
 TimeSeriesCard.defaultProps = defaultProps;
 
 export default TimeSeriesCard;

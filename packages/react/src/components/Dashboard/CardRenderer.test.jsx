@@ -1,5 +1,4 @@
 import React from 'react';
-import { Add16, Maximize16 } from '@carbon/icons-react';
 import { render, fireEvent, screen } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
@@ -144,11 +143,11 @@ describe('CardRenderer', () => {
     render(
       <Dashboard
         title="My Dashboard"
-        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
+        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0, w: 12, h: 4 }] }}
         actions={[
           { id: 'edit', labelText: 'Edit', icon: 'edit' },
-          { id: 'crash', labelText: 'Add', icon: Add16 },
-          { id: 'maximize', labelText: 'Maximize', icon: Maximize16 },
+          { id: 'crash', labelText: 'Add', icon: 'info' },
+          { id: 'maximize', labelText: 'Maximize', icon: 'help' },
         ]}
         cards={[
           {

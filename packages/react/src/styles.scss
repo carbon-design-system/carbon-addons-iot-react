@@ -148,6 +148,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/InlineLoading/inline-loading';
 @import 'components/PaginationNav/pagination-nav';
 @import 'components/UIShell/ui-shell';
+@import 'components/List/carbon-list';
 
 //-------------------------------------
 // 🔬 Experimental
@@ -192,6 +193,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Dashboard/dashboard-grid';
 @import 'components/DashboardEditor/dashboard-editor';
 @import 'components/DateTimePicker/date-time-picker';
+@import 'components/DateTimePicker/date-time-pickerv2';
 @import 'components/EmptyState/emptystate';
 @import 'components/FileDrop/file-drop';
 @import 'components/FilterTags/filter-tags';
@@ -209,8 +211,11 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/ListCard/listCard';
 @import 'components/List/list';
 @import 'components/ListBuilder/list-builder';
+@import 'components/TearSheet/tear-sheet-wrapper';
+@import 'components/TearSheet/tear-sheet';
 @import 'components/List/ListItem/list-item';
 @import 'components/List/ListHeader/list-header';
+@import 'components/MapCard/map-card';
 @import 'components/List/HierarchyList/hierarchy-list';
 @import 'components/MenuButton/menu-button';
 @import 'components/PageTitleBar/page-title-bar';

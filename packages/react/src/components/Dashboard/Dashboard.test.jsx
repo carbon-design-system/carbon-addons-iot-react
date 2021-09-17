@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { Add20 } from '@carbon/icons-react';
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
 import { tableColumns, tableData } from '../../utils/sample';
@@ -143,9 +143,35 @@ let wrapper = mount(
     ]}
     cards={cardValues}
     onDashboardAction={onClick}
+    testId="DASHBOARD"
   />
 );
 describe('Dashboard', () => {
+  it('should be selectable with testId', () => {
+    render(
+      <Dashboard
+        description="This is a description for this Dashboard"
+        title="My Dashboard"
+        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
+        actions={[
+          { id: 'edit', labelText: 'Edit', icon: 'edit' },
+          { id: 'add', labelText: 'Add', icon: <Add20 /> },
+          {
+            id: 'custom',
+            labelText: 'Custom',
+            customActionComponent: <CustomIcon />,
+          },
+        ]}
+        cards={cardValues}
+        onDashboardAction={onClick}
+        testId="DASHBOARD"
+      />
+    );
+
+    expect(screen.getByTestId('DASHBOARD')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD-header')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD-grid')).toBeDefined();
+  });
   it('verify dashboard still renders with bad layout', () => {
     // should still render even with incorrect layout
     expect(wrapper).toBeDefined();

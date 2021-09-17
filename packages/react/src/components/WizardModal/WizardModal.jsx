@@ -60,6 +60,7 @@ class WizardModal extends Component {
       submitButtonLabel: PropTypes.node,
       cancelButtonLabel: PropTypes.node,
     }),
+    testId: PropTypes.string,
   };
 
   static defaultProps = {
@@ -73,6 +74,7 @@ class WizardModal extends Component {
       submitButtonLabel: 'Submit',
       cancelButtonLabel: 'Cancel',
     },
+    testId: 'wizard-modal',
   };
 
   state = { step: this.props.currentStepIndex };
@@ -139,6 +141,7 @@ class WizardModal extends Component {
         previousButtonLabel,
       },
       steps,
+      testId,
     } = this.props;
     const { step } = this.state;
     const {
@@ -165,12 +168,21 @@ class WizardModal extends Component {
           (typeof sendingData === 'boolean' && sendingData) || typeof sendingData === 'string'
         }
         className={`${iotPrefix}--wizard-modal__footer`}
+        testId={`${testId}-footer`}
       />
     );
   };
 
   render() {
-    const { steps, className, currentStepIndex, isClickable, onBack, ...other } = this.props;
+    const {
+      steps,
+      className,
+      currentStepIndex,
+      isClickable,
+      onBack,
+      testId,
+      ...other
+    } = this.props;
     // Transform object to be what Progress Indicator expects
     const items = steps.map((step, index) => ({
       id: index,
@@ -182,14 +194,20 @@ class WizardModal extends Component {
         {...other}
         className={classnames(`${iotPrefix}--wizard-modal`, className)}
         footer={this.renderFooter()}
+        // TODO: pass testId in v3 to override defaults.
+        // testId={testId}
       >
         <ProgressIndicator
           items={items}
           currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : null}
           onClickItem={this.handleClick}
           isClickable={isClickable}
+          // TODO: pass testId in v3 to override defaults.
+          // testId={`${testId}-progress-indicator`}
         />
-        <div className={`${iotPrefix}--wizard-modal__content`}>{steps[stepIndex].content}</div>
+        <div data-testid={`${testId}-content`} className={`${iotPrefix}--wizard-modal__content`}>
+          {steps[stepIndex].content}
+        </div>
       </ComposedModal>
     );
   }

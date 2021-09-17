@@ -1,1619 +1,1892 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard basic 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "1.5rem",
+        "width": "1056px",
       }
     }
   >
     <div
+      accept={null}
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="image-hotspots"
+      role="presentation"
       style={
         Object {
-          "margin": "1.5rem",
-          "width": "1056px",
+          "--card-default-height": "624px",
         }
       }
     >
       <div
-        accept={null}
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="image-hotspots"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "624px",
-          }
-        }
+        className="iot--card--header"
+        data-testid="Card-header"
       >
-        <div
-          className="iot--card--header"
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Image"
         >
-          <span
-            className="iot--card--title"
-            title="Image"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Image
-            </div>
-          </span>
           <div
-            className="iot--card--toolbar"
+            className="iot--card--title--text"
           >
-            <button
-              aria-pressed={null}
-              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
-                />
-                <path
-                  d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
-                />
-              </svg>
-            </button>
+            Image
           </div>
-        </div>
+        </span>
         <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "576px",
-            }
-          }
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
         >
-          <div
-            className="iot--image-card__wrapper"
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Expand to fullscreen"
+            type="button"
           >
-            <div
-              onBlur={[Function]}
-              onMouseOut={[Function]}
-              style={
-                Object {
-                  "background": "#eee",
-                  "height": "100%",
-                  "overflow": "hidden",
-                  "position": "relative",
-                  "textAlign": "center",
-                  "width": "100%",
-                }
-              }
+            <svg
+              aria-hidden="true"
+              aria-label="Expand to fullscreen"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <img
-                alt="Sample image"
-                className="iot--image-card-img"
-                id={null}
-                onLoad={[Function]}
-                onMouseDown={[Function]}
-                onMouseMove={[Function]}
-                onMouseUp={[Function]}
-                src="landscape.jpg"
-                style={
-                  Object {
-                    "cursor": "auto",
-                    "height": "auto",
-                    "left": undefined,
-                    "objectFit": null,
-                    "position": "relative",
-                    "top": undefined,
-                    "width": "auto",
-                  }
-                }
+              <path
+                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
               />
-              <div
-                style={
-                  Object {
-                    "left": undefined,
-                    "margin": "auto",
-                    "pointerEvents": "none",
-                    "position": "absolute",
-                    "right": "auto",
-                    "top": undefined,
-                  }
-                }
-              >
-                <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-                  data-testid="hotspot-35-65"
-                  icon="User"
-                  style={
-                    Object {
-                      "--height": 25,
-                      "--width": 25,
-                      "--x-pos": 35,
-                      "--y-pos": 65,
-                    }
-                  }
-                >
-                  <div
-                    aria-describedby={null}
-                    aria-labelledby="hotspot-35-65"
-                    className="bx--tooltip__label"
-                    id="hotspot-35-65"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "color": "purple",
-                        }
-                      }
-                    >
-                      <svg
-                        fill="purple"
-                        focusable="true"
-                        height={25}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        tabIndex="0"
-                        title="User"
-                        viewBox="0 0 32 32"
-                        width={25}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16 4a5 5 0 11-5 5 5 5 0 015-5m0-2a7 7 0 107 7A7 7 0 0016 2zM26 30H24V25a5 5 0 00-5-5H13a5 5 0 00-5 5v5H6V25a7 7 0 017-7h6a7 7 0 017 7z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-                  data-testid="hotspot-45-75"
-                  icon="Warning alt"
-                  style={
-                    Object {
-                      "--height": 25,
-                      "--width": 25,
-                      "--x-pos": 45,
-                      "--y-pos": 75,
-                    }
-                  }
-                >
-                  <div
-                    aria-describedby={null}
-                    aria-labelledby="hotspot-45-75"
-                    className="bx--tooltip__label"
-                    id="hotspot-45-75"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "color": "red",
-                        }
-                      }
-                    >
-                      <svg
-                        fill="red"
-                        focusable="true"
-                        height={25}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        tabIndex="0"
-                        title="Warning alt"
-                        viewBox="0 0 32 32"
-                        width={25}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16 23a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 23zM15 12H17V21H15z"
-                        />
-                        <path
-                          d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "bottom": 10,
-                    "pointerEvents": "auto",
-                    "position": "absolute",
-                    "right": 10,
-                  }
-                }
-              >
-                <button
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "background": "#fff",
-                      "border": "none",
-                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                      "height": "25px",
-                      "width": "25px",
-                    }
-                  }
-                  title="Zoom in"
-                  type="button"
-                >
-                  +
-                </button>
-                <br />
-                <button
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "background": "#fff",
-                      "border": "none",
-                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                      "height": "25px",
-                      "width": "25px",
-                    }
-                  }
-                  title="Zoom out"
-                  type="button"
-                >
-                  -
-                </button>
-              </div>
-            </div>
-          </div>
+              <path
+                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard custom renderIconByName 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": "1.5rem",
-          "width": "1056px",
-        }
-      }
-    >
       <div
-        accept={null}
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="image-hotspots"
-        role="presentation"
+        className="iot--card--content"
+        data-testid="Card-content"
         style={
           Object {
-            "--card-default-height": "624px",
+            "--card-content-height": "576px",
           }
         }
       >
         <div
-          className="iot--card--header"
+          className="iot--image-card__wrapper"
         >
-          <span
-            className="iot--card--title"
-            title="Image"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Image
-            </div>
-          </span>
           <div
-            className="iot--card--toolbar"
-          >
-            <button
-              aria-pressed={null}
-              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
-                />
-                <path
-                  d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "576px",
+            onBlur={[Function]}
+            onMouseOut={[Function]}
+            style={
+              Object {
+                "background": "#eee",
+                "height": "100%",
+                "overflow": "hidden",
+                "position": "relative",
+                "textAlign": "center",
+                "width": "100%",
+              }
             }
-          }
-        >
-          <div
-            className="iot--image-card__wrapper"
           >
-            <div
-              onBlur={[Function]}
-              onMouseOut={[Function]}
+            <img
+              alt="Sample image"
+              className="iot--image-card-img"
+              id={null}
+              onLoad={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              onMouseUp={[Function]}
+              src="landscape.jpg"
               style={
                 Object {
-                  "background": "#eee",
-                  "height": "100%",
-                  "overflow": "hidden",
+                  "cursor": "auto",
+                  "height": "auto",
+                  "left": undefined,
+                  "objectFit": null,
                   "position": "relative",
-                  "textAlign": "center",
-                  "width": "100%",
+                  "top": undefined,
+                  "width": "auto",
+                }
+              }
+            />
+            <div
+              data-testid="null-hotspots-container"
+              style={
+                Object {
+                  "left": undefined,
+                  "margin": "auto",
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "right": "auto",
                 }
               }
             >
-              <img
-                alt="Sample image"
-                className="iot--image-card-img"
-                id={null}
-                onLoad={[Function]}
-                onMouseDown={[Function]}
-                onMouseMove={[Function]}
-                onMouseUp={[Function]}
-                src="landscape.jpg"
-                style={
-                  Object {
-                    "cursor": "auto",
-                    "height": "auto",
-                    "left": undefined,
-                    "objectFit": null,
-                    "position": "relative",
-                    "top": undefined,
-                    "width": "auto",
-                  }
-                }
-              />
               <div
+                className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+                data-testid="hotspot-35-65"
+                icon="User"
                 style={
                   Object {
-                    "left": undefined,
-                    "margin": "auto",
-                    "pointerEvents": "none",
-                    "position": "absolute",
-                    "right": "auto",
-                    "top": undefined,
+                    "--height": 25,
+                    "--width": 25,
+                    "--x-pos": 35,
+                    "--y-pos": 65,
                   }
                 }
               >
                 <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-                  data-testid="hotspot-35-65"
-                  icon="arrowDown"
-                  style={
-                    Object {
-                      "--height": 25,
-                      "--width": 25,
-                      "--x-pos": 35,
-                      "--y-pos": 65,
-                    }
-                  }
+                  aria-labelledby="hotspot-35-65"
+                  className="bx--tooltip__label"
+                  id="hotspot-35-65"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
                 >
                   <div
-                    aria-describedby={null}
-                    aria-labelledby="hotspot-35-65"
-                    className="bx--tooltip__label"
-                    id="hotspot-35-65"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
+                    style={
+                      Object {
+                        "color": "purple",
+                      }
+                    }
                   >
                     <svg
-                      aria-hidden={true}
+                      data-testid="card-icon"
                       fill="purple"
-                      focusable="false"
+                      focusable="true"
                       height={25}
                       preserveAspectRatio="xMidYMid meet"
-                      title=""
+                      role="img"
+                      tabIndex="0"
+                      title="User"
                       viewBox="0 0 32 32"
                       width={25}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
+                        d="M16 4a5 5 0 11-5 5 5 5 0 015-5m0-2a7 7 0 107 7A7 7 0 0016 2zM26 30H24V25a5 5 0 00-5-5H13a5 5 0 00-5 5v5H6V25a7 7 0 017-7h6a7 7 0 017 7z"
                       />
-                      <title>
-                        
-                      </title>
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  className="iot--hotspot-container iot--hotspot-container--is-fixed"
-                  data-testid="hotspot-45-25"
-                  icon={null}
-                  style={
-                    Object {
-                      "--height": 25,
-                      "--width": 25,
-                      "--x-pos": 45,
-                      "--y-pos": 25,
-                    }
-                  }
-                >
-                  <div
-                    aria-describedby={null}
-                    aria-labelledby="hotspot-45-25"
-                    className="bx--tooltip__label"
-                    id="hotspot-45-25"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      height={25}
-                      width={25}
-                    >
-                      <circle
-                        cx={12.5}
-                        cy={12.5}
-                        fill="none"
-                        opacity="1"
-                        r={11.5}
-                        stroke="white"
-                        strokeWidth="2"
-                      />
-                      <circle
-                        cx={12.5}
-                        cy={12.5}
-                        fill="#0f0"
-                        opacity="0.7"
-                        r={11.5}
-                        stroke="none"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  className="iot--hotspot-container iot--hotspot-container--is-fixed"
-                  data-testid="hotspot-45-50"
-                  icon={null}
-                  style={
-                    Object {
-                      "--height": 25,
-                      "--width": 25,
-                      "--x-pos": 45,
-                      "--y-pos": 50,
-                    }
-                  }
-                >
-                  <div
-                    aria-describedby={null}
-                    aria-labelledby="hotspot-45-50"
-                    className="bx--tooltip__label"
-                    id="hotspot-45-50"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      height={25}
-                      width={25}
-                    >
-                      <circle
-                        cx={12.5}
-                        cy={12.5}
-                        fill="none"
-                        opacity="1"
-                        r={11.5}
-                        stroke="white"
-                        strokeWidth="2"
-                      />
-                      <circle
-                        cx={12.5}
-                        cy={12.5}
-                        fill="#00f"
-                        opacity="0.7"
-                        r={11.5}
-                        stroke="none"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
-                  data-testid="hotspot-45-75"
-                  icon="arrowUp"
-                  style={
-                    Object {
-                      "--height": 25,
-                      "--width": 25,
-                      "--x-pos": 45,
-                      "--y-pos": 75,
-                    }
-                  }
-                >
-                  <div
-                    aria-describedby={null}
-                    aria-labelledby="hotspot-45-75"
-                    className="bx--tooltip__label"
-                    id="hotspot-45-75"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="blue"
-                      focusable="false"
-                      height={25}
-                      preserveAspectRatio="xMidYMid meet"
-                      title=""
-                      viewBox="0 0 32 32"
-                      width={25}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13 24L4 15 5.414 13.586 13 21.171 26.586 7.586 28 9 13 24z"
-                      />
-                      <title>
-                        
-                      </title>
                     </svg>
                   </div>
                 </div>
               </div>
               <div
+                className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+                data-testid="hotspot-45-75"
+                icon="Warning alt"
                 style={
                   Object {
-                    "bottom": 10,
-                    "pointerEvents": "auto",
-                    "position": "absolute",
-                    "right": 10,
+                    "--height": 25,
+                    "--width": 25,
+                    "--x-pos": 45,
+                    "--y-pos": 75,
                   }
                 }
               >
-                <button
+                <div
+                  aria-labelledby="hotspot-45-75"
+                  className="bx--tooltip__label"
+                  id="hotspot-45-75"
+                  onBlur={[Function]}
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "background": "#fff",
-                      "border": "none",
-                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                      "height": "25px",
-                      "width": "25px",
-                    }
-                  }
-                  title="Zoom in"
-                  type="button"
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
                 >
-                  +
-                </button>
-                <br />
-                <button
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "background": "#fff",
-                      "border": "none",
-                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                      "height": "25px",
-                      "width": "25px",
+                  <div
+                    style={
+                      Object {
+                        "color": "red",
+                      }
                     }
-                  }
-                  title="Zoom out"
-                  type="button"
-                >
-                  -
-                </button>
+                  >
+                    <svg
+                      data-testid="card-icon"
+                      fill="red"
+                      focusable="true"
+                      height={25}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      tabIndex="0"
+                      title="Warning alt"
+                      viewBox="0 0 32 32"
+                      width={25}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16 23a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 23zM15 12H17V21H15z"
+                      />
+                      <path
+                        d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard error 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": "1.5rem",
-          "width": "1056px",
-        }
-      }
-    >
-      <div
-        accept={null}
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="image-hotspots"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "624px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Image"
-          >
             <div
-              className="iot--card--title--text"
-            >
-              Image
-            </div>
-          </span>
-          <div
-            className="iot--card--toolbar"
-          >
-            <button
-              aria-pressed={null}
-              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
-                />
-                <path
-                  d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "576px",
-            }
-          }
-        >
-          <div
-            className="iot--card--empty-message-wrapper"
-            style={
-              Object {
-                "--card-content-padding": "16px",
-              }
-            }
-          >
-            Error loading data for this card:  API threw Nullpointer
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard error loading image 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": "1.5rem",
-          "width": "1056px",
-        }
-      }
-    >
-      <div
-        accept={null}
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="image-hotspots"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "624px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Image"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Image
-            </div>
-          </span>
-          <div
-            className="iot--card--toolbar"
-          >
-            <button
-              aria-pressed={null}
-              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
-                />
-                <path
-                  d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "576px",
-            }
-          }
-        >
-          <div
-            className="iot--card--empty-message-wrapper"
-            style={
-              Object {
-                "--card-content-padding": "16px",
-              }
-            }
-          >
-            Error loading data for this card:  Error no image found called ImageID
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard hotspots are loading 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": "1.5rem",
-          "width": "1056px",
-        }
-      }
-    >
-      <div
-        accept={null}
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="image-hotspots"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "624px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Image"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Image
-            </div>
-          </span>
-          <div
-            className="iot--card--toolbar"
-          >
-            <button
-              aria-pressed={null}
-              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
-                />
-                <path
-                  d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "576px",
-            }
-          }
-        >
-          <div
-            className="iot--image-card__wrapper"
-          >
-            <div
-              onBlur={[Function]}
-              onMouseOut={[Function]}
               style={
                 Object {
-                  "background": "#eee",
-                  "height": "100%",
-                  "overflow": "hidden",
-                  "position": "relative",
-                  "textAlign": "center",
-                  "width": "100%",
+                  "bottom": 10,
+                  "pointerEvents": "auto",
+                  "position": "absolute",
+                  "right": 10,
                 }
               }
             >
-              <img
-                alt="Sample image"
-                className="iot--image-card-img"
-                id={null}
-                onLoad={[Function]}
-                onMouseDown={[Function]}
-                onMouseMove={[Function]}
-                onMouseUp={[Function]}
-                src="landscape.jpg"
+              <button
+                onClick={[Function]}
                 style={
                   Object {
-                    "cursor": "auto",
-                    "height": "auto",
-                    "left": undefined,
-                    "objectFit": null,
-                    "position": "relative",
-                    "top": undefined,
-                    "width": "auto",
+                    "alignItems": "center",
+                    "background": "#fff",
+                    "border": "none",
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "flex",
+                    "height": "25px",
+                    "justifyContent": "center",
+                    "width": "25px",
                   }
                 }
+                title="Zoom in"
+                type="button"
+              >
+                +
+              </button>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "background": "#fff",
+                    "border": "none",
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "flex",
+                    "height": "25px",
+                    "justifyContent": "center",
+                    "width": "25px",
+                  }
+                }
+                title="Zoom out"
+                type="button"
+              >
+                -
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard custom renderIconByName 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1.5rem",
+        "width": "1056px",
+      }
+    }
+  >
+    <div
+      accept={null}
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="image-hotspots"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "624px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Image"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Image
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Expand to fullscreen"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Expand to fullscreen"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
               />
+              <path
+                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "576px",
+          }
+        }
+      >
+        <div
+          className="iot--image-card__wrapper"
+        >
+          <div
+            onBlur={[Function]}
+            onMouseOut={[Function]}
+            style={
+              Object {
+                "background": "#eee",
+                "height": "100%",
+                "overflow": "hidden",
+                "position": "relative",
+                "textAlign": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <img
+              alt="Sample image"
+              className="iot--image-card-img"
+              id={null}
+              onLoad={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              onMouseUp={[Function]}
+              src="landscape.jpg"
+              style={
+                Object {
+                  "cursor": "auto",
+                  "height": "auto",
+                  "left": undefined,
+                  "objectFit": null,
+                  "position": "relative",
+                  "top": undefined,
+                  "width": "auto",
+                }
+              }
+            />
+            <div
+              data-testid="null-hotspots-container"
+              style={
+                Object {
+                  "left": undefined,
+                  "margin": "auto",
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "right": "auto",
+                }
+              }
+            >
               <div
-                aria-live="assertive"
-                className="bx--inline-loading"
+                className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+                data-testid="hotspot-35-65"
+                icon="arrowDown"
                 style={
                   Object {
-                    "position": "absolute",
-                    "top": 0,
+                    "--height": 25,
+                    "--width": 25,
+                    "--x-pos": 35,
+                    "--y-pos": 65,
                   }
                 }
               >
                 <div
-                  className="bx--inline-loading__animation"
+                  aria-labelledby="hotspot-35-65"
+                  className="bx--tooltip__label"
+                  id="hotspot-35-65"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
                 >
-                  <div
-                    aria-atomic="true"
-                    aria-labelledby="loading-id-6"
-                    aria-live="assertive"
-                    className="bx--loading bx--loading--small"
+                  <svg
+                    aria-hidden={true}
+                    data-testid="card-icon"
+                    fill="purple"
+                    focusable="false"
+                    height={25}
+                    preserveAspectRatio="xMidYMid meet"
+                    title=""
+                    viewBox="0 0 32 32"
+                    width={25}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <label
-                      className="bx--visually-hidden"
-                      id="loading-id-6"
-                    >
+                    <path
+                      d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
+                    />
+                    <title>
+                      
+                    </title>
+                  </svg>
+                </div>
+              </div>
+              <div
+                className="iot--hotspot-container iot--hotspot-container--is-fixed"
+                data-testid="hotspot-45-25"
+                icon={null}
+                style={
+                  Object {
+                    "--height": 25,
+                    "--width": 25,
+                    "--x-pos": 45,
+                    "--y-pos": 25,
+                  }
+                }
+              >
+                <div
+                  aria-labelledby="hotspot-45-25"
+                  className="bx--tooltip__label"
+                  id="hotspot-45-25"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    height={25}
+                    width={25}
+                  >
+                    <circle
+                      cx={12.5}
+                      cy={12.5}
+                      fill="none"
+                      opacity="1"
+                      r={11.5}
+                      stroke="white"
+                      strokeWidth="2"
+                    />
+                    <circle
+                      cx={12.5}
+                      cy={12.5}
+                      fill="#0f0"
+                      opacity="0.7"
+                      r={11.5}
+                      stroke="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                className="iot--hotspot-container iot--hotspot-container--is-fixed"
+                data-testid="hotspot-45-50"
+                icon={null}
+                style={
+                  Object {
+                    "--height": 25,
+                    "--width": 25,
+                    "--x-pos": 45,
+                    "--y-pos": 50,
+                  }
+                }
+              >
+                <div
+                  aria-labelledby="hotspot-45-50"
+                  className="bx--tooltip__label"
+                  id="hotspot-45-50"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    height={25}
+                    width={25}
+                  >
+                    <circle
+                      cx={12.5}
+                      cy={12.5}
+                      fill="none"
+                      opacity="1"
+                      r={11.5}
+                      stroke="white"
+                      strokeWidth="2"
+                    />
+                    <circle
+                      cx={12.5}
+                      cy={12.5}
+                      fill="#00f"
+                      opacity="0.7"
+                      r={11.5}
+                      stroke="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+                data-testid="hotspot-45-75"
+                icon="arrowUp"
+                style={
+                  Object {
+                    "--height": 25,
+                    "--width": 25,
+                    "--x-pos": 45,
+                    "--y-pos": 75,
+                  }
+                }
+              >
+                <div
+                  aria-labelledby="hotspot-45-75"
+                  className="bx--tooltip__label"
+                  id="hotspot-45-75"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    aria-hidden={true}
+                    data-testid="card-icon"
+                    fill="blue"
+                    focusable="false"
+                    height={25}
+                    preserveAspectRatio="xMidYMid meet"
+                    title=""
+                    viewBox="0 0 32 32"
+                    width={25}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 24L4 15 5.414 13.586 13 21.171 26.586 7.586 28 9 13 24z"
+                    />
+                    <title>
+                      
+                    </title>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "bottom": 10,
+                  "pointerEvents": "auto",
+                  "position": "absolute",
+                  "right": 10,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "background": "#fff",
+                    "border": "none",
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "flex",
+                    "height": "25px",
+                    "justifyContent": "center",
+                    "width": "25px",
+                  }
+                }
+                title="Zoom in"
+                type="button"
+              >
+                +
+              </button>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "background": "#fff",
+                    "border": "none",
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "flex",
+                    "height": "25px",
+                    "justifyContent": "center",
+                    "width": "25px",
+                  }
+                }
+                title="Zoom out"
+                type="button"
+              >
+                -
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard error 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1.5rem",
+        "width": "1056px",
+      }
+    }
+  >
+    <div
+      accept={null}
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="image-hotspots"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "624px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Image"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Image
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Expand to fullscreen"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Expand to fullscreen"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+              />
+              <path
+                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "576px",
+          }
+        }
+      >
+        <div
+          className="iot--card--empty-message-wrapper"
+          style={
+            Object {
+              "--card-content-padding": "16px",
+            }
+          }
+        >
+          Error loading data for this card:  API threw Nullpointer
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard error loading image 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1.5rem",
+        "width": "1056px",
+      }
+    }
+  >
+    <div
+      accept={null}
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="image-hotspots"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "624px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Image"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Image
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Expand to fullscreen"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Expand to fullscreen"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+              />
+              <path
+                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "576px",
+          }
+        }
+      >
+        <div
+          className="iot--card--empty-message-wrapper"
+          style={
+            Object {
+              "--card-content-padding": "16px",
+            }
+          }
+        >
+          Error loading data for this card:  Error no image found called ImageID
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard hotspots are loading 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1.5rem",
+        "width": "1056px",
+      }
+    }
+  >
+    <div
+      accept={null}
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="image-hotspots"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "624px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Image"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Image
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Expand to fullscreen"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Expand to fullscreen"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+              />
+              <path
+                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "576px",
+          }
+        }
+      >
+        <div
+          className="iot--image-card__wrapper"
+        >
+          <div
+            onBlur={[Function]}
+            onMouseOut={[Function]}
+            style={
+              Object {
+                "background": "#eee",
+                "height": "100%",
+                "overflow": "hidden",
+                "position": "relative",
+                "textAlign": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <img
+              alt="Sample image"
+              className="iot--image-card-img"
+              id={null}
+              onLoad={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              onMouseUp={[Function]}
+              src="landscape.jpg"
+              style={
+                Object {
+                  "cursor": "auto",
+                  "height": "auto",
+                  "left": undefined,
+                  "objectFit": null,
+                  "position": "relative",
+                  "top": undefined,
+                  "width": "auto",
+                }
+              }
+            />
+            <div
+              aria-live="assertive"
+              className="bx--inline-loading"
+              style={
+                Object {
+                  "position": "absolute",
+                  "top": 0,
+                }
+              }
+            >
+              <div
+                className="bx--inline-loading__animation"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-labelledby="loading-id-5"
+                  aria-live="assertive"
+                  className="bx--loading bx--loading--small"
+                >
+                  <label
+                    className="bx--visually-hidden"
+                    id="loading-id-5"
+                  >
+                    Active loading indicator
+                  </label>
+                  <svg
+                    className="bx--loading__svg"
+                    viewBox="0 0 100 100"
+                  >
+                    <title>
                       Active loading indicator
-                    </label>
-                    <svg
-                      className="bx--loading__svg"
-                      viewBox="0 0 100 100"
-                    >
-                      <title>
-                        Active loading indicator
-                      </title>
-                      <circle
-                        className="bx--loading__background"
-                        cx="50%"
-                        cy="50%"
-                        r="42"
-                      />
-                      <circle
-                        className="bx--loading__stroke"
-                        cx="50%"
-                        cy="50%"
-                        r="42"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  className="bx--inline-loading__text"
-                >
-                  Loading hotspot data...
+                    </title>
+                    <circle
+                      className="bx--loading__background"
+                      cx="50%"
+                      cy="50%"
+                      r="42"
+                    />
+                    <circle
+                      className="bx--loading__stroke"
+                      cx="50%"
+                      cy="50%"
+                      r="42"
+                    />
+                  </svg>
                 </div>
               </div>
               <div
+                className="bx--inline-loading__text"
+              >
+                Loading hotspot data...
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "bottom": 10,
+                  "pointerEvents": "auto",
+                  "position": "absolute",
+                  "right": 10,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
                 style={
                   Object {
-                    "bottom": 10,
-                    "pointerEvents": "auto",
-                    "position": "absolute",
-                    "right": 10,
+                    "alignItems": "center",
+                    "background": "#fff",
+                    "border": "none",
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "flex",
+                    "height": "25px",
+                    "justifyContent": "center",
+                    "width": "25px",
+                  }
+                }
+                title="Zoom in"
+                type="button"
+              >
+                +
+              </button>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "background": "#fff",
+                    "border": "none",
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "flex",
+                    "height": "25px",
+                    "justifyContent": "center",
+                    "width": "25px",
+                  }
+                }
+                title="Zoom out"
+                type="button"
+              >
+                -
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard image upload error 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1.5rem",
+        "width": "1056px",
+      }
+    }
+  >
+    <div
+      accept={null}
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="image-hotspots"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "624px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Image"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Image
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        />
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "576px",
+          }
+        }
+      >
+        <div
+          className="iot--image-card__wrapper"
+        >
+          <div
+            className="iot--image-uploader"
+            data-testid="Card-image-uploader"
+          >
+            <div
+              className="bx--file"
+              onDragLeave={[Function]}
+              onDragOver={[Function]}
+              onDrop={[Function]}
+            >
+              <label
+                className="bx--file-browse-btn"
+                data-testid="Card-image-uploader-file-drop-container"
+                htmlFor="id16"
+                onKeyDown={[Function]}
+                size="field"
+                tabIndex={0}
+              >
+                <div
+                  className="bx--file__drop-container"
+                  role="button"
+                >
+                  
+                </div>
+                <input
+                  accept={Array []}
+                  className="bx--file-input"
+                  id="id16"
+                  multiple={false}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  tabIndex="-1"
+                  type="file"
+                />
+              </label>
+            </div>
+            <div
+              className="iot--image-uploader-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19,14a3,3,0,1,0-3-3A3,3,0,0,0,19,14Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,19,10Z"
+                />
+                <path
+                  d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,22H6V20l5-5,5.59,5.59a2,2,0,0,0,2.82,0L21,19l5,5Zm0-4.83-3.59-3.59a2,2,0,0,0-2.82,0L18,19.17l-5.59-5.59a2,2,0,0,0-2.82,0L6,17.17V6H26Z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--image-uploader-content"
+            >
+              <h2
+                className="iot--image-uploader-drop-label-text"
+              >
+                Drag file here or click to upload file
+              </h2>
+              <p
+                className="iot--image-uploader-drop-description-text"
+              >
+                Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
+              </p>
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--tertiary"
+                data-testid="Button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Add from gallery
+              </button>
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--tertiary"
+                data-testid="Button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Insert from URL
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard isEditable (experimental) 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1.5rem",
+        "width": "1056px",
+      }
+    }
+  >
+    <div
+      accept={null}
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="image-hotspots"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "624px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Image"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Image
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        />
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "576px",
+          }
+        }
+      >
+        <div
+          className="iot--image-card__wrapper"
+        >
+          <div
+            className="iot--image-uploader"
+            data-testid="Card-image-uploader"
+          >
+            <div
+              className="bx--file"
+              onDragLeave={[Function]}
+              onDragOver={[Function]}
+              onDrop={[Function]}
+            >
+              <label
+                className="bx--file-browse-btn"
+                data-testid="Card-image-uploader-file-drop-container"
+                htmlFor="id14"
+                onKeyDown={[Function]}
+                size="field"
+                tabIndex={0}
+              >
+                <div
+                  className="bx--file__drop-container"
+                  role="button"
+                >
+                  
+                </div>
+                <input
+                  accept={Array []}
+                  className="bx--file-input"
+                  id="id14"
+                  multiple={false}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  tabIndex="-1"
+                  type="file"
+                />
+              </label>
+            </div>
+            <div
+              className="iot--image-uploader-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19,14a3,3,0,1,0-3-3A3,3,0,0,0,19,14Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,19,10Z"
+                />
+                <path
+                  d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,22H6V20l5-5,5.59,5.59a2,2,0,0,0,2.82,0L21,19l5,5Zm0-4.83-3.59-3.59a2,2,0,0,0-2.82,0L18,19.17l-5.59-5.59a2,2,0,0,0-2.82,0L6,17.17V6H26Z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--image-uploader-content"
+            >
+              <h2
+                className="iot--image-uploader-drop-label-text"
+              >
+                Drag file here or click to upload file
+              </h2>
+              <p
+                className="iot--image-uploader-drop-description-text"
+              >
+                Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
+              </p>
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--tertiary"
+                data-testid="Button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Add from gallery
+              </button>
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="iot--btn bx--btn bx--btn--tertiary"
+                data-testid="Button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Insert from URL
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard with displayOptions 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1.5rem",
+        "width": "1056px",
+      }
+    }
+  >
+    <div
+      accept={null}
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="image-hotspots"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "624px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Image"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Image
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Expand to fullscreen"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Expand to fullscreen"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+              />
+              <path
+                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "576px",
+          }
+        }
+      >
+        <div
+          className="iot--image-card__wrapper"
+        >
+          <div
+            onBlur={[Function]}
+            onMouseOut={[Function]}
+            style={
+              Object {
+                "background": "#eee",
+                "height": "100%",
+                "overflow": "hidden",
+                "position": "relative",
+                "textAlign": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <img
+              alt="Sample image"
+              className="iot--image-card-img"
+              id={null}
+              onLoad={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              onMouseUp={[Function]}
+              src="landscape.jpg"
+              style={
+                Object {
+                  "cursor": "auto",
+                  "height": "auto",
+                  "left": undefined,
+                  "objectFit": null,
+                  "position": "relative",
+                  "top": undefined,
+                  "width": "auto",
+                }
+              }
+            />
+            <div
+              data-testid="null-hotspots-container"
+              style={
+                Object {
+                  "left": undefined,
+                  "margin": "auto",
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "right": "auto",
+                }
+              }
+            >
+              <div
+                className="iot--hotspot-container iot--hotspot-container--is-fixed"
+                data-testid="hotspot-0-0"
+                icon={null}
+                style={
+                  Object {
+                    "--height": 20,
+                    "--width": 20,
+                    "--x-pos": 0,
+                    "--y-pos": 0,
                   }
                 }
               >
-                <button
+                <div
+                  aria-labelledby="hotspot-0-0"
+                  className="bx--tooltip__label"
+                  id="hotspot-0-0"
+                  onBlur={[Function]}
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "background": "#fff",
-                      "border": "none",
-                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                      "height": "25px",
-                      "width": "25px",
-                    }
-                  }
-                  title="Zoom in"
-                  type="button"
-                >
-                  +
-                </button>
-                <br />
-                <button
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "background": "#fff",
-                      "border": "none",
-                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                      "height": "25px",
-                      "width": "25px",
-                    }
-                  }
-                  title="Zoom out"
-                  type="button"
-                >
-                  -
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard image upload error 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": "1.5rem",
-          "width": "1056px",
-        }
-      }
-    >
-      <div
-        accept={null}
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="image-hotspots"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "624px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Image"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Image
-            </div>
-          </span>
-          <div
-            className="iot--card--toolbar"
-          />
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "576px",
-            }
-          }
-        >
-          <div
-            className="iot--image-card__wrapper"
-          >
-            <div
-              className="iot--image-uploader"
-            >
-              <div
-                className="bx--file"
-                onDragLeave={[Function]}
-                onDragOver={[Function]}
-                onDrop={[Function]}
-              >
-                <label
-                  className="bx--file-browse-btn"
-                  htmlFor="id14"
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
                   onKeyDown={[Function]}
-                  size="field"
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
                   tabIndex={0}
                 >
-                  <div
-                    className="bx--file__drop-container"
-                    role="button"
+                  <svg
+                    height={20}
+                    width={20}
                   >
-                    
-                    <input
-                      accept={Array []}
-                      className="bx--file-input"
-                      id="id14"
-                      multiple={false}
-                      onChange={[Function]}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      type="file"
+                    <circle
+                      cx={10}
+                      cy={10}
+                      fill="none"
+                      opacity="1"
+                      r={9}
+                      stroke="white"
+                      strokeWidth="2"
                     />
-                  </div>
-                </label>
+                    <circle
+                      cx={10}
+                      cy={10}
+                      fill="green"
+                      opacity="0.7"
+                      r={9}
+                      stroke="none"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                className="iot--image-uploader-icon"
+                className="iot--hotspot-container iot--hotspot-container--is-fixed"
+                data-testid="hotspot-0-99.99"
+                icon={null}
+                style={
+                  Object {
+                    "--height": 20,
+                    "--width": 20,
+                    "--x-pos": 0,
+                    "--y-pos": 99.99,
+                  }
+                }
               >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19,14a3,3,0,1,0-3-3A3,3,0,0,0,19,14Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,19,10Z"
-                  />
-                  <path
-                    d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,22H6V20l5-5,5.59,5.59a2,2,0,0,0,2.82,0L21,19l5,5Zm0-4.83-3.59-3.59a2,2,0,0,0-2.82,0L18,19.17l-5.59-5.59a2,2,0,0,0-2.82,0L6,17.17V6H26Z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--image-uploader-content"
-              >
-                <h2
-                  className="iot--image-uploader-drop-label-text"
-                >
-                  Drag file here or click to upload file
-                </h2>
-                <p
-                  className="iot--image-uploader-drop-description-text"
-                >
-                  Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
-                </p>
-                <button
-                  aria-pressed={null}
-                  className="iot--btn bx--btn bx--btn--tertiary"
-                  data-testid="Button"
-                  disabled={false}
-                  onClick={null}
-                  tabIndex={0}
-                  type="button"
-                >
-                  Add from gallery
-                </button>
-                <button
-                  aria-pressed={null}
-                  className="iot--btn bx--btn bx--btn--tertiary"
-                  data-testid="Button"
-                  disabled={false}
+                <div
+                  aria-labelledby="hotspot-0-99.99"
+                  className="bx--tooltip__label"
+                  id="hotspot-0-99.99"
+                  onBlur={[Function]}
                   onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
-                >
-                  Insert from URL
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard isEditable (experimental) 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": "1.5rem",
-          "width": "1056px",
-        }
-      }
-    >
-      <div
-        accept={null}
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="image-hotspots"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "624px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Image"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Image
-            </div>
-          </span>
-          <div
-            className="iot--card--toolbar"
-          />
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "576px",
-            }
-          }
-        >
-          <div
-            className="iot--image-card__wrapper"
-          >
-            <div
-              className="iot--image-uploader"
-            >
-              <div
-                className="bx--file"
-                onDragLeave={[Function]}
-                onDragOver={[Function]}
-                onDrop={[Function]}
-              >
-                <label
-                  className="bx--file-browse-btn"
-                  htmlFor="id13"
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
                   onKeyDown={[Function]}
-                  size="field"
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
                   tabIndex={0}
                 >
-                  <div
-                    className="bx--file__drop-container"
-                    role="button"
+                  <svg
+                    height={20}
+                    width={20}
                   >
-                    
-                    <input
-                      accept={Array []}
-                      className="bx--file-input"
-                      id="id13"
-                      multiple={false}
-                      onChange={[Function]}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      type="file"
+                    <circle
+                      cx={10}
+                      cy={10}
+                      fill="none"
+                      opacity="1"
+                      r={9}
+                      stroke="white"
+                      strokeWidth="2"
                     />
-                  </div>
-                </label>
+                    <circle
+                      cx={10}
+                      cy={10}
+                      fill="green"
+                      opacity="0.7"
+                      r={9}
+                      stroke="none"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                className="iot--image-uploader-icon"
+                className="iot--hotspot-container iot--hotspot-container--is-fixed"
+                data-testid="hotspot-99.99-99.99"
+                icon={null}
+                style={
+                  Object {
+                    "--height": 20,
+                    "--width": 20,
+                    "--x-pos": 99.99,
+                    "--y-pos": 99.99,
+                  }
+                }
               >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19,14a3,3,0,1,0-3-3A3,3,0,0,0,19,14Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,19,10Z"
-                  />
-                  <path
-                    d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,22H6V20l5-5,5.59,5.59a2,2,0,0,0,2.82,0L21,19l5,5Zm0-4.83-3.59-3.59a2,2,0,0,0-2.82,0L18,19.17l-5.59-5.59a2,2,0,0,0-2.82,0L6,17.17V6H26Z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--image-uploader-content"
-              >
-                <h2
-                  className="iot--image-uploader-drop-label-text"
-                >
-                  Drag file here or click to upload file
-                </h2>
-                <p
-                  className="iot--image-uploader-drop-description-text"
-                >
-                  Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
-                </p>
-                <button
-                  aria-pressed={null}
-                  className="iot--btn bx--btn bx--btn--tertiary"
-                  data-testid="Button"
-                  disabled={false}
-                  onClick={null}
-                  tabIndex={0}
-                  type="button"
-                >
-                  Add from gallery
-                </button>
-                <button
-                  aria-pressed={null}
-                  className="iot--btn bx--btn bx--btn--tertiary"
-                  data-testid="Button"
-                  disabled={false}
+                <div
+                  aria-labelledby="hotspot-99.99-99.99"
+                  className="bx--tooltip__label"
+                  id="hotspot-99.99-99.99"
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
                   tabIndex={0}
-                  type="button"
                 >
-                  Insert from URL
-                </button>
+                  <svg
+                    height={20}
+                    width={20}
+                  >
+                    <circle
+                      cx={10}
+                      cy={10}
+                      fill="none"
+                      opacity="1"
+                      r={9}
+                      stroke="white"
+                      strokeWidth="2"
+                    />
+                    <circle
+                      cx={10}
+                      cy={10}
+                      fill="green"
+                      opacity="0.7"
+                      r={9}
+                      stroke="none"
+                    />
+                  </svg>
+                </div>
               </div>
+              <div
+                className="iot--hotspot-container iot--hotspot-container--is-fixed"
+                data-testid="hotspot-99.99-0"
+                icon={null}
+                style={
+                  Object {
+                    "--height": 20,
+                    "--width": 20,
+                    "--x-pos": 99.99,
+                    "--y-pos": 0,
+                  }
+                }
+              >
+                <div
+                  aria-labelledby="hotspot-99.99-0"
+                  className="bx--tooltip__label"
+                  id="hotspot-99.99-0"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    height={20}
+                    width={20}
+                  >
+                    <circle
+                      cx={10}
+                      cy={10}
+                      fill="none"
+                      opacity="1"
+                      r={9}
+                      stroke="white"
+                      strokeWidth="2"
+                    />
+                    <circle
+                      cx={10}
+                      cy={10}
+                      fill="green"
+                      opacity="0.7"
+                      r={9}
+                      stroke="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "bottom": 10,
+                  "pointerEvents": "auto",
+                  "position": "absolute",
+                  "right": 10,
+                }
+              }
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "background": "#fff",
+                    "border": "none",
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "flex",
+                    "height": "25px",
+                    "justifyContent": "center",
+                    "width": "25px",
+                  }
+                }
+                title="Zoom in"
+                type="button"
+              >
+                +
+              </button>
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "background": "#fff",
+                    "border": "none",
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "flex",
+                    "height": "25px",
+                    "justifyContent": "center",
+                    "width": "25px",
+                  }
+                }
+                title="Zoom out"
+                type="button"
+              >
+                -
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

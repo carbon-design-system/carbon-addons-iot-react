@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import { spacing02 } from '@carbon/layout';
 
+import Button from '../Button';
 import { COLORS } from '../../styles/styles';
 
 const ResourceListSection = styled.section`
@@ -66,6 +66,8 @@ class ResourceList extends Component {
     currentItemId: PropTypes.string,
     /** Extra content element */
     extraContent: PropTypes.arrayOf(PropTypes.node),
+
+    testId: PropTypes.string,
   };
 
   static defaultProps = {
@@ -74,6 +76,7 @@ class ResourceList extends Component {
     currentItemId: null,
     extraContent: null,
     customAction: null,
+    testId: 'resource-list',
   };
 
   constructor(props) {
@@ -82,7 +85,15 @@ class ResourceList extends Component {
   }
 
   render = () => {
-    const { design, data, customAction, currentItemId, onRowClick, extraContent } = this.props;
+    const {
+      design,
+      data,
+      customAction,
+      currentItemId,
+      onRowClick,
+      extraContent,
+      testId,
+    } = this.props;
 
     const checkboxCell = (
       <div className="bx--structured-list-td" style={{ verticalAlign: 'middle' }}>
@@ -103,6 +114,7 @@ class ResourceList extends Component {
           kind="ghost"
           renderIcon={customAction.icon}
           onClick={() => customAction.onClick(rowId)}
+          testId={`${testId}-custom-action-${rowId}`}
         >
           {customAction.label}
         </Button>
@@ -121,6 +133,7 @@ class ResourceList extends Component {
           } bx--structured-list-row`}
           tabIndex={customAction ? -1 : idx}
           onClick={onRowClick ? () => onRowClick(id) : null}
+          data-testid={`${testId}-row-${id}`}
         >
           {extraContent ? (
             <div className="bx--structured-list-td">{extraContent[idx]}</div>
@@ -162,6 +175,7 @@ class ResourceList extends Component {
 
     return (
       <ResourceListSection
+        data-testid={testId}
         className={[
           'bx--structured-list',
           'bx--structured-list--border',

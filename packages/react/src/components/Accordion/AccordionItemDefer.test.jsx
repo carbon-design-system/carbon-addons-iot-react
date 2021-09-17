@@ -6,6 +6,18 @@ import AccordionItemDefer from './AccordionItemDefer';
 import { Accordion } from '.';
 
 describe('AccordionItemDefer', () => {
+  it('should be selectable by testId', () => {
+    render(
+      <Accordion>
+        <AccordionItemDefer id="a" title="Title one" testId="DEFFERED">
+          <p>This content</p>
+        </AccordionItemDefer>
+      </Accordion>
+    );
+
+    expect(screen.getByTestId('DEFFERED')).toBeDefined();
+  });
+
   it('renders content when expanded', () => {
     const { container } = render(
       <Accordion>
@@ -43,5 +55,18 @@ describe('AccordionItemDefer', () => {
     expect(
       screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);
+  });
+
+  it('triggers callback when heading is clicked', () => {
+    const headingClicked = jest.fn();
+    render(
+      <Accordion>
+        <AccordionItemDefer id="a" title="Title one" onHeadingClick={headingClicked}>
+          <p>This content</p>
+        </AccordionItemDefer>
+      </Accordion>
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Title one' }));
+    expect(headingClicked).toHaveBeenCalled();
   });
 });

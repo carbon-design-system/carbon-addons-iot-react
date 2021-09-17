@@ -1,9 +1,14 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { render, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import { settings } from '../../constants/Settings';
 
 import TileCatalogNew from './TileCatalogNew';
 import SampleTile from './SampleTile';
+
+const { prefix } = settings;
 
 const getTiles = (num) => {
   const tiles = [];
@@ -19,6 +24,29 @@ const getTiles = (num) => {
 };
 
 describe('TileCatalogNew', () => {
+  it('should be selectable by testId', () => {
+    render(
+      <TileCatalogNew
+        tiles={getTiles(4, 'Tile')}
+        title="Test Tile Catalog"
+        numRows={1}
+        numColumns={2}
+        hasSearch
+        hasSort
+        hasPagination
+        testId="tile_catalog_new"
+      />
+    );
+    expect(screen.getByTestId('tile_catalog_new')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-grid')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-header')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-title')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-sort-select')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-search-input')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-pagination-backward-button')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-pagination-foreward-button')).toBeDefined();
+    expect(screen.getByTestId('tile_catalog_new-pagination-page-2-button')).toBeDefined();
+  });
   it('TileCatalogNew gets rendered', () => {
     render(
       <TileCatalogNew
@@ -45,16 +73,9 @@ describe('TileCatalogNew', () => {
     expect(screen.getByText('Tile 2')).toBeTruthy();
   });
 
-  it('TileCatalogNew to have default call back function ', () => {
-    expect(TileCatalogNew.defaultProps.onSearch).toBeDefined();
-    expect(TileCatalogNew.defaultProps.onSort).toBeDefined();
-    TileCatalogNew.defaultProps.onSearch();
-    TileCatalogNew.defaultProps.onSort();
-  });
-
   it('TileCatalogNew hasSearch set to true', () => {
     const onSearch = jest.fn();
-    render(
+    const { rerender } = render(
       <TileCatalogNew
         tiles={getTiles(8, 'Tile')}
         numColumns={2}
@@ -63,10 +84,16 @@ describe('TileCatalogNew', () => {
         onSearch={onSearch}
       />
     );
-    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
-      target: { value: '5' },
-    });
-    expect(onSearch).toHaveBeenCalled();
+    userEvent.type(screen.getByPlaceholderText('Enter a value'), '5');
+    expect(onSearch).toHaveBeenCalledTimes(1);
+    expect(screen.getByPlaceholderText('Enter a value')).toHaveValue('5');
+
+    jest.spyOn(TileCatalogNew.defaultProps, 'onSearch');
+    rerender(<TileCatalogNew tiles={getTiles(8, 'Tile')} numColumns={2} numRows={2} hasSearch />);
+    userEvent.type(screen.getByPlaceholderText('Enter a value'), '5');
+    expect(TileCatalogNew.defaultProps.onSearch).toHaveBeenCalledTimes(1);
+    expect(screen.getByPlaceholderText('Enter a value')).toHaveValue('55');
+    jest.resetAllMocks();
   });
 
   it('TileCatalogNew hasSort set to true', () => {
@@ -78,20 +105,54 @@ describe('TileCatalogNew', () => {
     const selectedSortOption = 'Choose from options';
     const onSort = jest.fn();
 
-    render(
+    const { rerender } = render(
       <TileCatalogNew
         tiles={getTiles(2, 'Tile')}
         hasSort
         onSort={onSort}
         sortOptions={sortOptions}
         selectedSortOption={selectedSortOption}
+      />
+    );
+    userEvent.selectOptions(screen.getByRole('listbox'), 'Z-A');
+    expect(onSort).toHaveBeenCalledWith('Z-A');
+
+    jest.spyOn(TileCatalogNew.defaultProps, 'onSort');
+    rerender(
+      <TileCatalogNew
+        tiles={getTiles(2, 'Tile')}
+        hasSort
+        sortOptions={sortOptions}
+        selectedSortOption={selectedSortOption}
         hasSearch
       />
     );
-    fireEvent.change(screen.getByDisplayValue('Choose from options'), {
-      target: { value: 'Z-A' },
-    });
-    expect(onSort).toHaveBeenCalled(); // https://github.com/carbon-design-system/carbon/issues/7595
+    userEvent.selectOptions(screen.getByRole('listbox'), 'Z-A');
+    expect(TileCatalogNew.defaultProps.onSort).toHaveBeenCalledTimes(1);
+    expect(TileCatalogNew.defaultProps.onSort).toHaveBeenCalledWith('Z-A');
+    jest.resetAllMocks();
+  });
+
+  it('should go to the page clicked', () => {
+    render(
+      <TileCatalogNew
+        title="Test Tile Catalog"
+        tiles={getTiles(8, 'Tile')}
+        numColumns={2}
+        numRows={2}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'page 2' }));
+    expect(screen.getByText('Tile 5')).toBeVisible();
+    expect(screen.getByText('Tile 6')).toBeVisible();
+    expect(screen.getByText('Tile 7')).toBeVisible();
+    expect(screen.getByText('Tile 8')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'page 1' }));
+    expect(screen.getByText('Tile 1')).toBeVisible();
+    expect(screen.getByText('Tile 2')).toBeVisible();
+    expect(screen.getByText('Tile 3')).toBeVisible();
+    expect(screen.getByText('Tile 4')).toBeVisible();
   });
 
   it('TileCatalogNew pagination next button', () => {
@@ -104,12 +165,11 @@ describe('TileCatalogNew', () => {
       />
     );
 
-    const buttons = screen.getAllByRole('button');
-    fireEvent.click(buttons[buttons.length - 1]);
-    expect(screen.getByText('Tile 6')).toBeTruthy();
-    expect(screen.getByText('Tile 5')).toBeTruthy();
-    expect(screen.getByText('Tile 7')).toBeTruthy();
-    expect(screen.getByText('Tile 8')).toBeTruthy();
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getByText('Tile 5')).toBeVisible();
+    expect(screen.getByText('Tile 6')).toBeVisible();
+    expect(screen.getByText('Tile 7')).toBeVisible();
+    expect(screen.getByText('Tile 8')).toBeVisible();
   });
 
   it('TileCatalogNew pagination previous button', () => {
@@ -121,31 +181,12 @@ describe('TileCatalogNew', () => {
         numRows={2}
       />
     );
-    const buttons = screen.getAllByRole('button');
-    fireEvent.click(buttons[buttons.length - 1]);
-    fireEvent.click(buttons[0]);
-    expect(screen.getByText('Tile 1')).toBeTruthy();
-    expect(screen.getByText('Tile 2')).toBeTruthy();
-    expect(screen.getByText('Tile 3')).toBeTruthy();
-    expect(screen.getByText('Tile 4')).toBeTruthy();
-  });
-
-  it('TileCatalogNew pagination number button', () => {
-    render(
-      <TileCatalogNew
-        title="Test Tile Catalog"
-        tiles={getTiles(20, 'Tile')}
-        numColumns={2}
-        numRows={2}
-      />
-    );
-    const buttons = screen.getAllByRole('button');
-    fireEvent.click(buttons[buttons.length - 2]);
-    fireEvent.click(buttons[0]);
-    expect(screen.getByText('Tile 13')).toBeTruthy();
-    expect(screen.getByText('Tile 14')).toBeTruthy();
-    expect(screen.getByText('Tile 15')).toBeTruthy();
-    expect(screen.getByText('Tile 16')).toBeTruthy();
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    userEvent.click(screen.getByRole('button', { name: 'Previous page' }));
+    expect(screen.getByText('Tile 1')).toBeVisible();
+    expect(screen.getByText('Tile 2')).toBeVisible();
+    expect(screen.getByText('Tile 3')).toBeVisible();
+    expect(screen.getByText('Tile 4')).toBeVisible();
   });
 
   it('TileCatalogNew pagination does not render with only one page', () => {
@@ -169,20 +210,30 @@ describe('TileCatalogNew', () => {
     expect(screen.queryByText('Next page')).toBeNull();
   });
 
-  it('TileCatalogNew renders loading state', () => {
-    render(
+  it('TileCatalogNew renders loading state for each tile upto 4', () => {
+    const { container, rerender } = render(
       <TileCatalogNew
         title="Test Tile Catalog"
-        tiles={getTiles(4, 'Tile')}
+        tiles={getTiles(3, 'Tile')}
         numColumns={2}
         numRows={2}
         isLoading
       />
     );
-    expect(screen.queryByText('Tile 1')).toBeNull();
-    expect(screen.queryByText('Tile 2')).toBeNull();
-    expect(screen.queryByText('Tile 3')).toBeNull();
-    expect(screen.queryByText('Tile 4')).toBeNull();
+
+    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)).toHaveLength(3);
+
+    rerender(
+      <TileCatalogNew
+        title="Test Tile Catalog"
+        tiles={getTiles(5, 'Tile')}
+        numColumns={2}
+        numRows={2}
+        isLoading
+      />
+    );
+
+    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)).toHaveLength(4);
   });
 
   it('TileCatalogNew renders error state', () => {

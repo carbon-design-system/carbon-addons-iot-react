@@ -58,30 +58,32 @@ export const SideNavPropTypes = {
     })
   ).isRequired,
   isSideNavExpanded: PropTypes.bool,
-  /** An array of strings which will be options of switcher */
-  // switcherProps: PropTypes.obj,
   i18n: PropTypes.shape({
     closeText: PropTypes.string,
     openText: PropTypes.string,
+    sideNavLabelText: PropTypes.string,
   }),
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   defaultExpanded: false,
   isSideNavExpanded: false,
-  // switcherProps: null,
   i18n: {
     closeText: 'Close',
     openText: 'Open',
+    sideNavLabelText: 'Side navigation',
   },
+  testId: 'side-nav',
 };
 
 /**
  * Side Navigation. part of UI shell
  */
-const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) => {
+const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, testId, ...props }) => {
   const nav = links
-    .map((link) => {
+    .map((link, index) => {
       const enabled = link.isEnabled ? link.isEnabled : false;
       if (!enabled) {
         return null;
@@ -96,6 +98,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
             <SideNavMenuItem
               key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
               isActive={childlink.isActive}
+              data-testid={`${testId}-menu-item-${index}`}
               {...childlink.metaData}
             >
               {childlink.content}
@@ -109,6 +112,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
             aria-label="dropdown"
             key={`menu-link-${links.indexOf(link)}-dropdown`}
             title={link.linkContent}
+            data-testid={`${testId}-menu-${index}`}
           >
             {children}
           </SideNavMenu>
@@ -122,6 +126,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
           href={link.metaData.href}
           renderIcon={link.icon}
           isActive={link.isActive}
+          data-testid={`${testId}-link-${index}`}
           {...link.metaData}
         >
           {link.linkContent}
@@ -130,23 +135,27 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
     })
     .filter((i) => i);
 
-  const translateById = (id) =>
-    id !== 'carbon.sidenav.state.closed' ? i18n.closeText : i18n.openText;
+  // TODO: Will be added back in when footer is added for rails.
+  // see: https://github.com/carbon-design-system/carbon/blob/main/packages/react/src/components/UIShell/SideNav.js#L143
+  // const translateById = (id) =>
+  //   id !== 'carbon.sidenav.state.closed' ? i18n.closeText : i18n.openText;
 
   return (
     <CarbonSideNav
+      data-testid={testId}
       className={classnames(`${iotPrefix}--side-nav`, {
         [`${iotPrefix}--side-nav--expanded`]: isSideNavExpanded,
         [`${prefix}--side-nav--expanded`]: isSideNavExpanded,
       })}
       expanded={isSideNavExpanded}
-      translateById={translateById}
-      aria-label="Side navigation"
+      // TODO: Will be added back in when footer is added for rails.
+      // see: https://github.com/carbon-design-system/carbon/blob/main/packages/react/src/components/UIShell/SideNav.js#L143
+      // translateById={translateById}
+      aria-label={i18n.sideNavLabelText}
       defaultExpanded={defaultExpanded}
       isRail
       {...props} // spreading here as base component does not pass to DOM element.
     >
-      {/* {switcherProps && <SideNavSwitcher {...switcherProps} />} */}
       <SideNavItems>{nav}</SideNavItems>
     </CarbonSideNav>
   );

@@ -1,2911 +1,2686 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Base with col / row specified 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Base with col / row specified 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "60rem",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "60rem",
-        }
-      }
-    >
-      <div>
-        <div
-          className="iot--tile-catalog--canvas-container"
-        >
-          <div
-            className="iot--tile-catalog--tile-canvas"
-          >
-            <div
-              className="iot--tile-catalog--tile-canvas--header"
-            >
-              <div
-                className="iot--tile-catalog--tile-canvas--header--title"
-              >
-                Product name
-              </div>
-              <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
-              >
-                <div
-                  aria-labelledby="44-search"
-                  className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                  role="search"
-                >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="44"
-                    id="44-search"
-                  >
-                    Filter table
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    id="44"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Enter a value"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                className="iot--tile-catalog--tile-canvas--header--select"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="iot--tile-catalog--tile-canvas--header--select"
-                    >
-                      
-                    </label>
-                    <div
-                      className="bx--select-input__wrapper"
-                      data-invalid={null}
-                    >
-                      <select
-                        className="bx--select-input"
-                        defaultValue=""
-                        id="iot--tile-catalog--tile-canvas--header--select"
-                        onChange={[Function]}
-                      />
-                      <svg
-                        aria-hidden={true}
-                        className="bx--select__arrow"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--content"
-            >
-              <div
-                className="iot--tile-catalog--grid-container"
-                style={
-                  Object {
-                    "--columns": "repeat(2, 1fr)",
-                  }
-                }
-              >
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      1
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      2
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      3
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      4
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--bottom"
-            >
-              <nav
-                aria-label="pagination"
-                className="bx--pagination-nav"
-              >
-                <ul
-                  className="bx--pagination-nav__list"
-                >
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-disabled="true"
-                      className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        Previous page
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        className="bx--pagination-nav__icon"
-                        focusable="false"
-                        height="8"
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 5 8"
-                        width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 8L0 4 5 0z"
-                        />
-                      </svg>
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={true}
-                      className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      1
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      2
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      className="bx--pagination-nav__page bx--pagination-nav__page--direction"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        Next page
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        className="bx--pagination-nav__icon"
-                        focusable="false"
-                        height="8"
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 5 8"
-                        width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 0L5 4 0 8z"
-                        />
-                      </svg>
-                    </button>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Dynamic resize with tile width specification 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
-      <div>
-        <div
-          className="iot--tile-catalog--canvas-container"
-        >
-          <div
-            className="iot--tile-catalog--tile-canvas"
-          >
-            <div
-              className="iot--tile-catalog--tile-canvas--header"
-            >
-              <div
-                className="iot--tile-catalog--tile-canvas--header--title"
-              >
-                Product name
-              </div>
-              <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
-              >
-                <div
-                  aria-labelledby="45-search"
-                  className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                  role="search"
-                >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="45"
-                    id="45-search"
-                  >
-                    Filter table
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    id="45"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Enter a value"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                className="iot--tile-catalog--tile-canvas--header--select"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="iot--tile-catalog--tile-canvas--header--select"
-                    >
-                      
-                    </label>
-                    <div
-                      className="bx--select-input__wrapper"
-                      data-invalid={null}
-                    >
-                      <select
-                        className="bx--select-input"
-                        defaultValue=""
-                        id="iot--tile-catalog--tile-canvas--header--select"
-                        onChange={[Function]}
-                      />
-                      <svg
-                        aria-hidden={true}
-                        className="bx--select__arrow"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--content"
-            >
-              <div
-                className="iot--tile-catalog--grid-container"
-                style={
-                  Object {
-                    "--columns": "repeat(auto-fill, minmax(15rem, 1fr))",
-                  }
-                }
-              >
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      1
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      2
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      3
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      4
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      5
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--bottom"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Error 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "60rem",
-        }
-      }
-    >
-      <div>
-        <div
-          className="iot--tile-catalog--canvas-container"
-        >
-          <div
-            className="iot--tile-catalog--tile-canvas"
-          >
-            <div
-              className="iot--tile-catalog--tile-canvas--header"
-            >
-              <div
-                className="iot--tile-catalog--tile-canvas--header--title"
-              >
-                Product name
-              </div>
-              <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
-              >
-                <div
-                  aria-labelledby="47-search"
-                  className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                  role="search"
-                >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="47"
-                    id="47-search"
-                  >
-                    Filter table
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    id="47"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Enter a value"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                className="iot--tile-catalog--tile-canvas--header--select"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="iot--tile-catalog--tile-canvas--header--select"
-                    >
-                      
-                    </label>
-                    <div
-                      className="bx--select-input__wrapper"
-                      data-invalid={null}
-                    >
-                      <select
-                        className="bx--select-input"
-                        defaultValue=""
-                        id="iot--tile-catalog--tile-canvas--header--select"
-                        onChange={[Function]}
-                      />
-                      <svg
-                        aria-hidden={true}
-                        className="bx--select__arrow"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="bx--tile iot--tile-catalog--empty-tile"
-            >
-              <svg
-                aria-hidden={true}
-                fill="currentColor"
-                focusable="false"
-                height={32}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={32}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
-                />
-              </svg>
-              <p>
-                An error has occurred. Please make sure your catalog has content.
-              </p>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--bottom"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Get Tiles 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="sample-tile"
+      data-testid="tile-catalog-new"
     >
       <div
-        className="sample-tile--title"
+        className="iot--tile-catalog--canvas-container"
       >
-        1
+        <div
+          className="iot--tile-catalog--tile-canvas"
+        >
+          <div
+            className="iot--tile-catalog--tile-canvas--header"
+            data-testid="tile-catalog-new-header"
+          >
+            <div
+              className="iot--tile-catalog--tile-canvas--header--title"
+              data-testid="tile-catalog-new-title"
+            >
+              Product name
+            </div>
+            <div
+              aria-labelledby="30-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
+            >
+              <div
+                className="bx--search-magnifier"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
+              <label
+                className="bx--label"
+                htmlFor="30"
+                id="30-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                data-testid="tile-catalog-new-search-input"
+                id="30"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="iot--tile-catalog--tile-canvas--header--select"
+            >
+              <div
+                className="bx--form-item"
+              >
+                <div
+                  className="bx--select"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="iot--tile-catalog--tile-canvas--header--select"
+                  >
+                    
+                  </label>
+                  <div
+                    className="bx--select-input__wrapper"
+                    data-invalid={null}
+                  >
+                    <select
+                      className="bx--select-input"
+                      data-testid="tile-catalog-new-sort-select"
+                      defaultValue=""
+                      id="iot--tile-catalog--tile-canvas--header--select"
+                      onChange={[Function]}
+                      role="listbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="bx--select__arrow"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--content"
+          >
+            <div
+              className="iot--tile-catalog--grid-container"
+              data-testid="tile-catalog-new-grid"
+              style={
+                Object {
+                  "--columns": "repeat(2, 1fr)",
+                }
+              }
+            >
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    1
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    2
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    3
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    4
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--bottom"
+          >
+            <nav
+              aria-label="pagination"
+              className="bx--pagination-nav"
+            >
+              <ul
+                className="bx--pagination-nav__list"
+              >
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-disabled="true"
+                    className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
+                    data-testid="tile-catalog-new-pagination-backward-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      Previous page
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      className="bx--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 8L0 4 5 0z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={true}
+                    className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
+                    data-testid="tile-catalog-new-pagination-page-1-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    1
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-2-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    2
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    className="bx--pagination-nav__page bx--pagination-nav__page--direction"
+                    data-testid="tile-catalog-new-pagination-foreward-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      Next page
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      className="bx--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0L5 4 0 8z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Dynamic resize with tile width specification 1`] = `
+<div
+  className="storybook-container"
+>
+  <div>
+    <div
+      data-testid="tile-catalog-new"
+    >
       <div
-        className="sample-tile--content"
+        className="iot--tile-catalog--canvas-container"
       >
-        This is a sample product tile
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew Loading 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "60rem",
-        }
-      }
-    >
-      <div>
         <div
-          className="iot--tile-catalog--canvas-container"
+          className="iot--tile-catalog--tile-canvas"
         >
           <div
-            className="iot--tile-catalog--tile-canvas"
+            className="iot--tile-catalog--tile-canvas--header"
+            data-testid="tile-catalog-new-header"
           >
             <div
-              className="iot--tile-catalog--tile-canvas--header"
+              className="iot--tile-catalog--tile-canvas--header--title"
+              data-testid="tile-catalog-new-title"
+            >
+              Product name
+            </div>
+            <div
+              aria-labelledby="31-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                className="iot--tile-catalog--tile-canvas--header--title"
+                className="bx--search-magnifier"
               >
-                Product name
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
               </div>
-              <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
+              <label
+                className="bx--label"
+                htmlFor="31"
+                id="31-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                data-testid="tile-catalog-new-search-input"
+                id="31"
                 onBlur={[Function]}
-                onClick={[Function]}
+                onChange={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
                 tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="iot--tile-catalog--tile-canvas--header--select"
+            >
+              <div
+                className="bx--form-item"
               >
                 <div
-                  aria-labelledby="46-search"
-                  className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                  role="search"
+                  className="bx--select"
                 >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
                   <label
                     className="bx--label"
-                    htmlFor="46"
-                    id="46-search"
+                    htmlFor="iot--tile-catalog--tile-canvas--header--select"
                   >
-                    Filter table
+                    
                   </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    id="46"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Enter a value"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
+                  <div
+                    className="bx--select-input__wrapper"
+                    data-invalid={null}
                   >
+                    <select
+                      className="bx--select-input"
+                      data-testid="tile-catalog-new-sort-select"
+                      defaultValue=""
+                      id="iot--tile-catalog--tile-canvas--header--select"
+                      onChange={[Function]}
+                      role="listbox"
+                    />
                     <svg
                       aria-hidden={true}
+                      className="bx--select__arrow"
                       fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
+                      viewBox="0 0 16 16"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                       />
                     </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                className="iot--tile-catalog--tile-canvas--header--select"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="iot--tile-catalog--tile-canvas--header--select"
-                    >
-                      
-                    </label>
-                    <div
-                      className="bx--select-input__wrapper"
-                      data-invalid={null}
-                    >
-                      <select
-                        className="bx--select-input"
-                        defaultValue=""
-                        id="iot--tile-catalog--tile-canvas--header--select"
-                        onChange={[Function]}
-                      />
-                      <svg
-                        aria-hidden={true}
-                        className="bx--select__arrow"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                      </svg>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--content"
+          >
             <div
-              className="iot--tile-catalog--tile-canvas--content"
-            >
-              <div
-                className="iot--tile-catalog--grid-container"
-                style={
-                  Object {
-                    "--columns": "repeat(2, 1fr)",
-                  }
+              className="iot--tile-catalog--grid-container"
+              data-testid="tile-catalog-new-grid"
+              style={
+                Object {
+                  "--columns": "repeat(auto-fill, minmax(15rem, 1fr))",
                 }
-              >
-                <p
-                  className="bx--skeleton__text"
-                  style={
-                    Object {
-                      "width": "100%",
-                    }
-                  }
-                />
-                <p
-                  className="bx--skeleton__text"
-                  style={
-                    Object {
-                      "width": "100%",
-                    }
-                  }
-                />
-                <p
-                  className="bx--skeleton__text"
-                  style={
-                    Object {
-                      "width": "100%",
-                    }
-                  }
-                />
-                <p
-                  className="bx--skeleton__text"
-                  style={
-                    Object {
-                      "width": "100%",
-                    }
-                  }
-                />
+              }
+            >
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    1
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    2
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    3
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    4
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    5
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
               </div>
             </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--bottom"
-            />
           </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--bottom"
+          />
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew StatefulTileCatalog 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Error 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "60rem",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "60rem",
-        }
-      }
+      data-testid="tile-catalog-new"
     >
-      <div>
+      <div
+        className="iot--tile-catalog--canvas-container"
+      >
         <div
-          className="iot--tile-catalog--canvas-container"
+          className="iot--tile-catalog--tile-canvas"
         >
           <div
-            className="iot--tile-catalog--tile-canvas"
+            className="iot--tile-catalog--tile-canvas--header"
+            data-testid="tile-catalog-new-header"
           >
             <div
-              className="iot--tile-catalog--tile-canvas--header"
+              className="iot--tile-catalog--tile-canvas--header--title"
+              data-testid="tile-catalog-new-title"
+            >
+              Product name
+            </div>
+            <div
+              aria-labelledby="33-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                className="iot--tile-catalog--tile-canvas--header--title"
+                className="bx--search-magnifier"
               >
-                Product name
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
               </div>
-              <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
+              <label
+                className="bx--label"
+                htmlFor="33"
+                id="33-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                data-testid="tile-catalog-new-search-input"
+                id="33"
                 onBlur={[Function]}
-                onClick={[Function]}
+                onChange={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
                 tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="iot--tile-catalog--tile-canvas--header--select"
+            >
+              <div
+                className="bx--form-item"
               >
                 <div
-                  aria-labelledby="50-search"
-                  className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                  role="search"
+                  className="bx--select"
                 >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
                   <label
                     className="bx--label"
-                    htmlFor="50"
-                    id="50-search"
+                    htmlFor="iot--tile-catalog--tile-canvas--header--select"
                   >
-                    Filter table
+                    
                   </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    id="50"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Enter a value"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
+                  <div
+                    className="bx--select-input__wrapper"
+                    data-invalid={null}
                   >
+                    <select
+                      className="bx--select-input"
+                      data-testid="tile-catalog-new-sort-select"
+                      defaultValue=""
+                      id="iot--tile-catalog--tile-canvas--header--select"
+                      onChange={[Function]}
+                      role="listbox"
+                    />
                     <svg
                       aria-hidden={true}
+                      className="bx--select__arrow"
                       fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
+                      viewBox="0 0 16 16"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                       />
                     </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                className="iot--tile-catalog--tile-canvas--header--select"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="iot--tile-catalog--tile-canvas--header--select"
-                    >
-                      
-                    </label>
-                    <div
-                      className="bx--select-input__wrapper"
-                      data-invalid={null}
-                    >
-                      <select
-                        className="bx--select-input"
-                        defaultValue="Choose from options"
-                        id="iot--tile-catalog--tile-canvas--header--select"
-                        onChange={[Function]}
-                      >
-                        <option
-                          className="bx--select-option"
-                          disabled={false}
-                          hidden={false}
-                          value="Choose from options"
-                        >
-                          Choose from options
-                        </option>
-                        <option
-                          className="bx--select-option"
-                          disabled={false}
-                          hidden={false}
-                          value="A-Z"
-                        >
-                          A-Z
-                        </option>
-                        <option
-                          className="bx--select-option"
-                          disabled={false}
-                          hidden={false}
-                          value="Z-A"
-                        >
-                          Z-A
-                        </option>
-                      </select>
-                      <svg
-                        aria-hidden={true}
-                        className="bx--select__arrow"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                      </svg>
-                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--content"
-            >
-              <div
-                className="iot--tile-catalog--grid-container"
-                style={
-                  Object {
-                    "--columns": "repeat(4, 1fr)",
-                  }
-                }
-              >
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      1
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      2
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      3
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      4
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      5
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      6
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      7
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      8
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--bottom"
-            >
-              <nav
-                aria-label="pagination"
-                className="bx--pagination-nav"
-              >
-                <ul
-                  className="bx--pagination-nav__list"
-                >
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-disabled="true"
-                      className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        Previous page
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        className="bx--pagination-nav__icon"
-                        focusable="false"
-                        height="8"
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 5 8"
-                        width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 8L0 4 5 0z"
-                        />
-                      </svg>
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={true}
-                      className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      1
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      2
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      3
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      className="bx--pagination-nav__page bx--pagination-nav__page--direction"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        Next page
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        className="bx--pagination-nav__icon"
-                        focusable="false"
-                        height="8"
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 5 8"
-                        width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 0L5 4 0 8z"
-                        />
-                      </svg>
-                    </button>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </div>
+          <div
+            className="bx--tile iot--tile-catalog--empty-tile"
+            data-testid="tile-catalog-new-empty"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={32}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={32}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
+              />
+            </svg>
+            <p>
+              An error has occurred. Please make sure your catalog has content.
+            </p>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--bottom"
+          />
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew With OverflowMenu in Pagination 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Get Tiles 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="sample-tile"
   >
     <div
-      style={
-        Object {
-          "width": "60rem",
-        }
-      }
+      className="sample-tile--title"
     >
-      <div>
-        <div
-          className="iot--tile-catalog--canvas-container"
-        >
-          <div
-            className="iot--tile-catalog--tile-canvas"
-          >
-            <div
-              className="iot--tile-catalog--tile-canvas--header"
-            >
-              <div
-                className="iot--tile-catalog--tile-canvas--header--title"
-              >
-                Product name
-              </div>
-              <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                tabIndex="0"
-              >
-                <div
-                  aria-labelledby="48-search"
-                  className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                  role="search"
-                >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
-                  <label
-                    className="bx--label"
-                    htmlFor="48"
-                    id="48-search"
-                  >
-                    Filter table
-                  </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    id="48"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Enter a value"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                className="iot--tile-catalog--tile-canvas--header--select"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="iot--tile-catalog--tile-canvas--header--select"
-                    >
-                      
-                    </label>
-                    <div
-                      className="bx--select-input__wrapper"
-                      data-invalid={null}
-                    >
-                      <select
-                        className="bx--select-input"
-                        defaultValue=""
-                        id="iot--tile-catalog--tile-canvas--header--select"
-                        onChange={[Function]}
-                      />
-                      <svg
-                        aria-hidden={true}
-                        className="bx--select__arrow"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--content"
-            >
-              <div
-                className="iot--tile-catalog--grid-container"
-                style={
-                  Object {
-                    "--columns": "repeat(4, 1fr)",
-                  }
-                }
-              >
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      1
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      2
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      3
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      4
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      5
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      6
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      7
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      8
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--bottom"
-            >
-              <nav
-                aria-label="pagination"
-                className="bx--pagination-nav"
-              >
-                <ul
-                  className="bx--pagination-nav__list"
-                >
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-disabled="true"
-                      className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        Previous page
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        className="bx--pagination-nav__icon"
-                        focusable="false"
-                        height="8"
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 5 8"
-                        width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 8L0 4 5 0z"
-                        />
-                      </svg>
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={true}
-                      className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      1
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      2
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      3
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      4
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      5
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <div
-                      className="bx--pagination-nav__select"
-                    >
-                      <select
-                        aria-label="select page number"
-                        className="bx--pagination-nav__page bx--pagination-nav__page--select"
-                        data-page-select={true}
-                        onChange={[Function]}
-                      >
-                        <option
-                          data-page=""
-                          hidden={true}
-                          value="default"
-                        />
-                        <option
-                          data-page={6}
-                          value={6}
-                        >
-                          6
-                        </option>
-                        <option
-                          data-page={7}
-                          value={7}
-                        >
-                          7
-                        </option>
-                        <option
-                          data-page={8}
-                          value={8}
-                        >
-                          8
-                        </option>
-                        <option
-                          data-page={9}
-                          value={9}
-                        >
-                          9
-                        </option>
-                        <option
-                          data-page={10}
-                          value={10}
-                        >
-                          10
-                        </option>
-                        <option
-                          data-page={11}
-                          value={11}
-                        >
-                          11
-                        </option>
-                        <option
-                          data-page={12}
-                          value={12}
-                        >
-                          12
-                        </option>
-                      </select>
-                      <div
-                        className="bx--pagination-nav__select-icon-wrapper"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          className="bx--pagination-nav__select-icon"
-                          focusable="false"
-                          height="16"
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            cx="8"
-                            cy="16"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="16"
-                            r="2"
-                          />
-                          <circle
-                            cx="24"
-                            cy="16"
-                            r="2"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      13
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      className="bx--pagination-nav__page bx--pagination-nav__page--direction"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        Next page
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        className="bx--pagination-nav__icon"
-                        focusable="false"
-                        height="8"
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 5 8"
-                        width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 0L5 4 0 8z"
-                        />
-                      </svg>
-                    </button>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
+      1
+    </div>
+    <div
+      className="sample-tile--content"
+    >
+      This is a sample product tile
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew With Search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Loading 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "60rem",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "60rem",
-        }
-      }
+      data-testid="tile-catalog-new"
     >
-      <div>
+      <div
+        className="iot--tile-catalog--canvas-container"
+      >
         <div
-          className="iot--tile-catalog--canvas-container"
+          className="iot--tile-catalog--tile-canvas"
         >
           <div
-            className="iot--tile-catalog--tile-canvas"
+            className="iot--tile-catalog--tile-canvas--header"
+            data-testid="tile-catalog-new-header"
           >
             <div
-              className="iot--tile-catalog--tile-canvas--header"
+              className="iot--tile-catalog--tile-canvas--header--title"
+              data-testid="tile-catalog-new-title"
+            >
+              Product name
+            </div>
+            <div
+              aria-labelledby="32-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                className="iot--tile-catalog--tile-canvas--header--title"
+                className="bx--search-magnifier"
               >
-                Product name
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
               </div>
-              <div
-                className="bx--toolbar-action bx--toolbar-search-container-expandable"
+              <label
+                className="bx--label"
+                htmlFor="32"
+                id="32-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                data-testid="tile-catalog-new-search-input"
+                id="32"
                 onBlur={[Function]}
-                onClick={[Function]}
+                onChange={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
                 tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="iot--tile-catalog--tile-canvas--header--select"
+            >
+              <div
+                className="bx--form-item"
               >
                 <div
-                  aria-labelledby="49-search"
-                  className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
-                  role="search"
+                  className="bx--select"
                 >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
                   <label
                     className="bx--label"
-                    htmlFor="49"
-                    id="49-search"
+                    htmlFor="iot--tile-catalog--tile-canvas--header--select"
                   >
-                    Filter table
+                    
                   </label>
-                  <input
-                    autoComplete="off"
-                    className="bx--search-input"
-                    id="49"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Enter a value"
-                    role="searchbox"
-                    tabIndex="-1"
-                    type="text"
-                    value=""
-                  />
-                  <button
-                    aria-label="Clear search input"
-                    className="bx--search-close bx--search-close--hidden"
-                    onClick={[Function]}
-                    type="button"
+                  <div
+                    className="bx--select-input__wrapper"
+                    data-invalid={null}
                   >
+                    <select
+                      className="bx--select-input"
+                      data-testid="tile-catalog-new-sort-select"
+                      defaultValue=""
+                      id="iot--tile-catalog--tile-canvas--header--select"
+                      onChange={[Function]}
+                      role="listbox"
+                    />
                     <svg
                       aria-hidden={true}
+                      className="bx--select__arrow"
                       fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
+                      viewBox="0 0 16 16"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                       />
                     </svg>
-                  </button>
+                  </div>
                 </div>
               </div>
-              <div
-                className="iot--tile-catalog--tile-canvas--header--select"
+            </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--content"
+          >
+            <div
+              className="iot--tile-catalog--grid-container"
+              data-testid="tile-catalog-new-grid"
+              style={
+                Object {
+                  "--columns": "repeat(2, 1fr)",
+                }
+              }
+            >
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              />
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              />
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              />
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
               />
             </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--content"
-            >
-              <div
-                className="iot--tile-catalog--grid-container"
-                style={
-                  Object {
-                    "--columns": "repeat(4, 1fr)",
-                  }
-                }
-              >
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      1
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      2
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      3
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      4
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      5
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      6
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      7
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      8
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--bottom"
-            >
-              <nav
-                aria-label="pagination"
-                className="bx--pagination-nav"
-              >
-                <ul
-                  className="bx--pagination-nav__list"
-                >
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-disabled="true"
-                      className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        Previous page
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        className="bx--pagination-nav__icon"
-                        focusable="false"
-                        height="8"
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 5 8"
-                        width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 8L0 4 5 0z"
-                        />
-                      </svg>
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={true}
-                      className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      1
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      2
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      aria-current="page"
-                      aria-disabled={false}
-                      className="bx--pagination-nav__page"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        page
-                      </span>
-                      3
-                    </button>
-                  </li>
-                  <li
-                    className="bx--pagination-nav__list-item"
-                  >
-                    <button
-                      className="bx--pagination-nav__page bx--pagination-nav__page--direction"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--pagination-nav__accessibility-label"
-                      >
-                        Next page
-                      </span>
-                      <svg
-                        aria-hidden="true"
-                        className="bx--pagination-nav__icon"
-                        focusable="false"
-                        height="8"
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 5 8"
-                        width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 0L5 4 0 8z"
-                        />
-                      </svg>
-                    </button>
-                  </li>
-                </ul>
-              </nav>
-            </div>
           </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--bottom"
+          />
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalogNew With Sort 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew StatefulTileCatalog 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "60rem",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "60rem",
-        }
-      }
+      data-testid="tile-catalog-new"
     >
-      <div>
+      <div
+        className="iot--tile-catalog--canvas-container"
+      >
         <div
-          className="iot--tile-catalog--canvas-container"
+          className="iot--tile-catalog--tile-canvas"
         >
           <div
-            className="iot--tile-catalog--tile-canvas"
+            className="iot--tile-catalog--tile-canvas--header"
+            data-testid="tile-catalog-new-header"
           >
             <div
-              className="iot--tile-catalog--tile-canvas--header"
+              className="iot--tile-catalog--tile-canvas--header--title"
+              data-testid="tile-catalog-new-title"
+            >
+              Product name
+            </div>
+            <div
+              aria-labelledby="36-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
             >
               <div
-                className="iot--tile-catalog--tile-canvas--header--title"
+                className="bx--search-magnifier"
               >
-                Product name
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
               </div>
+              <label
+                className="bx--label"
+                htmlFor="36"
+                id="36-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                data-testid="tile-catalog-new-search-input"
+                id="36"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="iot--tile-catalog--tile-canvas--header--select"
+            >
               <div
-                className="iot--tile-catalog--tile-canvas--header--select"
+                className="bx--form-item"
               >
                 <div
-                  className="bx--form-item"
+                  className="bx--select"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="iot--tile-catalog--tile-canvas--header--select"
+                  >
+                    
+                  </label>
+                  <div
+                    className="bx--select-input__wrapper"
+                    data-invalid={null}
+                  >
+                    <select
+                      className="bx--select-input"
+                      data-testid="tile-catalog-new-sort-select"
+                      defaultValue="Choose from options"
+                      id="iot--tile-catalog--tile-canvas--header--select"
+                      onChange={[Function]}
+                      role="listbox"
+                    >
+                      <option
+                        className="bx--select-option"
+                        disabled={false}
+                        hidden={false}
+                        value="Choose from options"
+                      >
+                        Choose from options
+                      </option>
+                      <option
+                        className="bx--select-option"
+                        disabled={false}
+                        hidden={false}
+                        value="A-Z"
+                      >
+                        A-Z
+                      </option>
+                      <option
+                        className="bx--select-option"
+                        disabled={false}
+                        hidden={false}
+                        value="Z-A"
+                      >
+                        Z-A
+                      </option>
+                    </select>
+                    <svg
+                      aria-hidden={true}
+                      className="bx--select__arrow"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--content"
+          >
+            <div
+              className="iot--tile-catalog--grid-container"
+              data-testid="tile-catalog-new-grid"
+              style={
+                Object {
+                  "--columns": "repeat(4, 1fr)",
+                }
+              }
+            >
+              <div>
+                <div
+                  className="sample-tile"
                 >
                   <div
-                    className="bx--select"
+                    className="sample-tile--title"
                   >
-                    <label
-                      className="bx--label"
-                      htmlFor="iot--tile-catalog--tile-canvas--header--select"
-                    >
-                      
-                    </label>
-                    <div
-                      className="bx--select-input__wrapper"
-                      data-invalid={null}
-                    >
-                      <select
-                        className="bx--select-input"
-                        defaultValue="Choose from options"
-                        id="iot--tile-catalog--tile-canvas--header--select"
-                        onChange={[Function]}
-                      >
-                        <option
-                          className="bx--select-option"
-                          disabled={false}
-                          hidden={false}
-                          value="Choose from options"
-                        >
-                          Choose from options
-                        </option>
-                        <option
-                          className="bx--select-option"
-                          disabled={false}
-                          hidden={false}
-                          value="A-Z"
-                        >
-                          A-Z
-                        </option>
-                        <option
-                          className="bx--select-option"
-                          disabled={false}
-                          hidden={false}
-                          value="Most Popular"
-                        >
-                          Most Popular
-                        </option>
-                      </select>
-                      <svg
-                        aria-hidden={true}
-                        className="bx--select__arrow"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                        />
-                      </svg>
-                    </div>
+                    1
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    2
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    3
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    4
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    5
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    6
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    7
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    8
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--content"
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--bottom"
+          >
+            <nav
+              aria-label="pagination"
+              className="bx--pagination-nav"
             >
-              <div
-                className="iot--tile-catalog--grid-container"
-                style={
-                  Object {
-                    "--columns": "repeat(4, 1fr)",
-                  }
-                }
+              <ul
+                className="bx--pagination-nav__list"
               >
-                <div>
-                  <div
-                    className="sample-tile"
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-disabled="true"
+                    className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
+                    data-testid="tile-catalog-new-pagination-backward-button"
+                    onClick={[Function]}
+                    type="button"
                   >
-                    <div
-                      className="sample-tile--title"
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
                     >
-                      1
-                    </div>
-                    <div
-                      className="sample-tile--content"
+                      Previous page
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      className="bx--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
+                      <path
+                        d="M5 8L0 4 5 0z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={true}
+                    className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
+                    data-testid="tile-catalog-new-pagination-page-1-button"
+                    onClick={[Function]}
+                    type="button"
                   >
-                    <div
-                      className="sample-tile--title"
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
                     >
-                      2
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
+                      page
+                    </span>
+                    1
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-2-button"
+                    onClick={[Function]}
+                    type="button"
                   >
-                    <div
-                      className="sample-tile--title"
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
                     >
-                      3
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
+                      page
+                    </span>
+                    2
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-3-button"
+                    onClick={[Function]}
+                    type="button"
                   >
-                    <div
-                      className="sample-tile--title"
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
                     >
-                      4
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
+                      page
+                    </span>
+                    3
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    className="bx--pagination-nav__page bx--pagination-nav__page--direction"
+                    data-testid="tile-catalog-new-pagination-foreward-button"
+                    onClick={[Function]}
+                    type="button"
                   >
-                    <div
-                      className="sample-tile--title"
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
                     >
-                      5
-                    </div>
-                    <div
-                      className="sample-tile--content"
+                      Next page
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      className="bx--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      6
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      7
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    className="sample-tile"
-                  >
-                    <div
-                      className="sample-tile--title"
-                    >
-                      8
-                    </div>
-                    <div
-                      className="sample-tile--content"
-                    >
-                      This is a sample product tile
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--bottom"
-            />
+                      <path
+                        d="M0 0L5 4 0 8z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew With OverflowMenu in Pagination 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
     style={
       Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
+        "width": "60rem",
       }
     }
-    type="button"
   >
-    Show Info
-  </button>
+    <div
+      data-testid="tile-catalog-new"
+    >
+      <div
+        className="iot--tile-catalog--canvas-container"
+      >
+        <div
+          className="iot--tile-catalog--tile-canvas"
+        >
+          <div
+            className="iot--tile-catalog--tile-canvas--header"
+            data-testid="tile-catalog-new-header"
+          >
+            <div
+              className="iot--tile-catalog--tile-canvas--header--title"
+              data-testid="tile-catalog-new-title"
+            >
+              Product name
+            </div>
+            <div
+              aria-labelledby="34-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
+            >
+              <div
+                className="bx--search-magnifier"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
+              <label
+                className="bx--label"
+                htmlFor="34"
+                id="34-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                data-testid="tile-catalog-new-search-input"
+                id="34"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="iot--tile-catalog--tile-canvas--header--select"
+            >
+              <div
+                className="bx--form-item"
+              >
+                <div
+                  className="bx--select"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="iot--tile-catalog--tile-canvas--header--select"
+                  >
+                    
+                  </label>
+                  <div
+                    className="bx--select-input__wrapper"
+                    data-invalid={null}
+                  >
+                    <select
+                      className="bx--select-input"
+                      data-testid="tile-catalog-new-sort-select"
+                      defaultValue=""
+                      id="iot--tile-catalog--tile-canvas--header--select"
+                      onChange={[Function]}
+                      role="listbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="bx--select__arrow"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--content"
+          >
+            <div
+              className="iot--tile-catalog--grid-container"
+              data-testid="tile-catalog-new-grid"
+              style={
+                Object {
+                  "--columns": "repeat(4, 1fr)",
+                }
+              }
+            >
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    1
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    2
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    3
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    4
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    5
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    6
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    7
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    8
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--bottom"
+          >
+            <nav
+              aria-label="pagination"
+              className="bx--pagination-nav"
+            >
+              <ul
+                className="bx--pagination-nav__list"
+              >
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-disabled="true"
+                    className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
+                    data-testid="tile-catalog-new-pagination-backward-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      Previous page
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      className="bx--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 8L0 4 5 0z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={true}
+                    className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
+                    data-testid="tile-catalog-new-pagination-page-1-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    1
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-2-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    2
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-3-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    3
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-4-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    4
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-5-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    5
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <div
+                    className="bx--pagination-nav__select"
+                  >
+                    <select
+                      aria-label="select page number"
+                      className="bx--pagination-nav__page bx--pagination-nav__page--select"
+                      data-page-select={true}
+                      data-testid="tile-catalog-new-pagination-page-select"
+                      onChange={[Function]}
+                    >
+                      <option
+                        data-page=""
+                        hidden={true}
+                        value="default"
+                      />
+                      <option
+                        data-page={6}
+                        value={6}
+                      >
+                        6
+                      </option>
+                      <option
+                        data-page={7}
+                        value={7}
+                      >
+                        7
+                      </option>
+                      <option
+                        data-page={8}
+                        value={8}
+                      >
+                        8
+                      </option>
+                      <option
+                        data-page={9}
+                        value={9}
+                      >
+                        9
+                      </option>
+                      <option
+                        data-page={10}
+                        value={10}
+                      >
+                        10
+                      </option>
+                      <option
+                        data-page={11}
+                        value={11}
+                      >
+                        11
+                      </option>
+                      <option
+                        data-page={12}
+                        value={12}
+                      >
+                        12
+                      </option>
+                    </select>
+                    <div
+                      className="bx--pagination-nav__select-icon-wrapper"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="bx--pagination-nav__select-icon"
+                        focusable="false"
+                        height="16"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="8"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="24"
+                          cy="16"
+                          r="2"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-13-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    13
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    className="bx--pagination-nav__page bx--pagination-nav__page--direction"
+                    data-testid="tile-catalog-new-pagination-foreward-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      Next page
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      className="bx--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0L5 4 0 8z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew With Search 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": "60rem",
+      }
+    }
+  >
+    <div
+      data-testid="tile-catalog-new"
+    >
+      <div
+        className="iot--tile-catalog--canvas-container"
+      >
+        <div
+          className="iot--tile-catalog--tile-canvas"
+        >
+          <div
+            className="iot--tile-catalog--tile-canvas--header"
+            data-testid="tile-catalog-new-header"
+          >
+            <div
+              className="iot--tile-catalog--tile-canvas--header--title"
+              data-testid="tile-catalog-new-title"
+            >
+              Product name
+            </div>
+            <div
+              aria-labelledby="35-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
+            >
+              <div
+                className="bx--search-magnifier"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
+              <label
+                className="bx--label"
+                htmlFor="35"
+                id="35-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                data-testid="tile-catalog-new-search-input"
+                id="35"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="iot--tile-catalog--tile-canvas--header--select"
+            />
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--content"
+          >
+            <div
+              className="iot--tile-catalog--grid-container"
+              data-testid="tile-catalog-new-grid"
+              style={
+                Object {
+                  "--columns": "repeat(4, 1fr)",
+                }
+              }
+            >
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    1
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    2
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    3
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    4
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    5
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    6
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    7
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    8
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--bottom"
+          >
+            <nav
+              aria-label="pagination"
+              className="bx--pagination-nav"
+            >
+              <ul
+                className="bx--pagination-nav__list"
+              >
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-disabled="true"
+                    className="bx--pagination-nav__page bx--pagination-nav__page--direction bx--pagination-nav__page--disabled"
+                    data-testid="tile-catalog-new-pagination-backward-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      Previous page
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      className="bx--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 8L0 4 5 0z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={true}
+                    className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
+                    data-testid="tile-catalog-new-pagination-page-1-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    1
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-2-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    2
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    aria-current="page"
+                    aria-disabled={false}
+                    className="bx--pagination-nav__page"
+                    data-testid="tile-catalog-new-pagination-page-3-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      page
+                    </span>
+                    3
+                  </button>
+                </li>
+                <li
+                  className="bx--pagination-nav__list-item"
+                >
+                  <button
+                    className="bx--pagination-nav__page bx--pagination-nav__page--direction"
+                    data-testid="tile-catalog-new-pagination-foreward-button"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="bx--pagination-nav__accessibility-label"
+                    >
+                      Next page
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      className="bx--pagination-nav__icon"
+                      focusable="false"
+                      height="8"
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 5 8"
+                      width="5"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0L5 4 0 8z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew With Sort 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": "60rem",
+      }
+    }
+  >
+    <div
+      data-testid="tile-catalog-new"
+    >
+      <div
+        className="iot--tile-catalog--canvas-container"
+      >
+        <div
+          className="iot--tile-catalog--tile-canvas"
+        >
+          <div
+            className="iot--tile-catalog--tile-canvas--header"
+            data-testid="tile-catalog-new-header"
+          >
+            <div
+              className="iot--tile-catalog--tile-canvas--header--title"
+              data-testid="tile-catalog-new-title"
+            >
+              Product name
+            </div>
+            <div
+              className="iot--tile-catalog--tile-canvas--header--select"
+            >
+              <div
+                className="bx--form-item"
+              >
+                <div
+                  className="bx--select"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="iot--tile-catalog--tile-canvas--header--select"
+                  >
+                    
+                  </label>
+                  <div
+                    className="bx--select-input__wrapper"
+                    data-invalid={null}
+                  >
+                    <select
+                      className="bx--select-input"
+                      data-testid="tile-catalog-new-sort-select"
+                      defaultValue="Choose from options"
+                      id="iot--tile-catalog--tile-canvas--header--select"
+                      onChange={[Function]}
+                      role="listbox"
+                    >
+                      <option
+                        className="bx--select-option"
+                        disabled={false}
+                        hidden={false}
+                        value="Choose from options"
+                      >
+                        Choose from options
+                      </option>
+                      <option
+                        className="bx--select-option"
+                        disabled={false}
+                        hidden={false}
+                        value="A-Z"
+                      >
+                        A-Z
+                      </option>
+                      <option
+                        className="bx--select-option"
+                        disabled={false}
+                        hidden={false}
+                        value="Most Popular"
+                      >
+                        Most Popular
+                      </option>
+                    </select>
+                    <svg
+                      aria-hidden={true}
+                      className="bx--select__arrow"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--content"
+          >
+            <div
+              className="iot--tile-catalog--grid-container"
+              data-testid="tile-catalog-new-grid"
+              style={
+                Object {
+                  "--columns": "repeat(4, 1fr)",
+                }
+              }
+            >
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    1
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    2
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    3
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    4
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    5
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    6
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    7
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="sample-tile"
+                >
+                  <div
+                    className="sample-tile--title"
+                  >
+                    8
+                  </div>
+                  <div
+                    className="sample-tile--content"
+                  >
+                    This is a sample product tile
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--bottom"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

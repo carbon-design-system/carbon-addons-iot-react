@@ -118,7 +118,9 @@ const PieChartCard = ({
   size: sizeProp,
   title: titleProp,
   values: initialValuesProp,
+  // TODO: remove deprecated 'testID' in v3.
   testID,
+  testId,
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
@@ -182,15 +184,14 @@ const PieChartCard = ({
       },
       resizable: true,
       tooltip: {
-        // Will work properly after upgrade to @carbon/charts-react 0.38.2, please see
-        // https://github.com/carbon-design-system/carbon-charts/issues/808
-        customHTML: isEditable ? () => {} : customTooltip,
+        customHTML: customTooltip,
       },
     },
   };
 
   const tableProps = {
-    'data-testid': `${testID}-table`,
+    // TODO: remove deprecated 'testID' in v3.
+    'data-testid': `${testID || testId}-table`,
     id: `${id}-table`,
     className: `${iotPrefix}--pie-chart-card--stateful-table`,
     columns: generateTableColumns(values, groupDataSourceId),
@@ -231,7 +232,8 @@ const PieChartCard = ({
       isEditable={isEditable}
       isResizable={isResizable}
       resizeHandles={resizeHandles}
-      testID={testID}
+      // TODO: remove deprecated 'testID' in v3.
+      testId={testID || testId}
       {...others}
       {...overrides?.card?.props}
     >

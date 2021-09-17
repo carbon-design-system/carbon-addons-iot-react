@@ -26,6 +26,11 @@
     &--detail {
       flex: 1;
       padding-left: $spacing-05;
+      overflow: hidden;
+      div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 
@@ -155,7 +160,7 @@
   }
 
   &--app-link {
-    a {
+    button {
       @include type-style('productive-heading-01');
       text-decoration: none;
       color: $text-02;
@@ -205,6 +210,9 @@
     .#{$prefix}--tooltip__trigger svg {
       fill: $ui-01;
     }
+  }
+  button.admin-icon__hidden {
+    visibility: hidden !important;
   }
   button.admin-icon__selected {
     background-color: $interactive-02;
@@ -287,5 +295,12 @@
       background-color: $inverse-hover-ui !important;
       width: 256px !important;
     }
+  }
+}
+
+.#{$iot-prefix}--session-timeout-modal {
+  z-index: 9999;
+  .#{$prefix}--modal-header .#{$prefix}--modal-close {
+    display: none;
   }
 }

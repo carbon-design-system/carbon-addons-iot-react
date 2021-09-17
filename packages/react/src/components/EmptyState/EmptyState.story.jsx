@@ -1,24 +1,24 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select } from '@storybook/addon-knobs';
+import { text, select, boolean } from '@storybook/addon-knobs';
 
 import { DashboardIcon } from '../../icons/components';
+import { Tabs, Tab } from '../Tabs';
 
 import EmptyState from './EmptyState';
 
 export default {
-  title: 'Watson IoT/EmptyState',
+  title: '1 - Watson IoT/EmptyState',
 
   parameters: {
     component: EmptyState,
-
     info: `
     Empty states occur in an app when no data is available to be displayed to the user. An empty state most commonly occurs the first time that a user interacts with a product or page, but is also used when data was deleted or is not available.
 
     **Actions**
 
-    \`EmptyState\` can have two optional actions: \`action\` and \`secondaryAction\`. 
-    
+    \`EmptyState\` can have two optional actions: \`action\` and \`secondaryAction\`.
+
     \`action\` can be either a button or a custom component and should be used to let the user have an option to "overcome" the empty state.
 
     \`secondaryAction\` usually is a link that could for example reference documentation for further reading as to why the empty state occured. However, it is also possible to pass a custom compent as well.
@@ -48,9 +48,7 @@ export const FirstTimeUse = () => (
   />
 );
 
-FirstTimeUse.story = {
-  name: 'First-time use',
-};
+FirstTimeUse.storyName = 'First-time use';
 
 export const NoSearchResultsFound = () => (
   <EmptyState
@@ -80,9 +78,7 @@ export const Page404 = () => (
   />
 );
 
-Page404.story = {
-  name: '404 error',
-};
+Page404.storyName = '404 error';
 
 export const DataMissing = () => (
   <EmptyState
@@ -157,6 +153,34 @@ export const WithCustomIcon = () => (
     }}
   />
 );
+
+export const TabsWithEmptyState = () => {
+  return (
+    <Tabs selected={1} light={boolean('light', false)}>
+      <Tab>
+        <EmptyState
+          icon="no-result"
+          title="No results found"
+          body="We couldn't find anything. Sorry."
+        />
+      </Tab>
+      <Tab>
+        <EmptyState
+          icon="no-result"
+          title="No results found"
+          body="We couldn't find anything. Sorry."
+        />
+      </Tab>
+      <Tab>
+        <EmptyState
+          icon="no-result"
+          title="No results found"
+          body="We couldn't find anything. Sorry."
+        />
+      </Tab>
+    </Tabs>
+  );
+};
 
 export const Playground = () => (
   <EmptyState

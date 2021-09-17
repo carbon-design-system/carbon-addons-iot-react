@@ -14,7 +14,7 @@ const FileDropProps = {
 };
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ FileDrop' : 'Watson IoT/FileDrop',
+  title: '1 - Watson IoT/FileDrop',
 
   parameters: {
     component: FileDrop,
@@ -36,15 +36,11 @@ export const BrowseOnlyOne = () => (
   <FileDrop {...FileDropProps} description="Only one file can be uploaded" multiple={false} />
 );
 
-BrowseOnlyOne.story = {
-  name: 'Browse only one',
-};
+BrowseOnlyOne.storyName = 'Browse only one';
 
 export const DragAndDrop = () => <FileDrop {...FileDropProps} kind="drag-and-drop" />;
 
-DragAndDrop.story = {
-  name: 'Drag and drop',
-};
+DragAndDrop.storyName = 'Drag and drop';
 
 export const DragOnlyOneFile = () => (
   <FileDrop
@@ -55,9 +51,7 @@ export const DragOnlyOneFile = () => (
   />
 );
 
-DragOnlyOneFile.story = {
-  name: 'Drag only one file',
-};
+DragOnlyOneFile.storyName = 'Drag only one file';
 
 export const ShowFilesFalse = () => (
   <FileDrop
@@ -69,9 +63,7 @@ export const ShowFilesFalse = () => (
   />
 );
 
-ShowFilesFalse.story = {
-  name: 'Show files false',
-};
+ShowFilesFalse.storyName = 'Show files false';
 
 export const AcceptJson = () => (
   <FileDrop
@@ -83,6 +75,4 @@ export const AcceptJson = () => (
   />
 );
 
-AcceptJson.story = {
-  name: 'Accept JSON',
-};
+AcceptJson.storyName = 'Accept JSON';

@@ -1,14 +1,50 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import { Link } from '../..';
+import { Link } from '../Link';
+import { settings } from '../../constants/Settings';
+import { CARD_TYPES } from '../../constants/LayoutConstants';
 
 import DashboardEditor from './DashboardEditor';
+
+const { iotPrefix } = settings;
+const mockOnImport = jest.fn();
+const mockOnExport = jest.fn();
+const mockOnCancel = jest.fn();
+const mockOnSubmit = jest.fn();
+const mockOnCardChange = jest.fn();
+
+const commonProps = {
+  title: 'My dashboard',
+  headerBreadcrumbs: [
+    <Link href="www.ibm.com">Dashboard library</Link>,
+    <Link href="www.ibm.com">Favorites</Link>,
+  ],
+  onImport: mockOnImport,
+  onExport: mockOnExport,
+  onCancel: mockOnCancel,
+  onSubmit: mockOnSubmit,
+  onDelete: jest.fn(),
+  onCardSelect: jest.fn(),
+  onEditDataItems: jest.fn(),
+  supportedCardTypes: [
+    'TIMESERIES',
+    'SIMPLE_BAR',
+    'GROUPED_BAR',
+    'STACKED_BAR',
+    'VALUE',
+    'IMAGE',
+    'TABLE',
+    'CUSTOM',
+  ],
+};
 
 describe('DashboardEditor', () => {
   const realScrollTo = window.HTMLElement.prototype.scrollTo;
   beforeEach(() => {
     window.HTMLElement.prototype.scrollTo = jest.fn();
+    commonProps.onCardSelect.mockClear();
   });
   afterEach(() => {
     window.HTMLElement.prototype.scrollTo = realScrollTo;
@@ -43,34 +79,46 @@ describe('DashboardEditor', () => {
     },
     values: { key1: 35 },
   };
-  const mockOnImport = jest.fn();
-  const mockOnExport = jest.fn();
-  const mockOnCancel = jest.fn();
-  const mockOnSubmit = jest.fn();
-  const mockOnCardChange = jest.fn();
 
-  const commonProps = {
-    title: 'My dashboard',
-    headerBreadcrumbs: [
-      <Link href="www.ibm.com">Dashboard library</Link>,
-      <Link href="www.ibm.com">Favorites</Link>,
-    ],
-    onImport: mockOnImport,
-    onExport: mockOnExport,
-    onCancel: mockOnCancel,
-    onSubmit: mockOnSubmit,
-    supportedCardTypes: [
-      'TIMESERIES',
-      'SIMPLE_BAR',
-      'GROUPED_BAR',
-      'STACKED_BAR',
-      'VALUE',
-      'IMAGE',
-      'TABLE',
-      'CUSTOM',
-    ],
-  };
+  it('should be selectable by testId', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        isTitleEditable
+        initialValue={{ cards: [mockValueCard] }}
+        testId="DASHBOARD_EDITOR"
+        breakpointSwitcher={{
+          enabled: true,
+        }}
+      />
+    );
+    expect(screen.getByTestId('DASHBOARD_EDITOR')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-file-uploader-button')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-breakpoint-switcher')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-fit-to-screen-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-large-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-medium-switch')).toBeDefined();
+    expect(screen.getByTestId('DASHBOARD_EDITOR-header-small-switch')).toBeDefined();
+    expect(screen.getAllByTestId('Button').length).toBeGreaterThan(1);
+    // these can be added back in after v3 passes testId to these components and overrides the defaults
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-page-title-bar')).toBeDefined();
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-export-button')).toBeDefined();
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-cancel-button')).toBeDefined();
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-delete-button')).toBeDefined();
+    // expect(screen.getByTestId('DASHBOARD_EDITOR-header-submit-button')).toBeDefined();
+  });
 
+  it('edit title', () => {
+    render(
+      <DashboardEditor {...commonProps} isTitleEditable initialValue={{ cards: [mockValueCard] }} />
+    );
+    userEvent.click(screen.getByRole('button', { name: 'Edit title' }));
+    userEvent.type(screen.getByRole('textbox', { name: 'Dashboard title' }), '25');
+    userEvent.click(screen.getByRole('button', { name: 'Save title' }));
+    // updates the title on screen
+    expect(screen.getByRole('heading', { name: 'My dashboard25' })).not.toBeNull();
+  });
   it('verify icon renders in editor', () => {
     render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
     // no card should be selected, meaning the gallery should be open
@@ -83,7 +131,7 @@ describe('DashboardEditor', () => {
     expect(cardTitle).toBeInTheDocument();
   });
   it('verify custom renderIconByName is called with threshold', () => {
-    const mockRenderIconByName = jest.fn();
+    const mockRenderIconByName = jest.fn(() => <div />);
     render(
       <DashboardEditor
         {...commonProps}
@@ -105,6 +153,8 @@ describe('DashboardEditor', () => {
     fireEvent.mouseDown(cardTitle);
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
@@ -123,6 +173,8 @@ describe('DashboardEditor', () => {
     fireEvent.keyDown(cardTitle, { key: 'Enter' });
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
@@ -141,6 +193,8 @@ describe('DashboardEditor', () => {
     fireEvent.keyDown(cardTitle, { key: 'Space' });
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
@@ -162,6 +216,8 @@ describe('DashboardEditor', () => {
     fireEvent.click(cloneCardBtn);
     // there should now be two cards with the same title
     expect(screen.getAllByText('value card')).toHaveLength(2);
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
   });
 
   it('selecting remove card should remove card', () => {
@@ -198,6 +254,8 @@ describe('DashboardEditor', () => {
     fireEvent.click(timeSeriesBtn);
     // then find the card title that was created, but these will have the same names so check the length
     expect(screen.getAllByTitle('Untitled')).toHaveLength(2);
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
     addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
     fireEvent.click(addCardBtn);
@@ -241,6 +299,8 @@ describe('DashboardEditor', () => {
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
     fireEvent.click(addCardBtn);
+    // card select should have been called
+    expect(commonProps.onCardSelect).toHaveBeenCalled();
   });
 
   it('selecting submit should fire onSubmit', () => {
@@ -276,7 +336,6 @@ describe('DashboardEditor', () => {
     // find and click export button
     // Export button is iconOnly meaning we can't find it based off text
     const exportBtn = screen.getAllByRole('button')[2];
-    console.log(exportBtn);
     expect(exportBtn).toBeInTheDocument();
     fireEvent.click(exportBtn);
     expect(mockOnExport).toBeCalled();
@@ -302,7 +361,7 @@ describe('DashboardEditor', () => {
     // there should be no breakpoint text on initial render
     expect(screen.queryByText('Edit dashboard at')).not.toBeInTheDocument();
     // find and click small button
-    const smallBtn = screen.getByText('Small view');
+    const smallBtn = screen.getByRole('button', { name: 'Small view' });
     expect(smallBtn).toBeInTheDocument();
     fireEvent.click(smallBtn);
     // there should now be breakpoint text
@@ -314,6 +373,14 @@ describe('DashboardEditor', () => {
   });
 
   it('triggering an error should show error message', () => {
+    const originalDev = global.__DEV__;
+    const originalError = console.error;
+    const originalLog = console.log;
+    const error = jest.fn();
+    const log = jest.fn();
+    console.error = error;
+    console.log = log;
+    global.__DEV__ = true;
     render(
       <DashboardEditor
         {...commonProps}
@@ -342,9 +409,14 @@ describe('DashboardEditor', () => {
         }}
       />
     );
+    expect(log).toHaveBeenCalledTimes(2);
+    expect(error).toHaveBeenCalledTimes(6);
     const errMsg = screen.getAllByText('Something went wrong. Please refresh the page.');
 
     expect(errMsg).toHaveLength(2);
+    console.error = originalError;
+    console.log = originalLog;
+    global.__DEV__ = originalDev;
   });
 
   it('uses custom onCardChange callback', () => {
@@ -371,5 +443,46 @@ describe('DashboardEditor', () => {
     });
     // mock on card change should be called again when the card is edited
     expect(mockOnCardChange).toHaveBeenCalledTimes(2);
+  });
+  it('should set an initial breakpoint when provided', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        breakpointSwitcher={{
+          enabled: true,
+          initialValue: 'SMALL',
+        }}
+      />
+    );
+
+    expect(screen.getByRole('button', { name: 'Small view' })).not.toHaveClass(
+      `${iotPrefix}--icon-switch--unselected`
+    );
+  });
+
+  it('should call getDefaultCard when supplied', () => {
+    const getDefaultCard = jest.fn().mockImplementation(() => ({
+      id: '4678571d-e6be-43e5-b3e9-b309d3d98273',
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'IMAGE',
+      content: {
+        hideMinimap: true,
+        hideHotspots: false,
+        hideZoomControls: false,
+        displayOption: 'contain',
+      },
+    }));
+    render(<DashboardEditor {...commonProps} getDefaultCard={getDefaultCard} />);
+
+    userEvent.click(screen.getByRole('button', { name: 'Image' }));
+    expect(getDefaultCard).toHaveBeenCalledWith(CARD_TYPES.IMAGE);
+  });
+
+  it('default onFetchDynamicDemoHotspots should return correctly', async () => {
+    jest.spyOn(DashboardEditor.defaultProps, 'onFetchDynamicDemoHotspots');
+    const defaultHotspots = await DashboardEditor.defaultProps.onFetchDynamicDemoHotspots();
+    expect(DashboardEditor.defaultProps.onFetchDynamicDemoHotspots).toHaveBeenCalled();
+    expect(defaultHotspots).toEqual([{ x: 50, y: 50, type: 'fixed' }]);
   });
 });

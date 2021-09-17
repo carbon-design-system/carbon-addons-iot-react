@@ -22,7 +22,10 @@ import { CardService } from './card.service';
 export class CardContentComponent implements OnInit, AfterViewInit {
   @HostBinding('class.iot--card--content') contentClass = true;
   @HostBinding('class.iot--card--content--expanded') expandedClass = false;
-  @Input() emptyText: string | TemplateRef<any>;
+  /**
+   * expects string | TemplateRef<any>
+   */
+  @Input() emptyText: any;
   @Input() isEmpty = false;
 
   constructor(protected cardService: CardService, protected elementRef: ElementRef) {}

@@ -13,7 +13,7 @@ import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 import { CodeSnippet, CodeSnippetSkeleton } from '.';
 
 export default {
-  title: 'CodeSnippet',
+  title: '3 - Carbon/CodeSnippet',
   component: CodeSnippet,
   decorators: [withKnobs],
 };

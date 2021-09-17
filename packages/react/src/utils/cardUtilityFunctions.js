@@ -174,7 +174,7 @@ export const replaceVariables = (variables, cardVariables, target) => {
   // if it's an object, then recursively replace each value unless it's a react element
   if (typeof target === 'object') {
     // if it's a react element, leave it alone
-    return React.isValidElement(target)
+    return React.isValidElement(target) || isNil(target)
       ? target
       : mapValues(target, (property) =>
           replaceVariables(variables, insensitiveCardVariables, property)
@@ -211,24 +211,28 @@ export const replaceVariables = (variables, cardVariables, target) => {
 };
 
 /**
- * @param {Object} cardProperty
+ * This function recurses across all of the card properties to find templatted variable
+ * strings that need to be replaced
+ * @param {Object} cardProperty i.e. title, content
+ * @param {Array<string>} keysToSkip if present, do not attempt to retrieve variables
+ * i.e. in table cards, there is unique cases in which it retrieves its only variables
  * @returns {Array<String>} an array of unique variable values
  */
-export const getCardVariables = (cardProperty) => {
-  const propertyVariables = Object.values(cardProperty).reduce((acc, property) => {
-    if (typeof property === 'object' && !React.isValidElement(property) && !isNil(property)) {
+export const getCardVariables = (cardProperty, keysToSkip = []) => {
+  const cardVariables = Object.entries(cardProperty).reduce((acc, [key, value]) => {
+    if (typeof value === 'object' && !React.isValidElement(value) && !isNil(value)) {
       // recursively search any objects for additional string properties
-      acc.push(...getCardVariables(property));
-    } else if (typeof property === 'string') {
+      acc.push(...getCardVariables(value, keysToSkip));
+    } else if (typeof value === 'string' && !keysToSkip.includes(key)) {
       // if it's a string, look for variables
-      const detectedVariables = getVariables(property);
+      const detectedVariables = getVariables(value);
       if (detectedVariables) {
         acc.push(...detectedVariables);
       }
     }
     return acc;
   }, []);
-  return [...new Set(propertyVariables)];
+  return [...new Set(cardVariables)];
 };
 
 /**
@@ -237,9 +241,11 @@ export const getCardVariables = (cardProperty) => {
  * @param {object} content - Contents for the card
  * @param {string} values - Values for the card
  * @param {object} card - The rest of the card
+ * @param {Array<string>} keysToSkip if present, do not attempt to retrieve variables
+ * i.e. in table cards, there is unique cases in which it retrieves its only variables
  * @return {object} updatedCard - card with any found variables replaced by their coresponding values, or the original card if no variables
  */
-export const handleCardVariables = (title, content, values, card) => {
+export const handleCardVariables = (title, content, values, card, keysToSkip = []) => {
   const updatedCard = {
     title,
     content,
@@ -252,7 +258,7 @@ export const handleCardVariables = (title, content, values, card) => {
   }
   const { cardVariables } = updatedCard;
 
-  const variablesArray = getCardVariables(updatedCard);
+  const variablesArray = getCardVariables(updatedCard, keysToSkip);
   return replaceVariables(variablesArray, cardVariables, updatedCard);
 };
 
@@ -449,7 +455,7 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
 
 /** compare the current datapoint to a list of alert ranges */
 export const findMatchingAlertRange = (alertRanges, data) => {
-  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data.date;
+  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data?.date;
 
   if (!currentDataPoint) {
     return false;
@@ -482,9 +488,11 @@ export const handleTooltip = (
   alertRanges,
   alertDetected,
   showTimeInGMT,
-  tooltipDateFormatPattern = 'L HH:mm:ss'
+  tooltipDateFormatPattern = 'L HH:mm:ss',
+  locale
 ) => {
-  const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+  dayjs.locale(locale);
+  const data = dataOrHoveredElement?.__data__
     ? dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
     : dataOrHoveredElement;
   const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();

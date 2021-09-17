@@ -32,6 +32,15 @@ describe('ComboBox', () => {
     return list;
   };
 
+  it('should filter bad props, but not good ones.', async () => {
+    jest.spyOn(console, 'error');
+    const { container } = render(
+      <ComboBox {...defaultProps} aBadProp="100" data-test-check="100" />
+    );
+    expect(console.error).not.toHaveBeenCalled();
+    expect(container.querySelector('[data-test-check]')).toBeDefined();
+  });
+
   it('renders with default props', async () => {
     render(<ComboBox {...defaultProps} />);
     const tags = screen.getByTestId('combo-tags');
@@ -103,7 +112,7 @@ describe('ComboBox', () => {
     const tags = screen.getByTestId('combo-tags');
 
     userEvent.click(screen.getByTitle('Open'));
-    userEvent.click(screen.getByTitle('Option 1'));
+    userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
 
     expect(tags.childElementCount).toEqual(1);
     expect(tags.firstChild.firstChild.firstChild.innerHTML).toEqual('Option 1');

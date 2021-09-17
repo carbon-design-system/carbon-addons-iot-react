@@ -53,15 +53,13 @@ const StructuredListInputProps = {
 };
 
 export default {
-  title: 'Watson IoT/🚫 ComposedStructuredList',
+  title: '1 - Watson IoT/🚫 ComposedStructuredList',
 };
 
 export const Deprecated = () => (
   <StoryNotice componentName="ComposedStructuredList" replacementComponentName="StructuredList" />
 );
-Deprecated.story = {
-  name: deprecatedStoryTitle,
-};
+Deprecated.storyName = deprecatedStoryTitle;
 
 export const Default = () => (
   <ComposedStructuredList
@@ -73,9 +71,7 @@ export const Default = () => (
   />
 );
 
-Default.story = {
-  name: 'default ',
-};
+Default.storyName = 'default ';
 
 export const WithEmptyState = () => (
   <ComposedStructuredList
@@ -86,9 +82,7 @@ export const WithEmptyState = () => (
   />
 );
 
-WithEmptyState.story = {
-  name: 'with empty state',
-};
+WithEmptyState.storyName = 'with empty state';
 
 export const WithFixedColumnWidths = () => (
   <ComposedStructuredList
@@ -100,9 +94,7 @@ export const WithFixedColumnWidths = () => (
   />
 );
 
-WithFixedColumnWidths.story = {
-  name: 'with fixed column widths',
-};
+WithFixedColumnWidths.storyName = 'with fixed column widths';
 
 export const WithEmptyStateWithFixedColumnWidth = () => (
   <ComposedStructuredList
@@ -114,9 +106,7 @@ export const WithEmptyStateWithFixedColumnWidth = () => (
   />
 );
 
-WithEmptyStateWithFixedColumnWidth.story = {
-  name: 'with empty state with fixed column width',
-};
+WithEmptyStateWithFixedColumnWidth.storyName = 'with empty state with fixed column width';
 
 export const CustomCellRenderer = () => (
   <ComposedStructuredList
@@ -129,41 +119,39 @@ export const CustomCellRenderer = () => (
   />
 );
 
-CustomCellRenderer.story = {
-  name: 'custom cell renderer',
+CustomCellRenderer.storyName = 'custom cell renderer';
 
-  parameters: {
-    info: {
-      text: `
+CustomCellRenderer.parameters = {
+  info: {
+    text: `
 
-      To render a your own widget in a list cell, pass a renderDataFunction prop along with your column metadata.
+    To render a your own widget in a list cell, pass a renderDataFunction prop along with your column metadata.
 
-      <br />
+    <br />
 
-      ~~~js
-      columns=[ { id: 'columnA', title: 'A', renderDataFunction: myCustomRenderer }, ...]
-      ~~~
+    ~~~js
+    columns=[ { id: 'columnA', title: 'A', renderDataFunction: myCustomRenderer }, ...]
+    ~~~
 
-      <br />
+    <br />
 
-      The renderDataFunction is called with this payload
+    The renderDataFunction is called with this payload
 
-      <br />
+    <br />
 
-      ~~~js
-         {
-            value: PropTypes.any (current cell value),
-            columnId: PropTypes.string,
-            rowId: PropTypes.string,
-            row: the full data for this rowPropTypes.object like this {col: value, col2: value}
-         }
+    ~~~js
+       {
+          value: PropTypes.any (current cell value),
+          columnId: PropTypes.string,
+          rowId: PropTypes.string,
+          row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+       }
 
-         const myCustomRenderer = ({ value }) => <span style={{ color: 'blue' }}>{value}</span>
-      ~~~
+       const myCustomRenderer = ({ value }) => <span style={{ color: 'blue' }}>{value}</span>
+    ~~~
 
-      <br />
+    <br />
 
-        `,
-    },
+      `,
   },
 };

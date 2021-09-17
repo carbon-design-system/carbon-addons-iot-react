@@ -1,565 +1,420 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select, object, boolean } from '@storybook/addon-knobs';
+import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { barChartData } from '../../utils/barChartDataSample';
+import { getIntervalChartData } from '../../utils/sample';
 
 import BarChartCard from './BarChartCard';
+import BarChartCardREADME from './BarChartCard.mdx';
 
 const COLORS = ['blue', 'red', 'green', 'yellow'];
 
-const acceptableSizes = Object.keys(CARD_SIZES).filter(
+const sizes = Object.keys(CARD_SIZES).filter(
   (size) => size.includes('MEDIUM') || size.includes('LARGE')
 );
 
+const layouts = Object.keys(BAR_CHART_LAYOUTS);
+
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ BarChartCard' : 'Watson IoT/BarChartCard',
+  title: __DEV__ ? '1 - Watson IoT/⚠️ BarChartCard' : '1 - Watson IoT/BarChartCard',
   parameters: {
     component: BarChartCard,
+    docs: {
+      page: BarChartCardREADME,
+    },
   },
 };
 
-export const SimpleBarVertical = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
+export const SimpleBar = () => {
+  const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles by city')}
         id="simple-sample"
+        breakpoint={breakpoint}
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          xLabel: 'Cities',
-          yLabel: 'Particles',
-          series: [
-            {
-              dataSourceId: 'particles',
-              color: COLORS,
-            },
-          ],
-          categoryDataSourceId: 'city',
-          layout: BAR_CHART_LAYOUTS.VERTICAL,
-          unit: 'P',
-          type: 'SIMPLE',
-        })}
-        values={barChartData.quarters.filter((q) => q.quarter === '2020-Q1')}
-        size={size}
-        availableActions={{ expand: true }}
-      />
-    </div>
-  );
-};
-
-SimpleBarVertical.story = {
-  name: 'Simple bar - Vertical',
-};
-
-export const SimpleBarHorizontal = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <BarChartCard
-        title={text('title', 'Particles by city')}
-        id="simple-horizontal-sample"
-        isLoading={boolean('isLoading', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          xLabel: 'Cities',
-          yLabel: 'Particles',
-          series: [
-            {
-              dataSourceId: 'particles',
-              color: {
-                Amsterdam: 'yellow',
-                'New York': 'yellow',
-                Bangkok: 'red',
-                'San Francisco': 'pink',
+        content={{
+          ...object('content', {
+            xLabel: 'Cities',
+            yLabel: 'Particles',
+            series: [
+              {
+                dataSourceId: 'particles',
+                color: COLORS,
               },
-            },
-          ],
-          categoryDataSourceId: 'city',
-          layout: BAR_CHART_LAYOUTS.HORIZONTAL,
-          type: 'SIMPLE',
+            ],
+            categoryDataSourceId: 'city',
+            type: BAR_CHART_TYPES.SIMPLE,
+            unit: 'P',
+          }),
+          layout: select('content.layout', layouts, BAR_CHART_LAYOUTS.VERTICAL),
+        }}
+        i18n={object('i18n', {
+          noDataLabel: 'No data for this card.',
         })}
-        values={barChartData.quarters.filter((a) => a.quarter === '2020-Q1')}
+        values={
+          boolean('with no data', false)
+            ? []
+            : barChartData.quarters.filter((a) => a.quarter === '2020-Q1')
+        }
         size={size}
         onCardAction={action('onCardAction')}
-        availableActions={{ expand: true }}
+        availableActions={object('availableActions', { expand: true })}
       />
     </div>
   );
 };
 
-SimpleBarHorizontal.story = {
-  name: 'Simple bar - Horizontal',
-};
+SimpleBar.storyName = 'with simple bar';
 
 export const SimpleBarTimeSeriesCustomDomainRange = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
+  const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles over 4 days')}
         id="simple-time-sample"
+        breakpoint={breakpoint}
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          layout: BAR_CHART_LAYOUTS.VERTICAL,
-          xLabel: 'Date',
-          yLabel: 'Particles',
-          series: [
-            {
-              dataSourceId: 'particles',
-              // colors: COLORS,
-              label: 'Particles really long label to check trunc',
-            },
-          ],
-          timeDataSourceId: 'timestamp',
-          type: 'SIMPLE',
+        isExpanded={boolean('isExpanded', false)}
+        content={{
+          ...object('content', {
+            xLabel: 'Date',
+            yLabel: 'Particles',
+            series: [
+              {
+                dataSourceId: 'particles',
+
+                label: 'Particles really long label to check trunc',
+              },
+            ],
+            timeDataSourceId: 'timestamp',
+            type: 'SIMPLE',
+          }),
+          layout: select('content.layout', layouts, BAR_CHART_LAYOUTS.VERTICAL),
+          zoomBar: {
+            enabled: boolean('content.zoomBar.enabled', false),
+            axes: 'top',
+            view: select('content.zoomBar.view', ['slider_view', 'graph_view'], 'slider_view'),
+          },
+        }}
+        // key is a simple storybook hack to force the chart to re-render when zoomBar changes,
+        // otherwise carbon-charts won't automatically re-render it (even in their own stories).
+        key={`${boolean('content.zoomBar.enabled', false)}-${select(
+          'content.layout',
+          layouts,
+          BAR_CHART_LAYOUTS.VERTICAL
+        )}`}
+        i18n={object('i18n', {
+          noDataLabel: 'No data for this card.',
         })}
-        domainRange={[1581251825000, 1581524625000]}
-        values={barChartData.timestamps.filter((t) => t.city === 'Amsterdam')}
+        domainRange={object('domainRange', [1581251825000, 1581524625000])}
+        values={
+          boolean('with no data', false)
+            ? []
+            : barChartData.timestamps.filter((t) => t.city === 'Amsterdam')
+        }
         size={size}
         onCardAction={action('onCardAction')}
-        availableActions={{ expand: true, range: true }}
+        availableActions={object('availableActions', { expand: true, range: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
       />
     </div>
   );
 };
 
-SimpleBarTimeSeriesCustomDomainRange.story = {
-  name: 'Simple bar - Time series - custom domainRange',
+SimpleBarTimeSeriesCustomDomainRange.storyName =
+  'with simple bar of time series data and custom domainRange';
+
+export const SimpleBarTimeSeries = () => {
+  const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  const interval = select(
+    'interval',
+    ['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year'],
+    'minute'
+  );
+  return (
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
+      <BarChartCard
+        title={text('title', 'Temperature over time')}
+        id="simple-time-sample"
+        breakpoint={breakpoint}
+        isLoading={boolean('isLoading', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        content={{
+          ...object('content', {
+            xLabel: 'Date',
+            yLabel: 'Temperature',
+            series: [
+              {
+                dataSourceId: 'temperature',
+
+                label: 'Temperature really long label to check trunc',
+              },
+            ],
+            timeDataSourceId: 'timestamp',
+            type: 'SIMPLE',
+          }),
+          layout: select('content.layout', layouts, BAR_CHART_LAYOUTS.VERTICAL),
+          zoomBar: {
+            enabled: boolean('content.zoomBar.enabled', false),
+            axes: 'top',
+            view: select('content.zoomBar.view', ['slider_view', 'graph_view'], 'slider_view'),
+          },
+        }}
+        // key is a simple storybook hack to force the chart to re-render when zoomBar changes,
+        // otherwise carbon-charts won't automatically re-render it (even in their own stories).
+        key={`${boolean('content.zoomBar.enabled', false)}-${select(
+          'content.layout',
+          layouts,
+          BAR_CHART_LAYOUTS.VERTICAL
+        )}`}
+        i18n={object('i18n', {
+          noDataLabel: 'No data for this card.',
+        })}
+        values={getIntervalChartData(
+          interval,
+          number('numberOfDataPoints', 15),
+          {
+            min: number('minimumDataPointRange', 10),
+            max: number('maximumDataPointRange', 100),
+          },
+          10
+        )}
+        interval={interval}
+        size={size}
+        onCardAction={action('onCardAction')}
+        availableActions={object('availableActions', { expand: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
+      />
+    </div>
+  );
 };
 
-export const GroupedBarVertical = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
+SimpleBarTimeSeries.storyName = 'with simple bar of time series data and intervals';
+
+export const GroupedBar = () => {
+  const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles and temperature in cities')}
         id="grouped-sample"
+        breakpoint={breakpoint}
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          type: BAR_CHART_TYPES.GROUPED,
-          xLabel: 'Cities',
-          yLabel: 'Total',
-          series: [
-            {
-              dataSourceId: 'particles',
-              label: 'Particles',
-              color: 'blue',
-            },
-            {
-              dataSourceId: 'temperature',
-              label: 'Temperature',
-            },
-            {
-              dataSourceId: 'emissions',
-              label: 'Emissions',
-            },
-          ],
-          categoryDataSourceId: 'city',
-        })}
-        values={barChartData.quarters.filter((a) => a.quarter === '2020-Q1')}
-        size={size}
-        onCardAction={action('onCardAction')}
-        availableActions={{ expand: true }}
-      />
-    </div>
-  );
-};
-
-GroupedBarVertical.story = {
-  name: 'Grouped bar - Vertical',
-};
-
-export const GroupedBarHorizontal = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <BarChartCard
-        title={text('title', 'Particles and temperature in cities')}
-        id="grouped-horizontal-sample"
-        isLoading={boolean('isLoading', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          type: BAR_CHART_TYPES.GROUPED,
-          layout: BAR_CHART_LAYOUTS.HORIZONTAL,
-          xLabel: 'Total',
-          yLabel: 'Cities',
-          series: [
-            {
-              dataSourceId: 'particles',
-              label: 'Particles',
-              color: {
-                Particles: 'yellow',
-                Temperature: 'purple',
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
+        content={{
+          ...object('content', {
+            type: BAR_CHART_TYPES.GROUPED,
+            xLabel: 'Cities',
+            yLabel: 'Total',
+            series: [
+              {
+                dataSourceId: 'particles',
+                label: 'Particles',
+                color: 'blue',
               },
-            },
-            {
-              dataSourceId: 'temperature',
-              label: 'Temperature',
-              // colors: COLORS,
-            },
-            {
-              dataSourceId: 'emissions',
-              label: 'Emissions',
-            },
-          ],
-          categoryDataSourceId: 'city',
+              {
+                dataSourceId: 'temperature',
+                label: 'Temperature',
+              },
+              {
+                dataSourceId: 'emissions',
+                label: 'Emissions',
+              },
+            ],
+            categoryDataSourceId: 'city',
+          }),
+          layout: select('content.layout', layouts, BAR_CHART_LAYOUTS.VERTICAL),
+        }}
+        i18n={object('i18n', {
+          noDataLabel: 'No data for this card.',
         })}
-        values={barChartData.quarters.filter((a) => a.quarter === '2020-Q2')}
+        values={
+          boolean('with no data', false)
+            ? []
+            : barChartData.quarters.filter((a) => a.quarter === '2020-Q1')
+        }
         size={size}
         onCardAction={action('onCardAction')}
-        availableActions={{ expand: true }}
+        availableActions={object('availableActions', { expand: true })}
       />
     </div>
   );
 };
 
-GroupedBarHorizontal.story = {
-  name: 'Grouped bar - Horizontal',
-};
+GroupedBar.storyName = 'with grouped bar';
 
-export const StackedBarVertical = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
+export const StackedBar = () => {
+  const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles and temperature in cities')}
         id="stacked-sample"
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          type: BAR_CHART_TYPES.STACKED,
-          layout: BAR_CHART_LAYOUTS.VERTICAL,
-          xLabel: 'Cities',
-          yLabel: 'Total',
-          series: [
-            {
-              dataSourceId: 'particles',
-              label: 'Particles',
-              // colors: COLORS,
-            },
-            {
-              dataSourceId: 'temperature',
-              label: 'Temperature',
-              // colors: COLORS,
-            },
-            {
-              dataSourceId: 'emissions',
-              label: 'Emission',
-            },
-          ],
-          categoryDataSourceId: 'city',
+        breakpoint={breakpoint}
+        content={{
+          ...object('content', {
+            type: BAR_CHART_TYPES.STACKED,
+            xLabel: 'Cities',
+            yLabel: 'Total',
+            series: [
+              {
+                dataSourceId: 'particles',
+                label: 'Particles',
+              },
+              {
+                dataSourceId: 'temperature',
+                label: 'Temperature',
+              },
+              {
+                dataSourceId: 'emissions',
+                label: 'Emission',
+              },
+            ],
+            categoryDataSourceId: 'city',
+          }),
+          layout: select('content.layout', layouts, BAR_CHART_LAYOUTS.VERTICAL),
+        }}
+        i18n={object('i18n', {
+          noDataLabel: 'No data for this card.',
         })}
-        values={barChartData.quarters.filter((a) => a.quarter === '2020-Q3')}
+        values={
+          boolean('with no data', false)
+            ? []
+            : barChartData.quarters.filter((a) => a.quarter === '2020-Q3')
+        }
         size={size}
         onCardAction={action('onCardAction')}
-        availableActions={{ expand: true }}
+        availableActions={object('availableActions', { expand: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
       />
     </div>
   );
 };
 
-StackedBarVertical.story = {
-  name: 'Stacked bar - Vertical',
-};
-
-export const StackedBarHorizontal = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <BarChartCard
-        title={text('title', 'Particles and temperature in cities')}
-        id="stacked-horizontal-sample"
-        isLoading={boolean('isLoading', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          type: BAR_CHART_TYPES.STACKED,
-          layout: BAR_CHART_LAYOUTS.HORIZONTAL,
-          xLabel: 'Total',
-          yLabel: 'Cities',
-          series: [
-            {
-              dataSourceId: 'particles',
-              label: 'Particles',
-              // colors: COLORS,
-            },
-            {
-              dataSourceId: 'temperature',
-              label: 'Temperature',
-              // colors: COLORS,
-            },
-            {
-              dataSourceId: 'emissions',
-              label: 'Emission',
-            },
-          ],
-          categoryDataSourceId: 'city',
-        })}
-        values={barChartData.quarters.filter((a) => a.quarter === '2020-Q4')}
-        size={size}
-        onCardAction={action('onCardAction')}
-        availableActions={{ expand: true }}
-      />
-    </div>
-  );
-};
-
-StackedBarHorizontal.story = {
-  name: 'Stacked bar - Horizontal',
-};
+StackedBar.storyName = 'with stacked bar';
 
 export const StackedBarTimeSeries = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
+  const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles / emissions over 4 days')}
         id="stacked-horizontal-sample"
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
         isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
+        breakpoint={breakpoint}
+        content={{
           type: BAR_CHART_TYPES.STACKED,
-          layout: BAR_CHART_LAYOUTS.VERTICAL,
           xLabel: 'Dates',
           yLabel: 'Total',
           series: [
             {
               dataSourceId: 'particles',
               label: 'Particles',
-              // colors: COLORS,
             },
             {
               dataSourceId: 'emissions',
               label: 'Emissions',
-              // colors: COLORS,
             },
           ],
           timeDataSourceId: 'timestamp',
-        })}
-        values={barChartData.timestamps}
-        size={size}
-        onCardAction={action('onCardAction')}
-        availableActions={{ expand: true, range: true }}
-      />
-    </div>
-  );
-};
-
-StackedBarTimeSeries.story = {
-  name: 'Stacked bar - Time series',
-};
-
-export const StackedBarTimeSeriesWithCategories = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <BarChartCard
-        title={text('title', 'Particles by city over time')}
-        id="stacked-horizontal-sample"
-        isLoading={boolean('isLoading', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          type: BAR_CHART_TYPES.STACKED,
-          layout: BAR_CHART_LAYOUTS.VERTICAL,
-          xLabel: 'Dates',
-          yLabel: 'Total',
-          series: [
-            {
-              dataSourceId: 'particles',
-              // colors: COLORS,
-            },
-          ],
-          timeDataSourceId: 'timestamp',
-          categoryDataSourceId: 'city',
-        })}
-        values={barChartData.timestamps}
-        size={size}
-        onCardAction={action('onCardAction')}
-        availableActions={{ expand: true, range: true }}
-      />
-    </div>
-  );
-};
-
-StackedBarTimeSeriesWithCategories.story = {
-  name: 'Stacked bar - Time series with categories',
-};
-
-export const WithZoomBar = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <BarChartCard
-        title={text('title', 'Particles by city over time')}
-        id="stacked-horizontal-sample"
-        isLoading={boolean('isLoading', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          type: BAR_CHART_TYPES.STACKED,
-          layout: BAR_CHART_LAYOUTS.VERTICAL,
-          xLabel: 'Dates',
-          yLabel: 'Total',
-          series: [
-            {
-              dataSourceId: 'particles',
-            },
-          ],
-          timeDataSourceId: 'timestamp',
-          categoryDataSourceId: 'city',
+          layout: select(`content.layout`, layouts, BAR_CHART_LAYOUTS.VERTICAL),
           zoomBar: {
-            enabled: true,
+            enabled: boolean('content.zoomBar.enabled', false),
             axes: 'top',
-            view: select('view', ['slider_view', 'graph_view'], 'slider_view'),
+            view: select('content.zoomBar.view', ['slider_view', 'graph_view'], 'slider_view'),
           },
-        })}
-        values={barChartData.timestamps}
-        size={size}
-        onCardAction={action('onCardAction')}
-        availableActions={{ expand: true, range: true }}
-      />
-    </div>
-  );
-};
-
-WithZoomBar.story = {
-  name: 'with zoomBar',
-};
-
-export const NoData = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <BarChartCard
-        title={text('title', 'Particles and temperature in cities')}
-        id="simple-sample-no-data"
-        isLoading={boolean('isLoading', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpandable', false)}
+        }}
+        // key is a simple storybook hack to force the chart to re-render when zoomBar changes,
+        // otherwise carbon-charts won't automatically re-render it (even in their own stories).
+        key={boolean('content.zoomBar.enabled', false) ? 'with zoombar' : 'without zoom bar'}
         i18n={object('i18n', {
           noDataLabel: 'No data for this card.',
         })}
-        content={object('content', {
-          xLabel: 'Cities',
-          yLabel: 'Particles',
-          series: [
-            {
-              dataSourceId: 'particles',
-              // colors: COLORS,
-            },
-          ],
-          categoryDataSourceId: 'city',
-          layout: BAR_CHART_LAYOUTS.VERTICAL,
-          type: BAR_CHART_TYPES.SIMPLE,
-        })}
-        values={barChartData.quarters.filter((a) => a.quarter === 'NOT_VALID')}
+        values={boolean('with no data', false) ? [] : barChartData.timestamps}
         size={size}
         onCardAction={action('onCardAction')}
-        availableActions={{ expand: true, range: true }}
+        availableActions={object('availableActions', { expand: true, range: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
       />
     </div>
   );
 };
 
-NoData.story = {
-  name: 'No data',
-};
+StackedBarTimeSeries.storyName = 'with stacked bar of time series data';
 
-export const IsExpanded = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
+export const StackedBarTimeSeriesWithCategories = () => {
+  const size = select('size', sizes, CARD_SIZES.MEDIUMWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
   return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <BarChartCard
         title={text('title', 'Particles by city over time')}
         id="stacked-horizontal-sample"
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpandable', true)}
-        content={object('content', {
+        isExpanded={boolean('isExpandable', false)}
+        breakpoint={breakpoint}
+        content={{
           type: BAR_CHART_TYPES.STACKED,
-          layout: BAR_CHART_LAYOUTS.VERTICAL,
           xLabel: 'Dates',
           yLabel: 'Total',
           series: [
             {
               dataSourceId: 'particles',
-              // colors: COLORS,
             },
           ],
           timeDataSourceId: 'timestamp',
-          categoryDataSourceId: 'city',
+          categoryDataSourceId: select('content.categoryDataSourceId', ['city'], 'city'),
+          layout: select(`content.layout`, layouts, BAR_CHART_LAYOUTS.VERTICAL),
           zoomBar: {
-            enabled: true,
+            enabled: boolean('content.zoomBar.enabled', false),
             axes: 'top',
+            view: select('content.zoomBar.view', ['slider_view', 'graph_view'], 'slider_view'),
           },
+        }}
+        // key is a simple storybook hack to force the chart to re-render when zoomBar changes,
+        // otherwise carbon-charts won't automatically re-render it (even in their own stories).
+        key={boolean('content.zoomBar.enabled', false) ? 'with zoombar' : 'without zoom bar'}
+        i18n={object('i18n', {
+          noDataLabel: 'No data for this card.',
         })}
-        values={barChartData.timestamps}
+        values={boolean('with no data', false) ? [] : barChartData.timestamps}
         size={size}
         onCardAction={action('onCardAction')}
-        availableActions={{ expand: true, range: true }}
+        availableActions={object('availableActions', { expand: true, range: true })}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
       />
     </div>
   );
 };
 
-IsExpanded.story = {
-  name: 'isExpanded',
-};
-
-export const IsEditable = () => {
-  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <BarChartCard
-        title={text('title', 'Particles and temperature in cities')}
-        id="grouped-sample"
-        isLoading={boolean('isLoading', false)}
-        isEditable={boolean('isEditable', true)}
-        isExpanded={boolean('isExpandable', false)}
-        content={object('content', {
-          type: BAR_CHART_TYPES.GROUPED,
-          xLabel: 'Cities',
-          yLabel: 'Total',
-          series: [
-            {
-              dataSourceId: 'particles',
-              label: 'Particles',
-              color: 'blue',
-            },
-            {
-              dataSourceId: 'temperature',
-              label: 'Temperature',
-            },
-            {
-              dataSourceId: 'emissions',
-              label: 'Emissions',
-            },
-          ],
-          categoryDataSourceId: 'city',
-        })}
-        values={[]}
-        size={size}
-        onCardAction={action('onCardAction')}
-      />
-    </div>
-  );
-};
-
-IsEditable.story = {
-  name: 'isEditable',
-};
+StackedBarTimeSeriesWithCategories.storyName =
+  'with stacked bar of time series data and categories';

@@ -8,6 +8,7 @@
 		"@ai-apps/styles",
 		"flatpickr",
 		"@carbon/icons",
-		"@carbon/telemetry"
+		"@carbon/telemetry",
+		"date-fns"
 	]
 }

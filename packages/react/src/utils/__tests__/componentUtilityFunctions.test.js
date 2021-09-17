@@ -1,10 +1,12 @@
 import {
   getSortedData,
   canFit,
+  getLayout,
   filterValidAttributes,
   generateCsv,
   convertStringsToDOMElement,
 } from '../componentUtilityFunctions';
+import { CARD_DIMENSIONS, DASHBOARD_COLUMNS } from '../../constants/LayoutConstants';
 
 const mockData = [
   { values: { number: 10, string: 'string', null: 1 } },
@@ -72,6 +74,63 @@ describe('componentUtilityFunctions', () => {
         [0, 0, 0, 0],
       ])
     ).toEqual(true);
+  });
+  describe('getLayout', () => {
+    it('Should generate new a layout for each card', () => {
+      // Current breakpoint
+      const layoutName = 'lg';
+      const cards = [
+        { id: 1, content: {}, size: 'MEDIUM' },
+        { id: 2, content: {}, size: 'MEDIUM' },
+        { id: 3, content: {}, size: 'LARGE' },
+      ];
+      // Only give a layout for the first card
+      const existingLayout = [{ i: 1, x: 2, y: 2 }];
+      const layout = getLayout(
+        layoutName,
+        cards,
+        DASHBOARD_COLUMNS,
+        CARD_DIMENSIONS,
+        existingLayout
+      );
+      // Should generate a layout for all 3 cards
+      expect(layout).toEqual([
+        { i: 1, h: 2, w: 8, x: 2, y: 2 },
+        { i: 2, h: 2, w: 8, x: 0, y: 0 },
+        { i: 3, h: 4, w: 8, x: 0, y: 4 },
+      ]);
+    });
+    it('Should throw a console.error if layout is bad', () => {
+      // Spy on the console to make sure we throw our error
+      jest.spyOn(console, 'error').mockImplementation(() => {});
+      const layoutName = 'md';
+      const cards = [
+        { id: 1, content: {}, size: 'MEDIUM' },
+        { id: 2, content: {}, size: 'MEDIUM' },
+        { id: 3, content: {}, size: 'LARGE' },
+      ];
+      // This layout is bad because a MEDIUM card would not fit at a 'md'
+      // breakpoint if it was set with an x offset of x: 2.
+      // A MEDIUM card has a width of 8 units, so if you set it at x: 2 it
+      // will attempt to be placed outside of the bounds of the 'md' breakpoint which is
+      // 8 units wide as well.
+      const existingLayout = [{ i: 1, x: 2, y: 2 }];
+      const mdLayout = getLayout(
+        layoutName,
+        cards,
+        DASHBOARD_COLUMNS,
+        CARD_DIMENSIONS,
+        existingLayout
+      );
+      // This should throw a console error that the layout is bad, but not fail the test as react-grid-layout will fix it for us
+      expect(mdLayout).toEqual([
+        { h: 2, i: 1, w: 8, x: 2, y: 2 },
+        { h: 2, i: 2, w: 8, x: 0, y: 0 },
+        { h: 4, i: 3, w: 8, x: 0, y: 4 },
+      ]);
+      expect(console.error).toHaveBeenCalled();
+      console.error.mockClear();
+    });
   });
   it('filterValidAttributes allow HTML attributes, event handlers, react lib', () => {
     // HTML

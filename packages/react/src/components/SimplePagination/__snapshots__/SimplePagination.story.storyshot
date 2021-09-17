@@ -1,113 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SimplePagination default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SimplePagination default 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="SimplePaginationstory__StyledSimplePagination-sc-17bs5nv-0 eccRzy"
   >
     <div
-      className="SimplePaginationstory__StyledSimplePagination-sc-17bs5nv-0 eccRzy"
+      className="iot-simple-pagination-container"
+      data-testid="iot-simple-pagination"
     >
+      <span
+        className="iot-simple-pagination-page-label"
+        maxpage={4}
+      >
+        10 Assets
+      </span>
       <div
-        className="iot-simple-pagination-container"
-        data-testid="iot-simple-pagination"
+        className="iot-simple-pagination-page-bar"
       >
         <span
           className="iot-simple-pagination-page-label"
           maxpage={4}
         >
-          10 Assets
+          Page 1 of 4
         </span>
         <div
-          className="iot-simple-pagination-page-bar"
+          className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+          data-testid="iot-simple-pagination-backward-button"
+          role="button"
+          tabIndex={-1}
         >
-          <span
-            className="iot-simple-pagination-page-label"
-            maxpage={4}
+          <svg
+            aria-label="Prev page"
+            className="iot-simple-pagination-caret-disabled"
+            dir="ltr"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Page 1 of 4
-          </span>
-          <div
-            className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
-            role="button"
-            tabIndex={-1}
+            <path
+              d="M20 24L10 16 20 8z"
+            />
+          </svg>
+        </div>
+        <div
+          className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+          data-testid="iot-simple-pagination-forward-button"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <svg
+            aria-label="Next page"
+            className="iot-simple-pagination-caret"
+            dir="ltr"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-label="Prev page"
-              className="iot-simple-pagination-caret-disabled"
-              dir="ltr"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 24L10 16 20 8z"
-              />
-            </svg>
-          </div>
-          <div
-            className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            tabIndex={0}
-          >
-            <svg
-              aria-label="Next page"
-              className="iot-simple-pagination-caret"
-              dir="ltr"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 8L22 16 12 24z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M12 8L22 16 12 24z"
+            />
+          </svg>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

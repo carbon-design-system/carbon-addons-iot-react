@@ -68,7 +68,7 @@ const props = () => {
 };
 
 export default {
-  title: 'ModalWrapper',
+  title: '3 - Carbon/ModalWrapper',
   decorators: [withKnobs],
 
   parameters: {

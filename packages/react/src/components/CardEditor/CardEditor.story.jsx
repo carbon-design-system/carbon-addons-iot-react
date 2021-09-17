@@ -3,17 +3,20 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
 import { EscalatorDown } from '@carbon/pictograms-react';
 import { Basketball32, Code24 } from '@carbon/icons-react';
+import { TextInput, Select, SelectItem } from 'carbon-components-react';
 
 import munichBuilding from '../ImageCard/MunichBuilding.png';
-import { CARD_SIZES, DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  CARD_TYPES,
+  CARD_SIZES,
+  DASHBOARD_EDITOR_CARD_TYPES,
+} from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
 import CardEditor from './CardEditor';
 
 export const Experimental = () => <StoryNotice componentName="CardEditor" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 const CardEditorInteractive = () => {
   const defaultCard = {
@@ -52,7 +55,7 @@ const CardEditorInteractive = () => {
 };
 
 export default {
-  title: 'Watson IoT Experimental/☢️ CardEditor',
+  title: '2 - Watson IoT Experimental/☢️ CardEditor',
   decorators: [withKnobs],
 
   parameters: {
@@ -105,9 +108,7 @@ export const Default = () => (
   </div>
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const ForTimeSeries = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
@@ -154,9 +155,7 @@ export const ForTimeSeries = () => (
   </div>
 );
 
-ForTimeSeries.story = {
-  name: 'for TimeSeries',
-};
+ForTimeSeries.storyName = 'for TimeSeries';
 
 export const WithNoCardDefinedGalleryView = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
@@ -204,15 +203,11 @@ export const WithNoCardDefinedGalleryViewAndCustomCards = () => (
   </div>
 );
 
-WithNoCardDefinedGalleryView.story = {
-  name: 'with no card defined (gallery view)',
-};
+WithNoCardDefinedGalleryView.storyName = 'with no card defined (gallery view)';
 
 export const Interactive = () => <CardEditorInteractive />;
 
-Interactive.story = {
-  name: 'interactive',
-};
+Interactive.storyName = 'interactive';
 
 export const ForImage = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
@@ -243,9 +238,7 @@ export const ForImage = () => (
   </div>
 );
 
-ForImage.story = {
-  name: 'for Image',
-};
+ForImage.storyName = 'for Image';
 
 export const WithTooltipLink = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
@@ -293,6 +286,203 @@ export const WithTooltipLink = () => (
   </div>
 );
 
-Default.story = {
-  name: 'default',
+Default.storyName = 'default';
+
+const renderCustomEditContent = (onChange, cardConfig) => {
+  return [
+    {
+      header: { title: 'customTitle', tooltip: { tooltipText: 'Custom Tooltip' } },
+      content: (
+        <TextInput
+          id="custom-content-textinput"
+          value={cardConfig.title}
+          labelText="Title"
+          onChange={(event) => onChange({ ...cardConfig, title: event.currentTarget.value })}
+        />
+      ),
+    },
+  ];
 };
+
+export const TimeSeriesCardWithCustom = () => {
+  return (
+    <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+      <CardEditor
+        cardConfig={{
+          renderEditContent: renderCustomEditContent,
+          type: CARD_TYPES.TIMESERIES,
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'discharge_flow_rate',
+                label: 'Discharge flow',
+                precision: 3,
+              },
+              {
+                dataSourceId: 'discharge_perc',
+                label: 'Max Discharge %',
+                precision: 3,
+              },
+            ],
+          },
+          dataSource: {
+            attributes: [
+              {
+                aggregator: 'mean',
+                attribute: 'discharge_flow_rate',
+                id: 'discharge_flow_rate',
+              },
+              {
+                aggregator: 'max',
+                attribute: 'discharge_perc',
+                id: 'discharge_perc',
+              },
+            ],
+          },
+          id: 'calculated',
+          size: 'MEDIUMTHIN',
+          title: 'Calculated',
+        }}
+        dataItems={[
+          { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
+          { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
+          { dataItemId: 'torque', dataSourceId: 'torque_mean', label: 'Torque Mean' },
+          { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+          { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
+        ]}
+        errors={{}}
+        onShowGallery={action('onShowGallery')}
+        onChange={action('onChange')}
+        onAddCard={action('onAddCard')}
+        dataSeriesItemLinks={{ value: 'www.ibm.com' }}
+      />
+    </div>
+  );
+};
+
+TimeSeriesCardWithCustom.storyName = 'custom edit content for time series card';
+
+// returns custom selector
+const renderCustomDataTypeSelector = (onChange, card, dataTypes, selectedDataType) => {
+  return [
+    {
+      content: (
+        <Select
+          labelText="Data source"
+          onChange={(event) => {
+            const updatedCard = { ...card, dataType: event.currentTarget.value };
+            action('onChange')(updatedCard);
+            onChange(updatedCard);
+          }}
+          id="select-1"
+          defaultValue={selectedDataType}
+        >
+          {dataTypes.map((dataType) => (
+            <SelectItem key={dataType} value={dataType} text={dataType} />
+          ))}
+        </Select>
+      ),
+    },
+  ];
+};
+
+const dataTypes = ['DataType1', 'DataType2'];
+export const TableCardWithCustom = () => {
+  const StatefulTableEditor = () => {
+    const [localCardState, setLocalCardState] = useState({
+      renderEditContent: (onChange, cardConfig) =>
+        renderCustomDataTypeSelector(onChange, cardConfig, dataTypes, dataTypes[1]),
+      title: 'Table card with custom edit content',
+      id: `table card`,
+      size: CARD_SIZES.LARGEWIDE,
+      type: CARD_TYPES.TABLE,
+      content: {
+        columns: [
+          { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
+          { dataSourceId: 'Campus_EGL', label: 'Campus' },
+          {
+            dataSourceId: 'peopleCount_EnterpriseBuilding_mean',
+            label: 'People',
+          },
+          {
+            dataSourceId: 'headCount_EnterpriseBuilding_mean',
+            label: 'Headcount',
+          },
+          {
+            dataSourceId: 'capacity_EnterpriseBuilding_mean',
+            label: 'capacity',
+          },
+        ],
+      },
+    });
+    return (
+      <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+        <CardEditor
+          cardConfig={localCardState}
+          dataItems={[
+            { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
+            { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
+            { dataItemId: 'torque', dataSourceId: 'torque_mean', label: 'Torque Mean' },
+            { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+            { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
+          ]}
+          errors={{}}
+          onShowGallery={action('onShowGallery')}
+          onChange={(card) => setLocalCardState(card)}
+          onAddCard={action('onAddCard')}
+          dataSeriesItemLinks={{ value: 'www.ibm.com' }}
+          getValidDataItems={action('getValidDataItems')}
+          getValidDimensions={(cardConfig) => {
+            action('getValidDimensions')(cardConfig);
+            return { dimension1: ['value1', 'value2'], dimension2: ['value3', 'value4'] };
+          }}
+        />
+      </div>
+    );
+  };
+  return <StatefulTableEditor />;
+};
+
+TableCardWithCustom.storyName = 'custom edit content for table card';
+
+export const DynamicallyAddSpecialContentToCardEditForm = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      cardConfig={{
+        title: 'Table card with dynamic custom edit content',
+        id: `table card`,
+        size: CARD_SIZES.LARGEWIDE,
+        type: CARD_TYPES.TABLE,
+        content: {
+          columns: [
+            { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
+            { dataSourceId: 'Campus_EGL', label: 'Campus' },
+            {
+              dataSourceId: 'peopleCount_EnterpriseBuilding_mean',
+              label: 'People',
+            },
+            {
+              dataSourceId: 'headCount_EnterpriseBuilding_mean',
+              label: 'Headcount',
+            },
+            {
+              dataSourceId: 'capacity_EnterpriseBuilding_mean',
+              label: 'capacity',
+            },
+          ],
+        },
+      }}
+      // dynamically adds the custom edit content at render time
+      onRenderCardEditForm={(cardConfig) => ({
+        ...cardConfig,
+        renderEditContent: (onChange, cardConfig) =>
+          renderCustomDataTypeSelector(onChange, cardConfig, dataTypes, dataTypes[1]),
+      })}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+DynamicallyAddSpecialContentToCardEditForm.storyName = 'Dynamically add edit form content';

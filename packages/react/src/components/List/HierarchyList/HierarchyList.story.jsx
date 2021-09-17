@@ -4,7 +4,7 @@ import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-import { Button, InlineLoading } from '../../..';
+import { Button, InlineLoading, DragAndDrop } from '../../..';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
@@ -22,7 +22,7 @@ const addButton = (
 );
 
 export default {
-  title: 'Watson IoT/HierarchyList',
+  title: '1 - Watson IoT/HierarchyList',
 
   parameters: {
     component: HierarchyList,
@@ -76,13 +76,12 @@ export const StatefulListWithNestedSearching = () => (
       i18n={object('i18n', {
         searchPlaceHolderText: 'Search',
       })}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
 
-StatefulListWithNestedSearching.story = {
-  name: 'Stateful list with nested searching',
-};
+StatefulListWithNestedSearching.storyName = 'Stateful list with nested searching';
 
 export const WithDefaultSelectedId = () => (
   <div style={{ width: 400, height: 400 }}>
@@ -125,13 +124,12 @@ export const WithDefaultSelectedId = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
 
-WithDefaultSelectedId.story = {
-  name: 'With defaultSelectedId',
-};
+WithDefaultSelectedId.storyName = 'With defaultSelectedId';
 
 export const WithOverflowMenu = () => (
   <div style={{ width: 400, height: 400 }}>
@@ -195,13 +193,12 @@ export const WithOverflowMenu = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
 
-WithOverflowMenu.story = {
-  name: 'With OverflowMenu',
-};
+WithOverflowMenu.storyName = 'With OverflowMenu';
 
 export const WithNestedReorder = () => {
   const HierarchyListWithReorder = () => {
@@ -261,6 +258,7 @@ export const WithNestedReorder = () => {
           hasSearch={boolean('hasSearch', true)}
           onSelect={action('onSelect')}
           hasDeselection={boolean('hasDeselection', true)}
+          hasMultiSelect={boolean('hasMultiSelect', false)}
         />
       </div>
     );
@@ -268,6 +266,14 @@ export const WithNestedReorder = () => {
 
   return <HierarchyListWithReorder />;
 };
+
+WithNestedReorder.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const WithDefaultExpandedIds = () => (
   <div style={{ width: 400, height: 400 }}>
@@ -310,13 +316,12 @@ export const WithDefaultExpandedIds = () => (
       defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
 
-WithDefaultExpandedIds.story = {
-  name: 'With defaultExpandedIds',
-};
+WithDefaultExpandedIds.storyName = 'With defaultExpandedIds';
 
 export const WithMixedHierarchies = () => (
   <div style={{ width: 400 }}>
@@ -395,13 +400,12 @@ export const WithMixedHierarchies = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
 
-WithMixedHierarchies.story = {
-  name: 'with mixed hierarchies',
-};
+WithMixedHierarchies.storyName = 'with mixed hierarchies';
 
 export const WithSelectableCategories = () => (
   <div style={{ width: 400, height: 400 }}>
@@ -445,10 +449,9 @@ export const WithSelectableCategories = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
 
-WithSelectableCategories.story = {
-  name: 'With selectable categories',
-};
+WithSelectableCategories.storyName = 'With selectable categories';

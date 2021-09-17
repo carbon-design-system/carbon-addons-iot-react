@@ -5,6 +5,7 @@ import { ButtonKinds } from 'carbon-components-react/es/prop-types/types';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 const propTypes = {
@@ -26,8 +27,14 @@ const propTypes = {
   /** Toggle selected styling for buttons of kind=icon-selection */
   selected: PropTypes.bool,
 
+  // TODO: remove deprecated testID prop in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -39,7 +46,7 @@ const defaultProps = {
   recommended: false,
   hasIconOnly: false,
   selected: false,
-  testID: 'Button',
+  testId: 'Button',
 };
 
 const Button = React.forwardRef((props, ref) => {
@@ -53,7 +60,9 @@ const Button = React.forwardRef((props, ref) => {
     recommended,
     hasIconOnly,
     selected,
+    // TODO: remove deprecated testID prop in v3
     testID,
+    testId,
     ...other
   } = props;
 
@@ -61,7 +70,8 @@ const Button = React.forwardRef((props, ref) => {
     <CarbonButton
       {...other}
       ref={ref}
-      data-testid={testID}
+      // TODO: remove deprecated testID prop in v3
+      data-testid={testID || testId}
       kind={kind === 'icon-selection' ? 'ghost' : kind}
       hasIconOnly={kind === 'icon-selection' ? true : hasIconOnly}
       onClick={onClick}

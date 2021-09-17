@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { unstable_ContextMenu as ContextMenu } from 'carbon-components-react';
+import { unstable_Menu as Menu } from 'carbon-components-react';
 import { ChevronDown16, ChevronUp16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 
 import { settings } from '../../constants/Settings';
+import deprecate from '../../internal/deprecate';
 
 import { SplitMenuButton } from './SplitMenuButton';
 import { SingleMenuButton } from './SingleMenuButton';
@@ -14,7 +15,12 @@ import { getMenuPosition } from './utils';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  testID: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
 
   /**
    * Use by a split menu button to fire the event for clicking on the main button,
@@ -69,7 +75,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  testID: 'menu-button',
+  testId: 'menu-button',
   onPrimaryActionClick: null,
   label: null,
   openIconDescription: 'open menu button',
@@ -79,7 +85,9 @@ const defaultProps = {
 };
 
 const MenuButton = ({
+  // TODO: remove deprecated 'testID' in v3.
   testID,
+  testId,
   onPrimaryActionClick,
   label,
   openIconDescription,
@@ -177,7 +185,8 @@ const MenuButton = ({
     typeof onPrimaryActionClick === 'function' && label ? SplitMenuButton : SingleMenuButton;
   return (
     <div
-      data-testid={`${testID}-wrapper`}
+      // TODO: remove deprecated 'testID' in v3.
+      data-testid={`${testID || testId}-wrapper`}
       className={classnames(`${iotPrefix}--menu-button`, {
         [`${iotPrefix}--menu-button--open`]: isMenuOpen,
       })}
@@ -189,11 +198,12 @@ const MenuButton = ({
         iconDescription={isMenuOpen ? closeIconDescription : openIconDescription}
         renderIcon={isMenuOpen ? renderCloseIcon : renderOpenIcon}
         label={label}
-        testID={testID}
+        // TODO: remove deprecated 'testID' in v3.
+        testId={testID || testId}
       />
-      <ContextMenu open={isMenuOpen} {...position}>
+      <Menu open={isMenuOpen} {...position}>
         {contextMenuItems}
-      </ContextMenu>
+      </Menu>
     </div>
   );
 };

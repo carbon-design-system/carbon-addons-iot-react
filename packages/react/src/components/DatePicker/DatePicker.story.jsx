@@ -62,7 +62,7 @@ const props = {
 };
 
 export default {
-  title: 'DatePicker',
+  title: '3 - Carbon/DatePicker',
   decorators: [withKnobs],
 
   parameters: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Button } from 'carbon-components-react';
 
+import Button from '../Button';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 
@@ -24,36 +24,28 @@ const tooltip = {
 };
 
 export default {
-  title: 'Watson IoT/🚫 Hero',
+  title: '1 - Watson IoT/🚫 Hero',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 
 export const Deprecated = () => (
   <StoryNotice componentName="Hero" replacementComponentName="PageTitleBar" />
 );
-Deprecated.story = {
-  name: deprecatedStoryTitle,
-};
+Deprecated.storyName = deprecatedStoryTitle;
 
 export const Normal = () => <Hero title="Explore" />;
 
-Normal.story = {
-  name: 'normal',
-};
+Normal.storyName = 'normal';
 
 export const WithDescription = () => (
   <Hero title="Explore" description={commonPageHeroProps.description} />
 );
 
-WithDescription.story = {
-  name: 'with description',
-};
+WithDescription.storyName = 'with description';
 
 export const IsLoading = () => <Hero title="Explore" isLoading />;
 
-IsLoading.story = {
-  name: 'isLoading',
-};
+IsLoading.storyName = 'isLoading';
 
 export const WithRightContent = () => (
   <Hero
@@ -68,9 +60,7 @@ export const WithRightContent = () => (
   />
 );
 
-WithRightContent.story = {
-  name: 'with right content',
-};
+WithRightContent.storyName = 'with right content';
 
 export const WithBreadcrumbWithRightContent = () => (
   <Hero
@@ -80,36 +70,26 @@ export const WithBreadcrumbWithRightContent = () => (
   />
 );
 
-WithBreadcrumbWithRightContent.story = {
-  name: 'with breadcrumb with right content',
-};
+WithBreadcrumbWithRightContent.storyName = 'with breadcrumb with right content';
 
 export const WithBreadcrumb = () => <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />;
 
-WithBreadcrumb.story = {
-  name: 'with breadcrumb',
-};
+WithBreadcrumb.storyName = 'with breadcrumb';
 
 export const WithTooltip = () => (
   <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={tooltip} />
 );
 
-WithTooltip.story = {
-  name: 'with tooltip',
-};
+WithTooltip.storyName = 'with tooltip';
 
 export const WithTooltipNoLink = () => (
   <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={{ message: tooltip.message }} />
 );
 
-WithTooltipNoLink.story = {
-  name: 'with tooltip (no link)',
-};
+WithTooltipNoLink.storyName = 'with tooltip (no link)';
 
 export const WithCloseButton = () => (
   <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} onClose={action('close')} />
 );
 
-WithCloseButton.story = {
-  name: 'with close button',
-};
+WithCloseButton.storyName = 'with close button';

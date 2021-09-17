@@ -37,6 +37,7 @@ export BarChartCard from './components/BarChartCard/BarChartCard';
 export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
 export DateTimePicker from './components/DateTimePicker/DateTimePicker';
+export DateTimePickerV2 from './components/DateTimePicker/DateTimePickerV2';
 export TableViewDropdown from './components/Table/TableViewDropdown/TableViewDropdown';
 export IconDropdown from './components/IconDropdown/IconDropdown';
 export EmptyState from './components/EmptyState/EmptyState';
@@ -59,15 +60,21 @@ export SuiteHeader from './components/SuiteHeader/SuiteHeader';
 export SuiteHeaderProfile from './components/SuiteHeader/SuiteHeaderProfile/SuiteHeaderProfile';
 export SuiteHeaderAppSwitcher from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
 export SuiteHeaderLogoutModal from './components/SuiteHeader/SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
+export IdleLogoutConfirmationModal from './components/SuiteHeader/IdleLogoutConfirmationModal/IdleLogoutConfirmationModal';
+export IdleTimer from './components/SuiteHeader/util/IdleTimer';
 export SuiteHeaderI18N from './components/SuiteHeader/i18n';
 export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderData';
 export suiteHeaderData from './components/SuiteHeader/util/suiteHeaderData';
+export useUiResources from './components/SuiteHeader/hooks/useUiResources';
+export uiresources from './components/SuiteHeader/util/uiresources';
+export Walkme from './components/Walkme/Walkme';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
 export DashboardHeader from './components/Dashboard/DashboardHeader';
 export DashboardGrid from './components/Dashboard/DashboardGrid';
 export DashboardEditor from './components/DashboardEditor/DashboardEditor';
+export DashboardEditorDefaultCardRenderer from './components/DashboardEditor/DashboardEditorDefaultCardRenderer';
 export CardEditor from './components/CardEditor/CardEditor';
 export Card from './components/Card/Card';
 export PieChartCard from './components/PieChartCard/PieChartCard';
@@ -76,16 +83,6 @@ export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';
 export ImageCard from './components/ImageCard/ImageCard';
 export TableCard from './components/TableCard/TableCard';
 export GaugeCard from './components/GaugeCard/GaugeCard';
-export {
-  CARD_TYPES,
-  CARD_SIZES,
-  CARD_ACTIONS,
-  DASHBOARD_BREAKPOINTS,
-  DASHBOARD_SIZES,
-  TIME_SERIES_TYPES,
-  BAR_CHART_TYPES,
-  DASHBOARD_EDITOR_CARD_TYPES,
-} from './constants/LayoutConstants';
 export { DragAndDrop } from './utils/DragAndDropUtils';
 
 // Experimental
@@ -117,9 +114,19 @@ export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicH
 export ComboChartCard from './components/ComboChartCard/ComboChartCard';
 export MenuButton from './components/MenuButton/MenuButton';
 export ListBuilder from './components/ListBuilder/ListBuilder';
+export TearSheet from './components/TearSheet/TearSheet';
+export TearSheetWrapper from './components/TearSheet/TearSheetWrapper';
+export MapCard from './components/MapCard/MapCard';
+export RuleBuilder from './components/RuleBuilder/RuleBuilder';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';
+export {
+  hotspotActionTypes,
+  hotspotTypes,
+  hotspotEditorReducer,
+  useHotspotEditorState,
+} from './components/HotspotEditorModal/hooks/hotspotStateHook';
 
 // Carbon proxy
 export {
@@ -339,3 +346,17 @@ export { determineMaxValueCardAttributeCount } from './components/ValueCard/valu
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
 
 export * from './icons/components';
+export * from './icons/static';
+
+// Constants
+export {
+  CARD_TYPES,
+  CARD_SIZES,
+  CARD_ACTIONS,
+  DASHBOARD_BREAKPOINTS,
+  DASHBOARD_SIZES,
+  TIME_SERIES_TYPES,
+  BAR_CHART_TYPES,
+  DASHBOARD_EDITOR_CARD_TYPES,
+} from './constants/LayoutConstants';
+export { PICKER_KINDS } from './constants/DateConstants';

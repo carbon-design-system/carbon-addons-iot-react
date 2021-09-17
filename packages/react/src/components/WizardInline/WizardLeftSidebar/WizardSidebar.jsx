@@ -8,15 +8,18 @@ const { iotPrefix } = settings;
 const propTypes = {
   sidebar: PropTypes.element,
   width: PropTypes.number,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   sidebar: null,
   width: 200,
+  testId: 'wizard-sidebar',
 };
 
-const WizardSidebar = ({ sidebar, width }) => (
+const WizardSidebar = ({ sidebar, width, testId }) => (
   <div
+    data-testid={testId}
     className={`${iotPrefix}--wizard-inline__sidebar`}
     style={{
       '--min-width': `${width}px`,

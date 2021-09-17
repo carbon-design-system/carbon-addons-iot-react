@@ -23,6 +23,7 @@ const propTypes = {
   footerLeftContent: PropTypes.node,
   nextDisabled: PropTypes.bool,
   sendingData: PropTypes.bool,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -31,6 +32,7 @@ const defaultProps = {
   hasPrev: true,
   hasNext: true,
   sendingData: false,
+  testId: 'wizard-footer',
 };
 
 const WizardFooter = ({
@@ -48,28 +50,50 @@ const WizardFooter = ({
   footerLeftContent,
   nextDisabled,
   sendingData,
+  testId,
 }) => (
   <Fragment>
     {footerLeftContent && (
       <div className="WizardInline-custom-footer-content">{footerLeftContent}</div>
     )}
-    <StyledFooterButtons className={className}>
+    <StyledFooterButtons data-testid={testId} className={className}>
       {!hasPrev ? (
-        <Button onClick={onCancel} kind="secondary">
+        <Button
+          onClick={onCancel}
+          kind="secondary"
+          // TODO: pass testId in v3 to override defaults
+          // testId={`${testId}-cancel-button`}
+        >
           {cancelLabel}
         </Button>
       ) : null}
       {hasPrev ? (
-        <Button onClick={onBack} kind="secondary">
+        <Button
+          onClick={onBack}
+          kind="secondary"
+          // TODO: pass testId in v3 to override defaults
+          // testId={`${testId}-previous-button`}
+        >
           {backLabel}
         </Button>
       ) : null}
       {hasNext ? (
-        <Button onClick={onNext} disabled={nextDisabled}>
+        <Button
+          onClick={onNext}
+          disabled={nextDisabled}
+          // TODO: pass testId in v3 to override defaults
+          // testId={`${testId}-next-button`}
+        >
           {nextLabel}
         </Button>
       ) : (
-        <Button onClick={onSubmit} disabled={nextDisabled} loading={sendingData}>
+        <Button
+          onClick={onSubmit}
+          disabled={nextDisabled}
+          loading={sendingData}
+          // TODO: pass testId in v3 to override defaults
+          // testId={`${testId}-submit-button`}
+        >
           {submitLabel}
         </Button>
       )}

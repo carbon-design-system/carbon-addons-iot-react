@@ -123,6 +123,8 @@ const propTypes = {
    * The dropdown type, `default` or `inline`
    */
   type: PropTypes.oneOf(['default', 'inline']),
+
+  testId: PropTypes.string,
 };
 
 const defaultPropTypes = {
@@ -144,6 +146,7 @@ const defaultPropTypes = {
   titleText: '',
   helperText: '',
   direction: 'bottom',
+  testId: 'dropdown',
 };
 
 const defaultItemToString = (item) => {
@@ -167,9 +170,10 @@ const defaultItemToString = (item) => {
   return content;
 };
 
-const Dropdown = ({ itemToString, ...other }) => {
+const Dropdown = ({ itemToString, testId, ...other }) => {
   return (
     <CarbonDropdown
+      data-testid={testId}
       {...other}
       className={`${iotPrefix}--dropdown`}
       itemToString={itemToString !== null ? itemToString : defaultItemToString}

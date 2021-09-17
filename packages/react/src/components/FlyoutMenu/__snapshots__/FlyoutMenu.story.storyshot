@@ -1,1166 +1,1114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyout Menu Auto Positioning Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FlyoutMenu Custom Footer Example 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "display": "flex",
+        "justifyContent": "center",
       }
     }
   >
     <div
+      className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light iot--flyout-menu__open"
+      data-testid="flyout-menu-container"
       style={
         Object {
-          "display": "flex",
-          "flex": "1",
-          "flexDirection": "column",
-          "height": "calc(100vh - 4rem)",
+          "--tooltip-visibility": "hidden",
         }
       }
     >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flex": 1,
-            "flexDirection": "row",
-          }
-        }
+      <button
+        aria-describedby={null}
+        aria-label="Helpful description"
+        className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+        data-testid="flyout-menu-button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
       >
         <div
-          style={
-            Object {
-              "alignItems": "flex-start",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-start",
-            }
-          }
+          className="bx--assistive-text"
+          onMouseEnter={[Function]}
         >
-          <div
-            className="iot--flyout-menu iot--flyout-menu__left"
-            style={
-              Object {
-                "--tooltip-visibility": "hidden",
-              }
-            }
-          >
-            <button
-              aria-label="Helpful description"
-              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="flyout-menu-button"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Helpful description
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Helpful description"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-                />
-              </svg>
-            </button>
-            <div
-              className="iot--flyout-menu--tooltip-anchor"
-              data-floating-menu-container={true}
-            >
-              <div
-                aria-describedby={null}
-                aria-expanded={false}
-                aria-label="Helpful description"
-                className="bx--tooltip__label"
-                id="test-trigger-id-2"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                role="button"
-                tabIndex={0}
-              />
-            </div>
-          </div>
+          Helpful description
         </div>
-        <div
-          style={
-            Object {
-              "alignItems": "flex-start",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <div
-            className="iot--flyout-menu iot--flyout-menu__top"
-            style={
-              Object {
-                "--tooltip-visibility": "hidden",
-              }
-            }
-          >
-            <button
-              aria-label="Helpful description"
-              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="flyout-menu-button"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Helpful description
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Helpful description"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-                />
-              </svg>
-            </button>
-            <div
-              className="iot--flyout-menu--tooltip-anchor"
-              data-floating-menu-container={true}
-            >
-              <div
-                aria-describedby={null}
-                aria-expanded={false}
-                aria-label="Helpful description"
-                className="bx--tooltip__label"
-                id="test-trigger-id-2"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                role="button"
-                tabIndex={0}
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "flex-start",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-end",
-            }
-          }
-        >
-          <div
-            className="iot--flyout-menu iot--flyout-menu__right"
-            style={
-              Object {
-                "--tooltip-visibility": "hidden",
-              }
-            }
-          >
-            <button
-              aria-label="Helpful description"
-              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="flyout-menu-button"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Helpful description
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Helpful description"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-                />
-              </svg>
-            </button>
-            <div
-              className="iot--flyout-menu--tooltip-anchor"
-              data-floating-menu-container={true}
-            >
-              <div
-                aria-describedby={null}
-                aria-expanded={false}
-                aria-label="Helpful description"
-                className="bx--tooltip__label"
-                id="test-trigger-id-2"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                role="button"
-                tabIndex={0}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flex": 1,
-            "flexDirection": "row",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-start",
-            }
-          }
-        >
-          <div
-            className="iot--flyout-menu iot--flyout-menu__left"
-            style={
-              Object {
-                "--tooltip-visibility": "hidden",
-              }
-            }
-          >
-            <button
-              aria-label="Helpful description"
-              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="flyout-menu-button"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Helpful description
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Helpful description"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-                />
-              </svg>
-            </button>
-            <div
-              className="iot--flyout-menu--tooltip-anchor"
-              data-floating-menu-container={true}
-            >
-              <div
-                aria-describedby={null}
-                aria-expanded={false}
-                aria-label="Helpful description"
-                className="bx--tooltip__label"
-                id="test-trigger-id-2"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                role="button"
-                tabIndex={0}
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <div
-            className="iot--flyout-menu iot--flyout-menu__top"
-            style={
-              Object {
-                "--tooltip-visibility": "hidden",
-              }
-            }
-          >
-            <button
-              aria-label="Helpful description"
-              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="flyout-menu-button"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Helpful description
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Helpful description"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-                />
-              </svg>
-            </button>
-            <div
-              className="iot--flyout-menu--tooltip-anchor"
-              data-floating-menu-container={true}
-            >
-              <div
-                aria-describedby={null}
-                aria-expanded={false}
-                aria-label="Helpful description"
-                className="bx--tooltip__label"
-                id="test-trigger-id-2"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                role="button"
-                tabIndex={0}
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-end",
-            }
-          }
-        >
-          <div
-            className="iot--flyout-menu iot--flyout-menu__right"
-            style={
-              Object {
-                "--tooltip-visibility": "hidden",
-              }
-            }
-          >
-            <button
-              aria-label="Helpful description"
-              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="flyout-menu-button"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Helpful description
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Helpful description"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-                />
-              </svg>
-            </button>
-            <div
-              className="iot--flyout-menu--tooltip-anchor"
-              data-floating-menu-container={true}
-            >
-              <div
-                aria-describedby={null}
-                aria-expanded={false}
-                aria-label="Helpful description"
-                className="bx--tooltip__label"
-                id="test-trigger-id-2"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                role="button"
-                tabIndex={0}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "flex": 1,
-            "flexDirection": "row",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "alignItems": "flex-end",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-start",
-            }
-          }
-        >
-          <div
-            className="iot--flyout-menu iot--flyout-menu__bottom"
-            style={
-              Object {
-                "--tooltip-visibility": "hidden",
-              }
-            }
-          >
-            <button
-              aria-label="Helpful description"
-              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="flyout-menu-button"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Helpful description
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Helpful description"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-                />
-              </svg>
-            </button>
-            <div
-              className="iot--flyout-menu--tooltip-anchor"
-              data-floating-menu-container={true}
-            >
-              <div
-                aria-describedby={null}
-                aria-expanded={false}
-                aria-label="Helpful description"
-                className="bx--tooltip__label"
-                id="test-trigger-id-2"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                role="button"
-                tabIndex={0}
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "flex-end",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <div
-            className="iot--flyout-menu iot--flyout-menu__bottom"
-            style={
-              Object {
-                "--tooltip-visibility": "hidden",
-              }
-            }
-          >
-            <button
-              aria-label="Helpful description"
-              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="flyout-menu-button"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Helpful description
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Helpful description"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-                />
-              </svg>
-            </button>
-            <div
-              className="iot--flyout-menu--tooltip-anchor"
-              data-floating-menu-container={true}
-            >
-              <div
-                aria-describedby={null}
-                aria-expanded={false}
-                aria-label="Helpful description"
-                className="bx--tooltip__label"
-                id="test-trigger-id-2"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                role="button"
-                tabIndex={0}
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "flex-end",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-end",
-            }
-          }
-        >
-          <div
-            className="iot--flyout-menu iot--flyout-menu__bottom"
-            style={
-              Object {
-                "--tooltip-visibility": "hidden",
-              }
-            }
-          >
-            <button
-              aria-label="Helpful description"
-              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="flyout-menu-button"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Helpful description
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Helpful description"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-                />
-              </svg>
-            </button>
-            <div
-              className="iot--flyout-menu--tooltip-anchor"
-              data-floating-menu-container={true}
-            >
-              <div
-                aria-describedby={null}
-                aria-expanded={false}
-                aria-label="Helpful description"
-                className="bx--tooltip__label"
-                id="test-trigger-id-2"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                role="button"
-                tabIndex={0}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyout Menu Custom Footer Example 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light iot--flyout-menu__open"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
+        <svg
+          aria-hidden="true"
           aria-label="Helpful description"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-          data-testid="flyout-menu-button"
-          disabled={false}
+          className="bx--btn__icon"
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M30 8h-4.1c-.5-2.3-2.5-4-4.9-4s-4.4 1.7-4.9 4H2v2h14.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H30V8zM21 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3S22.7 12 21 12zM2 24h4.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H30v-2H15.9c-.5-2.3-2.5-4-4.9-4s-4.4 1.7-4.9 4H2V24zM11 20c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3S9.3 20 11 20z"
+          />
+        </svg>
+      </button>
+      <div
+        className="iot--flyout-menu--tooltip-anchor"
+        data-floating-menu-container={true}
+      >
+        <div
+          aria-controls="flyout-tooltip"
+          aria-expanded={true}
+          aria-label="Helpful description"
+          className="bx--tooltip__label"
+          id="test-trigger-id-2"
+          onBlur={[Function]}
           onClick={[Function]}
+          onContextMenu={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="button"
           tabIndex={0}
-          type="button"
+        />
+        <div
+          onBlur={[Function]}
         >
           <span
-            className="bx--assistive-text"
+            className="bx--visually-hidden"
+            role="link"
+            tabIndex="0"
           >
-            Helpful description
+            Focus sentinel
           </span>
-          <svg
-            aria-hidden="true"
-            aria-label="Helpful description"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M30 8h-4.1c-.5-2.3-2.5-4-4.9-4s-4.4 1.7-4.9 4H2v2h14.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H30V8zM21 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3S22.7 12 21 12zM2 24h4.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H30v-2H15.9c-.5-2.3-2.5-4-4.9-4s-4.4 1.7-4.9 4H2V24zM11 20c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3S9.3 20 11 20z"
-            />
-          </svg>
-        </button>
-        <div
-          className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
-        >
           <div
-            aria-controls="flyout-tooltip"
-            aria-describedby="flyout-tooltip"
-            aria-expanded={true}
-            aria-label="Helpful description"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
+            className="bx--tooltip bx--tooltip--shown bx--tooltip--bottom bx--tooltip--align-center iot--flyout-menu--body iot--flyout-menu--body__bottom-start iot--flyout-menu--body__light iot--flyout-menu--body__open"
+            data-floating-menu-direction="bottom"
+            data-testid="flyout-menu"
+            disabled={false}
+            id="flyout-tooltip"
             onBlur={[Function]}
-            onClick={[Function]}
+            onChange={[Function]}
             onContextMenu={[Function]}
             onFocus={[Function]}
-            onKeyDown={[Function]}
             onMouseOut={[Function]}
             onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
-          <div
-            onBlur={[Function]}
+            open={true}
+            style={
+              Object {
+                "opacity": 1,
+                "position": "absolute",
+                "top": "0px",
+                "visibility": "hidden",
+              }
+            }
           >
             <span
-              className="bx--visually-hidden"
-              role="link"
-              tabIndex="0"
-            >
-              Focus sentinel
-            </span>
+              className="bx--tooltip__caret"
+            />
             <div
-              className="bx--tooltip bx--tooltip--shown bx--tooltip--bottom bx--tooltip--align-center iot--flyout-menu--body iot--flyout-menu--body__bottom-start iot--flyout-menu--body__light iot--flyout-menu--body__open"
-              data-floating-menu-direction="bottom"
-              data-testid="flyout-menu"
-              disabled={false}
-              id="flyout-tooltip"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              open={true}
-              role="tooltip"
-              style={
-                Object {
-                  "margin": 0,
-                  "opacity": 1,
-                  "position": "absolute",
-                  "top": "0px",
-                  "visibility": "hidden",
-                }
-              }
+              className="bx--tooltip__content"
+              role="dialog"
             >
-              <span
-                className="bx--tooltip__caret"
-              />
               <div
-                aria-labelledby="test-trigger-id-2"
-                className="bx--tooltip__content"
-                role="dialog"
+                className="iot--flyout-menu--content"
               >
                 <div>
-                  <div>
-                    <h2>
-                      This is a header
-                    </h2>
-                    <p
-                      style={
-                        Object {
-                          "width": 300,
-                        }
+                  <h2>
+                    This is a header
+                  </h2>
+                  <p
+                    style={
+                      Object {
+                        "width": 300,
                       }
-                    >
-                      Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-                    </p>
-                  </div>
-                  <div
-                    className="iot--flyout-menu__bottom-container"
+                    }
                   >
-                    <div
-                      style={
-                        Object {
-                          "alignItems": "center",
-                          "display": "flex",
-                          "height": 64,
-                          "justifyContent": "space-between",
-                        }
-                      }
-                    >
-                      I'm a custom footer!  
-                      <button
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--primary"
-                        data-testid="Button"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Confirm
-                      </button>
-                    </div>
-                  </div>
+                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+                  </p>
+                </div>
+              </div>
+              <div
+                className="iot--flyout-menu__bottom-container"
+              >
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "display": "flex",
+                      "height": 64,
+                      "justifyContent": "space-between",
+                    }
+                  }
+                >
+                  I'm a custom footer!  
+                  <button
+                    aria-describedby={null}
+                    aria-pressed={null}
+                    className="iot--btn bx--btn bx--btn--primary"
+                    data-testid="Button"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Confirm
+                  </button>
                 </div>
               </div>
             </div>
-            <span
-              className="bx--visually-hidden"
-              role="link"
-              tabIndex="0"
+          </div>
+          <span
+            className="bx--visually-hidden"
+            role="link"
+            tabIndex="0"
+          >
+            Focus sentinel
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FlyoutMenu Default Example 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "100vh",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <div
+      className="iot--flyout-menu iot--flyout-menu__bottom"
+      data-testid="flyout-menu-container"
+      style={
+        Object {
+          "--tooltip-visibility": "hidden",
+        }
+      }
+    >
+      <button
+        aria-describedby={null}
+        aria-label="Helpful description"
+        className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+        data-testid="flyout-menu-button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          className="bx--assistive-text"
+          onMouseEnter={[Function]}
+        >
+          Helpful description
+        </div>
+        <svg
+          aria-hidden="true"
+          aria-label="Helpful description"
+          className="bx--btn__icon"
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+          />
+        </svg>
+      </button>
+      <div
+        className="iot--flyout-menu--tooltip-anchor"
+        data-floating-menu-container={true}
+      >
+        <div
+          aria-expanded={false}
+          aria-label="Helpful description"
+          className="bx--tooltip__label"
+          id="test-trigger-id-2"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="button"
+          tabIndex={0}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FlyoutMenu Large Flyout Example 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <div
+      className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+      data-testid="flyout-menu-container"
+      style={
+        Object {
+          "--tooltip-visibility": "hidden",
+        }
+      }
+    >
+      <button
+        aria-describedby={null}
+        aria-label="Helpful description"
+        className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+        data-testid="flyout-menu-button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          className="bx--assistive-text"
+          onMouseEnter={[Function]}
+        >
+          Helpful description
+        </div>
+        <svg
+          aria-hidden="true"
+          aria-label="Helpful description"
+          className="bx--btn__icon"
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+          />
+        </svg>
+      </button>
+      <div
+        className="iot--flyout-menu--tooltip-anchor"
+        data-floating-menu-container={true}
+      >
+        <div
+          aria-expanded={false}
+          aria-label="Helpful description"
+          className="bx--tooltip__label"
+          id="test-trigger-id-2"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="button"
+          tabIndex={0}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FlyoutMenu autopositioning example 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flex": "1",
+        "flexDirection": "column",
+        "height": "calc(100vh - 4rem)",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <div
+          className="iot--flyout-menu iot--flyout-menu__left"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Helpful description"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="flyout-menu-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
             >
-              Focus sentinel
-            </span>
+              Helpful description
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Helpful description"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+            data-floating-menu-container={true}
+          >
+            <div
+              aria-expanded={false}
+              aria-label="Helpful description"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <div
+          className="iot--flyout-menu iot--flyout-menu__top"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Helpful description"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="flyout-menu-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Helpful description
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Helpful description"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+            data-floating-menu-container={true}
+          >
+            <div
+              aria-expanded={false}
+              aria-label="Helpful description"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <div
+          className="iot--flyout-menu iot--flyout-menu__right"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Helpful description"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="flyout-menu-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Helpful description
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Helpful description"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+            data-floating-menu-container={true}
+          >
+            <div
+              aria-expanded={false}
+              aria-label="Helpful description"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <div
+          className="iot--flyout-menu iot--flyout-menu__left"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Helpful description"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="flyout-menu-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Helpful description
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Helpful description"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+            data-floating-menu-container={true}
+          >
+            <div
+              aria-expanded={false}
+              aria-label="Helpful description"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <div
+          className="iot--flyout-menu iot--flyout-menu__top"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Helpful description"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="flyout-menu-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Helpful description
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Helpful description"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+            data-floating-menu-container={true}
+          >
+            <div
+              aria-expanded={false}
+              aria-label="Helpful description"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <div
+          className="iot--flyout-menu iot--flyout-menu__right"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Helpful description"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="flyout-menu-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Helpful description
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Helpful description"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+            data-floating-menu-container={true}
+          >
+            <div
+              aria-expanded={false}
+              aria-label="Helpful description"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Helpful description"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="flyout-menu-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Helpful description
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Helpful description"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+            data-floating-menu-container={true}
+          >
+            <div
+              aria-expanded={false}
+              aria-label="Helpful description"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Helpful description"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="flyout-menu-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Helpful description
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Helpful description"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+            data-floating-menu-container={true}
+          >
+            <div
+              aria-expanded={false}
+              aria-label="Helpful description"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="flyout-menu-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Helpful description"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="flyout-menu-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Helpful description
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Helpful description"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+            data-floating-menu-container={true}
+          >
+            <div
+              aria-expanded={false}
+              aria-label="Helpful description"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyout Menu Default Example 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "height": "100vh",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-label="Helpful description"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-          data-testid="flyout-menu-button"
-          disabled={false}
-          onClick={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span
-            className="bx--assistive-text"
-          >
-            Helpful description
-          </span>
-          <svg
-            aria-hidden="true"
-            aria-label="Helpful description"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-            />
-          </svg>
-        </button>
-        <div
-          className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
-        >
-          <div
-            aria-describedby={null}
-            aria-expanded={false}
-            aria-label="Helpful description"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onContextMenu={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyout Menu Large Flyout Example 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-label="Helpful description"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-          data-testid="flyout-menu-button"
-          disabled={false}
-          onClick={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <span
-            className="bx--assistive-text"
-          >
-            Helpful description
-          </span>
-          <svg
-            aria-hidden="true"
-            aria-label="Helpful description"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M27 25H21a3 3 0 00-3 3v2h2V28a1 1 0 011-1h6a1 1 0 011 1v2h2V28A3 3 0 0027 25zM20 20a4 4 0 104-4A4 4 0 0020 20zm6 0a2 2 0 11-2-2A2 2 0 0126 20zM6 21V20H4v1a7 7 0 007 7h3V26H11A5 5 0 016 21zM19 10H26V12H19zM19 6H29V8H19zM19 2H29V4H19zM11 11H5a3 3 0 00-3 3v2H4V14a1 1 0 011-1h6a1 1 0 011 1v2h2V14A3 3 0 0011 11zM8 10A4 4 0 104 6 4 4 0 008 10zM8 4A2 2 0 116 6 2 2 0 018 4z"
-            />
-          </svg>
-        </button>
-        <div
-          className="iot--flyout-menu--tooltip-anchor"
-          data-floating-menu-container={true}
-        >
-          <div
-            aria-describedby={null}
-            aria-expanded={false}
-            aria-label="Helpful description"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onContextMenu={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

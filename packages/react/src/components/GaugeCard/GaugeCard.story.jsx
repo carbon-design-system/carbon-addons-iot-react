@@ -51,7 +51,7 @@ const content = {
 };
 
 export default {
-  title: 'Watson IoT/GaugeCard',
+  title: '1 - Watson IoT/GaugeCard',
 
   parameters: {
     component: GaugeCard,
@@ -59,10 +59,12 @@ export default {
 };
 
 export const Basic = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'sm');
   return (
     <div
       style={{
-        width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: layout05,
       }}
     >
@@ -71,7 +73,8 @@ export const Basic = () => {
         tooltip={<p>Health - of floor 8</p>}
         id="GaugeCard"
         title={text('Text', 'Health')}
-        size={CARD_SIZES.SMALL}
+        size={size}
+        breakpoint={breakpoint}
         values={{
           usage: number('Gauge value', 81),
           usageTrend: '12%',
@@ -82,9 +85,148 @@ export const Basic = () => {
   );
 };
 
-Basic.story = {
-  name: 'basic',
+Basic.storyName = 'basic';
+
+export const MultipleGauges = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'sm');
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize(breakpoint, size).x}px`,
+        margin: layout05,
+      }}
+    >
+      <GaugeCard
+        isLoading={boolean('Is loading', false)}
+        tooltip={<p>Health - of floor 8</p>}
+        id="GaugeCard"
+        title={text('Text', 'Health')}
+        size={size}
+        breakpoint={breakpoint}
+        values={{
+          usage: number('Gauge value', 81),
+          usageTrend: '12%',
+          gaugeTwo: 32,
+          gaugeTwoTrend: '23%',
+          gaugeThree: 74,
+          gaugeThreeTrend: '12%',
+        }}
+        content={{
+          gauges: [
+            {
+              dataSourceId: 'usage',
+              units: '%',
+              minimumValue: 0,
+              maximumValue: 100,
+              color: 'orange',
+              backgroundColor: gray20,
+              shape: 'circle',
+              trend: {
+                /** the key to load the trend value from the values object. */
+                dataSourceId: 'usageTrend',
+                color: '',
+                trend: 'up',
+              },
+              thresholds: [
+                {
+                  comparison: '>',
+                  value: 0,
+                  color: 'red', // red
+                  label: 'Poor',
+                },
+                {
+                  comparison: '>',
+                  value: 60,
+                  color: yellow, // yellow
+                  label: 'Fair',
+                },
+                {
+                  comparison: '>',
+                  value: 80,
+                  color: 'green', // green
+                  label: select('Threshold label (> 80%)', ['Good', null], 'Good'),
+                },
+              ],
+            },
+            {
+              dataSourceId: 'gaugeTwo',
+              units: '%',
+              minimumValue: 0,
+              maximumValue: 100,
+              color: 'orange',
+              backgroundColor: gray20,
+              shape: 'circle',
+              trend: {
+                /** the key to load the trend value from the values object. */
+                dataSourceId: 'gaugeTwoTrend',
+                color: '',
+                trend: 'down',
+              },
+              thresholds: [
+                {
+                  comparison: '>',
+                  value: 0,
+                  color: 'red', // red
+                  label: 'Poor',
+                },
+                {
+                  comparison: '>',
+                  value: 60,
+                  color: yellow, // yellow
+                  label: 'Fair',
+                },
+                {
+                  comparison: '>',
+                  value: 80,
+                  color: 'green', // green
+                  label: 'Good',
+                },
+              ],
+            },
+            {
+              dataSourceId: 'gaugeThree',
+              units: '%',
+              minimumValue: 0,
+              maximumValue: 100,
+              color: 'orange',
+              backgroundColor: gray20,
+              shape: 'circle',
+              trend: {
+                /** the key to load the trend value from the values object. */
+                dataSourceId: 'gaugeThreeTrend',
+                color: '',
+                trend: 'up',
+              },
+              thresholds: [
+                {
+                  comparison: '>',
+                  value: 0,
+                  color: 'red', // red
+                  label: 'Poor',
+                },
+                {
+                  comparison: '>',
+                  value: 60,
+                  color: yellow, // yellow
+                  label: 'Fair',
+                },
+                {
+                  comparison: '>',
+                  value: 80,
+                  color: 'green', // green
+                  label: 'Good',
+                },
+              ],
+            },
+          ],
+        }}
+      />
+    </div>
+  );
 };
+
+MultipleGauges.storyName = 'with multiple gauges';
 
 export const BasicWithExpand = () => {
   return (
@@ -115,9 +257,7 @@ export const BasicWithExpand = () => {
   );
 };
 
-BasicWithExpand.story = {
-  name: 'basic with expand',
-};
+BasicWithExpand.storyName = 'basic with expand';
 
 export const WithDataStateNoData = () => {
   const myDataState = {
@@ -148,6 +288,4 @@ export const WithDataStateNoData = () => {
   );
 };
 
-WithDataStateNoData.story = {
-  name: 'with data state no-data',
-};
+WithDataStateNoData.storyName = 'with data state no-data';

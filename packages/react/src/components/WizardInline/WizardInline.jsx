@@ -122,6 +122,8 @@ export const propTypes = {
 
   /** Set the progress indicator button to clickable */
   isClickable: PropTypes.bool,
+
+  testId: PropTypes.string,
 };
 
 export const defaultProps = {
@@ -150,6 +152,7 @@ export const defaultProps = {
   error: null,
   onClearError: null,
   isClickable: false,
+  testId: 'wizard-inline',
 };
 
 const WizardInline = ({
@@ -180,6 +183,7 @@ const WizardInline = ({
   onClearError,
   closeButtonTitle,
   isClickable,
+  testId,
 }) => {
   if (__DEV__) {
     warning(
@@ -209,7 +213,7 @@ const WizardInline = ({
   };
 
   return (
-    <StyledWizardWrapper className={className}>
+    <StyledWizardWrapper data-testid={testId} className={className}>
       <div data-id="WizardInlineContainer" className="bx--modal-container">
         <WizardHeader
           title={title}
@@ -225,6 +229,7 @@ const WizardInline = ({
           stepWidth={stepWidth}
           closeButtonTitle={closeButtonTitle}
           isClickable={isClickable}
+          testId={`${testId}-header`}
         />
         {error ? (
           <StyledMessageBox
@@ -232,13 +237,14 @@ const WizardInline = ({
             subtitle=""
             kind="error"
             onCloseButtonClick={handleClearError}
+            data-testid={`${testId}-error-notification`}
           />
         ) : null}
 
         <StyledWizardContainer>
-          {sidebar ? <WizardSidebar sidebar={sidebar} /> : null}
+          {sidebar ? <WizardSidebar sidebar={sidebar} testId={`${testId}-sidebar`} /> : null}
           <div data-id="WizardInlineContent" className="bx--modal-content">
-            <WizardContent component={currentItemObj.component} />
+            <WizardContent component={currentItemObj.component} testId={`${testId}-content`} />
           </div>
         </StyledWizardContainer>
 
@@ -259,6 +265,7 @@ const WizardInline = ({
               footerLeftContent={footerLeftContent}
               nextDisabled={nextDisabled || false}
               sendingData={sendingData}
+              testId={`${testId}-footer`}
             />
           </div>
         </StyledFooter>

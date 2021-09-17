@@ -24,7 +24,7 @@ const dndProps = {
 };
 
 export default {
-  title: 'Watson IoT/ListItem',
+  title: '1 - Watson IoT/ListItem',
 
   parameters: {
     component: ListItem,
@@ -105,9 +105,7 @@ export const BasicWKnobs = () => {
   );
 };
 
-BasicWKnobs.story = {
-  name: 'basic w/ knobs',
-};
+BasicWKnobs.storyName = 'basic w/ knobs';
 
 export const WithValue = () => (
   <div style={{ width: 400 }}>
@@ -115,9 +113,7 @@ export const WithValue = () => (
   </div>
 );
 
-WithValue.story = {
-  name: 'with value',
-};
+WithValue.storyName = 'with value';
 
 export const WithSecondaryValue = () => (
   <div style={{ width: 400 }}>
@@ -125,9 +121,7 @@ export const WithSecondaryValue = () => (
   </div>
 );
 
-WithSecondaryValue.story = {
-  name: 'with secondaryValue',
-};
+WithSecondaryValue.storyName = 'with secondaryValue';
 
 export const TestingSecondaryValueOverflow = () => (
   <div style={{ width: 400 }}>
@@ -141,9 +135,7 @@ export const TestingSecondaryValueOverflow = () => (
   </div>
 );
 
-TestingSecondaryValueOverflow.story = {
-  name: 'testing secondaryValue overflow',
-};
+TestingSecondaryValueOverflow.storyName = 'testing secondaryValue overflow';
 
 export const WithIcon = () => (
   <div style={{ width: 400 }}>
@@ -157,9 +149,7 @@ export const WithIcon = () => (
   </div>
 );
 
-WithIcon.story = {
-  name: 'with icon',
-};
+WithIcon.storyName = 'with icon';
 
 export const WithIsSelectable = () => (
   <div style={{ width: 400 }}>
@@ -175,9 +165,7 @@ export const WithIsSelectable = () => (
   </div>
 );
 
-WithIsSelectable.story = {
-  name: 'with isSelectable',
-};
+WithIsSelectable.storyName = 'with isSelectable';
 
 export const WithIsLargeRow = () => (
   <div style={{ width: 400 }}>
@@ -191,9 +179,7 @@ export const WithIsLargeRow = () => (
   </div>
 );
 
-WithIsLargeRow.story = {
-  name: 'with isLargeRow',
-};
+WithIsLargeRow.storyName = 'with isLargeRow';
 
 export const TestingIsLargeRowOverflow = () => (
   <div style={{ width: 400 }}>
@@ -207,9 +193,7 @@ export const TestingIsLargeRowOverflow = () => (
   </div>
 );
 
-TestingIsLargeRowOverflow.story = {
-  name: 'testing isLargeRow overflow',
-};
+TestingIsLargeRowOverflow.storyName = 'testing isLargeRow overflow';
 
 export const WithIsExpandable = () => (
   <div style={{ width: 400 }}>
@@ -225,9 +209,7 @@ export const WithIsExpandable = () => (
   </div>
 );
 
-WithIsExpandable.story = {
-  name: 'with isExpandable',
-};
+WithIsExpandable.storyName = 'with isExpandable';
 
 export const WithIsCategory = () => (
   <div style={{ width: 400 }}>
@@ -243,9 +225,7 @@ export const WithIsCategory = () => (
   </div>
 );
 
-WithIsCategory.story = {
-  name: 'with isCategory',
-};
+WithIsCategory.storyName = 'with isCategory';
 
 export const WithSingleRowAction = () => (
   <div style={{ width: 400 }}>
@@ -270,9 +250,7 @@ export const WithSingleRowAction = () => (
   </div>
 );
 
-WithSingleRowAction.story = {
-  name: 'with single row action',
-};
+WithSingleRowAction.storyName = 'with single row action';
 
 export const WithDisabled = () => (
   <div style={{ width: 400 }}>
@@ -300,9 +278,7 @@ export const WithDisabled = () => (
   </div>
 );
 
-WithDisabled.story = {
-  name: 'with disabled',
-};
+WithDisabled.storyName = 'with disabled';
 
 export const WithOverflowMenuRowActions = () => (
   <div style={{ width: 400 }}>
@@ -332,9 +308,7 @@ export const WithOverflowMenuRowActions = () => (
   </div>
 );
 
-WithOverflowMenuRowActions.story = {
-  name: 'with OverflowMenu row actions',
-};
+WithOverflowMenuRowActions.storyName = 'with OverflowMenu row actions';
 
 export const WithTags = () => (
   <div style={{ width: 400 }}>
@@ -354,6 +328,4 @@ export const WithTags = () => (
   </div>
 );
 
-WithTags.story = {
-  name: 'with Tags',
-};
+WithTags.storyName = 'with Tags';

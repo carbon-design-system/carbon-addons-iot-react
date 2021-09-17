@@ -6,12 +6,6 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ],
-    "nohoist": [
-      "carbon-components-angular",
-      "**carbon-components-react",
-      "**@storybook/*",
-      "**storybook*"
     ]
   },
   "main": "lib/src/index.js",
@@ -39,11 +33,13 @@
     "format:check": "prettier --check \"**/*.{scss,css,js,jsx,md,ts}\" --loglevel warn",
     "publish-npm": "bash ./scripts/release.sh",
     "version": "yarn format",
-    "storybook": "node ./scripts/storybook.js"
+    "storybook": "node ./scripts/storybook.js",
+    "sync-styles": "bash ./scripts/sync-styles.sh"
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint-staged && lerna run --stream pre-commit",
+      "pre-push": "lerna run --stream pre-push",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -67,22 +63,23 @@
     ]
   },
   "devDependencies": {
+    "arg": "5.0.0",
     "husky": "^1.3.1",
     "lerna": "^3.22.1",
     "lint-staged": "^8.1.0",
     "prettier": "^2.1.2",
-    "prettier-config-carbon": "^0.4.0",
-    "arg": "5.0.0"
+    "prettier-config-carbon": "^0.4.0"
   },
   "sideEffects": false,
   "version": "0.0.0-development",
   "resolutions": {
-    "carbon-addons-iot-react/@emotion/core": "10.0.27",
-    "carbon-addons-iot-react/@storybook/theming": "5.3.17",
     "carbon-addons-iot-react/chokidar": "3.3.1",
     "carbon-addons-iot-react/react-grid-layout": "1.2.2",
+    "carbon-addons-iot-react/flatpickr": "4.6.1",
     "react-test-renderer": "16.14.0",
     "react-dom": "16.14.0",
-    "react": "16.14.0"
+    "react": "16.14.0",
+    "webpack": "4",
+    "flatpickr": "4.6.1"
   }
 }

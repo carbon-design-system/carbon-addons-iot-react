@@ -1,14 +1,19 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import StatefulPageWizard from './StatefulPageWizard';
 import { content, StepValidationWizard } from './PageWizard.story';
+import PageWizardStepTitle from './PageWizardStep/PageWizardStepTitle';
+import PageWizardStep from './PageWizardStep/PageWizardStep';
 
 describe('StatefulPageWizard', () => {
   it('button events during first step (no validation)', () => {
     const mocks = {
       onNext: jest.fn(),
       onClose: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
     };
     const i18n = {
       next: 'Next',
@@ -34,6 +39,9 @@ describe('StatefulPageWizard', () => {
     const mocks = {
       onNext: jest.fn(),
       onBack: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
+      onClose: jest.fn(),
     };
     const i18n = {
       next: 'Next',
@@ -64,6 +72,8 @@ describe('StatefulPageWizard', () => {
       onBack: jest.fn(),
       onNext: jest.fn(),
       onSubmit: jest.fn(),
+      onClearError: jest.fn(),
+      onClose: jest.fn(),
     };
     const i18n = {
       back: 'Back',
@@ -94,6 +104,9 @@ describe('StatefulPageWizard', () => {
     const mocks = {
       isClickable: true,
       setStep: jest.fn(),
+      onClose: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
     };
 
     render(
@@ -111,6 +124,9 @@ describe('StatefulPageWizard', () => {
     const mocks = {
       isClickable: true,
       setStep: jest.fn(),
+      onClose: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
     };
 
     render(<StatefulPageWizard {...mocks}>{content}</StatefulPageWizard>);
@@ -121,12 +137,18 @@ describe('StatefulPageWizard', () => {
   });
 
   it('not passing onBack function does not blow things up', () => {
+    const mocks = {
+      onClose: jest.fn(),
+      onClearError: jest.fn(),
+      onSubmit: jest.fn(),
+    };
+
     const i18n = {
       back: 'Back',
       next: 'Next',
     };
     const renderedElement = render(
-      <StatefulPageWizard currentStepId="step2" i18n={i18n} hasStickyFooter>
+      <StatefulPageWizard currentStepId="step2" i18n={i18n} {...mocks} hasStickyFooter>
         {content}
       </StatefulPageWizard>
     );
@@ -151,5 +173,34 @@ describe('StatefulPageWizard', () => {
     });
     fireEvent.click(screen.getByText('Second Step'));
     expect(screen.queryByText('First name and Last name cannot be empty')).toBeFalsy();
+  });
+
+  it('should not move to next or previous step if disabled', () => {
+    const mocks = {
+      onNext: jest.fn(),
+      onClose: jest.fn(),
+      onSubmit: jest.fn(),
+      onClearError: jest.fn(),
+      onBack: jest.fn(),
+    };
+
+    render(
+      <StatefulPageWizard currentStepId="step2" {...mocks}>
+        <PageWizardStep id="step1" label="First Step" key="step1" disabled>
+          <PageWizardStepTitle>Step 1: Define the data</PageWizardStepTitle>
+        </PageWizardStep>
+        <PageWizardStep id="step2" key="step2" label="Second Step">
+          <PageWizardStepTitle>Step 2: Pick the contents</PageWizardStepTitle>
+        </PageWizardStep>
+        <PageWizardStep id="step3" key="step3" label="Third Step" disabled>
+          <PageWizardStepTitle>Step 3: Finish</PageWizardStepTitle>
+        </PageWizardStep>
+      </StatefulPageWizard>
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Back' }));
+    expect(mocks.onBack).toHaveBeenCalledWith('step2');
+    userEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(mocks.onBack).toHaveBeenCalledWith('step2');
   });
 });

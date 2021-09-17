@@ -1,137 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader/SuiteHeaderLogoutModal default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderLogoutModal default 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="bx--modal bx--modal-tall is-visible"
+    data-testid="suite-header-logout-modal"
+    onBlur={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onTransitionEnd={[Function]}
+    role="presentation"
   >
-    <div
-      className="bx--modal bx--modal-tall is-visible"
-      onBlur={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onTransitionEnd={[Function]}
-      role="presentation"
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
     >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
+      Focus sentinel
+    </span>
+    <div
+      aria-label="Do you wish to log out?"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+      tabIndex="-1"
+    >
       <div
-        aria-label="Do you wish to log out?"
-        aria-modal="true"
-        className="bx--modal-container"
-        role="dialog"
-        tabIndex="-1"
+        className="bx--modal-header"
       >
-        <div
-          className="bx--modal-header"
+        
+        <h3
+          className="bx--modal-header__heading"
+          id="bx--modal-header__heading--modal-11"
         >
-          
-          <h3
-            className="bx--modal-header__heading"
-            id="bx--modal-header__heading--modal-8"
-          >
-            Do you wish to log out?
-          </h3>
-          <button
+          Do you wish to log out?
+        </h3>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
             aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-label="Close"
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          aria-labelledby="bx--modal-header__heading--modal-8"
-          className="bx--modal-content"
-          id="bx--modal-body--modal-8"
-        >
-          Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
-        </div>
-        <div
-          className="bx--modal-footer bx--btn-set"
-        >
-          <button
-            aria-pressed={null}
-            className="bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-pressed={null}
-            className="bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Log out
-          </button>
-        </div>
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
       </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
+      <div
+        aria-labelledby="bx--modal-header__heading--modal-11"
+        className="bx--modal-content"
+        id="bx--modal-body--modal-11"
       >
-        Focus sentinel
-      </span>
+        Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
+      </div>
+      <div
+        className="bx--modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn bx--btn--secondary"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn bx--btn--primary"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Log out
+        </button>
+      </div>
     </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

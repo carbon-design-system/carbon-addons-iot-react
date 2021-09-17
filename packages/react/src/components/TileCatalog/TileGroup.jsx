@@ -9,15 +9,17 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   tiles: PropTypes.arrayOf(PropTypes.node),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   tiles: null,
+  testId: 'tile-group',
 };
 
 /** this component just exists to make the last tile look good in a responsive flex container */
-const TileGroup = ({ tiles, className }) => (
-  <div className={classnames(className, `${iotPrefix}--tile-group`)}>
+const TileGroup = ({ tiles, className, testId }) => (
+  <div data-testid={testId} className={classnames(className, `${iotPrefix}--tile-group`)}>
     {tiles}
     <Tile className={`${iotPrefix}--greedy-tile`} />
   </div>

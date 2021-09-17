@@ -44,6 +44,7 @@ const propTypes = {
     urlInput: PropTypes.string,
     fileTooLarge: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -54,6 +55,7 @@ const defaultProps = {
   onUpload: () => {},
   hasInsertFromUrl: false,
   i18n: i18nDefaults,
+  testId: 'image-uploader',
 };
 
 const ImageUploader = ({
@@ -64,6 +66,7 @@ const ImageUploader = ({
   accept,
   validateUploadedImage,
   maxFileSizeInBytes,
+  testId,
   ...other
 }) => {
   const [fromURL, setFromURL] = useState(false);
@@ -135,6 +138,7 @@ const ImageUploader = ({
 
   return (
     <div
+      data-testid={testId}
       className={classnames(`${iotPrefix}--image-uploader`, {
         [`${iotPrefix}--image-uploader__medium`]: other.width >= 252 && other.width <= 519,
         [`${iotPrefix}--image-uploader__mediumwide`]: other.width >= 520 && other.height !== 576,
@@ -150,6 +154,7 @@ const ImageUploader = ({
           kind="error"
           title={i18n.errorTitle}
           subtitle={error}
+          data-testid={`${testId}-error-notification`}
         />
       ) : fromURL ? (
         <div className={`${iotPrefix}--image-uploader-url-wrapper`}>
@@ -158,17 +163,34 @@ const ImageUploader = ({
             ref={imgRef}
             labelText=""
             placeholder={i18n.urlInput}
+            data-testid={`${testId}-url-input`}
           />
-          <Button size={buttonSize} onClick={handleUploadByURL}>
+          <Button
+            size={buttonSize}
+            onClick={handleUploadByURL}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-url-upload-button`}
+          >
             {i18n.uploadByURLButton}
           </Button>
-          <Button size={buttonSize} onClick={handleCancelFromURLClick} kind="ghost">
+          <Button
+            size={buttonSize}
+            onClick={handleCancelFromURLClick}
+            kind="ghost"
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-url-cancel-button`}
+          >
             {i18n.uploadByURLCancel}
           </Button>
         </div>
       ) : (
         <>
-          <FileUploaderDropContainer size="field" labelText="" onAddFiles={handleOnChange} />
+          <FileUploaderDropContainer
+            size="field"
+            labelText=""
+            onAddFiles={handleOnChange}
+            data-testid={`${testId}-file-drop-container`}
+          />
           <div className={`${iotPrefix}--image-uploader-icon`}>
             <Image32 />
           </div>
@@ -179,11 +201,23 @@ const ImageUploader = ({
             <p className={`${iotPrefix}--image-uploader-drop-description-text`}>
               {i18n.dropContainerDescText}
             </p>
-            <Button size={buttonSize} onClick={onBrowseClick} kind="tertiary">
+            <Button
+              size={buttonSize}
+              onClick={onBrowseClick}
+              kind="tertiary"
+              // TODO: pass testId in v3 to override defaults
+              // testId={`${testId}-browse-button`}
+            >
               {i18n.browseImages}
             </Button>
             {hasInsertFromUrl ? (
-              <Button size={buttonSize} onClick={handleFromURLClick} kind="tertiary">
+              <Button
+                size={buttonSize}
+                onClick={handleFromURLClick}
+                kind="tertiary"
+                // TODO: pass testId in v3 to override defaults
+                // testId={`${testId}-insert-from-url-button`}
+              >
                 {i18n.insertUrl}
               </Button>
             ) : null}

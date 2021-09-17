@@ -314,7 +314,7 @@ export const StepValidationWizard = ({ ...props }) => {
 };
 
 export default {
-  title: 'Watson IoT/PageWizard',
+  title: '1 - Watson IoT/PageWizard',
 
   parameters: {
     component: PageWizard,
@@ -340,9 +340,7 @@ export const StatefulExample = () => (
   </div>
 );
 
-StatefulExample.story = {
-  name: 'stateful example',
-};
+StatefulExample.storyName = 'stateful example';
 
 export const StatefulExampleWValidationInPageTitleBar = () => (
   <div>
@@ -359,9 +357,8 @@ export const StatefulExampleWValidationInPageTitleBar = () => (
   </div>
 );
 
-StatefulExampleWValidationInPageTitleBar.story = {
-  name: 'stateful example w/ validation in PageTitleBar',
-};
+StatefulExampleWValidationInPageTitleBar.storyName =
+  'stateful example w/ validation in PageTitleBar';
 
 export const WrappedInPageTitleBar = () => (
   <div>
@@ -391,9 +388,7 @@ export const WrappedInPageTitleBar = () => (
   </div>
 );
 
-WrappedInPageTitleBar.story = {
-  name: 'wrapped in PageTitleBar',
-};
+WrappedInPageTitleBar.storyName = 'wrapped in PageTitleBar';
 
 export const WithHorizontalProgressIndicator = () => (
   <div>
@@ -413,9 +408,7 @@ export const WithHorizontalProgressIndicator = () => (
   </div>
 );
 
-WithHorizontalProgressIndicator.story = {
-  name: 'With Horizontal ProgressIndicator',
-};
+WithHorizontalProgressIndicator.storyName = 'With Horizontal ProgressIndicator';
 
 export const OnlyOneStepInPageTitleBar = () => (
   <div>
@@ -446,9 +439,7 @@ export const OnlyOneStepInPageTitleBar = () => (
   </div>
 );
 
-OnlyOneStepInPageTitleBar.story = {
-  name: 'only one step, in PageTitleBar',
-};
+OnlyOneStepInPageTitleBar.storyName = 'only one step, in PageTitleBar';
 
 export const WithStickyFooterStatefulExampleWValidationInPageTitleBar = () => (
   <div>
@@ -463,17 +454,17 @@ export const WithStickyFooterStatefulExampleWValidationInPageTitleBar = () => (
       content={
         <StepValidationWizard
           hasStickyFooter={boolean('hasStickyFooter', true)}
-          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
           isClickable
+          spaceEqually={boolean('spaceEqually', false)}
         />
       }
     />
   </div>
 );
 
-WithStickyFooterStatefulExampleWValidationInPageTitleBar.story = {
-  name: 'With Sticky Footer: stateful example w/ validation in PageTitleBar',
-};
+WithStickyFooterStatefulExampleWValidationInPageTitleBar.storyName =
+  'With Sticky Footer: stateful example w/ validation in PageTitleBar';
 
 export const WithAdditionalFooterContent = () => (
   <div>
@@ -512,9 +503,7 @@ export const WithAdditionalFooterContent = () => (
   </div>
 );
 
-WithAdditionalFooterContent.story = {
-  name: 'With additional footer content',
-};
+WithAdditionalFooterContent.storyName = 'With additional footer content';
 
 export const WI18N = () => (
   <div>
@@ -541,9 +530,7 @@ export const WI18N = () => (
   </div>
 );
 
-WI18N.story = {
-  name: 'w/ i18n',
-};
+WI18N.storyName = 'w/ i18n';
 
 export const StepValidation = ({ ...props }) => {
   const [firstName, setFirstName] = useState('');

@@ -1,135 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/AccordionItemDefer With Deferred Content Rendering 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/AccordionItemDefer With Deferred Content Rendering 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "calc(100vw - 6rem)",
       }
     }
   >
-    <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
+    <ul
+      className="bx--accordion bx--accordion--end"
     >
-      <ul
-        className="bx--accordion bx--accordion--end"
+      <li
+        className="bx--accordion__item"
+        id="a"
+        onAnimationEnd={[Function]}
       >
-        <li
-          className="bx--accordion__item"
-          id="a"
-          onAnimationEnd={[Function]}
+        <button
+          aria-controls="accordion-item-2"
+          aria-expanded={false}
+          className="bx--accordion__heading"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-controls="accordion-item-2"
-            aria-expanded={false}
-            className="bx--accordion__heading"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
+          <svg
+            aria-hidden={true}
+            className="bx--accordion__arrow"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              className="bx--accordion__arrow"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-            <div
-              className="bx--accordion__title"
-            >
-              A section without deferred content rendering
-            </div>
-          </button>
+            <path
+              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+            />
+          </svg>
           <div
-            className="bx--accordion__content"
-            id="accordion-item-2"
+            className="bx--accordion__title"
           >
-            <p>
-              This content is always rendered to the DOM, no matter if the accordion item has been open or closed.
-            </p>
+            A section without deferred content rendering
           </div>
-        </li>
-        <li
-          className="bx--accordion__item"
-          data-testid="accordion-item-deferred"
-          id="b"
-          onAnimationEnd={[Function]}
+        </button>
+        <div
+          className="bx--accordion__content"
+          id="accordion-item-2"
         >
-          <button
-            aria-controls="accordion-item-3"
-            aria-expanded={false}
-            className="bx--accordion__heading"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
+          <p>
+            This content is always rendered to the DOM, no matter if the accordion item has been open or closed.
+          </p>
+        </div>
+      </li>
+      <li
+        className="bx--accordion__item"
+        data-testid="accordion-item-deferred"
+        id="b"
+        onAnimationEnd={[Function]}
+      >
+        <button
+          aria-controls="accordion-item-3"
+          aria-expanded={false}
+          className="bx--accordion__heading"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--accordion__arrow"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              className="bx--accordion__arrow"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-            <div
-              className="bx--accordion__title"
-            >
-              A section with deferred content rendering
-            </div>
-          </button>
+            <path
+              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+            />
+          </svg>
           <div
-            className="bx--accordion__content"
-            id="accordion-item-3"
-          />
-        </li>
-      </ul>
-    </div>
+            className="bx--accordion__title"
+          >
+            A section with deferred content rendering
+          </div>
+        </button>
+        <div
+          className="bx--accordion__content"
+          id="accordion-item-3"
+        />
+      </li>
+    </ul>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

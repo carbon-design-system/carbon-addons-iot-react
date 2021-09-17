@@ -12,7 +12,7 @@ const StyledSimplePagination = styled.div`
 `;
 
 export default {
-  title: 'Watson IoT/SimplePagination',
+  title: '1 - Watson IoT/SimplePagination',
 
   parameters: {
     component: SimplePagination,
@@ -31,6 +31,4 @@ export const Default = () => (
   </StyledSimplePagination>
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';

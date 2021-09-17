@@ -1,3027 +1,2852 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog async loaded wait one second 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog async loaded wait one second 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="iot--tile-catalog"
+    data-testid="tile-catalog"
   >
     <div
-      className="iot--tile-catalog"
+      className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
+    />
+    <div
+      className="iot--tile-group"
+      data-testid="tile-catalog-loading-group"
     >
       <div
-        className="iot--tile-catalog--header"
-      />
-      <div
-        className="iot--tile-group"
+        className="bx--tile iot--tile-catalog--empty-tile"
       >
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
             }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--greedy-tile"
+          }
         />
       </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--greedy-tile"
+      />
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog default 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="iot--tile-catalog"
+    data-testid="tile-catalog"
   >
     <div
-      className="iot--tile-catalog"
+      className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
+    />
+    <div
+      className="iot--tile-group"
+      data-testid="tile-catalog-group"
     >
-      <div
-        className="iot--tile-catalog--header"
+      <input
+        checked={true}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test1"
+        id="test1"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test1"
       />
-      <div
-        className="iot--tile-group"
-      >
-        <input
-          checked={true}
-          className="bx--tile-input"
-          id="test1"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test1"
-        />
-        <label
-          className="bx--tile bx--tile--selectable bx--tile--is-selected"
-          htmlFor="test1"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile with really long title that should wrap"
-                  >
-                    Test Tile with really long title that should wrap
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test2"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test2"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test2"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile2"
-                  >
-                    Test Tile2
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test3"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test3"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test3"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile3"
-                  >
-                    Test Tile3
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Tile contents
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test4"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test4"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test4"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile4"
-                  >
-                    Test Tile4
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test5"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test5"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test5"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile5"
-                  >
-                    Test Tile5
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test6"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test6"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test6"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile6"
-                  >
-                    Test Tile6
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test7"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test7"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test7"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile7"
-                  >
-                    Test Tile7
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <div
-          className="bx--tile iot--greedy-tile"
-        />
-      </div>
-      <div
-        className="iot-simple-pagination-container"
-        data-testid="iot-simple-pagination"
+      <label
+        className="bx--tile bx--tile--selectable bx--tile--is-selected"
+        htmlFor="test1"
       >
         <span
-          className="iot-simple-pagination-page-label"
-          maxpage={1}
+          className="bx--tile__checkmark"
         >
-          7 Items
-        </span>
-        <div
-          className="iot-simple-pagination-page-bar"
-        >
-          <span
-            className="iot-simple-pagination-page-label"
-            maxpage={1}
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Page 1 of 1
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog error 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
-    >
-      <div
-        className="iot--tile-catalog"
-      >
-        <div
-          className="iot--tile-catalog--header"
-        />
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          In error state
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog isSelectedByDefault false 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="iot--tile-catalog"
-    >
-      <div
-        className="iot--tile-catalog--header"
-      />
-      <div
-        className="iot--tile-group"
-      >
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test1"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test1"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test1"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile with really long title that should wrap"
-                  >
-                    Test Tile with really long title that should wrap
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test2"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test2"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test2"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile2"
-                  >
-                    Test Tile2
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test3"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test3"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test3"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile3"
-                  >
-                    Test Tile3
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Tile contents
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test4"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test4"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test4"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile4"
-                  >
-                    Test Tile4
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test5"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test5"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test5"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile5"
-                  >
-                    Test Tile5
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test6"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test6"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test6"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile6"
-                  >
-                    Test Tile6
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test7"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test7"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test7"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile7"
-                  >
-                    Test Tile7
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <div
-          className="bx--tile iot--greedy-tile"
-        />
-      </div>
-      <div
-        className="iot-simple-pagination-container"
-        data-testid="iot-simple-pagination"
-      >
-        <span
-          className="iot-simple-pagination-page-label"
-          maxpage={1}
-        >
-          7 Items
-        </span>
-        <div
-          className="iot-simple-pagination-page-bar"
-        >
-          <span
-            className="iot-simple-pagination-page-label"
-            maxpage={1}
-          >
-            Page 1 of 1
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog loading 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="iot--tile-catalog"
-    >
-      <div
-        className="iot--tile-catalog--header"
-      />
-      <div
-        className="iot--tile-group"
-      >
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--tile-catalog--empty-tile"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-        <div
-          className="bx--tile iot--greedy-tile"
-        />
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog with pages 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="iot--tile-catalog"
-    >
-      <div
-        className="iot--tile-catalog--header"
-      />
-      <div
-        className="iot--tile-group"
-      >
-        <input
-          checked={true}
-          className="bx--tile-input"
-          id="test1"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test1"
-        />
-        <label
-          className="bx--tile bx--tile--selectable bx--tile--is-selected"
-          htmlFor="test1"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile with really long title that should wrap"
-                  >
-                    Test Tile with really long title that should wrap
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test2"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test2"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test2"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile2"
-                  >
-                    Test Tile2
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test3"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test3"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test3"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile3"
-                  >
-                    Test Tile3
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Tile contents
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test4"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test4"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test4"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile4"
-                  >
-                    Test Tile4
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test5"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test5"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test5"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile5"
-                  >
-                    Test Tile5
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test6"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test6"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test6"
-        >
-          <span
-            className="bx--tile__checkmark"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
-          >
-            <div
-              className="iot--sample-tile"
-            >
-              <div
-                className="iot--sample-tile-icon"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--sample-tile-contents"
-              >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile6"
-                  >
-                    Test Tile6
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
-              </div>
-            </div>
-          </span>
-        </label>
-        <div
-          className="bx--tile iot--greedy-tile"
-        />
-      </div>
-      <div
-        className="iot-simple-pagination-container"
-        data-testid="iot-simple-pagination"
-      >
-        <span
-          className="iot-simple-pagination-page-label"
-          maxpage={2}
-        >
-          7 Items
-        </span>
-        <div
-          className="iot-simple-pagination-page-bar"
-        >
-          <span
-            className="iot-simple-pagination-page-label"
-            maxpage={2}
-          >
-            Page 1 of 2
-          </span>
-          <div
-            className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
-            role="button"
-            tabIndex={-1}
-          >
-            <svg
-              aria-label="Prev page"
-              className="iot-simple-pagination-caret-disabled"
-              dir="ltr"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 24L10 16 20 8z"
-              />
-            </svg>
-          </div>
-          <div
-            className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            tabIndex={0}
-          >
-            <svg
-              aria-label="Next page"
-              className="iot-simple-pagination-caret"
-              dir="ltr"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 8L22 16 12 24z"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog with search 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="iot--tile-catalog"
-    >
-      <div
-        className="iot--tile-catalog--header"
-      >
-        <div
-          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          tabIndex="0"
-        >
-          <div
-            aria-labelledby="entityType-searchbox-search"
-            className="bx--search bx--search--sm"
-            role="search"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--search-magnifier"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-              />
-            </svg>
-            <label
-              className="bx--label"
-              htmlFor="entityType-searchbox"
-              id="entityType-searchbox-search"
-            >
-              Search catalog
-            </label>
-            <input
-              autoComplete="off"
-              className="bx--search-input"
-              id="entityType-searchbox"
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              placeholder="Search catalog"
-              role="searchbox"
-              tabIndex="-1"
-              type="text"
-              value=""
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
             />
-            <button
-              aria-label="Clear search input"
-              className="bx--search-close bx--search-close--hidden"
-              onClick={[Function]}
-              type="button"
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
             >
               <svg
                 aria-hidden={true}
                 fill="currentColor"
                 focusable="false"
-                height={16}
+                height={32}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 32 32"
-                width={16}
+                width={32}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                 />
               </svg>
-            </button>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile with really long title that should wrap"
+                >
+                  Test Tile with really long title that should wrap
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div
-        className="iot--tile-group"
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test2"
+        id="test2"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test2"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test2"
       >
-        <input
-          checked={true}
-          className="bx--tile-input"
-          id="test1"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test1"
-        />
-        <label
-          className="bx--tile bx--tile--selectable bx--tile--is-selected"
-          htmlFor="test1"
+        <span
+          className="bx--tile__checkmark"
         >
-          <span
-            className="bx--tile__checkmark"
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
           >
             <div
-              className="iot--sample-tile"
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
             >
               <div
-                className="iot--sample-tile-icon"
+                className="iot--sample-tile-title"
               >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  title="Test Tile2"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
+                  Test Tile2
+                </span>
               </div>
               <div
-                className="iot--sample-tile-contents"
+                className="iot--sample-tile-description"
               >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile with really long title that should wrap"
-                  >
-                    Test Tile with really long title that should wrap
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
               </div>
             </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test2"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test2"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test2"
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test3"
+        id="test3"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test3"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test3"
+      >
+        <span
+          className="bx--tile__checkmark"
         >
-          <span
-            className="bx--tile__checkmark"
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
           >
             <div
-              className="iot--sample-tile"
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
             >
               <div
-                className="iot--sample-tile-icon"
+                className="iot--sample-tile-title"
               >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  title="Test Tile3"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
+                  Test Tile3
+                </span>
               </div>
               <div
-                className="iot--sample-tile-contents"
+                className="iot--sample-tile-description"
               >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile2"
-                  >
-                    Test Tile2
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
+                Tile contents
               </div>
             </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test3"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test3"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test3"
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test4"
+        id="test4"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test4"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test4"
+      >
+        <span
+          className="bx--tile__checkmark"
         >
-          <span
-            className="bx--tile__checkmark"
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
           >
             <div
-              className="iot--sample-tile"
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
             >
               <div
-                className="iot--sample-tile-icon"
+                className="iot--sample-tile-title"
               >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  title="Test Tile4"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
+                  Test Tile4
+                </span>
               </div>
               <div
-                className="iot--sample-tile-contents"
+                className="iot--sample-tile-description"
               >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile3"
-                  >
-                    Test Tile3
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Tile contents
-                </div>
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
               </div>
             </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test4"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test4"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test4"
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test5"
+        id="test5"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test5"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test5"
+      >
+        <span
+          className="bx--tile__checkmark"
         >
-          <span
-            className="bx--tile__checkmark"
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
           >
             <div
-              className="iot--sample-tile"
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
             >
               <div
-                className="iot--sample-tile-icon"
+                className="iot--sample-tile-title"
               >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  title="Test Tile5"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
+                  Test Tile5
+                </span>
               </div>
               <div
-                className="iot--sample-tile-contents"
+                className="iot--sample-tile-description"
               >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile4"
-                  >
-                    Test Tile4
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
               </div>
             </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test5"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test5"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test5"
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test6"
+        id="test6"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test6"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test6"
+      >
+        <span
+          className="bx--tile__checkmark"
         >
-          <span
-            className="bx--tile__checkmark"
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
           >
             <div
-              className="iot--sample-tile"
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
             >
               <div
-                className="iot--sample-tile-icon"
+                className="iot--sample-tile-title"
               >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  title="Test Tile6"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
+                  Test Tile6
+                </span>
               </div>
               <div
-                className="iot--sample-tile-contents"
+                className="iot--sample-tile-description"
               >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile5"
-                  >
-                    Test Tile5
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
               </div>
             </div>
-          </span>
-        </label>
-        <input
-          checked={false}
-          className="bx--tile-input"
-          id="test6"
-          name="entityType"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="radio"
-          value="test6"
-        />
-        <label
-          className="bx--tile bx--tile--selectable"
-          htmlFor="test6"
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test7"
+        id="test7"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test7"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test7"
+      >
+        <span
+          className="bx--tile__checkmark"
         >
-          <span
-            className="bx--tile__checkmark"
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-              />
-              <path
-                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-            </svg>
-          </span>
-          <span
-            className="bx--tile-content"
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
           >
             <div
-              className="iot--sample-tile"
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
             >
               <div
-                className="iot--sample-tile-icon"
+                className="iot--sample-tile-title"
               >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={32}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={32}
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  title="Test Tile7"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                  />
-                </svg>
+                  Test Tile7
+                </span>
               </div>
               <div
-                className="iot--sample-tile-contents"
+                className="iot--sample-tile-description"
               >
-                <div
-                  className="iot--sample-tile-title"
-                >
-                  <span
-                    title="Test Tile6"
-                  >
-                    Test Tile6
-                  </span>
-                </div>
-                <div
-                  className="iot--sample-tile-description"
-                >
-                  Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
-                </div>
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
               </div>
             </div>
-          </span>
-        </label>
-        <div
-          className="bx--tile iot--greedy-tile"
+          </div>
+        </span>
+      </label>
+      <div
+        className="bx--tile iot--greedy-tile"
+      />
+    </div>
+    <div
+      className="iot-simple-pagination-container"
+      data-testid="iot-simple-pagination"
+    >
+      <span
+        className="iot-simple-pagination-page-label"
+        maxpage={1}
+      >
+        7 Items
+      </span>
+      <div
+        className="iot-simple-pagination-page-bar"
+      >
+        <span
+          className="iot-simple-pagination-page-label"
+          maxpage={1}
+        >
+          Page 1 of 1
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog error 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": "calc(100vw - 6rem)",
+      }
+    }
+  >
+    <div
+      className="iot--tile-catalog"
+      data-testid="tile-catalog"
+    >
+      <div
+        className="iot--tile-catalog--header"
+        data-testid="tile-catalog-header"
+      />
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+        data-testid="tile-catalog-empty"
+      >
+        In error state
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog isSelectedByDefault false 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--tile-catalog"
+    data-testid="tile-catalog"
+  >
+    <div
+      className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
+    />
+    <div
+      className="iot--tile-group"
+      data-testid="tile-catalog-group"
+    >
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test1"
+        id="test1"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test1"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test1"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile with really long title that should wrap"
+                >
+                  Test Tile with really long title that should wrap
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test2"
+        id="test2"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test2"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test2"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile2"
+                >
+                  Test Tile2
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test3"
+        id="test3"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test3"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test3"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile3"
+                >
+                  Test Tile3
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Tile contents
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test4"
+        id="test4"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test4"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test4"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile4"
+                >
+                  Test Tile4
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test5"
+        id="test5"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test5"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test5"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile5"
+                >
+                  Test Tile5
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test6"
+        id="test6"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test6"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test6"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile6"
+                >
+                  Test Tile6
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test7"
+        id="test7"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test7"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test7"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile7"
+                >
+                  Test Tile7
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <div
+        className="bx--tile iot--greedy-tile"
+      />
+    </div>
+    <div
+      className="iot-simple-pagination-container"
+      data-testid="iot-simple-pagination"
+    >
+      <span
+        className="iot-simple-pagination-page-label"
+        maxpage={1}
+      >
+        7 Items
+      </span>
+      <div
+        className="iot-simple-pagination-page-bar"
+      >
+        <span
+          className="iot-simple-pagination-page-label"
+          maxpage={1}
+        >
+          Page 1 of 1
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog loading 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--tile-catalog"
+    data-testid="tile-catalog"
+  >
+    <div
+      className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
+    />
+    <div
+      className="iot--tile-group"
+      data-testid="tile-catalog-loading-group"
+    >
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
         />
       </div>
       <div
-        className="iot-simple-pagination-container"
-        data-testid="iot-simple-pagination"
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--tile-catalog--empty-tile"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bx--tile iot--greedy-tile"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog with pages 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--tile-catalog"
+    data-testid="tile-catalog"
+  >
+    <div
+      className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
+    />
+    <div
+      className="iot--tile-group"
+      data-testid="tile-catalog-group"
+    >
+      <input
+        checked={true}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test1"
+        id="test1"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test1"
+      />
+      <label
+        className="bx--tile bx--tile--selectable bx--tile--is-selected"
+        htmlFor="test1"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile with really long title that should wrap"
+                >
+                  Test Tile with really long title that should wrap
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test2"
+        id="test2"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test2"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test2"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile2"
+                >
+                  Test Tile2
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test3"
+        id="test3"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test3"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test3"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile3"
+                >
+                  Test Tile3
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Tile contents
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test4"
+        id="test4"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test4"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test4"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile4"
+                >
+                  Test Tile4
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test5"
+        id="test5"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test5"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test5"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile5"
+                >
+                  Test Tile5
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test6"
+        id="test6"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test6"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test6"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile6"
+                >
+                  Test Tile6
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <div
+        className="bx--tile iot--greedy-tile"
+      />
+    </div>
+    <div
+      className="iot-simple-pagination-container"
+      data-testid="iot-simple-pagination"
+    >
+      <span
+        className="iot-simple-pagination-page-label"
+        maxpage={2}
+      >
+        7 Items
+      </span>
+      <div
+        className="iot-simple-pagination-page-bar"
       >
         <span
           className="iot-simple-pagination-page-label"
           maxpage={2}
         >
-          7 Items
+          Page 1 of 2
         </span>
         <div
-          className="iot-simple-pagination-page-bar"
+          className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+          data-testid="iot-simple-pagination-backward-button"
+          role="button"
+          tabIndex={-1}
         >
-          <span
-            className="iot-simple-pagination-page-label"
-            maxpage={2}
+          <svg
+            aria-label="Prev page"
+            className="iot-simple-pagination-caret-disabled"
+            dir="ltr"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Page 1 of 2
-          </span>
-          <div
-            className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
-            role="button"
-            tabIndex={-1}
+            <path
+              d="M20 24L10 16 20 8z"
+            />
+          </svg>
+        </div>
+        <div
+          className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+          data-testid="iot-simple-pagination-forward-button"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <svg
+            aria-label="Next page"
+            className="iot-simple-pagination-caret"
+            dir="ltr"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-label="Prev page"
-              className="iot-simple-pagination-caret-disabled"
-              dir="ltr"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 24L10 16 20 8z"
-              />
-            </svg>
-          </div>
-          <div
-            className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            tabIndex={0}
-          >
-            <svg
-              aria-label="Next page"
-              className="iot-simple-pagination-caret"
-              dir="ltr"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 8L22 16 12 24z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M12 8L22 16 12 24z"
+            />
+          </svg>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog with search 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--tile-catalog"
+    data-testid="tile-catalog"
   >
-    Show Info
-  </button>
+    <div
+      className="iot--tile-catalog--header"
+      data-testid="tile-catalog-header"
+    >
+      <div
+        aria-labelledby="entityType-searchbox-search"
+        className="bx--search bx--search--sm bx--toolbar-search-container-expandable"
+        role="search"
+      >
+        <div
+          className="bx--search-magnifier"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--search-magnifier-icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+            />
+          </svg>
+        </div>
+        <label
+          className="bx--label"
+          htmlFor="entityType-searchbox"
+          id="entityType-searchbox-search"
+        >
+          Search catalog
+        </label>
+        <input
+          autoComplete="off"
+          className="bx--search-input"
+          data-testid="tile-catalog-search-input"
+          id="entityType-searchbox"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Search catalog"
+          role="searchbox"
+          tabIndex="0"
+          type="text"
+          value=""
+        />
+        <button
+          aria-label="Clear search input"
+          className="bx--search-close bx--search-close--hidden"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      className="iot--tile-group"
+      data-testid="tile-catalog-group"
+    >
+      <input
+        checked={true}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test1"
+        id="test1"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test1"
+      />
+      <label
+        className="bx--tile bx--tile--selectable bx--tile--is-selected"
+        htmlFor="test1"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile with really long title that should wrap"
+                >
+                  Test Tile with really long title that should wrap
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test2"
+        id="test2"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test2"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test2"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile2"
+                >
+                  Test Tile2
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test3"
+        id="test3"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test3"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test3"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile3"
+                >
+                  Test Tile3
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Tile contents
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test4"
+        id="test4"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test4"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test4"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile4"
+                >
+                  Test Tile4
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test5"
+        id="test5"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test5"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test5"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile5"
+                >
+                  Test Tile5
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <input
+        checked={false}
+        className="bx--tile-input"
+        data-testid="tile-catalog-radio-tile-test6"
+        id="test6"
+        name="entityType"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="radio"
+        value="test6"
+      />
+      <label
+        className="bx--tile bx--tile--selectable"
+        htmlFor="test6"
+      >
+        <span
+          className="bx--tile__checkmark"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+            />
+            <path
+              d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+          </svg>
+        </span>
+        <span
+          className="bx--tile-content"
+        >
+          <div
+            className="iot--sample-tile"
+          >
+            <div
+              className="iot--sample-tile-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--sample-tile-contents"
+            >
+              <div
+                className="iot--sample-tile-title"
+              >
+                <span
+                  title="Test Tile6"
+                >
+                  Test Tile6
+                </span>
+              </div>
+              <div
+                className="iot--sample-tile-description"
+              >
+                Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
+              </div>
+            </div>
+          </div>
+        </span>
+      </label>
+      <div
+        className="bx--tile iot--greedy-tile"
+      />
+    </div>
+    <div
+      className="iot-simple-pagination-container"
+      data-testid="iot-simple-pagination"
+    >
+      <span
+        className="iot-simple-pagination-page-label"
+        maxpage={2}
+      >
+        7 Items
+      </span>
+      <div
+        className="iot-simple-pagination-page-bar"
+      >
+        <span
+          className="iot-simple-pagination-page-label"
+          maxpage={2}
+        >
+          Page 1 of 2
+        </span>
+        <div
+          className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+          data-testid="iot-simple-pagination-backward-button"
+          role="button"
+          tabIndex={-1}
+        >
+          <svg
+            aria-label="Prev page"
+            className="iot-simple-pagination-caret-disabled"
+            dir="ltr"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 24L10 16 20 8z"
+            />
+          </svg>
+        </div>
+        <div
+          className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+          data-testid="iot-simple-pagination-forward-button"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <svg
+            aria-label="Next page"
+            className="iot-simple-pagination-caret"
+            dir="ltr"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 8L22 16 12 24z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

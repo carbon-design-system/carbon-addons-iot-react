@@ -9,6 +9,7 @@ import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
 import { Tag } from '../Tag';
 
 import List from './List';
+import ListREADME from './List.mdx';
 
 export const sampleHierarchy = {
   MLB: {
@@ -114,10 +115,13 @@ const headerButton = (
 );
 
 export default {
-  title: 'Watson IoT/List',
+  title: '1 - Watson IoT/List',
 
   parameters: {
     component: List,
+    docs: {
+      page: ListREADME,
+    },
   },
 
   excludeStories: ['sampleHierarchy'],
@@ -138,9 +142,7 @@ export const BasicSingleColumn = () => (
   </div>
 );
 
-BasicSingleColumn.story = {
-  name: 'basic (single column)',
-};
+BasicSingleColumn.storyName = 'basic (single column)';
 
 export const BasicSingleColumnWithSearch = () => {
   const ListWithSearch = () => {
@@ -170,9 +172,7 @@ export const BasicSingleColumnWithSearch = () => {
   return <ListWithSearch />;
 };
 
-BasicSingleColumnWithSearch.story = {
-  name: 'basic (single column) with search',
-};
+BasicSingleColumnWithSearch.storyName = 'basic (single column) with search';
 
 export const SelectableItems = () => {
   const ListWithSelectableItems = () => {
@@ -198,9 +198,7 @@ export const SelectableItems = () => {
   return <ListWithSelectableItems />;
 };
 
-SelectableItems.story = {
-  name: 'with selectable items',
-};
+SelectableItems.storyName = 'with selectable items';
 
 export const WithSecondaryValue = () => (
   <div style={{ width: 400 }}>
@@ -220,9 +218,7 @@ export const WithSecondaryValue = () => (
   </div>
 );
 
-WithSecondaryValue.story = {
-  name: 'with secondaryValue',
-};
+WithSecondaryValue.storyName = 'with secondaryValue';
 
 export const WithIsLargeRowAndIcon = () => (
   <div style={{ width: 400 }}>
@@ -244,9 +240,7 @@ export const WithIsLargeRowAndIcon = () => (
   </div>
 );
 
-WithIsLargeRowAndIcon.story = {
-  name: 'with isLargeRow and icon',
-};
+WithIsLargeRowAndIcon.storyName = 'with isLargeRow and icon';
 
 export const WithRowActionsSingle = () => (
   <div style={{ width: 400 }}>
@@ -278,9 +272,7 @@ export const WithRowActionsSingle = () => (
   </div>
 );
 
-WithRowActionsSingle.story = {
-  name: 'with row actions (single)',
-};
+WithRowActionsSingle.storyName = 'with row actions (single)';
 
 export const WithRowActionsMultiple = () => (
   <div style={{ width: 400 }}>
@@ -307,9 +299,7 @@ export const WithRowActionsMultiple = () => (
   </div>
 );
 
-WithRowActionsMultiple.story = {
-  name: 'with row actions (multiple)',
-};
+WithRowActionsMultiple.storyName = 'with row actions (multiple)';
 
 export const WithHierarchy = () => (
   <div style={{ width: 400 }}>
@@ -356,9 +346,7 @@ export const WithHierarchy = () => (
   </div>
 );
 
-WithHierarchy.story = {
-  name: 'with hierarchy',
-};
+WithHierarchy.storyName = 'with hierarchy';
 
 export const WithCategoriesFixedHeight = () => (
   <div style={{ width: 400, height: 600 }}>
@@ -401,9 +389,7 @@ export const WithCategoriesFixedHeight = () => (
   </div>
 );
 
-WithCategoriesFixedHeight.story = {
-  name: 'with categories, fixed height',
-};
+WithCategoriesFixedHeight.storyName = 'with categories, fixed height';
 
 export const WithEmptyState = () => (
   <div style={{ width: 400, height: 600 }}>
@@ -418,9 +404,7 @@ export const WithEmptyState = () => (
   </div>
 );
 
-WithEmptyState.story = {
-  name: 'with empty state',
-};
+WithEmptyState.storyName = 'with empty state';
 
 export const WithCheckboxMultiSelection = () => {
   const MultiSelectList = () => {
@@ -587,9 +571,7 @@ export const WithCheckboxMultiSelection = () => {
   return <MultiSelectList />;
 };
 
-WithCheckboxMultiSelection.story = {
-  name: 'with checkbox multi-selection',
-};
+WithCheckboxMultiSelection.storyName = 'with checkbox multi-selection';
 
 export const WithTags = () => (
   <div style={{ width: 400 }}>
@@ -613,35 +595,7 @@ export const WithTags = () => (
   </div>
 );
 
-WithTags.story = {
-  name: 'with tags',
-};
-
-export const IsLoading = () => (
-  <div style={{ width: 400 }}>
-    <List
-      title={text('title', 'NY Yankees')}
-      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
-        ([key]) => ({
-          id: key,
-          content: {
-            value: key,
-            tags: [
-              <Tag type="blue" title="descriptor" key="tag1">
-                default
-              </Tag>,
-            ],
-          },
-        })
-      )}
-      isLoading={boolean('isLoading', true)}
-    />
-  </div>
-);
-
-IsLoading.story = {
-  name: 'with isLoading',
-};
+WithTags.storyName = 'with tags';
 
 export const WithPagination = () => (
   <div style={{ height: 300, overflow: 'auto', width: 400 }}>
@@ -664,6 +618,5 @@ export const WithPagination = () => (
     />
   </div>
 );
-WithPagination.story = {
-  name: 'with pagination',
-};
+
+WithPagination.storyName = 'with pagination';

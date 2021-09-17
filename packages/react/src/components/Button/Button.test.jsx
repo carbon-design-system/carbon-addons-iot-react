@@ -11,7 +11,7 @@ import Button from './Button';
 const { iotPrefix, prefix } = settings;
 
 const commonProps = {
-  onClick: () => console.log('clicked'),
+  onClick: jest.fn(),
 };
 
 const iconSelectionCommonProps = {
@@ -21,6 +21,14 @@ const iconSelectionCommonProps = {
 };
 
 describe('Button', () => {
+  it('is selectable by testID or testId', () => {
+    const { rerender } = render(<Button {...commonProps} testID="BUTTON_TEST" />);
+    expect(screen.getByTestId('BUTTON_TEST')).toBeTruthy();
+
+    rerender(<Button {...commonProps} testId="button-test" />);
+    expect(screen.getByTestId('button-test')).toBeTruthy();
+  });
+
   it('loading', () => {
     const wrapper = mount(
       <Button loading {...commonProps}>

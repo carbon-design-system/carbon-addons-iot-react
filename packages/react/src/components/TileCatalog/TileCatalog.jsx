@@ -64,6 +64,8 @@ export const propTypes = {
   onSelection: PropTypes.func.isRequired,
   /** currently selected tile id */
   selectedTileId: PropTypes.string,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -73,6 +75,7 @@ const defaultProps = {
   pagination: null,
   search: null,
   selectedTileId: null,
+  testId: 'tile-catalog',
 };
 
 /**
@@ -90,6 +93,7 @@ const TileCatalog = ({
   tiles,
   onSelection,
   selectedTileId,
+  testId,
 }) => {
   const searchState = search ? search.value : '';
   const handleSearch = search && search.onSearch;
@@ -97,8 +101,8 @@ const TileCatalog = ({
   const totalTiles = pagination && pagination.totalItems ? pagination.totalItems : 10;
 
   return (
-    <div className={classnames(className, `${iotPrefix}--tile-catalog`)}>
-      <div className={`${iotPrefix}--tile-catalog--header`}>
+    <div data-testid={testId} className={classnames(className, `${iotPrefix}--tile-catalog`)}>
+      <div data-testid={`${testId}-header`} className={`${iotPrefix}--tile-catalog--header`}>
         {search && (search.placeHolderText || search.placeholder) ? (
           <TableToolbarSearch
             size="sm"
@@ -107,11 +111,13 @@ const TileCatalog = ({
             placeholder={search.placeHolderText ?? search.placeholder}
             onChange={handleSearch}
             id={`${id}-searchbox`}
+            data-testid={`${testId}-search-input`}
           />
         ) : null}
       </div>
       {isLoading ? ( // generate empty tiles for first page
         <TileGroup
+          testId={`${testId}-loading-group`}
           tiles={[...Array(pageSize)].map((val, index) => (
             <Tile className={`${iotPrefix}--tile-catalog--empty-tile`} key={`emptytile-${index}`}>
               <SkeletonText />
@@ -121,6 +127,7 @@ const TileCatalog = ({
         />
       ) : tiles.length > 0 ? (
         <TileGroup
+          testId={`${testId}-group`}
           tiles={tiles.map((tile) => (
             <RadioTile
               className={tile.className}
@@ -130,6 +137,7 @@ const TileCatalog = ({
               name={id}
               checked={selectedTileId === tile.id}
               onChange={onSelection}
+              data-testid={`${testId}-radio-tile-${tile.id}`}
             >
               {tile.renderContent
                 ? tile.renderContent({ values: tile.values, id: tile.id })
@@ -138,7 +146,7 @@ const TileCatalog = ({
           ))}
         />
       ) : (
-        <Tile className={`${iotPrefix}--tile-catalog--empty-tile`}>
+        <Tile data-testid={`${testId}-empty`} className={`${iotPrefix}--tile-catalog--empty-tile`}>
           {error || (
             <Fragment>
               <Bee32 />
@@ -148,7 +156,12 @@ const TileCatalog = ({
         </Tile>
       )}
       {!isLoading && tiles.length > 0 && !error && pagination ? (
-        <SimplePagination {...pagination} maxPage={Math.ceil(totalTiles / pageSize)} />
+        <SimplePagination
+          {...pagination}
+          maxPage={Math.ceil(totalTiles / pageSize)}
+          // TODO: pass testId in v3 to override defaults
+          // testId={`${testId}-pagination`}
+        />
       ) : null}
     </div>
   );

@@ -1,9 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import PageTitle from './PageTitle';
 
 describe('PageTitle', () => {
+  it('should be selectable by testId', () => {
+    render(<PageTitle title="title" testId="page_title" />);
+    expect(screen.getByTestId('page_title')).toBeDefined();
+  });
+
   it('renders', () => {
     let wrapper = mount(<PageTitle title="title" />);
 

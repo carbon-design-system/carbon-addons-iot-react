@@ -26,7 +26,7 @@ const props = () => ({
 });
 
 export default {
-  title: 'Pagination',
+  title: '3 - Carbon/Pagination',
   decorators: [withKnobs, (story) => <div style={{ maxWidth: '800px' }}>{story()}</div>],
 
   parameters: {

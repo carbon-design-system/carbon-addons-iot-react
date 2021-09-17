@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
 
 import { ChildContentPropTypes } from '../Header';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const { prefix } = settings;
 
@@ -54,6 +55,40 @@ class HeaderActionMenu extends React.Component {
     tabIndex: null,
   };
 
+  state = {
+    isOverflowing: [],
+  };
+
+  constructor(props) {
+    super(props);
+    this.menuItemRefs = props.childContent.map(() => React.createRef(null));
+  }
+
+  componentDidMount() {
+    const { isExpanded } = this.props;
+    if (isExpanded) {
+      this.checkForOverflows();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { isExpanded } = this.props;
+    if (isExpanded && !prevProps.isExpanded) {
+      this.checkForOverflows();
+    }
+  }
+
+  checkForOverflows() {
+    this.setState({
+      isOverflowing: this.menuItemRefs.map((ref) => {
+        const element = ref.current.firstChild;
+        return (
+          element.offsetHeight < element.scrollHeight || element.offsetWidth < element.scrollWidth
+        );
+      }),
+    });
+  }
+
   render() {
     const {
       // eslint-disable-next-line react/prop-types
@@ -79,6 +114,7 @@ class HeaderActionMenu extends React.Component {
     // Prevents the a element from navigating to it's href target
     const handleDefaultClick = (event) => {
       event.preventDefault();
+      event.stopPropagation();
       onToggleExpansion();
     };
 
@@ -97,8 +133,8 @@ class HeaderActionMenu extends React.Component {
           aria-haspopup="menu" // eslint-disable-line jsx-a11y/aria-proptypes
           aria-expanded={isExpanded}
           className={classnames(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
-          href=""
-          onKeyDown={this.handleOnKeyDown}
+          href="#"
+          onKeyDown={handleSpecificKeyDown(['Enter', 'Space', 'Escape'], handleDefaultClick)}
           onClick={handleDefaultClick}
           ref={focusRef}
           data-testid="menuitem"
@@ -109,11 +145,41 @@ class HeaderActionMenu extends React.Component {
           <MenuContent ariaLabel={ariaLabel} />
         </a>
         <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
-          {childContent.map((childItem, index) => (
-            <HeaderMenuItem key={`menu-item-${label + index}-child`} {...childItem.metaData}>
-              {childItem.content}
-            </HeaderMenuItem>
-          ))}
+          {childContent.map((childItem, index) => {
+            const { isOverflowing } = this.state;
+            const childIsOverflowing = isOverflowing[index];
+            const fallbackTitle = this.menuItemRefs?.[index]?.current?.textContent ?? '';
+            const title =
+              childItem.metaData?.title ?? (childIsOverflowing ? fallbackTitle : undefined);
+            const onKeyDownClick = (e) => e.target.click();
+
+            // if the item is an A and doesn't have an onClick event
+            // do nothing. An A tag doesn't need an onClick handler.
+            const onClick =
+              childItem.metaData?.element === 'a' && !childItem.metaData?.onClick
+                ? undefined
+                : // otherwise, if an onClick exists use that, or fallback to a noop.
+                  childItem.metaData?.onClick || (() => {});
+
+            // if item has onKeyDown use that otherwise, fallback to onClick if it exists
+            // or create a custom handler to trigger the click
+            const onKeyDown = childItem?.metaData?.onKeyDown
+              ? childItem.metaData.onKeyDown
+              : onClick || onKeyDownClick;
+
+            return (
+              <HeaderMenuItem
+                ref={this.menuItemRefs[index]}
+                key={`menu-item-${label + index}-child`}
+                {...childItem.metaData}
+                title={title}
+                onClick={onClick}
+                onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
+              >
+                {childItem.content}
+              </HeaderMenuItem>
+            );
+          })}
         </ul>
       </div>
     );

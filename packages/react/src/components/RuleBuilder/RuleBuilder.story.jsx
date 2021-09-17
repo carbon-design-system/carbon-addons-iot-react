@@ -8,12 +8,10 @@ import RuleBuilder from './RuleBuilder';
 import { columns, TEST_TREE_DATA } from './RuleBuilderEditor.story';
 
 export const Experimental = () => <StoryNotice componentName="RuleBuilder" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 export default {
-  title: 'Watson IoT Experimental/☢️ RuleBuilder',
+  title: '2 - Watson IoT Experimental/☢️ RuleBuilder',
   parameters: {
     component: RuleBuilder,
   },
@@ -162,9 +160,7 @@ export const ruleBuilder = () => (
   </div>
 );
 
-ruleBuilder.story = {
-  name: 'new filter',
-};
+ruleBuilder.storyName = 'new filter';
 
 export const ruleBuilderWithRules = () => (
   <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
@@ -178,6 +174,4 @@ export const ruleBuilderWithRules = () => (
   </div>
 );
 
-ruleBuilderWithRules.story = {
-  name: 'with existing filter rules',
-};
+ruleBuilderWithRules.storyName = 'with existing filter rules';

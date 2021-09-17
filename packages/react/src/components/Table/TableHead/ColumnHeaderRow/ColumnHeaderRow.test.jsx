@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { UnconnectedColumnHeaderRow } from './ColumnHeaderRow';
 
@@ -24,10 +24,33 @@ const commonTableHeadProps = {
 };
 
 describe('TableHead', () => {
+  it('should be selectable by testId', () => {
+    const onChangeOrdering = jest.fn();
+    render(
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        showExpanderColumn={false}
+        onChangeOrdering={onChangeOrdering}
+        testId="column_header_row"
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
+    expect(screen.getByTestId('column_header_row')).toBeDefined();
+  });
+
   it('can reorder columns', () => {
     const onChangeOrdering = jest.fn();
     render(
-      <UnconnectedColumnHeaderRow {...commonTableHeadProps} onChangeOrdering={onChangeOrdering} />
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        showExpanderColumn={false}
+        onChangeOrdering={onChangeOrdering}
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
     );
 
     const column1 = screen.getByText('Column 1');
@@ -46,7 +69,14 @@ describe('TableHead', () => {
   it('does not reorder columns when placed upon themselves', () => {
     const onChangeOrdering = jest.fn();
     render(
-      <UnconnectedColumnHeaderRow {...commonTableHeadProps} onChangeOrdering={onChangeOrdering} />
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        showExpanderColumn={false}
+        onChangeOrdering={onChangeOrdering}
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
     );
 
     const column1 = screen.getByText('Column 1');
@@ -66,7 +96,11 @@ describe('TableHead', () => {
         {...commonTableHeadProps}
         onChangeOrdering={onChangeOrdering}
         onColumnToggle={onColumnToggle}
-      />
+        showExpanderColumn={false}
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
     );
 
     fireEvent.click(screen.getByText('Column 1'));
@@ -83,7 +117,9 @@ describe('ColumnHeaderRow', () => {
       options: { ...commonTableHeadProps.options, hasRowExpansion: true },
     };
 
-    render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
+    render(<UnconnectedColumnHeaderRow {...tableHeadProps} showExpanderColumn={false} />, {
+      container: document.body.appendChild(document.createElement('tbody')),
+    });
 
     expect(screen.getByText('Column 1').textContent).toContain('Column 1');
     expect(screen.getByText('Column 2').textContent).toContain('Column 2');
@@ -95,9 +131,14 @@ describe('ColumnHeaderRow', () => {
       ordering: [],
     };
 
-    const renderedElement = render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
+    const { container } = render(
+      <UnconnectedColumnHeaderRow {...tableHeadProps} showExpanderColumn={false} />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
 
-    expect(renderedElement.container.innerHTML).toContain('colspan="2"');
+    expect(container.innerHTML).toContain('colspan="2"');
   });
 
   it('when hasRowActions set to true', () => {
@@ -106,11 +147,32 @@ describe('ColumnHeaderRow', () => {
       options: { ...commonTableHeadProps.options, hasRowActions: true },
     };
 
-    const renderedElement = render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
+    const { container } = render(
+      <UnconnectedColumnHeaderRow {...tableHeadProps} showExpanderColumn={false} />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
 
-    expect(renderedElement.container.innerHTML).toContain('Column 1');
-    expect(renderedElement.container.innerHTML).toContain('Column 2');
-    expect(renderedElement.container.innerHTML).toContain('colspan="3"');
+    expect(container.innerHTML).toContain('Column 1');
+    expect(container.innerHTML).toContain('Column 2');
+    expect(container.innerHTML).toContain('colspan="3"');
+  });
+
+  it('adds extra colspan when showExpanderColumn is true', () => {
+    const tableHeadProps = {
+      ...commonTableHeadProps,
+      options: { ...commonTableHeadProps.options },
+      showExpanderColumn: true,
+    };
+
+    const { container } = render(<UnconnectedColumnHeaderRow {...tableHeadProps} />, {
+      container: document.body.appendChild(document.createElement('tbody')),
+    });
+
+    expect(container.innerHTML).toContain('Column 1');
+    expect(container.innerHTML).toContain('Column 2');
+    expect(container.innerHTML).toContain('colspan="3"');
   });
 
   it('column selection config renders and fires callback on click', () => {
@@ -125,11 +187,13 @@ describe('ColumnHeaderRow', () => {
       columnSelectionConfigText: 'button_text',
     };
 
-    const renderedElement = mount(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
+    render(<UnconnectedColumnHeaderRow {...tableHeadProps} showExpanderColumn={false} />, {
+      container: document.body.appendChild(document.createElement('tbody')),
+    });
 
-    expect(renderedElement.find('.column-header__btn').last().text()).toContain('button_text');
+    expect(screen.queryAllByText('button_text')).not.toBeNull();
 
-    renderedElement.find('.column-header__btn').last().simulate('click');
+    userEvent.click(screen.queryByRole('button', { name: 'button_text' }));
 
     expect(onColumnSelectionConfig).toHaveBeenCalledTimes(1);
   });

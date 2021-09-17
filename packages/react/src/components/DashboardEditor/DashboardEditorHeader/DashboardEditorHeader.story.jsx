@@ -7,7 +7,7 @@ import { Link } from '../../../index';
 import DashboardEditorHeader from './DashboardEditorHeader';
 
 export default {
-  title: 'Watson IoT Experimental/☢️ DashboardEditor/DashboardEditorHeader',
+  title: '2 - Watson IoT Experimental/☢️ DashboardEditor/DashboardEditorHeader',
   decorators: [withKnobs],
 
   parameters: {
@@ -35,9 +35,7 @@ export const Default = () => (
   </div>
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const WithEditableTitleAndNoImportExportDelete = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
@@ -57,6 +55,5 @@ export const WithEditableTitleAndNoImportExportDelete = () => (
   </div>
 );
 
-WithEditableTitleAndNoImportExportDelete.story = {
-  name: 'with editable title and no import/export/delete',
-};
+WithEditableTitleAndNoImportExportDelete.storyName =
+  'with editable title and no import/export/delete';

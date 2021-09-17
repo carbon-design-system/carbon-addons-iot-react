@@ -51,6 +51,7 @@ export const CARD_ACTIONS = {
   DELETE_CARD: 'DELETE_CARD',
   CHANGE_TIME_RANGE: 'CHANGE_TIME_RANGE',
   ON_CARD_CHANGE: 'ON_CARD_CHANGE',
+  ON_SETTINGS_CLICK: 'ON_SETTINGS_CLICK',
 };
 
 export const DASHBOARD_SIZES = {
@@ -155,7 +156,7 @@ export const CARD_DIMENSIONS = {
     max: { w: 4, h: 1 },
     xl: { w: 4, h: 1 },
     lg: { w: 4, h: 1 },
-    md: { w: 4, h: 1 },
+    md: { w: 2, h: 1 },
     sm: { w: 2, h: 1 },
     xs: { w: 4, h: 1 },
   },
@@ -163,8 +164,8 @@ export const CARD_DIMENSIONS = {
     max: { w: 8, h: 1 },
     xl: { w: 8, h: 1 },
     lg: { w: 8, h: 1 },
-    md: { w: 8, h: 1 },
-    sm: { w: 4, h: 2 },
+    md: { w: 4, h: 1 },
+    sm: { w: 4, h: 1 },
     xs: { w: 4, h: 1 },
   },
   SMALLFULL: {
@@ -172,7 +173,7 @@ export const CARD_DIMENSIONS = {
     xl: { w: 16, h: 1 },
     lg: { w: 16, h: 1 },
     md: { w: 8, h: 1 },
-    sm: { w: 8, h: 2 },
+    sm: { w: 8, h: 1 },
     xs: { w: 4, h: 1 },
   },
   MEDIUMTHIN: {

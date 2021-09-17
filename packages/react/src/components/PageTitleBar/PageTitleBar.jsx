@@ -45,7 +45,10 @@ const PageTitleBarPropTypes = {
   /** Is the page actively loading */
   isLoading: PropTypes.bool,
   onEdit: PropTypes.func,
-  i18n: PropTypes.shape({ editIconDescription: PropTypes.string }),
+  i18n: PropTypes.shape({
+    editIconDescription: PropTypes.string,
+    tooltipIconDescription: PropTypes.string,
+  }),
   className: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.string),
 
@@ -67,6 +70,10 @@ const PageTitleBarPropTypes = {
 
   /** Content rendered beneath title bar */
   content: PropTypes.node,
+  /** Callback to allow custom rendering of the title, it is called back with the title property */
+  renderTitleFunction: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -88,12 +95,15 @@ const defaultProps = {
   isLoading: false,
   tabs: undefined,
   content: undefined,
+  renderTitleFunction: undefined,
   headerMode: HEADER_MODES.STATIC,
   stickyHeaderOffset: 48, // default to 3rem to stick to the bottom of the suite header
+  testId: 'page-title-bar',
 };
 
 const PageTitleBar = ({
   title,
+  renderTitleFunction,
   description,
   className,
   rightContent,
@@ -111,6 +121,7 @@ const PageTitleBar = ({
   tabs,
   style,
   content,
+  testId,
 }) => {
   const titleBarContent = content || tabs;
 
@@ -131,10 +142,10 @@ const PageTitleBar = ({
 
       // Detect when sticky overlap begins to start fading out/fading in
       // content based on scroll position
+      /* istanbul ignore else */
       if (breadcrumbRef.current && titleRef.current) {
         const breadcrumbDims = breadcrumbRef.current.getBoundingClientRect();
         const titleDims = titleRef.current.getBoundingClientRect();
-
         if (titleDims.top < breadcrumbDims.bottom) {
           isCondensed = true;
           const distanceLeftToGo = breadcrumbDims.top - titleDims.top;
@@ -183,6 +194,7 @@ const PageTitleBar = ({
             tooltipId="tooltip"
             renderIcon={Information16}
             iconDescription={tooltipIconDescription}
+            testId={`${testId}-tooltip`}
           >
             {typeof description === 'string' ? <p>{description}</p> : description}
           </Tooltip>
@@ -194,26 +206,30 @@ const PageTitleBar = ({
             size="field"
             hasIconOnly
             renderIcon={Edit16}
+            title={editIconDescription}
             iconDescription={editIconDescription}
             tooltipAlignment="center"
             tooltipPosition="bottom"
             onClick={onEdit}
+            // TODO: pass testId in v3 to override defaults
+            // testId={`${testId}-edit-button`}
           />
         ) : null}
       </>
     ),
     [
-      collapsed,
       description,
+      collapsed,
       titleBarContent,
-      editIconDescription,
-      editable,
-      onEdit,
       tooltipIconDescription,
+      editable,
+      editIconDescription,
+      onEdit,
+      testId,
     ]
   );
 
-  /* We need the tabs to render outside the header so the tab stickiness will push away
+  /** We need the tabs to render outside the header so the tab stickiness will push away
      the header stickiness naturally with the scroll.
 
      We also want sticky mode to render outside so we can sticky the entire header element
@@ -230,6 +246,7 @@ const PageTitleBar = ({
 
   return (
     <div
+      data-testid={testId}
       className={classnames(className, 'page-title-bar', {
         'page-title-bar--sticky': headerMode === HEADER_MODES.STICKY,
         'page-title-bar--condensed-static': headerMode === HEADER_MODES.CONDENSED,
@@ -281,7 +298,7 @@ const PageTitleBar = ({
             ) : null}
             <div className="page-title-bar-title" ref={titleRef}>
               <div className="page-title-bar-title--text">
-                <h2 title={title}>{title}</h2>
+                {!renderTitleFunction ? <h2 title={title}>{title}</h2> : renderTitleFunction(title)}
                 {titleActions}
               </div>
             </div>

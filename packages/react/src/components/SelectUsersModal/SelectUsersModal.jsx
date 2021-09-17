@@ -52,6 +52,8 @@ export const propTypes = {
   onClose: PropTypes.func.isRequired,
   /** Callback to submit the dialog/form */
   onSubmit: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -72,6 +74,7 @@ const defaultProps = {
   },
   isOpen: false,
   onSubmit: null,
+  testId: 'select-users-modal',
 };
 
 const itemsAreEqual = (item1, item2) => {
@@ -144,7 +147,15 @@ const flattenUsers = (results, user) => {
     : results.concat(user);
 };
 
-const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUsers, i18n }) => {
+const SelectUsersModal = ({
+  isOpen,
+  onClose,
+  onSubmit,
+  users,
+  initialSelectedUsers,
+  i18n,
+  testId,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   const [selectedUsers, setSelectedUsers] = useState(initialSelectedUsers);
@@ -196,6 +207,8 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
             size="small"
             onClick={() => handleAdd(user)}
             iconDescription={mergedI18n.addUser}
+            // TODO: pass testId in v3
+            // testId={`${testId}-add-user-button`}
           />,
         ];
       },
@@ -220,6 +233,8 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
               size="small"
               onClick={() => handleRemove(user)}
               iconDescription={mergedI18n.removeUser}
+              // TODO: pass testId in v3
+              // testId={`${testId}-remove-user-button`}
             />,
           ];
         }
@@ -234,7 +249,7 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
   const selectedList = displaySelectedUsersList(selectedUsers);
 
   return (
-    <div className={`${iotPrefix}--select-users-modal`}>
+    <div data-testid={`${testId}-container`} className={`${iotPrefix}--select-users-modal`}>
       <ComposedModal
         isLarge
         footer={{
@@ -256,11 +271,15 @@ const SelectUsersModal = ({ isOpen, onClose, onSubmit, users, initialSelectedUse
           onClose(e);
           canSaveRef.current = false;
         }}
+        // TODO: replace with passed testId in v3.
+        // testId={testId}
       >
         <ListBuilder
           items={usersList}
           itemCount={userCount}
-          testID="select-users"
+          // TODO: replace with passed test in v3.
+          // testId={`${testId}-list-builder`}
+          testId="select-users"
           selectedItems={selectedList}
           i18n={{
             ...mergedI18n,

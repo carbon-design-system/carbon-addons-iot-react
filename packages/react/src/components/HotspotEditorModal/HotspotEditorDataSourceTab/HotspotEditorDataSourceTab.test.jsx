@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -76,15 +76,19 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         title="elevators"
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
-    userEvent.click(screen.getAllByRole('button')[0]);
-    const options = screen.getByTitle(/elevators/);
+    userEvent.click(
+      screen.getByRole('button', {
+        name: /select data items/i,
+      })
+    );
+    const options = screen.getByRole('option', { name: /elevators/i });
     userEvent.click(options);
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
@@ -104,14 +108,19 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
-    userEvent.click(screen.getAllByRole('button')[0]);
-    userEvent.click(screen.getAllByRole('option')[1]);
+    userEvent.click(
+      screen.getByRole('button', {
+        name: /select data items/i,
+      })
+    );
+    userEvent.click(screen.getByRole('option', { name: /Other metric/i }));
+
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
       attributes: [
@@ -142,10 +151,10 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
     userEvent.click(screen.getAllByRole('button')[2]);
@@ -158,17 +167,21 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
 
     // edit button
     userEvent.click(screen.getAllByRole('button')[1]);
-    // add threshold
-    userEvent.click(screen.getAllByRole('button')[3]);
+
+    userEvent.click(
+      screen.getByRole('button', {
+        name: HotspotEditorDataSourceTab.defaultProps.i18n.dataItemEditorDataItemAddThreshold,
+      })
+    );
     // save
     userEvent.click(screen.getAllByRole('button')[11]);
     // Card config with the elevators hotspot removed
@@ -194,10 +207,10 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
+        translateWithId={() => {}}
       />
     );
     // edit button
@@ -224,5 +237,116 @@ describe('HotspotEditorDataSourceTab', () => {
         },
       ],
     });
+  });
+
+  it('correctly preselects data items with custom labels', () => {
+    const customLabel = 'Temperature Celsius';
+    render(
+      <HotspotEditorDataSourceTab
+        hotspot={{
+          title: 'elevators',
+          content: {
+            attributes: [
+              {
+                dataItemId: 'temperature',
+                dataSourceId: 'temperature',
+                label: customLabel,
+                unit: '°',
+              },
+            ],
+          },
+        }}
+        thresholds={cardConfigWithPresets.thresholds || []}
+        cardConfig={cardConfigWithPresets}
+        dataItems={[
+          {
+            dataItemId: 'temperature',
+            dataSourceId: 'temperature',
+            label: 'Temperature', // standard label
+            unit: '°',
+          },
+        ]}
+        onChange={() => {}}
+        translateWithId={() => {}}
+      />
+    );
+    userEvent.click(
+      screen.getByRole('button', {
+        name: /select data items/i,
+      })
+    );
+
+    expect(
+      within(screen.getByRole('option', { name: customLabel })).getByText(customLabel)
+    ).toHaveAttribute('data-contained-checkbox-state', 'true');
+  });
+
+  it('multiselect handles changes to hotspot.content.attributes prop', () => {
+    const { rerender } = render(
+      <HotspotEditorDataSourceTab
+        hotspot={{
+          title: 'elevators',
+          content: {
+            attributes: [],
+          },
+        }}
+        thresholds={cardConfigWithPresets.thresholds || []}
+        cardConfig={cardConfigWithPresets}
+        dataItems={[
+          {
+            dataItemId: 'temperature',
+            dataSourceId: 'temperature',
+            label: 'Temperature',
+            unit: '°',
+          },
+        ]}
+        onChange={() => {}}
+        translateWithId={() => {}}
+      />
+    );
+    userEvent.click(
+      screen.getByRole('button', {
+        name: /select data items/i,
+      })
+    );
+
+    expect(screen.getByRole('option', { name: /Temperature/i })).toBeVisible();
+
+    rerender(
+      <HotspotEditorDataSourceTab
+        hotspot={{
+          title: 'elevators',
+          content: {
+            attributes: [
+              {
+                dataItemId: 'temperature',
+                dataSourceId: 'temperature',
+                label: 'Modified Label', // This is modified
+                unit: '°',
+              },
+            ],
+          },
+        }}
+        thresholds={cardConfigWithPresets.thresholds || []}
+        cardConfig={cardConfigWithPresets}
+        dataItems={[
+          {
+            dataItemId: 'temperature',
+            dataSourceId: 'temperature',
+            label: 'Temperature',
+            unit: '°',
+          },
+        ]}
+        onChange={() => {}}
+        translateWithId={() => {}}
+      />
+    );
+    userEvent.click(
+      screen.getByRole('button', {
+        name: /select data items/i,
+      })
+    );
+
+    expect(screen.getByRole('option', { name: /Modified Label/i })).toBeVisible();
   });
 });

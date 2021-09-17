@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import PageHero from './PageHero';
 
@@ -12,6 +13,25 @@ const commonPageHeroProps = {
 };
 
 describe('PageHero', () => {
+  it('should be selectable by testId', () => {
+    const commonSwitchProps = {
+      onChange: jest.fn(),
+      options: [
+        {
+          id: 'allDevices',
+          text: 'All Devices',
+        },
+        {
+          id: 'diagnose',
+          text: 'Diagnose',
+        },
+      ],
+    };
+    render(<PageHero {...commonPageHeroProps} switcher={commonSwitchProps} testId="page_hero" />);
+
+    expect(screen.getByTestId('page_hero')).toBeDefined();
+  });
+
   // handle click function test
   it('onClick switcher', () => {
     const commonSwitchProps = {

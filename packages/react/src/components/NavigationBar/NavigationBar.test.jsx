@@ -1,29 +1,67 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import NavigationBar from './NavigationBar';
 
 const commonNavigationBarProps = {
   tabs: [
-    { id: 'tab1', label: 'tabLabel', 'data-id': 'tab1' },
-    { id: 'tab2', label: 'tabLabel2', 'data-id': 'tab2' },
+    { id: 'tab1', label: 'tabLabel', 'data-id': 'tab1', children: 'my content' },
+    { id: 'tab2', label: 'tabLabel2', 'data-id': 'tab2', children: 'my content2' },
   ],
 };
 
 describe('NavigationBar', () => {
-  it('onSelectionChange', () => {
-    const wrapper = mount(<NavigationBar {...commonNavigationBarProps} />);
-    const tab1 = wrapper.find('[data-id="tab1"]');
-    tab1.at(0).simulate('click');
-    // no exception should be thrown
-
-    const mockSelectionChange = jest.fn();
-    const wrapper2 = mount(
-      <NavigationBar {...commonNavigationBarProps} onSelectionChange={mockSelectionChange} />
+  it('should be selectable by testId', () => {
+    render(
+      <NavigationBar
+        {...commonNavigationBarProps}
+        testId="navigation_bar"
+        actions={[
+          {
+            id: 'button1',
+            children: 'New Entity Type',
+            onClick: jest.fn(),
+          },
+          {
+            id: 'button2',
+            children: 'Button 2',
+            kind: 'secondary',
+            onClick: jest.fn(),
+          },
+        ]}
+      />
     );
-    const tab2 = wrapper2.find('[data-id="tab2"]');
+
+    expect(screen.getByTestId('navigation_bar')).toBeDefined();
+    expect(screen.getByTestId('navigation_bar-tabs')).toBeDefined();
+    expect(screen.getByTestId('navigation_bar-actions')).toBeDefined();
+    expect(screen.getByTestId('navigation_bar-button-button1')).toBeDefined();
+    expect(screen.getByTestId('navigation_bar-button-button2')).toBeDefined();
+  });
+
+  it('clicking tab without onSelectionChange callback works', () => {
+    render(<NavigationBar {...commonNavigationBarProps} />);
+    const tab1 = screen.getByRole('tab', { name: 'tabLabel' });
+    userEvent.click(tab1);
+
+    // no exception should be thrown
+    expect(screen.getByText('my content')).toBeVisible();
+  });
+
+  it('calls onSelectionChange if present', () => {
+    const mockSelectionChange = jest.fn();
+    render(<NavigationBar {...commonNavigationBarProps} onSelectionChange={mockSelectionChange} />);
     expect(mockSelectionChange).not.toHaveBeenCalled();
-    tab2.at(0).simulate('click');
-    expect(mockSelectionChange).toHaveBeenCalled();
+
+    const tab2 = screen.getByRole('tab', { name: /tabLabel2/i });
+    userEvent.click(tab2);
+    expect(mockSelectionChange).toHaveBeenCalledWith('tab2');
+    expect(screen.getByText('my content2')).toBeVisible();
+  });
+
+  it('renders workArea', () => {
+    render(<NavigationBar {...commonNavigationBarProps} workArea={<div>My work area</div>} />);
+    expect(screen.getByText('My work area')).toBeVisible();
   });
 });

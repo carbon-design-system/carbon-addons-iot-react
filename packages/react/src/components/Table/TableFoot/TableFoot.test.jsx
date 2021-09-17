@@ -81,6 +81,25 @@ const tableData = Array(20)
   }));
 
 describe('TableFoot', () => {
+  it('should be selectable by testId', () => {
+    const label = 'Total';
+    const tableFootTestId = 'table_foot';
+
+    render(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          tableState={{
+            aggregations: { label, columns: [{ id: 'c', value: '10' }] },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByTestId(tableFootTestId)).toBeDefined();
+  });
+
   it('shows aggregation label in first column unless that column has an aggregated value', () => {
     const label = 'Total';
     const tableTestId = 'table-test';
@@ -90,7 +109,7 @@ describe('TableFoot', () => {
     const { rerender } = render(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           tableState={{
             aggregations: { label, columns: [{ id: 'c', value: '10' }] },
             ordering,
@@ -104,7 +123,7 @@ describe('TableFoot', () => {
     rerender(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           tableState={{
             aggregations: { label, columns: [{ id: 'a', value: '10' }] },
             ordering,
@@ -147,7 +166,7 @@ describe('TableFoot', () => {
     expect(newFirstAggregationCell.textContent).toEqual('20');
   });
 
-  it('adds empty cells for rowExpension, rowSelection & rowActions', () => {
+  it('adds empty cells for rowExpension, rowSelection, rowActions & resize expander column', () => {
     const tableFootTestId = 'table-foot';
     const label = 'Total';
     const firstColumnTestId = `${tableFootTestId}-aggregation-${ordering[0].columnId}`;
@@ -156,7 +175,7 @@ describe('TableFoot', () => {
     const { rerender, container } = render(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           options={{
             hasRowActions: true,
             hasRowExpansion: true,
@@ -166,16 +185,17 @@ describe('TableFoot', () => {
             aggregations: {},
             ordering: [],
           }}
+          showExpanderColumn
         />
       </table>
     );
 
     expect(container.querySelectorAll('tr').length).toEqual(1);
-    expect(container.querySelectorAll('td').length).toEqual(3);
+    expect(container.querySelectorAll('td').length).toEqual(4);
     rerender(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           options={{
             hasAggregations: true,
             hasRowActions: true,
@@ -186,6 +206,7 @@ describe('TableFoot', () => {
             aggregations: { label, columns: [{ id: 'c', value: '10' }] },
             ordering,
           }}
+          showExpanderColumn
         />
       </table>
     );
@@ -193,7 +214,7 @@ describe('TableFoot', () => {
     expect(screen.getByTestId(firstColumnTestId).textContent).toEqual(label);
     expect(screen.getByTestId(thirdColumnTestId).textContent).toEqual('10');
     expect(container.querySelectorAll('tr').length).toEqual(1);
-    expect(container.querySelectorAll('td').length).toEqual(6);
+    expect(container.querySelectorAll('td').length).toEqual(7);
   });
 
   it('has the correct classes for alignment and sorting', () => {
@@ -206,7 +227,7 @@ describe('TableFoot', () => {
     render(
       <table>
         <TableFoot
-          testID={tableFootTestId}
+          testId={tableFootTestId}
           options={{
             hasRowActions: true,
             hasRowExpansion: true,

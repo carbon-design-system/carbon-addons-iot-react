@@ -27,6 +27,8 @@ const propTypes = {
   onClick: PropTypes.func,
   /** Specify an optional className to be applied to the container node */
   className: PropTypes.string,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -37,6 +39,7 @@ const defaultProps = {
   thumbnail: null,
   onClick: () => {},
   className: null,
+  testId: 'tile-gallery-item',
 };
 
 const TileGalleryItem = ({
@@ -48,6 +51,7 @@ const TileGalleryItem = ({
   thumbnail,
   onClick,
   className,
+  testId,
 }) => {
   const content = (
     <div className="content-container">
@@ -61,6 +65,7 @@ const TileGalleryItem = ({
             evt.stopPropagation();
           }}
           role="presentation"
+          data-testid={`${testId}-overflow-menu`}
         >
           {afterContent}
         </div>
@@ -98,6 +103,7 @@ const TileGalleryItem = ({
         }-title`}
         key={`${title}-card-link`}
         handleClick={onClick}
+        data-testid={testId}
       >
         {tile}
       </ClickableTile>

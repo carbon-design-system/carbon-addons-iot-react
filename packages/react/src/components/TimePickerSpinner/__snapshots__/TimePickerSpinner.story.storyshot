@@ -1,287 +1,231 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimePickerSpinner Default timeGroup to minutes 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimePickerSpinner Default timeGroup to minutes 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "1rem4",
       }
     }
   >
     <div
-      style={
-        Object {
-          "margin": "1rem4",
-        }
-      }
+      className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner iot--time-picker__wrapper--show-underline-minutes"
+      data-testid="time-picker-spinner-wrapper"
     >
       <div
-        className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner iot--time-picker__wrapper--show-underline-minutes"
+        className="bx--form-item"
       >
         <div
-          className="bx--form-item"
+          className="bx--time-picker"
         >
           <div
-            className="bx--time-picker"
+            className="bx--time-picker__input"
           >
-            <div
-              className="bx--time-picker__input"
+            <input
+              aria-label="Pick a time"
+              className="bx--time-picker__input-field bx--text-input"
+              data-testid="time-picker-spinner"
+              disabled={false}
+              id="timepicker"
+              maxLength={5}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
+              placeholder="hh:mm"
+              type="text"
+              value="19:33"
+            />
+          </div>
+          <div
+            className="iot--time-picker__controls"
+          >
+            <button
+              aria-atomic="true"
+              aria-label="Increment minutes"
+              aria-live="polite"
+              className="iot--time-picker__controls--btn up-icon"
+              data-testid="time-picker-spinner-up-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              title="Increment minutes"
+              type="button"
             >
-              <input
-                aria-label="Pick a time"
-                className="bx--time-picker__input-field bx--text-input"
-                disabled={false}
-                id="timepicker"
-                maxLength={5}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
-                placeholder="hh:mm"
-                type="text"
-                value="19:33"
-              />
-            </div>
-            <div
-              className="iot--time-picker__controls"
+              <svg
+                aria-hidden={true}
+                className="up-icon"
+                fill="currentColor"
+                focusable="false"
+                height={4}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 8 4"
+                width={8}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 4L4 0 8 4z"
+                />
+              </svg>
+            </button>
+            <button
+              aria-atomic="true"
+              aria-label="Decrement minutes"
+              aria-live="polite"
+              className="iot--time-picker__controls--btn down-icon"
+              data-testid="time-picker-spinner-down-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              title="Decrement minutes"
+              type="button"
             >
-              <button
-                aria-atomic="true"
-                aria-label="Increment minutes"
-                aria-live="polite"
-                className="iot--time-picker__controls--btn up-icon"
-                disabled={false}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                title="Increment minutes"
-                type="button"
+              <svg
+                aria-hidden={true}
+                className="down-icon"
+                fill="currentColor"
+                focusable="false"
+                height={4}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 8 4"
+                width={8}
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  aria-hidden={true}
-                  className="up-icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={4}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 8 4"
-                  width={8}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 4L4 0 8 4z"
-                  />
-                </svg>
-              </button>
-              <button
-                aria-atomic="true"
-                aria-label="Decrement minutes"
-                aria-live="polite"
-                className="iot--time-picker__controls--btn down-icon"
-                disabled={false}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                title="Decrement minutes"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  className="down-icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={4}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 8 4"
-                  width={8}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0L4 4 0 0z"
-                  />
-                </svg>
-              </button>
-            </div>
+                <path
+                  d="M8 0L4 4 0 0z"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimePickerSpinner With spinner 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimePickerSpinner With spinner 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "1rem4",
       }
     }
   >
     <div
-      style={
-        Object {
-          "margin": "1rem4",
-        }
-      }
+      className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+      data-testid="time-picker-spinner-wrapper"
     >
       <div
-        className="iot--time-picker__wrapper iot--time-picker__wrapper--with-spinner"
+        className="bx--form-item"
       >
         <div
-          className="bx--form-item"
+          className="bx--time-picker"
         >
           <div
-            className="bx--time-picker"
+            className="bx--time-picker__input"
           >
-            <div
-              className="bx--time-picker__input"
+            <input
+              aria-label="Pick a time"
+              className="bx--time-picker__input-field bx--text-input"
+              data-testid="time-picker-spinner"
+              disabled={false}
+              id="timepicker"
+              maxLength={5}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
+              placeholder="hh:mm"
+              type="text"
+              value="19:33"
+            />
+          </div>
+          <div
+            className="iot--time-picker__controls"
+          >
+            <button
+              aria-atomic="true"
+              aria-label="Increment hours"
+              aria-live="polite"
+              className="iot--time-picker__controls--btn up-icon"
+              data-testid="time-picker-spinner-up-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              title="Increment hours"
+              type="button"
             >
-              <input
-                aria-label="Pick a time"
-                className="bx--time-picker__input-field bx--text-input"
-                disabled={false}
-                id="timepicker"
-                maxLength={5}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                pattern="(1[012]|[1-9]):[0-5][0-9](\\\\s)?"
-                placeholder="hh:mm"
-                type="text"
-                value="19:33"
-              />
-            </div>
-            <div
-              className="iot--time-picker__controls"
+              <svg
+                aria-hidden={true}
+                className="up-icon"
+                fill="currentColor"
+                focusable="false"
+                height={4}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 8 4"
+                width={8}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 4L4 0 8 4z"
+                />
+              </svg>
+            </button>
+            <button
+              aria-atomic="true"
+              aria-label="Decrement hours"
+              aria-live="polite"
+              className="iot--time-picker__controls--btn down-icon"
+              data-testid="time-picker-spinner-down-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              title="Decrement hours"
+              type="button"
             >
-              <button
-                aria-atomic="true"
-                aria-label="Increment hours"
-                aria-live="polite"
-                className="iot--time-picker__controls--btn up-icon"
-                disabled={false}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                title="Increment hours"
-                type="button"
+              <svg
+                aria-hidden={true}
+                className="down-icon"
+                fill="currentColor"
+                focusable="false"
+                height={4}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 8 4"
+                width={8}
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  aria-hidden={true}
-                  className="up-icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={4}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 8 4"
-                  width={8}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 4L4 0 8 4z"
-                  />
-                </svg>
-              </button>
-              <button
-                aria-atomic="true"
-                aria-label="Decrement hours"
-                aria-live="polite"
-                className="iot--time-picker__controls--btn down-icon"
-                disabled={false}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                title="Decrement hours"
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  className="down-icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={4}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 8 4"
-                  width={8}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 0L4 4 0 0z"
-                  />
-                </svg>
-              </button>
-            </div>
+                <path
+                  d="M8 0L4 4 0 0z"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

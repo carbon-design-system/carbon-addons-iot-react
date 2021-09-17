@@ -28,6 +28,7 @@ const StructuredList = ({
   loadingDataLabel,
   StructuredListWrapperProps,
   StructuredListHeadClassName,
+  testId,
 }) => {
   if (__DEV__) {
     warning(
@@ -43,8 +44,9 @@ const StructuredList = ({
           [`${iotPrefix}--composed-structured-list__wrapper`]: isFixedWidth,
         })}
         selection
+        data-testid={testId}
       >
-        <StructuredListHead className={StructuredListHeadClassName}>
+        <StructuredListHead data-testid={`${testId}-head`} className={StructuredListHeadClassName}>
           <StructuredListRow head>
             {columns.map(({ id, title, width = undefined }) => (
               <StructuredListCell
@@ -60,9 +62,13 @@ const StructuredList = ({
             ))}
           </StructuredListRow>
         </StructuredListHead>
-        <StructuredListBody>
+        <StructuredListBody data-testid={`${testId}-body`}>
           {data.map((item) => (
-            <StructuredListRow key={`${item.id}-row`} onClick={() => onRowClick(item.id)}>
+            <StructuredListRow
+              data-testid={`${testId}-row-${item.id}`}
+              key={`${item.id}-row`}
+              onClick={() => onRowClick(item.id)}
+            >
               {columns.map((col) => (
                 <StructuredListCell
                   className={classnames({
@@ -97,7 +103,10 @@ const StructuredList = ({
           ))}
         </StructuredListBody>
         {!data.length ? (
-          <div className={`${iotPrefix}--composed-structured-list__empty-content`}>
+          <div
+            data-testid={`${testId}-empty`}
+            className={`${iotPrefix}--composed-structured-list__empty-content`}
+          >
             <Bee32 width={100} height={100} fill={COLORS.gray} />
             <div className={`${iotPrefix}--composed-structured-list__loading`}>
               {loadingDataLabel}
@@ -161,6 +170,8 @@ StructuredList.propTypes = {
   onRowClick: PropTypes.func.isRequired,
   /** Text label for loading data */
   loadingDataLabel: PropTypes.string,
+
+  testId: PropTypes.string,
 };
 
 StructuredList.defaultProps = {
@@ -170,6 +181,7 @@ StructuredList.defaultProps = {
   design: 'mini',
   isFixedWidth: false,
   loadingDataLabel: '',
+  testId: 'structured-list',
 };
 
 export default StructuredList;

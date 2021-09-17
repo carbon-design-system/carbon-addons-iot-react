@@ -7,6 +7,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import { spacing01, spacing05 } from '@carbon/layout';
+import classnames from 'classnames';
 
 import dayjs from '../../utils/dayjs';
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
@@ -32,7 +33,7 @@ import {
 } from './tableCardUtils';
 import ThresholdIcon from './ThresholdIcon';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) => (
   <StatefulTable {...rest} data={data} />
@@ -43,56 +44,56 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
   overflow-y: ${(props) => (!props.isExpanded ? 'hidden' : 'auto')};
   padding-bottom: ${(props) => (props.isExpanded ? '3rem' : '')};
   &&& {
-    .bx--pagination {
+    .${prefix}--pagination {
       position: ${(props) => (!props.isExpanded ? 'absolute' : 'fixed')};
       bottom: ${(props) => (!props.isExpanded ? '0px' : '25px')};
       ${(props) => (props.isExpanded ? `width: calc(100% - 50px)` : ``)}
     }
-    .bx--data-table-container {
+    .${prefix}--data-table-content {
       ${(props) =>
         props.data && props.data.length > 0 && !props.isExpanded
-          ? `max-height: 435px;`
+          ? `max-height: 523px;`
           : `height: 90%;`}
     }
 
-    .bx--list-box__menu-item {
+    .${prefix}--list-box__menu-item {
       height: 2rem;
       font-weight: normal;
     }
 
-    .bx--table-toolbar {
+    .${prefix}--table-toolbar {
       padding-bottom: ${spacing01};
       padding-top: 0px;
     }
-    .bx--data-table th:first-of-type,
-    .bx--data-table td:first-of-type {
+    .${prefix}--data-table th:first-of-type,
+    .${prefix}--data-table td:first-of-type {
       padding-left: ${spacing05};
       padding-right: ${spacing05};
     }
-    .bx--data-table thead {
+    .${prefix}--data-table thead {
       display: ${(props) => (!props.showHeader ? 'none' : '')};
       tr {
         height: 2rem;
       }
     }
 
-    .bx--data-table tbody tr {
+    .${prefix}--data-table tbody tr {
       height: 2.5rem;
     }
-    .bx--data-table-container + .bx--pagination {
+    .${prefix}--data-table-content + .${prefix}--pagination {
       border: 1px solid #dfe3e6;
     }
 
-    .bx--toolbar-search-container {
+    .${prefix}--toolbar-search-container {
       margin-left: ${spacing05};
     }
-    .bx--data-table {
+    .${prefix}--data-table {
       ${(props) => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
       td {
         white-space: nowrap;
       }
     }
-    .bx--data-table thead tr:nth-child(2) {
+    .${prefix}--data-table thead tr:nth-child(2) {
       height: 3rem;
 
       th {
@@ -103,13 +104,13 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
           height: 2rem;
         }
       }
-      th div.bx--form-item {
+      th div.${prefix}--form-item {
         display: block;
-        .bx--list-box {
+        .${prefix}--list-box {
           height: auto;
         }
       }
-      th div.bx--list-box {
+      th div.${prefix}--list-box {
         height: 2rem;
       }
     }
@@ -126,6 +127,7 @@ const defaultProps = {
     moderateLabel: 'Moderate',
     lowLabel: 'Low',
     selectSeverityPlaceholder: 'Select a severity',
+    searchLabel: 'Search',
     searchPlaceholder: 'Search',
     filterButtonAria: 'Filters',
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
@@ -172,6 +174,9 @@ const TableCard = ({
   timeRangeOptions,
   availableActions,
   isLoading,
+  testID,
+  testId,
+  className,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -179,11 +184,12 @@ const TableCard = ({
   // Set the locale
   dayjs.locale(locale);
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
+  // Need to skip the linkTemplate variable for now because we will handle it at render time per row
   const {
     title,
     content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
     values: data,
-  } = handleCardVariables(titleProp, contentProp, valuesProp, others);
+  } = handleCardVariables(titleProp, contentProp, valuesProp, others, ['href']);
 
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
@@ -194,18 +200,17 @@ const TableCard = ({
     id,
   ]);
 
-  const renderActionCell = (cellItem) => {
-    const actionList = JSON.parse(cellItem.value);
+  const renderActionCell = ({ value: actionList, rowId }) => {
     return actionList && actionList.length === 1 ? (
       React.createElement(
-        typeof actionList[0].icon === 'string' ? icons[actionList[0].icon] : actionList.icon,
+        typeof actionList[0].icon === 'string' ? icons[actionList[0].icon] : actionList[0].icon,
         {
           className: `${iotPrefix}--table-card--action-icon`,
           onClick: (evt) => {
             evt.preventDefault();
             evt.stopPropagation();
             onCardAction(id, 'TABLE_CARD_ROW_ACTION', {
-              rowId: cellItem.rowId,
+              rowId,
               actionId: actionList[0].id,
             });
           },
@@ -231,7 +236,7 @@ const TableCard = ({
                 evt.preventDefault();
                 evt.stopPropagation();
                 onCardAction(id, 'TABLE_CARD_ROW_ACTION', {
-                  rowId: cellItem.rowId,
+                  rowId,
                   actionId: item.id,
                 });
               }}
@@ -288,8 +293,9 @@ const TableCard = ({
 
   const hasActionColumn = data.filter((i) => i.actions).length > 0;
 
-  // If a column has a linkTemplate, format the column to render a link
-  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(columns, others.cardVariables);
+  // If a column has a linkTemplate, format the column to render a link,
+  // we need a special case here because this is the only card where we examine the actual data to replace variables in each
+  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(columns);
 
   // filter to get the indexes for each one
   const columnsUpdated = cloneDeep(columnsWithFormattedLinks);
@@ -446,9 +452,7 @@ const TableCard = ({
         : hasActionColumn || filteredPrecisionColumns.length || thresholds
         ? tableData.map((i) => {
             // if has custom action
-            const action = hasActionColumn
-              ? { actionColumn: JSON.stringify(i.actions || []) }
-              : null;
+            const action = hasActionColumn ? { actionColumn: i.actions || [] } : null;
 
             const matchingThresholds = thresholds
               ? findMatchingThresholds(thresholds, i.values)
@@ -542,7 +546,7 @@ const TableCard = ({
                         {item.linkTemplate ? (
                           <>
                             <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
-                              {item ? item.label : '--'}
+                              {item?.label ? item.label : '--'}
                             </p>
                             <Link
                               key={`${item.id}-link`}
@@ -555,7 +559,7 @@ const TableCard = ({
                         ) : (
                           <>
                             <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
-                              {item ? item.label : '--'}
+                              {item?.label ? item.label : '--'}
                             </p>
                             <span key={`${item.id}-value`}>
                               {item
@@ -603,7 +607,7 @@ const TableCard = ({
   const mergedAvailableActions = {
     ...availableActions,
     expand: isExpandable,
-    range: true,
+    range: availableActions?.range || true,
   };
 
   const cardToolbar = (
@@ -631,15 +635,19 @@ const TableCard = ({
       isResizable={isResizable}
       isExpanded={isExpanded}
       i18n={mergedI18n}
+      locale={locale}
       resizeHandles={resizeHandles}
       hideHeader
+      className={classnames(`${iotPrefix}--table-card`, className)}
       // Use the Table's loading state rather than Card's
       isLoading={false}
+      // TODO: remove deprecated testID in v3.
+      testId={testID || testId}
       {...others}
     >
       {({ height }) => {
         const numberOfRowsPerPage = Math.max(
-          !isNil(height) && height !== 0 ? Math.floor((height - 48) / 48) : 10,
+          !isNil(height) && height !== 0 ? Math.floor((height - 56) / 56) : 10,
           1 // at least pass 1 row per page
         );
         return (

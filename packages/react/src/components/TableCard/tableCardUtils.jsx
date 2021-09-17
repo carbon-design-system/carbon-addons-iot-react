@@ -21,18 +21,14 @@ export const determinePrecisionAndValue = (precision = 0, value, locale) => {
  * Updates the hrefs in each column to be us-able links. If href variables are on a table that has row specific values, the user
  * should not pass in a cardVariables object as each variable with have multiple values.
  * @param {Array<Object>} columns - Array of TableCard columns
- * @param {object} cardVariables - object of cardVariables
  * @return {array} array of columns with formatted links and updated variable values
  */
-export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
+export const createColumnsWithFormattedLinks = (columns) => {
   return columns.map((column) => {
     const { linkTemplate } = column;
     if (linkTemplate) {
-      let variables;
-      if (!cardVariables) {
-        // fetch variables on the href
-        variables = linkTemplate.href ? getVariables(linkTemplate.href) : [];
-      }
+      // get the variable names from the href
+      const variables = linkTemplate.href ? getVariables(linkTemplate.href) : [];
       return {
         ...column,
         // eslint-disable-next-line react/prop-types
@@ -108,6 +104,7 @@ export const handleExpandedItemLinks = (row, expandedRow, cardVariables) => {
       updatedExpandedRow.push({
         ...item,
         linkTemplate: {
+          ...linkTemplate,
           href: variableLink || linkTemplate.href,
         },
       });

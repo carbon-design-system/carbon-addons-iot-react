@@ -2,13 +2,26 @@ import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import filter from 'lodash/filter';
 import find from 'lodash/find';
+import orderBy from 'lodash/orderBy';
 
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { findMatchingAlertRange } from '../../utils/cardUtilityFunctions';
 import dayjs from '../../utils/dayjs';
 
-/** Generate fake values for my line chart */
-export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day', timeRange) => {
+/**
+ * Generate fake values for my line chart
+ * thresholds:  axis: PropTypes.oneOf(['x', 'y']),
+        value: PropTypes.number,
+        label: PropTypes.string,
+        fillColor: PropTypes.string,
+ * */
+export const generateSampleValues = (
+  series,
+  timeDataSourceId,
+  timeGrain = 'day',
+  timeRange,
+  thresholds = []
+) => {
   // determine interval type
   const timeRangeType = timeRange?.includes('this') ? 'periodToDate' : 'rolling';
   // for month timeGrains, we need to determine whether to show 3 for a quarter or 12 for a year
@@ -38,6 +51,27 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
       break;
   }
 
+  // This is a bit of a workaround for carbon-design-system/carbon-charts#1034 as they don't adjust the graph axes to include thresholds
+  const highestThresholdValue =
+    orderBy(
+      thresholds.filter((threshold) => threshold.axis === 'y'),
+      'value',
+      'desc'
+    )?.[0]?.value || 0;
+
+  const lowestThresholdValue =
+    orderBy(
+      thresholds.filter((threshold) => threshold.axis === 'y'),
+      'value',
+      'acc'
+    )?.[0]?.value || 0;
+
+  const generateDatapoint = (index) =>
+    isEmpty(thresholds)
+      ? Math.random() * 100
+      : index % 2 === 0
+      ? highestThresholdValue + Math.random() * 10
+      : lowestThresholdValue - Math.random() * 10;
   // number of each record to define
   const sampleValues = Array(count).fill(1);
   // ensure the series is actually an array since it can also be an object
@@ -49,13 +83,13 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
         : dayjs().subtract(count, timeGrain);
 
     let nextTimeStamp = now;
-    sampleValues.forEach(() => {
+    sampleValues.forEach((value, index) => {
       nextTimeStamp = nextTimeStamp.add(1, timeGrain);
       if (!isEmpty(dataFilter)) {
         // if we have a data filter, then we need a specific row for every filter
         sampleData.push({
           [timeDataSourceId]: nextTimeStamp.valueOf(),
-          [dataSourceId]: Math.random() * 100,
+          [dataSourceId]: generateDatapoint(index),
           ...dataFilter,
         });
       } else {
@@ -64,12 +98,12 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
         });
         if (existingData) {
           // add the additional dataSource to the existing datapoint
-          existingData[dataSourceId] = Math.random() * 100;
+          existingData[dataSourceId] = generateDatapoint(index);
         } else {
           // otherwise we need explicit row
           sampleData.push({
             [timeDataSourceId]: nextTimeStamp.valueOf(),
-            [dataSourceId]: Math.random() * 100,
+            [dataSourceId]: generateDatapoint(index),
           });
         }
       }
@@ -95,7 +129,7 @@ export const generateTableSampleValues = (id, columns) => {
 /** *
  * timestamp of current value
  * index of current value
- * ticks: array of current ticks
+ * ticks: array of current ticks or a single string with part of the date
  * interval: the type of interval formatting to use
  * locale: the current locale,
  * previousTickTimestamp
@@ -155,6 +189,9 @@ export const formatGraphTick = (
   }
   if (interval === 'month' && sameYear) {
     return currentTimestamp.format('MMM');
+  }
+  if (interval === 'year' && index === 0) {
+    return currentTimestamp.format('YYYY');
   }
   if (interval === 'year' && sameYear) {
     return ''; // if we're on the year boundary and the same year, then don't repeat

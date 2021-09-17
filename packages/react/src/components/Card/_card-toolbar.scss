@@ -5,6 +5,12 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+
+  // shrink the default text of the date-time-picker
+  .#{$iot-prefix}--date-time-picker__field {
+    font-size: 0.875rem;
+    font-weight: normal;
+  }
 }
 
 .#{$iot-prefix}--card--toolbar-action {

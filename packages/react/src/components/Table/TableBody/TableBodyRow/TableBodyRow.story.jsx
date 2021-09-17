@@ -37,7 +37,7 @@ const TableDecorator = (storyFn) => (
 );
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ Table/TableBodyRow' : 'Watson IoT/Table/TableBodyRow',
+  title: '1 - Watson IoT/Table/TableBodyRow',
   decorators: [TableDecorator],
 
   parameters: {
@@ -47,9 +47,7 @@ export default {
 
 export const Normal = () => <TableBodyRow {...tableBodyRowProps} />;
 
-Normal.story = {
-  name: 'normal',
-};
+Normal.storyName = 'normal';
 
 export const RowActions = () => (
   <TableBodyRow
@@ -64,9 +62,7 @@ export const RowActions = () => (
   />
 );
 
-RowActions.story = {
-  name: 'row actions',
-};
+RowActions.storyName = 'row actions';
 
 export const RowActionsWithOverflow = () => (
   <TableBodyRow
@@ -110,9 +106,7 @@ export const RowActionsWithOverflow = () => (
   />
 );
 
-RowActionsWithOverflow.story = {
-  name: 'row actions with overflow',
-};
+RowActionsWithOverflow.storyName = 'row actions with overflow';
 
 export const IsNotSelectable = () => (
   <TableBodyRow
@@ -127,9 +121,7 @@ export const IsNotSelectable = () => (
   />
 );
 
-IsNotSelectable.story = {
-  name: 'is not selectable',
-};
+IsNotSelectable.storyName = 'is not selectable';
 
 export const IsSelectable = () => (
   <TableBodyRow
@@ -143,9 +135,7 @@ export const IsSelectable = () => (
   />
 );
 
-IsSelectable.story = {
-  name: 'is selectable',
-};
+IsSelectable.storyName = 'is selectable';
 
 export const RowActionsRunning = () => (
   <TableBodyRow
@@ -161,9 +151,7 @@ export const RowActionsRunning = () => (
   />
 );
 
-RowActionsRunning.story = {
-  name: 'rowActions running',
-};
+RowActionsRunning.storyName = 'rowActions running';
 
 export const RowActionsError = () => (
   <TableBodyRow
@@ -183,6 +171,4 @@ export const RowActionsError = () => (
   />
 );
 
-RowActionsError.story = {
-  name: 'rowActions error',
-};
+RowActionsError.storyName = 'rowActions error';

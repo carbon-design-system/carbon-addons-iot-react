@@ -1,231 +1,168 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ IconDropdown default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ IconDropdown default 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "transform": "translateY(100px)",
+        "width": "300px",
       }
     }
   >
     <div
-      style={
-        Object {
-          "transform": "translateY(100px)",
-          "width": "300px",
-        }
-      }
+      id="unique-drop-down-id"
     >
       <div
-        id="unique-drop-down-id"
-      >
-        <div
-          className="bx--dropdown__wrapper bx--list-box__wrapper"
-          style={
-            Object {
-              "width": "192px",
-            }
+        className="bx--dropdown__wrapper bx--list-box__wrapper"
+        data-testid="icon-dropdown"
+        style={
+          Object {
+            "width": "192px",
           }
+        }
+      >
+        <label
+          className="bx--label"
+          htmlFor="downshift-0-toggle-button"
+          id="downshift-0-label"
         >
-          <label
-            className="bx--label"
-            htmlFor="downshift-0-toggle-button"
-            id="downshift-0-label"
-          >
-            Dropdown label
-          </label>
-          <div
-            aria-label="Dropdown"
-            className="bx--dropdown iot--icon-dropdown__selection-buttons bx--list-box"
-            id="carbon-dropdown-example"
+          Dropdown label
+        </label>
+        <div
+          aria-label="Dropdown"
+          className="bx--dropdown iot--icon-dropdown__selection-buttons bx--list-box"
+          id="carbon-dropdown-example"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-0-label downshift-0-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-0-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            type="button"
           >
-            <button
-              aria-disabled={false}
-              aria-expanded={false}
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label downshift-0-toggle-button"
-              className="bx--list-box__field"
-              disabled={false}
-              id="downshift-0-toggle-button"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              type="button"
+            <span
+              className="bx--list-box__label"
             >
-              <span
-                className="bx--list-box__label"
-              >
-                Dropdown menu options
-              </span>
-              <div
-                className="bx--list-box__menu-icon"
-              >
-                <svg
-                  aria-label="Open menu"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  name="chevron--down"
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                  />
-                  <title>
-                    Open menu
-                  </title>
-                </svg>
-              </div>
-            </button>
+              Dropdown menu options
+            </span>
             <div
-              aria-labelledby="downshift-0-label"
-              className="bx--list-box__menu"
-              id="downshift-0-menu"
-              onBlur={[Function]}
-              onKeyDown={[Function]}
-              onMouseLeave={[Function]}
-              role="listbox"
-              tabIndex={-1}
-            />
-          </div>
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-label="Open menu"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title>
+                  Open menu
+                </title>
+              </svg>
+            </div>
+          </button>
           <div
-            className="bx--form__helper-text"
-          >
-            This is some helper text.
-          </div>
+            aria-labelledby="downshift-0-label"
+            className="bx--list-box__menu"
+            id="downshift-0-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+        <div
+          className="bx--form__helper-text"
+        >
+          This is some helper text.
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ IconDropdown ️⚠️ Experimental Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ IconDropdown ️⚠️ Experimental Notice  1`] = `
 <div
   className="storybook-container"
 >
   <div
+    className="bx--toast-notification bx--toast-notification--warning-alt"
+    kind="warning-alt"
+    role="alert"
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "marginBottom": "0.5rem",
+        "minWidth": "30rem",
       }
     }
   >
-    <div
-      className="bx--toast-notification bx--toast-notification--warning-alt"
-      kind="warning-alt"
-      role="alert"
-      style={
-        Object {
-          "marginBottom": "0.5rem",
-          "minWidth": "30rem",
-        }
-      }
+    <svg
+      aria-hidden={true}
+      className="bx--toast-notification__icon"
+      fill="currentColor"
+      focusable="false"
+      height={20}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 32 32"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        aria-hidden={true}
-        className="bx--toast-notification__icon"
-        fill="currentColor"
-        focusable="false"
-        height={20}
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 32 32"
-        width={20}
-        xmlns="http://www.w3.org/2000/svg"
+      <path
+        d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        fill="none"
+      />
+      <path
+        d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+      />
+      <title>
+        warning-alt icon
+      </title>
+    </svg>
+    <div
+      className="bx--toast-notification__details"
+    >
+      <h3
+        className="bx--toast-notification__title"
       >
-        <path
-          d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-          fill="none"
-        />
-        <path
-          d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
-        />
-        <title>
-          warning-alt icon
-        </title>
-      </svg>
+        Experimental Component Notice
+      </h3>
       <div
-        className="bx--toast-notification__details"
+        className="bx--toast-notification__subtitle"
       >
-        <h3
-          className="bx--toast-notification__title"
-        >
-          Experimental Component Notice
-        </h3>
-        <div
-          className="bx--toast-notification__subtitle"
-        >
-          <span>
-            IconDropdown
-             is an
-             
-            <a
-              href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
-            >
-              experimental component
-            </a>
-             
-            and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
-          </span>
-        </div>
+        <span>
+          IconDropdown
+           is an
+           
+          <a
+            href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
+          >
+            experimental component
+          </a>
+           
+          and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
+        </span>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

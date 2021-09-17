@@ -20,6 +20,28 @@ function stringToArrayBuffer(str) {
 }
 
 describe('ImageCard', () => {
+  it('should be selectable by testId or testID', () => {
+    const testID = 'IMAGE_CARD';
+
+    const { rerender } = render(
+      <ImageCard content={{ src: landscape }} size={CARD_SIZES.LARGE} testID={testID} />
+    );
+
+    expect(screen.getByTestId(testID)).toBeDefined();
+
+    const testId = 'image_card';
+    rerender(<ImageCard content={{ src: landscape }} size={CARD_SIZES.LARGE} testID={testId} />);
+    expect(screen.getByTestId(testId)).toBeDefined();
+
+    rerender(<ImageCard isEditable size={CARD_SIZES.LARGE} testID={testId} />);
+    expect(screen.getByTestId(testId)).toBeDefined();
+    expect(screen.getByTestId(`${testId}-image-uploader`)).toBeDefined();
+
+    rerender(<ImageCard content={{ src: '' }} size={CARD_SIZES.LARGE} testID={testId} />);
+    expect(screen.getByTestId(testId)).toBeDefined();
+    expect(screen.getByTestId(`${testId}-empty`)).toBeDefined();
+  });
+
   it("should show 'size not supported' when an invalid size is given", () => {
     render(<ImageCard content={{ src: landscape }} size={CARD_SIZES.SMALL} />);
 

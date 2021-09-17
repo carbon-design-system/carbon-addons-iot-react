@@ -65,8 +65,8 @@ const propTypes = {
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
   /** if provided, renders node underneath the header and above the dashboard grid */
   notification: PropTypes.node,
-  /** if provided, renders edit button next to title linked to this callback */
-  onEditTitle: PropTypes.func,
+  /** if provided, renders edit button next to title */
+  isTitleEditable: PropTypes.bool,
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card
    * getValidDataItems(card, selectedTimeRange)
@@ -77,6 +77,10 @@ const propTypes = {
    * getValidTimeRanges(card, selectedDataItems)
    */
   getValidTimeRanges: PropTypes.func,
+  /** if provided, determines the default cardConfig for a new card when it is added
+   * getDefaultCard(cardType)
+   */
+  getDefaultCard: PropTypes.func,
   /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
@@ -86,6 +90,18 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  /** if provided, returns an object where the keys are available dimensions which are the dimensions to be allowed
+   * on each card
+   * ex response: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   * getValidDimensions(card)
+   */
+  getValidDimensions: PropTypes.func,
+  /**
+   * if provided this is called before the card form is rendered on the right side of the editor.
+   * It is called with the card prop JSON and you return the updated cardConfig.
+   * This callback function allows you to add elements for the form to render that are not passed in the main dashboard card JSON
+   */
+  onRenderCardEditForm: PropTypes.func,
   /** if provided, will update the dashboard json according to its own logic. Is called if a card is edited, or added.
    * Should return an updated card to be rendered
    * onCardChange(updatedCard, template): Card
@@ -119,14 +135,19 @@ const propTypes = {
   isSubmitDisabled: PropTypes.bool,
   /** Whether to set the loading spinner on the submit button */
   isSubmitLoading: PropTypes.bool,
-  /** If provided, runs the function when the user clicks submit in the Card code JSON editor
-   * onValidateCardJson(cardConfig)
-   * @returns Array<string> error strings. return empty array if there is no errors
+
+  /**
+   * Callback called when a card is selected, passes back the selected card id
    */
+  onCardSelect: PropTypes.func,
   /** Callback called when a card determines what icon render based on a named string in card config
    *    example usage: renderIconByName(name = 'my--checkmark--icon', props = { title: 'A checkmark', etc. })
    */
   renderIconByName: PropTypes.func,
+  /** If provided, runs the function when the user clicks submit in the Card code JSON editor
+   * onValidateCardJson(cardConfig)
+   * @returns Array<string> error strings. return empty array if there is no errors
+   */
   onValidateCardJson: PropTypes.func,
   /** callback function to validate the uploaded image */
   onValidateUploadedImage: PropTypes.func,
@@ -150,6 +171,9 @@ const propTypes = {
     layoutInfoXl: PropTypes.string,
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
+    dashboardTitleLabel: PropTypes.string,
+    requiredMessage: PropTypes.string,
+    saveTitleButton: PropTypes.string,
 
     // card stirngs
     noDataLabel: PropTypes.string,
@@ -262,6 +286,8 @@ const propTypes = {
     fontSize: PropTypes.string,
     abbreviateNumbers: PropTypes.string,
     abbreviateNumbersTooltip: PropTypes.string,
+
+    editDataItems: PropTypes.string,
   }),
   /** locale data */
   locale: PropTypes.string,
@@ -280,6 +306,9 @@ const propTypes = {
   onFetchDynamicDemoHotspots: PropTypes.func,
   /** should we allow resizing cards dynamically */
   isCardResizable: PropTypes.bool,
+  onEditDataItems: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -294,19 +323,23 @@ const defaultProps = {
   renderHeader: null,
   renderIconByName: renderDefaultIconByName,
   renderCardPreview: () => null,
+  onRenderCardEditForm: null,
   headerBreadcrumbs: null,
   notification: null,
   title: '',
-  onEditTitle: null,
+  isTitleEditable: null,
   getValidDataItems: null,
   getValidTimeRanges: null,
+  getDefaultCard: null,
   availableImages: [],
   dataItems: [],
   availableDimensions: {},
+  getValidDimensions: null,
   onCardChange: null,
   onImageDelete: null,
   onLayoutChange: null,
   onCardJsonPreview: null,
+  onCardSelect: null,
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -340,10 +373,16 @@ const defaultProps = {
     layoutInfoMd: 'Edit dashboard at medium layout (673 - 1056px)',
     layoutInfoSm: 'Edit dashboard at small layout (481 - 672px)',
     searchPlaceHolderText: 'Enter a value',
+    dashboardTitleLabel: 'Dashboard title',
+    requiredMessage: 'Required',
+    saveTitleButton: 'Save title',
+    editDataItems: 'Edit data items',
   },
   locale: 'en',
   dataSeriesItemLinks: null,
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
+  onEditDataItems: null,
+  testId: 'dashboard-editor',
 };
 
 const LAYOUTS = {
@@ -362,9 +401,11 @@ const DashboardEditor = ({
   breakpointSwitcher,
   renderHeader,
   renderCardPreview,
+  onRenderCardEditForm,
   renderIconByName,
   getValidDataItems,
   getValidTimeRanges,
+  getDefaultCard: customGetDefaultCard,
   dataItems,
   availableImages,
   headerBreadcrumbs,
@@ -373,7 +414,6 @@ const DashboardEditor = ({
   onCardChange,
   onLayoutChange,
   onCardJsonPreview,
-  onEditTitle,
   onImport,
   onExport,
   onDelete,
@@ -382,16 +422,21 @@ const DashboardEditor = ({
   isSubmitDisabled,
   isSubmitLoading,
   onValidateCardJson,
+  onCardSelect,
   onValidateUploadedImage,
   availableDimensions,
+  getValidDimensions,
   isSummaryDashboard,
   isLoading,
   i18n,
   locale,
   dataSeriesItemLinks,
+  isTitleEditable,
   icons,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
+  onEditDataItems,
+  testId,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -448,44 +493,66 @@ const DashboardEditor = ({
   }, [scrollContainerRef.current?.scrollHeight, needsScroll]);
 
   /**
+   * callback to parent when the card is selected
+   */
+  const handleCardSelect = useCallback(
+    (id) => {
+      setSelectedCardId(id);
+      /* istanbul ignore else */
+      if (onCardSelect) {
+        onCardSelect(id);
+      }
+    },
+    [onCardSelect]
+  );
+
+  /**
    * Adds a default, empty card to the preview
    * @param {string} type card type
    */
   const addCard = useCallback(
     (type) => {
-      // notify consumers that the card has been added if they're listening (they might want to tweak the card defaults)
-      const cardConfig = onCardChange
-        ? onCardChange(getDefaultCard(type, mergedI18n), dashboardJson)
+      const defaultCard = customGetDefaultCard // Use the default card specified by the consumer if it exists
+        ? customGetDefaultCard(type)
         : getDefaultCard(type, mergedI18n);
+
+      // notify consumers that the card has been added in onCardChange if we don't have an explicit customGetDefaultCard passed
+      const cardConfig =
+        onCardChange && !customGetDefaultCard
+          ? onCardChange(defaultCard, dashboardJson)
+          : defaultCard;
 
       // eslint-disable-next-line no-shadow
       setDashboardJson((dashboardJson) => ({
         ...dashboardJson,
         cards: [...dashboardJson.cards, cardConfig],
       }));
-      setSelectedCardId(cardConfig.id);
+      handleCardSelect(cardConfig.id);
       setNeedsScroll(true);
     },
-    [dashboardJson, mergedI18n, onCardChange]
+    [customGetDefaultCard, dashboardJson, handleCardSelect, mergedI18n, onCardChange]
   );
 
   /**
    * Adds a cloned card with a new unique id to the preview and place it next to the original card
    * @param {string} id
    */
-  const duplicateCard = useCallback((id) => {
-    setDashboardJson((dashboard) => {
-      const cardConfig = getDuplicateCard(dashboard.cards.find((card) => card.id === id));
-      const originalCardIndex = dashboard.cards.findIndex((card) => card.id === id);
-      dashboard.cards.splice(originalCardIndex, 0, cardConfig);
-      return {
-        ...dashboard,
-        cards: dashboard.cards,
-      };
-    });
-    setSelectedCardId(id);
-    setNeedsScroll(true);
-  }, []);
+  const duplicateCard = useCallback(
+    (id) => {
+      setDashboardJson((dashboard) => {
+        const cardConfig = getDuplicateCard(dashboard.cards.find((card) => card.id === id));
+        const originalCardIndex = dashboard.cards.findIndex((card) => card.id === id);
+        dashboard.cards.splice(originalCardIndex, 0, cardConfig);
+        return {
+          ...dashboard,
+          cards: dashboard.cards,
+        };
+      });
+      handleCardSelect(id);
+      setNeedsScroll(true);
+    },
+    [handleCardSelect]
+  );
 
   /**
    * Deletes a card from the preview
@@ -514,6 +581,7 @@ const DashboardEditor = ({
         cardConfig.content.imgState === 'new' &&
         !imagesToUpload.some((image) => image.id === cardConfig.content.id)
       ) {
+        /* istanbul ignore else */
         if (cardConfig.content.id && cardConfig.content.src) {
           setImagesToUpload((prevImagesToUpload) => [
             ...prevImagesToUpload,
@@ -567,13 +635,17 @@ const DashboardEditor = ({
     },
     [dashboardJson.cards, handleOnCardChange, selectedCardId]
   );
+  const handleEditTitle = useCallback(
+    (newTitle) => setDashboardJson((oldJSON) => ({ ...oldJSON, title: newTitle })),
+    []
+  );
 
   return isLoading ? (
-    <div className={baseClassName}>
+    <div data-testid={`${testId}-loading`} className={baseClassName}>
       <SkeletonText width="30%" />
     </div>
   ) : (
-    <div className={baseClassName}>
+    <div data-testid={testId} className={baseClassName}>
       <div
         className={classnames(`${baseClassName}--content`, {
           // enables overflow: auto if a specific breakpoint is selected so the width can be managed
@@ -585,9 +657,8 @@ const DashboardEditor = ({
           renderHeader()
         ) : (
           <DashboardEditorHeader
-            title={title}
+            title={dashboardJson?.title || title}
             breadcrumbs={headerBreadcrumbs}
-            onEditTitle={onEditTitle}
             onImport={onImport}
             onExport={() => onExport(dashboardJson, imagesToUpload)}
             onDelete={onDelete}
@@ -596,10 +667,12 @@ const DashboardEditor = ({
             isSubmitDisabled={isSubmitDisabled}
             isSubmitLoading={isSubmitLoading}
             i18n={mergedI18n}
+            onEditTitle={isTitleEditable && handleEditTitle}
             dashboardJson={dashboardJson}
             selectedBreakpointIndex={selectedBreakpointIndex}
             setSelectedBreakpointIndex={setSelectedBreakpointIndex}
             breakpointSwitcher={breakpointSwitcher}
+            testId={`${testId}-header`}
           />
         )}
         {notification}
@@ -634,6 +707,7 @@ const DashboardEditor = ({
                     subtitle="Something went wrong. Please refresh the page."
                     kind="error"
                     lowContrast
+                    data-testid={`${testId}-error-notification`}
                   />
                 }
               >
@@ -655,6 +729,8 @@ const DashboardEditor = ({
                   deleteLabelText={i18n.imageGalleryDeleteLabelText}
                   deleteModalLabelText={i18n.imageGalleryDeleteModalLabelText}
                   deleteModalTitleText={i18n.imageGalleryDeleteModalTitleText}
+                  // TODO: pass testId in v3 to override defaults
+                  // testId={`${testId}-image-gallery-modal`}
                 />
                 <DashboardGrid
                   isEditable
@@ -667,13 +743,14 @@ const DashboardEditor = ({
                     if (onLayoutChange) {
                       onLayoutChange(newLayout, newLayouts);
                     }
-                    setDashboardJson({
-                      ...dashboardJson,
+                    setDashboardJson((oldDashboard) => ({
+                      ...oldDashboard,
                       layouts: newLayouts,
-                    });
+                    }));
                   }}
                   onResizeStop={handleCardResize}
                   supportedLayouts={['lg', 'md', 'sm']}
+                  testId={`${testId}-grid`}
                 >
                   {dashboardJson?.cards?.map((cardConfig) => {
                     const isSelected = cardConfig.id === selectedCardId;
@@ -685,8 +762,6 @@ const DashboardEditor = ({
                         isResizable={isCardResizable}
                         i18n={mergedI18n}
                         isSelected={isSelected}
-                        getValidDataItems={getValidDataItems}
-                        dataItems={dataItems}
                         availableDimensions={availableDimensions}
                         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
                         renderCardPreview={renderCardPreview}
@@ -697,7 +772,7 @@ const DashboardEditor = ({
                         onValidateUploadedImage={onValidateUploadedImage}
                         onShowImageGallery={handleShowImageGallery}
                         renderIconByName={renderIconByName}
-                        setSelectedCardId={setSelectedCardId}
+                        setSelectedCardId={handleCardSelect}
                       />
                     );
                   })}
@@ -715,14 +790,16 @@ const DashboardEditor = ({
               subtitle="Something went wrong. Please refresh the page."
               kind="error"
               lowContrast
+              data-testid={`${testId}-sidebar-error-notification`}
             />
           }
         >
           <CardEditor
             cardConfig={dashboardJson.cards.find((card) => card.id === selectedCardId)}
             isSummaryDashboard={isSummaryDashboard}
-            onShowGallery={() => setSelectedCardId(null)}
+            onShowGallery={() => handleCardSelect(null)}
             onChange={handleOnCardChange}
+            onRenderCardEditForm={onRenderCardEditForm}
             getValidDataItems={getValidDataItems}
             getValidTimeRanges={getValidTimeRanges}
             dataItems={dataItems}
@@ -731,11 +808,13 @@ const DashboardEditor = ({
             onCardJsonPreview={onCardJsonPreview}
             supportedCardTypes={supportedCardTypes}
             icons={icons}
+            getValidDimensions={getValidDimensions}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+            onEditDataItems={onEditDataItems}
           />
         </ErrorBoundary>
       </div>

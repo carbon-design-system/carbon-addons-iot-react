@@ -1,1277 +1,1184 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor/CardEditFormItems/ThresholdFormItem Default Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor/CardEditFormItems/ThresholdFormItem Default Example 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "15rem",
       }
     }
   >
-    <div
-      style={
-        Object {
-          "width": "15rem",
-        }
-      }
+    <button
+      aria-describedby={null}
+      aria-pressed={null}
+      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+      data-testid="Button"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      tabIndex={0}
+      type="button"
     >
-      <button
-        aria-pressed={null}
-        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-        data-testid="Button"
-        disabled={false}
-        onClick={[Function]}
-        tabIndex={0}
-        type="button"
+      Add threshold
+      <svg
+        aria-hidden={true}
+        className="bx--btn__icon"
+        fill="currentColor"
+        focusable="false"
+        height={16}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Add threshold
-        <svg
-          aria-hidden={true}
-          className="bx--btn__icon"
-          fill="currentColor"
-          focusable="false"
-          height={16}
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 32 32"
-          width={16}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-          />
-        </svg>
-      </button>
-    </div>
+        <path
+          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+        />
+      </svg>
+    </button>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ CardEditor/CardEditFormItems/ThresholdFormItem Example With Initial Values 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ CardEditor/CardEditFormItems/ThresholdFormItem Example With Initial Values 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "15rem",
       }
     }
   >
-    <div
-      style={
-        Object {
-          "width": "15rem",
-        }
-      }
+    <span
+      className="bx--label iot--card-edit-form--input-label"
     >
-      <span
-        className="bx--label iot--card-edit-form--input-label"
+      Thresholds
+    </span>
+    <div>
+      <div
+        className="iot--card-edit-form--threshold-input-group"
       >
-        Thresholds
-      </span>
-      <div>
         <div
-          className="iot--card-edit-form--threshold-input-group"
+          className="iot--card-edit-form--threshold-input-group--item-dropdown"
         >
           <div
-            className="iot--card-edit-form--threshold-input-group--item-dropdown"
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
           >
+            
             <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              className="bx--dropdown iot--icon-dropdown bx--list-box"
+              id="undefined_value-card-threshold-icon_0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
             >
-              
-              <div
-                className="bx--dropdown iot--icon-dropdown bx--list-box"
-                id="undefined_value-card-threshold-icon_0"
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                type="button"
               >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-0-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
+                <span
+                  className="bx--list-box__label"
                 >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    <div
-                      className="iot--icon-dropdown__item"
-                      style={
-                        Object {
-                          "color": "#da1e28",
-                        }
+                  <div
+                    className="iot--icon-dropdown__item"
+                    style={
+                      Object {
+                        "color": "#da1e28",
                       }
-                    >
-                      <div
-                        className="iot--icon-dropdown__item-border"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          fill="currentColor"
-                          focusable="false"
-                          height={24}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={24}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                          />
-                          <path
-                            d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-label="Open menu"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title>
-                        Open menu
-                      </title>
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-0-label"
-                  className="bx--list-box__menu"
-                  id="downshift-0-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--card-edit-form--threshold-input-group--item-dropdown"
-          >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title=""
-            >
-              
-              <div
-                className="bx--dropdown iot--color-dropdown bx--list-box"
-                id="undefined_value-card-threshold-color_0"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-1-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
+                    }
                   >
                     <div
-                      className="iot--color-dropdown__item"
-                      title="red60"
+                      className="iot--icon-dropdown__item-border"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <path
+                          d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-label="Open menu"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      Open menu
+                    </title>
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-0-label"
+                className="bx--list-box__menu"
+                id="downshift-0-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-dropdown"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title=""
+          >
+            
+            <div
+              className="bx--dropdown iot--color-dropdown bx--list-box"
+              id="undefined_value-card-threshold-color_0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-1-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="red60"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
                     >
                       <div
-                        className="iot--color-dropdown__item-border"
-                      >
-                        <div
-                          className="iot--color-dropdown__color-sample"
-                          style={
-                            Object {
-                              "backgroundColor": "#da1e28",
-                            }
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#da1e28",
                           }
-                          title="#da1e28"
-                        />
-                      </div>
-                    </div>
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-label="Open menu"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                        }
+                        title="#da1e28"
                       />
-                      <title>
-                        Open menu
-                      </title>
-                    </svg>
+                    </div>
                   </div>
-                </button>
+                </span>
                 <div
-                  aria-labelledby="downshift-1-label"
-                  className="bx--list-box__menu"
-                  id="downshift-1-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-label="Open menu"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      Open menu
+                    </title>
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-1-label"
+                className="bx--list-box__menu"
+                id="downshift-1-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
             </div>
           </div>
+        </div>
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-dropdown"
+        >
           <div
-            className="iot--card-edit-form--threshold-input-group--item-dropdown"
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
           >
+            
             <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
+              className="bx--dropdown bx--list-box"
+              id="undefined_value-card-threshold-comparison_0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
             >
-              
-              <div
-                className="bx--dropdown bx--list-box"
-                id="undefined_value-card-threshold-comparison_0"
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-2-label downshift-2-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-2-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                type="button"
               >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-2-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
+                <span
+                  className="bx--list-box__label"
                 >
-                  <span
-                    className="bx--list-box__label"
+                  &gt;
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-label="Open menu"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    &gt;
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      Open menu
+                    </title>
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-2-label"
+                className="bx--list-box__menu"
+                id="downshift-2-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-end"
+        >
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--number bx--number--helpertext bx--number--nolabel"
+            >
+              <div
+                className="bx--number__input-wrapper"
+              >
+                <input
+                  aria-describedby={null}
+                  aria-label="Numeric input field with increment and decrement buttons"
+                  disabled={false}
+                  id="undefined_value-card-threshold-value_0"
+                  onChange={[Function]}
+                  pattern="[0-9]*"
+                  step={1}
+                  type="number"
+                  value="0"
+                />
+                <div
+                  className="bx--number__controls"
+                >
+                  <button
+                    aria-label="Decrement number"
+                    className="bx--number__control-btn down-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Decrement number"
+                    type="button"
                   >
                     <svg
-                      aria-label="Open menu"
+                      aria-hidden={true}
+                      className="down-icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      name="chevron--down"
                       preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 16 16"
+                      viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                        d="M8 15H24V17H8z"
                       />
-                      <title>
-                        Open menu
-                      </title>
                     </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-2-label"
-                  className="bx--list-box__menu"
-                  id="downshift-2-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--card-edit-form--threshold-input-group--item-end"
-          >
-            <div
-              className="bx--form-item"
-            >
-              <div
-                className="bx--number bx--number--helpertext bx--number--nolabel"
-              >
-                <div
-                  className="bx--number__input-wrapper"
-                >
-                  <input
-                    aria-describedby={null}
-                    aria-label="Numeric input field with increment and decrement buttons"
-                    disabled={false}
-                    id="undefined_value-card-threshold-value_0"
-                    onChange={[Function]}
-                    pattern="[0-9]*"
-                    step={1}
-                    type="number"
-                    value="0"
-                  />
+                  </button>
                   <div
-                    className="bx--number__controls"
+                    className="bx--number__rule-divider"
+                  />
+                  <button
+                    aria-label="Increment number"
+                    className="bx--number__control-btn up-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Increment number"
+                    type="button"
                   >
-                    <button
-                      aria-label="Decrement number"
-                      className="bx--number__control-btn down-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Decrement number"
-                      type="button"
+                    <svg
+                      aria-hidden={true}
+                      className="up-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        aria-hidden={true}
-                        className="down-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 15H24V17H8z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                    <button
-                      aria-label="Increment number"
-                      className="bx--number__control-btn up-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Increment number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="up-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                  </div>
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
                 </div>
               </div>
             </div>
           </div>
-          <button
-            className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <span
-              className="bx--assistive-text"
-            >
-              Remove
-            </span>
-            <svg
-              aria-hidden="true"
-              aria-label="Remove"
-              className="bx--btn__icon"
-              fill="currentColor"
-              focusable="false"
-              height={32}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={32}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 12H14V24H12zM18 12H20V24H18z"
-              />
-              <path
-                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-              />
-            </svg>
-          </button>
         </div>
-      </div>
-      <div>
-        <div
-          className="iot--card-edit-form--threshold-input-group"
+        <button
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
         >
           <div
-            className="iot--card-edit-form--threshold-input-group--item-dropdown"
+            className="bx--assistive-text"
+            onMouseEnter={[Function]}
           >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-            >
-              
-              <div
-                className="bx--dropdown iot--icon-dropdown bx--list-box"
-                id="undefined_value-card-threshold-icon_1"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-3-label downshift-3-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-3-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    <div
-                      className="iot--icon-dropdown__item"
-                      style={
-                        Object {
-                          "color": "#24a148",
-                        }
-                      }
-                    >
-                      <div
-                        className="iot--icon-dropdown__item-border"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          fill="currentColor"
-                          focusable="false"
-                          height={24}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={24}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                          />
-                          <path
-                            d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-label="Open menu"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title>
-                        Open menu
-                      </title>
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-3-label"
-                  className="bx--list-box__menu"
-                  id="downshift-3-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
+            Remove
           </div>
-          <div
-            className="iot--card-edit-form--threshold-input-group--item-dropdown"
+          <svg
+            aria-hidden="true"
+            aria-label="Remove"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={32}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={32}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title=""
-            >
-              
-              <div
-                className="bx--dropdown iot--color-dropdown bx--list-box"
-                id="undefined_value-card-threshold-color_1"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-4-label downshift-4-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-4-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    <div
-                      className="iot--color-dropdown__item"
-                      title="green50"
-                    >
-                      <div
-                        className="iot--color-dropdown__item-border"
-                      >
-                        <div
-                          className="iot--color-dropdown__color-sample"
-                          style={
-                            Object {
-                              "backgroundColor": "#24a148",
-                            }
-                          }
-                          title="#24a148"
-                        />
-                      </div>
-                    </div>
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-label="Open menu"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title>
-                        Open menu
-                      </title>
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-4-label"
-                  className="bx--list-box__menu"
-                  id="downshift-4-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--card-edit-form--threshold-input-group--item-dropdown"
-          >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-            >
-              
-              <div
-                className="bx--dropdown bx--list-box"
-                id="undefined_value-card-threshold-comparison_1"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-5-label downshift-5-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-5-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    &lt;
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-label="Open menu"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title>
-                        Open menu
-                      </title>
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-5-label"
-                  className="bx--list-box__menu"
-                  id="downshift-5-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--card-edit-form--threshold-input-group--item-end"
-          >
-            <div
-              className="bx--form-item"
-            >
-              <div
-                className="bx--number bx--number--helpertext bx--number--nolabel"
-              >
-                <div
-                  className="bx--number__input-wrapper"
-                >
-                  <input
-                    aria-describedby={null}
-                    aria-label="Numeric input field with increment and decrement buttons"
-                    disabled={false}
-                    id="undefined_value-card-threshold-value_1"
-                    onChange={[Function]}
-                    pattern="[0-9]*"
-                    step={1}
-                    type="number"
-                    value="5"
-                  />
-                  <div
-                    className="bx--number__controls"
-                  >
-                    <button
-                      aria-label="Decrement number"
-                      className="bx--number__control-btn down-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Decrement number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="down-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 15H24V17H8z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                    <button
-                      aria-label="Increment number"
-                      className="bx--number__control-btn up-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Increment number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="up-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <span
-              className="bx--assistive-text"
-            >
-              Remove
-            </span>
-            <svg
-              aria-hidden="true"
-              aria-label="Remove"
-              className="bx--btn__icon"
-              fill="currentColor"
-              focusable="false"
-              height={32}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={32}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 12H14V24H12zM18 12H20V24H18z"
-              />
-              <path
-                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              d="M12 12H14V24H12zM18 12H20V24H18z"
+            />
+            <path
+              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+            />
+          </svg>
+        </button>
       </div>
-      <div>
-        <div
-          className="iot--card-edit-form--threshold-input-group"
-        >
-          <div
-            className="iot--card-edit-form--threshold-input-group--item-dropdown"
-          >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-            >
-              
-              <div
-                className="bx--dropdown iot--icon-dropdown bx--list-box"
-                id="undefined_value-card-threshold-icon_2"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-6-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    <div
-                      className="iot--icon-dropdown__item"
-                      style={
-                        Object {
-                          "color": "#ff832b",
-                        }
-                      }
-                    >
-                      <div
-                        className="iot--icon-dropdown__item-border"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          fill="currentColor"
-                          focusable="false"
-                          height={24}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={24}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                          />
-                          <path
-                            d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-label="Open menu"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title>
-                        Open menu
-                      </title>
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-6-label"
-                  className="bx--list-box__menu"
-                  id="downshift-6-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--card-edit-form--threshold-input-group--item-dropdown"
-          >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title=""
-            >
-              
-              <div
-                className="bx--dropdown iot--color-dropdown bx--list-box"
-                id="undefined_value-card-threshold-color_2"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-7-label downshift-7-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-7-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    <div
-                      className="iot--color-dropdown__item"
-                      title="orange40"
-                    >
-                      <div
-                        className="iot--color-dropdown__item-border"
-                      >
-                        <div
-                          className="iot--color-dropdown__color-sample"
-                          style={
-                            Object {
-                              "backgroundColor": "#ff832b",
-                            }
-                          }
-                          title="#ff832b"
-                        />
-                      </div>
-                    </div>
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-label="Open menu"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title>
-                        Open menu
-                      </title>
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-7-label"
-                  className="bx--list-box__menu"
-                  id="downshift-7-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--card-edit-form--threshold-input-group--item-dropdown"
-          >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-            >
-              
-              <div
-                className="bx--dropdown bx--list-box"
-                id="undefined_value-card-threshold-comparison_2"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-8-label downshift-8-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-8-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    =
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-label="Open menu"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title>
-                        Open menu
-                      </title>
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-8-label"
-                  className="bx--list-box__menu"
-                  id="downshift-8-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--card-edit-form--threshold-input-group--item-end"
-          >
-            <div
-              className="bx--form-item"
-            >
-              <div
-                className="bx--number bx--number--helpertext bx--number--nolabel"
-              >
-                <div
-                  className="bx--number__input-wrapper"
-                >
-                  <input
-                    aria-describedby={null}
-                    aria-label="Numeric input field with increment and decrement buttons"
-                    disabled={false}
-                    id="undefined_value-card-threshold-value_2"
-                    onChange={[Function]}
-                    pattern="[0-9]*"
-                    step={1}
-                    type="number"
-                    value="20"
-                  />
-                  <div
-                    className="bx--number__controls"
-                  >
-                    <button
-                      aria-label="Decrement number"
-                      className="bx--number__control-btn down-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Decrement number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="down-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 15H24V17H8z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                    <button
-                      aria-label="Increment number"
-                      className="bx--number__control-btn up-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Increment number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="up-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-center"
-            data-testid="Button"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <span
-              className="bx--assistive-text"
-            >
-              Remove
-            </span>
-            <svg
-              aria-hidden="true"
-              aria-label="Remove"
-              className="bx--btn__icon"
-              fill="currentColor"
-              focusable="false"
-              height={32}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={32}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 12H14V24H12zM18 12H20V24H18z"
-              />
-              <path
-                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <button
-        aria-pressed={null}
-        className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-        data-testid="Button"
-        disabled={false}
-        onClick={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        Add threshold
-        <svg
-          aria-hidden={true}
-          className="bx--btn__icon"
-          fill="currentColor"
-          focusable="false"
-          height={16}
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 32 32"
-          width={16}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-          />
-        </svg>
-      </button>
     </div>
+    <div>
+      <div
+        className="iot--card-edit-form--threshold-input-group"
+      >
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-dropdown"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+          >
+            
+            <div
+              className="bx--dropdown iot--icon-dropdown bx--list-box"
+              id="undefined_value-card-threshold-icon_1"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-3-label downshift-3-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-3-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  <div
+                    className="iot--icon-dropdown__item"
+                    style={
+                      Object {
+                        "color": "#24a148",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--icon-dropdown__item-border"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <path
+                          d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-label="Open menu"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      Open menu
+                    </title>
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-3-label"
+                className="bx--list-box__menu"
+                id="downshift-3-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-dropdown"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title=""
+          >
+            
+            <div
+              className="bx--dropdown iot--color-dropdown bx--list-box"
+              id="undefined_value-card-threshold-color_1"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-4-label downshift-4-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-4-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="green50"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#24a148",
+                          }
+                        }
+                        title="#24a148"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-label="Open menu"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      Open menu
+                    </title>
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-4-label"
+                className="bx--list-box__menu"
+                id="downshift-4-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-dropdown"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+          >
+            
+            <div
+              className="bx--dropdown bx--list-box"
+              id="undefined_value-card-threshold-comparison_1"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-5-label downshift-5-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-5-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  &lt;
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-label="Open menu"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      Open menu
+                    </title>
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-5-label"
+                className="bx--list-box__menu"
+                id="downshift-5-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-end"
+        >
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--number bx--number--helpertext bx--number--nolabel"
+            >
+              <div
+                className="bx--number__input-wrapper"
+              >
+                <input
+                  aria-describedby={null}
+                  aria-label="Numeric input field with increment and decrement buttons"
+                  disabled={false}
+                  id="undefined_value-card-threshold-value_1"
+                  onChange={[Function]}
+                  pattern="[0-9]*"
+                  step={1}
+                  type="number"
+                  value="5"
+                />
+                <div
+                  className="bx--number__controls"
+                >
+                  <button
+                    aria-label="Decrement number"
+                    className="bx--number__control-btn down-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Decrement number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="down-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                  <button
+                    aria-label="Increment number"
+                    className="bx--number__control-btn up-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Increment number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="up-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <div
+            className="bx--assistive-text"
+            onMouseEnter={[Function]}
+          >
+            Remove
+          </div>
+          <svg
+            aria-hidden="true"
+            aria-label="Remove"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={32}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={32}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 12H14V24H12zM18 12H20V24H18z"
+            />
+            <path
+              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div>
+      <div
+        className="iot--card-edit-form--threshold-input-group"
+      >
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-dropdown"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+          >
+            
+            <div
+              className="bx--dropdown iot--icon-dropdown bx--list-box"
+              id="undefined_value-card-threshold-icon_2"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-6-label downshift-6-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-6-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  <div
+                    className="iot--icon-dropdown__item"
+                    style={
+                      Object {
+                        "color": "#ff832b",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--icon-dropdown__item-border"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <path
+                          d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-label="Open menu"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      Open menu
+                    </title>
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-6-label"
+                className="bx--list-box__menu"
+                id="downshift-6-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-dropdown"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title=""
+          >
+            
+            <div
+              className="bx--dropdown iot--color-dropdown bx--list-box"
+              id="undefined_value-card-threshold-color_2"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-7-label downshift-7-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-7-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="orange40"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#ff832b",
+                          }
+                        }
+                        title="#ff832b"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-label="Open menu"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      Open menu
+                    </title>
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-7-label"
+                className="bx--list-box__menu"
+                id="downshift-7-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-dropdown"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+          >
+            
+            <div
+              className="bx--dropdown bx--list-box"
+              id="undefined_value-card-threshold-comparison_2"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-8-label downshift-8-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-8-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  =
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-label="Open menu"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      Open menu
+                    </title>
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-8-label"
+                className="bx--list-box__menu"
+                id="downshift-8-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card-edit-form--threshold-input-group--item-end"
+        >
+          <div
+            className="bx--form-item bx--text-input-wrapper"
+          >
+            <div
+              className="bx--text-input__field-outer-wrapper"
+            >
+              <div
+                className="bx--text-input__field-wrapper"
+                data-invalid={null}
+              >
+                <input
+                  className="bx--text-input bx--text__input"
+                  data-testid="threshold-2-text-input"
+                  disabled={false}
+                  id="undefined_value-card-threshold-value_2"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  type="text"
+                  value="20"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          aria-describedby={null}
+          className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <div
+            className="bx--assistive-text"
+            onMouseEnter={[Function]}
+          >
+            Remove
+          </div>
+          <svg
+            aria-hidden="true"
+            aria-label="Remove"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={32}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={32}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 12H14V24H12zM18 12H20V24H18z"
+            />
+            <path
+              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <button
+      aria-describedby={null}
+      aria-pressed={null}
+      className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+      data-testid="Button"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Add threshold
+      <svg
+        aria-hidden={true}
+        className="bx--btn__icon"
+        fill="currentColor"
+        focusable="false"
+        height={16}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+        />
+      </svg>
+    </button>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

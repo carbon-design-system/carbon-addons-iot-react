@@ -17,7 +17,7 @@ import {
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 describe('cardUtilityFunctions', () => {
-  it('determine precision', () => {
+  it('determinePrecision', () => {
     // default precisions
     expect(determinePrecision(CARD_SIZES.SMALL, 11.45)).toEqual(0);
     expect(determinePrecision(CARD_SIZES.SMALL, 0.125)).toBeUndefined();
@@ -57,1041 +57,1314 @@ describe('cardUtilityFunctions', () => {
       expect(formatNumberWithPrecision(35000, null, 'en', true)).toEqual('35K');
     });
   });
-  it('handleCardVariables updates value cards with variables', () => {
-    const valueCardPropsWithVariables = {
-      title: 'Fuel {variable} flow',
-      content: {
-        attributes: [
-          {
-            dataSourceId: 'fuel_flow_rate',
-            dataFilter: {
-              deviceid: '73000',
-            },
-            label: 'Latest - 73000',
-            precision: 3,
-            thresholds: [
+  describe('card variables', () => {
+    describe('handleCardVariables', () => {
+      it('updates value cards with variables', () => {
+        const valueCardPropsWithVariables = {
+          title: 'Fuel {variable} flow',
+          content: {
+            attributes: [
               {
-                color: '#F00',
-                comparison: '>',
-                icon: 'Warning',
-                value: 2,
+                dataSourceId: 'fuel_flow_rate',
+                dataFilter: {
+                  deviceid: '73000',
+                },
+                label: 'Latest - 73000',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#F00',
+                    comparison: '>',
+                    icon: 'Warning',
+                    value: 2,
+                  },
+                ],
+              },
+              {
+                dataSourceId: 'fuel_flow_rate2',
+                dataFilter: {
+                  deviceid: '73001',
+                },
+                label: 'Latest - 73001',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#F00',
+                    comparison: '>',
+                    icon: 'Warning',
+                    value: '{unitVariable}',
+                  },
+                ],
+              },
+              {
+                dataSourceId: 'fuel_flow_rate_min',
+                label: 'Minimum {otherVariable}',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#5aa700',
+                    comparison: '>',
+                    icon: 'Checkmark outline',
+                    value: -2,
+                  },
+                ],
+              },
+              {
+                dataSourceId: 'fuel_flow_rate_max',
+                label: 'Maximum',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#5aa700',
+                    comparison: '<',
+                    icon: 'Checkmark outline',
+                    value: 5,
+                  },
+                ],
               },
             ],
           },
-          {
-            dataSourceId: 'fuel_flow_rate2',
-            dataFilter: {
-              deviceid: '73001',
+          values: [],
+          others: {
+            cardVariables: {
+              variable: 'big',
+              otherVariable: 'small',
+              unitVariable: 'F',
             },
-            label: 'Latest - 73001',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#F00',
-                comparison: '>',
-                icon: 'Warning',
-                value: '{unitVariable}',
+            dataSource: {
+              range: {
+                type: 'periodToDate',
+                count: -24,
+                interval: 'hour',
               },
-            ],
-          },
-          {
-            dataSourceId: 'fuel_flow_rate_min',
-            label: 'Minimum {otherVariable}',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#5aa700',
-                comparison: '>',
-                icon: 'Checkmark outline',
-                value: -2,
-              },
-            ],
-          },
-          {
-            dataSourceId: 'fuel_flow_rate_max',
-            label: 'Maximum',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#5aa700',
-                comparison: '<',
-                icon: 'Checkmark outline',
-                value: 5,
-              },
-            ],
-          },
-        ],
-      },
-      values: [],
-      others: {
-        cardVariables: {
-          variable: 'big',
-          otherVariable: 'small',
-          unitVariable: 'F',
-        },
-        dataSource: {
-          range: {
-            type: 'periodToDate',
-            count: -24,
-            interval: 'hour',
-          },
-          attributes: [
-            {
-              aggregator: 'last',
-              attribute: 'fuel_flow_rate',
-              id: 'fuel_flow_rate',
-            },
-            {
-              aggregator: 'last',
-              attribute: 'fuel_flow_rate',
-              id: 'fuel_flow_rate2',
-            },
-            {
-              aggregator: 'min',
-              attribute: 'fuel_flow_rate',
-              id: 'fuel_flow_rate_min',
-            },
-            {
-              aggregator: 'max',
-              attribute: 'fuel_flow_rate',
-              id: 'fuel_flow_rate_max',
-            },
-          ],
-          groupBy: ['deviceid'],
-        },
-      },
-    };
-    const updatedContent = {
-      attributes: [
-        {
-          dataSourceId: 'fuel_flow_rate',
-          dataFilter: {
-            deviceid: '73000',
-          },
-          label: 'Latest - 73000',
-          precision: 3,
-          thresholds: [
-            {
-              color: '#F00',
-              comparison: '>',
-              icon: 'Warning',
-              value: 2,
-            },
-          ],
-        },
-        {
-          dataSourceId: 'fuel_flow_rate2',
-          dataFilter: {
-            deviceid: '73001',
-          },
-          label: 'Latest - 73001',
-          precision: 3,
-          thresholds: [
-            {
-              color: '#F00',
-              comparison: '>',
-              icon: 'Warning',
-              value: 'F',
-            },
-          ],
-        },
-        {
-          dataSourceId: 'fuel_flow_rate_min',
-          label: 'Minimum small',
-          precision: 3,
-          thresholds: [
-            {
-              color: '#5aa700',
-              comparison: '>',
-              icon: 'Checkmark outline',
-              value: -2,
-            },
-          ],
-        },
-        {
-          dataSourceId: 'fuel_flow_rate_max',
-          label: 'Maximum',
-          precision: 3,
-          thresholds: [
-            {
-              color: '#5aa700',
-              comparison: '<',
-              icon: 'Checkmark outline',
-              value: 5,
-            },
-          ],
-        },
-      ],
-    };
-    const updatedTitle = 'Fuel big flow';
-    const updatedValues = [];
-    const { title, content, values, others } = valueCardPropsWithVariables;
-    expect(handleCardVariables(title, content, values, others)).toEqual({
-      title: updatedTitle,
-      content: updatedContent,
-      values: updatedValues,
-      ...others,
-    });
-  });
-  it('handleCardVariables updates table cards with variables', () => {
-    const tableCardPropsWithVariables = {
-      title: 'Max and {minimum} speed',
-      content: {
-        columns: [
-          {
-            dataSourceId: 'abnormal_stop_id',
-            label: 'Abnormal Stop Count',
-          },
-          {
-            dataSourceId: 'speed_id_mean',
-            label: 'Mean Speed',
-          },
-          {
-            dataSourceId: 'speed_id_max',
-            label: 'Max Speed',
-          },
-          {
-            dataSourceId: 'deviceid',
-            linkTemplate: {
-              href: 'www.{url}.com',
-            },
-          },
-          {
-            dataSourceId: 'timestamp',
-            label: 'Time stamp',
-            type: 'TIMESTAMP',
-          },
-        ],
-        thresholds: [
-          {
-            dataSourceId: 'abnormal_stop_id',
-            comparison: '>=',
-            severity: 1,
-            value: 75,
-            label: '{level} Severity',
-            severityLabel: '{size} severity',
-            icon: 'Stop filled',
-            color: '#008000',
-          },
-        ],
-        expandedRows: [
-          {
-            dataSourceId: 'travel_time_id',
-            label: 'Mean travel time',
-          },
-        ],
-        sort: 'DESC',
-      },
-      values: [],
-      others: {
-        cardVariables: {
-          minimum: 1.24,
-          url: 'google',
-          level: 'high',
-          size: 'large',
-        },
-        dataSource: {
-          attributes: [
-            {
-              aggregator: 'mean',
-              attribute: 'speed',
-              id: 'speed_id_mean',
-            },
-            {
-              aggregator: 'count',
-              attribute: 'abnormal_stop_count',
-              id: 'abnormal_stop_id',
-            },
-            {
-              aggregator: 'max',
-              attribute: 'speed',
-              id: 'speed_id_max',
-            },
-            {
-              aggregator: 'mean',
-              attribute: 'travel_time',
-              id: 'travel_time_id',
-            },
-          ],
-          range: {
-            count: -7,
-            interval: 'day',
-          },
-          timeGrain: 'day',
-          groupBy: ['deviceid'],
-        },
-      },
-    };
-    const updatedTitle = 'Max and 1.24 speed';
-    const updatedContent = {
-      columns: [
-        {
-          dataSourceId: 'abnormal_stop_id',
-          label: 'Abnormal Stop Count',
-        },
-        {
-          dataSourceId: 'speed_id_mean',
-          label: 'Mean Speed',
-        },
-        {
-          dataSourceId: 'speed_id_max',
-          label: 'Max Speed',
-        },
-        {
-          dataSourceId: 'deviceid',
-          linkTemplate: {
-            href: 'www.google.com',
-          },
-        },
-        {
-          dataSourceId: 'timestamp',
-          label: 'Time stamp',
-          type: 'TIMESTAMP',
-        },
-      ],
-      thresholds: [
-        {
-          dataSourceId: 'abnormal_stop_id',
-          comparison: '>=',
-          severity: 1,
-          value: 75,
-          label: 'high Severity',
-          severityLabel: 'large severity',
-          icon: 'Stop filled',
-          color: '#008000',
-        },
-      ],
-      expandedRows: [
-        {
-          dataSourceId: 'travel_time_id',
-          label: 'Mean travel time',
-        },
-      ],
-      sort: 'DESC',
-    };
-    const updatedValues = [];
-    const { title, content, values, others } = tableCardPropsWithVariables;
-    expect(handleCardVariables(title, content, values, others)).toEqual({
-      title: updatedTitle,
-      content: updatedContent,
-      values: updatedValues,
-      ...others,
-    });
-  });
-  it('handleCardVariables returns original card when no value cardVariables are specified', () => {
-    const valueCardProps = {
-      id: 'fuel_flow',
-      size: 'SMALL',
-      title: 'Fuel flow',
-      content: {
-        attributes: [
-          {
-            dataSourceId: 'fuel_flow_rate',
-            dataFilter: {
-              deviceid: '73000',
-            },
-            label: 'Latest - 73000',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#F00',
-                comparison: '>',
-                icon: 'Warning',
-                value: 2,
-              },
-            ],
-          },
-          {
-            dataSourceId: 'fuel_flow_rate2',
-            dataFilter: {
-              deviceid: '73001',
-            },
-            label: 'Latest - 73001',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#F00',
-                comparison: '>',
-                icon: 'Warning',
-                value: '%',
-              },
-            ],
-          },
-          {
-            dataSourceId: 'fuel_flow_rate_min',
-            label: 'Minimum',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#5aa700',
-                comparison: '>',
-                icon: 'Checkmark outline',
-                value: -2,
-              },
-            ],
-          },
-          {
-            dataSourceId: 'fuel_flow_rate_max',
-            label: 'Maximum',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#5aa700',
-                comparison: '<',
-                icon: 'Checkmark outline',
-                value: 5,
-              },
-            ],
-          },
-        ],
-      },
-      values: [],
-      others: {
-        dataSource: {
-          range: {
-            type: 'periodToDate',
-            count: -24,
-            interval: 'hour',
-          },
-          attributes: [
-            {
-              aggregator: 'last',
-              attribute: 'fuel_flow_rate',
-              id: 'fuel_flow_rate',
-            },
-            {
-              aggregator: 'last',
-              attribute: 'fuel_flow_rate',
-              id: 'fuel_flow_rate2',
-            },
-            {
-              aggregator: 'min',
-              attribute: 'fuel_flow_rate',
-              id: 'fuel_flow_rate_min',
-            },
-            {
-              aggregator: 'max',
-              attribute: 'fuel_flow_rate',
-              id: 'fuel_flow_rate_max',
-            },
-          ],
-          groupBy: ['deviceid'],
-        },
-      },
-    };
-    const { title, content, values, others } = valueCardProps;
-    expect(handleCardVariables(title, content, [], others)).toEqual({
-      title,
-      content,
-      values,
-      ...others,
-    });
-  });
-  it('handleCardVariables returns original card when no table cardVariables are specified', () => {
-    const tableCardProps = {
-      title: 'Max and min speed',
-      content: {
-        columns: [
-          {
-            dataSourceId: 'abnormal_stop_id',
-            label: 'Abnormal Stop Count',
-          },
-          {
-            dataSourceId: 'speed_id_mean',
-            label: 'Mean Speed',
-          },
-          {
-            dataSourceId: 'speed_id_max',
-            label: 'Max Speed',
-          },
-          {
-            dataSourceId: 'timestamp',
-            label: 'Time stamp',
-            type: 'TIMESTAMP',
-          },
-        ],
-        thresholds: [
-          {
-            dataSourceId: 'abnormal_stop_id',
-            comparison: '>=',
-            severity: 1,
-            value: 75,
-            label: 'Low Severity',
-            severityLabel: 'Low severity',
-            icon: 'Stop filled',
-            color: '#008000',
-          },
-        ],
-        expandedRows: [
-          {
-            dataSourceId: 'travel_time_id',
-            label: 'Mean travel time',
-          },
-        ],
-        sort: 'DESC',
-      },
-      values: [],
-      others: {
-        dataSource: {
-          attributes: [
-            {
-              aggregator: 'mean',
-              attribute: 'speed',
-              id: 'speed_id_mean',
-            },
-            {
-              aggregator: 'count',
-              attribute: 'abnormal_stop_count',
-              id: 'abnormal_stop_id',
-            },
-            {
-              aggregator: 'max',
-              attribute: 'speed',
-              id: 'speed_id_max',
-            },
-            {
-              aggregator: 'mean',
-              attribute: 'travel_time',
-              id: 'travel_time_id',
-            },
-          ],
-          range: {
-            count: -7,
-            interval: 'day',
-          },
-          timeGrain: 'day',
-          groupBy: ['deviceid'],
-        },
-      },
-    };
-    const { title, content, values, others } = tableCardProps;
-    expect(handleCardVariables(title, content, values, others)).toEqual({
-      title,
-      content,
-      values,
-      ...others,
-    });
-  });
-  it('handleCardVariables updates cards with variables when there are case discrepancies in cardVariables', () => {
-    const timeSeriesCardPropsWithVariables = {
-      title: 'timeSeries {device}',
-      content: {
-        xLabel: '{x_label}',
-        yLabel: '{y_label}',
-        unit: '{unit}',
-        series: [
-          {
-            dataSourceId: 'airflow_mean',
-            label: '{label}',
-          },
-        ],
-      },
-      values: [],
-      others: {
-        cardVariables: {
-          x_labEL: 'x-axis',
-          y_label: 'y-axis',
-          deVice: 'air',
-          unit: 'F',
-          Label: 'Airflow Mean',
-        },
-      },
-    };
-    const updatedTitle = 'timeSeries air';
-    const updatedContent = {
-      xLabel: 'x-axis',
-      yLabel: 'y-axis',
-      unit: 'F',
-      series: [
-        {
-          dataSourceId: 'airflow_mean',
-          label: 'Airflow Mean',
-        },
-      ],
-    };
-    const updatedValues = [];
-    const { title, content, values, others } = timeSeriesCardPropsWithVariables;
-    expect(handleCardVariables(title, content, values, others)).toEqual({
-      title: updatedTitle,
-      content: updatedContent,
-      values: updatedValues,
-      ...others,
-    });
-  });
-  it('handleCardVariables updates timeseries cards with variables', () => {
-    const timeSeriesCardPropsWithVariables = {
-      title: 'timeSeries {device}',
-      content: {
-        xLabel: '{x_label}',
-        yLabel: '{y_label}',
-        unit: '{unit}',
-        series: [
-          {
-            dataSourceId: 'airflow_mean',
-            label: '{label}',
-          },
-        ],
-      },
-      values: [],
-      others: {
-        cardVariables: {
-          x_label: 'x-axis',
-          y_label: 'y-axis',
-          device: 'air',
-          unit: 'F',
-          label: 'Airflow Mean',
-        },
-      },
-    };
-    const updatedTitle = 'timeSeries air';
-    const updatedContent = {
-      xLabel: 'x-axis',
-      yLabel: 'y-axis',
-      unit: 'F',
-      series: [
-        {
-          dataSourceId: 'airflow_mean',
-          label: 'Airflow Mean',
-        },
-      ],
-    };
-    const updatedValues = [];
-    const { title, content, values, others } = timeSeriesCardPropsWithVariables;
-    expect(handleCardVariables(title, content, values, others)).toEqual({
-      title: updatedTitle,
-      content: updatedContent,
-      values: updatedValues,
-      ...others,
-    });
-  });
-  it('handleCardVariables returns original card when no cardVariables are specified', () => {
-    const timeSeriesCardProps = {
-      title: 'timeSeries',
-      content: {
-        xLabel: 'x-axis',
-        yLabel: 'y-axis',
-        unit: 'F',
-        series: [
-          {
-            dataSourceId: 'airflow_mean',
-            label: 'Airflow Mean',
-          },
-        ],
-      },
-      values: [],
-      others: {},
-    };
-    const { title, content, values, others } = timeSeriesCardProps;
-    expect(handleCardVariables(title, content, values, others)).toEqual({
-      title,
-      content,
-      values,
-      ...others,
-    });
-  });
-  it('getVariables should return a list of variables from a string', () => {
-    const titleWithVariables = '{variable} in a title with {variables}';
-    const title = 'A title without variables';
-    expect(getVariables(titleWithVariables)).toEqual(['variable', 'variables']);
-    expect(getVariables(title)).toEqual(undefined);
-  });
-  it('getCardVariables returns variables in ValueCards', () => {
-    const valueCardWithVariables = {
-      id: 'fuel_flow',
-      size: 'SMALL',
-      title: 'Fuel {variable} flow',
-      type: 'VALUE',
-      content: {
-        attributes: [
-          {
-            dataSourceId: 'fuel_flow_rate',
-            dataFilter: {
-              deviceid: '73000',
-            },
-            label: 'Latest - 73000',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#F00',
-                comparison: '>',
-                icon: 'Warning',
-                value: 2,
-              },
-            ],
-          },
-          {
-            dataSourceId: 'fuel_flow_rate2',
-            dataFilter: {
-              deviceid: '73001',
-            },
-            label: 'Latest - 73001',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#F00',
-                comparison: '>',
-                icon: 'Warning',
-                value: '{unitVariable}',
-              },
-            ],
-          },
-          {
-            dataSourceId: 'fuel_flow_rate_min',
-            label: 'Minimum {otherVariable}',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#5aa700',
-                comparison: '>',
-                icon: 'Checkmark outline',
-                value: -2,
-              },
-            ],
-          },
-          {
-            dataSourceId: 'fuel_flow_rate_max',
-            label: 'Maximum',
-            precision: 3,
-            thresholds: [
-              {
-                color: '#5aa700',
-                comparison: '<',
-                icon: 'Checkmark outline',
-                value: 5,
-              },
-            ],
-          },
-        ],
-      },
-      dataSource: {
-        range: {
-          type: 'periodToDate',
-          count: -24,
-          interval: 'hour',
-        },
-        attributes: [
-          {
-            aggregator: 'last',
-            attribute: 'fuel_flow_rate',
-            id: 'fuel_flow_rate',
-          },
-          {
-            aggregator: 'last',
-            attribute: 'fuel_flow_rate',
-            id: 'fuel_flow_rate2',
-          },
-          {
-            aggregator: 'min',
-            attribute: 'fuel_flow_rate',
-            id: 'fuel_flow_rate_min',
-          },
-          {
-            aggregator: 'max',
-            attribute: 'fuel_flow_rate',
-            id: 'fuel_flow_rate_max',
-          },
-        ],
-        groupBy: ['deviceid'],
-      },
-    };
-    expect(getCardVariables(valueCardWithVariables)).toEqual([
-      'variable',
-      'unitVariable',
-      'otherVariable',
-    ]);
-  });
-  it('getCardVariables returns variables for an ImageCard', () => {
-    const imageCardWithVariables = {
-      content: {
-        alt: 'Sample image',
-        src: 'static/media/landscape.69143f06.jpg',
-        zoomMax: 10,
-        hotspots: [
-          {
-            icon: 'carbon-icon',
-            color: 'blue',
-            content: {
-              title: 'sensor readings',
               attributes: [
                 {
-                  dataSourceId: 'temp_last',
-                  label: '{high} temp',
-                  unit: '{unitVar}',
+                  aggregator: 'last',
+                  attribute: 'fuel_flow_rate',
+                  id: 'fuel_flow_rate',
+                },
+                {
+                  aggregator: 'last',
+                  attribute: 'fuel_flow_rate',
+                  id: 'fuel_flow_rate2',
+                },
+                {
+                  aggregator: 'min',
+                  attribute: 'fuel_flow_rate',
+                  id: 'fuel_flow_rate_min',
+                },
+                {
+                  aggregator: 'max',
+                  attribute: 'fuel_flow_rate',
+                  id: 'fuel_flow_rate_max',
+                },
+              ],
+              groupBy: ['deviceid'],
+            },
+          },
+        };
+        const updatedContent = {
+          attributes: [
+            {
+              dataSourceId: 'fuel_flow_rate',
+              dataFilter: {
+                deviceid: '73000',
+              },
+              label: 'Latest - 73000',
+              precision: 3,
+              thresholds: [
+                {
+                  color: '#F00',
+                  comparison: '>',
+                  icon: 'Warning',
+                  value: 2,
                 },
               ],
             },
-            thresholds: [
-              {
-                dataSourceId: 'temp_last',
-                comparison: '>=',
-                value: '{thresVar}',
+            {
+              dataSourceId: 'fuel_flow_rate2',
+              dataFilter: {
+                deviceid: '73001',
               },
-            ],
-          },
-        ],
-      },
-      size: 'LARGE',
-      title: 'Expanded {large} card',
-      type: 'IMAGE',
-    };
-    expect(getCardVariables(imageCardWithVariables)).toEqual([
-      'high',
-      'unitVar',
-      'thresVar',
-      'large',
-    ]);
-  });
-  it('getCardVariables returns variables for a TableCard', () => {
-    const tableCardWithVariables = {
-      id: 'speed_mean_and_max_threshold',
-      size: 'LARGE',
-      title: 'Max and {minimum} speed',
-      type: 'TABLE',
-      content: {
-        columns: [
-          {
-            dataSourceId: 'abnormal_stop_id',
-            label: 'Abnormal Stop Count',
-          },
-          {
-            dataSourceId: 'speed_id_mean',
-            label: 'Mean Speed',
-          },
-          {
-            dataSourceId: 'speed_id_max',
-            label: 'Max Speed',
-          },
-          {
-            dataSourceId: 'deviceid',
-            linkTemplate: {
-              href: 'www.{url}.com',
-              displayValue: '{url}',
-            },
-          },
-          {
-            dataSourceId: 'timestamp',
-            label: 'Time stamp',
-            type: 'TIMESTAMP',
-          },
-        ],
-        thresholds: [
-          {
-            dataSourceId: 'abnormal_stop_id',
-            comparison: '>=',
-            severity: 1,
-            value: 75,
-            label: '{high} Severity',
-            severityLabel: '{large} severity',
-            icon: 'Stop filled',
-            color: '#008000',
-          },
-        ],
-        expandedRows: [
-          {
-            dataSourceId: 'travel_time_id',
-            label: 'Mean travel time',
-          },
-        ],
-        sort: 'DESC',
-      },
-      dataSource: {
-        attributes: [
-          {
-            aggregator: 'mean',
-            attribute: 'speed',
-            id: 'speed_id_mean',
-          },
-          {
-            aggregator: 'count',
-            attribute: 'abnormal_stop_count',
-            id: 'abnormal_stop_id',
-          },
-          {
-            aggregator: 'max',
-            attribute: 'speed',
-            id: 'speed_id_max',
-          },
-          {
-            aggregator: 'mean',
-            attribute: 'travel_time',
-            id: 'travel_time_id',
-          },
-        ],
-        range: {
-          count: -7,
-          interval: 'day',
-        },
-        timeGrain: 'day',
-        groupBy: ['deviceid'],
-      },
-    };
-    expect(getCardVariables(tableCardWithVariables)).toEqual(['minimum', 'url', 'high', 'large']);
-  });
-  it('getCardVariables returns variables for a TimeSeriesCard', () => {
-    const timeSeriesCardWithVariables = {
-      id: 'air_flow_mean',
-      size: 'LARGE',
-      title: 'Air flow {deviceId} mean vs max',
-      type: 'TIMESERIES',
-      content: {
-        series: [
-          {
-            dataSourceId: 'airflow_mean',
-            label: 'Airflow Mean',
-          },
-          {
-            dataSourceId: 'airflow_max',
-            label: '{airflow_max}',
-          },
-        ],
-        xLabel: '{x_axis}',
-        yLabel: '{y_axis}',
-        unit: '{unit}',
-        timeDataSourceId: 'timestamp',
-      },
-      dataSource: {
-        attributes: [
-          {
-            aggregator: 'mean',
-            attribute: 'air_flow_rate',
-            id: 'airflow_mean',
-          },
-          {
-            aggregator: 'max',
-            attribute: 'air_flow_rate',
-            id: 'airflow_max',
-          },
-        ],
-        range: {
-          type: 'periodToDate',
-          count: -7,
-          interval: 'day',
-        },
-        additionalData: {
-          type: 'alert',
-          dataFilter: {
-            name: 'alert_air_flow_rate_greater_than_1',
-          },
-        },
-        timeGrain: 'day',
-      },
-    };
-    expect(getCardVariables(timeSeriesCardWithVariables)).toEqual([
-      'deviceId',
-      'airflow_max',
-      'x_axis',
-      'y_axis',
-      'unit',
-    ]);
-  });
-  it('getCardVariables does not blow up on null or react symbols', () => {
-    const timeSeriesCardWithVariables = {
-      id: 'air_flow_mean',
-      size: 'LARGE',
-      title: 'Air flow {deviceId} mean vs max',
-      type: 'TIMESERIES',
-      content: {
-        series: [
-          {
-            dataSourceId: 'airflow_max',
-            label: '{airflow_max}',
-          },
-        ],
-        xLabel: '{x_axis}',
-        yLabel: '{y_axis}',
-        unit: '{unit}',
-        timeDataSourceId: 'timestamp',
-      },
-      dataSource: {
-        attributes: [
-          {
-            aggregator: 'max',
-            attribute: 'air_flow_rate',
-            id: 'airflow_max',
-          },
-        ],
-        range: {
-          type: 'periodToDate',
-          count: -7,
-          interval: 'day',
-        },
-        timeGrain: 'day',
-      },
-      someNullProperty: null,
-      someReactSymbolProperty: <p>Hi I am a React symbol</p>,
-    };
-    expect(getCardVariables(timeSeriesCardWithVariables)).toEqual([
-      'deviceId',
-      'airflow_max',
-      'x_axis',
-      'y_axis',
-      'unit',
-    ]);
-  });
-  it('getCardVariables returns empty array when no variables are given', () => {
-    const imageCard = {
-      content: {
-        alt: 'Sample image',
-        src: 'static/media/landscape.69143f06.jpg',
-        zoomMax: 10,
-        hotspots: [
-          {
-            icon: 'carbon-icon',
-            color: 'blue',
-            content: {
-              title: 'sensor readings',
-              attributes: [
+              label: 'Latest - 73001',
+              precision: 3,
+              thresholds: [
                 {
-                  dataSourceId: 'temp_last',
-                  label: 'temp',
-                  unit: 'F',
+                  color: '#F00',
+                  comparison: '>',
+                  icon: 'Warning',
+                  value: 'F',
                 },
               ],
             },
+            {
+              dataSourceId: 'fuel_flow_rate_min',
+              label: 'Minimum small',
+              precision: 3,
+              thresholds: [
+                {
+                  color: '#5aa700',
+                  comparison: '>',
+                  icon: 'Checkmark outline',
+                  value: -2,
+                },
+              ],
+            },
+            {
+              dataSourceId: 'fuel_flow_rate_max',
+              label: 'Maximum',
+              precision: 3,
+              thresholds: [
+                {
+                  color: '#5aa700',
+                  comparison: '<',
+                  icon: 'Checkmark outline',
+                  value: 5,
+                },
+              ],
+            },
+          ],
+        };
+        const updatedTitle = 'Fuel big flow';
+        const updatedValues = [];
+        const { title, content, values, others } = valueCardPropsWithVariables;
+        expect(handleCardVariables(title, content, values, others)).toEqual({
+          title: updatedTitle,
+          content: updatedContent,
+          values: updatedValues,
+          ...others,
+        });
+      });
+
+      it('updates table cards with variables', () => {
+        const tableCardPropsWithVariables = {
+          title: 'Max and {minimum} speed',
+          content: {
+            columns: [
+              {
+                dataSourceId: 'abnormal_stop_id',
+                label: 'Abnormal Stop Count',
+              },
+              {
+                dataSourceId: 'speed_id_mean',
+                label: 'Mean Speed',
+              },
+              {
+                dataSourceId: 'speed_id_max',
+                label: 'Max Speed',
+              },
+              {
+                dataSourceId: 'deviceid',
+                linkTemplate: {
+                  href: 'www.{url}.com',
+                },
+              },
+              {
+                dataSourceId: 'timestamp',
+                label: 'Time stamp',
+                type: 'TIMESTAMP',
+              },
+            ],
             thresholds: [
               {
-                dataSourceId: 'temp_last',
+                dataSourceId: 'abnormal_stop_id',
                 comparison: '>=',
-                value: '300',
+                severity: 1,
+                value: 75,
+                label: '{level} Severity',
+                severityLabel: '{size} severity',
+                icon: 'Stop filled',
+                color: '#008000',
+              },
+            ],
+            expandedRows: [
+              {
+                dataSourceId: 'travel_time_id',
+                label: 'Mean travel time',
+              },
+            ],
+            sort: 'DESC',
+          },
+          values: [],
+          others: {
+            cardVariables: {
+              minimum: 1.24,
+              url: 'google',
+              level: 'high',
+              size: 'large',
+            },
+            dataSource: {
+              attributes: [
+                {
+                  aggregator: 'mean',
+                  attribute: 'speed',
+                  id: 'speed_id_mean',
+                },
+                {
+                  aggregator: 'count',
+                  attribute: 'abnormal_stop_count',
+                  id: 'abnormal_stop_id',
+                },
+                {
+                  aggregator: 'max',
+                  attribute: 'speed',
+                  id: 'speed_id_max',
+                },
+                {
+                  aggregator: 'mean',
+                  attribute: 'travel_time',
+                  id: 'travel_time_id',
+                },
+              ],
+              range: {
+                count: -7,
+                interval: 'day',
+              },
+              timeGrain: 'day',
+              groupBy: ['deviceid'],
+            },
+          },
+        };
+        const updatedTitle = 'Max and 1.24 speed';
+        const updatedContent = {
+          columns: [
+            {
+              dataSourceId: 'abnormal_stop_id',
+              label: 'Abnormal Stop Count',
+            },
+            {
+              dataSourceId: 'speed_id_mean',
+              label: 'Mean Speed',
+            },
+            {
+              dataSourceId: 'speed_id_max',
+              label: 'Max Speed',
+            },
+            {
+              dataSourceId: 'deviceid',
+              linkTemplate: {
+                href: 'www.google.com',
+              },
+            },
+            {
+              dataSourceId: 'timestamp',
+              label: 'Time stamp',
+              type: 'TIMESTAMP',
+            },
+          ],
+          thresholds: [
+            {
+              dataSourceId: 'abnormal_stop_id',
+              comparison: '>=',
+              severity: 1,
+              value: 75,
+              label: 'high Severity',
+              severityLabel: 'large severity',
+              icon: 'Stop filled',
+              color: '#008000',
+            },
+          ],
+          expandedRows: [
+            {
+              dataSourceId: 'travel_time_id',
+              label: 'Mean travel time',
+            },
+          ],
+          sort: 'DESC',
+        };
+        const updatedValues = [];
+        const { title, content, values, others } = tableCardPropsWithVariables;
+        expect(handleCardVariables(title, content, values, others)).toEqual({
+          title: updatedTitle,
+          content: updatedContent,
+          values: updatedValues,
+          ...others,
+        });
+      });
+
+      it('returns original card when no value cardVariables are specified', () => {
+        const valueCardProps = {
+          id: 'fuel_flow',
+          size: 'SMALL',
+          title: 'Fuel flow',
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'fuel_flow_rate',
+                dataFilter: {
+                  deviceid: '73000',
+                },
+                label: 'Latest - 73000',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#F00',
+                    comparison: '>',
+                    icon: 'Warning',
+                    value: 2,
+                  },
+                ],
+              },
+              {
+                dataSourceId: 'fuel_flow_rate2',
+                dataFilter: {
+                  deviceid: '73001',
+                },
+                label: 'Latest - 73001',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#F00',
+                    comparison: '>',
+                    icon: 'Warning',
+                    value: '%',
+                  },
+                ],
+              },
+              {
+                dataSourceId: 'fuel_flow_rate_min',
+                label: 'Minimum',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#5aa700',
+                    comparison: '>',
+                    icon: 'Checkmark outline',
+                    value: -2,
+                  },
+                ],
+              },
+              {
+                dataSourceId: 'fuel_flow_rate_max',
+                label: 'Maximum',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#5aa700',
+                    comparison: '<',
+                    icon: 'Checkmark outline',
+                    value: 5,
+                  },
+                ],
               },
             ],
           },
-        ],
-      },
-      size: 'LARGE',
-      title: 'Expanded card',
-      type: 'IMAGE',
-    };
-    expect(getCardVariables(imageCard)).toEqual([]);
+          values: [],
+          others: {
+            dataSource: {
+              range: {
+                type: 'periodToDate',
+                count: -24,
+                interval: 'hour',
+              },
+              attributes: [
+                {
+                  aggregator: 'last',
+                  attribute: 'fuel_flow_rate',
+                  id: 'fuel_flow_rate',
+                },
+                {
+                  aggregator: 'last',
+                  attribute: 'fuel_flow_rate',
+                  id: 'fuel_flow_rate2',
+                },
+                {
+                  aggregator: 'min',
+                  attribute: 'fuel_flow_rate',
+                  id: 'fuel_flow_rate_min',
+                },
+                {
+                  aggregator: 'max',
+                  attribute: 'fuel_flow_rate',
+                  id: 'fuel_flow_rate_max',
+                },
+              ],
+              groupBy: ['deviceid'],
+            },
+          },
+        };
+        const { title, content, values, others } = valueCardProps;
+        expect(handleCardVariables(title, content, [], others)).toEqual({
+          title,
+          content,
+          values,
+          ...others,
+        });
+      });
+
+      it('returns original card when no table cardVariables are specified', () => {
+        const tableCardProps = {
+          title: 'Max and min speed',
+          content: {
+            columns: [
+              {
+                dataSourceId: 'abnormal_stop_id',
+                label: 'Abnormal Stop Count',
+              },
+              {
+                dataSourceId: 'speed_id_mean',
+                label: 'Mean Speed',
+              },
+              {
+                dataSourceId: 'speed_id_max',
+                label: 'Max Speed',
+              },
+              {
+                dataSourceId: 'timestamp',
+                label: 'Time stamp',
+                type: 'TIMESTAMP',
+              },
+            ],
+            thresholds: [
+              {
+                dataSourceId: 'abnormal_stop_id',
+                comparison: '>=',
+                severity: 1,
+                value: 75,
+                label: 'Low Severity',
+                severityLabel: 'Low severity',
+                icon: 'Stop filled',
+                color: '#008000',
+              },
+            ],
+            expandedRows: [
+              {
+                dataSourceId: 'travel_time_id',
+                label: 'Mean travel time',
+              },
+            ],
+            sort: 'DESC',
+          },
+          values: [],
+          others: {
+            dataSource: {
+              attributes: [
+                {
+                  aggregator: 'mean',
+                  attribute: 'speed',
+                  id: 'speed_id_mean',
+                },
+                {
+                  aggregator: 'count',
+                  attribute: 'abnormal_stop_count',
+                  id: 'abnormal_stop_id',
+                },
+                {
+                  aggregator: 'max',
+                  attribute: 'speed',
+                  id: 'speed_id_max',
+                },
+                {
+                  aggregator: 'mean',
+                  attribute: 'travel_time',
+                  id: 'travel_time_id',
+                },
+              ],
+              range: {
+                count: -7,
+                interval: 'day',
+              },
+              timeGrain: 'day',
+              groupBy: ['deviceid'],
+            },
+          },
+        };
+        const { title, content, values, others } = tableCardProps;
+        expect(handleCardVariables(title, content, values, others)).toEqual({
+          title,
+          content,
+          values,
+          ...others,
+        });
+      });
+
+      it('updates cards with variables when there are case discrepancies in cardVariables', () => {
+        const timeSeriesCardPropsWithVariables = {
+          title: 'timeSeries {device}',
+          content: {
+            xLabel: '{x_label}',
+            yLabel: '{y_label}',
+            unit: '{unit}',
+            series: [
+              {
+                dataSourceId: 'airflow_mean',
+                label: '{label}',
+              },
+            ],
+          },
+          values: [],
+          others: {
+            cardVariables: {
+              x_labEL: 'x-axis',
+              y_label: 'y-axis',
+              deVice: 'air',
+              unit: 'F',
+              Label: 'Airflow Mean',
+            },
+          },
+        };
+        const updatedTitle = 'timeSeries air';
+        const updatedContent = {
+          xLabel: 'x-axis',
+          yLabel: 'y-axis',
+          unit: 'F',
+          series: [
+            {
+              dataSourceId: 'airflow_mean',
+              label: 'Airflow Mean',
+            },
+          ],
+        };
+        const updatedValues = [];
+        const { title, content, values, others } = timeSeriesCardPropsWithVariables;
+        expect(handleCardVariables(title, content, values, others)).toEqual({
+          title: updatedTitle,
+          content: updatedContent,
+          values: updatedValues,
+          ...others,
+        });
+      });
+
+      it('updates timeseries cards with variables', () => {
+        const timeSeriesCardPropsWithVariables = {
+          title: 'timeSeries {device}',
+          content: {
+            xLabel: '{x_label}',
+            yLabel: '{y_label}',
+            unit: '{unit}',
+            series: [
+              {
+                dataSourceId: 'airflow_mean',
+                label: '{label}',
+              },
+            ],
+          },
+          values: [],
+          others: {
+            cardVariables: {
+              x_label: 'x-axis',
+              y_label: 'y-axis',
+              device: 'air',
+              unit: 'F',
+              label: 'Airflow Mean',
+            },
+          },
+        };
+        const updatedTitle = 'timeSeries air';
+        const updatedContent = {
+          xLabel: 'x-axis',
+          yLabel: 'y-axis',
+          unit: 'F',
+          series: [
+            {
+              dataSourceId: 'airflow_mean',
+              label: 'Airflow Mean',
+            },
+          ],
+        };
+        const updatedValues = [];
+        const { title, content, values, others } = timeSeriesCardPropsWithVariables;
+        expect(handleCardVariables(title, content, values, others)).toEqual({
+          title: updatedTitle,
+          content: updatedContent,
+          values: updatedValues,
+          ...others,
+        });
+      });
+
+      it('returns original card when no timeseries cardVariables are specified', () => {
+        const timeSeriesCardProps = {
+          title: 'timeSeries',
+          content: {
+            xLabel: 'x-axis',
+            yLabel: 'y-axis',
+            unit: 'F',
+            series: [
+              {
+                dataSourceId: 'airflow_mean',
+                label: 'Airflow Mean',
+              },
+            ],
+          },
+          values: [],
+          others: {},
+        };
+        const { title, content, values, others } = timeSeriesCardProps;
+        expect(handleCardVariables(title, content, values, others)).toEqual({
+          title,
+          content,
+          values,
+          ...others,
+        });
+      });
+
+      it('should not replace href since its being skipped', () => {
+        const tableCardPropsWithVariables = {
+          title: 'Max and {minimum} speed',
+          content: {
+            columns: [
+              {
+                dataSourceId: 'abnormal_stop_id',
+                label: 'Abnormal Stop Count',
+              },
+              {
+                dataSourceId: 'speed_id_mean',
+                label: 'Mean Speed',
+              },
+              {
+                dataSourceId: 'speed_id_max',
+                label: 'Max Speed',
+              },
+              {
+                dataSourceId: 'deviceid',
+                linkTemplate: {
+                  href: 'www.{url}.com',
+                },
+              },
+              {
+                dataSourceId: 'timestamp',
+                label: 'Time stamp',
+                type: 'TIMESTAMP',
+              },
+            ],
+            thresholds: [
+              {
+                dataSourceId: 'abnormal_stop_id',
+                comparison: '>=',
+                severity: 1,
+                value: 75,
+                label: '{level} Severity',
+                severityLabel: '{size} severity',
+                icon: 'Stop filled',
+                color: '#008000',
+              },
+            ],
+            expandedRows: [
+              {
+                dataSourceId: 'travel_time_id',
+                label: 'Mean travel time',
+              },
+            ],
+            sort: 'DESC',
+          },
+          values: [],
+          others: {
+            cardVariables: {
+              minimum: 1.24,
+              url: 'google',
+              level: 'high',
+              size: 'large',
+            },
+            dataSource: {
+              attributes: [
+                {
+                  aggregator: 'mean',
+                  attribute: 'speed',
+                  id: 'speed_id_mean',
+                },
+                {
+                  aggregator: 'count',
+                  attribute: 'abnormal_stop_count',
+                  id: 'abnormal_stop_id',
+                },
+                {
+                  aggregator: 'max',
+                  attribute: 'speed',
+                  id: 'speed_id_max',
+                },
+                {
+                  aggregator: 'mean',
+                  attribute: 'travel_time',
+                  id: 'travel_time_id',
+                },
+              ],
+              range: {
+                count: -7,
+                interval: 'day',
+              },
+              timeGrain: 'day',
+              groupBy: ['deviceid'],
+            },
+          },
+        };
+        const updatedTitle = 'Max and 1.24 speed';
+        const updatedContent = {
+          columns: [
+            {
+              dataSourceId: 'abnormal_stop_id',
+              label: 'Abnormal Stop Count',
+            },
+            {
+              dataSourceId: 'speed_id_mean',
+              label: 'Mean Speed',
+            },
+            {
+              dataSourceId: 'speed_id_max',
+              label: 'Max Speed',
+            },
+            {
+              dataSourceId: 'deviceid',
+              linkTemplate: {
+                href: 'www.{url}.com',
+              },
+            },
+            {
+              dataSourceId: 'timestamp',
+              label: 'Time stamp',
+              type: 'TIMESTAMP',
+            },
+          ],
+          thresholds: [
+            {
+              dataSourceId: 'abnormal_stop_id',
+              comparison: '>=',
+              severity: 1,
+              value: 75,
+              label: 'high Severity',
+              severityLabel: 'large severity',
+              icon: 'Stop filled',
+              color: '#008000',
+            },
+          ],
+          expandedRows: [
+            {
+              dataSourceId: 'travel_time_id',
+              label: 'Mean travel time',
+            },
+          ],
+          sort: 'DESC',
+        };
+        const updatedValues = [];
+        const { title, content, values, others } = tableCardPropsWithVariables;
+        expect(handleCardVariables(title, content, values, others, ['href'])).toEqual({
+          title: updatedTitle,
+          content: updatedContent,
+          values: updatedValues,
+          ...others,
+        });
+      });
+    });
+
+    it('getVariables should return a list of variables from a string', () => {
+      const titleWithVariables = '{variable} in a title with {variables}';
+      const title = 'A title without variables';
+      expect(getVariables(titleWithVariables)).toEqual(['variable', 'variables']);
+      expect(getVariables(title)).toEqual(undefined);
+    });
+
+    describe('getCardVariables', () => {
+      it('returns variables in ValueCards', () => {
+        const valueCardWithVariables = {
+          id: 'fuel_flow',
+          size: 'SMALL',
+          title: 'Fuel {variable} flow',
+          type: 'VALUE',
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'fuel_flow_rate',
+                dataFilter: {
+                  deviceid: '73000',
+                },
+                label: 'Latest - 73000',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#F00',
+                    comparison: '>',
+                    icon: 'Warning',
+                    value: 2,
+                  },
+                ],
+              },
+              {
+                dataSourceId: 'fuel_flow_rate2',
+                dataFilter: {
+                  deviceid: '73001',
+                },
+                label: 'Latest - 73001',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#F00',
+                    comparison: '>',
+                    icon: 'Warning',
+                    value: '{unitVariable}',
+                  },
+                ],
+              },
+              {
+                dataSourceId: 'fuel_flow_rate_min',
+                label: 'Minimum {otherVariable}',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#5aa700',
+                    comparison: '>',
+                    icon: 'Checkmark outline',
+                    value: -2,
+                  },
+                ],
+              },
+              {
+                dataSourceId: 'fuel_flow_rate_max',
+                label: 'Maximum',
+                precision: 3,
+                thresholds: [
+                  {
+                    color: '#5aa700',
+                    comparison: '<',
+                    icon: 'Checkmark outline',
+                    value: 5,
+                  },
+                ],
+              },
+            ],
+          },
+          dataSource: {
+            range: {
+              type: 'periodToDate',
+              count: -24,
+              interval: 'hour',
+            },
+            attributes: [
+              {
+                aggregator: 'last',
+                attribute: 'fuel_flow_rate',
+                id: 'fuel_flow_rate',
+              },
+              {
+                aggregator: 'last',
+                attribute: 'fuel_flow_rate',
+                id: 'fuel_flow_rate2',
+              },
+              {
+                aggregator: 'min',
+                attribute: 'fuel_flow_rate',
+                id: 'fuel_flow_rate_min',
+              },
+              {
+                aggregator: 'max',
+                attribute: 'fuel_flow_rate',
+                id: 'fuel_flow_rate_max',
+              },
+            ],
+            groupBy: ['deviceid'],
+          },
+        };
+        expect(getCardVariables(valueCardWithVariables)).toEqual([
+          'variable',
+          'unitVariable',
+          'otherVariable',
+        ]);
+      });
+
+      it('returns variables for an ImageCard', () => {
+        const imageCardWithVariables = {
+          content: {
+            alt: 'Sample image',
+            src: 'static/media/landscape.69143f06.jpg',
+            zoomMax: 10,
+            hotspots: [
+              {
+                icon: 'carbon-icon',
+                color: 'blue',
+                content: {
+                  title: 'sensor readings',
+                  attributes: [
+                    {
+                      dataSourceId: 'temp_last',
+                      label: '{high} temp',
+                      unit: '{unitVar}',
+                    },
+                  ],
+                },
+                thresholds: [
+                  {
+                    dataSourceId: 'temp_last',
+                    comparison: '>=',
+                    value: '{thresVar}',
+                  },
+                ],
+              },
+            ],
+          },
+          size: 'LARGE',
+          title: 'Expanded {large} card',
+          type: 'IMAGE',
+        };
+        expect(getCardVariables(imageCardWithVariables)).toEqual([
+          'high',
+          'unitVar',
+          'thresVar',
+          'large',
+        ]);
+      });
+
+      it('returns variables for a TableCard', () => {
+        const tableCardWithVariables = {
+          id: 'speed_mean_and_max_threshold',
+          size: 'LARGE',
+          title: 'Max and {minimum} speed',
+          type: 'TABLE',
+          content: {
+            columns: [
+              {
+                dataSourceId: 'abnormal_stop_id',
+                label: 'Abnormal Stop Count',
+              },
+              {
+                dataSourceId: 'speed_id_mean',
+                label: 'Mean Speed',
+              },
+              {
+                dataSourceId: 'speed_id_max',
+                label: 'Max Speed',
+              },
+              {
+                dataSourceId: 'deviceid',
+                linkTemplate: {
+                  href: 'www.{url}.com',
+                  displayValue: '{url}',
+                },
+              },
+              {
+                dataSourceId: 'timestamp',
+                label: 'Time stamp',
+                type: 'TIMESTAMP',
+              },
+            ],
+            thresholds: [
+              {
+                dataSourceId: 'abnormal_stop_id',
+                comparison: '>=',
+                severity: 1,
+                value: 75,
+                label: '{high} Severity',
+                severityLabel: '{large} severity',
+                icon: 'Stop filled',
+                color: '#008000',
+              },
+            ],
+            expandedRows: [
+              {
+                dataSourceId: 'travel_time_id',
+                label: 'Mean travel time',
+              },
+            ],
+            sort: 'DESC',
+          },
+          dataSource: {
+            attributes: [
+              {
+                aggregator: 'mean',
+                attribute: 'speed',
+                id: 'speed_id_mean',
+              },
+              {
+                aggregator: 'count',
+                attribute: 'abnormal_stop_count',
+                id: 'abnormal_stop_id',
+              },
+              {
+                aggregator: 'max',
+                attribute: 'speed',
+                id: 'speed_id_max',
+              },
+              {
+                aggregator: 'mean',
+                attribute: 'travel_time',
+                id: 'travel_time_id',
+              },
+            ],
+            range: {
+              count: -7,
+              interval: 'day',
+            },
+            timeGrain: 'day',
+            groupBy: ['deviceid'],
+          },
+        };
+        expect(getCardVariables(tableCardWithVariables)).toEqual([
+          'minimum',
+          'url',
+          'high',
+          'large',
+        ]);
+      });
+
+      it('returns variables for a TimeSeriesCard', () => {
+        const timeSeriesCardWithVariables = {
+          id: 'air_flow_mean',
+          size: 'LARGE',
+          title: 'Air flow {deviceId} mean vs max',
+          type: 'TIMESERIES',
+          content: {
+            series: [
+              {
+                dataSourceId: 'airflow_mean',
+                label: 'Airflow Mean',
+              },
+              {
+                dataSourceId: 'airflow_max',
+                label: '{airflow_max}',
+              },
+            ],
+            xLabel: '{x_axis}',
+            yLabel: '{y_axis}',
+            unit: '{unit}',
+            timeDataSourceId: 'timestamp',
+          },
+          dataSource: {
+            attributes: [
+              {
+                aggregator: 'mean',
+                attribute: 'air_flow_rate',
+                id: 'airflow_mean',
+              },
+              {
+                aggregator: 'max',
+                attribute: 'air_flow_rate',
+                id: 'airflow_max',
+              },
+            ],
+            range: {
+              type: 'periodToDate',
+              count: -7,
+              interval: 'day',
+            },
+            additionalData: {
+              type: 'alert',
+              dataFilter: {
+                name: 'alert_air_flow_rate_greater_than_1',
+              },
+            },
+            timeGrain: 'day',
+          },
+        };
+        expect(getCardVariables(timeSeriesCardWithVariables)).toEqual([
+          'deviceId',
+          'airflow_max',
+          'x_axis',
+          'y_axis',
+          'unit',
+        ]);
+      });
+
+      it('does not blow up on null or react symbols', () => {
+        const timeSeriesCardWithVariables = {
+          id: 'air_flow_mean',
+          size: 'LARGE',
+          title: 'Air flow {deviceId} mean vs max',
+          type: 'TIMESERIES',
+          content: {
+            series: [
+              {
+                dataSourceId: 'airflow_max',
+                label: '{airflow_max}',
+              },
+            ],
+            xLabel: '{x_axis}',
+            yLabel: '{y_axis}',
+            unit: '{unit}',
+            timeDataSourceId: 'timestamp',
+          },
+          dataSource: {
+            attributes: [
+              {
+                aggregator: 'max',
+                attribute: 'air_flow_rate',
+                id: 'airflow_max',
+              },
+            ],
+            range: {
+              type: 'periodToDate',
+              count: -7,
+              interval: 'day',
+            },
+            timeGrain: 'day',
+          },
+          someNullProperty: null,
+          someReactSymbolProperty: <p>Hi I am a React symbol</p>,
+        };
+        expect(getCardVariables(timeSeriesCardWithVariables)).toEqual([
+          'deviceId',
+          'airflow_max',
+          'x_axis',
+          'y_axis',
+          'unit',
+        ]);
+      });
+
+      it('returns empty array when no variables are given', () => {
+        const imageCard = {
+          content: {
+            alt: 'Sample image',
+            src: 'static/media/landscape.69143f06.jpg',
+            zoomMax: 10,
+            hotspots: [
+              {
+                icon: 'carbon-icon',
+                color: 'blue',
+                content: {
+                  title: 'sensor readings',
+                  attributes: [
+                    {
+                      dataSourceId: 'temp_last',
+                      label: 'temp',
+                      unit: 'F',
+                    },
+                  ],
+                },
+                thresholds: [
+                  {
+                    dataSourceId: 'temp_last',
+                    comparison: '>=',
+                    value: '300',
+                  },
+                ],
+              },
+            ],
+          },
+          size: 'LARGE',
+          title: 'Expanded card',
+          type: 'IMAGE',
+        };
+        expect(getCardVariables(imageCard)).toEqual([]);
+      });
+
+      it('does not return variables for skipped properties', () => {
+        const tableCardWithVariables = {
+          id: 'speed_mean_and_max_threshold',
+          size: 'LARGE',
+          title: 'Max and {minimum} speed',
+          type: 'TABLE',
+          content: {
+            columns: [
+              {
+                dataSourceId: 'abnormal_stop_id',
+                label: 'Abnormal Stop Count',
+              },
+              {
+                dataSourceId: 'deviceid',
+                linkTemplate: {
+                  href: 'www.{url}.com',
+                  target: '_blank',
+                },
+              },
+              {
+                dataSourceId: 'timestamp',
+                label: 'Time stamp',
+                type: 'TIMESTAMP',
+              },
+            ],
+            thresholds: [
+              {
+                dataSourceId: 'abnormal_stop_id',
+                comparison: '>=',
+                severity: 1,
+                value: 75,
+                label: '{high} Severity',
+                severityLabel: '{large} severity',
+                icon: 'Stop filled',
+                color: '#008000',
+              },
+            ],
+            expandedRows: [
+              {
+                dataSourceId: 'travel_time_id',
+                label: 'Mean travel time',
+              },
+            ],
+            sort: 'DESC',
+          },
+          dataSource: {
+            attributes: [
+              {
+                aggregator: 'mean',
+                attribute: 'speed',
+                id: 'speed_id_mean',
+              },
+              {
+                aggregator: 'count',
+                attribute: 'abnormal_stop_count',
+                id: 'abnormal_stop_id',
+              },
+              {
+                aggregator: 'max',
+                attribute: 'speed',
+                id: 'speed_id_max',
+              },
+              {
+                aggregator: 'mean',
+                attribute: 'travel_time',
+                id: 'travel_time_id',
+              },
+            ],
+            range: {
+              count: -7,
+              interval: 'day',
+            },
+            timeGrain: 'day',
+            groupBy: ['deviceid'],
+          },
+        };
+        expect(getCardVariables(tableCardWithVariables, ['href'])).toEqual([
+          'minimum',
+          'high',
+          'large',
+        ]);
+      });
+    });
+
+    describe('replaceVariables', () => {
+      it('replaceVariables', () => {
+        const card = {
+          title: 'my {number_variable} {string_variable}',
+          thresholds: [{ value: '{number_variable}' }, { value: '{string_variable}' }],
+        };
+        const updatedCard = replaceVariables(
+          ['number_variable', 'string_variable'],
+          { number_variable: 100, string_variable: 'mystring' },
+          card
+        );
+        expect(updatedCard.title).toEqual('my 100 mystring');
+        expect(updatedCard.thresholds[0].value).toEqual(100);
+        expect(updatedCard.thresholds[1].value).toEqual('mystring');
+      });
+
+      it('replaceVariables handles nodes correctly', () => {
+        const card = {
+          title: <p>my default</p>,
+          thresholds: [{ value: '{number_variable}' }, { value: '{string_variable}' }],
+        };
+        const updatedCard = replaceVariables(
+          ['number_variable', 'string_variable'],
+          { number_variable: 100, string_variable: 'mystring' },
+          card
+        );
+        expect(React.isValidElement(updatedCard.title)).toEqual(true);
+        expect(updatedCard.thresholds[0].value).toEqual(100);
+        expect(updatedCard.thresholds[1].value).toEqual('mystring');
+      });
+
+      it('replaceVariables handles null targets', () => {
+        const card = {
+          title: 'untitled',
+          values: [{ value1: null, value2: 'a value: {value1}' }],
+        };
+        const cardVariables = {
+          value1: 'myValue1Value',
+        };
+        const variables = ['value1'];
+        expect(replaceVariables(variables, cardVariables, card)).toEqual({
+          title: 'untitled',
+          values: [{ value1: null, value2: 'a value: myValue1Value' }],
+        });
+      });
+    });
   });
-  it('replaceVariables', () => {
-    const card = {
-      title: 'my {number_variable} {string_variable}',
-      thresholds: [{ value: '{number_variable}' }, { value: '{string_variable}' }],
-    };
-    const updatedCard = replaceVariables(
-      ['number_variable', 'string_variable'],
-      { number_variable: 100, string_variable: 'mystring' },
-      card
-    );
-    expect(updatedCard.title).toEqual('my 100 mystring');
-    expect(updatedCard.thresholds[0].value).toEqual(100);
-    expect(updatedCard.thresholds[1].value).toEqual('mystring');
-  });
-  it('replaceVariables handles nodes correctly', () => {
-    const card = {
-      title: <p>my default</p>,
-      thresholds: [{ value: '{number_variable}' }, { value: '{string_variable}' }],
-    };
-    const updatedCard = replaceVariables(
-      ['number_variable', 'string_variable'],
-      { number_variable: 100, string_variable: 'mystring' },
-      card
-    );
-    expect(React.isValidElement(updatedCard.title)).toEqual(true);
-    expect(updatedCard.thresholds[0].value).toEqual(100);
-    expect(updatedCard.thresholds[1].value).toEqual('mystring');
-  });
+
   it('chartValueFormatter', () => {
     // Small should get 3 precision
     expect(chartValueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual('0.235');
@@ -1107,6 +1380,7 @@ describe('cardUtilityFunctions', () => {
     // nil
     expect(chartValueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
   });
+
   describe('Card sizes', () => {
     const consoleSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {});
     let originalDev;
@@ -1149,6 +1423,7 @@ describe('cardUtilityFunctions', () => {
       expect(increaseSmallCardSize(CARD_SIZES.LARGEWIDE)).toEqual(CARD_SIZES.LARGEWIDE);
     });
   });
+
   describe('findMatchingThresholds', () => {
     const thresholds = [
       { comparison: '>', dataSourceId: 'airflow_mean', severity: 3, value: 2 },

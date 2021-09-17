@@ -7,16 +7,20 @@
 // Requires
 // =================================
 const gulp = require('gulp');
-const sass = require('sass');
+const sass = require('gulp-sass')(require('sass'));
 const tap = require('gulp-tap');
 const path = require('path');
-const fs = require('fs');
 
 //
 // Variables
 // =================================
 const dirs = {
   DIST: 'dist',
+  SRC: 'src',
+};
+
+const globs = {
+  scss: `${dirs.SRC}/**/*.scss`,
 };
 
 const licenseTemplate = `/**
@@ -58,6 +62,8 @@ const buildLicense = () =>
 
 const buildReadme = () => gulp.src('README.md').pipe(gulp.dest(dirs.DIST));
 
+const copyStyles = () => gulp.src(globs.scss).pipe(gulp.dest(`${dirs.DIST}/esm2015`));
+
 //
 // Running tasks
 // =================================
@@ -68,6 +74,7 @@ module.exports = {
   buildReadme,
   moveLicense,
   buildMeta,
+  copyStyles,
   default: buildMeta,
 };
 

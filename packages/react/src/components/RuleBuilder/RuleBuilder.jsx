@@ -66,6 +66,8 @@ const propTypes = {
     saveLabel: PropTypes.string,
     cancelLabel: PropTypes.string,
   }),
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -103,6 +105,7 @@ const defaultProps = {
     userTypeLabel: 'User',
     modalPrimaryButtonLabel: 'OK',
   },
+  testId: 'rule-builder',
 };
 
 const baseClass = `${iotPrefix}--rule-builder-wrap`;
@@ -118,6 +121,7 @@ const RuleBuilder = ({
   ruleEditor: RuleEditor,
   onChange,
   i18n,
+  testId,
 }) => {
   const [currentFilter, setCurrentFilter] = React.useState(filter);
   const [modalState, setModalState] = React.useState({
@@ -138,7 +142,7 @@ const RuleBuilder = ({
       actionBar?.map((i) => (
         <ToolbarSVGWrapper
           key={i.actionId}
-          data-testid={i.actionId}
+          testId={i.actionId}
           title={i.actionLabel}
           onClick={() => {
             i.actionCallback(currentFilter);
@@ -154,7 +158,7 @@ const RuleBuilder = ({
     () =>
       footerButtons?.map((i) => (
         <Button
-          data-testid={i.buttonId}
+          testId={i.buttonId}
           key={i.buttonId}
           kind="secondary"
           className={`${baseClass}--footer-actions-preview`}
@@ -245,22 +249,25 @@ const RuleBuilder = ({
     <section
       className={classnames(baseClass, className)}
       id={currentFilter?.id}
-      data-testid={currentFilter?.id || 'rule-builder'}
+      // TODO: change this to use only testId in v3.
+      data-testid={currentFilter?.id || testId}
     >
       <header className={`${baseClass}--header`}>
         <div>
-          <h1 className={`${baseClass}--header-title`}>
+          <h1 className={`${baseClass}--header-title`} data-testid={`${testId}-title`}>
             {currentFilter?.filterTitleText || defaultTitleText}
           </h1>
           {currentFilter?.filterMetaText && (
-            <p className={`${baseClass}--header-metatext`}>{currentFilter?.filterMetaText}</p>
+            <p data-testid={`${testId}-metatext`} className={`${baseClass}--header-metatext`}>
+              {currentFilter?.filterMetaText}
+            </p>
           )}
         </div>
         <div className={`${baseClass}--header-actions`}>
           {actions}
           <Button
             className={`${baseClass}--header-actions-save`}
-            data-testid="rule-builder-save"
+            testId="rule-builder-save"
             onClick={() => onSave(currentFilter)}
             size="small"
           >
@@ -269,15 +276,24 @@ const RuleBuilder = ({
         </div>
       </header>
       <div className={`${baseClass}--body`}>
-        <Tabs className={`${baseClass}--tabs`}>
-          <Tab className={`${baseClass}--tab`} label={mergedI18n.filterTabText}>
+        <Tabs data-testid={`${testId}-tabs`} className={`${baseClass}--tabs`}>
+          <Tab
+            className={`${baseClass}--tab`}
+            label={mergedI18n.filterTabText}
+            data-testid={`${testId}-editor-tab`}
+          >
             <Editor
               defaultRules={currentFilter.filterRules}
               columns={currentFilter.filterColumns}
               onChange={handleOnChange}
+              testId={`${testId}-editor`}
             />
           </Tab>
-          <Tab className={`${baseClass}--tab`} label={mergedI18n.sharingTabText}>
+          <Tab
+            className={`${baseClass}--tab`}
+            label={mergedI18n.sharingTabText}
+            data-testid={`${testId}-sharing-tab`}
+          >
             <Accordion>
               <AccordionItem title={mergedI18n.detailsAccordionText} open>
                 <TextInput
@@ -286,15 +302,17 @@ const RuleBuilder = ({
                   className={`${baseClass}--title-input`}
                   labelText={mergedI18n.filterNameLabel}
                   light
-                  value={currentFilter.filterTitleText}
+                  defaultValue={currentFilter.filterTitleText}
                   placeholder="Untitled 01"
                   onChange={(e) => handleOnChange(e.target.value, 'TITLE')}
+                  data-testid={`${testId}-title-input`}
                 />
                 <FilterTags
                   hasOverflow
                   tagContainer={RuleBuilderTags}
                   onChange={handleOnChange}
                   i18n={mergedI18n}
+                  testId={`${testId}-tags`}
                 >
                   {currentFilter?.filterTags?.map((tag) => (
                     <Tag
@@ -305,6 +323,7 @@ const RuleBuilder = ({
                         marginRight: '1rem',
                       }}
                       onClose={handleTagClose(tag)}
+                      data-testid={`${testId}-tag-${tag}`}
                     >
                       {tag}
                     </Tag>
@@ -315,6 +334,7 @@ const RuleBuilder = ({
                 <div className={`${baseClass}--user-container`}>
                   <StatefulTable
                     id="edit-table"
+                    testId={`${testId}-edit-users-table`}
                     secondaryTitle={mergedI18n.editorAccessLabel}
                     options={{
                       hasSearch: true,
@@ -327,7 +347,7 @@ const RuleBuilder = ({
                             renderIcon={Add24}
                             id="add-editors-button"
                             kind="ghost"
-                            testID="rule-builder-add-edit-users"
+                            testId="rule-builder-add-edit-users"
                             onClick={handleAddAccess('edit')}
                           >
                             {mergedI18n.addUsersButtonLabel}
@@ -359,6 +379,7 @@ const RuleBuilder = ({
                   />
                   <StatefulTable
                     id="read-table"
+                    testId={`${testId}-read-users-table`}
                     secondaryTitle={mergedI18n.readOnlyAccessLabel}
                     options={{
                       hasSearch: true,
@@ -371,7 +392,7 @@ const RuleBuilder = ({
                             renderIcon={Add24}
                             id="add-read-users"
                             kind="ghost"
-                            testID="rule-builder-add-read-users"
+                            testId="rule-builder-add-read-users"
                             onClick={handleAddAccess('read')}
                           >
                             {mergedI18n.addUsersButtonLabel}
@@ -411,7 +432,7 @@ const RuleBuilder = ({
         <Button
           kind="secondary"
           className={`${baseClass}--footer-actions-cancel`}
-          testID="rule-builder-cancel"
+          testId="rule-builder-cancel"
           onClick={onCancel}
         >
           {mergedI18n.cancelLabel}

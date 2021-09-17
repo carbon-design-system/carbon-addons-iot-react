@@ -151,16 +151,14 @@ const sidebarComponent = <div>sidebar</div>;
 const footerComponent = <StyledFooterContent>this is footer content</StyledFooterContent>;
 
 export default {
-  title: 'Watson IoT/🚫 WizardInline',
+  title: '1 - Watson IoT/🚫 WizardInline',
   excludeStories: ['itemsAndComponents'],
 };
 
 export const Deprecated = () => (
   <StoryNotice componentName="WizardInline" replacementComponentName="PageWizard" />
 );
-Deprecated.story = {
-  name: deprecatedStoryTitle,
-};
+Deprecated.storyName = deprecatedStoryTitle;
 
 export const StatefulExample = () => (
   <StatefulWizardInline
@@ -180,9 +178,7 @@ export const StatefulExample = () => (
   />
 );
 
-StatefulExample.story = {
-  name: 'Stateful example',
-};
+StatefulExample.storyName = 'Stateful example';
 
 export const Static = () => (
   <WizardInline
@@ -213,9 +209,7 @@ export const WithBreadcrumbs = () => (
   />
 );
 
-WithBreadcrumbs.story = {
-  name: 'with breadcrumbs',
-};
+WithBreadcrumbs.storyName = 'with breadcrumbs';
 
 export const StaticWithSidebar = () => (
   <WizardInline
@@ -232,9 +226,7 @@ export const StaticWithSidebar = () => (
   />
 );
 
-StaticWithSidebar.story = {
-  name: 'Static with Sidebar',
-};
+StaticWithSidebar.storyName = 'Static with Sidebar';
 
 export const WithError = () => (
   <WizardInline
@@ -252,9 +244,7 @@ export const WithError = () => (
   />
 );
 
-WithError.story = {
-  name: 'with error',
-};
+WithError.storyName = 'with error';
 
 export const StaticWithFooter = () => (
   <WizardInline
@@ -271,6 +261,4 @@ export const StaticWithFooter = () => (
   />
 );
 
-StaticWithFooter.story = {
-  name: 'Static with Footer',
-};
+StaticWithFooter.storyName = 'Static with Footer';

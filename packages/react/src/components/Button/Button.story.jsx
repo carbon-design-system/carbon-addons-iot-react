@@ -130,7 +130,7 @@ const CustomLink = ({ children, href, ...other }) => (
 );
 
 export default {
-  title: 'Watson IoT/Button',
+  title: '1 - Watson IoT/Button',
   decorators: [withKnobs],
 
   parameters: {
@@ -144,9 +144,7 @@ export const Loading = () => (
   </Button>
 );
 
-Loading.story = {
-  name: 'loading',
-};
+Loading.storyName = 'loading';
 
 export const LoadingWithSecondary = () => (
   <Button {...ButtonProps} kind="secondary" loading>
@@ -154,15 +152,11 @@ export const LoadingWithSecondary = () => (
   </Button>
 );
 
-LoadingWithSecondary.story = {
-  name: 'loading with secondary',
-};
+LoadingWithSecondary.storyName = 'loading with secondary';
 
 export const NotLoading = () => <Button {...ButtonProps}>Test Button</Button>;
 
-NotLoading.story = {
-  name: 'not loading',
-};
+NotLoading.storyName = 'not loading';
 
 export const _Default = () => {
   const regularProps = props.regular(); // eslint-disable-line react/destructuring-assignment
@@ -193,34 +187,32 @@ export const _Default = () => {
   );
 };
 
-_Default.story = {
-  parameters: {
-    info: {
-      text: `
-        Buttons are used to initialize an action, either in the background or
-        foreground of an experience.
+_Default.parameters = {
+  info: {
+    text: `
+      Buttons are used to initialize an action, either in the background or
+      foreground of an experience.
 
-        There are several kinds of buttons.
+      There are several kinds of buttons.
 
-        Primary buttons should be used for the principle call to action
-        on the page.
+      Primary buttons should be used for the principle call to action
+      on the page.
 
-        Secondary buttons should be used for secondary actions on each page.
+      Secondary buttons should be used for secondary actions on each page.
 
-        Danger buttons should be used for a negative action (such as Delete) on the page.
+      Danger buttons should be used for a negative action (such as Delete) on the page.
 
-        Modify the behavior of the button by changing its event properties.
+      Modify the behavior of the button by changing its event properties.
 
-        Field buttons may be use directly next to an input element, to visually align their heights.
+      Field buttons may be use directly next to an input element, to visually align their heights.
 
-        Small buttons may be used when there is not enough space for a
-        regular sized button. This issue is most found in tables. Small button should have three words
-        or less.
+      Small buttons may be used when there is not enough space for a
+      regular sized button. This issue is most found in tables. Small button should have three words
+      or less.
 
-        When words are not enough, icons can be used in buttons to better communicate what the button does. Icons are
-        always paired with text.
-      `,
-    },
+      When words are not enough, icons can be used in buttons to better communicate what the button does. Icons are
+      always paired with text.
+    `,
   },
 };
 
@@ -228,9 +220,7 @@ export const IconOnlyButtons = () => (
   <Button {...props.iconOnly()} hasIconOnly /> // eslint-disable-line react/destructuring-assignment
 );
 
-IconOnlyButtons.story = {
-  name: 'Icon-only buttons',
-};
+IconOnlyButtons.storyName = 'Icon-only buttons';
 
 export const IconSelectionButtons = () => {
   const StatefulExample = () => {
@@ -251,9 +241,7 @@ export const IconSelectionButtons = () => {
   return <StatefulExample />;
 };
 
-IconSelectionButtons.story = {
-  name: 'Icon Selection buttons',
-};
+IconSelectionButtons.storyName = 'Icon Selection buttons';
 
 export const SetsOfButtons = () => {
   const setProps = props.set(); // eslint-disable-line react/destructuring-assignment
@@ -269,15 +257,13 @@ export const SetsOfButtons = () => {
   );
 };
 
-SetsOfButtons.story = {
-  name: 'Sets of Buttons',
+SetsOfButtons.storyName = 'Sets of Buttons';
 
-  parameters: {
-    info: {
-      text: `
-        When an action required by the user has more than one option, always use a a negative action button (secondary) paired with a positive action button (primary) in that order. Negative action buttons will be on the left. Positive action buttons should be on the right. When these two types buttons are paired in the correct order, they will automatically space themselves apart.
-      `,
-    },
+SetsOfButtons.parameters = {
+  info: {
+    text: `
+      When an action required by the user has more than one option, always use a a negative action button (secondary) paired with a positive action button (primary) in that order. Negative action buttons will be on the left. Positive action buttons should be on the right. When these two types buttons are paired in the correct order, they will automatically space themselves apart.
+    `,
   },
 };
 
@@ -291,14 +277,12 @@ export const Skeleton = () => (
   </div>
 );
 
-Skeleton.story = {
-  name: 'skeleton',
+Skeleton.storyName = 'skeleton';
 
-  parameters: {
-    info: {
-      text: `
-        Placeholder skeleton state to use when content is loading.
-      `,
-    },
+Skeleton.parameters = {
+  info: {
+    text: `
+      Placeholder skeleton state to use when content is loading.
+    `,
   },
 };

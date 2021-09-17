@@ -1,55 +1,49 @@
 import { Copy16, OverflowMenuVertical16, TrashCan16 } from '@carbon/icons-react';
 import {
-  unstable_ContextMenuItem as ContextMenuItem,
-  unstable_ContextMenuDivider as ContextMenuDivider,
-  unstable_ContextMenuRadioGroup as ContextMenuRadioGroup,
-  unstable_ContextMenuSelectableItem as ContextMenuSelectableItem,
+  unstable_MenuItem as MenuItem,
+  unstable_MenuDivider as MenuDivider,
+  unstable_MenuRadioGroup as MenuRadioGroup,
+  unstable_MenuSelectableItem as MenuSelectableItem,
 } from 'carbon-components-react';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withReadme } from 'storybook-readme';
 import { select } from '@storybook/addon-knobs';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 
-import README from './README.md';
+import MenuButtonREADME from './MenuButton.mdx';
 import MenuButton from './MenuButton';
 
 export const menuItems = [
-  <ContextMenuSelectableItem
+  <MenuSelectableItem
     key="publish"
     label="Publish"
     initialChecked={false}
     onChange={action('Publish')}
   />,
-  <ContextMenuDivider key="div-1" />,
-  <ContextMenuItem
-    key="duplicate"
-    renderIcon={Copy16}
-    label="Duplicate"
-    onClick={action('Duplicate')}
-  />,
-  <ContextMenuDivider key="div-2" />,
-  <ContextMenuItem key="share" label="Share with">
-    <ContextMenuRadioGroup
+  <MenuDivider key="div-1" />,
+  <MenuItem key="duplicate" renderIcon={Copy16} label="Duplicate" onClick={action('Duplicate')} />,
+  <MenuDivider key="div-2" />,
+  <MenuItem key="share" label="Share with">
+    <MenuRadioGroup
       label="Shared with"
       items={['None', 'Product Team', 'Organization', 'Company']}
       initialSelectedItem="None"
       onChange={action('Share')}
     />
-  </ContextMenuItem>,
-  <ContextMenuDivider key="div-3" />,
-  <ContextMenuItem key="export" label="Export">
-    <ContextMenuItem label="CSV" onClick={action('Export CSV')} />
-    <ContextMenuItem label="JSON" onClick={action('Export JSON')} />
-  </ContextMenuItem>,
-  <ContextMenuItem
+  </MenuItem>,
+  <MenuDivider key="div-3" />,
+  <MenuItem key="export" label="Export">
+    <MenuItem label="CSV" onClick={action('Export CSV')} />
+    <MenuItem label="JSON" onClick={action('Export JSON')} />
+  </MenuItem>,
+  <MenuItem
     key="disabled"
     label={<span title="You must have proper credentials to use this option.">Disabled</span>}
     disabled
   />,
-  <ContextMenuDivider key="div-4" />,
-  <ContextMenuItem
+  <MenuDivider key="div-4" />,
+  <MenuItem
     key="delete"
     label="Delete"
     renderIcon={TrashCan16}
@@ -61,19 +55,15 @@ export const menuItems = [
 ];
 
 export const Experimental = () => <StoryNotice componentName="MenuButton" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 const SingleButton = () => <MenuButton label="Actions">{menuItems}</MenuButton>;
 /**
  * If no primary action is given, but has a label we assume it's a single menu button.
  */
-export const SingleMenuButton = withReadme(README, () => <SingleButton />);
+export const SingleMenuButton = () => <SingleButton />;
 
-SingleMenuButton.story = {
-  name: 'menu button',
-};
+SingleMenuButton.storyName = 'menu button';
 
 /**
  * if a primary action and label are given, then we assume it's a split button.
@@ -85,11 +75,9 @@ const SplitButton = () => (
   </MenuButton>
 );
 
-export const SplitMenuButton = withReadme(README, () => <SplitButton />);
+export const SplitMenuButton = () => <SplitButton />;
 
-SplitMenuButton.story = {
-  name: 'split menu button',
-};
+SplitMenuButton.storyName = 'split menu button';
 
 /**
  * if no label is given then it assumes it's an icon only menu.
@@ -100,11 +88,9 @@ const IconOnlyButton = () => (
   </MenuButton>
 );
 
-export const IconOnlyMenuButton = withReadme(README, () => <IconOnlyButton />);
+export const IconOnlyMenuButton = () => <IconOnlyButton />;
 
-IconOnlyMenuButton.story = {
-  name: 'icon only menu button',
-};
+IconOnlyMenuButton.storyName = 'icon only menu button';
 
 export const AutoPositioningExample = () => {
   const COMPONENTS = {
@@ -228,16 +214,17 @@ export const AutoPositioningExample = () => {
   );
 };
 
-AutoPositioningExample.story = {
-  name: 'icon only with auto positioning',
-};
+AutoPositioningExample.storyName = 'icon only with auto positioning';
 
 export default {
-  title: 'Watson IoT Experimental/☢️ MenuButton',
+  title: '2 - Watson IoT Experimental/☢️ MenuButton',
 
   decorators: [],
   parameters: {
     component: MenuButton,
+    docs: {
+      page: MenuButtonREADME,
+    },
   },
   excludeStories: ['menuItems'],
 };

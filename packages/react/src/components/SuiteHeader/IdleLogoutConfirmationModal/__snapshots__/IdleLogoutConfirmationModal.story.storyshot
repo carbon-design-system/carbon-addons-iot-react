@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/IdleLogoutConfirmationModal default 1`] = `
+<div
+  className="storybook-container"
+>
+  <p>
+    The logout confirmation dialog will show up after 10 seconds of inactivity.
+  </p>
+  <p>
+    Open this story in another tab, wait for the dialog to show up in both tabs, then click "Stay logged in" to see the other dialog go away.
+  </p>
+  <div
+    className="bx--modal bx--modal-tall iot--session-timeout-modal"
+    data-testid="idle-logout-confirmation"
+    onBlur={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-label="Session Timeout"
+      aria-modal="true"
+      className="bx--modal-container bx--modal-container--sm"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        
+        <h3
+          className="bx--modal-header__heading"
+          id="bx--modal-header__heading--modal-1"
+        >
+          Session Timeout
+        </h3>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-label="Close"
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        aria-labelledby="bx--modal-header__heading--modal-1"
+        className="bx--modal-content"
+        id="bx--modal-body--modal-1"
+      >
+        You will be logged out due to inactivity in 0 seconds.
+      </div>
+      <div
+        className="bx--modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn bx--btn--secondary"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Log out
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn bx--btn--primary"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Stay logged in
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;

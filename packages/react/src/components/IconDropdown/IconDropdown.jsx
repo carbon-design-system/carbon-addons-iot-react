@@ -82,8 +82,11 @@ const propTypes = {
    * The dropdown type, `default` or `inline`
    */
   type: PropTypes.oneOf(['default', 'inline']),
+
+  testId: PropTypes.string,
 };
 
+/* istanbul ignore next, ignore the default onChange */
 const defaultPropTypes = {
   columnCount: 4,
   selectedItem: null,
@@ -98,6 +101,7 @@ const defaultPropTypes = {
   invalidText: '',
   onChange: () => {},
   translateWithId: undefined,
+  testId: 'icon-dropdown',
 };
 
 const defaultItemSize = 48;
@@ -113,6 +117,7 @@ const IconDropdown = ({
   direction,
   onChange,
   translateWithId,
+  testId,
   ...other
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -170,6 +175,7 @@ const IconDropdown = ({
 
     return (
       <div
+        data-testid={`${testId}-footer`}
         className={`${iotPrefix}--icon-dropdown__footer`}
         style={{
           width: `${width}px`,
@@ -193,35 +199,40 @@ const IconDropdown = ({
 
     return (
       <>
-        <Button
-          className={classnames(
-            `${iotPrefix}--icon-dropdown__image-button`,
-            {
-              [`${iotPrefix}--icon-dropdown__image-button--leading`]: index % columnCount === 0,
-            },
-            {
-              [`${iotPrefix}--icon-dropdown__image-button--trailing`]:
-                (index + 1) % columnCount === 0,
-            },
-            {
-              [`${iotPrefix}--icon-dropdown__image-button--bottom`]:
-                index + columnCount >= items.length && !hasFooter && direction === 'bottom',
-            },
-            {
-              [`${iotPrefix}--icon-dropdown__image-button--top`]:
-                index < columnCount && hasFooter && direction === 'top',
-            }
-          )}
-          renderIcon={item?.icon}
-          kind="ghost"
-          hasIconOnly
-          disabled={disabled}
-          selected={item.id === selectedItem?.id}
-          testID={`dropdown-button__${item?.id}`}
-          iconDescription={item.text}
-          title={item?.text}
-        />
-
+        {
+          // only display this button when the dropdown is open, bc if it's shown when closed it's
+          // rendered in a different place and causes a <button> within <button> warning.
+          isOpen ? (
+            <Button
+              className={classnames(
+                `${iotPrefix}--icon-dropdown__image-button`,
+                {
+                  [`${iotPrefix}--icon-dropdown__image-button--leading`]: index % columnCount === 0,
+                },
+                {
+                  [`${iotPrefix}--icon-dropdown__image-button--trailing`]:
+                    (index + 1) % columnCount === 0,
+                },
+                {
+                  [`${iotPrefix}--icon-dropdown__image-button--bottom`]:
+                    index + columnCount >= items.length && !hasFooter && direction === 'bottom',
+                },
+                {
+                  [`${iotPrefix}--icon-dropdown__image-button--top`]:
+                    index < columnCount && hasFooter && direction === 'top',
+                }
+              )}
+              renderIcon={item?.icon}
+              kind="ghost"
+              hasIconOnly
+              disabled={disabled}
+              selected={item.id === selectedItem?.id}
+              testId={`dropdown-button__${item?.id}`}
+              iconDescription={item.text}
+              title={item?.text}
+            />
+          ) : null
+        }
         <div className={`${iotPrefix}--icon-dropdown__selected-icon-label`}>
           {React.createElement(item.icon)}
           <div className={`${iotPrefix}--icon-dropdown__selected-icon-label__content`}>
@@ -243,8 +254,7 @@ const IconDropdown = ({
         items={items}
         className={`${iotPrefix}--icon-dropdown__selection-buttons`}
         selectedItem={selectedItem}
-        onChange={(changes) => {
-          const { selectedItem: newSelected } = changes;
+        onChange={({ selectedItem: newSelected }) => {
           setInternalSelectedItem(newSelected);
           onChange(newSelected);
         }}
@@ -263,6 +273,7 @@ const IconDropdown = ({
             }
           },
         }}
+        data-testid={testId}
         {...other}
         itemToString={itemToString}
       />

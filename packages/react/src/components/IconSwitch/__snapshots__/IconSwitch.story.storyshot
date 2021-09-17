@@ -1,257 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconSwitch example - used in ContentSwitcher 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch example - used in ContentSwitcher 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--content-switcher iot--content-switcher--icon"
-      onChange={[Function]}
-      role="tablist"
-    >
-      <button
-        aria-pressed={null}
-        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-        disabled={false}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="bx--assistive-text"
-        >
-          Graphical View
-        </span>
-        <svg
-          aria-hidden="true"
-          aria-label="Graphical View"
-          className="bx--btn__icon"
-          fill="currentColor"
-          focusable="false"
-          height={20}
-          preserveAspectRatio="xMidYMid meet"
-          role="img"
-          viewBox="0 0 32 32"
-          width={20}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M10 6H28V8H10zM10 24H28V26H10zM10 15H28V17H10zM4 15H6V17H4zM4 6H6V8H4zM4 24H6V26H4z"
-          />
-        </svg>
-      </button>
-      <button
-        aria-pressed={null}
-        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-        disabled={false}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="bx--assistive-text"
-        >
-          Source View
-        </span>
-        <svg
-          aria-hidden="true"
-          aria-label="Source View"
-          className="bx--btn__icon"
-          fill="currentColor"
-          focusable="false"
-          height={20}
-          preserveAspectRatio="xMidYMid meet"
-          role="img"
-          viewBox="0 0 32 32"
-          width={20}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-          />
-          <path
-            d="M5.91 15H26.080000000000002V17H5.91z"
-            transform="rotate(-75 15.996 16)"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconSwitch example - used in ContentSwitcher light version  1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--content-switcher iot--content-switcher--icon"
-      onChange={[Function]}
-      role="tablist"
-    >
-      <button
-        aria-pressed={null}
-        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-        disabled={false}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="bx--assistive-text"
-        >
-          Graphical View
-        </span>
-        <svg
-          aria-hidden="true"
-          aria-label="Graphical View"
-          className="bx--btn__icon"
-          fill="currentColor"
-          focusable="false"
-          height={20}
-          preserveAspectRatio="xMidYMid meet"
-          role="img"
-          viewBox="0 0 32 32"
-          width={20}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M10 6H28V8H10zM10 24H28V26H10zM10 15H28V17H10zM4 15H6V17H4zM4 6H6V8H4zM4 24H6V26H4z"
-          />
-        </svg>
-      </button>
-      <button
-        aria-pressed={null}
-        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-        disabled={false}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="bx--assistive-text"
-        >
-          Source View
-        </span>
-        <svg
-          aria-hidden="true"
-          aria-label="Source View"
-          className="bx--btn__icon"
-          fill="currentColor"
-          focusable="false"
-          height={20}
-          preserveAspectRatio="xMidYMid meet"
-          role="img"
-          viewBox="0 0 32 32"
-          width={20}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-          />
-          <path
-            d="M5.91 15H26.080000000000002V17H5.91z"
-            transform="rotate(-75 15.996 16)"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconSwitch selected 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="bx--content-switcher iot--content-switcher--icon"
+    onChange={[Function]}
+    role="tablist"
   >
     <button
+      aria-describedby={null}
       aria-pressed={null}
-      className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+      className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+      data-testid="icon-switch"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
       type="button"
     >
-      <span
+      <div
         className="bx--assistive-text"
+        onMouseEnter={[Function]}
       >
         Graphical View
-      </span>
+      </div>
       <svg
         aria-hidden="true"
         aria-label="Graphical View"
@@ -270,59 +48,83 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
         />
       </svg>
     </button>
+    <button
+      aria-describedby={null}
+      aria-pressed={null}
+      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+      data-testid="icon-switch"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        className="bx--assistive-text"
+        onMouseEnter={[Function]}
+      >
+        Source View
+      </div>
+      <svg
+        aria-hidden="true"
+        aria-label="Source View"
+        className="bx--btn__icon"
+        fill="currentColor"
+        focusable="false"
+        height={20}
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        viewBox="0 0 32 32"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+        />
+        <path
+          d="M5.91 15H26.080000000000002V17H5.91z"
+          transform="rotate(-75 15.996 16)"
+        />
+      </svg>
+    </button>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconSwitch unselected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch example - used in ContentSwitcher light version  1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="bx--content-switcher iot--content-switcher--icon"
+    onChange={[Function]}
+    role="tablist"
   >
     <button
+      aria-describedby={null}
       aria-pressed={null}
-      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+      className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+      data-testid="icon-switch"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
       onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       tabIndex={0}
       type="button"
     >
-      <span
+      <div
         className="bx--assistive-text"
+        onMouseEnter={[Function]}
       >
         Graphical View
-      </span>
+      </div>
       <svg
         aria-hidden="true"
         aria-label="Graphical View"
@@ -341,29 +143,141 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
         />
       </svg>
     </button>
+    <button
+      aria-describedby={null}
+      aria-pressed={null}
+      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+      data-testid="icon-switch"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        className="bx--assistive-text"
+        onMouseEnter={[Function]}
+      >
+        Source View
+      </div>
+      <svg
+        aria-hidden="true"
+        aria-label="Source View"
+        className="bx--btn__icon"
+        fill="currentColor"
+        focusable="false"
+        height={20}
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        viewBox="0 0 32 32"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+        />
+        <path
+          d="M5.91 15H26.080000000000002V17H5.91z"
+          transform="rotate(-75 15.996 16)"
+        />
+      </svg>
+    </button>
   </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch selected 1`] = `
+<div
+  className="storybook-container"
+>
   <button
-    className="info__show-button"
+    aria-describedby={null}
+    aria-pressed={null}
+    className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+    data-testid="icon-switch"
+    disabled={false}
+    onBlur={[Function]}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    tabIndex={0}
     type="button"
   >
-    Show Info
+    <div
+      className="bx--assistive-text"
+      onMouseEnter={[Function]}
+    >
+      Graphical View
+    </div>
+    <svg
+      aria-hidden="true"
+      aria-label="Graphical View"
+      className="bx--btn__icon"
+      fill="currentColor"
+      focusable="false"
+      height={20}
+      preserveAspectRatio="xMidYMid meet"
+      role="img"
+      viewBox="0 0 32 32"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 6H28V8H10zM10 24H28V26H10zM10 15H28V17H10zM4 15H6V17H4zM4 6H6V8H4zM4 24H6V26H4z"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch unselected 1`] = `
+<div
+  className="storybook-container"
+>
+  <button
+    aria-describedby={null}
+    aria-pressed={null}
+    className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+    data-testid="icon-switch"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <div
+      className="bx--assistive-text"
+      onMouseEnter={[Function]}
+    >
+      Graphical View
+    </div>
+    <svg
+      aria-hidden="true"
+      aria-label="Graphical View"
+      className="bx--btn__icon"
+      fill="currentColor"
+      focusable="false"
+      height={20}
+      preserveAspectRatio="xMidYMid meet"
+      role="img"
+      viewBox="0 0 32 32"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 6H28V8H10zM10 24H28V26H10zM10 15H28V17H10zM4 15H6V17H4zM4 6H6V8H4zM4 24H6V26H4z"
+      />
+    </svg>
   </button>
 </div>
 `;

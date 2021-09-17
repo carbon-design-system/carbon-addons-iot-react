@@ -53,7 +53,7 @@ const props = {
 };
 
 export default {
-  title: 'TimePicker',
+  title: '3 - Carbon/TimePicker',
   decorators: [withKnobs],
   parameters: {
     component: TimePicker,

@@ -14,12 +14,10 @@ const acceptableSizes = Object.keys(CARD_SIZES).filter(
 );
 
 export const Experimental = () => <StoryNotice componentName="ComboChartCard" experimental />;
-Experimental.story = {
-  name: experimentalStoryTitle,
-};
+Experimental.storyName = experimentalStoryTitle;
 
 export default {
-  title: 'Watson IoT Experimental/☢️ ComboChartCard',
+  title: '2 - Watson IoT Experimental/☢️ ComboChartCard',
   decorators: [withKnobs],
 
   parameters: {
@@ -28,11 +26,11 @@ export default {
   excludeStories: [],
 };
 
-/* Configuration details: 
+/* Configuration details:
   comboChartTypes.correspondingDatasets should be an array containing the values of series.label
-  This connects a dataset with a comboChartType. 
+  This connects a dataset with a comboChartType.
 
-  For instance: 
+  For instance:
    series: [{
       dataSourceId: 'health',
       label: 'Health',
@@ -56,7 +54,7 @@ export default {
     },
   ]
 
-  The above configuration snippet creates an area chart containing the data 
+  The above configuration snippet creates an area chart containing the data
   from the 'health' dataset, and line chart from the 'age' and 'condition datasets
 */
 
@@ -143,9 +141,7 @@ export const HealthDataAreaLine = () => {
   );
 };
 
-HealthDataAreaLine.story = {
-  name: 'Area/Line with health data',
-};
+HealthDataAreaLine.storyName = 'Area/Line with health data';
 
 export const ExpandedHealthDataAreaLine = () => {
   const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
@@ -230,9 +226,7 @@ export const ExpandedHealthDataAreaLine = () => {
   );
 };
 
-ExpandedHealthDataAreaLine.story = {
-  name: 'Area/Line with expanded health data',
-};
+ExpandedHealthDataAreaLine.storyName = 'Area/Line with expanded health data';
 
 export const ComboChartCardEmpty = () => {
   const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
@@ -253,9 +247,7 @@ export const ComboChartCardEmpty = () => {
   );
 };
 
-ComboChartCardEmpty.story = {
-  name: 'empty',
-};
+ComboChartCardEmpty.storyName = 'empty';
 
 export const ComboChartCardLoading = () => {
   const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
@@ -311,6 +303,4 @@ export const ComboChartCardLoading = () => {
   );
 };
 
-ComboChartCardLoading.story = {
-  name: 'loading',
-};
+ComboChartCardLoading.storyName = 'loading';

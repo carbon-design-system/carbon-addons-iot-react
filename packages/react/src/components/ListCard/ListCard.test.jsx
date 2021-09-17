@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
 import ListCard from './ListCard';
 
@@ -44,6 +45,22 @@ const mockScrollEvent = {
 };
 
 describe('ListCard', () => {
+  it('should be selectable by testID or testId', () => {
+    const { rerender } = render(
+      <ListCard title="Testing" hasMoreData isLoading data={data} testID="LIST_CARD" />
+    );
+
+    expect(screen.getByTestId('LIST_CARD')).toBeDefined();
+    expect(screen.getByTestId('LIST_CARD-list-body')).toBeDefined();
+    expect(screen.getByTestId('LIST_CARD-loading')).toBeDefined();
+
+    rerender(<ListCard title="Testing" hasMoreData isLoading data={data} testID="list_card" />);
+
+    expect(screen.getByTestId('list_card')).toBeDefined();
+    expect(screen.getByTestId('list_card-list-body')).toBeDefined();
+    expect(screen.getByTestId('list_card-loading')).toBeDefined();
+  });
+
   it('calls loadData callback on scroll', () => {
     const onLoadData = jest.fn();
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SkeletonText, Button } from 'carbon-components-react';
+import { SkeletonText } from 'carbon-components-react';
 import warning from 'warning';
 
 import icons, { bundledIconNames } from '../../utils/bundledIcons';
 import { settings } from '../../constants/Settings';
+import Button from '../Button';
 
 const { prefix } = settings;
 
@@ -46,6 +47,8 @@ const propTypes = {
   ),
   /** callback invoked if a dashboard action is clicked */
   onDashboardAction: PropTypes.func,
+
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -57,6 +60,7 @@ const defaultProps = {
   actions: [],
   onDashboardAction: null,
   hasLastUpdated: true,
+  testId: 'dashboard-header',
 };
 
 /** Renders the dashboard header at the top of the dashboard */
@@ -69,6 +73,7 @@ const DashboardHeader = ({
   hasLastUpdated,
   actions,
   onDashboardAction,
+  testId,
 }) => {
   if (__DEV__) {
     warning(
@@ -77,7 +82,7 @@ const DashboardHeader = ({
     );
   }
   return (
-    <div className="dashboard--header">
+    <div data-testid={testId} className="dashboard--header">
       <div className="dashboard--header-left">
         {title ? <h2>{title}</h2> : null}
         {description ? <p>{description}</p> : null}
@@ -107,6 +112,7 @@ const DashboardHeader = ({
                     : action.icon // alternatively you can pass the
                 }
                 iconDescription={action.labelText}
+                testId={`${testId}-button-${action.id}`}
               />
             ) : (
               React.cloneElement(action.customActionComponent, {

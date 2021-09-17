@@ -64,6 +64,10 @@ const defaultProps = {
     // eslint-disable-next-line react/prop-types
     return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
   },
+  // TODO: fix this after v3.
+  // since the default card props aren't merged with the default image card props the
+  // testId is technically undefined here, so we're matching the Card default to maintain backwards compat.
+  testId: 'Card',
 };
 
 const ImageCard = ({
@@ -87,6 +91,9 @@ const ImageCard = ({
   onUpload,
   validateUploadedImage,
   onBrowseClick,
+  // TODO: remove deprecated testID prop in v3.
+  testID,
+  testId,
   ...others
 }) => {
   const [imgContent, setImgContent] = useState(content);
@@ -142,6 +149,9 @@ const ImageCard = ({
       isExpanded={isExpanded}
       isEditable={isEditable}
       resizeHandles={resizeHandles}
+      // TODO: remove deprecated testID prop in v3.
+      testId={testID || testId}
+      locale={locale}
       {...others}
       error={error}
       i18n={mergedI18n}
@@ -175,12 +185,18 @@ const ImageCard = ({
                     )}
                     hasInsertFromUrl={hasInsertFromUrl}
                     validateUploadedImage={validateUploadedImage}
+                    // TODO: remove deprecated testID prop in v3.
+                    testId={`${testID || testId}-image-uploader`}
                   />
                 ) : imgContent.src ? (
                   <ImageHotspots
+                    // Key regen needed for stories that modifies the displayOption
+                    key={imgContent?.displayOption}
                     {...imgContent}
-                    width={width - 16 * 2} // Need to adjust for card chrome
-                    height={height - (48 + 16)} // Need to adjust for card chrome
+                    // Adjust for side padding of iot-image-card__wrapper + border of iot-card--wrapper
+                    width={width - (16 * 2 + 4)}
+                    // Adjust for bottom padding of iot-image-card__wrapper + border of iot-card--wrapper
+                    height={height - (16 + 4)}
                     isExpanded={isExpanded}
                     hotspots={hotspots}
                     isHotspotDataLoading={isLoading}
@@ -195,9 +211,15 @@ const ImageCard = ({
                       'titlePlaceholderText',
                       'titleEditableHintText'
                     )}
+                    // TODO: remove deprecated testID prop in v3.
+                    testId={`${testID || testId}-image-hotspots`}
                   />
                 ) : (
-                  <div className={`${iotPrefix}--image-card__empty`} i>
+                  <div
+                    // TODO: remove deprecated testID prop in v3.
+                    data-testid={`${testID || testId}-empty`}
+                    className={`${iotPrefix}--image-card__empty`}
+                  >
                     <Image32 width={250} height={250} fill="gray" />
                   </div>
                 )

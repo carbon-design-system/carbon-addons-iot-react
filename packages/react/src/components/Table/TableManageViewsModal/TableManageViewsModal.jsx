@@ -8,6 +8,7 @@ import { Search } from '../../Search';
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 import { SimplePaginationPropTypes } from '../../SimplePagination/SimplePagination';
+import deprecate from '../../../internal/deprecate';
 
 import TableManageViewsList from './TableManageViewsList';
 import { ViewsPropType } from './SharedTableManageViewsModalPropTypes';
@@ -71,8 +72,14 @@ const propTypes = {
   }),
   /** pagination at the bottom of list, see SimplePaginationPropTypes */
   pagination: PropTypes.shape(SimplePaginationPropTypes),
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id that can be used for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
   /** The views to be displayed in the list, see ViewsPropType */
   views: ViewsPropType.isRequired,
 };
@@ -101,7 +108,7 @@ const defaultProps = {
   isLoading: false,
   overrides: undefined,
   searchValueDefault: '',
-  testID: 'TableManageViewsModal',
+  testId: 'TableManageViewsModal',
   pagination: undefined,
 };
 
@@ -136,7 +143,9 @@ const TableManageViewsModal = ({
   overrides,
   pagination,
   searchValueDefault,
+  // TODO: remove deprecated 'testID' in v3.
   testID,
+  testId,
   views,
 }) => {
   const primaryInputId = 'manage-views-modal-search';
@@ -163,7 +172,8 @@ const TableManageViewsModal = ({
     <>
       <MyMainModal
         className={`${iotPrefix}--manage-views-modal`}
-        testID={testID}
+        // TODO: remove deprecated 'testID' in v3.
+        testID={testID || testId}
         error={error}
         header={{
           title: modalTitle,
@@ -192,7 +202,8 @@ const TableManageViewsModal = ({
           />
           <MyPublicCheckbox
             name="isPublic"
-            data-testid={`${testID}-public-checkbox`}
+            // TODO: remove deprecated 'testID' in v3.
+            data-testid={`${testID || testId}-public-checkbox`}
             defaultChecked={displayPublicDefaultChecked}
             id="manage-views-modal-public-checkbox-label"
             labelText={publicCheckboxLabelText}
@@ -208,7 +219,8 @@ const TableManageViewsModal = ({
           onEdit={onEdit}
           onDelete={onShowWarning}
           pagination={pagination}
-          testID={`${testID}-views-list`}
+          // TODO: remove deprecated 'testID' in v3.
+          testID={`${testID || testId}-views-list`}
           views={views}
           {...overrides?.tableManageViewsList?.props}
         />

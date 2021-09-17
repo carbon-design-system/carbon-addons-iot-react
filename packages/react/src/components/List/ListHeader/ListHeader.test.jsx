@@ -6,7 +6,7 @@ import ListHeader from './ListHeader';
 
 describe('ListHeader', () => {
   it('ListHeader gets rendered', () => {
-    render(<ListHeader title="List Header" i18n={{}} />);
+    render(<ListHeader title="List Header" />);
     expect(screen.getByText('List Header')).toBeTruthy();
   });
 
@@ -17,7 +17,7 @@ describe('ListHeader', () => {
   });
 
   it('ListHeader with no title', () => {
-    render(<ListHeader i18n={{}} />);
+    render(<ListHeader />);
     expect(screen.queryByText('List Header')).toBeNull();
   });
 

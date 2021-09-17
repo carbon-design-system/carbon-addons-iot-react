@@ -30,7 +30,7 @@ export const getTiles = (num) => {
 };
 
 export default {
-  title: 'Watson IoT/TileCatalogNew',
+  title: '1 - Watson IoT/TileCatalogNew',
 
   parameters: {
     component: TileCatalogNew,
@@ -53,9 +53,7 @@ export const BaseWithColRowSpecified = () => {
   );
 };
 
-BaseWithColRowSpecified.story = {
-  name: 'Base with col / row specified',
-};
+BaseWithColRowSpecified.storyName = 'Base with col / row specified';
 
 export const DynamicResizeWithTileWidthSpecification = () => {
   const numOfTiles = number('number of tiles', 5);
@@ -72,9 +70,7 @@ export const DynamicResizeWithTileWidthSpecification = () => {
   );
 };
 
-DynamicResizeWithTileWidthSpecification.story = {
-  name: 'Dynamic resize with tile width specification',
-};
+DynamicResizeWithTileWidthSpecification.storyName = 'Dynamic resize with tile width specification';
 
 export const Loading = () => {
   const numOfTiles = number('number of tiles', 4);
@@ -124,9 +120,7 @@ export const WithOverflowMenuInPagination = () => {
   );
 };
 
-WithOverflowMenuInPagination.story = {
-  name: 'With OverflowMenu in Pagination',
-};
+WithOverflowMenuInPagination.storyName = 'With OverflowMenu in Pagination';
 
 export const WithSearch = () => (
   <div style={{ width: '60rem' }}>
@@ -212,6 +206,4 @@ export const _StatefulTileCatalog = () => {
   return <StatefulTileCatalog />;
 };
 
-_StatefulTileCatalog.story = {
-  name: 'StatefulTileCatalog',
-};
+_StatefulTileCatalog.storyName = 'StatefulTileCatalog';

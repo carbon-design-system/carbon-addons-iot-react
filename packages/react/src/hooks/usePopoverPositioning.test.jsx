@@ -359,7 +359,10 @@ describe('usePopoverPositioning', () => {
     const trigger = screen.getByRole('button');
     trigger.children[0].getBoundingClientRect = generateBoundingClientRect({ x: 20, y: 300 });
     fireEvent.click(trigger);
-    expect(screen.getByRole('tooltip')).toHaveAttribute('data-floating-menu-direction', 'right');
+    expect(screen.getByRole('dialog').parentNode).toHaveAttribute(
+      'data-floating-menu-direction',
+      'right'
+    );
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
@@ -379,7 +382,10 @@ describe('usePopoverPositioning', () => {
     const trigger = screen.getByRole('button');
     trigger.children[0].getBoundingClientRect = generateBoundingClientRect({ x: 1000, y: 300 });
     fireEvent.click(trigger);
-    expect(screen.getByRole('tooltip')).toHaveAttribute('data-floating-menu-direction', 'left');
+    expect(screen.getByRole('dialog').parentNode).toHaveAttribute(
+      'data-floating-menu-direction',
+      'left'
+    );
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
@@ -399,7 +405,10 @@ describe('usePopoverPositioning', () => {
     const trigger = screen.getByRole('button');
     trigger.children[0].getBoundingClientRect = generateBoundingClientRect({ x: 300, y: 20 });
     fireEvent.click(trigger);
-    expect(screen.getByRole('tooltip')).toHaveAttribute('data-floating-menu-direction', 'bottom');
+    expect(screen.getByRole('dialog').parentNode).toHaveAttribute(
+      'data-floating-menu-direction',
+      'bottom'
+    );
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
@@ -419,7 +428,10 @@ describe('usePopoverPositioning', () => {
     const trigger = screen.getByRole('button');
     trigger.children[0].getBoundingClientRect = generateBoundingClientRect({ x: 300, y: 700 });
     fireEvent.click(trigger);
-    expect(screen.getByRole('tooltip')).toHaveAttribute('data-floating-menu-direction', 'top');
+    expect(screen.getByRole('dialog').parentNode).toHaveAttribute(
+      'data-floating-menu-direction',
+      'top'
+    );
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
@@ -439,7 +451,10 @@ describe('usePopoverPositioning', () => {
     const trigger = screen.getByRole('button');
     trigger.children[0].getBoundingClientRect = generateBoundingClientRect({ x: 300, y: 700 });
     fireEvent.click(trigger);
-    expect(screen.getByRole('tooltip')).toHaveAttribute('data-floating-menu-direction', 'bottom');
+    expect(screen.getByRole('dialog').parentNode).toHaveAttribute(
+      'data-floating-menu-direction',
+      'bottom'
+    );
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 

@@ -33,11 +33,16 @@ const propTypes = {
   defaultTimegroup: PropTypes.oneOf([TIMEGROUPS.HOURS, TIMEGROUPS.MINUTES]),
   /** All the labels that need translation */
   i18n: PropTypes.shape({
-    increment: PropTypes.string,
-    decrement: PropTypes.string,
+    /** String for word 'increment' or function receiving the unit as param:
+     * (timeUnit) => `Increment ${timeUnit}` */
+    increment: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    /** String for word 'decrement' or function receiving the unit as param:
+     * (timeUnit) => `Decrement ${timeUnit}` */
+    decrement: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     hours: PropTypes.string,
     minutes: PropTypes.string,
   }),
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -55,7 +60,11 @@ const defaultProps = {
     hours: 'hours',
     minutes: 'minutes',
   },
+  testId: 'time-picker-spinner',
 };
+
+const getButtonLabel = (text, timeUnit) =>
+  typeof text === 'function' ? text(timeUnit) : `${text} ${timeUnit}`;
 
 const TimePickerSpinner = ({
   spinner,
@@ -67,6 +76,7 @@ const TimePickerSpinner = ({
   is12hour,
   defaultTimegroup,
   i18n,
+  testId,
   ...others
 }) => {
   const [pickerValue, setPickerValue] = useState(value || '');
@@ -207,6 +217,7 @@ const TimePickerSpinner = ({
 
   return (
     <div
+      data-testid={`${testId}-wrapper`}
       className={classnames(`${iotPrefix}--time-picker__wrapper`, {
         [`${iotPrefix}--time-picker__wrapper--with-spinner`]: spinner,
         [`${iotPrefix}--time-picker__wrapper--updown`]: keyUpOrDownPosition > -1,
@@ -223,6 +234,7 @@ const TimePickerSpinner = ({
         onKeyUp={onInputKeyUp}
         onBlur={onInputBlur}
         disabled={disabled}
+        data-testid={testId}
         {...others}
       >
         {children}
@@ -238,9 +250,10 @@ const TimePickerSpinner = ({
               onBlur={() => onArrowStopInteract(true)}
               aria-live="polite"
               aria-atomic="true"
-              title={`${i18n.increment} ${timeGroupForLabel}`}
-              aria-label={`${i18n.increment} ${timeGroupForLabel}`}
+              title={getButtonLabel(i18n.increment, timeGroupForLabel)}
+              aria-label={getButtonLabel(i18n.increment, timeGroupForLabel)}
               disabled={disabled}
+              data-testid={`${testId}-up-button`}
             >
               <CaretUpGlyph className="up-icon" />
             </button>
@@ -254,9 +267,10 @@ const TimePickerSpinner = ({
               onBlur={() => onArrowStopInteract(true)}
               aria-live="polite"
               aria-atomic="true"
-              title={`${i18n.decrement} ${timeGroupForLabel}`}
-              aria-label={`${i18n.decrement} ${timeGroupForLabel}`}
+              title={getButtonLabel(i18n.decrement, timeGroupForLabel)}
+              aria-label={getButtonLabel(i18n.decrement, timeGroupForLabel)}
               disabled={disabled}
+              data-testid={`${testId}-down-button`}
             >
               <CaretDownGlyph className="down-icon" />
             </button>

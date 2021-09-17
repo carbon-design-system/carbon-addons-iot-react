@@ -74,6 +74,7 @@ const propTypes = {
   ),
   validDataItems: DataItemsPropTypes,
   isSummaryDashboard: PropTypes.bool,
+  isLarge: PropTypes.bool,
   i18n: PropTypes.shape({
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemLabel: PropTypes.string,
@@ -83,6 +84,9 @@ const propTypes = {
     dataItem: PropTypes.string,
     edit: PropTypes.string,
     dataItemEditorDataItemCustomLabel: PropTypes.string,
+    /** Function receiving the dataItemSource & dataItemId as params:
+     * (dataItemSource, dataItemId) => `${dataItemSource}: ${dataItemId}` */
+    dataItemEditorDataItemHelperText: PropTypes.func,
     dataItemEditorDataItemUnit: PropTypes.string,
     dataItemEditorDataItemFilter: PropTypes.string,
     dataItemEditorDataItemThresholds: PropTypes.string,
@@ -108,6 +112,8 @@ const defaultProps = {
     notSet: 'Not set',
     none: 'None',
     dataItemEditorDataItemCustomLabel: 'Custom label',
+    dataItemEditorDataItemHelperText: (dataItemSource, dataItemId) =>
+      `${dataItemSource}: ${dataItemId}`,
     dataItemEditorDataItemUnit: 'Unit',
     dataItemEditorDataItemFilter: 'Data filter',
     dataItemEditorDataItemThresholds: 'Thresholds',
@@ -134,6 +140,7 @@ const defaultProps = {
   editDataItem: {},
   setEditDataItem: null,
   isSummaryDashboard: false,
+  isLarge: false,
   validDataItems: [],
 };
 
@@ -164,6 +171,7 @@ const DataSeriesFormItemModal = ({
   availableDimensions,
   onChange,
   i18n,
+  isLarge,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
@@ -315,7 +323,10 @@ const DataSeriesFormItemModal = ({
                 })
               }
               value={editDataItem.label}
-              helperText={`${mergedI18n.dataItemSource}: ${editDataItem.dataItemId}`}
+              helperText={mergedI18n.dataItemEditorDataItemHelperText(
+                mergedI18n.dataItemSource,
+                editDataItem.dataItemId
+              )}
             />
           </div>
 
@@ -546,6 +557,7 @@ const DataSeriesFormItemModal = ({
                   : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
             size="xs"
+            isLarge={isLarge}
             footer={{
               primaryButtonLabel: mergedI18n.primaryButtonLabelText,
               secondaryButtonLabel: mergedI18n.secondaryButtonLabelText,

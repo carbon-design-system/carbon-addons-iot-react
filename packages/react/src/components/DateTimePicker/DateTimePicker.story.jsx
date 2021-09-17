@@ -6,14 +6,14 @@ import { spacing06 } from '@carbon/layout';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-
-// eslint-disable-next-line no-unused-vars
-import DateTimePicker, {
+import {
   INTERVAL_VALUES,
   RELATIVE_VALUES,
   PICKER_KINDS,
   PRESET_VALUES,
-} from './DateTimePicker';
+} from '../../constants/DateConstants';
+
+import DateTimePicker from './DateTimePicker';
 
 export const defaultRelativeValue = {
   timeRangeKind: PICKER_KINDS.RELATIVE,
@@ -36,7 +36,12 @@ export const defaultAbsoluteValue = {
 };
 
 export default {
-  title: 'Watson IoT/DateTime Picker',
+  title: '1 - Watson IoT/DateTime Picker',
+  parameters: {
+    docs: {
+      inlineStories: false,
+    },
+  },
   excludeStories: ['defaultRelativeValue', 'defaultAbsoluteValue'],
 };
 
@@ -87,9 +92,7 @@ export const SelectedPreset = () => {
   );
 };
 
-SelectedPreset.story = {
-  name: 'Selected preset',
-};
+SelectedPreset.storyName = 'Selected preset';
 
 export const SelectedRelative = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
@@ -111,9 +114,7 @@ export const SelectedRelative = () => {
   );
 };
 
-SelectedRelative.story = {
-  name: 'Selected relative',
-};
+SelectedRelative.storyName = 'Selected relative';
 
 export const SelectedAbsolute = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
@@ -135,9 +136,7 @@ export const SelectedAbsolute = () => {
   );
 };
 
-SelectedAbsolute.story = {
-  name: 'Selected absolute',
-};
+SelectedAbsolute.storyName = 'Selected absolute';
 
 export const WithoutARelativeOption = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
@@ -163,9 +162,7 @@ export const WithoutARelativeOption = () => {
   );
 };
 
-WithoutARelativeOption.story = {
-  name: 'Without a relative option',
-};
+WithoutARelativeOption.storyName = 'Without a relative option';
 
 export const WithoutACustomRangeLink = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
@@ -191,9 +188,7 @@ export const WithoutACustomRangeLink = () => {
   );
 };
 
-WithoutACustomRangeLink.story = {
-  name: 'Without a custom range link',
-};
+WithoutACustomRangeLink.storyName = 'Without a custom range link';
 
 export const LightVersion = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
@@ -220,6 +215,24 @@ export const LightVersion = () => {
   );
 };
 
-LightVersion.story = {
-  name: 'Light version',
+LightVersion.storyName = 'Light version';
+
+export const Locale = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <DateTimePicker
+        id="datetimepicker25"
+        dateTimeMask={text('dateTimeMask', 'L HH:mm')}
+        locale={select('locale', ['en', 'fr', 'ja'], 'fr')}
+        defaultValue={defaultAbsoluteValue}
+        hasTimeInput={boolean('hasTimeInput', true)}
+      />
+    </div>
+  );
 };

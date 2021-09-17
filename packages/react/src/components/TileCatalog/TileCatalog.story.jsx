@@ -60,7 +60,7 @@ export const commonTileCatalogProps = {
 };
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ TileCatalog' : 'Watson IoT/TileCatalog',
+  title: '1 - Watson IoT/TileCatalog',
   excludeStories: ['commonTileCatalogProps'],
 };
 
@@ -75,9 +75,7 @@ export const Default = () => (
   />
 );
 
-Default.story = {
-  name: 'default',
-};
+Default.storyName = 'default';
 
 export const WithSearch = () => (
   // Example stateful catalog component that can search
@@ -91,9 +89,7 @@ export const WithSearch = () => (
   />
 );
 
-WithSearch.story = {
-  name: 'with search',
-};
+WithSearch.storyName = 'with search';
 
 export const WithPages = () => (
   <StatefulTileCatalog
@@ -107,15 +103,11 @@ export const WithPages = () => (
   />
 );
 
-WithPages.story = {
-  name: 'with pages',
-};
+WithPages.storyName = 'with pages';
 
 export const Loading = () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />;
 
-Loading.story = {
-  name: 'loading',
-};
+Loading.storyName = 'loading';
 
 export const Error = () => (
   <FullWidthWrapper>
@@ -123,9 +115,7 @@ export const Error = () => (
   </FullWidthWrapper>
 );
 
-Error.story = {
-  name: 'error',
-};
+Error.storyName = 'error';
 
 export const AsyncLoadedWaitOneSecond = () => {
   const Container = () => {
@@ -146,14 +136,10 @@ export const AsyncLoadedWaitOneSecond = () => {
   return <Container />;
 };
 
-AsyncLoadedWaitOneSecond.story = {
-  name: 'async loaded wait one second',
-};
+AsyncLoadedWaitOneSecond.storyName = 'async loaded wait one second';
 
 export const IsSelectedByDefaultFalse = () => (
   <StatefulTileCatalog {...commonTileCatalogProps} isSelectedByDefault={false} />
 );
 
-IsSelectedByDefaultFalse.story = {
-  name: 'isSelectedByDefault false',
-};
+IsSelectedByDefaultFalse.storyName = 'isSelectedByDefault false';

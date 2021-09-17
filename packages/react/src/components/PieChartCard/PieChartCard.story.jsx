@@ -48,7 +48,7 @@ const chartDataExample = [
 ];
 
 export default {
-  title: 'Watson IoT/PieChartCard',
+  title: '1 - Watson IoT/PieChartCard',
 
   parameters: {
     component: PieChartCard,
@@ -82,9 +82,7 @@ export const Basic = () => {
   );
 };
 
-Basic.story = {
-  name: 'basic',
-};
+Basic.storyName = 'basic';
 
 export const WithCardVariables = () => {
   const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
@@ -119,9 +117,7 @@ export const WithCardVariables = () => {
   );
 };
 
-WithCardVariables.story = {
-  name: 'with CardVariables',
-};
+WithCardVariables.storyName = 'with CardVariables';
 
 export const CustomColors = () => {
   const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
@@ -158,9 +154,7 @@ export const CustomColors = () => {
   );
 };
 
-CustomColors.story = {
-  name: 'custom colors',
-};
+CustomColors.storyName = 'custom colors';
 
 export const CustomLabels = () => {
   const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
@@ -192,9 +186,7 @@ export const CustomLabels = () => {
   );
 };
 
-CustomLabels.story = {
-  name: 'custom labels',
-};
+CustomLabels.storyName = 'custom labels';
 
 export const CustomTooltip = () => {
   const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
@@ -226,9 +218,7 @@ export const CustomTooltip = () => {
   );
 };
 
-CustomTooltip.story = {
-  name: 'custom tooltip',
-};
+CustomTooltip.storyName = 'custom tooltip';
 
 export const NoData = () => {
   const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
@@ -256,9 +246,7 @@ export const NoData = () => {
   );
 };
 
-NoData.story = {
-  name: 'no data',
-};
+NoData.storyName = 'no data';
 
 export const AdvancedCustomisationUsingOverrides = () => {
   return (
@@ -316,6 +304,4 @@ export const AdvancedCustomisationUsingOverrides = () => {
   );
 };
 
-AdvancedCustomisationUsingOverrides.story = {
-  name: 'advanced customisation using overrides',
-};
+AdvancedCustomisationUsingOverrides.storyName = 'advanced customisation using overrides';

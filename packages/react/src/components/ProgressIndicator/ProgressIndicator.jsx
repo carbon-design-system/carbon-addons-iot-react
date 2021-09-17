@@ -37,6 +37,7 @@ const ProgressStep = ({
   incomplete,
   mainStep,
   subStep,
+  spaceEqually,
 }) => {
   const accessible = isClickable && !disabled && !current;
 
@@ -53,10 +54,14 @@ const ProgressStep = ({
   };
 
   const getStepWidth = () => {
-    if (stepWidth != null && stepWidth > 0) {
+    if (stepWidth != null && stepWidth > 0 && !spaceEqually) {
       return vertical
         ? { height: `${stepWidth}rem`, minHeight: `${stepWidth}rem` }
         : { width: `${stepWidth}rem`, minWidth: `${stepWidth}rem` };
+    }
+
+    if (spaceEqually) {
+      return { flexGrow: 1 };
     }
     return undefined;
   };
@@ -122,7 +127,9 @@ const ProgressStep = ({
 
   const StepSecondaryLabel = () => {
     return secondaryLabel !== null && secondaryLabel !== undefined ? (
-      <p className={`${iotPrefix}--progress-text-label--optional`}>{secondaryLabel}</p>
+      <p className={`${iotPrefix}--progress-text-label--optional`} title={secondaryLabel}>
+        {secondaryLabel}
+      </p>
     ) : null;
   };
 
@@ -201,6 +208,7 @@ ProgressStep.propTypes = {
   mainStep: PropTypes.bool,
   subStep: PropTypes.bool,
   onClick: PropTypes.func,
+  spaceEqually: PropTypes.bool,
 };
 
 ProgressStep.defaultProps = {
@@ -221,6 +229,7 @@ ProgressStep.defaultProps = {
   mainStep: false,
   subStep: false,
   onClick: null,
+  spaceEqually: false,
 };
 
 const ProgressIndicator = ({
@@ -232,6 +241,8 @@ const ProgressIndicator = ({
   stepWidth,
   isClickable,
   onClickItem,
+  testId,
+  spaceEqually,
 }) => {
   const [currentStep, setCurrentStep] = useState(currentItemId || items[0].id);
 
@@ -291,7 +302,7 @@ const ProgressIndicator = ({
   });
 
   return newItems.length > 1 ? (
-    <ul className={classes} data-testid={`${iotPrefix}--progress-indicator-testid`}>
+    <ul className={classes} data-testid={testId}>
       {newItems.map(
         (
           { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
@@ -317,6 +328,7 @@ const ProgressIndicator = ({
             disabled={disabled}
             invalid={invalid}
             isClickable={isClickable}
+            spaceEqually={spaceEqually}
           />
         )
       )}
@@ -342,6 +354,9 @@ ProgressIndicator.propTypes = {
   isVerticalMode: PropTypes.bool,
   isClickable: PropTypes.bool,
   onClickItem: PropTypes.func,
+  testId: PropTypes.string,
+  /** Specify whether the progress steps should be split equally in size in the div */
+  spaceEqually: PropTypes.bool,
 };
 
 ProgressIndicator.defaultProps = {
@@ -353,6 +368,8 @@ ProgressIndicator.defaultProps = {
   isVerticalMode: false,
   isClickable: false,
   onClickItem: null,
+  testId: `${iotPrefix}--progress-indicator-testid`,
+  spaceEqually: false,
 };
 
 export default ProgressIndicator;

@@ -6,10 +6,12 @@ import classnames from 'classnames';
 import { settings } from '../../../constants/Settings';
 import { Dropdown } from '../../Dropdown';
 import Button from '../../Button/Button';
+import deprecate from '../../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
 const propTypes = {
+  /** List of data source objects. The same list is used for bothe the x and the y coordinate dropdown */
   dataSourceItems: PropTypes.arrayOf(
     PropTypes.shape({
       dataSourceId: PropTypes.string,
@@ -23,7 +25,12 @@ const propTypes = {
   onYValueChange: PropTypes.func.isRequired,
   selectedSourceIdX: PropTypes.string,
   selectedSourceIdY: PropTypes.string,
-  testID: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
   i18n: PropTypes.shape({
     clearIconDescription: PropTypes.string,
     xCoordinateDropdownTitleText: PropTypes.string,
@@ -38,7 +45,7 @@ const defaultProps = {
   id: 'dynamic-hotspot-source-picker',
   selectedSourceIdX: undefined,
   selectedSourceIdY: undefined,
-  testID: 'dynamic-hotspot-source-picker',
+  testId: 'dynamic-hotspot-source-picker',
   i18n: {
     clearIconDescription: 'Clear coordinate sources',
     xCoordinateDropdownTitleText: 'X coordinate',
@@ -60,7 +67,9 @@ const DynamicHotspotSourcePicker = ({
   onYValueChange,
   selectedSourceIdX,
   selectedSourceIdY,
+  // TODO: remove deprecated testID prop in v3.
   testID,
+  testId,
   i18n,
   translateWithId,
 }) => {
@@ -74,10 +83,10 @@ const DynamicHotspotSourcePicker = ({
     yCoordinateDropdownLabelText,
   } = mergedI18n;
   return (
-    <div data-testid={testID} className={classname}>
+    <div data-testid={testID || testId} className={classname}>
       <Dropdown
         key={`${id}-x-coordinate-dropdown-${selectedSourceIdX}`}
-        data-testid={`${testID}-x-coordinate-dropdown`}
+        data-testid={`${testID || testId}-x-coordinate-dropdown`}
         selectedItem={dataSourceItems.find((item) => item.dataSourceId === selectedSourceIdX)}
         id={`${id}-x-coordinate-dropdown`}
         titleText={xCoordinateDropdownTitleText}
@@ -91,7 +100,7 @@ const DynamicHotspotSourcePicker = ({
       />
       <Dropdown
         key={`${id}-y-coordinate-dropdown-${selectedSourceIdY}`}
-        data-testid={`${testID}-y-coordinate-dropdown`}
+        data-testid={`${testID || testId}-y-coordinate-dropdown`}
         selectedItem={dataSourceItems.find((item) => item.dataSourceId === selectedSourceIdY)}
         id={`${id}-y-coordinate-dropdown`}
         titleText={yCoordinateDropdownTitleText}
@@ -105,7 +114,7 @@ const DynamicHotspotSourcePicker = ({
       />
       {
         <Button
-          testID={`${testID}-clear-dropdown`}
+          testId={`${testID || testId}-clear-dropdown`}
           className={classnames(`${classname}__clear-button`, {
             [`${classname}__clear-button--invisible`]: !selectedSourceIdX || !selectedSourceIdY,
           })}

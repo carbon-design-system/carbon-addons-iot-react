@@ -24,6 +24,17 @@ describe('PageWizard', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
+
+  it('should be selectable by testId', () => {
+    render(
+      <PageWizard currentStepId="step1" {...mocks} testId="page_wizard">
+        {content}
+      </PageWizard>
+    );
+    expect(screen.getByTestId('page_wizard')).toBeDefined();
+    expect(screen.getByTestId('page_wizard-content')).toBeDefined();
+  });
+
   it('error states', () => {
     render(
       <PageWizard error="My Custom Error" currentStepId="step1" {...mocks} i18n={i18n}>

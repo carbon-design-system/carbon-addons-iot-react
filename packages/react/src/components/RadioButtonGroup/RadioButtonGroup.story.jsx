@@ -51,7 +51,7 @@ const props = {
 };
 
 export default {
-  title: 'RadioButtonGroup',
+  title: '3 - Carbon/RadioButtonGroup',
   decorators: [withKnobs],
 
   parameters: {

@@ -1,940 +1,828 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar example with workArea 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/NavigationBar example with workArea 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="NavigationBarstory__StyledDirections-sbka37-0 vDQxp"
+  >
+    To interact with the workarea, click the New Entity Type button. To close the workarea, click the Cancel button or finish the flow.
+  </div>
+  <div
+    className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+    data-testid="navigation-bar"
   >
     <div
-      className="NavigationBarstory__StyledDirections-sbka37-0 vDQxp"
+      className="page-title-bar"
+      data-testid="page-title-bar"
+      style={
+        Object {
+          "--header-offset": "48px",
+          "--scroll-transition-progress": 1,
+        }
+      }
     >
-      To interact with the workarea, click the New Entity Type button. To close the workarea, click the Cancel button or finish the flow.
+      <div
+        className="page-title-bar-header"
+      >
+        <div
+          className="page-title-bar-breadcrumb-bg"
+        />
+        <div
+          className="page-title-bar-title"
+        >
+          <div
+            className="page-title-bar-title--text"
+          >
+            <h2
+              title="Your Devices"
+            >
+              Your Devices
+            </h2>
+          </div>
+        </div>
+        <p
+          className="page-title-bar-description"
+        >
+          Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+        </p>
+        <div
+          className="page-title-bar-header-right"
+        >
+          <div>
+            Extra Content
+          </div>
+        </div>
+      </div>
     </div>
     <div
-      className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+      className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
     >
       <div
-        className="page-title-bar"
-        style={
-          Object {
-            "--header-offset": "48px",
-            "--scroll-transition-progress": 1,
-          }
-        }
-      >
-        <div
-          className="page-title-bar-header"
-        >
-          <div
-            className="page-title-bar-breadcrumb-bg"
-          />
-          <div
-            className="page-title-bar-title"
-          >
-            <div
-              className="page-title-bar-title--text"
-            >
-              <h2
-                title="Your Devices"
-              >
-                Your Devices
-              </h2>
-            </div>
-          </div>
-          <p
-            className="page-title-bar-description"
-          >
-            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-          </p>
-          <div
-            className="page-title-bar-header-right"
-          >
-            <div>
-              Extra Content
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
-      >
-        <div
-          className="bx--tabs--scrollable"
-          hidden={false}
-          onScroll={[Function]}
-          selected={0}
-        >
-          <button
-            aria-hidden="true"
-            aria-label="Scroll left"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-              />
-            </svg>
-          </button>
-          <ul
-            className="bx--tabs--scrollable__nav"
-            role="tablist"
-            tabIndex={-1}
-          >
-            <li
-              className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="presentation"
-            >
-              <button
-                aria-controls="tab-25__panel"
-                aria-selected={true}
-                className="bx--tabs--scrollable__nav-link"
-                href="#"
-                id="tab-25"
-                role="tab"
-                tabIndex={0}
-                type="button"
-              >
-                Tab 1
-              </button>
-            </li>
-            <li
-              className="bx--tabs--scrollable__nav-item"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="presentation"
-            >
-              <button
-                aria-controls="tab-26__panel"
-                aria-selected={false}
-                className="bx--tabs--scrollable__nav-link"
-                href="#"
-                id="tab-26"
-                role="tab"
-                tabIndex={-1}
-                type="button"
-              >
-                Tab 2
-              </button>
-            </li>
-          </ul>
-          <button
-            aria-hidden="true"
-            aria-label="Scroll right"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--tab-content"
-          hidden={false}
-          role="tabpanel"
-          selected={true}
-          tabIndex={0}
-        >
-          <div
-            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
-          >
-            <div
-              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
-            >
-              my content
-            </div>
-          </div>
-        </div>
-        <div
-          className="bx--tab-content"
-          hidden={true}
-          role="tabpanel"
-          selected={false}
-          tabIndex={0}
-        >
-          <div
-            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
-          >
-            <div
-              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
-            >
-              my content2
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
+        className="bx--tabs--scrollable"
+        data-testid="navigation-bar-tabs"
+        hidden={false}
+        onScroll={[Function]}
+        selected={0}
       >
         <button
-          aria-pressed={null}
-          className="bx--btn bx--btn--primary"
-          disabled={false}
+          aria-hidden="true"
+          aria-label="Scroll left"
+          className="bx--tab--overflow-nav-button--hidden"
           onClick={[Function]}
-          tabIndex={0}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex="-1"
           type="button"
         >
-          New Entity Type
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+            />
+          </svg>
+        </button>
+        <ul
+          className="bx--tabs--scrollable__nav"
+          role="tablist"
+          tabIndex={-1}
+        >
+          <li
+            className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="presentation"
+          >
+            <button
+              aria-selected={true}
+              className="bx--tabs--scrollable__nav-link"
+              href="#"
+              role="tab"
+              tabIndex={0}
+              type="button"
+            >
+              Tab 1
+            </button>
+          </li>
+          <li
+            className="bx--tabs--scrollable__nav-item"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="presentation"
+          >
+            <button
+              aria-selected={false}
+              className="bx--tabs--scrollable__nav-link"
+              href="#"
+              role="tab"
+              tabIndex={-1}
+              type="button"
+            >
+              Tab 2
+            </button>
+          </li>
+        </ul>
+        <button
+          aria-hidden="true"
+          aria-label="Scroll right"
+          className="bx--tab--overflow-nav-button--hidden"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex="-1"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+            />
+          </svg>
         </button>
       </div>
+      <div
+        className="bx--tab-content"
+        hidden={false}
+        role="tabpanel"
+        selected={true}
+        tabIndex={0}
+      >
+        <div
+          className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+        >
+          <div
+            className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+          >
+            my content
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--tab-content"
+        hidden={true}
+        role="tabpanel"
+        selected={false}
+        tabIndex={0}
+      >
+        <div
+          className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+        >
+          <div
+            className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+          >
+            my content2
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
+      data-testid="navigation-bar-actions"
+    >
+      <button
+        aria-describedby={null}
+        aria-pressed={null}
+        className="iot--btn bx--btn bx--btn--primary"
+        data-testid="navigation-bar-button-button1"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        New Entity Type
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/NavigationBar normal 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+    data-testid="navigation-bar"
   >
     <div
-      className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+      className="page-title-bar"
+      data-testid="page-title-bar"
+      style={
+        Object {
+          "--header-offset": "48px",
+          "--scroll-transition-progress": 1,
+        }
+      }
     >
       <div
-        className="page-title-bar"
-        style={
-          Object {
-            "--header-offset": "48px",
-            "--scroll-transition-progress": 1,
-          }
-        }
+        className="page-title-bar-header"
       >
         <div
-          className="page-title-bar-header"
+          className="page-title-bar-breadcrumb-bg"
+        />
+        <div
+          className="page-title-bar-title"
         >
           <div
-            className="page-title-bar-breadcrumb-bg"
-          />
-          <div
-            className="page-title-bar-title"
+            className="page-title-bar-title--text"
           >
-            <div
-              className="page-title-bar-title--text"
+            <h2
+              title="Your Devices"
             >
-              <h2
-                title="Your Devices"
-              >
-                Your Devices
-              </h2>
-            </div>
+              Your Devices
+            </h2>
           </div>
-          <p
-            className="page-title-bar-description"
+        </div>
+        <p
+          className="page-title-bar-description"
+        >
+          Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+        </p>
+        <div
+          className="page-title-bar-header-right"
+        >
+          <div>
+            Extra Content
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
+    >
+      <div
+        className="bx--tabs--scrollable"
+        data-testid="navigation-bar-tabs"
+        hidden={false}
+        onScroll={[Function]}
+        selected={0}
+      >
+        <button
+          aria-hidden="true"
+          aria-label="Scroll left"
+          className="bx--tab--overflow-nav-button--hidden"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex="-1"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-          </p>
+            <path
+              d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+            />
+          </svg>
+        </button>
+        <ul
+          className="bx--tabs--scrollable__nav"
+          role="tablist"
+          tabIndex={-1}
+        >
+          <li
+            className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="presentation"
+          >
+            <button
+              aria-selected={true}
+              className="bx--tabs--scrollable__nav-link"
+              href="#"
+              role="tab"
+              tabIndex={0}
+              type="button"
+            >
+              Tab 1
+            </button>
+          </li>
+          <li
+            className="bx--tabs--scrollable__nav-item"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="presentation"
+          >
+            <button
+              aria-selected={false}
+              className="bx--tabs--scrollable__nav-link"
+              href="#"
+              role="tab"
+              tabIndex={-1}
+              type="button"
+            >
+              Tab 2
+            </button>
+          </li>
+        </ul>
+        <button
+          aria-hidden="true"
+          aria-label="Scroll right"
+          className="bx--tab--overflow-nav-button--hidden"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex="-1"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--tab-content"
+        hidden={false}
+        role="tabpanel"
+        selected={true}
+        tabIndex={0}
+      >
+        <div
+          className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+        >
           <div
-            className="page-title-bar-header-right"
+            className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
           >
-            <div>
-              Extra Content
-            </div>
+            my content
           </div>
         </div>
       </div>
       <div
-        className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
+        className="bx--tab-content"
+        hidden={true}
+        role="tabpanel"
+        selected={false}
+        tabIndex={0}
       >
         <div
-          className="bx--tabs--scrollable"
-          hidden={false}
-          onScroll={[Function]}
-          selected={0}
-        >
-          <button
-            aria-hidden="true"
-            aria-label="Scroll left"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-              />
-            </svg>
-          </button>
-          <ul
-            className="bx--tabs--scrollable__nav"
-            role="tablist"
-            tabIndex={-1}
-          >
-            <li
-              className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="presentation"
-            >
-              <button
-                aria-controls="tab-19__panel"
-                aria-selected={true}
-                className="bx--tabs--scrollable__nav-link"
-                href="#"
-                id="tab-19"
-                role="tab"
-                tabIndex={0}
-                type="button"
-              >
-                Tab 1
-              </button>
-            </li>
-            <li
-              className="bx--tabs--scrollable__nav-item"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="presentation"
-            >
-              <button
-                aria-controls="tab-20__panel"
-                aria-selected={false}
-                className="bx--tabs--scrollable__nav-link"
-                href="#"
-                id="tab-20"
-                role="tab"
-                tabIndex={-1}
-                type="button"
-              >
-                Tab 2
-              </button>
-            </li>
-          </ul>
-          <button
-            aria-hidden="true"
-            aria-label="Scroll right"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--tab-content"
-          hidden={false}
-          role="tabpanel"
-          selected={true}
-          tabIndex={0}
+          className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
         >
           <div
-            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+            className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
           >
-            <div
-              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
-            >
-              my content
-            </div>
-          </div>
-        </div>
-        <div
-          className="bx--tab-content"
-          hidden={true}
-          role="tabpanel"
-          selected={false}
-          tabIndex={0}
-        >
-          <div
-            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
-          >
-            <div
-              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
-            >
-              my content2
-            </div>
+            my content2
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar start with tab 2 selected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/NavigationBar start with tab 2 selected 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+    data-testid="navigation-bar"
   >
     <div
-      className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+      className="page-title-bar"
+      data-testid="page-title-bar"
+      style={
+        Object {
+          "--header-offset": "48px",
+          "--scroll-transition-progress": 1,
+        }
+      }
     >
       <div
-        className="page-title-bar"
-        style={
-          Object {
-            "--header-offset": "48px",
-            "--scroll-transition-progress": 1,
-          }
-        }
+        className="page-title-bar-header"
       >
         <div
-          className="page-title-bar-header"
+          className="page-title-bar-breadcrumb-bg"
+        />
+        <div
+          className="page-title-bar-title"
         >
           <div
-            className="page-title-bar-breadcrumb-bg"
-          />
-          <div
-            className="page-title-bar-title"
+            className="page-title-bar-title--text"
           >
-            <div
-              className="page-title-bar-title--text"
+            <h2
+              title="Your Devices"
             >
-              <h2
-                title="Your Devices"
-              >
-                Your Devices
-              </h2>
-            </div>
+              Your Devices
+            </h2>
           </div>
-          <p
-            className="page-title-bar-description"
+        </div>
+        <p
+          className="page-title-bar-description"
+        >
+          Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+        </p>
+        <div
+          className="page-title-bar-header-right"
+        >
+          <div>
+            Extra Content
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
+    >
+      <div
+        className="bx--tabs--scrollable"
+        data-testid="navigation-bar-tabs"
+        hidden={false}
+        onScroll={[Function]}
+        selected={1}
+      >
+        <button
+          aria-hidden="true"
+          aria-label="Scroll left"
+          className="bx--tab--overflow-nav-button--hidden"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex="-1"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-          </p>
+            <path
+              d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+            />
+          </svg>
+        </button>
+        <ul
+          className="bx--tabs--scrollable__nav"
+          role="tablist"
+          tabIndex={-1}
+        >
+          <li
+            className="bx--tabs--scrollable__nav-item"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="presentation"
+          >
+            <button
+              aria-selected={false}
+              className="bx--tabs--scrollable__nav-link"
+              href="#"
+              role="tab"
+              tabIndex={-1}
+              type="button"
+            >
+              Tab 1
+            </button>
+          </li>
+          <li
+            className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="presentation"
+          >
+            <button
+              aria-selected={true}
+              className="bx--tabs--scrollable__nav-link"
+              href="#"
+              role="tab"
+              tabIndex={0}
+              type="button"
+            >
+              Tab 2
+            </button>
+          </li>
+        </ul>
+        <button
+          aria-hidden="true"
+          aria-label="Scroll right"
+          className="bx--tab--overflow-nav-button--hidden"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex="-1"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--tab-content"
+        hidden={true}
+        role="tabpanel"
+        selected={false}
+        tabIndex={0}
+      >
+        <div
+          className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+        >
           <div
-            className="page-title-bar-header-right"
+            className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
           >
-            <div>
-              Extra Content
-            </div>
+            my content
           </div>
         </div>
       </div>
       <div
-        className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
+        className="bx--tab-content"
+        hidden={false}
+        role="tabpanel"
+        selected={true}
+        tabIndex={0}
       >
         <div
-          className="bx--tabs--scrollable"
-          hidden={false}
-          onScroll={[Function]}
-          selected={1}
-        >
-          <button
-            aria-hidden="true"
-            aria-label="Scroll left"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-              />
-            </svg>
-          </button>
-          <ul
-            className="bx--tabs--scrollable__nav"
-            role="tablist"
-            tabIndex={-1}
-          >
-            <li
-              className="bx--tabs--scrollable__nav-item"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="presentation"
-            >
-              <button
-                aria-controls="tab-21__panel"
-                aria-selected={false}
-                className="bx--tabs--scrollable__nav-link"
-                href="#"
-                id="tab-21"
-                role="tab"
-                tabIndex={-1}
-                type="button"
-              >
-                Tab 1
-              </button>
-            </li>
-            <li
-              className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="presentation"
-            >
-              <button
-                aria-controls="tab-22__panel"
-                aria-selected={true}
-                className="bx--tabs--scrollable__nav-link"
-                href="#"
-                id="tab-22"
-                role="tab"
-                tabIndex={0}
-                type="button"
-              >
-                Tab 2
-              </button>
-            </li>
-          </ul>
-          <button
-            aria-hidden="true"
-            aria-label="Scroll right"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--tab-content"
-          hidden={true}
-          role="tabpanel"
-          selected={false}
-          tabIndex={0}
+          className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
         >
           <div
-            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+            className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
           >
-            <div
-              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
-            >
-              my content
-            </div>
-          </div>
-        </div>
-        <div
-          className="bx--tab-content"
-          hidden={false}
-          role="tabpanel"
-          selected={true}
-          tabIndex={0}
-        >
-          <div
-            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
-          >
-            <div
-              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
-            >
-              my content2
-            </div>
+            my content2
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar with actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/NavigationBar with actions 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+    data-testid="navigation-bar"
   >
     <div
-      className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
+      className="page-title-bar"
+      data-testid="page-title-bar"
+      style={
+        Object {
+          "--header-offset": "48px",
+          "--scroll-transition-progress": 1,
+        }
+      }
     >
       <div
-        className="page-title-bar"
-        style={
-          Object {
-            "--header-offset": "48px",
-            "--scroll-transition-progress": 1,
-          }
-        }
+        className="page-title-bar-header"
       >
         <div
-          className="page-title-bar-header"
-        >
-          <div
-            className="page-title-bar-breadcrumb-bg"
-          />
-          <div
-            className="page-title-bar-title"
-          >
-            <div
-              className="page-title-bar-title--text"
-            >
-              <h2
-                title="Your Devices"
-              >
-                Your Devices
-              </h2>
-            </div>
-          </div>
-          <p
-            className="page-title-bar-description"
-          >
-            Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-          </p>
-          <div
-            className="page-title-bar-header-right"
-          >
-            <div>
-              Extra Content
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
-      >
+          className="page-title-bar-breadcrumb-bg"
+        />
         <div
-          className="bx--tabs--scrollable"
-          hidden={false}
-          onScroll={[Function]}
-          selected={0}
-        >
-          <button
-            aria-hidden="true"
-            aria-label="Scroll left"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-              />
-            </svg>
-          </button>
-          <ul
-            className="bx--tabs--scrollable__nav"
-            role="tablist"
-            tabIndex={-1}
-          >
-            <li
-              className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="presentation"
-            >
-              <button
-                aria-controls="tab-23__panel"
-                aria-selected={true}
-                className="bx--tabs--scrollable__nav-link"
-                href="#"
-                id="tab-23"
-                role="tab"
-                tabIndex={0}
-                type="button"
-              >
-                Tab 1
-              </button>
-            </li>
-            <li
-              className="bx--tabs--scrollable__nav-item"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="presentation"
-            >
-              <button
-                aria-controls="tab-24__panel"
-                aria-selected={false}
-                className="bx--tabs--scrollable__nav-link"
-                href="#"
-                id="tab-24"
-                role="tab"
-                tabIndex={-1}
-                type="button"
-              >
-                Tab 2
-              </button>
-            </li>
-          </ul>
-          <button
-            aria-hidden="true"
-            aria-label="Scroll right"
-            className="bx--tab--overflow-nav-button--hidden"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            tabIndex="-1"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--tab-content"
-          hidden={false}
-          role="tabpanel"
-          selected={true}
-          tabIndex={0}
+          className="page-title-bar-title"
         >
           <div
-            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+            className="page-title-bar-title--text"
           >
-            <div
-              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+            <h2
+              title="Your Devices"
             >
-              my content
-            </div>
+              Your Devices
+            </h2>
           </div>
         </div>
+        <p
+          className="page-title-bar-description"
+        >
+          Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+        </p>
         <div
-          className="bx--tab-content"
-          hidden={true}
-          role="tabpanel"
-          selected={false}
-          tabIndex={0}
+          className="page-title-bar-header-right"
         >
-          <div
-            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
-          >
-            <div
-              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
-            >
-              my content2
-            </div>
+          <div>
+            Extra Content
           </div>
         </div>
-      </div>
-      <div
-        className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
-      >
-        <button
-          aria-pressed={null}
-          className="bx--btn bx--btn--primary"
-          disabled={false}
-          onClick={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          New Entity Type
-        </button>
-        <button
-          aria-pressed={null}
-          className="bx--btn bx--btn--secondary"
-          disabled={false}
-          onClick={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Button 2
-        </button>
       </div>
     </div>
+    <div
+      className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
+    >
+      <div
+        className="bx--tabs--scrollable"
+        data-testid="navigation-bar-tabs"
+        hidden={false}
+        onScroll={[Function]}
+        selected={0}
+      >
+        <button
+          aria-hidden="true"
+          aria-label="Scroll left"
+          className="bx--tab--overflow-nav-button--hidden"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex="-1"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+            />
+          </svg>
+        </button>
+        <ul
+          className="bx--tabs--scrollable__nav"
+          role="tablist"
+          tabIndex={-1}
+        >
+          <li
+            className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="presentation"
+          >
+            <button
+              aria-selected={true}
+              className="bx--tabs--scrollable__nav-link"
+              href="#"
+              role="tab"
+              tabIndex={0}
+              type="button"
+            >
+              Tab 1
+            </button>
+          </li>
+          <li
+            className="bx--tabs--scrollable__nav-item"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="presentation"
+          >
+            <button
+              aria-selected={false}
+              className="bx--tabs--scrollable__nav-link"
+              href="#"
+              role="tab"
+              tabIndex={-1}
+              type="button"
+            >
+              Tab 2
+            </button>
+          </li>
+        </ul>
+        <button
+          aria-hidden="true"
+          aria-label="Scroll right"
+          className="bx--tab--overflow-nav-button--hidden"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex="-1"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--tab-content"
+        hidden={false}
+        role="tabpanel"
+        selected={true}
+        tabIndex={0}
+      >
+        <div
+          className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+        >
+          <div
+            className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+          >
+            my content
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--tab-content"
+        hidden={true}
+        role="tabpanel"
+        selected={false}
+        tabIndex={0}
+      >
+        <div
+          className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+        >
+          <div
+            className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+          >
+            my content2
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
+      data-testid="navigation-bar-actions"
+    >
+      <button
+        aria-describedby={null}
+        aria-pressed={null}
+        className="iot--btn bx--btn bx--btn--primary"
+        data-testid="navigation-bar-button-button1"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        New Entity Type
+      </button>
+      <button
+        aria-describedby={null}
+        aria-pressed={null}
+        className="iot--btn bx--btn bx--btn--secondary"
+        data-testid="navigation-bar-button-button2"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Button 2
+      </button>
+    </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

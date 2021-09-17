@@ -6,6 +6,7 @@ import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
+import debounce from 'lodash/debounce';
 import classnames from 'classnames';
 
 import {
@@ -13,11 +14,14 @@ import {
   I18NPropTypes,
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
+  TableSortPropType,
 } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { OverflowMenu, OverflowMenuItem } from '../../../index';
+import { usePrevious } from '../../../hooks/usePrevious';
+import deprecate from '../../../internal/deprecate';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -27,12 +31,17 @@ import {
   createNewWidthsMap,
   calculateWidthOnHide,
   calculateWidthsOnToggle,
-  adjustLastColumnWidth,
   calculateWidthOnShow,
   visibleColumnsHaveWidth,
   getIDsOfAddedVisibleColumns,
   getIDsOfRemovedColumns,
+  isColumnVisible,
+  getOriginalWidthOfColumn,
+  DEFAULT_COLUMN_WIDTH,
+  addMissingColumnWidths,
   checkColumnWidthFormat,
+  hasVisibleColumns,
+  adjustInitialColumnWidths,
 } from './columnWidthUtilityFunctions';
 
 const { iotPrefix } = settings;
@@ -50,6 +59,10 @@ const propTypes = {
     hasSingleRowEdit: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
+    hasMultiSort: PropTypes.bool,
+    useAutoTableLayoutForResize: PropTypes.bool,
+    /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
+    preserveColumnWidths: PropTypes.bool,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -74,10 +87,7 @@ const propTypes = {
       isSelectAllSelected: PropTypes.bool,
     }).isRequired,
     /** What sorting is currently applied */
-    sort: PropTypes.shape({
-      direction: PropTypes.string,
-      column: PropTypes.string,
-    }).isRequired,
+    sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]).isRequired,
     /** What column ordering is currently applied to the table */
     ordering: PropTypes.arrayOf(
       PropTypes.shape({
@@ -113,7 +123,15 @@ const propTypes = {
   i18n: I18NPropTypes,
   /** should we filter on each keypress */
   hasFastFilter: PropTypes.bool,
-  testID: PropTypes.string,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
+  testId: PropTypes.string,
+  /** shows an additional column that can expand/shrink as the table is resized  */
+  showExpanderColumn: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -130,6 +148,8 @@ const defaultProps = {
   },
   hasFastFilter: true,
   testID: '',
+  testId: '',
+  showExpanderColumn: false,
 };
 
 const generateOrderedColumnRefs = (ordering) =>
@@ -141,6 +161,7 @@ const PADDING_WITH_OVERFLOW_AND_SORT = 58;
 
 const TableHead = ({
   testID,
+  testId,
   tableId,
   options,
   options: {
@@ -151,6 +172,9 @@ const TableHead = ({
     wrapCellText,
     truncateCellText,
     hasSingleRowEdit,
+    hasMultiSort,
+    useAutoTableLayoutForResize,
+    preserveColumnWidths,
   },
   columns,
   tableState: {
@@ -179,6 +203,7 @@ const TableHead = ({
   lightweight,
   i18n,
   hasFastFilter,
+  showExpanderColumn,
 }) => {
   const filterBarActive = activeBar === 'filter';
   const initialColumnWidths = {};
@@ -233,14 +258,24 @@ const TableHead = ({
 
   const onColumnToggle = (columnId, newOrdering) => {
     if (hasResize) {
-      const toggleArgs = {
-        currentColumnWidths,
-        newOrdering,
-        columnId,
-        columns,
-      };
-      const newColumnWidths = calculateWidthsOnToggle(toggleArgs);
-      updateColumnWidths(newColumnWidths);
+      if (preserveColumnWidths) {
+        const isToggleShow = isColumnVisible(newOrdering, columnId);
+        const columnHasNoWidth = getOriginalWidthOfColumn(columns, columnId) === undefined;
+        if (isToggleShow && columnHasNoWidth) {
+          const newColumnWidths = createNewWidthsMap(newOrdering, currentColumnWidths, [
+            { id: columnId, width: DEFAULT_COLUMN_WIDTH },
+          ]);
+          updateColumnWidths(newColumnWidths);
+        }
+      } else {
+        const newColumnWidths = calculateWidthsOnToggle({
+          currentColumnWidths,
+          newOrdering,
+          columnId,
+          columns,
+        });
+        updateColumnWidths(newColumnWidths);
+      }
     }
     onChangeOrdering(newOrdering);
   };
@@ -254,24 +289,75 @@ const TableHead = ({
   };
 
   useLayoutEffect(() => {
+    const measureAndAdjustColumns = () => {
+      if (hasResize && columns.length) {
+        const measuredWidths = measureColumnWidths();
+        const adjustedWidths = adjustInitialColumnWidths(ordering, columns, measuredWidths);
+        const newWidthsMap = createNewWidthsMap(ordering, currentColumnWidths, adjustedWidths);
+        setCurrentColumnWidths(newWidthsMap);
+      }
+    };
+
     // An initial measuring is needed since there might not be an initial value from the columns prop
     // which means that the layout engine will have to set the widths dynamically
     // before we know what they are.
-    if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
-      const measuredWidths = measureColumnWidths();
-      const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
-      const newWidthsMap = createNewWidthsMap(ordering, currentColumnWidths, adjustedWidths);
-      setCurrentColumnWidths(newWidthsMap);
+    if (isEmpty(currentColumnWidths)) {
+      measureAndAdjustColumns();
     }
-  }, [hasResize, columns, ordering, currentColumnWidths, measureColumnWidths]);
 
+    // For non fixed tables with resizable columns we need to recalculate the
+    // column widths after window resize.
+    const handleWindowResize = debounce(() => {
+      if (useAutoTableLayoutForResize) {
+        measureAndAdjustColumns();
+      }
+    }, 100);
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, [
+    hasResize,
+    columns,
+    ordering,
+    currentColumnWidths,
+    measureColumnWidths,
+    useAutoTableLayoutForResize,
+  ]);
+
+  // Handle external modification of columns prop and ordering prop
+  const previousColumns = usePrevious(columns);
+  const previousOrdering = usePrevious(ordering);
   useEffect(
     () => {
       // We need to update the currentColumnWidths (state) after the initial render
-      // only if the widths of the column prop is updated or columns are added/removed .
-      if (hasResize && columns.length && !isEmpty(currentColumnWidths)) {
+      // if the widths of the column prop are externally updated or if columns are added/removed.
+      const externallyModified =
+        !isEqual(columns, previousColumns) || !isEqual(ordering, previousOrdering);
+      if (hasResize && columns.length && !isEmpty(currentColumnWidths) && externallyModified) {
         checkColumnWidthFormat(columns);
 
+        // PRESERVE WIDTHS
+        // Preserve column when possible widths when columns are externally modified
+        if (preserveColumnWidths) {
+          const columnPropInlcudingWidths = addMissingColumnWidths({
+            ordering,
+            columns,
+            currentColumnWidths,
+          });
+
+          const newColumnWidths = createNewWidthsMap(ordering, columnPropInlcudingWidths);
+          if (!isEqual(currentColumnWidths, newColumnWidths)) {
+            setCurrentColumnWidths(newColumnWidths);
+            // Notify the application if any columns were assigned the rendered or default widths
+            if (!isEqual(columnPropInlcudingWidths, columns)) {
+              onColumnResize(columnPropInlcudingWidths);
+            }
+          }
+          return;
+        }
+
+        // MODIFY WIDTHS
+        // Modify existing columns widths when columns are externally modified
         const removedColumnIDs = getIDsOfRemovedColumns(ordering, currentColumnWidths);
         const addedVisibleColumnIDs = getIDsOfAddedVisibleColumns(ordering, currentColumnWidths);
         const adjustedForRemoved =
@@ -285,7 +371,7 @@ const TableHead = ({
 
         if (addedVisibleColumnIDs.length > 0 || removedColumnIDs.length > 0) {
           setCurrentColumnWidths(adjustedForRemovedAndAdded);
-        } else if (visibleColumnsHaveWidth(ordering, columns)) {
+        } else if (hasVisibleColumns(ordering) && visibleColumnsHaveWidth(ordering, columns)) {
           const propsColumnWidths = createNewWidthsMap(ordering, columns);
           if (!isEqual(currentColumnWidths, propsColumnWidths)) {
             setCurrentColumnWidths(propsColumnWidths);
@@ -297,7 +383,7 @@ const TableHead = ({
     // since it would be directly overridden by the column props. This effect can be removed
     // with issue https://github.com/IBM/carbon-addons-iot-react/issues/1224
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [hasResize, columns, ordering]
+    [hasResize, columns, ordering, previousColumns]
   );
 
   const lastVisibleColumn = ordering.filter((col) => !col.isHidden).slice(-1)[0];
@@ -307,12 +393,14 @@ const TableHead = ({
       className={classnames({ lightweight })}
       onMouseMove={hasResize ? forwardMouseEvent : null}
       onMouseUp={hasResize ? forwardMouseEvent : null}
-      data-testid={testID}
+      // TODO: remove deprecated 'testID' in v3
+      data-testid={testID || testId}
     >
       <TableRow>
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
-            testID={`${testID}-row-expansion-column`}
+            // TODO: remove deprecated 'testID' in v3
+            data-testid={`${testID || testId}-row-expansion-column`}
             className={classnames({
               [`${iotPrefix}--table-expand-resize`]: hasResize,
             })}
@@ -321,7 +409,8 @@ const TableHead = ({
 
         {hasRowSelection === 'multi' ? (
           <TableHeader
-            testID={`${testID}-row-selection-column`}
+            // TODO: remove deprecated 'testID' in v3
+            testId={`${testID || testId}-row-selection-column`}
             className={classnames(`${iotPrefix}--table-header-checkbox`, {
               [`${iotPrefix}--table-header-checkbox-resize`]: hasResize,
             })}
@@ -342,7 +431,25 @@ const TableHead = ({
         ) : null}
         {ordering.map((item, columnIndex) => {
           const matchingColumnMeta = columns.find((column) => column.id === item.columnId);
-          const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
+          const hasSingleSort =
+            matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
+          const multiSortColumn =
+            hasMultiSort &&
+            matchingColumnMeta &&
+            Array.isArray(sort) &&
+            sort.find((c) => c.columnId === matchingColumnMeta.id);
+          const hasSort = hasSingleSort || hasMultiSort;
+          const sortOrder =
+            hasMultiSort && Array.isArray(sort)
+              ? sort.findIndex((c) => c.columnId === matchingColumnMeta.id) + 1
+              : -1;
+
+          const sortDirection = hasSingleSort
+            ? sort.direction
+            : hasMultiSort && multiSortColumn?.direction
+            ? multiSortColumn.direction
+            : 'NONE';
+
           const align =
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           const hasOverflow = Array.isArray(matchingColumnMeta?.overflowMenuItems);
@@ -356,7 +463,8 @@ const TableHead = ({
 
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
-              testID={`${testID}-column-${matchingColumnMeta.id}`}
+              // TODO: remove deprecated 'testID' in v3
+              testId={`${testID || testId}-column-${matchingColumnMeta.id}`}
               width={initialColumnWidths[matchingColumnMeta.id]}
               initialWidth={initialColumnWidths[matchingColumnMeta.id]}
               id={`column-${matchingColumnMeta.id}`}
@@ -366,13 +474,10 @@ const TableHead = ({
               isSortHeader={hasSort}
               hasTooltip={!!matchingColumnMeta.tooltip}
               ref={columnRef[matchingColumnMeta.id]}
+              hasMultiSort={hasMultiSort}
+              hasOverflow={hasOverflow}
               thStyle={{
-                width:
-                  currentColumnWidths[matchingColumnMeta.id] &&
-                  currentColumnWidths[matchingColumnMeta.id].width,
-              }}
-              style={{
-                '--table-header-width': classnames(initialColumnWidths[matchingColumnMeta.id]),
+                width: currentColumnWidths[matchingColumnMeta.id]?.width,
               }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
@@ -380,14 +485,14 @@ const TableHead = ({
                 }
               }}
               translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-              sortDirection={hasSort ? sort.direction : 'NONE'}
+              sortDirection={sortDirection}
               align={align}
               className={classnames(`table-header-label-${align}`, {
                 [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
                 'table-header-sortable': matchingColumnMeta.isSortable,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
                 [`${iotPrefix}--table-head--table-header--with-overflow`]:
-                  matchingColumnMeta.isSortable && hasOverflow,
+                  hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable),
               })}
               // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
               data-floating-menu-container
@@ -402,7 +507,7 @@ const TableHead = ({
                 {matchingColumnMeta.name}
               </TableCellRenderer>
 
-              {hasOverflow ? (
+              {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable) ? (
                 <OverflowMenu
                   className={`${iotPrefix}--table-head--overflow`}
                   direction="bottom"
@@ -410,31 +515,55 @@ const TableHead = ({
                   flipped={columnIndex === ordering.length - 1}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  {matchingColumnMeta.overflowMenuItems.map((menuItem) => (
+                  {hasOverflow &&
+                    matchingColumnMeta.overflowMenuItems.map((menuItem) => (
+                      <OverflowMenuItem
+                        data-testid={`${testID || testId}-column-overflow-menu-item-${menuItem.id}`}
+                        itemText={menuItem.text}
+                        key={`${columnIndex}--overflow-item-${menuItem.id}`}
+                        onClick={(e) => handleOverflowItemClick(e, menuItem)}
+                      />
+                    ))}
+                  {hasMultiSort && (
                     <OverflowMenuItem
-                      itemText={menuItem.text}
-                      key={`${columnIndex}--overflow-item-${menuItem.id}`}
-                      onClick={(e) => handleOverflowItemClick(e, menuItem)}
+                      data-testid={`${testID || testId}-column-overflow-menu-item-multi-sort`}
+                      itemText={i18n.multiSortOverflowItem}
+                      key={`${columnIndex}--overflow-item-multi-sort`}
+                      onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}
                     />
-                  ))}
+                  )}
                 </OverflowMenu>
               ) : null}
-              {hasResize && item !== lastVisibleColumn ? (
+              {sortOrder > 0 && (
+                <span className={`${iotPrefix}--table-header-label__sort-order`}>{sortOrder}</span>
+              )}
+              {hasResize && (item !== lastVisibleColumn || showExpanderColumn) ? (
                 <ColumnResize
+                  showExpanderColumn={showExpanderColumn}
                   onResize={onManualColumnResize}
                   ref={columnResizeRefs[matchingColumnMeta.id]}
                   currentColumnWidths={currentColumnWidths}
                   columnId={matchingColumnMeta.id}
                   ordering={ordering}
                   paddingExtra={paddingExtra}
+                  preserveColumnWidths={preserveColumnWidths}
                 />
               ) : null}
             </TableHeader>
           ) : null;
         })}
+
+        {showExpanderColumn ? (
+          <TableHeader
+            // TODO: remove deprecated 'testID' in v3
+            testId={`${testID || testId}-expander-column`}
+            className={classnames(`${iotPrefix}--table-header-expander-column`)}
+          />
+        ) : null}
         {options.hasRowActions ? (
           <TableHeader
-            testID={`${testID}-row-actions-column`}
+            // TODO: remove deprecated 'testID' in v3
+            testId={`${testID || testId}-row-actions-column`}
             className={classnames(`${iotPrefix}--table-header-row-action-column`, {
               [`${iotPrefix}--table-header-row-action-column--extra-wide`]: hasSingleRowEdit,
             })}
@@ -443,7 +572,8 @@ const TableHead = ({
       </TableRow>
       {filterBarActive && (
         <FilterHeaderRow
-          testID={`${testID}-filter-header-row`}
+          // TODO: remove deprecated 'testID' in v3
+          testId={`${testID || testId}-filter-header-row`}
           key={!hasFastFilter && JSON.stringify(filters)}
           columns={columns.map((column) => ({
             ...column.filter,
@@ -464,11 +594,13 @@ const TableHead = ({
           onApplyFilter={onApplyFilter}
           lightweight={lightweight}
           isDisabled={isDisabled}
+          showExpanderColumn={showExpanderColumn}
         />
       )}
       {activeBar === 'column' && (
         <ColumnHeaderRow
-          testID={`${testID}-column-header-row`}
+          // TODO: remove deprecated 'testID' in v3
+          testId={`${testID || testId}-column-header-row`}
           columns={columns.map((column) => ({
             id: column.id,
             name: column.name,
@@ -481,6 +613,7 @@ const TableHead = ({
           onColumnSelectionConfig={onColumnSelectionConfig}
           columnSelectionConfigText={i18n.columnSelectionConfig}
           isDisabled={isDisabled}
+          showExpanderColumn={showExpanderColumn}
         />
       )}
     </CarbonTableHead>

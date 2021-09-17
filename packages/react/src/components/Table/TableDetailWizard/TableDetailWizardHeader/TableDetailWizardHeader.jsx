@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Button } from 'carbon-components-react';
 import { Close20 } from '@carbon/icons-react';
 
+import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';
 
 const { iotPrefix } = settings;

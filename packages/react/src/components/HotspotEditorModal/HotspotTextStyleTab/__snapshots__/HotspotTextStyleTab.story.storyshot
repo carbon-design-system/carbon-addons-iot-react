@@ -1,681 +1,1349 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab Example with externaly managed state 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "maxWidth": "500px",
       }
     }
   >
     <div
-      style={
-        Object {
-          "maxWidth": "500px",
-        }
-      }
+      className=""
     >
-      <div
-        className=""
+      <form
+        className="iot--hotspot-text-style-tab__form"
+        onSubmit={[Function]}
       >
-        <form
-          className="iot--hotspot-text-style-tab__form"
-          onSubmit={[Function]}
-        >
-          <div
-            className="iot--hotspot-text-style-tab__text-style"
-          >
-            <button
-              aria-pressed={null}
-              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="hotspot-bold"
-              disabled={false}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Text Bold
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Text Bold"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18.25,25H9V7h8.5a5.25,5.25,0,0,1,4,8.65A5.25,5.25,0,0,1,18.25,25ZM12,22h6.23a2.25,2.25,0,1,0,0-4.5H12Zm0-7.5h5.5a2.25,2.25,0,1,0,0-4.5H12Z"
-                />
-              </svg>
-            </button>
-            <button
-              aria-pressed={null}
-              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="hotspot-italic"
-              disabled={false}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Text Italic
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Text Italic"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M25 9L25 7 12 7 12 9 17.14 9 12.77 23 7 23 7 25 20 25 20 23 14.86 23 19.23 9 25 9z"
-                />
-              </svg>
-            </button>
-            <button
-              aria-pressed={null}
-              className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
-              data-testid="hotspot-underline"
-              disabled={false}
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="bx--assistive-text"
-              >
-                Text Underline
-              </span>
-              <svg
-                aria-hidden="true"
-                aria-label="Text Underline"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4 26H28V28H4zM16 23a7 7 0 01-7-7V5h2V16a5 5 0 0010 0V5h2V16A7 7 0 0116 23z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className="iot--hotspot-text-style-tab__row"
-          >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title="Select a color"
-            >
-              <label
-                className="bx--label"
-                htmlFor="downshift-0-toggle-button"
-                id="downshift-0-label"
-              >
-                Font color
-              </label>
-              <div
-                className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                id="iot--hotspot-text-style-tab__font-color"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-0-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    Select a color
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title />
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-0-label"
-                  className="bx--list-box__menu"
-                  id="downshift-0-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-            <div
-              className="bx--form-item"
-            >
-              <div
-                className="bx--number bx--number--helpertext bx--number--light"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="iot--hotspot-text-style-tab__font-size"
-                >
-                  Font Size
-                </label>
-                <div
-                  className="bx--number__input-wrapper"
-                >
-                  <input
-                    aria-describedby={null}
-                    aria-label={null}
-                    disabled={false}
-                    id="iot--hotspot-text-style-tab__font-size"
-                    max={50}
-                    min={1}
-                    onChange={[Function]}
-                    pattern="[0-9]*"
-                    step={1}
-                    type="number"
-                    value={1}
-                  />
-                  <div
-                    className="bx--number__controls"
-                  >
-                    <button
-                      aria-label="Decrement number"
-                      className="bx--number__control-btn down-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Decrement number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="down-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 15H24V17H8z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                    <button
-                      aria-label="Increment number"
-                      className="bx--number__control-btn up-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Increment number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="up-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-text-style-tab__row"
-          >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title="Select a color"
-            >
-              <label
-                className="bx--label"
-                htmlFor="downshift-1-toggle-button"
-                id="downshift-1-label"
-              >
-                Background
-              </label>
-              <div
-                className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                id="iot--hotspot-text-style-tab__background-color"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-1-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    Select a color
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title />
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-1-label"
-                  className="bx--list-box__menu"
-                  id="downshift-1-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-            <div
-              className="bx--form-item"
-            >
-              <div
-                className="bx--number bx--number--helpertext bx--number--light"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="iot--hotspot-text-style-tab__background"
-                >
-                  Fill Opacity
-                </label>
-                <div
-                  className="bx--number__input-wrapper"
-                >
-                  <input
-                    aria-describedby={null}
-                    aria-label={null}
-                    disabled={false}
-                    id="iot--hotspot-text-style-tab__background"
-                    max={100}
-                    min={0}
-                    onChange={[Function]}
-                    pattern="[0-9]*"
-                    step={1}
-                    type="number"
-                    value={0}
-                  />
-                  <div
-                    className="bx--number__controls"
-                  >
-                    <button
-                      aria-label="Decrement number"
-                      className="bx--number__control-btn down-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Decrement number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="down-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 15H24V17H8z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                    <button
-                      aria-label="Increment number"
-                      className="bx--number__control-btn up-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Increment number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="up-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-text-style-tab__row"
-          >
-            <div
-              className="bx--dropdown__wrapper bx--list-box__wrapper"
-              title="Select a color"
-            >
-              <label
-                className="bx--label"
-                htmlFor="downshift-2-toggle-button"
-                id="downshift-2-label"
-              >
-                Border
-              </label>
-              <div
-                className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                id="iot--hotspot-text-style-tab__border-color"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-              >
-                <button
-                  aria-disabled={false}
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                  className="bx--list-box__field"
-                  disabled={false}
-                  id="downshift-2-toggle-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="bx--list-box__label"
-                  >
-                    Select a color
-                  </span>
-                  <div
-                    className="bx--list-box__menu-icon"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      name="chevron--down"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                      <title />
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  aria-labelledby="downshift-2-label"
-                  className="bx--list-box__menu"
-                  id="downshift-2-menu"
-                  onBlur={[Function]}
-                  onKeyDown={[Function]}
-                  onMouseLeave={[Function]}
-                  role="listbox"
-                  tabIndex={-1}
-                />
-              </div>
-            </div>
-            <div
-              className="bx--form-item"
-            >
-              <div
-                className="bx--number bx--number--helpertext bx--number--light"
-              >
-                <label
-                  className="bx--label"
-                  htmlFor="iot--hotspot-text-style-tab__border"
-                >
-                  Border Width
-                </label>
-                <div
-                  className="bx--number__input-wrapper"
-                >
-                  <input
-                    aria-describedby={null}
-                    aria-label={null}
-                    disabled={false}
-                    id="iot--hotspot-text-style-tab__border"
-                    max={50}
-                    min={0}
-                    onChange={[Function]}
-                    pattern="[0-9]*"
-                    step={1}
-                    type="number"
-                    value={0}
-                  />
-                  <div
-                    className="bx--number__controls"
-                  >
-                    <button
-                      aria-label="Decrement number"
-                      className="bx--number__control-btn down-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Decrement number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="down-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 15H24V17H8z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                    <button
-                      aria-label="Increment number"
-                      className="bx--number__control-btn up-icon"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex="-1"
-                      title="Increment number"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="up-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className="bx--number__rule-divider"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
         <div
-          className="iot--hotspot-text-style-tab__delete-button-container"
+          className="iot--hotspot-text-style-tab__text-style"
         >
           <button
+            aria-describedby={null}
             aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="Button"
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="hotspot-bold"
             disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             tabIndex={0}
             type="button"
           >
-            Delete hotspot
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Text Bold
+            </div>
             <svg
               aria-hidden="true"
-              aria-label="Delete this hotspot"
+              aria-label="Text Bold"
               className="bx--btn__icon"
               fill="currentColor"
               focusable="false"
-              height={32}
+              height={16}
               preserveAspectRatio="xMidYMid meet"
               role="img"
               viewBox="0 0 32 32"
-              width={32}
+              width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M12 12H14V24H12zM18 12H20V24H18z"
+                d="M18.25,25H9V7h8.5a5.25,5.25,0,0,1,4,8.65A5.25,5.25,0,0,1,18.25,25ZM12,22h6.23a2.25,2.25,0,1,0,0-4.5H12Zm0-7.5h5.5a2.25,2.25,0,1,0,0-4.5H12Z"
               />
+            </svg>
+          </button>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="hotspot-italic"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Text Italic
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Text Italic"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
-                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                d="M25 9L25 7 12 7 12 9 17.14 9 12.77 23 7 23 7 25 20 25 20 23 14.86 23 19.23 9 25 9z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="hotspot-underline"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Text Underline
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Text Underline"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 26H28V28H4zM16 23a7 7 0 01-7-7V5h2V16a5 5 0 0010 0V5h2V16A7 7 0 0116 23z"
               />
             </svg>
           </button>
         </div>
+        <div
+          className="iot--hotspot-text-style-tab__row"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title="Select a color"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-0-toggle-button"
+              id="downshift-0-label"
+            >
+              Font color
+            </label>
+            <div
+              className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="iot--hotspot-text-style-tab__font-color"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-0-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  Select a color
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-0-label"
+                className="bx--list-box__menu"
+                id="downshift-0-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--number bx--number--helpertext bx--number--light"
+            >
+              <label
+                className="bx--label"
+                htmlFor="iot--hotspot-text-style-tab__font-size"
+              >
+                Font Size
+              </label>
+              <div
+                className="bx--number__input-wrapper"
+              >
+                <input
+                  aria-describedby={null}
+                  aria-label={null}
+                  disabled={false}
+                  id="iot--hotspot-text-style-tab__font-size"
+                  max={50}
+                  min={1}
+                  onChange={[Function]}
+                  pattern="[0-9]*"
+                  step={1}
+                  type="number"
+                  value={1}
+                />
+                <div
+                  className="bx--number__controls"
+                >
+                  <button
+                    aria-label="Decrement number"
+                    className="bx--number__control-btn down-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Decrement number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="down-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                  <button
+                    aria-label="Increment number"
+                    className="bx--number__control-btn up-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Increment number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="up-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-text-style-tab__row"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title="Select a color"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-1-toggle-button"
+              id="downshift-1-label"
+            >
+              Background
+            </label>
+            <div
+              className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="iot--hotspot-text-style-tab__background-color"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-1-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  Select a color
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-1-label"
+                className="bx--list-box__menu"
+                id="downshift-1-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--number bx--number--helpertext bx--number--light"
+            >
+              <label
+                className="bx--label"
+                htmlFor="iot--hotspot-text-style-tab__background"
+              >
+                Fill Opacity
+              </label>
+              <div
+                className="bx--number__input-wrapper"
+              >
+                <input
+                  aria-describedby={null}
+                  aria-label={null}
+                  disabled={false}
+                  id="iot--hotspot-text-style-tab__background"
+                  max={100}
+                  min={0}
+                  onChange={[Function]}
+                  pattern="[0-9]*"
+                  step={1}
+                  type="number"
+                  value={0}
+                />
+                <div
+                  className="bx--number__controls"
+                >
+                  <button
+                    aria-label="Decrement number"
+                    className="bx--number__control-btn down-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Decrement number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="down-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                  <button
+                    aria-label="Increment number"
+                    className="bx--number__control-btn up-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Increment number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="up-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-text-style-tab__row"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title="Select a color"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-2-toggle-button"
+              id="downshift-2-label"
+            >
+              Border
+            </label>
+            <div
+              className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="iot--hotspot-text-style-tab__border-color"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-2-label downshift-2-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-2-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  Select a color
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-2-label"
+                className="bx--list-box__menu"
+                id="downshift-2-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--number bx--number--helpertext bx--number--light"
+            >
+              <label
+                className="bx--label"
+                htmlFor="iot--hotspot-text-style-tab__border"
+              >
+                Border Width
+              </label>
+              <div
+                className="bx--number__input-wrapper"
+              >
+                <input
+                  aria-describedby={null}
+                  aria-label={null}
+                  disabled={false}
+                  id="iot--hotspot-text-style-tab__border"
+                  max={50}
+                  min={0}
+                  onChange={[Function]}
+                  pattern="[0-9]*"
+                  step={1}
+                  type="number"
+                  value={0}
+                />
+                <div
+                  className="bx--number__controls"
+                >
+                  <button
+                    aria-label="Decrement number"
+                    className="bx--number__control-btn down-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Decrement number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="down-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                  <button
+                    aria-label="Increment number"
+                    className="bx--number__control-btn up-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Increment number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="up-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div
+        className="iot--hotspot-text-style-tab__delete-button-container"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Delete hotspot
+          <svg
+            aria-hidden="true"
+            aria-label="Delete this hotspot"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={32}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={32}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 12H14V24H12zM18 12H20V24H18z"
+            />
+            <path
+              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab Using HotspotStateHook 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
     style={
       Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
+        "maxWidth": "500px",
       }
     }
-    type="button"
   >
-    Show Info
-  </button>
+    <div
+      className=""
+    >
+      <form
+        className="iot--hotspot-text-style-tab__form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="iot--hotspot-text-style-tab__text-style"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="hotspot-bold"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Text Bold
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Text Bold"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.25,25H9V7h8.5a5.25,5.25,0,0,1,4,8.65A5.25,5.25,0,0,1,18.25,25ZM12,22h6.23a2.25,2.25,0,1,0,0-4.5H12Zm0-7.5h5.5a2.25,2.25,0,1,0,0-4.5H12Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="hotspot-italic"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Text Italic
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Text Italic"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M25 9L25 7 12 7 12 9 17.14 9 12.77 23 7 23 7 25 20 25 20 23 14.86 23 19.23 9 25 9z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="hotspot-underline"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Text Underline
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Text Underline"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 26H28V28H4zM16 23a7 7 0 01-7-7V5h2V16a5 5 0 0010 0V5h2V16A7 7 0 0116 23z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="iot--hotspot-text-style-tab__row"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title="Select a color"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-0-toggle-button"
+              id="downshift-0-label"
+            >
+              Font color
+            </label>
+            <div
+              className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="iot--hotspot-text-style-tab__font-color"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-0-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  Select a color
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-0-label"
+                className="bx--list-box__menu"
+                id="downshift-0-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--number bx--number--helpertext bx--number--light"
+            >
+              <label
+                className="bx--label"
+                htmlFor="iot--hotspot-text-style-tab__font-size"
+              >
+                Font Size
+              </label>
+              <div
+                className="bx--number__input-wrapper"
+              >
+                <input
+                  aria-describedby={null}
+                  aria-label={null}
+                  disabled={false}
+                  id="iot--hotspot-text-style-tab__font-size"
+                  max={50}
+                  min={1}
+                  onChange={[Function]}
+                  pattern="[0-9]*"
+                  step={1}
+                  type="number"
+                  value={1}
+                />
+                <div
+                  className="bx--number__controls"
+                >
+                  <button
+                    aria-label="Decrement number"
+                    className="bx--number__control-btn down-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Decrement number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="down-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                  <button
+                    aria-label="Increment number"
+                    className="bx--number__control-btn up-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Increment number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="up-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-text-style-tab__row"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title="Select a color"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-1-toggle-button"
+              id="downshift-1-label"
+            >
+              Background
+            </label>
+            <div
+              className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="iot--hotspot-text-style-tab__background-color"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-1-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  Select a color
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-1-label"
+                className="bx--list-box__menu"
+                id="downshift-1-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--number bx--number--helpertext bx--number--light"
+            >
+              <label
+                className="bx--label"
+                htmlFor="iot--hotspot-text-style-tab__background"
+              >
+                Fill Opacity
+              </label>
+              <div
+                className="bx--number__input-wrapper"
+              >
+                <input
+                  aria-describedby={null}
+                  aria-label={null}
+                  disabled={false}
+                  id="iot--hotspot-text-style-tab__background"
+                  max={100}
+                  min={0}
+                  onChange={[Function]}
+                  pattern="[0-9]*"
+                  step={1}
+                  type="number"
+                  value={0}
+                />
+                <div
+                  className="bx--number__controls"
+                >
+                  <button
+                    aria-label="Decrement number"
+                    className="bx--number__control-btn down-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Decrement number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="down-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                  <button
+                    aria-label="Increment number"
+                    className="bx--number__control-btn up-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Increment number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="up-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--hotspot-text-style-tab__row"
+        >
+          <div
+            className="bx--dropdown__wrapper bx--list-box__wrapper"
+            data-testid="color-dropdown"
+            title="Select a color"
+          >
+            <label
+              className="bx--label"
+              htmlFor="downshift-2-toggle-button"
+              id="downshift-2-label"
+            >
+              Border
+            </label>
+            <div
+              className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+              id="iot--hotspot-text-style-tab__border-color"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              <button
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-2-label downshift-2-toggle-button"
+                className="bx--list-box__field"
+                disabled={false}
+                id="downshift-2-toggle-button"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--list-box__label"
+                >
+                  Select a color
+                </span>
+                <div
+                  className="bx--list-box__menu-icon"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    name="chevron--down"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title />
+                  </svg>
+                </div>
+              </button>
+              <div
+                aria-labelledby="downshift-2-label"
+                className="bx--list-box__menu"
+                id="downshift-2-menu"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onMouseLeave={[Function]}
+                role="listbox"
+                tabIndex={-1}
+              />
+            </div>
+          </div>
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--number bx--number--helpertext bx--number--light"
+            >
+              <label
+                className="bx--label"
+                htmlFor="iot--hotspot-text-style-tab__border"
+              >
+                Border Width
+              </label>
+              <div
+                className="bx--number__input-wrapper"
+              >
+                <input
+                  aria-describedby={null}
+                  aria-label={null}
+                  disabled={false}
+                  id="iot--hotspot-text-style-tab__border"
+                  max={50}
+                  min={0}
+                  onChange={[Function]}
+                  pattern="[0-9]*"
+                  step={1}
+                  type="number"
+                  value={0}
+                />
+                <div
+                  className="bx--number__controls"
+                >
+                  <button
+                    aria-label="Decrement number"
+                    className="bx--number__control-btn down-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Decrement number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="down-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                  <button
+                    aria-label="Increment number"
+                    className="bx--number__control-btn up-icon"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex="-1"
+                    title="Increment number"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="up-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    className="bx--number__rule-divider"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div
+        className="iot--hotspot-text-style-tab__delete-button-container"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--ghost"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Delete hotspot
+          <svg
+            aria-hidden="true"
+            aria-label="Delete this hotspot"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={32}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={32}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 12H14V24H12zM18 12H20V24H18z"
+            />
+            <path
+              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;

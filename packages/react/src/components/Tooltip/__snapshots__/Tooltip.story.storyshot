@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip Auto Positioning Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip autopositioning example 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "display": "flex",
+        "flex": "1",
+        "flexDirection": "column",
+        "height": "calc(100vh - 4rem)",
       }
     }
   >
@@ -16,628 +18,500 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
       style={
         Object {
           "display": "flex",
-          "flex": "1",
-          "flexDirection": "column",
-          "height": "calc(100vh - 4rem)",
+          "flex": 1,
+          "flexDirection": "row",
         }
       }
     >
       <div
         style={
           Object {
+            "alignItems": "flex-start",
             "display": "flex",
             "flex": 1,
-            "flexDirection": "row",
+            "justifyContent": "flex-start",
           }
         }
       >
         <div
-          style={
-            Object {
-              "alignItems": "flex-start",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-start",
-            }
-          }
+          className="bx--tooltip__label"
+          id="top-left"
         >
           <div
-            className="bx--tooltip__label"
-            id="top-left"
+            aria-describedby="tooltip-body"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              aria-hidden={true}
+              description={null}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role={null}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "flex-start",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <div
-            className="bx--tooltip__label"
-            id="top-center"
-          >
-            <div
-              aria-describedby={null}
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "flex-start",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-end",
-            }
-          }
-        >
-          <div
-            className="bx--tooltip__label"
-            id="top-right"
-          >
-            <div
-              aria-describedby={null}
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
           </div>
         </div>
       </div>
       <div
         style={
           Object {
+            "alignItems": "flex-start",
             "display": "flex",
             "flex": 1,
-            "flexDirection": "row",
+            "justifyContent": "center",
           }
         }
       >
         <div
-          style={
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-start",
-            }
-          }
+          className="bx--tooltip__label"
+          id="top-center"
         >
           <div
-            className="bx--tooltip__label"
-            id="left-center"
+            aria-describedby="tooltip-body"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              aria-hidden={true}
+              description={null}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role={null}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "center",
-            }
-          }
-        >
-          <div
-            className="bx--tooltip__label"
-            id="center"
-          >
-            <div
-              aria-describedby={null}
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          style={
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-end",
-            }
-          }
-        >
-          <div
-            className="bx--tooltip__label"
-            id="right-center"
-          >
-            <div
-              aria-describedby={null}
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
           </div>
         </div>
       </div>
       <div
         style={
           Object {
+            "alignItems": "flex-start",
             "display": "flex",
             "flex": 1,
-            "flexDirection": "row",
+            "justifyContent": "flex-end",
           }
         }
       >
         <div
-          style={
-            Object {
-              "alignItems": "flex-end",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-start",
-            }
-          }
+          className="bx--tooltip__label"
+          id="top-right"
         >
           <div
-            className="bx--tooltip__label"
-            id="bottom-left"
+            aria-describedby="tooltip-body"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              aria-hidden={true}
+              description={null}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role={null}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
           </div>
         </div>
-        <div
-          style={
-            Object {
-              "alignItems": "flex-end",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "center",
-            }
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-start",
           }
+        }
+      >
+        <div
+          className="bx--tooltip__label"
+          id="left-center"
         >
           <div
-            className="bx--tooltip__label"
-            id="bottom-center"
+            aria-describedby="tooltip-body"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              aria-hidden={true}
+              description={null}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role={null}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
           </div>
         </div>
-        <div
-          style={
-            Object {
-              "alignItems": "flex-end",
-              "display": "flex",
-              "flex": 1,
-              "justifyContent": "flex-end",
-            }
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "center",
           }
+        }
+      >
+        <div
+          className="bx--tooltip__label"
+          id="center"
         >
           <div
-            className="bx--tooltip__label"
-            id="bottom-right"
+            aria-describedby="tooltip-body"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            <div
-              aria-describedby={null}
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
+            <svg
+              aria-hidden={true}
+              description={null}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role={null}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <div
+          className="bx--tooltip__label"
+          id="right-center"
+        >
+          <div
+            aria-describedby="tooltip-body"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              description={null}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role={null}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <div
+          className="bx--tooltip__label"
+          id="bottom-left"
+        >
+          <div
+            aria-describedby="tooltip-body"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              description={null}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role={null}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <div
+          className="bx--tooltip__label"
+          id="bottom-center"
+        >
+          <div
+            aria-describedby="tooltip-body"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              description={null}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role={null}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "display": "flex",
+            "flex": 1,
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <div
+          className="bx--tooltip__label"
+          id="bottom-right"
+        >
+          <div
+            aria-describedby="tooltip-body"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              aria-hidden={true}
+              description={null}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role={null}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip Default Bottom 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip default (bottom) 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "alignItems": "center",
+        "display": "flex",
+        "height": "calc(100vh - 6rem)",
+        "justifyContent": "center",
       }
     }
   >
     <div
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "height": "calc(100vh - 6rem)",
-          "justifyContent": "center",
-        }
-      }
+      className="bx--tooltip__label"
+      id="withIcon"
     >
+      Tooltip label
       <div
-        className="bx--tooltip__label"
-        id="withIcon"
-      >
-        Tooltip label
-        <div
-          aria-describedby={null}
-          aria-labelledby="withIcon"
-          className="bx--tooltip__trigger"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          <svg
-            aria-hidden={true}
-            description={null}
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role={null}
-            viewBox="0 0 16 16"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-            />
-            <path
-              d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip No Icon 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "height": "calc(100vh - 6rem)",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <div
-        aria-describedby={null}
-        aria-labelledby="withoutIcon"
-        className="bx--tooltip__label"
-        id="withoutIcon"
+        aria-describedby="tooltip-body"
+        aria-labelledby="withIcon"
+        className="bx--tooltip__trigger"
         onBlur={[Function]}
         onClick={[Function]}
         onContextMenu={[Function]}
@@ -648,284 +522,152 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
         role="button"
         tabIndex={0}
       >
-        Tooltip label
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip Only Custom Icon 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "height": "calc(100vh - 6rem)",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <div
-        className="bx--tooltip__label"
-        id="customIconOnly"
-      >
-        <div
-          aria-describedby={null}
-          aria-label="Helpful Information"
-          className="bx--tooltip__trigger"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          role="button"
-          tabIndex={0}
+        <svg
+          aria-hidden={true}
+          description={null}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          role={null}
+          viewBox="0 0 16 16"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            aria-hidden={true}
-            description={null}
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role={null}
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="16"
-              cy="8"
-              r="2"
-            />
-            <circle
-              cx="16"
-              cy="16"
-              r="2"
-            />
-            <circle
-              cx="16"
-              cy="24"
-              r="2"
-            />
-          </svg>
-        </div>
+          <path
+            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+          />
+          <path
+            d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+          />
+        </svg>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip Render Custom Icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip no icon 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "alignItems": "center",
+        "display": "flex",
+        "height": "calc(100vh - 6rem)",
+        "justifyContent": "center",
       }
     }
   >
     <div
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "height": "calc(100vh - 6rem)",
-          "justifyContent": "center",
-        }
+      aria-labelledby="withoutIcon"
+      className="bx--tooltip__label"
+      id="withoutIcon"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      Tooltip label
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip only custom icon 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "calc(100vh - 6rem)",
+        "justifyContent": "center",
       }
+    }
+  >
+    <div
+      className="bx--tooltip__label"
+      id="customIconOnly"
     >
       <div
-        className="bx--tooltip__label"
-        id="customIcon"
+        aria-label="Helpful Information"
+        className="bx--tooltip__trigger"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="button"
+        tabIndex={0}
       >
-        Tooltip label
-        <div
-          aria-describedby={null}
-          aria-labelledby="customIcon"
-          className="bx--tooltip__trigger"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          role="button"
-          tabIndex={0}
+        <svg
+          aria-hidden={true}
+          description={null}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          role={null}
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <div>
-            <svg
-              height="16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
-              />
-              <path
-                d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
-              />
-              <path
-                d="M0 0h16v16H0z"
-                fill="none"
-              />
-            </svg>
-          </div>
-        </div>
+          <circle
+            cx="16"
+            cy="8"
+            r="2"
+          />
+          <circle
+            cx="16"
+            cy="16"
+            r="2"
+          />
+          <circle
+            cx="16"
+            cy="24"
+            r="2"
+          />
+        </svg>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Tooltip Uncontrolled Tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip render custom icon 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "alignItems": "center",
+        "display": "flex",
+        "height": "calc(100vh - 6rem)",
+        "justifyContent": "center",
       }
     }
   >
-    <button
-      aria-pressed={null}
-      className="iot--btn bx--btn bx--btn--primary"
-      data-testid="Button"
-      disabled={false}
-      onClick={[Function]}
-      style={
-        Object {
-          "margin": "4px 20px",
-          "padding": "15px 20px",
-        }
-      }
-      tabIndex={0}
-      type="button"
-    >
-      Hide
-    </button>
-    <button
-      aria-pressed={null}
-      className="iot--btn bx--btn bx--btn--primary"
-      data-testid="Button"
-      disabled={false}
-      onClick={[Function]}
-      style={
-        Object {
-          "margin": "4px 20px",
-          "padding": "15px 20px",
-        }
-      }
-      tabIndex={0}
-      type="button"
-    >
-      Show
-    </button>
     <div
-      style={
-        Object {
-          "margin": "4px 20px",
-          "padding": "15px",
-        }
-      }
+      className="bx--tooltip__label"
+      id="customIcon"
     >
+      Tooltip label
       <div
-        aria-controls="uncontrolled"
-        aria-describedby="uncontrolled"
-        aria-expanded={true}
-        aria-labelledby="uncontrolled"
-        className="bx--tooltip__label"
-        id="uncontrolled"
+        aria-labelledby="customIcon"
+        className="bx--tooltip__trigger"
         onBlur={[Function]}
         onClick={[Function]}
         onContextMenu={[Function]}
@@ -937,83 +679,153 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Toolt
         tabIndex={0}
       >
         <div>
-          My text wrapped with tooltip
-        </div>
-      </div>
-      <div
-        onBlur={[Function]}
-      >
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
-        <div
-          className="bx--tooltip bx--tooltip--shown bx--tooltip--bottom bx--tooltip--align-center"
-          data-floating-menu-direction="bottom"
-          id="uncontrolled"
-          onBlur={[Function]}
-          onContextMenu={[Function]}
-          onFocus={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          open={true}
-          role="tooltip"
-          style={
-            Object {
-              "margin": 0,
-              "opacity": 1,
-              "position": "absolute",
-              "top": "0px",
-              "visibility": "hidden",
-            }
-          }
-        >
-          <span
-            className="bx--tooltip__caret"
-          />
-          <div
-            aria-labelledby="uncontrolled"
-            className="bx--tooltip__content"
-            role="dialog"
+          <svg
+            height="16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Some text
-          </div>
+            <path
+              d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+            />
+            <path
+              d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+            />
+            <path
+              d="M0 0h16v16H0z"
+              fill="none"
+            />
+          </svg>
         </div>
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tooltip uncontrolled tooltip 1`] = `
+<div
+  className="storybook-container"
+>
   <button
-    className="info__show-button"
+    aria-describedby={null}
+    aria-pressed={null}
+    className="iot--btn bx--btn bx--btn--primary"
+    data-testid="Button"
+    disabled={false}
+    onBlur={[Function]}
     onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     style={
       Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
+        "margin": "4px 20px",
+        "padding": "15px 20px",
       }
     }
+    tabIndex={0}
     type="button"
   >
-    Show Info
+    Hide
   </button>
+  <button
+    aria-describedby={null}
+    aria-pressed={null}
+    className="iot--btn bx--btn bx--btn--primary"
+    data-testid="Button"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "margin": "4px 20px",
+        "padding": "15px 20px",
+      }
+    }
+    tabIndex={0}
+    type="button"
+  >
+    Show
+  </button>
+  <div
+    style={
+      Object {
+        "margin": "4px 20px",
+        "padding": "15px",
+      }
+    }
+  >
+    <div
+      aria-controls="uncontrolled"
+      aria-expanded={true}
+      aria-labelledby="uncontrolled"
+      className="bx--tooltip__label"
+      id="uncontrolled"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      <div>
+        My text wrapped with tooltip
+      </div>
+    </div>
+    <div
+      onBlur={[Function]}
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+      <div
+        className="bx--tooltip bx--tooltip--shown bx--tooltip--bottom bx--tooltip--align-center"
+        data-floating-menu-direction="bottom"
+        data-testid="tooltip"
+        id="uncontrolled"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        open={true}
+        style={
+          Object {
+            "opacity": 1,
+            "position": "absolute",
+            "top": "0px",
+            "visibility": "hidden",
+          }
+        }
+      >
+        <span
+          className="bx--tooltip__caret"
+        />
+        <div
+          className="bx--tooltip__content"
+          role="dialog"
+        >
+          Some text
+        </div>
+      </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+    </div>
+  </div>
 </div>
 `;

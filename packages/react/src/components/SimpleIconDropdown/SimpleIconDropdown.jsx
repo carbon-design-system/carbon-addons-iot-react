@@ -4,6 +4,7 @@ import { Dropdown } from 'carbon-components-react';
 
 import { validThresholdIcons } from '../DashboardEditor/editorUtils';
 import { settings } from '../../constants/Settings';
+import deprecate from '../../internal/deprecate';
 
 const { iotPrefix } = settings;
 
@@ -27,15 +28,21 @@ const propTypes = {
   translateWithId: PropTypes.func,
   /** The selected icon, use to set initial icon */
   selectedIcon: iconProptype,
+  // TODO: remove deprecated 'testID' in v3
+  // eslint-disable-next-line react/require-default-props
+  testID: deprecate(
+    PropTypes.string,
+    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
+  ),
   /** Id used if needed for testing */
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 
 const defaultProps = {
   icons: validThresholdIcons,
   light: false,
   selectedIcon: undefined,
-  testID: undefined,
+  testId: undefined,
   titleText: '',
   translateWithId: undefined,
 };
@@ -47,7 +54,9 @@ const SimpleIconDropdown = ({
   onChange,
   selectedIcon: selectedIconProp,
   titleText,
+  // TODO: remove deprecated 'testID' in v3
   testID,
+  testId,
   translateWithId,
 }) => {
   const [selectedIcon, setSelectedIcon] = useState(selectedIconProp);
@@ -74,7 +83,8 @@ const SimpleIconDropdown = ({
       selectedItem={selectedIcon || icons[0]}
       titleText={titleText}
       type="default"
-      test-id={testID}
+      // TODO: remove deprecated 'testID' in v3
+      data-testid={testID || testId}
     />
   );
 };

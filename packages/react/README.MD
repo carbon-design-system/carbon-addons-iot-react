@@ -137,7 +137,7 @@ these packages if you use them directly in your project.
 
 ## 🤲 Contributing
 
-Please check out our [Contribution Guidelines](./.github/CONTRIBUTING.MD) for
+Please check out our [Contribution Guidelines](https://github.com/carbon-design-system/carbon-addons-iot-react/blob/HEAD/.github/CONTRIBUTING.MD) for
 more info on how you can help out!
 
 ## Testing

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, object, boolean } from '@storybook/addon-knobs';
+import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { spacing03 } from '@carbon/layout';
 
 import ImageHotspots from './ImageHotspots';
@@ -10,6 +10,38 @@ import smallerImage from './MunichBuilding.png';
 
 const hotspots = [
   {
+    x: 0,
+    y: 0,
+    content: <span style={{ padding: spacing03 }}>0:0</span>,
+    color: 'green',
+    width: 20,
+    height: 20,
+  },
+  {
+    x: 0,
+    y: 99.9,
+    content: <span style={{ padding: spacing03 }}>0:99</span>,
+    color: 'green',
+    width: 20,
+    height: 20,
+  },
+  {
+    x: 99.9,
+    y: 99.9,
+    content: <span style={{ padding: spacing03 }}>99:99</span>,
+    color: 'green',
+    width: 20,
+    height: 20,
+  },
+  {
+    x: 99.9,
+    y: 0,
+    content: <span style={{ padding: spacing03 }}>99:0</span>,
+    color: 'green',
+    width: 20,
+    height: 20,
+  },
+  {
     x: 10,
     y: 20,
     content: <span style={{ padding: spacing03 }}>Hotspot1</span>,
@@ -17,6 +49,32 @@ const hotspots = [
     color: 'white',
     width: 20,
     height: 20,
+  },
+  {
+    x: 26,
+    y: 75,
+    type: 'text',
+    content: {
+      title: 'Facility rooms',
+      values: {
+        temperature: 35.35,
+        humidity: 99,
+      },
+      attributes: [
+        { dataSourceId: 'temperature', label: 'Temperature' },
+        { dataSourceId: 'humidity', label: 'Humidity' },
+      ],
+      locale: 'en',
+    },
+    bold: true,
+    italic: false,
+    underline: false,
+    fontColor: '#006666',
+    fontSize: 16,
+    backgroundColor: '#00FF00',
+    backgroundOpacity: 50,
+    borderColor: '#FFFF00',
+    borderWidth: 8,
   },
   {
     x: 50,
@@ -54,7 +112,7 @@ const componentDescription =
   '/ panned, in which it will follow the overlaying panned position.';
 
 export default {
-  title: __DEV__ ? 'Watson IoT/⚠️ ImageHotspots' : 'Watson IoT/ImageHotspots',
+  title: '1 - Watson IoT/ImageHotspots',
 
   parameters: {
     component: ImageHotspots,
@@ -63,140 +121,159 @@ export default {
 };
 
 export const LandscapeImageLandscapeContainer = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
   return (
     <div style={{ width: '450px', height: '300px' }}>
       <ImageHotspots
+        key={myDisplayOption}
+        displayOption={myDisplayOption}
         src={text('Image', landscape)}
         alt={text('Alternate text', 'Sample image')}
         height={300}
         width={450}
+        onAddHotspotPosition={action('onAddHotspotPosition')}
+        isEditable
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
 };
 
-LandscapeImageLandscapeContainer.story = {
-  name: 'landscape image & landscape container',
-};
+LandscapeImageLandscapeContainer.storyName = 'landscape image & landscape container';
 
 export const LandscapeImagePortraitContainer = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <div style={{ width: '250px', height: '300px' }}>
       <ImageHotspots
+        key={myDisplayOption}
+        displayOption={myDisplayOption}
         src={text('Image', landscape)}
         alt={text('Alternate text', 'Sample image')}
-        height={250}
-        width={300}
+        height={300}
+        width={250}
+        onAddHotspotPosition={action('onAddHotspotPosition')}
+        isEditable
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
 };
 
-LandscapeImagePortraitContainer.story = {
-  name: 'landscape image & portrait container',
-};
+LandscapeImagePortraitContainer.storyName = 'landscape image & portrait container';
 
 export const PortraitImageLandscapeContainer = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <div style={{ width: '450px', height: '300px' }}>
       <ImageHotspots
+        key={myDisplayOption}
+        displayOption={myDisplayOption}
         src={text('Image', portrait)}
         height={300}
         width={450}
+        onAddHotspotPosition={action('onAddHotspotPosition')}
+        isEditable
         alt={text('Alternate text', 'Sample image')}
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
 };
 
-PortraitImageLandscapeContainer.story = {
-  name: 'portrait image & landscape container',
-};
+PortraitImageLandscapeContainer.storyName = 'portrait image & landscape container';
 
 export const PortraitImagePortraitContainer = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <div style={{ width: '225px', height: '300px' }}>
       <ImageHotspots
+        key={myDisplayOption}
+        displayOption={myDisplayOption}
         src={text('Image', portrait)}
         height={300}
         width={225}
+        onAddHotspotPosition={action('onAddHotspotPosition')}
+        isEditable
         alt={text('Alternate text', 'Sample image')}
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
 };
 
-PortraitImagePortraitContainer.story = {
-  name: 'portrait image & portrait container',
-};
+PortraitImagePortraitContainer.storyName = 'portrait image & portrait container';
 
 export const ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden = () => {
+  const myDisplayOption = select(
+    'displayOption',
+    { contain: 'contain', fill: 'fill', undefined },
+    undefined
+  );
+
   return (
     <div style={{ width: '560px', height: '560px' }}>
       <ImageHotspots
+        key={myDisplayOption}
+        displayOption={myDisplayOption}
         src={text('Image', smallerImage)}
         height={560}
         width={560}
+        onAddHotspotPosition={action('onAddHotspotPosition')}
+        isEditable
         alt={text('Alternate text', 'Sample image')}
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
         hideMinimap={boolean('Hide Minimap', false)}
+        minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
       />
     </div>
   );
 };
 
-ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden.story = {
-  name: 'image smaller than card, minimap and zoomcontrols should be hidden',
-};
+ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden.storyName =
+  'image smaller than card, minimap and zoomcontrols should be hidden';
 
 export const EditableWithTextHotspot = () => {
   const WithState = () => {
     const [myHotspots, setMyHotspots] = useState([
       ...hotspots,
-      {
-        x: 26,
-        y: 68,
-        type: 'text',
-        content: {
-          title: 'Facility rooms',
-          values: {
-            temperature: 35.35,
-            humidity: 99,
-          },
-          attributes: [
-            { dataSourceId: 'temperature', label: 'Temperature' },
-            { dataSourceId: 'humidity', label: 'Humidity' },
-          ],
-          locale: 'en',
-        },
-        bold: true,
-        italic: false,
-        underline: false,
-        fontColor: '#006666',
-        fontSize: 16,
-        backgroundColor: '#00FF00',
-        backgroundOpacity: 50,
-        borderColor: '#FFFF00',
-        borderWidth: 8,
-      },
       {
         x: 75,
         y: 10,
@@ -251,9 +328,17 @@ export const EditableWithTextHotspot = () => {
       action('onHotspotContentChanged')(position, change);
     };
 
+    const myDisplayOption = select(
+      'displayOption',
+      { contain: 'contain', fill: 'fill', undefined },
+      undefined
+    );
+
     return (
       <div style={{ width: '450px', height: '300px' }}>
         <ImageHotspots
+          key={myDisplayOption}
+          displayOption={myDisplayOption}
           isEditable
           onAddHotspotPosition={onAddHotspotPosition}
           onSelectHotspot={onSelectHotspot}
@@ -266,6 +351,7 @@ export const EditableWithTextHotspot = () => {
           hotspots={myHotspots}
           hideHotspots={boolean('Hide hotspots', false)}
           hideMinimap={boolean('Hide Minimap', false)}
+          minimapBehavior={select('minimapBehavior', ['hide', 'show', 'showOnPan'], 'showOnPan')}
           selectedHotspots={selectedHotspotPositions}
         />
       </div>
@@ -275,6 +361,4 @@ export const EditableWithTextHotspot = () => {
   return <WithState />;
 };
 
-EditableWithTextHotspot.story = {
-  name: 'Editable with text hotspot',
-};
+EditableWithTextHotspot.storyName = 'Editable with text hotspot';
