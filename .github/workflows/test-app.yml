@@ -45,12 +45,15 @@ jobs:
 
       - name: Run build
         if: steps.changes.outputs.react == 'true'
-        run: yarn build
+        run: |
+          cd packages/react
+          yarn build
 
       - name: Archive build artifacts
         if: ${{ success() }} && steps.changes.outputs.react == 'true'
         uses: actions/upload-artifact@v2
         with:
+          name: dist
           path: |
             packages/react/es
             packages/react/lib
@@ -58,7 +61,7 @@ jobs:
             packages/react/scss
 
   create-test-app:
-    name: Create test app
+    name: Create test app and build
     needs: build-pal
     runs-on: ubuntu-latest
 
@@ -67,29 +70,13 @@ jobs:
         run: |
           npx create-iot-react-app test-app
 
-      - name: Archive build artifacts
-        if: ${{ success() }} && steps.changes.outputs.react == 'true'
-        uses: actions/upload-artifact@v2
-        with:
-          path: ./
-
-  build-app:
-    name: Link and build app
-    needs: create-test-app
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Download all build artifacts
         uses: actions/download-artifact@v2
 
       - name: Link dependencies
         run: |
-          cd packages/react
+          cd dist
           yarn link
-          cd ../..
-
-      - name: Run build
-        run: |
-          cd test-app
+          cd ../test-app
           yarn link carbon-addons-iot-react
           yarn build
