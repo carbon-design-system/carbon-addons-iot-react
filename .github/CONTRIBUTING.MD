@@ -219,6 +219,14 @@ be updated by running `yarn test:update`.
 _Do not blindly update snapshots to pass the testcase._ Make sure the detected
 change is intentional and not unintentional before updating the snapshot.
 
+### Visual regression tests
+
+If you're adding a new component or making visual changes to an existing component, you'll want to run the visual regression tests and generate new comparison images. Visual regression tests run within a docker container using cypress to ensures a consistent environment for generating all regression test images. To run these tests, you'll need to install docker on your host machine. You can find [docker install instructions here](https://docs.docker.com/get-docker/).
+
+Once that is installed and running, you can run `yarn test:e2e:images` to build the docker container, install all dependencies, and run the cypress visual regression tests. These tests will compare your changes against the existing baseline images in `packages/react/cypress-visual-screenshots/baseline`.
+
+If this is a new component and no baseline images exist, cypress will create them, and you can commit them for use in future tests. However, if there are differences, the tests will fail. If intentional changes to the component cause this failure, you'll need to run `yarn test:e2e:update` to replace the existing baseline images with these newly created images. Commit these changes into git and push. The new images will become the baseline for all future comparisons.
+
 ### Minimum code coverage
 
 Code coverage thresholds are enforced in the repository. If you add code but do
