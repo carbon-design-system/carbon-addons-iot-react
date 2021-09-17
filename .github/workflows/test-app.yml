@@ -70,7 +70,8 @@ jobs:
       - name: Archive build artifacts
         if: ${{ success() }} && steps.changes.outputs.react == 'true'
         uses: actions/upload-artifact@v2
-        path: ./
+        with:
+          path: ./
 
   build-app:
     name: Link and build app
