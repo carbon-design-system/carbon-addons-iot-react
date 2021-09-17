@@ -50,11 +50,12 @@ jobs:
       - name: Archive build artifacts
         if: ${{ success() }} && steps.changes.outputs.react == 'true'
         uses: actions/upload-artifact@v2
-        path: |
-          packages/react/es
-          packages/react/lib
-          packages/react/umd
-          packages/react/scss
+        with:
+          path: |
+            packages/react/es
+            packages/react/lib
+            packages/react/umd
+            packages/react/scss
 
   create-test-app:
     name: Create test app
