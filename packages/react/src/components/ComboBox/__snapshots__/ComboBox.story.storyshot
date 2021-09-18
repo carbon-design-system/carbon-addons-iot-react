@@ -125,7 +125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
-          id="combobox-helper-text-27"
+          id="combobox-helper-text-30"
         >
           Optional helper text here
         </div>
@@ -258,7 +258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
-          id="combobox-helper-text-12"
+          id="combobox-helper-text-15"
         >
           Optional helper text here
         </div>
@@ -370,7 +370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
-          id="combobox-helper-text-15"
+          id="combobox-helper-text-18"
         >
           Optional helper text here
         </div>
@@ -482,7 +482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
-          id="combobox-helper-text-24"
+          id="combobox-helper-text-27"
         >
           Optional helper text here
         </div>
@@ -609,7 +609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="bx--form__helper-text"
-        id="combobox-helper-text-18"
+        id="combobox-helper-text-21"
       >
         Optional helper text here
       </div>
@@ -741,7 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
-          id="combobox-helper-text-21"
+          id="combobox-helper-text-24"
         >
           Optional helper text here
         </div>

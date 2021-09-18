@@ -43,16 +43,36 @@ jest.mock('lodash/debounce', () => (fn) => fn);
 
 describe('TableHead', () => {
   it('be selectable by testID or testId', () => {
-    const { rerender } = render(<TableHead {...commonTableHeadProps} testID="TABLE_HEAD" />, {
-      container: document.body.appendChild(document.createElement('table')),
-    });
+    const columns = commonTableHeadProps.columns.map((c) => ({
+      ...c,
+      overflowMenuItems: [
+        {
+          id: '1',
+          text: 'one',
+        },
+        {
+          id: '2',
+          text: 'two',
+        },
+      ],
+    }));
+    const { rerender } = render(
+      <TableHead {...commonTableHeadProps} columns={columns} testID="TABLE_HEAD" />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
+    );
 
     expect(screen.getByTestId('TABLE_HEAD')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-col1')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-col2')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-col3')).toBeDefined();
+    expect(screen.getAllByTestId('table-head--overflow')).toHaveLength(3);
+    userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[1]);
+    expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-1')).toBeDefined();
+    expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-2')).toBeDefined();
 
-    rerender(<TableHead {...commonTableHeadProps} testId="table_head" />, {
+    rerender(<TableHead {...commonTableHeadProps} columns={columns} testId="table_head" />, {
       container: document.body.appendChild(document.createElement('table')),
     });
 
@@ -60,6 +80,10 @@ describe('TableHead', () => {
     expect(screen.getByTestId('table_head-column-col1')).toBeDefined();
     expect(screen.getByTestId('table_head-column-col2')).toBeDefined();
     expect(screen.getByTestId('table_head-column-col3')).toBeDefined();
+    expect(screen.getAllByTestId('table-head--overflow')).toHaveLength(3);
+    userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[0]);
+    expect(screen.getByTestId('table_head-column-overflow-menu-item-1')).toBeDefined();
+    expect(screen.getByTestId('table_head-column-overflow-menu-item-2')).toBeDefined();
   });
   it('columns should render', () => {
     const wrapper = mount(<TableHead {...commonTableHeadProps} />, {

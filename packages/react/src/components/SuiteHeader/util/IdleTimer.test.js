@@ -142,4 +142,68 @@ describe('IdleTimer', () => {
     expect(clearInterval).toHaveBeenCalledTimes(1);
     expect(timer.cleanUpUserActivityListeners).toHaveBeenCalled();
   });
+  it('should clear the existing interval if start is called twice', () => {
+    // start is already called in the constructor, so calling it
+    // again here will trigger the clearing of the initial interval
+    timer.start();
+    jest.runOnlyPendingTimers();
+    expect(clearInterval).toHaveBeenCalledTimes(1);
+  });
+
+  it('should function correctly without passing custom onIdleTimeout/onRestart callbacks', () => {
+    const thisTimer = new IdleTimer({
+      onIdleTimeoutWarning: jest.fn(),
+    });
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${thisTimer.COOKIE_NAME}=${Date.now() - 1000}`,
+    });
+    // Make sure COUNTDOWN_START cycles of the setInterval run
+    jest.advanceTimersByTime(thisTimer.COUNTDOWN_START * 1000);
+    // only onIdleTimeoutWarning callbacks should have been fired
+    expect(thisTimer.onIdleTimeoutWarning).toHaveBeenCalledTimes(thisTimer.COUNTDOWN_START);
+  });
+
+  it('should function correctly without passing custom onIdleTimeoutWarning/onRestart callbacks', () => {
+    const thisTimer = new IdleTimer({
+      onIdleTimeout: jest.fn(),
+    });
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${thisTimer.COOKIE_NAME}=${Date.now() - 1000}`,
+    });
+    // Run just one setInterval cycle
+    jest.runOnlyPendingTimers();
+    // Simulate a timestamp cookie that is now in the future (some other tab might have pushed it)
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${thisTimer.COOKIE_NAME}=${Date.now() + 1000}`,
+    });
+    // Run just one setInterval cycle
+    jest.runOnlyPendingTimers();
+    expect(thisTimer.onIdleTimeout).not.toHaveBeenCalled();
+  });
+
+  it('should correctly parse more complex cookies', () => {
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `extra-information={"id":1,"value":"abc"}; ${timer.COOKIE_NAME}=${
+        Date.now() - 1000
+      }; data-info={"id":1,"value":"abc"}`,
+    });
+    // Make sure COUNTDOWN_START cycles of the setInterval run
+    jest.advanceTimersByTime(timer.COUNTDOWN_START * 1000);
+    // only onIdleTimeoutWarning callbacks should have been fired
+    expect(timer.onIdleTimeoutWarning).toHaveBeenCalledTimes(timer.COUNTDOWN_START);
+    expect(timer.onIdleTimeout).not.toHaveBeenCalled();
+    // Run just one more setInterval cycle
+    jest.runOnlyPendingTimers();
+    // now onIdleTimeout should have been fired
+    expect(timer.onIdleTimeout).toHaveBeenCalled();
+    // onRestart should never have been fired
+    expect(timer.onRestart).not.toHaveBeenCalled();
+  });
 });

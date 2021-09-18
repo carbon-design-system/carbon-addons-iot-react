@@ -96,6 +96,12 @@ const propTypes = {
    * getValidDimensions(card)
    */
   getValidDimensions: PropTypes.func,
+  /**
+   * if provided this is called before the card form is rendered on the right side of the editor.
+   * It is called with the card prop JSON and you return the updated cardConfig.
+   * This callback function allows you to add elements for the form to render that are not passed in the main dashboard card JSON
+   */
+  onRenderCardEditForm: PropTypes.func,
   /** if provided, will update the dashboard json according to its own logic. Is called if a card is edited, or added.
    * Should return an updated card to be rendered
    * onCardChange(updatedCard, template): Card
@@ -317,6 +323,7 @@ const defaultProps = {
   renderHeader: null,
   renderIconByName: renderDefaultIconByName,
   renderCardPreview: () => null,
+  onRenderCardEditForm: null,
   headerBreadcrumbs: null,
   notification: null,
   title: '',
@@ -394,6 +401,7 @@ const DashboardEditor = ({
   breakpointSwitcher,
   renderHeader,
   renderCardPreview,
+  onRenderCardEditForm,
   renderIconByName,
   getValidDataItems,
   getValidTimeRanges,
@@ -754,8 +762,6 @@ const DashboardEditor = ({
                         isResizable={isCardResizable}
                         i18n={mergedI18n}
                         isSelected={isSelected}
-                        getValidDataItems={getValidDataItems}
-                        dataItems={dataItems}
                         availableDimensions={availableDimensions}
                         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
                         renderCardPreview={renderCardPreview}
@@ -793,6 +799,7 @@ const DashboardEditor = ({
             isSummaryDashboard={isSummaryDashboard}
             onShowGallery={() => handleCardSelect(null)}
             onChange={handleOnCardChange}
+            onRenderCardEditForm={onRenderCardEditForm}
             getValidDataItems={getValidDataItems}
             getValidTimeRanges={getValidTimeRanges}
             dataItems={dataItems}

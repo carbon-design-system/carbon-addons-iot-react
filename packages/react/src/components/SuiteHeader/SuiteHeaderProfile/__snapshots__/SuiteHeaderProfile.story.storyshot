@@ -166,6 +166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
@@ -230,6 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}

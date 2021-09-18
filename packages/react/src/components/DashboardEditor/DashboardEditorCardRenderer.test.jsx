@@ -231,19 +231,6 @@ describe('DashboardEditorCardRenderer', () => {
     expect(screen.getByText(/defaultCard/)).toBeInTheDocument();
   });
 
-  it('should call getValidDataItems when passed', () => {
-    const getValidDataItems = jest.fn();
-    render(
-      <DashboardEditorCardRenderer
-        {...commonProps}
-        size={CARD_SIZES.MEDIUM}
-        getValidDataItems={getValidDataItems}
-      />
-    );
-
-    expect(getValidDataItems).toHaveBeenCalledWith({ size: CARD_SIZES.MEDIUM });
-  });
-
   it('should call onFetchDynamicDemoHotspots when the function is available and dynamic hotspots are passed', () => {
     const onCardChange = jest.fn();
 

@@ -483,6 +483,7 @@ Map {
         "wrapCellText": "always",
       },
       "secondaryTitle": null,
+      "size": undefined,
       "testId": null,
       "title": null,
       "tooltip": null,
@@ -510,6 +511,7 @@ Map {
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
           "loadingState": Object {
+            "columnCount": 5,
             "rowCount": 5,
           },
           "ordering": undefined,
@@ -1251,6 +1253,19 @@ Map {
       "secondaryTitle": Object {
         "type": "string",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "stickyHeader": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -1498,6 +1513,9 @@ Map {
                   "loadingState": Object {
                     "args": Array [
                       Object {
+                        "columnCount": Object {
+                          "type": "number",
+                        },
                         "isLoading": Object {
                           "type": "bool",
                         },
@@ -3396,6 +3414,7 @@ Map {
   },
   "TableSkeletonWithHeaders" => Object {
     "defaultProps": Object {
+      "columnCount": 5,
       "columns": Array [],
       "hasRowActions": false,
       "hasRowExpansion": false,
@@ -3405,6 +3424,9 @@ Map {
       "testId": "",
     },
     "propTypes": Object {
+      "columnCount": Object {
+        "type": "number",
+      },
       "columns": Object {
         "args": Array [
           Object {
@@ -6057,6 +6079,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "domainRange": Object {
         "args": Array [
           Object {
@@ -8360,6 +8385,7 @@ Map {
         "mainHeader": "main header",
         "openMenu": "Open menu",
       },
+      "isActionItemVisible": [Function],
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -8407,6 +8433,9 @@ Map {
                 },
                 "hasHeaderPanel": Object {
                   "type": "bool",
+                },
+                "id": Object {
+                  "type": "string",
                 },
                 "label": Object {
                   "isRequired": true,
@@ -8464,6 +8493,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isActionItemVisible": Object {
+        "type": "func",
       },
       "onClickSideNavExpand": Object {
         "type": "func",
@@ -8639,6 +8671,7 @@ Map {
         "whatsNew": "What's new",
       },
       "idleTimeoutData": null,
+      "isActionItemVisible": [Function],
       "isAdminView": false,
       "onRouteChange": [Function],
       "onSideNavToggled": [Function],
@@ -8725,6 +8758,9 @@ Map {
                 },
                 "hasHeaderPanel": Object {
                   "type": "bool",
+                },
+                "id": Object {
+                  "type": "string",
                 },
                 "label": Object {
                   "isRequired": true,
@@ -8946,6 +8982,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isActionItemVisible": Object {
+        "type": "func",
       },
       "isAdminView": Object {
         "type": "bool",
@@ -10475,6 +10514,7 @@ Map {
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
+      "onRenderCardEditForm": null,
       "onSubmit": null,
       "onValidateCardJson": null,
       "onValidateUploadedImage": null,
@@ -11069,6 +11109,9 @@ Map {
       "onLayoutChange": Object {
         "type": "func",
       },
+      "onRenderCardEditForm": Object {
+        "type": "func",
+      },
       "onSubmit": Object {
         "type": "func",
       },
@@ -11103,6 +11146,7 @@ Map {
       },
     },
   },
+  "DashboardEditorDefaultCardRenderer" => Object {},
   "CardEditor" => Object {
     "defaultProps": Object {
       "availableDimensions": Object {},
@@ -11126,6 +11170,7 @@ Map {
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
       "onEditDataItems": null,
+      "onRenderCardEditForm": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -11331,6 +11376,9 @@ Map {
         "type": "func",
       },
       "onEditDataItems": Object {
+        "type": "func",
+      },
+      "onRenderCardEditForm": Object {
         "type": "func",
       },
       "onShowGallery": Object {
@@ -11747,6 +11795,7 @@ Map {
         "xl": 16,
         "xs": 4,
       },
+      "dateTimeMask": "YYYY-MM-DD HH:mm",
       "footerContent": undefined,
       "hasTitleWrap": false,
       "hideHeader": false,
@@ -12325,6 +12374,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "footerContent": Object {
         "type": "elementType",
@@ -13283,6 +13335,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -13770,6 +13825,7 @@ Map {
       "fontSize": 42,
       "isNumberValueCompact": false,
       "locale": "en",
+      "onAttributeClick": null,
       "size": "MEDIUM",
       "testId": "Card",
       "values": null,
@@ -14471,6 +14527,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "fontSize": Object {
         "type": "number",
       },
@@ -14606,6 +14665,9 @@ Map {
       },
       "locale": Object {
         "type": "string",
+      },
+      "onAttributeClick": Object {
+        "type": "func",
       },
       "onBlur": Object {
         "type": "func",
@@ -15663,6 +15725,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "domainRange": Object {
         "args": Array [
           Object {
@@ -16599,6 +16664,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "footerContent": Object {
         "type": "elementType",
@@ -17755,6 +17823,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -18783,6 +18854,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -19718,6 +19792,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "footerContent": Object {
         "type": "elementType",
@@ -23289,6 +23366,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -24514,6 +24594,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "dropRef": Object {
         "args": Array [

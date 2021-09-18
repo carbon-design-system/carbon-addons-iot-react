@@ -934,4 +934,88 @@ describe('MapCards', () => {
     expect(mapRef.current).toHaveClass('iot--map__container');
     expect(dropRef.current).toHaveClass('iot--map__container');
   });
+
+  it('disabled scroll down button when at the bottom', () => {
+    const visibleItemsCount = 3;
+    const originalScrollBy = HTMLElement.prototype.scrollBy;
+    const mockScrollBy = jest.fn();
+    HTMLElement.prototype.scrollBy = mockScrollBy;
+
+    render(
+      <MapCard
+        id="map-card"
+        testID="map-card"
+        isExpanded
+        mapContainerRef={React.createRef()}
+        mapControls={[
+          {
+            hasScroll: true,
+            visibleItemsCount,
+            group: [
+              {
+                icon: Hail32,
+                iconDescription: 'Map scroll hail',
+              },
+              {
+                icon: Rain32,
+                iconDescription: 'Map scroll rain',
+              },
+              {
+                icon: Fog32,
+                iconDescription: 'Map scroll fog',
+              },
+              {
+                icon: Cloudy32,
+                iconDescription: 'Map scroll cloudy',
+              },
+              {
+                icon: Cloud32,
+                iconDescription: 'Map scroll cloud',
+              },
+              {
+                icon: PartlyCloudy32,
+                iconDescription: 'Map scroll partly cloudy',
+              },
+
+              {
+                icon: Sun32,
+                iconDescription: 'Map scroll sun',
+              },
+            ],
+          },
+        ]}
+        onZoomIn={() => {}}
+        onZoomOut={() => {}}
+        settingsContent={settingsContentMock}
+      />
+    );
+
+    const scrollDownButton = screen.getByRole('button', {
+      name: MapCard.defaultProps.i18n.scrollDown,
+    });
+    expect(scrollDownButton).not.toBeDisabled();
+
+    // Mock scrolling so that we reach the end of scroll after one
+    // click on "scroll down".
+    const scrollArea = screen.getByTestId('map-card-map-controls-scroll-controls-scroll-area');
+    Object.defineProperty(scrollArea, 'scrollHeight', {
+      writable: true,
+      value: 200,
+    });
+    Object.defineProperty(scrollArea, 'scrollTop', {
+      writable: true,
+      value: 20,
+    });
+    Object.defineProperty(scrollArea, 'clientHeight', {
+      writable: true,
+      value: 100,
+    });
+
+    userEvent.click(scrollDownButton);
+
+    // We have reached the end of scroll down
+    expect(scrollDownButton).toBeDisabled();
+
+    HTMLElement.prototype.scrollBy = originalScrollBy;
+  });
 });

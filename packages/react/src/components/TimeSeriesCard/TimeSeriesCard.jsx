@@ -536,6 +536,7 @@ const TimeSeriesCard = ({
       i18n={mergedI18n}
       timeRange={timeRange}
       {...others}
+      locale={locale}
       isExpanded={isExpanded}
       isEditable={isEditable}
       isEmpty={isChartDataEmpty}

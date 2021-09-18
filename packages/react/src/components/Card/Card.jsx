@@ -241,6 +241,7 @@ export const defaultProps = {
   tabIndex: undefined,
   testId: CardWrapper.defaultProps.testId,
   footerContent: undefined,
+  dateTimeMask: 'YYYY-MM-DD HH:mm',
 };
 
 /** Dumb component that renders the card basics */
@@ -278,6 +279,7 @@ const Card = (props) => {
     testId,
     contentClassName,
     footerContent: CardFooter,
+    dateTimeMask,
     ...others
   } = props;
 
@@ -366,10 +368,12 @@ const Card = (props) => {
                 isEditable={isEditable}
                 isExpanded={isExpanded}
                 timeRange={timeRange}
+                locale={others.locale}
                 timeRangeOptions={timeRangeOptions}
                 onCardAction={cachedOnCardAction}
                 // TODO: remove deprecated testID prop in v3
                 testId={`${testID || testId}-toolbar`}
+                dateTimeMask={dateTimeMask}
               />
             ) : null;
 
