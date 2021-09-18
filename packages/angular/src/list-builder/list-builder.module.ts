@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ListModule } from 'src/list';
+import { ListModule } from '@ai-apps/angular/list';
 import { AIListBuilderComponent } from './list-builder.component';
 import { ButtonModule, IconModule } from 'carbon-components-angular';
 

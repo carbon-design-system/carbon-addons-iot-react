@@ -18,7 +18,7 @@ import ArrowsVertical16 from '@carbon/icons/es/arrows--vertical/16';
 import ArrowDown16 from '@carbon/icons/es/arrow--down/16';
 import Filter16 from '@carbon/icons/es/filter/16';
 import { AIColumnCustomizationModal } from './column-customization/column-customization-modal.component';
-import { ListBuilderModule } from '../list-builder';
+import { ListBuilderModule } from '@ai-apps/angular/list-builder';
 import { AIColumnCustomizationButton } from './column-customization/column-customization-button.component';
 
 @NgModule({

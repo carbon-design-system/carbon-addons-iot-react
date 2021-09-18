@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { BaseModal, ModalService, TableHeaderItem } from 'carbon-components-angular';
-import { AIListItem } from 'src/list';
-import { AIListBuilderItem, AIListBuilderModel } from 'src/list-builder';
+import { AIListItem } from '@ai-apps/angular/list';
+import { AIListBuilderItem, AIListBuilderModel } from '@ai-apps/angular/list-builder';
 import { AITableModel } from '../table-model.class';
 
 @Component({

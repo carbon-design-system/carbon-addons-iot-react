@@ -11,7 +11,7 @@ import { AIColumnCustomizationModal } from './column-customization-modal.compone
       [ibmButton]="ibmButton"
       [assistiveTextPlacement]="assistiveTextPlacement"
       [assistiveTextAlignment]="assistiveTextAlignment"
-      [hasAssistiveText]="assistiveText"
+      [hasAssistiveText]="!!assistiveText"
       (click)="openModal()"
     >
       <ng-content></ng-content>

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { IconService } from 'carbon-components-angular';
 import { AIListComponent } from '../list/ai-list.component';
+import { SelectionType } from '@ai-apps/angular/list';
 import { ArrowRight16, Subtract16 } from '@carbon/icons';
 import { AIListBuilderItem, AIListBuilderModel } from './list-builder-model.class';
 
@@ -12,7 +13,7 @@ import { AIListBuilderItem, AIListBuilderModel } from './list-builder-model.clas
         <ai-list
           #list
           [items]="model.items"
-          [selectionType]="addingMethod === 'multi-select' ? 'multi' : undefined"
+          [selectionType]="addingMethod === 'multi-select' ? SelectionType.MULTI : undefined"
         >
         </ai-list>
       </div>
@@ -20,7 +21,7 @@ import { AIListBuilderItem, AIListBuilderModel } from './list-builder-model.clas
         <ai-list
           #addedItemsList
           [items]="model.addedItems"
-          [itemsDraggable]="addingMethod === 'multi-select' ? 'multi' : undefined"
+          [itemsDraggable]="addingMethod === 'multi-select'"
           [allowDropOutsideParents]="false"
         >
         </ai-list>
@@ -41,6 +42,7 @@ import { AIListBuilderItem, AIListBuilderModel } from './list-builder-model.clas
   `,
 })
 export class AIListBuilderComponent implements AfterViewInit, OnInit {
+  SelectionType = SelectionType;
   @Input() model: AIListBuilderModel;
 
   /**
@@ -59,8 +61,8 @@ export class AIListBuilderComponent implements AfterViewInit, OnInit {
    */
   @Input() addingMethod: 'multi-select' | 'row-actions' = 'row-actions';
 
-  @ViewChild('addButton') @Input() addButton: TemplateRef<any>;
-  @ViewChild('removeButton') @Input() removeButton: TemplateRef<any>;
+  @ViewChild('addButton') addButton: TemplateRef<any>;
+  @ViewChild('removeButton') removeButton: TemplateRef<any>;
 
   @ViewChild('list') listComponent: AIListComponent;
   @ViewChild('addedItemsList') addedItemsListComponent: AIListComponent;

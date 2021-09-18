@@ -1,6 +1,6 @@
 import { EventEmitter, TemplateRef } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AIListItem } from '../list';
+import { AIListItem } from '../list-index';
 
 export class AIListBuilderItem extends AIListItem {
   items: AIListBuilderItem[] = [];
