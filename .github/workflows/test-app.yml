@@ -54,11 +54,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dist
-          path: |
-            packages/react/es
-            packages/react/lib
-            packages/react/umd
-            packages/react/scss
+          path: packages/react
 
   create-test-app:
     name: Create test app and build
