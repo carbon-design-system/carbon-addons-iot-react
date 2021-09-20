@@ -490,6 +490,9 @@ describe('DashboardGrid', () => {
       </div>
     );
 
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(500);
+
     cy.findByTestId('visual-regression-test').should('be.visible');
     onlyOn('headless', () => {
       cy.findByTestId('visual-regression-test').compareSnapshot('DashboardGrid');
