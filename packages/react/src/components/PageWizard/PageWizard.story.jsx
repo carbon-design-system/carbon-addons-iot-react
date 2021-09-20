@@ -454,8 +454,9 @@ export const WithStickyFooterStatefulExampleWValidationInPageTitleBar = () => (
       content={
         <StepValidationWizard
           hasStickyFooter={boolean('hasStickyFooter', true)}
-          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
           isClickable
+          spaceEqually={boolean('spaceEqually', false)}
         />
       }
     />

@@ -102,21 +102,3 @@
     position: relative;
   }
 }
-
-.#{$iot-prefix}--gauge-card {
-  .#{$iot-prefix}--card--title {
-    padding-bottom: $spacing-02;
-    padding-top: $spacing-02;
-    width: 100%;
-
-    span {
-      max-width: calc(100% - 40px);
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-
-  .#{$prefix}--tooltip__trigger {
-    margin-right: $spacing-03;
-  }
-}

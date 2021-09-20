@@ -1,7 +1,7 @@
 import React, { createElement, useMemo, useRef, useState } from 'react';
 import { boolean, text, select, array, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { SettingsAdjust16 } from '@carbon/icons-react';
+import { SettingsAdjust16, TrashCan16 } from '@carbon/icons-react';
 import isEqual from 'lodash/isEqual';
 import assign from 'lodash/assign';
 
@@ -32,6 +32,8 @@ import TableViewDropdown from './TableViewDropdown/TableViewDropdown';
 import TableSaveViewModal from './TableSaveViewModal/TableSaveViewModal';
 
 export const StatefulTableWithNestedRowItems = (props) => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const tableData = initialState.data.map((i, idx) => ({
     ...i,
     children:
@@ -64,18 +66,31 @@ export const StatefulTableWithNestedRowItems = (props) => {
         : undefined,
   }));
   return (
-    <div>
-      <StatefulTable
+    <div style={{ width: select('table container width', ['auto', '300px', '800px'], 'auto') }}>
+      <MyTable
         id="table"
         {...initialState}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
         columns={tableColumnsFixedWidth}
         data={tableData}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         options={{
           ...initialState.options,
           hasRowNesting: true,
           hasFilter: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          hasResize: true,
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'alwaysTruncate'
+          ),
         }}
         view={{
           ...initialState.view,
@@ -85,7 +100,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
           },
         }}
         actions={tableActions}
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         {...props}
       />
     </div>
@@ -112,57 +127,110 @@ export default {
   ],
 };
 
-export const SimpleStatefulExample = () => (
-  <StatefulTable
-    id="table"
-    {...initialState}
-    actions={tableActions}
-    columns={initialState.columns.map((column) => {
-      if (column.filter) {
-        return {
-          ...column,
-          filter: {
-            ...column.filter,
-            isMultiselect: !!column.filter?.options,
-          },
-        };
-      }
-      return column;
-    })}
-    style={{ maxWidth: select('table width', ['auto', '300px'], 'auto') }}
-    lightweight={boolean('lightweight', false)}
-    options={{
-      hasRowSelection: select('options.hasRowSelection', ['multi', 'single'], 'multi'),
-      hasRowExpansion: boolean('options.hasRowExpansion', false),
-      hasRowNesting: boolean('options.hasRowNesting', false),
-      wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
-      hasSearch: boolean('options.hasSearch', false),
-      hasFilter: boolean('options.hasFilter', false),
-      hasAggregations: boolean('options.hasAggregations', false),
-      hasPagination: boolean('options.hasPagination', false),
-      hasSort: boolean('options.hasSort', false),
-      hasMultiSort: boolean('options.hasMultiSort', false),
-      hasResize: boolean('options.hasResize', false),
-      useAutoTableLayoutForResize: boolean('options.useAutoTableLayoutForResize', false),
-      hasColumnSelection: boolean('options.hasColumnSelection', false),
-    }}
-    view={{
-      aggregations: {
-        label: text('view.aggregations.label', 'Total:'),
-        columns: [
-          object('view.aggregations.columns[0]', {
-            id: 'number',
-            align: 'start',
-            isSortable: false,
-          }),
-        ],
-      },
-      table: {
-        selectedIds: array('selectedIds', []),
-      },
-    }}
-  />
-);
+export const SimpleStatefulExample = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  return (
+    <MyTable
+      id="table"
+      {...initialState}
+      actions={tableActions}
+      columns={initialState.columns.map((column) => {
+        if (column.filter) {
+          return {
+            ...column,
+            filter: {
+              ...column.filter,
+              isMultiselect: !!column.filter?.options,
+            },
+          };
+        }
+        return column;
+      })}
+      style={{ maxWidth: select('table width', ['auto', '300px'], 'auto') }}
+      useZebraStyles={boolean('Alternate colors in table rows (useZebraStyles)', false)}
+      lightweight={boolean('Show an alternate header style (lightweight)', false)}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
+      options={{
+        hasAggregations: boolean(
+          'Aggregates column values and displays in a footer row (options.hasAggregations)',
+          false
+        ),
+        hasColumnSelection: boolean(
+          'Enables choosing which columns are available (options.hasColumnSelection)',
+          false
+        ),
+        hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', false),
+        hasMultiSort: boolean(
+          'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
+          false
+        ),
+        hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
+        hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
+        hasRowExpansion: boolean(
+          'Enables expanding rows to show additional content (options.hasRowExpansion)',
+          false
+        ),
+        hasRowNesting: boolean(
+          'Enables rows to have nested rows within (options.hasRowNesting)',
+          false
+        ),
+        hasRowSelection: select(
+          'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+          ['multi', 'single', false],
+          'multi'
+        ),
+        hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
+        hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
+        preserveColumnWidths: boolean(
+          'Preserve column widths when resizing (options.preserveColumnWidths)',
+          false
+        ),
+        useAutoTableLayoutForResize: boolean(
+          'Removes table-layout:fixed to allow resizable tables (options.useAutoTableLayoutForResize)',
+          false
+        ),
+        wrapCellText: select(
+          'Choose how text should wrap witin columns (options.wrapCellText)',
+          selectTextWrapping,
+          'always'
+        ),
+      }}
+      view={{
+        aggregations: {
+          label: text('The label used in the aggregation row (view.aggregations.label)', 'Total:'),
+          columns: [
+            object(
+              'An example column object to demonstrate which columns should aggregate (view.aggregations.columns[0])',
+              {
+                id: 'number',
+                align: 'start',
+                isSortable: false,
+              }
+            ),
+          ],
+        },
+        table: {
+          selectedIds: array('An array of selected table ids (view.table.selectedIds)', []),
+        },
+        toolbar: {
+          batchActions: [
+            {
+              iconDescription: 'Delete Item',
+              id: 'delete',
+              labelText: 'Delete',
+              renderIcon: TrashCan16,
+            },
+          ],
+        },
+      }}
+    />
+  );
+};
 
 SimpleStatefulExample.storyName = 'simple stateful table';
 
@@ -180,7 +248,7 @@ export const StatefulExampleWithRowNestingAndFixedColumns = () => (
 );
 
 StatefulExampleWithRowNestingAndFixedColumns.storyName =
-  'Stateful Example with row nesting and fixed columns';
+  'with row nesting and resizable columns with initial width';
 
 StatefulExampleWithRowNestingAndFixedColumns.parameters = {
   info: {
@@ -230,18 +298,29 @@ StatefulExampleWithRowNestingAndFixedColumns.parameters = {
 };
 
 export const StatefulExampleWithSingleNestedHierarchy = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   const tableData = initialState.data.map((i, idx) => ({
     ...i,
     children: [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)],
   }));
   return (
     <div>
-      <StatefulTable
+      <MyTable
         id="table"
         {...initialState}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
         columns={tableColumns}
         data={tableData}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         options={{
           ...initialState.options,
           hasRowNesting: {
@@ -250,17 +329,20 @@ export const StatefulExampleWithSingleNestedHierarchy = () => {
               true
             ),
           },
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
         }}
         actions={tableActions}
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
       />
     </div>
   );
 };
 
-StatefulExampleWithSingleNestedHierarchy.storyName =
-  'Stateful Example with single nested hierarchy';
+StatefulExampleWithSingleNestedHierarchy.storyName = 'with single nested hierarchy';
 
 StatefulExampleWithSingleNestedHierarchy.parameters = {
   info: {
@@ -313,37 +395,63 @@ StatefulExampleWithSingleNestedHierarchy.parameters = {
   },
 };
 
-export const SimpleStatefulExampleWithColumnOverflowMenu = () => (
-  <FullWidthWrapper>
-    <StatefulTable
-      id="table"
-      {...initialState}
-      columns={tableColumnsWithOverflowMenu}
-      actions={tableActions}
-      lightweight={boolean('lightweight', false)}
-      options={{
-        hasAggregations: true,
-        hasPagination: boolean('hasPagination', true),
-        hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
-        hasRowExpansion: false,
-        hasResize: true,
-        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-      }}
-      view={{
-        aggregations: {
-          label: 'Total',
-          columns: [
-            {
-              id: 'number',
-              align: 'end',
-            },
-          ],
-        },
-        table: { selectedIds: array('selectedIds', []) },
-      }}
-    />
-  </FullWidthWrapper>
-);
+export const SimpleStatefulExampleWithColumnOverflowMenu = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  return (
+    <FullWidthWrapper>
+      <MyTable
+        id="table"
+        {...initialState}
+        columns={tableColumnsWithOverflowMenu.map((c) => ({
+          ...c,
+          width: '150px',
+        }))}
+        actions={tableActions}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
+        options={{
+          hasAggregations: true,
+          hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
+          hasRowSelection: select(
+            'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+            ['multi', 'single'],
+            'multi'
+          ),
+          hasRowExpansion: false,
+          hasResize: true,
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
+          preserveColumnWidths: true,
+        }}
+        view={{
+          aggregations: {
+            label: 'Total',
+            columns: [
+              {
+                id: 'number',
+                align: 'end',
+              },
+            ],
+          },
+          table: {
+            selectedIds: array(
+              'An array of currently selected rowIds (view.table.selectedIds)',
+              []
+            ),
+          },
+        }}
+      />
+    </FullWidthWrapper>
+  );
+};
 
 SimpleStatefulExampleWithColumnOverflowMenu.storyName =
   'with column overflow menu and aggregate column values';
@@ -351,130 +459,195 @@ SimpleStatefulExampleWithColumnOverflowMenu.storyName =
 SimpleStatefulExampleWithColumnOverflowMenu.parameters = {
   info: {
     text:
-      'This is an example of the <StatefulTable> component that implements the overflow menu in the column header. Refer to the source files under /src/components/Table/TableHead for details. ',
+      'This is an example of the <MyTable> component that implements the overflow menu in the column header. Refer to the source files under /src/components/Table/TableHead for details. ',
     propTables: [Table],
     propTablesExclude: [StatefulTable],
   },
 };
 
-export const SimpleStatefulExampleWithAlignment = () => (
-  <FullWidthWrapper>
-    <StatefulTable
+export const SimpleStatefulExampleWithAlignment = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  return (
+    <FullWidthWrapper>
+      <MyTable
+        id="table"
+        {...initialState}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
+        columns={tableColumnsWithAlignment.map((c, idx) => ({
+          ...c,
+          width: idx % 2 === 0 ? '100px' : '200px',
+          tooltip: c.id === 'select' ? 'Select an option' : undefined,
+        }))}
+        data={initialState.data.map((eachRow, index) => ({
+          ...eachRow,
+          isSelectable: index % 3 !== 0,
+        }))}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
+        actions={tableActions}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
+        options={{
+          hasRowSelection: select(
+            'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+            ['multi', 'single', false],
+            'multi'
+          ),
+          hasRowExpansion: boolean(
+            'Enables expanding rows to show additional content (options.hasRowExpansion)',
+            false
+          ),
+        }}
+        view={{
+          table: {
+            selectedIds: array(
+              'An array of currently selected rowIds (view.table.selectedIds)',
+              []
+            ),
+          },
+        }}
+      />
+    </FullWidthWrapper>
+  );
+};
+
+SimpleStatefulExampleWithAlignment.storyName = 'with alignment and column tooltip';
+
+SimpleStatefulExampleWithAlignment.parameters = {
+  info: {
+    text:
+      'This is an example of the <MyTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+    propTables: [Table],
+    propTablesExclude: [StatefulTable],
+  },
+};
+
+export const StatefulExampleWithEveryThirdRowUnselectable = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  return (
+    <MyTable
       id="table"
       {...initialState}
-      secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
-      columns={tableColumnsWithAlignment.map((c, idx) => ({
-        ...c,
-        width: idx % 2 === 0 ? '100px' : '200px',
-        tooltip: c.id === 'select' ? 'Select an option' : undefined,
-      }))}
+      secondaryTitle={text(
+        'Title shown in bar above header row (secondaryTitle)',
+        `Row count: ${initialState.data.length}`
+      )}
       data={initialState.data.map((eachRow, index) => ({
         ...eachRow,
         isSelectable: index % 3 !== 0,
       }))}
       actions={tableActions}
-      lightweight={boolean('lightweight', false)}
+      lightweight={boolean('Show an alternate header style (lightweight)', false)}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       options={{
-        hasRowSelection: select('options.hasRowSelection', ['multi', 'single'], 'multi'),
-        hasRowExpansion: boolean('options.hasRowExpansion', false),
+        hasRowSelection: select(
+          'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+          ['multi', 'single', false],
+          'multi'
+        ),
+        hasRowExpansion: false,
       }}
-      view={{ table: { selectedIds: array('selectedIds', []) } }}
+      view={{
+        table: {
+          selectedIds: array('An array of currently selected rowIds (view.table.selectedIds)', []),
+        },
+      }}
     />
-  </FullWidthWrapper>
-);
-
-SimpleStatefulExampleWithAlignment.storyName = 'Simple Stateful Example with alignment';
-
-SimpleStatefulExampleWithAlignment.parameters = {
-  info: {
-    text:
-      'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
-    propTables: [Table],
-    propTablesExclude: [StatefulTable],
-  },
+  );
 };
 
-export const StatefulExampleWithEveryThirdRowUnselectable = () => (
-  <StatefulTable
-    id="table"
-    {...initialState}
-    secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
-    data={initialState.data.map((eachRow, index) => ({
-      ...eachRow,
-      isSelectable: index % 3 !== 0,
-    }))}
-    actions={tableActions}
-    lightweight={boolean('lightweight', false)}
-    options={{
-      hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
-      hasRowExpansion: false,
-    }}
-    view={{ table: { selectedIds: array('selectedIds', []) } }}
-  />
-);
-
-StatefulExampleWithEveryThirdRowUnselectable.storyName =
-  'Stateful Example with every third row unselectable';
+StatefulExampleWithEveryThirdRowUnselectable.storyName = 'with every third row unselectable';
 
 StatefulExampleWithEveryThirdRowUnselectable.parameters = {
   info: {
     text:
-      'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+      'This is an example of the <MyTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
     propTables: [Table],
     propTablesExclude: [StatefulTable],
   },
 };
 
-export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => (
-  <FullWidthWrapper>
-    <StatefulTable
-      id="table"
-      {...initialState}
-      view={{
-        ...initialState.view,
-        pagination: {
-          ...initialState.view.pagination,
-          maxPages: 5,
-        },
-        toolbar: {
-          activeBar: 'filter',
-          customToolbarContent: (
-            <FlyoutMenu
-              direction={FlyoutMenuDirection.BottomEnd}
-              buttonProps={{ size: 'default', renderIcon: SettingsAdjust16 }}
-              iconDescription="Helpful description"
-              triggerId="test-flyout-id"
-              transactional={boolean('Flyout Transactional', true)}
-              onApply={action('Flyout Menu Apply Clicked')}
-              onCancel={action('Flyout Menu Cancel Clicked')}
-            >
-              Example Flyout Content
-            </FlyoutMenu>
+export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  return (
+    <FullWidthWrapper>
+      <MyTable
+        id="table"
+        {...initialState}
+        view={{
+          ...initialState.view,
+          pagination: {
+            ...initialState.view.pagination,
+            maxPages: 5,
+          },
+          toolbar: {
+            activeBar: 'filter',
+            customToolbarContent: (
+              <FlyoutMenu
+                direction={FlyoutMenuDirection.BottomEnd}
+                buttonProps={{ size: 'default', renderIcon: SettingsAdjust16 }}
+                iconDescription="Helpful description"
+                triggerId="test-flyout-id"
+                transactional={boolean('Flyout Transactional', true)}
+                onApply={action('Flyout Menu Apply Clicked')}
+                onCancel={action('Flyout Menu Cancel Clicked')}
+              >
+                Example Flyout Content
+              </FlyoutMenu>
+            ),
+          },
+        }}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
+        actions={{
+          ...tableActions,
+          toolbar: {
+            ...tableActions.toolbar,
+            onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, 'my table data'),
+          },
+        }}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
+        options={{
+          ...initialState.options,
+          hasResize: true,
+          hasFilter: select(
+            'Enables filtering columns by value (options.hasFilter)',
+            ['onKeyPress', 'onEnterAndBlur', true, false],
+            'onKeyPress'
           ),
-        },
-      }}
-      secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
-      actions={{
-        ...tableActions,
-        toolbar: {
-          ...tableActions.toolbar,
-          onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, 'my table data'),
-        },
-      }}
-      lightweight={boolean('lightweight', false)}
-      options={{
-        ...initialState.options,
-        hasResize: true,
-        hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-        hasSingleRowEdit: true,
-      }}
-    />
-  </FullWidthWrapper>
-);
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
+          hasSingleRowEdit: true,
+        }}
+      />
+    </FullWidthWrapper>
+  );
+};
 
 StatefulExampleWithExpansionMaxPagesAndColumnResize.storyName =
-  'Stateful Example with expansion, maxPages, and column resize';
+  'with expansion, maxPages, and column resize';
 
 StatefulExampleWithExpansionMaxPagesAndColumnResize.parameters = {
   info: {
@@ -513,6 +686,8 @@ StatefulExampleWithExpansionMaxPagesAndColumnResize.parameters = {
 };
 
 export const StatefulExampleWithCreateSaveViews = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   // The initial default state for this story is one with no active filters
   // and no default search value etc, i.e. a view all scenario.
   const defaultState = {
@@ -742,12 +917,12 @@ export const StatefulExampleWithCreateSaveViews = () => {
             setViewToSave(viewToEdit);
           },
           onDelete,
-          onClearError: action('onClearManageViewsModalError'),
+          onClearError: action('TableManageViewsModal: onClearManageViewsModalError'),
           onClose: () => setManageViewsModalOpen(false),
         }}
         defaultViewId={defaultViewId}
-        error={select('error', [undefined, 'My error msg'], undefined)}
-        isLoading={boolean('isLoading', false)}
+        error={select('TableManageViewsModal: error', [undefined, 'My error msg'], undefined)}
+        isLoading={boolean('TableManageViewsModal: isLoading', false)}
         open={manageViewsModalOpen}
         views={manageViewsCurrentPageItems}
         pagination={{
@@ -865,14 +1040,14 @@ export const StatefulExampleWithCreateSaveViews = () => {
             onClose: () => {
               setViewToSave(undefined);
             },
-            onClearError: action('onClearError'),
-            onChange: action('onChange'),
+            onClearError: action('TableSaveViewModal: onClearError'),
+            onChange: action('TableSaveViewModal: onChange'),
           }}
-          sendingData={boolean('sendingData', false)}
-          error={select('error', [undefined, 'My error msg'], undefined)}
+          sendingData={boolean('TableSaveViewModal: sendingData', false)}
+          error={select('TableSaveViewModal: error', [undefined, 'My error msg'], undefined)}
           open
-          titleInputInvalid={boolean('titleInputInvalid', false)}
-          titleInputInvalidText={text('titleInputInvalidText', undefined)}
+          titleInputInvalid={boolean('TableSaveViewModal: titleInputInvalid', false)}
+          titleInputInvalidText={text('TableSaveViewModal: titleInputInvalidText', undefined)}
           viewDescription={getDescription(viewToSave.props.view)}
           initialFormValues={{
             title: viewToSave.title,
@@ -911,7 +1086,7 @@ export const StatefulExampleWithCreateSaveViews = () => {
     <FullWidthWrapper>
       {renderManageViewsModal()}
       {renderSaveViewModal()}
-      <StatefulTable
+      <MyTable
         key={`table-story-${selectedView?.id}`}
         id="table"
         {...defaultState}
@@ -929,12 +1104,25 @@ export const StatefulExampleWithCreateSaveViews = () => {
           ...tableActions,
           onUserViewModified,
         }}
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         options={{
           ...defaultState.options,
           hasResize: true,
-          hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          hasFilter: select(
+            'Enables filtering columns by value (options.hasFilter)',
+            ['onKeyPress', 'onEnterAndBlur', true, false],
+            'onKeyPress'
+          ),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
           // Enables the behaviour in StatefulTable and Table required
           // to fully implement Create and Save Views
           hasUserViewManagement: true,
@@ -944,7 +1132,7 @@ export const StatefulExampleWithCreateSaveViews = () => {
   );
 };
 
-StatefulExampleWithCreateSaveViews.storyName = 'Stateful Example with Create & Save Views';
+StatefulExampleWithCreateSaveViews.storyName = 'with create & save view management';
 StatefulExampleWithCreateSaveViews.decorators = [createElement];
 
 StatefulExampleWithCreateSaveViews.parameters = {
@@ -960,6 +1148,8 @@ StatefulExampleWithCreateSaveViews.parameters = {
 };
 
 export const WithPreFilledSearch = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const [defaultValue, setDefaultValue] = useState('toyota');
   const sampleDefaultValues = ['whiteboard', 'scott', 'helping'];
   return (
@@ -987,9 +1177,12 @@ export const WithPreFilledSearch = () => {
       >
         Reset defaultValue prop to empty string
       </Button>
-      <StatefulTable
+      <MyTable
         id="table"
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Title shown in bar above header row (secondaryTitle)',
+          `Row count: ${initialState.data.length}`
+        )}
         style={{ maxWidth: '300px' }}
         columns={tableColumns.slice(0, 2)}
         data={tableData}
@@ -999,6 +1192,11 @@ export const WithPreFilledSearch = () => {
           hasPagination: true,
           hasRowSelection: 'single',
         }}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           toolbar: {
             search: {
@@ -1007,7 +1205,10 @@ export const WithPreFilledSearch = () => {
           },
         }}
         i18n={{
-          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+          emptyButtonLabelWithFilters: text(
+            'i18n strings for translation (i18n.emptyButtonLabel)',
+            '__Clear all filters__'
+          ),
         }}
       />
     </>
@@ -1030,7 +1231,7 @@ export const StatefulTableWithAdvancedFilters = () => {
     {
       filterId: 'story-filter',
       /** Text for main tilte of page */
-      filterTitleText: 'Story Filter',
+      filterTitleText: 'date CONTAINS 19, boolean=true',
       /** Text for metadata for the filter */
       filterMetaText: `last updated: 2021-03-11 15:34:01`,
       /** tags associated with particular filter */
@@ -1117,7 +1318,7 @@ export const StatefulTableWithAdvancedFilters = () => {
     {
       filterId: 'next-filter',
       /** Text for main tilte of page */
-      filterTitleText: 'Next Filter',
+      filterTitleText: 'select=Option c, boolean=false',
       /** Text for metadata for the filter */
       filterMetaText: `last updated: 2021-03-11 15:34:01`,
       /** tags associated with particular filter */
@@ -1226,6 +1427,11 @@ export const StatefulTableWithAdvancedFilters = () => {
             hasRowSelection: 'multi',
             hasAdvancedFilter: true,
           }}
+          size={select(
+            'Sets the height of the table rows (size)',
+            ['xs', 'sm', 'md', 'lg', 'xl'],
+            'lg'
+          )}
           view={{
             filters: [
               {
@@ -1281,23 +1487,32 @@ StatefulTableWithAdvancedFilters.storyName = '☢️ with advanced filters';
 StatefulTableWithAdvancedFilters.decorators = [createElement];
 
 export const WithMultiSorting = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   return (
-    <StatefulTable
+    <MyTable
       columns={tableColumns.map((i, idx) => ({
         ...i,
+        width: '200px',
         isSortable: idx !== 1,
         align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
       }))}
       data={tableData}
       actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       options={{
         hasFilter: false,
         hasPagination: true,
         hasRowSelection: 'multi',
-        hasAggregations: true,
+        hasAggregations: false,
         hasMultiSort: true,
         hasResize: true,
         hasColumnSelection: true,
+        preserveColumnWidths: true,
       }}
       view={{
         filters: [],

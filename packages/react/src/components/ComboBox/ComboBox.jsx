@@ -2,8 +2,10 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { ComboBox as CarbonComboBox, Tag } from 'carbon-components-react';
+import pick from 'lodash/pick';
 
 import { settings } from '../../constants/Settings';
+import { filterValidAttributes } from '../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -226,7 +228,26 @@ const ComboBox = ({
         disabled={disabled || (loading !== undefined && loading !== false)}
         helperText={helperText}
         shouldFilterItem={hasMultiValue || addToList ? shouldFilterItemForTags : shouldFilterItem}
-        {...rest}
+        {...pick(
+          rest,
+          'ariaLabel',
+          'direction',
+          'downshiftProps',
+          'initialSelectedItem',
+          'invalid',
+          'invalidText',
+          'itemToElement',
+          'light',
+          'onToggleClick',
+          'placeholder',
+          'selectedItem',
+          'titleText',
+          'translateWithId',
+          'type',
+          'warn',
+          'warnText'
+        )}
+        {...filterValidAttributes(rest)}
       />
       {hasMultiValue ? (
         <ul data-testid={`${testId}-tags`} className={`${iotPrefix}--combobox-tags`}>

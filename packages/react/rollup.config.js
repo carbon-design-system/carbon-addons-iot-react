@@ -184,10 +184,21 @@ export default [
             ],
             dest: ['es/node_modules', 'lib/node_modules'],
           },
-          // Copy CSS
+          // Copy CSS from tmp to ./lib/css, 'lib/css' folder is kept b/c flatten:false
           {
-            src: ['lib/css/'],
+            src: ['tmp/lib/css/'],
             dest: ['./'],
+          },
+        ],
+        verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
+      }),
+      copy({
+        flatten: true,
+        targets: [
+          // Copy CSS from tmp to ./css, 'lib/css' folder isn't kept because flatten:true.
+          {
+            src: 'tmp/lib/css/*',
+            dest: './css/',
           },
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging

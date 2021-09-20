@@ -3,6 +3,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import merge from 'lodash/merge';
 import get from 'lodash/get';
 
+import { getRowAction } from './statefulTableUtilities';
 import { tableReducer } from './tableReducer';
 import {
   tableRegister,
@@ -50,7 +51,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     options,
     view: {
       toolbar: { customToolbarContent },
-      pagination: { totalItems },
+      pagination: { totalItems: initialTotalItems },
     },
     view: initialState,
     actions: callbackActions,
@@ -81,7 +82,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         data: initialData,
         isLoading,
         view: initialState,
-        totalItems: totalItems || initialData.length,
+        totalItems: initialTotalItems || initialData.length,
         hasUserViewManagement,
       })
     );
@@ -158,32 +159,6 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onAddMultiSortColumn,
     onRemoveMultiSortColumn,
   } = table || {};
-
-  const getRowAction = (data, actionId, rowId) => {
-    let item;
-    for (let idx = 0; idx < data.length; idx += 1) {
-      const element = data[idx];
-      if (element.id === rowId) {
-        item = element.rowActions.find((action) => action.id === actionId);
-        if (item) {
-          break;
-        }
-        if (Array.isArray(element?.children)) {
-          item = getRowAction(element.children, actionId, rowId);
-          if (item) {
-            break;
-          }
-        }
-      }
-      if (Array.isArray(element?.children)) {
-        item = getRowAction(element.children, actionId, rowId);
-        if (item) {
-          break;
-        }
-      }
-    }
-    return item;
-  };
 
   // In addition to updating the store, I always callback to the parent in case they want to do something
   const actions = {
@@ -347,7 +322,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const filteredTotalItems =
     filteredCount && filteredCount !== currentlyLoadedDataCount
       ? filteredCount
-      : totalItems || currentlyLoadedDataCount;
+      : view?.pagination?.totalItems || initialTotalItems || currentlyLoadedDataCount;
 
   return filteredData ? (
     <Table

@@ -45,11 +45,15 @@ const propTypes = {
   }),
   /** Callback function when user clicks Show Gallery */
   onShowGallery: PropTypes.func.isRequired,
-  /** Callback function when form data changes */
+  /** Callback function when form data changes, passes the updated card configuration */
   onChange: PropTypes.func.isRequired,
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
-
+  /** optional function passes the card props being edited and you can updated the card props
+   * This allows you to add things to the edit form that are not in the main card JSON.  This is a better
+   * way to add custom editor props to the Card.
+   */
+  onRenderCardEditForm: PropTypes.func,
   /** if provided, allows the consumer to make changes to the cardConfig for preview in the JSON editor modal.
    * onCardJsonPreview(card)
    */
@@ -73,6 +77,12 @@ const propTypes = {
       label: PropTypes.string,
     })
   ),
+  /** if provided, returns an object where the keys are available dimensions which are the dimensions to be allowed
+   * on each card
+   * ex response: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   * getValidDimensions(card)
+   */
+  getValidDimensions: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -149,9 +159,11 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a search',
     editDataItems: 'Edit data items',
   },
+  getValidDimensions: null,
   getValidDataItems: null,
   getValidTimeRanges: null,
   onCardJsonPreview: null,
+  onRenderCardEditForm: null,
   dataItems: [],
   availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
@@ -178,7 +190,9 @@ const CardEditor = ({
   onValidateCardJson,
   onCardJsonPreview,
   supportedCardTypes,
-  availableDimensions,
+  availableDimensions: availableDimensionsProp,
+  getValidDimensions,
+  onRenderCardEditForm,
   icons,
   i18n,
   currentBreakpoint,
@@ -200,9 +214,18 @@ const CardEditor = ({
   }, []);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
+  const availableDimensions = useMemo(
+    () => (getValidDimensions ? getValidDimensions(cardConfig) : availableDimensionsProp),
+    [availableDimensionsProp, cardConfig, getValidDimensions]
+  );
+
   // show the gallery if no card is being edited
   const showGallery = isNil(cardConfig);
 
+  const finalCardToEdit = useMemo(
+    () => (onRenderCardEditForm && cardConfig ? onRenderCardEditForm(cardConfig) : cardConfig),
+    [cardConfig, onRenderCardEditForm]
+  );
   return (
     <div
       className={baseClassName}
@@ -226,7 +249,7 @@ const CardEditor = ({
           />
         ) : (
           <CardEditForm
-            cardConfig={cardConfig}
+            cardConfig={finalCardToEdit}
             isSummaryDashboard={isSummaryDashboard}
             onChange={onChange}
             dataItems={dataItems}

@@ -3,6 +3,8 @@
 @import 'zoom-control';
 @import 'scrolling-controls';
 
+$cardPadding: $spacing-05;
+
 .#{$iot-prefix}--map {
   &-card-content.#{$iot-prefix}--card--content--expanded {
     overflow: hidden;
@@ -10,8 +12,10 @@
   // container and map canvas
   &__container {
     position: relative;
-    height: 100%;
-    width: 100%;
+    // map card should span full width of card
+    height: calc(100% + #{$cardPadding});
+    width: calc(100% + #{$cardPadding} + #{$cardPadding});
+    transform: translateX(-#{$cardPadding});
     transition: width $duration--fast-02 motion(entrance, productive);
 
     canvas {

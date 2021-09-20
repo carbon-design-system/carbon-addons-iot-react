@@ -1,6 +1,7 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--card--toolbar-date-range-wrapper {
+  align-items: center;
   background: transparent;
   border: none;
   display: flex;
@@ -14,13 +15,14 @@
   padding: $carbon--spacing-05 $carbon--spacing-03;
   font-size: 0.875rem;
   font-weight: normal;
+
+  &--hidden {
+    display: none;
+  }
 }
 
 .#{$iot-prefix}--card--toolbar-date-range-wrapper
   > .#{$iot-prefix}--card--toolbar-date-range-action {
-  min-height: $carbon--spacing-09;
-  min-width: $carbon--spacing-09;
-  cursor: pointer;
   &:active,
   &:focus {
     outline: 2px solid $focus;

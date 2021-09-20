@@ -12,6 +12,7 @@ import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
+import experimental from '../../internal/experimental';
 
 import {
   TableColumnsPropTypes,
@@ -53,6 +54,9 @@ const propTypes = {
   data: TableRowPropTypes.isRequired,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
+
+  /** Experimental: Turns on the carbon sticky-header feature. */
+  stickyHeader: experimental('stickyHeader'),
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     /** If true allows the table to aggregate values of columns in a special row */
@@ -99,6 +103,8 @@ const propTypes = {
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
     hasUserViewManagement: PropTypes.bool,
+    /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
+    preserveColumnWidths: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     /**
@@ -109,6 +115,9 @@ const propTypes = {
      */
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
   }),
+
+  /** Size prop from Carbon to shrink row height (and header height in some instances) */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
   view: PropTypes.shape({
@@ -204,6 +213,7 @@ const propTypes = {
       loadingState: PropTypes.shape({
         isLoading: PropTypes.bool,
         rowCount: PropTypes.number,
+        columnCount: PropTypes.number,
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
@@ -306,10 +316,12 @@ export const defaultProps = (baseProps) => ({
     hasResize: false,
     hasSingleRowEdit: false,
     hasUserViewManagement: false,
+    preserveColumnWidths: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
     wrapCellText: 'always',
   },
+  size: undefined,
   view: {
     aggregations: { columns: [] },
     pagination: {
@@ -337,6 +349,7 @@ export const defaultProps = (baseProps) => ({
       ordering: baseProps.columns && baseProps.columns.map((i) => ({ columnId: i.id })),
       loadingState: {
         rowCount: 5,
+        columnCount: 5,
       },
       singleRowEditButtons: null,
     },
@@ -387,8 +400,6 @@ export const defaultProps = (baseProps) => ({
     pageForwardAria: 'Next page',
     pageNumberAria: 'Page Number',
     itemsPerPage: 'Items per page:',
-    itemsRange: (min, max) => `${min}–${max} items`,
-    currentPage: (page) => `page ${page}`,
     itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
     pageRange: (current, total) => `${current} of ${total} pages`,
     /** table body */
@@ -411,8 +422,8 @@ export const defaultProps = (baseProps) => ({
     closeMenuAria: 'Close menu',
     clearSelectionAria: 'Clear selection',
     batchCancel: 'Cancel',
-    itemsSelected: 'items selected',
-    itemSelected: 'item selected',
+    itemsSelected: (selectedCount) => `${selectedCount} items selected`,
+    itemSelected: (selectedCount) => `${selectedCount} item selected`,
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
     toggleAggregations: 'Toggle aggregations',
     /** empty state */
@@ -825,60 +836,63 @@ const Table = (props) => {
           })}
           {...others}
         >
-          <TableHead
-            {...others}
-            i18n={i18n}
-            lightweight={lightweight}
-            options={{
-              ...pick(
-                options,
-                'hasAggregations',
-                'hasColumnSelectionConfig',
-                'hasResize',
-                'hasRowActions',
-                'hasRowExpansion',
-                'hasRowNesting',
-                'hasSingleRowEdit',
-                'hasRowSelection',
-                'useAutoTableLayoutForResize',
-                'hasMultiSort'
-              ),
-              wrapCellText: options.wrapCellText,
-              truncateCellText: useCellTextTruncate,
-            }}
-            columns={columns}
-            filters={view.filters}
-            actions={{
-              ...pick(actions.toolbar, 'onApplyFilter'),
-              ...pick(
-                actions.table,
-                'onSelectAll',
-                'onChangeSort',
-                'onChangeOrdering',
-                'onColumnSelectionConfig',
-                'onOverflowItemClicked'
-              ),
-              onColumnResize: handleOnColumnResize,
-            }}
-            selectAllText={i18n.selectAllAria}
-            clearFilterText={i18n.clearFilterAria}
-            filterText={i18n.filterAria}
-            clearSelectionText={i18n.clearSelectionAria}
-            openMenuText={i18n.openMenuAria}
-            closeMenuText={i18n.closeMenuAria}
-            tableId={id || tableId}
-            tableState={{
-              isDisabled: rowEditMode || singleRowEditMode,
-              activeBar: view.toolbar.activeBar,
-              filters: view.filters,
-              ...view.table,
-              selection: { isSelectAllSelected, isSelectAllIndeterminate },
-            }}
-            hasFastFilter={options?.hasFilter === 'onKeyPress'}
-            // TODO: remove id in v3
-            testId={`${id || testId}-table-head`}
-            showExpanderColumn={showExpanderColumn}
-          />
+          {columns.length ? (
+            <TableHead
+              {...others}
+              i18n={i18n}
+              lightweight={lightweight}
+              options={{
+                ...pick(
+                  options,
+                  'hasAggregations',
+                  'hasColumnSelectionConfig',
+                  'hasResize',
+                  'hasRowActions',
+                  'hasRowExpansion',
+                  'hasRowNesting',
+                  'hasSingleRowEdit',
+                  'hasRowSelection',
+                  'useAutoTableLayoutForResize',
+                  'hasMultiSort',
+                  'preserveColumnWidths'
+                ),
+                wrapCellText: options.wrapCellText,
+                truncateCellText: useCellTextTruncate,
+              }}
+              columns={columns}
+              filters={view.filters}
+              actions={{
+                ...pick(actions.toolbar, 'onApplyFilter'),
+                ...pick(
+                  actions.table,
+                  'onSelectAll',
+                  'onChangeSort',
+                  'onChangeOrdering',
+                  'onColumnSelectionConfig',
+                  'onOverflowItemClicked'
+                ),
+                onColumnResize: handleOnColumnResize,
+              }}
+              selectAllText={i18n.selectAllAria}
+              clearFilterText={i18n.clearFilterAria}
+              filterText={i18n.filterAria}
+              clearSelectionText={i18n.clearSelectionAria}
+              openMenuText={i18n.openMenuAria}
+              closeMenuText={i18n.closeMenuAria}
+              tableId={id || tableId}
+              tableState={{
+                isDisabled: rowEditMode || singleRowEditMode,
+                activeBar: view.toolbar.activeBar,
+                filters: view.filters,
+                ...view.table,
+                selection: { isSelectAllSelected, isSelectAllIndeterminate },
+              }}
+              hasFastFilter={options?.hasFilter === 'onKeyPress'}
+              // TODO: remove id in v3
+              testId={`${id || testId}-table-head`}
+              showExpanderColumn={showExpanderColumn}
+            />
+          ) : null}
 
           {
             // Table contents
@@ -887,6 +901,7 @@ const Table = (props) => {
                 columns={visibleColumns}
                 {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
                 rowCount={view.table.loadingState.rowCount}
+                columnCount={view.table.loadingState.columnCount}
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-skeleton`}
                 showExpanderColumn={showExpanderColumn}
@@ -996,10 +1011,7 @@ const Table = (props) => {
           ) : null}
         </CarbonTable>
       </div>
-      {options.hasPagination &&
-      !view.table.loadingState.isLoading &&
-      visibleData &&
-      visibleData.length ? ( // don't show pagination row while loading
+      {options.hasPagination && !view.table.loadingState.isLoading && visibleData?.length ? ( // don't show pagination row while loading
         <Pagination
           pageSize={paginationProps.pageSize}
           pageSizes={paginationProps.pageSizes}
@@ -1015,9 +1027,7 @@ const Table = (props) => {
           forwardText={i18n.pageForwardAria}
           pageNumberText={i18n.pageNumberAria}
           itemsPerPageText={i18n.itemsPerPage}
-          itemText={i18n.itemsRange}
           itemRangeText={i18n.itemsRangeWithTotal}
-          pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}

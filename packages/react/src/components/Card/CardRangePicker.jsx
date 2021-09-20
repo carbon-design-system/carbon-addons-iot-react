@@ -54,11 +54,14 @@ const CardRangePicker = ({
   return (
     <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
       <ToolbarItem>
-        {cardWidth > 400 ? (
-          <div id="timeRange" className={`${iotPrefix}--card--toolbar-timerange-label`}>
-            {timeRangeOptions[timeRange] || i18n.defaultLabel}
-          </div>
-        ) : null}
+        <div
+          id="timeRange"
+          className={classnames(`${iotPrefix}--card--toolbar-timerange-label`, {
+            [`${iotPrefix}--card--toolbar-timerange-label--hidden`]: cardWidth < 400,
+          })}
+        >
+          {timeRangeOptions[timeRange] || i18n.defaultLabel}
+        </div>
 
         <OverflowMenu
           className={classnames(`${iotPrefix}--card--toolbar-date-range-action`)}

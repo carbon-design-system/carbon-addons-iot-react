@@ -17,6 +17,7 @@ const propTypes = {
   onResize: PropTypes.func.isRequired,
   ordering: PropTypes.arrayOf(PropTypes.object).isRequired,
   paddingExtra: PropTypes.number.isRequired,
+  preserveColumnWidths: PropTypes.bool.isRequired,
   showExpanderColumn: PropTypes.bool.isRequired,
   resizeColumnText: PropTypes.string,
 };
@@ -28,24 +29,41 @@ const defaultProps = {
 const dragHandleWidth = 4;
 const { iotPrefix } = settings;
 
-export const getColumnDragBounds = (myColumn, siblingColumn, paddingExtra) => {
+export const getColumnDragBounds = ({
+  myColumn,
+  affectedSiblingColumn,
+  paddingExtra,
+  preserveColumnWidths,
+}) => {
   const minWidth = MIN_COLUMN_WIDTH + paddingExtra;
 
   return {
     minWidth,
-    left: document.dir === 'rtl' ? minWidth - siblingColumn.width : minWidth,
+    left:
+      document.dir === 'rtl'
+        ? preserveColumnWidths
+          ? -Infinity
+          : minWidth - affectedSiblingColumn.width
+        : minWidth,
     right:
       document.dir === 'rtl'
         ? myColumn.width - minWidth
-        : myColumn.width + siblingColumn.width - minWidth,
+        : preserveColumnWidths
+        ? Infinity
+        : myColumn.width + affectedSiblingColumn.width - minWidth,
   };
 };
 
-export const getUpdatedColumnWidths = (dropXPos, myColumn, affectedSiblingColumn) => {
+export const getUpdatedColumnWidths = ({
+  dropXPos,
+  myColumn,
+  affectedSiblingColumn,
+  preserveColumnWidths,
+}) => {
   const myColumnNewWidth = document.dir === 'rtl' ? myColumn.width - dropXPos : dropXPos;
   const updatedColumns = [{ id: myColumn.id, width: myColumnNewWidth }];
 
-  if (!affectedSiblingColumn.isExpanderColumn) {
+  if (!affectedSiblingColumn.isExpanderColumn && !preserveColumnWidths) {
     const newAffectedSiblingColumnWidth =
       document.dir === 'rtl'
         ? affectedSiblingColumn.width + dropXPos
@@ -77,6 +95,7 @@ const ColumnResize = React.forwardRef((props, ref) => {
     ordering,
     paddingExtra,
     showExpanderColumn,
+    preserveColumnWidths,
     resizeColumnText,
   } = props;
   const [startX, setStartX] = useState(0);
@@ -110,7 +129,12 @@ const ColumnResize = React.forwardRef((props, ref) => {
   const onMouseMove = (e) => {
     if (columnIsBeingResized) {
       const mousePosition = e.clientX + startX;
-      const bounds = getColumnDragBounds(myColumn, affectedSiblingColumn, paddingExtra);
+      const bounds = getColumnDragBounds({
+        myColumn,
+        affectedSiblingColumn,
+        paddingExtra,
+        preserveColumnWidths,
+      });
       if (mousePosition > bounds.left && mousePosition < bounds.right) {
         setLeftPosition(mousePosition);
       }
@@ -119,8 +143,13 @@ const ColumnResize = React.forwardRef((props, ref) => {
 
   const onMouseUp = () => {
     if (columnIsBeingResized) {
-      const resizePosition = leftPosition + (document.dir === 'rtl' ? 0 : dragHandleWidth);
-      const colWidths = getUpdatedColumnWidths(resizePosition, myColumn, affectedSiblingColumn);
+      const dropXPos = leftPosition + (document.dir === 'rtl' ? 0 : dragHandleWidth);
+      const colWidths = getUpdatedColumnWidths({
+        dropXPos,
+        myColumn,
+        affectedSiblingColumn,
+        preserveColumnWidths,
+      });
       props.onResize(colWidths);
       setColumnIsBeingResized(false);
       setLeftPosition(0);

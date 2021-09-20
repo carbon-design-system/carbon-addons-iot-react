@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, fireEvent, screen, within } from '@testing-library/react';
+import { render, fireEvent, screen, within, waitFor } from '@testing-library/react';
 import debounce from 'lodash/debounce';
+import userEvent from '@testing-library/user-event';
 
 import { sampleHierarchy } from '../List.story';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
@@ -481,6 +482,112 @@ describe('HierarchyList', () => {
     expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
   });
 
+  it('supports i18n strings', async () => {
+    render(
+      <HierarchyList
+        hasSearch
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        editingStyle={EditingStyle.MultipleNesting}
+        i18n={{
+          searchPlaceHolderText: 'test-enter-value',
+          expand: 'test-expand',
+          close: 'test-close',
+          itemsSelected: '%d test-items-selected',
+          move: 'test-move',
+          cancel: 'test-cancel',
+          itemSelected: '1 test-item-selected',
+          allRows: 'test-all-rows',
+          itemTitle: 'test-move 1 item',
+          itemsTitle: 'test-move %d items',
+          modalDescription: 'test-select-a-destination',
+        }}
+      />
+    );
+    expect(screen.getByText('test-enter-value')).toBeInTheDocument();
+    expect(screen.queryAllByRole('button', { name: 'test-expand' })).toHaveLength(6);
+
+    // Expand the 5th category New York Mets
+    userEvent.click(screen.queryAllByRole('button', { name: 'test-expand' })[4]);
+    userEvent.click(screen.queryByTestId('New York Mets_Pete Alonso-checkbox'));
+
+    expect(screen.getByText('test-all-rows')).toBeVisible();
+    expect(screen.getByText('1 test-item-selected')).toBeVisible();
+    expect(screen.queryByText('2 test-items-selected')).not.toBeInTheDocument();
+
+    userEvent.click(screen.queryByTestId('New York Mets_Amed Rosario-checkbox'));
+    expect(screen.getByText('2 test-items-selected')).toBeVisible();
+
+    // Open the dialog
+    userEvent.click(screen.getByRole('button', { name: 'test-move' }));
+    await waitFor(() => expect(screen.getByText('test-move 2 items')).toBeVisible());
+    expect(screen.getByRole('button', { name: 'test-close' })).toBeVisible();
+    expect(screen.getByText('test-select-a-destination')).toBeVisible();
+    expect(screen.getByText('test-all-rows')).toBeVisible();
+  });
+
+  it('has default i18n strings', async () => {
+    const i18nDefaults = HierarchyList.defaultProps.i18n;
+    render(
+      <HierarchyList
+        hasSearch
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        editingStyle={EditingStyle.MultipleNesting}
+      />
+    );
+    expect(screen.getByText(i18nDefaults.searchPlaceHolderText)).toBeInTheDocument();
+    expect(screen.queryAllByRole('button', { name: i18nDefaults.expand })).toHaveLength(6);
+
+    // Expand the 5th category New York Mets
+    userEvent.click(screen.queryAllByRole('button', { name: i18nDefaults.expand })[4]);
+    userEvent.click(screen.queryByTestId('New York Mets_Pete Alonso-checkbox'));
+
+    expect(screen.getByText(i18nDefaults.itemSelected)).toBeVisible();
+    expect(screen.queryByText('2 items selected')).not.toBeInTheDocument();
+
+    userEvent.click(screen.queryByTestId('New York Mets_Amed Rosario-checkbox'));
+    expect(screen.getByText('2 items selected')).toBeVisible();
+
+    // Open the dialog
+    userEvent.click(screen.getByRole('button', { name: i18nDefaults.move }));
+    await waitFor(() => expect(screen.getByText('Move 2 items underneath')).toBeVisible());
+
+    const modal = screen.getByRole('dialog');
+    expect(within(modal).getByRole('button', { name: i18nDefaults.close })).toBeVisible();
+    expect(screen.getByText(i18nDefaults.modalDescription)).toBeVisible();
+    expect(screen.getByText(i18nDefaults.allRows)).toBeVisible();
+  });
+
+  it('supports i18n functions where needed', async () => {
+    const i18nDefaults = HierarchyList.defaultProps.i18n;
+    render(
+      <HierarchyList
+        hasSearch
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        editingStyle={EditingStyle.MultipleNesting}
+        i18n={{
+          itemsSelected: (i) => `${i} test-items-selected`,
+          itemsTitle: (i) => `test-move ${i} items`,
+        }}
+      />
+    );
+
+    // // Expand the 5th category New York Mets
+    userEvent.click(screen.queryAllByRole('button', { name: i18nDefaults.expand })[4]);
+    userEvent.click(screen.queryByTestId('New York Mets_Pete Alonso-checkbox'));
+    userEvent.click(screen.queryByTestId('New York Mets_Amed Rosario-checkbox'));
+    expect(screen.getByText('2 test-items-selected')).toBeVisible();
+
+    // Open the dialog
+    userEvent.click(screen.getByRole('button', { name: i18nDefaults.move }));
+    await waitFor(() => expect(screen.getByText('test-move 2 items')).toBeVisible());
+  });
+
   it('clicking item should fire onSelect', () => {
     const onSelect = jest.fn();
     render(
@@ -491,6 +598,52 @@ describe('HierarchyList', () => {
     // Select the item
     fireEvent.click(screen.getAllByTitle('Leury Garcia')[0]);
     expect(onSelect).toHaveBeenCalledTimes(1);
+  });
+
+  it('clicking a selected item with hasDeselection deselects it', () => {
+    const onSelect = jest.fn();
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        onSelect={onSelect}
+        hasDeselection
+      />
+    );
+    // Expand the category
+    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
+    // Select the item once to initially select it
+    fireEvent.click(screen.getAllByTitle('Leury Garcia')[0]);
+    expect(onSelect).toHaveBeenCalledWith('Chicago White Sox_Leury Garcia');
+    // click it again
+    fireEvent.click(screen.getAllByTitle('Leury Garcia')[0]);
+    expect(onSelect).toHaveBeenCalledWith('Chicago White Sox_Leury Garcia');
+    expect(onSelect).toHaveBeenCalledTimes(2);
+  });
+
+  it('should be able to select multiple items with hasMultiSelect', () => {
+    const onSelect = jest.fn();
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        onSelect={onSelect}
+        hasMultiSelect
+        editingStyle={null}
+      />
+    );
+    // Expand the category
+    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
+    // Select the item once to initially select it
+    fireEvent.click(screen.getAllByTitle('Leury Garcia')[0]);
+    expect(onSelect).toHaveBeenCalledWith('Chicago White Sox_Leury Garcia');
+    // click it again
+    fireEvent.click(screen.getAllByTitle('Yoan Moncada')[0]);
+    expect(onSelect).toHaveBeenCalledWith('Chicago White Sox_Yoan Moncada');
+    expect(onSelect).toHaveBeenCalledTimes(2);
+    expect(screen.getAllByTestId('list-item__selected')).toHaveLength(2);
   });
 
   it('clicking a selected item should not fire onSelect', () => {
@@ -546,6 +699,28 @@ describe('HierarchyList', () => {
     expect(moveTextMissing).toBeNull();
   });
 
+  it('should close the bulk modal when clicking submit with nothing selected', () => {
+    const onSelect = jest.fn();
+    const onListUpdated = jest.fn();
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+        onSelect={onSelect}
+        onListUpdated={onListUpdated}
+      />
+    );
+
+    const expandIcons = screen.queryAllByTestId('expand-icon');
+
+    fireEvent.click(expandIcons[1]);
+
+    userEvent.click(screen.queryByText('Save'));
+    expect(onSelect).not.toHaveBeenCalled();
+    expect(onListUpdated).not.toHaveBeenCalled();
+  });
+
   it('shows modal when move selected', () => {
     render(
       <HierarchyList
@@ -593,5 +768,25 @@ describe('HierarchyList', () => {
 
     expect(within(listItems[2]).queryAllByText('Luke Voit').length).toBeGreaterThanOrEqual(1);
     expect(within(listItems[3]).queryAllByText('Gary Sanchez').length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('should clear selected ids in bulk mode when cancelled.', () => {
+    const onSelect = jest.fn();
+    const { container } = render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+        defaultExpandedIds={['New York Mets']}
+        onSelect={onSelect}
+      />
+    );
+
+    userEvent.click(screen.getByTestId('New York Mets_Pete Alonso-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.getByText('1 item selected')).toBeVisible();
+    userEvent.click(within(screen.getByTestId('list')).getByText('Cancel'));
+    expect(screen.queryByText('1 item selected')).toBeNull();
+    expect(container.querySelectorAll('input[checked]').length).toBe(0);
   });
 });

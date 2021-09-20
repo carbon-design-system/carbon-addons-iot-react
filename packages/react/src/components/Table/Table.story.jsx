@@ -1,11 +1,4 @@
-import React, {
-  useState,
-  useLayoutEffect,
-  useMemo,
-  useEffect,
-  useCallback,
-  createElement,
-} from 'react';
+import React, { useState, useMemo, useEffect, useCallback, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select, array, object } from '@storybook/addon-knobs';
 import Arrow from '@carbon/icons-react/lib/arrow--right/16';
@@ -18,15 +11,7 @@ import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
 import { firstBy } from 'thenby';
 
-import {
-  Tooltip,
-  TextInput,
-  Checkbox,
-  ToastNotification,
-  Button,
-  FormGroup,
-  Form,
-} from '../../index';
+import { TextInput, Checkbox, ToastNotification, Button, FormGroup, Form } from '../../index';
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
@@ -164,6 +149,32 @@ export const tableColumns = [
   {
     id: 'node',
     name: 'React Node',
+  },
+  {
+    id: 'object',
+    name: 'Object Id',
+    renderDataFunction: ({ value }) => {
+      return value?.id;
+    },
+    sortFunction: ({ data, columnId, direction }) => {
+      // clone inputData because sort mutates the array
+      const sortedData = data.map((i) => i);
+      sortedData.sort((a, b) => {
+        const aId = a.values[columnId].id;
+        const bId = b.values[columnId].id;
+        const compare = aId.localeCompare(bId);
+
+        return direction === 'ASC' ? compare : -compare;
+      });
+
+      return sortedData;
+    },
+    filter: {
+      placeholderText: 'Filter object values...',
+      filterFunction: (columnValue, filterValue) => {
+        return columnValue.id.includes(filterValue);
+      },
+    },
   },
 ];
 
@@ -337,6 +348,7 @@ export const getNewRow = (idx, suffix = '', withActions = false) => ({
     status: getStatus(idx),
     boolean: getBoolean(idx),
     node: <Add20 />,
+    object: { id: getString(idx, 5) },
   },
   rowActions: withActions
     ? [
@@ -368,7 +380,10 @@ const RowExpansionContent = ({ rowId }) => (
     <ul style={{ lineHeight: '22px' }}>
       {Object.entries(tableData.find((i) => i.id === rowId).values).map(([key, value]) => (
         <li key={`${rowId}-${key}`}>
-          <b>{key}</b>: {value}
+          <b>{key}</b>:{' '}
+          {!React.isValidElement(value) && typeof value === 'object' && value !== null
+            ? JSON.stringify(value, null, 2)
+            : value}
         </li>
       ))}
     </ul>
@@ -486,7 +501,11 @@ export const initialState = {
     hasColumnSelection: true,
     shouldExpandOnRowClick: false,
     hasRowEdit: true,
-    wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+    wrapCellText: select(
+      'Choose how text should wrap witin columns (options.wrapCellText)',
+      selectTextWrapping,
+      'always'
+    ),
   },
   view: {
     filters: [
@@ -557,37 +576,148 @@ export default {
   ],
 };
 
-export const BasicDumbTable = () => (
-  <Table
-    id="table"
-    secondaryTitle={text('secondaryTitle', 'Basic `dumb` table')}
-    useZebraStyles={boolean('useZebraStyles', false)}
-    lightweight={boolean('lightweight', false)}
-    tooltip={<div>Now with custom tooltip content!</div>}
-    columns={tableColumns}
-    data={tableData}
-    actions={tableActions}
-    options={{
-      hasAggregations: boolean('hasAggregations', true),
-      hasSearch: boolean('hasSearch', false),
-      hasFilter: boolean('hasFilter', false),
-      hasPagination: boolean('hasPagination', false),
-      hasRowEdit: boolean('hasRowEdit', false),
-    }}
-    view={{
-      aggregations: {
-        label: 'Total:',
-        columns: [
-          {
-            id: 'number',
-            align: 'start',
-            isSortable: false,
+export const BasicDumbTable = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
+  const secondaryTitle = text(
+    'Title shown in bar above header row (secondaryTitle)',
+    'Basic `dumb` table'
+  );
+  const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
+  const lightweight = boolean('Show an alternate header style (lightweight)', false);
+  const hasColumnSelection = boolean(
+    'Enables choosing which columns are visible or drag-and-drop reorder them (options.hasColumnSelection)',
+    false
+  );
+
+  const hasColumnSelectionConfig = boolean(
+    'Enables choosing which columns are visible or drag-and-drop reorder them and adds callback to manage which columns are available to the table (options.hasColumnSelectionConfig)',
+    false
+  );
+
+  const hasMultiSort = boolean(
+    'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
+    false
+  );
+  return (
+    <MyTable
+      id="table"
+      secondaryTitle={secondaryTitle}
+      useZebraStyles={useZebraStyles}
+      lightweight={lightweight}
+      tooltip={<div>Now with custom tooltip content!</div>}
+      columns={
+        hasMultiSort
+          ? tableColumns.map((c, i) => ({
+              ...c,
+              isSortable: i !== 1,
+            }))
+          : tableColumns
+      }
+      data={tableData}
+      actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
+      options={{
+        hasAggregations: boolean(
+          'Aggregates column values and displays in a footer row (options.hasAggregations)',
+          true
+        ),
+        hasColumnSelection,
+        hasColumnSelectionConfig,
+        hasFilter: select(
+          'Enables filtering columns by value (options.hasFilter)',
+          ['onKeyPress', 'onEnterAndBlur', true, false],
+          true
+        ),
+        hasMultiSort,
+        hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
+        hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
+        hasRowExpansion: boolean(
+          'Enables expanding rows to show additional content (options.hasRowExpansion)',
+          false
+        ),
+        hasRowNesting: boolean(
+          'Enables rows to have nested rows within (options.hasRowNesting)',
+          false
+        ),
+        hasRowSelection: select(
+          'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+          ['multi', 'single', false],
+          'multi'
+        ),
+        hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
+        hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
+        preserveColumnWidths: boolean(
+          'Preserve column widths when resizing (options.preserveColumnWidths)',
+          false
+        ),
+        useAutoTableLayoutForResize: boolean(
+          'Removes table-layout:fixed to allow resizable tables (options.useAutoTableLayoutForResize)',
+          false
+        ),
+        wrapCellText: select(
+          'Choose how text should wrap witin columns (options.wrapCellText)',
+          selectTextWrapping,
+          'always'
+        ),
+      }}
+      view={{
+        aggregations: {
+          label: 'Total:',
+          columns: [
+            {
+              id: 'number',
+              align: 'start',
+              isSortable: false,
+            },
+          ],
+        },
+        toolbar: {
+          activeBar: hasColumnSelection || hasColumnSelectionConfig ? 'column' : undefined,
+        },
+        table: {
+          loadingState: {
+            isLoading: boolean(
+              'Show the loading state for the table (view.table.loadingState.isLoading)',
+              false
+            ),
+            rowCount: number(
+              'The number of skeleton rows to be included in the loading state (view.table.loadingState.rowCount)',
+              7
+            ),
+            columnCount: number(
+              'The number of skeleton columns to be included in the loading state (view.table.loadingState.columnCount)',
+              6
+            ),
           },
-        ],
-      },
-    }}
-  />
-);
+          sort: hasMultiSort
+            ? [
+                {
+                  columnId: 'select',
+                  direction: 'ASC',
+                },
+                {
+                  columnId: 'string',
+                  direction: 'ASC',
+                },
+              ]
+            : {
+                columnId: 'string',
+                direction: 'ASC',
+              },
+        },
+      }}
+      i18n={{
+        columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__'),
+      }}
+    />
+  );
+};
 
 BasicDumbTable.storyName = 'basic `dumb` table';
 
@@ -631,6 +761,9 @@ BasicDumbTable.parameters = {
 };
 
 export const TableExampleWithCreateSaveViews = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   // The initial default state for this story is one with no active filters
   // and no default search value etc, i.e. a view all scenario.
   const baseState = {
@@ -841,12 +974,12 @@ export const TableExampleWithCreateSaveViews = () => {
             setViewToSave(viewToEdit);
           },
           onDelete,
-          onClearError: action('onClearManageViewsModalError'),
+          onClearError: action('TableManageViewsModal: onClearManageViewsModalError'),
           onClose: () => setManageViewsModalOpen(false),
         }}
         defaultViewId={defaultViewId}
-        error={select('error', [undefined, 'My error msg'], undefined)}
-        isLoading={boolean('isLoading', false)}
+        error={select('TableManageViewsModal: error', [undefined, 'My error msg'], undefined)}
+        isLoading={boolean('TableManageViewsModal: isLoading', false)}
         open={manageViewsModalOpen}
         views={manageViewsCurrentPageItems}
         pagination={{
@@ -961,14 +1094,14 @@ export const TableExampleWithCreateSaveViews = () => {
             onClose: () => {
               setViewToSave(undefined);
             },
-            onClearError: action('onClearError'),
-            onChange: action('onChange'),
+            onClearError: action('TableSaveViewModal: onClearError'),
+            onChange: action('TableSaveViewModal: onChange'),
           }}
-          sendingData={boolean('sendingData', false)}
-          error={select('error', [undefined, 'My error msg'], undefined)}
+          sendingData={boolean('TableSaveViewModal: sendingData', false)}
+          error={select('TableSaveViewModal: error', [undefined, 'My error msg'], undefined)}
           open
-          titleInputInvalid={boolean('titleInputInvalid', false)}
-          titleInputInvalidText={text('titleInputInvalidText', undefined)}
+          titleInputInvalid={boolean('TableSaveViewModal: titleInputInvalid', false)}
+          titleInputInvalidText={text('TableSaveViewModal: titleInputInvalidText', undefined)}
           viewDescription={getDescription(viewToSave.props.view)}
           initialFormValues={{
             title: viewToSave.title,
@@ -987,11 +1120,16 @@ export const TableExampleWithCreateSaveViews = () => {
     <FullWidthWrapper>
       {renderManageViewsModal()}
       {renderSaveViewModal()}
-      <Table
+      <MyTable
         key={`table-story-${selectedView?.id}`}
         id="table"
         {...baseState}
         columns={currentTableState.columns}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           ...currentTableState.view,
           // The TableViewDropdown should be inserted as customToolbarContent
@@ -1064,12 +1202,20 @@ export const TableExampleWithCreateSaveViews = () => {
           },
         }}
         isSortable
-        lightweight={boolean('lightweight', false)}
+        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           ...baseState.options,
           hasResize: true,
-          hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          hasFilter: select(
+            'hasFilter',
+            ['onKeyPress', 'onEnterAndBlur', true, false],
+            'onKeyPress'
+          ),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
           // Enables the behaviour in Table required
           // to fully implement Create and Save Views
           hasUserViewManagement: true,
@@ -1079,7 +1225,7 @@ export const TableExampleWithCreateSaveViews = () => {
   );
 };
 
-TableExampleWithCreateSaveViews.storyName = 'Table Example with Create & Save Views';
+TableExampleWithCreateSaveViews.storyName = 'with create & save view management';
 TableExampleWithCreateSaveViews.decorators = [createElement];
 
 TableExampleWithCreateSaveViews.parameters = {
@@ -1234,6 +1380,11 @@ export const BasicTableWithFullRowEditExample = () => {
       <Table
         id="table"
         secondaryTitle="My editable table"
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           toolbar: {
             activeBar: showRowEditBar ? 'rowEdit' : undefined,
@@ -1250,8 +1401,14 @@ export const BasicTableWithFullRowEditExample = () => {
           toolbar: { onShowRowEdit: onShowMultiRowEdit },
         }}
         options={{
-          hasRowEdit: boolean('hasRowEdit', true),
-          hasSingleRowEdit: boolean('hasSingleRowEdit', true),
+          hasRowEdit: boolean(
+            'Enables row editing for the entire table (options.hasRowEdit)',
+            true
+          ),
+          hasSingleRowEdit: boolean(
+            'Enables row editing for a single row (options.hasSingleRowEdit)',
+            true
+          ),
           hasRowActions: true,
           hasPagination: true,
         }}
@@ -1261,7 +1418,7 @@ export const BasicTableWithFullRowEditExample = () => {
   );
 };
 
-BasicTableWithFullRowEditExample.storyName = 'Basic table with full rowEdit example';
+BasicTableWithFullRowEditExample.storyName = 'with full rowEdit example';
 BasicTableWithFullRowEditExample.decorators = [createElement];
 
 BasicTableWithFullRowEditExample.parameters = {
@@ -1328,15 +1485,27 @@ BasicTableWithFullRowEditExample.parameters = {
 export const RowSelectionAndBatchActions = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const hasRowSelection = select('options.hasRowSelection', ['single', 'multi'], 'multi');
+  const hasRowSelection = select(
+    'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+    ['multi', 'single', false],
+    'multi'
+  );
   const selectedIds =
     hasRowSelection === 'multi'
-      ? array('view.table.selectedIds', ['row-3', 'row-4', 'row-6', 'row-7'])
-      : array('view.table.selectedIds', ['row-3']);
+      ? array('An array of currently selected rowIds (view.table.selectedIds)', [
+          'row-3',
+          'row-4',
+          'row-6',
+          'row-7',
+        ])
+      : array('An array of currently selected rowIds (view.table.selectedIds)', ['row-3']);
   return (
     <MyTable
       id="table"
-      secondaryTitle={text('secondaryTitle', `Row count: ${initialState.data.length}`)}
+      secondaryTitle={text(
+        'Title shown in bar above header row (secondaryTitle)',
+        `Row count: ${initialState.data.length}`
+      )}
       columns={tableColumns}
       data={tableData.slice(0, number('number of rows in story', 10)).map((i, idx) => ({
         ...i,
@@ -1359,12 +1528,27 @@ export const RowSelectionAndBatchActions = () => {
             : undefined,
       }))}
       actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       options={{
-        hasFilter: boolean('options.hasFilter', true),
-        hasPagination: boolean('options.hasPagination', true),
+        hasFilter: select(
+          'Enables filtering columns by value (options.hasFilter)',
+          ['onKeyPress', 'onEnterAndBlur', true, false],
+          'onKeyPress'
+        ),
+        hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
         hasRowSelection,
-        hasRowExpansion: boolean('options.hasRowExpansion', true),
-        hasRowNesting: boolean('options.hasRowNesting', true),
+        hasRowExpansion: boolean(
+          'Enables expanding rows to show additional content (options.hasRowExpansion)',
+          true
+        ),
+        hasRowNesting: boolean(
+          'Enables rows to have nested rows within (options.hasRowNesting)',
+          true
+        ),
       }}
       view={{
         filters: [],
@@ -1380,13 +1564,21 @@ export const RowSelectionAndBatchActions = () => {
         },
         table: {
           ordering: defaultOrdering,
-          isSelectAllSelected: select('isSelectAllSelected', [undefined, true, false], undefined),
-          isSelectAllIndeterminate: select(
-            'isSelectAllIndeterminate',
+          isSelectAllSelected: select(
+            'Manages the state of the Select All checkbox (view.table.isSelectAllSelected)',
             [undefined, true, false],
             undefined
           ),
-          expandedIds: array('view.table.expandedIds', ['row-3', 'row-7', 'row-7_B']),
+          isSelectAllIndeterminate: select(
+            'Is the Select All checkbox in in indeterminate state? (view.table.isSelectAllIndeterminate)',
+            [undefined, true, false],
+            undefined
+          ),
+          expandedIds: array('An array of current expanded rowIds (view.table.expandedIds)', [
+            'row-3',
+            'row-7',
+            'row-7_B',
+          ]),
           selectedIds,
         },
       }}
@@ -1394,19 +1586,22 @@ export const RowSelectionAndBatchActions = () => {
   );
 };
 
-RowSelectionAndBatchActions.storyName =
-  'with row selection: single or multi-select and batch actions';
+RowSelectionAndBatchActions.storyName = 'with row selection and batch actions';
 
 export const WithRowExpansionAndActions = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   const renderDataFunction = ({ value }) => (
     <div style={{ color: value === 'BROKEN' ? 'red' : 'black' }}>{value}</div>
   );
+
   return (
-    <Table
+    <MyTable
       id="table"
       columns={tableColumns.map((c) => ({
         ...c,
-        renderDataFunction,
+        renderDataFunction: c.renderDataFunction || renderDataFunction,
       }))}
       data={tableData.map((i, idx) => ({
         ...i,
@@ -1443,6 +1638,11 @@ export const WithRowExpansionAndActions = () => {
         hasRowExpansion: true,
         hasRowActions: true,
       }}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       view={{
         filters: [],
         table: {
@@ -1476,7 +1676,7 @@ export const WithRowExpansionAndActions = () => {
   );
 };
 
-WithRowExpansionAndActions.storyName = 'row expansion: with actions';
+WithRowExpansionAndActions.storyName = 'with row expansion, custom cell renderer, and actions';
 
 WithRowExpansionAndActions.parameters = {
   info: {
@@ -1561,15 +1761,19 @@ WithRowExpansionAndActions.parameters = {
 export const WithSorting = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const hasMultiSort = boolean('options.hasMultiSort', false);
+  const hasMultiSort = boolean(
+    'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
+    false
+  );
 
-  const sortedData = hasMultiSort
-    ? tableData.slice(0, 10).sort(
-        firstBy((row) => row.values.select).thenBy((row) => {
-          return row.values.string;
-        })
-      )
-    : getSortedData(tableData, 'string', 'ASC');
+  const sortedData =
+    hasMultiSort && selectedTableType === 'Table'
+      ? tableData.slice(0, 10).sort(
+          firstBy((row) => row.values.select).thenBy((row) => {
+            return row.values.string;
+          })
+        )
+      : getSortedData(tableData, 'string', 'ASC');
   return (
     <FullWidthWrapper>
       <style>{`#custom-row-height table tr { height: 5rem;}`}</style>
@@ -1583,10 +1787,20 @@ export const WithSorting = () => {
           data={sortedData}
           actions={tableActions}
           options={{
-            hasFilter: boolean('options.hasFilter', false),
-            hasPagination: boolean('options.hasPagination', true),
-            hasRowSelection: boolean('options.hasRowSelection', 'multi'),
-            hasAggregations: boolean('options.hasAggregations', true),
+            hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', false),
+            hasPagination: boolean(
+              'Enables pagination for the table (options.hasPagination)',
+              false
+            ),
+            hasRowSelection: select(
+              'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+              ['multi', 'single', false],
+              'multi'
+            ),
+            hasAggregations: boolean(
+              'Aggregates column values and displays in a footer row (options.hasAggregations)',
+              true
+            ),
             hasMultiSort,
           }}
           view={{
@@ -1634,16 +1848,19 @@ export const WithFilters = () => {
     'instructions',
     "By changing the value in a filter to a value that doesn't it exist will show the no results screen"
   );
-  const filters = object('view.filters', [
-    {
-      columnId: 'string',
-      value: 'whiteboard',
-    },
-    {
-      columnId: 'select',
-      value: 'option-B',
-    },
-  ]);
+  const filters = object(
+    'An array of filter objects for the columns to be filtered by (view.filters)',
+    [
+      {
+        columnId: 'string',
+        value: 'whiteboard',
+      },
+      {
+        columnId: 'select',
+        value: 'option-B',
+      },
+    ]
+  );
 
   const filteredData = tableData.filter(({ values }) =>
     // return false if a value doesn't match a valid filter
@@ -1652,8 +1869,11 @@ export const WithFilters = () => {
       true
     )
   );
+
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   return (
-    <Table
+    <MyTable
       id="table"
       columns={tableColumns}
       data={filteredData}
@@ -1663,6 +1883,11 @@ export const WithFilters = () => {
         hasPagination: true,
         hasRowSelection: 'multi',
       }}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       view={{
         filters,
         pagination: {
@@ -1902,6 +2127,11 @@ export const WithAdvancedFilters = () => {
           hasRowSelection: 'multi',
           hasAdvancedFilter: true,
         }}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           filters: [
             {
@@ -1933,6 +2163,9 @@ export const WithAdvancedFilters = () => {
 WithAdvancedFilters.storyName = '☢️ with advanced filtering';
 
 export const WithTableStates = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
   const emptyState = (
     <div key="empty-state">
       <h1 key="empty-state-heading">Custom empty state</h1>
@@ -1944,7 +2177,7 @@ export const WithTableStates = () => {
     <EmptyState
       icon="error"
       title="Error occured while loading"
-      body={text('error', 'Error message')}
+      body={text('error state message', 'Error message')}
       action={{
         label: 'Reload',
         onClick: action('onErrorStateAction'),
@@ -1953,24 +2186,33 @@ export const WithTableStates = () => {
     />
   );
 
-  const loadingState = object('loadingState', {
-    isLoading: false,
-    rowCount: 7,
-  });
-
   const showErrorState = boolean('Show Custom Error State', false);
   return (
-    <Table
+    <MyTable
       id="table"
       columns={tableColumns}
       data={showErrorState ? tableData.slice(0, 20) : []}
       actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
       view={{
         table: {
           ordering: defaultOrdering,
           emptyState: boolean('Show Custom Empty State', false) ? emptyState : undefined,
           errorState: showErrorState ? errorState : undefined,
-          loadingState,
+          loadingState: {
+            isLoading: boolean(
+              'Show the loading state for the table (view.table.loadingState.isLoading)',
+              false
+            ),
+            rowCount: number(
+              'The number of skeleton rows to be included in the loading state (view.table.loadingState.rowCount)',
+              7
+            ),
+          },
         },
       }}
       options={{ hasPagination: true }}
@@ -2063,7 +2305,7 @@ export const WithOptionsToExploreColumnSettings = () => {
   const initialColumnsWidth = select(
     'initial column width',
     [undefined, '100px', '300px'],
-    undefined
+    '100px'
   );
   const [myColumns, setMyColumns] = useState(
     [
@@ -2075,6 +2317,7 @@ export const WithOptionsToExploreColumnSettings = () => {
     ...defaultOrdering,
     { columnId: 'longName', isHidden: false },
   ]);
+  const [activeBar, setActiveBar] = useState(null);
 
   const onAdd = (colIds, colWidths, isHidden) => {
     const colsToAdd = colIds.split(', ');
@@ -2098,7 +2341,24 @@ export const WithOptionsToExploreColumnSettings = () => {
     setMyColumns(myColumns.filter((col) => !colsToDelete.includes(col.id)));
     setMyOrdering(myOrdering.filter((col) => !colsToDelete.includes(col.columnId)));
   };
-  const onColumnResize = (cols) => setMyColumns(cols);
+  const onColumnResize = (cols) => {
+    action('onColumnResize')(cols);
+    if (selectedTableType === 'Table') {
+      setMyColumns(cols);
+    }
+  };
+  const onToggleColumnSelection = () => {
+    action('onToggleColumnSelection')();
+    if (selectedTableType === 'Table') {
+      setActiveBar(activeBar ? undefined : 'column');
+    }
+  };
+  const onChangeOrdering = (ordering) => {
+    action('onChangeOrdering')(ordering);
+    if (selectedTableType === 'Table') {
+      setMyOrdering(ordering);
+    }
+  };
 
   return (
     <>
@@ -2112,23 +2372,51 @@ export const WithOptionsToExploreColumnSettings = () => {
         <MyTable
           id="table"
           options={{
-            hasColumnSelection: boolean('options.hasColumnSelection', true),
-            hasResize: boolean('options.hasResize', true),
-            wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
-            useAutoTableLayoutForResize: boolean('options.useAutoTableLayoutForResize', false),
+            hasColumnSelection: boolean(
+              'Enables choosing which columns are visible or drag-and-drop reorder them (options.hasColumnSelection)',
+              true
+            ),
+            hasResize: boolean('Enables resizing of column widths (options.hasResize)', true),
+            wrapCellText: select(
+              'Choose how text should wrap witin columns (options.wrapCellText)',
+              selectTextWrapping,
+              'always'
+            ),
+            useAutoTableLayoutForResize: boolean(
+              'Removes table-layout:fixed to allow resizable tables (options.useAutoTableLayoutForResize)',
+              false
+            ),
+            preserveColumnWidths: boolean(
+              'Preserve column widths when resizing (options.preserveColumnWidths)',
+              true
+            ),
             hasPagination: true,
           }}
           columns={myColumns}
+          size={select(
+            'Sets the height of the table rows (size)',
+            ['xs', 'sm', 'md', 'lg', 'xl'],
+            'lg'
+          )}
           view={{
             filters: [],
             table: {
               ordering: myOrdering,
             },
+            toolbar: { activeBar },
           }}
           data={tableData}
           actions={{
             ...tableActions,
-            table: { ...tableActions.table, onColumnResize },
+            table: {
+              ...tableActions.table,
+              onColumnResize,
+              onChangeOrdering,
+            },
+            toolbar: {
+              ...tableActions.toolbar,
+              onToggleColumnSelection,
+            },
           }}
         />
       </div>
@@ -2144,48 +2432,6 @@ WithOptionsToExploreColumnSettings.parameters = {
     propTables: false,
   },
 };
-
-export const WithResizeAndNoInitialColumns = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-
-  // Initial render is an empty columns array, which is updated after the first render
-  const [columns, setColumns] = useState([]);
-  useLayoutEffect(() => {
-    setColumns(
-      tableColumns.map((i, idx) => ({
-        width: idx % 2 === 0 ? '100px' : '100px',
-        ...i,
-      }))
-    );
-  }, []);
-
-  const hasColumnSelectionConfig = boolean('options.hasColumnSelectionConfig', false);
-  return (
-    <MyTable
-      id="table"
-      options={{
-        hasResize: boolean('options.hasResize', true),
-        wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
-        hasColumnSelectionConfig,
-      }}
-      columns={columns}
-      data={tableData}
-      actions={tableActions}
-      view={{
-        toolbar: {
-          activeBar: hasColumnSelectionConfig ? 'column' : undefined,
-        },
-      }}
-      i18n={{
-        columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__'),
-      }}
-    />
-  );
-};
-
-WithResizeAndNoInitialColumns.storyName = 'with resize on no initial columns and column selection';
-WithResizeAndNoInitialColumns.decorators = [createElement];
 
 export const HorizontalScrollCustomWidth = () => {
   const tableColumnsConcat = [
@@ -2206,25 +2452,44 @@ export const HorizontalScrollCustomWidth = () => {
         id="table"
         columns={tableColumns.concat(tableColumnsConcat)}
         options={{
-          hasFilter: boolean('options.hasFilter', true),
-          hasPagination: boolean('options.hasPagination', true),
-          wrapCellText: select('options.wrapCellText', selectTextWrapping, 'always'),
-          hasOnlyPageData: boolean('options.hasOnlyPageData', true),
+          hasFilter: select(
+            'Enables filtering columns by value (options.hasFilter)',
+            ['onKeyPress', 'onEnterAndBlur', true, false],
+            'onKeyPress'
+          ),
+          hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
+          wrapCellText: select(
+            'Choose how text should wrap witin columns (options.wrapCellText)',
+            selectTextWrapping,
+            'always'
+          ),
+          hasOnlyPageData: boolean(
+            'Change pagination behavior to assume data prop only contains data necessary for the current page (options.hasOnlyPageData)',
+            true
+          ),
         }}
         data={tableData.slice(25, 45)}
         actions={tableActions}
+        size={select(
+          'Sets the height of the table rows (size)',
+          ['xs', 'sm', 'md', 'lg', 'xl'],
+          'lg'
+        )}
         view={{
           filters: [
             { columnId: 'string', value: 'whiteboard' },
             { columnId: 'select', value: 'option-B' },
           ],
           toolbar: { activeBar: 'filter' },
-          pagination: object('view.pagination', {
-            pageSize: 10,
-            pageSizes: [10, 20, 30],
-            page: 8267,
-            totalItems: 97532,
-          }),
+          pagination: object(
+            'An object representing the pagination props for the table (view.pagination)',
+            {
+              pageSize: 10,
+              pageSizes: [10, 20, 30],
+              page: 8267,
+              totalItems: 97532,
+            }
+          ),
         }}
       />
     </div>
@@ -2238,77 +2503,84 @@ export const FilteredSortedPaginatedTableWithAsynchronousDataSource = () => {
   return <AsyncTable fetchData={apiClient.getData} />;
 };
 
-FilteredSortedPaginatedTableWithAsynchronousDataSource.storyName =
-  'Filtered/Sorted/Paginated table with asynchronous data source';
+FilteredSortedPaginatedTableWithAsynchronousDataSource.storyName = 'with asynchronous data source';
 
 FilteredSortedPaginatedTableWithAsynchronousDataSource.parameters = {
   info: {
     text:
-      'This is an example of how to use the <Table> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
+      'This is an example of how to use the <MyTable> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
     source: false,
   },
 };
 
-export const WithStickyHeaderExperimentalAndCellTooltipCalculation = () => {
-  const renderDataFunction = ({ value }) => (
-    <div style={{ position: 'relative' }} data-floating-menu-container>
-      {value}
-      <Tooltip
-        direction="right"
-        tabIndex={0}
-        tooltipId="table-tooltip"
-        id="table-tooltip"
-        triggerId="table-tooltip-trigger"
-        triggerText=""
-        menuOffset={(menuBody) => {
-          const container = menuBody.closest('[data-floating-menu-container]');
-          return {
-            top: -container.getBoundingClientRect().y - window.pageYOffset + 4,
-            left: -container.getBoundingClientRect().x - window.pageXOffset + 10,
-          };
-        }}
-      >
-        <p>This scroll with the table body</p>
-      </Tooltip>
-    </div>
-  );
+export const AsyncColumnLoading = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
+  const [columns, setColumns] = useState([]);
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setColumns(tableColumns);
+      setData(tableData);
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div>
-      <Table
-        id="table"
-        columns={tableColumns.map((i) => ({
-          ...i,
-          renderDataFunction,
-        }))}
-        data={tableData}
-        actions={tableActions}
-        stickyHeader
-        options={{
-          hasFilter: true,
-          hasPagination: true,
-          hasRowSelection: 'multi',
-        }}
-        view={{
-          filters: [],
-          table: {
-            ordering: defaultOrdering,
-            sort: {
-              columnId: 'string',
-              direction: 'ASC',
+    <MyTable
+      id="loading-table"
+      columns={columns}
+      data={data}
+      options={{
+        hasAggregations: boolean(
+          'Aggregates column values and displays in a footer row (options.hasAggregations)',
+          true
+        ),
+        hasSearch: boolean('Enable searching on the table values (options.hasSearch)', true),
+        hasFilter: select(
+          'Enables filtering columns by value (options.hasFilter)',
+          ['onKeyPress', 'onEnterAndBlur', true, false],
+          'onKeyPress'
+        ),
+        hasPagination: boolean('Enables pagination for the table (options.hasPagination)', true),
+      }}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
+      view={{
+        aggregations: {
+          label: 'Total:',
+          columns: [
+            {
+              id: 'number',
+              align: 'start',
+              isSortable: false,
             },
+          ],
+        },
+        table: {
+          loadingState: {
+            isLoading,
+            rowCount: number(
+              'The number of skeleton rows to be included in the loading state (view.table.loadingState.rowCount)',
+              10
+            ),
+            columnCount: number(
+              'The number of skeleton columns to be included in the loading state (view.table.loadingState.columnCount)',
+              9
+            ),
           },
-        }}
-      />
-    </div>
+        },
+      }}
+    />
   );
 };
-
-WithStickyHeaderExperimentalAndCellTooltipCalculation.storyName =
-  'with sticky header (experimental) and cell tooltip calculation';
-
-WithStickyHeaderExperimentalAndCellTooltipCalculation.parameters = {
-  centered: { disable: true },
-  info: {
-    text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
-  },
-};
+AsyncColumnLoading.storyName = 'with async column loading';
+AsyncColumnLoading.decorators = [createElement];

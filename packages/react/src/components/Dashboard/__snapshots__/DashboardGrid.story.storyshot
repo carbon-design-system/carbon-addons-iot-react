@@ -761,6 +761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           "--value-renderer-max-lines": 1,
                         }
                       }
+                      title="88"
                     >
                       88
                     </span>
@@ -869,7 +870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 GaugeCard - MEDIUMTHIN
               </div>
               <div
-                className="bx--tooltip__label"
+                className="bx--tooltip__label iot--card--header--tooltip"
                 id="card-tooltip-trigger-gaugeCard"
               >
                 
@@ -1125,7 +1126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <button
                 aria-describedby={null}
                 aria-pressed={null}
-                className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                 data-testid="map-card-toolbar-expand-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -1898,7 +1899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-139"
+                    aria-controls="accordion-item-168"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1928,7 +1929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-139"
+                    id="accordion-item-168"
                   >
                     <div
                       className="toggle-group"
@@ -1976,7 +1977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-140"
+                    aria-controls="accordion-item-169"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2006,7 +2007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-140"
+                    id="accordion-item-169"
                   >
                     More Map settings
                   </div>
@@ -2017,7 +2018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-141"
+                    aria-controls="accordion-item-170"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2047,7 +2048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-141"
+                    id="accordion-item-170"
                   >
                     Even more settings
                   </div>
@@ -2069,7 +2070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           />
         </div>
         <div
-          className="iot--card react-grid-item cssTransforms react-resizable iot--card--wrapper"
+          className="iot--card iot--table-card react-grid-item cssTransforms react-resizable iot--card--wrapper"
           data-testid="Card"
           id="tableCard"
           onMouseDown={[Function]}
@@ -2100,7 +2101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             }
           >
             <div
-              className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
+              className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
               data-testid="table-for-card-tableCard-table-container"
             >
               <section
@@ -2294,6 +2295,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     <div
                       className="iot--card--toolbar-date-range-wrapper"
                     >
+                      <div
+                        className="iot--card--toolbar-timerange-label"
+                        id="timeRange"
+                      >
+                        Default
+                      </div>
                       <button
                         aria-expanded={false}
                         aria-haspopup={true}
@@ -2339,7 +2346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     <button
                       aria-describedby={null}
                       aria-pressed={null}
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                       data-testid="card-toolbar-expand-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -2412,11 +2419,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             data-floating-menu-container={true}
                             id="column-alert"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                             width=""
                           >
                             <span
@@ -2482,11 +2484,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             data-floating-menu-container={true}
                             id="column-hour"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                             width=""
                           >
                             <span
@@ -2552,11 +2549,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             data-floating-menu-container={true}
                             id="column-pressure"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                             width=""
                           >
                             <span
@@ -3558,7 +3550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <button
                 aria-describedby={null}
                 aria-pressed={null}
-                className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                 data-testid="Card-toolbar-expand-button"
                 disabled={false}
                 onBlur={[Function]}

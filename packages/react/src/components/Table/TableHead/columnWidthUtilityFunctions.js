@@ -8,11 +8,13 @@ import warning from 'warning';
 
 // This width must be able to fit the elipsis of a truncated text + sort arrows
 export const MIN_COLUMN_WIDTH = 62;
+// This width can be used when adding a new column without a width.
+export const DEFAULT_COLUMN_WIDTH = 150;
 
-function isColumnVisible(ordering, columnId) {
+export const isColumnVisible = (ordering, columnId) => {
   const orderedColumn = ordering.find((orderedCol) => orderedCol.columnId === columnId);
   return orderedColumn && !orderedColumn.isHidden;
-}
+};
 
 function getTotalWidth(cols) {
   return cols.reduce((width, col) => width + col.width, 0);
@@ -43,10 +45,10 @@ function getVisibleColumns(currentColumnWidths, ordering, excludeIDs) {
   );
 }
 
-function getOriginalWidthOfColumn(origColumns, colId) {
+export const getOriginalWidthOfColumn = (origColumns, colId) => {
   const orginalWidth = origColumns.find((col) => col.id === colId).width;
   return orginalWidth ? parseInt(orginalWidth, 10) : undefined;
-}
+};
 
 function getExistingColumnWidth(currentColumnWidths, origColumns, colId) {
   const currentColumnWidth = currentColumnWidths[colId]?.width;
@@ -69,6 +71,12 @@ function shrinkColumns(shrinkableColumns, widthOfColumnToShow) {
     return { id: col.id, width: Math.round(newWidth) };
   });
   return shrunkenColumns;
+}
+
+function adjustColumnsBelowMinWidth(measuredWidth) {
+  return measuredWidth.map((widthObj) =>
+    widthObj.width < MIN_COLUMN_WIDTH ? { ...widthObj, width: DEFAULT_COLUMN_WIDTH } : widthObj
+  );
 }
 
 /**
@@ -119,6 +127,14 @@ export const getIDsOfAddedVisibleColumns = (ordering, currentColumnWidths) => {
 };
 
 /**
+ * Returns true if there are visible columns
+ * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
+ */
+export const hasVisibleColumns = (ordering) => {
+  return ordering.some((col) => !col.isHidden);
+};
+
+/**
  * Returns true if all visible columns have a width.
  * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
  * @param {array} columns The table column props
@@ -127,6 +143,42 @@ export const visibleColumnsHaveWidth = (ordering, columns) => {
   return columns
     .filter((col) => isColumnVisible(ordering, col.id))
     .every((col) => col.hasOwnProperty('width') && col.width !== undefined);
+};
+
+export const addDefaultWidthToNewVisibleColumns = (ordering, columns, currentColumnWidths) => {
+  if (!visibleColumnsHaveWidth(ordering, columns)) {
+    const addedVisibleColumnIDs = getIDsOfAddedVisibleColumns(ordering, currentColumnWidths);
+    return columns.map((column) => {
+      const isNewVisibleColumn = addedVisibleColumnIDs.includes(column.id);
+      return {
+        ...column,
+        width:
+          isNewVisibleColumn && column.width === undefined
+            ? `${DEFAULT_COLUMN_WIDTH}px`
+            : column.width,
+      };
+    });
+  }
+  return columns;
+};
+
+function addCurrentlyRenderedWidths(columns, currentColumnWidths) {
+  return columns.map((col) => {
+    const renderedWidth = currentColumnWidths[col.id]?.width;
+    const width =
+      col.width === undefined && renderedWidth !== undefined ? `${renderedWidth}px` : col.width;
+    return { ...col, width };
+  });
+}
+
+export const addMissingColumnWidths = ({ ordering, columns, currentColumnWidths }) => {
+  const modifiedColumns = addDefaultWidthToNewVisibleColumns(
+    ordering,
+    columns,
+    currentColumnWidths
+  );
+
+  return addCurrentlyRenderedWidths(modifiedColumns, currentColumnWidths);
 };
 
 /**
@@ -138,18 +190,31 @@ export const visibleColumnsHaveWidth = (ordering, columns) => {
  */
 export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs, columns) => {
   const visibleColumns = getVisibleColumns(currentColumnWidths, ordering, colToShowIDs);
-  const newColumnsToShow = colToShowIDs.reduce((accumulator, colToShowId) => {
+  const newWidthColumns = [];
+
+  const newColumnsToShow = colToShowIDs.map((colToShowId) => {
+    const existingWidth = getExistingColumnWidth(currentColumnWidths, columns, colToShowId);
     const widthOfColumnToShow =
-      getExistingColumnWidth(currentColumnWidths, columns, colToShowId) ||
-      getAverageVisibleColumnWidth(visibleColumns);
-    return [...accumulator, { id: colToShowId, width: Math.round(widthOfColumnToShow) }];
-  }, []);
+      existingWidth || getAverageVisibleColumnWidth(visibleColumns) || MIN_COLUMN_WIDTH;
+    const newColumnToShow = { id: colToShowId, width: Math.round(widthOfColumnToShow) };
+    if (!existingWidth) {
+      newWidthColumns.push(newColumnToShow);
+    }
+    return newColumnToShow;
+  });
+
   const totalWidthNeeded = newColumnsToShow.reduce((acc, col) => acc + col.width, 0);
   const shrinkableColumns = [...newColumnsToShow, ...visibleColumns].filter(
     (col) => col.width > MIN_COLUMN_WIDTH
   );
 
-  const adjustedCols = shrinkColumns(shrinkableColumns, totalWidthNeeded);
+  const adjustedCols = [
+    // There are some scenarios where the new columns don't have an existing width
+    // and in that case they are adjusted to get a min width assigned.
+    ...newWidthColumns,
+    // We adjust to shrink existing columns to make room for the new ones.
+    ...shrinkColumns(shrinkableColumns, totalWidthNeeded),
+  ];
 
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 };
@@ -186,16 +251,13 @@ export const calculateWidthOnHide = (currentColumnWidths, ordering, colToHideIDs
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 };
 
-/**
- * If the table isn't wide enough for all columns that has a defined width
- * the browser will will shrink the last column instead of keeping its defined width.
- * This function adjusts the column width to the initial width if that one is larger.
- * @param {*} ordering
- * @param {*} columns
- * @param {*} measuredWidths
- */
-export const adjustLastColumnWidth = (ordering, columns, measuredWidths) => {
+function adjustLastColumnWidth(ordering, columns, measuredWidths) {
+  // This function adjusts the last column width to the initial width if that one is larger.
   const visibleCols = ordering.filter((col) => !col.isHidden);
+
+  // If there are no visible columns there is nothing to adjust
+  if (!visibleCols.length) return measuredWidths;
+
   const lastIndex = visibleCols.length - 1;
   const lastColumn = columns.find((col) => col.id === visibleCols[lastIndex].columnId);
   const fixedWidth = lastColumn.width ? parseInt(lastColumn.width, 10) : 0;
@@ -207,6 +269,28 @@ export const adjustLastColumnWidth = (ordering, columns, measuredWidths) => {
     result[lastIndex].width = fixedWidth;
   }
   return result;
+}
+
+/**
+ * When the browser layout engine sets the widths dynamically we need to to make
+ * some adjustments to the last column width and also to column widths below
+ * the allowed minimum.
+ * @param {*} ordering
+ * @param {*} columns
+ * @param {*} measuredWidths
+ */
+export const adjustInitialColumnWidths = (ordering, columns, measuredWidths) => {
+  // If the table isn't wide enough for all columns that has a defined width
+  // the browser will will shrink the last column instead of keeping its defined width.
+  // We therefore eadjust the column width to the initial width if that one is larger.
+  const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
+
+  // If the table-layout is fixed (prop useAutoTableLayoutForResize:false) and the
+  // the table container isn't wide enough to fully render all column header texts the
+  // browser will shrink the columns that don't have a defined width to make them all fit.
+  // It is possible that the new widths are shrunk below our minimum width and in that case
+  // we use the default width instead.
+  return adjustColumnsBelowMinWidth(adjustedWidths);
 };
 
 /**

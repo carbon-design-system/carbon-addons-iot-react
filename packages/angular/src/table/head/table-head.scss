@@ -1,5 +1,4 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '../../../../styles/scss/globals/vars';
+@import '../../vendor/@ai-apps/styles/scss/globals/vars';
 
 tr.table-row:not(:first-of-type) {
   border-top: 2px solid white;

@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
 import { DataItemsPropTypes } from '../../DashboardEditor/editorUtils';
+import { settings } from '../../../constants/Settings';
 
 import CommonCardEditFormFields from './CommonCardEditFormFields';
 import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
 import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
 import TableCardFormContent from './CardEditFormItems/TableCardFormItems/TableCardFormContent';
 import ContentFormItemTitle from './CardEditFormItems/ContentFormItemTitle';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data value */
@@ -147,7 +150,7 @@ const CardEditFormContent = ({
 
   const editContentSections = renderEditContent && renderEditContent(onChange, cardConfig);
   return (
-    <>
+    <div className={`${iotPrefix}--card-edit-form--content`}>
       <CommonCardEditFormFields
         cardConfig={cardConfig}
         key={`${cardConfig.id}-common`} // fix because I need to regenerate the form state when switching between cards
@@ -209,14 +212,17 @@ const CardEditFormContent = ({
         />
       ) : null}
       {Array.isArray(editContentSections) // render the content sections for all types of card if set
-        ? editContentSections.map(({ header: { title, tooltip }, content }) => (
-            <React.Fragment key="custom-content-section">
-              <ContentFormItemTitle title={title} tooltip={tooltip} />
-              {content}
-            </React.Fragment>
-          ))
+        ? editContentSections.map(({ header, content }, index) => {
+            const { title, tooltip } = header || {};
+            return (
+              <React.Fragment key={`custom-content-section-${index}`}>
+                {title || tooltip ? <ContentFormItemTitle title={title} tooltip={tooltip} /> : null}
+                {content}
+              </React.Fragment>
+            );
+          })
         : null}
-    </>
+    </div>
   );
 };
 

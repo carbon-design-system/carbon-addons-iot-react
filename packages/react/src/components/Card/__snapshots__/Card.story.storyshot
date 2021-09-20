@@ -49,6 +49,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -94,7 +100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -178,6 +184,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         <div
           className="iot--table-container bx--data-table-container"
           data-testid="my table-table-container"
+          style={
+            Object {
+              "transform": "translateX(-1rem)",
+              "width": "calc(100% + 2rem)",
+            }
+          }
         >
           <section
             aria-label="data table toolbar"
@@ -236,6 +248,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <div
                   className="iot--card--toolbar-date-range-wrapper"
                 >
+                  <div
+                    className="iot--card--toolbar-timerange-label"
+                    id="timeRange"
+                  >
+                    Default
+                  </div>
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
@@ -281,7 +299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <button
                   aria-describedby={null}
                   aria-pressed={null}
-                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
                   data-testid="Card-toolbar-expand-button"
                   disabled={false}
                   onBlur={[Function]}
@@ -553,6 +571,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -663,6 +687,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -773,6 +803,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -883,6 +919,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -993,6 +1035,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -1103,6 +1151,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -1213,6 +1267,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -1323,6 +1383,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -1437,6 +1503,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -1478,6 +1550,304 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </title>
               </svg>
             </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "256px",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card with datetimepicker range selector 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": 20,
+        "width": "300px",
+      }
+    }
+  >
+    <div
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="facilitycard-with-date-picker"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "304px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Card with date picker"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Card with date picker
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        >
+          <div
+            className="iot--date-time-pickerv2__wrapper"
+            data-testid="date-time-picker"
+            id="Card-toolbar-iot--date-time-pickerv2__wrapper"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "--wrapper-width": "3rem",
+              }
+            }
+            tabIndex="0"
+          >
+            <div
+              className=""
+            >
+              <div
+                className="iot--flyout-menu iot--flyout-menu__bottom"
+                data-testid="date-time-picker-datepicker-flyout-container"
+                style={
+                  Object {
+                    "--tooltip-visibility": "hidden",
+                  }
+                }
+              >
+                <button
+                  aria-describedby={null}
+                  aria-label="Calendar"
+                  className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                  data-testid="date-time-picker-datepicker-flyout-button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="bx--assistive-text"
+                    onMouseEnter={[Function]}
+                  >
+                    Calendar
+                  </div>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Calendar"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className="iot--flyout-menu--tooltip-anchor"
+                >
+                  <div
+                    aria-expanded={false}
+                    aria-label="Calendar"
+                    className="bx--tooltip__label"
+                    id="test-trigger-id-2"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "256px",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card with datetimepicker range selector with existing value 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": 20,
+        "width": "400px",
+      }
+    }
+  >
+    <div
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="facilitycard-with-datepicker-existing-value"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "304px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Card Title"
+        >
+          <div
+            className="iot--card--title--text"
+          >
+            Card Title
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        >
+          <div
+            className="iot--date-time-pickerv2__wrapper"
+            data-testid="date-time-picker"
+            id="Card-toolbar-iot--date-time-pickerv2__wrapper"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "--wrapper-width": "20rem",
+              }
+            }
+            tabIndex="0"
+          >
+            <div
+              className="iot--date-time-picker__box--full"
+            >
+              <div
+                className="iot--date-time-picker__field"
+                data-testid="date-time-picker__field"
+              >
+                <span
+                  title="2018-10-28 13:10 to 2018-10-28 13:30"
+                >
+                  2018-10-28 13:10 to 2018-10-28 13:30
+                </span>
+              </div>
+              <div
+                className="iot--flyout-menu iot--flyout-menu__bottom"
+                data-testid="date-time-picker-datepicker-flyout-container"
+                style={
+                  Object {
+                    "--tooltip-visibility": "hidden",
+                  }
+                }
+              >
+                <button
+                  aria-describedby={null}
+                  aria-label="Calendar"
+                  className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                  data-testid="date-time-picker-datepicker-flyout-button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="bx--assistive-text"
+                    onMouseEnter={[Function]}
+                  >
+                    Calendar
+                  </div>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Calendar"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className="iot--flyout-menu--tooltip-anchor"
+                >
+                  <div
+                    aria-expanded={false}
+                    aria-label="Calendar"
+                    className="bx--tooltip__label"
+                    id="test-trigger-id-2"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1537,7 +1907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.
           </div>
           <div
-            className="bx--tooltip__label"
+            className="bx--tooltip__label iot--card--header--tooltip"
             id="card-tooltip-trigger-facilitycard-basic"
           >
             
@@ -1574,60 +1944,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </svg>
             </div>
           </div>
+          <div
+            className="iot--card--subtitle--text iot--card--subtitle--text--padded"
+            data-testid="Card-subtitle"
+          >
+            lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse
+          </div>
         </span>
         <div
           className="iot--card--toolbar"
           data-testid="Card-toolbar"
         >
-          <div
-            className="iot--card--toolbar-date-range-wrapper"
-          >
-            <button
-              aria-expanded={false}
-              aria-haspopup={true}
-              aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
-              data-testid="Card-toolbar-range-picker"
-              onClick={[Function]}
-              onClose={[Function]}
-              onKeyDown={[Function]}
-              open={false}
-              title="Select time range"
-              type="button"
-            >
-              <svg
-                aria-label="Select time range"
-                className="bx--overflow-menu__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
-                />
-                <path
-                  d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
-                />
-                <path
-                  d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
-                />
-                <title>
-                  Select time range
-                </title>
-              </svg>
-            </button>
-          </div>
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -1671,6 +2002,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           }
         }
       />
+      <div
+        className="iot--card--footer--wrapper"
+        data-testid="Card-footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Footer Content
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -1789,6 +2141,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -1834,7 +2192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -1883,6 +2241,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
            and height is 
           NaN
         </p>
+      </div>
+      <div
+        className="iot--card--footer--wrapper"
+        data-testid="Card-footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Footer Content
+        </button>
       </div>
     </div>
   </div>

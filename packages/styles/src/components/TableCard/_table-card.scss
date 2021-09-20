@@ -1,5 +1,8 @@
 @import '../../globals/vars';
 
+.#{$iot-prefix}--table-card .#{$iot-prefix}--card--content {
+  padding: 0;
+}
 .#{$iot-prefix}--card--content .#{$iot-prefix}--table-container {
   overflow-x: hidden; // scrolling should be handled inside the table, not between the card and the table
 }

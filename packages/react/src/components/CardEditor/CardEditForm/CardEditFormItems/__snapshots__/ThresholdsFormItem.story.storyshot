@@ -1083,85 +1083,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--card-edit-form--threshold-input-group--item-end"
         >
           <div
-            className="bx--form-item"
+            className="bx--form-item bx--text-input-wrapper"
           >
             <div
-              className="bx--number bx--number--helpertext bx--number--nolabel"
+              className="bx--text-input__field-outer-wrapper"
             >
               <div
-                className="bx--number__input-wrapper"
+                className="bx--text-input__field-wrapper"
+                data-invalid={null}
               >
                 <input
-                  aria-describedby={null}
-                  aria-label="Numeric input field with increment and decrement buttons"
+                  className="bx--text-input bx--text__input"
+                  data-testid="threshold-2-text-input"
                   disabled={false}
                   id="undefined_value-card-threshold-value_2"
                   onChange={[Function]}
-                  pattern="[0-9]*"
-                  step={1}
-                  type="number"
+                  onClick={[Function]}
+                  type="text"
                   value="20"
                 />
-                <div
-                  className="bx--number__controls"
-                >
-                  <button
-                    aria-label="Decrement number"
-                    className="bx--number__control-btn down-icon"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex="-1"
-                    title="Decrement number"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      className="down-icon"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 15H24V17H8z"
-                      />
-                    </svg>
-                  </button>
-                  <div
-                    className="bx--number__rule-divider"
-                  />
-                  <button
-                    aria-label="Increment number"
-                    className="bx--number__control-btn up-icon"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex="-1"
-                    title="Increment number"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      className="up-icon"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                      />
-                    </svg>
-                  </button>
-                  <div
-                    className="bx--number__rule-divider"
-                  />
-                </div>
               </div>
             </div>
           </div>

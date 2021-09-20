@@ -44,9 +44,9 @@
 
   &--content {
     flex: 1;
-    margin: -$spacing-05;
     height: 100%;
-    padding-top: $spacing-05;
+    display: flex;
+    flex-flow: column;
   }
 
   &--form-section {
@@ -173,6 +173,9 @@
       .#{$prefix}--number input[type='number'] {
         padding-right: 0;
       }
+      .#{$prefix}--form-item input[type='text'] {
+        min-width: 9.375rem;
+      }
     }
     &--item-dropdown {
       margin-right: $spacing-05;
@@ -198,6 +201,12 @@
     // hide multi-select combobox tags in editor form
     display: none;
   }
+}
+
+// Table card form styles
+.#{$iot-prefix}--table-card-form--content {
+  display: flex;
+  flex-flow: column;
 }
 
 // Image card form styles

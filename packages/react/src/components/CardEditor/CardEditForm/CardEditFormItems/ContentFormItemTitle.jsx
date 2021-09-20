@@ -21,10 +21,10 @@ const defaultProps = {
 };
 
 const ContentFormItemTitle = ({ title, tooltip }) => {
-  const { tooltipText, linkText, href } = tooltip;
+  const { tooltipText, linkText, href } = tooltip || {};
   return (
     <div className={`${iotPrefix}--card-edit-form--form-section`}>
-      <div>{title}</div>
+      {title ? <div>{title}</div> : null}
       <div>
         {tooltip ? (
           <Tooltip

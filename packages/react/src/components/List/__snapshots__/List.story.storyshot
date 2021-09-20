@@ -882,7 +882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -923,7 +923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -964,7 +964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1005,7 +1005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1046,7 +1046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1087,7 +1087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1128,7 +1128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1169,7 +1169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1210,7 +1210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1251,7 +1251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1398,7 +1398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1439,7 +1439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1480,7 +1480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1521,7 +1521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1562,7 +1562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1603,7 +1603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1644,7 +1644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1685,7 +1685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1726,7 +1726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -1948,7 +1948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2034,7 +2034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2120,7 +2120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2206,7 +2206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2292,7 +2292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2378,7 +2378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -2648,14 +2648,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             className="iot--list-item"
           >
             <div
-              className="iot--list-item--nesting-offset"
-              style={
-                Object {
-                  "width": "30px",
-                }
-              }
-            />
-            <div
               aria-label="Close"
               className="iot--list-item--expand-icon"
               data-testid="expand-icon"
@@ -2712,7 +2704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -2819,7 +2811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "90px",
+                  "width": "64px",
                 }
               }
             />
@@ -2929,7 +2921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "90px",
+                  "width": "64px",
                 }
               }
             />
@@ -3039,7 +3031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3098,7 +3090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3157,7 +3149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3216,7 +3208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3275,7 +3267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3334,7 +3326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3393,7 +3385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3452,7 +3444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3511,7 +3503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3570,7 +3562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "120px",
+                  "width": "96px",
                 }
               }
             />
@@ -3629,7 +3621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "90px",
+                  "width": "64px",
                 }
               }
             />
@@ -3739,7 +3731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "60px",
+                  "width": "32px",
                 }
               }
             />
@@ -3846,7 +3838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "90px",
+                  "width": "64px",
                 }
               }
             />
@@ -3956,7 +3948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "90px",
+                  "width": "64px",
                 }
               }
             />
@@ -4066,7 +4058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "90px",
+                  "width": "64px",
                 }
               }
             />
@@ -7208,7 +7200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -7240,7 +7232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -7272,7 +7264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -7304,7 +7296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -7336,7 +7328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -7368,7 +7360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -7400,7 +7392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -7432,7 +7424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -7464,7 +7456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
@@ -7496,7 +7488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
         >
           <div
             className="iot--list-item iot--list-item__selectable"
-            data_testid={null}
+            data-testid={null}
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"

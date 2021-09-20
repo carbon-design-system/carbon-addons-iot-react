@@ -1,5 +1,3 @@
-import { EventEmitter } from '@angular/core';
-
 import { PaginationModel, TableHeaderItem, TableItem, TableRow } from 'carbon-components-angular';
 import { Subject } from 'rxjs';
 
@@ -18,9 +16,9 @@ export class AITableModel implements PaginationModel {
    */
   protected static COUNT = 0;
 
-  dataChange = new EventEmitter();
-  rowsSelectedChange = new EventEmitter<number>();
-  rowsExpandedChange = new EventEmitter<number>();
+  dataChange = new Subject();
+  rowsSelectedChange = new Subject<number>();
+  rowsExpandedChange = new Subject<number>();
   /**
    * Gets emitted when `selectAll` is called. Emits false if all rows are deselected and true if
    * all rows are selected.
@@ -170,7 +168,7 @@ export class AITableModel implements PaginationModel {
       this.header = newHeader;
     }
 
-    this.dataChange.emit();
+    this.dataChange.next();
   }
 
   /**
@@ -189,7 +187,7 @@ export class AITableModel implements PaginationModel {
 
     this.header = newHeader as TableHeaderItem[][];
 
-    this.dataChange.emit();
+    this.dataChange.next();
   }
 
   setItem(rowIndex: number, columnIndex: number, item: TableItem) {
@@ -421,7 +419,7 @@ export class AITableModel implements PaginationModel {
       this.rowsClass.splice(ri, 0, undefined);
     }
 
-    this.dataChange.emit();
+    this.dataChange.next();
   }
 
   /**
@@ -439,7 +437,7 @@ export class AITableModel implements PaginationModel {
     this.rowsContext.splice(rri, 1);
     this.rowsClass.splice(rri, 1);
 
-    this.dataChange.emit();
+    this.dataChange.next();
   }
 
   rowMetaInfo(index: number) {
@@ -565,7 +563,7 @@ export class AITableModel implements PaginationModel {
       }
     }
 
-    this.dataChange.emit();
+    this.dataChange.next();
   }
 
   /**
@@ -589,7 +587,7 @@ export class AITableModel implements PaginationModel {
       }
     }
 
-    this.dataChange.emit();
+    this.dataChange.next();
   }
 
   /**
@@ -800,7 +798,7 @@ export class AITableModel implements PaginationModel {
     }
     this.rowsSelected[index] = value;
     if (emitChange) {
-      this.rowsSelectedChange.emit(index);
+      this.rowsSelectedChange.next(index);
     }
   }
 
@@ -838,7 +836,7 @@ export class AITableModel implements PaginationModel {
    */
   expandRow(index: number, value = true) {
     this.rowsExpanded[index] = value;
-    this.rowsExpandedChange.emit(index);
+    this.rowsExpandedChange.next(index);
   }
 
   /**

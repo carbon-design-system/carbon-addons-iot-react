@@ -46,7 +46,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -355,7 +355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -751,7 +751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -857,7 +857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -963,7 +963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -1224,7 +1224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               <label
                 className="bx--file-browse-btn"
                 data-testid="Card-image-uploader-file-drop-container"
-                htmlFor="id15"
+                htmlFor="id16"
                 onKeyDown={[Function]}
                 size="field"
                 tabIndex={0}
@@ -1238,7 +1238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 <input
                   accept={Array []}
                   className="bx--file-input"
-                  id="id15"
+                  id="id16"
                   multiple={false}
                   onChange={[Function]}
                   onClick={[Function]}
@@ -1535,7 +1535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}

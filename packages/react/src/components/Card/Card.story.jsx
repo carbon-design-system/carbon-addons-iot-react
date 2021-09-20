@@ -6,6 +6,8 @@ import { Tree16 } from '@carbon/icons-react';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
+import Button from '../Button';
+import { INTERVAL_VALUES, RELATIVE_VALUES, PICKER_KINDS } from '../../constants/DateConstants';
 
 import CardREADME from './Card.mdx';
 import Card from './Card';
@@ -125,6 +127,12 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           'title',
           'Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.'
         )}
+        subtitle={select(
+          'subtitle',
+          ['lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse', undefined],
+          'lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse'
+        )}
+        hasTitleWrap={boolean('wrap title', true)}
         id="facilitycard-basic"
         size={size}
         isLoading={boolean('isloading', false)}
@@ -133,17 +141,22 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         isExpanded={boolean('isExpanded', false)}
         breakpoint={breakpoint}
         availableActions={object('availableActions', {
-          range: true,
+          range: false,
           expand: true,
-          edit: true,
-          clone: false,
-          delete: false,
+          edit: false,
+          clone: true,
+          delete: true,
         })}
         onCardAction={action('onCardAction')}
         onFocus={action('onFocus')}
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
         tooltip={<p>this is the external tooltip content</p>}
       />
     </div>
@@ -179,6 +192,11 @@ export const BasicWithRenderProp = () => {
         onBlur={action('onBlur')}
         onClick={action('onClick')}
         tabIndex={0}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
       >
         {(childSize) => (
           <p>
@@ -225,6 +243,83 @@ export const WithCustomRangeSelector = () => {
 };
 
 WithCustomRangeSelector.storyName = 'with custom range selector';
+
+export const WithDateTimePickerRangeSelector = () => {
+  const dateTimePickerSetting = select('range', [true, false, 'iconOnly', 'full'], 'iconOnly');
+  return (
+    <div style={{ width: `300px`, margin: 20 }}>
+      <Card
+        title="Card with date picker"
+        id="facilitycard-with-date-picker"
+        size={CARD_SIZES.MEDIUM}
+        isLoading={false}
+        isEmpty={false}
+        isEditable={false}
+        isExpanded={false}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
+        breakpoint="lg"
+        onCardAction={action('onCardAction')}
+        availableActions={{
+          range: dateTimePickerSetting,
+        }}
+        timeRangeOptions={object('timeRangeOptions', {
+          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
+          lastHour: { label: 'Last Hour', offset: 60 * 60 },
+        })}
+      />
+    </div>
+  );
+};
+
+WithDateTimePickerRangeSelector.storyName = 'with datetimepicker range selector';
+
+export const WithDateTimePickerRangeSelectorExistingValue = () => {
+  const defaultRelativeValue = {
+    timeRangeKind: PICKER_KINDS.RELATIVE,
+    timeRangeValue: {
+      lastNumber: 20,
+      lastInterval: INTERVAL_VALUES.MINUTES,
+      relativeToWhen: RELATIVE_VALUES.TODAY,
+      relativeToTime: '13:30',
+    },
+  };
+  const dateTimePickerSetting = select('range', [true, false, 'iconOnly', 'full'], 'full');
+  return (
+    <div style={{ width: `400px`, margin: 20 }}>
+      <Card
+        title={text('title', 'Card Title')}
+        id="facilitycard-with-datepicker-existing-value"
+        size={CARD_SIZES.MEDIUM}
+        isLoading={false}
+        isEmpty={false}
+        isEditable={false}
+        isExpanded={false}
+        breakpoint="lg"
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
+        onCardAction={action('onCardAction')}
+        availableActions={{
+          range: dateTimePickerSetting,
+        }}
+        timeRange={defaultRelativeValue}
+        timeRangeOptions={object('timeRangeOptions', {
+          last48Hours: { id: 'last48Hours', label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { id: 'last24Hours', label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { id: 'last8Hours', label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { id: 'last4Hours', label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { id: 'last2Hours', label: 'Last 2 Hours', offset: 2 * 60 },
+          lastHour: { id: 'lastHour', label: 'Last Hour', offset: 60 },
+        })}
+      />
+    </div>
+  );
+};
+
+WithDateTimePickerRangeSelectorExistingValue.storyName =
+  'with datetimepicker range selector with existing value';
 
 export const SizeGallery = () => {
   return Object.keys(CARD_SIZES).map((i) => (
@@ -294,6 +389,7 @@ export const ImplementingACustomCard = () => {
         {!isEditable
           ? (_$, { cardToolbar, values }) => (
               <Table
+                style={{ width: 'calc(100% + 2rem)', transform: 'translateX(-1rem)' }}
                 id="my table"
                 secondaryTitle={title}
                 columns={[

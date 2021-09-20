@@ -76,6 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -233,6 +234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -396,6 +398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -724,14 +727,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           className="page-title-bar-content"
         >
           <div
-            className="iot--page-wizard iot--page-wizard__sticky"
+            className="iot--page-wizard__sticky"
             data-testid="page-wizard"
           >
             <div
-              className="iot--page-wizard--progress--vertical"
+              className="iot--page-wizard--progress--horizontal"
             >
               <ul
-                className="iot--progress-indicator iot--progress-indicator--vertical"
+                className="iot--progress-indicator"
                 data-testid="iot--progress-indicator-testid"
               >
                 <li
@@ -794,6 +797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="With validation"
                       >
                         With validation
                       </p>
@@ -1199,6 +1203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="With validation"
                       >
                         With validation
                       </p>
@@ -1763,6 +1768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -1920,6 +1926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -2083,6 +2090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -2481,6 +2489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="With validation"
                       >
                         With validation
                       </p>
@@ -2767,6 +2776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -2924,6 +2934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -3087,6 +3098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </p>
                 <p
                   className="iot--progress-text-label--optional"
+                  title="Optional label"
                 >
                   Optional label
                 </p>
@@ -3485,6 +3497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="Optional label"
                       >
                         Optional label
                       </p>
@@ -3642,6 +3655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="Optional label"
                       >
                         Optional label
                       </p>
@@ -3805,6 +3819,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </p>
                       <p
                         className="iot--progress-text-label--optional"
+                        title="Optional label"
                       >
                         Optional label
                       </p>

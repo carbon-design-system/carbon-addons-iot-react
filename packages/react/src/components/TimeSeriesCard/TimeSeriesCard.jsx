@@ -234,7 +234,7 @@ const TimeSeriesCard = ({
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, contentWithDefaults, initialValues, others);
-  let chartRef = useRef();
+  const chartRef = useRef(null);
   const previousTick = useRef();
   dayjs.locale(locale);
 
@@ -243,9 +243,19 @@ const TimeSeriesCard = ({
   const objectAgnosticThresholds = JSON.stringify(thresholds);
 
   const sampleValues = useMemo(
-    () => generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds),
+    () =>
+      isEditable
+        ? generateSampleValues(series, timeDataSourceId, interval, timeRange, thresholds)
+        : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [objectAgnosticSeries, timeDataSourceId, interval, timeRange, objectAgnosticThresholds]
+    [
+      objectAgnosticSeries,
+      timeDataSourceId,
+      interval,
+      timeRange,
+      objectAgnosticThresholds,
+      isEditable,
+    ]
   );
 
   const values = useMemo(() => (isEditable ? sampleValues : valuesProp), [
@@ -320,8 +330,8 @@ const TimeSeriesCard = ({
 
   /** This is needed to update the chart when the lines and values change */
   useEffect(() => {
-    if (chartRef && chartRef.chart && !isEqual(chartData, previousChartData)) {
-      chartRef.chart.model.setData(chartData);
+    if (chartRef?.current?.chart && !isEqual(chartData, previousChartData)) {
+      chartRef.current.chart.model.setData(chartData);
     }
   }, [chartData, previousChartData]);
 
@@ -445,6 +455,9 @@ const TimeSeriesCard = ({
       },
       containerResizable: true,
       tooltip: {
+        truncation: {
+          type: 'none',
+        },
         valueFormatter: (tooltipValue) =>
           chartValueFormatter(tooltipValue, newSize, unit, locale, decimalPrecision),
         customHTML: (...args) =>
@@ -453,7 +466,8 @@ const TimeSeriesCard = ({
             alertRanges,
             mergedI18n.alertDetected,
             showTimeInGMT,
-            tooltipDateFormatPattern
+            tooltipDateFormatPattern,
+            locale
           ),
         groupLabel: mergedI18n.tooltipGroupLabel,
       },
@@ -475,6 +489,9 @@ const TimeSeriesCard = ({
         : {}),
       timeScale: {
         addSpaceOnEdges: !isNil(addSpaceOnEdges) ? addSpaceOnEdges : 1,
+      },
+      toolbar: {
+        enabled: false,
       },
     }),
     [
@@ -519,6 +536,7 @@ const TimeSeriesCard = ({
       i18n={mergedI18n}
       timeRange={timeRange}
       {...others}
+      locale={locale}
       isExpanded={isExpanded}
       isEditable={isEditable}
       isEmpty={isChartDataEmpty}
@@ -538,9 +556,7 @@ const TimeSeriesCard = ({
             })}
           >
             <ChartComponent
-              ref={(el) => {
-                chartRef = el;
-              }}
+              ref={chartRef}
               data={chartData}
               options={options}
               width="100%"

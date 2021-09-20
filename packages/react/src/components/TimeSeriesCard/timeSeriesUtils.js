@@ -129,7 +129,7 @@ export const generateTableSampleValues = (id, columns) => {
 /** *
  * timestamp of current value
  * index of current value
- * ticks: array of current ticks
+ * ticks: array of current ticks or a single string with part of the date
  * interval: the type of interval formatting to use
  * locale: the current locale,
  * previousTickTimestamp
@@ -189,6 +189,9 @@ export const formatGraphTick = (
   }
   if (interval === 'month' && sameYear) {
     return currentTimestamp.format('MMM');
+  }
+  if (interval === 'year' && index === 0) {
+    return currentTimestamp.format('YYYY');
   }
   if (interval === 'year' && sameYear) {
     return ''; // if we're on the year boundary and the same year, then don't repeat

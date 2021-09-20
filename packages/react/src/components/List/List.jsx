@@ -115,6 +115,11 @@ const defaultProps = {
   testId: 'list',
 };
 
+const getAdjustedNestingLevel = (items, currentLevel) =>
+  items.some((item) => item?.children && item.children.length > 0)
+    ? currentLevel + 1
+    : currentLevel;
+
 const List = forwardRef((props, ref) => {
   // Destructuring this way is needed to retain the propTypes and defaultProps
   const {
@@ -166,7 +171,7 @@ const List = forwardRef((props, ref) => {
           id={item.id}
           index={index}
           key={`${item.id}-list-item-${level}-${value}`}
-          nestingLevel={isCategory ? level - 1 : level}
+          nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
           value={value}
           icon={
             editingStyleIsMultiple(editingStyle) ? (
@@ -187,7 +192,7 @@ const List = forwardRef((props, ref) => {
           editingStyle={editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
-          onSelect={editingStyle ? () => {} : () => handleSelect(item.id, parentId)}
+          onSelect={() => handleSelect(item.id, parentId)}
           onExpand={toggleExpansion}
           onItemMoved={onItemMoved}
           itemWillMove={itemWillMove}
@@ -204,18 +209,19 @@ const List = forwardRef((props, ref) => {
       </div>,
       ...(hasChildren && isExpanded
         ? item.children.map((child, nestedIndex) => {
-            return renderItemAndChildren(child, nestedIndex, item.id, level + 1);
+            return renderItemAndChildren(
+              child,
+              nestedIndex,
+              item.id,
+              getAdjustedNestingLevel(item?.children, level)
+            );
           })
         : []),
     ];
   };
 
-  // If the root level contains a category item, the base indent level should be increased by 1 to
-  // account for the caret on non-category items.
-  const baseIndentLevel = items.some((item) => item?.children && item.children.length > 0) ? 1 : 0;
-
   const listItems = items.map((item, index) =>
-    renderItemAndChildren(item, index, null, baseIndentLevel)
+    renderItemAndChildren(item, index, null, getAdjustedNestingLevel(items, 0))
   );
 
   const emptyContent =

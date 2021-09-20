@@ -10,9 +10,9 @@ import {
   Select,
   SelectItem,
   NumberInput,
-  TooltipDefinition,
   OrderedList,
   ListItem,
+  TooltipDefinition,
 } from 'carbon-components-react';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
@@ -21,6 +21,8 @@ import uuid from 'uuid';
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
 import dayjs from '../../utils/dayjs';
+import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
+import { Tooltip } from '../Tooltip';
 
 const { iotPrefix } = settings;
 
@@ -305,10 +307,14 @@ const DateTimePicker = ({
   const [relativeValue, setRelativeValue] = useState(null);
   const [absoluteValue, setAbsoluteValue] = useState(null);
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
+  const [relativeLastNumberInvalid, setRelativeLastNumberInvalid] = useState(false);
 
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
   const relativeSelect = useRef(null);
+  const presetListRef = useRef(null);
+  const previousActiveElement = useRef(null);
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -331,7 +337,17 @@ const DateTimePicker = ({
     },
   };
 
+  /**
+   * A callback ref to capture the DateTime node. When a user changes from Relative to Absolute
+   * the calendar would capture focus and move the users position adding confusion to where they
+   * are on the page. This also checks if they're currently focused on the Absolute radio button
+   * and captures it so focus can be restored after the calendar has been reparented below.
+   */
   const handleDatePickerRef = useCallback((node) => {
+    if (document.activeElement?.getAttribute('value') === PICKER_KINDS.ABSOLUTE) {
+      previousActiveElement.current = document.activeElement;
+    }
+
     setDatePickerElem(node);
   }, []);
 
@@ -347,6 +363,12 @@ const DateTimePicker = ({
             .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
             .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
           dp.appendChild(datePickerElem.cal.calendarContainer);
+        }
+
+        // if we were focused on the Absolute radio button previously, restore focus to it.
+        if (previousActiveElement.current) {
+          previousActiveElement.current.focus();
+          previousActiveElement.current = null;
         }
       }
     }, 0);
@@ -398,14 +420,16 @@ const DateTimePicker = ({
       }
       case PICKER_KINDS.ABSOLUTE: {
         let startDate = dayjs(value.absolute.start);
-        if (value.absolute.startTime) {
+        // wait to parse it until fully typed
+        if (value.absolute.startTime && value.absolute.startTime.length === 5) {
           startDate = startDate.hours(value.absolute.startTime.split(':')[0]);
           startDate = startDate.minutes(value.absolute.startTime.split(':')[1]);
         }
         returnValue.absolute.start = new Date(startDate.valueOf());
         if (value.absolute.end) {
           let endDate = dayjs(value.absolute.end);
-          if (value.absolute.endTime) {
+          // wait to parse it until fully typed
+          if (value.absolute.endTime && value.absolute.endTime.length === 5) {
             endDate = endDate.hours(value.absolute.endTime.split(':')[0]);
             endDate = endDate.minutes(value.absolute.endTime.split(':')[1]);
           }
@@ -475,8 +499,96 @@ const DateTimePicker = ({
     [absoluteValue, relativeValue]
   );
 
-  const onFieldClick = () => {
-    setIsExpanded(!isExpanded);
+  const getFocusableSiblings = () => {
+    if (presetListRef?.current) {
+      const siblings = presetListRef.current.querySelectorAll('[tabindex]');
+      return Array.from(siblings).filter(
+        (sibling) => parseInt(sibling.getAttribute('tabindex'), 10) !== -1
+      );
+    }
+
+    return [];
+  };
+
+  const onFieldInteraction = ({ key }) => {
+    switch (key) {
+      case 'Escape':
+        setIsExpanded(false);
+        break;
+      // if the input box is focused and a down arrow is pressed this
+      // moves focus to the first item in the preset list that has a tabindex
+      case 'ArrowDown':
+        if (presetListRef?.current) {
+          const listItems = getFocusableSiblings();
+          if (listItems?.[0]?.focus) {
+            listItems[0].focus();
+          }
+        }
+        break;
+      default:
+        setIsExpanded(!isExpanded);
+        break;
+    }
+  };
+
+  /**
+   * Moves up the preset list to the previous focusable element or wraps around to the bottom
+   * if already at the top.
+   */
+  const moveToPreviousElement = () => {
+    const siblings = getFocusableSiblings();
+    const index = siblings.findIndex((elem) => elem === document.activeElement);
+    const previous = siblings[index - 1];
+    if (previous) {
+      previous.focus();
+    } else {
+      siblings[siblings.length - 1].focus();
+    }
+  };
+
+  /**
+   * Moves down the preset list to the next focusable element or wraps around to the top
+   * if already at the bottom
+   */
+  const moveToNextElement = () => {
+    const siblings = getFocusableSiblings();
+    const index = siblings.findIndex((elem) => elem === document.activeElement);
+    const next = siblings[index + 1];
+    if (next) {
+      next.focus();
+    } else {
+      siblings[0].focus();
+    }
+  };
+
+  const onNavigatePresets = ({ key }) => {
+    switch (key) {
+      case 'ArrowUp':
+        moveToPreviousElement();
+        break;
+      case 'ArrowDown':
+        moveToNextElement();
+        break;
+      default:
+        break;
+    }
+  };
+
+  /**
+   * Allows navigation back and forth between the radio buttons for Relative/Absolute
+   *
+   * @param {KeyboardEvent} e
+   */
+  const onNavigateRadioButton = (e) => {
+    if (e.target.getAttribute('id').includes('absolute')) {
+      setCustomRangeKind(PICKER_KINDS.RELATIVE);
+      document.activeElement.parentNode.previousSibling
+        .querySelector('input[type="radio"]')
+        .focus();
+    } else {
+      setCustomRangeKind(PICKER_KINDS.ABSOLUTE);
+      document.activeElement.parentNode.nextSibling.querySelector('input[type="radio"]').focus();
+    }
   };
 
   useEffect(() => {
@@ -497,6 +609,8 @@ const DateTimePicker = ({
       newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
       newAbsolute.end = end;
       newAbsolute.endDate = dayjs(newAbsolute.end).format('MM/DD/YYYY');
+    } else {
+      setFocusOnFirstField(false);
     }
 
     newAbsolute.start = start;
@@ -507,6 +621,7 @@ const DateTimePicker = ({
 
   const onDatePickerClose = (range, single, flatpickr) => {
     // force it to stay open
+    /* istanbul ignore else */
     if (flatpickr) {
       flatpickr.open();
     }
@@ -602,6 +717,7 @@ const DateTimePicker = ({
 
   useEffect(
     () => {
+      /* istanbul ignore else */
       if (defaultValue || humanValue === null) {
         parseDefaultValue(defaultValue);
         setLastAppliedValue(defaultValue);
@@ -615,6 +731,7 @@ const DateTimePicker = ({
     setIsExpanded(false);
     parseDefaultValue(lastAppliedValue);
 
+    /* istanbul ignore else */
     if (onCancel) {
       onCancel();
     }
@@ -657,6 +774,7 @@ const DateTimePicker = ({
           strings.toNowLabel
         }`;
       }
+      return humanValue;
     }
     return '';
   };
@@ -670,7 +788,11 @@ const DateTimePicker = ({
 
   // on change functions that trigger a relative value update
   const onRelativeLastNumberChange = (event) => {
-    changeRelativePropertyValue('lastNumber', Number(event.imaginaryTarget.value));
+    const valid = !event.imaginaryTarget.getAttribute('data-invalid');
+    setRelativeLastNumberInvalid(!valid);
+    if (valid) {
+      changeRelativePropertyValue('lastNumber', Number(event.imaginaryTarget.value));
+    }
   };
   const onRelativeLastIntervalChange = (event) => {
     changeRelativePropertyValue('lastInterval', event.currentTarget.value);
@@ -701,11 +823,26 @@ const DateTimePicker = ({
     ? renderPresetTooltipText(currentValue)
     : getIntervalValue();
 
+  /**
+   * Shows and hides the tooltip with the humanValue (Relative) or full-range (Absolute) when
+   * the user focuses or hovers on the input
+   */
+  const toggleTooltip = () => {
+    if (isExpanded) {
+      setIsTooltipOpen(false);
+    } else {
+      setIsTooltipOpen((prev) => !prev);
+    }
+  };
+
   return (
+    // Escape handler added to allow pressing escape to close the picker from any via event bubbling
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       data-testid={testId}
       id={`${id}-${iotPrefix}--date-time-picker__wrapper`}
       className={`${iotPrefix}--date-time-picker__wrapper`}
+      onKeyDown={handleSpecificKeyDown(['Escape'], () => setIsExpanded(false))}
     >
       <div
         className={`${iotPrefix}--date-time-picker__box ${
@@ -716,8 +853,13 @@ const DateTimePicker = ({
           data-testid={`${testId}__field`}
           className={`${iotPrefix}--date-time-picker__field`}
           role="button"
-          onClick={onFieldClick}
-          onKeyPress={onFieldClick}
+          onClick={onFieldInteraction}
+          /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
+          onKeyUp={handleSpecificKeyDown(['Enter', ' ', 'Escape', 'ArrowDown'], onFieldInteraction)}
+          onFocus={toggleTooltip}
+          onBlur={toggleTooltip}
+          onMouseEnter={toggleTooltip}
+          onMouseLeave={toggleTooltip}
           tabIndex={0}
         >
           {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
@@ -736,6 +878,17 @@ const DateTimePicker = ({
             aria-label={strings.calendarLabel}
             className={`${iotPrefix}--date-time-picker__icon`}
           />
+          {!isExpanded && isTooltipOpen ? (
+            <Tooltip
+              open={isTooltipOpen}
+              showIcon={false}
+              focusTrap={false}
+              triggerClassName={`${iotPrefix}--date-time-picker__tooltip-trigger`}
+              className={`${iotPrefix}--date-time-picker__tooltip`}
+            >
+              {tooltipValue}
+            </Tooltip>
+          ) : null}
         </div>
         <div
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {
@@ -745,40 +898,53 @@ const DateTimePicker = ({
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
-              <OrderedList nested={false}>
-                {tooltipValue ? (
-                  <ListItem
-                    className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
-                  >
-                    {tooltipValue}
-                  </ListItem>
-                ) : null}
-                {showCustomRangeLink ? (
-                  <ListItem
-                    onClick={toggleIsCustomRange}
-                    className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}
-                  >
-                    {strings.customRangeLinkLabel}
-                  </ListItem>
-                ) : null}
-                {presets.map((preset, i) => {
-                  return (
+              // Catch bubbled Up/Down keys from the preset list and move focus.
+              // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+              <div
+                ref={presetListRef}
+                onKeyDown={handleSpecificKeyDown(['ArrowUp', 'ArrowDown'], onNavigatePresets)}
+              >
+                <OrderedList nested={false}>
+                  {tooltipValue ? (
                     <ListItem
-                      key={i}
-                      onClick={() => onPresetClick(preset)}
-                      className={classnames(
-                        `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
-                        {
-                          [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
-                            selectedPreset === (preset.id ?? preset.offset),
-                        }
-                      )}
+                      className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
                     >
-                      {strings.presetLabels[i] || preset.label}
+                      {tooltipValue}
                     </ListItem>
-                  );
-                })}
-              </OrderedList>
+                  ) : null}
+                  {showCustomRangeLink ? (
+                    <ListItem
+                      onClick={toggleIsCustomRange}
+                      onKeyDown={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
+                      className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}
+                      tabIndex={0}
+                    >
+                      {strings.customRangeLinkLabel}
+                    </ListItem>
+                  ) : null}
+                  {presets.map((preset, i) => {
+                    return (
+                      <ListItem
+                        key={i}
+                        onClick={() => onPresetClick(preset)}
+                        onKeyDown={handleSpecificKeyDown(['Enter', ' '], () =>
+                          onPresetClick(preset)
+                        )}
+                        tabIndex={0}
+                        className={classnames(
+                          `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
+                          {
+                            [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
+                              selectedPreset === (preset.id ?? preset.offset),
+                          }
+                        )}
+                      >
+                        {strings.presetLabels[i] || preset.label}
+                      </ListItem>
+                    );
+                  })}
+                </OrderedList>
+              </div>
             ) : (
               <div className={`${iotPrefix}--date-time-picker__custom-wrapper`}>
                 {showRelativeOption ? (
@@ -795,11 +961,19 @@ const DateTimePicker = ({
                         value={PICKER_KINDS.RELATIVE}
                         id={`${id}-relative`}
                         labelText={strings.relativeLabel}
+                        onKeyDown={handleSpecificKeyDown(
+                          ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
+                          onNavigateRadioButton
+                        )}
                       />
                       <RadioButton
                         value={PICKER_KINDS.ABSOLUTE}
                         id={`${id}-absolute`}
                         labelText={strings.absoluteLabel}
+                        onKeyDown={handleSpecificKeyDown(
+                          ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
+                          onNavigateRadioButton
+                        )}
                       />
                     </RadioButtonGroup>
                   </FormGroup>
@@ -810,7 +984,12 @@ const DateTimePicker = ({
                       legendText={strings.lastLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
-                      <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                      <div
+                        className={classnames(
+                          `${iotPrefix}--date-time-picker__fields-wrapper`,
+                          `${iotPrefix}--date-time-picker__fields-wrapper--with-gap`
+                        )}
+                      >
                         <NumberInput
                           id={`${id}-last-number`}
                           invalidText={strings.invalidNumberLabel}
@@ -853,7 +1032,15 @@ const DateTimePicker = ({
                       legendText={strings.relativeToLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
-                      <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                      <div
+                        className={classnames(
+                          `${iotPrefix}--date-time-picker__fields-wrapper`,
+                          `${iotPrefix}--date-time-picker__fields-wrapper--with-gap`,
+                          {
+                            [`${iotPrefix}--date-time-picker__fields-wrapper--without-time`]: !hasTimeInput,
+                          }
+                        )}
+                      >
                         <Select
                           {...others}
                           ref={relativeSelect}
@@ -960,6 +1147,8 @@ const DateTimePicker = ({
                 size="field"
                 {...others}
                 onClick={toggleIsCustomRange}
+                /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
+                onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
               >
                 {strings.backBtnLabel}
               </Button>
@@ -967,9 +1156,11 @@ const DateTimePicker = ({
               <Button
                 kind="secondary"
                 className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-cancel`}
-                onClick={onCancelClick}
                 size="field"
                 {...others}
+                onClick={onCancelClick}
+                /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
+                onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
               >
                 {strings.cancelBtnLabel}
               </Button>
@@ -979,7 +1170,14 @@ const DateTimePicker = ({
               className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
               {...others}
               onClick={onApplyClick}
+              /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
+              onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
               size="field"
+              disabled={
+                isCustomRange &&
+                customRangeKind === PICKER_KINDS.RELATIVE &&
+                relativeLastNumberInvalid
+              }
             >
               {strings.applyBtnLabel}
             </Button>

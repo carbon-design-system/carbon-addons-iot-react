@@ -19,6 +19,7 @@ const useUiResources = ({
     applications: null,
     i18n: null,
     surveyData: null,
+    idleTimeoutData: null,
   });
 
   const refreshData = useCallback(async () => {

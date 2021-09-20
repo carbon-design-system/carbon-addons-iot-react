@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
-import { Switcher24 } from '@carbon/icons-react';
+import { ScreenOff16, Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
@@ -103,6 +103,10 @@ const sideNavLinks = [
 
 const customActionItems = [
   {
+    label: 'aHiddenIcon',
+    btnContent: <ScreenOff16 id="hidden-button" fill="white" description="hidden-button-icon" />,
+  },
+  {
     label: 'bell',
     btnContent: (
       <span id="bell-icon">
@@ -135,6 +139,20 @@ const customActionItems = [
       },
       {
         metaData: {
+          href: 'http://google.com',
+          title: 'this is a title',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          element: 'a',
+        },
+        content: (
+          <span id="a-message">
+            this is my really long message to you that should be truncated...
+          </span>
+        ),
+      },
+      {
+        metaData: {
           element: 'button',
         },
         content: (
@@ -157,12 +175,26 @@ const customActionItems = [
       {
         metaData: {
           href: 'http://google.com',
-          title: 'this is a title',
+          title: 'this is my message to you',
           target: '_blank',
           rel: 'noopener noreferrer',
           element: 'a',
         },
         content: <span id="another-message">this is my message to you</span>,
+      },
+      {
+        metaData: {
+          href: 'http://google.com',
+          title: 'this is my really long message to you that should be truncated...',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          element: 'a',
+        },
+        content: (
+          <span id="another-message">
+            this is my really long message to you that should be truncated...
+          </span>
+        ),
       },
       {
         metaData: {
@@ -204,7 +236,11 @@ const customHelpLinks = [
       href: 'javascript:void(0)',
       onClick: () => alert('custom help menu action'),
     },
-    content: <span id="yet-another-custom-help-link">{'{Yet another custom help link}'}</span>,
+    content: (
+      <span id="yet-another-custom-help-link">
+        {'{Yet another custom help link that is really long and should be truncated...}'}
+      </span>
+    ),
   },
 ];
 
@@ -234,7 +270,9 @@ const customProfileLinks = [
       onClick: () => alert('custom profile menu action'),
     },
     content: (
-      <span id="yet-another-custom-profile-link">{'{Yet another custom profile link}'}</span>
+      <span id="yet-another-custom-profile-link">
+        {'{Yet another custom profile link that is really long and should be truncated...}'}
+      </span>
     ),
   },
 ];
@@ -461,10 +499,17 @@ export const HeaderWithCustomActionItems = () => (
     customHelpLinks={customHelpLinks}
     customProfileLinks={customProfileLinks}
     customApplications={customApplications}
+    isActionItemVisible={(item) => {
+      if (item.label === 'aHiddenIcon' || item.id === 'app-switcher') {
+        return false;
+      }
+
+      return true;
+    }}
   />
 );
 
-HeaderWithCustomActionItems.storyName = 'Header with custom action items';
+HeaderWithCustomActionItems.storyName = 'Header with custom action items and hidden icons';
 
 export const HeaderWithSurveyNotification = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');

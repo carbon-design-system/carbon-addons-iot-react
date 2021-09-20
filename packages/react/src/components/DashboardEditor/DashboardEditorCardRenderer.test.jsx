@@ -230,4 +230,42 @@ describe('DashboardEditorCardRenderer', () => {
     );
     expect(screen.getByText(/defaultCard/)).toBeInTheDocument();
   });
+
+  it('should call onFetchDynamicDemoHotspots when the function is available and dynamic hotspots are passed', () => {
+    const onCardChange = jest.fn();
+
+    const onFetchDynamicDemoHotspots = jest
+      .fn()
+      .mockImplementation(
+        () => new Promise((resolve) => resolve([{ x: 75, y: 10, type: 'text' }]))
+      );
+
+    render(
+      <DashboardEditorCardRenderer
+        {...commonProps}
+        size={CARD_SIZES.MEDIUM}
+        type="IMAGE"
+        onCardChange={onCardChange}
+        content={{
+          src: 'landscape',
+          image: 'landscape',
+          alt: 'Sample image',
+          zoomMax: 10,
+          hasInsertFromUrl: true,
+        }}
+        onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+        values={{
+          hotspots: [
+            {
+              color: 'purple',
+              icon: 'Checkmark',
+              type: 'dynamic',
+            },
+          ],
+        }}
+      />
+    );
+
+    expect(onFetchDynamicDemoHotspots).toHaveBeenCalled();
+  });
 });

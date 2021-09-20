@@ -16,6 +16,7 @@ import {
 
 import { bundledIconNames } from '../utils/bundledIcons';
 import deprecate from '../internal/deprecate';
+import { DateTimePickerDefaultValuePropTypes } from '../components/DateTimePicker/DateTimePickerV2';
 
 import {
   CARD_LAYOUTS,
@@ -117,6 +118,8 @@ export const ValueCardPropTypes = {
   fontSize: PropTypes.number,
   /** option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool,
+  /** Callback fired when an attribute is clicked to take further action like opening a modal */
+  onAttributeClick: PropTypes.func,
 };
 
 export const TableCardPropTypes = {
@@ -512,17 +515,29 @@ export const CardSizesToDimensionsPropTypes = PropTypes.shape({
 
 export const TimeRangeOptionsPropTypes = (props, propName, componentName) => {
   let error;
+  const timeRangeProp = props[propName];
   // if the
   if (props[propName]) {
-    const timeRangeKeys = Object.keys(props[propName]);
-    // only validate the options if they are populated
-    if (timeRangeKeys.length > 0) {
+    const timeRangeKeys = Object.keys(timeRangeProp);
+    // only validate the options if they are populated and they are strings
+    if (timeRangeKeys.length > 0 && typeof timeRangeProp[timeRangeKeys[0]] === 'string') {
       // throw error if timeRangeOptions does not include 'this' or 'last'
       const isError = timeRangeKeys.some((key) => !key.includes('this') && !key.includes('last'));
 
       if (isError) {
         error = new Error(
           `\`${componentName}\` prop \`${propName}\` key's should include \`this\` or \`last\` i.e. \`{ thisWeek: 'This week', lastWeek: 'Last week'}\``
+        );
+      }
+    } else if (timeRangeKeys.length > 0 && typeof timeRangeProp[timeRangeKeys[0]] === 'object') {
+      // throw error if timeRangeOptions does not label or offset fields
+      const isError = timeRangeKeys.some(
+        (key) => !timeRangeProp[key].label || !timeRangeProp[key].offset
+      );
+
+      if (isError) {
+        error = new Error(
+          `\`${componentName}\` prop \`${propName}\` each keyed object needs a label and offset.`
         );
       }
     }
@@ -637,8 +652,12 @@ export const MapCardPropTypes = {
   dropRef: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
 };
 
+export const DATE_PICKER_OPTIONS = { ICON_ONLY: 'iconOnly', FULL: 'full' };
+
 export const CardPropTypes = {
   title: PropTypes.string,
+  subtitle: PropTypes.string,
+  hasTitleWrap: PropTypes.bool,
   id: PropTypes.string,
   isLoading: PropTypes.bool,
   isEmpty: PropTypes.bool,
@@ -663,7 +682,7 @@ export const CardPropTypes = {
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
   /** Optional selected range to pass at the card level */
-  timeRange: PropTypes.string,
+  timeRange: PropTypes.oneOfType([PropTypes.string, DateTimePickerDefaultValuePropTypes]),
   /** Generates the available time range selection options. Each option should include 'this' or 'last'.
    * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
    */
@@ -673,7 +692,11 @@ export const CardPropTypes = {
     clone: PropTypes.bool,
     delete: PropTypes.bool,
     expand: PropTypes.bool,
-    range: PropTypes.bool,
+    range: PropTypes.oneOfType([
+      PropTypes.bool, // previous simple range selector
+      /** Use the new datepicker */
+      PropTypes.oneOf(Object.values(DATE_PICKER_OPTIONS)), // these are the new'iconOnly' will only show icon, 'full' shows whole field
+    ]),
     settings: PropTypes.bool,
   }),
   /** All the labels that need translation */
@@ -745,8 +768,12 @@ export const CardPropTypes = {
   locale: PropTypes.string,
   /** a way to pass down dashboard grid resize handles, only used by other card types */
   resizeHandles: PropTypes.array,
-  /** Optional callback function that is passed an onChange function and the original cardConfig function.
+  /** Optional callback function that is passed an onChange function and the original cardConfig object.
    * This allows additional information to be passed to be used in the Card Editor for this type.
-   * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render * */
+   * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render
+   * We recommend doing this dynamically with the CardEditor onRenderCardEditForm property rather than hardcoding it in the Card JSON
+   * * */
   renderEditContent: PropTypes.func,
+  footerContent: PropTypes.elementType,
+  dateTimeMask: PropTypes.string,
 };

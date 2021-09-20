@@ -4,7 +4,7 @@ import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-import { Button, InlineLoading } from '../../..';
+import { Button, InlineLoading, DragAndDrop } from '../../..';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
@@ -76,6 +76,7 @@ export const StatefulListWithNestedSearching = () => (
       i18n={object('i18n', {
         searchPlaceHolderText: 'Search',
       })}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -123,6 +124,7 @@ export const WithDefaultSelectedId = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -191,6 +193,7 @@ export const WithOverflowMenu = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -255,6 +258,7 @@ export const WithNestedReorder = () => {
           hasSearch={boolean('hasSearch', true)}
           onSelect={action('onSelect')}
           hasDeselection={boolean('hasDeselection', true)}
+          hasMultiSelect={boolean('hasMultiSelect', false)}
         />
       </div>
     );
@@ -262,6 +266,14 @@ export const WithNestedReorder = () => {
 
   return <HierarchyListWithReorder />;
 };
+
+WithNestedReorder.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const WithDefaultExpandedIds = () => (
   <div style={{ width: 400, height: 400 }}>
@@ -304,6 +316,7 @@ export const WithDefaultExpandedIds = () => (
       defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -387,6 +400,7 @@ export const WithMixedHierarchies = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );
@@ -435,6 +449,7 @@ export const WithSelectableCategories = () => (
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
     />
   </div>
 );

@@ -12,15 +12,15 @@
     width: var(--value-card-attribute-width);
 
     &--vertical {
-      padding: 0 0 $spacing-06 $spacing-05;
+      padding: 0 0 $spacing-06 0;
     }
 
     &--vertical:last-of-type {
-      padding: 0 0 0 $spacing-05;
+      padding: 0;
     }
 
     &--horizontal {
-      padding: 0 0 0 $spacing-05;
+      padding: 0;
     }
   }
 

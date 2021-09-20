@@ -9,15 +9,17 @@ import { TabController } from './tab-controller.class';
         'max-width': getMaxWidth()
       }"
     >
-      <ibm-tab-header
+      <ai-tab-header
         *ngFor="let tab of controller.getTabs()"
         [active]="(controller.selection | async) === tab.key"
+        [tab]="tab"
+        [actions]="tab.actions"
         (selected)="onSelected(tab.key)"
       >
         <div class="iot--tab__title-container">
           <span>{{ tab.title }}</span>
         </div>
-      </ibm-tab-header>
+      </ai-tab-header>
     </ibm-tab-header-group>
     <ng-content select="ai-tab-actions"></ng-content>
   `,

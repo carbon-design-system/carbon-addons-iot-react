@@ -32,6 +32,15 @@ describe('ComboBox', () => {
     return list;
   };
 
+  it('should filter bad props, but not good ones.', async () => {
+    jest.spyOn(console, 'error');
+    const { container } = render(
+      <ComboBox {...defaultProps} aBadProp="100" data-test-check="100" />
+    );
+    expect(console.error).not.toHaveBeenCalled();
+    expect(container.querySelector('[data-test-check]')).toBeDefined();
+  });
+
   it('renders with default props', async () => {
     render(<ComboBox {...defaultProps} />);
     const tags = screen.getByTestId('combo-tags');

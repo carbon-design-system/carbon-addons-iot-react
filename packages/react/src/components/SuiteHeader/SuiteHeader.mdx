@@ -7,11 +7,16 @@
   - [Using native `fetch` to retrieve data](#using-native-fetch-to-retrieve-data)
   - [Using provided data fetching util](#using-provided-data-fetching-util)
   - [Using provided data fetching hook (recommended)](#using-provided-data-fetching-hook-recommended)
+  - [Hiding an icon from the action menu](#hiding-an-icon-from-the-action-menu)
 - [Props](#props)
 - [Feedback](#feedback)
 - External Links
   - [Design specs](https://pages.github.ibm.com/ai-applications/design/components/buttons/usage)
   - [Source Code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/MenuButton)
+
+## Getting started
+
+The SuiteHeader can be imported as `import {SuiteHeader} from 'carbon-addons-iot-react';`. It has it's own custom props, but then also uses all props from the header.
 
 ## Examples of usage
 
@@ -28,6 +33,7 @@ const SuiteHeaderWithDataFetchingExample = () => {
     applications: null,
     i18n: null,
     surveyData: null,
+    idleTimeoutData: null,
   });
   useEffect(() => {
     fetch('http://localhost:3001/internal/uiresources?id=masthead&lang=en&surveyId=test', {
@@ -55,6 +61,7 @@ const SuiteHeaderWithDataFetchingExample = () => {
       applications={data.applications}
       i18n={data.i18n}
       surveyData={data.surveyData}
+      idleTimeoutData={data.idleTimeoutData}
     />
   );
 };
@@ -73,6 +80,7 @@ const SuiteHeaderWithDataFetchingUtilExample = () => {
     applications: null,
     i18n: null,
     surveyData: null,
+    idleTimeoutData: null,
   });
   useEffect(() => {
     uiresources({
@@ -92,6 +100,7 @@ const SuiteHeaderWithDataFetchingUtilExample = () => {
       applications={data.applications}
       i18n={data.i18n}
       surveyData={data.surveyData}
+      idleTimeoutData={data.idleTimeoutData}
     />
   );
 };
@@ -119,9 +128,94 @@ const SuiteHeaderWithDataFetchingHookExample = () => {
       applications={data.applications}
       i18n={data.i18n}
       surveyData={data.surveyData}
+      idleTimeoutData={data.idleTimeoutData}
     />
   );
 };
+```
+
+### Hiding an icon from the action menu
+
+You can hide actionItems in the header by passing an isActionItemVisible function. This function is passed
+the actionItem object and allows you to determine if it should be rendered or not.
+
+```jsx
+import { SuiteHeader } from 'carbon-addons-iot-react';
+
+<SuiteHeader
+  suiteName="Application Suite"
+  appName="Application Name"
+  userDisplayName="Admin User"
+  username="adminuser"
+  routes={{
+    profile: 'https://www.ibm.com',
+    navigator: 'https://www.ibm.com',
+    admin: 'https://www.ibm.com',
+    logout: 'https://www.ibm.com',
+    whatsNew: 'https://www.ibm.com',
+    gettingStarted: 'https://www.ibm.com',
+    documentation: 'https://www.ibm.com',
+    requestEnhancement: 'https://www.ibm.com',
+    support: 'https://www.ibm.com',
+    about: 'https://www.ibm.com',
+  }}
+  applications={[
+    {
+      id: 'monitor',
+      name: 'Monitor',
+      href: 'https://www.ibm.com',
+    },
+    {
+      id: 'health',
+      name: 'Health',
+      href: 'https://ibm.com',
+      isExternal: true,
+    },
+  ]}
+  customActionItems={[
+    {
+      label: 'aHiddenIcon',
+      btnContent: <ScreenOff16 id="hidden-button" fill="white" description="hidden-button-icon" />,
+    },
+    {
+      label: 'bell',
+      btnContent: (
+        <span id="bell-icon">
+          <NotificationOn id="notification-button" fill="white" description="Icon" />
+        </span>
+      ),
+    },
+    {
+      label: 'bee',
+      hasHeaderPanel: true,
+      btnContent: (
+        <span id="bee-icon">
+          <Bee fill="white" description="bee-icon" />
+        </span>
+      ),
+    },
+  ]}
+  customApplications={[
+    {
+      id: 'customapp1',
+      name: 'Custom Application',
+      href: 'https://www.ibm.com',
+    },
+    {
+      id: 'customapp2',
+      name: 'Another Custom Application',
+      href: 'https://google.com',
+      isExternal: true,
+    },
+  ]}
+  isActionItemVisible={(item) => {
+    if (item.label === 'aHiddenIcon' || item.label === 'AppSwitcher') {
+      return false;
+    }
+
+    return true;
+  }}
+/>;
 ```
 
 ## Props
@@ -140,6 +234,7 @@ const SuiteHeaderWithDataFetchingHookExample = () => {
 | applications                                         | arrayOf  | null                              | Applications to render in AppSwitcher                                                                                                                       |
 | sideNavProps                                         | shape    | null                              | side navigation component                                                                                                                                   |
 | surveyData                                           | shape    | null                              | If surveyData is present, show a ToastNotification                                                                                                          |
+| idleTimeoutData                                      | shape    | null                              | If idleTimeoutData is present, user inactivity detection is enabled                                                                                         |
 | onSideNavToggled                                     | function | async () => Promise.resolve(true) | Function called when side nav button is toggled                                                                                                             |
 | onRouteChange                                        | function | async () => Promise.resolve(true) | Function called before any route change. Returns a Promise\<Boolean\>. False means the redirect will not happen. This function should never throw an error. |
 | i18n                                                 | shape    | SuiteHeaderI18N.en                | I18N strings                                                                                                                                                |
@@ -149,6 +244,7 @@ const SuiteHeaderWithDataFetchingHookExample = () => {
 | customApplications                                   | arrayOf  | []                                | Array of custom applications                                                                                                                                |
 | walkmePath                                           | string   | null                              | Path to Walkme entry point                                                                                                                                  |
 | walkmeLang                                           | string   | 'en'                              | Walkme language code                                                                                                                                        |
+| isActionItemVisible                                  | function | () => true                        | Is passed the actionItem object being rendered and returns a boolean if it should be in the DOM. (actionItem) => {}                                         |
 
 ## Feedback
 

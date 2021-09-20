@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
 import { EscalatorDown } from '@carbon/pictograms-react';
 import { Basketball32, Code24 } from '@carbon/icons-react';
-import { TextInput } from 'carbon-components-react';
+import { TextInput, Select, SelectItem } from 'carbon-components-react';
 
 import munichBuilding from '../ImageCard/MunichBuilding.png';
 import {
@@ -360,4 +360,129 @@ export const TimeSeriesCardWithCustom = () => {
   );
 };
 
-TimeSeriesCardWithCustom.storyName = 'custom edit content';
+TimeSeriesCardWithCustom.storyName = 'custom edit content for time series card';
+
+// returns custom selector
+const renderCustomDataTypeSelector = (onChange, card, dataTypes, selectedDataType) => {
+  return [
+    {
+      content: (
+        <Select
+          labelText="Data source"
+          onChange={(event) => {
+            const updatedCard = { ...card, dataType: event.currentTarget.value };
+            action('onChange')(updatedCard);
+            onChange(updatedCard);
+          }}
+          id="select-1"
+          defaultValue={selectedDataType}
+        >
+          {dataTypes.map((dataType) => (
+            <SelectItem key={dataType} value={dataType} text={dataType} />
+          ))}
+        </Select>
+      ),
+    },
+  ];
+};
+
+const dataTypes = ['DataType1', 'DataType2'];
+export const TableCardWithCustom = () => {
+  const StatefulTableEditor = () => {
+    const [localCardState, setLocalCardState] = useState({
+      renderEditContent: (onChange, cardConfig) =>
+        renderCustomDataTypeSelector(onChange, cardConfig, dataTypes, dataTypes[1]),
+      title: 'Table card with custom edit content',
+      id: `table card`,
+      size: CARD_SIZES.LARGEWIDE,
+      type: CARD_TYPES.TABLE,
+      content: {
+        columns: [
+          { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
+          { dataSourceId: 'Campus_EGL', label: 'Campus' },
+          {
+            dataSourceId: 'peopleCount_EnterpriseBuilding_mean',
+            label: 'People',
+          },
+          {
+            dataSourceId: 'headCount_EnterpriseBuilding_mean',
+            label: 'Headcount',
+          },
+          {
+            dataSourceId: 'capacity_EnterpriseBuilding_mean',
+            label: 'capacity',
+          },
+        ],
+      },
+    });
+    return (
+      <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+        <CardEditor
+          cardConfig={localCardState}
+          dataItems={[
+            { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
+            { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
+            { dataItemId: 'torque', dataSourceId: 'torque_mean', label: 'Torque Mean' },
+            { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+            { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
+          ]}
+          errors={{}}
+          onShowGallery={action('onShowGallery')}
+          onChange={(card) => setLocalCardState(card)}
+          onAddCard={action('onAddCard')}
+          dataSeriesItemLinks={{ value: 'www.ibm.com' }}
+          getValidDataItems={action('getValidDataItems')}
+          getValidDimensions={(cardConfig) => {
+            action('getValidDimensions')(cardConfig);
+            return { dimension1: ['value1', 'value2'], dimension2: ['value3', 'value4'] };
+          }}
+        />
+      </div>
+    );
+  };
+  return <StatefulTableEditor />;
+};
+
+TableCardWithCustom.storyName = 'custom edit content for table card';
+
+export const DynamicallyAddSpecialContentToCardEditForm = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      cardConfig={{
+        title: 'Table card with dynamic custom edit content',
+        id: `table card`,
+        size: CARD_SIZES.LARGEWIDE,
+        type: CARD_TYPES.TABLE,
+        content: {
+          columns: [
+            { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
+            { dataSourceId: 'Campus_EGL', label: 'Campus' },
+            {
+              dataSourceId: 'peopleCount_EnterpriseBuilding_mean',
+              label: 'People',
+            },
+            {
+              dataSourceId: 'headCount_EnterpriseBuilding_mean',
+              label: 'Headcount',
+            },
+            {
+              dataSourceId: 'capacity_EnterpriseBuilding_mean',
+              label: 'capacity',
+            },
+          ],
+        },
+      }}
+      // dynamically adds the custom edit content at render time
+      onRenderCardEditForm={(cardConfig) => ({
+        ...cardConfig,
+        renderEditContent: (onChange, cardConfig) =>
+          renderCustomDataTypeSelector(onChange, cardConfig, dataTypes, dataTypes[1]),
+      })}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+DynamicallyAddSpecialContentToCardEditForm.storyName = 'Dynamically add edit form content';

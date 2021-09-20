@@ -51,6 +51,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <div
               className="iot--card--toolbar-date-range-wrapper"
             >
+              <div
+                className="iot--card--toolbar-timerange-label"
+                id="timeRange"
+              >
+                Default
+              </div>
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
@@ -96,7 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
               data-testid="Card-toolbar-close-button"
               disabled={false}
               onBlur={[Function]}
@@ -364,11 +370,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-date"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -432,11 +433,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-health"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -500,11 +496,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-age"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -568,11 +559,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-condition"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -636,11 +622,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-rul"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -1993,6 +1974,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -2038,7 +2025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -2133,7 +2120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             ComboChartCard Empty
           </div>
           <div
-            className="bx--tooltip__label"
+            className="bx--tooltip__label iot--card--header--tooltip"
             id="card-tooltip-trigger-combo-chart-1"
           >
             
@@ -2178,6 +2165,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <div
             className="iot--card--toolbar-date-range-wrapper"
           >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
             <button
               aria-expanded={false}
               aria-haspopup={true}
@@ -2223,7 +2216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--ghost"
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
             data-testid="Card-toolbar-expand-button"
             disabled={false}
             onBlur={[Function]}
@@ -2321,7 +2314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             ComboChartCard Loading
           </div>
           <div
-            className="bx--tooltip__label"
+            className="bx--tooltip__label iot--card--header--tooltip"
             id="card-tooltip-trigger-combo-chart-1"
           >
             
