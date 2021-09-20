@@ -21,9 +21,17 @@ $icon-switch-size-large: $spacing-09;
     }
   }
 
-  &:hover:not(.#{$iot-prefix}--icon-switch--light) {
-    .#{$iot-prefix}--icon-switch__divider:after {
-      display: none;
+  &:hover {
+    // hide the divider on hover
+    &:not(.#{$iot-prefix}--icon-switch--light) {
+      .#{$iot-prefix}--icon-switch__divider:after {
+        display: none;
+      }
+
+      // hide the divider beside it on hover to prevent "fuzziness" of the hover state
+      + .#{$iot-prefix}--icon-switch .#{$iot-prefix}--icon-switch__divider:after {
+        display: none;
+      }
     }
   }
 
@@ -160,7 +168,7 @@ $icon-switch-size-large: $spacing-09;
   }
 
   .#{$iot-prefix}--icon-switch--selected &:after {
-    background-color: $ui-05;
+    background-color: transparent;
   }
 
   .#{$iot-prefix}--icon-switch--light &:after {
