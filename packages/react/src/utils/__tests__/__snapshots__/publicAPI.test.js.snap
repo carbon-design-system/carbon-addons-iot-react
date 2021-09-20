@@ -457,6 +457,7 @@ Map {
         "selectRowAria": "Select row",
         "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle aggregations",
+        "toolbarLabelAria": undefined,
       },
       "id": null,
       "lightweight": false,
@@ -1119,6 +1120,9 @@ Map {
               "type": "string",
             },
             "toggleAggregations": Object {
+              "type": "string",
+            },
+            "toolbarLabelAria": Object {
               "type": "string",
             },
           },
@@ -2154,6 +2158,9 @@ Map {
               "type": "string",
             },
             "toggleAggregations": Object {
+              "type": "string",
+            },
+            "toolbarLabelAria": Object {
               "type": "string",
             },
           },
@@ -3766,6 +3773,9 @@ Map {
               "type": "string",
             },
             "toggleAggregations": Object {
+              "type": "string",
+            },
+            "toolbarLabelAria": Object {
               "type": "string",
             },
           },
