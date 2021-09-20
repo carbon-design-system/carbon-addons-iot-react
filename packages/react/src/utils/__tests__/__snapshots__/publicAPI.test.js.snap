@@ -6125,6 +6125,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "domainRange": Object {
         "args": Array [
           Object {
@@ -11838,6 +11841,7 @@ Map {
         "xl": 16,
         "xs": 4,
       },
+      "dateTimeMask": "YYYY-MM-DD HH:mm",
       "footerContent": undefined,
       "hasTitleWrap": false,
       "hideHeader": false,
@@ -12416,6 +12420,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "footerContent": Object {
         "type": "elementType",
@@ -13373,6 +13380,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "footerContent": Object {
         "type": "elementType",
@@ -14562,6 +14572,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "fontSize": Object {
         "type": "number",
@@ -15758,6 +15771,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "domainRange": Object {
         "args": Array [
           Object {
@@ -16694,6 +16710,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "footerContent": Object {
         "type": "elementType",
@@ -17850,6 +17869,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -18878,6 +18900,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -19813,6 +19838,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "footerContent": Object {
         "type": "elementType",
@@ -23404,6 +23432,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -24629,6 +24660,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "dropRef": Object {
         "args": Array [

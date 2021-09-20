@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.146.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.0...v2.146.1-next.1) (2021-09-20)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+## [2.146.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0...v2.146.1-next.0) (2021-09-18)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.187...v2.146.0) (2021-09-17)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.187](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.186...v2.146.0-next.187) (2021-09-16)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.146.0-next.186](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.185...v2.146.0-next.186) (2021-09-16)
+
+
+### Bug Fixes
+
+* **datetimepicker:** disable apply for invalid values ([abf2296](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/abf2296e060ddea180bce84221b8055df1332705)), closes [#2832](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2832)
+
+
+
+
+
+# [2.146.0-next.185](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.184...v2.146.0-next.185) (2021-09-16)
+
+
+### Bug Fixes
+
+* **suite-header:** btn--primary icon colors ([00710ae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/00710ae1b5f382fa934c8222836656f42728b0b8))
+
+
+
+
+
+# [2.146.0-next.184](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.183...v2.146.0-next.184) (2021-09-15)
+
+
+### Bug Fixes
+
+* **card:** make dateTimeMask a prop, add tests, update snapshots ([284eab8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/284eab8ea55e886604e07ba84510ff6200077c96))
+* **card:** update default dateTimeMask ([38e57bf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/38e57bfa0e78b5b45936959c2366e3cffbfaef05))
+* **carddaterangepicker:** need to support locales correctly ([028765a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/028765a9ab08844d8b6a40d0f4ea5bb6bb5358ad))
+* **cardrangepicker:** need to pass locale for the calendar ([467b700](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/467b70007f1e144df81c57fa2ed0fbd8a2c1f767))
+
+
+
+
+
 # [2.146.0-next.183](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.182...v2.146.0-next.183) (2021-09-13)
 
 
