@@ -79,8 +79,6 @@ jobs:
 
       - name: Build app
         if: ${{ success() }}
-        run: npx serve -s build
-
-      - name: exit on success
-        if: ${{ success() }}
-        run: exit 1
+        run: |
+          npx serve -s build
+          exit 0
