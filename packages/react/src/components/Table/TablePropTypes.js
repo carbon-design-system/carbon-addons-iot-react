@@ -174,6 +174,7 @@ export const I18NPropTypes = PropTypes.shape({
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
   batchCancel: PropTypes.string,
+  toolbarLabelAria: PropTypes.string,
   itemsSelected: PropTypes.string,
   itemSelected: PropTypes.string,
   /** Row actions in table body */
