@@ -76,3 +76,11 @@ jobs:
           cd ../test-app
           yarn link carbon-addons-iot-react
           yarn build
+
+      - name: Build app
+        if: ${{ success() }}
+        run: npx serve -s build
+
+      - name: exit on success
+        if: ${{ success() }}
+        run: exit 1
