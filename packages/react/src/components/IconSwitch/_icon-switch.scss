@@ -196,6 +196,13 @@ $icon-switch-size-large: $spacing-09;
     color: $disabled-02;
   }
 
+  // hide divider beside a selected icon
+  &:not(.#{$iot-prefix}--icon-switch--light) + .#{$iot-prefix}--icon-switch {
+    .#{$iot-prefix}--icon-switch__divider:after {
+      background-color: transparent;
+    }
+  }
+
   &.#{$iot-prefix}--icon-switch--light {
     background-color: transparent;
     color: $icon-02;
