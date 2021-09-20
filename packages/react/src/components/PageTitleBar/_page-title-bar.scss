@@ -152,7 +152,7 @@
     flex-direction: row;
     align-items: center;
     padding: $spacing-04 0 $spacing-02 $spacing-07;
-    max-height: clamp(0, $spacing-02, $spacing-08);
+    max-height: clamp(0rem, $spacing-02, $spacing-08);
     white-space: nowrap;
 
     [dir='rtl'] & {
