@@ -18,6 +18,7 @@ import data from '../MapCard/storyFiles/data.json';
 import options from '../MapCard/storyFiles/mapOptions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { CARD_DIMENSIONS } from '../../constants/LayoutConstants';
+import landscape from '../ImageCard/landscape.jpg';
 
 import DashboardGrid from './DashboardGrid';
 
@@ -299,7 +300,7 @@ const DashboardAllCardsAsResizable = () => {
       size={currentSizes.imageCard}
       content={{
         alt: 'Sample image',
-        src: 'static/media/landscape.013ce39d.jpg',
+        src: landscape,
         zoomMax: 10,
       }}
       values={imageCardValues}
@@ -489,9 +490,6 @@ describe('DashboardGrid', () => {
         <DashboardAllCardsAsResizable />
       </div>
     );
-
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(500);
 
     cy.findByTestId('visual-regression-test').should('be.visible');
     onlyOn('headless', () => {
