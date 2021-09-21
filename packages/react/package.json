@@ -343,7 +343,6 @@
   "version": "2.146.0",
   "resolutions": {
     "chokidar": "3.3.1",
-    "react-grid-layout": "1.2.2",
-    "flatpickr": "4.6.1"
+    "react-grid-layout": "1.2.2"
   }
 }
