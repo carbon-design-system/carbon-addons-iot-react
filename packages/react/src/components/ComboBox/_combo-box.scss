@@ -1,4 +1,6 @@
 @import '~carbon-components/scss/components/combo-box/combo-box';
+@import '../../globals/vars';
+@import '../../globals/mixins';
 
 .#{$iot-prefix}--combobox {
   display: flex;
@@ -13,6 +15,17 @@
       display: inline-block;
       max-width: 100%;
     }
+  }
+
+  &.#{$iot-prefix}--combobox__menu--fit-content {
+    @include list-box-menu-fits-content();
+  }
+
+  // Default for when fit-content is active and the menu is wider than the input
+  // is that the menu expands to the right. This style makes it expand to the left
+  // unless we are in RTL mode.
+  &.#{$iot-prefix}--combobox__menu--flip-horizontal {
+    @include list-box-menu-flip-horizontal();
   }
 
   // Placement of the editOptionText
