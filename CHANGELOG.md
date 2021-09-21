@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.146.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.1...v2.146.1-next.2) (2021-09-21)
+
+
+### Bug Fixes
+
+* **table:** added back class ([e0b3f6f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e0b3f6f299078de86d17752b55959a2d7c34a62b))
+* **table:** added fit-content to multiselect ([711eb62](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/711eb62692d7d53e79c0e446e5714e0a1cf8b53f))
+* **table:** improved readbility for filters ([8828c8c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8828c8c77394009f000eda49031c9b76f3d17bf4))
+* **table:** pr feedback ([323ea5f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/323ea5ff00d2e29bee93f6f2db404678ae761aba)), closes [#2620](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2620)
+
+
+
+
+
 ## [2.146.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.0...v2.146.1-next.1) (2021-09-20)
 
 **Note:** Version bump only for package ibm-ai-applications
