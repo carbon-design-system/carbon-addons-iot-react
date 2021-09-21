@@ -81,4 +81,5 @@ jobs:
         if: ${{ success() }}
         run: |
           npx serve -s build
+          kill node
           exit 0
