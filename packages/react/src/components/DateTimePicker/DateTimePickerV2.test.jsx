@@ -230,7 +230,7 @@ describe('DateTimePicker', () => {
     // first open the menu
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
     userEvent.click(screen.getByText(/Back/));
-    expect(screen.getByText(/Custom Range/)).toBeInTheDocument();
+    expect(screen.getByText(/Custom Range/i)).toBeInTheDocument();
   });
 
   it('should switch from relative to absolute and then to preset', () => {
