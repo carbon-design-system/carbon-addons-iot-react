@@ -932,7 +932,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="bx--search-input"
                             data-testid="edit-table-table-toolbar-search"
                             id="edit-table-toolbar-search"
-                            onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -1447,7 +1446,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="bx--search-input"
                             data-testid="read-table-table-toolbar-search"
                             id="read-table-toolbar-search"
-                            onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -5548,7 +5546,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="bx--search-input"
                             data-testid="edit-table-table-toolbar-search"
                             id="edit-table-toolbar-search"
-                            onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -5827,7 +5824,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="bx--search-input"
                             data-testid="read-table-table-toolbar-search"
                             id="read-table-toolbar-search"
-                            onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}

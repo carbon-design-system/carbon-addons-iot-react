@@ -1690,7 +1690,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           data-testid="table-for-card-alert-table1-table-toolbar-search"
                           disabled={false}
                           id="table-for-card-alert-table1-toolbar-search"
-                          onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
@@ -4630,7 +4629,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           data-testid="table-for-card-alert-table1-table-toolbar-search"
                           disabled={false}
                           id="table-for-card-alert-table1-toolbar-search"
-                          onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
@@ -7605,7 +7603,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           data-testid="table-for-card-alert-table1-table-toolbar-search"
                           disabled={false}
                           id="table-for-card-alert-table1-toolbar-search"
-                          onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
@@ -9663,7 +9660,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           className="bx--search-input"
                           data-testid="table-for-card-expandedcard-table-toolbar-search"
                           id="table-for-card-expandedcard-toolbar-search"
-                          onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
@@ -13181,7 +13177,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           data-testid="table-for-card-alert-table1-table-toolbar-search"
                           disabled={false}
                           id="table-for-card-alert-table1-toolbar-search"
-                          onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
@@ -30827,7 +30822,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           data-testid="table-for-card-alert-table1-table-toolbar-search"
                           disabled={false}
                           id="table-for-card-alert-table1-toolbar-search"
-                          onBlur={[Function]}
                           onChange={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}

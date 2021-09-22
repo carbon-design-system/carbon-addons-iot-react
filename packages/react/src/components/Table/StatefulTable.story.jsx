@@ -184,6 +184,10 @@ export const SimpleStatefulExample = () => {
           ['multi', 'single', false],
           'multi'
         ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
+          true
+        ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
         hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
         preserveColumnWidths: boolean(
