@@ -156,7 +156,7 @@ export class AITableModel implements PaginationModel {
     // this will only create a single level of headers (it will destroy any existing header items)
     if (
       this.header == null ||
-      (this.header[0].length !== this._data[0].length && this._data[0].length > 0)
+      (this.projectedRowLength(this.header[0]) !== this._data[0].length && this._data[0].length > 0)
     ) {
       const newHeader = [[]];
       // disable this tslint here since we don't actually want to
@@ -326,6 +326,15 @@ export class AITableModel implements PaginationModel {
    */
   row(index: number): TableItem[] {
     return this._data[this.realRowIndex(index)];
+  }
+
+  /**
+   * Returns all the rows.
+   *
+   * Use `row()` instead.
+   */
+  rows(): TableItem[][] {
+    return this._data;
   }
 
   /**
@@ -693,7 +702,10 @@ export class AITableModel implements PaginationModel {
     const projectedIndices = this.actualIndexToProjectedIndices(indexFrom, this.header[rowIndex]);
     // based on those indices, find the "actual indices" of child rows
     for (let nextRowIndex = rowIndex; nextRowIndex < this.header.length; nextRowIndex++) {
-      const actualIndices = this.projectedIndicesToActualIndices(projectedIndices, this.header[nextRowIndex]);
+      const actualIndices = this.projectedIndicesToActualIndices(
+        projectedIndices,
+        this.header[nextRowIndex]
+      );
       // move them to the right place (based on the "projected indexTo")
       this.moveMultipleToIndex(actualIndices, indexTo, this.header[nextRowIndex]);
     }
@@ -927,7 +939,10 @@ export class AITableModel implements PaginationModel {
     return new Array(list[actualIndex].colSpan).fill(0).map((_, index) => startingIndex + index);
   }
 
-  protected projectedIndicesToActualIndices(projectedIndices: number[], list: TableHeaderItem[] | TableItem[]) {
+  protected projectedIndicesToActualIndices(
+    projectedIndices: number[],
+    list: TableHeaderItem[] | TableItem[]
+  ) {
     const actualIndicesSet = new Set();
 
     for (let projectedIndex of projectedIndices) {
