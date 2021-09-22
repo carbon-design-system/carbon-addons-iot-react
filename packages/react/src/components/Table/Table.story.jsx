@@ -2620,7 +2620,7 @@ export const RowExpansionAndLoadMore = () => {
     const addDataTimeout = (id) =>
       setTimeout(() => {
         setTableDataNested((prevTable) => {
-          const dataUpdated = [...prevTable];
+          const dataUpdated = cloneDeep(prevTable);
           const indexChildren = dataUpdated[0].children.findIndex((i) => i.id === id);
           dataUpdated[0].children[indexChildren] = {
             ...dataUpdated[0].children[indexChildren],
