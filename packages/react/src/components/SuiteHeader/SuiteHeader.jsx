@@ -174,6 +174,9 @@ const propTypes = {
   isActionItemVisible: Header.propTypes.isActionItemVisible,
 };
 
+export const shouldOpenInNewWindow = (e) =>
+  navigator.userAgent.indexOf('Mac') !== -1 ? e.metaKey : e.ctrlKey;
+
 const SuiteHeader = ({
   className,
   suiteName,
@@ -389,16 +392,21 @@ const SuiteHeader = ({
                 />
               </span>
             ),
-            onClick: async () => {
+            onClick: async (e) => {
               let href = routes.admin;
               let routeType = ROUTE_TYPES.ADMIN;
+              const newWindow = shouldOpenInNewWindow(e);
               if (isAdminView) {
                 href = navigatorRoute;
                 routeType = ROUTE_TYPES.NAVIGATOR;
               }
               const result = await onRouteChange(routeType, href);
               if (result) {
-                window.location.href = href;
+                if (newWindow) {
+                  window.open(href, '_blank', 'noopener noreferrer');
+                } else {
+                  window.location.href = href;
+                }
               }
             },
           },
@@ -441,10 +449,15 @@ const SuiteHeader = ({
                       'data-testid': 'suite-header-help--about',
                       href: 'javascript:void(0)',
                       title: mergedI18N.about,
-                      onClick: async () => {
+                      onClick: async (e) => {
+                        const newWindow = shouldOpenInNewWindow(e);
                         const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
                         if (result) {
-                          window.location.href = routes.about;
+                          if (newWindow) {
+                            window.open(routes.about, '_blank', 'noopener noreferrer');
+                          } else {
+                            window.location.href = routes.about;
+                          }
                         }
                       },
                     },
@@ -489,10 +502,15 @@ const SuiteHeader = ({
                     <SuiteHeaderProfile
                       displayName={userDisplayName}
                       username={username}
-                      onProfileClick={async () => {
+                      onProfileClick={async (e) => {
+                        const newWindow = shouldOpenInNewWindow(e);
                         const result = await onRouteChange(ROUTE_TYPES.PROFILE, routes.profile);
                         if (result) {
-                          window.location.href = routes.profile;
+                          if (newWindow) {
+                            window.open(routes.profile, '_blank', 'noopener noreferrer');
+                          } else {
+                            window.location.href = routes.profile;
+                          }
                         }
                       }}
                       i18n={{

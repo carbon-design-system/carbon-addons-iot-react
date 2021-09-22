@@ -937,4 +937,94 @@ describe('SuiteHeader', () => {
     expect(onKeyDown).toHaveBeenCalled();
     jest.resetAllMocks();
   });
+
+  describe('opening in new window', () => {
+    let fakeUserAgent = '';
+    beforeAll(() => {
+      const { userAgent } = global.navigator;
+      Object.defineProperty(global.navigator, 'userAgent', {
+        get() {
+          return fakeUserAgent === '' ? userAgent : fakeUserAgent;
+        },
+      });
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+      fakeUserAgent = '';
+    });
+
+    it('should open built-in routes in new window when holding cmd', async () => {
+      const onRouteChange = jest.fn().mockImplementation(() => true);
+      fakeUserAgent = 'Mac';
+      render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
+      await userEvent.click(screen.getByLabelText('Administration'), { metaKey: true });
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', 'https://www.ibm.com');
+      expect(window.open).toHaveBeenCalledWith(
+        'https://www.ibm.com',
+        '_blank',
+        'noopener noreferrer'
+      );
+    });
+
+    it('should open built-in routes in new window when holding ctrl', async () => {
+      const onRouteChange = jest.fn().mockImplementation(() => true);
+      fakeUserAgent = 'Win';
+      render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
+      await userEvent.click(screen.getByLabelText('Administration'), { ctrlKey: true });
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', 'https://www.ibm.com');
+      expect(window.open).toHaveBeenLastCalledWith(
+        'https://www.ibm.com',
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(1);
+      userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+      await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }), {
+        ctrlKey: true,
+      });
+      expect(window.open).toHaveBeenLastCalledWith(
+        'https://www.ibm.com',
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(2);
+
+      userEvent.click(screen.getByRole('menuitem', { name: 'Help' }));
+      await userEvent.click(screen.getByTitle('About'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        'https://www.ibm.com',
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(3);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        'https://www.ibm.com',
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(4);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('Monitor'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        'https://www.ibm.com',
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(5);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('Health'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        'https://www.ibm.com',
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(6);
+    });
+  });
 });

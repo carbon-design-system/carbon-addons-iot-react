@@ -8,6 +8,7 @@
   - [Using provided data fetching util](#using-provided-data-fetching-util)
   - [Using provided data fetching hook (recommended)](#using-provided-data-fetching-hook-recommended)
   - [Hiding an icon from the action menu](#hiding-an-icon-from-the-action-menu)
+  - [Opening a route in a new window](#opening-a-route-in-a-new-window)
 - [Props](#props)
 - [Feedback](#feedback)
 - External Links
@@ -216,6 +217,181 @@ import { SuiteHeader } from 'carbon-addons-iot-react';
     return true;
   }}
 />;
+```
+
+## Opening a route in a new window
+
+The SuiteHeader and SideNav are very versatle. Application developers have control over the elements and metadata used to render a SideNav link or custom actions.
+All of the built-in actions in the SuiteHeader (Administation link, help, profile, or Application Switcher) can be opened in a new window by holding <kbd>⌘</kbd>+<kbd>Left-Click</kbd> (Mac) or <kbd>Ctrl</kbd>+<kbd>Left-Click</kbd> (Windows).
+
+For example, if you would like a link in the sideNav to open in a new window, you can set the metaData like this:
+
+```json
+{
+  "label": "Dashboards",
+  "href": "https://www.ibm.com",
+  "element": "a",
+  "target": "_blank",
+  "rel": "noopener noreferrer"
+}
+```
+
+If you want to use a button element, but also have the option of it opening in a new window, you can control that with the onClick handler.
+
+```jsx
+{
+  "label": "Dashboards",
+  "element": "button",
+  "onClick": (e) => {
+    // you'll need to check the current platform to confirm mac/windows
+    // and check the correct key
+    if (e.ctrlKey || e.metaKey) {
+      window.open('https://www.ibm.com', '_blank', 'noopener noreferrer')
+    } else {
+      window.location.href = 'https://www.ibm.com';
+    }
+  }
+}
+```
+
+Below is a full example of various BUTTON and ANCHOR tags used in both open in new window or same window scenarios.
+
+```jsx
+<SuiteHeader
+  suiteName={text('suiteName', 'Application Suite')}
+  appName={text('appName', 'Application Name')}
+  userDisplayName={text('userDisplayName', 'Admin User')}
+  username={text('username', 'adminuser')}
+  isAdminView={boolean('isAdminView', false)}
+  routes={object('routes', {
+    profile: 'https://www.ibm.com',
+    navigator: 'https://www.ibm.com',
+    admin: 'https://www.ibm.com',
+    logout: 'https://www.ibm.com',
+    whatsNew: 'https://www.ibm.com',
+    gettingStarted: 'https://www.ibm.com',
+    documentation: 'https://www.ibm.com',
+    requestEnhancement: 'https://www.ibm.com',
+    support: 'https://www.ibm.com',
+    about: 'https://www.ibm.com',
+    workspaceId: 'workspace1',
+    domain: 'ibm.com',
+  })}
+  applications={object('applications', [
+    {
+      id: 'monitor',
+      name: 'Monitor',
+      href: 'https://www.ibm.com',
+    },
+    {
+      id: 'health',
+      name: 'Health',
+      href: 'https://www.ibm.com',
+      isExternal: true,
+    },
+  ])}
+  sideNavProps={{
+    links: [
+      {
+        icon: Switcher24,
+        isEnabled: true,
+        metaData: {
+          tabIndex: 0,
+          label: 'Boards',
+          element: ({ children, ...rest }) => <div {...rest}>{children}</div>,
+          isActive: true,
+        },
+        linkContent: 'Boards',
+        childContent: [
+          {
+            metaData: {
+              label: 'Yet another link',
+              title: 'Yet another link',
+              element: 'button',
+              onClick: (e) => {
+                // do something else
+              },
+            },
+            content: 'Yet another link',
+          },
+        ],
+      },
+      {
+        isEnabled: true,
+        icon: Chip,
+        metaData: {
+          label: 'Devices',
+          href: 'https://www.ibm.com',
+          element: 'a',
+          target: '_blank',
+        },
+        linkContent: 'Devices',
+      },
+      {
+        isEnabled: true,
+        icon: Dashboard,
+        metaData: {
+          label: 'Dashboards',
+          href: 'https://www.ibm.com',
+          element: 'a',
+          target: '_blank',
+        },
+        linkContent: 'Dashboards',
+        childContent: [
+          {
+            metaData: {
+              label: 'Link 1',
+              title: 'Link 1',
+              element: 'button',
+              onClick: (e) => {
+                window.location.href = 'https://www.ibm.com';
+              },
+            },
+            content: 'Link 1',
+          },
+          {
+            metaData: {
+              label: 'Link 2',
+              title: 'Link 2',
+              element: 'a',
+              href: 'https://www.ibm.com',
+            },
+            content: 'Link 2',
+          },
+        ],
+      },
+      {
+        isEnabled: true,
+        icon: Group,
+        metaData: {
+          label: 'Members',
+          element: 'button',
+        },
+        linkContent: 'Members',
+        childContent: [
+          {
+            metaData: {
+              label: 'Yet another link',
+              title: 'Yet another link',
+              element: 'button',
+              onClick: (e) => {
+                // you'll need to check the current platform to confirm mac/windows
+                // and check the correct key
+                if (e.ctrlKey || e.metaKey) {
+                  window.open('https://www.ibm.com', '_blank', 'noopener noreferrer');
+                } else {
+                  window.location.href = 'https://www.ibm.com';
+                }
+              },
+            },
+            content: 'Link 3',
+            isActive: true,
+          },
+        ],
+      },
+    ],
+  }}
+/>
 ```
 
 ## Props
