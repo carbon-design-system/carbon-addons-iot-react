@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.146.1-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.2...v2.146.1-next.3) (2021-09-22)
+
+
+### Bug Fixes
+
+* **icon-switch:** design adjustments from pr feedback ([487548c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/487548cce40c5b911c5bb46c5f33e8cfe13c1177))
+* **icon-switch:** design updates for RTL ([1586401](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/15864014d6cadd63d42c86122addb9550678b80a))
+* **icon-switch:** fix icon pixel move/rough border ([ed58719](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ed587196c4e4032c2b22b5b1af5b824a50cd620d))
+* **icon-switch:** fix styles for dividers between icons ([d8265a4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d8265a41312fa2643a98a251113f76abf09cd777))
+* **icon-switch:** hide divider beside selected icon ([3073310](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/30733105ec94f8698e7c2ccfb240d8626bce9f66))
+* **icon-switch:** hide dividers on hover ([9527c6e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9527c6ed3153c461a4c6e2ecc57ab101b5ab97b9))
+* **icon-switch:** thicken focus borders ([94d0753](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/94d07536f5ecc67efa58c1efe8c32f01d5e376fe))
+* **icon-switch:** update design ([e720b6d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e720b6dc95dbee3788c1829add0a4cf20b2558ec))
+* **icon-switch:** use psuedo-element for light selected borders ([6a4ff06](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6a4ff06153774fac32a954127200a6529fddd087))
+* **page-title-bar:** don't apply margin to IconSwitch ([0399b88](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0399b88aa2275aee3934818e8a917943e2d545d2))
+
+
+### Reverts
+
+* Revert "chore(repo): fix action" ([4accbbe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4accbbe003a059d0b466fa3db1a6869da714a1b4))
+
+
+
+
+
 ## [2.146.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.1...v2.146.1-next.2) (2021-09-21)
 
 
