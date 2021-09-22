@@ -853,7 +853,7 @@ describe('Table', () => {
       new TableHeaderItem({ data: 'h1' }),
       new TableHeaderItem({ data: 'h2', colSpan: 3 }),
       new TableHeaderItem({ data: 'h3', colSpan: 4 }),
-    ]
+    ];
     const tableModel = new AITableModel();
 
     expect(tableModel['projectedIndexToActualIndex'](0, header)).toEqual(0);
@@ -871,7 +871,7 @@ describe('Table', () => {
       new TableHeaderItem({ data: 'h1' }),
       new TableHeaderItem({ data: 'h2', colSpan: 3 }),
       new TableHeaderItem({ data: 'h3', colSpan: 4 }),
-    ]
+    ];
     const tableModel = new AITableModel();
 
     expect(tableModel['actualIndexToProjectedIndices'](0, header)).toEqual([0]);
@@ -884,19 +884,34 @@ describe('Table', () => {
       new TableHeaderItem({ data: 'h1' }),
       new TableHeaderItem({ data: 'h2', colSpan: 3 }),
       new TableHeaderItem({ data: 'h3', colSpan: 4 }),
-    ]
+    ];
     const header2 = [
       new TableHeaderItem({ data: 'h1' }),
       new TableHeaderItem({ data: 'h2', colSpan: 2 }),
       new TableHeaderItem({ data: 'h3' }),
       new TableHeaderItem({ data: 'h4', colSpan: 2 }),
       new TableHeaderItem({ data: 'h5', colSpan: 2 }),
-    ]
+    ];
     const tableModel = new AITableModel();
 
-    expect(tableModel['projectedIndicesToActualIndices'](tableModel['actualIndexToProjectedIndices'](0, header), header2)).toEqual([0]);
-    expect(tableModel['projectedIndicesToActualIndices'](tableModel['actualIndexToProjectedIndices'](1, header), header2)).toEqual([1, 2]);
-    expect(tableModel['projectedIndicesToActualIndices'](tableModel['actualIndexToProjectedIndices'](2, header), header2)).toEqual([3, 4]);
+    expect(
+      tableModel['projectedIndicesToActualIndices'](
+        tableModel['actualIndexToProjectedIndices'](0, header),
+        header2
+      )
+    ).toEqual([0]);
+    expect(
+      tableModel['projectedIndicesToActualIndices'](
+        tableModel['actualIndexToProjectedIndices'](1, header),
+        header2
+      )
+    ).toEqual([1, 2]);
+    expect(
+      tableModel['projectedIndicesToActualIndices'](
+        tableModel['actualIndexToProjectedIndices'](2, header),
+        header2
+      )
+    ).toEqual([3, 4]);
   });
 
   it('should move multiple array items to left', () => {
@@ -907,12 +922,12 @@ describe('Table', () => {
       new TableHeaderItem({ data: 'h4' }),
       new TableHeaderItem({ data: 'h5' }),
       new TableHeaderItem({ data: 'h6' }),
-    ]
+    ];
     const tableModel = new AITableModel();
 
     tableModel['moveMultipleToIndex']([1, 2, 3], 0, header);
 
-    expect(header.map(item => item.data)).toEqual(['h2', 'h3', 'h4', 'h1', 'h5', 'h6']);
+    expect(header.map((item) => item.data)).toEqual(['h2', 'h3', 'h4', 'h1', 'h5', 'h6']);
   });
 
   it('should move one array items to left', () => {
@@ -923,12 +938,12 @@ describe('Table', () => {
       new TableHeaderItem({ data: 'h4' }),
       new TableHeaderItem({ data: 'h5' }),
       new TableHeaderItem({ data: 'h6' }),
-    ]
+    ];
     const tableModel = new AITableModel();
 
     tableModel['moveMultipleToIndex']([1], 0, header);
 
-    expect(header.map(item => item.data)).toEqual(['h2', 'h1', 'h3', 'h4', 'h5', 'h6']);
+    expect(header.map((item) => item.data)).toEqual(['h2', 'h1', 'h3', 'h4', 'h5', 'h6']);
   });
 
   it('should move multiple array items to right', () => {
@@ -939,12 +954,12 @@ describe('Table', () => {
       new TableHeaderItem({ data: 'h4' }),
       new TableHeaderItem({ data: 'h5' }),
       new TableHeaderItem({ data: 'h6' }),
-    ]
+    ];
     const tableModel = new AITableModel();
 
     tableModel['moveMultipleToIndex']([1, 2, 3], 5, header);
 
-    expect(header.map(item => item.data)).toEqual(['h1', 'h5', 'h2', 'h3', 'h4', 'h6']);
+    expect(header.map((item) => item.data)).toEqual(['h1', 'h5', 'h2', 'h3', 'h4', 'h6']);
   });
 
   it('should move one array items to right', () => {
@@ -955,11 +970,11 @@ describe('Table', () => {
       new TableHeaderItem({ data: 'h4' }),
       new TableHeaderItem({ data: 'h5' }),
       new TableHeaderItem({ data: 'h6' }),
-    ]
+    ];
     const tableModel = new AITableModel();
 
     tableModel['moveMultipleToIndex']([1], 3, header);
-    expect(header.map(item => item.data)).toEqual(['h1', 'h3', 'h2', 'h4', 'h5', 'h6']);
+    expect(header.map((item) => item.data)).toEqual(['h1', 'h3', 'h2', 'h4', 'h5', 'h6']);
   });
 
   it('should preserve header if data is emptied', () => {
