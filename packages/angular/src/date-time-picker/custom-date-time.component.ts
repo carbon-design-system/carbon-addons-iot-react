@@ -92,7 +92,6 @@ export class CustomDateTimeComponent implements OnChanges {
   }
 
   absoluteChange(change: DateRange) {
-    console.log(change);
     this.rangeChange.emit(['ABSOLUTE', ...change]);
   }
 }
