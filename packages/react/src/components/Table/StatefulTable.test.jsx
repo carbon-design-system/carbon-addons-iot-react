@@ -18,6 +18,10 @@ import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
 const { iotPrefix } = settings;
 
 describe('stateful table with real reducer', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should clear filters', async () => {
     render(<StatefulTable {...initialState} actions={mockActions} />);
     const whiteboardFilter = await screen.findByDisplayValue('whiteboard');

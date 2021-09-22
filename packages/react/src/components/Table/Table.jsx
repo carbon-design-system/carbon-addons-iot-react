@@ -61,6 +61,8 @@ const propTypes = {
   options: PropTypes.shape({
     /** If true allows the table to aggregate values of columns in a special row */
     hasAggregations: PropTypes.bool,
+    /** If true, search is applied as typed. If false, only after 'Enter' is pressed */
+    hasFastSearch: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
@@ -310,6 +312,7 @@ export const defaultProps = (baseProps) => ({
     hasFilter: false,
     hasAdvancedFilter: false,
     hasOnlyPageData: false,
+    hasFastSearch: true,
     hasSearch: false,
     hasColumnSelection: false,
     hasColumnSelectionConfig: false,
@@ -759,6 +762,7 @@ const Table = (props) => {
                 options,
                 'hasAggregations',
                 'hasColumnSelection',
+                'hasFastSearch',
                 'hasSearch',
                 'hasRowSelection',
                 'hasRowCountInHeader',
