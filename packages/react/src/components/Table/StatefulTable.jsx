@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import merge from 'lodash/merge';
 import get from 'lodash/get';
@@ -37,6 +37,7 @@ import {
   tableRemoveMultiSortColumn,
   tableClearMultiSortColumns,
   tableRowLoadMore,
+  tableMoreRowsLoaded,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -121,6 +122,12 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     initialState.table.loadingMoreIds,
     initialState.table.loadingState,
   ]);
+
+  useEffect(() => {
+    if (view.table.loadingMoreIds?.length) {
+      dispatch(tableMoreRowsLoaded({ data: initialData }));
+    }
+  }, [initialData, view]);
 
   const columns = hasUserViewManagement ? state.columns : initialColumns;
   const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';

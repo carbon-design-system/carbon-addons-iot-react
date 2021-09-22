@@ -44,6 +44,7 @@ import {
   TABLE_MULTI_SORT_REMOVE_COLUMN,
   TABLE_MULTI_SORT_CLEAR,
   TABLE_ROW_LOAD_MORE,
+  TABLE_MORE_ROW_LOADED,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -743,6 +744,7 @@ export const tableReducer = (state = {}, action) => {
 
     case TABLE_ROW_LOAD_MORE: {
       return update(state, {
+        initialDataHelper: { $set: state.data },
         view: {
           table: {
             loadingMoreIds: {
@@ -751,6 +753,37 @@ export const tableReducer = (state = {}, action) => {
           },
         },
       });
+    }
+
+    case TABLE_MORE_ROW_LOADED: {
+      const { data } = action.payload;
+
+      const findNestedRowObject = (rowId, data, parent, idx) => {
+        // data match
+        if (data.id === rowId) {
+          return { data, parent, idx };
+        }
+        // check children
+        if (data.children && data.children.length > 0) {
+          return data.children
+            .map((i, index) => findNestedRowObject(rowId, i, data, index))
+            .filter((i) => i)[0];
+        }
+      };
+
+      state.view.table.loadingMoreIds.forEach((loadMoreId) => {
+        const newDataFound = data
+          .map((i, idx) => findNestedRowObject(loadMoreId, i, i, idx))
+          .filter((i) => i)[0];
+        console.log('dataFound: ', newDataFound);
+
+        const stateDataFound = state.data
+          .map((i, idx) => findNestedRowObject(loadMoreId, i, i, idx))
+          .filter((i) => i)[0];
+        console.log('stateDataFound:', stateDataFound);
+        return loadMoreId;
+      });
+      return state;
     }
 
     // Actions that are handled by the base reducer
