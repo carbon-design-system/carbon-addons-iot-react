@@ -1590,7 +1590,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
                   id="table-for-card-table-list-toolbar-search"
-                  onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -3061,7 +3060,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
                   id="table-for-card-table-list-toolbar-search"
-                  onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -4718,7 +4716,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--search-input"
                   data-testid="table-for-card-undefined-table-toolbar-search"
                   id="table-for-card-undefined-toolbar-search"
-                  onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -5661,7 +5658,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
                   id="table-for-card-table-list-toolbar-search"
-                  onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -6891,7 +6887,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
                   id="table-for-card-table-list-toolbar-search"
-                  onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -9343,7 +9338,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
                   id="table-for-card-table-list-toolbar-search"
-                  onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -11629,7 +11623,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
                   id="table-for-card-table-list-toolbar-search"
-                  onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -13435,7 +13428,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
                   id="table-for-card-table-list-toolbar-search"
-                  onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -15580,7 +15572,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
                   id="table-for-card-table-list-toolbar-search"
-                  onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
