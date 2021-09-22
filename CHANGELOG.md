@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.146.1-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.4...v2.146.1-next.5) (2021-09-22)
+
+
+### Bug Fixes
+
+* **dashboard-grid:** update snapshot, fix imagecard ([f3fbe7b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f3fbe7bb3cfa230126d4506b3f7b29b6cb2cdcab))
+* **datetimepicker:** format code ([3cfde74](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3cfde743e9849eec0f8801fe8a00725ab2029f66))
+* **datetimepicker:** support blocking dates ([7429abe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7429abebdf5f7217c50bcb0edffc8ec349f17bbf))
+* **datetimepicker:** update format ([5240587](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5240587eb746a502957dba31bb936e8147c8c97d))
+* **repo:** add delay to dashboard grid visual tests ([b962ec9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b962ec97046025106872790db0b25ff5c14f3b27))
+
+
+
+
+
 ## [2.146.1-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.3...v2.146.1-next.4) (2021-09-22)
 
 
