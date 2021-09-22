@@ -166,6 +166,19 @@ export class AITableModel implements PaginationModel {
         newHeader[0].push(new TableHeaderItem());
       }
       this.header = newHeader;
+    } else {
+      this.header.forEach((headerRow) => {
+        const projectedRowLength = this.projectedRowLength(headerRow);
+        if (projectedRowLength < this._data[0].length && this._data[0].length > 0) {
+          const difference = this._data[0].length - projectedRowLength;
+          // disable this tslint here since we don't actually want to
+          // loop the difference between contents of data and projected header row length
+          // tslint:disable-next-line: prefer-for-of
+          for (let i = 0; i < difference; i++) {
+            headerRow.push(new TableHeaderItem());
+          }
+        }
+      });
     }
 
     this.dataChange.next();

@@ -64,6 +64,57 @@ describe('Table', () => {
     expect(tableModel['header'][0].length).toEqual(2);
   });
 
+  it('should make sure each header has the same length as data', () => {
+    let tableModel = new AITableModel();
+    tableModel.setHeader([
+      [
+        new TableHeaderItem({ data: 'h1' }),
+        new TableHeaderItem({ data: 'h2', colSpan: 4 }),
+        new TableHeaderItem({ data: 'h3' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h11' }),
+        new TableHeaderItem({ data: 'h12', colSpan: 2 }),
+        new TableHeaderItem({ data: 'h13', colSpan: 2 }),
+        new TableHeaderItem({ data: 'h14' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h21' }),
+        new TableHeaderItem({ data: 'h22' }),
+        new TableHeaderItem({ data: 'h23' }),
+        new TableHeaderItem({ data: 'h24' }),
+        new TableHeaderItem({ data: 'h25' }),
+        new TableHeaderItem({ data: 'h26' }),
+      ],
+    ]);
+    tableModel.setData([
+      [
+        new TableItem({ data: 'A' }),
+        new TableItem({ data: 'B' }),
+        new TableItem({ data: 'C' }),
+        new TableItem({ data: 'D' }),
+        new TableItem({ data: 'E' }),
+        new TableItem({ data: 'F' }),
+        new TableItem({ data: 'Extra' }),
+        new TableItem({ data: 'Extra' }),
+      ],
+      [
+        new TableItem({ data: 'G' }),
+        new TableItem({ data: 'H' }),
+        new TableItem({ data: 'I' }),
+        new TableItem({ data: 'J' }),
+        new TableItem({ data: 'K' }),
+        new TableItem({ data: 'L' }),
+        new TableItem({ data: 'Extra' }),
+        new TableItem({ data: 'Extra' }),
+      ],
+    ]);
+
+    expect(tableModel['header'][0].length === tableModel.row(0).length);
+    expect(tableModel['header'][1].length === tableModel.row(0).length);
+    expect(tableModel['header'][2].length === tableModel.row(0).length);
+  });
+
   it('should have same data in same table cell', () => {
     let tableModel = new AITableModel();
     tableModel.setData([
