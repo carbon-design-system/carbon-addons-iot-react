@@ -154,10 +154,7 @@ export class AITableModel implements PaginationModel {
 
     // only create a fresh header if necessary (header doesn't exist or differs in length)
     // this will only create a single level of headers (it will destroy any existing header items)
-    if (
-      this.header == null ||
-      (this.projectedRowLength(this.header[0]) !== this._data[0].length && this._data[0].length > 0)
-    ) {
+    if (this.header == null) {
       const newHeader = [[]];
       // disable this tslint here since we don't actually want to
       // loop the contents of the data
