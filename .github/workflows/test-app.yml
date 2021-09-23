@@ -79,4 +79,6 @@ jobs:
 
       - name: Serve app
         if: ${{ success() }}
-        run: node ./dist/src/utils/serveTestApp.js
+        run: |
+          node ./dist/src/utils/serveTestApp.js
+          exit 0

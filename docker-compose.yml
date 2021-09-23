@@ -8,4 +8,4 @@ services:
     volumes:
       - ./packages/react/cypress-visual-screenshots:/@ai-apps/packages/react/cypress-visual-screenshots
       - ./packages/react/cypress-visual-report:/@ai-apps/packages/react/cypress-visual-report
-      - ./packages/react/cypress/coverage/coverage-final.json:/@ai-apps/packages/react/cypress/coverage/coverage-final.json
+      - ${PWD}/packages/react/cypress/coverage/coverage-final.json:/@ai-apps/packages/react/cypress/coverage/coverage-final.json
