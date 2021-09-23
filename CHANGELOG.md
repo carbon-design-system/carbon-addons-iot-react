@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.146.1-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.5...v2.146.1-next.6) (2021-09-23)
+
+
+### Bug Fixes
+
+* **combo-box:** fix scss to not break optimizecssassets plugin ([e8201b3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e8201b386a1e6d8d47ae297825fe55d0b9158534))
+* **page-title-bar:** add units to clamp ([c913faf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c913faf6d8830f9b92d1a0a65faef844de19ec80))
+
+
+
+
+
 ## [2.146.1-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.4...v2.146.1-next.5) (2021-09-22)
 
 
