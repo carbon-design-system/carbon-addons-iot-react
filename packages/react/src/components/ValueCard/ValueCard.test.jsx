@@ -189,6 +189,6 @@ describe('ValueCard', () => {
     const previewData = screen.getAllByText(PREVIEW_DATA);
     expect(previewData).toHaveLength(2);
     expect(previewData[1]).toHaveClass(`${iotPrefix}--value-card__attribute-secondary-value`);
-    expect(previewData[1]).toHaveStyle('--secondary-value-color:red');
+    expect(previewData[1]).toHaveStyle('--secondary-value-color:#6F6F6F');
   });
 });

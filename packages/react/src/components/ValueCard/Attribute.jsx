@@ -162,7 +162,7 @@ const Attribute = ({
             data-testid={`${testId}-secondary-value`}
             className={`${BEM_BASE}-secondary-value`}
             style={{
-              '--secondary-value-color': secondaryValue.color || '#777',
+              '--secondary-value-color': '#6F6F6F',
             }}
           >
             {secondaryValue.trend && secondaryValue.trend === 'up' ? (
@@ -170,12 +170,14 @@ const Attribute = ({
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending up"
                 data-testid={`${testId}-trending-up`}
+                fill={secondaryValue.color || '#6F6F6F'}
               />
             ) : secondaryValue.trend === 'down' ? (
               <CaretDown16
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending down"
                 data-testid={`${testId}-trending-down`}
+                fill={secondaryValue.color || '#6F6F6F'}
               />
             ) : null}
             {secondaryValue.value}
