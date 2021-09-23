@@ -80,5 +80,5 @@ jobs:
       - name: Serve app
         if: ${{ success() }}
         run: |
-        ls -la ./dist/src/utils/serveTestApp.sh
-        bash ./dist/src/utils/serveTestApp.sh
+          ls -la ./dist/src/utils/serveTestApp.sh
+          bash ./dist/src/utils/serveTestApp.sh
