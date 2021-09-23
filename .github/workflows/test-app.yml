@@ -79,6 +79,4 @@ jobs:
 
       - name: Serve app
         if: ${{ success() }}
-        run: |
-          cd ../dist
-          ./src/utils/serveTestApp.sh
+        run: ./dist/src/utils/serveTestApp.sh

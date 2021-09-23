@@ -54,7 +54,10 @@
     "test:e2e:update": "cypress-image-diff -u",
     "test:e2e": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct --browser chrome --config video=false,screenshotOnRunFailure=false",
     "test:e2e:interactive": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress open-ct --browser chrome --config video=false,screenshotOnRunFailure=false",
-    "test:e2e:ci": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct  --browser chrome --headless --config watchForFileChanges=false --record video=false,screenshotOnRunFailure=false",
+    "test:e2e:ci": "cross-env HEIGHT=900 WIDTH=1680 BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct  --browser chrome --headless --config watchForFileChanges=false --record video=false,screenshotOnRunFailure=false",
+    "test:e2e:images": "cd ../.. && docker-compose run --no-deps --rm react-visual-regression-tests bash -c 'cd /@ai-apps/packages/react && pwd && yarn test:e2e:ci --record=false'",
+    "test:e2e:docker:build": "cd ../.. && docker-compose up --build",
+    "test:e2e:docker:clean": "docker system prune",
     "reports:clean": "rimraf .nyc_output reports",
     "reports:copy": "mkdir reports || true && cp cypress/coverage/coverage-final.json reports/from-cypress.json && cp jest/coverage/coverage-final.json reports/from-jest.json",
     "reports:combine": "mkdir .nyc_output || true && npx nyc merge reports && mv coverage.json .nyc_output/out.json && npx nyc report --check-coverage --per-file --report-dir coverage",
@@ -153,14 +156,13 @@
       "src/components/Dashboard/Dashboard.jsx",
       "src/components/Dashboard/CardRenderer.jsx",
       "src/components/MapCard/storyFiles/*.jsx",
-      "src/components/BarChartCard/barChartUtils.js",
       "src/components/Table/Table.test.helpers.js",
       "src/components/Table/TablePropTypes.js"
     ],
-    "branches": 80,
-    "lines": 80,
-    "functions": 80,
-    "statements": 80
+    "branches": 90,
+    "lines": 90,
+    "functions": 90,
+    "statements": 90
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
@@ -340,7 +342,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.146.0-next.184",
+  "version": "2.146.1-next.6",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2",

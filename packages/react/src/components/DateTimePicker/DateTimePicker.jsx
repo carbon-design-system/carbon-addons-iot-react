@@ -308,6 +308,7 @@ const DateTimePicker = ({
   const [absoluteValue, setAbsoluteValue] = useState(null);
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
+  const [relativeLastNumberInvalid, setRelativeLastNumberInvalid] = useState(false);
 
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
@@ -787,7 +788,11 @@ const DateTimePicker = ({
 
   // on change functions that trigger a relative value update
   const onRelativeLastNumberChange = (event) => {
-    changeRelativePropertyValue('lastNumber', Number(event.imaginaryTarget.value));
+    const valid = !event.imaginaryTarget.getAttribute('data-invalid');
+    setRelativeLastNumberInvalid(!valid);
+    if (valid) {
+      changeRelativePropertyValue('lastNumber', Number(event.imaginaryTarget.value));
+    }
   };
   const onRelativeLastIntervalChange = (event) => {
     changeRelativePropertyValue('lastInterval', event.currentTarget.value);
@@ -1168,6 +1173,11 @@ const DateTimePicker = ({
               /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
               onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
               size="field"
+              disabled={
+                isCustomRange &&
+                customRangeKind === PICKER_KINDS.RELATIVE &&
+                relativeLastNumberInvalid
+              }
             >
               {strings.applyBtnLabel}
             </Button>
