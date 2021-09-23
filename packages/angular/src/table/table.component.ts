@@ -53,7 +53,7 @@ import { Table } from 'carbon-components-angular';
         [selectionLabelColumn]="selectionLabelColumn"
         [showSelectionColumn]="showSelectionColumn"
         [skeleton]="skeleton"
-        *ngIf="!totalDataLength; else noDataTemplate"
+        *ngIf="!model.totalDataLength; else noDataTemplate"
       ></tbody>
       <ng-template #noDataTemplate><ng-content></ng-content></ng-template>
       <tfoot>
