@@ -46,6 +46,7 @@ import {
   TABLE_ROW_LOAD_MORE,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
+import { findRow } from './tableUtilities';
 
 /**
  * Default function to compare value 1 and 2
@@ -481,10 +482,15 @@ export const tableReducer = (state = {}, action) => {
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
 
-      if (state.view.table.loadingMoreIds.length) {
-        console.info('TABLE_REGISTER - state.data', state.data);
-        console.info('TABLE_REGISTER - action.payload.data', action.payload.data);
-      }
+      // The only thing that changes after additional child rows have been loaded is the
+      // actual data, so we use that diff to find out which ids in loadingMoreIds that
+      // we should keep.
+      const loadingMoreIds =
+        state.view?.table?.loadingMoreIds?.filter((loadMoreRowId) => {
+          const oldChildCount = findRow(loadMoreRowId, state.data)?.children?.length;
+          const newChildCount = findRow(loadMoreRowId, action.payload.data)?.children?.length;
+          return oldChildCount === newChildCount;
+        }) ?? [];
 
       const { view, totalItems, hasUserViewManagement } = action.payload;
       const { pageSize, pageSizes } = get(view, 'pagination') || {};
@@ -562,7 +568,7 @@ export const tableReducer = (state = {}, action) => {
               $set: view ? view.table.isSelectAllSelected : false,
             },
             loadingMoreIds: {
-              $set: view ? view.table.loadingMoreIds : [],
+              $set: loadingMoreIds,
             },
           },
         },
