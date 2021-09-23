@@ -3,7 +3,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import merge from 'lodash/merge';
 import get from 'lodash/get';
 
-import { getRowAction } from './statefulTableUtilities';
+import { getRowAction } from './tableUtilities';
 import { tableReducer } from './tableReducer';
 import {
   tableRegister,
