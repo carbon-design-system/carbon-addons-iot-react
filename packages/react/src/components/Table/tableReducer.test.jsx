@@ -473,6 +473,50 @@ describe('table reducer', () => {
       // is Loading should be set false and rowCount should be correct
       expect(tableWithSortedData.view.table.loadingState.isLoading).toEqual(false);
       expect(tableWithSortedData.view.table.loadingState.rowCount).toEqual(0);
+
+      // load more
+      const initialStateLoadMore = {
+        ...initialState,
+        data: [{ ...initialState.data[0], hasLoadMore: true, children: [initialState.data[1]] }],
+      };
+      expect(initialState.view.table.loadingMoreIds).toHaveLength(0);
+
+      const tableWithNoLoadingMoreData = tableReducer(
+        initialStateLoadMore,
+        tableRegister({ data: initialStateLoadMore.data, isLoading: false })
+      );
+      expect(tableWithNoLoadingMoreData.data).toEqual(initialStateLoadMore.data);
+
+      // with loading more data
+      const tableWithLoadingMoreData = tableReducer(
+        merge({}, omit(initialStateLoadMore, 'view.table.loadingMoreIds'), {
+          view: {
+            table: { loadingMoreIds: ['row-0'] },
+          },
+        }),
+        tableRegister({ data: initialStateLoadMore.data, isLoading: false })
+      );
+
+      expect(tableWithLoadingMoreData.view.table.loadingMoreIds).toHaveLength(1);
+
+      // after loaded data is completely loaded
+      const initialStateWithLoadMoreComplete = {
+        ...initialState,
+        data: [
+          {
+            ...initialState.data[0],
+            hasLoadMore: true,
+            children: [initialState.data[1], initialState.data[2]],
+          },
+        ],
+      };
+
+      const tableWithLoadingMoreDataComplete = tableReducer(
+        initialStateWithLoadMoreComplete,
+        tableRegister({ data: initialStateLoadMore.data, isLoading: false })
+      );
+
+      expect(tableWithLoadingMoreDataComplete.view.table.loadingMoreIds).toHaveLength(0);
     });
   });
 });

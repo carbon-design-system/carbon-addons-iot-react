@@ -13,7 +13,6 @@ import { getTableColumns, mockActions, getNestedRows, getNestedRowIds } from './
 import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
-import TableBodyLoadMoreRow from './TableBody/TableBodyLoadMoreRow/TableBodyLoadMoreRow';
 import TableHead from './TableHead/TableHead';
 import { initialState } from './Table.story';
 
@@ -2306,9 +2305,28 @@ describe('Table', () => {
     expect(screen.getByTitle('Date')).toBeVisible();
   });
   it('should render Load more row', () => {
-    const wrapper = mount(<Table columns={tableColumns} data={getNestedRows()} />);
-    expect(wrapper.find(TableBodyLoadMoreRow)).toBeTruthy();
-    wrapper.find('.iot--load-more-cell--content').at(0).simulate('click');
+    const testId = 'testId01';
+    const loadMoreText = 'Load more...';
+    render(
+      <Table
+        columns={tableColumns}
+        data={getNestedRows()}
+        testId={testId}
+        i18n={{ loadMoreText }}
+        options={{ hasRowNesting: true }}
+        view={{
+          table: {
+            expandedIds: ['row-1', 'row-1_B'],
+          },
+        }}
+        actions={mockActions}
+      />
+    );
+
+    expect(screen.getAllByRole('button', { name: loadMoreText })[0]).toBeInTheDocument();
+
+    userEvent.click(screen.getAllByRole('button', { name: loadMoreText })[0]);
+
     expect(mockActions.table.onRowLoadMore).toHaveBeenCalled();
   });
 });

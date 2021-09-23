@@ -325,11 +325,41 @@ describe('List', () => {
         expandedIds={['org', 'site-02']}
         handleLoadMore={mockLoadMore}
         testId="test-list"
+        i18n={{ loadMore: 'Load more...' }}
       />
     );
     expect(mockLoadMore).not.toHaveBeenCalled();
     userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
     expect(mockLoadMore).toHaveBeenCalledWith('site-02');
     expect(mockLoadMore).toHaveBeenCalledTimes(1);
+  });
+  it(' load more row clicked without handleLoadMore function provided', () => {
+    render(
+      <List
+        title="Sports Teams"
+        items={[
+          {
+            id: 'org',
+            content: { value: 'Organization' },
+            children: [
+              { id: 'site-01', content: { value: 'Site 1' } },
+              {
+                id: 'site-02',
+                content: { value: 'Site 2' },
+                children: [
+                  { id: 'system-01', content: { value: 'System 1' } },
+                  { id: 'system-02', content: { value: 'System 2' } },
+                ],
+                hasLoadMore: true,
+              },
+            ],
+          },
+        ]}
+        expandedIds={['org', 'site-02']}
+        testId="test-list"
+      />
+    );
+    expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
+    userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
   });
 });

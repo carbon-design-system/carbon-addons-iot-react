@@ -35,7 +35,7 @@ const TableBodyLoadMoreRow = ({
   isLoadingMore,
 }) => {
   return (
-    <TableRow key={id} isSelected={false} isSelectable isEditMode={false}>
+    <TableRow key={`${testId}--${id}`} isSelected={false} isSelectable isEditMode={false}>
       <TableCell
         key={`${tableId}-${id}-row-load-more-cell`}
         colSpan={totalColumns}

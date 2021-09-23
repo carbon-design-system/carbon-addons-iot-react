@@ -524,6 +524,7 @@ export const initialState = {
       page: 1,
     },
     table: {
+      loadingMoreIds: [],
       isSelectAllSelected: false,
       selectedIds: [],
       sort: undefined,
