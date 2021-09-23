@@ -10,7 +10,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       data-testid="table-table-container"
     >
       <section
-        aria-label="data table toolbar"
+        aria-label="My editable table Toolbar"
         className="bx--table-toolbar"
         data-testid="table-table-toolbar"
       >
@@ -3755,7 +3755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       data-testid="table-table-container"
     >
       <section
-        aria-label="data table toolbar"
+        aria-label="Table with user view management Toolbar"
         className="bx--table-toolbar"
         data-testid="table-table-toolbar"
       >
@@ -8534,7 +8534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     data-testid="table-table-container"
   >
     <section
-      aria-label="data table toolbar"
+      aria-label="Basic \`dumb\` table Toolbar"
       className="bx--table-toolbar"
       data-testid="table-table-toolbar"
     >
@@ -87641,7 +87641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     data-testid="table-table-container"
   >
     <section
-      aria-label="data table toolbar"
+      aria-label="Row count: 100 Toolbar"
       className="bx--table-toolbar"
       data-testid="table-table-toolbar"
     >

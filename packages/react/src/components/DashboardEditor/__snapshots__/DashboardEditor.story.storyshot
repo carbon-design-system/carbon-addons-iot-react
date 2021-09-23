@@ -627,7 +627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-testid="table-for-card-Table-table-container"
                       >
                         <section
-                          aria-label="data table toolbar"
+                          aria-label="Table card Toolbar"
                           className="bx--table-toolbar"
                           data-testid="table-for-card-Table-table-toolbar"
                         >
@@ -19913,7 +19913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-testid="table-for-card-Table-table-container"
                     >
                       <section
-                        aria-label="data table toolbar"
+                        aria-label="Table card Toolbar"
                         className="bx--table-toolbar"
                         data-testid="table-for-card-Table-table-toolbar"
                       >

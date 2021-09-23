@@ -2104,7 +2104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               data-testid="table-for-card-tableCard-table-container"
             >
               <section
-                aria-label="data table toolbar"
+                aria-label="TableCard - LARGE Toolbar"
                 className="bx--table-toolbar"
                 data-testid="table-for-card-tableCard-table-toolbar"
               >
