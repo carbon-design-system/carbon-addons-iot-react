@@ -15,28 +15,28 @@ const commonProps = {
   isAdminView: true,
   onRouteChange: async () => true,
   routes: {
-    profile: 'https://www.ibm.com',
-    navigator: 'https://www.ibm.com',
-    admin: 'https://www.ibm.com',
-    logout: 'https://www.ibm.com',
-    logoutInactivity: 'https://www.ibm.com',
-    whatsNew: 'https://www.ibm.com',
-    gettingStarted: 'https://www.ibm.com',
-    documentation: 'https://www.ibm.com',
-    requestEnhancement: 'https://www.ibm.com',
-    support: 'https://www.ibm.com',
-    about: 'https://www.ibm.com',
+    profile: 'https://www.ibm.com/profile',
+    navigator: 'https://www.ibm.com/navigator',
+    admin: 'https://www.ibm.com/admin',
+    logout: 'https://www.ibm.com/logout',
+    logoutInactivity: 'https://www.ibm.com/inactivity',
+    whatsNew: 'https://www.ibm.com/whatsnew',
+    gettingStarted: 'https://www.ibm.com/gettingstarted',
+    documentation: 'https://www.ibm.com/documentation',
+    requestEnhancement: 'https://www.ibm.com/request',
+    support: 'https://www.ibm.com/support',
+    about: 'https://www.ibm.com/about',
   },
   applications: [
     {
       id: 'monitor',
       name: 'Monitor',
-      href: 'https://www.ibm.com',
+      href: 'https://www.ibm.com/monitor',
     },
     {
       id: 'health',
       name: 'Health',
-      href: 'https://www.ibm.com',
+      href: 'https://www.ibm.com/health',
       isExternal: true,
     },
   ],
@@ -494,14 +494,14 @@ describe('SuiteHeader', () => {
     render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
     await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
-    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', 'https://www.ibm.com');
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
     expect(window.location.href).toEqual(originalHref);
 
     onRouteChange.mockImplementation(() => true);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
     await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
-    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', 'https://www.ibm.com');
-    expect(window.location.href).toBe('https://www.ibm.com');
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
+    expect(window.location.href).toBe(commonProps.routes.profile);
   });
 
   it('should handle keyboard navigation for actionItems and panel links', async () => {
@@ -959,9 +959,9 @@ describe('SuiteHeader', () => {
       fakeUserAgent = 'Mac';
       render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
       await userEvent.click(screen.getByLabelText('Administration'), { metaKey: true });
-      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', 'https://www.ibm.com');
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', commonProps.routes.navigator);
       expect(window.open).toHaveBeenCalledWith(
-        'https://www.ibm.com',
+        commonProps.routes.navigator,
         '_blank',
         'noopener noreferrer'
       );
@@ -972,9 +972,9 @@ describe('SuiteHeader', () => {
       fakeUserAgent = 'Win';
       render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
       await userEvent.click(screen.getByLabelText('Administration'), { ctrlKey: true });
-      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', 'https://www.ibm.com');
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', commonProps.routes.navigator);
       expect(window.open).toHaveBeenLastCalledWith(
-        'https://www.ibm.com',
+        commonProps.routes.navigator,
         '_blank',
         'noopener noreferrer'
       );
@@ -984,7 +984,7 @@ describe('SuiteHeader', () => {
         ctrlKey: true,
       });
       expect(window.open).toHaveBeenLastCalledWith(
-        'https://www.ibm.com',
+        commonProps.routes.profile,
         '_blank',
         'noopener noreferrer'
       );
@@ -993,7 +993,7 @@ describe('SuiteHeader', () => {
       userEvent.click(screen.getByRole('menuitem', { name: 'Help' }));
       await userEvent.click(screen.getByTitle('About'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
-        'https://www.ibm.com',
+        commonProps.routes.about,
         '_blank',
         'noopener noreferrer'
       );
@@ -1002,7 +1002,7 @@ describe('SuiteHeader', () => {
       userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
       await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
-        'https://www.ibm.com',
+        commonProps.routes.navigator,
         '_blank',
         'noopener noreferrer'
       );
@@ -1011,7 +1011,7 @@ describe('SuiteHeader', () => {
       userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
       await userEvent.click(screen.getByText('Monitor'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
-        'https://www.ibm.com',
+        commonProps.applications[0].href,
         '_blank',
         'noopener noreferrer'
       );
@@ -1020,7 +1020,7 @@ describe('SuiteHeader', () => {
       userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
       await userEvent.click(screen.getByText('Health'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
-        'https://www.ibm.com',
+        commonProps.applications[1].href,
         '_blank',
         'noopener noreferrer'
       );

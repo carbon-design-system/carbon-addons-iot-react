@@ -281,7 +281,7 @@ const SuiteHeader = ({
               <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
                 <Link
                   href="javascript:void(0)"
-                  onClick={handleOnClick(ROUTE_TYPES.SURVEY, surveyData.surveyLink, true)}
+                  onClick={handleOnClick(ROUTE_TYPES.SURVEY, surveyData.privacyLink, true)}
                 >
                   {mergedI18N.surveyPrivacyPolicy}
                 </Link>
@@ -305,7 +305,7 @@ const SuiteHeader = ({
       <SuiteHeaderLogoutModal
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
-        onLogout={handleOnClick(ROUTE_TYPES.LOGOUT, routes.logout)}
+        onLogout={handleOnClick(ROUTE_TYPES.LOGOUT, routes?.logout)}
         i18n={{
           heading: mergedI18N.profileLogoutModalHeading,
           primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
@@ -476,7 +476,7 @@ const SuiteHeader = ({
                     <SuiteHeaderProfile
                       displayName={userDisplayName}
                       username={username}
-                      onProfileClick={handleOnClick(ROUTE_TYPES.PROFILE, routes.profile)}
+                      onProfileClick={handleOnClick(ROUTE_TYPES.PROFILE, routes?.profile)}
                       i18n={{
                         profileTitle: mergedI18N.profileTitle,
                         profileButton: mergedI18N.profileManageButton,
