@@ -83,7 +83,7 @@ jobs:
           trap "exit" INT TERM ERR
           trap "kill 0" EXIT
 
-          npx serve -s --debug &>serve.log &
+          npx serve -s build --debug &>serve.log &
           NODE_PID=$!
 
           while read line; do
