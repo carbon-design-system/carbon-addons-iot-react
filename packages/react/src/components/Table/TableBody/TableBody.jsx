@@ -310,6 +310,7 @@ const TableBody = ({
     ) : (
       <TableBodyLoadMoreRow
         id={row.id}
+        key={`${row.id}--load-more`}
         tableId={tableId}
         testId={testId}
         loadMoreText={loadMoreText}
