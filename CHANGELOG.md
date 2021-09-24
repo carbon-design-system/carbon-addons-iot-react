@@ -3,11 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.146.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0...v2.146.1) (2021-09-24)
 ## [2.146.1-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.6...v2.146.1-next.7) (2021-09-23)
 
 
 ### Bug Fixes
 
+* **date-time-picker:** remove flatpickr resolutions, fix issue ([7585eae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7585eaefc3e4106fcc206c6d65df6a05b836d71f))
+* **date-time-picker-v2:** fix flatpickr issue ([1e0f102](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1e0f1026b46a8e3e1cb58c866ee956cbe305a4c8))
 * **suite-header:** all cmd+click/ctrl+click to open new window ([b3f9595](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b3f959519df3830ea7cec6e3b518f0849a111a2d))
 * **suite-header:** PR feedback ([8686d95](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8686d9597f439f174022dc2d9a5c789cd1c72e69))
 * **tabletoolbar:** provide aria-label to CarbonTableToolbar ([a43ffb5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a43ffb531ebc837639bf9de7db11a95049805ee5))
