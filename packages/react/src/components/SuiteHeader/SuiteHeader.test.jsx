@@ -15,28 +15,28 @@ const commonProps = {
   isAdminView: true,
   onRouteChange: async () => true,
   routes: {
-    profile: 'https://www.ibm.com',
-    navigator: 'https://www.ibm.com',
-    admin: 'https://www.ibm.com',
-    logout: 'https://www.ibm.com',
-    logoutInactivity: 'https://www.ibm.com',
-    whatsNew: 'https://www.ibm.com',
-    gettingStarted: 'https://www.ibm.com',
-    documentation: 'https://www.ibm.com',
-    requestEnhancement: 'https://www.ibm.com',
-    support: 'https://www.ibm.com',
-    about: 'https://www.ibm.com',
+    profile: 'https://www.ibm.com/profile',
+    navigator: 'https://www.ibm.com/navigator',
+    admin: 'https://www.ibm.com/admin',
+    logout: 'https://www.ibm.com/logout',
+    logoutInactivity: 'https://www.ibm.com/inactivity',
+    whatsNew: 'https://www.ibm.com/whatsnew',
+    gettingStarted: 'https://www.ibm.com/gettingstarted',
+    documentation: 'https://www.ibm.com/documentation',
+    requestEnhancement: 'https://www.ibm.com/request',
+    support: 'https://www.ibm.com/support',
+    about: 'https://www.ibm.com/about',
   },
   applications: [
     {
       id: 'monitor',
       name: 'Monitor',
-      href: 'https://www.ibm.com',
+      href: 'https://www.ibm.com/monitor',
     },
     {
       id: 'health',
       name: 'Health',
-      href: 'https://www.ibm.com',
+      href: 'https://www.ibm.com/health',
       isExternal: true,
     },
   ],
@@ -494,14 +494,14 @@ describe('SuiteHeader', () => {
     render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
     await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
-    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', 'https://www.ibm.com');
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
     expect(window.location.href).toEqual(originalHref);
 
     onRouteChange.mockImplementation(() => true);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
     await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
-    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', 'https://www.ibm.com');
-    expect(window.location.href).toBe('https://www.ibm.com');
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
+    expect(window.location.href).toBe(commonProps.routes.profile);
   });
 
   it('should handle keyboard navigation for actionItems and panel links', async () => {
@@ -936,5 +936,95 @@ describe('SuiteHeader', () => {
     expect(onRouteChange).not.toHaveBeenCalled();
     expect(onKeyDown).toHaveBeenCalled();
     jest.resetAllMocks();
+  });
+
+  describe('opening in new window', () => {
+    let fakeUserAgent = '';
+    beforeAll(() => {
+      const { userAgent } = global.navigator;
+      Object.defineProperty(global.navigator, 'userAgent', {
+        get() {
+          return fakeUserAgent === '' ? userAgent : fakeUserAgent;
+        },
+      });
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+      fakeUserAgent = '';
+    });
+
+    it('should open built-in routes in new window when holding cmd', async () => {
+      const onRouteChange = jest.fn().mockImplementation(() => true);
+      fakeUserAgent = 'Mac';
+      render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
+      await userEvent.click(screen.getByLabelText('Administration'), { metaKey: true });
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', commonProps.routes.navigator);
+      expect(window.open).toHaveBeenCalledWith(
+        commonProps.routes.navigator,
+        '_blank',
+        'noopener noreferrer'
+      );
+    });
+
+    it('should open built-in routes in new window when holding ctrl', async () => {
+      const onRouteChange = jest.fn().mockImplementation(() => true);
+      fakeUserAgent = 'Win';
+      render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
+      await userEvent.click(screen.getByLabelText('Administration'), { ctrlKey: true });
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', commonProps.routes.navigator);
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.routes.navigator,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(1);
+      userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+      await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }), {
+        ctrlKey: true,
+      });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.routes.profile,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(2);
+
+      userEvent.click(screen.getByRole('menuitem', { name: 'Help' }));
+      await userEvent.click(screen.getByTitle('About'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.routes.about,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(3);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.routes.navigator,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(4);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('Monitor'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.applications[0].href,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(5);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('Health'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.applications[1].href,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(6);
+    });
   });
 });
