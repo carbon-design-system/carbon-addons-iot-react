@@ -80,6 +80,6 @@ jobs:
       - name: Serve app
         if: ${{ success() }}
         run: |
-          node ../../dist/src/utils/serveTestApp.js
+          ls
+          node ./dist/src/utils/serveTestApp.js
           exit 0
-        working-directory: ./test-app/build

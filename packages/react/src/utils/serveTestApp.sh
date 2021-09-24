@@ -4,8 +4,8 @@ trap "exit" INT TERM ERR
 trap "kill 0" EXIT
 
 touch server.log
-
-npx serve -s --debug &>serve.log &
+ls
+npx serve -s ../../../test-app/build --debug &>serve.log &
 NODE_PID=$!
 
 while read line; do
