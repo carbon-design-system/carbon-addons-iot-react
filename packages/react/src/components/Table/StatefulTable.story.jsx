@@ -65,6 +65,11 @@ export const StatefulTableWithNestedRowItems = (props) => {
           ]
         : undefined,
   }));
+
+  const hasAggregations = boolean(
+    'Aggregates column values and displays in a footer row (options.hasAggregations)',
+    false
+  );
   return (
     <div style={{ width: select('table container width', ['auto', '300px', '800px'], 'auto') }}>
       <MyTable
@@ -83,6 +88,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
         )}
         options={{
           ...initialState.options,
+          hasAggregations,
           hasRowNesting: true,
           hasFilter: true,
           hasResize: true,
@@ -94,6 +100,18 @@ export const StatefulTableWithNestedRowItems = (props) => {
         }}
         view={{
           ...initialState.view,
+          aggregations: hasAggregations
+            ? {
+                label: 'Total:',
+                columns: [
+                  {
+                    id: 'number',
+                    align: 'center',
+                    isSortable: false,
+                  },
+                ],
+              }
+            : undefined,
           filters: [],
           toolbar: {
             activeBar: null,

@@ -191,7 +191,7 @@ describe('TableFoot', () => {
     );
 
     expect(container.querySelectorAll('tr').length).toEqual(1);
-    expect(container.querySelectorAll('td').length).toEqual(4);
+    expect(container.querySelectorAll('td').length).toEqual(2);
     rerender(
       <table>
         <TableFoot
@@ -214,7 +214,7 @@ describe('TableFoot', () => {
     expect(screen.getByTestId(firstColumnTestId).textContent).toEqual(label);
     expect(screen.getByTestId(thirdColumnTestId).textContent).toEqual('10');
     expect(container.querySelectorAll('tr').length).toEqual(1);
-    expect(container.querySelectorAll('td').length).toEqual(7);
+    expect(container.querySelectorAll('td').length).toEqual(6);
   });
 
   it('has the correct classes for alignment and sorting', () => {
@@ -260,5 +260,219 @@ describe('TableFoot', () => {
 
     const dColumnTotalCell = screen.getByTestId(fourthColumnTestId);
     expect(dColumnTotalCell).toHaveClass('data-table-start');
+  });
+
+  it('should have the correct colSpan on label based on props', () => {
+    const tableFootTestId = 'table-foot';
+    const label = 'Total';
+
+    const { container, rerender } = render(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: true,
+            hasRowNesting: true,
+            hasRowSelection: 'multi',
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
+    expect(container.querySelectorAll('td')).toHaveLength(5);
+    rerender(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: true,
+            hasRowNesting: false,
+            hasRowSelection: 'multi',
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
+    expect(container.querySelectorAll('td')).toHaveLength(5);
+    rerender(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: false,
+            hasRowNesting: true,
+            hasRowSelection: 'multi',
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
+    expect(container.querySelectorAll('td')).toHaveLength(5);
+    rerender(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: false,
+            hasRowNesting: false,
+            hasRowSelection: 'multi',
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
+    expect(container.querySelectorAll('td')).toHaveLength(4);
+    rerender(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: false,
+            hasRowNesting: false,
+            hasRowSelection: 'single',
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '1');
+    expect(container.querySelectorAll('td')).toHaveLength(4);
+    rerender(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: false,
+            hasRowNesting: false,
+            hasRowSelection: false,
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '1');
+    expect(container.querySelectorAll('td')).toHaveLength(4);
+    rerender(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: false,
+            hasRowNesting: true,
+            hasRowSelection: false,
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
+    expect(container.querySelectorAll('td')).toHaveLength(4);
+    rerender(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: true,
+            hasRowNesting: true,
+            hasRowSelection: false,
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
+    expect(container.querySelectorAll('td')).toHaveLength(4);
   });
 });

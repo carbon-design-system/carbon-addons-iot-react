@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { TableCell, TableRow } from 'carbon-components-react';
 import classnames from 'classnames';
@@ -12,6 +12,7 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]), // TODO: don't duplicate this one
     hasRowActions: PropTypes.bool,
+    hasRowNesting: PropTypes.bool,
   }),
   tableState: PropTypes.shape({
     aggregations: PropTypes.shape({
@@ -50,17 +51,19 @@ const defaultProps = {
 
 const TableFoot = ({
   testId,
-  options: { hasRowExpansion, hasRowSelection, hasRowActions },
+  options: { hasRowExpansion, hasRowSelection, hasRowActions, hasRowNesting },
   tableState: { aggregations, ordering },
   showExpanderColumn,
 }) => {
   const visibleColumns = ordering.filter((col) => !col.isHidden);
 
+  const hasMultiSelect = hasRowSelection === 'multi';
+  const hasExpandOrNest = hasRowExpansion || hasRowNesting;
+  const colSpan = hasExpandOrNest || hasMultiSelect ? 2 : 1;
+
   return (
     <tfoot className={`${iotPrefix}-table-foot`} data-testid={testId}>
-      <TableRow>
-        {hasRowExpansion ? <TableCell key="row-expansion" /> : null}
-        {hasRowSelection === 'multi' ? <TableCell key="row-selection" /> : null}
+      <TableRow key="aggregate-row">
         {visibleColumns.map((orderedCol, index) => {
           const aggregated = aggregations.columns.find((col) => orderedCol.columnId === col.id);
           const isLabelCell = !aggregated && index === 0;
@@ -68,13 +71,19 @@ const TableFoot = ({
           const cellKey = `${orderedCol.columnId}${index}`;
 
           return isLabelCell ? (
-            <TableCell
-              className={`${iotPrefix}-table-foot--label`}
-              data-testid={cellTestId}
-              key={cellKey}
-            >
-              {aggregations.label}
-            </TableCell>
+            <Fragment key="label-cell-fragment">
+              <TableCell
+                className={`${iotPrefix}-table-foot--label`}
+                data-testid={cellTestId}
+                key={cellKey}
+                colSpan={colSpan}
+              >
+                {aggregations.label}
+              </TableCell>
+              {colSpan === 2 && hasMultiSelect && hasExpandOrNest ? (
+                <TableCell key="spacer-cell" />
+              ) : null}
+            </Fragment>
           ) : aggregated ? (
             <TableCell
               className={classnames({
