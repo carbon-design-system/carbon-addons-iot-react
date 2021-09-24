@@ -2469,7 +2469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               data-testid="Card-attribute-0-secondary-value"
               style={
                 Object {
-                  "--secondary-value-color": "#6F6F6F",
+                  "--secondary-value-color": "#6f6f6f",
                 }
               }
             >

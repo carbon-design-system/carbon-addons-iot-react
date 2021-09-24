@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { gray60 } from '@carbon/colors';
 
 import Attribute from './Attribute';
 
@@ -24,10 +25,10 @@ const commonProps = {
   value: 89,
 };
 describe('Attribute', () => {
-  it('falls back to #6F6F6F when no secondaryValue.color given', () => {
+  it('falls back to gray60 when no secondaryValue.color given', () => {
     render(<Attribute {...commonProps} secondaryValue={{ trend: 'up', value: '22' }} />);
 
-    expect(screen.getByText('22')).toHaveStyle('--secondary-value-color:#6F6F6F');
+    expect(screen.getByText('22')).toHaveStyle(`--secondary-value-color:${gray60}`);
   });
 
   it('should match values less than or equal to a threshold', () => {
