@@ -1,9 +1,7 @@
 #!/bin/bash
+set -e
 
-trap "exit" INT TERM ERR
-trap "kill 0" EXIT
-
-touch server.log
+touch serve.log
 npx serve -s ../../../test-app/build --debug &>serve.log &
 NODE_PID=$!
 

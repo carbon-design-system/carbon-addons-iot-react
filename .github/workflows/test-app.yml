@@ -80,5 +80,5 @@ jobs:
       - name: Serve app
         if: ${{ success() }}
         run: |
-          bash dist/src/utils/serveTestApp.sh
+          timeout 2m bash dist/src/utils/serveTestApp.sh
           exit 0
