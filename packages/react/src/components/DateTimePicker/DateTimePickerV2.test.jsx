@@ -230,7 +230,7 @@ describe('DateTimePicker', () => {
     // first open the menu
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
     userEvent.click(screen.getByText(/Back/));
-    expect(screen.getByText(/Custom Range/)).toBeInTheDocument();
+    expect(screen.getByText(/Custom Range/i)).toBeInTheDocument();
   });
 
   it('should switch from relative to absolute and then to preset', () => {
@@ -371,9 +371,8 @@ describe('DateTimePicker', () => {
     // Select absolute
     expect(screen.getByText(/Absolute/)).toBeInTheDocument();
     userEvent.click(screen.getByText(/Absolute/i));
-    // github.com/haoxins/react-flatpickr/issues/92
-    fireEvent.mouseDown(screen.getByLabelText('April 10, 2020'), { which: 1 });
-    fireEvent.mouseDown(screen.getByLabelText('April 11, 2020'), { which: 1 });
+    userEvent.click(screen.getByLabelText('April 10, 2020'));
+    userEvent.click(screen.getByLabelText('April 11, 2020'));
     expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
     userEvent.click(screen.getByText('Apply'));
     // This should be displayed
