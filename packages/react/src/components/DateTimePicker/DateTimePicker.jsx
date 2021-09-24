@@ -594,9 +594,9 @@ const DateTimePicker = ({
   useEffect(() => {
     if (datePickerElem && datePickerElem.inputField && datePickerElem.toInputField) {
       if (focusOnFirstField) {
-        datePickerElem.inputField.focus();
+        datePickerElem.inputField.click();
       } else {
-        datePickerElem.toInputField.focus();
+        datePickerElem.toInputField.click();
       }
     }
   }, [datePickerElem, focusOnFirstField]);
