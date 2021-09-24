@@ -3,6 +3,81 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.146.2-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1...v2.146.2-next.1) (2021-09-24)
+
+
+
+## [2.146.1-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.6...v2.146.1-next.7) (2021-09-23)
+
+
+### Bug Fixes
+
+* **suite-header:** PR feedback ([8686d95](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8686d9597f439f174022dc2d9a5c789cd1c72e69))
+* **tabletoolbar:** provide aria-label to CarbonTableToolbar ([a43ffb5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a43ffb531ebc837639bf9de7db11a95049805ee5))
+
+
+
+## [2.146.1-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.5...v2.146.1-next.6) (2021-09-23)
+
+
+### Bug Fixes
+
+* **suite-header:** all cmd+click/ctrl+click to open new window ([b3f9595](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b3f959519df3830ea7cec6e3b518f0849a111a2d))
+
+
+
+## [2.146.1-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.4...v2.146.1-next.5) (2021-09-22)
+
+
+### Bug Fixes
+
+* **page-title-bar:** add units to clamp ([c913faf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c913faf6d8830f9b92d1a0a65faef844de19ec80))
+
+
+
+## [2.146.1-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.2...v2.146.1-next.3) (2021-09-22)
+
+
+
+## [2.146.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.1...v2.146.1-next.2) (2021-09-21)
+
+
+### Bug Fixes
+
+* **dashboard-grid:** update snapshot, fix imagecard ([f3fbe7b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f3fbe7bb3cfa230126d4506b3f7b29b6cb2cdcab))
+* **icon-switch:** hide divider beside selected icon ([3073310](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/30733105ec94f8698e7c2ccfb240d8626bce9f66))
+* **icon-switch:** hide dividers on hover ([9527c6e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9527c6ed3153c461a4c6e2ecc57ab101b5ab97b9))
+* **repo:** add delay to dashboard grid visual tests ([b962ec9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b962ec97046025106872790db0b25ff5c14f3b27))
+
+
+
+## [2.146.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.0...v2.146.1-next.1) (2021-09-20)
+
+
+
+## [2.146.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0...v2.146.1-next.0) (2021-09-18)
+
+
+### Bug Fixes
+
+* **combo-box:** fix scss to not break optimizecssassets plugin ([e8201b3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e8201b386a1e6d8d47ae297825fe55d0b9158534))
+* **icon-switch:** design adjustments from pr feedback ([487548c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/487548cce40c5b911c5bb46c5f33e8cfe13c1177))
+* **icon-switch:** design updates for RTL ([1586401](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/15864014d6cadd63d42c86122addb9550678b80a))
+* **icon-switch:** fix icon pixel move/rough border ([ed58719](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ed587196c4e4032c2b22b5b1af5b824a50cd620d))
+* **icon-switch:** fix styles for dividers between icons ([d8265a4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d8265a41312fa2643a98a251113f76abf09cd777))
+* **icon-switch:** thicken focus borders ([94d0753](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/94d07536f5ecc67efa58c1efe8c32f01d5e376fe))
+* **icon-switch:** update design ([e720b6d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e720b6dc95dbee3788c1829add0a4cf20b2558ec))
+* **icon-switch:** use psuedo-element for light selected borders ([6a4ff06](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6a4ff06153774fac32a954127200a6529fddd087))
+* **page-title-bar:** don't apply margin to IconSwitch ([0399b88](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0399b88aa2275aee3934818e8a917943e2d545d2))
+* **table:** added back class ([e0b3f6f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e0b3f6f299078de86d17752b55959a2d7c34a62b))
+* **table:** added fit-content to multiselect ([711eb62](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/711eb62692d7d53e79c0e446e5714e0a1cf8b53f))
+* **table:** improved readbility for filters ([8828c8c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8828c8c77394009f000eda49031c9b76f3d17bf4))
+* **table:** pr feedback ([323ea5f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/323ea5ff00d2e29bee93f6f2db404678ae761aba)), closes [#2620](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2620)
+
+
+
+
+
 ## [2.146.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0...v2.146.1) (2021-09-24)
 ## [2.146.1-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1-next.6...v2.146.1-next.7) (2021-09-23)
 
