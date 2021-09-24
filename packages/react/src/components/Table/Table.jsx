@@ -432,6 +432,7 @@ export const defaultProps = (baseProps) => ({
     itemSelected: (selectedCount) => `${selectedCount} item selected`,
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
     toggleAggregations: 'Toggle aggregations',
+    toolbarLabelAria: undefined,
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageBody: '',
@@ -736,6 +737,7 @@ const Table = (props) => {
               downloadIconDescription: i18n.downloadIconDescription,
               rowCountInHeader: i18n.rowCountInHeader,
               toggleAggregations: i18n.toggleAggregations,
+              toolbarLabelAria: i18n.toolbarLabelAria,
             }}
             actions={{
               ...pick(

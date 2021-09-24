@@ -33,6 +33,7 @@ const IconSwitch = React.forwardRef((props, ref) => {
     text,
     light,
     testId,
+    children,
     ...other
   } = props;
 
@@ -53,6 +54,8 @@ const IconSwitch = React.forwardRef((props, ref) => {
     className,
     `${iotPrefix}--icon-switch`,
     `${iotPrefix}--icon-switch--${size}`,
+    { [`${iotPrefix}--icon-switch--selected`]: selected },
+    { [`${iotPrefix}--icon-switch--light`]: light },
     { [`${iotPrefix}--icon-switch--unselected`]: !selected },
     { [`${iotPrefix}--icon-switch--unselected--light`]: light && !selected }
   );
@@ -74,7 +77,10 @@ const IconSwitch = React.forwardRef((props, ref) => {
       data-testid={testId}
       {...other}
       {...commonProps}
-    />
+    >
+      {children}
+      <span className={`${iotPrefix}--icon-switch__divider`} />
+    </CarbonButton>
   );
 });
 
@@ -143,6 +149,11 @@ IconSwitch.propTypes = {
   light: PropTypes.bool,
 
   testId: PropTypes.string,
+
+  /** The button should be disabled */
+  disabled: PropTypes.bool,
+
+  children: PropTypes.node,
 };
 
 IconSwitch.defaultProps = {
@@ -154,6 +165,8 @@ IconSwitch.defaultProps = {
   onClick: undefined,
   onKeyDown: undefined,
   testId: 'icon-switch',
+  disabled: false,
+  children: undefined,
 };
 
 export default IconSwitch;
