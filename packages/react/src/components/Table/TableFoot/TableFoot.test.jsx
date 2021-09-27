@@ -475,4 +475,65 @@ describe('TableFoot', () => {
     expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
     expect(container.querySelectorAll('td')).toHaveLength(4);
   });
+
+  it('should add a spacer cell when colSpan:2 and aggregation in first column', () => {
+    const tableFootTestId = 'table-foot';
+    const label = 'Total';
+    const { container } = render(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: true,
+            hasRowNesting: true,
+            hasRowSelection: false,
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'a', value: '300', align: 'center', isSortable: false },
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(container.querySelectorAll('td')).toHaveLength(5);
+  });
+  it('should add a not spacer cell when aggregation in first column with no nesting, expansion, or selection', () => {
+    const tableFootTestId = 'table-foot';
+    const label = 'Total';
+    const { container } = render(
+      <table>
+        <TableFoot
+          testId={tableFootTestId}
+          options={{
+            hasRowActions: true,
+            hasRowExpansion: false,
+            hasRowNesting: false,
+            hasRowSelection: false,
+          }}
+          tableState={{
+            aggregations: {
+              label,
+              columns: [
+                { id: 'a', value: '300', align: 'center', isSortable: false },
+                { id: 'c', value: '10', align: 'end', isSortable: true },
+                { id: 'd', value: '100' },
+              ],
+            },
+            ordering,
+          }}
+        />
+      </table>
+    );
+
+    expect(container.querySelectorAll('td')).toHaveLength(4);
+  });
 });

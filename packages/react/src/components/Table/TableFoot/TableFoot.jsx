@@ -85,20 +85,25 @@ const TableFoot = ({
               ) : null}
             </Fragment>
           ) : aggregated ? (
-            <TableCell
-              className={classnames({
-                [`${iotPrefix}-table-foot--value`]: true,
-                'data-table-end': aggregated.align === 'end',
-                'data-table-start': !aggregated.align || aggregated.align === 'start',
-                'data-table-center': aggregated.align === 'center',
-                [`${iotPrefix}-table-foot--value__sortable`]: aggregated.isSortable,
-              })}
-              align={aggregated.align ? aggregated.align : undefined}
-              data-testid={cellTestId}
-              key={cellKey}
-            >
-              {aggregated.value}
-            </TableCell>
+            <Fragment key={`aggregated-cell-fragment-${index}`}>
+              {index === 0 && (hasMultiSelect || hasExpandOrNest) ? (
+                <TableCell colSpan={hasMultiSelect && hasExpandOrNest ? 2 : 1} />
+              ) : null}
+              <TableCell
+                className={classnames({
+                  [`${iotPrefix}-table-foot--value`]: true,
+                  'data-table-end': aggregated.align === 'end',
+                  'data-table-start': !aggregated.align || aggregated.align === 'start',
+                  'data-table-center': aggregated.align === 'center',
+                  [`${iotPrefix}-table-foot--value__sortable`]: aggregated.isSortable,
+                })}
+                align={aggregated.align ? aggregated.align : undefined}
+                data-testid={cellTestId}
+                key={cellKey}
+              >
+                {aggregated.value}
+              </TableCell>
+            </Fragment>
           ) : (
             <TableCell data-testid={cellTestId} key={cellKey}>
               &nbsp;
