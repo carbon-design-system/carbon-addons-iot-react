@@ -24,7 +24,10 @@ const propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /** triggered on input click  */
   onClick: PropTypes.func,
-  /** triggered on value change  */
+  /** triggered on value change. Called with 3 parameters: newValue, event, meta
+   * The meta object has a property called invalid that is either true or false
+   * representing the validation status of the new input
+   */
   onChange: PropTypes.func,
   /** disable the input  */
   disabled: PropTypes.bool,
