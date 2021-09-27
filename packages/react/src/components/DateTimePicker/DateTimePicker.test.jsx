@@ -45,6 +45,8 @@ describe('DateTimePicker', () => {
 
   afterEach(() => {
     jest.clearAllMocks();
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   beforeAll(() => {
