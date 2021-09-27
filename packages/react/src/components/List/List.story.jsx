@@ -660,7 +660,7 @@ export const WithLoadMore = () => {
           iconPosition="left"
           items={listItems}
           expandedIds={expandedIds}
-          toggleExpansion={(id) => setExpandedIds((prev) => [...prev, id])}
+          toggleExpansion={(id) => setExpandedIds((prev) => prev.includes(id) ? prev.filter((prevId) => prevId !== id) : [...prev, id])}
           loadingMoreIds={loadingMoreIds}
           isLoading={boolean('isLoading', false)}
           handleLoadMore={(id) => {
