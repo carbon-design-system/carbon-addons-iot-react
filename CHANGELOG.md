@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2-next.2...v2.147.0-next.0) (2021-09-27)
+
+
+### Bug Fixes
+
+* **table:** body not rendering ([1351cb6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1351cb66836f93d77c79c9458967748688dab96c))
+* **table:** build ([8b3554f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8b3554ff36e343de78e768a4478da34464def7e0))
+* **table:** move body columns ([7518964](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/75189641acbea092bd7c20e85ec00092aea396da))
+* **table:** tests ([1e23521](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1e23521102e7d5235565f7525f9375cd8e14716d))
+
+
+### Features
+
+* **table:** add multi-line header move column - draft ([1524e58](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1524e5873330d1b2fcce44dee4414ad3d95ac666))
+* **table:** add multi-line header support for setData ([d22bcaf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d22bcafa3e82cc1ee5d84f1d5975d3590ef23c44))
+
+
+
+
+
 ## [2.146.2-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2-next.1...v2.146.2-next.2) (2021-09-27)
 
 **Note:** Version bump only for package ibm-ai-applications
