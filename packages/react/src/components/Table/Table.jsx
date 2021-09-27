@@ -978,7 +978,6 @@ const Table = (props) => {
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-body`}
                 showExpanderColumn={showExpanderColumn}
-                isLoadingMore={view.table.loadingState.isLoadingMore}
               />
             ) : (
               <EmptyTable
