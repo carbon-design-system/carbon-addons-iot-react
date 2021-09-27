@@ -214,7 +214,7 @@ describe('TableFoot', () => {
     expect(screen.getByTestId(firstColumnTestId).textContent).toEqual(label);
     expect(screen.getByTestId(thirdColumnTestId).textContent).toEqual('10');
     expect(container.querySelectorAll('tr').length).toEqual(1);
-    expect(container.querySelectorAll('td').length).toEqual(6);
+    expect(container.querySelectorAll('td').length).toEqual(5);
   });
 
   it('has the correct classes for alignment and sorting', () => {
@@ -290,8 +290,8 @@ describe('TableFoot', () => {
       </table>
     );
 
-    expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
-    expect(container.querySelectorAll('td')).toHaveLength(5);
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '3');
+    expect(container.querySelectorAll('td')).toHaveLength(4);
     rerender(
       <table>
         <TableFoot
@@ -316,8 +316,8 @@ describe('TableFoot', () => {
       </table>
     );
 
-    expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
-    expect(container.querySelectorAll('td')).toHaveLength(5);
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '3');
+    expect(container.querySelectorAll('td')).toHaveLength(4);
     rerender(
       <table>
         <TableFoot
@@ -342,8 +342,8 @@ describe('TableFoot', () => {
       </table>
     );
 
-    expect(screen.getByText('Total')).toHaveAttribute('colspan', '2');
-    expect(container.querySelectorAll('td')).toHaveLength(5);
+    expect(screen.getByText('Total')).toHaveAttribute('colspan', '3');
+    expect(container.querySelectorAll('td')).toHaveLength(4);
     rerender(
       <table>
         <TableFoot

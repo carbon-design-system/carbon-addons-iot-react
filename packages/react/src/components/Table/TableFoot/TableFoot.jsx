@@ -59,7 +59,8 @@ const TableFoot = ({
 
   const hasMultiSelect = hasRowSelection === 'multi';
   const hasExpandOrNest = hasRowExpansion || hasRowNesting;
-  const colSpan = hasExpandOrNest || hasMultiSelect ? 2 : 1;
+  const labelColSpan =
+    hasMultiSelect && hasExpandOrNest ? 3 : hasExpandOrNest || hasMultiSelect ? 2 : 1;
 
   return (
     <tfoot className={`${iotPrefix}-table-foot`} data-testid={testId}>
@@ -76,13 +77,10 @@ const TableFoot = ({
                 className={`${iotPrefix}-table-foot--label`}
                 data-testid={cellTestId}
                 key={cellKey}
-                colSpan={colSpan}
+                colSpan={labelColSpan}
               >
                 {aggregations.label}
               </TableCell>
-              {colSpan === 2 && hasMultiSelect && hasExpandOrNest ? (
-                <TableCell key="spacer-cell" />
-              ) : null}
             </Fragment>
           ) : aggregated ? (
             <Fragment key={`aggregated-cell-fragment-${index}`}>
