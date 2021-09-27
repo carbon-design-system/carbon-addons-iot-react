@@ -309,6 +309,9 @@ const DateTimePicker = ({
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
   const [relativeLastNumberInvalid, setRelativeLastNumberInvalid] = useState(false);
+  const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
+  const [absolutStartTimeInvalid, setAbsolutStartTimeInvalid] = useState(false);
+  const [absolutEndTimeInvalid, setAbsolutEndTimeInvalid] = useState(false);
 
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
@@ -800,7 +803,8 @@ const DateTimePicker = ({
   const onRelativeToWhenChange = (event) => {
     changeRelativePropertyValue('relativeToWhen', event.currentTarget.value);
   };
-  const onRelativeToTimeChange = (pickerValue) => {
+  const onRelativeToTimeChange = (pickerValue, evt, meta) => {
+    setRelativeToTimeInvalid(meta.invalid);
     changeRelativePropertyValue('relativeToTime', pickerValue);
   };
 
@@ -812,16 +816,30 @@ const DateTimePicker = ({
   };
 
   // on change functions that trigger a absolute value update
-  const onAbsoluteStartTimeChange = (pickerValue) => {
+  const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
+    setAbsolutStartTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
-  const onAbsoluteEndTimeChange = (pickerValue) => {
+  const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
+    setAbsolutEndTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
     : getIntervalValue();
+
+  const disbableRelativeApply =
+    isCustomRange &&
+    customRangeKind === PICKER_KINDS.RELATIVE &&
+    (relativeLastNumberInvalid || relativeToTimeInvalid);
+
+  const disbableAbsoluteApply =
+    isCustomRange &&
+    customRangeKind === PICKER_KINDS.ABSOLUTE &&
+    (absolutStartTimeInvalid || absolutEndTimeInvalid);
+
+  const disableApply = disbableRelativeApply || disbableAbsoluteApply;
 
   /**
    * Shows and hides the tooltip with the humanValue (Relative) or full-range (Absolute) when
@@ -1065,7 +1083,9 @@ const DateTimePicker = ({
                         </Select>
                         {hasTimeInput ? (
                           <TimePickerSpinner
+                            key={`${id}-relative-to-time`}
                             id={`${id}-relative-to-time`}
+                            invalid={relativeToTimeInvalid}
                             value={relativeValue ? relativeValue.relativeToTime : ''}
                             i18n={i18n}
                             light
@@ -1111,6 +1131,7 @@ const DateTimePicker = ({
                         <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                           <TimePickerSpinner
                             id={`${id}-start-time`}
+                            invalid={absolutStartTimeInvalid}
                             labelText={strings.startTimeLabel}
                             value={absoluteValue ? absoluteValue.startTime : '00:00'}
                             i18n={i18n}
@@ -1121,6 +1142,7 @@ const DateTimePicker = ({
                           />
                           <TimePickerSpinner
                             id={`${id}-end-time`}
+                            invalid={absolutEndTimeInvalid}
                             labelText={strings.endTimeLabel}
                             value={absoluteValue ? absoluteValue.endTime : '00:00'}
                             i18n={i18n}
@@ -1173,11 +1195,7 @@ const DateTimePicker = ({
               /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
               onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
               size="field"
-              disabled={
-                isCustomRange &&
-                customRangeKind === PICKER_KINDS.RELATIVE &&
-                relativeLastNumberInvalid
-              }
+              disabled={disableApply}
             >
               {strings.applyBtnLabel}
             </Button>
