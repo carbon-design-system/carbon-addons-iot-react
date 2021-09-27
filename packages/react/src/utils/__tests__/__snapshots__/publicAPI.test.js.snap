@@ -6513,6 +6513,7 @@ Map {
         "increment": "Increment",
         "minutes": "minutes",
       },
+      "invalid": false,
       "is12hour": false,
       "onChange": null,
       "onClick": null,
@@ -6589,6 +6590,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "invalid": Object {
+        "type": "bool",
       },
       "is12hour": Object {
         "type": "bool",
