@@ -154,6 +154,7 @@ const Attribute = ({
             testId={`${testId}-value`}
             dataSourceId={dataSourceId}
             onClick={onValueClick}
+            unit={unit}
           />
           <UnitRenderer unit={unit} testId={`${testId}-unit`} />
         </div>

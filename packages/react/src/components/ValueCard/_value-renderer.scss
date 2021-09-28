@@ -6,7 +6,7 @@
     display: flex;
 
     .#{$iot-prefix}--value-card__attribute-wrapper--horizontal & {
-      width: 100%;
+      width: var(--value-card-attribute-wrapper-width);
     }
 
     .#{$iot-prefix}--value-card__content-wrapper--vertical & {

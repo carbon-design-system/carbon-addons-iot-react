@@ -24,6 +24,8 @@ const propTypes = {
   /** callback to trigger further action when clicking the value */
   onClick: PropTypes.func,
   dataSourceId: PropTypes.string.isRequired,
+  /** used to determine how wide the wrapper should be */
+  unit: PropTypes.string,
 };
 
 const defaultProps = {
@@ -34,6 +36,7 @@ const defaultProps = {
   customFormatter: null,
   testId: 'value',
   onClick: null,
+  unit: undefined,
 };
 
 /**
@@ -53,6 +56,7 @@ const ValueRenderer = ({
   testId,
   onClick,
   dataSourceId,
+  unit,
 }) => {
   let renderValue = value;
   if (typeof value === 'boolean') {
@@ -88,7 +92,12 @@ const ValueRenderer = ({
   };
 
   return (
-    <div className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}>
+    <div
+      className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}
+      style={{
+        '--value-card-attribute-wrapper-width': unit ? 'auto' : '100%',
+      }}
+    >
       {onClick ? (
         <Button {...commonProps} onClick={() => onClick({ dataSourceId, value })} kind="ghost">
           {renderValue}
