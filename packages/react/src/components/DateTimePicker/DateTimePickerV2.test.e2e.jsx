@@ -33,6 +33,8 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 8, 2021').click();
     cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
+    cy.findAllByLabelText('Increment hours').eq(0).click();
+    cy.findByLabelText('End time').type('12:34');
     cy.findByText('Apply')
       .click()
       .should(() => {
@@ -41,8 +43,10 @@ describe('DateTimePickerV2', () => {
           timeRangeValue: {
             end: Cypress.sinon.match.any,
             endDate: '08/08/2021',
+            endTime: '12:34',
             start: Cypress.sinon.match.any,
             startDate: '08/06/2021',
+            startTime: '01:00',
           },
         });
       });

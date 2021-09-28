@@ -75,11 +75,9 @@
   "resolutions": {
     "carbon-addons-iot-react/chokidar": "3.3.1",
     "carbon-addons-iot-react/react-grid-layout": "1.2.2",
-    "carbon-addons-iot-react/flatpickr": "4.6.1",
     "react-test-renderer": "16.14.0",
     "react-dom": "16.14.0",
     "react": "16.14.0",
-    "webpack": "4",
-    "flatpickr": "4.6.1"
+    "webpack": "4"
   }
 }

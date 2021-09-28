@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import { CaretUp16, CaretDown16 } from '@carbon/icons-react';
 import classnames from 'classnames';
+import { gray60 } from '@carbon/colors';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
@@ -162,7 +163,7 @@ const Attribute = ({
             data-testid={`${testId}-secondary-value`}
             className={`${BEM_BASE}-secondary-value`}
             style={{
-              '--secondary-value-color': secondaryValue.color || '#777',
+              '--secondary-value-color': gray60,
             }}
           >
             {secondaryValue.trend && secondaryValue.trend === 'up' ? (
@@ -170,12 +171,14 @@ const Attribute = ({
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending up"
                 data-testid={`${testId}-trending-up`}
+                fill={secondaryValue.color || gray60}
               />
             ) : secondaryValue.trend === 'down' ? (
               <CaretDown16
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending down"
                 data-testid={`${testId}-trending-down`}
+                fill={secondaryValue.color || gray60}
               />
             ) : null}
             {secondaryValue.value}
