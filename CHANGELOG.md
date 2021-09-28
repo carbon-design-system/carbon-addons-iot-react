@@ -21,6 +21,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [2.146.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.1...v2.146.2) (2021-09-28)
+
+
+### Bug Fixes
+
+* **row-actions-cell:** set overflow menu to closed after overflow action ([346311c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/346311ce53182959d3fa882c18f75a47eaaceb2e))
+
+
+
+
 
 
 ## [2.146.2-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2-next.1...v2.146.2-next.2) (2021-09-27)
