@@ -72,16 +72,14 @@ const TableFoot = ({
           const cellKey = `${orderedCol.columnId}${index}`;
 
           return isLabelCell ? (
-            <Fragment key="label-cell-fragment">
-              <TableCell
-                className={`${iotPrefix}-table-foot--label`}
-                data-testid={cellTestId}
-                key={cellKey}
-                colSpan={labelColSpan}
-              >
-                {aggregations.label}
-              </TableCell>
-            </Fragment>
+            <TableCell
+              className={`${iotPrefix}-table-foot--label`}
+              data-testid={cellTestId}
+              key={cellKey}
+              colSpan={labelColSpan}
+            >
+              {aggregations.label}
+            </TableCell>
           ) : aggregated ? (
             <Fragment key={`aggregated-cell-fragment-${index}`}>
               {index === 0 && (hasMultiSelect || hasExpandOrNest) ? (
