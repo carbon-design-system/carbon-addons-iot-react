@@ -1,15 +1,11 @@
 @import '../../../../globals/vars';
 
 .#{$iot-prefix}--load-more-cell {
-  text-align: center !important;
-  cursor: pointer;
-  width: 100%;
-
-  &--content {
+  &--content.#{$iot-prefix}--btn {
     @include type-style('body-short-01');
-    color: $interactive-01 !important;
+    color: $interactive-01;
     min-width: 100%;
     display: flex;
-    justify-content: center !important;
+    justify-content: center;
   }
 }
