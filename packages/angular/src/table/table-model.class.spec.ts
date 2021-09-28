@@ -64,6 +64,57 @@ describe('Table', () => {
     expect(tableModel['header'][0].length).toEqual(2);
   });
 
+  it('should make sure each header has the same length as data', () => {
+    let tableModel = new AITableModel();
+    tableModel.setHeader([
+      [
+        new TableHeaderItem({ data: 'h1' }),
+        new TableHeaderItem({ data: 'h2', colSpan: 4 }),
+        new TableHeaderItem({ data: 'h3' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h11' }),
+        new TableHeaderItem({ data: 'h12', colSpan: 2 }),
+        new TableHeaderItem({ data: 'h13', colSpan: 2 }),
+        new TableHeaderItem({ data: 'h14' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h21' }),
+        new TableHeaderItem({ data: 'h22' }),
+        new TableHeaderItem({ data: 'h23' }),
+        new TableHeaderItem({ data: 'h24' }),
+        new TableHeaderItem({ data: 'h25' }),
+        new TableHeaderItem({ data: 'h26' }),
+      ],
+    ]);
+    tableModel.setData([
+      [
+        new TableItem({ data: 'A' }),
+        new TableItem({ data: 'B' }),
+        new TableItem({ data: 'C' }),
+        new TableItem({ data: 'D' }),
+        new TableItem({ data: 'E' }),
+        new TableItem({ data: 'F' }),
+        new TableItem({ data: 'Extra' }),
+        new TableItem({ data: 'Extra' }),
+      ],
+      [
+        new TableItem({ data: 'G' }),
+        new TableItem({ data: 'H' }),
+        new TableItem({ data: 'I' }),
+        new TableItem({ data: 'J' }),
+        new TableItem({ data: 'K' }),
+        new TableItem({ data: 'L' }),
+        new TableItem({ data: 'Extra' }),
+        new TableItem({ data: 'Extra' }),
+      ],
+    ]);
+
+    expect(tableModel['header'][0].length === tableModel.row(0).length);
+    expect(tableModel['header'][1].length === tableModel.row(0).length);
+    expect(tableModel['header'][2].length === tableModel.row(0).length);
+  });
+
   it('should have same data in same table cell', () => {
     let tableModel = new AITableModel();
     tableModel.setData([
@@ -763,6 +814,218 @@ describe('Table', () => {
     expect(tableModel.getClosestHeader(1).data).toEqual('h1');
     expect(tableModel.getClosestHeader(2).data).toEqual('h3');
     expect(tableModel['header'][0].length).toEqual(3);
+  });
+
+  it('should move (multi-line header) column to beginning', () => {
+    let tableModel = new AITableModel();
+    tableModel.setHeader([
+      [
+        new TableHeaderItem({ data: 'h1' }),
+        new TableHeaderItem({ data: 'h2', colSpan: 4 }),
+        new TableHeaderItem({ data: 'h3' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h11' }),
+        new TableHeaderItem({ data: 'h12', colSpan: 2 }),
+        new TableHeaderItem({ data: 'h13', colSpan: 2 }),
+        new TableHeaderItem({ data: 'h14' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h21' }),
+        new TableHeaderItem({ data: 'h22' }),
+        new TableHeaderItem({ data: 'h23' }),
+        new TableHeaderItem({ data: 'h24' }),
+        new TableHeaderItem({ data: 'h25' }),
+        new TableHeaderItem({ data: 'h26' }),
+      ],
+    ]);
+    tableModel.setData([
+      [
+        new TableItem({ data: 'A' }),
+        new TableItem({ data: 'B' }),
+        new TableItem({ data: 'C' }),
+        new TableItem({ data: 'D' }),
+        new TableItem({ data: 'E' }),
+        new TableItem({ data: 'F' }),
+      ],
+      [
+        new TableItem({ data: 'G' }),
+        new TableItem({ data: 'H' }),
+        new TableItem({ data: 'I' }),
+        new TableItem({ data: 'J' }),
+        new TableItem({ data: 'K' }),
+        new TableItem({ data: 'L' }),
+      ],
+    ]);
+
+    tableModel.moveColumn(1, 0);
+
+    expect(tableModel.column(0)).toEqual([
+      new TableItem({ data: 'B' }),
+      new TableItem({ data: 'H' }),
+    ]);
+    expect(tableModel.column(1)).toEqual([
+      new TableItem({ data: 'C' }),
+      new TableItem({ data: 'I' }),
+    ]);
+    expect(tableModel.column(2)).toEqual([
+      new TableItem({ data: 'D' }),
+      new TableItem({ data: 'J' }),
+    ]);
+    expect(tableModel.column(3)).toEqual([
+      new TableItem({ data: 'E' }),
+      new TableItem({ data: 'K' }),
+    ]);
+    expect(tableModel.column(4)).toEqual([
+      new TableItem({ data: 'A' }),
+      new TableItem({ data: 'G' }),
+    ]);
+    expect(tableModel.column(5)).toEqual([
+      new TableItem({ data: 'F' }),
+      new TableItem({ data: 'L' }),
+    ]);
+    expect(tableModel['header'][0].length).toEqual(3);
+    expect(tableModel['header'][1].length).toEqual(4);
+    expect(tableModel['header'][2].length).toEqual(6);
+    expect(tableModel['header'][0].map((h) => h.data)).toEqual(['h2', 'h1', 'h3']);
+    expect(tableModel['header'][1].map((h) => h.data)).toEqual(['h12', 'h13', 'h11', 'h14']);
+    expect(tableModel['header'][2].map((h) => h.data)).toEqual([
+      'h22',
+      'h23',
+      'h24',
+      'h25',
+      'h21',
+      'h26',
+    ]);
+  });
+
+  it('should calculate correct actual index', () => {
+    const header = [
+      new TableHeaderItem({ data: 'h1' }),
+      new TableHeaderItem({ data: 'h2', colSpan: 3 }),
+      new TableHeaderItem({ data: 'h3', colSpan: 4 }),
+    ];
+    const tableModel = new AITableModel();
+
+    expect(tableModel['projectedIndexToActualIndex'](0, header)).toEqual(0);
+    expect(tableModel['projectedIndexToActualIndex'](1, header)).toEqual(1);
+    expect(tableModel['projectedIndexToActualIndex'](2, header)).toEqual(1);
+    expect(tableModel['projectedIndexToActualIndex'](3, header)).toEqual(1);
+    expect(tableModel['projectedIndexToActualIndex'](4, header)).toEqual(2);
+    expect(tableModel['projectedIndexToActualIndex'](5, header)).toEqual(2);
+    expect(tableModel['projectedIndexToActualIndex'](6, header)).toEqual(2);
+    expect(tableModel['projectedIndexToActualIndex'](7, header)).toEqual(2);
+  });
+
+  it('should calculate correct projected indices', () => {
+    const header = [
+      new TableHeaderItem({ data: 'h1' }),
+      new TableHeaderItem({ data: 'h2', colSpan: 3 }),
+      new TableHeaderItem({ data: 'h3', colSpan: 4 }),
+    ];
+    const tableModel = new AITableModel();
+
+    expect(tableModel['actualIndexToProjectedIndices'](0, header)).toEqual([0]);
+    expect(tableModel['actualIndexToProjectedIndices'](1, header)).toEqual([1, 2, 3]);
+    expect(tableModel['actualIndexToProjectedIndices'](2, header)).toEqual([4, 5, 6, 7]);
+  });
+
+  it('should calculate correct projected indices', () => {
+    const header = [
+      new TableHeaderItem({ data: 'h1' }),
+      new TableHeaderItem({ data: 'h2', colSpan: 3 }),
+      new TableHeaderItem({ data: 'h3', colSpan: 4 }),
+    ];
+    const header2 = [
+      new TableHeaderItem({ data: 'h1' }),
+      new TableHeaderItem({ data: 'h2', colSpan: 2 }),
+      new TableHeaderItem({ data: 'h3' }),
+      new TableHeaderItem({ data: 'h4', colSpan: 2 }),
+      new TableHeaderItem({ data: 'h5', colSpan: 2 }),
+    ];
+    const tableModel = new AITableModel();
+
+    expect(
+      tableModel['projectedIndicesToActualIndices'](
+        tableModel['actualIndexToProjectedIndices'](0, header),
+        header2
+      )
+    ).toEqual([0]);
+    expect(
+      tableModel['projectedIndicesToActualIndices'](
+        tableModel['actualIndexToProjectedIndices'](1, header),
+        header2
+      )
+    ).toEqual([1, 2]);
+    expect(
+      tableModel['projectedIndicesToActualIndices'](
+        tableModel['actualIndexToProjectedIndices'](2, header),
+        header2
+      )
+    ).toEqual([3, 4]);
+  });
+
+  it('should move multiple array items to left', () => {
+    const header = [
+      new TableHeaderItem({ data: 'h1' }),
+      new TableHeaderItem({ data: 'h2' }),
+      new TableHeaderItem({ data: 'h3' }),
+      new TableHeaderItem({ data: 'h4' }),
+      new TableHeaderItem({ data: 'h5' }),
+      new TableHeaderItem({ data: 'h6' }),
+    ];
+    const tableModel = new AITableModel();
+
+    tableModel['moveMultipleToIndex']([1, 2, 3], 0, header);
+
+    expect(header.map((item) => item.data)).toEqual(['h2', 'h3', 'h4', 'h1', 'h5', 'h6']);
+  });
+
+  it('should move one array items to left', () => {
+    const header = [
+      new TableHeaderItem({ data: 'h1' }),
+      new TableHeaderItem({ data: 'h2' }),
+      new TableHeaderItem({ data: 'h3' }),
+      new TableHeaderItem({ data: 'h4' }),
+      new TableHeaderItem({ data: 'h5' }),
+      new TableHeaderItem({ data: 'h6' }),
+    ];
+    const tableModel = new AITableModel();
+
+    tableModel['moveMultipleToIndex']([1], 0, header);
+
+    expect(header.map((item) => item.data)).toEqual(['h2', 'h1', 'h3', 'h4', 'h5', 'h6']);
+  });
+
+  it('should move multiple array items to right', () => {
+    const header = [
+      new TableHeaderItem({ data: 'h1' }),
+      new TableHeaderItem({ data: 'h2' }),
+      new TableHeaderItem({ data: 'h3' }),
+      new TableHeaderItem({ data: 'h4' }),
+      new TableHeaderItem({ data: 'h5' }),
+      new TableHeaderItem({ data: 'h6' }),
+    ];
+    const tableModel = new AITableModel();
+
+    tableModel['moveMultipleToIndex']([1, 2, 3], 5, header);
+
+    expect(header.map((item) => item.data)).toEqual(['h1', 'h5', 'h2', 'h3', 'h4', 'h6']);
+  });
+
+  it('should move one array items to right', () => {
+    const header = [
+      new TableHeaderItem({ data: 'h1' }),
+      new TableHeaderItem({ data: 'h2' }),
+      new TableHeaderItem({ data: 'h3' }),
+      new TableHeaderItem({ data: 'h4' }),
+      new TableHeaderItem({ data: 'h5' }),
+      new TableHeaderItem({ data: 'h6' }),
+    ];
+    const tableModel = new AITableModel();
+
+    tableModel['moveMultipleToIndex']([1], 3, header);
+    expect(header.map((item) => item.data)).toEqual(['h1', 'h3', 'h2', 'h4', 'h5', 'h6']);
   });
 
   it('should preserve header if data is emptied', () => {

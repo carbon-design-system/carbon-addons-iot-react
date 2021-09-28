@@ -457,6 +457,7 @@ Map {
         "selectRowAria": "Select row",
         "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle aggregations",
+        "toolbarLabelAria": undefined,
       },
       "id": null,
       "lightweight": false,
@@ -1119,6 +1120,9 @@ Map {
               "type": "string",
             },
             "toggleAggregations": Object {
+              "type": "string",
+            },
+            "toolbarLabelAria": Object {
               "type": "string",
             },
           },
@@ -2154,6 +2158,9 @@ Map {
               "type": "string",
             },
             "toggleAggregations": Object {
+              "type": "string",
+            },
+            "toolbarLabelAria": Object {
               "type": "string",
             },
           },
@@ -3766,6 +3773,9 @@ Map {
               "type": "string",
             },
             "toggleAggregations": Object {
+              "type": "string",
+            },
+            "toolbarLabelAria": Object {
               "type": "string",
             },
           },
@@ -21406,7 +21416,9 @@ Map {
   "IconSwitch" => Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
+      "children": undefined,
       "className": undefined,
+      "disabled": false,
       "light": false,
       "name": "",
       "onClick": undefined,
@@ -21416,8 +21428,14 @@ Map {
       "testId": "icon-switch",
     },
     "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
       "className": Object {
         "type": "string",
+      },
+      "disabled": Object {
+        "type": "bool",
       },
       "index": Object {
         "isRequired": true,
@@ -21531,11 +21549,13 @@ Map {
       "disabled": false,
       "editOptionText": "Create",
       "hasMultiValue": false,
+      "horizontalDirection": "end",
       "itemToElement": null,
       "itemToString": [Function],
       "items": Array [],
       "light": false,
       "loading": false,
+      "menuFitContent": false,
       "onBlur": null,
       "onInputChange": null,
       "shouldFilterItem": [Function],
@@ -21614,6 +21634,15 @@ Map {
       "helperText": Object {
         "type": "string",
       },
+      "horizontalDirection": Object {
+        "args": Array [
+          Array [
+            "start",
+            "end",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "id": Object {
         "isRequired": true,
         "type": "string",
@@ -21651,6 +21680,9 @@ Map {
         "type": "bool",
       },
       "loading": Object {
+        "type": "bool",
+      },
+      "menuFitContent": Object {
         "type": "bool",
       },
       "onBlur": Object {

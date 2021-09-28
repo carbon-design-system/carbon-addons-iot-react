@@ -170,6 +170,7 @@ export const I18NPropTypes = PropTypes.shape({
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
   batchCancel: PropTypes.string,
+  toolbarLabelAria: PropTypes.string,
   /** String 'items selected' or function receiving the selectedCount as param:
    * (selectedCount) => `${selectedCount} items selected` */
   itemsSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
