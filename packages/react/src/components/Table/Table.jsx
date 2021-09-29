@@ -1013,7 +1013,13 @@ const Table = (props) => {
           {options.hasAggregations && !aggregationsAreHidden ? (
             <TableFoot
               options={{
-                ...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions'),
+                ...pick(
+                  options,
+                  'hasRowSelection',
+                  'hasRowExpansion',
+                  'hasRowActions',
+                  'hasRowNesting'
+                ),
               }}
               tableState={{
                 aggregations,

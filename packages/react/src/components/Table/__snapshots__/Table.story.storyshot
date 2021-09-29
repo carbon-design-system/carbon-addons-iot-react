@@ -23032,9 +23032,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             data-testid="table-table-foot"
           >
             <tr>
-              <td />
               <td
                 className="iot-table-foot--label"
+                colSpan={2}
                 data-testid="table-table-foot-aggregation-string"
               >
                 Total:
@@ -106209,9 +106209,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-testid="null-table-foot"
               >
                 <tr>
-                  <td />
                   <td
                     className="iot-table-foot--label"
+                    colSpan={2}
                     data-testid="null-table-foot-aggregation-string"
                   >
                     Total
