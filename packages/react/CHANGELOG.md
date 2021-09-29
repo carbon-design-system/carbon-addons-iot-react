@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.3...v2.147.0-next.4) (2021-09-29)
+
+
+### Bug Fixes
+
+* **datetimepicker:** improved time validation ([633f717](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/633f71752354a3b936db5ad530e16f6d93965211))
+* **datetimepicker:** pr feedback spelling fix ([e0e711b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e0e711b70db0bbdea10a585e48fb69f758780714))
+* **page-title-bar:** chrome upgrade(?) causes cypress test to fail ([279c740](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/279c740a455c02c9537a608fbaa521b9bbe01fb8))
+* **timepickerspinner:** improved validation ([843929f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/843929f0148d5df2d2dd1acc6de976c5d0477143))
+
+
+
+
+
 # [2.147.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.2...v2.147.0-next.3) (2021-09-29)
 
 
