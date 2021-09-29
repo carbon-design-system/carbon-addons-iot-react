@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.2...v2.147.0-next.3) (2021-09-29)
+
+
+### Bug Fixes
+
+* **table:** fix aggregation values placement in first column ([7f78e0e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7f78e0ec670fbca90c501602b8316c9ff500f42c))
+* **table:** fix placement of label/values in various scenarios ([da60221](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/da60221f4c858cef58254fbb588d9c4bc2bdb414))
+* **table:** PR feedback adjustments ([9a0ff6a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9a0ff6a34a0655c9dabea50f99c70f7b690c7271))
+* **table:** remove fragment ([a767c7b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a767c7b0fdcf13ce6643b68c863af5dc3d126029))
+
+
+
+
+
 # [2.147.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.1...v2.147.0-next.2) (2021-09-29)
 
 
