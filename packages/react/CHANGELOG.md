@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.1...v2.147.0-next.2) (2021-09-29)
+
+
+### Bug Fixes
+
+* **feedback:** fixes from feedback ([13c13c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/13c13c5ee853adf0a03d267f803b486c3441f213))
+* **feedback:** updates from feedback ([982e75f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/982e75f0288cfeee999061ec0dc6f16e76cee383))
+* **table:** fix load more scss from feedback ([d74ae18](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d74ae18827143f2eca6441cd769308ced099982d))
+
+
+### Features
+
+* **loading:** table and list isLoadingMore support ([0bf83df](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0bf83df682913f9935445e1458b84d7b7fbf8202))
+* **loadmore:** support to multiple load more ids loading at once ([db4e05f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/db4e05fc073485bec736f30d6c438370c00bdf0e))
+* **loadmore:** suppport to load more in Table and List ([6996e43](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6996e43d368bbbdf157dc96570f00f2788adf743))
+* **table:** working example of load more in statefultable ([596fc8d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/596fc8dc663e4cdd37f46b29b7dbbc70c74e3301))
+
+
+
+
+
 # [2.147.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2...v2.147.0-next.1) (2021-09-28)
 
 
