@@ -834,12 +834,12 @@ const DateTimePicker = ({
     customRangeKind === PICKER_KINDS.RELATIVE &&
     (relativeLastNumberInvalid || relativeToTimeInvalid);
 
-  const disbableAbsoluteApply =
+  const disableAbsoluteApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
     (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
 
-  const disableApply = disableRelativeApply || disbableAbsoluteApply;
+  const disableApply = disableRelativeApply || disableAbsoluteApply;
 
   /**
    * Shows and hides the tooltip with the humanValue (Relative) or full-range (Absolute) when

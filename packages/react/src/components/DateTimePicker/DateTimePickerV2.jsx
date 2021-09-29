@@ -649,12 +649,12 @@ const DateTimePicker = ({
   const disableRelativeApply =
     isCustomRange && customRangeKind === PICKER_KINDS.RELATIVE && relativeToTimeInvalid;
 
-  const disbableAbsoluteApply =
+  const disableAbsoluteApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
     (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
 
-  const disableApply = disableRelativeApply || disbableAbsoluteApply;
+  const disableApply = disableRelativeApply || disableAbsoluteApply;
 
   // eslint-disable-next-line react/prop-types
   const CustomFooter = ({ setIsOpen }) => {
