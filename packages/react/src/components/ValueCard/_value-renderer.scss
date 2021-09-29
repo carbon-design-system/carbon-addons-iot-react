@@ -41,3 +41,7 @@
     text-transform: capitalize;
   }
 }
+
+html[dir='rtl'] .#{$iot-prefix}--value-card__value-renderer--value.#{$iot-prefix}--btn {
+  padding: $spacing-01;
+}
