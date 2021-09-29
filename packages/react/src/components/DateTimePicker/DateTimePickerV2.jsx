@@ -284,8 +284,8 @@ const DateTimePicker = ({
   const [absoluteValue, setAbsoluteValue] = useState(null);
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
   const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
-  const [absolutStartTimeInvalid, setAbsolutStartTimeInvalid] = useState(false);
-  const [absolutEndTimeInvalid, setAbsolutEndTimeInvalid] = useState(false);
+  const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(false);
+  const [absoluteEndTimeInvalid, setAbsoluteEndTimeInvalid] = useState(false);
 
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
@@ -634,11 +634,11 @@ const DateTimePicker = ({
 
   // on change functions that trigger a absolute value update
   const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
-    setAbsolutStartTimeInvalid(meta.invalid);
+    setAbsoluteStartTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
   const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
-    setAbsolutEndTimeInvalid(meta.invalid);
+    setAbsoluteEndTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 
@@ -646,15 +646,15 @@ const DateTimePicker = ({
     ? renderPresetTooltipText(currentValue)
     : getIntervalValue();
 
-  const disbableRelativeApply =
+  const disableRelativeApply =
     isCustomRange && customRangeKind === PICKER_KINDS.RELATIVE && relativeToTimeInvalid;
 
   const disbableAbsoluteApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
-    (absolutStartTimeInvalid || absolutEndTimeInvalid);
+    (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
 
-  const disableApply = disbableRelativeApply || disbableAbsoluteApply;
+  const disableApply = disableRelativeApply || disbableAbsoluteApply;
 
   // eslint-disable-next-line react/prop-types
   const CustomFooter = ({ setIsOpen }) => {
@@ -998,7 +998,7 @@ const DateTimePicker = ({
                           <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                             <TimePickerSpinner
                               id={`${id}-start-time`}
-                              invalid={absolutStartTimeInvalid}
+                              invalid={absoluteStartTimeInvalid}
                               labelText={strings.startTimeLabel}
                               value={absoluteValue ? absoluteValue.startTime : '00:00'}
                               i18n={i18n}
@@ -1009,7 +1009,7 @@ const DateTimePicker = ({
                             />
                             <TimePickerSpinner
                               id={`${id}-end-time`}
-                              invalid={absolutEndTimeInvalid}
+                              invalid={absoluteEndTimeInvalid}
                               labelText={strings.endTimeLabel}
                               value={absoluteValue ? absoluteValue.endTime : '00:00'}
                               i18n={i18n}
