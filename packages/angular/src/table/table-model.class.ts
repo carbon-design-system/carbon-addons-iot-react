@@ -905,8 +905,14 @@ export class AITableModel implements PaginationModel {
    * @returns the number of columns as if now cells were merged
    */
   protected projectedRowLength(itemArray: any[]) {
-    // `any[]` should be `TableItem[] | TableHeaderItem[]` but typescript
-    return itemArray.reduce((len, item) => len + (item.colSpan || 1), 0);
+    let rowLength = 0;
+    for (let i = 0; i < itemArray.length;) {
+      const item = itemArray[i];
+      let increment = item ? item.colSpan : 1;
+      rowLength += increment;
+      i += increment;
+    }
+    return rowLength;
   }
 
   /**
