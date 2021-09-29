@@ -23,6 +23,7 @@ export const mockActions = {
     onEmptyStateAction: jest.fn(),
     onChangeOrdering: jest.fn(),
     onColumnResize: jest.fn(),
+    onRowLoadMore: jest.fn(),
   },
 };
 
@@ -78,6 +79,7 @@ export const getNestedRows = () => {
               getNewRow(idx, 'A', true),
               {
                 ...getNewRow(idx, 'B'),
+                hasLoadMore: true,
                 children: [
                   getNewRow(idx, 'B-1', true),
                   {

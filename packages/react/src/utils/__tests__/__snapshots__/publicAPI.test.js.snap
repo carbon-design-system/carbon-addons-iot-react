@@ -430,6 +430,7 @@ Map {
         "itemsPerPage": "Items per page:",
         "itemsRangeWithTotal": [Function],
         "itemsSelected": [Function],
+        "loadMoreText": "Load more...",
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortDescending": "Descending",
@@ -511,6 +512,7 @@ Map {
         "table": Object {
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
+          "loadingMoreIds": Array [],
           "loadingState": Object {
             "columnCount": 5,
             "rowCount": 5,
@@ -588,6 +590,9 @@ Map {
                     "type": "func",
                   },
                   "onRowExpanded": Object {
+                    "type": "func",
+                  },
+                  "onRowLoadMore": Object {
                     "type": "func",
                   },
                   "onRowSelected": Object {
@@ -808,6 +813,9 @@ Map {
                     ],
                   ],
                   "type": "oneOfType",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "isRequired": true,
@@ -1036,6 +1044,9 @@ Map {
               "type": "oneOfType",
             },
             "learnMoreText": Object {
+              "type": "string",
+            },
+            "loadMoreText": Object {
               "type": "string",
             },
             "multiSortAddColumn": Object {
@@ -1513,6 +1524,14 @@ Map {
                   },
                   "isSelectAllSelected": Object {
                     "type": "bool",
+                  },
+                  "loadingMoreIds": Object {
+                    "args": Array [
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "type": "arrayOf",
                   },
                   "loadingState": Object {
                     "args": Array [
@@ -2076,6 +2095,9 @@ Map {
             "learnMoreText": Object {
               "type": "string",
             },
+            "loadMoreText": Object {
+              "type": "string",
+            },
             "multiSortAddColumn": Object {
               "type": "string",
             },
@@ -2404,6 +2426,7 @@ Map {
       "hasRowNesting": false,
       "hasRowSelection": false,
       "langDir": "ltr",
+      "loadingMoreIds": Array [],
       "locale": null,
       "overflowMenuAria": "More actions",
       "rowActionsState": Array [],
@@ -2432,6 +2455,9 @@ Map {
               "type": "func",
             },
             "onRowExpanded": Object {
+              "type": "func",
+            },
+            "onRowLoadMore": Object {
               "type": "func",
             },
             "onRowSelected": Object {
@@ -2655,6 +2681,17 @@ Map {
       "learnMoreText": Object {
         "type": "string",
       },
+      "loadMoreText": Object {
+        "type": "string",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "locale": Object {
         "type": "string",
       },
@@ -2735,6 +2772,9 @@ Map {
                     ],
                   ],
                   "type": "oneOfType",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "isRequired": true,
@@ -3599,6 +3639,9 @@ Map {
                     ],
                   ],
                   "type": "oneOfType",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "isRequired": true,
@@ -5356,6 +5399,9 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "type": "string",
@@ -21013,10 +21059,12 @@ Map {
       "editingStyle": null,
       "emptyState": "No list items to show",
       "expandedIds": Array [],
+      "handleLoadMore": [Function],
       "handleSelect": [Function],
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
+        "loadMore": "Load more...",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
@@ -21025,6 +21073,7 @@ Map {
       "isLoading": false,
       "itemWillMove": [Function],
       "items": Array [],
+      "loadingMoreIds": Array [],
       "onItemMoved": [Function],
       "overrides": null,
       "pagination": null,
@@ -21078,6 +21127,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "handleLoadMore": Object {
+        "type": "func",
+      },
       "handleSelect": Object {
         "type": "func",
       },
@@ -21088,6 +21140,9 @@ Map {
               "type": "string",
             },
             "expand": Object {
+              "type": "string",
+            },
+            "loadMore": Object {
               "type": "string",
             },
             "searchPlaceHolderText": Object {
@@ -21152,6 +21207,9 @@ Map {
                   ],
                   "type": "shape",
                 },
+                "hasLoadMore": Object {
+                  "type": "bool",
+                },
                 "id": Object {
                   "type": "string",
                 },
@@ -21161,6 +21219,14 @@ Map {
               },
             ],
             "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
           },
         ],
         "type": "arrayOf",
@@ -32456,6 +32522,7 @@ Map {
     "TABLE_ROW_ACTION_START": "TABLE_ROW_ACTION_START",
     "TABLE_ROW_CLICK": "TABLE_ROW_CLICK",
     "TABLE_ROW_EXPAND": "TABLE_ROW_EXPAND",
+    "TABLE_ROW_LOAD_MORE": "TABLE_ROW_LOAD_MORE",
     "TABLE_ROW_SELECT": "TABLE_ROW_SELECT",
     "TABLE_ROW_SELECT_ALL": "TABLE_ROW_SELECT_ALL",
     "TABLE_SEARCH_APPLY": "TABLE_SEARCH_APPLY",
@@ -32489,6 +32556,7 @@ Map {
     "tableRowActionStart": Object {},
     "tableRowClick": Object {},
     "tableRowExpand": Object {},
+    "tableRowLoadMore": Object {},
     "tableRowSelect": Object {},
     "tableRowSelectAll": Object {},
     "tableSaveMultiSortColumns": Object {},

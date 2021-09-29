@@ -217,6 +217,8 @@ const propTypes = {
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
+      /** Array with rowIds that are with loading active */
+      loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -279,6 +281,9 @@ const propTypes = {
       /* (index) => {} */
       onRemoveMultiSortColumn: PropTypes.func,
       onTableErrorStateAction: PropTypes.func,
+
+      /** call back function for when load more row is clicked  (rowId) => {} */
+      onRowLoadMore: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -352,6 +357,7 @@ export const defaultProps = (baseProps) => ({
         columnCount: 5,
       },
       singleRowEditButtons: null,
+      loadingMoreIds: [],
     },
   },
   actions: {
@@ -454,6 +460,8 @@ export const defaultProps = (baseProps) => ({
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
+    /* table load more */
+    loadMoreText: 'Load more...',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -527,6 +535,7 @@ const Table = (props) => {
     view.table.isSelectAllSelected,
     view.table.isSelectAllIndeterminate,
     view.table.selectedIds,
+    view.table.loadingMoreIds,
     view.table.sort,
     view.table.ordering,
     // Remove the error as it's a React.Element/Node which can not be compared
@@ -930,6 +939,7 @@ const Table = (props) => {
                 columns={visibleColumns}
                 expandedIds={view.table.expandedIds}
                 selectedIds={view.table.selectedIds}
+                loadingMoreIds={view.table.loadingMoreIds}
                 {...pick(
                   i18n,
                   'overflowMenuAria',
@@ -939,7 +949,8 @@ const Table = (props) => {
                   'actionFailedText',
                   'learnMoreText',
                   'dismissText',
-                  'selectRowAria'
+                  'selectRowAria',
+                  'loadMoreText'
                 )}
                 totalColumns={totalColumns}
                 {...pick(
@@ -961,7 +972,8 @@ const Table = (props) => {
                   'onApplyRowAction',
                   'onClearRowError',
                   'onRowExpanded',
-                  'onRowClicked'
+                  'onRowClicked',
+                  'onRowLoadMore'
                 )}
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-body`}
