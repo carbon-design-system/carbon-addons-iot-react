@@ -102,7 +102,7 @@ describe('Table', () => {
   const expandedData = [
     {
       rowId: 'row-1',
-      content: <div style={{ padding: '8px' }}>Expnded content</div>,
+      content: <div style={{ padding: '8px' }}>Expanded content</div>,
     },
   ];
 
