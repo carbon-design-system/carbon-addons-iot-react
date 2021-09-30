@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import classnames from 'classnames';
@@ -7,6 +7,7 @@ import { blue60 } from '@carbon/colors';
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import { formatNumberWithPrecision } from '../../utils/cardUtilityFunctions';
 import Button from '../Button';
+import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 
 import { BASE_CLASS_NAME, PREVIEW_DATA } from './valueCardUtils';
 
@@ -58,6 +59,8 @@ const ValueRenderer = ({
   dataSourceId,
   unit,
 }) => {
+  const buttonRef = useRef(null);
+  const buttonOverflows = useHasTextOverflow(buttonRef);
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = (
@@ -95,11 +98,17 @@ const ValueRenderer = ({
     <div
       className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}
       style={{
-        '--value-card-attribute-wrapper-width': unit ? 'auto' : '100%',
+        '--value-card-attribute-wrapper-width':
+          unit && onClick && buttonOverflows ? '100%' : unit ? 'auto' : '100%',
       }}
     >
       {onClick ? (
-        <Button {...commonProps} onClick={() => onClick({ dataSourceId, value })} kind="ghost">
+        <Button
+          {...commonProps}
+          onClick={() => onClick({ dataSourceId, value })}
+          kind="ghost"
+          ref={buttonRef}
+        >
           {renderValue}
         </Button>
       ) : (
