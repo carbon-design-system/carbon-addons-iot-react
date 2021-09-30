@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import classnames from 'classnames';
@@ -7,7 +7,6 @@ import { blue60 } from '@carbon/colors';
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import { formatNumberWithPrecision } from '../../utils/cardUtilityFunctions';
 import Button from '../Button';
-import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 
 import { BASE_CLASS_NAME, PREVIEW_DATA } from './valueCardUtils';
 
@@ -25,8 +24,6 @@ const propTypes = {
   /** callback to trigger further action when clicking the value */
   onClick: PropTypes.func,
   dataSourceId: PropTypes.string.isRequired,
-  /** used to determine how wide the wrapper should be */
-  unit: PropTypes.string,
 };
 
 const defaultProps = {
@@ -37,7 +34,6 @@ const defaultProps = {
   customFormatter: null,
   testId: 'value',
   onClick: null,
-  unit: undefined,
 };
 
 /**
@@ -57,10 +53,7 @@ const ValueRenderer = ({
   testId,
   onClick,
   dataSourceId,
-  unit,
 }) => {
-  const buttonRef = useRef(null);
-  const buttonOverflows = useHasTextOverflow(buttonRef);
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = (
@@ -95,20 +88,9 @@ const ValueRenderer = ({
   };
 
   return (
-    <div
-      className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}
-      style={{
-        '--value-card-attribute-wrapper-width':
-          unit && onClick && buttonOverflows ? '100%' : unit ? 'auto' : '100%',
-      }}
-    >
+    <div className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}>
       {onClick ? (
-        <Button
-          {...commonProps}
-          onClick={() => onClick({ dataSourceId, value })}
-          kind="ghost"
-          ref={buttonRef}
-        >
+        <Button {...commonProps} onClick={() => onClick({ dataSourceId, value })} kind="ghost">
           {renderValue}
         </Button>
       ) : (
