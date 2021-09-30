@@ -232,11 +232,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -298,11 +293,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -422,11 +412,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -488,11 +473,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -554,11 +534,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -620,11 +595,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -686,11 +656,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -810,11 +775,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -876,11 +836,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -942,11 +897,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1008,11 +958,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1132,11 +1077,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1198,11 +1138,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1322,11 +1257,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <span
                   className="iot--value-card__value-renderer--value"
@@ -1436,11 +1366,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1502,11 +1427,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1568,11 +1488,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1634,11 +1549,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1700,11 +1610,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1766,11 +1671,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1832,11 +1732,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -1977,11 +1872,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -2064,11 +1954,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -2151,11 +2036,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "auto",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -2290,11 +2170,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -2432,11 +2307,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
@@ -2556,11 +2426,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
             >
               <div
                 className="iot--value-card__value-renderer--wrapper"
-                style={
-                  Object {
-                    "--value-card-attribute-wrapper-width": "100%",
-                  }
-                }
               >
                 <button
                   aria-describedby={null}
