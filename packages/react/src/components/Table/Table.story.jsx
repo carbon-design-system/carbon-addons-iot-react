@@ -526,6 +526,7 @@ export const initialState = {
       page: 1,
     },
     table: {
+      loadingMoreIds: [],
       isSelectAllSelected: false,
       selectedIds: [],
       sort: undefined,
@@ -2586,3 +2587,93 @@ export const AsyncColumnLoading = () => {
 };
 AsyncColumnLoading.storyName = 'with async column loading';
 AsyncColumnLoading.decorators = [createElement];
+
+export const RowExpansionAndLoadMore = () => {
+  const TableWithState = () => {
+    const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+    const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+    const [loadingMoreIds, setLoadingMoreIds] = useState([]);
+
+    const [tableDataNested, setTableDataNested] = useState(
+      tableData.slice(0, number('number of rows in story', 3)).map((i, idx) => ({
+        ...i,
+        children:
+          idx === 0
+            ? [
+                getNewRow(idx, 'A'),
+
+                getNewRow(idx, 'B'),
+
+                getNewRow(idx, 'C'),
+                {
+                  ...getNewRow(idx, 'D'),
+                  hasLoadMore: true,
+                  children: [getNewRow(0, 'D-1'), getNewRow(0, 'D-2'), getNewRow(0, 'D-3')],
+                },
+                {
+                  ...getNewRow(idx, 'E'),
+                  hasLoadMore: true,
+                  children: [getNewRow(0, 'E-1'), getNewRow(0, 'E-2'), getNewRow(0, 'E-3')],
+                },
+              ]
+            : undefined,
+      }))
+    );
+
+    const addDataTimeout = (id) =>
+      setTimeout(() => {
+        setTableDataNested((prevTable) => {
+          const dataUpdated = cloneDeep(prevTable);
+          const indexChildren = dataUpdated[0].children.findIndex((i) => i.id === id);
+          dataUpdated[0].children[indexChildren] = {
+            ...dataUpdated[0].children[indexChildren],
+            hasLoadMore: false,
+            children: [
+              ...dataUpdated[0].children[indexChildren].children,
+              getNewRow(0, `${id.split('_').pop()}-4`),
+              getNewRow(0, `${id.split('_').pop()}-5`),
+              getNewRow(0, `${id.split('_').pop()}-6 `),
+            ],
+          };
+          return dataUpdated;
+        });
+      }, 2000);
+
+    return (
+      <MyTable
+        id="my-nested-table"
+        columns={tableColumns}
+        data={tableDataNested}
+        actions={{
+          table: {
+            onRowLoadMore: (id) => {
+              action('onRowLoadMore:', id);
+              if (selectedTableType !== 'StatefulTable') {
+                setLoadingMoreIds((prev) => [...prev, id]);
+              }
+              addDataTimeout(id);
+            },
+          },
+        }}
+        options={{
+          hasRowExpansion: boolean('options.hasRowExpansion', true),
+          hasRowNesting: boolean('options.hasRowNesting', true),
+        }}
+        view={{
+          table: {
+            expandedIds: [
+              tableDataNested[0].id,
+              tableDataNested[0].children[3].id,
+              tableDataNested[0].children[4].id,
+            ],
+            loadingMoreIds: selectedTableType !== 'StatefulTable' ? loadingMoreIds : [],
+          },
+        }}
+      />
+    );
+  };
+
+  return <TableWithState />;
+};
+
+RowExpansionAndLoadMore.storyName = 'row expansion: with load more ';

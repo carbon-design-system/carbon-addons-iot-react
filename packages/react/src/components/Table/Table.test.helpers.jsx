@@ -59,6 +59,7 @@ export const getMockActions = (mockFunctionProvider) => ({
     onEmptyStateAction: mockFunctionProvider(),
     onChangeOrdering: mockFunctionProvider(),
     onColumnResize: mockFunctionProvider(),
+    onRowLoadMore: mockFunctionProvider(),
   },
 });
 
@@ -137,6 +138,7 @@ export const getNestedRows = () => {
               getNewRow(idx, 'A', true),
               {
                 ...getNewRow(idx, 'B'),
+                hasLoadMore: true,
                 children: [
                   getNewRow(idx, 'B-1', true),
                   {

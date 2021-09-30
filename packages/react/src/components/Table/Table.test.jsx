@@ -706,7 +706,7 @@ describe('Table', () => {
       render(<Table columns={columns} data={[tableData[0]]} options={options} />);
     };
 
-    it('wraps cell text when there are no otions', () => {
+    it('wraps cell text when there are no options', () => {
       render(<Table columns={tableColumns} data={[tableData[0]]} options={false} />);
       expectWrapping();
       expectNoTruncation();
@@ -2232,5 +2232,30 @@ describe('Table', () => {
     expect(container.querySelectorAll('tr')).toHaveLength(21);
     expect(screen.getByTitle('String')).toBeVisible();
     expect(screen.getByTitle('Date')).toBeVisible();
+  });
+  it('should render Load more row', () => {
+    const testId = 'testId01';
+    const loadMoreText = 'Load more...';
+    render(
+      <Table
+        columns={tableColumns}
+        data={getNestedRows()}
+        testId={testId}
+        i18n={{ loadMoreText }}
+        options={{ hasRowNesting: true }}
+        view={{
+          table: {
+            expandedIds: ['row-1', 'row-1_B'],
+          },
+        }}
+        actions={mockActions}
+      />
+    );
+
+    expect(screen.getAllByRole('button', { name: loadMoreText })[0]).toBeInTheDocument();
+
+    userEvent.click(screen.getAllByRole('button', { name: loadMoreText })[0]);
+
+    expect(mockActions.table.onRowLoadMore).toHaveBeenCalled();
   });
 });

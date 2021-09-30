@@ -160,7 +160,7 @@
 
   .#{$iot-prefix}--date-time-picker__fields-wrapper {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
 
     .#{$prefix}--label {
       margin-bottom: 0;
