@@ -11,26 +11,12 @@ import {
   RowActionsStatePropTypes,
 } from '../TablePropTypes';
 import deprecate from '../../../internal/deprecate';
+import { findRow, tableTraverser } from '../tableUtilities';
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
+import TableBodyLoadMoreRow from './TableBodyLoadMoreRow/TableBodyLoadMoreRow';
 
 const { TableBody: CarbonTableBody } = DataTable;
-
-/**
- * Use this function to traverse the tree structure of a set of table rows using Depth-first search (DFS)
- * and apply some function on each row. The function is applied once the recursion starts back-tracking.
- * @param rows The root node of your search space, an array of rows.
- * @param functionToApply Any function that should be applied on every row. Params are a row and an optional aggregatorObj.
- * @param aggregatorObj Used as a container to aggregate the result (e.g. a count or needle) if needed.
- */
-const tableTraverser = (rows, functionToApply, aggregatorObj) => {
-  rows.forEach((row) => {
-    if (row.children) {
-      tableTraverser(row.children, functionToApply, aggregatorObj);
-    }
-    functionToApply(row, aggregatorObj);
-  });
-};
 
 const propTypes = {
   /** The unique id of the table */
@@ -56,6 +42,8 @@ const propTypes = {
   learnMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** I18N label for dismiss */
   dismissText: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** I18N label for load more */
+  loadMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -81,6 +69,7 @@ const propTypes = {
     onRowClicked: PropTypes.func,
     onApplyRowActions: PropTypes.func,
     onRowExpanded: PropTypes.func,
+    onRowLoadMore: PropTypes.func,
   }).isRequired,
   /** What column ordering is currently applied to the table */
   ordering: PropTypes.arrayOf(
@@ -105,11 +94,14 @@ const propTypes = {
     `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   testId: PropTypes.string,
+  /** Array with rowIds that are with loading active */
+  loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
 };
 
 const defaultProps = {
   expandedIds: [],
   selectedIds: [],
+  loadingMoreIds: [],
   selectRowAria: 'Select row',
   overflowMenuAria: 'More actions',
   clickToExpandAria: 'Click to expand.',
@@ -140,6 +132,7 @@ const TableBody = ({
   expandedIds,
   expandedRows,
   selectedIds,
+  loadingMoreIds,
   selectRowAria,
   overflowMenuAria,
   clickToExpandAria,
@@ -148,6 +141,7 @@ const TableBody = ({
   learnMoreText,
   dismissText,
   actionFailedText,
+  loadMoreText,
   totalColumns,
   actions,
   rowActionsState,
@@ -196,17 +190,6 @@ const TableBody = ({
     const result = [];
     tableTraverser(children, (row, aggr) => aggr.push(row.id), result);
     return result;
-  };
-
-  const findRow = (rowId, myRows) => {
-    const result = [];
-    const applyFunc = (row, aggr) => {
-      if (row.id === rowId) {
-        aggr.push(row);
-      }
-    };
-    tableTraverser(myRows, applyFunc, result);
-    return result[0];
   };
 
   const updateChildIdSelection = (triggeringRowId, myRows, selection) => {
@@ -273,7 +256,7 @@ const TableBody = ({
     const rowHasSingleRowEditMode = !!(myRowActionState && myRowActionState.isEditMode);
     const isSelectable = rowEditMode || someRowHasSingleRowEditMode ? false : row.isSelectable;
 
-    const rowElement = (
+    const rowElement = !row.isLoadMoreRow ? (
       <TableBodyRow
         langDir={langDir}
         key={row.id}
@@ -324,9 +307,26 @@ const TableBody = ({
         values={row.values}
         showExpanderColumn={showExpanderColumn}
       />
+    ) : (
+      <TableBodyLoadMoreRow
+        id={row.id}
+        key={`${row.id}--load-more`}
+        tableId={tableId}
+        testId={testId}
+        loadMoreText={loadMoreText}
+        totalColumns={totalColumns}
+        onRowLoadMore={actions?.onRowLoadMore}
+        isLoadingMore={loadingMoreIds.includes(row.id)}
+      />
     );
     return shouldShowChildren
-      ? [rowElement].concat(row.children.map((childRow) => renderRow(childRow, nestingLevel + 1)))
+      ? [rowElement]
+          .concat(row.children.map((childRow) => renderRow(childRow, nestingLevel + 1)))
+          .concat(
+            row.hasLoadMore && row.children.length > 0
+              ? renderRow({ id: row.id, isLoadMoreRow: true }, nestingLevel)
+              : []
+          )
       : rowElement;
   };
 

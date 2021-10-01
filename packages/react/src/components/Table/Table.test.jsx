@@ -4,12 +4,21 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import merge from 'lodash/merge';
-import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
+import { ArrowRight16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
 
-import { getTableColumns, mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
+import {
+  getTableColumns,
+  getMockActions,
+  getNestedRows,
+  getNestedRowIds,
+  getTableData,
+  addRowActions,
+  getSelectData,
+  getWords,
+} from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
@@ -18,92 +27,12 @@ import { initialState } from './Table.story';
 
 const { iotPrefix, prefix } = settings;
 
-const selectData = [
-  {
-    id: 'option-A',
-    text: 'option-A',
-  },
-  {
-    id: 'option-B',
-    text: 'option-B',
-  },
-  {
-    id: 'option-C',
-    text: 'option-C',
-  },
-];
+const mockActions = getMockActions(jest.fn);
+const words = getWords();
+const selectData = getSelectData();
 const tableColumns = getTableColumns(selectData);
-
-const words = [
-  'toyota',
-  'helping',
-  'whiteboard',
-  'as',
-  'can',
-  'bottle',
-  'eat',
-  'chocolate',
-  'pinocchio',
-  'scott',
-];
-const getWord = (index, step = 1) => words[(step * index) % words.length];
-const getSentence = (index) =>
-  `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
-
-const tableData = Array(20)
-  .fill(0)
-  .map((i, idx) => ({
-    id: `row-${idx}`,
-    values: {
-      string: getSentence(idx),
-      node: <Add20 />,
-      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
-      select: selectData[idx % 3].id,
-      number: idx * idx,
-    },
-    rowActions: [
-      {
-        id: 'drilldown',
-        renderIcon: ArrowRight16,
-        iconDescription: 'Drill in',
-        labelText: 'Drill in',
-        isOverflow: true,
-      },
-      {
-        id: 'Add',
-        renderIcon: Add16,
-        iconDescription: 'Add',
-        labelText: 'Add',
-        isOverflow: true,
-      },
-    ],
-  }));
-
-const largeTableData = Array(100)
-  .fill(0)
-  .map((i, idx) => ({
-    id: `row-${idx}`,
-    values: {
-      string: getSentence(idx),
-      node: <Add20 />,
-      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
-      select: selectData[idx % 3].id,
-      number: idx * idx,
-    },
-  }));
-
-const RowExpansionContent = ({ rowId }) => (
-  <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
-    <h3 key={`${rowId}-title`}>{rowId}</h3>
-    <ul style={{ lineHeight: '22px' }}>
-      {Object.entries(tableData.find((i) => i.id === rowId).values).map(([key, value]) => (
-        <li key={`${rowId}-${key}`}>
-          <b>{key}</b>: {value}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+const tableData = addRowActions(getTableData(20, words, selectData));
+const largeTableData = getTableData(100, words, selectData);
 
 const i18nTest = {
   /** table body */
@@ -173,7 +102,7 @@ describe('Table', () => {
   const expandedData = [
     {
       rowId: 'row-1',
-      content: <RowExpansionContent rowId="row-1" />,
+      content: <div style={{ padding: '8px' }}>Expanded content</div>,
     },
   ];
 
@@ -777,7 +706,7 @@ describe('Table', () => {
       render(<Table columns={columns} data={[tableData[0]]} options={options} />);
     };
 
-    it('wraps cell text when there are no otions', () => {
+    it('wraps cell text when there are no options', () => {
       render(<Table columns={tableColumns} data={[tableData[0]]} options={false} />);
       expectWrapping();
       expectNoTruncation();
@@ -1369,7 +1298,7 @@ describe('Table', () => {
       />
     );
 
-    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(5);
+    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(8);
   });
 
   describe('Row selection', () => {
@@ -2303,5 +2232,30 @@ describe('Table', () => {
     expect(container.querySelectorAll('tr')).toHaveLength(21);
     expect(screen.getByTitle('String')).toBeVisible();
     expect(screen.getByTitle('Date')).toBeVisible();
+  });
+  it('should render Load more row', () => {
+    const testId = 'testId01';
+    const loadMoreText = 'Load more...';
+    render(
+      <Table
+        columns={tableColumns}
+        data={getNestedRows()}
+        testId={testId}
+        i18n={{ loadMoreText }}
+        options={{ hasRowNesting: true }}
+        view={{
+          table: {
+            expandedIds: ['row-1', 'row-1_B'],
+          },
+        }}
+        actions={mockActions}
+      />
+    );
+
+    expect(screen.getAllByRole('button', { name: loadMoreText })[0]).toBeInTheDocument();
+
+    userEvent.click(screen.getAllByRole('button', { name: loadMoreText })[0]);
+
+    expect(mockActions.table.onRowLoadMore).toHaveBeenCalled();
   });
 });

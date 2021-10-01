@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.4...v2.147.0-next.5) (2021-09-30)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.147.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.3...v2.147.0-next.4) (2021-09-29)
+
+
+### Bug Fixes
+
+* **datetimepicker:** improved time validation ([633f717](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/633f71752354a3b936db5ad530e16f6d93965211))
+* **datetimepicker:** pr feedback spelling fix ([e0e711b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e0e711b70db0bbdea10a585e48fb69f758780714))
+* **page-title-bar:** chrome upgrade(?) causes cypress test to fail ([279c740](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/279c740a455c02c9537a608fbaa521b9bbe01fb8))
+* **timepickerspinner:** improved validation ([843929f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/843929f0148d5df2d2dd1acc6de976c5d0477143))
+
+
+
+
+
+# [2.147.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.2...v2.147.0-next.3) (2021-09-29)
+
+
+### Bug Fixes
+
+* **table:** fix aggregation values placement in first column ([7f78e0e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7f78e0ec670fbca90c501602b8316c9ff500f42c))
+* **table:** fix placement of label/values in various scenarios ([da60221](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/da60221f4c858cef58254fbb588d9c4bc2bdb414))
+* **table:** PR feedback adjustments ([9a0ff6a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9a0ff6a34a0655c9dabea50f99c70f7b690c7271))
+* **table:** remove fragment ([a767c7b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a767c7b0fdcf13ce6643b68c863af5dc3d126029))
+
+
+
+
+
+# [2.147.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.1...v2.147.0-next.2) (2021-09-29)
+
+
+### Bug Fixes
+
+* **feedback:** fixes from feedback ([13c13c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/13c13c5ee853adf0a03d267f803b486c3441f213))
+* **feedback:** updates from feedback ([982e75f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/982e75f0288cfeee999061ec0dc6f16e76cee383))
+* **table:** fix load more scss from feedback ([d74ae18](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d74ae18827143f2eca6441cd769308ced099982d))
+
+
+### Features
+
+* **loading:** table and list isLoadingMore support ([0bf83df](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0bf83df682913f9935445e1458b84d7b7fbf8202))
+* **loadmore:** support to multiple load more ids loading at once ([db4e05f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/db4e05fc073485bec736f30d6c438370c00bdf0e))
+* **loadmore:** suppport to load more in Table and List ([6996e43](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6996e43d368bbbdf157dc96570f00f2788adf743))
+* **table:** working example of load more in statefultable ([596fc8d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/596fc8dc663e4cdd37f46b29b7dbbc70c74e3301))
+
+
+
+
+
 # [2.147.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2...v2.147.0-next.1) (2021-09-28)
 
 
