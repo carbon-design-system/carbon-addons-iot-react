@@ -358,6 +358,8 @@ const HierarchyList = ({
   useEffect(() => {
     if (currentPageNumber > maxPage) {
       onPage(1);
+    } else {
+      onPage(currentPageNumber);
     }
   }, [currentPageNumber, maxPage, onPage, pageSize]);
 
