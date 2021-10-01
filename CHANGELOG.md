@@ -67,6 +67,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # [2.147.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2-next.2...v2.147.0-next.0) (2021-09-27)
 
 
+## [2.146.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2...v2.146.3) (2021-10-01)
+
+### Bug Fixes
+
+
+* **table:** add old size values and add deprecation warning ([11e3bdb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/11e3bdbaa3743f0e708e8718b75906f1db5779ec))
 
 ## [2.146.2-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2-next.1...v2.146.2-next.2) (2021-09-27)
 
