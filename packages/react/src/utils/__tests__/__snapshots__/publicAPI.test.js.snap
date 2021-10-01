@@ -1253,18 +1253,7 @@ Map {
       "secondaryTitle": Object {
         "type": "string",
       },
-      "size": Object {
-        "args": Array [
-          Array [
-            "xs",
-            "sm",
-            "md",
-            "lg",
-            "xl",
-          ],
-        ],
-        "type": "oneOf",
-      },
+      "size": [Function],
       "stickyHeader": [Function],
       "testId": Object {
         "type": "string",

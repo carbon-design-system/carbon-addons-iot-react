@@ -7,6 +7,7 @@ import { Table as CarbonTable, TableContainer, Tag } from 'carbon-components-rea
 import uniqueId from 'lodash/uniqueId';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
+import warning from 'warning';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
@@ -117,7 +118,16 @@ const propTypes = {
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  size: function checkProps(props, propName, componentName) {
+    if (['compact', 'short', 'normal', 'tall'].includes(props[propName])) {
+      warning(
+        false,
+        `The value \`${props[propName]}\` has been deprecated for the ` +
+          `\`${propName}\` prop on the ${componentName} component. It will be removed in the next major ` +
+          `release. Please use 'xs', 'sm', 'md', 'lg', or 'xl' instead.`
+      );
+    }
+  },
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
   view: PropTypes.shape({
