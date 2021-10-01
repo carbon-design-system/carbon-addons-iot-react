@@ -84,6 +84,8 @@ export const TableRowPropTypes = PropTypes.arrayOf(
     rowActions: RowActionPropTypes,
     /** is this particular row selectable */
     isSelectable: PropTypes.bool,
+    /** boolean to define load more row */
+    hasLoadMore: PropTypes.bool,
   })
 );
 
@@ -207,6 +209,8 @@ export const I18NPropTypes = PropTypes.shape({
   multiSortClearAll: PropTypes.string,
   multiSortOpenMenu: PropTypes.string,
   multiSortCloseMenu: PropTypes.string,
+  /** I18N label for load more row */
+  loadMoreText: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {

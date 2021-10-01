@@ -50,6 +50,48 @@ describe('DateTimePicker', () => {
       });
   });
 
+  it('should disable apply button when absolute TimePickerSpinner inputs are invalid ', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2021, 7, 1, 12, 34, 0),
+            end: new Date(2021, 7, 6, 10, 49, 0),
+          },
+        }}
+      />
+    );
+
+    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
+
+    cy.findByLabelText(i18n.startTimeLabel).type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}91:35'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+
+    cy.findByLabelText(i18n.startTimeLabel).type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}11:35'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
+
+    cy.findByLabelText(i18n.endTimeLabel).type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}11:61'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+
+    // set time to 11:00
+    cy.findByLabelText(i18n.endTimeLabel).type('{backspace}{backspace}00');
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
+  });
+
   it('should be able to navigate by keyboard', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();

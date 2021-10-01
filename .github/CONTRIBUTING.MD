@@ -173,7 +173,7 @@ A Prop table detailing the various props that can be passed to this component, t
 
 Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
 [GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ExampleComponent/ExampleComponent.mdx).
-```
+````
 
 ## Adding new SVG images
 
