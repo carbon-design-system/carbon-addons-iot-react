@@ -339,17 +339,32 @@ const HierarchyList = ({
     setItemsToShow(filteredItems.slice(0, rowsPerPage));
   }, [filteredItems, rowsPerPage]);
 
-  const onPage = (page) => {
-    const rowUpperLimit = page * rowsPerPage;
-    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
-    setCurrentPageNumber(page);
-    setItemsToShow(currentItemsOnPage);
-  };
+  const maxPage = Math.ceil(numberOfItems / rowsPerPage);
+
+  const onPage = useCallback(
+    (page) => {
+      const rowUpperLimit = page * rowsPerPage;
+      const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
+      setCurrentPageNumber(page);
+      setItemsToShow(currentItemsOnPage);
+    },
+    [filteredItems, rowsPerPage]
+  );
+
+  /**
+   * If we were on a higher page and the number of items drop, we need to ensure we
+   * reset to the first page when the number of items drops below our previous max page.
+   */
+  useEffect(() => {
+    if (currentPageNumber > maxPage) {
+      onPage(1);
+    }
+  }, [currentPageNumber, maxPage, onPage, pageSize]);
 
   const pagination = {
     page: currentPageNumber,
     onPage,
-    maxPage: Math.ceil(numberOfItems / rowsPerPage),
+    maxPage,
     pageOfPagesText: (page) => `Page ${page}`,
   };
 
