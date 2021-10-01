@@ -359,9 +359,12 @@ const HierarchyList = ({
    * the total filtered array. The next category's children then needs to
    * be searched in the same fashion.
    * @param {String} text keyed values from search input
+   * @param {Array} currentItems the current state of items.
+   *                             Used to maintain state when the list is updated (drag and drop)
+   *                             and there's a current search value
    */
-  const handleSearch = (text) => {
-    const tempFilteredItems = searchForNestedItemValues(items, text);
+  const handleSearch = (text, currentItems = null) => {
+    const tempFilteredItems = searchForNestedItemValues(currentItems || items, text);
     const tempExpandedIds = [];
     // Expand the categories that have found results
     tempFilteredItems.forEach((categoryItem) => {
@@ -389,6 +392,9 @@ const HierarchyList = ({
 
     onListUpdated(updatedList);
     setFilteredItems(updatedList);
+    if (searchValue) {
+      handleSearch(searchValue, updatedList);
+    }
   };
 
   const handleDrag = (dragId, hoverId, target) => {
