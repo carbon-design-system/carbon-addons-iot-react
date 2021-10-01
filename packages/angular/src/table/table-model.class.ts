@@ -906,7 +906,7 @@ export class AITableModel implements PaginationModel {
    */
   protected projectedRowLength(itemArray: any[]) {
     let rowLength = 0;
-    for (let i = 0; i < itemArray.length;) {
+    for (let i = 0; i < itemArray.length; ) {
       const item = itemArray[i];
       let increment = item ? item.colSpan : 1;
       rowLength += increment;
