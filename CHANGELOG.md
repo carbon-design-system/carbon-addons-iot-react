@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.6...v2.147.0-next.7) (2021-10-01)
+
+
+### Bug Fixes
+
+* **asynctable:** pagination and filters working ([8d54b2a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8d54b2ab94e6061648dff409a511328aba2671c3))
+
+
+
+
+
 # [2.147.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.3...v2.147.0-next.6) (2021-10-01)
 
 
