@@ -36,6 +36,7 @@ import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.
       [batchText]="batchText"
       [dateFormat]="dateFormat"
       [placeholder]="placeholder"
+      [flatpickrOptions]="flatpickrOptions"
     >
     </ai-date-time-absolute>
   `,
@@ -61,6 +62,7 @@ export class CustomDateTimeComponent implements OnChanges {
    */
   @Input() dateFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
+  @Input() flatpickrOptions;
   @Output() rangeChange: EventEmitter<DateTimeSelection> = new EventEmitter();
 
   @HostBinding('class.iot--date-time-picker__custom-wrapper') wrapperClass = true;
@@ -92,7 +94,6 @@ export class CustomDateTimeComponent implements OnChanges {
   }
 
   absoluteChange(change: DateRange) {
-    console.log(change);
     this.rangeChange.emit(['ABSOLUTE', ...change]);
   }
 }

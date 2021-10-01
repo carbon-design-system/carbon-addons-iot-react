@@ -6,8 +6,17 @@ jobs:
   test-react:
     name: Test React
     runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node14.17.0-chrome91-ff89
+      options: --privileged
 
     steps:
+      - name: Upgrade git
+        run: |
+          echo deb "http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list
+          apt-get update
+          apt-get install -y git/buster-backports
+
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -19,7 +28,7 @@ jobs:
               - 'packages/react/**'
 
       - name: Increase watchers
-        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+        run: echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -67,6 +76,15 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           HEIGHT: 900
           WIDTH: 1680
+
+      - name: Archive visual diff report
+        if: ${{ failure() }} && steps.changes.outputs.react == 'true'
+        uses: actions/upload-artifact@v2
+        with:
+          name: visual-diff-report
+          path: |
+            packages/react/cypress-visual-report
+            packages/react/cypress-visual-screenshots
 
       - name: Copy, combine, and report coverage
         if: steps.changes.outputs.react == 'true'
