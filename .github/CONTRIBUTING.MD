@@ -173,7 +173,7 @@ A Prop table detailing the various props that can be passed to this component, t
 
 Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
 [GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ExampleComponent/ExampleComponent.mdx).
-```
+````
 
 ## Adding new SVG images
 
@@ -218,6 +218,14 @@ be updated by running `yarn test:update`.
 
 _Do not blindly update snapshots to pass the testcase._ Make sure the detected
 change is intentional and not unintentional before updating the snapshot.
+
+### Visual regression tests
+
+If you're adding a new component or making visual changes to an existing component, you'll want to run the visual regression tests and generate new comparison images. Visual regression tests run within a docker container using cypress to ensures a consistent environment for generating all regression test images. To run these tests, you'll need to install docker on your host machine. You can find [docker install instructions here](https://docs.docker.com/get-docker/).
+
+Once that is installed and running, you can run `yarn test:e2e:images` to build the docker container, install all dependencies, and run the cypress visual regression tests. These tests will compare your changes against the existing baseline images in `packages/react/cypress-visual-screenshots/baseline`.
+
+If this is a new component, you'll want to add it to the "kitchen-sink" cypress test that combines many components in a single image for testing. This addition, or making visual changes to existing components, will cause the tests to fail. If intentional changes to the component cause this failure, you'll need to run `yarn test:e2e:update` to replace the existing baseline images with these newly created images. Commit these changes into git and push. The new images will become the baseline for all future comparisons.
 
 ### Minimum code coverage
 

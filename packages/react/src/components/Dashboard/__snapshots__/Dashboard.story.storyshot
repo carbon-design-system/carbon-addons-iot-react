@@ -845,7 +845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -853,7 +853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -1104,7 +1104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -1112,7 +1112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -3785,7 +3785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -3793,7 +3793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -4044,7 +4044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -4052,7 +4052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -6760,7 +6760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -6768,7 +6768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -7019,7 +7019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -7027,7 +7027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -12336,7 +12336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -12344,7 +12344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -12595,7 +12595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -12603,7 +12603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -16560,7 +16560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -16568,7 +16568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -16693,7 +16693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -16701,7 +16701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -17105,7 +17105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -17113,7 +17113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -17238,7 +17238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -17246,7 +17246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -20689,7 +20689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -20697,7 +20697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -20822,7 +20822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -20830,7 +20830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -22977,7 +22977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -22985,7 +22985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -23110,7 +23110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -23118,7 +23118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25398,7 +25398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25406,7 +25406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25477,7 +25477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25485,7 +25485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25610,7 +25610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25618,7 +25618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25792,7 +25792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25800,7 +25800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25870,7 +25870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25878,7 +25878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26076,7 +26076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -26084,7 +26084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26155,7 +26155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -26163,7 +26163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26288,7 +26288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -26296,7 +26296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26470,7 +26470,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -26478,7 +26478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26548,7 +26548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -26556,7 +26556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -27729,7 +27729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -27737,7 +27737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -27808,7 +27808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-2-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -27816,7 +27816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-2-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -28527,7 +28527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -28535,7 +28535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -28606,7 +28606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-2-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -28614,7 +28614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-2-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -29982,7 +29982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -29990,7 +29990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -30241,7 +30241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -30249,7 +30249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"

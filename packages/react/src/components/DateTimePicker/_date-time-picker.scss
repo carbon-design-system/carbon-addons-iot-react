@@ -166,7 +166,7 @@
 
         .#{$iot-prefix}--date-time-picker__fields-wrapper {
           display: flex;
-          align-items: flex-end;
+          align-items: flex-start;
 
           &--with-gap {
             gap: $spacing-05;

@@ -7,7 +7,7 @@ import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { SkeletonText } from '../SkeletonText';
 import { EditingStyle, editingStyleIsMultiple, DragAndDrop } from '../../utils/DragAndDropUtils';
-import { Checkbox } from '../..';
+import { Checkbox, Button } from '../..';
 import { OverridePropTypes } from '../../constants/SharedPropTypes';
 
 import ListItem from './ListItem/ListItem';
@@ -25,6 +25,8 @@ export const ListItemPropTypes = {
   }),
   children: PropTypes.arrayOf(PropTypes.object),
   isSelectable: PropTypes.bool,
+  /** boolean to define load more row is needed */
+  hasLoadMore: PropTypes.bool,
 };
 
 const propTypes = {
@@ -65,6 +67,7 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
+    loadMore: PropTypes.string,
   }),
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
@@ -83,6 +86,10 @@ const propTypes = {
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   testId: PropTypes.string,
+  /** call back function for when load more row is clicked  (rowId) => {} */
+  handleLoadMore: PropTypes.func,
+  /** RowIds for rows currently loading more child rows */
+  loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -99,11 +106,13 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
+    loadMore: 'Load more...',
   },
   iconPosition: 'left',
   pagination: null,
   selectedIds: [],
   expandedIds: [],
+  loadingMoreIds: [],
   items: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
@@ -113,6 +122,7 @@ const defaultProps = {
   },
   emptyState: 'No list items to show',
   testId: 'list',
+  handleLoadMore: () => {},
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -144,14 +154,18 @@ const List = forwardRef((props, ref) => {
     itemWillMove,
     emptyState,
     testId,
+    handleLoadMore,
+    loadingMoreIds,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const selectedItemRef = ref;
   const ListHeader = overrides?.header?.component || DefaultListHeader;
+
   const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item?.children && item.children.length > 0;
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
+    const isLoadingMore = loadingMoreIds.includes(item.id);
 
     const {
       content: { value, secondaryValue, icon, rowActions, tags },
@@ -208,14 +222,33 @@ const List = forwardRef((props, ref) => {
         />
       </div>,
       ...(hasChildren && isExpanded
-        ? item.children.map((child, nestedIndex) => {
-            return renderItemAndChildren(
-              child,
-              nestedIndex,
-              item.id,
-              getAdjustedNestingLevel(item?.children, level)
-            );
-          })
+        ? item.children
+            .map((child, nestedIndex) => {
+              return renderItemAndChildren(
+                child,
+                nestedIndex,
+                item.id,
+                getAdjustedNestingLevel(item?.children, level)
+              );
+            })
+            .concat(
+              item.hasLoadMore
+                ? [
+                    <Button
+                      key={`${item.id}-list-item-parent-loading`}
+                      className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
+                      onClick={() => handleLoadMore(item.id)}
+                      data-testid={`${testId}-${item.id}-load-more`}
+                      kind="ghost"
+                      loading={isLoadingMore}
+                    >
+                      <div className={`${iotPrefix}--load-more-row--content`}>
+                        {mergedI18n.loadMore}
+                      </div>
+                    </Button>,
+                  ]
+                : []
+            )
         : []),
     ];
   };
@@ -268,7 +301,11 @@ const List = forwardRef((props, ref) => {
           {!isLoading ? (
             <>{listItems.length ? listItems : emptyContent}</>
           ) : (
-            <SkeletonText className={`${iotPrefix}--list--skeleton`} width="90%" />
+            <SkeletonText
+              className={`${iotPrefix}--list--skeleton`}
+              width="90%"
+              data-testid={`${testId}-loading`}
+            />
           )}
         </div>
         {pagination && !isLoading ? (

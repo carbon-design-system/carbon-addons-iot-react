@@ -283,6 +283,9 @@ const DateTimePicker = ({
   const [relativeValue, setRelativeValue] = useState(null);
   const [absoluteValue, setAbsoluteValue] = useState(null);
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
+  const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
+  const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(false);
+  const [absoluteEndTimeInvalid, setAbsoluteEndTimeInvalid] = useState(false);
 
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
@@ -451,9 +454,9 @@ const DateTimePicker = ({
   useEffect(() => {
     if (datePickerElem && datePickerElem.inputField && datePickerElem.toInputField) {
       if (focusOnFirstField) {
-        datePickerElem.inputField.focus();
+        datePickerElem.inputField.click();
       } else {
-        datePickerElem.toInputField.focus();
+        datePickerElem.toInputField.click();
       }
     }
   }, [datePickerElem, focusOnFirstField]);
@@ -617,7 +620,8 @@ const DateTimePicker = ({
   const onRelativeToWhenChange = (event) => {
     changeRelativePropertyValue('relativeToWhen', event.currentTarget.value);
   };
-  const onRelativeToTimeChange = (pickerValue) => {
+  const onRelativeToTimeChange = (pickerValue, evt, meta) => {
+    setRelativeToTimeInvalid(meta.invalid);
     changeRelativePropertyValue('relativeToTime', pickerValue);
   };
 
@@ -629,16 +633,28 @@ const DateTimePicker = ({
   };
 
   // on change functions that trigger a absolute value update
-  const onAbsoluteStartTimeChange = (pickerValue) => {
+  const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
+    setAbsoluteStartTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
-  const onAbsoluteEndTimeChange = (pickerValue) => {
+  const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
+    setAbsoluteEndTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
     : getIntervalValue();
+
+  const disableRelativeApply =
+    isCustomRange && customRangeKind === PICKER_KINDS.RELATIVE && relativeToTimeInvalid;
+
+  const disableAbsoluteApply =
+    isCustomRange &&
+    customRangeKind === PICKER_KINDS.ABSOLUTE &&
+    (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
+
+  const disableApply = disableRelativeApply || disableAbsoluteApply;
 
   // eslint-disable-next-line react/prop-types
   const CustomFooter = ({ setIsOpen }) => {
@@ -706,6 +722,7 @@ const DateTimePicker = ({
           size="field"
           {...others}
           onClick={onApplyClick}
+          disabled={disableApply}
         >
           {strings.applyBtnLabel}
         </Button>
@@ -932,6 +949,7 @@ const DateTimePicker = ({
                           {hasTimeInput ? (
                             <TimePickerSpinner
                               id={`${id}-relative-to-time`}
+                              invalid={relativeToTimeInvalid}
                               value={relativeValue ? relativeValue.relativeToTime : ''}
                               i18n={i18n}
                               onChange={onRelativeToTimeChange}
@@ -980,6 +998,7 @@ const DateTimePicker = ({
                           <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                             <TimePickerSpinner
                               id={`${id}-start-time`}
+                              invalid={absoluteStartTimeInvalid}
                               labelText={strings.startTimeLabel}
                               value={absoluteValue ? absoluteValue.startTime : '00:00'}
                               i18n={i18n}
@@ -990,6 +1009,7 @@ const DateTimePicker = ({
                             />
                             <TimePickerSpinner
                               id={`${id}-end-time`}
+                              invalid={absoluteEndTimeInvalid}
                               labelText={strings.endTimeLabel}
                               value={absoluteValue ? absoluteValue.endTime : '00:00'}
                               i18n={i18n}

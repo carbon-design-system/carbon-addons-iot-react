@@ -74,6 +74,22 @@ storiesOf('Components/DateTime Picker', module)
       },
     }),
   }))
+  .add('With blocked dates', () => ({
+    template: `
+      <ai-date-time-picker
+        [theme]="(theme ? 'light' : null)"
+        [flatpickrOptions]="flatpickrOptions"
+        (selectedChange)="selectedChange($event)"
+        (apply)="apply($event)"
+        (cancel)="cancel($event)">
+      </ai-date-time-picker>
+		`,
+    props: getProps({
+      flatpickrOptions: {
+        maxDate: 'today',
+      },
+    }),
+  }))
   .add('With preset range selected', () => ({
     template: `
       <ai-date-time-picker

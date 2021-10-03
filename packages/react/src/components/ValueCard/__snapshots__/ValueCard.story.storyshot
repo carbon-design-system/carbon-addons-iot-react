@@ -2469,7 +2469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               data-testid="Card-attribute-0-secondary-value"
               style={
                 Object {
-                  "--secondary-value-color": "red",
+                  "--secondary-value-color": "#6f6f6f",
                 }
               }
             >
@@ -2477,7 +2477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                 aria-label="trending down"
                 className="iot--value-card__attribute_trend-icon"
                 data-testid="Card-attribute-0-trending-down"
-                fill="currentColor"
+                fill="red"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
