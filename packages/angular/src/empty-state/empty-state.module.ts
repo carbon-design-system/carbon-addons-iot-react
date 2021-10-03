@@ -9,7 +9,7 @@ import {
   EmptyStateErrorIcon,
   EmptyStateNotAuthorizedIcon,
   EmptyStateSuccessIcon,
-} from '../icons';
+} from '@ai-apps/angular/icons';
 
 @NgModule({
   declarations: [
