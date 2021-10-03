@@ -6,7 +6,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
     <div class="iot--empty-state">
       <div class="iot--empty-state--content">
         <ng-container *ngIf="icon !== 'no-icon'">
-          <ng-container *ngIf="isTemplate(icon)" [ngTemplateOutlet]="icon"></ng-container>
+          <ng-container *ngIf="isTemplate(icon)" [ngTemplateOutlet]="$any(icon)"></ng-container>
           <ng-container *ngIf="!isTemplate(icon)" [ngSwitch]="icon">
             <empty-state-no-results-icon
               *ngSwitchCase="'no-results'"
