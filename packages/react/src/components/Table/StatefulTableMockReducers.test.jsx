@@ -4,8 +4,10 @@ import React from 'react';
 import StatefulTable from './StatefulTable';
 import EmptyTable from './EmptyTable/EmptyTable';
 import Table from './Table';
-import { mockActions } from './Table.test.helpers';
+import { getMockActions } from './Table.test.helpers';
 import { initialState } from './Table.story';
+
+const mockActions = getMockActions(jest.fn);
 
 const mockDispatch = jest.fn();
 // Need to mock the useReducer hook so the real reducer doesn't run

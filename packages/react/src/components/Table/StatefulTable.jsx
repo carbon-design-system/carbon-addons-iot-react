@@ -3,7 +3,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import merge from 'lodash/merge';
 import get from 'lodash/get';
 
-import { getRowAction } from './statefulTableUtilities';
+import { getRowAction } from './tableUtilities';
 import { tableReducer } from './tableReducer';
 import {
   tableRegister,
@@ -36,6 +36,7 @@ import {
   tableAddMultiSortColumn,
   tableRemoveMultiSortColumn,
   tableClearMultiSortColumns,
+  tableRowLoadMore,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -117,6 +118,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       return nonElements;
     }),
     initialState.table.expandedIds,
+    initialState.table.loadingMoreIds,
     initialState.table.loadingState,
   ]);
 
@@ -147,6 +149,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onRowClicked,
     onSelectAll,
     onRowExpanded,
+    onRowLoadMore,
     onApplyRowAction,
     onClearRowError,
     onEmptyStateAction,
@@ -249,6 +252,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onRowExpanded: (rowId, isExpanded) => {
         dispatch(tableRowExpand(rowId, isExpanded));
         callbackParent(onRowExpanded, rowId, isExpanded);
+      },
+      onRowLoadMore: (rowId) => {
+        dispatch(tableRowLoadMore(rowId));
+        callbackParent(onRowLoadMore, rowId);
       },
       onApplyRowAction: async (actionId, rowId) => {
         const action = state.data && getRowAction(state.data, actionId, rowId);
