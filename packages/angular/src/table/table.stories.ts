@@ -1,12 +1,15 @@
-import { boolean, select, withKnobs } from '@storybook/addon-knobs';
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
-import { TableHeaderItem, TableItem } from 'carbon-components-angular';
+import { ButtonModule, TableHeaderItem, TableItem } from 'carbon-components-angular';
 
 import { AITableModel } from './table-model.class';
 import { AITableModule } from './table.module';
 
+import { EmptyStateModule } from '../empty-state-index';
+
 const simpleModel = new AITableModel();
+const emptyModel = new AITableModel();
 
 simpleModel.setHeader([
   [
@@ -39,10 +42,27 @@ simpleModel.setData([
   ],
 ]);
 
+emptyModel.setHeader([
+  [
+    new TableHeaderItem({
+      data: 'Name',
+    }),
+    new TableHeaderItem({
+      data: 'Name 2',
+    }),
+    new TableHeaderItem({
+      data: 'Name 3',
+    }),
+    new TableHeaderItem({
+      data: 'Name 4',
+    }),
+  ],
+]);
+
 storiesOf('Components/Table', module)
   .addDecorator(
     moduleMetadata({
-      imports: [AITableModule],
+      imports: [AITableModule, ButtonModule, EmptyStateModule],
     })
   )
   .addDecorator(withKnobs)
@@ -78,5 +98,47 @@ storiesOf('Components/Table', module)
           simpleModel.sort(index);
         },
       },
+    };
+  })
+  .add('Empty', () => {
+    return {
+      template: `
+      <div class="iot--table-container bx--data-table-container">
+        <div class="addons-iot-table-container">
+          <div class="bx--data-table-content">
+            <ai-table
+              [showSelectionColumn]="false"
+              [model]="model">
+              <ai-empty-state
+                [icon]="icon"
+                [title]="title"
+                [body]="body"
+                [action]="action">
+              </ai-empty-state>
+            </ai-table>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #action>
+        <button ibmButton (click)="actionOnClick()">Create some data</button>
+      </ng-template>
+		`,
+    props: {
+      model: emptyModel,
+      icon: select(
+        'icon',
+        ['error', 'error404', 'not-authorized', 'no-results', 'success', 'default', 'no-icon'],
+        'default'
+      ),
+      title: text('title', 'You don’t have any [variable] yet'),
+      body: text(
+        'body',
+        'Optional extra sentence or sentences to describe the resource and how to create it or the action a first-time user needs to take.'
+      ),
+      actionOnClick: () => {
+        console.log('Action button clicked');
+      },
+    },
     };
   });
