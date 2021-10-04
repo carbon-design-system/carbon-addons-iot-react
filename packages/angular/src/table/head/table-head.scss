@@ -14,9 +14,6 @@ th:not(:last-of-type) {
 
 .ai-table {
   .#{$prefix}--table-sort,
-  &.#{$prefix}--data-table--sort th:first-of-type .#{$prefix}--table-sort {
-    padding-left: 0;
-  }
   &.#{$prefix}--data-table th button {
     align-items: flex-end;
     padding-bottom: $spacing-05;

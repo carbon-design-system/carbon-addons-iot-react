@@ -43,8 +43,13 @@ import { TableHead } from 'carbon-components-angular';
             [attr.rowspan]="column.rowSpan"
             [filterTitle]="getFilterTitle()"
             (sort)="sort.emit(i)"
-            [class]="column.className"
+            [class]="column.className + ' iot--table-head--table-header'"
             [skeleton]="skeleton"
+            [ngClass]="{
+              'table-header-label-start': column.alignment === 'start',
+              'table-header-label-center': column.alignment === 'center',
+              'table-header-label-end': column.alignment === 'end'
+            }"
             [ngStyle]="column.style"
           ></th>
         </ng-container>

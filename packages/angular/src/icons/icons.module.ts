@@ -8,7 +8,6 @@ import { EmptyStateErrorIcon } from './empty-state-error-icon.component';
 import { EmptyStateSuccessIcon } from './empty-state-success-icon.component';
 import { EmptyStateNotAuthorizedIcon } from './empty-state-not-authorized-icon.component';
 
-
 @NgModule({
   declarations: [
     EmptyStateDefaultIcon,
@@ -16,7 +15,7 @@ import { EmptyStateNotAuthorizedIcon } from './empty-state-not-authorized-icon.c
     EmptyState404Icon,
     EmptyStateErrorIcon,
     EmptyStateSuccessIcon,
-    EmptyStateNotAuthorizedIcon
+    EmptyStateNotAuthorizedIcon,
   ],
   imports: [CommonModule],
   exports: [
@@ -25,7 +24,7 @@ import { EmptyStateNotAuthorizedIcon } from './empty-state-not-authorized-icon.c
     EmptyState404Icon,
     EmptyStateErrorIcon,
     EmptyStateSuccessIcon,
-    EmptyStateNotAuthorizedIcon
+    EmptyStateNotAuthorizedIcon,
   ],
 })
 export class AIIconsModule {}

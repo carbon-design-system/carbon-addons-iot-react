@@ -1,9 +1,9 @@
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
-import { ButtonModule, TableHeaderItem, TableItem } from 'carbon-components-angular';
+import { ButtonModule, TableItem } from 'carbon-components-angular';
 
-import { AITableModel } from './table-model.class';
+import { AITableHeaderItem, AITableModel } from './table-model.class';
 import { AITableModule } from './table.module';
 
 import { EmptyStateModule } from '../empty-state-index';
@@ -13,14 +13,19 @@ const emptyModel = new AITableModel();
 
 simpleModel.setHeader([
   [
-    new TableHeaderItem({
+    new AITableHeaderItem({
       data: 'Name',
       rowSpan: 2,
+      alignment: 'center',
     }),
-    new TableHeaderItem({ data: 'hwer', colSpan: 2, sortable: false }),
+    new AITableHeaderItem({ data: 'hwer', colSpan: 2, alignment: 'center', sortable: false }),
     null,
   ],
-  [null, new TableHeaderItem({ data: 'hwer1' }), new TableHeaderItem({ data: 'hwer2' })],
+  [
+    null,
+    new AITableHeaderItem({ data: 'hwer1' }),
+    new AITableHeaderItem({ data: 'hwer2', alignment: 'end' }),
+  ],
 ]);
 
 simpleModel.setData([
@@ -44,16 +49,16 @@ simpleModel.setData([
 
 emptyModel.setHeader([
   [
-    new TableHeaderItem({
+    new AITableHeaderItem({
       data: 'Name',
     }),
-    new TableHeaderItem({
+    new AITableHeaderItem({
       data: 'Name 2',
     }),
-    new TableHeaderItem({
+    new AITableHeaderItem({
       data: 'Name 3',
     }),
-    new TableHeaderItem({
+    new AITableHeaderItem({
       data: 'Name 4',
     }),
   ],
@@ -124,21 +129,21 @@ storiesOf('Components/Table', module)
         <button ibmButton (click)="actionOnClick()">Create some data</button>
       </ng-template>
 		`,
-    props: {
-      model: emptyModel,
-      icon: select(
-        'icon',
-        ['error', 'error404', 'not-authorized', 'no-results', 'success', 'default', 'no-icon'],
-        'default'
-      ),
-      title: text('title', 'You don’t have any [variable] yet'),
-      body: text(
-        'body',
-        'Optional extra sentence or sentences to describe the resource and how to create it or the action a first-time user needs to take.'
-      ),
-      actionOnClick: () => {
-        console.log('Action button clicked');
+      props: {
+        model: emptyModel,
+        icon: select(
+          'icon',
+          ['error', 'error404', 'not-authorized', 'no-results', 'success', 'default', 'no-icon'],
+          'default'
+        ),
+        title: text('title', 'You don’t have any [variable] yet'),
+        body: text(
+          'body',
+          'Optional extra sentence or sentences to describe the resource and how to create it or the action a first-time user needs to take.'
+        ),
+        actionOnClick: () => {
+          console.log('Action button clicked');
+        },
       },
-    },
     };
   });
