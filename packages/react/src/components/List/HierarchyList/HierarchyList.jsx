@@ -336,8 +336,9 @@ const HierarchyList = ({
 
   // Needed for updates to the filteredItems state on pageSize change
   useEffect(() => {
-    setItemsToShow(filteredItems.slice(0, rowsPerPage));
-  }, [filteredItems, rowsPerPage]);
+    const startIndex = (currentPageNumber - 1) * rowsPerPage;
+    setItemsToShow(filteredItems.slice(startIndex, startIndex + rowsPerPage));
+  }, [currentPageNumber, filteredItems, rowsPerPage]);
 
   const onPage = (page) => {
     const rowUpperLimit = page * rowsPerPage;

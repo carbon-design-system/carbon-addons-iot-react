@@ -2233,6 +2233,7 @@ describe('Table', () => {
     expect(screen.getByTitle('String')).toBeVisible();
     expect(screen.getByTitle('Date')).toBeVisible();
   });
+
   it('should render Load more row', () => {
     const testId = 'testId01';
     const loadMoreText = 'Load more...';
@@ -2257,5 +2258,46 @@ describe('Table', () => {
     userEvent.click(screen.getAllByRole('button', { name: loadMoreText })[0]);
 
     expect(mockActions.table.onRowLoadMore).toHaveBeenCalled();
+  });
+
+  it('should show a deprecation warning for old size props', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const { rerender } = render(
+      <Table id="loading-table" columns={tableColumns} data={tableData} size="compact" />
+    );
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'The value `compact` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="short" />);
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'The value `short` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="normal" />);
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'The value `normal` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="tall" />);
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'The value `tall` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    rerender(
+      <Table id="loading-table" columns={tableColumns} data={tableData} size="unsupported" />
+    );
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'Failed prop type: Invalid prop `size` of value `unsupported` supplied to `Table`'
+      )
+    );
+    jest.clearAllMocks();
+    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="lg" />);
+    expect(console.error).not.toHaveBeenCalled();
   });
 });
