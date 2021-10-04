@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.8...v2.147.0-next.9) (2021-10-04)
+
+
+### Bug Fixes
+
+* **hierarchy-list:** reset page (as necessary) when pageSize changes ([769a09d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/769a09dda690b76ff4c3ef6698c0ef6a45d9268c))
+* **hierarchy-list:** show items from current page on pageSize change ([02ff1d3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/02ff1d322dfc75f7f75a500a14d7256da54fe089))
+
+
+
+
+
 # [2.147.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.7...v2.147.0-next.8) (2021-10-04)
 
 
