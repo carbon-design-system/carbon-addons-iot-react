@@ -68,7 +68,7 @@ export const StatefulListWithNestedSearching = () => (
         })),
       ]}
       hasSearch={boolean('hasSearch', true)}
-      pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'sm')}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], 'sm')}
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
@@ -119,7 +119,7 @@ export const WithDefaultSelectedId = () => (
         })),
       ]}
       hasSearch={boolean('hasSearch', true)}
-      pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], 'lg')}
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
@@ -188,7 +188,7 @@ export const WithOverflowMenu = () => (
         })),
       ]}
       hasSearch={boolean('hasSearch', true)}
-      pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], 'lg')}
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
@@ -246,7 +246,7 @@ export const WithNestedReorder = () => {
             [EditingStyle.SingleNesting, EditingStyle.MultipleNesting],
             EditingStyle.SingleNesting
           )}
-          pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
+          pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], 'lg')}
           isLoading={boolean('isLoading', false)}
           isLargeRow={boolean('isLargeRow', false)}
           onListUpdated={(updatedItems) => {
@@ -310,7 +310,7 @@ export const WithDefaultExpandedIds = () => (
         })),
       ]}
       hasSearch={boolean('hasSearch', true)}
-      pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], 'xl')}
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
@@ -395,7 +395,7 @@ export const WithMixedHierarchies = () => (
         },
       ]}
       hasSearch={boolean('hasSearch', true)}
-      pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], 'xl')}
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
@@ -444,7 +444,7 @@ export const WithSelectableCategories = () => (
         })),
       ]}
       hasSearch={boolean('hasSearch', true)}
-      pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], 'lg')}
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
@@ -455,3 +455,31 @@ export const WithSelectableCategories = () => (
 );
 
 WithSelectableCategories.storyName = 'With selectable categories';
+
+export const WithLargeNumberOfItems = () => (
+  <div style={{ width: 400, height: 400 }}>
+    <HierarchyList
+      title={text('Title', 'Big List')}
+      isFullHeight={boolean('isFullHeight', true)}
+      items={[...Array(1000)].map((_, i) => ({
+        id: `item-${i}`,
+        content: {
+          value: `Item ${i}`,
+        },
+      }))}
+      editingStyle={EditingStyle.Single}
+      hasSearch={boolean('hasSearch', true)}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], undefined)}
+      isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
+      onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
+      i18n={object('i18n', {
+        searchPlaceHolderText: 'Search',
+      })}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
+    />
+  </div>
+);
+
+WithLargeNumberOfItems.storyName = 'with large number of items';
