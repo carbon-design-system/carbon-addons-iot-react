@@ -38,8 +38,15 @@ const i18n = {
 };
 
 describe('DateTimePicker', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+    jest.clearAllMocks();
+  });
+
   afterEach(() => {
     console.error.mockClear();
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   beforeAll(() => {

@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  react-visual-regression-tests:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./packages/react/cypress-visual-screenshots:/@ai-apps/packages/react/cypress-visual-screenshots
+      - ./packages/react/cypress-visual-report:/@ai-apps/packages/react/cypress-visual-report

@@ -437,7 +437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-describedby={null}
                             aria-pressed={null}
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                             data-testid="ComposedModal-grid-switch"
                             disabled={false}
                             onBlur={[Function]}
@@ -455,6 +455,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             >
                               Grid
                             </div>
+                            <span
+                              className="iot--icon-switch__divider"
+                            />
                             <svg
                               aria-hidden="true"
                               aria-label="Grid"
@@ -494,6 +497,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             >
                               List
                             </div>
+                            <span
+                              className="iot--icon-switch__divider"
+                            />
                             <svg
                               aria-hidden="true"
                               aria-label="List"
@@ -3289,7 +3295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -3307,6 +3313,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             Grid
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="Grid"
@@ -3346,6 +3355,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             List
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="List"
@@ -4628,7 +4640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -4646,6 +4658,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             Grid
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="Grid"
@@ -4685,6 +4700,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             List
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="List"
@@ -7417,7 +7435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-describedby={null}
                     aria-pressed={null}
-                    className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    className="iot--icon-switch iot--icon-switch--default iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="dashboard-editor-header-fit-to-screen-switch"
                     disabled={false}
                     onBlur={[Function]}
@@ -7435,6 +7453,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       Fit to screen
                     </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
                     <svg
                       aria-hidden="true"
                       aria-label="Fit to screen"
@@ -7474,6 +7495,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       Large view
                     </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
                     <svg
                       aria-hidden="true"
                       aria-label="Large view"
@@ -7513,6 +7537,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       Medium view
                     </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
                     <svg
                       aria-hidden="true"
                       aria-label="Medium view"
@@ -7556,6 +7583,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       Small view
                     </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
                     <svg
                       aria-hidden="true"
                       aria-label="Small view"
@@ -7922,7 +7952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -7940,6 +7970,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             Grid
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="Grid"
@@ -7979,6 +8012,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             List
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="List"
@@ -9581,7 +9617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -9599,6 +9635,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             Grid
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="Grid"
@@ -9638,6 +9677,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             List
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="List"
@@ -11009,7 +11051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-describedby={null}
                             aria-pressed={null}
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                             data-testid="ComposedModal-grid-switch"
                             disabled={false}
                             onBlur={[Function]}
@@ -11027,6 +11069,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             >
                               Grid
                             </div>
+                            <span
+                              className="iot--icon-switch__divider"
+                            />
                             <svg
                               aria-hidden="true"
                               aria-label="Grid"
@@ -11066,6 +11111,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             >
                               List
                             </div>
+                            <span
+                              className="iot--icon-switch__divider"
+                            />
                             <svg
                               aria-hidden="true"
                               aria-label="List"
@@ -12349,7 +12397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -12367,6 +12415,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             Grid
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="Grid"
@@ -12406,6 +12457,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             List
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="List"
@@ -14205,7 +14259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <button
                     aria-describedby={null}
                     aria-pressed={null}
-                    className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    className="iot--icon-switch iot--icon-switch--default iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="dashboard-editor-header-fit-to-screen-switch"
                     disabled={false}
                     onBlur={[Function]}
@@ -14223,6 +14277,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       headerFitToScreenButton
                     </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
                     <svg
                       aria-hidden="true"
                       aria-label="headerFitToScreenButton"
@@ -14262,6 +14319,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       headerLargeButton
                     </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
                     <svg
                       aria-hidden="true"
                       aria-label="headerLargeButton"
@@ -14301,6 +14361,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       headerMediumButton
                     </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
                     <svg
                       aria-hidden="true"
                       aria-label="headerMediumButton"
@@ -14344,6 +14407,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       headerSmallButton
                     </div>
+                    <span
+                      className="iot--icon-switch__divider"
+                    />
                     <svg
                       aria-hidden="true"
                       aria-label="headerSmallButton"
@@ -14710,7 +14776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -14728,6 +14794,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             imageGalleryGridButtonText
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="imageGalleryGridButtonText"
@@ -14767,6 +14836,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             imageGalleryListButtonText
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="imageGalleryListButtonText"
@@ -16602,7 +16674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <button
                       aria-describedby={null}
                       aria-pressed={null}
-                      className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="dashboard-editor-header-fit-to-screen-switch"
                       disabled={false}
                       onBlur={[Function]}
@@ -16620,6 +16692,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         Fit to screen
                       </div>
+                      <span
+                        className="iot--icon-switch__divider"
+                      />
                       <svg
                         aria-hidden="true"
                         aria-label="Fit to screen"
@@ -16659,6 +16734,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         Large view
                       </div>
+                      <span
+                        className="iot--icon-switch__divider"
+                      />
                       <svg
                         aria-hidden="true"
                         aria-label="Large view"
@@ -16698,6 +16776,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         Medium view
                       </div>
+                      <span
+                        className="iot--icon-switch__divider"
+                      />
                       <svg
                         aria-hidden="true"
                         aria-label="Medium view"
@@ -16741,6 +16822,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         Small view
                       </div>
+                      <span
+                        className="iot--icon-switch__divider"
+                      />
                       <svg
                         aria-hidden="true"
                         aria-label="Small view"
@@ -17107,7 +17191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <button
                             aria-describedby={null}
                             aria-pressed={null}
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                             data-testid="ComposedModal-grid-switch"
                             disabled={false}
                             onBlur={[Function]}
@@ -17125,6 +17209,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             >
                               Grid
                             </div>
+                            <span
+                              className="iot--icon-switch__divider"
+                            />
                             <svg
                               aria-hidden="true"
                               aria-label="Grid"
@@ -17164,6 +17251,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             >
                               List
                             </div>
+                            <span
+                              className="iot--icon-switch__divider"
+                            />
                             <svg
                               aria-hidden="true"
                               aria-label="List"
@@ -18350,7 +18440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -18368,6 +18458,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             Grid
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="Grid"
@@ -18407,6 +18500,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             List
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="List"
@@ -19715,7 +19811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -19733,6 +19829,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             Grid
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="Grid"
@@ -19772,6 +19871,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             List
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="List"
@@ -22906,7 +23008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <button
                           aria-describedby={null}
                           aria-pressed={null}
-                          className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                          className="iot--icon-switch iot--icon-switch--large iot--icon-switch--selected bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                           data-testid="ComposedModal-grid-switch"
                           disabled={false}
                           onBlur={[Function]}
@@ -22924,6 +23026,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             Grid
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="Grid"
@@ -22963,6 +23068,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             List
                           </div>
+                          <span
+                            className="iot--icon-switch__divider"
+                          />
                           <svg
                             aria-hidden="true"
                             aria-label="List"

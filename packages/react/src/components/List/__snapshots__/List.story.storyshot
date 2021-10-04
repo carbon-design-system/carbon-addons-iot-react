@@ -4714,6 +4714,100 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with load more 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            Sports Teams
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+      </div>
+      <div
+        className="iot--list--content"
+      >
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item"
+          >
+            <div
+              aria-label="Expand"
+              className="iot--list-item--expand-icon"
+              data-testid="expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+              title="Expand"
+            >
+              <svg
+                aria-label="Expand-icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Organization"
+                  >
+                    Organization
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with pagination 1`] = `
 <div
   className="storybook-container"

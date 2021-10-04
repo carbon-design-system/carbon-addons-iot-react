@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { TimePicker } from 'carbon-components-react';
 import { CaretDownGlyph, CaretUpGlyph } from '@carbon/icons-react';
 import classnames from 'classnames';
+import merge from 'lodash/merge';
 
 import { settings } from '../../constants/Settings';
 import { keyCodes } from '../../constants/KeyCodeConstants';
@@ -23,10 +24,15 @@ const propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /** triggered on input click  */
   onClick: PropTypes.func,
-  /** triggered on value change  */
+  /** triggered on value change. Called with 3 parameters: newValue, event, meta
+   * The meta object has a property called invalid that is either true or false
+   * representing the validation status of the new input
+   */
   onChange: PropTypes.func,
   /** disable the input  */
   disabled: PropTypes.bool,
+  /** will display invalidText when set to true */
+  invalid: PropTypes.bool,
   /** set a 12-hour timepicker instead of the default 24-hour  */
   is12hour: PropTypes.bool,
   /** the default selected timegroup (hours, minutes) */
@@ -52,6 +58,7 @@ const defaultProps = {
   onClick: null,
   onChange: null,
   disabled: false,
+  invalid: false,
   is12hour: false,
   defaultTimegroup: TIMEGROUPS.HOURS,
   i18n: {
@@ -73,12 +80,14 @@ const TimePickerSpinner = ({
   onClick,
   onChange,
   disabled,
+  invalid,
   is12hour,
   defaultTimegroup,
-  i18n,
+  i18n: i18nProp,
   testId,
   ...others
 }) => {
+  const i18n = merge({}, defaultProps.i18n, i18nProp);
   const [pickerValue, setPickerValue] = useState(value || '');
   const [currentTimeGroup, setCurrentTimeGroup] = useState(
     defaultTimegroup === TIMEGROUPS.MINUTES ? 1 : 0
@@ -90,6 +99,12 @@ const TimePickerSpinner = ({
   const [focusTarget, setFocusTarget] = useState(null);
 
   const timePickerRef = React.createRef();
+
+  const validate = (newValue) => {
+    const isValid12HoursRegex = /^(1[0-2]|0?[1-9]):[0-5][0-9]$/;
+    const isValid24HoursRegex = /^([01][0-9]|2[0-3]):([0-5][0-9])$/;
+    return !(is12hour ? isValid12HoursRegex.test(newValue) : isValid24HoursRegex.test(newValue));
+  };
 
   const handleArrowClick = (direction) => {
     const timeGroups = pickerValue.split(':');
@@ -109,7 +124,7 @@ const TimePickerSpinner = ({
     const newValue = timeGroups.join(':');
     setPickerValue(newValue);
     if (onChange) {
-      onChange(newValue);
+      onChange(newValue, null, { invalid: validate(newValue) });
     }
     window.setTimeout(() => {
       if (focusTarget) {
@@ -135,8 +150,20 @@ const TimePickerSpinner = ({
     } = e;
     setPickerValue(currentValue);
     if (onChange) {
-      onChange(currentValue, e);
+      onChange(currentValue, e, { invalid: validate(currentValue) });
     }
+  };
+
+  const preventNonAllowedKeyboardInput = (e) => {
+    const isNumberChar = /\d/.test(e.key);
+    const isOnlyColon = e.key === ':' && !e.currentTarget.value?.includes(':');
+
+    if (isNumberChar || isOnlyColon) {
+      return true;
+    }
+
+    e.preventDefault();
+    return false;
   };
 
   const onInputKeyDown = (e) => {
@@ -147,9 +174,18 @@ const TimePickerSpinner = ({
       case keyCodes.DOWN:
         setKeyUpOrDownPosition(target.selectionStart);
         break;
-      default:
+      case keyCodes.BACKSPACE:
+      case keyCodes.DELETE:
+      case keyCodes.TAB:
+      case keyCodes.END:
+      case keyCodes.HOME:
+      case keyCodes.LEFT:
+      case keyCodes.RIGHT:
         break;
+      default:
+        return preventNonAllowedKeyboardInput(e);
     }
+    return true;
   };
 
   const onInputBlur = (e) => {
@@ -235,6 +271,7 @@ const TimePickerSpinner = ({
         onBlur={onInputBlur}
         disabled={disabled}
         data-testid={testId}
+        invalid={invalid}
         {...others}
       >
         {children}

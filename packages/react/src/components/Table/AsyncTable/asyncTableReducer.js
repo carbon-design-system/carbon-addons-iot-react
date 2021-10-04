@@ -18,7 +18,7 @@ export default (state, action) => {
         },
         view: {
           pagination: {
-            totalItems: { $set: action.totalItems },
+            totalItems: { $set: action.payload.totalItems },
           },
         },
       });
