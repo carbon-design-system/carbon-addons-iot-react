@@ -460,7 +460,7 @@ export const WithLargeNumberOfItems = () => (
   <div style={{ width: 400, height: 400 }}>
     <HierarchyList
       title={text('Title', 'Big List')}
-      isFullHeight={boolean('isFullHeight', true)}
+      isFullHeight={boolean('isFullHeight', false)}
       items={[...Array(1000)].map((_, i) => ({
         id: `item-${i}`,
         content: {
