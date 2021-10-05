@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.9...v2.147.0-next.10) (2021-10-05)
+
+
+
+## [2.146.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.8...v2.146.4) (2021-10-04)
+
+
+### Bug Fixes
+
+* **page-title-bar:** cypress test ([68ff44a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/68ff44a047598217d7d148418c424bc5e156ae38))
+* **value-card:** fix button overflow in narrow cards ([b8ade34](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b8ade34e93f4a353cabb243736b59cb294a0bcbd))
+* **value-card:** fix unit position in certain situations ([f71446b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f71446b8455381a75ac6f8baa24e57cd2d8e1a43))
+* **value-card:** fix unit positioning better ([125b4d1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/125b4d1bdfca0977d0fcd56199bc183348765f53))
+* **value-card:** rtl rendering of units/buttons ([757a943](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/757a94399eaf6ab2fd7dcdf64c8a84f4fa1be743))
+
+
+
+
+
+# [2.147.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.8...v2.147.0-next.9) (2021-10-04)
+
+
+### Bug Fixes
+
+* **hierarchy-list:** reset page (as necessary) when pageSize changes ([769a09d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/769a09dda690b76ff4c3ef6698c0ef6a45d9268c))
+* **hierarchy-list:** show items from current page on pageSize change ([02ff1d3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/02ff1d322dfc75f7f75a500a14d7256da54fe089))
+
+
+
+
+
 # [2.147.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.7...v2.147.0-next.8) (2021-10-04)
 
 
@@ -226,7 +257,19 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.147.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2...v2.147.0-next.1) (2021-09-28)
 
+## [2.146.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.3...v2.146.4) (2021-10-04)
+
+
+### Bug Fixes
+
+* **page-title-bar:** cypress test ([68ff44a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/68ff44a047598217d7d148418c424bc5e156ae38))
+* **value-card:** fix button overflow in narrow cards ([b8ade34](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b8ade34e93f4a353cabb243736b59cb294a0bcbd))
+* **value-card:** fix unit position in certain situations ([f71446b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f71446b8455381a75ac6f8baa24e57cd2d8e1a43))
+* **value-card:** fix unit positioning better ([125b4d1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/125b4d1bdfca0977d0fcd56199bc183348765f53))
+* **value-card:** rtl rendering of units/buttons ([757a943](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/757a94399eaf6ab2fd7dcdf64c8a84f4fa1be743))
+
 ## [2.146.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.2...v2.146.3) (2021-10-01)
+
 
 ### Bug Fixes
 
