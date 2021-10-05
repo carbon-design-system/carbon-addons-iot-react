@@ -501,7 +501,7 @@ describe('List', () => {
       userEvent.click(screen.getAllByTitle('Expand')[0]);
       expect(onExpanded).toHaveBeenCalledWith('Chicago White Sox');
       jest.spyOn(UnconnectedList.defaultProps, 'toggleExpansion');
-      rerender(<UnconnectedList title="list" items={items} />);
+      rerender(<UnconnectedList title="list" items={items} isVirtualList />);
       userEvent.click(screen.getAllByTitle('Expand')[0]);
       expect(UnconnectedList.defaultProps.toggleExpansion).toHaveBeenCalledWith(
         'Chicago White Sox'
