@@ -267,8 +267,6 @@ const VirtualListContent = ({
     return [
       <div
         key={`${item.id}-list-item-parent-${level}-${value}`}
-        // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
-        data-floating-menu-container
         className={`${iotPrefix}--list-item-parent`}
         style={style}
       >

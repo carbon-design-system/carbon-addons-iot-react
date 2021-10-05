@@ -49985,7 +49985,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             className="iot--list-item-parent"
-            data-floating-menu-container={true}
             style={
               Object {
                 "height": 40,
@@ -50052,7 +50051,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
           </div>
           <div
             className="iot--list-item-parent"
-            data-floating-menu-container={true}
             style={
               Object {
                 "height": 40,
@@ -50119,7 +50117,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
           </div>
           <div
             className="iot--list-item-parent"
-            data-floating-menu-container={true}
             style={
               Object {
                 "height": 40,
