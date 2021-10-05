@@ -174,7 +174,11 @@ describe('HierarchyList', () => {
     );
 
     // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-    cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
+    cy.get('.iot--list-item')
+      .should('be.visible')
+      .then(($els) => {
+        cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+      });
 
     // Select Pete and drag him to Amed (one-based-index)
     cy.findByTitle('Pete Alonso')
@@ -184,10 +188,14 @@ describe('HierarchyList', () => {
       });
 
     // open the newly created nesting
-    cy.findAllByTestId('expand-icon').eq(2).realClick();
+    cy.findAllByTestId('expand-icon').eq(2).click({ force: true });
 
     // expect Pete in position 4 and Amed in position 5 (zero-based-index)
-    cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
+    cy.get('.iot--list-item')
+      .should('be.visible')
+      .then(($els) => {
+        cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+      });
   });
 
   it('handles drag and drop into a category with multiple-nesting', () => {
@@ -212,8 +220,12 @@ describe('HierarchyList', () => {
     );
 
     // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-    cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
-    cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Amed Rosario');
+    cy.get('.iot--list-item')
+      .should('be.visible')
+      .then(($els) => {
+        cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+        cy.wrap($els).eq(2).find('[title]').should('have.text', 'Amed Rosario');
+      });
 
     // select Amed to move him, too.
     cy.findByTestId('New York Mets_Amed Rosario-checkbox').click({ force: true });
@@ -225,11 +237,15 @@ describe('HierarchyList', () => {
         expect(onListUpdated).to.be.called;
       });
 
-    cy.findAllByTestId('expand-icon').eq(0).realClick();
+    cy.findAllByTestId('expand-icon').eq(0).click();
 
     // expect Pete in position 3 and Amed in position 2 (zero-based-index)
-    cy.get('.iot--list-item').eq(1).find('[title]').should('have.text', 'Amed Rosario');
-    cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Pete Alonso');
+    cy.get('.iot--list-item')
+      .should('be.visible')
+      .then(($els) => {
+        cy.wrap($els).eq(1).find('[title]').should('have.text', 'Amed Rosario');
+        cy.wrap($els).eq(2).find('[title]').should('have.text', 'Pete Alonso');
+      });
   });
 
   describe('isVirtualList', () => {
@@ -276,7 +292,7 @@ describe('HierarchyList', () => {
         </div>
       );
 
-      cy.findByRole('button', { name: 'Next page' }).realClick();
+      cy.findByRole('button', { name: 'Next page' }).click();
       cy.findByTitle('Item 9')
         .drag(':nth-child(1) > [draggable="true"]', { position: 'top' })
         .then(() => {
@@ -400,19 +416,31 @@ describe('HierarchyList', () => {
       );
 
       // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-      cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
+      cy.get('.iot--list-item')
+        .should('be.visible')
+        .then(($els) => {
+          cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+        });
 
       // Select Pete and drag him to Amed (one-based-index)
       cy.findByTitle('Pete Alonso')
         .drag(':nth-child(4) > [draggable="true"]', { position: 'left' })
         .then(() => {
           expect(onListUpdated).to.be.called;
-          cy.findAllByTestId('expand-icon').should('have.length', 3);
-          // open the newly created nesting
-          cy.findAllByTestId('expand-icon').eq(2).realClick();
+        });
 
-          // expect Pete in position 4 and Amed in position 5 (zero-based-index)
-          cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
+      cy.findAllByTestId('expand-icon')
+        .should('have.length', 3)
+        .then(($els) => {
+          // open the newly created nesting
+          cy.wrap($els).eq(2).click({ force: true });
+        });
+
+      // expect Pete in position 4 and Amed in position 5 (zero-based-index)
+      cy.get('.iot--list-item')
+        .should('be.visible')
+        .then(($els) => {
+          cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
         });
     });
 
@@ -439,8 +467,12 @@ describe('HierarchyList', () => {
       );
 
       // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-      cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
-      cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Amed Rosario');
+      cy.get('.iot--list-item')
+        .should('be.visible')
+        .then(($els) => {
+          cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+          cy.wrap($els).eq(2).find('[title]').should('have.text', 'Amed Rosario');
+        });
 
       // select Amed to move him, too.
       cy.findByTestId('New York Mets_Amed Rosario-checkbox').click({ force: true });
@@ -450,10 +482,15 @@ describe('HierarchyList', () => {
         .drag(':nth-child(1) > [draggable="true"]', { position: 'left' })
         .then(() => {
           expect(onListUpdated).to.be.called;
-          cy.findAllByTestId('expand-icon').eq(0).realClick();
-          // expect Pete in position 3 and Amed in position 2 (zero-based-index)
-          cy.get('.iot--list-item').eq(1).find('[title]').should('have.text', 'Amed Rosario');
-          cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Pete Alonso');
+        });
+
+      cy.findAllByTestId('expand-icon').eq(0).click({ force: true });
+      // expect Pete in position 3 and Amed in position 2 (zero-based-index)
+      cy.get('.iot--list-item')
+        .should('be.visible')
+        .then(($els) => {
+          cy.wrap($els).eq(1).find('[title]').should('have.text', 'Amed Rosario');
+          cy.wrap($els).eq(2).find('[title]').should('have.text', 'Pete Alonso');
         });
     });
   });
