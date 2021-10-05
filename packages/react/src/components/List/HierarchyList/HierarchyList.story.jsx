@@ -77,6 +77,7 @@ export const StatefulListWithNestedSearching = () => (
         searchPlaceHolderText: 'Search',
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -125,6 +126,7 @@ export const WithDefaultSelectedId = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -194,6 +196,7 @@ export const WithOverflowMenu = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -259,6 +262,7 @@ export const WithNestedReorder = () => {
           onSelect={action('onSelect')}
           hasDeselection={boolean('hasDeselection', true)}
           hasMultiSelect={boolean('hasMultiSelect', false)}
+          isVirtualList={boolean('hasVirtualList', false)}
         />
       </div>
     );
@@ -317,6 +321,7 @@ export const WithDefaultExpandedIds = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -401,6 +406,7 @@ export const WithMixedHierarchies = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -450,6 +456,7 @@ export const WithSelectableCategories = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -479,8 +486,9 @@ export const WithLargeNumberOfItems = () => (
         searchPlaceHolderText: 'Search',
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', true)}
     />
   </div>
 );
 
-WithLargeNumberOfItems.storyName = 'with large number of items';
+WithLargeNumberOfItems.storyName = 'with virtual list and large number of items';

@@ -16,7 +16,6 @@ const getListItems = (num) =>
 
 describe('List', () => {
   it('should not move items on a list if itemWillMove return false', () => {
-    const onListUpdated = cy.stub();
     const itemWillMove = cy.stub().returns(false);
     mount(
       <List
@@ -25,7 +24,6 @@ describe('List', () => {
         items={getListItems(3)}
         pageSize="sm"
         editingStyle={EditingStyle.Single}
-        onListUpdated={onListUpdated}
         itemWillMove={itemWillMove}
       />
     );
@@ -35,7 +33,72 @@ describe('List', () => {
       .drag(':nth-child(3) > [draggable="true"]', { position: 'bottom' })
       .should(() => {
         expect(itemWillMove).to.be.calledWith('1', '3', 'below');
-        expect(onListUpdated).not.to.be.called;
       });
+  });
+
+  it('should move items on a list if itemWillMove returns true', () => {
+    const onItemMoved = cy.stub();
+    mount(
+      <List
+        title="Simple list"
+        hasSearch
+        items={getListItems(3)}
+        pageSize="sm"
+        editingStyle={EditingStyle.Single}
+        onItemMoved={onItemMoved}
+      />
+    );
+
+    cy.findAllByText('Item 1')
+      .eq(1)
+      .drag(':nth-child(3) > [draggable="true"]', { position: 'bottom' })
+      .should(() => {
+        expect(onItemMoved).to.be.calledWith('1', '3', 'below');
+      });
+  });
+
+  describe('isVirtualList', () => {
+    it('should not move items on a list if itemWillMove return false', () => {
+      const itemWillMove = cy.stub().returns(false);
+      mount(
+        <List
+          title="Simple list"
+          hasSearch
+          items={getListItems(3)}
+          pageSize="sm"
+          editingStyle={EditingStyle.Single}
+          itemWillMove={itemWillMove}
+          isVirtualList
+        />
+      );
+
+      cy.findAllByText('Item 1')
+        .eq(1)
+        .drag(':nth-child(3) > [draggable="true"]', { position: 'bottom' })
+        .should(() => {
+          expect(itemWillMove).to.be.calledWith('1', '3', 'below');
+        });
+    });
+
+    it('should move items on a list if itemWillMove returns true', () => {
+      cy.spy(List.defaultProps, 'onItemMoved');
+      mount(
+        <List
+          title="Simple list"
+          hasSearch
+          items={getListItems(3)}
+          pageSize="sm"
+          editingStyle={EditingStyle.Single}
+          isVirtualList
+        />
+      );
+
+      cy.findAllByText('Item 1')
+        .eq(1)
+        .drag(':nth-child(3) > [draggable="true"]', { position: 'bottom' })
+        .should(() => {
+          expect(List.defaultProps.onItemMoved).to.be.calledWith('1', '3', 'below');
+        });
+    });
   });
 });

@@ -5222,6 +5222,7 @@ Map {
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
+      "isVirtualList": false,
       "itemWillMove": [Function],
       "items": Array [],
       "onListUpdated": [Function],
@@ -5352,6 +5353,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isVirtualList": Object {
+        "type": "bool",
+      },
       "itemWillMove": Object {
         "type": "func",
       },
@@ -5432,6 +5436,361 @@ Map {
       },
       "title": Object {
         "type": "string",
+      },
+    },
+  },
+  "ListContent" => Object {
+    "defaultProps": Object {
+      "editingStyle": null,
+      "emptyState": "No list items to show",
+      "expandedIds": Array [],
+      "handleLoadMore": [Function],
+      "handleSelect": [Function],
+      "i18n": Object {
+        "close": "Close",
+        "expand": "Expand",
+        "loadMore": "Load more...",
+        "searchPlaceHolderText": "Enter a value",
+      },
+      "iconPosition": "left",
+      "isFullHeight": false,
+      "isLargeRow": false,
+      "isLoading": false,
+      "itemWillMove": [Function],
+      "items": Array [],
+      "loadingMoreIds": Array [],
+      "onItemMoved": [Function],
+      "selectedIds": Array [],
+      "selectedItemRef": Object {
+        "current": null,
+      },
+      "testId": "list",
+      "toggleExpansion": [Function],
+    },
+    "propTypes": Object {
+      "editingStyle": Object {
+        "args": Array [
+          Array [
+            "single",
+            "multiple",
+            "single-nesting",
+            "multiple-nesting",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "emptyState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "handleLoadMore": Object {
+        "type": "func",
+      },
+      "handleSelect": Object {
+        "type": "func",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+            "expand": Object {
+              "type": "string",
+            },
+            "loadMore": Object {
+              "type": "string",
+            },
+            "searchPlaceHolderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconPosition": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "isFullHeight": Object {
+        "type": "bool",
+      },
+      "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "itemWillMove": Object {
+        "type": "func",
+      },
+      "items": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              undefined,
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "onItemMoved": Object {
+        "type": "func",
+      },
+      "selectedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "selectedItemRef": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "current": Object {
+                    "type": "any",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "toggleExpansion": Object {
+        "type": "func",
+      },
+    },
+  },
+  "VirtualListContent" => Object {
+    "defaultProps": Object {
+      "editingStyle": null,
+      "emptyState": "No list items to show",
+      "expandedIds": Array [],
+      "handleLoadMore": [Function],
+      "handleSelect": [Function],
+      "hasPagination": false,
+      "i18n": Object {
+        "close": "Close",
+        "expand": "Expand",
+        "loadMore": "Load more...",
+        "searchPlaceHolderText": "Enter a value",
+      },
+      "iconPosition": "left",
+      "isFullHeight": false,
+      "isLargeRow": false,
+      "isLoading": false,
+      "itemWillMove": [Function],
+      "items": Array [],
+      "loadingMoreIds": Array [],
+      "onItemMoved": [Function],
+      "selectedIds": Array [],
+      "selectedItemRef": Object {
+        "current": null,
+      },
+      "testId": "list",
+      "toggleExpansion": [Function],
+      "virtualListRef": Object {
+        "current": null,
+      },
+    },
+    "propTypes": Object {
+      "editingStyle": Object {
+        "args": Array [
+          Array [
+            "single",
+            "multiple",
+            "single-nesting",
+            "multiple-nesting",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "emptyState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "handleLoadMore": Object {
+        "type": "func",
+      },
+      "handleSelect": Object {
+        "type": "func",
+      },
+      "hasPagination": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+            "expand": Object {
+              "type": "string",
+            },
+            "loadMore": Object {
+              "type": "string",
+            },
+            "searchPlaceHolderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconPosition": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "isFullHeight": [Function],
+      "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "itemWillMove": Object {
+        "type": "func",
+      },
+      "items": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              undefined,
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "onItemMoved": Object {
+        "type": "func",
+      },
+      "selectedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "selectedItemRef": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "current": Object {
+                    "type": "any",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "toggleExpansion": Object {
+        "type": "func",
+      },
+      "virtualListRef": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "current": Object {
+                    "type": "any",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
     },
   },
@@ -21064,6 +21423,7 @@ Map {
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
+      "isVirtualList": false,
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
@@ -21161,6 +21521,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isVirtualList": Object {
         "type": "bool",
       },
       "itemWillMove": Object {

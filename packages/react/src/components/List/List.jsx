@@ -9,6 +9,7 @@ import { OverridePropTypes } from '../../constants/SharedPropTypes';
 
 import DefaultListHeader from './ListHeader/ListHeader';
 import DefaultListContent from './ListContent/ListContent';
+import VirtualListContent from './VirtualListContent/VirtualListContent';
 
 const { iotPrefix } = settings;
 
@@ -58,8 +59,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
-  // // /** optional prop to use a virtualized version of the list instead of rendering all items */
-  // isVirtualList: PropTypes.bool,
+  /** optional prop to use a virtualized version of the list instead of rendering all items */
+  isVirtualList: PropTypes.bool,
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   /** i18n strings */
@@ -102,7 +103,7 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
-  // isVirtualList: false,
+  isVirtualList: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
@@ -146,6 +147,7 @@ const List = forwardRef((props, ref) => {
     editingStyle,
     isLargeRow,
     isLoading,
+    isVirtualList,
     onItemMoved,
     itemWillMove,
     emptyState,
@@ -155,7 +157,8 @@ const List = forwardRef((props, ref) => {
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const ListHeader = overrides?.header?.component || DefaultListHeader;
-  const ListContent = overrides?.content?.component || DefaultListContent;
+  const ListContent =
+    overrides?.content?.component || isVirtualList ? VirtualListContent : DefaultListContent;
 
   return (
     <DragAndDrop>
@@ -163,6 +166,7 @@ const List = forwardRef((props, ref) => {
         data-testid={testId}
         className={classnames(`${iotPrefix}--list`, className, {
           [`${iotPrefix}--list__full-height`]: isFullHeight,
+          [`${iotPrefix}--list--virtual`]: isVirtualList,
         })}
       >
         <ListHeader
@@ -193,6 +197,7 @@ const List = forwardRef((props, ref) => {
           loadingMoreIds={loadingMoreIds}
           selectedItemRef={ref}
           i18n={mergedI18n}
+          hasPagination={!(pagination?.maxPage === 1 && pagination?.page === 1)}
         />
         {pagination && !isLoading ? (
           <div className={`${iotPrefix}--list--page`}>

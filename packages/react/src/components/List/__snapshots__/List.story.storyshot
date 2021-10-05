@@ -8064,3 +8064,179 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
   </div>
 </div>
 `;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with virtual list 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": 300,
+        "overflow": "auto",
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list iot--list__full-height iot--list--virtual"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            NY Yankees
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+      </div>
+      <div
+        className="iot--list--content iot--list--content--virtual iot--list--content__full-height"
+        onScroll={[Function]}
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "direction": "ltr",
+            "height": 0,
+            "overflow": "auto",
+            "position": "relative",
+            "width": undefined,
+            "willChange": "transform",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": 470,
+              "pointerEvents": undefined,
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="DJ LeMahieu"
+                    >
+                      DJ LeMahieu
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 40,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Luke Voit"
+                    >
+                      Luke Voit
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 80,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gary Sanchez"
+                    >
+                      Gary Sanchez
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
