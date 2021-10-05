@@ -5611,7 +5611,6 @@ Map {
       "expandedIds": Array [],
       "handleLoadMore": [Function],
       "handleSelect": [Function],
-      "hasPagination": false,
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
@@ -5674,9 +5673,6 @@ Map {
       },
       "handleSelect": Object {
         "type": "func",
-      },
-      "hasPagination": Object {
-        "type": "bool",
       },
       "i18n": Object {
         "args": Array [

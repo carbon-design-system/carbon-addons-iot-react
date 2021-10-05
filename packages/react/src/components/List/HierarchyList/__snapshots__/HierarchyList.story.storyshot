@@ -49967,7 +49967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             "WebkitOverflowScrolling": "touch",
             "direction": "ltr",
             "height": 40000,
-            "overflow": "auto",
+            "overflow": "unset",
             "position": "relative",
             "width": undefined,
             "willChange": "transform",

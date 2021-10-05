@@ -18,7 +18,6 @@ const { iotPrefix } = settings;
 const propTypes = {
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  hasPagination: PropTypes.bool,
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
@@ -86,7 +85,6 @@ const defaultProps = {
   expandedIds: [],
   handleLoadMore: () => {},
   handleSelect: () => {},
-  hasPagination: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
@@ -121,7 +119,6 @@ const VirtualListContent = ({
   expandedIds,
   handleLoadMore,
   handleSelect,
-  hasPagination,
   i18n,
   iconPosition,
   isFullHeight,
@@ -378,9 +375,7 @@ const VirtualListContent = ({
       <VariableSizeList
         ref={virtualListRef}
         itemCount={flattened.items.length}
-        height={
-          isFullHeight && !hasPagination ? flattened.height : Math.min(listHeight, flattened.height)
-        }
+        height={isFullHeight ? flattened.height : Math.min(listHeight, flattened.height)}
         itemSize={getItemSize}
         className={classnames(
           `${iotPrefix}--list--content`,
@@ -388,10 +383,12 @@ const VirtualListContent = ({
           {
             // If FullHeight, the content's overflow shouldn't be hidden
             [`${iotPrefix}--list--content__full-height`]: isFullHeight,
-            // [`${iotPrefix}--list--content--virtual-fill`]: !hasPagination,
           }
         )}
         outerRef={listOuterRef}
+        style={{
+          overflow: isFullHeight ? 'unset' : 'auto',
+        }}
       >
         {ListRow}
       </VariableSizeList>
