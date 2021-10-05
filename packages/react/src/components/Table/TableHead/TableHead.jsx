@@ -15,6 +15,8 @@ import {
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
   TableSortPropType,
+  TableColumnGroupPropType,
+  TableOrderingPropType,
 } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
@@ -43,6 +45,7 @@ import {
   hasVisibleColumns,
   adjustInitialColumnWidths,
 } from './columnWidthUtilityFunctions';
+import ColumnGrouping from './ColumnGrouping/ColumnGrouping';
 
 const { iotPrefix } = settings;
 
@@ -66,7 +69,8 @@ const propTypes = {
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
-
+  /** Specify the properties of each column group in the table. Defaults to empty column. */
+  columnGroups: TableColumnGroupPropType,
   /** internationalized labels */
   selectAllText: PropTypes.string,
   clearFilterText: PropTypes.string,
@@ -88,14 +92,8 @@ const propTypes = {
     }).isRequired,
     /** What sorting is currently applied */
     sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]).isRequired,
-    /** What column ordering is currently applied to the table */
-    ordering: PropTypes.arrayOf(
-      PropTypes.shape({
-        columnId: PropTypes.string.isRequired,
-        /* Visibility of column in table, defaults to false */
-        isHidden: PropTypes.bool,
-      })
-    ).isRequired,
+    /** Specify the order, visibility and group belonging of the table columns */
+    ordering: TableOrderingPropType.isRequired,
     /** Optional list of applied column filters */
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -135,6 +133,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  columnGroups: [],
   options: {},
   lightweight: false,
   selectAllText: 'Select all',
@@ -177,6 +176,7 @@ const TableHead = ({
     preserveColumnWidths,
   },
   columns,
+  columnGroups,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
     sort,
@@ -386,17 +386,25 @@ const TableHead = ({
     [hasResize, columns, ordering, previousColumns]
   );
 
-  const lastVisibleColumn = ordering.filter((col) => !col.isHidden).slice(-1)[0];
+  const visibleColumns = ordering.filter((col) => !col.isHidden);
+  const lastVisibleColumn = visibleColumns.slice(-1)[0];
+  const showColumnGroups = columnGroups.some(({ id }) =>
+    visibleColumns.find(({ columnGroupId }) => id === columnGroupId)
+  );
 
   return (
     <CarbonTableHead
-      className={classnames({ lightweight })}
+      // className={classnames({ lightweight })}
+      className={classnames({
+        lightweight,
+        [`${iotPrefix}--table-head--with-column-groups`]: showColumnGroups,
+      })}
       onMouseMove={hasResize ? forwardMouseEvent : null}
       onMouseUp={hasResize ? forwardMouseEvent : null}
       // TODO: remove deprecated 'testID' in v3
       data-testid={testID || testId}
     >
-      <TableRow>
+      <TableRow className={`${iotPrefix}--table-header__column-row`}>
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
             // TODO: remove deprecated 'testID' in v3
@@ -461,9 +469,14 @@ const TableHead = ({
               : PADDING_WITH_OVERFLOW
             : 0;
 
+          const columnBelongsToExistingGroup = columnGroups.some(
+            ({ id }) => id === item.columnGroupId
+          );
+
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
               // TODO: remove deprecated 'testID' in v3
+              spanGroupRow={showColumnGroups && !columnBelongsToExistingGroup}
               testId={`${testID || testId}-column-${matchingColumnMeta.id}`}
               width={initialColumnWidths[matchingColumnMeta.id]}
               initialWidth={initialColumnWidths[matchingColumnMeta.id]}
@@ -570,6 +583,19 @@ const TableHead = ({
           />
         ) : null}
       </TableRow>
+      {showColumnGroups ? (
+        // Column grouping should visually appear above the normal column headers but since we
+        // need the normal column headers to control the width of the columns, and since rowspan
+        // only works downward, we place the groups below the normal columns and then swicth
+        // places using scss.
+        <ColumnGrouping
+          appendedColumns={+showExpanderColumn + !!options.hasRowActions}
+          testId={`${testId}-column-grouping`}
+          prependedColumns={+(hasRowSelection === 'multi') + !!(hasRowExpansion || hasRowNesting)}
+          columnGroups={columnGroups}
+          ordering={ordering}
+        />
+      ) : null}
       {filterBarActive && (
         <FilterHeaderRow
           // TODO: remove deprecated 'testID' in v3
@@ -617,6 +643,7 @@ const TableHead = ({
         />
       )}
     </CarbonTableHead>
+    // </>
   );
 };
 

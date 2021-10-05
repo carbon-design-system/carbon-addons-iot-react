@@ -763,6 +763,62 @@ BasicDumbTable.parameters = {
   },
 };
 
+export const TableWithColumnGrouping = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
+  const lightweight = boolean('Show an alternate header style (lightweight)', false);
+  const ordering = object('Ordering (view.table.ordering)', [
+    {
+      columnId: 'string',
+      columnGroupId: 'groupA',
+    },
+    {
+      columnId: 'date',
+      columnGroupId: 'groupA',
+    },
+    {
+      columnId: 'select',
+      columnGroupId: 'groupB',
+    },
+    {
+      columnId: 'secretField',
+      columnGroupId: 'groupB',
+    },
+  ]);
+
+  return (
+    <MyTable
+      id="table"
+      useZebraStyles={useZebraStyles}
+      lightweight={lightweight}
+      columns={tableColumns.slice(0, 4)}
+      columnGroups={object('Column groups (columnGroups)', [
+        {
+          id: 'groupA',
+          name: 'Group A',
+        },
+        {
+          id: 'groupB',
+          name: 'Group B',
+        },
+      ])}
+      data={tableData.slice(0, 10)}
+      actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
+      view={{
+        table: { ordering },
+      }}
+    />
+  );
+};
+
+TableWithColumnGrouping.storyName = 'with column grouping';
+
 export const TableExampleWithCreateSaveViews = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
