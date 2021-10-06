@@ -710,7 +710,7 @@ describe('List', () => {
       expect(mockLoadMore).toHaveBeenCalledWith('site-02');
       expect(mockLoadMore).toHaveBeenCalledTimes(1);
     });
-    it(' load more row clicked without handleLoadMore function provided', () => {
+    it('should load more row clicked without handleLoadMore function provided', () => {
       render(
         <List
           title="Sports Teams"
@@ -739,6 +739,26 @@ describe('List', () => {
       );
       expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
       userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+    });
+
+    it('should pass override props to list content', () => {
+      render(
+        <List
+          title="Override Props"
+          items={getListItems(1)}
+          testId="test-list"
+          isVirtualList
+          isLoading
+          overrides={{
+            content: {
+              props: {
+                testId: '__test-list-virtual-content__',
+              },
+            },
+          }}
+        />
+      );
+      expect(screen.getByTestId('__test-list-virtual-content__-loading')).toBeInTheDocument();
     });
   });
 });

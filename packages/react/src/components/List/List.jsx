@@ -197,6 +197,7 @@ const List = forwardRef((props, ref) => {
           loadingMoreIds={loadingMoreIds}
           selectedItemRef={ref}
           i18n={mergedI18n}
+          {...overrides?.content?.props}
         />
         {pagination && !isLoading ? (
           <div className={`${iotPrefix}--list--page`}>
