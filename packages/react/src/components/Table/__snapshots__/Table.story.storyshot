@@ -66220,13 +66220,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           className="bx--loading__background"
                           cx="50%"
                           cy="50%"
-                          r="42"
+                          r="44"
                         />
                         <circle
                           className="bx--loading__stroke"
                           cx="50%"
                           cy="50%"
-                          r="42"
+                          r="44"
                         />
                       </svg>
                     </div>
