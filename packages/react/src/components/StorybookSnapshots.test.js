@@ -35,7 +35,12 @@ describe(`Storybook Snapshot tests and console checks`, () => {
 
     spy.consoleWarn = jest.spyOn(console, 'warn').mockImplementation((w) => {
       const message = w.toString();
-      if (!message.includes('This page appears to be missing CSS declarations for Mapbox GL JS')) {
+      if (
+        !message.includes('This page appears to be missing CSS declarations for Mapbox GL JS') &&
+        !message.includes(
+          'The prop `wrapperClassName` for Checkbox will be deprecated in V11 in favor of `className`. `className` will then be placed on the outer wrapper.'
+        )
+      ) {
         done.fail(w);
       }
     });

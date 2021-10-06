@@ -912,7 +912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text__input"
+                                className="bx--text-input"
                                 data-testid="first-name"
                                 disabled={false}
                                 id="first-name"
@@ -945,7 +945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text__input"
+                                className="bx--text-input"
                                 data-testid="last-name"
                                 disabled={false}
                                 id="last-name"
@@ -1318,7 +1318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text__input"
+                                className="bx--text-input"
                                 data-testid="first-name"
                                 disabled={false}
                                 id="first-name"
@@ -1351,7 +1351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text__input"
+                                className="bx--text-input"
                                 data-testid="last-name"
                                 disabled={false}
                                 id="last-name"
@@ -2605,7 +2605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text__input"
+                                className="bx--text-input"
                                 data-testid="first-name"
                                 disabled={false}
                                 id="first-name"
@@ -2638,7 +2638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text__input"
+                                className="bx--text-input"
                                 data-testid="last-name"
                                 disabled={false}
                                 id="last-name"

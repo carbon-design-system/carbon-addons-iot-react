@@ -58,6 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select all items
                       </span>
@@ -630,6 +631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -851,6 +853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -1079,6 +1082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -1307,6 +1311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -1528,6 +1533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -1756,6 +1762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -1984,6 +1991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -2205,6 +2213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -2433,6 +2442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -2661,6 +2671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -2882,6 +2893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -3110,6 +3122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -3338,6 +3351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -3559,6 +3573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -3787,6 +3802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -4015,6 +4031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -4236,6 +4253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -4464,6 +4482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -4692,6 +4711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -4913,6 +4933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -5141,6 +5162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -5369,6 +5391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -5590,6 +5613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -5818,6 +5842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -6046,6 +6071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -6267,6 +6293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -6495,6 +6522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -6723,6 +6751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -6944,6 +6973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -7172,6 +7202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -7400,6 +7431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -7621,6 +7653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -7849,6 +7882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -8077,6 +8111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -8298,6 +8333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -8526,6 +8562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -8754,6 +8791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -8975,6 +9013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -9203,6 +9242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -9431,6 +9471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -9652,6 +9693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -9880,6 +9922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -10108,6 +10151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -10329,6 +10373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -10557,6 +10602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -10785,6 +10831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -11006,6 +11053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -11234,6 +11282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -11462,6 +11511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -11683,6 +11733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -11911,6 +11962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -12139,6 +12191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -12360,6 +12413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -12588,6 +12642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -12816,6 +12871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -13037,6 +13093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -13265,6 +13322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -13493,6 +13551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -13714,6 +13773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -13942,6 +14002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -14170,6 +14231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -14391,6 +14453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -14619,6 +14682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -14847,6 +14911,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -15068,6 +15133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -15296,6 +15362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -15524,6 +15591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -15745,6 +15813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -15973,6 +16042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -16201,6 +16271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -16422,6 +16493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -16650,6 +16722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -16878,6 +16951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -17099,6 +17173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -17327,6 +17402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -17555,6 +17631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -17776,6 +17853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -18004,6 +18082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -18232,6 +18311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -18453,6 +18533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -18681,6 +18762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -18909,6 +18991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -19130,6 +19213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -19358,6 +19442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -19586,6 +19671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -19807,6 +19893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -20035,6 +20122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -20263,6 +20351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -20484,6 +20573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -20712,6 +20802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -20940,6 +21031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -21161,6 +21253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -21389,6 +21482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -21617,6 +21711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -21838,6 +21933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -22066,6 +22162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -22294,6 +22391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -22515,6 +22613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -22743,6 +22842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -22971,6 +23071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -23281,6 +23382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select all items
                         </span>
@@ -23614,6 +23716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -23776,6 +23879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -23945,6 +24049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -24114,6 +24219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -24276,6 +24382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -24445,6 +24552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -24614,6 +24722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -24776,6 +24885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -24945,6 +25055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -25114,6 +25225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -25276,6 +25388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -25445,6 +25558,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -25614,6 +25728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -25776,6 +25891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -25945,6 +26061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -26114,6 +26231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -26276,6 +26394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -26445,6 +26564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -26614,6 +26734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -26776,6 +26897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -26945,6 +27067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -27114,6 +27237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -27276,6 +27400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -27445,6 +27570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -27614,6 +27740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -27776,6 +27903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -27945,6 +28073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -28114,6 +28243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -28276,6 +28406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -28445,6 +28576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -28614,6 +28746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -28776,6 +28909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -28945,6 +29079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -29114,6 +29249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -29276,6 +29412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -29445,6 +29582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -29614,6 +29752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -29776,6 +29915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -29945,6 +30085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -30114,6 +30255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -30276,6 +30418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -30445,6 +30588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -30614,6 +30758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -30776,6 +30921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -30945,6 +31091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -31114,6 +31261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -31276,6 +31424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -31445,6 +31594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -31614,6 +31764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -31776,6 +31927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -31945,6 +32097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -32114,6 +32267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -32276,6 +32430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -32445,6 +32600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -32614,6 +32770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -32776,6 +32933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -32945,6 +33103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -33114,6 +33273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -33276,6 +33436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -33445,6 +33606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -33614,6 +33776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -33776,6 +33939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -33945,6 +34109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -34114,6 +34279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -34276,6 +34442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -34445,6 +34612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -34614,6 +34782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -34776,6 +34945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -34945,6 +35115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -35114,6 +35285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -35276,6 +35448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -35445,6 +35618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -35614,6 +35788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -35776,6 +35951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -35945,6 +36121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -36114,6 +36291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -36276,6 +36454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -36445,6 +36624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -36614,6 +36794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -36776,6 +36957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -36945,6 +37127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -37114,6 +37297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -37276,6 +37460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -37445,6 +37630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -37614,6 +37800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -37776,6 +37963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -37945,6 +38133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -38114,6 +38303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -38276,6 +38466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -38445,6 +38636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -38614,6 +38806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -38776,6 +38969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -38945,6 +39139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -39114,6 +39309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -39276,6 +39472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -39445,6 +39642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -39614,6 +39812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -39776,6 +39975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -39945,6 +40145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -40114,6 +40315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -40408,6 +40610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select all items
                         </span>
@@ -41138,6 +41341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -41349,6 +41553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -41567,6 +41772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -41785,6 +41991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -41996,6 +42203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -42214,6 +42422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -42432,6 +42641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -42643,6 +42853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -42861,6 +43072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -43079,6 +43291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -43778,6 +43991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--checkbox-label-text"
+                  dir="auto"
                 >
                   Display public views
                 </span>
@@ -44503,6 +44717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select all items
                         </span>
@@ -45153,7 +45368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="string"
                               onBlur={null}
@@ -45224,7 +45439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="date"
                               onBlur={null}
@@ -45379,7 +45594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="number"
                               onBlur={null}
@@ -45426,7 +45641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="boolean"
                               onBlur={null}
@@ -45485,7 +45700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="object"
                               onBlur={null}
@@ -45581,6 +45796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -45925,6 +46141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -46269,6 +46486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -46613,6 +46831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -46957,6 +47176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -47301,6 +47521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -47645,6 +47866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -47989,6 +48211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -48333,6 +48556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -48677,6 +48901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -49306,6 +49531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select all items
                       </span>
@@ -49878,6 +50104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -50099,6 +50326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -50327,6 +50555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -50555,6 +50784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -50776,6 +51006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -51004,6 +51235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -51232,6 +51464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -51453,6 +51686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -51681,6 +51915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -51909,6 +52144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -52130,6 +52366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -52358,6 +52595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -52586,6 +52824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -52807,6 +53046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -53035,6 +53275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -53263,6 +53504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -53484,6 +53726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -53712,6 +53955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -53940,6 +54184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -54161,6 +54406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -54389,6 +54635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -54617,6 +54864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -54838,6 +55086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -55066,6 +55315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -55294,6 +55544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -55515,6 +55766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -55743,6 +55995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -55971,6 +56224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -56192,6 +56446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -56420,6 +56675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -56648,6 +56904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -56869,6 +57126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -57097,6 +57355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -57325,6 +57584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -57546,6 +57806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -57774,6 +58035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -58002,6 +58264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -58223,6 +58486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -58451,6 +58715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -58679,6 +58944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -58900,6 +59166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -59128,6 +59395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -59356,6 +59624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -59577,6 +59846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -59805,6 +60075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -60033,6 +60304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -60254,6 +60526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -60482,6 +60755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -60710,6 +60984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -60931,6 +61206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -61159,6 +61435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -61387,6 +61664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -61608,6 +61886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -61836,6 +62115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -62064,6 +62344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -62285,6 +62566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -62513,6 +62795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -62741,6 +63024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -62962,6 +63246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -63190,6 +63475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -63418,6 +63704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -63639,6 +63926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -63867,6 +64155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -64095,6 +64384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -64316,6 +64606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -64544,6 +64835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -64772,6 +65064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -64993,6 +65286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -65221,6 +65515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -65449,6 +65744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -65670,6 +65966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -65898,6 +66195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -66126,6 +66424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -66347,6 +66646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -66575,6 +66875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -66803,6 +67104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -67024,6 +67326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -67252,6 +67555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -67480,6 +67784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -67701,6 +68006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -67929,6 +68235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -68157,6 +68464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -68378,6 +68686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -68606,6 +68915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -68834,6 +69144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -69055,6 +69366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -69283,6 +69595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -69511,6 +69824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -69732,6 +70046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -69960,6 +70275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -70188,6 +70504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -70409,6 +70726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -70637,6 +70955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -70865,6 +71184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -71086,6 +71406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -71314,6 +71635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -71542,6 +71864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -71763,6 +72086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -71991,6 +72315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -72219,6 +72544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -72819,6 +73145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select all items
                         </span>
@@ -73468,7 +73795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="string"
                               onBlur={null}
@@ -73538,7 +73865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="date"
                               onBlur={null}
@@ -73713,7 +74040,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="number"
                               onBlur={null}
@@ -73759,7 +74086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="boolean"
                               onBlur={null}
@@ -73816,7 +74143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="object"
                               onBlur={null}
@@ -73912,6 +74239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -74248,6 +74576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -74551,6 +74880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -74854,6 +75184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -75190,6 +75521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -75526,6 +75858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -75862,6 +76195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -76198,6 +76532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -76501,6 +76836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -76837,6 +77173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -77454,6 +77791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select all items
                       </span>
@@ -78440,6 +78778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -78651,6 +78990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -78862,6 +79202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -79073,6 +79414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -79284,6 +79626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -79495,6 +79838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -79706,6 +80050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -79917,6 +80262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -80128,6 +80474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -80339,6 +80686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
                       >
                         Select row
                       </span>
@@ -82643,6 +82991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select all items
                         </span>
@@ -83055,6 +83404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -83357,6 +83707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -83699,6 +84050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -84041,6 +84393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -84376,6 +84729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -84685,6 +85039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -85027,6 +85382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -85362,6 +85718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -85704,6 +86061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -86013,6 +86371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -86922,6 +87281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select all items
                         </span>
@@ -87181,7 +87541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="string"
                               onBlur={[Function]}
@@ -87251,7 +87611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="date"
                               onBlur={[Function]}
@@ -87426,7 +87786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="number"
                               onBlur={[Function]}
@@ -87472,7 +87832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="boolean"
                               onBlur={[Function]}
@@ -87529,7 +87889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              className="bx--text-input bx--text__input"
+                              className="bx--text-input"
                               disabled={false}
                               id="object"
                               onBlur={[Function]}
@@ -87624,6 +87984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -87963,6 +88324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -88269,6 +88631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -88575,6 +88938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -88914,6 +89278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -89253,6 +89618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -89592,6 +89958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -89931,6 +90298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -90237,6 +90605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -90576,6 +90945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -91359,6 +91729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select all items
                         </span>
@@ -91602,6 +91973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -91811,6 +92183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -92020,6 +92393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>
@@ -92229,6 +92603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <span
                           className="bx--checkbox-label-text bx--visually-hidden"
+                          dir="auto"
                         >
                           Select row
                         </span>

@@ -46,6 +46,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       Select row
                     </span>
@@ -176,6 +177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       Select row
                     </span>

@@ -150,6 +150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <span
                 className="bx--checkbox-label-text"
+                dir="auto"
               >
                 Display public views
               </span>
@@ -1568,6 +1569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <span
                 className="bx--checkbox-label-text"
+                dir="auto"
               >
                 Display public views
               </span>

@@ -102,7 +102,7 @@ const TileGalleryItem = ({
           mode === 'grid' ? 'card' : 'list'
         }-title`}
         key={`${title}-card-link`}
-        handleClick={onClick}
+        onClick={onClick}
         data-testid={testId}
       >
         {tile}

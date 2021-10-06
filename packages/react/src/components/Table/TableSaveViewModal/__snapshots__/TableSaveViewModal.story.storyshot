@@ -89,7 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text__input"
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -134,6 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   4 active filters
                 </div>
@@ -176,6 +177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   1 hidden column
                 </div>
@@ -213,6 +215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--checkbox-label-text"
+                  dir="auto"
                 >
                   Save as my default view
                 </span>
@@ -238,6 +241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--checkbox-label-text"
+                  dir="auto"
                 >
                   Public view
                 </span>
@@ -529,7 +533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text__input"
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -570,6 +574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--checkbox-label-text"
+                  dir="auto"
                 >
                   Save as my default view
                 </span>
@@ -595,6 +600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--checkbox-label-text"
+                  dir="auto"
                 >
                   Public view
                 </span>
@@ -740,7 +746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text__input"
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -779,6 +785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--checkbox-label-text"
+                  dir="auto"
                 >
                   Save as my default view
                 </span>
@@ -804,6 +811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <span
                   className="bx--checkbox-label-text"
+                  dir="auto"
                 >
                   Public view
                 </span>

@@ -224,6 +224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                     <div
                       className="bx--accordion__title"
+                      dir="auto"
                     >
                       Favorites
                     </div>
@@ -664,6 +665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                     <div
                       className="bx--accordion__title"
+                      dir="auto"
                     >
                       Dashboard Category A
                     </div>
@@ -1562,6 +1564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                     <div
                       className="bx--accordion__title"
+                      dir="auto"
                     >
                       __Favorites__
                     </div>
@@ -1762,6 +1765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </svg>
               <div
                 className="bx--accordion__title"
+                dir="auto"
               >
                 Title
               </div>
@@ -2227,6 +2231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </svg>
               <div
                 className="bx--accordion__title"
+                dir="auto"
               >
                 More
               </div>
@@ -2519,6 +2524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   Title
                 </div>
@@ -2984,6 +2990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   More
                 </div>

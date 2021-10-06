@@ -2005,6 +2005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       Chicago White Sox
                     </span>
@@ -2091,6 +2092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       New York Yankees
                     </span>
@@ -2177,6 +2179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       Houston Astros
                     </span>
@@ -2263,6 +2266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       Atlanta Braves
                     </span>
@@ -2349,6 +2353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       New York Mets
                     </span>
@@ -2435,6 +2440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       Washington Nationals
                     </span>

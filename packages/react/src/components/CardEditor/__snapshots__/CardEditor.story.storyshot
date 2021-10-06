@@ -149,7 +149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="table card_title"
                         onChange={[Function]}
@@ -405,6 +405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <label
                         className="bx--label"
+                        dir="auto"
                         htmlFor="table card_dataSourceIds-combobox"
                         id="downshift-2-label"
                       >
@@ -2041,7 +2042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
                         onChange={[Function]}
@@ -2661,7 +2662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="table card_title"
                         onChange={[Function]}
@@ -2917,6 +2918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <label
                         className="bx--label"
+                        dir="auto"
                         htmlFor="table card_dataSourceIds-combobox"
                         id="downshift-2-label"
                       >
@@ -4164,7 +4166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
                         onChange={[Function]}
@@ -4417,6 +4419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <label
                       className="bx--label"
+                      dir="auto"
                       htmlFor="calculated_dataSourceIds-combobox"
                       id="downshift-2-label"
                     >
@@ -4574,7 +4577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input"
+                      className="bx--text-input"
                       disabled={false}
                       id="custom-content-textinput"
                       onChange={[Function]}
@@ -4614,7 +4617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_title"
                       onChange={[Function]}
@@ -4645,7 +4648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_y-axis-label"
                       onChange={[Function]}
@@ -4676,7 +4679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_unit-selection"
                       onChange={[Function]}
@@ -4707,7 +4710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_decimal-precision"
                       onChange={[Function]}
@@ -5055,7 +5058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
                         onChange={[Function]}
@@ -5675,7 +5678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="image_title"
                         onChange={[Function]}
@@ -6507,7 +6510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="timeseries_title"
                         onChange={[Function]}
@@ -6760,6 +6763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <label
                       className="bx--label"
+                      dir="auto"
                       htmlFor="timeseries_dataSourceIds-combobox"
                       id="downshift-2-label"
                     >
@@ -7116,7 +7120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_title"
                       onChange={[Function]}
@@ -7148,7 +7152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_y-axis-label"
                       onChange={[Function]}
@@ -7180,7 +7184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_unit-selection"
                       onChange={[Function]}
@@ -7212,7 +7216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_decimal-precision"
                       onChange={[Function]}
@@ -7577,7 +7581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
+                          className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="card-1_title"
                           onChange={[Function]}

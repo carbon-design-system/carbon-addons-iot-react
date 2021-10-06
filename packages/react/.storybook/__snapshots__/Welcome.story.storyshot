@@ -122,6 +122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
           </svg>
           <div
             className="bx--accordion__title"
+            dir="auto"
           >
             Exports table
           </div>
