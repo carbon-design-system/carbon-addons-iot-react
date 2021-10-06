@@ -77,6 +77,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
+        aria-labelledby="tooltip"
         className="bx--tooltip__content"
         role="dialog"
       >
@@ -242,6 +243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
+        aria-labelledby="tooltip"
         className="bx--tooltip__content"
         role="dialog"
       >
@@ -417,6 +419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
+        aria-labelledby="tooltip"
         className="bx--tooltip__content"
         role="dialog"
       >
@@ -638,6 +641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
+        aria-labelledby="tooltip"
         className="bx--tooltip__content"
         role="dialog"
       >

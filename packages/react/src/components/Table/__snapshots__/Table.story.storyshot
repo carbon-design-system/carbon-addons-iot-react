@@ -106499,6 +106499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--tooltip__caret"
                 />
                 <div
+                  aria-labelledby="flyout-tooltip"
                   className="bx--tooltip__content"
                   role="dialog"
                 >

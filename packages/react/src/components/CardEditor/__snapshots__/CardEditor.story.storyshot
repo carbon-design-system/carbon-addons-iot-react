@@ -1191,6 +1191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       />
                       <span
                         className=""
+                        dir="auto"
                       >
                         Descending
                       </span>
@@ -1218,6 +1219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       />
                       <span
                         className=""
+                        dir="auto"
                       >
                         Ascending
                       </span>
@@ -3770,6 +3772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       />
                       <span
                         className=""
+                        dir="auto"
                       >
                         Descending
                       </span>
@@ -3797,6 +3800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       />
                       <span
                         className=""
+                        dir="auto"
                       >
                         Ascending
                       </span>
@@ -6026,6 +6030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           />
                           <span
                             className=""
+                            dir="auto"
                           >
                             Fit
                           </span>
@@ -6053,6 +6058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           />
                           <span
                             className=""
+                            dir="auto"
                           >
                             Stretch
                           </span>
