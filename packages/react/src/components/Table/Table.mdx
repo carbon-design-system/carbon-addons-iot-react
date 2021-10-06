@@ -411,12 +411,34 @@ You can pass which rows are currently selected through the view.table.selectedId
 
 ### Simple Filtering
 
-Simple filtering in a `Table` is provided through the `options.hasFilter=true` prop and the `view.toolbar.activeBar='filter'` prop. You set set the current filters by supplying the `view.filters` prop as an array of object with a columnId and a value key.
+Simple filtering in a `Table` is provided through the `options.hasFilter=true` prop and the `view.toolbar.activeBar='filter'` prop. You set set the current filters by supplying the `view.filters` prop as an array of object with a columnId and a value key. The objects in the `columns` array must also be given a `filter` prop that defines the input `placeholderText` and, if needed, an `options` prop for a combobox filter.
 
 ```jsx
 <Table
   id="table"
-  columns={columns}
+  columns={[
+    {
+      id: 'string',
+      name: 'String',
+      filter: { placeholderText: 'enter a string' },
+    },
+    {
+      id: 'select',
+      name: 'Select',
+      filter: { placeholderText: 'pick an option',
+        options: [
+          {
+            id: 'option-A',
+            text: 'option-A',
+          },
+          {
+            id: 'option-B',
+            text: 'option-B',
+          },
+        ]
+      },
+    },
+  ]}
   data={data}
   actions={{
     toolbar: {
