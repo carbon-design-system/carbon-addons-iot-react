@@ -48,6 +48,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             id="downshift-0-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            title="Dropdown menu options"
             type="button"
           >
             <span

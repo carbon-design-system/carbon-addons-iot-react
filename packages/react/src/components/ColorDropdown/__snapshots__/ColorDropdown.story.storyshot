@@ -39,6 +39,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title="Select a color"
           type="button"
         >
           <span
@@ -125,6 +126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title="Select a color"
           type="button"
         >
           <span
@@ -211,6 +213,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title={
+            <div
+              className="iot--color-dropdown__item"
+              title="purple70"
+            >
+              <div
+                className="iot--color-dropdown__item-border"
+              >
+                <div
+                  className="iot--color-dropdown__color-sample"
+                  style={
+                    Object {
+                      "backgroundColor": "#6929c4",
+                    }
+                  }
+                  title="#6929c4"
+                />
+              </div>
+            </div>
+          }
           type="button"
         >
           <span
@@ -314,6 +336,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title={
+            <div
+              className="iot--color-dropdown__item"
+              title="teal70"
+            >
+              <div
+                className="iot--color-dropdown__item-border"
+              >
+                <div
+                  className="iot--color-dropdown__color-sample"
+                  style={
+                    Object {
+                      "backgroundColor": "#005d5d",
+                    }
+                  }
+                  title="#005d5d"
+                />
+                <div
+                  className="iot--color-dropdown__color-name"
+                >
+                  teal70
+                </div>
+              </div>
+            </div>
+          }
           type="button"
         >
           <span

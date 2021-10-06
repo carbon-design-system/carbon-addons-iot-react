@@ -221,6 +221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Large wide (16x4)"
                       type="button"
                     >
                       <span
@@ -295,6 +296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -435,6 +437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             placeholder="Filter"
                             role="combobox"
                             tabIndex="0"
+                            title=""
                             type="text"
                             value=""
                           />
@@ -1116,6 +1119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-3-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Sort by"
                     type="button"
                   >
                     <span
@@ -2109,6 +2113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium thin (4x2)"
                       type="button"
                     >
                       <span
@@ -2183,6 +2188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -2727,6 +2733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Large wide (16x4)"
                       type="button"
                     >
                       <span
@@ -2801,6 +2808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -2941,6 +2949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             placeholder="Filter"
                             role="combobox"
                             tabIndex="0"
+                            title=""
                             type="text"
                             value=""
                           />
@@ -3697,6 +3706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-4-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Sort by"
                     type="button"
                   >
                     <span
@@ -4226,6 +4236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium thin (4x2)"
                       type="button"
                     >
                       <span
@@ -4300,6 +4311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -4437,6 +4449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           placeholder="Filter"
                           role="combobox"
                           tabIndex="0"
+                          title=""
                           type="text"
                           value=""
                         />
@@ -5114,6 +5127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium thin (4x2)"
                       type="button"
                     >
                       <span
@@ -5188,6 +5202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -5732,6 +5747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium wide (16x2)"
                       type="button"
                     >
                       <span
@@ -5806,6 +5822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -6099,6 +6116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-2-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a color"
                       type="button"
                     >
                       <span
@@ -6561,6 +6579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium wide (16x2)"
                       type="button"
                     >
                       <span
@@ -6635,6 +6654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -6772,6 +6792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           placeholder="Filter"
                           role="combobox"
                           tabIndex="0"
+                          title=""
                           type="text"
                           value=""
                         />
@@ -7628,6 +7649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-0-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="Small (4x1)"
                         type="button"
                       >
                         <span
@@ -7702,6 +7724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-1-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="Select a time range"
                         type="button"
                       >
                         <span

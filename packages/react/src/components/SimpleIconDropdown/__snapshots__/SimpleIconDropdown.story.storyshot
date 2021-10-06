@@ -37,6 +37,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title={
+            <div
+              className="iot--icon-dropdown__item"
+              style={
+                Object {
+                  "color": "unset",
+                }
+              }
+            >
+              <div
+                className="iot--icon-dropdown__item-border"
+              >
+                <ForwardRef(Checkmark24) />
+              </div>
+            </div>
+          }
           type="button"
         >
           <span
@@ -147,6 +163,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title={
+            <div
+              className="iot--icon-dropdown__item"
+              style={
+                Object {
+                  "color": "red",
+                }
+              }
+            >
+              <div
+                className="iot--icon-dropdown__item-border"
+              >
+                <ForwardRef(ErrorOutline24) />
+              </div>
+            </div>
+          }
           type="button"
         >
           <span
@@ -261,6 +293,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title={
+            <div
+              className="iot--icon-dropdown__item"
+              style={
+                Object {
+                  "color": "unset",
+                }
+              }
+            >
+              <div
+                className="iot--icon-dropdown__item-border"
+              >
+                <ForwardRef(Information24) />
+              </div>
+            </div>
+          }
           type="button"
         >
           <span

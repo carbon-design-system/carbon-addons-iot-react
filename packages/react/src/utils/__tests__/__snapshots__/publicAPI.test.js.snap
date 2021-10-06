@@ -21588,7 +21588,7 @@ Map {
       "open": Object {
         "type": "bool",
       },
-      "renderExpand": Object {
+      "renderExpando": Object {
         "type": "func",
       },
       "testId": Object {
@@ -26246,7 +26246,7 @@ Map {
       "open": Object {
         "type": "bool",
       },
-      "renderExpand": Object {
+      "renderExpando": Object {
         "type": "func",
       },
       "title": Object {
@@ -26806,7 +26806,7 @@ Map {
         "className": Object {
           "type": "string",
         },
-        "enableExpand": Object {
+        "enableExpando": Object {
           "type": "bool",
         },
         "expandIconDescription": Object {
@@ -28800,6 +28800,9 @@ Map {
         "invalidText": Object {
           "type": "node",
         },
+        "itemToElement": Object {
+          "type": "func",
+        },
         "itemToString": Object {
           "type": "func",
         },
@@ -28954,6 +28957,9 @@ Map {
       },
       "invalidText": Object {
         "type": "node",
+      },
+      "itemToElement": Object {
+        "type": "func",
       },
       "itemToString": Object {
         "type": "func",
@@ -30458,6 +30464,7 @@ Map {
       "warn": false,
       "warnText": "",
     },
+    "displayName": "TextInput",
     "propTypes": Object {
       "className": Object {
         "type": "string",

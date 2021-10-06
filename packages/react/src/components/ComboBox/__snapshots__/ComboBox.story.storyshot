@@ -56,6 +56,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value="Option 1"
             />
@@ -212,6 +213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value=""
             />
@@ -324,6 +326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value=""
             />
@@ -436,6 +439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value=""
             />
@@ -540,6 +544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             placeholder="Filter..."
             role="combobox"
             tabIndex="0"
+            title=""
             type="text"
             value="Option 1"
           />
@@ -695,6 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value=""
             />

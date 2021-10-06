@@ -28116,6 +28116,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   id="downshift-0-toggle-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  title={
+                    <TableViewDropdownItem
+                      activeViewEdited={true}
+                      i18n={
+                        Object {
+                          "ariaLabel": "Select view",
+                          "edited": "Edited",
+                          "manageViews": "Manage views",
+                          "saveAsNewView": "Save as new view",
+                          "saveChanges": "Save changes",
+                          "tableViewMenu": "Table view menu",
+                          "view": "View",
+                          "viewAll": "View All",
+                        }
+                      }
+                      isCompact={false}
+                      isSelected={true}
+                      item={
+                        Object {
+                          "id": "view2",
+                          "text": "Filters and search view",
+                        }
+                      }
+                      testID="TableViewDropdownItem-view2"
+                    />
+                  }
                   type="button"
                 >
                   <span
@@ -29035,6 +29061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               placeholder="pick an option"
                               role="combobox"
                               tabIndex="0"
+                              title=""
                               type="text"
                               value=""
                             />
@@ -33961,6 +33988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             placeholder="pick an option"
                             role="combobox"
                             tabIndex="0"
+                            title=""
                             type="text"
                             value="option-B"
                           />
@@ -40269,6 +40297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               placeholder="pick an option"
                               role="combobox"
                               tabIndex="0"
+                              title=""
                               type="text"
                               value="option-B"
                             />

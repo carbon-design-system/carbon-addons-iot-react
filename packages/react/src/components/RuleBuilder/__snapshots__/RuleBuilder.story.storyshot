@@ -291,6 +291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-0-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="ALL"
                         type="button"
                       >
                         <span
@@ -431,6 +432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-1-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Select a column"
                     type="button"
                   >
                     <span
@@ -495,6 +497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-2-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Select an operand"
                     type="button"
                   >
                     <span
@@ -2956,6 +2959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-0-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="ALL"
                         type="button"
                       >
                         <span
@@ -3096,6 +3100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-1-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Column 1"
                     type="button"
                   >
                     <span
@@ -3160,6 +3165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-2-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Equals"
                     type="button"
                   >
                     <span
@@ -3369,6 +3375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-3-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Column 2"
                     type="button"
                   >
                     <span
@@ -3433,6 +3440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-4-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Less than"
                     type="button"
                   >
                     <span
@@ -3645,6 +3653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-5-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="ANY"
                         type="button"
                       >
                         <span
@@ -3718,6 +3727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-6-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Column 2"
                       type="button"
                     >
                       <span
@@ -3782,6 +3792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-7-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Greater than or equal to"
                       type="button"
                     >
                       <span
@@ -3991,6 +4002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-8-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Column 1"
                       type="button"
                     >
                       <span
@@ -4055,6 +4067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-9-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Less than"
                       type="button"
                     >
                       <span
@@ -4267,6 +4280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-10-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="ALL"
                           type="button"
                         >
                           <span
@@ -4340,6 +4354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-11-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="Select a column"
                         type="button"
                       >
                         <span
@@ -4404,6 +4419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-12-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="Select an operand"
                         type="button"
                       >
                         <span
@@ -4616,6 +4632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             id="downshift-13-toggle-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
+                            title="ALL"
                             type="button"
                           >
                             <span
@@ -4689,6 +4706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-14-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="Column 1"
                           type="button"
                         >
                           <span
@@ -4753,6 +4771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-15-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="Equals"
                           type="button"
                         >
                           <span
@@ -4962,6 +4981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-16-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="Column 2"
                           type="button"
                         >
                           <span
@@ -5026,6 +5046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-17-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="Equals"
                           type="button"
                         >
                           <span
