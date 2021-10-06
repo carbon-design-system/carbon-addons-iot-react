@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.10...v2.147.0-next.11) (2021-10-06)
+
+
+### Bug Fixes
+
+* **table:** body ([f1cd8d6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f1cd8d677f7bb0afa20b448223484314d3300e05))
+* **table:** projectedRowLength ([f9740b7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f9740b76cb3194e8af2c32de7059df61e489bbd8))
+* **table:** projectedRowLength now does rowSpans ([0312581](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/031258157e03ec4a01ecf00a7b2168463cc3b703))
+
+
+
+
+
 # [2.147.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.9...v2.147.0-next.10) (2021-10-05)
 
 
