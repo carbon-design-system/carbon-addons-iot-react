@@ -156,6 +156,10 @@ const propTypes = {
       /** Number of pages rendered in pagination */
       maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
+      /**
+       * Specify the size of the Pagination buttons. Currently supports either `sm`, 'md' (default) or 'lg` as an option.
+       */
+      size: PropTypes.oneOf(['sm', 'md', 'lg']),
     }),
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -346,6 +350,7 @@ export const defaultProps = (baseProps) => ({
       totalItems: baseProps.data && baseProps.data.length,
       maxPages: 100,
       isItemPerPageHidden: false,
+      size: 'lg',
     },
     filters: [],
     advancedFilters: [],
@@ -1061,6 +1066,7 @@ const Table = (props) => {
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}
+          carbonSize={paginationProps.size}
         />
       ) : null}
       {options.hasMultiSort && (
