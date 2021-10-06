@@ -1262,6 +1262,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
+                  ActionableNotification
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
                   ToastNotification
                 </div>
                 <div
@@ -3492,6 +3507,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   role="cell"
                 >
                   unstable_ProgressBar
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_usePrefix
                 </div>
                 <div
                   className="bx--structured-list-td"

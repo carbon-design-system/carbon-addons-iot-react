@@ -506,6 +506,7 @@ Map {
             20,
             30,
           ],
+          "size": "lg",
           "totalItems": undefined,
         },
         "selectedAdvancedFilterIds": Array [],
@@ -1442,6 +1443,16 @@ Map {
                       },
                     ],
                     "type": "arrayOf",
+                  },
+                  "size": Object {
+                    "args": Array [
+                      Array [
+                        "sm",
+                        "md",
+                        "lg",
+                      ],
+                    ],
+                    "type": "oneOf",
                   },
                   "totalItems": Object {
                     "type": "number",
