@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.11...v2.147.0-next.12) (2021-10-06)
+
+
+### Features
+
+* **icon-content-switcher:** add it ([310aa15](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/310aa15c4214ec6745659b138286389c1338fd12))
+
+
+
+
+
 # [2.147.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.10...v2.147.0-next.11) (2021-10-06)
 
 
