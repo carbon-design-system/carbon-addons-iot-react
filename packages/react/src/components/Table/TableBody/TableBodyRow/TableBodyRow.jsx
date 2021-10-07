@@ -543,7 +543,7 @@ const TableBodyRow = ({
           data-nesting-offset={nestingOffset}
           onExpand={(evt) => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
           onClick={() => {
-            if (shouldExpandOnRowClick) {
+            if (shouldExpandOnRowClick && nestingChildCount) {
               onRowExpanded(id, false);
             }
             if (hasRowSelection === 'single' && isSelectable !== false) {
@@ -576,7 +576,7 @@ const TableBodyRow = ({
         hasRowSelection={hasRowSelection}
         onExpand={(evt) => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {
-          if (shouldExpandOnRowClick) {
+          if (shouldExpandOnRowClick && nestingChildCount) {
             onRowExpanded(id, true);
           }
           if (hasRowSelection === 'single' && isSelectable !== false) {

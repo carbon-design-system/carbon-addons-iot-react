@@ -92,6 +92,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
           hasRowNesting: true,
           hasFilter: true,
           hasResize: true,
+          shouldExpandOnRowClick: true,
           wrapCellText: select(
             'Choose how text should wrap witin columns (options.wrapCellText)',
             selectTextWrapping,
