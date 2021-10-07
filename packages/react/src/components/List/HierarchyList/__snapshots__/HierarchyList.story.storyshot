@@ -49543,7 +49543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       </span>
     </div>
     <div
-      className="iot--list iot--list__full-height"
+      className="iot--list"
       data-testid="list"
     >
       <div
@@ -49633,7 +49633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         </div>
       </div>
       <div
-        className="iot--list--content__full-height iot--list--content"
+        className="iot--list--content"
       >
         <div
           className="iot--list-item-parent"
