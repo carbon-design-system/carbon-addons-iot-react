@@ -58,6 +58,7 @@
   }
 }
 
+// SET BORDERS
 // We need the bx--data-table selector in order to override some Carbon styles
 .#{$prefix}--data-table {
   .#{$iot-prefix}--table-head--with-column-groups {
@@ -71,43 +72,61 @@
       border-width: 0;
     }
 
-    // THE ROW OF NORMAL COLUMN HEADERS
+    // THE ROW OF COLUMN HEADERS
     .#{$iot-prefix}--table-header__column-row {
-      // Add border width to the "normal" columns
-      th.iot--table-head--table-header {
-        border-left-width: $border-width;
-      }
-      // First columm should never get a left border.
-      th:first-of-type {
-        border-left: none;
+      th {
+        // Add left border width to the "real" columns (i.e. not to nesting/muli select etc)
+        &.#{$iot-prefix}--table-head--table-header {
+          border-left-width: $border-width;
+        }
+        // But first columm should never get a left border.
+        &:first-of-type {
+          border-left-width: 0;
+          // But again, the first column is a "real" column it should get a right border
+          // bacause we can't put a left border on the first group row column
+          // since the colspan makes it in possible to tell when a group row column is the
+          // first visual column.
+          &.#{$iot-prefix}--table-header--span-group-row {
+            border-right-width: $border-width;
+            // We need to compensate the next sibling by removing that left border
+            // or else we end up with double borders.
+            & + .#{$iot-prefix}--table-head--table-header {
+              border-left-width: 0;
+            }
+          }
+        }
       }
 
       // Add border width to the first column that appears after the
-      // normal columns (which can be either row action or expander).
+      // "real" columns which can be either row action or expander but not both.
       .#{$iot-prefix}--table-header-expander-column,
       .#{$iot-prefix}--table-header-row-action-column {
         border-left-width: $border-width;
       }
       .#{$iot-prefix}--table-header-expander-column
         ~ .#{$iot-prefix}--table-header-row-action-column {
-        border-left: none;
+        border-left-width: 0;
       }
 
       // Fix for multisort/overflow button that exceeded its container
       // possibly move this fix to always be active, not just for column grouping.
-      .iot--table-head--table-header--with-overflow {
-        .bx--table-header-label {
+      .#{$iot-prefix}--table-head--table-header--with-overflow {
+        .#{$prefix}--table-header-label {
           padding-bottom: 0;
           padding-top: 0;
         }
       }
     }
 
-    // THE ROW OF THE COLUMN GROUPS
+    // THE ROW OF THE GROUPS
     .#{$iot-prefix}--table-header__group-row {
       th {
-        &:not(:first-of-type) {
-          border-left-width: $border-width;
+        border-left-width: $border-width;
+        &:first-of-type {
+          &.#{$iot-prefix}--table-header__group-row-spacer,
+          &.#{$iot-prefix}--table-header__column-group {
+            border-left-width: 0;
+          }
         }
         &.#{$iot-prefix}--table-header__column-group {
           text-align: center;
@@ -144,16 +163,29 @@
 
     // RTL STYLING
     [dir='rtl'] & {
-      // Add right side border width to the "normal" columns
-      th.iot--table-head--table-header {
-        border-right-width: $border-width;
-        border-left: none;
-      }
-
-      // First column should never get a right border.
-      .#{$iot-prefix}--table-header__column-row {
-        th:first-of-type {
-          border-right: none;
+      // Revert the flow of borders for start of the table
+      th {
+        // Add right border width to the "real" columns (i.e. not to nesting/muli select etc)
+        // remove the left border from ltr dir
+        &.#{$iot-prefix}--table-head--table-header {
+          border-right-width: $border-width;
+          border-left-width: 0;
+        }
+        // But first columm should never get a right border.
+        &:first-of-type {
+          border-right-width: 0;
+          // But again, the first column is a "real" column it should now get a left border
+          // bacause we can't put a right border on the first group row column
+          // since the colspan makes it in possible to tell when a group row column is the
+          // first visual column.
+          &.#{$iot-prefix}--table-header--span-group-row {
+            border-left-width: $border-width;
+            // We need to compensate the next sibling by removing that right border
+            // or else we end up with double borders.
+            & + .#{$iot-prefix}--table-head--table-header {
+              border-right-width: 0;
+            }
+          }
         }
       }
 
@@ -162,17 +194,16 @@
       .#{$iot-prefix}--table-header-expander-column,
       .#{$iot-prefix}--table-header-row-action-column {
         border-right-width: $border-width;
-        border-left: none;
+        border-left-width: 0;
       }
       .#{$iot-prefix}--table-header-expander-column
         ~ .#{$iot-prefix}--table-header-row-action-column {
-        border-right: none;
+        border-right-width: 0;
       }
 
-      // Add right side border to the "group" columns
       .#{$iot-prefix}--table-header__group-row th:not(:first-of-type) {
         border-right-width: $border-width;
-        border-left: none;
+        border-left-width: 0;
       }
     }
   }
@@ -188,7 +219,7 @@
   }
   &--sm {
     .#{$iot-prefix}--table-head--with-column-groups {
-      .bx--table-header-label {
+      .#{$prefix}--table-header-label {
         padding-bottom: 0;
         padding-top: 0;
       }
@@ -197,7 +228,7 @@
   }
   &--xs {
     .#{$iot-prefix}--table-head--with-column-groups {
-      .bx--table-header-label {
+      .#{$prefix}--table-header-label {
         padding-bottom: 0;
         padding-top: 0;
       }
