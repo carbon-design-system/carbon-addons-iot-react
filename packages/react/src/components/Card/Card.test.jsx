@@ -256,6 +256,8 @@ describe('Card', () => {
         tooltipValue: '2018-09-20 08:57 to Now',
       },
     });
+
+    expect(screen.getByTestId('Card-subtitle')).toHaveTextContent('2018-09-20 08:57 to Now');
   });
   it('card toolbar renders in header only when there are actions', () => {
     const { container, rerender } = render(
