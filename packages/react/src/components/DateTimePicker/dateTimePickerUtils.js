@@ -1,29 +1,36 @@
+import cloneDeep from 'lodash/cloneDeep';
+
 import { PICKER_KINDS, INTERVAL_VALUES, RELATIVE_VALUES } from '../../constants/DateConstants';
 import dayjs from '../../utils/dayjs';
-
-export const getHumanReadableDate = (timeRange, dateTimeMask, toLabel) => {
+/**
+ * Parses a value object into a human readable value
+ * @param {Object} value - the currently selected value
+ * @param {string} value.kind - preset/relative/absolute
+ * @param {Object} value.preset - the preset selection
+ * @param {Object} value - the relative time selection
+ * @param {Object} value - the absolute time selection
+ * @returns {Object} a human readable value and a furtherly augmented value object
+ */
+export const parseValue = (timeRange, dateTimeMask, toLabel) => {
   let readableValue = '';
 
   if (!timeRange) {
-    return readableValue;
-  }
-
-  if (timeRange.range) {
-    return timeRange.range;
+    return { readableValue };
   }
 
   const kind = timeRange.kind ?? timeRange.timeRangeKind;
   const value =
     kind === PICKER_KINDS.RELATIVE
-      ? timeRange?.value?.relative ?? timeRange.timeRangeValue
-      : PICKER_KINDS.ABSOLUTE
-      ? timeRange?.value?.absolute ?? timeRange.timeRangeValue
-      : timeRange?.value?.preset ?? timeRange.timeRangeValue;
+      ? timeRange?.relative ?? timeRange.timeRangeValue
+      : kind === PICKER_KINDS.ABSOLUTE
+      ? timeRange?.absolute ?? timeRange.timeRangeValue
+      : timeRange?.preset ?? timeRange.timeRangeValue;
 
   if (!value) {
-    return readableValue;
+    return { readableValue };
   }
 
+  const returnValue = cloneDeep(timeRange);
   switch (kind) {
     case PICKER_KINDS.RELATIVE: {
       let endDate = dayjs();
@@ -44,7 +51,11 @@ export const getHumanReadableDate = (timeRange, dateTimeMask, toLabel) => {
             value.lastNumber,
             value.lastInterval ? value.lastInterval : INTERVAL_VALUES.MINUTES
           );
-
+        if (!returnValue.relative) {
+          returnValue.relative = {};
+        }
+        returnValue.relative.start = new Date(startDate.valueOf());
+        returnValue.relative.end = new Date(endDate.valueOf());
         readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
           endDate
         ).format(dateTimeMask)}`;
@@ -57,12 +68,17 @@ export const getHumanReadableDate = (timeRange, dateTimeMask, toLabel) => {
         startDate = startDate.hours(value.startTime.split(':')[0]);
         startDate = startDate.minutes(value.startTime.split(':')[1]);
       }
+      if (!returnValue.absolute) {
+        returnValue.absolute = {};
+      }
+      returnValue.absolute.start = new Date(startDate.valueOf());
       if (value.end ?? value.endDate) {
         let endDate = dayjs(value.end ?? value.endDate);
         if (value.endTime) {
           endDate = endDate.hours(value.endTime.split(':')[0]);
           endDate = endDate.minutes(value.endTime.split(':')[1]);
         }
+        returnValue.absolute.end = new Date(endDate.valueOf());
         readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
           endDate
         ).format(dateTimeMask)}`;
@@ -77,5 +93,6 @@ export const getHumanReadableDate = (timeRange, dateTimeMask, toLabel) => {
       readableValue = value.label;
       break;
   }
-  return readableValue;
+
+  return { readableValue, ...returnValue };
 };

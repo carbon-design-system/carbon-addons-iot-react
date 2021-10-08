@@ -24,7 +24,7 @@ import { CardPropTypes } from '../../constants/CardPropTypes';
 import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize, useCardResizing } from '../../utils/cardUtilityFunctions';
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
-import { getHumanReadableDate } from '../DateTimePicker/dateTimePickerUtils';
+import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
 
 import CardToolbar from './CardToolbar';
 
@@ -368,7 +368,9 @@ const Card = (props) => {
     }
 
     if (mergedAvailableActions.range === 'full' || mergedAvailableActions.range === 'iconOnly') {
-      return getHumanReadableDate(timeRange, dateTimeMask, strings.toLabel);
+      const { readableValue } = parseValue(timeRange, dateTimeMask, strings.toLabel);
+
+      return readableValue;
     }
 
     return undefined;

@@ -16,7 +16,6 @@ import {
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import uuid from 'uuid';
-import cloneDeep from 'lodash/cloneDeep';
 import warning from 'warning';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
@@ -30,6 +29,8 @@ import {
 } from '../../constants/DateConstants';
 import Button from '../Button/Button';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
+
+import { parseValue } from './dateTimePickerUtils';
 
 const { iotPrefix } = settings;
 
@@ -332,79 +333,6 @@ const DateTimePicker = ({
   }, [datePickerElem, id]);
 
   /**
-   * Parses a value object into a human readable value
-   * @param {Object} value - the currently selected value
-   * @param {string} value.kind - preset/relative/absolute
-   * @param {Object} value.preset - the preset selection
-   * @param {Object} value.relative - the relative time selection
-   * @param {Object} value.absolute - the absolute time selection
-   * @returns {Object} a human readable value and a furtherly augmented value object
-   */
-  const parseValue = (value) => {
-    setCurrentValue(value);
-    let readableValue = '';
-    const returnValue = cloneDeep(value);
-    switch (value.kind) {
-      case PICKER_KINDS.RELATIVE: {
-        let endDate = dayjs();
-        if (value.relative.relativeToWhen !== '') {
-          endDate =
-            value.relative.relativeToWhen === RELATIVE_VALUES.YESTERDAY
-              ? dayjs().add(-1, INTERVAL_VALUES.DAYS)
-              : dayjs();
-          // wait to parse it until fully typed
-          if (value.relative.relativeToTime.length === 5) {
-            endDate = endDate.hour(Number(value.relative.relativeToTime.split(':')[0]));
-            endDate = endDate.minute(Number(value.relative.relativeToTime.split(':')[1]));
-          }
-
-          const startDate = endDate
-            .clone()
-            .subtract(
-              value.relative.lastNumber,
-              value.relative.lastInterval ? value.relative.lastInterval : INTERVAL_VALUES.MINUTES
-            );
-          returnValue.relative.start = new Date(startDate.valueOf());
-          returnValue.relative.end = new Date(endDate.valueOf());
-          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-            endDate
-          ).format(dateTimeMask)}`;
-        }
-        break;
-      }
-      case PICKER_KINDS.ABSOLUTE: {
-        let startDate = dayjs(value.absolute.start);
-        if (value.absolute.startTime) {
-          startDate = startDate.hours(value.absolute.startTime.split(':')[0]);
-          startDate = startDate.minutes(value.absolute.startTime.split(':')[1]);
-        }
-        returnValue.absolute.start = new Date(startDate.valueOf());
-        if (value.absolute.end) {
-          let endDate = dayjs(value.absolute.end);
-          if (value.absolute.endTime) {
-            endDate = endDate.hours(value.absolute.endTime.split(':')[0]);
-            endDate = endDate.minutes(value.absolute.endTime.split(':')[1]);
-          }
-          returnValue.absolute.end = new Date(endDate.valueOf());
-          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-            endDate
-          ).format(dateTimeMask)}`;
-        } else {
-          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-            startDate
-          ).format(dateTimeMask)}`;
-        }
-        break;
-      }
-      default:
-        readableValue = value.preset.label;
-        break;
-    }
-    setHumanValue(readableValue);
-    return { readableValue, ...returnValue };
-  };
-
-  /**
    * Transforms a default or selected value into a full blown returnable object
    * @param {Object} [preset] clicked preset
    * @param {string} preset.label preset label
@@ -435,9 +363,13 @@ const DateTimePicker = ({
       value.preset = preset;
       value.kind = PICKER_KINDS.PRESET;
     }
+    setCurrentValue(value);
+    const parsedValue = parseValue(value, dateTimeMask, strings.toLabel);
+    setHumanValue(parsedValue.readableValue);
+
     return {
       ...value,
-      ...parseValue(value),
+      ...parsedValue,
     };
   };
 
