@@ -92,6 +92,8 @@ const propTypes = {
   className: PropTypes.string,
   /** an optional id string passed to the list search field */
   searchId: PropTypes.string,
+  /** content shown if list is empty */
+  emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 };
 
 const defaultProps = {
@@ -131,6 +133,7 @@ const defaultProps = {
   className: null,
   items: [],
   searchId: null,
+  emptyState: 'No list items to show',
 };
 
 /**
@@ -232,6 +235,7 @@ const HierarchyList = ({
   sendingData,
   className,
   searchId,
+  emptyState,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -498,6 +502,7 @@ const HierarchyList = ({
         ref={selectedItemRef}
         onItemMoved={handleDrag}
         className={className}
+        emptyState={emptyState}
       />
     </>
   );

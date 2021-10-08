@@ -5389,6 +5389,297 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList with empty state 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": 400,
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
+      data-floating-menu-container={true}
+      data-testid="ComposedModal"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onClose={[Function]}
+      onKeyDown={[Function]}
+      open={false}
+      role="presentation"
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+      <div
+        aria-modal="true"
+        className="bx--modal-container"
+        role="dialog"
+      >
+        <div
+          className="bx--modal-header"
+        >
+          <h3
+            className="bx--modal-header__heading bx--type-beta"
+          >
+            Move 1 item underneath
+          </h3>
+          <button
+            aria-label="Close"
+            className="bx--modal-close"
+            onClick={[Function]}
+            title="Close"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--modal-close__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="bx--modal-content"
+        >
+          <div
+            className="iot--hierarchy-list-bulk-modal--title"
+          >
+            Select a destination
+          </div>
+          <div
+            className="breadcrumb--container"
+            data-testid="overflow"
+          >
+            <nav
+              aria-label="Breadcrumb"
+              className={null}
+              data-testid="modal-breadcrumb"
+            >
+              <ol
+                className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
+              >
+                <li
+                  className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
+                  title="All rows"
+                >
+                  <button
+                    className="bx--link iot--hierarchy-list-bulk-modal--breadcrumb-button"
+                    kind="ghost"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    All rows
+                  </button>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div
+            className="iot--hierarchy-list-bulk-modal--list"
+          />
+        </div>
+        <div
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--btn bx--btn bx--btn--secondary"
+            data-testid="ComposedModal-modal-secondary-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--btn bx--btn bx--btn--primary"
+            data-testid="ComposedModal-modal-primary-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+    </div>
+    <div
+      className="iot--list iot--list__full-height"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            Big List
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+        <div
+          className="iot--list-header--search"
+        >
+          <div
+            aria-labelledby="iot--list-header--search-search"
+            className="bx--search bx--search--sm"
+            role="search"
+          >
+            <div
+              className="bx--search-magnifier"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--search-magnifier-icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                />
+              </svg>
+            </div>
+            <label
+              className="bx--label"
+              htmlFor="iot--list-header--search"
+              id="iot--list-header--search-search"
+            >
+              Search
+            </label>
+            <input
+              autoComplete="off"
+              className="bx--search-input"
+              data-testid="list-header-search-input"
+              id="iot--list-header--search"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Search"
+              role="searchbox"
+              type="text"
+              value=""
+            />
+            <button
+              aria-label="Clear search input"
+              className="bx--search-close bx--search-close--hidden"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--content__full-height iot--list--content"
+      >
+        <div
+          className="iot--list--empty-state iot--list--empty-state__full-height"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={32}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={32}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
+            />
+          </svg>
+          <p>
+            __a custom empty state__
+          </p>
+        </div>
+      </div>
+      <div
+        className="iot--list--page"
+      >
+        <div
+          className="iot-simple-pagination-container"
+          data-testid="iot-simple-pagination"
+        >
+          <div
+            className="iot-simple-pagination-page-bar"
+          >
+            <span
+              className="iot-simple-pagination-page-label"
+              maxpage={NaN}
+            >
+              Page 1
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList with large number of items 1`] = `
 <div
   className="storybook-container"
