@@ -668,13 +668,24 @@ const DateTimePicker = ({
       };
       switch (value.kind) {
         case PICKER_KINDS.ABSOLUTE:
-          returnValue.timeRangeValue = value.absolute;
+          returnValue.timeRangeValue = {
+            ...value.absolute,
+            humanValue,
+            tooltipValue,
+          };
           break;
         case PICKER_KINDS.RELATIVE:
-          returnValue.timeRangeValue = value.relative;
+          returnValue.timeRangeValue = {
+            ...value.relative,
+            humanValue,
+            tooltipValue,
+          };
           break;
         default:
-          returnValue.timeRangeValue = value.preset;
+          returnValue.timeRangeValue = {
+            ...value.preset,
+            tooltipValue,
+          };
           break;
       }
 

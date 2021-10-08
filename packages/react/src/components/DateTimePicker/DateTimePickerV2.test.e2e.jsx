@@ -47,6 +47,8 @@ describe('DateTimePickerV2', () => {
             start: Cypress.sinon.match.any,
             startDate: '08/06/2021',
             startTime: '01:00',
+            humanValue: '2021-08-06 01:00 to 2021-08-08 12:34',
+            tooltipValue: '',
           },
         });
       });
@@ -175,6 +177,8 @@ describe('DateTimePickerV2', () => {
           timeRangeValue: {
             relativeToWhen: '',
             relativeToTime: '12:04',
+            humanValue: '',
+            tooltipValue: '',
           },
         });
       });
@@ -212,6 +216,8 @@ describe('DateTimePickerV2', () => {
             relativeToTime: '12:04',
             end: Cypress.sinon.match.any,
             start: Cypress.sinon.match.any,
+            humanValue: 'Invalid Date to 2021-10-08 12:04',
+            tooltipValue: '',
           },
         });
       });

@@ -11876,6 +11876,7 @@ Map {
         "thisWeekLabel": "This week",
         "thisYearLabel": "This year",
         "timeRangeLabel": "Time range",
+        "toLabel": "to",
         "weeklyLabel": "Weekly",
       },
       "isEditable": false,
@@ -12518,6 +12519,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -13478,6 +13482,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -14673,6 +14680,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -16810,6 +16820,9 @@ Map {
             "thisYearLabel": Object {
               "type": "string",
             },
+            "toLabel": Object {
+              "type": "string",
+            },
             "weeklyLabel": Object {
               "type": "string",
             },
@@ -17152,6 +17165,7 @@ Map {
         "thisWeekLabel": "This week",
         "thisYearLabel": "This year",
         "timeRangeLabel": "Time range",
+        "toLabel": "to",
         "weeklyLabel": "Weekly",
       },
       "locale": "en",
@@ -18999,6 +19013,9 @@ Map {
             "thisYearLabel": Object {
               "type": "string",
             },
+            "toLabel": Object {
+              "type": "string",
+            },
             "weeklyLabel": Object {
               "type": "string",
             },
@@ -19939,6 +19956,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -23553,6 +23573,9 @@ Map {
             "thisYearLabel": Object {
               "type": "string",
             },
+            "toLabel": Object {
+              "type": "string",
+            },
             "weeklyLabel": Object {
               "type": "string",
             },
@@ -24796,6 +24819,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
