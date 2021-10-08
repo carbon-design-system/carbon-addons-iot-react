@@ -92,6 +92,8 @@ const propTypes = {
   className: PropTypes.string,
   /** an optional id string passed to the list search field */
   searchId: PropTypes.string,
+  /** content shown if list is empty */
+  emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 };
 
 const defaultProps = {
@@ -131,6 +133,7 @@ const defaultProps = {
   className: null,
   items: [],
   searchId: null,
+  emptyState: 'No list items to show',
 };
 
 /**
@@ -232,6 +235,7 @@ const HierarchyList = ({
   sendingData,
   className,
   searchId,
+  emptyState,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -377,9 +381,11 @@ const HierarchyList = ({
    * the total filtered array. The next category's children then needs to
    * be searched in the same fashion.
    * @param {String} text keyed values from search input
+   * @param {Array} searchItems the current state of items. Used to maintain state when the list
+   *     is updated (drag and drop) and there's a current search value
    */
-  const handleSearch = (text) => {
-    const tempFilteredItems = searchForNestedItemValues(items, text);
+  const handleSearch = (text, searchItems) => {
+    const tempFilteredItems = searchForNestedItemValues(searchItems, text);
     const tempExpandedIds = [];
     // Expand the categories that have found results
     tempFilteredItems.forEach((categoryItem) => {
@@ -398,7 +404,7 @@ const HierarchyList = ({
    * be typed.
    */
   const delayedSearch = useCallback(
-    debounce((textInput) => handleSearch(textInput), 150),
+    debounce((textInput) => handleSearch(textInput, items), 150),
     [items]
   );
 
@@ -407,6 +413,9 @@ const HierarchyList = ({
 
     onListUpdated(updatedList);
     setFilteredItems(updatedList);
+    if (searchValue) {
+      handleSearch(searchValue, updatedList);
+    }
   };
 
   const handleDrag = (dragId, hoverId, target) => {
@@ -493,6 +502,7 @@ const HierarchyList = ({
         ref={selectedItemRef}
         onItemMoved={handleDrag}
         className={className}
+        emptyState={emptyState}
       />
     </>
   );
