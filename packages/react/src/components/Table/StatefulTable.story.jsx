@@ -149,6 +149,7 @@ export const SimpleStatefulExample = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
   const demoInitialColumnSizes = boolean('Demo initial columns sizes', false);
   const demoColumnGroupAssignments = boolean('Demo assigning columns to groups', false);
+  const demoColumnTooltips = boolean('Demo column tooltips', false);
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   return (
@@ -173,6 +174,7 @@ export const SimpleStatefulExample = () => {
         .map((col, i) => ({
           ...col,
           width: demoInitialColumnSizes ? (i % 2 === 0 ? '100px' : '200px') : undefined,
+          tooltip: demoColumnTooltips ? `A tooltip for ${col.name} here` : undefined,
         }))}
       columnGroups={object('Column groups definition (columnGroups)', [
         {

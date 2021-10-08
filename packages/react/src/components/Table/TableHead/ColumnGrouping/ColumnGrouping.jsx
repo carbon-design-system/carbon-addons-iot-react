@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
 import { DataTable } from 'carbon-components-react';
+import classNames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
 import TableHeader from '../TableHeader';
@@ -28,6 +29,14 @@ const defaultProps = {
   testId: 'column-grouping-row',
 };
 
+const containsLastVisibleColumn = (groupId, visibleColumns) => {
+  const lastColumnInGroup = visibleColumns
+    .filter(({ columnGroupId }) => columnGroupId === groupId)
+    .slice(-1)[0];
+  const lastColumn = visibleColumns.slice(-1)[0];
+  return lastColumnInGroup === lastColumn;
+};
+
 const ColumnGrouping = ({ appendedColumns, columnGroups, ordering, prependedColumns, testId }) => {
   const { TableRow } = DataTable;
   const visibleColumns = ordering.filter((col) => !col.isHidden);
@@ -44,6 +53,8 @@ const ColumnGrouping = ({ appendedColumns, columnGroups, ordering, prependedColu
     isEqual
   );
 
+  const isLastGroup = groups.slice(-1)[0];
+
   return (
     <TableRow data-testid={testId} className={`${iotPrefix}--table-header__group-row`}>
       {prependedColumns ? (
@@ -59,7 +70,11 @@ const ColumnGrouping = ({ appendedColumns, columnGroups, ordering, prependedColu
           title={colGroupData.name}
           key={`column-group-${colGroupData.id}`}
           testId={`${testId}-column-group-${colGroupData.id}`}
-          className={`${iotPrefix}--table-header__column-group`}
+          className={classNames(`${iotPrefix}--table-header__column-group`, {
+            [`${iotPrefix}--table-header__column-group--last-data-column`]:
+              colGroupData === isLastGroup &&
+              containsLastVisibleColumn(colGroupData.id, visibleColumns),
+          })}
           colSpan={colGroupData.colspan || '1'}
         >
           {colGroupData.name}

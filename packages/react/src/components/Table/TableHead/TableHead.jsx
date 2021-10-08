@@ -506,6 +506,8 @@ const TableHead = ({
                 [`${iotPrefix}--table-header-resize`]: hasResize,
                 [`${iotPrefix}--table-head--table-header--with-overflow`]:
                   hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable),
+                [`${iotPrefix}--table-header--last-data-column`]:
+                  showColumnGroups && item === lastVisibleColumn,
               })}
               // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
               data-floating-menu-container

@@ -786,6 +786,22 @@ export const TableWithColumnGrouping = () => {
       columnGroupId: 'groupB',
     },
   ]);
+  const options = {
+    hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
+    hasRowExpansion: boolean(
+      'Enables expanding rows to show additional content (options.hasRowExpansion)',
+      false
+    ),
+    hasRowNesting: boolean(
+      'Enables rows to have nested rows within (options.hasRowNesting)',
+      false
+    ),
+    hasRowSelection: select(
+      'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+      ['multi', 'single', false],
+      false
+    ),
+  };
 
   return (
     <MyTable
@@ -803,7 +819,17 @@ export const TableWithColumnGrouping = () => {
           name: 'Group B',
         },
       ])}
-      data={tableData.slice(0, 10)}
+      data={tableData.slice(0, 10).map((i) => ({
+        ...i,
+        rowActions: [
+          {
+            id: 'textOnly',
+            labelText: 'Text only sample action',
+            isOverflow: true,
+          },
+        ],
+      }))}
+      options={options}
       actions={tableActions}
       size={select(
         'Sets the height of the table rows (size)',
