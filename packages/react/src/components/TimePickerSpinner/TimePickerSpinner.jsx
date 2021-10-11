@@ -111,13 +111,18 @@ const TimePickerSpinner = ({
     if (timeGroups.length === 1) {
       timeGroups.push('00');
     }
+    const isChangingHours = currentTimeGroup === 0;
     let groupValue = Number(timeGroups[currentTimeGroup]);
-    const maxForGroup = currentTimeGroup === 0 ? (is12hour ? 12 : 23) : 59;
+    const maxForGroup = isChangingHours ? (is12hour ? 12 : 23) : 59;
 
     if (direction === 'down') {
-      groupValue = groupValue - 1 < 0 ? maxForGroup : groupValue - 1;
+      const lowestForGroup = isChangingHours && is12hour ? maxForGroup : 0;
+      const newGroupValue = groupValue - 1;
+      groupValue =
+        groupValue - 1 < 0 ? maxForGroup : newGroupValue === 0 ? lowestForGroup : newGroupValue;
     } else {
-      groupValue = groupValue + 1 > maxForGroup ? 0 : groupValue + 1;
+      groupValue =
+        groupValue + 1 > maxForGroup ? (isChangingHours && is12hour ? 1 : 0) : groupValue + 1;
     }
 
     timeGroups[currentTimeGroup] = groupValue.toString().padStart(2, '0');
