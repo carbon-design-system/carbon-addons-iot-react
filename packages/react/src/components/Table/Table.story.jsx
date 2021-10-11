@@ -682,6 +682,7 @@ export const BasicDumbTable = () => {
         },
         toolbar: {
           activeBar: hasColumnSelection || hasColumnSelectionConfig ? 'column' : undefined,
+          isDisabled: boolean('Disable the table toolbar (view.toolbar.isDisabled)', false),
         },
         table: {
           loadingState: {

@@ -2301,7 +2301,10 @@ describe('Table', () => {
     expect(console.error).not.toHaveBeenCalled();
   });
 
-  it('should not show toggle aggregations when toolbar is disabled', () => {
+  it('should not show toggle aggregations when toolbar is disabled', async () => {
+    jest
+      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+      .mockImplementation(() => ({ width: 100, height: 100 }));
     const { rerender } = render(
       <Table
         columns={tableColumns}
@@ -2331,7 +2334,10 @@ describe('Table', () => {
       />
     );
 
-    expect(screen.queryByLabelText('open and close list of options')).toBeNull();
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    const toggleButton = screen.getByRole('menuitem', { name: 'Toggle aggregations' });
+    expect(toggleButton).toBeVisible();
+    expect(toggleButton).toBeDisabled();
     expect(screen.getByText('Total:')).toBeVisible();
 
     rerender(
@@ -2362,6 +2368,10 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByRole('button', { name: 'open and close list of options' })).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    expect(toggleButton).toBeVisible();
+    expect(toggleButton).not.toBeDisabled();
+    expect(screen.getByText('Total:')).toBeVisible();
+    jest.resetAllMocks();
   });
 });

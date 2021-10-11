@@ -391,7 +391,7 @@ const TableToolbar = ({
               disabled={isDisabled}
             />
           ) : null}
-          {hasAggregations && !isDisabled ? (
+          {hasAggregations ? (
             <OverflowMenu
               className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
               direction="bottom"
@@ -409,6 +409,7 @@ const TableToolbar = ({
                 // When passing the event directly to the storybook action it throws an iframe access
                 // error. This might a temporary issue and can be removed later.
                 onClick={() => onToggleAggregations()}
+                disabled={isDisabled}
               />
             </OverflowMenu>
           ) : null}
