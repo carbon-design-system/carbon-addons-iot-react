@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.14...v2.147.0-next.15) (2021-10-11)
+
+
+### Bug Fixes
+
+* **time-picker-spinner:** don't allow 00 for 12-hour picker ([ef767f6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ef767f6a860af0ada800dcf68f242fcac557b682))
+
+
+
+
+
 # [2.147.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.13...v2.147.0-next.14) (2021-10-08)
 
 
