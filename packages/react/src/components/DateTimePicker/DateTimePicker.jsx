@@ -99,6 +99,10 @@ const propTypes = {
       timeRangeValue: PropTypes.exact({
         startDate: PropTypes.string.isRequired,
         startTime: PropTypes.string.isRequired,
+        /** Can be a full parseable DateTime string or a Date object */
+        start: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+        /** Can be a full parseable DateTime string or a Date object */
+        end: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
         endDate: PropTypes.string.isRequired,
         endTime: PropTypes.string.isRequired,
       }).isRequired,
