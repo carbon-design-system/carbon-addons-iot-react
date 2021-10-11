@@ -5,9 +5,7 @@ import SizeMe from 'react-sizeme';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import keyBy from 'lodash/keyBy';
 
-import { PRESET_VALUES } from '../../constants/DateConstants';
 import { settings } from '../../constants/Settings';
 import {
   CARD_TITLE_HEIGHT,
@@ -269,7 +267,7 @@ const Card = (props) => {
     id,
     tooltip,
     timeRange,
-    timeRangeOptions: timeRangeOptionsProp,
+    timeRangeOptions,
     onCardAction,
     availableActions,
     renderExpandIcon,
@@ -327,40 +325,6 @@ const Card = (props) => {
     ...defaultProps.i18n,
     ...i18n,
   };
-
-  // maps the timebox internal label to a translated string
-  // Need the default here in case that the CardToolbar is used by multiple different components
-  // Also needs to reassign itself if i18n changes
-  const timeRangeOptions = useMemo(
-    () =>
-      timeRangeOptionsProp ||
-      (typeof availableActions?.range === 'string' // if we're using date time picker default to those options
-        ? keyBy(PRESET_VALUES, 'id')
-        : {
-            last24Hours: strings.last24HoursLabel,
-            last7Days: strings.last7DaysLabel,
-            lastMonth: strings.lastMonthLabel,
-            lastQuarter: strings.lastQuarterLabel,
-            lastYear: strings.lastYearLabel,
-            thisWeek: strings.thisWeekLabel,
-            thisMonth: strings.thisMonthLabel,
-            thisQuarter: strings.thisQuarterLabel,
-            thisYear: strings.thisYearLabel,
-          }),
-    [
-      availableActions,
-      strings.last24HoursLabel,
-      strings.last7DaysLabel,
-      strings.lastMonthLabel,
-      strings.lastQuarterLabel,
-      strings.lastYearLabel,
-      strings.thisMonthLabel,
-      strings.thisQuarterLabel,
-      strings.thisWeekLabel,
-      strings.thisYearLabel,
-      timeRangeOptionsProp,
-    ]
-  );
 
   const getTheSubtitle = useMemo(() => {
     if (subtitleProp) {
