@@ -391,7 +391,7 @@ const TableToolbar = ({
               disabled={isDisabled}
             />
           ) : null}
-          {hasAggregations ? (
+          {hasAggregations && !isDisabled ? (
             <OverflowMenu
               className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
               direction="bottom"

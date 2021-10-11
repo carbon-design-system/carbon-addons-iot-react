@@ -2300,4 +2300,68 @@ describe('Table', () => {
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="lg" />);
     expect(console.error).not.toHaveBeenCalled();
   });
+
+  it('should not show toggle aggregations when toolbar is disabled', () => {
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+                value: 100000,
+              },
+            ],
+          },
+          toolbar: {
+            ...view.toolbar,
+            isDisabled: true,
+          },
+        }}
+      />
+    );
+
+    expect(screen.queryByLabelText('open and close list of options')).toBeNull();
+    expect(screen.getByText('Total:')).toBeVisible();
+
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+                value: 100000,
+              },
+            ],
+          },
+          toolbar: {
+            ...view.toolbar,
+            isDisabled: false,
+          },
+        }}
+      />
+    );
+    expect(screen.getByRole('button', { name: 'open and close list of options' })).toBeVisible();
+  });
 });
