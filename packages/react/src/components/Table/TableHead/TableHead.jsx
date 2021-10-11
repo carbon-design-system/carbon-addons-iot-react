@@ -404,7 +404,9 @@ const TableHead = ({
       // TODO: remove deprecated 'testID' in v3
       data-testid={testID || testId}
     >
-      <TableRow className={`${iotPrefix}--table-header__column-row`}>
+      <TableRow
+        className={classnames({ [`${iotPrefix}--table-header__column-row`]: showColumnGroups })}
+      >
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
             // TODO: remove deprecated 'testID' in v3
