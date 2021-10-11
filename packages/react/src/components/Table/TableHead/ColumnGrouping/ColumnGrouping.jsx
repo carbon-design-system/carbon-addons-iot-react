@@ -75,7 +75,7 @@ const ColumnGrouping = ({ appendedColumns, columnGroups, ordering, prependedColu
               colGroupData === isLastGroup &&
               containsLastVisibleColumn(colGroupData.id, visibleColumns),
           })}
-          colSpan={colGroupData.colspan || '1'}
+          colSpan={colGroupData.colspan}
         >
           {colGroupData.name}
         </TableHeader>
