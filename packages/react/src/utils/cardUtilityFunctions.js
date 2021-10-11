@@ -309,13 +309,15 @@ export const chartValueFormatter = (value, size, unit, locale, precision) => {
 export const increaseSmallCardSize = (size, cardName) => {
   if (__DEV__) {
     warning(
-      size !== CARD_SIZES.SMALL && size !== CARD_SIZES.SMALLWIDE,
+      size !== CARD_SIZES.SMALL && size !== CARD_SIZES.SMALLWIDE && size !== CARD_SIZES.SMALLFULL,
       `${cardName} does not support card size ${size}`
     );
   }
   return size === CARD_SIZES.SMALL
     ? CARD_SIZES.MEDIUM
     : size === CARD_SIZES.SMALLWIDE
+    ? CARD_SIZES.MEDIUMWIDE
+    : size === CARD_SIZES.SMALLFULL
     ? CARD_SIZES.MEDIUMWIDE
     : size;
 };
