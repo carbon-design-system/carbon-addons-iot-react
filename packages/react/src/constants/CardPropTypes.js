@@ -445,6 +445,28 @@ export const ImageCardPropTypes = {
   accept: PropTypes.arrayOf(PropTypes.string),
   /** callback that you can use to validate the image, if you return a message we will display it as an error */
   validateUploadedImage: PropTypes.func,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.LARGETHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the lists will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
 };
 
 export const GaugeCardPropTypes = {
