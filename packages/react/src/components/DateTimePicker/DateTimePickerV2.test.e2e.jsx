@@ -216,7 +216,9 @@ describe('DateTimePickerV2', () => {
             relativeToTime: '12:04',
             end: Cypress.sinon.match.any,
             start: Cypress.sinon.match.any,
-            humanValue: 'Invalid Date to 2021-10-08 12:04',
+            humanValue: Cypress.sinon.match((value) => {
+              return value.includes('Invalid Date') && value.includes('12:04');
+            }),
             tooltipValue: '',
           },
         });
