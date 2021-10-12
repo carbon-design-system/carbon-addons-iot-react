@@ -8,6 +8,7 @@ import { ArrowRight16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 import {
   getTableColumns,
@@ -2029,10 +2030,7 @@ describe('Table', () => {
       fireEvent.change(screen.getByPlaceholderText('pick a number'), { target: { value: '16' } });
       // ensure keyDown events also get called with hasFastFilter is false
       fireEvent.keyDown(screen.getByPlaceholderText('pick a number'), {
-        key: 'Enter',
-        code: 'Enter',
-        keyCode: 13,
-        charCode: 13,
+        key: keyboardKeys.ENTER,
       });
       userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
@@ -2158,10 +2156,7 @@ describe('Table', () => {
       const numberInputClear = screen.getAllByRole('button', { name: 'Clear filter' })[1];
       fireEvent.focus(numberInputClear);
       fireEvent.keyDown(numberInputClear, {
-        key: 'Enter',
-        code: 'Enter',
-        keyCode: 13,
-        charCode: 13,
+        key: keyboardKeys.ENTER,
       });
       userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
