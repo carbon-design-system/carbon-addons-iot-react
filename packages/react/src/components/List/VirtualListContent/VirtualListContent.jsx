@@ -199,16 +199,6 @@ const VirtualListContent = ({
   }, [expandedIds, flattened, virtualListRef, rowSize]);
 
   useEffect(() => {
-    if (didScrollRef.current === false && virtualListRef.current && selectedIds?.length > 0) {
-      const selectedIndex = flattened.items.findIndex((item) => item.id === selectedIds[0]);
-      if (selectedIndex >= 0) {
-        virtualListRef.current.scrollToItem(selectedIndex, 'start');
-        didScrollRef.current = true;
-      }
-    }
-  }, [flattened.items, selectedIds, virtualListRef]);
-
-  useEffect(() => {
     const flattenedItems = flatten(items);
     const parents = flattenedItems.filter(
       (item) =>
@@ -367,7 +357,15 @@ const VirtualListContent = ({
       const { height } = rect;
       setListHeight(height);
     }
-  }, [listOuterRef]);
+
+    if (didScrollRef.current === false && selectedIds?.length > 0 && virtualListRef.current) {
+      const selectedIndex = flattened.items.findIndex((item) => item.id === selectedIds[0]);
+      if (selectedIndex >= 0) {
+        virtualListRef.current.scrollToItem(selectedIndex, 'start');
+        didScrollRef.current = true;
+      }
+    }
+  }, [flattened.items, listOuterRef, selectedIds, virtualListRef]);
 
   if (!isLoading && flattened.items.length) {
     return (
