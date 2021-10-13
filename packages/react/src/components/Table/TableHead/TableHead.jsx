@@ -646,7 +646,6 @@ const TableHead = ({
         />
       )}
     </CarbonTableHead>
-    // </>
   );
 };
 
