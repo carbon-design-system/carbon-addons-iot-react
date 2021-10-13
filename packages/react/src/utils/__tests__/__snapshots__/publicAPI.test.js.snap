@@ -473,6 +473,7 @@ Map {
         "hasPagination": false,
         "hasResize": false,
         "hasRowActions": false,
+        "hasRowEdit": false,
         "hasRowExpansion": false,
         "hasRowNesting": false,
         "hasRowSelection": false,
@@ -1197,6 +1198,9 @@ Map {
               "type": "bool",
             },
             "hasRowCountInHeader": Object {
+              "type": "bool",
+            },
+            "hasRowEdit": Object {
               "type": "bool",
             },
             "hasRowExpansion": Object {
