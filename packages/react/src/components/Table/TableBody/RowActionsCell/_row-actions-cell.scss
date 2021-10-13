@@ -18,6 +18,7 @@
   .#{$prefix}--loading--small {
     width: 1.875rem;
     height: 1.875rem;
+    margin-right: $spacing-03;
   }
 
   > * {
@@ -32,6 +33,7 @@
   flex-shrink: 0;
   opacity: 0;
   padding-left: $spacing-06;
+  padding-right: $spacing-06;
   z-index: 0;
   @include backgroundGradient($hover-ui);
 }
@@ -87,13 +89,22 @@ html[dir='rtl'] {
   .#{$iot-prefix}--row-actions-container__background {
     margin-left: unset;
     margin-right: $spacing-04;
-    padding-left: unset;
+    padding-left: $spacing-06;
     padding-right: $spacing-06;
 
     .#{$prefix}--btn__icon {
       margin-left: unset;
       margin-right: $spacing-03;
       transform: rotate(180deg);
+    }
+
+    .#{$prefix}--loading--small {
+      margin-right: unset;
+      margin-left: $spacing-03;
+    }
+
+    .#{$iot-prefix}--row-actions-cell--overflow-menu {
+      margin-left: unset;
     }
   }
 }
