@@ -154,7 +154,7 @@ const VirtualListContent = ({
           });
         }
 
-        if (item.children) {
+        if (isExpanded && item.children) {
           tmp = tmp.concat(
             flatten(item.children, item.id, getAdjustedNestingLevel(item.children, currentLevel))
           );
