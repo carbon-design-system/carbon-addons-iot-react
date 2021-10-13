@@ -116,29 +116,25 @@ describe('ListCard', () => {
     expect(screen.queryByText('Loading data...')).not.toBeNull();
   });
 
-  it('should display a proptype error when using SMALL size', () => {
+  it('should display a proptype error when using unsupoorted sizes', () => {
     const onLoadData = jest.fn();
-    render(<ListCard title="Testing" data={data} size={CARD_SIZES.SMALL} loadData={onLoadData} />);
+    const { rerender } = render(
+      <ListCard title="Testing" data={data} size={CARD_SIZES.SMALL} loadData={onLoadData} />
+    );
 
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining('`ListCard` prop `size` cannot be `SMALL`')
     );
-  });
 
-  it('should display a proptype error when using SMALLWIDE sizes', () => {
-    const onLoadData = jest.fn();
-    render(
+    rerender(
       <ListCard title="Testing" data={data} size={CARD_SIZES.SMALLWIDE} loadData={onLoadData} />
     );
 
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining('`ListCard` prop `size` cannot be `SMALLWIDE`')
     );
-  });
 
-  it('should display a proptype error when using SMALLFULL sizes', () => {
-    const onLoadData = jest.fn();
-    render(
+    rerender(
       <ListCard title="Testing" data={data} size={CARD_SIZES.SMALLFULL} loadData={onLoadData} />
     );
 
