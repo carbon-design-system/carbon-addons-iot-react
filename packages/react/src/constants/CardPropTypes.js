@@ -385,6 +385,8 @@ export const PieCardPropTypes = {
      * Function to format the labels. Input to the function is a wrapped data object containing additional
      * chart label info such as x & y positions etc */
     labelsFormatter: PropTypes.func,
+    /** The alignment of the legend in relation to the chart, can be 'left', 'center', or 'right'. */
+    legendAlignment: PropTypes.oneOf(['left', 'center', 'right']),
     /** The position of the legend in relation to the chart, can be 'bottom' or 'top'. */
     legendPosition: PropTypes.oneOf(['top', 'bottom']),
     /** carbon charts legend truncation options */
