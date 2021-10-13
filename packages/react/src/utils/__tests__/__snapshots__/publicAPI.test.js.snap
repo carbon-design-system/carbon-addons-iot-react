@@ -6395,6 +6395,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -6402,6 +6418,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -6883,6 +6915,22 @@ Map {
                   "timeRangeValue": Object {
                     "args": Array [
                       Object {
+                        "end": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
+                        },
                         "endDate": Object {
                           "isRequired": true,
                           "type": "string",
@@ -6890,6 +6938,22 @@ Map {
                         "endTime": Object {
                           "isRequired": true,
                           "type": "string",
+                        },
+                        "start": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
                         },
                         "startDate": Object {
                           "isRequired": true,
@@ -7298,6 +7362,22 @@ Map {
                   "timeRangeValue": Object {
                     "args": Array [
                       Object {
+                        "end": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
+                        },
                         "endDate": Object {
                           "isRequired": true,
                           "type": "string",
@@ -7305,6 +7385,22 @@ Map {
                         "endTime": Object {
                           "isRequired": true,
                           "type": "string",
+                        },
+                        "start": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
                         },
                         "startDate": Object {
                           "isRequired": true,
@@ -12766,6 +12862,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -12773,6 +12885,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -13804,6 +13932,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -13811,6 +13955,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -14927,6 +15087,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -14934,6 +15110,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -16079,6 +16271,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -16086,6 +16294,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -17065,6 +17289,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -17072,6 +17312,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -18142,6 +18398,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -18149,6 +18421,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -19245,6 +19533,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -19252,6 +19556,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -20185,6 +20505,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -20192,6 +20528,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -23799,6 +24151,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -23806,6 +24174,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -25289,6 +25673,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -25296,6 +25696,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
