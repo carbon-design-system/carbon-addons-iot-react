@@ -69,10 +69,6 @@ const propTypes = {
   ]),
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
-  selectedItemRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.any }),
-  ]),
   virtualListRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.any }),
@@ -102,7 +98,6 @@ const defaultProps = {
   loadingMoreIds: [],
   onItemMoved: () => {},
   selectedIds: [],
-  selectedItemRef: React.createRef(),
   testId: 'list',
   toggleExpansion: () => {},
   virtualListRef: React.createRef(),
@@ -129,7 +124,6 @@ const VirtualListContent = ({
   loadingMoreIds,
   onItemMoved,
   selectedIds,
-  selectedItemRef,
   testId,
   toggleExpansion,
   virtualListRef,
@@ -288,7 +282,6 @@ const VirtualListContent = ({
           isCategory={isCategory}
           isSelectable={editingStyle === null && isSelectable}
           i18n={mergedI18n}
-          selectedItemRef={isSelected ? selectedItemRef : null}
           tags={tags}
         />
       </div>,
