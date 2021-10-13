@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.14...v2.147.0-next.15) (2021-10-11)
+
+
+### Bug Fixes
+
+* **time-picker-spinner:** don't allow 00 for 12-hour picker ([ef767f6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ef767f6a860af0ada800dcf68f242fcac557b682))
+
+
+
+
+
+# [2.147.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.13...v2.147.0-next.14) (2021-10-08)
+
+
+### Bug Fixes
+
+* **header:** fix overflow in RTL ([151a684](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/151a6840ea3003c3ac18ea66402103d974218e0d))
+* **hierarchy-list:** pass emptyState prop to underlying list ([7a48242](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7a48242133b694fcec1c7720f52055ab845fe9ca))
+
+
+
+
+
+# [2.147.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.12...v2.147.0-next.13) (2021-10-07)
+
+
+### Bug Fixes
+
+* **hierarchy-list:** maintain list search state on drag and drop ([ad685e6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ad685e649f8d0cf9fefb4d338fd77c4e3474adf6))
+
+
+
+
+
 # [2.147.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.11...v2.147.0-next.12) (2021-10-06)
 
 

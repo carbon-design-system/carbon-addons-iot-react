@@ -789,4 +789,18 @@ describe('HierarchyList', () => {
     expect(screen.queryByText('1 item selected')).toBeNull();
     expect(container.querySelectorAll('input[checked]').length).toBe(0);
   });
+
+  it('should show custom empty state when given', () => {
+    const { rerender } = render(
+      <HierarchyList items={[]} title="Empty List" emptyState="__custom-empty-state__" />
+    );
+
+    expect(screen.getByText('__custom-empty-state__')).toBeVisible();
+
+    rerender(
+      <HierarchyList items={[]} title="Empty List" emptyState={<div>A CUSTOM EMPTY NODE</div>} />
+    );
+
+    expect(screen.getByText('A CUSTOM EMPTY NODE')).toBeVisible();
+  });
 });
