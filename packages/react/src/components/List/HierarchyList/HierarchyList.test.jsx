@@ -826,4 +826,18 @@ describe('HierarchyList', () => {
       expect(screen.getByText('Item 9')).toBeVisible();
     });
   });
+
+  it('should show custom empty state when given', () => {
+    const { rerender } = render(
+      <HierarchyList items={[]} title="Empty List" emptyState="__custom-empty-state__" />
+    );
+
+    expect(screen.getByText('__custom-empty-state__')).toBeVisible();
+
+    rerender(
+      <HierarchyList items={[]} title="Empty List" emptyState={<div>A CUSTOM EMPTY NODE</div>} />
+    );
+
+    expect(screen.getByText('A CUSTOM EMPTY NODE')).toBeVisible();
+  });
 });

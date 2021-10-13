@@ -60,7 +60,7 @@ module.exports = {
     },
     './src/components/Header/HeaderActionGroup.jsx': {
       statements: 51,
-      branches: 21,
+      branches: 20,
       lines: 50,
       functions: 56,
     },

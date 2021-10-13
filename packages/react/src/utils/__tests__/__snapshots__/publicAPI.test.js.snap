@@ -5202,6 +5202,7 @@ Map {
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
+      "emptyState": "No list items to show",
       "hasDeselection": true,
       "hasMultiSelect": false,
       "hasPagination": true,
@@ -5268,6 +5269,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptyState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "hasDeselection": Object {
         "type": "bool",
