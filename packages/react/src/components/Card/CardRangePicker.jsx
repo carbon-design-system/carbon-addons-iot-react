@@ -60,7 +60,9 @@ const CardRangePicker = ({
             [`${iotPrefix}--card--toolbar-timerange-label--hidden`]: cardWidth < 400,
           })}
         >
-          {timeRangeOptions[timeRange] || i18n.defaultLabel}
+          {typeof timeRangeOptions[timeRange] === 'string'
+            ? timeRangeOptions[timeRange]
+            : timeRangeOptions[timeRange]?.label || i18n.defaultLabel}
         </div>
 
         <OverflowMenu
@@ -88,7 +90,11 @@ const CardRangePicker = ({
                 key={i}
                 hasDivider={index === 0}
                 onClick={() => handleTimeRange(i)}
-                itemText={timeRangeOptions[i]}
+                itemText={
+                  typeof timeRangeOptions[i] === 'string'
+                    ? timeRangeOptions[i]
+                    : timeRangeOptions[i].label
+                }
                 className={classnames({
                   [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
                 })}
@@ -101,7 +107,11 @@ const CardRangePicker = ({
                 key={i}
                 hasDivider={index === 0}
                 onClick={() => handleTimeRange(i)}
-                itemText={timeRangeOptions[i]}
+                itemText={
+                  typeof timeRangeOptions[i] === 'string'
+                    ? timeRangeOptions[i]
+                    : timeRangeOptions[i].label
+                }
                 className={classnames({
                   [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
                 })}

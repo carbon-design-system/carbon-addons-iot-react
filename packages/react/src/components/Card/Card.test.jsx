@@ -224,6 +224,37 @@ describe('Card', () => {
       range: 'last24Hours',
     });
   });
+
+  it('card actions for default range picker using datetimepicker format', () => {
+    const mockOnCardAction = jest.fn();
+    render(
+      <Card
+        {...cardProps}
+        isExpanded
+        size={CARD_SIZES.LARGE}
+        tooltip={tooltipElement}
+        onCardAction={mockOnCardAction}
+        availableActions={{ expand: true, range: true }}
+        timeRangeOptions={{
+          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
+          lastHour: { label: 'Last Hour', offset: 60 * 60 },
+        }}
+      />
+    );
+    // pop out the calendar
+    userEvent.click(screen.getAllByTitle(`Select time range`)[0]);
+
+    // select a default range
+    userEvent.click(screen.getByText(`Last 24 Hours`));
+
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CHANGE_TIME_RANGE, {
+      range: 'last24Hours',
+    });
+  });
   it('card actions for dateTime range picker', () => {
     const mockOnCardAction = jest.fn();
     render(
