@@ -734,6 +734,7 @@ export const CardPropTypes = {
     closeLabel: PropTypes.string,
     loadingDataLabel: PropTypes.string,
     overflowMenuDescription: PropTypes.string,
+    toLabel: PropTypes.string,
   }),
   tooltip: PropTypes.element,
   toolbar: PropTypes.element,
