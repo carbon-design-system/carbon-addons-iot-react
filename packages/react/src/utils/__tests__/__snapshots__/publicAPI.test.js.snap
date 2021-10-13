@@ -12945,6 +12945,7 @@ Map {
       "content": Object {
         "colors": undefined,
         "groupDataSourceId": "group",
+        "legendAlignment": "left",
         "legendPosition": "bottom",
         "truncation": Object {
           "numCharacter": 20,
@@ -13447,6 +13448,16 @@ Map {
             },
             "labelsFormatter": Object {
               "type": "func",
+            },
+            "legendAlignment": Object {
+              "args": Array [
+                Array [
+                  "left",
+                  "center",
+                  "right",
+                ],
+              ],
+              "type": "oneOf",
             },
             "legendPosition": Object {
               "args": Array [

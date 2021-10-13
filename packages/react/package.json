@@ -166,8 +166,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "@carbon/charts": "0.41.98-d3v5-latest-0.1",
-    "@carbon/charts-react": "0.41.98-d3v5-latest-0.1",
+    "@carbon/charts": "0.50.4",
+    "@carbon/charts-react": "0.50.4",
     "@carbon/colors": "10.28.0",
     "@carbon/icons-react": "10.35.0",
     "@carbon/layout": "10.27.0",
@@ -208,7 +208,7 @@
     "warning": "^4.0.3"
   },
   "peerDependencies": {
-    "d3": ">=5.0.0 <=5.14.2",
+    "d3": "^7.0",
     "react": ">=16.14.0",
     "react-dom": ">=16.14.0"
   },
@@ -283,7 +283,7 @@
     "cypress-file-upload": "^5.0.8",
     "cypress-image-diff-js": "^1.10.3",
     "cypress-real-events": "^1.5.0",
-    "d3": ">=5.0.0 <=5.14.2",
+    "d3": "7.1.1",
     "deepdash": "^5.1.2",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.14.0",
