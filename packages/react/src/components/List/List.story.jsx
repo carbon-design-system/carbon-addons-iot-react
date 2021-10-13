@@ -138,6 +138,7 @@ export const BasicSingleColumn = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -164,6 +165,7 @@ export const BasicSingleColumnWithSearch = () => {
           search={{
             onChange: (evt) => setSearchValue(evt.target.value),
           }}
+          isVirtualList={boolean('isVirtualList', false)}
         />
       </div>
     );
@@ -191,6 +193,7 @@ export const SelectableItems = () => {
           isLoading={boolean('isLoading', false)}
           handleSelect={(id) => setSelected(id)}
           selectedIds={[selected]}
+          isVirtualList={boolean('isVirtualList', false)}
         />
       </div>
     );
@@ -214,6 +217,7 @@ export const WithSecondaryValue = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -236,6 +240,7 @@ export const WithIsLargeRowAndIcon = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -268,6 +273,7 @@ export const WithRowActionsSingle = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -295,6 +301,7 @@ export const WithRowActionsMultiple = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -342,6 +349,7 @@ export const WithHierarchy = () => (
       ]}
       toggleExpansion={action('toggleExpansion')}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -385,6 +393,7 @@ export const WithCategoriesFixedHeight = () => (
       ]}
       expandedIds={['New York Yankees', 'Atlanta Braves']}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -400,6 +409,7 @@ export const WithEmptyState = () => (
       isLoading={boolean('isLoading', false)}
       isFullHeight={boolean('isFullHeight', true)}
       emptyState={text('hasEmptyState', 'No list items to show')}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -564,6 +574,7 @@ export const WithCheckboxMultiSelection = () => {
             }
           }}
           isLoading={boolean('isLoading', false)}
+          isVirtualList={boolean('isVirtualList', false)}
         />
       </div>
     );
@@ -591,6 +602,7 @@ export const WithTags = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -614,7 +626,8 @@ export const WithPagination = () => (
         maxPage: 10,
         pageOfPagesText: (page) => `Page ${page}`,
       }}
-      isFullHeight
+      isFullHeight={boolean('isFullHeight', true)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -667,8 +680,9 @@ export const WithLoadMore = () => {
           }
           loadingMoreIds={loadingMoreIds}
           isLoading={boolean('isLoading', false)}
+          isVirtualList={boolean('isVirtualList', false)}
           handleLoadMore={(id) => {
-            action('handleLoadMore:', id);
+            action('handleLoadMore')(id);
             setLoadingMoreIds((prev) => [...prev, id]);
             setTimeout(() => {
               setListItems((prevItems) => [
@@ -721,3 +735,23 @@ export const WithLoadMore = () => {
 };
 
 WithLoadMore.storyName = 'with load more';
+
+export const WithVirtualList = () => (
+  <div style={{ height: 300, overflow: 'auto', width: 400 }}>
+    <List
+      title={text('title', 'NY Yankees')}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key]) => ({
+          id: key,
+          content: { value: key },
+        })
+      )}
+      isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', true)}
+      isFullHeight={boolean('isFullHeight', true)}
+      isLargeRow={boolean('isLargeRow', false)}
+    />
+  </div>
+);
+
+WithVirtualList.storyName = 'with virtual list';
