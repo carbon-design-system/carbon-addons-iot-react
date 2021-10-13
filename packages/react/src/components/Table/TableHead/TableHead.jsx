@@ -394,7 +394,6 @@ const TableHead = ({
 
   return (
     <CarbonTableHead
-      // className={classnames({ lightweight })}
       className={classnames({
         lightweight,
         [`${iotPrefix}--table-head--with-column-groups`]: showColumnGroups,
@@ -590,7 +589,7 @@ const TableHead = ({
       {showColumnGroups ? (
         // Column grouping should visually appear above the normal column headers but since we
         // need the normal column headers to control the width of the columns, and since rowspan
-        // only works downward, we place the groups below the normal columns and then swicth
+        // only works downward, we place the groups below the normal columns and then switch
         // places using scss.
         <ColumnGrouping
           appendedColumns={+showExpanderColumn + !!options.hasRowActions}

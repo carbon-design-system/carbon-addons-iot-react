@@ -12,7 +12,7 @@ import { TableColumnGroupPropType, TableOrderingPropType } from '../../TableProp
 const { iotPrefix } = settings;
 
 const propTypes = {
-  /** Number of additional columns that have been added to the start of the table */
+  /** Number of additional columns that have been added to the end of the table */
   appendedColumns: PropTypes.number,
   /** Specify the properties of each column group in the table. Defaults to empty column. */
   columnGroups: TableColumnGroupPropType.isRequired,
