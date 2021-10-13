@@ -5640,9 +5640,6 @@ Map {
       "loadingMoreIds": Array [],
       "onItemMoved": [Function],
       "selectedIds": Array [],
-      "selectedItemRef": Object {
-        "current": null,
-      },
       "testId": "list",
       "toggleExpansion": [Function],
       "virtualListRef": Object {
@@ -5755,26 +5752,6 @@ Map {
           },
         ],
         "type": "arrayOf",
-      },
-      "selectedItemRef": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "func",
-            },
-            Object {
-              "args": Array [
-                Object {
-                  "current": Object {
-                    "type": "any",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-          ],
-        ],
-        "type": "oneOfType",
       },
       "testId": Object {
         "type": "string",

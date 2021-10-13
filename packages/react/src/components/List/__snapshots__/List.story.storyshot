@@ -2751,6 +2751,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -2858,6 +2860,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -2968,6 +2972,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -3668,6 +3674,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -3778,6 +3786,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -3885,6 +3895,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -3995,6 +4007,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -4105,6 +4119,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5255,6 +5271,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5337,6 +5355,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5419,6 +5439,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5501,6 +5523,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5583,6 +5607,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5665,6 +5691,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5747,6 +5775,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5829,6 +5859,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5911,6 +5943,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5993,6 +6027,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -6116,6 +6152,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6195,6 +6233,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6274,6 +6314,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6353,6 +6395,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6432,6 +6476,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6511,6 +6557,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6590,6 +6638,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6669,6 +6719,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6748,6 +6800,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6827,6 +6881,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
