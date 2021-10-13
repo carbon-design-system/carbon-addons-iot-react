@@ -138,6 +138,7 @@ const VirtualListContent = ({
   const rowSize = isLargeRow ? 96 : 40;
   const [listHeight, setListHeight] = useState(0);
   const listOuterRef = useResize(useRef(null));
+  const didScrollRef = useRef(false);
 
   const flatten = useCallback(
     (initialItems, parentId = null, currentLevel = 0) => {
@@ -210,9 +211,12 @@ const VirtualListContent = ({
   }, [expandedIds, flattened, virtualListRef, rowSize]);
 
   useEffect(() => {
-    if (virtualListRef.current && selectedIds?.length === 1) {
+    if (didScrollRef.current === false && virtualListRef.current && selectedIds?.length > 0) {
       const selectedIndex = flattened.items.findIndex((item) => item.id === selectedIds[0]);
-      virtualListRef.current.scrollToItem(selectedIndex);
+      if (selectedIndex >= 0) {
+        virtualListRef.current.scrollToItem(selectedIndex, 'start');
+        didScrollRef.current = true;
+      }
     }
   }, [flattened.items, selectedIds, virtualListRef]);
 
