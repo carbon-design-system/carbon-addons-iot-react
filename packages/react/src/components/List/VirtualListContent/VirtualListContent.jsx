@@ -193,18 +193,6 @@ const VirtualListContent = ({
   });
 
   useEffect(() => {
-    if (listOuterRef.current) {
-      const parentList = listOuterRef.current.closest(`.${iotPrefix}--list`);
-
-      if (parentList) {
-        const { height } = parentList.getBoundingClientRect();
-
-        setListHeight(height);
-      }
-    }
-  }, [expandedIds, listOuterRef]);
-
-  useEffect(() => {
     if (virtualListRef.current) {
       virtualListRef.current.resetAfterIndex(0);
     }
@@ -372,6 +360,15 @@ const VirtualListContent = ({
       emptyState
     );
 
+  const handleItemsRendered = useCallback(() => {
+    const parentList = listOuterRef.current.closest(`.${iotPrefix}--list`);
+    if (parentList) {
+      const rect = parentList.getBoundingClientRect();
+      const { height } = rect;
+      setListHeight(height);
+    }
+  }, [listOuterRef]);
+
   if (!isLoading && flattened.items.length) {
     return (
       <VariableSizeList
@@ -391,6 +388,7 @@ const VirtualListContent = ({
         style={{
           overflow: isFullHeight ? 'unset' : 'auto',
         }}
+        onItemsRendered={handleItemsRendered}
       >
         {ListRow}
       </VariableSizeList>
