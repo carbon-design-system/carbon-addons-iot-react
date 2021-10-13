@@ -17,6 +17,7 @@ const getListItems = (num) =>
 describe('List', () => {
   it('should not move items on a list if itemWillMove return false', () => {
     const itemWillMove = cy.stub().returns(false);
+    const onItemMoved = cy.stub();
     mount(
       <List
         title="Simple list"
@@ -33,6 +34,7 @@ describe('List', () => {
       .drag(':nth-child(3) > [draggable="true"]', { position: 'bottom' })
       .should(() => {
         expect(itemWillMove).to.be.calledWith('1', '3', 'below');
+        expect(onItemMoved).not.to.be.called;
       });
   });
 
@@ -60,6 +62,7 @@ describe('List', () => {
   describe('isVirtualList', () => {
     it('should not move items on a list if itemWillMove return false', () => {
       const itemWillMove = cy.stub().returns(false);
+      const onItemMoved = cy.stub();
       mount(
         <List
           title="Simple list"
@@ -68,6 +71,7 @@ describe('List', () => {
           pageSize="sm"
           editingStyle={EditingStyle.Single}
           itemWillMove={itemWillMove}
+          onItemMoved={onItemMoved}
           isVirtualList
         />
       );
@@ -77,6 +81,7 @@ describe('List', () => {
         .drag(':nth-child(3) > [draggable="true"]', { position: 'bottom' })
         .should(() => {
           expect(itemWillMove).to.be.calledWith('1', '3', 'below');
+          expect(onItemMoved).not.to.be.called;
         });
     });
 

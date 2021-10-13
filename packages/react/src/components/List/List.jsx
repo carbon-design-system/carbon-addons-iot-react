@@ -39,7 +39,7 @@ const propTypes = {
   }),
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
-  /** Node to override the default header */
+  /** Node to override the default header or content */
   overrides: PropTypes.shape({
     header: OverridePropTypes,
     content: OverridePropTypes,
