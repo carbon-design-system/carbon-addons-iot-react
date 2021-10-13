@@ -148,7 +148,7 @@ export const WithOverflowMenu = () => (
             id: `${team}_${player}`,
             content: {
               value: player,
-              rowActions: [
+              rowActions: () => (
                 <OverflowMenu title="data-item-menu" flipped>
                   <OverflowMenuItem itemText="Configure" onClick={() => console.log('Configure')} />
                   <OverflowMenuItem
@@ -157,8 +157,8 @@ export const WithOverflowMenu = () => (
                     isDelete
                     hasDivider
                   />
-                </OverflowMenu>,
-              ],
+                </OverflowMenu>
+              ),
             },
             isSelectable: true,
           })),
