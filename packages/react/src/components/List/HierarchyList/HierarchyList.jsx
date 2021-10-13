@@ -261,15 +261,18 @@ const HierarchyList = ({
     }
   }, [items, previousItems]);
 
-  const selectedItemRef = useCallback((node) => {
-    if (node && node.parentNode) {
-      scrollIntoView(node.parentNode, {
-        scrollMode: 'if-needed',
-        block: 'nearest',
-        inline: 'nearest',
-      });
-    }
-  }, []);
+  const selectedItemRef = useCallback(
+    (node) => {
+      if (node && node.parentNode && !isVirtualList) {
+        scrollIntoView(node.parentNode, {
+          scrollMode: 'if-needed',
+          block: 'nearest',
+          inline: 'nearest',
+        });
+      }
+    },
+    [isVirtualList]
+  );
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
