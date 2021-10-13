@@ -45,6 +45,7 @@ describe('TableBodyRow', () => {
           truncateCellText: true,
         }}
         tableActions={mockActions}
+        nestingChildCount={2}
         {...tableRowProps}
       />,
       {
@@ -67,6 +68,7 @@ describe('TableBodyRow', () => {
           truncateCellText: true,
         }}
         tableActions={mockActions}
+        nestingChildCount={2}
         {...tableRowProps}
       />,
       {
@@ -84,6 +86,7 @@ describe('TableBodyRow', () => {
       <TableBodyRow
         options={{ hasRowExpansion: true, wrapCellText: 'always', truncateCellText: true }}
         tableActions={mockActions}
+        nestingChildCount={2}
         {...tableRowProps}
       />,
       {
@@ -107,6 +110,7 @@ describe('TableBodyRow', () => {
         }}
         isExpanded
         tableActions={mockActions}
+        nestingChildCount={2}
         {...tableRowProps}
       />,
       {
