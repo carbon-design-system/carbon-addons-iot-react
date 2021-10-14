@@ -247,7 +247,7 @@ WithCustomRangeSelector.storyName = 'with custom range selector';
 export const WithDateTimePickerRangeSelector = () => {
   const dateTimePickerSetting = select('range', [true, false, 'iconOnly'], 'iconOnly');
   return (
-    <div style={{ width: `300px`, margin: 20 }}>
+    <div style={{ width: text(`card width`, '300px'), margin: 20 }}>
       <Card
         title="Card with date picker"
         id="facilitycard-with-date-picker"

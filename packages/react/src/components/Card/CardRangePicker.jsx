@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { EventSchedule16 } from '@carbon/icons-react';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
@@ -50,6 +50,10 @@ const CardRangePicker = ({
     },
     [setTimeRange, onCardAction]
   );
+
+  useEffect(() => {
+    setTimeRange(timeRangeProp);
+  }, [timeRangeProp]);
 
   return (
     <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
