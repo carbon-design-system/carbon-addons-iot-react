@@ -71,7 +71,7 @@
   .#{$iot-prefix}--table-head--with-column-groups {
     $border-width: 2px;
 
-    // Basic border styling to simplyfy further border modifications
+    // Basic border styling to simplify further border modifications
     // using color or width only.
     th {
       border-color: $ui-02;
@@ -90,8 +90,8 @@
         &:first-of-type {
           border-left-width: 0;
           // But again, if the first column is a "real" column it should get a right border
-          // bacause we can't put a left border on the first group row column
-          // since the rowspan makes it impossible to tell when a group row column is the
+          // because we can't put a left border on the first group row column
+          // since the rowspan makes it in possible to tell when a group row column is the
           // first visual column.
           &.#{$iot-prefix}--table-header--span-group-row {
             border-right-width: $border-width;
