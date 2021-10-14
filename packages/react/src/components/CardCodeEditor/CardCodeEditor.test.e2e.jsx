@@ -45,7 +45,7 @@ describe('CardCodeEditor loaded editor test', () => {
   });
 
   it('should load intial value into editor', () => {
-    cy.viewport(1670, 900);
+    cy.viewport(1680, 900);
     mount(
       <CardCodeEditor
         open

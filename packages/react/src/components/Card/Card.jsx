@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useEffect } from 'react';
+import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import SizeMe from 'react-sizeme';
@@ -22,6 +22,7 @@ import { CardPropTypes } from '../../constants/CardPropTypes';
 import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize, useCardResizing } from '../../utils/cardUtilityFunctions';
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
+import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
 
 import CardToolbar from './CardToolbar';
 
@@ -230,6 +231,7 @@ export const defaultProps = {
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
     overflowMenuDescription: 'Open and close list of options',
+    toLabel: 'to',
   },
   onMouseDown: undefined,
   onMouseUp: undefined,
@@ -241,6 +243,7 @@ export const defaultProps = {
   tabIndex: undefined,
   testId: CardWrapper.defaultProps.testId,
   footerContent: undefined,
+  dateTimeMask: 'YYYY-MM-DD HH:mm',
 };
 
 /** Dumb component that renders the card basics */
@@ -249,7 +252,7 @@ const Card = (props) => {
     size,
     children,
     title,
-    subtitle,
+    subtitle: subtitleProp,
     hasTitleWrap,
     layout,
     isLoading,
@@ -278,6 +281,7 @@ const Card = (props) => {
     testId,
     contentClassName,
     footerContent: CardFooter,
+    dateTimeMask,
     ...others
   } = props;
 
@@ -322,11 +326,41 @@ const Card = (props) => {
     ...i18n,
   };
 
+  const getTheSubtitle = useMemo(() => {
+    if (subtitleProp) {
+      return subtitleProp;
+    }
+
+    if (mergedAvailableActions.range === 'full' || mergedAvailableActions.range === 'iconOnly') {
+      const { readableValue } = parseValue(timeRange, dateTimeMask, strings.toLabel);
+
+      return readableValue;
+    }
+
+    return undefined;
+  }, [dateTimeMask, mergedAvailableActions.range, strings.toLabel, subtitleProp, timeRange]);
+
+  const [subtitle, setSubtitle] = useState(getTheSubtitle);
+
+  useEffect(() => {
+    setSubtitle(getTheSubtitle);
+  }, [getTheSubtitle, subtitleProp]);
+
   /** adds the id to the card action */
-  const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
-    onCardAction,
-    id,
-  ]);
+  const cachedOnCardAction = useCallback(
+    (...args) => {
+      const [action, value] = args;
+      if (action === 'CHANGE_TIME_RANGE' && !subtitleProp) {
+        if (value.timeRangeKind === 'PRESET') {
+          setSubtitle(value.timeRangeValue.tooltipValue);
+        } else if (!value.range) {
+          setSubtitle(value.timeRangeValue.humanValue);
+        }
+      }
+      onCardAction(id, ...args);
+    },
+    [subtitleProp, onCardAction, id]
+  );
 
   const getChildSize = (cardSize, cardTitle) => {
     const childSize = {
@@ -366,10 +400,12 @@ const Card = (props) => {
                 isEditable={isEditable}
                 isExpanded={isExpanded}
                 timeRange={timeRange}
+                locale={others.locale}
                 timeRangeOptions={timeRangeOptions}
                 onCardAction={cachedOnCardAction}
                 // TODO: remove deprecated testID prop in v3
                 testId={`${testID || testId}-toolbar`}
+                dateTimeMask={dateTimeMask}
               />
             ) : null;
 

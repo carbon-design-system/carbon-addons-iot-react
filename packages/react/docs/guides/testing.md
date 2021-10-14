@@ -28,19 +28,19 @@ For exported non-internal components this will be configurable via a prop with a
 default of the component name.
 
 ```jsx
-function ExportedComponent({ testID }) {
+function ExportedComponent({ testId }) {
   return (
     <>
-      <span data-testid={testID}>Example</span>
+      <span data-testid={testId}>Example</span>
     </>
   );
 }
 
 ExportedComponent.propTypes = {
-  testID: PropTypes.string,
+  testId: PropTypes.string,
 };
 ExportedComponent.defaultProps = {
-  testID: 'ExportedComponent',
+  testId: 'ExportedComponent',
 };
 ```
 

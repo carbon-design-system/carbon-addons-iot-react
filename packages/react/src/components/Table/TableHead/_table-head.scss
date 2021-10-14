@@ -6,10 +6,55 @@
 
 .#{$prefix}--data-table {
   th {
-    height: 3rem;
+    height: $spacing-09;
     border-top: none;
     border-bottom: none;
     position: relative;
+
+    // always vertically align headers to middle--even with xl size prop
+    &.#{$iot-prefix}--table-head--table-header {
+      vertical-align: middle;
+    }
+  }
+
+  // override sort icons, so they stay in the middle, at xl size, too.
+  &--xl {
+    .#{$prefix}--table-sort__icon-unsorted,
+    .#{$prefix}--table-sort__icon {
+      margin-top: 0;
+    }
+
+    // fix positioning of order number when in multi-sort
+    span.#{$iot-prefix}--table-header-label__sort-order {
+      bottom: $spacing-06;
+    }
+
+    // fix sort icon missing at xl sizes
+    &.#{$prefix}--data-table--sort th .#{$prefix}--table-sort {
+      display: flex;
+    }
+
+    th {
+      height: $spacing-10;
+    }
+  }
+
+  &--md {
+    th {
+      height: $spacing-08;
+    }
+  }
+
+  &--sm {
+    th {
+      height: $spacing-07;
+    }
+  }
+
+  &--xs {
+    th {
+      height: $spacing-06;
+    }
   }
 
   th:last-of-type {
@@ -138,8 +183,6 @@
 
     .#{$prefix}--table-header-label {
       height: 100%;
-      min-width: var(--table-header-width);
-      max-width: var(--table-header-width);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

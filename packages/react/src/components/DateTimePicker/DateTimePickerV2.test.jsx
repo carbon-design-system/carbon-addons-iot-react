@@ -11,6 +11,7 @@ import {
   PRESET_VALUES,
   PICKER_KINDS,
 } from '../../constants/DateConstants';
+import { settings } from '../../constants/Settings';
 
 import DateTimePicker from './DateTimePickerV2';
 import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePickerV2.story';
@@ -22,6 +23,8 @@ const defaultPresets = [
     offset: 70,
   },
 ];
+
+const { iotPrefix } = settings;
 
 const dateTimePickerProps = {
   onCancel: jest.fn(),
@@ -35,8 +38,15 @@ const i18n = {
 };
 
 describe('DateTimePicker', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+    jest.clearAllMocks();
+  });
+
   afterEach(() => {
     console.error.mockClear();
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   beforeAll(() => {
@@ -227,7 +237,7 @@ describe('DateTimePicker', () => {
     // first open the menu
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
     userEvent.click(screen.getByText(/Back/));
-    expect(screen.getByText(/Custom Range/)).toBeInTheDocument();
+    expect(screen.getByText(/Custom Range/i)).toBeInTheDocument();
   });
 
   it('should switch from relative to absolute and then to preset', () => {
@@ -265,7 +275,10 @@ describe('DateTimePicker', () => {
     const wrapper = mount(
       <DateTimePicker
         {...dateTimePickerProps}
-        defaultValue={PRESET_VALUES[1]}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[1],
+        }}
         showRelativeOption={false}
       />
     );
@@ -368,9 +381,8 @@ describe('DateTimePicker', () => {
     // Select absolute
     expect(screen.getByText(/Absolute/)).toBeInTheDocument();
     userEvent.click(screen.getByText(/Absolute/i));
-    // github.com/haoxins/react-flatpickr/issues/92
-    fireEvent.mouseDown(screen.getByLabelText('April 10, 2020'), { which: 1 });
-    fireEvent.mouseDown(screen.getByLabelText('April 11, 2020'), { which: 1 });
+    userEvent.click(screen.getByLabelText('April 10, 2020'));
+    userEvent.click(screen.getByLabelText('April 11, 2020'));
     expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
     userEvent.click(screen.getByText('Apply'));
     // This should be displayed
@@ -514,5 +526,152 @@ describe('DateTimePicker', () => {
     expect(
       screen.queryByTitle(new RegExp(`.*\\s${i18nDefault.toLabel}\\s.*`))
     ).not.toBeInTheDocument();
+  });
+
+  it('should parse default values with start/end', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: '2021-08-01 12:34',
+            end: '2021-08-06 10:49',
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByText('2021-08-01 12:34 to 2021-08-06 10:49')).toBeVisible();
+  });
+
+  it('should not render a time picker if hasTimeInput:false', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2021, 7, 1, 12, 34, 0),
+            end: new Date(2021, 7, 6, 10, 49, 0),
+          },
+        }}
+      />
+    );
+
+    userEvent.click(screen.getByText('2021-08-01 12:34 to 2021-08-06 10:49'));
+    expect(screen.queryByLabelText('Start time')).toBeNull();
+    expect(screen.queryByLabelText('End time')).toBeNull();
+  });
+
+  it('should fallback to minute intervals if none given in a relative defaultValue', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.RELATIVE,
+          timeRangeValue: {
+            lastNumber: 20,
+            relativeToWhen: RELATIVE_VALUES.TODAY,
+            relativeToTime: '13:30',
+          },
+        }}
+      />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.getByText('minutes')).toBeInTheDocument();
+  });
+  it('should render light when given', () => {
+    const { container } = render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.RELATIVE,
+          timeRangeValue: {
+            lastNumber: 20,
+            relativeToWhen: RELATIVE_VALUES.TODAY,
+            relativeToTime: '13:30',
+          },
+        }}
+        light
+      />
+    );
+    jest.runAllTimers();
+
+    expect(container.querySelectorAll(`.${iotPrefix}--date-time-picker__box--light`)).toHaveLength(
+      1
+    );
+  });
+  it('should fallback to 00:00 for absolute times when none given', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Custom Range'));
+    userEvent.click(screen.getByText('Absolute'));
+    expect(screen.getAllByTestId('time-picker-spinner')[0]).toHaveValue('00:00');
+  });
+  it('should not show the Custom Range link when showCustomRangeLink:false', () => {
+    render(
+      <DateTimePicker {...dateTimePickerProps} showCustomRangeLink={false} id="picker-test" />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.queryByText('Custom Range')).toBeNull();
+  });
+  it('should show relative labels', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        relatives={[
+          {
+            label: 'Quarter',
+            value: 'quarter',
+          },
+        ]}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: '2021-08-01 12:34',
+            end: '2021-08-06 10:49',
+          },
+        }}
+        id="picker-test"
+      />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Relative'));
+    expect(screen.getByText('Quarter')).toBeInTheDocument();
+  });
+
+  it('should show a warning in __DEV__', () => {
+    const { __DEV__ } = global;
+    global.__DEV__ = true;
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The `DateTimePickerV2` is an experimental component and could be lacking unit test and documentation.'
+      )
+    );
+    jest.resetAllMocks();
+    global.__DEV__ = __DEV__;
+  });
+
+  it('should change --wrapper-width when hasIconOnly:true', () => {
+    render(<DateTimePicker {...dateTimePickerProps} hasIconOnly />);
+    expect(screen.getByTestId('date-time-picker')).toHaveStyle('--wrapper-width:3rem');
   });
 });

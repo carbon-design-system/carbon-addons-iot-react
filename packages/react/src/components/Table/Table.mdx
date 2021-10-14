@@ -411,12 +411,34 @@ You can pass which rows are currently selected through the view.table.selectedId
 
 ### Simple Filtering
 
-Simple filtering in a `Table` is provided through the `options.hasFilter=true` prop and the `view.toolbar.activeBar='filter'` prop. You set set the current filters by supplying the `view.filters` prop as an array of object with a columnId and a value key.
+Simple filtering in a `Table` is provided through the `options.hasFilter=true` prop and the `view.toolbar.activeBar='filter'` prop. You set set the current filters by supplying the `view.filters` prop as an array of object with a columnId and a value key. The objects in the `columns` array must also be given a `filter` prop that defines the input `placeholderText` and, if needed, an `options` prop for a combobox filter.
 
 ```jsx
 <Table
   id="table"
-  columns={columns}
+  columns={[
+    {
+      id: 'string',
+      name: 'String',
+      filter: { placeholderText: 'enter a string' },
+    },
+    {
+      id: 'select',
+      name: 'Select',
+      filter: { placeholderText: 'pick an option',
+        options: [
+          {
+            id: 'option-A',
+            text: 'option-A',
+          },
+          {
+            id: 'option-B',
+            text: 'option-B',
+          },
+        ]
+      },
+    },
+  ]}
   data={data}
   actions={{
     toolbar: {
@@ -858,6 +880,7 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | :---------------------- | :-------------- | :------ | :---------------------------------------------------------------------------------------------------- |
 | id                      | string          |         | the id of this row                                                                                    |
 | values                  | object          |         | A {[columnId]: value} object containing all the values for this row                                   |
+| hasLoadMore             | bool            |         | An optional boolean prop to define if the row has more data to be loaded                              |
 | children                | arrayOf(object) |         | An optional array of rows (in the same structure as the data prop) for children nested under this row |
 | rowActions              | object          |         | An optional list of actions visible on row how or expansion                                           |
 | rowActions[].id         | string          |         | unique id for this action                                                                             |
@@ -970,6 +993,7 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | table.rowActions[].error.learnMoreURL   | string                           |         | The link to learn more about this error                                                                                                             |
 | table.singleRowEditButtons              | element                          |         | Buttons shown when editing a single row                                                                                                             |
 | table.expandedIds                       | string[]                         |         | an array of strings representing the rowIds to be expanded                                                                                          |
+| table.loadingMoreIds                    | string[]                         |         | an array of strings representing the rowIds with the load more active                                                                               |
 | table.emptyState                        | object or element                |         | If a React element is provided, it will be rendered in place of the default                                                                         |
 | table.emptyState.message                | node                             |         | The message to show when the table is empty                                                                                                         |
 | table.emptyState.messageWithFilters     | node                             |         | Show a different message if no content is in the table matching the filters                                                                         |
@@ -1021,61 +1045,61 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | table.onAddMultiSortColumn      | func   |         |                                                                                                                                                                                                                 |
 | table.onRemoveMultiSortColumn   | func   |         |                                                                                                                                                                                                                 |
 | table.onTableErrorStateAction   | func   |         | callback action relavent on error state. This can be used with `error` message. When `view.table.errorState` property is used then this callback function has no effect.                                        |
+| table.onRowLoadMore             | func   |         | callback if a load more row is clicked called with the id of the row id.                                                                                                                                        |
 | onUserViewModified              | func   |         | callback for actions relevant for view management                                                                                                                                                               |
 
 ### i18n Prop
 
-| Name                             | Type   | Default                  | Description                                            |
-| :------------------------------- | :----- | :----------------------- | :----------------------------------------------------- |
-| pageBackwardAria                 | string |                          | pagination                                             |
-| pageForwardAria                  | string |                          |
-| pageNumberAria                   | string |                          |
-| itemsPerPage                     | string |                          |
-| itemsRange                       | func   |                          | (min, max) => `${min}-${max} items`                    |
-| currentPage                      | func   |                          | (page) => `page ${page}`                               |
-| itemsRangeWithTotal              | func   |                          | (min, max, total) => `${min}-${max} of ${total} items` |
-| pageRange                        | func   |                          | (current, total) => `${current} of ${total} pages`     |
-| overflowMenuAria                 | string |                          |
-| clickToExpandAria                | string |                          |
-| clickToCollapseAria              | string |                          |
-| selectAllAria                    | string |                          |
-| selectRowAria                    | string |                          |
-| searchLabel                      | string |                          | toolbar                                                |
-| searchPlaceholder                | string |                          |
-| clearAllFilters                  | string |                          |
-| columnSelectionButtonAria        | string |                          |
-| columnSelectionConfig            | string |                          |
-| filterButtonAria                 | string |                          |
-| editButtonAria                   | string |                          |
-| clearFilterAria                  | string |                          |
-| filterAria                       | string |                          |
-| downloadIconDescription          | string |                          |
-| openMenuAria                     | string |                          |
-| closeMenuAria                    | string |                          |
-| clearSelectionAria               | string |                          |
-| batchCancel                      | string |                          |
-| itemsSelected                    | string |                          |
-| itemSelected                     | string |                          |
-| inProgressText                   | string |                          | I18N label for in progress                             |
-| actionFailedText                 | string |                          | I18N label for action failed                           |
-| learnMoreText                    | string |                          | I18N label for learn more                              |
-| dismissText                      | string |                          | I18N label for dismiss                                 |
-| filterNone                       | string |                          |                                                        |
-| filterAscending                  | string |                          |                                                        |
-| filterDescending                 | string |                          |                                                        |
-| rowCountInHeader                 | func   |                          |                                                        |
-| multiSortModalTitle              | string | 'Select columns to sort' |                                                        |
-| multiSortModalPrimaryLabel       | string | 'Sort'                   |                                                        |
-| multiSortModalSecondaryLabel     | string | 'Cancel'                 |                                                        |
-| multiSortSelectColumnLabel       | string | 'Select a column'        |                                                        |
-| multiSortSelectColumnSortByTitle | string | 'Sort by'                |                                                        |
-| multiSortSelectColumnThenByTitle | string | 'Then by'                |                                                        |
-| multiSortDirectionLabel          | string | 'Select a direction'     |                                                        |
-| multiSortDirectionTitle          | string | 'Sort order'             |                                                        |
-| multiSortAddColumn               | string | 'Add column'             |                                                        |
-| multiSortRemoveColumn            | string | 'Remove column'          |                                                        |
-| multiSortAscending               | string | 'Ascending'              |                                                        |
-| multiSortDescending              | string | 'Descending'             |                                                        |
+| Name                             | Type         | Default                  | Description                                            |
+| :------------------------------- | :----------- | :----------------------- | :----------------------------------------------------- |
+| pageBackwardAria                 | string       |                          | pagination                                             |
+| pageForwardAria                  | string       |                          |
+| pageNumberAria                   | string       |                          |
+| itemsPerPage                     | string       |                          |
+| itemsRangeWithTotal              | func         |                          | (min, max, total) => `${min}-${max} of ${total} items` |
+| pageRange                        | func         |                          | (current, total) => `${current} of ${total} pages`     |
+| overflowMenuAria                 | string       |                          |
+| clickToExpandAria                | string       |                          |
+| clickToCollapseAria              | string       |                          |
+| selectAllAria                    | string       |                          |
+| selectRowAria                    | string       |                          |
+| searchLabel                      | string       |                          | toolbar                                                |
+| searchPlaceholder                | string       |                          |
+| clearAllFilters                  | string       |                          |
+| columnSelectionButtonAria        | string       |                          |
+| columnSelectionConfig            | string       |                          |
+| filterButtonAria                 | string       |                          |
+| editButtonAria                   | string       |                          |
+| clearFilterAria                  | string       |                          |
+| filterAria                       | string       |                          |
+| downloadIconDescription          | string       |                          |
+| openMenuAria                     | string       |                          |
+| closeMenuAria                    | string       |                          |
+| clearSelectionAria               | string       |                          |
+| batchCancel                      | string       |                          |
+| itemsSelected                    | string, func |                          | (selectedCount) => `${selectedCount} items selected`   |
+| itemSelected                     | string, func |                          | (selectedCount) => `${selectedCount} item selected`    |
+| inProgressText                   | string       |                          | I18N label for in progress                             |
+| actionFailedText                 | string       |                          | I18N label for action failed                           |
+| learnMoreText                    | string       |                          | I18N label for learn more                              |
+| dismissText                      | string       |                          | I18N label for dismiss                                 |
+| filterNone                       | string       |                          |                                                        |
+| filterAscending                  | string       |                          |                                                        |
+| filterDescending                 | string       |                          |                                                        |
+| rowCountInHeader                 | func         |                          |                                                        |
+| multiSortModalTitle              | string       | 'Select columns to sort' |                                                        |
+| multiSortModalPrimaryLabel       | string       | 'Sort'                   |                                                        |
+| multiSortModalSecondaryLabel     | string       | 'Cancel'                 |                                                        |
+| multiSortSelectColumnLabel       | string       | 'Select a column'        |                                                        |
+| multiSortSelectColumnSortByTitle | string       | 'Sort by'                |                                                        |
+| multiSortSelectColumnThenByTitle | string       | 'Then by'                |                                                        |
+| multiSortDirectionLabel          | string       | 'Select a direction'     |                                                        |
+| multiSortDirectionTitle          | string       | 'Sort order'             |                                                        |
+| multiSortAddColumn               | string       | 'Add column'             |                                                        |
+| multiSortRemoveColumn            | string       | 'Remove column'          |                                                        |
+| multiSortAscending               | string       | 'Ascending'              |                                                        |
+| multiSortDescending              | string       | 'Descending'             |                                                        |
+| loadMoreText                     | string       | 'Load more...'           |                                                        |
 
 ## Source Code
 

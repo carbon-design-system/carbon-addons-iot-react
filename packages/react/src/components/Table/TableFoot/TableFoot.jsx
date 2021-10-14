@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { TableCell, TableRow } from 'carbon-components-react';
 import classnames from 'classnames';
@@ -12,6 +12,7 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]), // TODO: don't duplicate this one
     hasRowActions: PropTypes.bool,
+    hasRowNesting: PropTypes.bool,
   }),
   tableState: PropTypes.shape({
     aggregations: PropTypes.shape({
@@ -50,17 +51,20 @@ const defaultProps = {
 
 const TableFoot = ({
   testId,
-  options: { hasRowExpansion, hasRowSelection, hasRowActions },
+  options: { hasRowExpansion, hasRowSelection, hasRowActions, hasRowNesting },
   tableState: { aggregations, ordering },
   showExpanderColumn,
 }) => {
   const visibleColumns = ordering.filter((col) => !col.isHidden);
 
+  const hasMultiSelect = hasRowSelection === 'multi';
+  const hasExpandOrNest = hasRowExpansion || hasRowNesting;
+  const labelColSpan =
+    hasMultiSelect && hasExpandOrNest ? 3 : hasExpandOrNest || hasMultiSelect ? 2 : 1;
+
   return (
     <tfoot className={`${iotPrefix}-table-foot`} data-testid={testId}>
-      <TableRow>
-        {hasRowExpansion ? <TableCell key="row-expansion" /> : null}
-        {hasRowSelection === 'multi' ? <TableCell key="row-selection" /> : null}
+      <TableRow key="aggregate-row">
         {visibleColumns.map((orderedCol, index) => {
           const aggregated = aggregations.columns.find((col) => orderedCol.columnId === col.id);
           const isLabelCell = !aggregated && index === 0;
@@ -72,24 +76,30 @@ const TableFoot = ({
               className={`${iotPrefix}-table-foot--label`}
               data-testid={cellTestId}
               key={cellKey}
+              colSpan={labelColSpan}
             >
               {aggregations.label}
             </TableCell>
           ) : aggregated ? (
-            <TableCell
-              className={classnames({
-                [`${iotPrefix}-table-foot--value`]: true,
-                'data-table-end': aggregated.align === 'end',
-                'data-table-start': !aggregated.align || aggregated.align === 'start',
-                'data-table-center': aggregated.align === 'center',
-                [`${iotPrefix}-table-foot--value__sortable`]: aggregated.isSortable,
-              })}
-              align={aggregated.align ? aggregated.align : undefined}
-              data-testid={cellTestId}
-              key={cellKey}
-            >
-              {aggregated.value}
-            </TableCell>
+            <Fragment key={`aggregated-cell-fragment-${index}`}>
+              {index === 0 && (hasMultiSelect || hasExpandOrNest) ? (
+                <TableCell colSpan={hasMultiSelect && hasExpandOrNest ? 2 : 1} />
+              ) : null}
+              <TableCell
+                className={classnames({
+                  [`${iotPrefix}-table-foot--value`]: true,
+                  'data-table-end': aggregated.align === 'end',
+                  'data-table-start': !aggregated.align || aggregated.align === 'start',
+                  'data-table-center': aggregated.align === 'center',
+                  [`${iotPrefix}-table-foot--value__sortable`]: aggregated.isSortable,
+                })}
+                align={aggregated.align ? aggregated.align : undefined}
+                data-testid={cellTestId}
+                key={cellKey}
+              >
+                {aggregated.value}
+              </TableCell>
+            </Fragment>
           ) : (
             <TableCell data-testid={cellTestId} key={cellKey}>
               &nbsp;

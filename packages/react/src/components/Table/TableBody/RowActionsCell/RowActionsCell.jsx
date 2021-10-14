@@ -65,11 +65,6 @@ const defaultProps = {
   langDir: 'ltr',
 };
 
-const onClick = (e, id, action, onApplyRowAction) => {
-  onApplyRowAction(action, id);
-  e.preventDefault();
-  e.stopPropagation();
-};
 const renderBundledIconUsingName = (iconName, label) => {
   const Icon = icons[iconName];
   return <Icon aria-label={label} />;
@@ -92,6 +87,13 @@ class RowActionsCell extends React.Component {
     if (isOpen) {
       this.setState({ isOpen: false });
     }
+  };
+
+  onClick = (e, id, action, onApplyRowAction) => {
+    onApplyRowAction(action, id);
+    e.preventDefault();
+    e.stopPropagation();
+    this.handleClose();
   };
 
   render() {
@@ -164,7 +166,7 @@ class RowActionsCell extends React.Component {
                       tooltipPosition="left"
                       tooltipAlignment="end"
                       size="small"
-                      onClick={(e) => onClick(e, id, actionId, onApplyRowAction)}
+                      onClick={(e) => this.onClick(e, id, actionId, onApplyRowAction)}
                     >
                       {labelText}
                     </Button>
@@ -188,8 +190,9 @@ class RowActionsCell extends React.Component {
                           [`${iotPrefix}--action-overflow-item--initialFocus`]:
                             actionIndex === firstSelectableItemIndex,
                         })}
+                        data-testid={`${tableId}-${id}-row-actions-cell-overflow-menu-item-${action.id}`}
                         key={`${id}-row-actions-button-${action.id}`}
-                        onClick={(e) => onClick(e, id, action.id, onApplyRowAction)}
+                        onClick={(e) => this.onClick(e, id, action.id, onApplyRowAction)}
                         requireTitle={!action.renderIcon}
                         hasDivider={action.hasDivider}
                         isDelete={action.isDelete}

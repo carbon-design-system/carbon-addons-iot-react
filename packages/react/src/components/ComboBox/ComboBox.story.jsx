@@ -54,6 +54,12 @@ const props = () => ({
   invalidText: text('Invalid text (invalidText)', 'A valid value is required'),
   size: select('Field size (size)', sizes, undefined) || undefined,
   onChange: action('fired onChange'),
+  menuFitContent: boolean('Menu fits content (menuFitContent)', false),
+  horizontalDirection: select(
+    'Horizontal direction (horizontalDirection)',
+    ['start', 'end'],
+    'end'
+  ),
 });
 
 const itemToElement = (item) => {

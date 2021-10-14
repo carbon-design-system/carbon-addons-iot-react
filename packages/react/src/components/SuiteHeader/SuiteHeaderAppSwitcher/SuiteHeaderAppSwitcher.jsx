@@ -9,7 +9,10 @@ import { ButtonSkeleton } from 'carbon-components-react';
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
 import { SkeletonText } from '../../SkeletonText';
-import SuiteHeader, { SuiteHeaderApplicationPropTypes } from '../SuiteHeader';
+import SuiteHeader, {
+  SuiteHeaderApplicationPropTypes,
+  shouldOpenInNewWindow,
+} from '../SuiteHeader';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const defaultProps = {
@@ -60,11 +63,12 @@ const SuiteHeaderAppSwitcher = ({
   const handleRouteChange = useCallback(
     ({ href, id, isExternal }) => async (e) => {
       e.preventDefault();
+      const newWindow = shouldOpenInNewWindow(e);
       const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
         appId: id,
       });
       if (result) {
-        if (isExternal) {
+        if (isExternal || newWindow) {
           window.open(href, '_blank', 'noopener noreferrer');
         } else {
           window.location.href = href;
@@ -77,9 +81,14 @@ const SuiteHeaderAppSwitcher = ({
   const handleAllApplicationRoute = useCallback(
     async (e) => {
       e.preventDefault();
+      const newWindow = shouldOpenInNewWindow(e);
       const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.NAVIGATOR, allApplicationsLink);
       if (result) {
-        window.location.href = allApplicationsLink;
+        if (newWindow) {
+          window.open(allApplicationsLink, '_blank', 'noopener noreferrer');
+        } else {
+          window.location.href = allApplicationsLink;
+        }
       }
     },
     [allApplicationsLink, onRouteChange]

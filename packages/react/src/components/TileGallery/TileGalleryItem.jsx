@@ -65,7 +65,7 @@ const TileGalleryItem = ({
             evt.stopPropagation();
           }}
           role="presentation"
-          data-testId={`${testId}-overflow-menu`}
+          data-testid={`${testId}-overflow-menu`}
         >
           {afterContent}
         </div>

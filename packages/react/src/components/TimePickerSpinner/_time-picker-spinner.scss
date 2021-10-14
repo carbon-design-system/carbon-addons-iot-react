@@ -17,16 +17,26 @@
   }
 
   &.#{$iot-prefix}--time-picker__wrapper--show-underline {
+    .bx--time-picker--invalid .bx--time-picker__input:before {
+      bottom: 1.6rem;
+    }
     .bx--time-picker__input:before {
       content: '__';
       position: absolute;
       bottom: 0.365rem;
       left: 1rem;
     }
+
     &.#{$iot-prefix}--time-picker__wrapper--show-underline-minutes {
       .bx--time-picker__input:before {
         left: 2.7rem;
       }
+    }
+  }
+
+  .bx--time-picker--invalid {
+    .#{$iot-prefix}--time-picker__controls {
+      bottom: calc(#{$spacing-06} - #{$spacing-01});
     }
   }
 

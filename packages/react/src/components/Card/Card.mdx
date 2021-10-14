@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Getting started](#getting-started)
+- [DateTime range](#datetime-range)
 - [Custom card content](#custom-card-content)
 - [Props](#props)
 - [External links](#external-links)
@@ -15,6 +16,34 @@ The `Card` component is the foundation of all cards in the library.
 
 ```jsx
 import { Card } from 'carbon-addons-iot-react';
+```
+
+## DateTime range
+
+You can use the full DateTimePicker on a Card by passing 'iconOnly' to the range actions. The date chosen will be displayed in the subtitle of the card.
+The `onCardAction` callback will fire with the `CHANGE_TIME_RANGE` action and include the values from the DateTimePicker when apply is clicked. See the actions tab in StoryBook for examples.
+
+```jsx
+// onCardAction CHANGE_TIME_RANGE results with DateTimePicker.
+{
+  timeRangeKind: "PRESET",
+  timeRangeValue: {
+    id: "last48Hours",
+    label: "Last 48 Hours",
+    offset: 2880,
+    tooltipValue: "2021-10-06 14:08 to Now",
+  }
+}
+```
+
+```jsx
+<Card
+  {...cardProps}
+  size={CARD_SIZES.LARGE}
+  tooltip={tooltipElement}
+  onCardAction={mockOnCardAction}
+  availableActions={{ expand: true, range: DATE_PICKER_OPTIONS.ICON_ONLY }}
+/>
 ```
 
 ## Implementing a custom card
@@ -479,7 +508,7 @@ const isEditable = true;
   }}
   size="MEDIUM"
   tabIndex={undefined}
-  testID="Card"
+  testId="Card"
   timeRange={undefined}
   title="Custom Card Title"
   toolbar={undefined}
@@ -585,6 +614,7 @@ const isEditable = true;
 | i18n.closeLabel                 | string                                                                                                                                                | 'Close'                                                                   |                                                                                                                                                    |
 | i18n.loadingDataLabel           | string                                                                                                                                                |                                                                           |                                                                                                                                                    |
 | i18n.overflowMenuDescription    | string                                                                                                                                                | 'Open and close list of options'                                          |                                                                                                                                                    |
+| i18n.toLabel                    | string                                                                                                                                                | 'to'                                                                      | The 'to' used in the subtitle of a date string. ie. '2021-10-11 12:00 to 2021-10-12 12:00'                                                         |
 | onMouseDown                     | function                                                                                                                                              | undefined                                                                 |                                                                                                                                                    |
 | onMouseUp                       | function                                                                                                                                              | undefined                                                                 |                                                                                                                                                    |
 | onTouchEnd                      | function                                                                                                                                              | undefined                                                                 |                                                                                                                                                    |
@@ -593,7 +623,7 @@ const isEditable = true;
 | onFocus                         | function                                                                                                                                              | undefined                                                                 |                                                                                                                                                    |
 | onBlur                          | function                                                                                                                                              | undefined                                                                 |                                                                                                                                                    |
 | tabIndex                        | number                                                                                                                                                | undefined                                                                 |                                                                                                                                                    |
-| testID                          | string                                                                                                                                                | CardWrapper.defaultProps.testID                                           |                                                                                                                                                    |
+| testId                          | string                                                                                                                                                | CardWrapper.defaultProps.testId                                           |                                                                                                                                                    |
 
 ### cardDimensions Prop
 

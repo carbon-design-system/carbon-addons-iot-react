@@ -147,4 +147,96 @@ describe('TableCellRenderer', () => {
     );
     expect(screen.getByText('35.1234567')).toBeInTheDocument(); // no limit on the count of decimals
   });
+
+  describe('warning should be thrown for objects as data without needed functions', () => {
+    const { __DEV__ } = global;
+    const { error } = console;
+    let renderDataFunction;
+
+    beforeEach(() => {
+      renderDataFunction = jest.fn().mockImplementation(() => '124556');
+      global.__DEV__ = true;
+      console.error = jest.fn();
+    });
+
+    afterEach(() => {
+      global.__DEV__ = __DEV__;
+      console.error = error;
+      jest.clearAllMocks();
+    });
+
+    it('should throw warnings if objects are passed as data without a renderer', () => {
+      render(
+        <TableCellRenderer wrapText="never" truncateCellText locale="en" columnId="object">
+          {{ id: '124556' }}
+        </TableCellRenderer>
+      );
+
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `You must supply a 'renderDataFunction' when passing objects as column values.`
+        )
+      );
+    });
+
+    it('should throw warnings if objects are passed as data and are sortable without sortFunction', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          columnId="object"
+          renderDataFunction={renderDataFunction}
+          isSortable
+        >
+          {{ id: '124556' }}
+        </TableCellRenderer>
+      );
+
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `You must supply a 'sortFunction' when isSortable is true and you're passing objects as column values.`
+        )
+      );
+    });
+
+    it('should throw warnings if objects are passed as data and are filterable without filterFunction', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          columnId="object"
+          renderDataFunction={renderDataFunction}
+          isFilterable
+        >
+          {{ id: '124556' }}
+        </TableCellRenderer>
+      );
+
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          `You must supply a 'filterFunction' when passing objects as column values and want them filterable.`
+        )
+      );
+    });
+
+    it('should not throw errors when a render function is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          renderDataFunction={renderDataFunction}
+          columnId="object"
+        >
+          {{ id: '124556' }}
+        </TableCellRenderer>
+      );
+
+      expect(console.error).not.toHaveBeenCalled();
+      expect(renderDataFunction).toHaveBeenCalled();
+      expect(screen.getByText('124556')).toBeDefined();
+    });
+  });
 });

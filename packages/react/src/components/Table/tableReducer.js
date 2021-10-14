@@ -43,8 +43,10 @@ import {
   TABLE_MULTI_SORT_ADD_COLUMN,
   TABLE_MULTI_SORT_REMOVE_COLUMN,
   TABLE_MULTI_SORT_CLEAR,
+  TABLE_ROW_LOAD_MORE,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
+import { findRow } from './tableUtilities';
 
 /**
  * Default function to compare value 1 and 2
@@ -368,15 +370,27 @@ export const tableReducer = (state = {}, action) => {
       const data = filteredData || state.data;
       // only update the data and filtered data if deleted
       if (action.payload === 'delete') {
+        const { selectedIds } = state.view.table;
+        const { pagination } = state.view;
+        const totalItems = pagination.totalItems - selectedIds.length;
+        const numberOfPages = Math.ceil(totalItems / pagination.pageSize);
+        const page = pagination.page > numberOfPages ? numberOfPages : pagination.page;
         return baseTableReducer(
           update(state, {
             data: {
-              $set: state.data.filter((i) => !state.view.table.selectedIds.includes(i.id)),
+              $set: state.data.filter((i) => !selectedIds.includes(i.id)),
             },
             view: {
               table: {
                 filteredData: {
-                  $set: data.filter((i) => !state.view.table.selectedIds.includes(i.id)),
+                  $set: data.filter((i) => !selectedIds.includes(i.id)),
+                },
+              },
+              pagination: {
+                $set: {
+                  ...pagination,
+                  totalItems,
+                  page,
                 },
               },
             },
@@ -467,6 +481,17 @@ export const tableReducer = (state = {}, action) => {
     // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
+
+      // The only thing that changes after additional child rows have been loaded is the
+      // actual data, so we use that diff to find out which ids in loadingMoreIds that
+      // we should keep.
+      const loadingMoreIds =
+        state.view?.table?.loadingMoreIds?.filter((loadMoreRowId) => {
+          const oldChildCount = findRow(loadMoreRowId, state.data)?.children?.length;
+          const newChildCount = findRow(loadMoreRowId, action.payload.data)?.children?.length;
+          return oldChildCount === newChildCount;
+        }) ?? [];
+
       const { view, totalItems, hasUserViewManagement } = action.payload;
       const { pageSize, pageSizes } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
@@ -529,6 +554,7 @@ export const tableReducer = (state = {}, action) => {
               $set: {
                 isLoading: action.payload.isLoading,
                 rowCount: get(state, 'view.table.loadingState.rowCount') || 0,
+                columnCount: get(state, 'view.table.loadingState.columnCount') || 0,
               },
             },
             // Reset the selection to the previous values
@@ -540,6 +566,9 @@ export const tableReducer = (state = {}, action) => {
             },
             isSelectAllSelected: {
               $set: view ? view.table.isSelectAllSelected : false,
+            },
+            loadingMoreIds: {
+              $set: loadingMoreIds,
             },
           },
         },
@@ -581,12 +610,11 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_ADVANCED_FILTER_CANCEL: {
-      const isOpen = state.view.toolbar.advancedFilterFlyoutOpen === true;
       return update(state, {
         view: {
           toolbar: {
             $set: {
-              advancedFilterFlyoutOpen: !isOpen,
+              advancedFilterFlyoutOpen: false,
             },
           },
         },
@@ -723,6 +751,18 @@ export const tableReducer = (state = {}, action) => {
 
     case TABLE_MULTI_SORT_REMOVE_COLUMN: {
       return state;
+    }
+
+    case TABLE_ROW_LOAD_MORE: {
+      return update(state, {
+        view: {
+          table: {
+            loadingMoreIds: {
+              $set: [...state.view.table.loadingMoreIds, action.payload],
+            },
+          },
+        },
+      });
     }
 
     // Actions that are handled by the base reducer

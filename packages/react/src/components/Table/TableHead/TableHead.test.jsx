@@ -1,10 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import cloneDeep from 'lodash/cloneDeep';
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../constants/Settings';
+import * as componentUtilityFunctions from '../../../utils/componentUtilityFunctions';
 
 import TableHead from './TableHead';
 import TableHeader from './TableHeader';
@@ -32,22 +33,46 @@ const commonTableHeadProps = {
       { columnId: 'col3', isHidden: false },
     ],
   },
-  actions: { onChangeOrdering: jest.fn() },
-  options: { wrapCellText: 'auto', truncateCellText: false },
+  actions: { onChangeOrdering: jest.fn(), onOverflowItemClicked: jest.fn() },
+  options: { wrapCellText: 'auto', truncateCellText: false, preserveColumnWidths: false },
 };
+
+// Needed to get the debounced window resize tested
+// https://github.com/facebook/jest/issues/3465#issuecomment-449007170
+jest.mock('lodash/debounce', () => (fn) => fn);
 
 describe('TableHead', () => {
   it('be selectable by testID or testId', () => {
-    const { rerender } = render(<TableHead {...commonTableHeadProps} testID="TABLE_HEAD" />, {
-      container: document.body.appendChild(document.createElement('table')),
-    });
+    const columns = commonTableHeadProps.columns.map((c) => ({
+      ...c,
+      overflowMenuItems: [
+        {
+          id: '1',
+          text: 'one',
+        },
+        {
+          id: '2',
+          text: 'two',
+        },
+      ],
+    }));
+    const { rerender } = render(
+      <TableHead {...commonTableHeadProps} columns={columns} testID="TABLE_HEAD" />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
+    );
 
     expect(screen.getByTestId('TABLE_HEAD')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-col1')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-col2')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-col3')).toBeDefined();
+    expect(screen.getAllByTestId('table-head--overflow')).toHaveLength(3);
+    userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[1]);
+    expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-1')).toBeDefined();
+    expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-2')).toBeDefined();
 
-    rerender(<TableHead {...commonTableHeadProps} testId="table_head" />, {
+    rerender(<TableHead {...commonTableHeadProps} columns={columns} testId="table_head" />, {
       container: document.body.appendChild(document.createElement('table')),
     });
 
@@ -55,6 +80,10 @@ describe('TableHead', () => {
     expect(screen.getByTestId('table_head-column-col1')).toBeDefined();
     expect(screen.getByTestId('table_head-column-col2')).toBeDefined();
     expect(screen.getByTestId('table_head-column-col3')).toBeDefined();
+    expect(screen.getAllByTestId('table-head--overflow')).toHaveLength(3);
+    userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[0]);
+    expect(screen.getByTestId('table_head-column-overflow-menu-item-1')).toBeDefined();
+    expect(screen.getByTestId('table_head-column-overflow-menu-item-2')).toBeDefined();
   });
   it('columns should render', () => {
     const wrapper = mount(<TableHead {...commonTableHeadProps} />, {
@@ -139,19 +168,6 @@ describe('TableHead', () => {
       attachTo: document.createElement('table'),
     });
     expect(wrapper.exists('ColumnHeaderRow')).toBeTruthy();
-  });
-
-  it('check has resize if has resize is true ', () => {
-    const myProps = {
-      ...commonTableHeadProps,
-      options: { ...commonTableHeadProps.options, hasResize: true },
-    };
-    const wrapper = mount(<TableHead {...myProps} />, {
-      attachTo: document.createElement('table'),
-    });
-    const tableHeaders = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
-    tableHeaders.first().simulate('click');
-    expect(tableHeaders).toHaveLength(2);
   });
 
   it('check not resize if has resize is false ', () => {
@@ -252,6 +268,69 @@ describe('TableHead', () => {
     expect(sortableTableHead.prop('width')).toBe('101px');
   });
 
+  it('adds tableTranslateWithId to TableHeader that calls it', () => {
+    jest.spyOn(componentUtilityFunctions, 'tableTranslateWithId');
+    render(<TableHead {...commonTableHeadProps} />, {
+      container: document.body.appendChild(document.createElement('table')),
+    });
+    expect(componentUtilityFunctions.tableTranslateWithId).toHaveBeenCalled();
+    componentUtilityFunctions.tableTranslateWithId.mockRestore();
+  });
+
+  it('adds multisort overflow to headers', async () => {
+    const myOptions = { ...commonTableHeadProps.options, hasMultiSort: true };
+    const myTableState = {
+      ...commonTableHeadProps.tableState,
+      sort: [
+        {
+          columnId: 'col3',
+          direction: 'ASC',
+        },
+      ],
+    };
+    render(<TableHead {...commonTableHeadProps} options={myOptions} tableState={myTableState} />, {
+      container: document.body.appendChild(document.createElement('table')),
+    });
+
+    const column3 = screen.getByRole('columnheader', { name: /Column 3/i });
+    expect(column3).toHaveClass('iot--table-head--table-header--with-overflow');
+    expect(within(column3).getByText('1')).toHaveClass('iot--table-header-label__sort-order');
+  });
+
+  it('calls onOverflowItemClicked when multi-sort overflow is clicked', async () => {
+    const myOptions = { ...commonTableHeadProps.options, hasMultiSort: true };
+    const myTableState = {
+      ...commonTableHeadProps.tableState,
+      sort: [
+        {
+          columnId: 'col3',
+          direction: 'ASC',
+        },
+      ],
+    };
+    render(
+      <TableHead
+        {...commonTableHeadProps}
+        options={myOptions}
+        tableState={myTableState}
+        i18n={{ multiSortOverflowItem: 'Multi-sort' }}
+      />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
+    );
+
+    const column3 = screen.getByRole('columnheader', { name: /Column 3/i });
+    expect(screen.queryByText('Multi-sort')).not.toBeInTheDocument();
+    userEvent.click(
+      within(column3).getByRole('button', { name: 'open and close list of options' })
+    );
+    await waitFor(() => expect(screen.getByText('Multi-sort')).toBeInTheDocument());
+
+    userEvent.click(screen.getByText(/Multi-sort/i));
+    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort');
+  });
+
   describe('Column resizing active', () => {
     let ordering;
     let columns;
@@ -289,6 +368,7 @@ describe('TableHead', () => {
           hasResize: true,
           wrapCellText: 'auto',
           truncateCellText: false,
+          preserveColumnWidths: false,
         },
         actions: myActions,
         showExpanderColumn: true,
@@ -297,6 +377,53 @@ describe('TableHead', () => {
 
     afterAll(() => {
       Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+    });
+
+    it('shows resize handle if hasResize:true ', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const { container } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+      expect(container.querySelector(`.${iotPrefix}--column-resize-handle`)).toBeInTheDocument();
+    });
+
+    it('sets new columns widths after window resize if useAutoTableLayoutForResize:true', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+      const myOptions = { ...myProps.options, useAutoTableLayoutForResize: true };
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1' },
+        { id: 'col2', name: 'Column 2' },
+        { id: 'col3', name: 'Column 3' },
+      ];
+
+      render(<TableHead {...myProps} options={myOptions} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '100px',
+      });
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      fireEvent(window, new Event('resize'));
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
+        width: '200px',
+      });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
+        width: '200px',
+      });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
+        width: '200px',
+      });
     });
 
     it('toggle hide column correctly updates the column widths of visible columns', () => {
@@ -449,6 +576,179 @@ describe('TableHead', () => {
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
         { columnId: 'col1', isHidden: false },
         { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ]);
+    });
+
+    it('uses last known widths for hidden columns when all  columns in column prop lack width', () => {
+      myProps.options = {
+        hasResize: true,
+        preserveColumnWidths: false,
+      };
+
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1', width: '200px' },
+        { id: 'col2', name: 'Column 2', width: '200px' },
+        { id: 'col3', name: 'Column 3', width: '200px' },
+      ];
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { container, rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: true },
+          { columnId: 'col3', isHidden: true },
+        ],
+      };
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1', width: undefined },
+        { id: 'col2', name: 'Column 2' },
+        { id: 'col3', name: 'Column 3' },
+      ];
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col2', name: 'Column 2', width: '200px' },
+        { id: 'col3', name: 'Column 3', width: '200px' },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: true },
+        { columnId: 'col3', isHidden: true },
+      ]);
+    });
+
+    it('handles column toggle show after all has been hidden, using min width if needed', () => {
+      myProps.options = {
+        hasResize: true,
+        preserveColumnWidths: false,
+      };
+
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1' },
+        { id: 'col2', name: 'Column 2' },
+        { id: 'col3', name: 'Column 3' },
+      ];
+
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: true },
+          { columnId: 'col3', isHidden: true },
+        ],
+      };
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { container, rerender } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 1')
+      );
+
+      const columnsAfterToggle = [
+        { id: 'col1', name: 'Column 1', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col2', name: 'Column 2', width: undefined },
+        { id: 'col3', name: 'Column 3', width: undefined },
+      ];
+      const orderingAfterToggle = [
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: true },
+        { columnId: 'col3', isHidden: true },
+      ];
+      expect(myActions.onColumnResize).toHaveBeenCalledWith(columnsAfterToggle);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterToggle);
+
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: orderingAfterToggle,
+      };
+      myProps.columns = columnsAfterToggle;
+
+      rerender(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 2')
+      );
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col2', name: 'Column 2', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col3', name: 'Column 3', width: undefined },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: true },
+      ]);
+    });
+
+    it('handles column toggle when all columns are hidden and without width', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: true },
+          { columnId: 'col3', isHidden: true },
+        ],
+      };
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1', width: undefined },
+        { id: 'col2', name: 'Column 2' },
+        { id: 'col3', name: 'Column 3' },
+      ];
+
+      myProps.options = {
+        hasResize: true,
+        preserveColumnWidths: false,
+      };
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { container } = render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      // Show col3 which has no initial column width.
+      userEvent.click(
+        within(
+          container.querySelector(`.${iotPrefix}--column-header-row--select-wrapper`)
+        ).getByText('Column 3')
+      );
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: undefined },
+        { id: 'col2', name: 'Column 2', width: undefined },
+        { id: 'col3', name: 'Column 3', width: `${MIN_COLUMN_WIDTH}px` },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith([
+        { columnId: 'col1', isHidden: true },
+        { columnId: 'col2', isHidden: true },
         { columnId: 'col3', isHidden: false },
       ]);
     });

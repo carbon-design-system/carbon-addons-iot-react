@@ -117,6 +117,7 @@ const defaultProps = {
   walkmePath: null,
   walkmeLang: 'en',
   testId: 'suite-header',
+  isActionItemVisible: () => true,
 };
 
 const propTypes = {
@@ -166,9 +167,15 @@ const propTypes = {
   walkmePath: PropTypes.string,
   /** Walkme language code */
   walkmeLang: PropTypes.string,
-
   testId: PropTypes.string,
+
+  /** a function that will be passed the actionItem object and returns a boolean to determine if that item should be shown */
+  // eslint-disable-next-line react/forbid-foreign-prop-types
+  isActionItemVisible: Header.propTypes.isActionItemVisible,
 };
+
+export const shouldOpenInNewWindow = (e) =>
+  navigator.userAgent.indexOf('Mac') !== -1 ? e.metaKey : e.ctrlKey;
 
 const SuiteHeader = ({
   className,
@@ -238,6 +245,18 @@ const SuiteHeader = ({
         ]
       : [];
 
+  const handleOnClick = (routeType, href, isExternal) => async (e) => {
+    const newWindow = isExternal ? true : shouldOpenInNewWindow(e);
+    const result = await onRouteChange(routeType, href);
+    if (result) {
+      if (newWindow) {
+        window.open(href, '_blank', 'noopener noreferrer');
+      } else {
+        window.location.href = href;
+      }
+    }
+  };
+
   return (
     <>
       {walkmePath ? <Walkme path={walkmePath} lang={walkmeLang} /> : null}
@@ -255,26 +274,14 @@ const SuiteHeader = ({
             <>
               <Link
                 href="#"
-                onClick={async (e) => {
-                  e.preventDefault();
-                  const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
-                  if (result) {
-                    window.open(surveyData.surveyLink, '_blank', 'noopener noreferrer');
-                  }
-                }}
+                onClick={handleOnClick(ROUTE_TYPES.SURVEY, surveyData.surveyLink, true)}
               >
                 {mergedI18N.surveyText}
               </Link>
               <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
                 <Link
                   href="#"
-                  onClick={async (e) => {
-                    e.preventDefault();
-                    const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
-                    if (result) {
-                      window.open(surveyData.privacyLink, '_blank', 'noopener noreferrer');
-                    }
-                  }}
+                  onClick={handleOnClick(ROUTE_TYPES.SURVEY, surveyData.privacyLink, true)}
                 >
                   {mergedI18N.surveyPrivacyPolicy}
                 </Link>
@@ -298,12 +305,7 @@ const SuiteHeader = ({
       <SuiteHeaderLogoutModal
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
-        onLogout={async () => {
-          const result = await onRouteChange(ROUTE_TYPES.LOGOUT, routes.logout);
-          if (result) {
-            window.location.href = routes.logout;
-          }
-        }}
+        onLogout={handleOnClick(ROUTE_TYPES.LOGOUT, routes?.logout)}
         i18n={{
           heading: mergedI18N.profileLogoutModalHeading,
           primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
@@ -370,6 +372,7 @@ const SuiteHeader = ({
         actionItems={[
           ...customActionItems,
           {
+            id: 'admin',
             label: mergedI18N.administrationIcon,
             className: [
               'admin-icon',
@@ -387,20 +390,18 @@ const SuiteHeader = ({
                 />
               </span>
             ),
-            onClick: async () => {
+            onClick: async (e) => {
               let href = routes.admin;
               let routeType = ROUTE_TYPES.ADMIN;
               if (isAdminView) {
                 href = navigatorRoute;
                 routeType = ROUTE_TYPES.NAVIGATOR;
               }
-              const result = await onRouteChange(routeType, href);
-              if (result) {
-                window.location.href = href;
-              }
+              handleOnClick(routeType, href)(e);
             },
           },
           {
+            id: 'help',
             label: mergedI18N.help,
             onClick: () => {},
             btnContent: (
@@ -423,12 +424,7 @@ const SuiteHeader = ({
                       'data-testid': `suite-header-help--${item}`,
                       href: '#',
                       title: mergedI18N[item],
-                      onClick: async () => {
-                        const result = await onRouteChange(ROUTE_TYPES.DOCUMENTATION, routes[item]);
-                        if (result) {
-                          window.open(routes[item], '_blank', 'noopener noreferrer');
-                        }
-                      },
+                      onClick: handleOnClick(ROUTE_TYPES.DOCUMENTATION, routes[item], true),
                     },
                     content: <span id={`suite-header-help-menu-${item}`}>{mergedI18N[item]}</span>,
                   })),
@@ -438,12 +434,7 @@ const SuiteHeader = ({
                       'data-testid': 'suite-header-help--about',
                       href: '#',
                       title: mergedI18N.about,
-                      onClick: async () => {
-                        const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
-                        if (result) {
-                          window.location.href = routes.about;
-                        }
-                      },
+                      onClick: handleOnClick(ROUTE_TYPES.ABOUT, routes.about),
                     },
                     content: <span id="suite-header-help-menu-about">{mergedI18N.about}</span>,
                   },
@@ -465,6 +456,7 @@ const SuiteHeader = ({
                 ],
           },
           {
+            id: 'user',
             label: 'user',
             btnContent: (
               <span id="suite-header-action-item-profile">
@@ -485,12 +477,7 @@ const SuiteHeader = ({
                     <SuiteHeaderProfile
                       displayName={userDisplayName}
                       username={username}
-                      onProfileClick={async () => {
-                        const result = await onRouteChange(ROUTE_TYPES.PROFILE, routes.profile);
-                        if (result) {
-                          window.location.href = routes.profile;
-                        }
-                      }}
+                      onProfileClick={handleOnClick(ROUTE_TYPES.PROFILE, routes?.profile)}
                       i18n={{
                         profileTitle: mergedI18N.profileTitle,
                         profileButton: mergedI18N.profileManageButton,

@@ -41,6 +41,7 @@ import {
   DEFAULT_COLUMN_WIDTH,
   addMissingColumnWidths,
   checkColumnWidthFormat,
+  hasVisibleColumns,
   adjustInitialColumnWidths,
 } from './columnWidthUtilityFunctions';
 
@@ -369,7 +370,7 @@ const TableHead = ({
 
         if (addedVisibleColumnIDs.length > 0 || removedColumnIDs.length > 0) {
           setCurrentColumnWidths(adjustedForRemovedAndAdded);
-        } else if (visibleColumnsHaveWidth(ordering, columns)) {
+        } else if (hasVisibleColumns(ordering) && visibleColumnsHaveWidth(ordering, columns)) {
           const propsColumnWidths = createNewWidthsMap(ordering, columns);
           if (!isEqual(currentColumnWidths, propsColumnWidths)) {
             setCurrentColumnWidths(propsColumnWidths);
@@ -515,6 +516,7 @@ const TableHead = ({
                   {hasOverflow &&
                     matchingColumnMeta.overflowMenuItems.map((menuItem) => (
                       <OverflowMenuItem
+                        data-testid={`${testID || testId}-column-overflow-menu-item-${menuItem.id}`}
                         itemText={menuItem.text}
                         key={`${columnIndex}--overflow-item-${menuItem.id}`}
                         onClick={(e) => handleOverflowItemClick(e, menuItem)}
@@ -522,6 +524,7 @@ const TableHead = ({
                     ))}
                   {hasMultiSort && (
                     <OverflowMenuItem
+                      data-testid={`${testID || testId}-column-overflow-menu-item-multi-sort`}
                       itemText={i18n.multiSortOverflowItem}
                       key={`${columnIndex}--overflow-item-multi-sort`}
                       onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}

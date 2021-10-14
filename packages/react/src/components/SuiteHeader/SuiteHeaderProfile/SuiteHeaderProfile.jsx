@@ -5,6 +5,7 @@ import { ButtonSkeleton } from 'carbon-components-react';
 import { Button } from '../../../index';
 import { SkeletonText } from '../../SkeletonText';
 import { settings } from '../../../constants/Settings';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const defaultProps = {
   username: '',
@@ -69,6 +70,7 @@ const SuiteHeaderProfile = ({
               size="small"
               testId={`${testId}--profile`}
               onClick={onProfileClick}
+              onKeyDown={handleSpecificKeyDown(['Enter', ' '], onProfileClick)}
             >
               {mergedI18N.profileButton}
             </Button>

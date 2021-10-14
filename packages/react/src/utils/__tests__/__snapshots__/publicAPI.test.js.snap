@@ -350,7 +350,6 @@ Map {
         "closeMenuAria": "Close menu",
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage Columns",
-        "currentPage": [Function],
         "downloadIconDescription": "Download table content",
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
@@ -363,11 +362,11 @@ Map {
         "filterButtonAria": "Filters",
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
-        "itemSelected": "item selected",
+        "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
-        "itemsRange": [Function],
         "itemsRangeWithTotal": [Function],
-        "itemsSelected": "items selected",
+        "itemsSelected": [Function],
+        "loadMoreText": "Load more...",
         "multiSortAddColumn": "Add column",
         "multiSortAscending": "Ascending",
         "multiSortDescending": "Descending",
@@ -422,6 +421,7 @@ Map {
         "wrapCellText": "always",
       },
       "secondaryTitle": null,
+      "size": undefined,
       "testId": null,
       "title": null,
       "tooltip": null,
@@ -448,7 +448,9 @@ Map {
         "table": Object {
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
+          "loadingMoreIds": Array [],
           "loadingState": Object {
+            "columnCount": 5,
             "rowCount": 5,
           },
           "ordering": undefined,
@@ -524,6 +526,9 @@ Map {
                     "type": "func",
                   },
                   "onRowExpanded": Object {
+                    "type": "func",
+                  },
+                  "onRowLoadMore": Object {
                     "type": "func",
                   },
                   "onRowSelected": Object {
@@ -745,6 +750,9 @@ Map {
                   ],
                   "type": "oneOfType",
                 },
+                "hasLoadMore": Object {
+                  "type": "bool",
+                },
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
@@ -912,9 +920,6 @@ Map {
             "columnSelectionConfig": Object {
               "type": "string",
             },
-            "currentPage": Object {
-              "type": "func",
-            },
             "dismissText": Object {
               "type": "string",
             },
@@ -943,21 +948,41 @@ Map {
               "type": "string",
             },
             "itemSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "itemsPerPage": Object {
               "type": "string",
-            },
-            "itemsRange": Object {
-              "type": "func",
             },
             "itemsRangeWithTotal": Object {
               "type": "func",
             },
             "itemsSelected": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "learnMoreText": Object {
+              "type": "string",
+            },
+            "loadMoreText": Object {
               "type": "string",
             },
             "multiSortAddColumn": Object {
@@ -1179,6 +1204,8 @@ Map {
       "secondaryTitle": Object {
         "type": "string",
       },
+      "size": [Function],
+      "stickyHeader": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -1423,9 +1450,20 @@ Map {
                   "isSelectAllSelected": Object {
                     "type": "bool",
                   },
+                  "loadingMoreIds": Object {
+                    "args": Array [
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
                   "loadingState": Object {
                     "args": Array [
                       Object {
+                        "columnCount": Object {
+                          "type": "number",
+                        },
                         "isLoading": Object {
                           "type": "bool",
                         },
@@ -2103,7 +2141,17 @@ Map {
               "type": "number",
             },
             "totalItemsText": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -2835,7 +2883,17 @@ Map {
         "type": "number",
       },
       "totalItemsText": Object {
-        "type": "string",
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "func",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
     },
   },
@@ -3342,6 +3400,7 @@ Map {
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
+      "emptyState": "No list items to show",
       "hasDeselection": true,
       "hasMultiSelect": false,
       "hasPagination": true,
@@ -3353,8 +3412,8 @@ Map {
         "expand": "Expand",
         "itemSelected": "1 item selected",
         "itemTitle": "Move 1 item underneath",
-        "itemsSelected": "%d items selected",
-        "itemsTitle": "Move %d items underneath",
+        "itemsSelected": [Function],
+        "itemsTitle": [Function],
         "modalDescription": "Select a destination",
         "move": "Move",
         "searchPlaceHolderText": "Enter a value",
@@ -3362,6 +3421,7 @@ Map {
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
+      "isVirtualList": false,
       "itemWillMove": [Function],
       "items": Array [],
       "onListUpdated": [Function],
@@ -3408,6 +3468,19 @@ Map {
         ],
         "type": "oneOf",
       },
+      "emptyState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "hasDeselection": Object {
         "type": "bool",
       },
@@ -3435,8 +3508,37 @@ Map {
             "expand": Object {
               "type": "string",
             },
-            "itemsSelected": Object {
+            "itemSelected": Object {
               "type": "string",
+            },
+            "itemTitle": Object {
+              "type": "string",
+            },
+            "itemsSelected": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "itemsTitle": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "modalDescription": Object {
               "type": "string",
@@ -3461,6 +3563,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isVirtualList": Object {
         "type": "bool",
       },
       "itemWillMove": Object {
@@ -3499,6 +3604,9 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
                 },
                 "id": Object {
                   "type": "string",
@@ -3540,6 +3648,334 @@ Map {
       },
       "title": Object {
         "type": "string",
+      },
+    },
+  },
+  "ListContent" => Object {
+    "defaultProps": Object {
+      "editingStyle": null,
+      "emptyState": "No list items to show",
+      "expandedIds": Array [],
+      "handleLoadMore": [Function],
+      "handleSelect": [Function],
+      "i18n": Object {
+        "close": "Close",
+        "expand": "Expand",
+        "loadMore": "Load more...",
+        "searchPlaceHolderText": "Enter a value",
+      },
+      "iconPosition": "left",
+      "isFullHeight": false,
+      "isLargeRow": false,
+      "isLoading": false,
+      "itemWillMove": [Function],
+      "items": Array [],
+      "loadingMoreIds": Array [],
+      "onItemMoved": [Function],
+      "selectedIds": Array [],
+      "selectedItemRef": Object {
+        "current": null,
+      },
+      "testId": "list",
+      "toggleExpansion": [Function],
+    },
+    "propTypes": Object {
+      "editingStyle": Object {
+        "args": Array [
+          Array [
+            "single",
+            "multiple",
+            "single-nesting",
+            "multiple-nesting",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "emptyState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "handleLoadMore": Object {
+        "type": "func",
+      },
+      "handleSelect": Object {
+        "type": "func",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+            "expand": Object {
+              "type": "string",
+            },
+            "loadMore": Object {
+              "type": "string",
+            },
+            "searchPlaceHolderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconPosition": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "isFullHeight": Object {
+        "type": "bool",
+      },
+      "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "itemWillMove": Object {
+        "type": "func",
+      },
+      "items": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              undefined,
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "onItemMoved": Object {
+        "type": "func",
+      },
+      "selectedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "selectedItemRef": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "current": Object {
+                    "type": "any",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "toggleExpansion": Object {
+        "type": "func",
+      },
+    },
+  },
+  "VirtualListContent" => Object {
+    "defaultProps": Object {
+      "editingStyle": null,
+      "emptyState": "No list items to show",
+      "expandedIds": Array [],
+      "handleLoadMore": [Function],
+      "handleSelect": [Function],
+      "i18n": Object {
+        "close": "Close",
+        "expand": "Expand",
+        "loadMore": "Load more...",
+        "searchPlaceHolderText": "Enter a value",
+      },
+      "iconPosition": "left",
+      "isFullHeight": false,
+      "isLargeRow": false,
+      "isLoading": false,
+      "itemWillMove": [Function],
+      "items": Array [],
+      "loadingMoreIds": Array [],
+      "onItemMoved": [Function],
+      "selectedIds": Array [],
+      "testId": "list",
+      "toggleExpansion": [Function],
+      "virtualListRef": Object {
+        "current": null,
+      },
+    },
+    "propTypes": Object {
+      "editingStyle": Object {
+        "args": Array [
+          Array [
+            "single",
+            "multiple",
+            "single-nesting",
+            "multiple-nesting",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "emptyState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "handleLoadMore": Object {
+        "type": "func",
+      },
+      "handleSelect": Object {
+        "type": "func",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+            "expand": Object {
+              "type": "string",
+            },
+            "loadMore": Object {
+              "type": "string",
+            },
+            "searchPlaceHolderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconPosition": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "isFullHeight": [Function],
+      "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "itemWillMove": Object {
+        "type": "func",
+      },
+      "items": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              undefined,
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "onItemMoved": Object {
+        "type": "func",
+      },
+      "selectedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "toggleExpansion": Object {
+        "type": "func",
+      },
+      "virtualListRef": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "current": Object {
+                    "type": "any",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
     },
   },
@@ -4232,6 +4668,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "domainRange": Object {
         "args": Array [
           Object {
@@ -4486,6 +4925,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -4493,6 +4948,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -4653,6 +5124,7 @@ Map {
         "increment": "Increment",
         "minutes": "minutes",
       },
+      "invalid": false,
       "is12hour": false,
       "onChange": null,
       "onClick": null,
@@ -4695,13 +5167,33 @@ Map {
         "args": Array [
           Object {
             "decrement": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hours": Object {
               "type": "string",
             },
             "increment": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "minutes": Object {
               "type": "string",
@@ -4709,6 +5201,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "invalid": Object {
+        "type": "bool",
       },
       "is12hour": Object {
         "type": "bool",
@@ -4950,6 +5445,22 @@ Map {
                   "timeRangeValue": Object {
                     "args": Array [
                       Object {
+                        "end": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
+                        },
                         "endDate": Object {
                           "isRequired": true,
                           "type": "string",
@@ -4957,6 +5468,22 @@ Map {
                         "endTime": Object {
                           "isRequired": true,
                           "type": "string",
+                        },
+                        "start": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
                         },
                         "startDate": Object {
                           "isRequired": true,
@@ -5365,6 +5892,22 @@ Map {
                   "timeRangeValue": Object {
                     "args": Array [
                       Object {
+                        "end": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
+                        },
                         "endDate": Object {
                           "isRequired": true,
                           "type": "string",
@@ -5372,6 +5915,22 @@ Map {
                         "endTime": Object {
                           "isRequired": true,
                           "type": "string",
+                        },
+                        "start": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
                         },
                         "startDate": Object {
                           "isRequired": true,
@@ -6515,6 +7074,7 @@ Map {
         "mainHeader": "main header",
         "openMenu": "Open menu",
       },
+      "isActionItemVisible": [Function],
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -6562,6 +7122,9 @@ Map {
                 },
                 "hasHeaderPanel": Object {
                   "type": "bool",
+                },
+                "id": Object {
+                  "type": "string",
                 },
                 "label": Object {
                   "isRequired": true,
@@ -6619,6 +7182,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isActionItemVisible": Object {
+        "type": "func",
       },
       "onClickSideNavExpand": Object {
         "type": "func",
@@ -6794,6 +7360,7 @@ Map {
         "whatsNew": "What's new",
       },
       "idleTimeoutData": null,
+      "isActionItemVisible": [Function],
       "isAdminView": false,
       "onRouteChange": [Function],
       "onSideNavToggled": [Function],
@@ -6880,6 +7447,9 @@ Map {
                 },
                 "hasHeaderPanel": Object {
                   "type": "bool",
+                },
+                "id": Object {
+                  "type": "string",
                 },
                 "label": Object {
                   "isRequired": true,
@@ -7101,6 +7671,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isActionItemVisible": Object {
+        "type": "func",
       },
       "isAdminView": Object {
         "type": "bool",
@@ -8622,6 +9195,7 @@ Map {
       "onCancel": null,
       "onCardChange": null,
       "onCardJsonPreview": null,
+      "onCardSelect": null,
       "onDelete": null,
       "onEditDataItems": null,
       "onExport": null,
@@ -8629,6 +9203,7 @@ Map {
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
+      "onRenderCardEditForm": null,
       "onSubmit": null,
       "onValidateCardJson": null,
       "onValidateUploadedImage": null,
@@ -9199,6 +9774,9 @@ Map {
       "onCardJsonPreview": Object {
         "type": "func",
       },
+      "onCardSelect": Object {
+        "type": "func",
+      },
       "onDelete": Object {
         "type": "func",
       },
@@ -9218,6 +9796,9 @@ Map {
         "type": "func",
       },
       "onLayoutChange": Object {
+        "type": "func",
+      },
+      "onRenderCardEditForm": Object {
         "type": "func",
       },
       "onSubmit": Object {
@@ -9254,6 +9835,7 @@ Map {
       },
     },
   },
+  "DashboardEditorDefaultCardRenderer" => Object {},
   "CardEditor" => Object {
     "defaultProps": Object {
       "availableDimensions": Object {},
@@ -9277,6 +9859,7 @@ Map {
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
       "onEditDataItems": null,
+      "onRenderCardEditForm": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -9482,6 +10065,9 @@ Map {
         "type": "func",
       },
       "onEditDataItems": Object {
+        "type": "func",
+      },
+      "onRenderCardEditForm": Object {
         "type": "func",
       },
       "onShowGallery": Object {
@@ -9898,6 +10484,7 @@ Map {
         "xl": 16,
         "xs": 4,
       },
+      "dateTimeMask": "YYYY-MM-DD HH:mm",
       "footerContent": undefined,
       "hasTitleWrap": false,
       "hideHeader": false,
@@ -9929,6 +10516,7 @@ Map {
         "thisWeekLabel": "This week",
         "thisYearLabel": "This year",
         "timeRangeLabel": "Time range",
+        "toLabel": "to",
         "weeklyLabel": "Weekly",
       },
       "isEditable": false,
@@ -10477,6 +11065,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -10568,6 +11159,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -10802,6 +11396,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -10809,6 +11419,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -10853,6 +11479,7 @@ Map {
       "content": Object {
         "colors": undefined,
         "groupDataSourceId": "group",
+        "legendAlignment": "left",
         "legendPosition": "bottom",
         "truncation": Object {
           "numCharacter": 20,
@@ -11356,6 +11983,16 @@ Map {
             "labelsFormatter": Object {
               "type": "func",
             },
+            "legendAlignment": Object {
+              "args": Array [
+                Array [
+                  "left",
+                  "center",
+                  "right",
+                ],
+              ],
+              "type": "oneOf",
+            },
             "legendPosition": Object {
               "args": Array [
                 Array [
@@ -11433,6 +12070,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
       },
       "footerContent": Object {
         "type": "elementType",
@@ -11525,6 +12165,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -11837,6 +12480,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -11844,6 +12503,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -11921,6 +12596,7 @@ Map {
       "fontSize": 42,
       "isNumberValueCompact": false,
       "locale": "en",
+      "onAttributeClick": null,
       "size": "MEDIUM",
       "testId": "Card",
       "values": null,
@@ -12622,6 +13298,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "fontSize": Object {
         "type": "number",
       },
@@ -12718,6 +13397,9 @@ Map {
             "thisYearLabel": Object {
               "type": "string",
             },
+            "toLabel": Object {
+              "type": "string",
+            },
             "weeklyLabel": Object {
               "type": "string",
             },
@@ -12757,6 +13439,9 @@ Map {
       },
       "locale": Object {
         "type": "string",
+      },
+      "onAttributeClick": Object {
+        "type": "func",
       },
       "onBlur": Object {
         "type": "func",
@@ -12953,6 +13638,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -12960,6 +13661,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -13814,6 +14531,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "domainRange": Object {
         "args": Array [
           Object {
@@ -14102,6 +14822,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -14109,6 +14845,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -14751,6 +15503,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -14842,6 +15597,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -15085,6 +15843,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -15092,6 +15866,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -15186,6 +15976,7 @@ Map {
         "thisWeekLabel": "This week",
         "thisYearLabel": "This year",
         "timeRangeLabel": "Time range",
+        "toLabel": "to",
         "weeklyLabel": "Weekly",
       },
       "locale": "en",
@@ -15906,6 +16697,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -16159,6 +16953,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -16166,6 +16976,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -16934,6 +17760,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -17025,6 +17854,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -17259,6 +18091,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -17266,6 +18114,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -17870,6 +18734,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -17964,6 +18831,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -18196,6 +19066,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -18203,6 +19089,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -19077,18 +19979,22 @@ Map {
       "editingStyle": null,
       "emptyState": "No list items to show",
       "expandedIds": Array [],
+      "handleLoadMore": [Function],
       "handleSelect": [Function],
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
+        "loadMore": "Load more...",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
+      "isVirtualList": false,
       "itemWillMove": [Function],
       "items": Array [],
+      "loadingMoreIds": Array [],
       "onItemMoved": [Function],
       "overrides": null,
       "pagination": null,
@@ -19142,6 +20048,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "handleLoadMore": Object {
+        "type": "func",
+      },
       "handleSelect": Object {
         "type": "func",
       },
@@ -19152,6 +20061,9 @@ Map {
               "type": "string",
             },
             "expand": Object {
+              "type": "string",
+            },
+            "loadMore": Object {
               "type": "string",
             },
             "searchPlaceHolderText": Object {
@@ -19177,6 +20089,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isVirtualList": Object {
         "type": "bool",
       },
       "itemWillMove": Object {
@@ -19216,6 +20131,9 @@ Map {
                   ],
                   "type": "shape",
                 },
+                "hasLoadMore": Object {
+                  "type": "bool",
+                },
                 "id": Object {
                   "type": "string",
                 },
@@ -19229,12 +20147,43 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "onItemMoved": Object {
         "type": "func",
       },
       "overrides": Object {
         "args": Array [
           Object {
+            "content": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
             "header": Object {
               "args": Array [
                 Object {
@@ -19297,7 +20246,17 @@ Map {
               "type": "number",
             },
             "totalItemsText": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
           },
         ],
@@ -19470,7 +20429,9 @@ Map {
   "IconSwitch" => Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
+      "children": undefined,
       "className": undefined,
+      "disabled": false,
       "light": false,
       "name": "",
       "onClick": undefined,
@@ -19480,8 +20441,14 @@ Map {
       "testId": "icon-switch",
     },
     "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
       "className": Object {
         "type": "string",
+      },
+      "disabled": Object {
+        "type": "bool",
       },
       "index": Object {
         "isRequired": true,
@@ -19595,11 +20562,13 @@ Map {
       "disabled": false,
       "editOptionText": "Create",
       "hasMultiValue": false,
+      "horizontalDirection": "end",
       "itemToElement": null,
       "itemToString": [Function],
       "items": Array [],
       "light": false,
       "loading": false,
+      "menuFitContent": false,
       "onBlur": null,
       "onInputChange": null,
       "shouldFilterItem": [Function],
@@ -19678,6 +20647,15 @@ Map {
       "helperText": Object {
         "type": "string",
       },
+      "horizontalDirection": Object {
+        "args": Array [
+          Array [
+            "start",
+            "end",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "id": Object {
         "isRequired": true,
         "type": "string",
@@ -19715,6 +20693,9 @@ Map {
         "type": "bool",
       },
       "loading": Object {
+        "type": "bool",
+      },
+      "menuFitContent": Object {
         "type": "bool",
       },
       "onBlur": Object {
@@ -21430,6 +22411,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "footerContent": Object {
         "type": "elementType",
       },
@@ -21521,6 +22505,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -21755,6 +22742,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -21762,6 +22765,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -22656,6 +23675,9 @@ Map {
         ],
         "type": "shape",
       },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
       "dropRef": Object {
         "args": Array [
           Array [
@@ -22763,6 +23785,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
               "type": "string",
             },
             "weeklyLabel": Object {
@@ -23242,6 +24267,22 @@ Map {
                         "timeRangeValue": Object {
                           "args": Array [
                             Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
                               "endDate": Object {
                                 "isRequired": true,
                                 "type": "string",
@@ -23249,6 +24290,22 @@ Map {
                               "endTime": Object {
                                 "isRequired": true,
                                 "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "startDate": Object {
                                 "isRequired": true,
@@ -23285,6 +24342,325 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+    },
+  },
+  "RuleBuilder" => Object {
+    "defaultProps": Object {
+      "actionBar": null,
+      "className": null,
+      "defaultTitleText": "Undefined",
+      "filter": Object {
+        "filterAccess": Array [],
+        "filterTags": Array [],
+        "filterUsers": Array [],
+      },
+      "footerButtons": null,
+      "i18n": Object {
+        "addUsersButtonLabel": "Add users",
+        "cancelLabel": "Cancel",
+        "clearFilterTitle": "Clear Filter",
+        "detailsAccordionText": "Details",
+        "editModalHeaderLabel": "Selected users will have edit access",
+        "editorAccessLabel": "Editor access",
+        "filterNameLabel": "Filter Name",
+        "filterTabText": "Filter builder",
+        "groupTypeLabel": "Group",
+        "modalPrimaryButtonLabel": "OK",
+        "nameColumnLabel": "Name",
+        "readModalHeaderLabel": "Selected users will have read access",
+        "readOnlyAccessLabel": "Read only access",
+        "saveLabel": "Save",
+        "sharingAccordionText": "Sharing and permissions",
+        "sharingTabText": "Sharing and preferences",
+        "tagsLabel": "Tags (optional)",
+        "typeColumnLabel": "Type",
+        "userTypeLabel": "User",
+      },
+      "onChange": [Function],
+      "ruleEditor": null,
+      "testId": "rule-builder",
+    },
+    "propTypes": Object {
+      "actionBar": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "actionCallback": Object {
+                  "isRequired": true,
+                  "type": "func",
+                },
+                "actionIcon": Object {
+                  "isRequired": true,
+                  "type": "elementType",
+                },
+                "actionId": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "actionLabel": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "defaultTitleText": Object {
+        "type": "string",
+      },
+      "filter": Object {
+        "args": Array [
+          Object {
+            "filterAccess": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "access": Object {
+                        "args": Array [
+                          Array [
+                            "edit",
+                            "read",
+                          ],
+                        ],
+                        "type": "oneOf",
+                      },
+                      "email": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                      "userName": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "filterColumns": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "id": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "operands": Object {
+                        "args": Array [
+                          Object {
+                            "args": Array [
+                              Object {
+                                "id": Object {
+                                  "isRequired": true,
+                                  "type": "string",
+                                },
+                                "name": Object {
+                                  "isRequired": true,
+                                  "type": "string",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
+                      "renderField": Object {
+                        "type": "func",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+            "filterId": Object {
+              "type": "string",
+            },
+            "filterMetaText": Object {
+              "type": "string",
+            },
+            "filterRules": Object {
+              "args": Array [
+                Object {
+                  "groupLogic": Object {
+                    "args": Array [
+                      Array [
+                        "ALL",
+                        "ANY",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "id": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                },
+              ],
+              "rules": Object {
+                "args": Array [
+                  Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "args": Array [
+                            Object {
+                              "columnId": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "id": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "operand": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "value": Object {
+                                "isRequired": true,
+                                "type": "any",
+                              },
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        [Circular],
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+              "type": "shape",
+            },
+            "filterTags": Object {
+              "type": "array",
+            },
+            "filterTitleText": Object {
+              "type": "string",
+            },
+            "filterUsers": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "email": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                      "userName": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "footerButtons": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "buttonCallback": Object {
+                  "isRequired": true,
+                  "type": "func",
+                },
+                "buttonId": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "buttonLabel": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "addUsers": Object {
+              "type": "string",
+            },
+            "cancelLabel": Object {
+              "type": "string",
+            },
+            "clearFilterTitle": Object {
+              "type": "string",
+            },
+            "editorAccess": Object {
+              "type": "string",
+            },
+            "filterTabText": Object {
+              "type": "string",
+            },
+            "readOnlyAccess": Object {
+              "type": "string",
+            },
+            "saveLabel": Object {
+              "type": "string",
+            },
+            "sharingAndPermissions": Object {
+              "type": "string",
+            },
+            "sharingTabText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "onCancel": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "onSave": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "ruleEditor": Object {
+        "type": "elementType",
+      },
+      "testId": Object {
+        "type": "string",
       },
     },
   },
@@ -30163,6 +31539,7 @@ Map {
     "TABLE_ROW_ACTION_START": "TABLE_ROW_ACTION_START",
     "TABLE_ROW_CLICK": "TABLE_ROW_CLICK",
     "TABLE_ROW_EXPAND": "TABLE_ROW_EXPAND",
+    "TABLE_ROW_LOAD_MORE": "TABLE_ROW_LOAD_MORE",
     "TABLE_ROW_SELECT": "TABLE_ROW_SELECT",
     "TABLE_ROW_SELECT_ALL": "TABLE_ROW_SELECT_ALL",
     "TABLE_SEARCH_APPLY": "TABLE_SEARCH_APPLY",
@@ -30196,6 +31573,7 @@ Map {
     "tableRowActionStart": Object {},
     "tableRowClick": Object {},
     "tableRowExpand": Object {},
+    "tableRowLoadMore": Object {},
     "tableRowSelect": Object {},
     "tableRowSelectAll": Object {},
     "tableSaveMultiSortColumns": Object {},
