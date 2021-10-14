@@ -2327,6 +2327,34 @@ describe('Table', () => {
     expect(screen.getByTestId('my-table')).toHaveClass(`${iotPrefix}--data-table--column-groups`);
   });
 
+  it('adds min-size class if columnGroups are present and there at least one sortable column', () => {
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px', isSortable: true },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('my-table')).toHaveClass(
+      `${iotPrefix}--data-table--column-groups--min-size-large`
+    );
+  });
+
   it('throws an error when using both column groups and hasColumnSelection prop', () => {
     const { __DEV__ } = global;
     global.__DEV__ = true;

@@ -89,9 +89,9 @@
         // But first columm should never get a left border.
         &:first-of-type {
           border-left-width: 0;
-          // But again, the first column is a "real" column it should get a right border
+          // But again, if the first column is a "real" column it should get a right border
           // bacause we can't put a left border on the first group row column
-          // since the colspan makes it in possible to tell when a group row column is the
+          // since the rowspan makes it impossible to tell when a group row column is the
           // first visual column.
           &.#{$iot-prefix}--table-header--span-group-row {
             border-right-width: $border-width;
@@ -247,12 +247,17 @@
 
   // ADJUST FOR DIFFERENT TABLE ROW SIZES
   // Default size is lg
-  @include adjustPositionsAndHeights($spacing-09, $spacing-09);
+  $size-lg: $spacing-09;
+  @include adjustPositionsAndHeights($size-lg, $size-lg);
+
   &--xl {
     @include adjustPositionsAndHeights($spacing-10, $spacing-10);
   }
   &--md {
-    @include adjustPositionsAndHeights($spacing-08, $spacing-09);
+    @include adjustPositionsAndHeights($spacing-08, $spacing-08);
+    &.#{$iot-prefix}--data-table--column-groups--min-size-large {
+      @include adjustPositionsAndHeights($spacing-08, $size-lg);
+    }
   }
   &--sm {
     .#{$iot-prefix}--table-head--with-column-groups {
@@ -261,7 +266,10 @@
         padding-top: 0;
       }
     }
-    @include adjustPositionsAndHeights($spacing-07, $spacing-09);
+    @include adjustPositionsAndHeights($spacing-07, $spacing-07);
+    &.#{$iot-prefix}--data-table--column-groups--min-size-large {
+      @include adjustPositionsAndHeights($spacing-07, $size-lg);
+    }
   }
   &--xs {
     .#{$iot-prefix}--table-head--with-column-groups {
@@ -270,6 +278,9 @@
         padding-top: 0;
       }
     }
-    @include adjustPositionsAndHeights($spacing-06, $spacing-09);
+    @include adjustPositionsAndHeights($spacing-06, $spacing-06);
+    &.#{$iot-prefix}--data-table--column-groups--min-size-large {
+      @include adjustPositionsAndHeights($spacing-06, $size-lg);
+    }
   }
 }

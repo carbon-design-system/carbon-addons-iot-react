@@ -405,7 +405,10 @@ const TableHead = ({
       data-testid={testID || testId}
     >
       <TableRow
-        className={classnames({ [`${iotPrefix}--table-header__column-row`]: showColumnGroups })}
+        className={classnames({
+          [`${iotPrefix}--table-header__column-row`]: showColumnGroups,
+          [`${iotPrefix}--table-header__column-row--prevent-small-sizes`]: showColumnGroups,
+        })}
       >
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader

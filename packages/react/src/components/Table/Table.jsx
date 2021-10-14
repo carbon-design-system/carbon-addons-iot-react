@@ -707,6 +707,8 @@ const Table = (props) => {
       ? someRowsAreSelected
       : view.table.isSelectAllIndeterminate;
 
+  const minHeaderSizeIsLarge = visibleColumns.some((col) => col.isSortable);
+
   if (__DEV__ && columnGroups.length && options.hasColumnSelection) {
     warning(
       false,
@@ -858,6 +860,8 @@ const Table = (props) => {
           data-testid={id || testId}
           className={classnames({
             [`${iotPrefix}--data-table--column-groups`]: columnGroups.length,
+            [`${iotPrefix}--data-table--column-groups--min-size-large`]:
+              columnGroups.length && minHeaderSizeIsLarge,
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
               options.hasResize && !options.useAutoTableLayoutForResize,
