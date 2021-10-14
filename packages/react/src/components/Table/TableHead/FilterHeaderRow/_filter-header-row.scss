@@ -87,9 +87,13 @@
   }
 }
 
-.#{$prefix}--data-table
-  .#{$prefix}--table-header-label
-  .#{$prefix}--multi-select
-  .#{$prefix}--list-box__menu.#{$prefix}--list-box__menu {
-  max-height: var(--filter-header-dropdown-max-height);
+.#{$prefix}--data-table {
+  .#{$prefix}--table-header-label {
+    .#{$prefix}--multi-select,
+    .#{$iot-prefix}--combobox {
+      .#{$prefix}--list-box__menu.#{$prefix}--list-box__menu {
+        max-height: var(--filter-header-dropdown-max-height);
+      }
+    }
+  }
 }
