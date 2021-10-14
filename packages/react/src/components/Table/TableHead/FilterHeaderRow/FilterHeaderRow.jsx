@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ComboBox, DataTable, FormItem, TextInput, MultiSelect } from 'carbon-components-react';
+import { DataTable, FormItem, TextInput, MultiSelect } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
 import memoize from 'lodash/memoize';
 import classnames from 'classnames';
@@ -9,6 +9,7 @@ import isEqual from 'lodash/isEqual';
 
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
+import ComboBox from '../../../ComboBox/ComboBox';
 
 const { iotPrefix, prefix } = settings;
 const { TableHeader, TableRow } = DataTable;
@@ -183,6 +184,7 @@ class FilterHeaderRow extends Component {
       showExpanderColumn,
     } = this.props;
     const { filterValues } = this.state;
+    const visibleColumns = ordering.filter((c) => !c.isHidden);
     return isVisible ? (
       <TableRow data-testid={testId}>
         {hasRowSelection === 'multi' ? (
@@ -191,170 +193,174 @@ class FilterHeaderRow extends Component {
         {hasRowExpansion ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}
-        {ordering
-          .filter((c) => !c.isHidden)
-          .map((c, i) => {
-            const column = columns.find((item) => c.columnId === item.id);
-            const columnStateValue = filterValues[column.id]; // eslint-disable-line react/destructuring-assignment
-            const filterColumnOptions = (options) => {
-              options.sort((a, b) => {
-                return a.text.localeCompare(b.text, { sensitivity: 'base' });
-              });
-              return options;
-            };
-            const memoizeColumnOptions = memoize(filterColumnOptions); // TODO: this memoize isn't really working, should refactor to a higher column level
-
-            // undefined check has the effect of making isFilterable default to true
-            // if unspecified
-            const headerContent =
-              column.isFilterable !== undefined && !column.isFilterable ? (
-                <div />
-              ) : column.options ? (
-                column.isMultiselect ? (
-                  <MultiSelect.Filterable
-                    key={columnStateValue}
-                    className={`${iotPrefix}--filterheader-multiselect`}
-                    id={`column-${i}`}
-                    aria-label={filterText}
-                    placeholder={column.placeholderText || 'Choose an option'}
-                    translateWithId={this.handleTranslation}
-                    items={memoizeColumnOptions(column.options)}
-                    label={column.placeholderText || 'Choose an option'}
-                    itemToString={(item) => item.text}
-                    initialSelectedItems={
-                      Array.isArray(columnStateValue)
-                        ? columnStateValue.map((value) =>
-                            typeof value !== 'object' ? { id: value, text: value } : value
-                          )
-                        : columnStateValue
-                        ? [{ id: columnStateValue, text: columnStateValue }]
-                        : []
+        {visibleColumns.map((c, i) => {
+          const column = columns.find((item) => c.columnId === item.id);
+          const columnStateValue = filterValues[column.id]; // eslint-disable-line react/destructuring-assignment
+          const filterColumnOptions = (options) => {
+            options.sort((a, b) => {
+              return a.text.localeCompare(b.text, { sensitivity: 'base' });
+            });
+            return options;
+          };
+          const memoizeColumnOptions = memoize(filterColumnOptions); // TODO: this memoize isn't really working, should refactor to a higher column level
+          const isLastColumn = visibleColumns.length - 1 === i;
+          // undefined check has the effect of making isFilterable default to true
+          // if unspecified
+          const headerContent =
+            column.isFilterable !== undefined && !column.isFilterable ? (
+              <div />
+            ) : column.options ? (
+              column.isMultiselect ? (
+                <MultiSelect.Filterable
+                  key={columnStateValue}
+                  className={classnames(
+                    `${iotPrefix}--filterheader-multiselect`,
+                    `${iotPrefix}--filterheader-multiselect__menu--fit-content`,
+                    {
+                      [`${iotPrefix}--filterheader-multiselect__menu--flip-horizontal`]: isLastColumn,
                     }
-                    onChange={(evt) => {
-                      this.setState(
-                        (state) => ({
-                          filterValues: {
-                            ...state.filterValues,
-                            [column.id]: evt.selectedItems.map((item) => item.text),
-                          },
-                        }),
-                        this.handleApplyFilter
-                      );
-                    }}
-                    light
-                    disabled={isDisabled}
-                  />
-                ) : (
-                  <ComboBox
-                    key={columnStateValue}
-                    className={`${iotPrefix}--filterheader-combo`}
-                    id={`column-${i}`}
-                    aria-label={filterText}
-                    translateWithId={this.handleTranslation}
-                    items={memoizeColumnOptions(column.options)}
-                    itemToString={(item) => (item ? item.text : '')}
-                    initialSelectedItem={{
-                      id: columnStateValue,
-                      text: (
-                        column.options.find((option) => option.id === columnStateValue) || {
-                          text: '',
-                        }
-                      ).text, // eslint-disable-line react/destructuring-assignment
-                    }}
-                    placeholder={column.placeholderText || 'Choose an option'}
-                    onChange={(evt) => {
-                      this.setState(
-                        (state) => ({
-                          filterValues: {
-                            ...state.filterValues,
-                            [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
-                          },
-                        }),
-                        this.handleApplyFilter
-                      );
-                    }}
-                    light={lightweight}
-                    disabled={isDisabled}
-                  />
-                )
+                  )}
+                  id={`column-${i}`}
+                  aria-label={filterText}
+                  placeholder={column.placeholderText || 'Choose an option'}
+                  translateWithId={this.handleTranslation}
+                  items={memoizeColumnOptions(column.options)}
+                  label={column.placeholderText || 'Choose an option'}
+                  itemToString={(item) => item.text}
+                  initialSelectedItems={
+                    Array.isArray(columnStateValue)
+                      ? columnStateValue.map((value) =>
+                          typeof value !== 'object' ? { id: value, text: value } : value
+                        )
+                      : columnStateValue
+                      ? [{ id: columnStateValue, text: columnStateValue }]
+                      : []
+                  }
+                  onChange={(evt) => {
+                    this.setState(
+                      (state) => ({
+                        filterValues: {
+                          ...state.filterValues,
+                          [column.id]: evt.selectedItems.map((item) => item.text),
+                        },
+                      }),
+                      this.handleApplyFilter
+                    );
+                  }}
+                  light
+                  disabled={isDisabled}
+                />
               ) : (
-                <FormItem className={`${iotPrefix}--filter-header-row--form-item`}>
-                  <TextInput
-                    id={column.id}
-                    labelText={column.id}
-                    hideLabel
-                    light={lightweight}
-                    placeholder={column.placeholderText || 'Type and hit enter to apply'}
-                    title={filterValues[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
-                    onChange={(event) => {
-                      event.persist();
-                      this.setState(
-                        (state) => ({
-                          filterValues: {
-                            ...state.filterValues,
-                            [column.id]: event.target.value,
-                          },
-                        }),
-                        hasFastFilter ? debounce(this.handleApplyFilter, 150) : null // only apply the filter at debounced interval
-                      );
+                <ComboBox
+                  menuFitContent
+                  horizontalDirection={isLastColumn ? 'start' : 'end'}
+                  key={columnStateValue}
+                  className={`${iotPrefix}--filterheader-combo`}
+                  id={`column-${i}`}
+                  aria-label={filterText}
+                  translateWithId={this.handleTranslation}
+                  items={memoizeColumnOptions(column.options)}
+                  itemToString={(item) => (item ? item.text : '')}
+                  initialSelectedItem={{
+                    id: columnStateValue,
+                    text: (
+                      column.options.find((option) => option.id === columnStateValue) || {
+                        text: '',
+                      }
+                    ).text, // eslint-disable-line react/destructuring-assignment
+                  }}
+                  placeholder={column.placeholderText || 'Choose an option'}
+                  onChange={(selectedItem) => {
+                    this.setState(
+                      (state) => ({
+                        filterValues: {
+                          ...state.filterValues,
+                          [column.id]: selectedItem === null ? '' : selectedItem.id,
+                        },
+                      }),
+                      this.handleApplyFilter
+                    );
+                  }}
+                  light={lightweight}
+                  disabled={isDisabled}
+                />
+              )
+            ) : (
+              <FormItem className={`${iotPrefix}--filter-header-row--form-item`}>
+                <TextInput
+                  id={column.id}
+                  labelText={column.id}
+                  hideLabel
+                  light={lightweight}
+                  placeholder={column.placeholderText || 'Type and hit enter to apply'}
+                  title={filterValues[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
+                  onChange={(event) => {
+                    event.persist();
+                    this.setState(
+                      (state) => ({
+                        filterValues: {
+                          ...state.filterValues,
+                          [column.id]: event.target.value,
+                        },
+                      }),
+                      hasFastFilter ? debounce(this.handleApplyFilter, 150) : null // only apply the filter at debounced interval
+                    );
+                  }}
+                  onKeyDown={
+                    !hasFastFilter
+                      ? (event) => handleEnterKeyDown(event, this.handleApplyFilter)
+                      : null
+                  } // if fast filter off, then filter on key press
+                  onBlur={!hasFastFilter ? this.handleApplyFilter : null} // if fast filter off, then filter on blur
+                  value={filterValues[column.id]} // eslint-disable-line react/destructuring-assignment
+                  disabled={isDisabled}
+                />
+                {filterValues[column.id] ? ( // eslint-disable-line react/destructuring-assignment
+                  <div
+                    role="button"
+                    className={classnames(`${prefix}--list-box__selection`, {
+                      [`${iotPrefix}--clear-filters-button--disabled`]: isDisabled,
+                    })}
+                    tabIndex={isDisabled ? '-1' : '0'}
+                    onClick={(event) => {
+                      if (!isDisabled) {
+                        this.handleClearFilter(event, column);
+                      }
                     }}
-                    onKeyDown={
-                      !hasFastFilter
-                        ? (event) => handleEnterKeyDown(event, this.handleApplyFilter)
-                        : null
-                    } // if fast filter off, then filter on key press
-                    onBlur={!hasFastFilter ? this.handleApplyFilter : null} // if fast filter off, then filter on blur
-                    value={filterValues[column.id]} // eslint-disable-line react/destructuring-assignment
-                    disabled={isDisabled}
-                  />
-                  {filterValues[column.id] ? ( // eslint-disable-line react/destructuring-assignment
-                    <div
-                      role="button"
-                      className={classnames(`${prefix}--list-box__selection`, {
-                        [`${iotPrefix}--clear-filters-button--disabled`]: isDisabled,
-                      })}
-                      tabIndex={isDisabled ? '-1' : '0'}
-                      onClick={(event) => {
+                    onKeyDown={(event) =>
+                      handleEnterKeyDown(event, () => {
                         if (!isDisabled) {
                           this.handleClearFilter(event, column);
                         }
-                      }}
-                      onKeyDown={(event) =>
-                        handleEnterKeyDown(event, () => {
-                          if (!isDisabled) {
-                            this.handleClearFilter(event, column);
-                          }
-                        })
-                      }
-                      title={clearFilterText}
-                    >
-                      <Close16 description={clearFilterText} />
-                    </div>
-                  ) : null}
-                </FormItem>
-              );
-
-            return (
-              <TableHeader
-                className={classnames(
-                  `${iotPrefix}--tableheader-filter`,
-                  `${iotPrefix}--filter-header-row--header`,
-                  {
-                    [`${iotPrefix}--filter-header-row--header-width`]: column.width === undefined,
-                  }
-                )}
-                data-column={column.id}
-                key={`FilterHeader${column.id}`}
-                width={column.width}
-                style={{
-                  '--table-header-width': classnames(column.width),
-                  '--table-header-is-select-column': column.options ? 'hidden' : 'inherit',
-                }}
-              >
-                {headerContent}
-              </TableHeader>
+                      })
+                    }
+                    title={clearFilterText}
+                  >
+                    <Close16 description={clearFilterText} />
+                  </div>
+                ) : null}
+              </FormItem>
             );
-          })}
+
+          return (
+            <TableHeader
+              className={classnames(
+                `${iotPrefix}--tableheader-filter`,
+                `${iotPrefix}--filter-header-row--header`,
+                {
+                  // This class does not make sense for undefined column widths and the corresponding
+                  // CSS has been removed. Class is kept only for backwards compatibilty in the DOM.
+                  [`${iotPrefix}--filter-header-row--header-width`]: column.width === undefined,
+                }
+              )}
+              data-column={column.id}
+              key={`FilterHeader${column.id}`}
+              width={column.width}
+            >
+              {headerContent}
+            </TableHeader>
+          );
+        })}
         {hasRowActions ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}

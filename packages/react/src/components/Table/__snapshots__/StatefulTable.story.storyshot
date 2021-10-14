@@ -43266,9 +43266,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-table-foot"
             >
               <tr>
-                <td />
                 <td
                   className="iot-table-foot--label"
+                  colSpan={2}
                   data-testid="table-table-foot-aggregation-string"
                 >
                   Total
@@ -43832,6 +43832,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -43960,6 +43962,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -45102,12 +45106,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="string"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45179,12 +45177,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="date"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45232,90 +45224,93 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="select"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "hidden",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--list-box__wrapper"
+                      className="iot--combobox iot--combobox__menu--fit-content"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--combo-box iot--filterheader-combo bx--list-box"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
+                        className="bx--list-box__wrapper"
                       >
                         <div
-                          className="bx--list-box__field"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
-                          <input
-                            aria-activedescendant={null}
-                            aria-autocomplete="list"
-                            aria-controls={null}
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-label="Filter"
-                            aria-labelledby={null}
-                            autoComplete="off"
-                            className="bx--text-input bx--text-input--empty"
-                            disabled={false}
-                            id="column-2"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            placeholder="pick an option"
-                            role="combobox"
-                            tabIndex="0"
-                            type="text"
-                            value=""
-                          />
-                          
-                          <button
-                            aria-haspopup={true}
-                            aria-label="Open menu"
-                            className="bx--list-box__menu-icon"
-                            data-toggle={true}
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseUp={[Function]}
-                            role="button"
-                            tabIndex="-1"
-                            title="Open menu"
-                            type="button"
+                          <div
+                            className="bx--list-box__field"
                           >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
+                            <input
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input bx--text-input--empty"
+                              data-testid="combo-box"
+                              disabled={false}
+                              id="column-2"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="pick an option"
+                              role="combobox"
+                              tabIndex="0"
+                              type="text"
+                              value=""
+                            />
+                            
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
                             >
-                              <path
-                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                              />
-                            </svg>
-                          </button>
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div
+                            aria-label="Choose an item"
+                            aria-labelledby={null}
+                            className="bx--list-box__menu"
+                            id="downshift-1-menu"
+                            role="listbox"
+                          />
                         </div>
-                        <div
-                          aria-label="Choose an item"
-                          aria-labelledby={null}
-                          className="bx--list-box__menu"
-                          id="downshift-1-menu"
-                          role="listbox"
-                        />
                       </div>
                     </div>
                   </div>
@@ -45324,12 +45319,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="status"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45342,12 +45331,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="number"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45395,12 +45378,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="boolean"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45448,12 +45425,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="node"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45466,12 +45437,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="object"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -73456,12 +73421,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="string"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73532,12 +73491,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="date"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73584,112 +73537,115 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="select"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "hidden",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--list-box__wrapper"
+                      className="iot--combobox iot--combobox__menu--fit-content"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--combo-box iot--filterheader-combo bx--list-box"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
+                        className="bx--list-box__wrapper"
                       >
                         <div
-                          className="bx--list-box__field"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
-                          <input
-                            aria-activedescendant={null}
-                            aria-autocomplete="list"
-                            aria-controls={null}
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-label="Filter"
+                          <div
+                            className="bx--list-box__field"
+                          >
+                            <input
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input"
+                              data-testid="combo-box"
+                              disabled={false}
+                              id="column-2"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="pick an option"
+                              role="combobox"
+                              tabIndex="0"
+                              type="text"
+                              value="option-B"
+                            />
+                            <button
+                              aria-label="Clear selection"
+                              className="bx--list-box__selection"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              tabIndex={0}
+                              title="Clear selection"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div
+                            aria-label="Choose an item"
                             aria-labelledby={null}
-                            autoComplete="off"
-                            className="bx--text-input"
-                            disabled={false}
-                            id="column-2"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            placeholder="pick an option"
-                            role="combobox"
-                            tabIndex="0"
-                            type="text"
-                            value="option-B"
+                            className="bx--list-box__menu"
+                            id="downshift-0-menu"
+                            role="listbox"
                           />
-                          <button
-                            aria-label="Clear selection"
-                            className="bx--list-box__selection"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            tabIndex={0}
-                            title="Clear selection"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-haspopup={true}
-                            aria-label="Open menu"
-                            className="bx--list-box__menu-icon"
-                            data-toggle={true}
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseUp={[Function]}
-                            role="button"
-                            tabIndex="-1"
-                            title="Open menu"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                              />
-                            </svg>
-                          </button>
                         </div>
-                        <div
-                          aria-label="Choose an item"
-                          aria-labelledby={null}
-                          className="bx--list-box__menu"
-                          id="downshift-0-menu"
-                          role="listbox"
-                        />
                       </div>
                     </div>
                   </div>
@@ -73698,12 +73654,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="status"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73715,12 +73665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="number"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73767,12 +73711,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="boolean"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73819,12 +73757,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="node"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73836,12 +73768,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="object"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87207,12 +87133,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="string"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87283,12 +87203,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="date"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87335,112 +87249,115 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="select"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "hidden",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--list-box__wrapper"
+                      className="iot--combobox iot--combobox__menu--fit-content"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--combo-box iot--filterheader-combo bx--list-box"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
+                        className="bx--list-box__wrapper"
                       >
                         <div
-                          className="bx--list-box__field"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
-                          <input
-                            aria-activedescendant={null}
-                            aria-autocomplete="list"
-                            aria-controls={null}
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-label="Filter"
+                          <div
+                            className="bx--list-box__field"
+                          >
+                            <input
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input"
+                              data-testid="combo-box"
+                              disabled={false}
+                              id="column-2"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="pick an option"
+                              role="combobox"
+                              tabIndex="0"
+                              type="text"
+                              value="option-B"
+                            />
+                            <button
+                              aria-label="Clear selection"
+                              className="bx--list-box__selection"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              tabIndex={0}
+                              title="Clear selection"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div
+                            aria-label="Choose an item"
                             aria-labelledby={null}
-                            autoComplete="off"
-                            className="bx--text-input"
-                            disabled={false}
-                            id="column-2"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            placeholder="pick an option"
-                            role="combobox"
-                            tabIndex="0"
-                            type="text"
-                            value="option-B"
+                            className="bx--list-box__menu"
+                            id="downshift-0-menu"
+                            role="listbox"
                           />
-                          <button
-                            aria-label="Clear selection"
-                            className="bx--list-box__selection"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            tabIndex={0}
-                            title="Clear selection"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-haspopup={true}
-                            aria-label="Open menu"
-                            className="bx--list-box__menu-icon"
-                            data-toggle={true}
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseUp={[Function]}
-                            role="button"
-                            tabIndex="-1"
-                            title="Open menu"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                              />
-                            </svg>
-                          </button>
                         </div>
-                        <div
-                          aria-label="Choose an item"
-                          aria-labelledby={null}
-                          className="bx--list-box__menu"
-                          id="downshift-0-menu"
-                          role="listbox"
-                        />
                       </div>
                     </div>
                   </div>
@@ -87449,12 +87366,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="status"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87466,12 +87377,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="number"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87518,12 +87423,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="boolean"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87570,12 +87469,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="node"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87587,12 +87480,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="object"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"

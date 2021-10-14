@@ -306,7 +306,7 @@ describe('TimePickerSpinner', () => {
   it('12-hour picker', () => {
     render(<TimePickerSpinner {...timePickerProps} value="12:00" spinner is12hour />);
     userEvent.click(screen.getByLabelText(/increment/i));
-    expect(screen.getByLabelText('Pick a time')).toHaveValue('00:00');
+    expect(screen.getByLabelText('Pick a time')).toHaveValue('01:00');
   });
 
   it('default timeGroup to minutes', () => {
@@ -333,5 +333,234 @@ describe('TimePickerSpinner', () => {
     );
     userEvent.click(screen.getByLabelText(/decrement/i));
     expect(screen.getByLabelText('Pick a time')).toHaveValue('12:59');
+  });
+
+  it('can have invalid state and default invalid text', () => {
+    render(<TimePickerSpinner id="timepickerspinner" value="42:00" invalid />);
+    expect(screen.getByText('Invalid time format.')).toBeVisible();
+  });
+
+  it('can have invalid state and custom invalid text', () => {
+    render(
+      <TimePickerSpinner
+        id="timepickerspinner"
+        value="42:00"
+        invalid
+        invalidText="my invalid text"
+      />
+    );
+    expect(screen.getByText('my invalid text')).toBeVisible();
+  });
+
+  it('adds validation result in onChange callback when using text input', () => {
+    let invalid;
+    const onChange = jest.fn().mockImplementation((time, evt, meta) => {
+      /* eslint-disable-next-line prefer-destructuring */
+      invalid = meta.invalid;
+    });
+    render(<TimePickerSpinner {...timePickerProps} spinner onChange={onChange} />);
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '25:34');
+    expect(invalid).toBeTruthy();
+    expect(onChange).toHaveBeenCalledTimes(5);
+
+    userEvent.clear(input);
+    expect(onChange).toHaveBeenCalledTimes(6);
+    expect(invalid).toBeTruthy();
+
+    userEvent.type(input, '11:34');
+    expect(invalid).toBeFalsy();
+    expect(onChange).toHaveBeenCalledTimes(11);
+
+    userEvent.clear(input);
+    userEvent.type(input, '11:61');
+    expect(onChange).toHaveBeenCalledTimes(17);
+    expect(invalid).toBeTruthy();
+
+    userEvent.type(input, '{backspace}{backspace}');
+    expect(onChange).toHaveBeenCalledTimes(19);
+    expect(invalid).toBeTruthy();
+
+    userEvent.type(input, '59');
+    expect(onChange).toHaveBeenCalledTimes(21);
+    expect(invalid).toBeFalsy();
+  });
+
+  it('adds validation result in onChange callback when using text input & 12 hours setting', () => {
+    let invalid;
+    let time;
+    const onChange = jest.fn().mockImplementation((newTime, evt, meta) => {
+      /* eslint-disable-next-line prefer-destructuring */
+      invalid = meta.invalid;
+      time = newTime;
+    });
+    render(<TimePickerSpinner {...timePickerProps} spinner onChange={onChange} is12hour />);
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '13:34');
+    expect(invalid).toBeTruthy();
+    expect(onChange).toHaveBeenCalledTimes(5);
+
+    userEvent.clear(input);
+    expect(onChange).toHaveBeenCalledTimes(6);
+    expect(invalid).toBeTruthy();
+
+    userEvent.type(input, '11:34');
+    expect(invalid).toBeFalsy();
+    expect(onChange).toHaveBeenCalledTimes(11);
+
+    userEvent.clear(input);
+    userEvent.type(input, '11:61');
+    expect(onChange).toHaveBeenCalledTimes(17);
+    expect(invalid).toBeTruthy();
+
+    userEvent.type(input, '{backspace}{backspace}');
+    expect(onChange).toHaveBeenCalledTimes(19);
+    expect(invalid).toBeTruthy();
+
+    userEvent.type(input, '59');
+    expect(onChange).toHaveBeenCalledTimes(21);
+    expect(time).toBe('11:59');
+    expect(invalid).toBeFalsy();
+  });
+
+  it('adds validation result in onChange callback when using spinner buttons', () => {
+    let invalid;
+    let time;
+    const onChange = jest.fn().mockImplementation((newTime, evt, meta) => {
+      /* eslint-disable-next-line prefer-destructuring */
+      invalid = meta.invalid;
+      time = newTime;
+    });
+    render(<TimePickerSpinner {...timePickerProps} spinner onChange={onChange} value="19:78" />);
+    userEvent.click(screen.queryByRole('button', { name: /Increment hours/i }));
+    expect(invalid).toBeTruthy();
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(time).toBe('20:78');
+
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+
+    userEvent.click(screen.queryByRole('button', { name: /Increment minutes/i }));
+    expect(invalid).toBeFalsy();
+    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(time).toBe('20:00');
+
+    userEvent.click(screen.queryByRole('button', { name: /Increment minutes/i }));
+    expect(invalid).toBeFalsy();
+    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(time).toBe('20:01');
+  });
+
+  it('adds validation result in onChange callback when using spinner buttons & 12 hours setting', () => {
+    let invalid;
+    let time;
+    const onChange = jest.fn().mockImplementation((newTime, evt, meta) => {
+      /* eslint-disable-next-line prefer-destructuring */
+      invalid = meta.invalid;
+      time = newTime;
+    });
+    render(
+      <TimePickerSpinner {...timePickerProps} spinner onChange={onChange} value="7:78" is12hour />
+    );
+    userEvent.click(screen.queryByRole('button', { name: /Increment hours/i }));
+    expect(invalid).toBeTruthy();
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(time).toBe('08:78');
+
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+
+    userEvent.click(screen.queryByRole('button', { name: /Increment minutes/i }));
+    expect(invalid).toBeFalsy();
+    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(time).toBe('08:00');
+
+    userEvent.click(screen.queryByRole('button', { name: /Increment minutes/i }));
+    expect(invalid).toBeFalsy();
+    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(time).toBe('08:01');
+  });
+
+  it('only allows numbers and : as input', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner />);
+
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, 'ababJKD');
+
+    expect(timePickerProps.onChange).not.toHaveBeenCalled();
+
+    userEvent.type(input, 'a:?12Ö!');
+    expect(input.value).toEqual(':12');
+    expect(timePickerProps.onChange).toHaveBeenCalledTimes(3);
+  });
+
+  it('should roll hours from 12 to 01 when incrementing in 12hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="12:00" is12hour />);
+
+    userEvent.click(screen.getByLabelText('Increment hours'));
+    act(() => {
+      jest.runAllTimers();
+    });
+
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('01:00', null, { invalid: false });
+  });
+
+  it('should roll hours from 01 to 12 when decrementing in 12hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="01:00" is12hour />);
+
+    userEvent.click(screen.getByLabelText('Decrement hours'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('12:00', null, { invalid: false });
+  });
+
+  it('should roll hours from 23 to 00 when incrementing in 24hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="23:00" />);
+
+    userEvent.click(screen.getByLabelText('Increment hours'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('00:00', null, { invalid: false });
+  });
+
+  it('should roll hours from 00 to 23 when decrementing in 24hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="00:00" />);
+
+    userEvent.click(screen.getByLabelText('Decrement hours'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('23:00', null, { invalid: false });
+  });
+
+  it('should roll minutes from 00 to 59 when decrementing in 24hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="00:00" />);
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+    userEvent.click(screen.getByLabelText('Decrement minutes'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('00:59', null, { invalid: false });
+  });
+
+  it('should roll minutes from 00 to 59 when decrementing in 12hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="12:00" is12hour />);
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+    userEvent.click(screen.getByLabelText('Decrement minutes'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('12:59', null, { invalid: false });
+  });
+
+  it('should roll minutes from 59 to 00 when incrementing in 24hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="00:59" />);
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+    userEvent.click(screen.getByLabelText('Increment minutes'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('00:00', null, { invalid: false });
+  });
+
+  it('should roll minutes from 59 to 00 when incrementing in 12hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="12:59" is12hour />);
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+    userEvent.click(screen.getByLabelText('Increment minutes'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('12:00', null, { invalid: false });
   });
 });

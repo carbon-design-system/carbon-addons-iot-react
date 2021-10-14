@@ -23032,9 +23032,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             data-testid="table-table-foot"
           >
             <tr>
-              <td />
               <td
                 className="iot-table-foot--label"
+                colSpan={2}
                 data-testid="table-table-foot-aggregation-string"
               >
                 Total:
@@ -23083,6 +23083,3424 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
           </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Table row expansion: with load more  1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--table-container bx--data-table-container"
+    data-testid="my-nested-table-table-container"
+  >
+    <div
+      className="addons-iot-table-container"
+    >
+      <div
+        className="bx--data-table-content"
+      >
+        <table
+          className="bx--data-table bx--data-table--no-border"
+          data-testid="my-nested-table"
+          id="my-nested-table"
+          title={null}
+        >
+          <thead
+            data-testid="my-nested-table-table-head"
+            onMouseMove={null}
+            onMouseUp={null}
+          >
+            <tr>
+              <th
+                className="bx--table-expand"
+                data-testid="my-nested-table-table-head-row-expansion-column"
+                scope="col"
+              />
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="string"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-string"
+                id="column-string"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="String"
+                  >
+                    String
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="date"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-date"
+                id="column-date"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Date"
+                  >
+                    Date
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="select"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-select"
+                id="column-select"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Select"
+                  >
+                    Select
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="secretField"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-secretField"
+                id="column-secretField"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Secret Information"
+                  >
+                    Secret Information
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="status"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-status"
+                id="column-status"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Status"
+                  >
+                    Status
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="number"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-number"
+                id="column-number"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Number"
+                  >
+                    Number
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="boolean"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-boolean"
+                id="column-boolean"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Boolean"
+                  >
+                    Boolean
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="node"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-node"
+                id="column-node"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="React Node"
+                  >
+                    React Node
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="object"
+                data-floating-menu-container={true}
+                data-testid="my-nested-table-table-head-column-object"
+                id="column-object"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Object Id"
+                  >
+                    Object Id
+                  </span>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            aria-live="polite"
+            data-testid="my-nested-table-table-body"
+          >
+            <tr
+              className="bx--parent-row bx--expandable-row TableBodyRow__StyledTableExpandRowExpanded-sc-103itxu-3 dFrdkC"
+              data-nesting-offset={0}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                data-previous-value="collapsed"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to collapse content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to collapse content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to collapse content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="as eat scott 3"
+                  >
+                    as eat scott 3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-06-15T13:46:40.000Z"
+                  >
+                    1973-06-15T13:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="qcUSWgwIkI"
+                  >
+                    qcUSWgwIkI
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-3-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="qcUSW"
+                  >
+                    qcUSW
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 bnfawd"
+              data-child-count={0}
+              data-nesting-offset={16}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={16}
+                id="cell-my-nested-table-row-0_A-string"
+                offset={16}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ldXASM"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0A"
+                  >
+                    toyota toyota toyota 0A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_A-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_A-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_A-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAA"
+                  >
+                    AAAAAAAAAAA
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_A-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_A-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_A-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_A-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_A-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 bnfawd"
+              data-child-count={0}
+              data-nesting-offset={16}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={16}
+                id="cell-my-nested-table-row-0_B-string"
+                offset={16}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ldXASM"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0B"
+                  >
+                    toyota toyota toyota 0B
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_B-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_B-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_B-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAB"
+                  >
+                    AAAAAAAAAAB
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_B-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_B-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_B-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_B-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_B-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 bnfawd"
+              data-child-count={0}
+              data-nesting-offset={16}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={16}
+                id="cell-my-nested-table-row-0_C-string"
+                offset={16}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ldXASM"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0C"
+                  >
+                    toyota toyota toyota 0C
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_C-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_C-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_C-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAC"
+                  >
+                    AAAAAAAAAAC
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_C-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_C-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_C-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_C-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_C-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row bx--expandable-row TableBodyRow__StyledTableExpandRowExpanded-sc-103itxu-3 hkTPKC"
+              data-nesting-offset={16}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                data-previous-value="collapsed"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to collapse content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to collapse content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to collapse content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={16}
+                id="cell-my-nested-table-row-0_D-string"
+                offset={16}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ldXASM"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0D"
+                  >
+                    toyota toyota toyota 0D
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAD"
+                  >
+                    AAAAAAAAAAD
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 gNcEWg"
+              data-child-count={0}
+              data-nesting-offset={32}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={32}
+                id="cell-my-nested-table-row-0_D-1-string"
+                offset={32}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 fRNuSp"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0D-1"
+                  >
+                    toyota toyota toyota 0D-1
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-1-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-1-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-1-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAD-1"
+                  >
+                    AAAAAAAAAAD-1
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-1-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-1-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-1-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-1-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-1-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 gNcEWg"
+              data-child-count={0}
+              data-nesting-offset={32}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={32}
+                id="cell-my-nested-table-row-0_D-2-string"
+                offset={32}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 fRNuSp"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0D-2"
+                  >
+                    toyota toyota toyota 0D-2
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-2-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-2-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-2-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAD-2"
+                  >
+                    AAAAAAAAAAD-2
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-2-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-2-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-2-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-2-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-2-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 gNcEWg"
+              data-child-count={0}
+              data-nesting-offset={32}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={32}
+                id="cell-my-nested-table-row-0_D-3-string"
+                offset={32}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 fRNuSp"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0D-3"
+                  >
+                    toyota toyota toyota 0D-3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-3-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-3-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-3-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAD-3"
+                  >
+                    AAAAAAAAAAD-3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-3-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-3-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-3-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-3-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_D-3-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              isEditMode={false}
+              isSelectable={true}
+            >
+              <td
+                className="iot--load-more-cell"
+                colSpan={10}
+                data-testid="my-nested-table-table-body-row-0_D-load-more"
+              >
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--load-more-cell--content iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Load more...
+                </button>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row bx--expandable-row TableBodyRow__StyledTableExpandRowExpanded-sc-103itxu-3 hkTPKC"
+              data-nesting-offset={16}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                data-previous-value="collapsed"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to collapse content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to collapse content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to collapse content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={16}
+                id="cell-my-nested-table-row-0_E-string"
+                offset={16}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ldXASM"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0E"
+                  >
+                    toyota toyota toyota 0E
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAE"
+                  >
+                    AAAAAAAAAAE
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 gNcEWg"
+              data-child-count={0}
+              data-nesting-offset={32}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={32}
+                id="cell-my-nested-table-row-0_E-1-string"
+                offset={32}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 fRNuSp"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0E-1"
+                  >
+                    toyota toyota toyota 0E-1
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-1-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-1-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-1-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAE-1"
+                  >
+                    AAAAAAAAAAE-1
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-1-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-1-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-1-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-1-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-1-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 gNcEWg"
+              data-child-count={0}
+              data-nesting-offset={32}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={32}
+                id="cell-my-nested-table-row-0_E-2-string"
+                offset={32}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 fRNuSp"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0E-2"
+                  >
+                    toyota toyota toyota 0E-2
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-2-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-2-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-2-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAE-2"
+                  >
+                    AAAAAAAAAAE-2
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-2-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-2-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-2-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-2-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-2-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 gNcEWg"
+              data-child-count={0}
+              data-nesting-offset={32}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={32}
+                id="cell-my-nested-table-row-0_E-3-string"
+                offset={32}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 fRNuSp"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0E-3"
+                  >
+                    toyota toyota toyota 0E-3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="1973-03-03T09:46:40.000Z"
+                  >
+                    1973-03-03T09:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAAE-3"
+                  >
+                    AAAAAAAAAAE-3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-0_E-3-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              isEditMode={false}
+              isSelectable={true}
+            >
+              <td
+                className="iot--load-more-cell"
+                colSpan={10}
+                data-testid="my-nested-table-table-body-row-0_E-load-more"
+              >
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--load-more-cell--content iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Load more...
+                </button>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iMVZzd"
+              data-child-count={0}
+              data-nesting-offset={0}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="as eat scott 33"
+                  >
+                    as eat scott 33
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="2007-09-05T13:46:40.000Z"
+                  >
+                    2007-09-05T13:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="c8iM4qgaYa"
+                  >
+                    c8iM4qgaYa
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-33-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="c8iM4"
+                  >
+                    c8iM4
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iMVZzd"
+              data-child-count={0}
+              data-nesting-offset={0}
+              data-parent-row={true}
+              data-row-nesting={true}
+              onClick={[Function]}
+            >
+              <td
+                className="bx--table-expand"
+                headers="expand"
+              >
+                <button
+                  aria-label="Click to expand content"
+                  className="bx--table-expand__button"
+                  onClick={[Function]}
+                  title="Click to expand content"
+                  type="button"
+                >
+                  <svg
+                    aria-label="Click to expand content"
+                    className="bx--table-expand__svg"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                </button>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="as eat scott 63"
+                  >
+                    as eat scott 63
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="2098-12-09T21:46:40.000Z"
+                  >
+                    2098-12-09T21:46:40.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="OewGc0QsMs"
+                  >
+                    OewGc0QsMs
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-my-nested-table-row-63-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                >
+                  <span
+                    className=""
+                    title="OewGc"
+                  >
+                    OewGc
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -24181,6 +27599,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -24309,6 +27729,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -25456,12 +28878,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="string"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -25533,12 +28949,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="date"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -25586,90 +28996,93 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="select"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "hidden",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--list-box__wrapper"
+                      className="iot--combobox iot--combobox__menu--fit-content"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--combo-box iot--filterheader-combo bx--list-box"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
+                        className="bx--list-box__wrapper"
                       >
                         <div
-                          className="bx--list-box__field"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
-                          <input
-                            aria-activedescendant={null}
-                            aria-autocomplete="list"
-                            aria-controls={null}
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-label="Filter"
-                            aria-labelledby={null}
-                            autoComplete="off"
-                            className="bx--text-input bx--text-input--empty"
-                            disabled={false}
-                            id="column-2"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            placeholder="pick an option"
-                            role="combobox"
-                            tabIndex="0"
-                            type="text"
-                            value=""
-                          />
-                          
-                          <button
-                            aria-haspopup={true}
-                            aria-label="Open menu"
-                            className="bx--list-box__menu-icon"
-                            data-toggle={true}
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseUp={[Function]}
-                            role="button"
-                            tabIndex="-1"
-                            title="Open menu"
-                            type="button"
+                          <div
+                            className="bx--list-box__field"
                           >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
+                            <input
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input bx--text-input--empty"
+                              data-testid="combo-box"
+                              disabled={false}
+                              id="column-2"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="pick an option"
+                              role="combobox"
+                              tabIndex="0"
+                              type="text"
+                              value=""
+                            />
+                            
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
                             >
-                              <path
-                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                              />
-                            </svg>
-                          </button>
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div
+                            aria-label="Choose an item"
+                            aria-labelledby={null}
+                            className="bx--list-box__menu"
+                            id="downshift-1-menu"
+                            role="listbox"
+                          />
                         </div>
-                        <div
-                          aria-label="Choose an item"
-                          aria-labelledby={null}
-                          className="bx--list-box__menu"
-                          id="downshift-1-menu"
-                          role="listbox"
-                        />
                       </div>
                     </div>
                   </div>
@@ -25678,12 +29091,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="status"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -25696,12 +29103,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="number"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -25749,12 +29150,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="boolean"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -25802,12 +29197,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="node"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -25820,12 +29209,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="object"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -30424,12 +33807,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                 data-column="string"
                 scope="col"
-                style={
-                  Object {
-                    "--table-header-is-select-column": "inherit",
-                    "--table-header-width": "",
-                  }
-                }
               >
                 <div
                   className="bx--table-header-label"
@@ -30500,12 +33877,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                 data-column="date"
                 scope="col"
-                style={
-                  Object {
-                    "--table-header-is-select-column": "inherit",
-                    "--table-header-width": "",
-                  }
-                }
               >
                 <div
                   className="bx--table-header-label"
@@ -30552,112 +33923,115 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                 data-column="select"
                 scope="col"
-                style={
-                  Object {
-                    "--table-header-is-select-column": "hidden",
-                    "--table-header-width": "",
-                  }
-                }
               >
                 <div
                   className="bx--table-header-label"
                 >
                   <div
-                    className="bx--list-box__wrapper"
+                    className="iot--combobox iot--combobox__menu--fit-content"
+                    data-edit-option-text="Create"
+                    data-testid="combo-wrapper"
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
                   >
                     <div
-                      className="bx--combo-box iot--filterheader-combo bx--list-box"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
+                      className="bx--list-box__wrapper"
                     >
                       <div
-                        className="bx--list-box__field"
+                        className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                       >
-                        <input
-                          aria-activedescendant={null}
-                          aria-autocomplete="list"
-                          aria-controls={null}
-                          aria-expanded={false}
-                          aria-haspopup="listbox"
-                          aria-label="Filter"
+                        <div
+                          className="bx--list-box__field"
+                        >
+                          <input
+                            aria-activedescendant={null}
+                            aria-autocomplete="list"
+                            aria-controls={null}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-label="Filter"
+                            aria-labelledby={null}
+                            autoComplete="off"
+                            className="bx--text-input"
+                            data-testid="combo-box"
+                            disabled={false}
+                            id="column-2"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="pick an option"
+                            role="combobox"
+                            tabIndex="0"
+                            type="text"
+                            value="option-B"
+                          />
+                          <button
+                            aria-label="Clear selection"
+                            className="bx--list-box__selection"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            tabIndex={0}
+                            title="Clear selection"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                              />
+                            </svg>
+                          </button>
+                          <button
+                            aria-haspopup={true}
+                            aria-label="Open menu"
+                            className="bx--list-box__menu-icon"
+                            data-toggle={true}
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseUp={[Function]}
+                            role="button"
+                            tabIndex="-1"
+                            title="Open menu"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div
+                          aria-label="Choose an item"
                           aria-labelledby={null}
-                          autoComplete="off"
-                          className="bx--text-input"
-                          disabled={false}
-                          id="column-2"
-                          onBlur={[Function]}
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          placeholder="pick an option"
-                          role="combobox"
-                          tabIndex="0"
-                          type="text"
-                          value="option-B"
+                          className="bx--list-box__menu"
+                          id="downshift-0-menu"
+                          role="listbox"
                         />
-                        <button
-                          aria-label="Clear selection"
-                          className="bx--list-box__selection"
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          tabIndex={0}
-                          title="Clear selection"
-                          type="button"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 32 32"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                            />
-                          </svg>
-                        </button>
-                        <button
-                          aria-haspopup={true}
-                          aria-label="Open menu"
-                          className="bx--list-box__menu-icon"
-                          data-toggle={true}
-                          disabled={false}
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          onKeyUp={[Function]}
-                          onMouseUp={[Function]}
-                          role="button"
-                          tabIndex="-1"
-                          title="Open menu"
-                          type="button"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                            />
-                          </svg>
-                        </button>
                       </div>
-                      <div
-                        aria-label="Choose an item"
-                        aria-labelledby={null}
-                        className="bx--list-box__menu"
-                        id="downshift-0-menu"
-                        role="listbox"
-                      />
                     </div>
                   </div>
                 </div>
@@ -30666,12 +34040,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                 data-column="status"
                 scope="col"
-                style={
-                  Object {
-                    "--table-header-is-select-column": "inherit",
-                    "--table-header-width": "",
-                  }
-                }
               >
                 <div
                   className="bx--table-header-label"
@@ -30683,12 +34051,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                 data-column="number"
                 scope="col"
-                style={
-                  Object {
-                    "--table-header-is-select-column": "inherit",
-                    "--table-header-width": "",
-                  }
-                }
               >
                 <div
                   className="bx--table-header-label"
@@ -30735,12 +34097,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                 data-column="boolean"
                 scope="col"
-                style={
-                  Object {
-                    "--table-header-is-select-column": "inherit",
-                    "--table-header-width": "",
-                  }
-                }
               >
                 <div
                   className="bx--table-header-label"
@@ -30787,12 +34143,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                 data-column="node"
                 scope="col"
-                style={
-                  Object {
-                    "--table-header-is-select-column": "inherit",
-                    "--table-header-width": "",
-                  }
-                }
               >
                 <div
                   className="bx--table-header-label"
@@ -30804,12 +34154,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                 data-column="object"
                 scope="col"
-                style={
-                  Object {
-                    "--table-header-is-select-column": "inherit",
-                    "--table-header-width": "",
-                  }
-                }
               >
                 <div
                   className="bx--table-header-label"
@@ -36771,12 +40115,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="string"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -36847,12 +40185,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="date"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -36899,112 +40231,115 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="select"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "hidden",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--list-box__wrapper"
+                      className="iot--combobox iot--combobox__menu--fit-content"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--combo-box iot--filterheader-combo bx--list-box"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
+                        className="bx--list-box__wrapper"
                       >
                         <div
-                          className="bx--list-box__field"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
-                          <input
-                            aria-activedescendant={null}
-                            aria-autocomplete="list"
-                            aria-controls={null}
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-label="Filter"
+                          <div
+                            className="bx--list-box__field"
+                          >
+                            <input
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input"
+                              data-testid="combo-box"
+                              disabled={false}
+                              id="column-2"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="pick an option"
+                              role="combobox"
+                              tabIndex="0"
+                              type="text"
+                              value="option-B"
+                            />
+                            <button
+                              aria-label="Clear selection"
+                              className="bx--list-box__selection"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              tabIndex={0}
+                              title="Clear selection"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div
+                            aria-label="Choose an item"
                             aria-labelledby={null}
-                            autoComplete="off"
-                            className="bx--text-input"
-                            disabled={false}
-                            id="column-2"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            placeholder="pick an option"
-                            role="combobox"
-                            tabIndex="0"
-                            type="text"
-                            value="option-B"
+                            className="bx--list-box__menu"
+                            id="downshift-0-menu"
+                            role="listbox"
                           />
-                          <button
-                            aria-label="Clear selection"
-                            className="bx--list-box__selection"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            tabIndex={0}
-                            title="Clear selection"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-haspopup={true}
-                            aria-label="Open menu"
-                            className="bx--list-box__menu-icon"
-                            data-toggle={true}
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseUp={[Function]}
-                            role="button"
-                            tabIndex="-1"
-                            title="Open menu"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                              />
-                            </svg>
-                          </button>
                         </div>
-                        <div
-                          aria-label="Choose an item"
-                          aria-labelledby={null}
-                          className="bx--list-box__menu"
-                          id="downshift-0-menu"
-                          role="listbox"
-                        />
                       </div>
                     </div>
                   </div>
@@ -37013,12 +40348,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="secretField"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -37030,12 +40359,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="status"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -37047,12 +40370,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="number"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -37099,12 +40416,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="boolean"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -37151,12 +40462,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="node"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -37168,12 +40473,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="object"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -37220,12 +40519,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="test2"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -37237,12 +40530,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="test3"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -37254,12 +40541,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="test4"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -102932,9 +106213,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-testid="null-table-foot"
               >
                 <tr>
-                  <td />
                   <td
                     className="iot-table-foot--label"
+                    colSpan={2}
                     data-testid="null-table-foot-aggregation-string"
                   >
                     Total

@@ -13,6 +13,7 @@ import { format, setHours, setMinutes } from 'date-fns';
           [dateFormat]="dateFormat"
           [(ngModel)]="dateRange"
           [placeholder]="placeholder"
+          [flatpickrOptions]="flatpickrOptions"
           (valueChange)="onChange()"
           theme="light"
         >
@@ -87,6 +88,7 @@ export class DateTimeAbsoluteComponent implements OnChanges {
   @Input() batchText: any;
   @Input() dateFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
+  @Input() flatpickrOptions;
   @Output() valueChange: EventEmitter<[Date, Date]> = new EventEmitter();
 
   ngOnChanges(changes: SimpleChanges) {

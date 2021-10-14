@@ -1,10 +1,3 @@
-const all90Covered = {
-  statements: 90,
-  branches: 90,
-  functions: 90,
-  lines: 90,
-};
-
 module.exports = {
   collectCoverageFrom: [
     'src/components/**/*.js?(x)',
@@ -20,73 +13,69 @@ module.exports = {
     '!src/components/MapCard/storyFiles/*.jsx',
     '!src/components/**/*.test.e2e.jsx',
     '!src/components/StorybookSnapshots.test.js',
+    '!src/components/Table/Table.test.helpers.jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
   coverageDirectory: 'jest/coverage',
   coverageThreshold: {
-    './src/components/List/ListItem/ListItem.jsx': all90Covered,
-    './src/components/DashboardEditor/editorUtils.jsx': all90Covered,
-    './src/components/Table/baseTableReducer.js': all90Covered,
-    './src/components/Table/tableReducer.js': all90Covered,
-    './src/components/Card/Card.jsx': all90Covered,
-    './src/components/TimePickerSpinner/TimePickerSpinner.jsx': all90Covered,
-    './src/components/List/HierarchyList/HierarchyList.jsx': all90Covered,
-    './src/components/ValueCard/ValueRenderer.jsx': all90Covered,
-    './src/components/List/ListItem/ListItemWrapper.jsx': all90Covered,
-    './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': all90Covered,
-    './src/components/Table/ErrorTable/ErrorTable.jsx': all90Covered,
-    './src/components/List/List.jsx': all90Covered,
-    './src/components/Breadcrumb/Breadcrumb.jsx': all90Covered,
-    './src/components/CardEditor/CardEditForm/CardEditFormItems/ImageCardFormItems/ImageCardFormContent.jsx': all90Covered,
-    './src/components/ValueCard/Attribute.jsx': all90Covered,
-    './src/components/SuiteHeader/SuiteHeader.jsx': all90Covered,
-    './src/components/Table/TableManageViewsModal/TableManageViewsModal.jsx': all90Covered,
-    './src/components/ComposedModal/ComposedModal.jsx': all90Covered,
-    './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': all90Covered,
-    './src/components/Table/TableBody/TableBodyRow/TableBodyRow.jsx': all90Covered,
-    './src/components/TimeSeriesCard/timeSeriesUtils.js': all90Covered,
-    './src/components/Accordion/AccordionItemDefer.jsx': all90Covered,
-    './src/components/Card/CardRangePicker.jsx': all90Covered,
-    './src/components/TableCard/tableCardUtils.jsx': all90Covered,
-    './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': all90Covered,
-    './src/components/MapCard/ScrollingControls.jsx': all90Covered,
-    './src/components/Dropdown/Dropdown.jsx': all90Covered,
-    './src/components/Table/StatefulTable.jsx': all90Covered,
-    './src/components/Table/statefulTableUtilities.js': all90Covered,
-    './src/components/ResourceList/ResourceList.jsx': all90Covered,
-    './src/components/Table/Table.jsx': all90Covered,
-    './src/components/ImageCard/HotspotContent.jsx': all90Covered,
-    './src/components/IconDropdown/IconDropdown.jsx': all90Covered,
-    './src/components/Table/TableHead/TableHead.jsx': all90Covered,
-    './src/components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher.jsx': all90Covered,
-    './src/components/BarChartCard/barChartUtils.js': all90Covered,
-    './src/components/Table/TableSaveViewModal/TableSaveViewForm.jsx': all90Covered,
-    './src/components/HotspotEditorModal/HotspotEditorModal.jsx': all90Covered,
-    './src/components/Header/HeaderAction/HeaderAction.jsx': all90Covered,
-    './src/components/HotspotEditorModal/HotspotTextStyleTab/HotspotTextStyleTab.jsx': all90Covered,
-    './src/components/DashboardEditor/DashboardEditorHeader/DashboardEditorHeader.jsx': all90Covered,
-    './src/components/SideNav/SideNav.jsx': all90Covered,
-    './src/components/ComposedStructuredList/ComposedStructuredList.jsx': all90Covered,
-    './src/components/NavigationBar/NavigationBar.jsx': all90Covered,
-    './src/components/TileCatalog/CatalogContent.jsx': all90Covered,
-    './src/components/CardEditor/CardEditForm/CardEditFormItems/ThresholdsFormItem.jsx': all90Covered,
-    './src/components/ImageCard/ImageUploader.jsx': all90Covered,
-    './src/components/ComboChartCard/comboChartHelpers.js': all90Covered,
-    './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 65, functions: 71 },
-    './src/components/BarChartCard/BarChartCard.jsx': {
-      // TODO: Add tests for tooltip interaction and formatting when below issue is solved
-      // https://github.com/carbon-design-system/carbon-charts/issues/594
-      functions: 69,
+    global: {
+      statements: 90,
+      branches: 90,
+      functions: 90,
+      lines: 90,
     },
-    './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
-      // TODO: Add tests for tooltip interaction and formatting when below issue is solved
-      // https://github.com/carbon-design-system/carbon-charts/issues/594
-      functions: 74,
+    // set coverage to 90 for all items except those who are covered by e2e cypress tests
+    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor|ListTarget|PageTitleBar|DateTimePickerV2|DateTimePicker|HeaderActionGroup|DashboardEditorCardRenderer|CardCodeEditor|SimpleList|index|ListContent|List|VirtualListContent).jsx': {
+      statements: 90,
+      branches: 90,
+      functions: 90,
+      lines: 90,
     },
-    // Deprecated, no need for thresholds to be at 90%
-    './src/components/Hero/Hero.jsx': { statements: 83, branches: 40, functions: 50, lines: 83 },
-    './src/components/Dashboard/DashboardHeader.jsx': { branches: 83 },
+    './src/components/List/ListItem/ListTarget.jsx': {
+      branches: 88,
+    },
+    './src/components/List/List.jsx': {
+      functions: 85,
+    },
+    './src/components/List/ListContent/ListContent.jsx': {
+      functions: 88,
+    },
+    './src/components/List/VirtualListContent/VirtualListContent.jsx': {
+      functions: 89,
+    },
+    './src/components/PageTitleBar/PageTitleBar.jsx': {
+      statements: 82,
+      branches: 87,
+      lines: 81,
+    },
+    './src/components/DateTimePicker/DateTimePickerV2.jsx': {
+      branches: 89,
+    },
+    './src/components/DateTimePicker/DateTimePicker.jsx': {
+      statements: 79,
+      branches: 80,
+      lines: 80,
+      functions: 78,
+    },
+    './src/components/Header/HeaderActionGroup.jsx': {
+      statements: 51,
+      branches: 20,
+      lines: 50,
+      functions: 56,
+    },
+    './src/components/DashboardEditor/DashboardEditorCardRenderer.jsx': {
+      branches: 87,
+    },
+    './src/components/CardCodeEditor/CardCodeEditor.jsx': {
+      functions: 88,
+    },
+    './src/components/List/SimpleList/SimpleList.jsx': {
+      functions: 88,
+    },
+    './src/components/Tooltip/index.jsx': {
+      branches: 87,
+    },
   },
   globals: {
     __DEV__: false,

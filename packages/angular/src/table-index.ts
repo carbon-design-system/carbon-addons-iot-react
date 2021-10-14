@@ -5,3 +5,5 @@ export * from './table/head/table-head.component';
 export * from './table/head/table-head-cell.component';
 export * from './table/column-customization/column-customization-button.component';
 export * from './table/column-customization/column-customization-modal.component';
+export * from './table/body/table-body.component';
+export * from './table/body/table-row.component';
