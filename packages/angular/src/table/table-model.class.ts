@@ -171,8 +171,8 @@ export class AITableModel implements PaginationModel {
       }
       this.header = newHeader;
     } else {
-      this.header.forEach((headerRow) => {
-        const projectedRowLength = this.projectedRowLength(headerRow);
+      this.header.forEach((headerRow, rowIndex) => {
+        const projectedRowLength = this.projectedRowLength(headerRow, rowIndex, this.header);
         if (projectedRowLength < this._data[0].length && this._data[0].length > 0) {
           const difference = this._data[0].length - projectedRowLength;
           // disable this tslint here since we don't actually want to
@@ -397,7 +397,7 @@ export class AITableModel implements PaginationModel {
       }
     } else if (realRow.length > columnCount) {
       // extend the length of header
-      let difference = realRow.length - this.projectedRowLength(this.header[0]);
+      let difference = realRow.length - this.projectedRowLength(this.header[0], 0, this.header);
       for (let j = 0; j < difference; j++) {
         // add to the first header row and row-span to fill the height of the header
         const headerItem = new AITableHeaderItem();
@@ -907,19 +907,35 @@ export class AITableModel implements PaginationModel {
     }
   }
 
+  protected projectedRowLengthSimple(itemArray: any[]) {
+    return itemArray.reduce((len, item) => len + (item ? item.colSpan || 1 : 0), 0);
+  }
+
   /**
    * @param itemArray TableItem[] | AITableHeaderItem[]
    * @returns the number of columns as if now cells were merged
    */
-  protected projectedRowLength(itemArray: any[]) {
-    let rowLength = 0;
-    for (let i = 0; i < itemArray.length; ) {
-      const item = itemArray[i];
-      let increment = item ? item.colSpan : 1;
-      rowLength += increment;
-      i += increment;
+  protected projectedRowLength(itemArray: any[], rowIndex?: number, matrix?: any[][]) {
+    // `any[]` should be `TableItem[] | TableHeaderItem[]` but typescript
+    if (rowIndex === undefined || matrix === undefined) {
+      return this.projectedRowLengthSimple(itemArray);
     }
-    return rowLength;
+
+    // the rest of the function takes into account row spans
+    const rowLengths = matrix.map((row) => this.projectedRowLengthSimple(row));
+
+    for (let index = 0; index < rowIndex; index++) {
+      const row = matrix[index];
+      row.forEach((item) => {
+        if (item && item.rowSpan) {
+          // increment all row lengths that the span covers
+          for (let i = index + 1; i < index + 1 + item.rowSpan; i++) {
+            rowLengths[i]++;
+          }
+        }
+      });
+    }
+    return rowLengths[rowIndex];
   }
 
   /**
@@ -935,7 +951,7 @@ export class AITableModel implements PaginationModel {
     let index = 0;
     for (let i = 0; i < list.length; i++) {
       const item = list[i];
-      index += item.colSpan || 1;
+      index += item?.colSpan || 1;
       if (index > projectedIndex) {
         return i;
       }

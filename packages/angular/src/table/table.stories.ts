@@ -18,14 +18,9 @@ simpleModel.setHeader([
       rowSpan: 2,
       alignment: 'center',
     }),
-    new AITableHeaderItem({ data: 'hwer', colSpan: 2, alignment: 'center', sortable: false }),
-    null,
+    new AITableHeaderItem({ data: 'hwer', colSpan: 2, sortable: false }),
   ],
-  [
-    null,
-    new AITableHeaderItem({ data: 'hwer1' }),
-    new AITableHeaderItem({ data: 'hwer2', alignment: 'end' }),
-  ],
+  [new AITableHeaderItem({ data: 'hwer1' }), new AITableHeaderItem({ data: 'hwer2' })],
 ]);
 
 simpleModel.setData([

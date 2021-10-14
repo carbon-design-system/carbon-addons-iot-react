@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "carbon-addons-iot-react": "latest",
-    "d3": ">=5.0.0 <=5.14.2",
+    "d3": "^7.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"

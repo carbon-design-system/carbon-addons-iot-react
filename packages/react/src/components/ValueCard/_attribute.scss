@@ -61,3 +61,8 @@
     color: var(--secondary-value-color);
   }
 }
+
+html[dir='rtl'] .#{$iot-prefix}--value-card__attribute {
+  padding-right: 0;
+  padding-left: $spacing-05;
+}

@@ -249,8 +249,15 @@ describe('Card', () => {
 
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CHANGE_TIME_RANGE, {
       timeRangeKind: PICKER_KINDS.PRESET,
-      timeRangeValue: { id: 'item-05', label: hourLabel, offset: 24 * 60 },
+      timeRangeValue: {
+        id: 'item-05',
+        label: hourLabel,
+        offset: 24 * 60,
+        tooltipValue: '2018-09-20 08:57 to Now',
+      },
     });
+
+    expect(screen.getByTestId('Card-subtitle')).toHaveTextContent('2018-09-20 08:57 to Now');
   });
   it('card toolbar renders in header only when there are actions', () => {
     const { container, rerender } = render(
@@ -350,7 +357,7 @@ describe('Card', () => {
 
     it('should put the subtitle in a tooltip if it overflows', () => {
       const aLongSubTitle =
-        'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
+        'A very very long subtitle which will almost certainly overflow and require a tooltip and we must test these things, you know.';
       render(<Card {...cardProps} title="A Very Modest Title" subtitle={aLongSubTitle} />);
       const tooltipButton = screen.getByRole('button', {
         name: aLongSubTitle,

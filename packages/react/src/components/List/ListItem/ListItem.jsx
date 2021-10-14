@@ -7,6 +7,7 @@ import warning from 'warning';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 import ListItemWrapper from './ListItemWrapper';
 
@@ -185,7 +186,18 @@ const ListItem = ({
 
   const renderRowActions = () =>
     hasRowActions ? (
-      <div className={`${iotPrefix}--list-item--content--row-actions`}>
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+      <div
+        className={`${iotPrefix}--list-item--content--row-actions`}
+        // add event handlers to prevent rowAction items from bubbling and causing
+        // list re-renders
+        onKeyPress={handleSpecificKeyDown(['Enter', ' '], (e) => {
+          e.stopPropagation();
+        })}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         {typeof rowActions === 'function' ? rowActions() : rowActions}
       </div>
     ) : null;
