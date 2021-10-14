@@ -15,6 +15,7 @@ import {
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
   TableSortPropType,
+  CellTextOverflowPropType,
 } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
@@ -56,12 +57,11 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
-    truncateCellText: PropTypes.bool.isRequired,
     hasMultiSort: PropTypes.bool,
     useAutoTableLayoutForResize: PropTypes.bool,
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
+    cellTextOverflow: CellTextOverflowPropType,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -168,8 +168,7 @@ const TableHead = ({
     hasRowSelection,
     hasRowNesting,
     hasResize,
-    wrapCellText,
-    truncateCellText,
+    cellTextOverflow,
     hasSingleRowEdit,
     hasMultiSort,
     useAutoTableLayoutForResize,
@@ -498,8 +497,7 @@ const TableHead = ({
             >
               <TableCellRenderer
                 className={`${iotPrefix}--table-head--text`}
-                wrapText={wrapCellText}
-                truncateCellText={truncateCellText}
+                cellTextOverflow={cellTextOverflow}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
               >

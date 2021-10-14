@@ -174,6 +174,7 @@ export const I18NPropTypes = PropTypes.shape({
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
   batchCancel: PropTypes.string,
+  toolbarLabelAria: PropTypes.string,
   itemsSelected: PropTypes.string,
   itemSelected: PropTypes.string,
   /** Row actions in table body */
@@ -292,3 +293,6 @@ export const TableSortPropType = PropTypes.shape({
   columnId: PropTypes.string,
   direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
 });
+
+/** How should long cell texts be handled, the implicit default is wrapping */
+export const CellTextOverflowPropType = PropTypes.oneOf(['grow', 'truncate', 'wrap']);

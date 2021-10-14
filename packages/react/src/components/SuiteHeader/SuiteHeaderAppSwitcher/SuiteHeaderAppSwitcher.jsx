@@ -58,7 +58,8 @@ const SuiteHeaderAppSwitcher = ({
     : null;
 
   const handleRouteChange = useCallback(
-    ({ href, id, isExternal }) => async () => {
+    ({ href, id, isExternal }) => async (e) => {
+      e.preventDefault();
       const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
         appId: id,
       });
@@ -73,12 +74,16 @@ const SuiteHeaderAppSwitcher = ({
     [onRouteChange]
   );
 
-  const handleAllApplicationRoute = useCallback(async () => {
-    const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.NAVIGATOR, allApplicationsLink);
-    if (result) {
-      window.location.href = allApplicationsLink;
-    }
-  }, [allApplicationsLink, onRouteChange]);
+  const handleAllApplicationRoute = useCallback(
+    async (e) => {
+      e.preventDefault();
+      const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.NAVIGATOR, allApplicationsLink);
+      if (result) {
+        window.location.href = allApplicationsLink;
+      }
+    },
+    [allApplicationsLink, onRouteChange]
+  );
 
   return (
     <ul data-testid={testId} className={baseClassName}>
@@ -139,9 +144,10 @@ const SuiteHeaderAppSwitcher = ({
           </div>
           <span>{mergedI18n.requestAccess}</span>
           <a
-            href="javascript:void(0)"
+            href="#"
             data-testid="suite-header-app-switcher--no-access"
-            onClick={async () => {
+            onClick={async (e) => {
+              e.preventDefault();
               const result = await onRouteChange(
                 SuiteHeader.ROUTE_TYPES.DOCUMENTATION,
                 noAccessLink

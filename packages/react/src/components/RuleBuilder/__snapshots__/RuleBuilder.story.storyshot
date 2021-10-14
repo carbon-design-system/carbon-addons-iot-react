@@ -847,7 +847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-testid="edit-table-table-container"
                   >
                     <section
-                      aria-label="data table toolbar"
+                      aria-label="Editor access Toolbar"
                       className="bx--table-toolbar"
                       data-testid="edit-table-table-toolbar"
                     >
@@ -1362,7 +1362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-testid="read-table-table-container"
                   >
                     <section
-                      aria-label="data table toolbar"
+                      aria-label="Read only access Toolbar"
                       className="bx--table-toolbar"
                       data-testid="read-table-table-toolbar"
                     >
@@ -5463,7 +5463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-testid="edit-table-table-container"
                   >
                     <section
-                      aria-label="data table toolbar"
+                      aria-label="Editor access Toolbar"
                       className="bx--table-toolbar"
                       data-testid="edit-table-table-toolbar"
                     >
@@ -5742,7 +5742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-testid="read-table-table-container"
                   >
                     <section
-                      aria-label="data table toolbar"
+                      aria-label="Read only access Toolbar"
                       className="bx--table-toolbar"
                       data-testid="read-table-table-toolbar"
                     >

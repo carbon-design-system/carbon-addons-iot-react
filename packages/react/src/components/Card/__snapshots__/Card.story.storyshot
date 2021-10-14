@@ -192,7 +192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           }
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Custom Card Title Toolbar"
             className="bx--table-toolbar"
             data-testid="my table-table-toolbar"
           >

@@ -1594,7 +1594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
-                    aria-label="data table toolbar"
+                    aria-label="Alerts Toolbar"
                     className="bx--table-toolbar"
                     data-testid="table-for-card-alert-table1-table-toolbar"
                   >
@@ -4524,7 +4524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
-                    aria-label="data table toolbar"
+                    aria-label="Alerts Toolbar"
                     className="bx--table-toolbar"
                     data-testid="table-for-card-alert-table1-table-toolbar"
                   >
@@ -7489,7 +7489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
-                    aria-label="data table toolbar"
+                    aria-label="Alerts Toolbar"
                     className="bx--table-toolbar"
                     data-testid="table-for-card-alert-table1-table-toolbar"
                   >
@@ -9548,7 +9548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   data-testid="table-for-card-expandedcard-table-container"
                 >
                   <section
-                    aria-label="data table toolbar"
+                    aria-label="Expanded card Toolbar"
                     className="bx--table-toolbar"
                     data-testid="table-for-card-expandedcard-table-toolbar"
                   >
@@ -13055,7 +13055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
-                    aria-label="data table toolbar"
+                    aria-label="Alerts Toolbar"
                     className="bx--table-toolbar"
                     data-testid="table-for-card-alert-table1-table-toolbar"
                   >
@@ -30517,7 +30517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
-                    aria-label="data table toolbar"
+                    aria-label="Alerts Toolbar"
                     className="bx--table-toolbar"
                     data-testid="table-for-card-alert-table1-table-toolbar"
                   >

@@ -563,9 +563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                 <div
                   className="bx--structured-list-td"
                   role="cell"
-                >
-                  TableBody
-                </div>
+                />
               </div>
               <div
                 className="bx--structured-list-row"
@@ -655,9 +653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                 <div
                   className="bx--structured-list-td"
                   role="cell"
-                >
-                  TableHead
-                </div>
+                />
               </div>
               <div
                 className="bx--structured-list-row"
@@ -732,9 +728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                 <div
                   className="bx--structured-list-td"
                   role="cell"
-                >
-                  TableToolbar
-                </div>
+                />
               </div>
               <div
                 className="bx--structured-list-row"
@@ -3494,21 +3488,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
-                  EmptyTable
-                </div>
-              </div>
-              <div
-                className="bx--structured-list-row"
-                role="row"
-              >
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                />
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                >
                   TableSaveViewModal
                 </div>
               </div>
@@ -3525,21 +3504,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   role="cell"
                 >
                   TableManageViewsModal
-                </div>
-              </div>
-              <div
-                className="bx--structured-list-row"
-                role="row"
-              >
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                />
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                >
-                  TableSkeletonWithHeaders
                 </div>
               </div>
               <div

@@ -37,7 +37,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-table-list-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-table-list-table-toolbar"
           >
@@ -1463,7 +1463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-table-list-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-table-list-table-toolbar"
           >
@@ -2934,7 +2934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-table-list-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-table-list-table-toolbar"
           >
@@ -4633,7 +4633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-undefined-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-undefined-table-toolbar"
           >
@@ -5534,7 +5534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-table-list-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts 11112 Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-table-list-table-toolbar"
           >
@@ -6764,7 +6764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-table-list-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-table-list-table-toolbar"
           >
@@ -9216,7 +9216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-table-list-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-table-list-table-toolbar"
           >
@@ -11502,7 +11502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-table-list-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-table-list-table-toolbar"
           >
@@ -13308,7 +13308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-table-list-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-table-list-table-toolbar"
           >
@@ -15453,7 +15453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="table-for-card-table-list-table-container"
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Open Alerts Toolbar"
             className="bx--table-toolbar"
             data-testid="table-for-card-table-list-table-toolbar"
           >

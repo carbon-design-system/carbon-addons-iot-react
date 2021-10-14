@@ -75,6 +75,7 @@ const propTypes = {
     filterAscending: PropTypes.string,
     filterDescending: PropTypes.string,
     toggleAggregations: PropTypes.string,
+    toolbarLabelAria: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -215,6 +216,7 @@ const TableToolbar = ({
       // TODO: remove deprecated 'testID' in v3
       data-testid={testID || testId}
       className={classnames(`${iotPrefix}--table-toolbar`, className)}
+      aria-label={i18n.toolbarLabelAria || secondaryTitle ? `${secondaryTitle} Toolbar` : undefined}
     >
       <TableBatchActions
         // TODO: remove deprecated 'testID' in v3

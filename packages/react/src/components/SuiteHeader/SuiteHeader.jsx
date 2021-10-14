@@ -221,7 +221,7 @@ const SuiteHeader = ({
     setIsSideNavExpandedState((prevIsSideNavExpanded) => !prevIsSideNavExpanded);
   }, [setIsSideNavExpandedState]);
 
-  const navigatorRoute = routes?.navigator || 'javascript:void(0)';
+  const navigatorRoute = routes?.navigator || '#';
 
   // If there are custom help links, include an extra child content entry for the separator
   const mergedCustomHelpLinks =
@@ -254,8 +254,9 @@ const SuiteHeader = ({
           subtitle={
             <>
               <Link
-                href="javascript:void(0)"
-                onClick={async () => {
+                href="#"
+                onClick={async (e) => {
+                  e.preventDefault();
                   const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                   if (result) {
                     window.open(surveyData.surveyLink, '_blank', 'noopener noreferrer');
@@ -266,8 +267,9 @@ const SuiteHeader = ({
               </Link>
               <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
                 <Link
-                  href="javascript:void(0)"
-                  onClick={async () => {
+                  href="#"
+                  onClick={async (e) => {
+                    e.preventDefault();
                     const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                     if (result) {
                       window.open(surveyData.privacyLink, '_blank', 'noopener noreferrer');
@@ -332,6 +334,7 @@ const SuiteHeader = ({
         url={navigatorRoute}
         hasSideNav={hasSideNav || sideNavProps !== null}
         onClickSideNavExpand={(evt) => {
+          evt.preventDefault();
           onSideNavToggled(evt);
           handleSideNavButtonClick(evt);
         }}
@@ -341,7 +344,7 @@ const SuiteHeader = ({
               applications={applications}
               customApplications={customApplications}
               allApplicationsLink={routes?.navigator}
-              noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
+              noAccessLink={routes?.gettingStarted || '#'}
               onRouteChange={onRouteChange}
               i18n={{
                 myApplications: mergedI18N.switcherMyApplications,
@@ -418,7 +421,7 @@ const SuiteHeader = ({
                     metaData: {
                       element: 'a',
                       'data-testid': `suite-header-help--${item}`,
-                      href: 'javascript:void(0)',
+                      href: '#',
                       title: mergedI18N[item],
                       onClick: async () => {
                         const result = await onRouteChange(ROUTE_TYPES.DOCUMENTATION, routes[item]);
@@ -433,7 +436,7 @@ const SuiteHeader = ({
                     metaData: {
                       element: 'a',
                       'data-testid': 'suite-header-help--about',
-                      href: 'javascript:void(0)',
+                      href: '#',
                       title: mergedI18N.about,
                       onClick: async () => {
                         const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
@@ -504,9 +507,12 @@ const SuiteHeader = ({
                       className: `${settings.iotPrefix}--suite-header--logout`,
                       element: 'a',
                       'data-testid': 'suite-header-profile--logout',
-                      href: 'javascript:void(0)',
+                      href: '#',
                       title: mergedI18N.logout,
-                      onClick: () => setShowLogoutModal(true),
+                      onClick: (e) => {
+                        e.preventDefault();
+                        setShowLogoutModal(true);
+                      },
                     },
                     content: <span id="suite-header-profile-menu-logout">{mergedI18N.logout}</span>,
                   }
