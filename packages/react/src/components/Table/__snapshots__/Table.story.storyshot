@@ -27416,7 +27416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onMouseUp={null}
           >
             <tr
-              className="iot--table-header__column-row"
+              className="iot--table-header__column-row iot--table-header__column-row--prevent-small-sizes"
             >
               <th
                 align="start"
