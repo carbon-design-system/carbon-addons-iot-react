@@ -916,7 +916,7 @@ export class AITableModel implements PaginationModel {
    * @returns the number of columns as if now cells were merged
    */
   protected projectedRowLength(itemArray: any[], rowIndex?: number, matrix?: any[][]) {
-    // `any[]` should be `TableItem[] | TableHeaderItem[]` but typescript
+    // `any[]` should be `AITableItem[] | AITableHeaderItem[]` but typescript
     if (rowIndex === undefined || matrix === undefined) {
       return this.projectedRowLengthSimple(itemArray);
     }

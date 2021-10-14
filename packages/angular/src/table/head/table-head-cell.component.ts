@@ -1,5 +1,6 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { TableHeadCell } from 'carbon-components-angular';
+import { AITableHeaderItem } from '../table-model.class';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -88,4 +89,5 @@ import { TableHeadCell } from 'carbon-components-angular';
 })
 export class AITableHeadCell extends TableHeadCell {
   @HostBinding('class.iot--table-head-cell') cssClass = true;
+  @Input() column: AITableHeaderItem;
 }
