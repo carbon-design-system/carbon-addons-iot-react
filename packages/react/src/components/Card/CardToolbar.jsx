@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import keyBy from 'lodash/keyBy';
 
 import { settings } from '../../constants/Settings';
-import { DATE_PICKER_OPTIONS, TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
+import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import DateTimePicker, {
   DateTimePickerDefaultValuePropTypes,
@@ -75,6 +75,8 @@ const propTypes = {
     settingsLabel: PropTypes.string,
   }),
   testId: PropTypes.string,
+  locale: PropTypes.string,
+  dateTimeMask: PropTypes.string,
 };
 
 const defaultProps = {
@@ -82,6 +84,7 @@ const defaultProps = {
   isExpanded: false,
   renderExpandIcon: Popup16,
   className: null,
+  locale: 'en',
   timeRangeOptions: null,
   timeRange: null,
   i18n: {
@@ -102,6 +105,7 @@ const defaultProps = {
     settingsLabel: 'Settings',
   },
   testId: 'card-toolbar',
+  dateTimeMask: 'YYYY-MM-DD HH:mm',
 };
 
 const CardToolbar = ({
@@ -116,6 +120,8 @@ const CardToolbar = ({
   onCardAction,
   className,
   testId,
+  locale,
+  dateTimeMask,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   // maps the timebox internal label to a translated string
@@ -211,10 +217,9 @@ const CardToolbar = ({
           <DateTimePicker
             id={testId}
             i18n={mergedI18n}
-            hasIconOnly={
-              // make sure the card is actually sized
-              (width > 0 && width < 320) || availableActions.range === DATE_PICKER_OPTIONS.ICON_ONLY
-            }
+            dateTimeMask={dateTimeMask}
+            locale={locale}
+            hasIconOnly
             presets={Object.entries(timeRangeOptions).reduce(
               (acc, [timeRangeOptionKey, timeRangeOption]) => {
                 acc.push({

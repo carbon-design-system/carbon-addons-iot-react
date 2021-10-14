@@ -151,6 +151,7 @@ const ImageCard = ({
       resizeHandles={resizeHandles}
       // TODO: remove deprecated testID prop in v3.
       testId={testID || testId}
+      locale={locale}
       {...others}
       error={error}
       i18n={mergedI18n}

@@ -63,4 +63,19 @@ describe('ErrorTable', () => {
     fireEvent.click(screen.getByText('Refresh the page'));
     expect(onErrorStateAction).toHaveBeenCalled();
   });
+  it('renders without error prop', () => {
+    const onErrorStateAction = jest.fn();
+    render(
+      <ErrorTable
+        {...commonTableProps}
+        error={undefined}
+        onErrorStateAction={onErrorStateAction}
+      />,
+      {
+        container: document.body.appendChild(document.createElement('table')),
+      }
+    );
+    expect(screen.queryAllByText('Unable to load the page')).toHaveLength(1);
+    expect(screen.queryByText('error occured')).not.toBeInTheDocument();
+  });
 });

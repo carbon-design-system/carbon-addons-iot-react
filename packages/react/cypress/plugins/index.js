@@ -72,6 +72,14 @@ const webpackConfig = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -80,7 +88,7 @@ const webpackConfig = {
 };
 
 module.exports = (on, config) => {
-  const width = 1670;
+  const width = 1680;
   const height = 900;
   on('before:browser:launch', (browser = {}, launchOptions) => {
     /* eslint-disable dot-notation, no-param-reassign */

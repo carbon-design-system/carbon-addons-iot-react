@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.146.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0...v2.146.1-next.0) (2021-09-18)
+
+**Note:** Version bump only for package @ai-apps/styles
+
+
+
+
+
+# [2.146.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.187...v2.146.0) (2021-09-17)
+
+**Note:** Version bump only for package @ai-apps/styles
+
+
+
+
+
+# [2.146.0-next.109](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.108...v2.146.0-next.109) (2021-08-20)
+
+
+### Features
+
+* **table:** add new table model and multi-line headre implementation ([89819da](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/89819dab59872b0c46ed9123aa36e09ac018dc5e))
+
+
+
+
+
 # [2.146.0-next.84](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.146.0-next.83...v2.146.0-next.84) (2021-08-12)
 
 **Note:** Version bump only for package @ai-apps/styles

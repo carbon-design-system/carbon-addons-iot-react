@@ -40,6 +40,8 @@ const propTypes = {
   /** Determines if items can be deselected, meaning once an item is selected,
    * it can only be deselected by selecting another item */
   hasDeselection: PropTypes.bool,
+  /** optional prop to use a virtualized version of the list instead of rendering all items */
+  isVirtualList: PropTypes.bool,
   /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** ListItems to be displayed */
@@ -50,12 +52,21 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
-    itemsSelected: PropTypes.string,
+    itemSelected: PropTypes.string,
+    /** String e.g. '%d items selected' that gets %d replaced by selected count or
+     * function receiving the selectedCount as param:
+     * (selectedCount) => `${selectedCount} items selected` */
+    itemsSelected: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     move: PropTypes.string,
     cancel: PropTypes.string,
     allRows: PropTypes.string,
     modalTitle: PropTypes.string,
     modalDescription: PropTypes.string,
+    itemTitle: PropTypes.string,
+    /** String e.g. 'Move %d items underneath' that gets %d replaced by items count or
+     * function receiving the selectedCount as param:
+     * (itemsCount) => `Move ${itemsCount} items underneath` */
+    itemsTitle: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   }),
   /** Displays the List as full height */
   isFullHeight: PropTypes.bool,
@@ -83,6 +94,8 @@ const propTypes = {
   className: PropTypes.string,
   /** an optional id string passed to the list search field */
   searchId: PropTypes.string,
+  /** content shown if list is empty */
+  emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 };
 
 const defaultProps = {
@@ -98,17 +111,18 @@ const defaultProps = {
     expand: 'Expand',
     close: 'Close',
     itemSelected: '1 item selected',
-    itemsSelected: '%d items selected',
+    itemsSelected: (selectedCount) => `${selectedCount} items selected`,
     move: 'Move',
     cancel: 'Cancel',
     allRows: 'All rows',
     itemTitle: 'Move 1 item underneath',
-    itemsTitle: 'Move %d items underneath',
+    itemsTitle: (itemsCount) => `Move ${itemsCount} items underneath`,
     modalDescription: 'Select a destination',
   },
   isFullHeight: false,
   isLoading: false,
   isLargeRow: false,
+  isVirtualList: false,
   pageSize: null,
   defaultSelectedId: null,
   defaultExpandedIds: [],
@@ -122,6 +136,7 @@ const defaultProps = {
   className: null,
   items: [],
   searchId: null,
+  emptyState: 'No list items to show',
 };
 
 /**
@@ -213,6 +228,7 @@ const HierarchyList = ({
   isFullHeight,
   isLoading,
   isLargeRow,
+  isVirtualList,
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
@@ -223,6 +239,7 @@ const HierarchyList = ({
   sendingData,
   className,
   searchId,
+  emptyState,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -244,15 +261,18 @@ const HierarchyList = ({
     }
   }, [items, previousItems]);
 
-  const selectedItemRef = useCallback((node) => {
-    if (node && node.parentNode) {
-      scrollIntoView(node.parentNode, {
-        scrollMode: 'if-needed',
-        block: 'nearest',
-        inline: 'nearest',
-      });
-    }
-  }, []);
+  const selectedItemRef = useCallback(
+    (node) => {
+      if (node && node.parentNode && !isVirtualList) {
+        scrollIntoView(node.parentNode, {
+          scrollMode: 'if-needed',
+          block: 'nearest',
+          inline: 'nearest',
+        });
+      }
+    },
+    [isVirtualList]
+  );
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
@@ -296,6 +316,7 @@ const HierarchyList = ({
         });
         setExpandedIds(tempExpandedIds);
 
+        /* istanbul ignore else */
         if (!isEqual(selectedIds, [defaultSelectedId])) {
           // If the defaultSelectedId prop is updated from the outside, we need to use it
           setSelected(defaultSelectedId);
@@ -326,20 +347,38 @@ const HierarchyList = ({
 
   // Needed for updates to the filteredItems state on pageSize change
   useEffect(() => {
-    setItemsToShow(filteredItems.slice(0, rowsPerPage));
-  }, [filteredItems, rowsPerPage]);
+    const startIndex = (currentPageNumber - 1) * rowsPerPage;
+    setItemsToShow(filteredItems.slice(startIndex, startIndex + rowsPerPage));
+  }, [currentPageNumber, filteredItems, rowsPerPage]);
 
-  const onPage = (page) => {
-    const rowUpperLimit = page * rowsPerPage;
-    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
-    setCurrentPageNumber(page);
-    setItemsToShow(currentItemsOnPage);
-  };
+  const maxPage = Math.ceil(numberOfItems / rowsPerPage);
+
+  const onPage = useCallback(
+    (page) => {
+      const rowUpperLimit = page * rowsPerPage;
+      const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
+      setCurrentPageNumber(page);
+      setItemsToShow(currentItemsOnPage);
+    },
+    [filteredItems, rowsPerPage]
+  );
+
+  /**
+   * If we were on a higher page and the number of items drop, we need to ensure we
+   * reset to the first page when the number of items drops below our previous max page.
+   */
+  useEffect(() => {
+    if (currentPageNumber > maxPage) {
+      onPage(1);
+    } else {
+      onPage(currentPageNumber);
+    }
+  }, [currentPageNumber, maxPage, onPage, pageSize]);
 
   const pagination = {
     page: currentPageNumber,
     onPage,
-    maxPage: Math.ceil(numberOfItems / rowsPerPage),
+    maxPage,
     pageOfPagesText: (page) => `Page ${page}`,
   };
 
@@ -349,9 +388,11 @@ const HierarchyList = ({
    * the total filtered array. The next category's children then needs to
    * be searched in the same fashion.
    * @param {String} text keyed values from search input
+   * @param {Array} searchItems the current state of items. Used to maintain state when the list
+   *     is updated (drag and drop) and there's a current search value
    */
-  const handleSearch = (text) => {
-    const tempFilteredItems = searchForNestedItemValues(items, text);
+  const handleSearch = (text, searchItems) => {
+    const tempFilteredItems = searchForNestedItemValues(searchItems, text);
     const tempExpandedIds = [];
     // Expand the categories that have found results
     tempFilteredItems.forEach((categoryItem) => {
@@ -370,7 +411,7 @@ const HierarchyList = ({
    * be typed.
    */
   const delayedSearch = useCallback(
-    debounce((textInput) => handleSearch(textInput), 150),
+    debounce((textInput) => handleSearch(textInput, items), 150),
     [items]
   );
 
@@ -379,6 +420,9 @@ const HierarchyList = ({
 
     onListUpdated(updatedList);
     setFilteredItems(updatedList);
+    if (searchValue) {
+      handleSearch(searchValue, updatedList);
+    }
   };
 
   const handleDrag = (dragId, hoverId, target) => {
@@ -459,12 +503,14 @@ const HierarchyList = ({
         isFullHeight={isFullHeight}
         isLoading={isLoading}
         isLargeRow={isLargeRow}
+        isVirtualList={isVirtualList}
         itemWillMove={itemWillMove}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
         handleSelect={handleSelect}
         ref={selectedItemRef}
         onItemMoved={handleDrag}
         className={className}
+        emptyState={emptyState}
       />
     </>
   );

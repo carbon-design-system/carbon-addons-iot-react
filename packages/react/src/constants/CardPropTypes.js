@@ -118,6 +118,8 @@ export const ValueCardPropTypes = {
   fontSize: PropTypes.number,
   /** option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool,
+  /** Callback fired when an attribute is clicked to take further action like opening a modal */
+  onAttributeClick: PropTypes.func,
 };
 
 export const TableCardPropTypes = {
@@ -383,6 +385,8 @@ export const PieCardPropTypes = {
      * Function to format the labels. Input to the function is a wrapped data object containing additional
      * chart label info such as x & y positions etc */
     labelsFormatter: PropTypes.func,
+    /** The alignment of the legend in relation to the chart, can be 'left', 'center', or 'right'. */
+    legendAlignment: PropTypes.oneOf(['left', 'center', 'right']),
     /** The position of the legend in relation to the chart, can be 'bottom' or 'top'. */
     legendPosition: PropTypes.oneOf(['top', 'bottom']),
     /** carbon charts legend truncation options */
@@ -730,6 +734,7 @@ export const CardPropTypes = {
     closeLabel: PropTypes.string,
     loadingDataLabel: PropTypes.string,
     overflowMenuDescription: PropTypes.string,
+    toLabel: PropTypes.string,
   }),
   tooltip: PropTypes.element,
   toolbar: PropTypes.element,
@@ -768,7 +773,10 @@ export const CardPropTypes = {
   resizeHandles: PropTypes.array,
   /** Optional callback function that is passed an onChange function and the original cardConfig object.
    * This allows additional information to be passed to be used in the Card Editor for this type.
-   * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render * */
+   * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render
+   * We recommend doing this dynamically with the CardEditor onRenderCardEditForm property rather than hardcoding it in the Card JSON
+   * * */
   renderEditContent: PropTypes.func,
   footerContent: PropTypes.elementType,
+  dateTimeMask: PropTypes.string,
 };

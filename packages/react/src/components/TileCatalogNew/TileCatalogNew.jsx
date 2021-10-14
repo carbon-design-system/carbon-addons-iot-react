@@ -164,6 +164,7 @@ const TileCatalogNew = ({
                   defaultValue={selectedSortOption}
                   labelText=""
                   data-testid={`${testId}-sort-select`}
+                  role="listbox"
                 >
                   {sortOptions.map((option) => (
                     <SelectItem key={option.id} text={option.text} value={option.id} />
