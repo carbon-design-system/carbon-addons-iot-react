@@ -97,6 +97,7 @@ class FilterHeaderRow extends Component {
   };
 
   state = {
+    maxHeight: 'unset',
     filterValues: this.props.columns.reduce(
       (acc, curr) => ({
         ...acc,
@@ -130,6 +131,40 @@ class FilterHeaderRow extends Component {
     }
     return null;
   }
+
+  constructor(props) {
+    super(props);
+
+    this.rowRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.updateDropdownHeight();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { maxHeight } = this.state;
+    if (maxHeight !== prevState.maxHeight) {
+      this.updateDropdownHeight();
+    }
+  }
+
+  updateDropdownHeight = () => {
+    if (this.rowRef.current) {
+      const tableContainer = this.rowRef.current.closest(`.${prefix}--data-table-content`);
+      const tableHead = this.rowRef.current.closest(`thead`);
+      if (tableContainer) {
+        const { height: containerHeight } = tableContainer.getBoundingClientRect();
+        const { height: headHeight } = tableHead.getBoundingClientRect();
+
+        const height = containerHeight - headHeight;
+
+        this.setState({
+          maxHeight: `${height}px`,
+        });
+      }
+    }
+  };
 
   /**
    * take the state with the filter values and send to our listener
@@ -183,12 +218,17 @@ class FilterHeaderRow extends Component {
       testId,
       showExpanderColumn,
     } = this.props;
-    const { filterValues } = this.state;
+    const { maxHeight, filterValues } = this.state;
     const visibleColumns = ordering.filter((c) => !c.isHidden);
     return isVisible ? (
-      <TableRow data-testid={testId}>
+      <TableRow
+        data-testid={testId}
+        style={{
+          '--filter-header-dropdown-max-height': maxHeight,
+        }}
+      >
         {hasRowSelection === 'multi' ? (
-          <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
+          <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />
         ) : null}
         {hasRowExpansion ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />

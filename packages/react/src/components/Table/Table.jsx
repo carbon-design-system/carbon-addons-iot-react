@@ -844,7 +844,11 @@ const Table = (props) => {
           </FilterTags>
         </section>
       ) : null}
-      <div className="addons-iot-table-container">
+      <div
+        className={classnames('addons-iot-table-container', {
+          [`addons-iot-table-container--${others.size}`]: others.size,
+        })}
+      >
         <CarbonTable
           id={id}
           // TODO: remove id in v3

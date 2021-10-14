@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="addons-iot-table-container"
+      className="addons-iot-table-container addons-iot-table-container--lg"
     >
       <div
         className="bx--data-table-content"
@@ -23237,7 +23237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         />
       </section>
       <div
-        className="addons-iot-table-container"
+        className="addons-iot-table-container addons-iot-table-container--lg"
       >
         <div
           className="bx--data-table-content"
@@ -40364,7 +40364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
       </section>
       <div
-        className="addons-iot-table-container"
+        className="addons-iot-table-container addons-iot-table-container--lg"
       >
         <div
           className="bx--data-table-content"
@@ -44432,7 +44432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
       </section>
       <div
-        className="addons-iot-table-container"
+        className="addons-iot-table-container addons-iot-table-container--lg"
       >
         <div
           className="bx--data-table-content"
@@ -45093,6 +45093,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </tr>
               <tr
                 data-testid="table-table-head-filter-header-row"
+                style={
+                  Object {
+                    "--filter-header-dropdown-max-height": "unset",
+                  }
+                }
               >
                 <th
                   className="iot--filter-header-row--header"
@@ -49239,7 +49244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       />
     </section>
     <div
-      className="addons-iot-table-container"
+      className="addons-iot-table-container addons-iot-table-container--lg"
     >
       <div
         className="bx--data-table-content"
@@ -72747,7 +72752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
       </section>
       <div
-        className="addons-iot-table-container"
+        className="addons-iot-table-container addons-iot-table-container--lg"
       >
         <div
           className="bx--data-table-content"
@@ -73408,6 +73413,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </tr>
               <tr
                 data-testid="table-table-head-filter-header-row"
+                style={
+                  Object {
+                    "--filter-header-dropdown-max-height": "unset",
+                  }
+                }
               >
                 <th
                   className="iot--filter-header-row--header"
@@ -77386,7 +77396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
     </section>
     <div
-      className="addons-iot-table-container"
+      className="addons-iot-table-container addons-iot-table-container--lg"
     >
       <div
         className="bx--data-table-content"
@@ -81589,7 +81599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
     </section>
     <div
-      className="addons-iot-table-container"
+      className="addons-iot-table-container addons-iot-table-container--lg"
     >
       <div
         className="bx--data-table-content"
@@ -82570,7 +82580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
       </section>
       <div
-        className="addons-iot-table-container"
+        className="addons-iot-table-container addons-iot-table-container--lg"
       >
         <div
           className="bx--data-table-content"
@@ -86849,7 +86859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
       </section>
       <div
-        className="addons-iot-table-container"
+        className="addons-iot-table-container addons-iot-table-container--lg"
       >
         <div
           className="bx--data-table-content"
@@ -87120,6 +87130,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </tr>
               <tr
                 data-testid="table-table-head-filter-header-row"
+                style={
+                  Object {
+                    "--filter-header-dropdown-max-height": "unset",
+                  }
+                }
               >
                 <th
                   className="iot--filter-header-row--header"
@@ -91286,7 +91301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
       </section>
       <div
-        className="addons-iot-table-container"
+        className="addons-iot-table-container addons-iot-table-container--lg"
       >
         <div
           className="bx--data-table-content"
