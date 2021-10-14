@@ -132,10 +132,7 @@ storiesOf('Components/Table', module)
           'default'
         ),
         title: text('title', 'You don’t have any [variable] yet'),
-        body: text(
-          'body',
-          'Optional extra sentence or sentences'
-        ),
+        body: text('body', 'Optional extra sentence or sentences'),
         actionOnClick: () => {
           console.log('Action button clicked');
         },
