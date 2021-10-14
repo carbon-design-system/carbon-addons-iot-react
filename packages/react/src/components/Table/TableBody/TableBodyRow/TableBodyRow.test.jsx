@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Add32 } from '@carbon/icons-react';
 
@@ -120,6 +120,42 @@ describe('TableBodyRow', () => {
     userEvent.click(screen.getByRole('cell', { name: 'value1' }));
     expect(mockActions.onRowClicked).toHaveBeenCalled();
     expect(mockActions.onRowExpanded).toHaveBeenCalled();
+  });
+
+  it('should not show expand icon when there are no children', () => {
+    const { container } = render(
+      <TableBodyRow
+        {...tableRowProps}
+        options={{
+          hasRowExpansion: true,
+          shouldExpandOnRowClick: true,
+          wrapCellText: 'always',
+          truncateCellText: true,
+          hasRowNesting: true,
+        }}
+        tableActions={mockActions}
+        nestingChildCount={0}
+        clickToExpandAria="click to expand"
+        clickToCollapseAria="click to collapse"
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
+    // Clicking on the row should expand if there are children
+    fireEvent.click(container.querySelector('tr'));
+
+    // Ignores the callback even though shouldExpandOnRowClick is true
+    expect(mockActions.onRowExpanded).not.toHaveBeenCalled();
+
+    const expandButton = screen.getByTitle('click to expand');
+    expect(expandButton).toBeInTheDocument();
+
+    fireEvent.click(expandButton);
+
+    // This assertion tells us that the expand button is still in the DOM (the component never flipped to isExpanded)
+    // And that the button/icon is not visible
+    expect(expandButton).toHaveStyle('display: none');
   });
 
   it('verify rendering with undefined column', () => {
