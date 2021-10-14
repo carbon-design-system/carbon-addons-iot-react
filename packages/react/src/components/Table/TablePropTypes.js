@@ -132,7 +132,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     /**
      * If omitted, column overflow menu will not render
      */
-    options: PropTypes.arrayOf(
+    overflowMenuItems: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
         text: PropTypes.string.isRequired,

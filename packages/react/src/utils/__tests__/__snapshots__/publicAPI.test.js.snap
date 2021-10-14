@@ -746,7 +746,7 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
-                "options": Object {
+                "overflowMenuItems": Object {
                   "args": Array [
                     Object {
                       "args": Array [
@@ -1930,7 +1930,7 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
-                "options": Object {
+                "overflowMenuItems": Object {
                   "args": Array [
                     Object {
                       "args": Array [
@@ -2538,7 +2538,7 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
-                "options": Object {
+                "overflowMenuItems": Object {
                   "args": Array [
                     Object {
                       "args": Array [
