@@ -321,6 +321,14 @@ export const WithInitialValue = () => (
             timeDataSourceId: 'timestamp',
           },
         },
+        {
+          id: 'Custom-2',
+          title: 'Custom rendered card',
+          type: 'CUSTOM',
+          size: 'MEDIUM',
+          content: <div>custom react element content</div>,
+          value: 35,
+        },
       ],
       layouts: {
         lg: [
@@ -341,6 +349,11 @@ export const WithInitialValue = () => (
             x: 1,
             y: 8,
           },
+          {
+            i: 'Custom-2',
+            x: 0,
+            y: 12,
+          },
         ],
         md: [
           { i: 'Table', x: 0, y: 0 },
@@ -360,6 +373,11 @@ export const WithInitialValue = () => (
             x: 0,
             y: 10,
           },
+          {
+            i: 'Custom-2',
+            x: 0,
+            y: 12,
+          },
         ],
         sm: [
           { i: 'Table', x: 0, y: 0 },
@@ -378,6 +396,11 @@ export const WithInitialValue = () => (
             i: 'Bar',
             x: 1,
             y: 6,
+          },
+          {
+            i: 'Custom-2',
+            x: 0,
+            y: 8,
           },
         ],
       },
