@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash/isEqual';
+import update from 'immutability-helper';
 
 import Button from '../../Button/Button';
 import ComposedModal from '../../ComposedModal/ComposedModal';
@@ -216,6 +217,21 @@ const TableMultiSortModal = ({
     onClearMultiSortColumns();
   };
 
+  const onMoveRow = useCallback(
+    (dragIndex, hoverIndex) => {
+      const row = selectedMultiSortColumns[dragIndex];
+      setSelectedMultiSortColumns(
+        update(selectedMultiSortColumns, {
+          $splice: [
+            [dragIndex, 1],
+            [hoverIndex, 0, row],
+          ],
+        })
+      );
+    },
+    [selectedMultiSortColumns]
+  );
+
   return (
     <ComposedModal
       testId={testId}
@@ -269,6 +285,7 @@ const TableMultiSortModal = ({
               multiSortColumns={multiSortColumns}
               numSelectedColumns={selectedMultiSortColumns?.length}
               onAddMultiSortColumn={handleAddMultiSortColumn(index)}
+              onMoveRow={onMoveRow}
               onRemoveMultiSortColumn={handleRemoveMultiSortColumn(index)}
               onSelectMultiSortColumn={handleSelectMultiSortColumn(index)}
               onSelectMultiSortColumnDirection={handleSelectMultiSortColumnDirection(index)}
