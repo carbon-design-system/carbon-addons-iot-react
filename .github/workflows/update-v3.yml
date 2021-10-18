@@ -1,0 +1,20 @@
+name: update v3 branch on next changes
+on:
+  push:
+    branches:
+      - next
+jobs:
+  update-v3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: next
+      - name: Reset next branch
+        run: |
+          git fetch origin next:next
+          git reset --hard next
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: v3
