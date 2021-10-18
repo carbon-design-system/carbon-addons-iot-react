@@ -130,12 +130,13 @@ export const TableMultiSortRow = ({
         [`${iotPrefix}--table-multi-sort-row--dragging`]: isDragging,
       })}
       data-handler-id={handlerId}
-      style={{ opacity: isDragging ? 0 : 1, cursor: isDragging ? 'grabbing' : undefined }}
+      style={{ opacity: isDragging ? 0 : 1 }}
     >
       <div
         ref={dragRef}
         className={`${iotPrefix}--table-multi-sort-row__handle`}
-        title={i18n.dragHandle}
+        title={i18n.multiSortDragHandle}
+        data-testid={`drag-handle-${columnId}`}
       >
         <Draggable16 />
       </div>

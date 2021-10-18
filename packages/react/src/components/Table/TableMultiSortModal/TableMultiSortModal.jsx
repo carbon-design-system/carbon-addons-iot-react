@@ -49,6 +49,7 @@ const propTypes = {
     multiSortClearAll: PropTypes.string,
     multiSortOpenMenu: PropTypes.string,
     multiSortCloseMenu: PropTypes.string,
+    multiSortDragHandle: PropTypes.string,
   }),
   testId: PropTypes.string,
 };
@@ -70,6 +71,7 @@ const defaultProps = {
     multiSortAscending: 'Ascending',
     multiSortDescending: 'Descending',
     multiSortCloseModal: 'Close',
+    multiSortDragHandle: 'Drag handle',
   },
   testId: 'multi-sort-modal',
 };
@@ -276,7 +278,7 @@ const TableMultiSortModal = ({
           const defaultDirection = getInitialSelectedDirection(direction);
           return (
             <TableMultiSortRow
-              key={`${columnId}-${direction}-${index}`}
+              key={`${columnId}-${direction}`}
               columnId={columnId}
               defaultColumn={defaultColumn}
               defaultDirection={defaultDirection}
