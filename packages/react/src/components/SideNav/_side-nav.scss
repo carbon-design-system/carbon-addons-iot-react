@@ -76,3 +76,7 @@ html[dir='rtl'] {
     margin-right: unset;
   }
 }
+
+.#{$prefix}--side-nav__overlay-active {
+  z-index: z('overlay');
+}
