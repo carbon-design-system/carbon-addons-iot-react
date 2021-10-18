@@ -270,9 +270,13 @@ export const BarChartCardPropTypes = {
       );
     }
     // If the size
-    if (props[propName] === CARD_SIZES.SMALL || props[propName] === CARD_SIZES.SMALLWIDE) {
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL
+    ) {
       error = new Error(
-        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`SMALL\` || \`SMALLWIDE\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
       );
     }
     return error;
