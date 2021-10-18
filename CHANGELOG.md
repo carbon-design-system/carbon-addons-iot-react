@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.17...v2.147.0-next.18) (2021-10-18)
+
+
+### Bug Fixes
+
+* **card:** allow cardrangepicker to use datetimepicker timerangeoptions ([b4ae07f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b4ae07f8a9d19ba6aab836ab8d88db263bc3e30f))
+
+
+
+
+
 # [2.147.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.16...v2.147.0-next.17) (2021-10-13)
 
 
