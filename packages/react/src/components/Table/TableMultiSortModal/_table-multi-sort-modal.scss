@@ -23,7 +23,7 @@
 
   .#{$iot-prefix}--table-multi-sort-row__handle {
     align-self: center;
-    cursor: move;
+    cursor: grab;
   }
 
   &__footer {
