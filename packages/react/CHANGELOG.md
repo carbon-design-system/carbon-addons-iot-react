@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.18...v2.147.0-next.19) (2021-10-18)
+
+
+### Bug Fixes
+
+* **bar-chart-card:** add prop warning for unsupported sizes ([8e38ede](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e38ede1ea9e8abb482c399ce3a4bd6ca0f6f419))
+* **image-card:** prop error for unsupported size, attempt rendering img ([e9b9e5f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e9b9e5f1894d5b0fa06623e49586160aba4dab29))
+* **table:** hide 'toggle aggregations' when toolbar disabled ([6c9c5aa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6c9c5aa3130d22414da9108bce2bc177a08fd82e))
+* **table:** use disabled prop instead of hiding ([6dc352d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6dc352d3c25bf0d21593c40bfede7c39b7a128e7))
+
+
+
+
+
 # [2.147.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.17...v2.147.0-next.18) (2021-10-18)
 
 
