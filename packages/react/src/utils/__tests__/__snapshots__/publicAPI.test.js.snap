@@ -436,6 +436,7 @@ Map {
         "multiSortDescending": "Descending",
         "multiSortDirectionLabel": "Select a direction",
         "multiSortDirectionTitle": "Sort order",
+        "multiSortDragHandle": "Drag handle",
         "multiSortModalClearLabel": "Clear sorting",
         "multiSortModalPrimaryLabel": "Sort",
         "multiSortModalSecondaryLabel": "Cancel",
