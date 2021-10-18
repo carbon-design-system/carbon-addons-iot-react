@@ -2300,4 +2300,78 @@ describe('Table', () => {
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="lg" />);
     expect(console.error).not.toHaveBeenCalled();
   });
+
+  it('should not show toggle aggregations when toolbar is disabled', async () => {
+    jest
+      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+      .mockImplementation(() => ({ width: 100, height: 100 }));
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+                value: 100000,
+              },
+            ],
+          },
+          toolbar: {
+            ...view.toolbar,
+            isDisabled: true,
+          },
+        }}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    const toggleButton = screen.getByRole('menuitem', { name: 'Toggle aggregations' });
+    expect(toggleButton).toBeVisible();
+    expect(toggleButton).toBeDisabled();
+    expect(screen.getByText('Total:')).toBeVisible();
+
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+                value: 100000,
+              },
+            ],
+          },
+          toolbar: {
+            ...view.toolbar,
+            isDisabled: false,
+          },
+        }}
+      />
+    );
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    expect(toggleButton).toBeVisible();
+    expect(toggleButton).not.toBeDisabled();
+    expect(screen.getByText('Total:')).toBeVisible();
+    jest.resetAllMocks();
+  });
 });
