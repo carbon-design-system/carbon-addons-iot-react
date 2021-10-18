@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { EventSchedule16 } from '@carbon/icons-react';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
@@ -51,6 +51,16 @@ const CardRangePicker = ({
     [setTimeRange, onCardAction]
   );
 
+  useEffect(() => {
+    setTimeRange(timeRangeProp);
+  }, [timeRangeProp]);
+
+  const getTimeRangeText = (key, defaultText = '') => {
+    return typeof timeRangeOptions[key] === 'string'
+      ? timeRangeOptions[key]
+      : timeRangeOptions[key]?.label || defaultText;
+  };
+
   return (
     <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
       <ToolbarItem>
@@ -60,7 +70,7 @@ const CardRangePicker = ({
             [`${iotPrefix}--card--toolbar-timerange-label--hidden`]: cardWidth < 400,
           })}
         >
-          {timeRangeOptions[timeRange] || i18n.defaultLabel}
+          {getTimeRangeText(timeRange, i18n.defaultLabel)}
         </div>
 
         <OverflowMenu
@@ -88,7 +98,7 @@ const CardRangePicker = ({
                 key={i}
                 hasDivider={index === 0}
                 onClick={() => handleTimeRange(i)}
-                itemText={timeRangeOptions[i]}
+                itemText={getTimeRangeText(i)}
                 className={classnames({
                   [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
                 })}
@@ -101,7 +111,7 @@ const CardRangePicker = ({
                 key={i}
                 hasDivider={index === 0}
                 onClick={() => handleTimeRange(i)}
-                itemText={timeRangeOptions[i]}
+                itemText={getTimeRangeText(i)}
                 className={classnames({
                   [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
                 })}
