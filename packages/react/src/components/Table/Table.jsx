@@ -846,7 +846,12 @@ const Table = (props) => {
       ) : null}
       <div
         className={classnames('addons-iot-table-container', {
-          [`addons-iot-table-container--${others.size}`]: others.size,
+          // workaround hack to prevent double scrolling of the table and a filter dropdown
+          // because the Dropdown and Multiselect components don't support opening the menu
+          // items outside of the parent. This sets a minimum height for the table and applies
+          // a max-height to the dropdown list container based on that minimum height to prevent
+          // this issue.
+          [`addons-iot-table-container--dropdown-height-fix`]: options.hasFilter,
         })}
       >
         <CarbonTable

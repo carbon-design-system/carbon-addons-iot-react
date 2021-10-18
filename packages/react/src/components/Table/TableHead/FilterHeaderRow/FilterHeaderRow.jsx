@@ -6,6 +6,7 @@ import memoize from 'lodash/memoize';
 import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 import isEqual from 'lodash/isEqual';
+import warning from 'warning';
 
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
@@ -78,6 +79,17 @@ class FilterHeaderRow extends Component {
     testId: PropTypes.string,
     /** shows an additional column that can expand/shrink as the table is resized  */
     showExpanderColumn: PropTypes.bool.isRequired,
+    /** Size prop from Carbon to shrink row height (and header height in some instances) */
+    size: function checkProps(props, propName, componentName) {
+      if (['compact', 'short', 'normal', 'tall'].includes(props[propName])) {
+        warning(
+          false,
+          `The value \`${props[propName]}\` has been deprecated for the ` +
+            `\`${propName}\` prop on the ${componentName} component. It will be removed in the next major ` +
+            `release. Please use 'xs', 'sm', 'md', 'lg', or 'xl' instead.`
+        );
+      }
+    },
   };
 
   static defaultProps = {
@@ -94,10 +106,11 @@ class FilterHeaderRow extends Component {
     lightweight: false,
     hasFastFilter: true,
     testId: '',
+    size: undefined,
   };
 
   state = {
-    maxHeight: 'unset',
+    dropdownMaxHeight: 'unset',
     filterValues: this.props.columns.reduce(
       (acc, curr) => ({
         ...acc,
@@ -143,8 +156,9 @@ class FilterHeaderRow extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { maxHeight } = this.state;
-    if (maxHeight !== prevState.maxHeight) {
+    const { dropdownMaxHeight } = this.state;
+    const { size } = this.props;
+    if (dropdownMaxHeight !== prevState.dropdownMaxHeight || size !== prevProps.size) {
       this.updateDropdownHeight();
     }
   }
@@ -157,10 +171,10 @@ class FilterHeaderRow extends Component {
         const { height: containerHeight } = tableContainer.getBoundingClientRect();
         const { height: headHeight } = tableHead.getBoundingClientRect();
 
-        const height = containerHeight - headHeight;
+        const height = containerHeight - headHeight - 16;
 
         this.setState({
-          maxHeight: `${height}px`,
+          dropdownMaxHeight: `${height}px`,
         });
       }
     }
@@ -218,13 +232,13 @@ class FilterHeaderRow extends Component {
       testId,
       showExpanderColumn,
     } = this.props;
-    const { maxHeight, filterValues } = this.state;
+    const { dropdownMaxHeight, filterValues } = this.state;
     const visibleColumns = ordering.filter((c) => !c.isHidden);
     return isVisible ? (
       <TableRow
         data-testid={testId}
         style={{
-          '--filter-header-dropdown-max-height': maxHeight,
+          '--filter-header-dropdown-max-height': dropdownMaxHeight,
         }}
       >
         {hasRowSelection === 'multi' ? (

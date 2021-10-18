@@ -802,7 +802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </div>
                         </section>
                         <div
-                          className="addons-iot-table-container"
+                          className="addons-iot-table-container addons-iot-table-container--dropdown-height-fix"
                         >
                           <div
                             className="bx--data-table-content"
@@ -20176,7 +20176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </div>
                       </section>
                       <div
-                        className="addons-iot-table-container"
+                        className="addons-iot-table-container addons-iot-table-container--dropdown-height-fix"
                       >
                         <div
                           className="bx--data-table-content"

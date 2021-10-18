@@ -41,36 +41,10 @@ td.#{$iot-prefix}--table__cell--sortable {
 }
 
 .addons-iot-table-container {
-  &--xs {
-    min-height: calc(#{$spacing-06} * 10);
+  &--dropdown-height-fix {
+    min-height: calc(#{$spacing-10} * 5);
     .#{$prefix}--data-table-content {
-      min-height: calc(#{$spacing-06} * 10);
-    }
-  }
-
-  &--sm {
-    min-height: calc(#{$spacing-07} * 8);
-    .#{$prefix}--data-table-content {
-      min-height: calc(#{$spacing-07} * 8);
-    }
-  }
-  &--md {
-    min-height: calc(#{$spacing-08} * 6);
-    .#{$prefix}--data-table-content {
-      min-height: calc(#{$spacing-08} * 6);
-    }
-  }
-  &--lg {
-    min-height: calc(#{$spacing-09} * 5);
-    .#{$prefix}--data-table-content {
-      min-height: calc(#{$spacing-09} * 5);
-    }
-  }
-  &--xl {
-    min-height: calc(#{$spacing-10} * 4);
-
-    .#{$prefix}--data-table-content {
-      min-height: calc(#{$spacing-10} * 4);
+      min-height: calc(#{$spacing-10} * 5);
     }
   }
 }
