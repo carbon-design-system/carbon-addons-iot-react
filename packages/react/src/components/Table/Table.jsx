@@ -851,7 +851,7 @@ const Table = (props) => {
           // items outside of the parent. This sets a minimum height for the table and applies
           // a max-height to the dropdown list container based on that minimum height to prevent
           // this issue.
-          [`addons-iot-table-container--dropdown-height-fix`]: options.hasFilter,
+          [`${iotPrefix}-table-container--dropdown-height-fix`]: options.hasFilter,
         })}
       >
         <CarbonTable
