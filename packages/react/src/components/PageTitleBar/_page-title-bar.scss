@@ -41,7 +41,7 @@
       'title                actions             actions' $spacing-08
       'description          description         description' auto
       'content              content             content' max-content /
-      minmax(200px, 60%) auto min-content;
+      auto min-content min-content;
 
     .page-title-bar--sticky & {
       @include condensed-style();
