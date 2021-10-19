@@ -173,26 +173,6 @@
       }
     }
 
-    // LIGHTWEIGHT STYLING
-    &.lightweight {
-      th {
-        border-color: $interactive-02;
-        // Override Carbon bottom border
-        &.#{$iot-prefix}--table-header__group-row-spacer {
-          border-bottom: none;
-        }
-      }
-      // Top line
-      .#{$iot-prefix}--table-header__group-row th,
-      .#{$iot-prefix}--table-header--span-group-row {
-        border-top-width: $border-width;
-      }
-      // Bottom line
-      .#{$iot-prefix}--table-header__column-row th {
-        border-bottom-width: $border-width;
-      }
-    }
-
     // RTL STYLING
     [dir='rtl'] & {
       .#{$iot-prefix}--table-header__column-row {
