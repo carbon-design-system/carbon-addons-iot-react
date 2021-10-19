@@ -1646,20 +1646,20 @@ export const WithRowExpansionAndActions = () => {
         ['xs', 'sm', 'md', 'lg', 'xl'],
         'lg'
       )}
+      expandedData={[
+        {
+          rowId: 'row-2',
+          content: <RowExpansionContent rowId="row-2" />,
+        },
+        {
+          rowId: 'row-5',
+          content: <RowExpansionContent rowId="row-5" />,
+        },
+      ]}
       view={{
         filters: [],
         table: {
           ordering: defaultOrdering,
-          expandedRows: [
-            {
-              rowId: 'row-2',
-              content: <RowExpansionContent rowId="row-2" />,
-            },
-            {
-              rowId: 'row-5',
-              content: <RowExpansionContent rowId="row-5" />,
-            },
-          ],
           rowActions: [
             {
               rowId: 'row-1',

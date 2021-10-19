@@ -157,9 +157,9 @@ export const tableRowClick = (rowId, instanceId = null) => ({
   instanceId,
 });
 
-export const tableRowExpand = (rowId, isExpanded, instanceId = null) => ({
+export const tableRowExpand = (rowId, isExpanded, options, instanceId = null) => ({
   type: TABLE_ROW_EXPAND,
-  payload: { rowId, isExpanded },
+  payload: { rowId, isExpanded, options },
   instanceId,
 });
 
