@@ -12,6 +12,15 @@ import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
 jest.mock('lodash/debounce', () => (fn) => fn);
 
+const getListItems = (num) =>
+  Array(num)
+    .fill(0)
+    .map((i, idx) => ({
+      id: (idx + 1).toString(),
+      content: { value: `Item ${idx + 1}` },
+      isSelectable: true,
+    }));
+
 describe('HierarchyList', () => {
   const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
 
@@ -788,6 +797,34 @@ describe('HierarchyList', () => {
     userEvent.click(within(screen.getByTestId('list')).getByText('Cancel'));
     expect(screen.queryByText('1 item selected')).toBeNull();
     expect(container.querySelectorAll('input[checked]').length).toBe(0);
+  });
+
+  describe('isVirtualList', () => {
+    beforeEach(() => {
+      jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+        height: 800,
+      }));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('should maintain the current page when page size changes', () => {
+      const listItems = getListItems(20);
+      const { rerender } = render(
+        <HierarchyList title="Test List" items={listItems} pageSize="lg" isVirtualList />
+      );
+
+      expect(screen.getByText('Item 9')).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+      expect(screen.getByText('Item 19')).toBeVisible();
+
+      rerender(<HierarchyList title="Test List" items={listItems} pageSize="sm" isVirtualList />);
+
+      expect(screen.getByText('Page 2')).toBeVisible();
+      expect(screen.getByText('Item 9')).toBeVisible();
+    });
   });
 
   it('should show custom empty state when given', () => {

@@ -33,6 +33,8 @@ export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
 export HierarchyList from './components/List/HierarchyList';
+export ListContent from './components/List/ListContent/ListContent';
+export VirtualListContent from './components/List/VirtualListContent/VirtualListContent';
 export BarChartCard from './components/BarChartCard/BarChartCard';
 export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';

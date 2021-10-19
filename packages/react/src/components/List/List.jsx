@@ -1,17 +1,15 @@
 import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Bee32 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
-import { SkeletonText } from '../SkeletonText';
-import { EditingStyle, editingStyleIsMultiple, DragAndDrop } from '../../utils/DragAndDropUtils';
-import { Checkbox, Button } from '../..';
+import { EditingStyle, DragAndDrop } from '../../utils/DragAndDropUtils';
 import { OverridePropTypes } from '../../constants/SharedPropTypes';
 
-import ListItem from './ListItem/ListItem';
 import DefaultListHeader from './ListHeader/ListHeader';
+import DefaultListContent from './ListContent/ListContent';
+import VirtualListContent from './VirtualListContent/VirtualListContent';
 
 const { iotPrefix } = settings;
 
@@ -41,9 +39,10 @@ const propTypes = {
   }),
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
-  /** Node to override the default header */
+  /** Node to override the default header or content */
   overrides: PropTypes.shape({
     header: OverridePropTypes,
+    content: OverridePropTypes,
   }),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
@@ -60,6 +59,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** optional prop to use a virtualized version of the list instead of rendering all items */
+  isVirtualList: PropTypes.bool,
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   /** i18n strings */
@@ -102,6 +103,7 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
+  isVirtualList: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
@@ -125,11 +127,6 @@ const defaultProps = {
   handleLoadMore: () => {},
 };
 
-const getAdjustedNestingLevel = (items, currentLevel) =>
-  items.some((item) => item?.children && item.children.length > 0)
-    ? currentLevel + 1
-    : currentLevel;
-
 const List = forwardRef((props, ref) => {
   // Destructuring this way is needed to retain the propTypes and defaultProps
   const {
@@ -150,6 +147,7 @@ const List = forwardRef((props, ref) => {
     editingStyle,
     isLargeRow,
     isLoading,
+    isVirtualList,
     onItemMoved,
     itemWillMove,
     emptyState,
@@ -158,118 +156,9 @@ const List = forwardRef((props, ref) => {
     loadingMoreIds,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-  const selectedItemRef = ref;
   const ListHeader = overrides?.header?.component || DefaultListHeader;
-
-  const renderItemAndChildren = (item, index, parentId, level) => {
-    const hasChildren = item?.children && item.children.length > 0;
-    const isSelected = selectedIds.some((id) => item.id === id);
-    const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
-    const isLoadingMore = loadingMoreIds.includes(item.id);
-
-    const {
-      content: { value, secondaryValue, icon, rowActions, tags },
-      isSelectable,
-      isCategory,
-      disabled,
-    } = item;
-
-    return [
-      // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
-      <div
-        key={`${item.id}-list-item-parent-${level}-${value}`}
-        data-floating-menu-container
-        className={`${iotPrefix}--list-item-parent`}
-      >
-        <ListItem
-          id={item.id}
-          index={index}
-          key={`${item.id}-list-item-${level}-${value}`}
-          nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
-          value={value}
-          icon={
-            editingStyleIsMultiple(editingStyle) ? (
-              <Checkbox
-                id={`${item.id}-checkbox`}
-                name={item.value}
-                data-testid={`${item.id}-checkbox`}
-                labelText=""
-                onClick={() => handleSelect(item.id, parentId)}
-                checked={isSelected}
-              />
-            ) : (
-              icon
-            )
-          }
-          disabled={disabled}
-          iconPosition={iconPosition}
-          editingStyle={editingStyle}
-          secondaryValue={secondaryValue}
-          rowActions={rowActions}
-          onSelect={() => handleSelect(item.id, parentId)}
-          onExpand={toggleExpansion}
-          onItemMoved={onItemMoved}
-          itemWillMove={itemWillMove}
-          selected={isSelected}
-          expanded={isExpanded}
-          isExpandable={hasChildren}
-          isLargeRow={isLargeRow}
-          isCategory={isCategory}
-          isSelectable={editingStyle === null && isSelectable}
-          i18n={mergedI18n}
-          selectedItemRef={isSelected ? selectedItemRef : null}
-          tags={tags}
-        />
-      </div>,
-      ...(hasChildren && isExpanded
-        ? item.children
-            .map((child, nestedIndex) => {
-              return renderItemAndChildren(
-                child,
-                nestedIndex,
-                item.id,
-                getAdjustedNestingLevel(item?.children, level)
-              );
-            })
-            .concat(
-              item.hasLoadMore
-                ? [
-                    <Button
-                      key={`${item.id}-list-item-parent-loading`}
-                      className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
-                      onClick={() => handleLoadMore(item.id)}
-                      data-testid={`${testId}-${item.id}-load-more`}
-                      kind="ghost"
-                      loading={isLoadingMore}
-                    >
-                      <div className={`${iotPrefix}--load-more-row--content`}>
-                        {mergedI18n.loadMore}
-                      </div>
-                    </Button>,
-                  ]
-                : []
-            )
-        : []),
-    ];
-  };
-
-  const listItems = items.map((item, index) =>
-    renderItemAndChildren(item, index, null, getAdjustedNestingLevel(items, 0))
-  );
-
-  const emptyContent =
-    typeof emptyState === 'string' ? (
-      <div
-        className={classnames(`${iotPrefix}--list--empty-state`, {
-          [`${iotPrefix}--list--empty-state__full-height`]: isFullHeight,
-        })}
-      >
-        <Bee32 />
-        <p>{emptyState}</p>
-      </div>
-    ) : (
-      emptyState
-    );
+  const ListContent =
+    overrides?.content?.component || isVirtualList ? VirtualListContent : DefaultListContent;
 
   return (
     <DragAndDrop>
@@ -277,6 +166,7 @@ const List = forwardRef((props, ref) => {
         data-testid={testId}
         className={classnames(`${iotPrefix}--list`, className, {
           [`${iotPrefix}--list__full-height`]: isFullHeight,
+          [`${iotPrefix}--list--virtual`]: isVirtualList,
         })}
       >
         <ListHeader
@@ -288,26 +178,27 @@ const List = forwardRef((props, ref) => {
           testId={`${testId}-header`}
           {...overrides?.header?.props}
         />
-
-        <div
-          className={classnames(
-            {
-              // If FullHeight, the content's overflow shouldn't be hidden
-              [`${iotPrefix}--list--content__full-height`]: isFullHeight,
-            },
-            `${iotPrefix}--list--content`
-          )}
-        >
-          {!isLoading ? (
-            <>{listItems.length ? listItems : emptyContent}</>
-          ) : (
-            <SkeletonText
-              className={`${iotPrefix}--list--skeleton`}
-              width="90%"
-              data-testid={`${testId}-loading`}
-            />
-          )}
-        </div>
+        <ListContent
+          emptyState={emptyState}
+          items={items}
+          isFullHeight={isFullHeight}
+          testId={testId}
+          isLoading={isLoading}
+          selectedIds={selectedIds}
+          expandedIds={expandedIds}
+          handleSelect={handleSelect}
+          toggleExpansion={toggleExpansion}
+          iconPosition={iconPosition}
+          editingStyle={editingStyle}
+          isLargeRow={isLargeRow}
+          onItemMoved={onItemMoved}
+          itemWillMove={itemWillMove}
+          handleLoadMore={handleLoadMore}
+          loadingMoreIds={loadingMoreIds}
+          selectedItemRef={ref}
+          i18n={mergedI18n}
+          {...overrides?.content?.props}
+        />
         {pagination && !isLoading ? (
           <div className={`${iotPrefix}--list--page`}>
             <SimplePagination {...pagination} />

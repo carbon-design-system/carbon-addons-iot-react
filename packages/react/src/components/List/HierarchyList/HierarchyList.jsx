@@ -40,6 +40,8 @@ const propTypes = {
   /** Determines if items can be deselected, meaning once an item is selected,
    * it can only be deselected by selecting another item */
   hasDeselection: PropTypes.bool,
+  /** optional prop to use a virtualized version of the list instead of rendering all items */
+  isVirtualList: PropTypes.bool,
   /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** ListItems to be displayed */
@@ -120,6 +122,7 @@ const defaultProps = {
   isFullHeight: false,
   isLoading: false,
   isLargeRow: false,
+  isVirtualList: false,
   pageSize: null,
   defaultSelectedId: null,
   defaultExpandedIds: [],
@@ -225,6 +228,7 @@ const HierarchyList = ({
   isFullHeight,
   isLoading,
   isLargeRow,
+  isVirtualList,
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
@@ -257,15 +261,18 @@ const HierarchyList = ({
     }
   }, [items, previousItems]);
 
-  const selectedItemRef = useCallback((node) => {
-    if (node && node.parentNode) {
-      scrollIntoView(node.parentNode, {
-        scrollMode: 'if-needed',
-        block: 'nearest',
-        inline: 'nearest',
-      });
-    }
-  }, []);
+  const selectedItemRef = useCallback(
+    (node) => {
+      if (node && node.parentNode && !isVirtualList) {
+        scrollIntoView(node.parentNode, {
+          scrollMode: 'if-needed',
+          block: 'nearest',
+          inline: 'nearest',
+        });
+      }
+    },
+    [isVirtualList]
+  );
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
@@ -496,6 +503,7 @@ const HierarchyList = ({
         isFullHeight={isFullHeight}
         isLoading={isLoading}
         isLargeRow={isLargeRow}
+        isVirtualList={isVirtualList}
         itemWillMove={itemWillMove}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
         handleSelect={handleSelect}

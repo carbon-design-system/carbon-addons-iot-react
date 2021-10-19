@@ -95,6 +95,7 @@ const defaultProps = {
   content: {
     colors: undefined,
     groupDataSourceId: 'group',
+    legendAlignment: 'left',
     legendPosition: 'bottom',
     truncation: {
       type: 'end_line',
@@ -136,6 +137,7 @@ const PieChartCard = ({
       customTooltip,
       groupDataSourceId,
       labelsFormatter,
+      legendAlignment,
       legendPosition,
       truncation,
     },
@@ -170,7 +172,7 @@ const PieChartCard = ({
       getFillColor: (...args) => getColor(colors, ...args),
       getStrokeColor: (...args) => getColor(colors, ...args),
       legend: {
-        alignment: 'center',
+        alignment: legendAlignment,
         position: legendPosition,
         enabled: values.length > 1,
         clickable: !isEditable,
