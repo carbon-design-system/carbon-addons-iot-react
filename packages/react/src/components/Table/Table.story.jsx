@@ -588,7 +588,6 @@ export const BasicDumbTable = () => {
     'Basic `dumb` table'
   );
   const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
-  const lightweight = boolean('Show an alternate header style (lightweight)', false);
   const hasColumnSelection = boolean(
     'Enables choosing which columns are visible or drag-and-drop reorder them (options.hasColumnSelection)',
     false
@@ -608,7 +607,6 @@ export const BasicDumbTable = () => {
       id="table"
       secondaryTitle={secondaryTitle}
       useZebraStyles={useZebraStyles}
-      lightweight={lightweight}
       tooltip={<div>Now with custom tooltip content!</div>}
       columns={
         hasMultiSort
@@ -1206,7 +1204,6 @@ export const TableExampleWithCreateSaveViews = () => {
           },
         }}
         isSortable
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           ...baseState.options,
           hasResize: true,

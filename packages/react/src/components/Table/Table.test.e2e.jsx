@@ -143,7 +143,6 @@ describe('Table visual regression tests', () => {
           testId="snapshot-2"
           columns={columns}
           data={tableData}
-          lightweight
           options={{
             hasAggregations: true,
             hasColumnSelection: true,

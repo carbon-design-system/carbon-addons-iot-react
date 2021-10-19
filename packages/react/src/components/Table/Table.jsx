@@ -14,6 +14,7 @@ import { settings } from '../../constants/Settings';
 import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 import experimental from '../../internal/experimental';
+import deprecate from '../../internal/deprecate';
 
 import {
   TableColumnsPropTypes,
@@ -47,8 +48,8 @@ const propTypes = {
   tooltip: PropTypes.node,
   /** render zebra stripes or not */
   useZebraStyles: PropTypes.bool,
-  /**  lighter styling where regular table too visually heavy */
-  lightweight: PropTypes.bool,
+  /**  lighter styling where regular table too visually heavy. Deprecated. */
+  lightweight: deprecate(PropTypes.bool, `The 'lightweight' prop has been deprecated.`),
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
   /** Row value data for the body of the table */
@@ -311,7 +312,7 @@ const propTypes = {
 export const defaultProps = (baseProps) => ({
   id: null,
   useZebraStyles: false,
-  lightweight: false,
+  lightweight: undefined,
   title: null,
   tooltip: null,
   secondaryTitle: null,

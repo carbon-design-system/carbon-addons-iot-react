@@ -118,7 +118,6 @@ export const StatefulTableWithNestedRowItems = (props) => {
           },
         }}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         {...props}
       />
     </div>
@@ -167,7 +166,6 @@ export const SimpleStatefulExample = () => {
       })}
       style={{ maxWidth: select('table width', ['auto', '300px'], 'auto') }}
       useZebraStyles={boolean('Alternate colors in table rows (useZebraStyles)', false)}
-      lightweight={boolean('Show an alternate header style (lightweight)', false)}
       size={select(
         'Sets the height of the table rows (size)',
         ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -354,7 +352,6 @@ export const StatefulExampleWithSingleNestedHierarchy = () => {
           ),
         }}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
       />
     </div>
   );
@@ -426,7 +423,6 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => {
           width: '150px',
         }))}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         size={select(
           'Sets the height of the table rows (size)',
           ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -510,7 +506,6 @@ export const SimpleStatefulExampleWithAlignment = () => {
           'lg'
         )}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           hasRowSelection: select(
             'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
@@ -562,7 +557,6 @@ export const StatefulExampleWithEveryThirdRowUnselectable = () => {
         isSelectable: index % 3 !== 0,
       }))}
       actions={tableActions}
-      lightweight={boolean('Show an alternate header style (lightweight)', false)}
       size={select(
         'Sets the height of the table rows (size)',
         ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -638,7 +632,6 @@ export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => {
             onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, 'my table data'),
           },
         }}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         size={select(
           'Sets the height of the table rows (size)',
           ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -1122,7 +1115,6 @@ export const StatefulExampleWithCreateSaveViews = () => {
           ...tableActions,
           onUserViewModified,
         }}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         size={select(
           'Sets the height of the table rows (size)',
           ['xs', 'sm', 'md', 'lg', 'xl'],
