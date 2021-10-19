@@ -46,22 +46,6 @@
         top: calc(#{$col-height} * -1);
       }
     }
-
-    &.lightweight {
-      // lightweight adds extra 2 borders at top and bottom
-      $extra-borders-width: calc(2px * 2);
-      // Subtract width for extra borders from the overflow button height.
-      .#{$iot-prefix}--table-head--overflow {
-        max-height: calc(#{$col-height} - #{$extra-borders-width}) !important;
-      }
-      // Subtract width for extra borders from the table headers
-      th.#{$iot-prefix}--table-header--span-group-row {
-        button.#{$iot-prefix}--table-head--table-header,
-        a.#{$iot-prefix}--table-head--table-header {
-          height: calc(calc(#{$group-height} + #{$col-height}) - #{$extra-borders-width});
-        }
-      }
-    }
   }
 }
 
