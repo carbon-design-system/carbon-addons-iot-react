@@ -436,7 +436,7 @@ describe('table reducer', () => {
       const tableSingleWithExpandedRow = tableReducer(initialState, tableRowExpand('row-1', true));
       const newTableSingleWithExpandedRow = tableReducer(
         tableSingleWithExpandedRow,
-        tableRowExpand('row-2', true, { expandRowsExclusively: true })
+        tableRowExpand('row-2', true, null, { expandRowsExclusively: true })
       );
       expect(newTableSingleWithExpandedRow.view.table.expandedIds).toEqual(['row-2']);
     });
