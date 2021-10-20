@@ -247,7 +247,7 @@ WithCustomRangeSelector.storyName = 'with custom range selector';
 export const WithDateTimePickerRangeSelector = () => {
   const dateTimePickerSetting = select('range', [true, false, 'iconOnly'], 'iconOnly');
   return (
-    <div style={{ width: `300px`, margin: 20 }}>
+    <div style={{ width: text(`card width`, '300px'), margin: 20 }}>
       <Card
         title="Card with date picker"
         id="facilitycard-with-date-picker"
@@ -263,12 +263,12 @@ export const WithDateTimePickerRangeSelector = () => {
           range: dateTimePickerSetting,
         }}
         timeRangeOptions={object('timeRangeOptions', {
-          last48Hours: 'Last 48 Hours',
-          last24Hours: 'Last 24 Hours',
-          last8Hours: 'Last 8 Hours',
-          last4Hours: 'Last 4 Hours',
-          last2Hours: 'Last 2 Hours',
-          lastHour: 'Last Hour',
+          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
+          lastHour: { label: 'Last Hour', offset: 60 * 60 },
         })}
       />
     </div>
