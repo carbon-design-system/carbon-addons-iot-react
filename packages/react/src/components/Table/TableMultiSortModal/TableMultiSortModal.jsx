@@ -46,7 +46,6 @@ const propTypes = {
     multiSortAscending: PropTypes.string,
     multiSortDescending: PropTypes.string,
     multiSortCloseModal: PropTypes.string,
-    multiSortClearAll: PropTypes.string,
     multiSortOpenMenu: PropTypes.string,
     multiSortCloseMenu: PropTypes.string,
     multiSortDragHandle: PropTypes.string,
@@ -172,8 +171,19 @@ const TableMultiSortModal = ({
   const handleAddMultiSortColumn = (index) => () => {
     setSelectedMultiSortColumns((prev) => {
       const clone = [...prev];
+
+      let nextColumnIndex = 0;
+      // If the default column is in the first position, set it before adding the next column
+      if (clone.length === 1 && Object.keys(clone[0]).length === 0) {
+        clone.splice(index, 1, {
+          columnId: multiSortColumns.filter((col) => !col.disabled)[nextColumnIndex]?.id,
+          direction: 'ASC',
+        });
+        nextColumnIndex = 1;
+      }
+
       clone.splice(index + 1, 0, {
-        columnId: '',
+        columnId: multiSortColumns.filter((col) => !col.disabled)[nextColumnIndex]?.id,
         direction: 'ASC',
       });
       return clone;
@@ -219,20 +229,17 @@ const TableMultiSortModal = ({
     onClearMultiSortColumns();
   };
 
-  const onMoveRow = useCallback(
-    (dragIndex, hoverIndex) => {
-      const row = selectedMultiSortColumns[dragIndex];
-      setSelectedMultiSortColumns(
-        update(selectedMultiSortColumns, {
-          $splice: [
-            [dragIndex, 1],
-            [hoverIndex, 0, row],
-          ],
-        })
-      );
-    },
-    [selectedMultiSortColumns]
-  );
+  const onMoveRow = useCallback((dragIndex, hoverIndex) => {
+    setSelectedMultiSortColumns((prev) => {
+      const row = prev[dragIndex];
+      return update(prev, {
+        $splice: [
+          [dragIndex, 1],
+          [hoverIndex, 0, row],
+        ],
+      });
+    });
+  }, []);
 
   return (
     <ComposedModal
@@ -279,9 +286,9 @@ const TableMultiSortModal = ({
           return (
             <TableMultiSortRow
               key={`${columnId}-${direction}`}
-              columnId={columnId}
-              defaultColumn={defaultColumn}
-              defaultDirection={defaultDirection}
+              columnId={columnId || defaultColumn?.id}
+              defaultColumnId={defaultColumn?.id}
+              defaultDirectionId={defaultDirection?.id}
               i18n={i18n}
               index={index}
               multiSortColumns={multiSortColumns}

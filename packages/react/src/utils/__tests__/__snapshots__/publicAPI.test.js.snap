@@ -1056,9 +1056,6 @@ Map {
             "multiSortAscending": Object {
               "type": "string",
             },
-            "multiSortClearAll": Object {
-              "type": "string",
-            },
             "multiSortCloseMenu": Object {
               "type": "string",
             },
@@ -1072,6 +1069,12 @@ Map {
               "type": "string",
             },
             "multiSortDirectionTitle": Object {
+              "type": "string",
+            },
+            "multiSortDragHandle": Object {
+              "type": "string",
+            },
+            "multiSortModalClearLabel": Object {
               "type": "string",
             },
             "multiSortModalPrimaryLabel": Object {
@@ -1787,6 +1790,7 @@ Map {
         "multiSortDescending": "Descending",
         "multiSortDirectionLabel": "Select a direction",
         "multiSortDirectionTitle": "Sort order",
+        "multiSortDragHandle": "Drag handle",
         "multiSortModalPrimaryLabel": "Sort",
         "multiSortModalSecondaryLabel": "Cancel",
         "multiSortModalTitle": "Select columns to sort",
@@ -2094,9 +2098,6 @@ Map {
             "multiSortAscending": Object {
               "type": "string",
             },
-            "multiSortClearAll": Object {
-              "type": "string",
-            },
             "multiSortCloseMenu": Object {
               "type": "string",
             },
@@ -2110,6 +2111,12 @@ Map {
               "type": "string",
             },
             "multiSortDirectionTitle": Object {
+              "type": "string",
+            },
+            "multiSortDragHandle": Object {
+              "type": "string",
+            },
+            "multiSortModalClearLabel": Object {
               "type": "string",
             },
             "multiSortModalPrimaryLabel": Object {
@@ -3547,6 +3554,7 @@ Map {
         "multiSortDescending": "Descending",
         "multiSortDirectionLabel": "Select a direction",
         "multiSortDirectionTitle": "Sort order",
+        "multiSortDragHandle": "Drag handle",
         "multiSortModalPrimaryLabel": "Sort",
         "multiSortModalSecondaryLabel": "Cancel",
         "multiSortModalTitle": "Select columns to sort",

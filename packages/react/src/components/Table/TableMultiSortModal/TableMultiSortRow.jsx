@@ -12,12 +12,8 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   columnId: PropTypes.string.isRequired,
-  defaultColumn: PropTypes.shape({
-    id: PropTypes.string,
-  }).isRequired,
-  defaultDirection: PropTypes.shape({
-    id: PropTypes.string,
-  }).isRequired,
+  defaultColumnId: PropTypes.string.isRequired,
+  defaultDirectionId: PropTypes.string.isRequired,
   i18n: PropTypes.shape({
     multiSortSelectColumnSortByTitle: PropTypes.stirng,
     multiSortSelectColumnThenByTitle: PropTypes.string,
@@ -47,8 +43,8 @@ const propTypes = {
 
 export const TableMultiSortRow = ({
   columnId,
-  defaultColumn,
-  defaultDirection,
+  defaultColumnId,
+  defaultDirectionId,
   i18n,
   index,
   multiSortColumns,
@@ -150,7 +146,7 @@ export const TableMultiSortRow = ({
             ? i18n.multiSortSelectColumnSortByTitle
             : i18n.multiSortSelectColumnThenByTitle
         }
-        defaultValue={defaultColumn?.id}
+        defaultValue={defaultColumnId}
       >
         {multiSortColumns.map((col) => (
           <SelectItem
@@ -166,7 +162,7 @@ export const TableMultiSortRow = ({
         id={`${columnId}-select-sort-direction`}
         helperText={i18n.multiSortDirectionLabel}
         labelText={i18n.multiSortDirectionTitle}
-        defaultValue={defaultDirection.id}
+        defaultValue={defaultDirectionId}
         onChange={onSelectMultiSortColumnDirection}
       >
         {sortDirections.map((dir) => (
