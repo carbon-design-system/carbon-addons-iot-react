@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Close16 } from '@carbon/icons-react';
 import { white } from '@carbon/colors';
 
-import { keyCodes } from '../../../constants/KeyCodeConstants';
+import { keyboardKeys } from '../../../constants/KeyCodeConstants';
 import { HeaderActionItemPropTypes } from '../Header';
 import deprecate from '../../../internal/deprecate';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
@@ -113,9 +113,9 @@ const HeaderAction = ({
   const handleHeaderKeyDown = (event) => {
     // Handle keydowns for opening and closing the menus
     if (
-      (event.keyCode === keyCodes.ESCAPE && isExpanded) ||
-      event.keyCode === keyCodes.SPACE ||
-      event.keyCode === keyCodes.ENTER
+      (event.key === keyboardKeys.ESCAPE && isExpanded) ||
+      event.key === keyboardKeys.SPACE ||
+      event.key === keyboardKeys.ENTER
     ) {
       event.stopPropagation();
       event.preventDefault();
