@@ -1,13 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import fileDownload from 'js-file-download';
 
-import Table from '../Table/Table';
 import { barChartData } from '../../utils/barChartDataSample';
-import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 
 import BarChartCard from './BarChartCard';
 import * as barChartUtils from './barChartUtils';
@@ -51,23 +49,23 @@ describe('BarChartCard', () => {
   });
 
   it('does not show bar chart when loading', () => {
-    const wrapper = mount(<BarChartCard {...barChartCardProps} isLoading />);
-    expect(wrapper.find('#mock-bar-chart-simple')).toHaveLength(0);
+    const { container } = render(<BarChartCard {...barChartCardProps} isLoading />);
+    expect(container.querySelectorAll('#mock-bar-chart-simple')).toHaveLength(0);
   });
 
   it('does not show bar chart when empty data', () => {
-    const wrapper = mount(
+    const { container } = render(
       <BarChartCard
         {...barChartCardProps}
         values={barChartData.quarters.filter((q) => q.quarter === 'NOT_VALID')}
       />
     );
-    expect(wrapper.find('#mock-bar-chart-simple')).toHaveLength(0);
+    expect(container.querySelectorAll('#mock-bar-chart-simple')).toHaveLength(0);
   });
 
   it('shows table when isExpanded', () => {
-    const wrapper = mount(<BarChartCard {...barChartCardProps} isExpanded />);
-    expect(wrapper.find(Table)).toHaveLength(1);
+    const { container } = render(<BarChartCard {...barChartCardProps} isExpanded />);
+    expect(container.querySelectorAll('#BarChartCard-table')).toHaveLength(1);
   });
 
   it('onCsvDownload should fire when download button is clicked', async () => {
@@ -85,7 +83,7 @@ describe('BarChartCard', () => {
   });
 
   it('shows groupedBarChart on grouped data', () => {
-    const wrapper = mount(
+    const { container } = render(
       <BarChartCard
         {...barChartCardProps}
         content={{
@@ -108,11 +106,11 @@ describe('BarChartCard', () => {
         values={barChartData.quarters.filter((a) => a.quarter === '2020-Q1')}
       />
     );
-    expect(wrapper.find('#mock-bar-chart-grouped')).toHaveLength(1);
+    expect(container.querySelectorAll('#mock-bar-chart-grouped')).toHaveLength(1);
   });
 
   it('shows stackedBarChart', () => {
-    const wrapper = mount(
+    const { container } = render(
       <BarChartCard
         {...barChartCardProps}
         content={{
@@ -135,11 +133,11 @@ describe('BarChartCard', () => {
         values={barChartData.quarters.filter((a) => a.quarter === '2020-Q3')}
       />
     );
-    expect(wrapper.find('#mock-bar-chart-stacked')).toHaveLength(1);
+    expect(container.querySelectorAll('#mock-bar-chart-stacked')).toHaveLength(1);
   });
 
   it('shows a timeSeries chart', () => {
-    const wrapper = mount(
+    const { container } = render(
       <BarChartCard
         {...barChartCardProps}
         content={{
@@ -157,11 +155,11 @@ describe('BarChartCard', () => {
         values={barChartData.timestamps.filter((t) => t.city === 'Amsterdam')}
       />
     );
-    expect(wrapper.find('#mock-bar-chart-stacked')).toHaveLength(1);
+    expect(container.querySelectorAll('#mock-bar-chart-stacked')).toHaveLength(1);
   });
 
   it('shows a horizontal chart', () => {
-    const wrapper = mount(
+    const { container } = render(
       <BarChartCard
         {...barChartCardProps}
         content={{
@@ -185,7 +183,7 @@ describe('BarChartCard', () => {
         values={barChartData.quarters.filter((a) => a.quarter === '2020-Q1')}
       />
     );
-    expect(wrapper.find('#mock-bar-chart-grouped')).toHaveLength(1);
+    expect(container.querySelectorAll('#mock-bar-chart-grouped')).toHaveLength(1);
   });
 
   it('i18n string test', () => {
@@ -220,6 +218,22 @@ describe('BarChartCard', () => {
       undefined,
       'city',
       undefined
+    );
+    jest.resetAllMocks();
+  });
+  it('should throw a prop warning when using an unsupported size', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const { rerender } = render(<BarChartCard {...barChartCardProps} size={CARD_SIZES.SMALL} />);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`BarChartCard` prop `size` cannot be `SMALL`')
+    );
+    rerender(<BarChartCard {...barChartCardProps} size={CARD_SIZES.SMALLWIDE} />);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`BarChartCard` prop `size` cannot be `SMALLWIDE`')
+    );
+    rerender(<BarChartCard {...barChartCardProps} size={CARD_SIZES.SMALLFULL} />);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`BarChartCard` prop `size` cannot be `SMALLFULL`')
     );
     jest.resetAllMocks();
   });

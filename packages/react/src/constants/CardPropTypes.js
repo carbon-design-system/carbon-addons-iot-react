@@ -270,9 +270,13 @@ export const BarChartCardPropTypes = {
       );
     }
     // If the size
-    if (props[propName] === CARD_SIZES.SMALL || props[propName] === CARD_SIZES.SMALLWIDE) {
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL
+    ) {
       error = new Error(
-        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`SMALL\` || \`SMALLWIDE\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
       );
     }
     return error;
@@ -385,6 +389,8 @@ export const PieCardPropTypes = {
      * Function to format the labels. Input to the function is a wrapped data object containing additional
      * chart label info such as x & y positions etc */
     labelsFormatter: PropTypes.func,
+    /** The alignment of the legend in relation to the chart, can be 'left', 'center', or 'right'. */
+    legendAlignment: PropTypes.oneOf(['left', 'center', 'right']),
     /** The position of the legend in relation to the chart, can be 'bottom' or 'top'. */
     legendPosition: PropTypes.oneOf(['top', 'bottom']),
     /** carbon charts legend truncation options */
@@ -445,6 +451,28 @@ export const ImageCardPropTypes = {
   accept: PropTypes.arrayOf(PropTypes.string),
   /** callback that you can use to validate the image, if you return a message we will display it as an error */
   validateUploadedImage: PropTypes.func,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.LARGETHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the lists will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
 };
 
 export const GaugeCardPropTypes = {
@@ -732,6 +760,7 @@ export const CardPropTypes = {
     closeLabel: PropTypes.string,
     loadingDataLabel: PropTypes.string,
     overflowMenuDescription: PropTypes.string,
+    toLabel: PropTypes.string,
   }),
   tooltip: PropTypes.element,
   toolbar: PropTypes.element,
