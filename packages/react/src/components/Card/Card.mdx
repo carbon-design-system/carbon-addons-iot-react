@@ -543,6 +543,52 @@ const isEditable = true;
 </Card>;
 ```
 
+## Extra actions
+
+You can use extraActions on a Card. Which can be used in the card toolbar to either display a single icon with a unique action, or even be a three-dot icon with many custom actions inside of it.
+
+```jsx
+// Card with single icon extra action.
+<Card
+  {...cardProps}
+  size={CARD_SIZES.LARGE}
+  availableActions={{
+    extra: true,
+  }}
+  extraActions={
+    id: 'extrasingleaction',
+    icon: Add16,
+    callback: action('extra single action icon clicked.'),
+  }
+/>
+```
+
+```jsx
+// Card with multiple extra action.
+<Card
+  {...cardProps}
+  size={CARD_SIZES.LARGE}
+  availableActions={{
+    extra: true,
+  }}
+  extraActions={
+    id: 'extramultiaction',
+    children: [
+      {
+        id: 'firstItem',
+        itemText: 'Item1',
+        callback: action('extra three dot action item1 clicked.'),
+      },
+      {
+        id: 'secondItem',
+        itemText: 'Item2',
+        callback: action('extra three dot action item2 clicked.'),
+      },
+    ],
+  }
+/>
+```
+
 ## Props
 
 | Name                            | Type                                                                                                                                                  | Default                                                                   | Description                                                                                                                                        |
@@ -567,6 +613,7 @@ const isEditable = true;
 | availableActions.delete         | bool                                                                                                                                                  |                                                                           |                                                                                                                                                    |
 | availableActions.expand         | bool                                                                                                                                                  |                                                                           |                                                                                                                                                    |
 | availableActions.range          | bool                                                                                                                                                  |                                                                           |                                                                                                                                                    |
+| availableActions.extra          | bool                                                                                                                                                  |                                                                           |                                                                                                                                                    |
 | renderExpandIcon                | function, node                                                                                                                                        | undefined                                                                 |                                                                                                                                                    |
 | footerContent                   | elementType                                                                                                                                           | undefined                                                                 | footer content is limited to 2.5rem (40px)                                                                                                         |
 | rowHeight                       | shape                                                                                                                                                 |                                                                           | Row height in pixels for each layout                                                                                                               |
@@ -586,6 +633,7 @@ const isEditable = true;
 | dashboardColumns.sm             | number                                                                                                                                                |                                                                           |                                                                                                                                                    |
 | dashboardColumns.xs             | number                                                                                                                                                |                                                                           |                                                                                                                                                    |
 | cardDimensions                  | shape [see cardDimensions Prop](#carddimensions-prop)                                                                                                 |                                                                           | array of configurable sizes to dimensions. The numbered sizes represent the number of columns and rows the card spans at that size and breakpoint. |
+| extraActions                    | shape                                                                                                                                                 |                                                                           | extra action object to either display single icon or array of items to be displayed as overflow items.                                                |
 | i18n                            | shape                                                                                                                                                 |                                                                           |                                                                                                                                                    |
 | i18n.noDataLabel                | string                                                                                                                                                | 'No data is available for this time range.'                               |                                                                                                                                                    |
 | i18n.noDataShortLabel           | string                                                                                                                                                | 'No data'                                                                 |                                                                                                                                                    |

@@ -1,7 +1,7 @@
 import React from 'react';
 import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Tree16 } from '@carbon/icons-react';
+import { Tree16, Add16 } from '@carbon/icons-react';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -120,6 +120,27 @@ Basic.storyName = 'basic stateful example with custom expand icon';
 export const WithEllipsedTitleTooltipExternalTooltip = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  const extraaction = select('extra actions', ['Single', 'Multiple'], 'Single');
+  const singleExtraAction = {
+    id: 'extrasingleaction',
+    icon: Add16,
+    callback: action('extra single action icon clicked.'),
+  };
+  const multiExtraAction = {
+    id: 'extramultiaction',
+    children: [
+      {
+        id: 'firstItem',
+        itemText: 'Item1',
+        callback: action('extra three dot action item1 clicked.'),
+      },
+      {
+        id: 'secondItem',
+        itemText: 'Item2',
+        callback: action('extra three dot action item2 clicked.'),
+      },
+    ],
+  };
   return (
     <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <Card
@@ -146,6 +167,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           edit: false,
           clone: true,
           delete: true,
+          extra: true,
         })}
         onCardAction={action('onCardAction')}
         onFocus={action('onFocus')}
@@ -158,6 +180,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           </Button>
         )}
         tooltip={<p>this is the external tooltip content</p>}
+        extraActions={extraaction === 'Single' ? singleExtraAction : multiExtraAction}
       />
     </div>
   );

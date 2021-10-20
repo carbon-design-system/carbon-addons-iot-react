@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Tree16 } from '@carbon/icons-react';
+import { Tree16, Add16 } from '@carbon/icons-react';
 
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -477,5 +477,66 @@ describe('Card', () => {
     expect(screen.getByText('ven')).toBeVisible();
     expect(screen.getByText('sam')).toBeVisible();
     expect(screen.getByText('dim')).toBeVisible();
+  });
+
+  it('card extra single action', async () => {
+    const mockExtraSingle = jest.fn();
+    const singleExtraAction = {
+      id: 'extrasingleaction',
+      icon: Add16,
+      callback: mockExtraSingle,
+    };
+    render(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    expect(mockExtraSingle).toHaveBeenCalled();
+  });
+
+  it('card extra multiple action', async () => {
+    const mockExtraMultiple = jest.fn();
+    const multiExtraAction = {
+      id: 'extramultiaction',
+      children: [
+        {
+          id: 'firstItem',
+          itemText: 'Item1',
+          callback: mockExtraMultiple,
+        },
+        {
+          id: 'secondItem',
+          itemText: 'Item2',
+          callback: mockExtraMultiple,
+        },
+      ],
+    };
+    render(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={multiExtraAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    const firstItem = await screen.findByText('Item1');
+    fireEvent.click(firstItem);
+    expect(mockExtraMultiple).toHaveBeenCalled();
+
+    // Reopen menu
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    mockExtraMultiple.mockClear();
+    const secondItem = await screen.findByText('Item2');
+    fireEvent.click(secondItem);
+    expect(mockExtraMultiple).toHaveBeenCalled();
   });
 });

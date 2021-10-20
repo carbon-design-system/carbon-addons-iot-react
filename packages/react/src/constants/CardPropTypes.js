@@ -726,6 +726,7 @@ export const CardPropTypes = {
       PropTypes.oneOf(Object.values(DATE_PICKER_OPTIONS)), // these are the new'iconOnly' will only show icon, 'full' shows whole field
     ]),
     settings: PropTypes.bool,
+    extra: PropTypes.bool,
   }),
   /** All the labels that need translation */
   i18n: PropTypes.shape({
@@ -805,4 +806,16 @@ export const CardPropTypes = {
   renderEditContent: PropTypes.func,
   footerContent: PropTypes.elementType,
   dateTimeMask: PropTypes.string,
+  extraActions: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    icon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    callback: PropTypes.func,
+    children: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        itemText: PropTypes.string.isRequired,
+        callback: PropTypes.func.isRequired,
+      })
+    ),
+  }),
 };
