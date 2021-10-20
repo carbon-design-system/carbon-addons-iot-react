@@ -402,6 +402,7 @@ Map {
           "onToggleFilter": [Function],
         },
       },
+      "columnGroups": Array [],
       "error": null,
       "i18n": Object {
         "batchCancel": "Cancel",
@@ -670,6 +671,24 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "columnGroups": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "id": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
       "columns": Object {
         "args": Array [
@@ -1541,6 +1560,9 @@ Map {
                       Object {
                         "args": Array [
                           Object {
+                            "columnGroupId": Object {
+                              "type": "string",
+                            },
                             "columnId": Object {
                               "isRequired": true,
                               "type": "string",
@@ -1745,6 +1767,7 @@ Map {
       "clearFilterText": "Clear filter",
       "clearSelectionText": "Clear selection",
       "closeMenuText": "Close menu",
+      "columnGroups": Array [],
       "filterText": "Filter",
       "hasFastFilter": true,
       "i18n": Object {
@@ -1852,6 +1875,24 @@ Map {
       },
       "closeMenuText": Object {
         "type": "string",
+      },
+      "columnGroups": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "id": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
       "columns": Object {
         "args": Array [
@@ -2308,6 +2349,9 @@ Map {
                 Object {
                   "args": Array [
                     Object {
+                      "columnGroupId": Object {
+                        "type": "string",
+                      },
                       "columnId": Object {
                         "isRequired": true,
                         "type": "string",

@@ -19,6 +19,10 @@ table.#{$prefix}--side-nav--data-table {
   table-layout: fixed;
 }
 
+.#{$iot-prefix}--data-table--column-groups {
+  border-collapse: separate;
+}
+
 .#{$iot-prefix}--table__cell--truncate {
   max-width: 0;
 }
