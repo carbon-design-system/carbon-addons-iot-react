@@ -545,7 +545,7 @@ const isEditable = true;
 
 ## Extra actions
 
-You can use extraActions on a Card. Which can be used in the card toolbar to either display a single icon with a unique action, or even be a three-dot icon with many custom actions inside of it.
+You can use extraActions on a Card. Which can be used in the card toolbar to either display a single icon with a unique action, or a three-dot icon with many custom actions inside of it.
 
 ```jsx
 // Card with single icon extra action.
@@ -558,7 +558,7 @@ You can use extraActions on a Card. Which can be used in the card toolbar to eit
   extraActions={
     id: 'extrasingleaction',
     icon: Add16,
-    callback: action('extra single action icon clicked.'),
+    callback: {undefined},
   }
 />
 ```
@@ -577,12 +577,12 @@ You can use extraActions on a Card. Which can be used in the card toolbar to eit
       {
         id: 'firstItem',
         itemText: 'Item1',
-        callback: action('extra three dot action item1 clicked.'),
+        callback: {undefined},
       },
       {
         id: 'secondItem',
         itemText: 'Item2',
-        callback: action('extra three dot action item2 clicked.'),
+        callback: {undefined},
       },
     ],
   }
