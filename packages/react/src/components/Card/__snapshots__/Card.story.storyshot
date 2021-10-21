@@ -1991,7 +1991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             aria-describedby={null}
             aria-pressed={null}
             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Card-toolbar-extra-signle-action"
+            data-testid="Card-toolbar-extra-single-action"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}

@@ -555,11 +555,11 @@ You can use extraActions on a Card. Which can be used in the card toolbar to eit
   availableActions={{
     extra: true,
   }}
-  extraActions={
+  extraActions={{
     id: 'extrasingleaction',
     icon: Add16,
-    callback: {undefined},
-  }
+    callback: undefined,
+  }}
 />
 ```
 
@@ -571,21 +571,21 @@ You can use extraActions on a Card. Which can be used in the card toolbar to eit
   availableActions={{
     extra: true,
   }}
-  extraActions={
+  extraActions={{
     id: 'extramultiaction',
     children: [
       {
         id: 'firstItem',
         itemText: 'Item1',
-        callback: {undefined},
+        callback: undefined,
       },
       {
         id: 'secondItem',
         itemText: 'Item2',
-        callback: {undefined},
+        callback: undefined,
       },
     ],
-  }
+  }}
 />
 ```
 

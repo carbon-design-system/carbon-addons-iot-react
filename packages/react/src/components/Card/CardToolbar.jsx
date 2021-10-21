@@ -5,6 +5,7 @@ import { Close16, Popup16, Settings16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classnames from 'classnames';
 import keyBy from 'lodash/keyBy';
+import { useLangDirection } from 'use-lang-direction';
 
 import { settings } from '../../constants/Settings';
 import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
@@ -104,7 +105,7 @@ const defaultProps = {
     closeLabel: 'Close',
     expandLabel: 'Expand',
     settingsLabel: 'Settings',
-    extraActionLabel: 'Action',
+    extraActionLabel: 'Action Label',
   },
   testId: 'card-toolbar',
   dateTimeMask: 'YYYY-MM-DD HH:mm',
@@ -127,6 +128,8 @@ const CardToolbar = ({
   extraActions,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const langDir = useLangDirection();
+  const overflowMenuPosition = React.useMemo(() => langDir === 'ltr', [langDir]);
   // maps the timebox internal label to a translated string
   // Need the default here in case that the CardToolbar is used by multiple different components
   // Also needs to reassign itself if i18n changes
@@ -172,7 +175,7 @@ const CardToolbar = ({
     extraActions && Object.keys(extraActions).length !== 0 ? (
       extraActions.children && extraActions.children.length ? (
         <OverflowMenu
-          flipped
+          flipped={overflowMenuPosition}
           title={mergedI18n.overflowMenuDescription}
           iconDescription={mergedI18n.overflowMenuDescription}
         >
@@ -191,7 +194,7 @@ const CardToolbar = ({
           onClick={extraActions.callback}
           iconDescription={mergedI18n.extraActionLabel}
           renderIcon={extraActions.icon}
-          testId={`${testId}-extra-signle-action`}
+          testId={`${testId}-extra-single-action`}
         />
       ) : null
     ) : null;
@@ -200,7 +203,7 @@ const CardToolbar = ({
     <div data-testid={testId} className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {(availableActions.clone || availableActions.delete) && (
         <OverflowMenu
-          flipped
+          flipped={overflowMenuPosition}
           title={mergedI18n.overflowMenuDescription}
           iconDescription={mergedI18n.overflowMenuDescription}
         >
