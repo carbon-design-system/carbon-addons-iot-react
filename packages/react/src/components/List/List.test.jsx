@@ -277,7 +277,6 @@ describe('List', () => {
         items={getListItems(1)}
         handleSelect={onSelect}
         editingStyle="single-nesting"
-        isSelectable
       />
     );
     userEvent.click(screen.getByTitle('Item 1'));
@@ -287,16 +286,67 @@ describe('List', () => {
   it('should call onSelect when editingStyle is set to multiple', () => {
     const onSelect = jest.fn();
     render(
+      <List title="list" items={getListItems(1)} handleSelect={onSelect} editingStyle="multiple" />
+    );
+    userEvent.click(screen.getByTestId('1-checkbox'));
+    expect(onSelect).toHaveBeenCalledWith('1', null);
+  });
+
+  it('adds checkboxes when isMultiSelect is set to true', () => {
+    const onSelect = jest.fn();
+    render(<List title="list" items={getListItems(1)} handleSelect={onSelect} isMultiSelect />);
+    userEvent.click(screen.getByTestId('1-checkbox'));
+    expect(onSelect).toHaveBeenCalledWith('1', null);
+  });
+
+  it('sets selected checkboxes when isMultiSelect is set to true', () => {
+    const onSelect = jest.fn();
+    const { rerender } = render(
       <List
         title="list"
         items={getListItems(1)}
         handleSelect={onSelect}
-        editingStyle="multiple"
-        isSelectable
+        isMultiSelect
+        selectedIds={['1']}
       />
     );
-    userEvent.click(screen.getByTestId('1-checkbox'));
-    expect(onSelect).toHaveBeenCalledWith('1', null);
+    expect(screen.getByTestId('1-checkbox')).toBeChecked();
+
+    rerender(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        isMultiSelect
+        selectedIds={[]}
+      />
+    );
+    expect(screen.getByTestId('1-checkbox')).not.toBeChecked();
+  });
+
+  it('sets indeterminate checkboxes when isMultiSelect is set to true', () => {
+    const onSelect = jest.fn();
+    const { rerender } = render(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        isMultiSelect
+        indeterminateIds={['1']}
+      />
+    );
+    expect(screen.getByTestId('1-checkbox')).toBePartiallyChecked();
+
+    rerender(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        isMultiSelect
+        indeterminateIds={[]}
+      />
+    );
+    expect(screen.getByTestId('1-checkbox')).not.toBePartiallyChecked();
   });
 
   it('calls handleLoadMore when load more row clicked', () => {
@@ -651,7 +701,6 @@ describe('List', () => {
           items={getListItems(1)}
           handleSelect={onSelect}
           editingStyle="single-nesting"
-          isSelectable
           isVirtualList
         />
       );
@@ -667,12 +716,80 @@ describe('List', () => {
           items={getListItems(1)}
           handleSelect={onSelect}
           editingStyle="multiple"
-          isSelectable
           isVirtualList
         />
       );
       userEvent.click(screen.getByTestId('1-checkbox'));
       expect(onSelect).toHaveBeenCalledWith('1', null);
+    });
+
+    it('adds checkboxes when isMultiSelect is set to true', () => {
+      const onSelect = jest.fn();
+      render(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isMultiSelect
+          isVirtualList
+        />
+      );
+      userEvent.click(screen.getByTestId('1-checkbox'));
+      expect(onSelect).toHaveBeenCalledWith('1', null);
+    });
+
+    it('sets selected checkboxes when isMultiSelect is set to true', () => {
+      const onSelect = jest.fn();
+      const { rerender } = render(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isMultiSelect
+          selectedIds={['1']}
+          isVirtualList
+        />
+      );
+      expect(screen.getByTestId('1-checkbox')).toBeChecked();
+
+      rerender(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isMultiSelect
+          selectedIds={[]}
+          isVirtualList
+        />
+      );
+      expect(screen.getByTestId('1-checkbox')).not.toBeChecked();
+    });
+
+    it('sets indeterminate checkboxes when isMultiSelect is set to true', () => {
+      const onSelect = jest.fn();
+      const { rerender } = render(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isMultiSelect
+          indeterminateIds={['1']}
+          isVirtualList
+        />
+      );
+      expect(screen.getByTestId('1-checkbox')).toBePartiallyChecked();
+
+      rerender(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isMultiSelect
+          indeterminateIds={[]}
+          isVirtualList
+        />
+      );
+      expect(screen.getByTestId('1-checkbox')).not.toBePartiallyChecked();
     });
 
     it('calls handleLoadMore when load more row clicked', () => {

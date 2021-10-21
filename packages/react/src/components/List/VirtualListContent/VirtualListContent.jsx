@@ -43,6 +43,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** true if the list should have multiple selectable rows using checkboxes */
+  isMultiSelect: PropTypes.bool,
   testId: PropTypes.string,
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
@@ -58,6 +60,8 @@ const propTypes = {
   itemWillMove: PropTypes.func,
   /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
+  /** ids of selectable rows with indeterminate selection state */
+  indeterminateIds: PropTypes.arrayOf(PropTypes.string),
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
   /** list editing style */
@@ -91,10 +95,12 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
+  isMultiSelect: false,
   items: [],
   itemWillMove: () => {
     return true;
   },
+  indeterminateIds: [],
   loadingMoreIds: [],
   onItemMoved: () => {},
   selectedIds: [],
@@ -116,9 +122,11 @@ const VirtualListContent = ({
   handleSelect,
   i18n,
   iconPosition,
+  indeterminateIds,
   isFullHeight,
   isLargeRow,
   isLoading,
+  isMultiSelect,
   items,
   itemWillMove,
   loadingMoreIds,
@@ -211,6 +219,7 @@ const VirtualListContent = ({
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
     const isLoadingMore = loadingMoreIds.includes(item.id);
+    const isIndeterminate = indeterminateIds.includes(item.id);
     const parentIsExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
     const {
@@ -253,7 +262,7 @@ const VirtualListContent = ({
           nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
           value={value}
           icon={
-            editingStyleIsMultiple(editingStyle) ? (
+            editingStyleIsMultiple(editingStyle) || (isSelectable && isMultiSelect) ? (
               <Checkbox
                 id={`${item.id}-checkbox`}
                 name={item.value}
@@ -261,6 +270,7 @@ const VirtualListContent = ({
                 labelText=""
                 onClick={() => handleSelect(item.id, parentId)}
                 checked={isSelected}
+                indeterminate={isIndeterminate}
               />
             ) : (
               icon
