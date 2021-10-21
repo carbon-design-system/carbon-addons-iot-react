@@ -5,7 +5,9 @@ import omit from 'lodash/omit';
 import { Bee16, Close16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import { gray20 } from '@carbon/colors';
+import MockDate from 'mockdate';
 
+import { settings } from '../../constants/Settings';
 import Button from '../Button';
 import { actions1, chartData, tableColumns, tableData } from '../../utils/sample';
 import PieChartCard from '../PieChartCard/PieChartCard';
@@ -29,6 +31,8 @@ import { barChartData } from '../../utils/barChartDataSample';
 
 import DashboardGrid from './DashboardGrid';
 
+const { prefix } = settings;
+
 const commonGridProps = {
   onBreakpointChange: () => {},
   onLayoutChange: () => {},
@@ -46,6 +50,111 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
     }
   };
 
+  const getBarChartCardContent = (index) => {
+    const isStacked = index === 5;
+    const isGrouped = index === 2;
+    const isHorizontal = index === 4;
+    const isStackedWithoutCustomColor = index === 1;
+    return {
+      categoryDataSourceId: isStacked ? undefined : 'city',
+      timeDataSourceId: isStacked ? 'timestamp' : undefined,
+      type: isGrouped
+        ? BAR_CHART_TYPES.GROUPED
+        : isStackedWithoutCustomColor || isStacked
+        ? BAR_CHART_TYPES.STACKED
+        : BAR_CHART_TYPES.SIMPLE,
+      layout: isHorizontal ? BAR_CHART_LAYOUTS.HORIZONTAL : BAR_CHART_LAYOUTS.VERTICAL,
+      series: isGrouped
+        ? [
+            {
+              dataSourceId: 'particles',
+              label: 'Particles',
+              color: 'blue',
+            },
+            {
+              dataSourceId: 'temperature',
+              label: 'Temperature',
+            },
+            {
+              dataSourceId: 'emissions',
+              label: 'Emissions',
+            },
+          ]
+        : isStackedWithoutCustomColor
+        ? [
+            {
+              dataSourceId: 'particles',
+              label: 'Particles',
+            },
+            {
+              dataSourceId: 'temperature',
+              label: 'Temperature',
+            },
+            {
+              dataSourceId: 'emissions',
+              label: 'Emission',
+            },
+          ]
+        : isStacked
+        ? [
+            {
+              dataSourceId: 'particles',
+              label: 'Particles',
+            },
+            {
+              dataSourceId: 'emissions',
+              label: 'Emissions',
+            },
+          ]
+        : [
+            {
+              dataSourceId: 'particles',
+            },
+          ],
+      unit: 'P',
+      xLabel: isStacked || isHorizontal ? 'Dates' : 'Cities',
+      yLabel: isStackedWithoutCustomColor || isStacked ? 'Total' : 'Particles',
+      zoomBar: isStacked
+        ? {
+            enabled: true,
+            axes: 'top',
+            view: 'slider_view',
+          }
+        : undefined,
+    };
+  };
+
+  const getPieChartCardContent = (index) => {
+    const hasCustomColors = index === 2;
+    const hasCustomTooltip = index === 4;
+    const hasLabelFormatter = index === 3;
+    const hasLegendOnTop = index === 0;
+
+    return {
+      colors: hasCustomColors
+        ? {
+            A: 'red',
+            B: 'green',
+            C: 'blue',
+            D: 'yellow',
+            E: 'purple',
+            F: 'orange',
+          }
+        : undefined,
+      customTooltip: hasCustomTooltip
+        ? ([pieData] = [], html) => {
+            return pieData ? `label: ${pieData.label} - Value: ${pieData.value}` : html;
+          }
+        : undefined,
+      labelsFormatter: hasLabelFormatter
+        ? (wrapper) => {
+            return `${wrapper.data.category} (${wrapper.value})`;
+          }
+        : undefined,
+      groupDataSourceId: 'category',
+      legendPosition: hasLegendOnTop ? 'top' : 'bottom',
+    };
+  };
   const pieChartCardValues = [
     {
       category: 'A',
@@ -63,6 +172,76 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
       value: 20,
     },
   ];
+
+  const getTableCardColumns = (index) => {
+    const hasLinks = index === 4;
+    const hasSort = index === 1;
+    const hasThresholds = index === 2;
+    const hasExpandedRows = index === 3;
+    return {
+      columns: hasLinks
+        ? tableColumns.map((col) => {
+            if (col.dataSourceId === 'pressure') {
+              return {
+                ...col,
+                linkTemplate: {
+                  href: 'https://www.{company}.com?pressure={pressureId}',
+                  target: '_blank',
+                },
+              };
+            }
+
+            return col;
+          })
+        : hasSort
+        ? tableColumns.map((col) => {
+            if (col.dataSourceId === 'count') {
+              return {
+                ...col,
+                sort: 'DESC',
+                width: 100,
+              };
+            }
+            return col;
+          })
+        : tableColumns,
+      thresholds: hasThresholds
+        ? [
+            {
+              dataSourceId: 'pressure',
+              comparison: '>=',
+              value: 1,
+              severity: 1,
+              icon: 'bee',
+              color: 'red',
+              label: 'Custom Pressure Severity Header',
+              showSeverityLabel: true,
+              severityLabel: <span style={{ color: 'red' }}>critical</span>,
+            },
+          ]
+        : undefined,
+      expandedRows: hasExpandedRows
+        ? [
+            {
+              id: 'long_description',
+              label: 'Description',
+              linkTemplate: {
+                href: 'http://ibm.com/{pressure}',
+              },
+            },
+            {
+              id: 'other_description',
+              label: 'Other content to show',
+            },
+            {
+              id: 'hour',
+              label: 'Time',
+              type: 'TIMESTAMP',
+            },
+          ]
+        : undefined,
+    };
+  };
 
   const timeSeriesCardContent = (index) => ({
     includeZeroOnXaxis: true,
@@ -154,6 +333,116 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
     ],
   };
 
+  const getMultipleGaugeContent = () => ({
+    gauges: [
+      {
+        dataSourceId: 'usage',
+        units: '%',
+        minimumValue: 0,
+        maximumValue: 100,
+        color: 'orange',
+        backgroundColor: gray20,
+        shape: 'circle',
+        trend: {
+          /** the key to load the trend value from the values object. */
+          dataSourceId: 'usageTrend',
+          color: '',
+          trend: 'up',
+        },
+        thresholds: [
+          {
+            comparison: '>',
+            value: 0,
+            color: 'red', // red
+            label: 'Poor',
+          },
+          {
+            comparison: '>',
+            value: 60,
+            color: 'yellow',
+            label: 'Fair',
+          },
+          {
+            comparison: '>',
+            value: 80,
+            color: 'green',
+            label: 'Good',
+          },
+        ],
+      },
+      {
+        dataSourceId: 'gaugeTwo',
+        units: '%',
+        minimumValue: 0,
+        maximumValue: 100,
+        color: 'orange',
+        backgroundColor: gray20,
+        shape: 'circle',
+        trend: {
+          /** the key to load the trend value from the values object. */
+          dataSourceId: 'gaugeTwoTrend',
+          color: '',
+          trend: 'down',
+        },
+        thresholds: [
+          {
+            comparison: '>',
+            value: 0,
+            color: 'red',
+            label: 'Poor',
+          },
+          {
+            comparison: '>',
+            value: 60,
+            color: 'yellow',
+            label: 'Fair',
+          },
+          {
+            comparison: '>',
+            value: 80,
+            color: 'green',
+            label: 'Good',
+          },
+        ],
+      },
+      {
+        dataSourceId: 'gaugeThree',
+        units: '%',
+        minimumValue: 0,
+        maximumValue: 100,
+        color: 'orange',
+        backgroundColor: gray20,
+        shape: 'circle',
+        trend: {
+          /** the key to load the trend value from the values object. */
+          dataSourceId: 'gaugeThreeTrend',
+          color: '',
+          trend: 'up',
+        },
+        thresholds: [
+          {
+            comparison: '>',
+            value: 0,
+            color: 'red',
+            label: 'Poor',
+          },
+          {
+            comparison: '>',
+            value: 60,
+            color: 'yellow',
+            label: 'Fair',
+          },
+          {
+            comparison: '>',
+            value: 80,
+            color: 'green',
+            label: 'Good',
+          },
+        ],
+      },
+    ],
+  });
+
   const gaugeCardContent = {
     gauges: [
       {
@@ -234,6 +523,89 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
     { id: 'row-7', value: 'Row content 7' },
     { id: 'row-8', value: 'Row content 8' },
   ];
+
+  const getValueCardPointsAndThresholdContent = () => ({
+    attributes: [
+      {
+        label: 'Comfort Level',
+        dataSourceId: 'comfortLevel',
+        unit: '%',
+        thresholds: [
+          {
+            comparison: '>',
+            value: 80,
+            color: '#F00',
+            icon: 'warning',
+          },
+          {
+            comparison: '<',
+            value: 80,
+            color: '#5aa700',
+            icon: 'checkmark',
+          },
+        ],
+      },
+      {
+        label: 'Average Temperature',
+        dataSourceId: 'averageTemp',
+        unit: '˚F',
+        precision: 1,
+        thresholds: [
+          {
+            comparison: '>',
+            value: 80,
+            color: '#F00',
+            icon: 'warning',
+          },
+          {
+            comparison: '<',
+            value: 80,
+            color: '#5aa700',
+            icon: 'checkmark',
+          },
+        ],
+      },
+      {
+        label: 'Air Flow',
+        dataSourceId: 'airflow',
+        precision: 4,
+        thresholds: [
+          {
+            comparison: '>',
+            value: 80,
+            color: '#F00',
+            icon: 'warning',
+          },
+          {
+            comparison: '<',
+            value: 80,
+            color: '#5aa700',
+            icon: 'checkmark',
+          },
+        ],
+      },
+      {
+        label: 'Humidity',
+        dataSourceId: 'humidity',
+        unit: '˚F',
+        precision: 0,
+        thresholds: [
+          {
+            comparison: '>',
+            value: 80,
+            color: '#F00',
+            icon: 'warning',
+          },
+          {
+            comparison: '<',
+            value: 80,
+            color: '#5aa700',
+            icon: 'checkmark',
+          },
+        ],
+      },
+    ],
+  });
 
   const isResizable = true;
 
@@ -454,88 +826,7 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
           key="ValueCard - Multiple Data Points and Thresholds"
           id="ValueCard - Multiple Data Points and Thresholds"
           breakpoint={breakpoint}
-          content={{
-            attributes: [
-              {
-                label: 'Comfort Level',
-                dataSourceId: 'comfortLevel',
-                unit: '%',
-                thresholds: [
-                  {
-                    comparison: '>',
-                    value: 80,
-                    color: '#F00',
-                    icon: 'warning',
-                  },
-                  {
-                    comparison: '<',
-                    value: 80,
-                    color: '#5aa700',
-                    icon: 'checkmark',
-                  },
-                ],
-              },
-              {
-                label: 'Average Temperature',
-                dataSourceId: 'averageTemp',
-                unit: '˚F',
-                precision: 1,
-                thresholds: [
-                  {
-                    comparison: '>',
-                    value: 80,
-                    color: '#F00',
-                    icon: 'warning',
-                  },
-                  {
-                    comparison: '<',
-                    value: 80,
-                    color: '#5aa700',
-                    icon: 'checkmark',
-                  },
-                ],
-              },
-              {
-                label: 'Air Flow',
-                dataSourceId: 'airflow',
-                precision: 4,
-                thresholds: [
-                  {
-                    comparison: '>',
-                    value: 80,
-                    color: '#F00',
-                    icon: 'warning',
-                  },
-                  {
-                    comparison: '<',
-                    value: 80,
-                    color: '#5aa700',
-                    icon: 'checkmark',
-                  },
-                ],
-              },
-              {
-                label: 'Humidity',
-                dataSourceId: 'humidity',
-                unit: '˚F',
-                precision: 0,
-                thresholds: [
-                  {
-                    comparison: '>',
-                    value: 80,
-                    color: '#F00',
-                    icon: 'warning',
-                  },
-                  {
-                    comparison: '<',
-                    value: 80,
-                    color: '#5aa700',
-                    icon: 'checkmark',
-                  },
-                ],
-              },
-            ],
-          }}
+          content={getValueCardPointsAndThresholdContent()}
           size={CARD_SIZES.LARGETHIN}
           values={{
             comfortLevel: 345678234234234234,
@@ -627,115 +918,7 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
             gaugeThree: 74,
             gaugeThreeTrend: '9%',
           }}
-          content={{
-            gauges: [
-              {
-                dataSourceId: 'usage',
-                units: '%',
-                minimumValue: 0,
-                maximumValue: 100,
-                color: 'orange',
-                backgroundColor: gray20,
-                shape: 'circle',
-                trend: {
-                  /** the key to load the trend value from the values object. */
-                  dataSourceId: 'usageTrend',
-                  color: '',
-                  trend: 'up',
-                },
-                thresholds: [
-                  {
-                    comparison: '>',
-                    value: 0,
-                    color: 'red', // red
-                    label: 'Poor',
-                  },
-                  {
-                    comparison: '>',
-                    value: 60,
-                    color: 'yellow',
-                    label: 'Fair',
-                  },
-                  {
-                    comparison: '>',
-                    value: 80,
-                    color: 'green',
-                    label: 'Good',
-                  },
-                ],
-              },
-              {
-                dataSourceId: 'gaugeTwo',
-                units: '%',
-                minimumValue: 0,
-                maximumValue: 100,
-                color: 'orange',
-                backgroundColor: gray20,
-                shape: 'circle',
-                trend: {
-                  /** the key to load the trend value from the values object. */
-                  dataSourceId: 'gaugeTwoTrend',
-                  color: '',
-                  trend: 'down',
-                },
-                thresholds: [
-                  {
-                    comparison: '>',
-                    value: 0,
-                    color: 'red',
-                    label: 'Poor',
-                  },
-                  {
-                    comparison: '>',
-                    value: 60,
-                    color: 'yellow',
-                    label: 'Fair',
-                  },
-                  {
-                    comparison: '>',
-                    value: 80,
-                    color: 'green',
-                    label: 'Good',
-                  },
-                ],
-              },
-              {
-                dataSourceId: 'gaugeThree',
-                units: '%',
-                minimumValue: 0,
-                maximumValue: 100,
-                color: 'orange',
-                backgroundColor: gray20,
-                shape: 'circle',
-                trend: {
-                  /** the key to load the trend value from the values object. */
-                  dataSourceId: 'gaugeThreeTrend',
-                  color: '',
-                  trend: 'up',
-                },
-                thresholds: [
-                  {
-                    comparison: '>',
-                    value: 0,
-                    color: 'red',
-                    label: 'Poor',
-                  },
-                  {
-                    comparison: '>',
-                    value: 60,
-                    color: 'yellow',
-                    label: 'Fair',
-                  },
-                  {
-                    comparison: '>',
-                    value: 80,
-                    color: 'green',
-                    label: 'Good',
-                  },
-                ],
-              },
-            ],
-          }}
+          content={getMultipleGaugeContent()}
         />,
       ];
       break;
@@ -743,33 +926,7 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
       CARDS_TO_RENDER = [
         ...Object.values(omit(CARD_SIZES, 'SMALL', 'SMALLWIDE', 'SMALLFULL')).map((size, index) => (
           <PieChartCard
-            content={{
-              colors:
-                index === 2
-                  ? {
-                      A: 'red',
-                      B: 'green',
-                      C: 'blue',
-                      D: 'yellow',
-                      E: 'purple',
-                      F: 'orange',
-                    }
-                  : undefined,
-              customTooltip:
-                index === 4
-                  ? ([pieData] = [], html) => {
-                      return pieData ? `label: ${pieData.label} - Value: ${pieData.value}` : html;
-                    }
-                  : undefined,
-              labelsFormatter:
-                index === 3
-                  ? (wrapper) => {
-                      return `${wrapper.data.category} (${wrapper.value})`;
-                    }
-                  : undefined,
-              groupDataSourceId: 'category',
-              legendPosition: index === 0 ? 'top' : 'bottom',
-            }}
+            content={getPieChartCardContent(index)}
             title={`PieChartCard - ${size}`}
             key={`pieChartCard-${size}`}
             id={`pieChartCard-${size}`}
@@ -777,6 +934,7 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
             isResizable={isResizable}
             values={pieChartCardValues}
             breakpoint={breakpoint}
+            testId={`pieChartCard-${size}`}
           />
         )),
         <PieChartCard
@@ -821,72 +979,7 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
               pressureId: '012345',
             }}
             testId={`tableCard-${size}`}
-            content={{
-              columns:
-                index === 4
-                  ? tableColumns.map((col) => {
-                      if (col.dataSourceId === 'pressure') {
-                        return {
-                          ...col,
-                          linkTemplate: {
-                            href: 'https://www.{company}.com?pressure={pressureId}',
-                            target: '_blank',
-                          },
-                        };
-                      }
-
-                      return col;
-                    })
-                  : index === 1
-                  ? tableColumns.map((col) => {
-                      if (col.dataSourceId === 'count') {
-                        return {
-                          ...col,
-                          sort: 'DESC',
-                          width: 100,
-                        };
-                      }
-                      return col;
-                    })
-                  : tableColumns,
-              thresholds:
-                index === 2
-                  ? [
-                      {
-                        dataSourceId: 'pressure',
-                        comparison: '>=',
-                        value: 1,
-                        severity: 1,
-                        icon: 'bee',
-                        color: 'red',
-                        label: 'Custom Pressure Severity Header',
-                        showSeverityLabel: true,
-                        severityLabel: <span style={{ color: 'red' }}>critical</span>,
-                      },
-                    ]
-                  : undefined,
-              expandedRows:
-                index === 3
-                  ? [
-                      {
-                        id: 'long_description',
-                        label: 'Description',
-                        linkTemplate: {
-                          href: 'http://ibm.com/{pressure}',
-                        },
-                      },
-                      {
-                        id: 'other_description',
-                        label: 'Other content to show',
-                      },
-                      {
-                        id: 'hour',
-                        label: 'Time',
-                        type: 'TIMESTAMP',
-                      },
-                    ]
-                  : undefined,
-            }}
+            content={getTableCardColumns(index)}
             values={
               index === 5
                 ? tableData.map((row) => {
@@ -990,6 +1083,7 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
             values={chartData.events.slice(0, 5)}
             breakpoint={breakpoint}
             locale={index === 5 ? 'fr' : 'en'}
+            testId={`timeSeriesCard-${size}`}
           />
         )),
       ];
@@ -1020,79 +1114,11 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
             size={size}
             isResizable={isResizable}
             title={`BarChartCard - ${size}`}
-            content={{
-              categoryDataSourceId: index === 5 ? undefined : 'city',
-              timeDataSourceId: index === 5 ? 'timestamp' : undefined,
-              type:
-                index === 2
-                  ? BAR_CHART_TYPES.GROUPED
-                  : index === 1 || index === 5
-                  ? BAR_CHART_TYPES.STACKED
-                  : BAR_CHART_TYPES.SIMPLE,
-              layout: index === 4 ? BAR_CHART_LAYOUTS.HORIZONTAL : BAR_CHART_LAYOUTS.VERTICAL,
-              series:
-                index === 2
-                  ? [
-                      {
-                        dataSourceId: 'particles',
-                        label: 'Particles',
-                        color: 'blue',
-                      },
-                      {
-                        dataSourceId: 'temperature',
-                        label: 'Temperature',
-                      },
-                      {
-                        dataSourceId: 'emissions',
-                        label: 'Emissions',
-                      },
-                    ]
-                  : index === 1
-                  ? [
-                      {
-                        dataSourceId: 'particles',
-                        label: 'Particles',
-                      },
-                      {
-                        dataSourceId: 'temperature',
-                        label: 'Temperature',
-                      },
-                      {
-                        dataSourceId: 'emissions',
-                        label: 'Emission',
-                      },
-                    ]
-                  : index === 5
-                  ? [
-                      {
-                        dataSourceId: 'particles',
-                        label: 'Particles',
-                      },
-                      {
-                        dataSourceId: 'emissions',
-                        label: 'Emissions',
-                      },
-                    ]
-                  : [
-                      {
-                        dataSourceId: 'particles',
-                      },
-                    ],
-              unit: 'P',
-              xLabel: index === 5 || index === 4 ? 'Dates' : 'Cities',
-              yLabel: index === 1 || index === 5 ? 'Total' : 'Particles',
-              zoomBar:
-                index === 5
-                  ? {
-                      enabled: true,
-                      axes: 'top',
-                      view: 'slider_view',
-                    }
-                  : undefined,
-            }}
+            content={getBarChartCardContent(index)}
             values={barChartCardValues(index)}
             locale={index === 5 ? 'fr' : 'en'}
             breakpoint={breakpoint}
+            testId={`barChartCard-${size}`}
           />
         )),
       ];
@@ -1134,8 +1160,12 @@ DashboardAllCardsAsResizable.propTypes = {
 };
 
 describe('DashboardGrid', () => {
+  beforeEach(() => {
+    MockDate.set(1537538254000);
+  });
   afterEach(() => {
     cy.viewport(1680, 900);
+    MockDate.reset();
   });
   BREAKPOINTS.forEach((breakpoint) => {
     CARD_TYPES.forEach((type) => {
@@ -1163,13 +1193,41 @@ describe('DashboardGrid', () => {
             break;
         }
         mount(
-          <div data-testid="visual-regression-test" style={{ padding: '3rem' }}>
+          <div
+            data-testid="visual-regression-test"
+            style={{ padding: breakpoint === 'xs' ? 0 : '3rem' }}
+          >
             <DashboardAllCardsAsResizable breakpoint={breakpoint} type={type} />
           </div>
         );
 
         cy.findByTestId('visual-regression-test').should('be.visible');
 
+        if (type === 'BarChartCard') {
+          if (breakpoint === 'max') {
+            // these should be added back to test hover states in VRT, but currently
+            // something in cypress causes them to be broken.
+            // cy.findByTestId('barChartCard-MEDIUMTHIN').within(() => {
+            //   cy.findByRole('checkbox', { name: 'Bangkok' }).realHover();
+            // });
+          }
+
+          if (breakpoint === 'xl') {
+            // these should be added back to test hover states in VRT, but currently
+            // something in cypress causes them to be broken.
+            // cy.findByTestId('barChartCard-MEDIUMTHIN').within(() => {
+            //   cy.get(`.${prefix}--cc--simple-bar`).find('.bar').eq(0).realHover();
+            // });
+          }
+
+          if (breakpoint === 'lg') {
+            // these should be added back to test hover states in VRT, but currently
+            // something in cypress causes them to be broken.
+            // cy.findByTestId('barChartCard-MEDIUM').within(() => {
+            //   cy.get(`.${prefix}--cc--stacked-bar`).find('.bar').eq(0).realHover();
+            // });
+          }
+        }
         if (type === 'TableCard') {
           cy.findByTestId('tableCard-LARGETHIN').within(() => {
             cy.findAllByRole('button', { name: 'Click to expand content' }).eq(2).click();
@@ -1186,6 +1244,40 @@ describe('DashboardGrid', () => {
         if (type === 'Card') {
           cy.findByTestId('date-time-picker-datepicker-flyout-button').click();
           cy.findByTestId('Card-toolbar-range-picker').click();
+        }
+
+        if (type === 'PieChartCard') {
+          if (breakpoint === 'max') {
+            cy.findByTestId('pieChartCard-LARGE').within(() => {
+              cy.get(`.${prefix}--cc--pie`).eq(0).find('.slice').eq(0).realHover();
+            });
+          }
+
+          if (breakpoint === 'xl') {
+            // these should be added back to test hover states in VRT, but currently
+            // something in cypress causes them to be broken.
+            // cy.findByTestId('pieChartCard-LARGE').within(() => {
+            //   cy.findByRole('checkbox', { name: 'C' }).realHover();
+            // });
+          }
+        }
+
+        if (type === 'TimeSeriesCard') {
+          if (breakpoint === 'max') {
+            // these should be added back to test hover states in VRT, but currently
+            // something in cypress causes them to be broken.
+            // cy.findByTestId('timeSeriesCard-MEDIUMTHIN').within(() => {
+            //   cy.get(`.${prefix}--cc--scatter`).eq(0).find('.dot').eq(0).realHover();
+            // });
+          }
+
+          if (breakpoint === 'xl') {
+            // these should be added back to test hover states in VRT, but currently
+            // something in cypress causes them to be broken.
+            // cy.findByTestId('timeSeriesCard-MEDIUM').within(() => {
+            //   cy.findByRole('checkbox', { name: 'Pressure' }).realHover();
+            // });
+          }
         }
 
         onlyOn('headless', () => {
