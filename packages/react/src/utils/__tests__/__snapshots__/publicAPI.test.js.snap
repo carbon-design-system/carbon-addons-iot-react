@@ -5511,9 +5511,11 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
+      "indeterminateIds": Array [],
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
+      "isMultiSelect": false,
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
@@ -5592,6 +5594,14 @@ Map {
         ],
         "type": "oneOf",
       },
+      "indeterminateIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "isFullHeight": Object {
         "type": "bool",
       },
@@ -5599,6 +5609,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isMultiSelect": Object {
         "type": "bool",
       },
       "itemWillMove": Object {
@@ -5676,9 +5689,11 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
+      "indeterminateIds": Array [],
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
+      "isMultiSelect": false,
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
@@ -5757,11 +5772,22 @@ Map {
         ],
         "type": "oneOf",
       },
+      "indeterminateIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "isFullHeight": [Function],
       "isLargeRow": Object {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isMultiSelect": Object {
         "type": "bool",
       },
       "itemWillMove": Object {
@@ -21814,9 +21840,11 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
+      "indeterminateIds": Array [],
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
+      "isMultiSelect": false,
       "isVirtualList": false,
       "itemWillMove": [Function],
       "items": Array [],
@@ -21908,6 +21936,14 @@ Map {
         ],
         "type": "oneOf",
       },
+      "indeterminateIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "isFullHeight": Object {
         "type": "bool",
       },
@@ -21915,6 +21951,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isMultiSelect": Object {
         "type": "bool",
       },
       "isVirtualList": Object {
