@@ -1,0 +1,25 @@
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--column-customization-modal {
+  .#{$prefix}--modal-header__label {
+    display: none;
+  }
+
+  .#{$prefix}--modal-container {
+    overflow-y: hidden;
+  }
+
+  .#{$prefix}--modal-content {
+    // Can't use $ui-01 beacuse it becomes white in the modal
+    background-color: $carbon--gray-10;
+    padding: $spacing-05;
+    padding-bottom: $spacing-09;
+    margin-bottom: 0;
+  }
+
+  .#{$iot-prefix}--list-builder__all,
+  .#{$iot-prefix}--list-builder__selected {
+    height: auto;
+    max-height: 50vh;
+  }
+}

@@ -58,7 +58,7 @@ const propTypes = {
   ),
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
-  /** Specify the properties of each column group in the table. Defaults to empty column. */
+  /** Specify the properties of each column group in the table. Defaults to empty array. */
   columnGroups: TableColumnGroupPropType,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,

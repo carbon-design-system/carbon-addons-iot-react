@@ -5,11 +5,12 @@ import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
 import { spacing03 } from '@carbon/layout';
-import { Add20, TrashCan16 } from '@carbon/icons-react';
+import { Add20, Column20, TrashCan16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
 import { firstBy } from 'thenby';
+import uuid from 'uuid';
 
 import { TextInput } from '../TextInput';
 import { Checkbox } from '../Checkbox';
@@ -21,6 +22,7 @@ import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
 import EmptyState from '../EmptyState';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import TableREADME from './Table.mdx';
 import Table from './Table';
@@ -30,6 +32,7 @@ import MockApiClient from './AsyncTable/MockApiClient';
 import TableViewDropdown from './TableViewDropdown/TableViewDropdown';
 import TableSaveViewModal from './TableSaveViewModal/TableSaveViewModal';
 import TableManageViewsModal from './TableManageViewsModal/TableManageViewsModal';
+import TableColumnCustomizationModal from './TableColumnCustomizationModal/TableColumnCustomizationModal';
 
 const selectData = [
   {
@@ -2811,3 +2814,118 @@ export const RowExpansionAndLoadMore = () => {
 };
 
 RowExpansionAndLoadMore.storyName = 'row expansion: with load more ';
+
+export const WithColumnCustomizationModal = () => {
+  const demoGroupExample = boolean('demo grouping example', true);
+  const demoHasLoadMore = boolean('demo load more example (hasLoadMore)', true);
+  const pinnedColumnId = text('Pin column (pinnedColumnId)', 'string');
+  const hasVisibilityToggle = boolean('Allow toggling visibility (hasVisibilityToggle)', true);
+
+  const smallDataSet = tableData.slice(0, 5);
+  const allAvailableColumns = tableColumns;
+  const initialActiveColumns = allAvailableColumns.slice(0, 6);
+  const initialOrdering = [
+    { columnId: 'string' },
+    { columnId: 'date' },
+    { columnId: 'select' },
+    { columnId: 'secretField', isHidden: true },
+    { columnId: 'status' },
+    { columnId: 'number' },
+  ];
+
+  const columnGroupMapping = [
+    { id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] },
+    { id: 'groupB', name: 'Group B', columnIds: ['status', 'secretField', 'number', 'boolean'] },
+  ];
+  const columnGroups = [
+    { id: 'groupA', name: 'Group A' },
+    { id: 'groupB', name: 'Group B' },
+  ];
+
+  const appendGrouping = (col) => {
+    const group = columnGroupMapping.find((group) => group.columnIds.includes(col.columnId));
+    return group
+      ? {
+          ...col,
+          columnGroupId: group.id,
+        }
+      : col;
+  };
+
+  const [showModal, setShowModal] = useState(true);
+  const [loadedColumns, setLoadedColumns] = useState(allAvailableColumns.slice(0, 7));
+  const [loadingMoreIds, setLoadingMoreIds] = useState([]);
+  const [canLoadMore, setCanLoadMore] = useState(true);
+  const [activeColumns, setActiveColumns] = useState(initialActiveColumns);
+  const [ordering, setOrdering] = useState(initialOrdering);
+  const [modalKey, setModalKey] = useState('initial-key');
+
+  return (
+    <>
+      <Table
+        columns={activeColumns}
+        columnGroups={demoGroupExample ? columnGroups : undefined}
+        data={smallDataSet}
+        view={{
+          table: { ordering: demoGroupExample ? ordering.map(appendGrouping) : ordering },
+          toolbar: {
+            customToolbarContent: (
+              <Button
+                kind="ghost"
+                renderIcon={Column20}
+                iconDescription="Manage columns"
+                hasIconOnly
+                onClick={() => setShowModal(true)}
+              />
+            ),
+          },
+        }}
+      />
+
+      <TableColumnCustomizationModal
+        key={modalKey}
+        groupMapping={demoGroupExample ? columnGroupMapping : []}
+        hasLoadMore={demoHasLoadMore && canLoadMore}
+        hasVisibilityToggle={hasVisibilityToggle}
+        availableColumns={loadedColumns}
+        initialOrdering={ordering}
+        loadingMoreIds={loadingMoreIds}
+        onClose={() => {
+          setShowModal(false);
+          action('onClose');
+        }}
+        onChange={action('onChange')}
+        onLoadMore={(id) => {
+          setLoadingMoreIds([id]);
+          setTimeout(() => {
+            setLoadedColumns(allAvailableColumns);
+            setLoadingMoreIds([]);
+            setCanLoadMore(false);
+          }, 2000);
+          action('onLoadMore')(id);
+        }}
+        onReset={() => {
+          setModalKey(uuid.v4());
+          action('onReset');
+        }}
+        onSave={(updatedOrdering, updatedColumns) => {
+          setOrdering(updatedOrdering);
+          setActiveColumns(updatedColumns);
+          setShowModal(false);
+          action('onSave')(updatedOrdering, updatedColumns);
+        }}
+        open={showModal}
+        pinnedColumnId={pinnedColumnId}
+      />
+    </>
+  );
+};
+
+WithColumnCustomizationModal.storyName = '☢️ with column customization modal';
+WithColumnCustomizationModal.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];

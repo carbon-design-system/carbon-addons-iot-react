@@ -59,6 +59,7 @@ const propTypes = {
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
+    clearSearchIconDescription: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
     loadMore: PropTypes.string,
