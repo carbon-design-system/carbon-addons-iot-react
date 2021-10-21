@@ -15,9 +15,8 @@ simpleModel.setHeader([
       rowSpan: 2,
     }),
     new TableHeaderItem({ data: 'hwer', colSpan: 2, sortable: false }),
-    null,
   ],
-  [null, new TableHeaderItem({ data: 'hwer1' }), new TableHeaderItem({ data: 'hwer2' })],
+  [new TableHeaderItem({ data: 'hwer1' }), new TableHeaderItem({ data: 'hwer2' })],
 ]);
 
 simpleModel.setData([

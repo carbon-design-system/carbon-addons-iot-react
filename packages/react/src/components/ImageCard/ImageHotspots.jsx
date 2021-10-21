@@ -8,6 +8,7 @@ import warning from 'warning';
 import { findMatchingThresholds } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import { HotspotIconPropType, HotspotPropTypes } from '../../constants/SharedPropTypes';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 import Hotspot from './Hotspot';
 import ImageControls from './ImageControls';
@@ -588,7 +589,7 @@ const ImageHotspots = ({
 
   const handleCtrlKeyUp = useCallback((event) => {
     // Was the control key unpressed
-    if (event.keyCode === 17) {
+    if (event.key === keyboardKeys.CONTROL) {
       setIsCtrlPressed(false);
     }
   }, []);

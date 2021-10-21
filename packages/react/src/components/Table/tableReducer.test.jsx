@@ -473,6 +473,69 @@ describe('table reducer', () => {
       // is Loading should be set false and rowCount should be correct
       expect(tableWithSortedData.view.table.loadingState.isLoading).toEqual(false);
       expect(tableWithSortedData.view.table.loadingState.rowCount).toEqual(0);
+
+      // load more
+      const initialStateLoadMore = {
+        ...initialState,
+        data: [
+          {
+            ...initialState.data[0],
+            hasLoadMore: true,
+            children: [initialState.data[1], initialState.data[2], initialState.data[3]],
+          },
+          {
+            ...initialState.data[4],
+            hasLoadMore: true,
+            children: [initialState.data[5], initialState.data[6], initialState.data[7]],
+          },
+          {
+            ...initialState.data[8],
+            hasLoadMore: true,
+            children: [initialState.data[9], initialState.data[10], initialState.data[11]],
+          },
+          {
+            ...initialState.data[12],
+            hasLoadMore: true,
+            children: [initialState.data[13], initialState.data[14], initialState.data[15]],
+          },
+        ],
+        view: {
+          ...initialState.view,
+          table: {
+            ...initialState.table,
+            loadingMoreIds: ['row-0', 'row-4', 'row-12'],
+          },
+        },
+      };
+
+      // with loading more data
+      const tableWithLoadingMoreData = tableReducer(
+        initialStateLoadMore,
+        tableRegister({ data: initialStateLoadMore.data, isLoading: false })
+      );
+
+      expect(tableWithLoadingMoreData.view.table.loadingMoreIds).toHaveLength(3);
+
+      // after loaded data is completely loaded
+      const initialStateWithLoadMoreComplete = {
+        ...initialStateLoadMore,
+        data: initialStateLoadMore.data.map((i, idx) =>
+          idx === 0
+            ? {
+                ...i,
+                hasLoadMore: false,
+                children: [...i.children, initialState.data[16], initialState.data[17]],
+              }
+            : i
+        ),
+      };
+
+      const tableWithLoadingMoreDataComplete = tableReducer(
+        initialStateLoadMore,
+        tableRegister({ data: initialStateWithLoadMoreComplete.data, isLoading: false })
+      );
+
+      expect(tableWithLoadingMoreDataComplete.view.table.loadingMoreIds).toHaveLength(2);
     });
   });
 });

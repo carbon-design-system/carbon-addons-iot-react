@@ -84,6 +84,8 @@ export const TableRowPropTypes = PropTypes.arrayOf(
     rowActions: RowActionPropTypes,
     /** is this particular row selectable */
     isSelectable: PropTypes.bool,
+    /** boolean to define load more row */
+    hasLoadMore: PropTypes.bool,
   })
 );
 
@@ -207,6 +209,8 @@ export const I18NPropTypes = PropTypes.shape({
   multiSortClearAll: PropTypes.string,
   multiSortOpenMenu: PropTypes.string,
   multiSortCloseMenu: PropTypes.string,
+  /** I18N label for load more row */
+  loadMoreText: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
@@ -291,3 +295,22 @@ export const TableSortPropType = PropTypes.shape({
   columnId: PropTypes.string,
   direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
 });
+
+/** Specify the properties of each column group in the table */
+export const TableColumnGroupPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+  })
+);
+
+/** Specify the order, visibility and group belonging of the table columns */
+export const TableOrderingPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    columnId: PropTypes.string.isRequired,
+    /* Visibility of column in table, defaults to false */
+    isHidden: PropTypes.bool,
+    /* The id of the column group this column belongs to if any */
+    columnGroupId: PropTypes.string,
+  })
+);

@@ -38,8 +38,15 @@ const i18n = {
 };
 
 describe('DateTimePicker', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+    jest.clearAllMocks();
+  });
+
   afterEach(() => {
     console.error.mockClear();
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   beforeAll(() => {
@@ -268,7 +275,10 @@ describe('DateTimePicker', () => {
     const wrapper = mount(
       <DateTimePicker
         {...dateTimePickerProps}
-        defaultValue={PRESET_VALUES[1]}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[1],
+        }}
         showRelativeOption={false}
       />
     );
