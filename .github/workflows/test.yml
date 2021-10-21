@@ -160,12 +160,9 @@ jobs:
         uses: actions/download-artifact@v2
 
       - name: Copy, combine, and report coverage
-        run: |
-          mkdir -p packages/react/jest/coverage packages/react/cypress/coverage
-          mv jest-coverage/coverage-final.json packages/react/jest/coverage/coverage-final.json
-          mv cypress-coverage/coverage-final.json packages/react/cypress/coverage/coverage-final.json
-          cd packages/react
-          yarn reports
+        with:
+          base-path: 'packages/react'
+        run: yarn reports
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
