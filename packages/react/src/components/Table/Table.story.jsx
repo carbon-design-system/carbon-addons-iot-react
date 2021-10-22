@@ -766,7 +766,6 @@ export const TableWithColumnGrouping = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
-  const lightweight = boolean('Show an alternate header style (lightweight)', false);
   const ordering = object('Ordering (view.table.ordering)', [
     {
       columnId: 'string',
