@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import * as utils from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
+import { keyboardKeys } from '../../../../constants/KeyCodeConstants';
 
 import FilterHeaderRow from './FilterHeaderRow';
 
@@ -179,13 +180,11 @@ describe('FilterHeaderRow', () => {
     expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[1]).toHaveValue('test2');
     // hitting buttons other than enter doesn't clear the filters
     fireEvent.keyDown(screen.getAllByTitle('Clear filter')[0], {
-      keyCode: 27,
-      key: 'Escape',
+      key: keyboardKeys.ESCAPE,
     });
     expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[0]).toHaveValue('test1');
     fireEvent.keyDown(screen.getAllByTitle('Clear filter')[0], {
-      keyCode: 13,
-      key: 'Enter',
+      key: keyboardKeys.ENTER,
     });
     expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[0]).toHaveValue('');
   });

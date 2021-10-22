@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { keyCodes } from '../../constants/KeyCodeConstants';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 import { settings } from '../../constants/Settings';
 
 import ComboBox from './ComboBox';
@@ -207,8 +207,8 @@ describe('ComboBox', () => {
     const control = screen.getByPlaceholderText('Filter...');
 
     await userEvent.click(control);
-    fireEvent.keyDown(control, { keyCode: keyCodes.DOWN });
-    fireEvent.keyDown(control, { keyCode: keyCodes.ENTER });
+    fireEvent.keyDown(control, { key: keyboardKeys.DOWN });
+    fireEvent.keyDown(control, { key: keyboardKeys.ENTER });
 
     expect(tags.childElementCount).toEqual(1);
 

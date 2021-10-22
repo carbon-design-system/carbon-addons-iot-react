@@ -3,6 +3,7 @@ import { HeaderGlobalBar } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import { Close16, OverflowMenuVertical16 } from '@carbon/icons-react';
 import ReactDOM from 'react-dom';
+import { useLangDirection } from 'use-lang-direction';
 
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
@@ -64,6 +65,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) =
     [i18n]
   );
 
+  const langDir = useLangDirection();
   const checkForOverflow = useCallback(() => {
     /* istanbul ignore else */
     if (overFlowContainerRef.current) {
@@ -76,7 +78,10 @@ const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) =
       if (firstButtonInGroupRef && nameDivRef) {
         const windowWidth = window.innerWidth || document.documentElement.clientWidth;
         // check that it's also greater than zero to prevent collapsing in jest where all the values are 0.
-        const tooBig = nameDivRef.right > 0 && nameDivRef.right >= firstButtonInGroupRef.left;
+        const tooBig =
+          langDir === 'ltr'
+            ? nameDivRef.right > 0 && nameDivRef.right >= firstButtonInGroupRef.left
+            : firstButtonInGroupRef.right > 0 && firstButtonInGroupRef.right >= nameDivRef.left;
         const previousBreakpoint = breakpoint.current;
 
         if (tooBig && actionItems.length > 0 && overflowItems.length === 0) {
@@ -87,7 +92,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) =
         }
       }
     }
-  }, [actionItems, overflowItems.length]);
+  }, [actionItems, langDir, overflowItems.length]);
 
   useLayoutEffect(() => {
     checkForOverflow();

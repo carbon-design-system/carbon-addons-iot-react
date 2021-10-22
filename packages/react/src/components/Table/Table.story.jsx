@@ -682,6 +682,7 @@ export const BasicDumbTable = () => {
         },
         toolbar: {
           activeBar: hasColumnSelection || hasColumnSelectionConfig ? 'column' : undefined,
+          isDisabled: boolean('Disable the table toolbar (view.toolbar.isDisabled)', false),
         },
         table: {
           loadingState: {
@@ -762,6 +763,88 @@ BasicDumbTable.parameters = {
     `,
   },
 };
+
+export const TableWithColumnGrouping = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
+  const lightweight = boolean('Show an alternate header style (lightweight)', false);
+  const ordering = object('Ordering (view.table.ordering)', [
+    {
+      columnId: 'string',
+      columnGroupId: 'groupA',
+    },
+    {
+      columnId: 'date',
+      columnGroupId: 'groupA',
+    },
+    {
+      columnId: 'select',
+      columnGroupId: 'groupB',
+    },
+    {
+      columnId: 'secretField',
+      columnGroupId: 'groupB',
+    },
+  ]);
+  const options = {
+    hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
+    hasRowExpansion: boolean(
+      'Enables expanding rows to show additional content (options.hasRowExpansion)',
+      false
+    ),
+    hasRowNesting: boolean(
+      'Enables rows to have nested rows within (options.hasRowNesting)',
+      false
+    ),
+    hasRowSelection: select(
+      'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+      ['multi', 'single', false],
+      false
+    ),
+  };
+
+  return (
+    <MyTable
+      id="table"
+      useZebraStyles={useZebraStyles}
+      lightweight={lightweight}
+      columns={tableColumns.slice(0, 4)}
+      columnGroups={object('Column groups (columnGroups)', [
+        {
+          id: 'groupA',
+          name: 'Group A',
+        },
+        {
+          id: 'groupB',
+          name: 'Group B',
+        },
+      ])}
+      data={tableData.slice(0, 10).map((i) => ({
+        ...i,
+        rowActions: [
+          {
+            id: 'textOnly',
+            labelText: 'Text only sample action',
+            isOverflow: true,
+          },
+        ],
+      }))}
+      options={options}
+      actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
+      view={{
+        table: { ordering },
+      }}
+    />
+  );
+};
+
+TableWithColumnGrouping.storyName = 'with column grouping';
 
 export const TableExampleWithCreateSaveViews = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');

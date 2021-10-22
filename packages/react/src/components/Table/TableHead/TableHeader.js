@@ -9,9 +9,9 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { settings } from 'carbon-components';
 import { ArrowUp20 as Arrow, ArrowsVertical20 as Arrows } from '@carbon/icons-react';
 
+import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 export const sortStates = {
@@ -20,7 +20,7 @@ export const sortStates = {
   ASC: 'ASC',
 };
 
-const { prefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 export const translationKeys = {
   iconDescription: 'carbon.table.header.icon.description',
@@ -69,18 +69,26 @@ const TableHeader = React.forwardRef(function TableHeader(
     thStyle,
     initialWidth,
     testId,
+    spanGroupRow,
+    rowSpan: rowSpanProp,
     ...rest
   },
   ref
 ) {
+  const rowSpan = rowSpanProp ?? spanGroupRow ? '2' : undefined;
+  const headerClassNames = classnames(headerClassName, {
+    [`${iotPrefix}--table-header--span-group-row`]: spanGroupRow,
+  });
+
   if (!isSortable) {
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <th
         {...rest}
+        rowSpan={rowSpan}
         data-testid={testId}
         width={initialWidth}
-        className={headerClassName}
+        className={headerClassNames}
         scope={scope}
         ref={ref}
         style={thStyle}
@@ -119,9 +127,10 @@ const TableHeader = React.forwardRef(function TableHeader(
 
   return (
     <th
+      rowSpan={rowSpan}
       width={initialWidth}
       scope={scope}
-      className={headerClassName}
+      className={headerClassNames}
       aria-sort={ariaSort}
       ref={ref}
       style={thStyle}
@@ -167,6 +176,11 @@ TableHeader.propTypes = {
    */
   children: PropTypes.node,
 
+  /**
+   * True if the header must span the column group row.
+   */
+  spanGroupRow: PropTypes.bool,
+
   hasOverflow: PropTypes.bool,
 
   hasMultiSort: PropTypes.bool,
@@ -194,6 +208,9 @@ TableHeader.propTypes = {
    * Hook that is invoked when the header is clicked
    */
   onClick: PropTypes.func,
+
+  /** Applies the HTML attribute rowspan with the number provided */
+  rowSpan: PropTypes.number,
 
   /**
    * Specify the scope of this table header. You can find more info about this
@@ -225,11 +242,13 @@ TableHeader.propTypes = {
 TableHeader.defaultProps = {
   className: '',
   children: '',
+  spanGroupRow: false,
   isSortHeader: false,
   hasTooltip: false,
   hasOverflow: false,
   hasMultiSort: false,
   isSortable: false,
+  rowSpan: undefined,
   sortDirection: 'NONE',
   onClick: (onClick) => `${onClick}`,
   scope: 'col',

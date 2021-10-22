@@ -8,6 +8,7 @@ import { ArrowRight16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 import {
   getTableColumns,
@@ -2029,10 +2030,7 @@ describe('Table', () => {
       fireEvent.change(screen.getByPlaceholderText('pick a number'), { target: { value: '16' } });
       // ensure keyDown events also get called with hasFastFilter is false
       fireEvent.keyDown(screen.getByPlaceholderText('pick a number'), {
-        key: 'Enter',
-        code: 'Enter',
-        keyCode: 13,
-        charCode: 13,
+        key: keyboardKeys.ENTER,
       });
       userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
@@ -2158,10 +2156,7 @@ describe('Table', () => {
       const numberInputClear = screen.getAllByRole('button', { name: 'Clear filter' })[1];
       fireEvent.focus(numberInputClear);
       fireEvent.keyDown(numberInputClear, {
-        key: 'Enter',
-        code: 'Enter',
-        keyCode: 13,
-        charCode: 13,
+        key: keyboardKeys.ENTER,
       });
       userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
@@ -2299,5 +2294,166 @@ describe('Table', () => {
     jest.clearAllMocks();
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="lg" />);
     expect(console.error).not.toHaveBeenCalled();
+  });
+
+  it('adds --column-groups class to the CarbonTable if columnGroups are present', () => {
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px' },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('my-table')).toHaveClass(`${iotPrefix}--data-table--column-groups`);
+  });
+
+  it('adds min-size class if columnGroups are present and there at least one sortable column', () => {
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px', isSortable: true },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('my-table')).toHaveClass(
+      `${iotPrefix}--data-table--column-groups--min-size-large`
+    );
+  });
+
+  it('throws an error when using both column groups and hasColumnSelection prop', () => {
+    const { __DEV__ } = global;
+    global.__DEV__ = true;
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px' },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+        options={{ hasColumnSelection: true }}
+      />
+    );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Column grouping (columnGroups) cannot be combined with the option hasColumnSelection'
+      )
+    );
+    global.__DEV__ = __DEV__;
+  });
+
+  it('should not show toggle aggregations when toolbar is disabled', async () => {
+    jest
+      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+      .mockImplementation(() => ({ width: 100, height: 100 }));
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+                value: 100000,
+              },
+            ],
+          },
+          toolbar: {
+            ...view.toolbar,
+            isDisabled: true,
+          },
+        }}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    const toggleButton = screen.getByRole('menuitem', { name: 'Toggle aggregations' });
+    expect(toggleButton).toBeVisible();
+    expect(toggleButton).toBeDisabled();
+    expect(screen.getByText('Total:')).toBeVisible();
+
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+                value: 100000,
+              },
+            ],
+          },
+          toolbar: {
+            ...view.toolbar,
+            isDisabled: false,
+          },
+        }}
+      />
+    );
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    expect(toggleButton).toBeVisible();
+    expect(toggleButton).not.toBeDisabled();
+    expect(screen.getByText('Total:')).toBeVisible();
+    jest.resetAllMocks();
   });
 });

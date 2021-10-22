@@ -77,6 +77,7 @@ export const StatefulListWithNestedSearching = () => (
         searchPlaceHolderText: 'Search',
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -125,6 +126,7 @@ export const WithDefaultSelectedId = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -146,7 +148,7 @@ export const WithOverflowMenu = () => (
             id: `${team}_${player}`,
             content: {
               value: player,
-              rowActions: [
+              rowActions: () => (
                 <OverflowMenu title="data-item-menu" flipped>
                   <OverflowMenuItem itemText="Configure" onClick={() => console.log('Configure')} />
                   <OverflowMenuItem
@@ -155,8 +157,8 @@ export const WithOverflowMenu = () => (
                     isDelete
                     hasDivider
                   />
-                </OverflowMenu>,
-              ],
+                </OverflowMenu>
+              ),
             },
             isSelectable: true,
           })),
@@ -194,6 +196,7 @@ export const WithOverflowMenu = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -259,6 +262,7 @@ export const WithNestedReorder = () => {
           onSelect={action('onSelect')}
           hasDeselection={boolean('hasDeselection', true)}
           hasMultiSelect={boolean('hasMultiSelect', false)}
+          isVirtualList={boolean('hasVirtualList', false)}
         />
       </div>
     );
@@ -317,6 +321,7 @@ export const WithDefaultExpandedIds = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -401,6 +406,7 @@ export const WithMixedHierarchies = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -450,6 +456,7 @@ export const WithSelectableCategories = () => (
       onSelect={action('onSelect')}
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
     />
   </div>
 );
@@ -460,7 +467,7 @@ export const WithLargeNumberOfItems = () => (
   <div style={{ width: 400, height: 400 }}>
     <HierarchyList
       title={text('Title', 'Big List')}
-      isFullHeight={boolean('isFullHeight', true)}
+      isFullHeight={boolean('isFullHeight', false)}
       items={[...Array(1000)].map((_, i) => ({
         id: `item-${i}`,
         content: {
@@ -473,13 +480,39 @@ export const WithLargeNumberOfItems = () => (
       isLoading={boolean('isLoading', false)}
       isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
+      onListUpdated={action('onListUpdated')}
       hasDeselection={boolean('hasDeselection', true)}
       i18n={object('i18n', {
         searchPlaceHolderText: 'Search',
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', true)}
     />
   </div>
 );
 
-WithLargeNumberOfItems.storyName = 'with large number of items';
+WithLargeNumberOfItems.storyName = 'with virtual list and large number of items';
+
+export const WithEmptyState = () => (
+  <div style={{ width: 400, height: 400 }}>
+    <HierarchyList
+      title={text('Title', 'Big List')}
+      isFullHeight={boolean('isFullHeight', true)}
+      items={[]}
+      editingStyle={EditingStyle.Single}
+      hasSearch={boolean('hasSearch', true)}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], undefined)}
+      isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
+      onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
+      i18n={object('i18n', {
+        searchPlaceHolderText: 'Search',
+      })}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
+      emptyState={text('emptyState', '__a custom empty state__')}
+    />
+  </div>
+);
+
+WithEmptyState.storyName = 'with empty state';

@@ -2,7 +2,7 @@ import React from 'react';
 import { screen, render, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { keyCodes } from '../../constants/KeyCodeConstants';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
 
@@ -102,21 +102,15 @@ describe('TimePickerSpinner', () => {
     screen.getByRole('textbox').focus();
 
     fireEvent.keyUp(document.activeElement || document.body, {
-      key: 'ArrowLeft',
-      code: 'ArrowLeft',
-      keyCode: keyCodes.LEFT,
+      key: keyboardKeys.LEFT,
     });
     fireEvent.keyUp(document.activeElement || document.body, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
     expect(screen.getByRole('textbox').value).toEqual('01:00');
 
     fireEvent.keyUp(document.activeElement || document.body, {
-      key: 'ArrowDown',
-      code: 'ArrowDown',
-      keyCode: keyCodes.DOWN,
+      key: keyboardKeys.DOWN,
     });
     expect(screen.getByRole('textbox').value).toEqual('00:00');
   });
@@ -127,14 +121,10 @@ describe('TimePickerSpinner', () => {
     screen.getByRole('textbox').focus();
 
     fireEvent.keyDown(document.activeElement || document.body, {
-      key: 'Escape',
-      code: 'Escape',
-      keyCode: keyCodes.ESCAPE,
+      key: keyboardKeys.ESCAPE,
     });
     fireEvent.keyUp(document.activeElement || document.body, {
-      key: 'Escape',
-      code: 'Escape',
-      keyCode: keyCodes.ESCAPE,
+      key: keyboardKeys.ESCAPE,
     });
     expect(screen.getByRole('textbox').value).toEqual('');
   });
@@ -177,18 +167,14 @@ describe('TimePickerSpinner', () => {
 
     fireEvent.focus(input);
     fireEvent.keyUp(input, {
-      key: 'ArrowDown',
-      code: 'ArrowDown',
-      keyCode: keyCodes.DOWN,
+      key: keyboardKeys.DOWN,
     });
     act(() => {
       jest.runAllTimers();
     });
     expect(input).toHaveValue('00:00');
     fireEvent.keyUp(input, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
     act(() => {
       jest.runAllTimers();
@@ -250,9 +236,7 @@ describe('TimePickerSpinner', () => {
     // this keyEvent sets the selectionRange to 5 b/c of how testing-library always moves to the end
     // of the endup.
     fireEvent.keyUp(input, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
     act(() => {
       jest.runAllTimers();
@@ -262,29 +246,21 @@ describe('TimePickerSpinner', () => {
     // updates the input to group 2 (minutes)
     userEvent.click(input);
     fireEvent.keyUp(input, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
     act(() => {
       jest.runAllTimers();
     });
     expect(input).toHaveValue('01:01');
     fireEvent.keyUp(input, {
-      key: 'ArrowRight',
-      code: 'ArrowRight',
-      keyCode: keyCodes.RIGHT,
+      key: keyboardKeys.RIGHT,
     });
     fireEvent.keyUp(input, {
-      key: 'ArrowRight',
-      code: 'ArrowRight',
-      keyCode: keyCodes.RIGHT,
+      key: keyboardKeys.RIGHT,
     });
     expect(input.selectionStart).toBe(5);
     fireEvent.keyUp(input, {
-      key: 'ArrowLeft',
-      code: 'ArrowLeft',
-      keyCode: keyCodes.LEFT,
+      key: keyboardKeys.LEFT,
     });
     expect(input.selectionStart).toBe(4);
     act(() => {
@@ -292,9 +268,7 @@ describe('TimePickerSpinner', () => {
     });
     userEvent.click(input);
     fireEvent.keyUp(input, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
 
     act(() => {
@@ -306,7 +280,7 @@ describe('TimePickerSpinner', () => {
   it('12-hour picker', () => {
     render(<TimePickerSpinner {...timePickerProps} value="12:00" spinner is12hour />);
     userEvent.click(screen.getByLabelText(/increment/i));
-    expect(screen.getByLabelText('Pick a time')).toHaveValue('00:00');
+    expect(screen.getByLabelText('Pick a time')).toHaveValue('01:00');
   });
 
   it('default timeGroup to minutes', () => {
@@ -494,5 +468,73 @@ describe('TimePickerSpinner', () => {
     userEvent.type(input, 'a:?12Ö!');
     expect(input.value).toEqual(':12');
     expect(timePickerProps.onChange).toHaveBeenCalledTimes(3);
+  });
+
+  it('should roll hours from 12 to 01 when incrementing in 12hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="12:00" is12hour />);
+
+    userEvent.click(screen.getByLabelText('Increment hours'));
+    act(() => {
+      jest.runAllTimers();
+    });
+
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('01:00', null, { invalid: false });
+  });
+
+  it('should roll hours from 01 to 12 when decrementing in 12hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="01:00" is12hour />);
+
+    userEvent.click(screen.getByLabelText('Decrement hours'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('12:00', null, { invalid: false });
+  });
+
+  it('should roll hours from 23 to 00 when incrementing in 24hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="23:00" />);
+
+    userEvent.click(screen.getByLabelText('Increment hours'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('00:00', null, { invalid: false });
+  });
+
+  it('should roll hours from 00 to 23 when decrementing in 24hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="00:00" />);
+
+    userEvent.click(screen.getByLabelText('Decrement hours'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('23:00', null, { invalid: false });
+  });
+
+  it('should roll minutes from 00 to 59 when decrementing in 24hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="00:00" />);
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+    userEvent.click(screen.getByLabelText('Decrement minutes'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('00:59', null, { invalid: false });
+  });
+
+  it('should roll minutes from 00 to 59 when decrementing in 12hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="12:00" is12hour />);
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+    userEvent.click(screen.getByLabelText('Decrement minutes'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('12:59', null, { invalid: false });
+  });
+
+  it('should roll minutes from 59 to 00 when incrementing in 24hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="00:59" />);
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+    userEvent.click(screen.getByLabelText('Increment minutes'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('00:00', null, { invalid: false });
+  });
+
+  it('should roll minutes from 59 to 00 when incrementing in 12hour mode', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner value="12:59" is12hour />);
+    // Increasing or decreasing the minutes with the spinner buttons will reset the minutes to a valid 00
+    const input = screen.getByLabelText('Pick a time');
+    userEvent.type(input, '{end}');
+    userEvent.click(screen.getByLabelText('Increment minutes'));
+    expect(timePickerProps.onChange).toHaveBeenCalledWith('12:00', null, { invalid: false });
   });
 });
