@@ -806,7 +806,6 @@ export const TableWithColumnGrouping = () => {
     <MyTable
       id="table"
       useZebraStyles={useZebraStyles}
-      lightweight={lightweight}
       columns={tableColumns.slice(0, 4)}
       columnGroups={object('Column groups (columnGroups)', [
         {
