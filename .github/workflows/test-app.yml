@@ -81,4 +81,8 @@ jobs:
         if: ${{ success() }}
         run: |
           timeout 2m bash dist/src/utils/serveTestApp.sh
-          exit 0
+          status="$?"
+          if (( status == 124 )); then
+            exit 0
+          fi
+          exit "$status"
