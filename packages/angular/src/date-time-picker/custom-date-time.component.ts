@@ -7,7 +7,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.component';
+import { DateRange, DateTimeSelection, RelativeRange, datePickerParameters } from './date-time-picker.component';
 
 @Component({
   selector: 'ai-custom-date-time',
@@ -37,6 +37,7 @@ import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.
       [dateFormat]="dateFormat"
       [placeholder]="placeholder"
       [flatpickrOptions]="flatpickrOptions"
+      [datePickerParams]="datePickerParams"
     >
     </ai-date-time-absolute>
   `,
@@ -63,6 +64,7 @@ export class CustomDateTimeComponent implements OnChanges {
   @Input() dateFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
   @Input() flatpickrOptions;
+  @Input() datePickerParams: datePickerParameters;
   @Output() rangeChange: EventEmitter<DateTimeSelection> = new EventEmitter();
 
   @HostBinding('class.iot--date-time-picker__custom-wrapper') wrapperClass = true;

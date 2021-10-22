@@ -58,6 +58,20 @@ export type DateTimeSelection = PresetDateTimeSelection | CustomDateTimeSelectio
 
 export type DateRange = [Date, Date];
 
+export type datePickerParameters = {
+  ariaLabel: string;
+  disabled: boolean;
+  invalid: boolean;
+  invalidText: string;
+  rangeInvalid: boolean;
+  rangeInvalidText: string;
+  rangeWarn: boolean;
+  rangeWarnText: string;
+  warn: boolean;
+  warnText: string;
+  size: 'sm' | 'md' | 'xl';
+};
+
 @Component({
   selector: 'ai-date-time-picker',
   template: `
@@ -135,6 +149,7 @@ export type DateRange = [Date, Date];
             [placeholder]="dateFormat.toLowerCase()"
             [flatpickrOptions]="flatpickrOptions"
             [batchText]="batchText"
+            [datePickerParams]="datePickerParams"
           ></ai-custom-date-time>
         </div>
         <div class="iot--date-time-picker__menu-btn-set">
@@ -244,7 +259,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   @Input() selected: DateTimeSelection = null;
   @Input() hasRelative = true;
   @Input() hasAbsolute = true;
-  @Input() theme: 'light' | null = null;
+  @Input() theme: 'light' | 'dark' = null;
   @Input() placeholder = 'yyyy-mm-dd HH:mm';
   @Input() dateFormat = 'yyyy-MM-dd';
   @Input() flatpickrOptions;
@@ -271,6 +286,44 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     MINUTES: 'minutes',
     RANGE_SEPARATOR: 'to',
   };
+
+  // parameters for inner date picker
+  @Input() datePickerAriaLabel = 'inner-date-picker';
+  @Input() datePickerDisabled = false;
+  /**
+   * Set to `true` to display the invalid state.
+   */
+  @Input() datePickerInvalid = false;
+  /**
+   * Value displayed if datepicker is in an invalid state.
+   */
+  @Input() datePickerInvalidText = 'Invalid date format';
+  /**
+   * Set to `true` to display the invalid state for the second datepicker input.
+   */
+  @Input() datePickerRangeInvalid = false;
+  /**
+   * Value displayed if the second datepicker input is in an invalid state.
+   */
+  @Input() datePickerRangeInvalidText = 'Invalid date range format';
+  /**
+   * Set to `true` to show a warning (contents set by warningText)
+   */
+  @Input() datePickerWarn = false;
+  /**
+   * Sets the warning text
+   */
+  @Input() datePickerWarnText = 'This is a warning';
+  /**
+   * Set to `true` to show a warning in the second datepicker input (contents set by rangeWarningText)
+   */
+  @Input() datePickerRangeWarn = false;
+  /**
+   * Sets the warning text for the second datepicker input
+   */
+  @Input() datePickerRangeWarnText = 'This is a warning';
+  @Input() datePickerSize: 'sm' | 'md' | 'xl' = 'md';
+
   @Output() selectedChange: EventEmitter<DateTimeSelection> = new EventEmitter();
   @Output() apply: EventEmitter<DateRange> = new EventEmitter();
   @Output() cancel: EventEmitter<void> = new EventEmitter();
@@ -282,6 +335,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   disabled = false;
   timeFormat = 'HH:mm';
   absoluteDateFormat = 'Y-m-d';
+  datePickerParams: datePickerParameters = null;
 
   get tooltipOffset() {
     return { x: 0, y: 4 };
@@ -303,6 +357,19 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       this.selected = [null];
       this.disabled = true;
     }
+    this.datePickerParams = {
+      ariaLabel: this.datePickerAriaLabel,
+      disabled: this.datePickerDisabled,
+      invalid: this.datePickerInvalid,
+      invalidText: this.datePickerInvalidText,
+      rangeInvalid: this.datePickerRangeInvalid,
+      rangeInvalidText: this.datePickerRangeInvalidText,
+      warn: this.datePickerWarn,
+      warnText: this.datePickerWarnText,
+      rangeWarn: this.datePickerRangeWarn,
+      rangeWarnText: this.datePickerRangeWarnText,
+      size: this.datePickerSize,
+    };
     this.updateI18nTranslationString();
     this.updateAbsoluteDateFormat();
   }

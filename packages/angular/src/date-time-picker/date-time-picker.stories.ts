@@ -74,6 +74,20 @@ storiesOf('Components/DateTime Picker', module)
       },
     }),
   }))
+  .add('With disabled date picker', () => ({
+    template: `
+      <ai-date-time-picker
+        [theme]="(theme ? 'light' : null)"
+        [datePickerDisabled]="datePickerDisabled"
+        (selectedChange)="selectedChange($event)"
+        (apply)="apply($event)"
+        (cancel)="cancel($event)">
+      </ai-date-time-picker>
+		`,
+    props: getProps({
+      datePickerDisabled: true
+    }),
+  }))
   .add('With blocked dates', () => ({
     template: `
       <ai-date-time-picker

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { format, setHours, setMinutes } from 'date-fns';
+import { datePickerParameters } from './date-time-picker.component';
 
 @Component({
   selector: 'ai-date-time-absolute',
@@ -11,6 +12,17 @@ import { format, setHours, setMinutes } from 'date-fns';
           [label]="batchText.START_DATE"
           [rangeLabel]="batchText.END_DATE"
           [dateFormat]="dateFormat"
+          [ariaLabel]="datePickerParams.ariaLabel"
+          [disabled]="datePickerParams.disabled"
+          [invalid]="datePickerParams.invalid"
+          [invalidText]="datePickerParams.invalidText"
+          [rangeInvalid]="datePickerParams.rangeInvalid"
+          [rangeInvalidText]="datePickerParams.rangeInvalidText"
+          [rangeWarn]="datePickerParams.rangeWarn"
+          [rangeWarnText]="datePickerParams.rangeWarnText"
+          [warn]="datePickerParams.warn"
+          [warnText]="datePickerParams.warnText"
+          [size]="datePickerParams.size"
           [(ngModel)]="dateRange"
           [placeholder]="placeholder"
           [flatpickrOptions]="flatpickrOptions"
@@ -89,6 +101,7 @@ export class DateTimeAbsoluteComponent implements OnChanges {
   @Input() dateFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
   @Input() flatpickrOptions;
+  @Input() datePickerParams: datePickerParameters;
   @Output() valueChange: EventEmitter<[Date, Date]> = new EventEmitter();
 
   ngOnChanges(changes: SimpleChanges) {
@@ -102,6 +115,7 @@ export class DateTimeAbsoluteComponent implements OnChanges {
       this.startTime = format(start, formatString);
       this.endTime = format(end, formatString);
     }
+    console.info('para', this.datePickerParams);
   }
 
   onChange() {
