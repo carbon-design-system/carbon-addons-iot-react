@@ -62,6 +62,7 @@ export const SideNavPropTypes = {
     closeText: PropTypes.string,
     openText: PropTypes.string,
     sideNavLabelText: PropTypes.string,
+    submenuLabel: PropTypes.string,
   }),
 
   testId: PropTypes.string,
@@ -74,6 +75,7 @@ const defaultProps = {
     closeText: 'Close',
     openText: 'Open',
     sideNavLabelText: 'Side navigation',
+    submenuLabel: 'dropdown',
   },
   testId: 'side-nav',
 };
@@ -137,7 +139,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, testId, ...p
       <SideNavMenu
         isActive={parentActive}
         renderIcon={link.icon}
-        aria-label="dropdown"
+        aria-label={i18n.submenuLabel}
         key={`menu-link-${links.indexOf(link)}-dropdown`}
         title={link.linkContent}
         data-testid={`${testId}-menu-${index}`}
