@@ -533,4 +533,43 @@ describe('TableMultiSortModal', () => {
     userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
     expect(callbacks.onCancelMultiSortColumns).toHaveBeenCalled();
   });
+
+  it('should show the first column when no sort, and no anticipatedColumn are given', () => {
+    render(
+      <TableMultiSortModal
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+            isSortable: true,
+          },
+          {
+            id: 'select',
+            name: 'Select',
+            isSortable: true,
+          },
+        ]}
+        ordering={[
+          {
+            columnId: 'string',
+            isHidden: false,
+          },
+          {
+            columnId: 'select',
+            isHidden: false,
+          },
+        ]}
+        actions={callbacks}
+        sort={[]}
+        showMultiSortModal
+        testId="multi_sort_modal"
+      />
+    );
+
+    expect(screen.getByLabelText('Sort by')).toBeVisible();
+    expect(
+      within(screen.getByLabelText('Sort by')).getByRole('option', { name: 'String' }).selected
+    ).toBe(true);
+    expect(screen.queryByLabelText('Then by')).toBeNull();
+  });
 });

@@ -113,6 +113,15 @@ const TableMultiSortModal = ({
       return [...sortArray, anticipatedColumn];
     }
 
+    if (!sortArray.length) {
+      return [
+        {
+          columnId: '',
+          direction: 'ASC',
+        },
+      ];
+    }
+
     return sortArray;
   }, [anticipatedColumn, sort]);
 
