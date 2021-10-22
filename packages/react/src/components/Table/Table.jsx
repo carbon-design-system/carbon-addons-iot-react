@@ -228,10 +228,10 @@ const propTypes = {
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
       /**
-       * The anticipatedColumn is used to add the most recently click columnId to the UI of the sort
-       * modal. This gives the user a better experience by pre-emptively adding the column they clicked
-       * multi-sort on to the multisort modal without changing state. They still have to click "Sort"
-       * to save it, or can click 'Cancel' or the 'X' to clear it.
+       * The anticipatedMultiSortColumn is used to add the most recently click columnId to the UI of the
+       * MultiSort modal. This gives the user a better experience by pre-emptively adding the column
+       * they clicked multi-sort on to the multisort modal without changing state. They still have to
+       * click "Sort" to save it, or can click 'Cancel' or the 'X' to clear it.
        */
       anticipatedMultiSortColumn: PropTypes.shape({
         columnId: PropTypes.string,

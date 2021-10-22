@@ -13,10 +13,10 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /**
-   * The anticipatedColumn is used to add the most recently click columnId to the UI of the sort
-   * modal. This gives the user a better experience by pre-emptively adding the column they triggered
-   * the multi-sort on to the multisort modal without changing state. They still have to click "Sort"
-   * to save it, or can click 'Cancel' or the 'X' to clear it.
+   * The anticipatedColumn is used to add the most recently click columnId to the UI of the
+   * MultiSort modal. This gives the user a better experience by pre-emptively adding the column
+   * they clicked multi-sort on to the multisort modal without changing state. They still have to
+   * click "Sort" to save it, or can click 'Cancel' or the 'X' to clear it.
    */
   anticipatedColumn: PropTypes.shape({
     columnId: PropTypes.string,
@@ -83,6 +83,11 @@ const defaultProps = {
   testId: 'multi-sort-modal',
 };
 
+/**
+ * Simple helper function to turn the sort object into an array and filter empty values from it
+ * @param {Array|Object} sort A sort object or an array of sort objects
+ * @returns Array
+ */
 const cleanSortArray = (sort) => {
   const sortArray = Array.isArray(sort) ? sort : sort !== undefined ? [sort] : [];
 
