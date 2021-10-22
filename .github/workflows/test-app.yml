@@ -79,4 +79,4 @@ jobs:
 
       - name: Serve app
         if: ${{ success() }}
-        run: timeout 2m bash dist/src/utils/serveTestApp.sh || status="$?" if [[$status -ne 124]]; then exit $status; else exit 0; fi
+        run: timeout 2m bash dist/src/utils/serveTestApp.sh || status="$?" if [ "$status" -ne 124 ]; then exit $status; else exit 0; fi
