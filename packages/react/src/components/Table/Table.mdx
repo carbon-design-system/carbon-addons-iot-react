@@ -17,6 +17,7 @@
 - [Pagination](#pagination)
 - [Batch actions](#batch-actions)
 - [Aggregation](#aggregation)
+- [Row data editing](#row-data-editing)
 - [Column grouping](#column-grouping)
 - [Props](#props)
   - [Column Prop](#column-prop)
@@ -932,6 +933,103 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 />
 ```
 
+## Row data editing
+
+### Multi row data editing
+
+Row data editing can be activated using the option prop `hasRowEdit`. When it is true an edit icon will be shown in the
+table toolbar. Clicking the edit icon will trigger the callback `onShowRowEdit` and the StatefulTable will set the current
+toolbar to be the content of the view prop `view.toolbar.rowEditBarButtons` and all the rows to render the `editDataFunction`
+specified by their respective column in the `columns` prop.
+
+For the normal table this needs to be done manually by listening to `onShowRowEdit` and setting `view.toolbar.activeBar: 'rowEdit'`.
+
+Both the StatefulTable and the normal Table requires the `rowEditBarButtons` content to be provided. Below is a simple example:
+
+```jsx
+<>
+  <Button key="cancel" size="small" kind="tertiary" onClick={onCancelRowEdit}>
+    Cancel
+  </Button>
+  <Button key="save" size="small" onClick={onSaveRowEdit}>
+    Save
+  </Button>
+</>
+```
+
+The `onCancelRowEdit` implementation should exit the row edit mode by setting the `view.toolbar.activeBar` to be undefined and clear any data modifications.
+The `onSaveRowEdit` implementation should save your modified data and also exit the row edit if all goes well.
+
+All the columns that should be editable need to specify an `editDataFunction` that renders the appropriate form element. The editDataFunction is called with this payload:
+
+```jsx
+
+{
+    value: PropTypes.any, // Current cell value
+    columnId: PropTypes.string, // The id of the column
+    rowId: PropTypes.string, // The id of the row
+    row: PropTypes.object // All the data for this row, e.g. { col1: 'valueX', col2: 'valueY' }
+}
+```
+
+Below is a very basic example of the editDataFunction:
+
+```jsx
+// The app should handle input validation and types like dates, select etc
+const editDataFunction = ({ value, columnId, rowId }) => {
+  const id = `${columnId}-${rowId}`;
+  return typeof value === 'boolean' ? (
+    <Checkbox
+      defaultChecked={value}
+      id={id}
+      labelText=""
+      hideLabel
+      onChange={(e) => onDataChange(e, columnId, rowId)}
+    />
+  ) : (
+    <TextInput
+      id={id}
+      onChange={(e) => onDataChange(e, columnId, rowId)}
+      type="text"
+      light
+      defaultValue={value}
+      labelText=""
+      hideLabel
+    />
+  );
+};
+```
+
+An onDataChange needs to be implemented that handles the changes in a temporary data state until the Save button is clicked. See the table story code for a complete example.
+
+### Single row data editing
+
+It is also possible to only edit a single row at a time by using the option `hasSingleRowEdit` instead of `hasRowEdit`.
+The option `hasSingleRowEdit` must be combined with a row action that has the `isEdit` property set to true and the
+Save/Cancel buttons must be passed via the prop `view.table.singleRowEditButtons`.
+
+Clicking the "Edit" row action should turn that specific row editable, and it also requires the columns to have
+provided an `editDataFunction`. For StatefulTable the row action state is automatically updated with
+`isEditMode:true` but for normal tables it should be handled manually. This is done by listening to the `actions.table.onApplyRowAction`
+and checking if the action is 'edit'. In that case the state in `view.table.rowActions` should be updated to set `isEditMode: true`
+on the row in question.
+
+An example of the `onApplyRowAction` could look like this:
+
+```jsx
+const [rowEditedData, setRowEditedData] = useState([]);
+const [rowActionsState, setRowActionsState] = useState([]); // This one is passed to the table via view.table.rowActions
+
+const onApplyRowAction = (action, rowId) => {
+  if (action === 'edit') {
+    setRowEditedData(cloneDeep(currentData)); // Clone the current data to get a temporary one used until save is clicked
+    setRowActionsState([...rowActionsState, { rowId, isEditMode: true }]);
+  }
+};
+```
+
+See the table story code for a complete example.
+
 ## Column grouping
 
 The table columns can be grouped into any number of groups. Each column group has an id, a name and can include any number of columns. The column groups will be displayed in a dedicated row above the normal column headers.
@@ -1056,6 +1154,7 @@ A complete example of how to use the column grouping could look like this:
 | hasAggregations             | bool                                           |         | If true allows the table to aggregate values of columns in a special row                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | hasPagination               | bool                                           |         | If true the table uses pagination                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | hasRowSelection             | 'multi', 'single', or false                    |         | Enables multiple row selection, single row selection, or turns it off                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| hasRowEdit                  | bool                                           |         | If true enables the row edit toolbar button and functionality                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | hasRowExpansion             | bool                                           |         | Allows rows to be expanded                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | hasRowNesting               | bool, or {hasSingleNestedHierarchy: bool}      |         | Allows nested rows, or only a depth of one nested row                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | hasRowActions               | bool                                           |         | If true, row actions are enabled                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
