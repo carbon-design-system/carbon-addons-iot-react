@@ -6375,6 +6375,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -6464,6 +6466,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -6645,6 +6649,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -7006,6 +7012,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -7095,6 +7103,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -7317,6 +7327,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}

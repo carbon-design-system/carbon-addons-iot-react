@@ -274,7 +274,10 @@ describe('DateTimePicker', () => {
     const wrapper = mount(
       <DateTimePicker
         {...dateTimePickerProps}
-        defaultValue={PRESET_VALUES[1]}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[1],
+        }}
         showRelativeOption={false}
       />
     );
