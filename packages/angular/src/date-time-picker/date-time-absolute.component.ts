@@ -115,7 +115,6 @@ export class DateTimeAbsoluteComponent implements OnChanges {
       this.startTime = format(start, formatString);
       this.endTime = format(end, formatString);
     }
-    console.info('para', this.datePickerParams);
   }
 
   onChange() {
