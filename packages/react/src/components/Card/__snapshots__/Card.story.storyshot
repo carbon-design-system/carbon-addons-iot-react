@@ -1748,6 +1748,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             Card Title
           </div>
+          <div
+            className="iot--card--subtitle--text"
+            data-testid="Card-subtitle"
+          >
+            2018-10-28 13:10 to 2018-10-28 13:30
+          </div>
         </span>
         <div
           className="iot--card--toolbar"
@@ -1762,24 +1768,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             role="button"
             style={
               Object {
-                "--wrapper-width": "20rem",
+                "--wrapper-width": "3rem",
               }
             }
             tabIndex="0"
           >
             <div
-              className="iot--date-time-picker__box--full"
+              className=""
             >
-              <div
-                className="iot--date-time-picker__field"
-                data-testid="date-time-picker__field"
-              >
-                <span
-                  title="2018-10-28 13:10 to 2018-10-28 13:30"
-                >
-                  2018-10-28 13:10 to 2018-10-28 13:30
-                </span>
-              </div>
               <div
                 className="iot--flyout-menu iot--flyout-menu__bottom"
                 data-testid="date-time-picker-datepicker-flyout-container"
@@ -1792,7 +1788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <button
                   aria-describedby={null}
                   aria-label="Calendar"
-                  className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                  className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="date-time-picker-datepicker-flyout-button"
                   disabled={false}
                   onBlur={[Function]}

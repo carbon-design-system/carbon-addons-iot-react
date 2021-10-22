@@ -24,7 +24,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--light iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="hotspot-bold"
             disabled={false}
             onBlur={[Function]}
@@ -42,6 +42,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               Text Bold
             </div>
+            <span
+              className="iot--icon-switch__divider"
+            />
             <svg
               aria-hidden="true"
               aria-label="Text Bold"
@@ -63,7 +66,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--light iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="hotspot-italic"
             disabled={false}
             onBlur={[Function]}
@@ -81,6 +84,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               Text Italic
             </div>
+            <span
+              className="iot--icon-switch__divider"
+            />
             <svg
               aria-hidden="true"
               aria-label="Text Italic"
@@ -102,7 +108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--light iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="hotspot-underline"
             disabled={false}
             onBlur={[Function]}
@@ -120,6 +126,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               Text Underline
             </div>
+            <span
+              className="iot--icon-switch__divider"
+            />
             <svg
               aria-hidden="true"
               aria-label="Text Underline"
@@ -698,7 +707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--light iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="hotspot-bold"
             disabled={false}
             onBlur={[Function]}
@@ -716,6 +725,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               Text Bold
             </div>
+            <span
+              className="iot--icon-switch__divider"
+            />
             <svg
               aria-hidden="true"
               aria-label="Text Bold"
@@ -737,7 +749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--light iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="hotspot-italic"
             disabled={false}
             onBlur={[Function]}
@@ -755,6 +767,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               Text Italic
             </div>
+            <span
+              className="iot--icon-switch__divider"
+            />
             <svg
               aria-hidden="true"
               aria-label="Text Italic"
@@ -776,7 +791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-describedby={null}
             aria-pressed={null}
-            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            className="iot--icon-switch iot--icon-switch--default iot--icon-switch--light iot--icon-switch--unselected iot--icon-switch--unselected--light bx--btn bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="hotspot-underline"
             disabled={false}
             onBlur={[Function]}
@@ -794,6 +809,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               Text Underline
             </div>
+            <span
+              className="iot--icon-switch__divider"
+            />
             <svg
               aria-hidden="true"
               aria-label="Text Underline"

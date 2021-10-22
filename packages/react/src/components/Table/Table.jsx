@@ -7,6 +7,7 @@ import { Table as CarbonTable, TableContainer, Tag } from 'carbon-components-rea
 import uniqueId from 'lodash/uniqueId';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
+import warning from 'warning';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
@@ -24,6 +25,8 @@ import {
   RowActionsStatePropTypes,
   ActiveTableToolbarPropType,
   TableSortPropType,
+  TableColumnGroupPropType,
+  TableOrderingPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -50,6 +53,8 @@ const propTypes = {
   lightweight: PropTypes.bool,
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
+  /** Specify the properties of each column group in the table. Defaults to empty column. */
+  columnGroups: TableColumnGroupPropType,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
   /** Expanded data for the table details */
@@ -100,6 +105,8 @@ const propTypes = {
     hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
+    /** If true enables the row edit toolbar button and functionality */
+    hasRowEdit: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
     hasUserViewManagement: PropTypes.bool,
@@ -117,7 +124,16 @@ const propTypes = {
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  size: function checkProps(props, propName, componentName) {
+    if (['compact', 'short', 'normal', 'tall'].includes(props[propName])) {
+      warning(
+        false,
+        `The value \`${props[propName]}\` has been deprecated for the ` +
+          `\`${propName}\` prop on the ${componentName} component. It will be removed in the next major ` +
+          `release. Please use 'xs', 'sm', 'md', 'lg', or 'xl' instead.`
+      );
+    }
+  },
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
   view: PropTypes.shape({
@@ -195,14 +211,8 @@ const propTypes = {
       isSelectAllIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string),
       sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]),
-      /** Specify column ordering and visibility */
-      ordering: PropTypes.arrayOf(
-        PropTypes.shape({
-          columnId: PropTypes.string.isRequired,
-          /* Visibility of column in table, defaults to false */
-          isHidden: PropTypes.bool,
-        })
-      ),
+      /** Specify the order, visibility and group belonging of the table columns */
+      ordering: TableOrderingPropType,
       /** what is the current state of the row actions */
       rowActions: RowActionsStatePropTypes,
       singleRowEditButtons: PropTypes.element,
@@ -217,6 +227,8 @@ const propTypes = {
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
+      /** Array with rowIds that are with loading active */
+      loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -279,6 +291,9 @@ const propTypes = {
       /* (index) => {} */
       onRemoveMultiSortColumn: PropTypes.func,
       onTableErrorStateAction: PropTypes.func,
+
+      /** call back function for when load more row is clicked  (rowId) => {} */
+      onRowLoadMore: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -294,6 +309,7 @@ const propTypes = {
 };
 
 export const defaultProps = (baseProps) => ({
+  columnGroups: [],
   id: null,
   useZebraStyles: false,
   lightweight: false,
@@ -307,6 +323,7 @@ export const defaultProps = (baseProps) => ({
     hasRowExpansion: false,
     hasRowActions: false,
     hasRowNesting: false,
+    hasRowEdit: false,
     hasFilter: false,
     hasAdvancedFilter: false,
     hasOnlyPageData: false,
@@ -352,6 +369,7 @@ export const defaultProps = (baseProps) => ({
         columnCount: 5,
       },
       singleRowEditButtons: null,
+      loadingMoreIds: [],
     },
   },
   actions: {
@@ -426,6 +444,7 @@ export const defaultProps = (baseProps) => ({
     itemSelected: (selectedCount) => `${selectedCount} item selected`,
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
     toggleAggregations: 'Toggle aggregations',
+    toolbarLabelAria: undefined,
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageBody: '',
@@ -453,6 +472,8 @@ export const defaultProps = (baseProps) => ({
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
+    /* table load more */
+    loadMoreText: 'Load more...',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -464,6 +485,7 @@ const Table = (props) => {
   const {
     id,
     columns,
+    columnGroups,
     data,
     expandedData,
     locale,
@@ -526,6 +548,7 @@ const Table = (props) => {
     view.table.isSelectAllSelected,
     view.table.isSelectAllIndeterminate,
     view.table.selectedIds,
+    view.table.loadingMoreIds,
     view.table.sort,
     view.table.ordering,
     // Remove the error as it's a React.Element/Node which can not be compared
@@ -687,6 +710,15 @@ const Table = (props) => {
       ? someRowsAreSelected
       : view.table.isSelectAllIndeterminate;
 
+  const minHeaderSizeIsLarge = visibleColumns.some((col) => col.isSortable);
+
+  if (__DEV__ && columnGroups.length && options.hasColumnSelection) {
+    warning(
+      false,
+      'Column grouping (columnGroups) cannot be combined with the option hasColumnSelection:true'
+    );
+  }
+
   return (
     <TableContainer
       style={style}
@@ -727,6 +759,7 @@ const Table = (props) => {
               downloadIconDescription: i18n.downloadIconDescription,
               rowCountInHeader: i18n.rowCountInHeader,
               toggleAggregations: i18n.toggleAggregations,
+              toolbarLabelAria: i18n.toolbarLabelAria,
             }}
             actions={{
               ...pick(
@@ -829,6 +862,9 @@ const Table = (props) => {
           // TODO: remove id in v3
           data-testid={id || testId}
           className={classnames({
+            [`${iotPrefix}--data-table--column-groups`]: columnGroups.length,
+            [`${iotPrefix}--data-table--column-groups--min-size-large`]:
+              columnGroups.length && minHeaderSizeIsLarge,
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
               options.hasResize && !options.useAutoTableLayoutForResize,
@@ -860,6 +896,7 @@ const Table = (props) => {
                 truncateCellText: useCellTextTruncate,
               }}
               columns={columns}
+              columnGroups={columnGroups}
               filters={view.filters}
               actions={{
                 ...pick(actions.toolbar, 'onApplyFilter'),
@@ -928,6 +965,7 @@ const Table = (props) => {
                 columns={visibleColumns}
                 expandedIds={view.table.expandedIds}
                 selectedIds={view.table.selectedIds}
+                loadingMoreIds={view.table.loadingMoreIds}
                 {...pick(
                   i18n,
                   'overflowMenuAria',
@@ -937,7 +975,8 @@ const Table = (props) => {
                   'actionFailedText',
                   'learnMoreText',
                   'dismissText',
-                  'selectRowAria'
+                  'selectRowAria',
+                  'loadMoreText'
                 )}
                 totalColumns={totalColumns}
                 {...pick(
@@ -959,7 +998,8 @@ const Table = (props) => {
                   'onApplyRowAction',
                   'onClearRowError',
                   'onRowExpanded',
-                  'onRowClicked'
+                  'onRowClicked',
+                  'onRowLoadMore'
                 )}
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-body`}
@@ -999,7 +1039,13 @@ const Table = (props) => {
           {options.hasAggregations && !aggregationsAreHidden ? (
             <TableFoot
               options={{
-                ...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions'),
+                ...pick(
+                  options,
+                  'hasRowSelection',
+                  'hasRowExpansion',
+                  'hasRowActions',
+                  'hasRowNesting'
+                ),
               }}
               tableState={{
                 aggregations,

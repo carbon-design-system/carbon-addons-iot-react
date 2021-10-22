@@ -8,8 +8,18 @@ import reducer from './asyncTableReducer';
 
 const AsyncTable = ({ fetchData, id }) => {
   const columns = [
-    { id: 'firstName', name: 'First Name', isSortable: true },
-    { id: 'lastName', name: 'Last Name', isSortable: true },
+    {
+      id: 'firstName',
+      name: 'First Name',
+      isSortable: true,
+      filter: { placeholderText: 'enter a string' },
+    },
+    {
+      id: 'lastName',
+      name: 'Last Name',
+      isSortable: true,
+      filter: { placeholderText: 'enter a string' },
+    },
   ];
 
   const [state, dispatch] = useReducer(reducer, {
@@ -42,16 +52,10 @@ const AsyncTable = ({ fetchData, id }) => {
     },
   });
 
-  // console.log(state);
-
   // This hook is responsible for refetching more data asynchronously
   // as necessary when the page, filters or sort properties are changed
   useEffect(
     () => {
-      // console.log('pagination', state.view.pagination);
-      // console.log('filters', state.view.filters);
-      // console.log('sort', state.view.table.sort);
-
       // Determine what our filters should be
       let firstNameFilterValue;
       let lastNameFilterValue;
@@ -118,10 +122,10 @@ const AsyncTable = ({ fetchData, id }) => {
 
           // update the table data
           dispatch(
-            baseTableActions.tableRegister(
-              { data: [...state.data, ...tableData] },
-              data.meta.totalRows
-            )
+            baseTableActions.tableRegister({
+              data: [...state.data, ...tableData],
+              totalItems: data.meta.totalRows,
+            })
           );
 
           // and reset the table's loading state

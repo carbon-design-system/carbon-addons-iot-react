@@ -20,7 +20,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         className="bx--data-table-content"
       >
         <table
-          className="bx--data-table bx--data-table--lg bx--data-table--no-border"
+          className="bx--data-table iot--data-table--column-groups iot--data-table--column-groups--min-size-large bx--data-table--lg bx--data-table--no-border"
           data-testid="table"
           id="table"
           title={null}
@@ -180,69 +180,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       title="Select"
                     >
                       Select
-                    </span>
-                  </span>
-                  <svg
-                    aria-label="Sort rows by this header in ascending order"
-                    className="bx--table-sort__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
-                    />
-                  </svg>
-                  <svg
-                    aria-label="Sort rows by this header in ascending order"
-                    className="bx--table-sort__icon-unsorted"
-                    fill="currentColor"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                    />
-                  </svg>
-                </button>
-              </th>
-              <th
-                aria-sort="none"
-                className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                data-testid="table-table-head-column-secretField"
-                scope="col"
-                style={
-                  Object {
-                    "width": undefined,
-                  }
-                }
-              >
-                <button
-                  align="start"
-                  className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
-                  data-column="secretField"
-                  data-floating-menu-container={true}
-                  id="column-secretField"
-                  onClick={[Function]}
-                >
-                  <span
-                    className="bx--table-header-label"
-                  >
-                    <span
-                      className=""
-                      title="Secret Information"
-                    >
-                      Secret Information
                     </span>
                   </span>
                   <svg
@@ -697,25 +634,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-0-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="AAAAAAAAAA"
-                  >
-                    AAAAAAAAAA
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-0-status"
@@ -912,25 +830,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-1-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="OewGc0QsMs"
-                  >
-                    OewGc0QsMs
                   </span>
                 </span>
               </td>
@@ -1146,25 +1045,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-2-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="c8iM4qgaYa"
-                  >
-                    c8iM4qgaYa
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-2-status"
@@ -1374,25 +1254,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-3-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="qcUSWgwIkI"
-                  >
-                    qcUSWgwIkI
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-3-status"
@@ -1589,25 +1450,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-4-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="46GYyWC0w0"
-                  >
-                    46GYyWC0w0
                   </span>
                 </span>
               </td>
@@ -1823,25 +1665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-5-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Ia2eQMSi8i"
-                  >
-                    Ia2eQMSi8i
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-5-status"
@@ -2051,25 +1874,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-6-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="W4oksCiQKQ"
-                  >
-                    W4oksCiQKQ
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-6-status"
@@ -2266,25 +2070,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-7-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="kYaqK2y8W8"
-                  >
-                    kYaqK2y8W8
                   </span>
                 </span>
               </td>
@@ -2500,25 +2285,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-8-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="y2MwmsEqiq"
-                  >
-                    y2MwmsEqiq
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-8-status"
@@ -2728,25 +2494,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-9-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="CW82EiUYuY"
-                  >
-                    CW82EiUYuY
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-9-status"
@@ -2943,25 +2690,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-10-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Q0u8gYkG6G"
-                  >
-                    Q0u8gYkG6G
                   </span>
                 </span>
               </td>
@@ -3177,25 +2905,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-11-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="eUgE8O0yIy"
-                  >
-                    eUgE8O0yIy
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-11-status"
@@ -3405,25 +3114,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-12-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="sySKaEGgUg"
-                  >
-                    sySKaEGgUg
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-12-status"
@@ -3620,25 +3310,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-13-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="6SEQ24WOgO"
-                  >
-                    6SEQ24WOgO
                   </span>
                 </span>
               </td>
@@ -3854,25 +3525,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-14-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Kw0WUum6s6"
-                  >
-                    Kw0WUum6s6
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-14-status"
@@ -4082,25 +3734,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-15-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="YQmcwk2o4o"
-                  >
-                    YQmcwk2o4o
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-15-status"
@@ -4297,25 +3930,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-16-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="muYiOaIWGW"
-                  >
-                    muYiOaIWGW
                   </span>
                 </span>
               </td>
@@ -4531,25 +4145,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-17-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="0OKoqQYESE"
-                  >
-                    0OKoqQYESE
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-17-status"
@@ -4759,25 +4354,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-18-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Es6uIGowew"
-                  >
-                    Es6uIGowew
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-18-status"
@@ -4974,25 +4550,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-19-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="SMs0k64eqe"
-                  >
-                    SMs0k64eqe
                   </span>
                 </span>
               </td>
@@ -5208,25 +4765,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-20-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="gqe6CwKM2M"
-                  >
-                    gqe6CwKM2M
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-20-status"
@@ -5436,25 +4974,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-21-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="uKQCema4E4"
-                  >
-                    uKQCema4E4
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-21-status"
@@ -5651,25 +5170,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-22-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="8oCI6cqmQm"
-                  >
-                    8oCI6cqmQm
                   </span>
                 </span>
               </td>
@@ -5885,25 +5385,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-23-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="MIyOYS6UcU"
-                  >
-                    MIyOYS6UcU
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-23-status"
@@ -6113,25 +5594,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-24-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="amkU0IMCoC"
-                  >
-                    amkU0IMCoC
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-24-status"
@@ -6328,25 +5790,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-25-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="oGWaS8cu0u"
-                  >
-                    oGWaS8cu0u
                   </span>
                 </span>
               </td>
@@ -6562,25 +6005,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-26-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="2kIguyscCc"
-                  >
-                    2kIguyscCc
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-26-status"
@@ -6790,25 +6214,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-27-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="GE4mMo8KOK"
-                  >
-                    GE4mMo8KOK
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-27-status"
@@ -7005,25 +6410,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-28-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="UiqsoeO2a2"
-                  >
-                    UiqsoeO2a2
                   </span>
                 </span>
               </td>
@@ -7239,25 +6625,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-29-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="iCcyGUekmk"
-                  >
-                    iCcyGUekmk
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-29-status"
@@ -7467,25 +6834,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-30-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="wgO4iKuSyS"
-                  >
-                    wgO4iKuSyS
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-30-status"
@@ -7682,25 +7030,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-31-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="AAAAAAAAAA"
-                  >
-                    AAAAAAAAAA
                   </span>
                 </span>
               </td>
@@ -7916,25 +7245,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-32-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="OewGc0QsMs"
-                  >
-                    OewGc0QsMs
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-32-status"
@@ -8144,25 +7454,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-33-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="c8iM4qgaYa"
-                  >
-                    c8iM4qgaYa
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-33-status"
@@ -8359,25 +7650,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-34-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="qcUSWgwIkI"
-                  >
-                    qcUSWgwIkI
                   </span>
                 </span>
               </td>
@@ -8593,25 +7865,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-35-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="46GYyWC0w0"
-                  >
-                    46GYyWC0w0
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-35-status"
@@ -8821,25 +8074,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-36-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Ia2eQMSi8i"
-                  >
-                    Ia2eQMSi8i
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-36-status"
@@ -9036,25 +8270,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-37-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="W4oksCiQKQ"
-                  >
-                    W4oksCiQKQ
                   </span>
                 </span>
               </td>
@@ -9270,25 +8485,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-38-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="kYaqK2y8W8"
-                  >
-                    kYaqK2y8W8
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-38-status"
@@ -9498,25 +8694,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-39-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="y2MwmsEqiq"
-                  >
-                    y2MwmsEqiq
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-39-status"
@@ -9713,25 +8890,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-40-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="CW82EiUYuY"
-                  >
-                    CW82EiUYuY
                   </span>
                 </span>
               </td>
@@ -9947,25 +9105,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-41-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Q0u8gYkG6G"
-                  >
-                    Q0u8gYkG6G
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-41-status"
@@ -10175,25 +9314,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-42-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="eUgE8O0yIy"
-                  >
-                    eUgE8O0yIy
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-42-status"
@@ -10390,25 +9510,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-43-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="sySKaEGgUg"
-                  >
-                    sySKaEGgUg
                   </span>
                 </span>
               </td>
@@ -10624,25 +9725,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-44-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="6SEQ24WOgO"
-                  >
-                    6SEQ24WOgO
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-44-status"
@@ -10852,25 +9934,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-45-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Kw0WUum6s6"
-                  >
-                    Kw0WUum6s6
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-45-status"
@@ -11067,25 +10130,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-46-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="YQmcwk2o4o"
-                  >
-                    YQmcwk2o4o
                   </span>
                 </span>
               </td>
@@ -11301,25 +10345,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-47-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="muYiOaIWGW"
-                  >
-                    muYiOaIWGW
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-47-status"
@@ -11529,25 +10554,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-48-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="0OKoqQYESE"
-                  >
-                    0OKoqQYESE
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-48-status"
@@ -11744,25 +10750,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-49-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Es6uIGowew"
-                  >
-                    Es6uIGowew
                   </span>
                 </span>
               </td>
@@ -11978,25 +10965,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-50-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="SMs0k64eqe"
-                  >
-                    SMs0k64eqe
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-50-status"
@@ -12206,25 +11174,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-51-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="gqe6CwKM2M"
-                  >
-                    gqe6CwKM2M
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-51-status"
@@ -12421,25 +11370,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-52-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="uKQCema4E4"
-                  >
-                    uKQCema4E4
                   </span>
                 </span>
               </td>
@@ -12655,25 +11585,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-53-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="8oCI6cqmQm"
-                  >
-                    8oCI6cqmQm
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-53-status"
@@ -12883,25 +11794,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-54-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="MIyOYS6UcU"
-                  >
-                    MIyOYS6UcU
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-54-status"
@@ -13098,25 +11990,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-55-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="amkU0IMCoC"
-                  >
-                    amkU0IMCoC
                   </span>
                 </span>
               </td>
@@ -13332,25 +12205,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-56-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="oGWaS8cu0u"
-                  >
-                    oGWaS8cu0u
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-56-status"
@@ -13560,25 +12414,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-57-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="2kIguyscCc"
-                  >
-                    2kIguyscCc
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-57-status"
@@ -13775,25 +12610,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-58-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="GE4mMo8KOK"
-                  >
-                    GE4mMo8KOK
                   </span>
                 </span>
               </td>
@@ -14009,25 +12825,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-59-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="UiqsoeO2a2"
-                  >
-                    UiqsoeO2a2
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-59-status"
@@ -14237,25 +13034,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-60-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="iCcyGUekmk"
-                  >
-                    iCcyGUekmk
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-60-status"
@@ -14452,25 +13230,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-61-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="wgO4iKuSyS"
-                  >
-                    wgO4iKuSyS
                   </span>
                 </span>
               </td>
@@ -14686,25 +13445,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-62-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="AAAAAAAAAA"
-                  >
-                    AAAAAAAAAA
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-62-status"
@@ -14914,25 +13654,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-63-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="OewGc0QsMs"
-                  >
-                    OewGc0QsMs
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-63-status"
@@ -15129,25 +13850,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-64-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="c8iM4qgaYa"
-                  >
-                    c8iM4qgaYa
                   </span>
                 </span>
               </td>
@@ -15363,25 +14065,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-65-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="qcUSWgwIkI"
-                  >
-                    qcUSWgwIkI
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-65-status"
@@ -15591,25 +14274,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-66-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="46GYyWC0w0"
-                  >
-                    46GYyWC0w0
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-66-status"
@@ -15806,25 +14470,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-67-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Ia2eQMSi8i"
-                  >
-                    Ia2eQMSi8i
                   </span>
                 </span>
               </td>
@@ -16040,25 +14685,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-68-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="W4oksCiQKQ"
-                  >
-                    W4oksCiQKQ
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-68-status"
@@ -16268,25 +14894,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-69-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="kYaqK2y8W8"
-                  >
-                    kYaqK2y8W8
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-69-status"
@@ -16483,25 +15090,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-70-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="y2MwmsEqiq"
-                  >
-                    y2MwmsEqiq
                   </span>
                 </span>
               </td>
@@ -16717,25 +15305,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-71-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="CW82EiUYuY"
-                  >
-                    CW82EiUYuY
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-71-status"
@@ -16945,25 +15514,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-72-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Q0u8gYkG6G"
-                  >
-                    Q0u8gYkG6G
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-72-status"
@@ -17160,25 +15710,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-73-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="eUgE8O0yIy"
-                  >
-                    eUgE8O0yIy
                   </span>
                 </span>
               </td>
@@ -17394,25 +15925,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-74-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="sySKaEGgUg"
-                  >
-                    sySKaEGgUg
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-74-status"
@@ -17622,25 +16134,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-75-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="6SEQ24WOgO"
-                  >
-                    6SEQ24WOgO
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-75-status"
@@ -17837,25 +16330,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-76-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Kw0WUum6s6"
-                  >
-                    Kw0WUum6s6
                   </span>
                 </span>
               </td>
@@ -18071,25 +16545,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-77-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="YQmcwk2o4o"
-                  >
-                    YQmcwk2o4o
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-77-status"
@@ -18299,25 +16754,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-78-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="muYiOaIWGW"
-                  >
-                    muYiOaIWGW
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-78-status"
@@ -18514,25 +16950,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-79-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="0OKoqQYESE"
-                  >
-                    0OKoqQYESE
                   </span>
                 </span>
               </td>
@@ -18748,25 +17165,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-80-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Es6uIGowew"
-                  >
-                    Es6uIGowew
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-80-status"
@@ -18976,25 +17374,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-81-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="SMs0k64eqe"
-                  >
-                    SMs0k64eqe
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-81-status"
@@ -19191,25 +17570,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-82-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="gqe6CwKM2M"
-                  >
-                    gqe6CwKM2M
                   </span>
                 </span>
               </td>
@@ -19425,25 +17785,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-83-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="uKQCema4E4"
-                  >
-                    uKQCema4E4
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-83-status"
@@ -19653,25 +17994,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-84-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="8oCI6cqmQm"
-                  >
-                    8oCI6cqmQm
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-84-status"
@@ -19868,25 +18190,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-85-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="MIyOYS6UcU"
-                  >
-                    MIyOYS6UcU
                   </span>
                 </span>
               </td>
@@ -20102,25 +18405,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-86-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="amkU0IMCoC"
-                  >
-                    amkU0IMCoC
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-86-status"
@@ -20330,25 +18614,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-87-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="oGWaS8cu0u"
-                  >
-                    oGWaS8cu0u
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-87-status"
@@ -20545,25 +18810,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-88-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="2kIguyscCc"
-                  >
-                    2kIguyscCc
                   </span>
                 </span>
               </td>
@@ -20779,25 +19025,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-89-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="GE4mMo8KOK"
-                  >
-                    GE4mMo8KOK
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-89-status"
@@ -21007,25 +19234,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-90-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="UiqsoeO2a2"
-                  >
-                    UiqsoeO2a2
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-90-status"
@@ -21222,25 +19430,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-91-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="iCcyGUekmk"
-                  >
-                    iCcyGUekmk
                   </span>
                 </span>
               </td>
@@ -21456,25 +19645,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-92-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="wgO4iKuSyS"
-                  >
-                    wgO4iKuSyS
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-92-status"
@@ -21684,25 +19854,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-93-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="AAAAAAAAAA"
-                  >
-                    AAAAAAAAAA
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-93-status"
@@ -21899,25 +20050,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-94-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="OewGc0QsMs"
-                  >
-                    OewGc0QsMs
                   </span>
                 </span>
               </td>
@@ -22133,25 +20265,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-95-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="c8iM4qgaYa"
-                  >
-                    c8iM4qgaYa
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-95-status"
@@ -22361,25 +20474,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-96-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="qcUSWgwIkI"
-                  >
-                    qcUSWgwIkI
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-96-status"
@@ -22576,25 +20670,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-B"
                   >
                     option-B
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-97-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="46GYyWC0w0"
-                  >
-                    46GYyWC0w0
                   </span>
                 </span>
               </td>
@@ -22810,25 +20885,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 align="start"
                 className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-98-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="Ia2eQMSi8i"
-                  >
-                    Ia2eQMSi8i
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
                 data-column="status"
                 data-offset={0}
                 id="cell-table-row-98-status"
@@ -23032,25 +21088,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     title="option-A"
                   >
                     option-A
-                  </span>
-                </span>
-              </td>
-              <td
-                align="start"
-                className="data-table-start iot--table__cell--sortable"
-                data-column="secretField"
-                data-offset={0}
-                id="cell-table-row-99-secretField"
-                offset={0}
-              >
-                <span
-                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                >
-                  <span
-                    className=""
-                    title="W4oksCiQKQ"
-                  >
-                    W4oksCiQKQ
                   </span>
                 </span>
               </td>
@@ -43266,9 +41303,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="table-table-foot"
             >
               <tr>
-                <td />
                 <td
                   className="iot-table-foot--label"
+                  colSpan={2}
                   data-testid="table-table-foot-aggregation-string"
                 >
                   Total
@@ -43832,6 +41869,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -43960,6 +41999,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         </div>
                         <div
                           className="iot--list-item--content--row-actions"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -45102,12 +43143,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="string"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45179,12 +43214,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="date"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45232,90 +43261,93 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="select"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "hidden",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--list-box__wrapper"
+                      className="iot--combobox iot--combobox__menu--fit-content"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--combo-box iot--filterheader-combo bx--list-box"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
+                        className="bx--list-box__wrapper"
                       >
                         <div
-                          className="bx--list-box__field"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
-                          <input
-                            aria-activedescendant={null}
-                            aria-autocomplete="list"
-                            aria-controls={null}
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-label="Filter"
-                            aria-labelledby={null}
-                            autoComplete="off"
-                            className="bx--text-input bx--text-input--empty"
-                            disabled={false}
-                            id="column-2"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            placeholder="pick an option"
-                            role="combobox"
-                            tabIndex="0"
-                            type="text"
-                            value=""
-                          />
-                          
-                          <button
-                            aria-haspopup={true}
-                            aria-label="Open menu"
-                            className="bx--list-box__menu-icon"
-                            data-toggle={true}
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseUp={[Function]}
-                            role="button"
-                            tabIndex="-1"
-                            title="Open menu"
-                            type="button"
+                          <div
+                            className="bx--list-box__field"
                           >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
+                            <input
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input bx--text-input--empty"
+                              data-testid="combo-box"
+                              disabled={false}
+                              id="column-2"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="pick an option"
+                              role="combobox"
+                              tabIndex="0"
+                              type="text"
+                              value=""
+                            />
+                            
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
                             >
-                              <path
-                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                              />
-                            </svg>
-                          </button>
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div
+                            aria-label="Choose an item"
+                            aria-labelledby={null}
+                            className="bx--list-box__menu"
+                            id="downshift-1-menu"
+                            role="listbox"
+                          />
                         </div>
-                        <div
-                          aria-label="Choose an item"
-                          aria-labelledby={null}
-                          className="bx--list-box__menu"
-                          id="downshift-1-menu"
-                          role="listbox"
-                        />
                       </div>
                     </div>
                   </div>
@@ -45324,12 +43356,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="status"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45342,12 +43368,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="number"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45395,12 +43415,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="boolean"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45448,12 +43462,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="node"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -45466,12 +43474,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header"
                   data-column="object"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "150px",
-                    }
-                  }
                   width="150px"
                 >
                   <div
@@ -73456,12 +71458,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="string"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73532,12 +71528,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="date"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73584,112 +71574,115 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="select"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "hidden",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--list-box__wrapper"
+                      className="iot--combobox iot--combobox__menu--fit-content"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--combo-box iot--filterheader-combo bx--list-box"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
+                        className="bx--list-box__wrapper"
                       >
                         <div
-                          className="bx--list-box__field"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
-                          <input
-                            aria-activedescendant={null}
-                            aria-autocomplete="list"
-                            aria-controls={null}
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-label="Filter"
+                          <div
+                            className="bx--list-box__field"
+                          >
+                            <input
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input"
+                              data-testid="combo-box"
+                              disabled={false}
+                              id="column-2"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="pick an option"
+                              role="combobox"
+                              tabIndex="0"
+                              type="text"
+                              value="option-B"
+                            />
+                            <button
+                              aria-label="Clear selection"
+                              className="bx--list-box__selection"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              tabIndex={0}
+                              title="Clear selection"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div
+                            aria-label="Choose an item"
                             aria-labelledby={null}
-                            autoComplete="off"
-                            className="bx--text-input"
-                            disabled={false}
-                            id="column-2"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            placeholder="pick an option"
-                            role="combobox"
-                            tabIndex="0"
-                            type="text"
-                            value="option-B"
+                            className="bx--list-box__menu"
+                            id="downshift-0-menu"
+                            role="listbox"
                           />
-                          <button
-                            aria-label="Clear selection"
-                            className="bx--list-box__selection"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            tabIndex={0}
-                            title="Clear selection"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-haspopup={true}
-                            aria-label="Open menu"
-                            className="bx--list-box__menu-icon"
-                            data-toggle={true}
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseUp={[Function]}
-                            role="button"
-                            tabIndex="-1"
-                            title="Open menu"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                              />
-                            </svg>
-                          </button>
                         </div>
-                        <div
-                          aria-label="Choose an item"
-                          aria-labelledby={null}
-                          className="bx--list-box__menu"
-                          id="downshift-0-menu"
-                          role="listbox"
-                        />
                       </div>
                     </div>
                   </div>
@@ -73698,12 +71691,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="status"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73715,12 +71702,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="number"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73767,12 +71748,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="boolean"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73819,12 +71794,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="node"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -73836,12 +71805,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="object"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87207,12 +85170,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="string"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87283,12 +85240,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="date"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87335,112 +85286,115 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="select"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "hidden",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--list-box__wrapper"
+                      className="iot--combobox iot--combobox__menu--fit-content"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--combo-box iot--filterheader-combo bx--list-box"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
+                        className="bx--list-box__wrapper"
                       >
                         <div
-                          className="bx--list-box__field"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
-                          <input
-                            aria-activedescendant={null}
-                            aria-autocomplete="list"
-                            aria-controls={null}
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-label="Filter"
+                          <div
+                            className="bx--list-box__field"
+                          >
+                            <input
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input"
+                              data-testid="combo-box"
+                              disabled={false}
+                              id="column-2"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="pick an option"
+                              role="combobox"
+                              tabIndex="0"
+                              type="text"
+                              value="option-B"
+                            />
+                            <button
+                              aria-label="Clear selection"
+                              className="bx--list-box__selection"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              tabIndex={0}
+                              title="Clear selection"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <div
+                            aria-label="Choose an item"
                             aria-labelledby={null}
-                            autoComplete="off"
-                            className="bx--text-input"
-                            disabled={false}
-                            id="column-2"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            placeholder="pick an option"
-                            role="combobox"
-                            tabIndex="0"
-                            type="text"
-                            value="option-B"
+                            className="bx--list-box__menu"
+                            id="downshift-0-menu"
+                            role="listbox"
                           />
-                          <button
-                            aria-label="Clear selection"
-                            className="bx--list-box__selection"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            tabIndex={0}
-                            title="Clear selection"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-haspopup={true}
-                            aria-label="Open menu"
-                            className="bx--list-box__menu-icon"
-                            data-toggle={true}
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseUp={[Function]}
-                            role="button"
-                            tabIndex="-1"
-                            title="Open menu"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                              />
-                            </svg>
-                          </button>
                         </div>
-                        <div
-                          aria-label="Choose an item"
-                          aria-labelledby={null}
-                          className="bx--list-box__menu"
-                          id="downshift-0-menu"
-                          role="listbox"
-                        />
                       </div>
                     </div>
                   </div>
@@ -87449,12 +85403,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="status"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87466,12 +85414,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="number"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87518,12 +85460,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="boolean"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87570,12 +85506,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="node"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"
@@ -87587,12 +85517,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                   data-column="object"
                   scope="col"
-                  style={
-                    Object {
-                      "--table-header-is-select-column": "inherit",
-                      "--table-header-width": "",
-                    }
-                  }
                 >
                   <div
                     className="bx--table-header-label"

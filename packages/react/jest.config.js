@@ -13,6 +13,7 @@ module.exports = {
     '!src/components/MapCard/storyFiles/*.jsx',
     '!src/components/**/*.test.e2e.jsx',
     '!src/components/StorybookSnapshots.test.js',
+    '!src/components/Table/Table.test.helpers.jsx',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
@@ -25,7 +26,7 @@ module.exports = {
       lines: 90,
     },
     // set coverage to 90 for all items except those who are covered by e2e cypress tests
-    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor|ListTarget|PageTitleBar|DateTimePickerV2|DateTimePicker|HeaderActionGroup|DashboardEditorCardRenderer|CardCodeEditor|SimpleList|index).jsx': {
+    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor|ListTarget|PageTitleBar|DateTimePickerV2|DateTimePicker|HeaderActionGroup|DashboardEditorCardRenderer|CardCodeEditor|SimpleList|index|ListContent|List|VirtualListContent).jsx': {
       statements: 90,
       branches: 90,
       functions: 90,
@@ -33,6 +34,15 @@ module.exports = {
     },
     './src/components/List/ListItem/ListTarget.jsx': {
       branches: 88,
+    },
+    './src/components/List/List.jsx': {
+      functions: 85,
+    },
+    './src/components/List/ListContent/ListContent.jsx': {
+      functions: 88,
+    },
+    './src/components/List/VirtualListContent/VirtualListContent.jsx': {
+      functions: 89,
     },
     './src/components/PageTitleBar/PageTitleBar.jsx': {
       statements: 82,
@@ -43,14 +53,14 @@ module.exports = {
       branches: 89,
     },
     './src/components/DateTimePicker/DateTimePicker.jsx': {
-      statements: 80,
+      statements: 79,
       branches: 80,
-      lines: 81,
+      lines: 80,
       functions: 78,
     },
     './src/components/Header/HeaderActionGroup.jsx': {
       statements: 51,
-      branches: 21,
+      branches: 20,
       lines: 50,
       functions: 56,
     },

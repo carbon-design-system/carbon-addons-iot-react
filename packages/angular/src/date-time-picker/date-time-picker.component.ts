@@ -46,6 +46,7 @@ export interface BatchLabelText {
   DAYS: string;
   HOURS: string;
   MINUTES: string;
+  RANGE_SEPARATOR: string;
 }
 
 export type RelativeDateTimeSelection = ['RELATIVE', ...DateRange, RelativeRange];
@@ -132,6 +133,7 @@ export type DateRange = [Date, Date];
             [hasAbsolute]="hasAbsolute"
             [dateFormat]="absoluteDateFormat"
             [placeholder]="dateFormat.toLowerCase()"
+            [flatpickrOptions]="flatpickrOptions"
             [batchText]="batchText"
           ></ai-custom-date-time>
         </div>
@@ -245,6 +247,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   @Input() theme: 'light' | null = null;
   @Input() placeholder = 'yyyy-mm-dd HH:mm';
   @Input() dateFormat = 'yyyy-MM-dd';
+  @Input() flatpickrOptions;
   @Input() batchText: BatchLabelText = {
     ABSOLUTE: 'Absolute',
     RELATIVE: 'Relative',
@@ -266,6 +269,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     DAYS: 'days',
     HOURS: 'hours',
     MINUTES: 'minutes',
+    RANGE_SEPARATOR: 'to',
   };
   @Output() selectedChange: EventEmitter<DateTimeSelection> = new EventEmitter();
   @Output() apply: EventEmitter<DateRange> = new EventEmitter();
@@ -343,7 +347,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     if (isThisMinute(end)) {
       endFormatted = this.batchText.NOW;
     }
-    return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${endFormatted}`;
+    return `${format(start, formatString)} ${this.batchText.RANGE_SEPARATOR} ${endFormatted}`;
   }
 
   formatCustomRange() {
@@ -351,13 +355,13 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     const formatString = `${this.dateFormat} ${this.timeFormat}`;
     const [type, start, end, relativeConfig] = this.selected;
     if (type === 'ABSOLUTE') {
-      return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(
+      return `${format(start, formatString)} ${this.batchText.RANGE_SEPARATOR} ${format(
         end,
         formatString
       )}`;
     } else if (type === 'RELATIVE') {
       const [start, end] = getRangeFromRelative(relativeConfig);
-      return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(
+      return `${format(start, formatString)} ${this.batchText.RANGE_SEPARATOR} ${format(
         end,
         formatString
       )}`;
@@ -409,7 +413,6 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     switch (event.key) {
       case 'ArrowUp': {
         const prev = target.previousElementSibling as HTMLElement;
-        console.log(prev);
         if (prev?.hasAttribute('tabindex')) {
           target.tabIndex = -1;
           prev.tabIndex = 0;

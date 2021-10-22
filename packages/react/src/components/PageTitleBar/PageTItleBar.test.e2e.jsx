@@ -27,7 +27,13 @@ describe('PageTitleBar', () => {
       .should('have.class', 'page-title-bar--dynamic--during')
       .should('not.have.class', 'page-title-bar--dynamic--after')
       .should('not.have.class', 'page-title-bar--dynamic--before')
-      .should('have.attr', 'style', '--header-offset:48px; --scroll-transition-progress:0.2;');
+      .should(($el) => {
+        const scrollProgress = Number.parseFloat(
+          $el[0].style.getPropertyValue('--scroll-transition-progress')
+        ).toPrecision(1);
+
+        expect(scrollProgress).to.equal('0.2');
+      });
 
     cy.scrollTo(0, 200);
     cy.findByTestId('page-title-bar')
