@@ -139,6 +139,18 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         itemText: 'Item2',
         callback: action('extra three dot action item2 clicked.'),
       },
+      {
+        id: 'thirdItem',
+        itemText: 'Item3',
+        disabled: true,
+        callback: action('extra three dot action item3 clicked.'),
+      },
+      {
+        id: 'fourthItem',
+        itemText: 'Item4',
+        hidden: true,
+        callback: action('extra three dot action item4 clicked.'),
+      },
     ],
   };
   return (

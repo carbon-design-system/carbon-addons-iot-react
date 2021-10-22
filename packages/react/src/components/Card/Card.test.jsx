@@ -479,29 +479,20 @@ describe('Card', () => {
     expect(screen.getByText('dim')).toBeVisible();
   });
 
-  it('card extra single action', async () => {
+  it('card extra actions(single/multiple)', async () => {
     const mockExtraSingle = jest.fn();
+    const mockExtraMultiple = jest.fn();
     const singleExtraAction = {
       id: 'extrasingleaction',
       icon: Add16,
       callback: mockExtraSingle,
     };
-    render(
-      <Card
-        {...cardProps}
-        size={CARD_SIZES.LARGE}
-        extraActions={singleExtraAction}
-        availableActions={{
-          extra: true,
-        }}
-      />
-    );
-    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
-    expect(mockExtraSingle).toHaveBeenCalled();
-  });
-
-  it('card extra multiple action', async () => {
-    const mockExtraMultiple = jest.fn();
+    const singleExtraDisabledAction = {
+      id: 'extrasingleaction',
+      icon: Add16,
+      disabled: true,
+      callback: mockExtraSingle,
+    };
     const multiExtraAction = {
       id: 'extramultiaction',
       children: [
@@ -515,9 +506,70 @@ describe('Card', () => {
           itemText: 'Item2',
           callback: mockExtraMultiple,
         },
+        {
+          id: 'thirdItem',
+          itemText: 'Item3',
+          disabled: true,
+          callback: mockExtraMultiple,
+        },
+        {
+          id: 'fourthItem',
+          itemText: 'Item4',
+          hidden: true,
+          callback: mockExtraMultiple,
+        },
       ],
     };
-    render(
+
+    // Test single icon button action
+    const { rerender } = render(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    expect(mockExtraSingle).toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    // Test disabled icon button action
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraDisabledAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    expect(screen.getAllByTitle('Action Label')[0]).toBeDisabled();
+    expect(mockExtraSingle).not.toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    // Test extra action when card isExpanded
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraAction}
+        isExpanded
+        availableActions={{
+          extra: true,
+          expand: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    expect(mockExtraSingle).toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    // Test multiple extra actions
+    rerender(
       <Card
         {...cardProps}
         size={CARD_SIZES.LARGE}
@@ -538,5 +590,14 @@ describe('Card', () => {
     const secondItem = await screen.findByText('Item2');
     fireEvent.click(secondItem);
     expect(mockExtraMultiple).toHaveBeenCalled();
+
+    // // Reopen menu to verify disabled item
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    const thirdItem = await screen.findByText('Item3');
+    expect(thirdItem.closest('button')).toBeDisabled();
+
+    // Reopen menu to verify hidden item
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    expect(screen.queryByText('Item4')).not.toBeInTheDocument();
   });
 });
