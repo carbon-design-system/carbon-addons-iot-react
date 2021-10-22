@@ -789,9 +789,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         Focus sentinel
       </span>
       <div
+        align="center"
         className="bx--tooltip bx--tooltip--shown bx--tooltip--bottom bx--tooltip--align-center"
         data-floating-menu-direction="bottom"
         data-testid="tooltip"
+        direction="bottom"
         id="uncontrolled"
         onBlur={[Function]}
         onContextMenu={[Function]}

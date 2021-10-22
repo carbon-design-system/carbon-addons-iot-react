@@ -1988,6 +1988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -1995,7 +1996,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     id="Chicago White Sox-checkbox"
                     name="Chicago White Sox"
                     onChange={[Function]}
-                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2075,6 +2075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2082,7 +2083,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     id="New York Yankees-checkbox"
                     name="New York Yankees"
                     onChange={[Function]}
-                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2162,6 +2162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2169,7 +2170,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     id="Houston Astros-checkbox"
                     name="Houston Astros"
                     onChange={[Function]}
-                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2249,6 +2249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2256,7 +2257,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     id="Atlanta Braves-checkbox"
                     name="Atlanta Braves"
                     onChange={[Function]}
-                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2336,6 +2336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2343,7 +2344,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     id="New York Mets-checkbox"
                     name="New York Mets"
                     onChange={[Function]}
-                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2423,6 +2423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2430,7 +2431,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     id="Washington Nationals-checkbox"
                     name="Washington Nationals"
                     onChange={[Function]}
-                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
