@@ -512,6 +512,7 @@ Map {
         },
         "selectedAdvancedFilterIds": Array [],
         "table": Object {
+          "anticipatedMultiSortColumn": undefined,
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
           "loadingMoreIds": Array [],
@@ -522,6 +523,7 @@ Map {
           "ordering": undefined,
           "rowActions": Array [],
           "selectedIds": Array [],
+          "showMultiSortModal": false,
           "singleRowEditButtons": null,
           "sort": Object {},
         },
@@ -1484,6 +1486,25 @@ Map {
             "table": Object {
               "args": Array [
                 Object {
+                  "anticipatedMultiSortColumn": Object {
+                    "args": Array [
+                      Object {
+                        "columnId": Object {
+                          "type": "string",
+                        },
+                        "direction": Object {
+                          "args": Array [
+                            Array [
+                              "ASC",
+                              "DESC",
+                            ],
+                          ],
+                          "type": "oneOf",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
                   "emptyState": Object {
                     "args": Array [
                       Array [

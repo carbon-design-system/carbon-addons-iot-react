@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, render } from '@testing-library/react';
+import { screen, render, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TableMultiSortModal from './TableMultiSortModal';
@@ -316,5 +316,221 @@ describe('TableMultiSortModal', () => {
     expect(callbacks.onSaveMultiSortColumns).toHaveBeenCalledWith([
       { columnId: 'string', direction: 'ASC' },
     ]);
+  });
+
+  it('add a column to the UI when anticipatedColumn is given', () => {
+    render(
+      <TableMultiSortModal
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+            isSortable: true,
+          },
+          {
+            id: 'select',
+            name: 'Select',
+            isSortable: true,
+          },
+          {
+            id: 'number',
+            name: 'Number',
+            isSortable: true,
+          },
+          {
+            id: 'boolean',
+            name: 'Boolean',
+            isSortable: true,
+          },
+        ]}
+        ordering={[
+          {
+            columnId: 'string',
+            isHidden: false,
+          },
+          {
+            columnId: 'select',
+            isHidden: false,
+          },
+          {
+            columnId: 'number',
+            isHidden: false,
+          },
+          {
+            columnId: 'boolean',
+            isHidden: false,
+          },
+        ]}
+        actions={callbacks}
+        sort={[
+          {
+            columnId: 'string',
+            direction: 'ASC',
+          },
+        ]}
+        anticipatedColumn={{ columnId: 'boolean', direction: 'ASC' }}
+        showMultiSortModal
+        testId="multi_sort_modal"
+      />
+    );
+
+    expect(screen.getByLabelText('Sort by')).toBeVisible();
+    expect(
+      within(screen.getByLabelText('Sort by')).getByRole('option', { name: 'String' }).selected
+    ).toBe(true);
+    expect(screen.getByLabelText('Then by')).toBeVisible();
+    expect(
+      within(screen.getByLabelText('Then by')).getByRole('option', { name: 'Boolean' }).selected
+    ).toBe(true);
+    userEvent.click(screen.getByRole('button', { name: 'Sort' }));
+    expect(callbacks.onSaveMultiSortColumns).toHaveBeenCalledWith([
+      {
+        columnId: 'string',
+        direction: 'ASC',
+      },
+      {
+        columnId: 'boolean',
+        direction: 'ASC',
+      },
+    ]);
+  });
+
+  it('should save the added column anticipatedColumn is given and save is clicked', () => {
+    render(
+      <TableMultiSortModal
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+            isSortable: true,
+          },
+          {
+            id: 'select',
+            name: 'Select',
+            isSortable: true,
+          },
+          {
+            id: 'number',
+            name: 'Number',
+            isSortable: true,
+          },
+          {
+            id: 'boolean',
+            name: 'Boolean',
+            isSortable: true,
+          },
+        ]}
+        ordering={[
+          {
+            columnId: 'string',
+            isHidden: false,
+          },
+          {
+            columnId: 'select',
+            isHidden: false,
+          },
+          {
+            columnId: 'number',
+            isHidden: false,
+          },
+          {
+            columnId: 'boolean',
+            isHidden: false,
+          },
+        ]}
+        actions={callbacks}
+        sort={[
+          {
+            columnId: 'string',
+            direction: 'ASC',
+          },
+        ]}
+        anticipatedColumn={{ columnId: 'boolean', direction: 'ASC' }}
+        showMultiSortModal
+        testId="multi_sort_modal"
+      />
+    );
+
+    expect(screen.getByLabelText('Sort by')).toBeVisible();
+    expect(
+      within(screen.getByLabelText('Sort by')).getByRole('option', { name: 'String' }).selected
+    ).toBe(true);
+    expect(screen.getByLabelText('Then by')).toBeVisible();
+    expect(
+      within(screen.getByLabelText('Then by')).getByRole('option', { name: 'Boolean' }).selected
+    ).toBe(true);
+    userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+    expect(callbacks.onCancelMultiSortColumns).toHaveBeenCalled();
+    userEvent.click(screen.getByRole('button', { name: 'Sort' }));
+    expect(callbacks.onSaveMultiSortColumns).toHaveBeenCalledWith([
+      {
+        columnId: 'string',
+        direction: 'ASC',
+      },
+    ]);
+  });
+
+  it('should not add a column to the UI when anticipatedColumn is not given', () => {
+    render(
+      <TableMultiSortModal
+        columns={[
+          {
+            id: 'string',
+            name: 'String',
+            isSortable: true,
+          },
+          {
+            id: 'select',
+            name: 'Select',
+            isSortable: true,
+          },
+          {
+            id: 'number',
+            name: 'Number',
+            isSortable: true,
+          },
+          {
+            id: 'boolean',
+            name: 'Boolean',
+            isSortable: true,
+          },
+        ]}
+        ordering={[
+          {
+            columnId: 'string',
+            isHidden: false,
+          },
+          {
+            columnId: 'select',
+            isHidden: false,
+          },
+          {
+            columnId: 'number',
+            isHidden: false,
+          },
+          {
+            columnId: 'boolean',
+            isHidden: false,
+          },
+        ]}
+        actions={callbacks}
+        sort={[
+          {
+            columnId: 'string',
+            direction: 'ASC',
+          },
+        ]}
+        showMultiSortModal
+        testId="multi_sort_modal"
+      />
+    );
+
+    expect(screen.getByLabelText('Sort by')).toBeVisible();
+    expect(
+      within(screen.getByLabelText('Sort by')).getByRole('option', { name: 'String' }).selected
+    ).toBe(true);
+    expect(screen.queryByLabelText('Then by')).toBeNull();
+    userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+    expect(callbacks.onCancelMultiSortColumns).toHaveBeenCalled();
   });
 });

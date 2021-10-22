@@ -284,7 +284,7 @@ const TableHead = ({
     e.stopPropagation();
 
     if (onOverflowItemClicked) {
-      onOverflowItemClicked(option.id);
+      onOverflowItemClicked(option.id, option.meta);
     }
   };
 
@@ -548,7 +548,12 @@ const TableHead = ({
                       data-testid={`${testID || testId}-column-overflow-menu-item-multi-sort`}
                       itemText={i18n.multiSortOverflowItem}
                       key={`${columnIndex}--overflow-item-multi-sort`}
-                      onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}
+                      onClick={(e) =>
+                        handleOverflowItemClick(e, {
+                          id: 'multi-sort',
+                          meta: { columnId: matchingColumnMeta.id },
+                        })
+                      }
                     />
                   )}
                 </OverflowMenu>

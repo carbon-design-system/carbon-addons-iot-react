@@ -328,7 +328,9 @@ describe('TableHead', () => {
     await waitFor(() => expect(screen.getByText('Multi-sort')).toBeInTheDocument());
 
     userEvent.click(screen.getByText(/Multi-sort/i));
-    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort');
+    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort', {
+      columnId: 'col3',
+    });
   });
 
   describe('Column resizing active', () => {

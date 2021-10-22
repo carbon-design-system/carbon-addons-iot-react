@@ -1,6 +1,6 @@
 import { Add16, Subtract16 } from '@carbon/icons-react';
 import { Select, SelectItem } from 'carbon-components-react';
-import React, { Fragment, useEffect, useMemo, useState } from 'react';
+import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash/isEqual';
 
@@ -12,6 +12,16 @@ import { TableColumnsPropTypes, TableSortPropType } from '../TablePropTypes';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  /**
+   * The anticipatedColumn is used to add the most recently click columnId to the UI of the sort
+   * modal. This gives the user a better experience by pre-emptively adding the column they triggered
+   * the multi-sort on to the multisort modal without changing state. They still have to click "Sort"
+   * to save it, or can click 'Cancel' or the 'X' to clear it.
+   */
+  anticipatedColumn: PropTypes.shape({
+    columnId: PropTypes.string,
+    direction: PropTypes.oneOf(['ASC', 'DESC']),
+  }),
   columns: TableColumnsPropTypes.isRequired,
   ordering: PropTypes.arrayOf(
     PropTypes.shape({
@@ -52,6 +62,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  anticipatedColumn: undefined,
   showMultiSortModal: false,
   i18n: {
     multiSortModalTitle: 'Select columns to sort',
@@ -72,7 +83,14 @@ const defaultProps = {
   testId: 'multi-sort-modal',
 };
 
+const cleanSortArray = (sort) => {
+  const sortArray = Array.isArray(sort) ? sort : sort !== undefined ? [sort] : [];
+
+  return sortArray.filter(({ columnId }) => columnId);
+};
+
 const TableMultiSortModal = ({
+  anticipatedColumn,
   columns,
   ordering,
   sort,
@@ -89,11 +107,20 @@ const TableMultiSortModal = ({
     onClearMultiSortColumns,
   } = actions;
 
-  const [selectedMultiSortColumns, setSelectedMultiSortColumns] = useState(sort);
+  const sortHelper = useCallback(() => {
+    const sortArray = cleanSortArray(sort);
+    if (anticipatedColumn) {
+      return [...sortArray, anticipatedColumn];
+    }
+
+    return sortArray;
+  }, [anticipatedColumn, sort]);
+
+  const [selectedMultiSortColumns, setSelectedMultiSortColumns] = useState(sortHelper);
 
   useEffect(() => {
-    setSelectedMultiSortColumns(sort);
-  }, [sort]);
+    setSelectedMultiSortColumns(sortHelper);
+  }, [anticipatedColumn, sort, sortHelper]);
 
   const sortDirections = useMemo(
     () => [
@@ -206,7 +233,7 @@ const TableMultiSortModal = ({
   };
 
   const handleCancelMultiSortColumns = () => {
-    setSelectedMultiSortColumns(sort);
+    setSelectedMultiSortColumns(cleanSortArray(sort));
     onCancelMultiSortColumns();
   };
 

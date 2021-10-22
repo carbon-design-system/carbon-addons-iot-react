@@ -227,6 +227,16 @@ const propTypes = {
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
+      /**
+       * The anticipatedColumn is used to add the most recently click columnId to the UI of the sort
+       * modal. This gives the user a better experience by pre-emptively adding the column they clicked
+       * multi-sort on to the multisort modal without changing state. They still have to click "Sort"
+       * to save it, or can click 'Cancel' or the 'X' to clear it.
+       */
+      anticipatedMultiSortColumn: PropTypes.shape({
+        columnId: PropTypes.string,
+        direction: PropTypes.oneOf(['ASC', 'DESC']),
+      }),
       /** Array with rowIds that are with loading active */
       loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
     }),
@@ -370,6 +380,8 @@ export const defaultProps = (baseProps) => ({
       },
       singleRowEditButtons: null,
       loadingMoreIds: [],
+      showMultiSortModal: false,
+      anticipatedMultiSortColumn: undefined,
     },
   },
   actions: {
@@ -1084,7 +1096,8 @@ const Table = (props) => {
           testId={`${id}-multi-sort-modal`}
           columns={columns}
           ordering={view.table.ordering}
-          sort={Array.isArray(view.table.sort) ? view.table.sort : [view.table.sort]}
+          sort={view.table.sort}
+          anticipatedColumn={view.table.anticipatedMultiSortColumn}
           actions={{
             ...pick(
               actions.table,
