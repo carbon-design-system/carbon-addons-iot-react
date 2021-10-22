@@ -1,16 +1,38 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
-import { setHours, setMinutes, sub, subDays } from 'date-fns';
-import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.component';
+import { setHours, setMinutes, sub, subDays, addDays } from 'date-fns';
+import {
+  DateRange,
+  RelativeRange,
+  relativeToOption,
+} from './date-time-picker.component';
 
 export type RelativeDateValue = [...DateRange, RelativeRange];
 
-export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange => {
-  const [valueToSubtract, valueRange] = relativeConfig.last;
-  const [relativeTo, relativeTime] = relativeConfig.relativeTo;
+export const getEndDate = (
+  relativeTo: [string, string],
+  relativeToOptions: relativeToOption[]
+): Date => {
+  const [relativeToLabel, relativeTime] = relativeTo;
   const [hourStr, minStr] = relativeTime.split(':');
   const hour = parseInt(hourStr, 10);
   const min = parseInt(minStr, 10);
-  const endDate = setMinutes(setHours(subDays(new Date(), 1), hour), min);
+  const numOfDays = relativeToOptions.filter((option) => option.label === relativeToLabel)[0].value;
+
+  // numOfDays < 0 for past, numOfDays == 0 for today, numOfDays > 0 for future
+  if (numOfDays < 0) {
+    const pastDays = Math.abs(numOfDays);
+    return setMinutes(setHours(subDays(new Date(), pastDays), hour), min);
+  }
+
+  return setMinutes(setHours(addDays(new Date(), numOfDays), hour), min);
+};
+
+export const getRangeFromRelative = (
+  relativeConfig: RelativeRange,
+  relativeToOptions: relativeToOption[]
+): DateRange => {
+  const [valueToSubtract, valueRange] = relativeConfig.last;
+  const endDate = getEndDate(relativeConfig.relativeTo, relativeToOptions);
   const timeToSub = {
     years: 0,
     months: 0,
@@ -21,7 +43,7 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
     seconds: 0,
   };
   timeToSub[valueRange.toLowerCase()] = valueToSubtract;
-  const startDate = sub(new Date(), timeToSub);
+  const startDate = sub(endDate, timeToSub);
   return [startDate, endDate];
 };
 
@@ -57,12 +79,18 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
       <legend class="bx--label">{{ batchText.RELATIVE_TO }}</legend>
       <div class="iot--date-time-picker__fields-wrapper">
         <ibm-select
-          class="bx--form-item"
+          class="bx--form-item iot--date-time-relative-to__select"
           [(ngModel)]="relativeTo"
           (valueChange)="onChange()"
           theme="light"
         >
-          <option value="YESTERDAY" selected>{{ batchText.YESTERDAY }}</option>
+          <option
+            *ngFor="let option of relativeToOptions; let i = index"
+            [value]="option.label"
+            [selected]="i === 0"
+          >
+            {{ option.label }}
+          </option>
         </ibm-select>
         <!-- tmp until we can implement a better time selector -->
         <div class="bx--form-item">
@@ -90,11 +118,12 @@ export const getRangeFromRelative = (relativeConfig: RelativeRange): DateRange =
 export class DateTimeRelativeComponent implements OnChanges {
   @Input() value: any[] = null;
   @Input() batchText: any;
+  @Input() relativeToOptions: relativeToOption[];
   @Output() valueChange: EventEmitter<RelativeDateValue> = new EventEmitter();
 
   timeToSubtract = 0;
   timeRange = 'MINUTES';
-  relativeTo = 'YESTERDAY';
+  relativeTo = 'Yesterday';
   relativeTime = '00:00';
 
   ngOnChanges(changes: SimpleChanges) {
@@ -118,7 +147,7 @@ export class DateTimeRelativeComponent implements OnChanges {
         last: [this.timeToSubtract, this.timeRange],
         relativeTo: [this.relativeTo, this.relativeTime],
       };
-      const dates = getRangeFromRelative(relativeConfig);
+      const dates = getRangeFromRelative(relativeConfig, this.relativeToOptions);
       const range: RelativeDateValue = [...dates, relativeConfig];
       this.valueChange.emit(range);
     });

@@ -57,6 +57,11 @@ export type DateTimeSelection = PresetDateTimeSelection | CustomDateTimeSelectio
 
 export type DateRange = [Date, Date];
 
+export type relativeToOption = {
+  label: string;
+  value: number;
+};
+
 @Component({
   selector: 'ai-date-time-picker',
   template: `
@@ -133,6 +138,7 @@ export type DateRange = [Date, Date];
             [dateFormat]="absoluteDateFormat"
             [placeholder]="dateFormat.toLowerCase()"
             [batchText]="batchText"
+            [relativeToOptions]="relativeToOptions"
           ></ai-custom-date-time>
         </div>
         <div class="iot--date-time-picker__menu-btn-set">
@@ -267,6 +273,17 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     HOURS: 'hours',
     MINUTES: 'minutes',
   };
+  @Input() relativeToOptions: relativeToOption[] = [
+    {
+      label: 'Yesterday',
+      value: -1,
+    },
+    {
+      label: 'Today',
+      value: 0,
+    },
+  ];
+
   @Output() selectedChange: EventEmitter<DateTimeSelection> = new EventEmitter();
   @Output() apply: EventEmitter<DateRange> = new EventEmitter();
   @Output() cancel: EventEmitter<void> = new EventEmitter();
@@ -355,7 +372,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
         formatString
       )}`;
     } else if (type === 'RELATIVE') {
-      const [start, end] = getRangeFromRelative(relativeConfig);
+      const [start, end] = getRangeFromRelative(relativeConfig, this.relativeToOptions);
       return `${format(start, formatString)}${this.i18n.get().rangeSeparator}${format(
         end,
         formatString
