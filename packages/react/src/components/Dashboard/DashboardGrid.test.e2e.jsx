@@ -1281,6 +1281,10 @@ describe('DashboardGrid', () => {
         }
 
         onlyOn('headless', () => {
+          if (type === 'GaugeCard') {
+            // eslint-disable-next-line cypress/no-unnecessary-waiting, allow the gauges to fill
+            cy.wait(1000);
+          }
           cy.findByTestId('visual-regression-test').compareSnapshot(
             `DashboardGrid-${breakpoint}-${type}`
           );
