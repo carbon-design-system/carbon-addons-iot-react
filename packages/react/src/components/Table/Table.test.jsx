@@ -4,12 +4,22 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import merge from 'lodash/merge';
-import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
+import { ArrowRight16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
-import { getTableColumns, mockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
+import {
+  getTableColumns,
+  getMockActions,
+  getNestedRows,
+  getNestedRowIds,
+  getTableData,
+  addRowActions,
+  getSelectData,
+  getWords,
+} from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
@@ -18,92 +28,12 @@ import { initialState } from './Table.story';
 
 const { iotPrefix, prefix } = settings;
 
-const selectData = [
-  {
-    id: 'option-A',
-    text: 'option-A',
-  },
-  {
-    id: 'option-B',
-    text: 'option-B',
-  },
-  {
-    id: 'option-C',
-    text: 'option-C',
-  },
-];
+const mockActions = getMockActions(jest.fn);
+const words = getWords();
+const selectData = getSelectData();
 const tableColumns = getTableColumns(selectData);
-
-const words = [
-  'toyota',
-  'helping',
-  'whiteboard',
-  'as',
-  'can',
-  'bottle',
-  'eat',
-  'chocolate',
-  'pinocchio',
-  'scott',
-];
-const getWord = (index, step = 1) => words[(step * index) % words.length];
-const getSentence = (index) =>
-  `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
-
-const tableData = Array(20)
-  .fill(0)
-  .map((i, idx) => ({
-    id: `row-${idx}`,
-    values: {
-      string: getSentence(idx),
-      node: <Add20 />,
-      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
-      select: selectData[idx % 3].id,
-      number: idx * idx,
-    },
-    rowActions: [
-      {
-        id: 'drilldown',
-        renderIcon: ArrowRight16,
-        iconDescription: 'Drill in',
-        labelText: 'Drill in',
-        isOverflow: true,
-      },
-      {
-        id: 'Add',
-        renderIcon: Add16,
-        iconDescription: 'Add',
-        labelText: 'Add',
-        isOverflow: true,
-      },
-    ],
-  }));
-
-const largeTableData = Array(100)
-  .fill(0)
-  .map((i, idx) => ({
-    id: `row-${idx}`,
-    values: {
-      string: getSentence(idx),
-      node: <Add20 />,
-      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
-      select: selectData[idx % 3].id,
-      number: idx * idx,
-    },
-  }));
-
-const RowExpansionContent = ({ rowId }) => (
-  <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
-    <h3 key={`${rowId}-title`}>{rowId}</h3>
-    <ul style={{ lineHeight: '22px' }}>
-      {Object.entries(tableData.find((i) => i.id === rowId).values).map(([key, value]) => (
-        <li key={`${rowId}-${key}`}>
-          <b>{key}</b>: {value}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+const tableData = addRowActions(getTableData(20, words, selectData));
+const largeTableData = getTableData(100, words, selectData);
 
 const i18nTest = {
   /** table body */
@@ -173,7 +103,7 @@ describe('Table', () => {
   const expandedData = [
     {
       rowId: 'row-1',
-      content: <RowExpansionContent rowId="row-1" />,
+      content: <div style={{ padding: '8px' }}>Expanded content</div>,
     },
   ];
 
@@ -777,7 +707,7 @@ describe('Table', () => {
       render(<Table columns={columns} data={[tableData[0]]} options={options} />);
     };
 
-    it('wraps cell text when there are no otions', () => {
+    it('wraps cell text when there are no options', () => {
       render(<Table columns={tableColumns} data={[tableData[0]]} options={false} />);
       expectWrapping();
       expectNoTruncation();
@@ -1369,7 +1299,7 @@ describe('Table', () => {
       />
     );
 
-    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(5);
+    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(8);
   });
 
   describe('Row selection', () => {
@@ -2100,10 +2030,7 @@ describe('Table', () => {
       fireEvent.change(screen.getByPlaceholderText('pick a number'), { target: { value: '16' } });
       // ensure keyDown events also get called with hasFastFilter is false
       fireEvent.keyDown(screen.getByPlaceholderText('pick a number'), {
-        key: 'Enter',
-        code: 'Enter',
-        keyCode: 13,
-        charCode: 13,
+        key: keyboardKeys.ENTER,
       });
       userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
@@ -2229,10 +2156,7 @@ describe('Table', () => {
       const numberInputClear = screen.getAllByRole('button', { name: 'Clear filter' })[1];
       fireEvent.focus(numberInputClear);
       fireEvent.keyDown(numberInputClear, {
-        key: 'Enter',
-        code: 'Enter',
-        keyCode: 13,
-        charCode: 13,
+        key: keyboardKeys.ENTER,
       });
       userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
@@ -2303,5 +2227,233 @@ describe('Table', () => {
     expect(container.querySelectorAll('tr')).toHaveLength(21);
     expect(screen.getByTitle('String')).toBeVisible();
     expect(screen.getByTitle('Date')).toBeVisible();
+  });
+
+  it('should render Load more row', () => {
+    const testId = 'testId01';
+    const loadMoreText = 'Load more...';
+    render(
+      <Table
+        columns={tableColumns}
+        data={getNestedRows()}
+        testId={testId}
+        i18n={{ loadMoreText }}
+        options={{ hasRowNesting: true }}
+        view={{
+          table: {
+            expandedIds: ['row-1', 'row-1_B'],
+          },
+        }}
+        actions={mockActions}
+      />
+    );
+
+    expect(screen.getAllByRole('button', { name: loadMoreText })[0]).toBeInTheDocument();
+
+    userEvent.click(screen.getAllByRole('button', { name: loadMoreText })[0]);
+
+    expect(mockActions.table.onRowLoadMore).toHaveBeenCalled();
+  });
+
+  it('should show a deprecation warning for old size props', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const { rerender } = render(
+      <Table id="loading-table" columns={tableColumns} data={tableData} size="compact" />
+    );
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'The value `compact` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="short" />);
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'The value `short` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="normal" />);
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'The value `normal` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="tall" />);
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'The value `tall` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    rerender(
+      <Table id="loading-table" columns={tableColumns} data={tableData} size="unsupported" />
+    );
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'Failed prop type: Invalid prop `size` of value `unsupported` supplied to `Table`'
+      )
+    );
+    jest.clearAllMocks();
+    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="lg" />);
+    expect(console.error).not.toHaveBeenCalled();
+  });
+
+  it('adds --column-groups class to the CarbonTable if columnGroups are present', () => {
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px' },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('my-table')).toHaveClass(`${iotPrefix}--data-table--column-groups`);
+  });
+
+  it('adds min-size class if columnGroups are present and there at least one sortable column', () => {
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px', isSortable: true },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('my-table')).toHaveClass(
+      `${iotPrefix}--data-table--column-groups--min-size-large`
+    );
+  });
+
+  it('throws an error when using both column groups and hasColumnSelection prop', () => {
+    const { __DEV__ } = global;
+    global.__DEV__ = true;
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px' },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+        options={{ hasColumnSelection: true }}
+      />
+    );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Column grouping (columnGroups) cannot be combined with the option hasColumnSelection'
+      )
+    );
+    global.__DEV__ = __DEV__;
+  });
+
+  it('should not show toggle aggregations when toolbar is disabled', async () => {
+    jest
+      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+      .mockImplementation(() => ({ width: 100, height: 100 }));
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+                value: 100000,
+              },
+            ],
+          },
+          toolbar: {
+            ...view.toolbar,
+            isDisabled: true,
+          },
+        }}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    const toggleButton = screen.getByRole('menuitem', { name: 'Toggle aggregations' });
+    expect(toggleButton).toBeVisible();
+    expect(toggleButton).toBeDisabled();
+    expect(screen.getByText('Total:')).toBeVisible();
+
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+                value: 100000,
+              },
+            ],
+          },
+          toolbar: {
+            ...view.toolbar,
+            isDisabled: false,
+          },
+        }}
+      />
+    );
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    expect(toggleButton).toBeVisible();
+    expect(toggleButton).not.toBeDisabled();
+    expect(screen.getByText('Total:')).toBeVisible();
+    jest.resetAllMocks();
   });
 });

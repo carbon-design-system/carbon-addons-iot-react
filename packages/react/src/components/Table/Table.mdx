@@ -17,6 +17,8 @@
 - [Pagination](#pagination)
 - [Batch actions](#batch-actions)
 - [Aggregation](#aggregation)
+- [Row data editing](#row-data-editing)
+- [Column grouping](#column-grouping)
 - [Props](#props)
   - [Column Prop](#column-prop)
   - [Data Prop](#data-prop)
@@ -206,6 +208,106 @@ writing:
 
 ```jsx
 <Table id="table" columns={columns} data={data} actions={actions} />
+```
+
+An example columns array:
+
+```jsx
+export const tableColumns = [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'enter a string' },
+    // allows adding custom overflow menu to the column header
+    // calls the `onOverflowItemClicked` action with the id of the item clicked
+    overflowMenuItems: [
+      {
+        id: 'stop',
+        text: 'Stop',
+      },
+      {
+        id: 'go',
+        text: 'Go',
+      },
+    ],
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+    filter: { placeholderText: 'enter a date' },
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: {
+      placeholderText: 'pick an option',
+      // custom dropdown options to use as filters
+      options: [
+        {
+          id: 'a',
+          text: 'A',
+        },
+        {
+          id: 'b',
+          text: 'B',
+        },
+      ],
+    },
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: ({ value }) => {
+      // render a custom react node based on the value of this cell.
+      return <AReactElement />;
+    },
+    sortFunction: ({ data, columnId, direction }) => {
+      // sort the data based on given props and return sorted data;
+      return sortedData;
+    },
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'enter a number' },
+  },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+    filter: { placeholderText: 'true or false' },
+  },
+  {
+    id: 'node',
+    name: 'React Node',
+  },
+  {
+    id: 'object',
+    name: 'Object Id',
+    renderDataFunction: ({ value }) => {
+      // If given complex data in the table, use a custom renderDataFunction
+      // to render the object into a simple value.
+      return value?.id;
+    },
+    sortFunction: ({ data, columnId, direction }) => {
+      // sort the data based on given props and return sorted data;
+      return sortedData;
+    },
+    filter: {
+      placeholderText: 'Filter object values...',
+      filterFunction: (columnValue, filterValue) => {
+        // custom filter function based on columnValue and current filterValue
+        // returns a boolean based on the condition. ie:
+        // return columnValue.id.includes(filterValue);
+        return includeInFilter;
+      },
+    },
+  },
+];
 ```
 
 After rendering a `Table` component using the code snippet above, you can
@@ -411,12 +513,34 @@ You can pass which rows are currently selected through the view.table.selectedId
 
 ### Simple Filtering
 
-Simple filtering in a `Table` is provided through the `options.hasFilter=true` prop and the `view.toolbar.activeBar='filter'` prop. You set set the current filters by supplying the `view.filters` prop as an array of object with a columnId and a value key.
+Simple filtering in a `Table` is provided through the `options.hasFilter=true` prop and the `view.toolbar.activeBar='filter'` prop. You set set the current filters by supplying the `view.filters` prop as an array of object with a columnId and a value key. The objects in the `columns` array must also be given a `filter` prop that defines the input `placeholderText` and, if needed, an `options` prop for a combobox filter.
 
 ```jsx
 <Table
   id="table"
-  columns={columns}
+  columns={[
+    {
+      id: 'string',
+      name: 'String',
+      filter: { placeholderText: 'enter a string' },
+    },
+    {
+      id: 'select',
+      name: 'Select',
+      filter: { placeholderText: 'pick an option',
+        options: [
+          {
+            id: 'option-A',
+            text: 'option-A',
+          },
+          {
+            id: 'option-B',
+            text: 'option-B',
+          },
+        ]
+      },
+    },
+  ]}
   data={data}
   actions={{
     toolbar: {
@@ -809,48 +933,192 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 />
 ```
 
+## Row data editing
+
+### Multi row data editing
+
+Row data editing can be activated using the option prop `hasRowEdit`. When it is true an edit icon will be shown in the
+table toolbar. Clicking the edit icon will trigger the callback `onShowRowEdit` and the StatefulTable will set the current
+toolbar to be the content of the view prop `view.toolbar.rowEditBarButtons` and all the rows to render the `editDataFunction`
+specified by their respective column in the `columns` prop.
+
+For the normal table this needs to be done manually by listening to `onShowRowEdit` and setting `view.toolbar.activeBar: 'rowEdit'`.
+
+Both the StatefulTable and the normal Table requires the `rowEditBarButtons` content to be provided. Below is a simple example:
+
+```jsx
+<>
+  <Button key="cancel" size="small" kind="tertiary" onClick={onCancelRowEdit}>
+    Cancel
+  </Button>
+  <Button key="save" size="small" onClick={onSaveRowEdit}>
+    Save
+  </Button>
+</>
+```
+
+The `onCancelRowEdit` implementation should exit the row edit mode by setting the `view.toolbar.activeBar` to be undefined and clear any data modifications.
+The `onSaveRowEdit` implementation should save your modified data and also exit the row edit if all goes well.
+
+All the columns that should be editable need to specify an `editDataFunction` that renders the appropriate form element. The editDataFunction is called with this payload:
+
+```jsx
+
+{
+    value: PropTypes.any, // Current cell value
+    columnId: PropTypes.string, // The id of the column
+    rowId: PropTypes.string, // The id of the row
+    row: PropTypes.object // All the data for this row, e.g. { col1: 'valueX', col2: 'valueY' }
+}
+```
+
+Below is a very basic example of the editDataFunction:
+
+```jsx
+// The app should handle input validation and types like dates, select etc
+const editDataFunction = ({ value, columnId, rowId }) => {
+  const id = `${columnId}-${rowId}`;
+  return typeof value === 'boolean' ? (
+    <Checkbox
+      defaultChecked={value}
+      id={id}
+      labelText=""
+      hideLabel
+      onChange={(e) => onDataChange(e, columnId, rowId)}
+    />
+  ) : (
+    <TextInput
+      id={id}
+      onChange={(e) => onDataChange(e, columnId, rowId)}
+      type="text"
+      light
+      defaultValue={value}
+      labelText=""
+      hideLabel
+    />
+  );
+};
+```
+
+An onDataChange needs to be implemented that handles the changes in a temporary data state until the Save button is clicked. See the table story code for a complete example.
+
+### Single row data editing
+
+It is also possible to only edit a single row at a time by using the option `hasSingleRowEdit` instead of `hasRowEdit`.
+The option `hasSingleRowEdit` must be combined with a row action that has the `isEdit` property set to true and the
+Save/Cancel buttons must be passed via the prop `view.table.singleRowEditButtons`.
+
+Clicking the "Edit" row action should turn that specific row editable, and it also requires the columns to have
+provided an `editDataFunction`. For StatefulTable the row action state is automatically updated with
+`isEditMode:true` but for normal tables it should be handled manually. This is done by listening to the `actions.table.onApplyRowAction`
+and checking if the action is 'edit'. In that case the state in `view.table.rowActions` should be updated to set `isEditMode: true`
+on the row in question.
+
+An example of the `onApplyRowAction` could look like this:
+
+```jsx
+const [rowEditedData, setRowEditedData] = useState([]);
+const [rowActionsState, setRowActionsState] = useState([]); // This one is passed to the table via view.table.rowActions
+
+const onApplyRowAction = (action, rowId) => {
+  if (action === 'edit') {
+    setRowEditedData(cloneDeep(currentData)); // Clone the current data to get a temporary one used until save is clicked
+    setRowActionsState([...rowActionsState, { rowId, isEditMode: true }]);
+  }
+};
+```
+
+See the table story code for a complete example.
+
+## Column grouping
+
+The table columns can be grouped into any number of groups. Each column group has an id, a name and can include any number of columns. The column groups will be displayed in a dedicated row above the normal column headers.
+The column grouping can be combined with any other table functionality except with the StatefulTable's column toggle and reordering functionality (`hasColumnSelection`).
+
+A group is defined by adding an object containing the id and name to the `ColumnGroups` prop. A column is matched to a group by setting the `columnGroupId` prop of the column object in `view.table.ordering`.
+The order of the column groups is implicitly defined by the order they are referenced in the `view.table.ordering` and that order must be sequential.
+E.g. this ordering is valid since the columns belonging to groupA appear in sequence in the array.
+
+```jsx
+ordering: [
+  { columnId: 'col0' },
+  { columnId: 'col1', columnGroupId: 'groupA' },
+  { columnId: 'col2', columnGroupId: 'groupA' },
+  { columnId: 'col3' },
+];
+```
+
+A complete example of how to use the column grouping could look like this:
+
+```jsx
+<Table
+  columns={[
+    { id: 'col0', name: 'column 0' },
+    { id: 'col1', name: 'column 1' },
+    { id: 'col2', name: 'column 2' },
+    { id: 'col3', name: 'column 3' },
+  ]}
+  // Column groups are defined here
+  columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+  view={{
+    table: {
+      ordering: [
+        { columnId: 'col0' },
+        // Columns are matched to to groups here
+        { columnId: 'col1', columnGroupId: 'groupA' },
+        { columnId: 'col2', columnGroupId: 'groupA' },
+        { columnId: 'col3' },
+      ],
+    },
+  }}
+/>
+```
+
 ## Props
 
 ### Table Props
 
-| Name           | Type   | Default | Description                                                                                                                                                                                            |
-| :------------- | :----- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id             | string |         | DOM ID for component                                                                                                                                                                                   |
-| secondaryTitle | string |         | Displays smaller title in header                                                                                                                                                                       |
-| tooltip        | node   |         |                                                                                                                                                                                                        |
-| useZebraStyles | bool   |         | render zebra stripes or not                                                                                                                                                                            |
-| lightweight    | bool   |         | lighter styling where regular table too visually heavy                                                                                                                                                 |
-| columns        | object |         | (see [column prop](#column-prop))                                                                                                                                                                      |
-| data           | object |         | Row value data for the body of the table (see [data prop](#data-prop))                                                                                                                                 |
-| expandedData   | object |         | Expanded data for the table details (see [expandedData prop](#expandeddata-prop))                                                                                                                      |
-| options        | object |         | Optional properties to customize how the table should be rendered (see [options prop](#options-prop))                                                                                                  |
-| view           | object |         | Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example (see [view prop](#view-prop)) |
-| actions        | object |         | Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props (see [actions prop](#actions-prop))                                                        |
-| locale         | string |         | what locale should we use to format table values if left empty no locale formatting happens                                                                                                            |
-| i18n           | object |         | (see [i18n prop](#i18n-prop))                                                                                                                                                                          |
-| error          | string |         | Specify the error message that need to be displayed by default. Incase we use `view.table.errorState` property then the error state element will be rendered instead of error message                  |
+| Name                 | Type            | Default | Description                                                                                                                                                                                            |
+| :------------------- | :-------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                   | string          |         | DOM ID for component                                                                                                                                                                                   |
+| secondaryTitle       | string          |         | Displays smaller title in header                                                                                                                                                                       |
+| tooltip              | node            |         |                                                                                                                                                                                                        |
+| useZebraStyles       | bool            |         | render zebra stripes or not                                                                                                                                                                            |
+| lightweight          | bool            |         | lighter styling where regular table too visually heavy                                                                                                                                                 |
+| columns              | object          |         | (see [column prop](#column-prop))                                                                                                                                                                      |
+| columnsGroups        | arrayOf(object) | []      | Array of objects representing column groups                                                                                                                                                            |
+| columnsGroups[].id   | string          |         | The id of the column group                                                                                                                                                                             |
+| columnsGroups[].name | string          |         | The name of the column group, will appear as the header label                                                                                                                                          |
+| data                 | object          |         | Row value data for the body of the table (see [data prop](#data-prop))                                                                                                                                 |
+| expandedData         | object          |         | Expanded data for the table details (see [expandedData prop](#expandeddata-prop))                                                                                                                      |
+| options              | object          |         | Optional properties to customize how the table should be rendered (see [options prop](#options-prop))                                                                                                  |
+| view                 | object          |         | Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example (see [view prop](#view-prop)) |
+| actions              | object          |         | Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props (see [actions prop](#actions-prop))                                                        |
+| locale               | string          |         | what locale should we use to format table values if left empty no locale formatting happens                                                                                                            |
+| i18n                 | object          |         | (see [i18n prop](#i18n-prop))                                                                                                                                                                          |
+| error                | string          |         | Specify the error message that need to be displayed by default. Incase we use `view.table.errorState` property then the error state element will be rendered instead of error message                  |
 
 ### Column Prop
 
-| Name                   | Type                     | Default | Description                                                                                                                                                                                            |
-| :--------------------- | :----------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                     | string                   |         | The id of this column                                                                                                                                                                                  |
-| name                   | string                   |         | The display name of the column shown in the header                                                                                                                                                     |
-| isSortable             | bool                     |         | Is this column sortable?                                                                                                                                                                               |
-| sortFunction           | func                     |         | a custom function for sorting this column. Called with: { columnId: PropTypes.string, direction: PropTypes.oneOf(['ASC','DESC']), data: PropTypes.array }                                              |
-| width                  | string                   |         | set the width of this column. ex. 150px or 2rem                                                                                                                                                        |
-| align                  | string                   |         | 'start', 'center', or 'end'                                                                                                                                                                            |
-| renderDataFunction     | func                     |         | A custom function to render this column. Called with: {value: PropTypes.any, columnId: PropTypes.string, rowId: PropTypes.string, row: PropTypes.shape({[columnId: PropTypes.string]: PropTypes.any})} |
-| filter                 | object                   |         |                                                                                                                                                                                                        |
-| filter.placeholderText | string                   |         | i18n text for the filter                                                                                                                                                                               |
-| filter.isMultiselect   | bool                     |         | if true the table is filtered based on a multiselect component                                                                                                                                         |
-| filter.options         | arrayOf(object)          |         |                                                                                                                                                                                                        |
-| filter.options[].id    | string, number, or, bool |         | The id of the filter option used in multiselect filtering                                                                                                                                              |
-| filter.options[].text  | string                   |         | the display value for this multiselect filter option                                                                                                                                                   |
-| filter.filterFunction  | func                     |         | Custom filter function call with (columnFilterValue, currentValue)                                                                                                                                     |
-| options                | object                   |         | Optional items forthe column overflow menu                                                                                                                                                             |
-| options[].id           | string, number, or, bool |         | The id of the option used in the overflow menu for this column                                                                                                                                         |
-| options[].text         | string                   |         | the display text for this overflow menu item                                                                                                                                                           |
+| Name                     | Type                     | Default | Description                                                                                                                                                                                            |
+| :----------------------- | :----------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                       | string                   |         | The id of this column                                                                                                                                                                                  |
+| name                     | string                   |         | The display name of the column shown in the header                                                                                                                                                     |
+| isSortable               | bool                     |         | Is this column sortable?                                                                                                                                                                               |
+| sortFunction             | func                     |         | a custom function for sorting this column. Called with: { columnId: PropTypes.string, direction: PropTypes.oneOf(['ASC','DESC']), data: PropTypes.array }                                              |
+| width                    | string                   |         | set the width of this column. ex. 150px or 2rem                                                                                                                                                        |
+| align                    | string                   |         | 'start', 'center', or 'end'                                                                                                                                                                            |
+| renderDataFunction       | func                     |         | A custom function to render this column. Called with: {value: PropTypes.any, columnId: PropTypes.string, rowId: PropTypes.string, row: PropTypes.shape({[columnId: PropTypes.string]: PropTypes.any})} |
+| filter                   | object                   |         |                                                                                                                                                                                                        |
+| filter.placeholderText   | string                   |         | i18n text for the filter                                                                                                                                                                               |
+| filter.isMultiselect     | bool                     |         | if true the table is filtered based on a multiselect component                                                                                                                                         |
+| filter.options           | arrayOf(object)          |         |                                                                                                                                                                                                        |
+| filter.options[].id      | string, number, or, bool |         | The id of the filter option used in multiselect filtering                                                                                                                                              |
+| filter.options[].text    | string                   |         | the display value for this multiselect filter option                                                                                                                                                   |
+| filter.filterFunction    | func                     |         | Custom filter function call with (columnFilterValue, currentValue)                                                                                                                                     |
+| overflowMenuItems        | arrayOf(objects)         |         | Optional items for the column overflow menu                                                                                                                                                            |
+| overflowMenuItems[].id   | string, number, or, bool |         | The id of the option used in the overflow menu for this column                                                                                                                                         |
+| overflowMenuItems[].text | string                   |         | the display text for this overflow menu item                                                                                                                                                           |
 
 ### Data Prop
 
@@ -858,6 +1126,7 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | :---------------------- | :-------------- | :------ | :---------------------------------------------------------------------------------------------------- |
 | id                      | string          |         | the id of this row                                                                                    |
 | values                  | object          |         | A {[columnId]: value} object containing all the values for this row                                   |
+| hasLoadMore             | bool            |         | An optional boolean prop to define if the row has more data to be loaded                              |
 | children                | arrayOf(object) |         | An optional array of rows (in the same structure as the data prop) for children nested under this row |
 | rowActions              | object          |         | An optional list of actions visible on row how or expansion                                           |
 | rowActions[].id         | string          |         | unique id for this action                                                                             |
@@ -885,6 +1154,7 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | hasAggregations             | bool                                           |         | If true allows the table to aggregate values of columns in a special row                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | hasPagination               | bool                                           |         | If true the table uses pagination                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | hasRowSelection             | 'multi', 'single', or false                    |         | Enables multiple row selection, single row selection, or turns it off                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| hasRowEdit                  | bool                                           |         | If true enables the row edit toolbar button and functionality                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | hasRowExpansion             | bool                                           |         | Allows rows to be expanded                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | hasRowNesting               | bool, or {hasSingleNestedHierarchy: bool}      |         | Allows nested rows, or only a depth of one nested row                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | hasRowActions               | bool                                           |         | If true, row actions are enabled                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -960,6 +1230,7 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | table.ordering                          | object[]                         |         | an array of objects representing the order and visibility of the columns                                                                            |
 | table.ordering[].columnId               | string                           |         | The id of the column to make hidden or visible                                                                                                      |
 | table.ordering[].isHidden               | bool                             |         | If true, the column with columnId will be hidden in the table                                                                                       |
+| table.ordering[].columnGroupId          | string                           |         | The id of the column group this column belongs to if any                                                                                            |
 | table.rowActions                        | object[]                         |         |                                                                                                                                                     |
 | table.rowsActions[].rowId               | string                           |         | The rowID associated with this action                                                                                                               |
 | table.rowActions[].isRunning            | bool                             |         | Is this action currently running on this row                                                                                                        |
@@ -970,6 +1241,7 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | table.rowActions[].error.learnMoreURL   | string                           |         | The link to learn more about this error                                                                                                             |
 | table.singleRowEditButtons              | element                          |         | Buttons shown when editing a single row                                                                                                             |
 | table.expandedIds                       | string[]                         |         | an array of strings representing the rowIds to be expanded                                                                                          |
+| table.loadingMoreIds                    | string[]                         |         | an array of strings representing the rowIds with the load more active                                                                               |
 | table.emptyState                        | object or element                |         | If a React element is provided, it will be rendered in place of the default                                                                         |
 | table.emptyState.message                | node                             |         | The message to show when the table is empty                                                                                                         |
 | table.emptyState.messageWithFilters     | node                             |         | Show a different message if no content is in the table matching the filters                                                                         |
@@ -1021,6 +1293,7 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | table.onAddMultiSortColumn      | func   |         |                                                                                                                                                                                                                 |
 | table.onRemoveMultiSortColumn   | func   |         |                                                                                                                                                                                                                 |
 | table.onTableErrorStateAction   | func   |         | callback action relavent on error state. This can be used with `error` message. When `view.table.errorState` property is used then this callback function has no effect.                                        |
+| table.onRowLoadMore             | func   |         | callback if a load more row is clicked called with the id of the row id.                                                                                                                                        |
 | onUserViewModified              | func   |         | callback for actions relevant for view management                                                                                                                                                               |
 
 ### i18n Prop
@@ -1074,6 +1347,7 @@ The table can sum columns and show their aggregate total in a footer. A custom v
 | multiSortRemoveColumn            | string       | 'Remove column'          |                                                        |
 | multiSortAscending               | string       | 'Ascending'              |                                                        |
 | multiSortDescending              | string       | 'Descending'             |                                                        |
+| loadMoreText                     | string       | 'Load more...'           |                                                        |
 
 ## Source Code
 

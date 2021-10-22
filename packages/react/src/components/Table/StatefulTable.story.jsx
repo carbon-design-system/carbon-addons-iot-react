@@ -65,6 +65,11 @@ export const StatefulTableWithNestedRowItems = (props) => {
           ]
         : undefined,
   }));
+
+  const hasAggregations = boolean(
+    'Aggregates column values and displays in a footer row (options.hasAggregations)',
+    false
+  );
   return (
     <div style={{ width: select('table container width', ['auto', '300px', '800px'], 'auto') }}>
       <MyTable
@@ -83,6 +88,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
         )}
         options={{
           ...initialState.options,
+          hasAggregations,
           hasRowNesting: true,
           hasFilter: true,
           hasResize: true,
@@ -94,6 +100,18 @@ export const StatefulTableWithNestedRowItems = (props) => {
         }}
         view={{
           ...initialState.view,
+          aggregations: hasAggregations
+            ? {
+                label: 'Total:',
+                columns: [
+                  {
+                    id: 'number',
+                    align: 'center',
+                    isSortable: false,
+                  },
+                ],
+              }
+            : undefined,
           filters: [],
           toolbar: {
             activeBar: null,
@@ -129,24 +147,42 @@ export default {
 
 export const SimpleStatefulExample = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const demoInitialColumnSizes = boolean('Demo initial columns sizes', false);
+  const demoColumnGroupAssignments = boolean('Demo assigning columns to groups', false);
+  const demoColumnTooltips = boolean('Demo column tooltips', false);
+
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   return (
     <MyTable
       id="table"
+      key={`table${demoInitialColumnSizes}`}
       {...initialState}
       actions={tableActions}
-      columns={initialState.columns.map((column) => {
-        if (column.filter) {
-          return {
-            ...column,
-            filter: {
-              ...column.filter,
-              isMultiselect: !!column.filter?.options,
-            },
-          };
-        }
-        return column;
-      })}
+      columns={initialState.columns
+        .map((column) => {
+          if (column.filter) {
+            return {
+              ...column,
+              filter: {
+                ...column.filter,
+                isMultiselect: !!column.filter?.options,
+              },
+            };
+          }
+          return column;
+        })
+        .map((col, i) => ({
+          ...col,
+          width: demoInitialColumnSizes ? (i % 2 === 0 ? '100px' : '200px') : undefined,
+          tooltip: demoColumnTooltips ? `A tooltip for ${col.name} here` : undefined,
+        }))}
+      columnGroups={object('Column groups definition (columnGroups)', [
+        {
+          id: 'groupA',
+          name: 'Group A that has a very long name that should be truncated',
+        },
+        { id: 'groupB', name: 'Group B' },
+      ])}
       style={{ maxWidth: select('table width', ['auto', '300px'], 'auto') }}
       useZebraStyles={boolean('Alternate colors in table rows (useZebraStyles)', false)}
       lightweight={boolean('Show an alternate header style (lightweight)', false)}
@@ -171,6 +207,7 @@ export const SimpleStatefulExample = () => {
         ),
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
         hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
+        hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
         hasRowExpansion: boolean(
           'Enables expanding rows to show additional content (options.hasRowExpansion)',
           false
@@ -215,6 +252,15 @@ export const SimpleStatefulExample = () => {
           ],
         },
         table: {
+          ordering: demoColumnGroupAssignments
+            ? defaultOrdering.map((col, index) =>
+                index === 1 || index === 2
+                  ? { ...col, columnGroupId: 'groupA' }
+                  : index === 5 || index === 6 || index === 7
+                  ? { ...col, columnGroupId: 'groupB' }
+                  : col
+              )
+            : defaultOrdering,
           selectedIds: array('An array of selected table ids (view.table.selectedIds)', []),
         },
         toolbar: {

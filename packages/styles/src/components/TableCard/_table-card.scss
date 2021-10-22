@@ -1,7 +1,14 @@
 @import '../../globals/vars';
 
-.#{$iot-prefix}--table-card .#{$iot-prefix}--card--content {
-  padding: 0;
+.#{$iot-prefix}--table-card {
+  .#{$iot-prefix}--card--content {
+    padding: 0;
+  }
+  .#{$iot-prefix}--table-toolbar-secondary-title {
+    // title needs to match new card title font size and padding
+    @include type-style('productive-heading-02');
+    padding-top: $spacing-04;
+  }
 }
 .#{$iot-prefix}--card--content .#{$iot-prefix}--table-container {
   overflow-x: hidden; // scrolling should be handled inside the table, not between the card and the table

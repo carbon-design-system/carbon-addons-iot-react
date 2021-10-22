@@ -75,6 +75,7 @@ const propTypes = {
     filterAscending: PropTypes.string,
     filterDescending: PropTypes.string,
     toggleAggregations: PropTypes.string,
+    toolbarLabelAria: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -215,6 +216,7 @@ const TableToolbar = ({
       // TODO: remove deprecated 'testID' in v3
       data-testid={testID || testId}
       className={classnames(`${iotPrefix}--table-toolbar`, className)}
+      aria-label={i18n.toolbarLabelAria}
     >
       <TableBatchActions
         // TODO: remove deprecated 'testID' in v3
@@ -407,6 +409,7 @@ const TableToolbar = ({
                 // When passing the event directly to the storybook action it throws an iframe access
                 // error. This might a temporary issue and can be removed later.
                 onClick={() => onToggleAggregations()}
+                disabled={isDisabled}
               />
             </OverflowMenu>
           ) : null}

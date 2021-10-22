@@ -33,6 +33,8 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 8, 2021').click();
     cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
+    cy.findAllByLabelText('Increment hours').eq(0).click();
+    cy.findByLabelText('End time').type('12:34');
     cy.findByText('Apply')
       .click()
       .should(() => {
@@ -41,11 +43,78 @@ describe('DateTimePickerV2', () => {
           timeRangeValue: {
             end: Cypress.sinon.match.any,
             endDate: '08/08/2021',
+            endTime: '12:34',
             start: Cypress.sinon.match.any,
             startDate: '08/06/2021',
+            startTime: '01:00',
+            humanValue: '2021-08-06 01:00 to 2021-08-08 12:34',
+            tooltipValue: '',
           },
         });
       });
+  });
+
+  it('should disable apply button when relative TimePickerSpinner input is invalid ', () => {
+    const { i18n } = DateTimePickerV2.defaultProps;
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePickerV2 onApply={onApply} onCancel={onCancel} id="picker-test" hasTimeInput />);
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+    cy.findByText('Custom Range').click();
+
+    cy.findByPlaceholderText('hh:mm').type('91:35');
+
+    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+
+    cy.findByPlaceholderText('hh:mm').type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}11:35'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
+  });
+
+  it('should disable apply button when absolute TimePickerSpinner inputs are invalid ', () => {
+    const { i18n } = DateTimePickerV2.defaultProps;
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePickerV2
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            startDate: '2021-08-01',
+            startTime: '12:34',
+            endDate: '2021-08-06',
+            endTime: '10:49',
+          },
+        }}
+      />
+    );
+
+    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
+
+    cy.findByLabelText(i18n.startTimeLabel).type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}91:35'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+
+    cy.findByLabelText(i18n.startTimeLabel).type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}11:35'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
+
+    cy.findByLabelText(i18n.endTimeLabel).type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}11:61'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+
+    // set time to 11:00
+    cy.findByLabelText(i18n.endTimeLabel).type('{backspace}{backspace}00');
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
   });
 
   it('should open the flyout when hitting enter', () => {
@@ -108,6 +177,8 @@ describe('DateTimePickerV2', () => {
           timeRangeValue: {
             relativeToWhen: '',
             relativeToTime: '12:04',
+            humanValue: '',
+            tooltipValue: '',
           },
         });
       });
@@ -145,6 +216,10 @@ describe('DateTimePickerV2', () => {
             relativeToTime: '12:04',
             end: Cypress.sinon.match.any,
             start: Cypress.sinon.match.any,
+            humanValue: Cypress.sinon.match((value) => {
+              return value.includes('Invalid Date') && value.includes('12:04');
+            }),
+            tooltipValue: '',
           },
         });
       });

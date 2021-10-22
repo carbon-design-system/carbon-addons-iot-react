@@ -379,4 +379,22 @@ describe('PieChartCard', () => {
     expect(firstSlice).toHaveClass('hovered');
     expect(screen.getByText('custom-tooltip-test')).toBeVisible();
   });
+
+  it('should throw a prop warnings with an unsupported size', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const { testID, ...props } = pieChartCardProps;
+    const { rerender } = render(<PieChartCard {...props} size={CARD_SIZES.SMALL} />);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(`PieChartCard does not support card size ${CARD_SIZES.SMALL}`)
+    );
+    rerender(<PieChartCard {...props} size={CARD_SIZES.SMALLWIDE} />);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(`PieChartCard does not support card size ${CARD_SIZES.SMALLWIDE}`)
+    );
+    rerender(<PieChartCard {...props} size={CARD_SIZES.SMALLFULL} />);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(`PieChartCard does not support card size ${CARD_SIZES.SMALLFULL}`)
+    );
+    jest.resetAllMocks();
+  });
 });

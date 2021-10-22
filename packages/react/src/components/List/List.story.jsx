@@ -138,6 +138,7 @@ export const BasicSingleColumn = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -164,6 +165,7 @@ export const BasicSingleColumnWithSearch = () => {
           search={{
             onChange: (evt) => setSearchValue(evt.target.value),
           }}
+          isVirtualList={boolean('isVirtualList', false)}
         />
       </div>
     );
@@ -191,6 +193,7 @@ export const SelectableItems = () => {
           isLoading={boolean('isLoading', false)}
           handleSelect={(id) => setSelected(id)}
           selectedIds={[selected]}
+          isVirtualList={boolean('isVirtualList', false)}
         />
       </div>
     );
@@ -214,6 +217,7 @@ export const WithSecondaryValue = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -236,6 +240,7 @@ export const WithIsLargeRowAndIcon = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -268,6 +273,7 @@ export const WithRowActionsSingle = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -295,6 +301,7 @@ export const WithRowActionsMultiple = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -342,6 +349,7 @@ export const WithHierarchy = () => (
       ]}
       toggleExpansion={action('toggleExpansion')}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -385,6 +393,7 @@ export const WithCategoriesFixedHeight = () => (
       ]}
       expandedIds={['New York Yankees', 'Atlanta Braves']}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -400,6 +409,7 @@ export const WithEmptyState = () => (
       isLoading={boolean('isLoading', false)}
       isFullHeight={boolean('isFullHeight', true)}
       emptyState={text('hasEmptyState', 'No list items to show')}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -564,6 +574,7 @@ export const WithCheckboxMultiSelection = () => {
             }
           }}
           isLoading={boolean('isLoading', false)}
+          isVirtualList={boolean('isVirtualList', false)}
         />
       </div>
     );
@@ -591,6 +602,7 @@ export const WithTags = () => (
         })
       )}
       isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
@@ -614,9 +626,132 @@ export const WithPagination = () => (
         maxPage: 10,
         pageOfPagesText: (page) => `Page ${page}`,
       }}
-      isFullHeight
+      isFullHeight={boolean('isFullHeight', true)}
+      isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
 
 WithPagination.storyName = 'with pagination';
+
+export const WithLoadMore = () => {
+  const ListWithExpandIds = () => {
+    const [expandedIds, setExpandedIds] = useState([]);
+    const [loadingMoreIds, setLoadingMoreIds] = useState([]);
+
+    const [listItems, setListItems] = useState([
+      {
+        id: 'org',
+        content: { value: 'Organization' },
+        children: [
+          { id: 'site-01', content: { value: 'Site 1' } },
+          {
+            id: 'site-02',
+            content: { value: 'Site 2' },
+            children: [
+              { id: 'system-01', content: { value: 'System 1' } },
+              { id: 'system-02', content: { value: 'System 2' } },
+            ],
+            hasLoadMore: true,
+          },
+          {
+            id: 'site-03',
+            content: { value: 'Site 3' },
+            children: [
+              { id: 'system-03', content: { value: 'System 3' } },
+              { id: 'system-04', content: { value: 'System 4' } },
+            ],
+            hasLoadMore: true,
+          },
+        ],
+      },
+    ]);
+    return (
+      <div style={{ width: 400 }}>
+        <List
+          title="Sports Teams"
+          iconPosition="left"
+          items={listItems}
+          expandedIds={expandedIds}
+          toggleExpansion={(id) =>
+            setExpandedIds((prev) =>
+              prev.includes(id) ? prev.filter((prevId) => prevId !== id) : [...prev, id]
+            )
+          }
+          loadingMoreIds={loadingMoreIds}
+          isLoading={boolean('isLoading', false)}
+          isVirtualList={boolean('isVirtualList', false)}
+          handleLoadMore={(id) => {
+            action('handleLoadMore')(id);
+            setLoadingMoreIds((prev) => [...prev, id]);
+            setTimeout(() => {
+              setListItems((prevItems) => [
+                {
+                  id: 'org',
+                  content: { value: 'Organization' },
+                  children: [
+                    { id: 'site-01', content: { value: 'Site 1' } },
+                    {
+                      id: 'site-02',
+                      content: { value: 'Site 2' },
+                      children:
+                        id === 'site-02'
+                          ? [
+                              { id: 'system-01', content: { value: 'System 1' } },
+                              { id: 'system-02', content: { value: 'System 2' } },
+                              { id: 'system-03', content: { value: 'System 3' } },
+                              { id: 'system-04', content: { value: 'System 4' } },
+                            ]
+                          : prevItems[0]?.children[1]?.children,
+                      hasLoadMore:
+                        id === 'site-02' ? false : prevItems[0]?.children[1]?.hasLoadMore,
+                    },
+                    {
+                      id: 'site-03',
+                      content: { value: 'Site 3' },
+                      children:
+                        id === 'site-03'
+                          ? [
+                              { id: 'system-03', content: { value: 'System 3' } },
+                              { id: 'system-04', content: { value: 'System 4' } },
+                              { id: 'system-05', content: { value: 'System 5' } },
+                              { id: 'system-06', content: { value: 'System 6' } },
+                            ]
+                          : prevItems[0]?.children[2]?.children,
+                      hasLoadMore:
+                        id === 'site-03' ? false : prevItems[0]?.children[2]?.hasLoadMore,
+                    },
+                  ],
+                },
+              ]);
+              setLoadingMoreIds((prev) => prev.filter((prevId) => prevId !== id));
+            }, 2000);
+          }}
+        />
+      </div>
+    );
+  };
+  return <ListWithExpandIds />;
+};
+
+WithLoadMore.storyName = 'with load more';
+
+export const WithVirtualList = () => (
+  <div style={{ height: 300, overflow: 'auto', width: 400 }}>
+    <List
+      title={text('title', 'NY Yankees')}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key]) => ({
+          id: key,
+          content: { value: key },
+        })
+      )}
+      isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', true)}
+      isFullHeight={boolean('isFullHeight', true)}
+      isLargeRow={boolean('isLargeRow', false)}
+    />
+  </div>
+);
+
+WithVirtualList.storyName = 'with virtual list';

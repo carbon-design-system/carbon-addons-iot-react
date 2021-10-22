@@ -1,0 +1,9 @@
+version: '3.2'
+
+services:
+  react-visual-regression-tests:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/@ai-apps

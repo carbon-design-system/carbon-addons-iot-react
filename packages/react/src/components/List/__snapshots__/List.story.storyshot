@@ -2751,6 +2751,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -2858,6 +2860,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -2968,6 +2972,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -3668,6 +3674,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -3778,6 +3786,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -3885,6 +3895,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -3995,6 +4007,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -4105,6 +4119,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -4714,6 +4730,100 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with load more 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            Sports Teams
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+      </div>
+      <div
+        className="iot--list--content"
+      >
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item"
+          >
+            <div
+              aria-label="Expand"
+              className="iot--list-item--expand-icon"
+              data-testid="expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+              title="Expand"
+            >
+              <svg
+                aria-label="Expand-icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Organization"
+                  >
+                    Organization
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with pagination 1`] = `
 <div
   className="storybook-container"
@@ -5161,6 +5271,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5243,6 +5355,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5325,6 +5439,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5407,6 +5523,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5489,6 +5607,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5571,6 +5691,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5653,6 +5775,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5735,6 +5859,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5817,6 +5943,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -5899,6 +6027,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-expanded={false}
@@ -6022,6 +6152,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6101,6 +6233,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6180,6 +6314,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6259,6 +6395,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6338,6 +6476,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6417,6 +6557,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6496,6 +6638,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6575,6 +6719,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6654,6 +6800,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -6733,6 +6881,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -7958,6 +8108,431 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       >
                         default
                       </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with virtual list 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": 300,
+        "overflow": "auto",
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list iot--list__full-height iot--list--virtual"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            NY Yankees
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+      </div>
+      <div
+        className="iot--list--content iot--list--content--virtual iot--list--content__full-height"
+        onScroll={[Function]}
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "direction": "ltr",
+            "height": 400,
+            "overflow": "unset",
+            "position": "relative",
+            "width": undefined,
+            "willChange": "transform",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": 400,
+              "pointerEvents": undefined,
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="DJ LeMahieu"
+                    >
+                      DJ LeMahieu
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 40,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Luke Voit"
+                    >
+                      Luke Voit
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 80,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gary Sanchez"
+                    >
+                      Gary Sanchez
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 120,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Kendrys Morales"
+                    >
+                      Kendrys Morales
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 160,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gleyber Torres"
+                    >
+                      Gleyber Torres
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 200,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Clint Frazier"
+                    >
+                      Clint Frazier
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 240,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Brett Gardner"
+                    >
+                      Brett Gardner
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 280,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gio Urshela"
+                    >
+                      Gio Urshela
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 320,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Cameron Maybin"
+                    >
+                      Cameron Maybin
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 360,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Robinson Cano"
+                    >
+                      Robinson Cano
                     </div>
                   </div>
                 </div>

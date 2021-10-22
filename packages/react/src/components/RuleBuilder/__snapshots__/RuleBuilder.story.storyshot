@@ -696,7 +696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-597"
+                aria-controls="accordion-item-609"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -726,7 +726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-597"
+                id="accordion-item-609"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -807,7 +807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-598"
+                aria-controls="accordion-item-610"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -837,7 +837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-598"
+                id="accordion-item-610"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -5230,7 +5230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-637"
+                aria-controls="accordion-item-649"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -5260,7 +5260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-637"
+                id="accordion-item-649"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -5423,7 +5423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-638"
+                aria-controls="accordion-item-650"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -5453,7 +5453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-638"
+                id="accordion-item-650"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -6375,6 +6375,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -6464,6 +6466,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -6645,6 +6649,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -7006,6 +7012,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -7095,6 +7103,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}
@@ -7317,6 +7327,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </div>
                                 <div
                                   className="iot--list-item--content--row-actions"
+                                  onClick={[Function]}
+                                  onKeyPress={[Function]}
                                 >
                                   <button
                                     aria-describedby={null}

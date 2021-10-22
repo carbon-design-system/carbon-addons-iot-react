@@ -45,6 +45,8 @@ describe('DateTimePicker', () => {
 
   afterEach(() => {
     jest.clearAllMocks();
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   beforeAll(() => {
@@ -272,7 +274,10 @@ describe('DateTimePicker', () => {
     const wrapper = mount(
       <DateTimePicker
         {...dateTimePickerProps}
-        defaultValue={PRESET_VALUES[1]}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[1],
+        }}
         showRelativeOption={false}
       />
     );
@@ -650,5 +655,33 @@ describe('DateTimePicker', () => {
     userEvent.type(numberInput, '{backspace}-1');
     expect(numberInput).toBeInvalid();
     expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
+  });
+
+  it('should disable apply button when relative TimePickerSpinner input is invalid', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
+    const applyBytton = screen.getByRole('button', { name: i18n.applyBtnLabel });
+    expect(applyBytton).toBeEnabled();
+    const relativeToTime = screen.getByPlaceholderText('hh:mm');
+    expect(relativeToTime).toBeValid();
+
+    // set time to 1
+    userEvent.type(relativeToTime, '1');
+    expect(relativeToTime).toBeInvalid();
+    expect(applyBytton).toBeDisabled();
+
+    // set time to 11:11
+    userEvent.type(relativeToTime, '1:11');
+    expect(relativeToTime).toBeValid();
+    expect(applyBytton).toBeEnabled();
+
+    // set time to 11:61
+    userEvent.type(relativeToTime, '{backspace}{backspace}61');
+    expect(relativeToTime).toBeInvalid();
+    expect(applyBytton).toBeDisabled();
   });
 });

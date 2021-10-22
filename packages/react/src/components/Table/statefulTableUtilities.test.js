@@ -1,6 +1,6 @@
 import { Add16 } from '@carbon/icons-react';
 
-import { getRowAction } from './statefulTableUtilities';
+import { getRowAction } from './tableUtilities';
 
 describe('statefulTableUtilities', () => {
   describe('getRowAction', () => {

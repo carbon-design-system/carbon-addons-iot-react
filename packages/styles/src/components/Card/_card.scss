@@ -3,7 +3,7 @@
 @import './card-range-picker';
 @import './card-toolbar';
 @import './data-state-renderer';
-@import '../../../../styles/src/globals/_mixins.scss';
+@import '../../globals/mixins';
 
 $iot-header-padding: $spacing-05;
 $tooltipSize: $spacing-07;
@@ -25,7 +25,7 @@ $lineHeightSize: 1.375em;
 }
 
 .#{$iot-prefix}--card--resizing {
-  border: $spacing-01 solid $interactive-02;
+  outline: $spacing-01 solid $interactive-02;
   box-sizing: border-box;
 }
 
@@ -120,6 +120,10 @@ $lineHeightSize: 1.375em;
   height: var(--card-content-height);
   overflow-x: visible;
   overflow-y: visible;
+
+  .#{$prefix}--cc--chart-wrapper {
+    background-color: inherit;
+  }
 }
 
 .#{$iot-prefix}--card--content--expanded {

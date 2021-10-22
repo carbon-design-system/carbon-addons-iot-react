@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import keyBy from 'lodash/keyBy';
 
 import { settings } from '../../constants/Settings';
-import { DATE_PICKER_OPTIONS, TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
+import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import DateTimePicker, {
   DateTimePickerDefaultValuePropTypes,
@@ -219,10 +219,7 @@ const CardToolbar = ({
             i18n={mergedI18n}
             dateTimeMask={dateTimeMask}
             locale={locale}
-            hasIconOnly={
-              // make sure the card is actually sized
-              (width > 0 && width < 320) || availableActions.range === DATE_PICKER_OPTIONS.ICON_ONLY
-            }
+            hasIconOnly
             presets={Object.entries(timeRangeOptions).reduce(
               (acc, [timeRangeOptionKey, timeRangeOption]) => {
                 acc.push({
