@@ -112,6 +112,8 @@ const propTypes = {
     hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
+    /** If true enables the row edit toolbar button and functionality */
+    hasRowEdit: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
     hasUserViewManagement: PropTypes.bool,
@@ -328,6 +330,7 @@ export const defaultProps = (baseProps) => ({
     hasRowExpansion: false,
     hasRowActions: false,
     hasRowNesting: false,
+    hasRowEdit: false,
     hasFilter: false,
     hasAdvancedFilter: false,
     hasOnlyPageData: false,
