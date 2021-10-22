@@ -7,7 +7,12 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { DateRange, DateTimeSelection, RelativeRange, datePickerParameters } from './date-time-picker.component';
+import {
+  DateRange,
+  DateTimeSelection,
+  RelativeRange,
+  datePickerParameters,
+} from './date-time-picker.component';
 
 @Component({
   selector: 'ai-custom-date-time',

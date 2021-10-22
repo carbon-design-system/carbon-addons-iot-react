@@ -85,7 +85,7 @@ storiesOf('Components/DateTime Picker', module)
       </ai-date-time-picker>
 		`,
     props: getProps({
-      datePickerDisabled: true
+      datePickerDisabled: true,
     }),
   }))
   .add('With blocked dates', () => ({
