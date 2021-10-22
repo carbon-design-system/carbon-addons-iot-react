@@ -209,6 +209,106 @@ writing:
 <Table id="table" columns={columns} data={data} actions={actions} />
 ```
 
+An example columns array:
+
+```jsx
+export const tableColumns = [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'enter a string' },
+    // allows adding custom overflow menu to the column header
+    // calls the `onOverflowItemClicked` action with the id of the item clicked
+    overflowMenuItems: [
+      {
+        id: 'stop',
+        text: 'Stop',
+      },
+      {
+        id: 'go',
+        text: 'Go',
+      },
+    ],
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+    filter: { placeholderText: 'enter a date' },
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: {
+      placeholderText: 'pick an option',
+      // custom dropdown options to use as filters
+      options: [
+        {
+          id: 'a',
+          text: 'A',
+        },
+        {
+          id: 'b',
+          text: 'B',
+        },
+      ],
+    },
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: ({ value }) => {
+      // render a custom react node based on the value of this cell.
+      return <AReactElement />;
+    },
+    sortFunction: ({ data, columnId, direction }) => {
+      // sort the data based on given props and return sorted data;
+      return sortedData;
+    },
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'enter a number' },
+  },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+    filter: { placeholderText: 'true or false' },
+  },
+  {
+    id: 'node',
+    name: 'React Node',
+  },
+  {
+    id: 'object',
+    name: 'Object Id',
+    renderDataFunction: ({ value }) => {
+      // If given complex data in the table, use a custom renderDataFunction
+      // to render the object into a simple value.
+      return value?.id;
+    },
+    sortFunction: ({ data, columnId, direction }) => {
+      // sort the data based on given props and return sorted data;
+      return sortedData;
+    },
+    filter: {
+      placeholderText: 'Filter object values...',
+      filterFunction: (columnValue, filterValue) => {
+        // custom filter function based on columnValue and current filterValue
+        // returns a boolean based on the condition. ie:
+        // return columnValue.id.includes(filterValue);
+        return includeInFilter;
+      },
+    },
+  },
+];
+```
+
 After rendering a `Table` component using the code snippet above, you can
 optionally add any number of features including sorting, row expansion,
 filtering, row selection, batch actions through the `options` prop.
@@ -902,25 +1002,25 @@ A complete example of how to use the column grouping could look like this:
 
 ### Column Prop
 
-| Name                   | Type                     | Default | Description                                                                                                                                                                                            |
-| :--------------------- | :----------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                     | string                   |         | The id of this column                                                                                                                                                                                  |
-| name                   | string                   |         | The display name of the column shown in the header                                                                                                                                                     |
-| isSortable             | bool                     |         | Is this column sortable?                                                                                                                                                                               |
-| sortFunction           | func                     |         | a custom function for sorting this column. Called with: { columnId: PropTypes.string, direction: PropTypes.oneOf(['ASC','DESC']), data: PropTypes.array }                                              |
-| width                  | string                   |         | set the width of this column. ex. 150px or 2rem                                                                                                                                                        |
-| align                  | string                   |         | 'start', 'center', or 'end'                                                                                                                                                                            |
-| renderDataFunction     | func                     |         | A custom function to render this column. Called with: {value: PropTypes.any, columnId: PropTypes.string, rowId: PropTypes.string, row: PropTypes.shape({[columnId: PropTypes.string]: PropTypes.any})} |
-| filter                 | object                   |         |                                                                                                                                                                                                        |
-| filter.placeholderText | string                   |         | i18n text for the filter                                                                                                                                                                               |
-| filter.isMultiselect   | bool                     |         | if true the table is filtered based on a multiselect component                                                                                                                                         |
-| filter.options         | arrayOf(object)          |         |                                                                                                                                                                                                        |
-| filter.options[].id    | string, number, or, bool |         | The id of the filter option used in multiselect filtering                                                                                                                                              |
-| filter.options[].text  | string                   |         | the display value for this multiselect filter option                                                                                                                                                   |
-| filter.filterFunction  | func                     |         | Custom filter function call with (columnFilterValue, currentValue)                                                                                                                                     |
-| options                | object                   |         | Optional items forthe column overflow menu                                                                                                                                                             |
-| options[].id           | string, number, or, bool |         | The id of the option used in the overflow menu for this column                                                                                                                                         |
-| options[].text         | string                   |         | the display text for this overflow menu item                                                                                                                                                           |
+| Name                     | Type                     | Default | Description                                                                                                                                                                                            |
+| :----------------------- | :----------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                       | string                   |         | The id of this column                                                                                                                                                                                  |
+| name                     | string                   |         | The display name of the column shown in the header                                                                                                                                                     |
+| isSortable               | bool                     |         | Is this column sortable?                                                                                                                                                                               |
+| sortFunction             | func                     |         | a custom function for sorting this column. Called with: { columnId: PropTypes.string, direction: PropTypes.oneOf(['ASC','DESC']), data: PropTypes.array }                                              |
+| width                    | string                   |         | set the width of this column. ex. 150px or 2rem                                                                                                                                                        |
+| align                    | string                   |         | 'start', 'center', or 'end'                                                                                                                                                                            |
+| renderDataFunction       | func                     |         | A custom function to render this column. Called with: {value: PropTypes.any, columnId: PropTypes.string, rowId: PropTypes.string, row: PropTypes.shape({[columnId: PropTypes.string]: PropTypes.any})} |
+| filter                   | object                   |         |                                                                                                                                                                                                        |
+| filter.placeholderText   | string                   |         | i18n text for the filter                                                                                                                                                                               |
+| filter.isMultiselect     | bool                     |         | if true the table is filtered based on a multiselect component                                                                                                                                         |
+| filter.options           | arrayOf(object)          |         |                                                                                                                                                                                                        |
+| filter.options[].id      | string, number, or, bool |         | The id of the filter option used in multiselect filtering                                                                                                                                              |
+| filter.options[].text    | string                   |         | the display value for this multiselect filter option                                                                                                                                                   |
+| filter.filterFunction    | func                     |         | Custom filter function call with (columnFilterValue, currentValue)                                                                                                                                     |
+| overflowMenuItems        | arrayOf(objects)         |         | Optional items for the column overflow menu                                                                                                                                                            |
+| overflowMenuItems[].id   | string, number, or, bool |         | The id of the option used in the overflow menu for this column                                                                                                                                         |
+| overflowMenuItems[].text | string                   |         | the display text for this overflow menu item                                                                                                                                                           |
 
 ### Data Prop
 
