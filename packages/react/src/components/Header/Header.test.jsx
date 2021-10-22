@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import { User20, Help20 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
-import { keyCodes } from '../../constants/KeyCodeConstants';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 import Header, { APP_SWITCHER } from './Header';
 
@@ -243,11 +243,11 @@ describe('Header', () => {
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuTrigger = screen.getByTestId('menuitem');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.HOME });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.HOME });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.SPACE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 
@@ -264,9 +264,9 @@ describe('Header', () => {
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuTrigger = screen.getByTitle('help');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.SPACE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 
@@ -284,9 +284,9 @@ describe('Header', () => {
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuParent = screen.getByRole('menu');
     const menuTrigger = screen.getByTestId('menuitem');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuParent, { keyCode: keyCodes.ESCAPE });
+    fireEvent.keyDown(menuParent, { key: keyboardKeys.ESCAPE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 

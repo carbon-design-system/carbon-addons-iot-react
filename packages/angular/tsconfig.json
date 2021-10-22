@@ -18,7 +18,7 @@
     "skipLibCheck": true,
     "typeRoots": ["./node_modules/@types"],
     "paths": {
-      "@ai-apps/angular/*": ["./src/*/index"],
+      "@ai-apps/angular/*": ["./src/*-index"],
       "@angular/*": ["./node_modules/@angular/*", "../../node_modules/@angular/*"]
     }
   },

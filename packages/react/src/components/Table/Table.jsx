@@ -25,6 +25,8 @@ import {
   RowActionsStatePropTypes,
   ActiveTableToolbarPropType,
   TableSortPropType,
+  TableColumnGroupPropType,
+  TableOrderingPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -51,6 +53,8 @@ const propTypes = {
   lightweight: PropTypes.bool,
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
+  /** Specify the properties of each column group in the table. Defaults to empty column. */
+  columnGroups: TableColumnGroupPropType,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
   /** Expanded data for the table details */
@@ -101,6 +105,8 @@ const propTypes = {
     hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
+    /** If true enables the row edit toolbar button and functionality */
+    hasRowEdit: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
     hasUserViewManagement: PropTypes.bool,
@@ -205,14 +211,8 @@ const propTypes = {
       isSelectAllIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string),
       sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]),
-      /** Specify column ordering and visibility */
-      ordering: PropTypes.arrayOf(
-        PropTypes.shape({
-          columnId: PropTypes.string.isRequired,
-          /* Visibility of column in table, defaults to false */
-          isHidden: PropTypes.bool,
-        })
-      ),
+      /** Specify the order, visibility and group belonging of the table columns */
+      ordering: TableOrderingPropType,
       /** what is the current state of the row actions */
       rowActions: RowActionsStatePropTypes,
       singleRowEditButtons: PropTypes.element,
@@ -309,6 +309,7 @@ const propTypes = {
 };
 
 export const defaultProps = (baseProps) => ({
+  columnGroups: [],
   id: null,
   useZebraStyles: false,
   lightweight: false,
@@ -322,6 +323,7 @@ export const defaultProps = (baseProps) => ({
     hasRowExpansion: false,
     hasRowActions: false,
     hasRowNesting: false,
+    hasRowEdit: false,
     hasFilter: false,
     hasAdvancedFilter: false,
     hasOnlyPageData: false,
@@ -483,6 +485,7 @@ const Table = (props) => {
   const {
     id,
     columns,
+    columnGroups,
     data,
     expandedData,
     locale,
@@ -707,6 +710,15 @@ const Table = (props) => {
       ? someRowsAreSelected
       : view.table.isSelectAllIndeterminate;
 
+  const minHeaderSizeIsLarge = visibleColumns.some((col) => col.isSortable);
+
+  if (__DEV__ && columnGroups.length && options.hasColumnSelection) {
+    warning(
+      false,
+      'Column grouping (columnGroups) cannot be combined with the option hasColumnSelection:true'
+    );
+  }
+
   return (
     <TableContainer
       style={style}
@@ -850,6 +862,9 @@ const Table = (props) => {
           // TODO: remove id in v3
           data-testid={id || testId}
           className={classnames({
+            [`${iotPrefix}--data-table--column-groups`]: columnGroups.length,
+            [`${iotPrefix}--data-table--column-groups--min-size-large`]:
+              columnGroups.length && minHeaderSizeIsLarge,
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
               options.hasResize && !options.useAutoTableLayoutForResize,
@@ -881,6 +896,7 @@ const Table = (props) => {
                 truncateCellText: useCellTextTruncate,
               }}
               columns={columns}
+              columnGroups={columnGroups}
               filters={view.filters}
               actions={{
                 ...pick(actions.toolbar, 'onApplyFilter'),

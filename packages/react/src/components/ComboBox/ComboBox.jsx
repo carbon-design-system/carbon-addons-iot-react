@@ -6,6 +6,7 @@ import pick from 'lodash/pick';
 
 import { settings } from '../../constants/Settings';
 import { filterValidAttributes } from '../../utils/componentUtilityFunctions';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 const { iotPrefix } = settings;
 
@@ -171,7 +172,7 @@ const ComboBox = ({
   const handleOnKeypress = (evt) => {
     // Current value of input
     const currentValue = comboRef.current.value.trim();
-    if (evt.key === 'Enter' && currentValue) {
+    if (evt.key === keyboardKeys.ENTER && currentValue) {
       const newItem = {
         id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
         text: currentValue,
