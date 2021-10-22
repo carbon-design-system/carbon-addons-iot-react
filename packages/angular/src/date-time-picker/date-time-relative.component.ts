@@ -1,10 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { setHours, setMinutes, sub, subDays, addDays } from 'date-fns';
-import {
-  DateRange,
-  RelativeRange,
-  relativeToOption,
-} from './date-time-picker.component';
+import { DateRange, RelativeRange, relativeToOption } from './date-time-picker.component';
 
 export type RelativeDateValue = [...DateRange, RelativeRange];
 
