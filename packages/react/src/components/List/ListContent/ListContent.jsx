@@ -159,7 +159,17 @@ const ListContent = ({
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={() => handleSelect(item.id, parentId)}
+                onClick={(evt) => {
+                  if (isSelectable && isMultiSelect) {
+                    // When combing checkboxes with selectable rows (isSelectable) we are
+                    // getting click events from the ListItemWrapper before this handler is called.
+                    // Therefor we stop this one and rely on the ListItem onSelect handler to handle
+                    // the selection. If we don't the handleSelect callback will be called multiple times.
+                    evt.stopPropagation();
+                  } else {
+                    handleSelect(item.id, parentId);
+                  }
+                }}
                 checked={isSelected}
                 indeterminate={isIndeterminate}
               />

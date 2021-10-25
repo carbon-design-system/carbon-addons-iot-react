@@ -294,8 +294,10 @@ describe('List', () => {
 
   it('adds checkboxes when isMultiSelect is set to true', () => {
     const onSelect = jest.fn();
-    render(<List title="list" items={getListItems(1)} handleSelect={onSelect} isMultiSelect />);
-    userEvent.click(screen.getByTestId('1-checkbox'));
+    const { container } = render(
+      <List title="list" items={getListItems(1)} handleSelect={onSelect} isMultiSelect />
+    );
+    userEvent.click(container.querySelectorAll('.bx--checkbox-label')[0]);
     expect(onSelect).toHaveBeenCalledWith('1', null);
   });
 
