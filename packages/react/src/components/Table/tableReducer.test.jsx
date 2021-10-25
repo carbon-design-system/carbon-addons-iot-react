@@ -422,9 +422,23 @@ describe('table reducer', () => {
       // Expanded row
       const tableWithExpandedRow = tableReducer(initialState, tableRowExpand('row-1', true));
       expect(tableWithExpandedRow.view.table.expandedIds).toEqual(['row-1']);
+      const tableWith2ExpandedRows = tableReducer(
+        tableWithExpandedRow,
+        tableRowExpand('row-2', true)
+      );
+      expect(tableWith2ExpandedRows.view.table.expandedIds).toEqual(['row-1', 'row-2']);
+
       // Collapsed row
       const tableWithCollapsedRow = tableReducer(initialState, tableRowExpand('row-1', false));
       expect(tableWithCollapsedRow.view.table.expandedIds).toEqual([]);
+
+      // With expandRowsExclusively
+      const tableSingleWithExpandedRow = tableReducer(initialState, tableRowExpand('row-1', true));
+      const newTableSingleWithExpandedRow = tableReducer(
+        tableSingleWithExpandedRow,
+        tableRowExpand('row-2', true, null, { expandRowsExclusively: true })
+      );
+      expect(newTableSingleWithExpandedRow.view.table.expandedIds).toEqual(['row-2']);
     });
     it('REGISTER_TABLE', () => {
       // Data should be filtered once table registers

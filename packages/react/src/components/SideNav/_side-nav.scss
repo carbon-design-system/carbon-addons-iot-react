@@ -141,3 +141,7 @@ html[dir='rtl'] {
     }
   }
 }
+
+.#{$prefix}--side-nav__overlay-active {
+  z-index: z('overlay');
+}

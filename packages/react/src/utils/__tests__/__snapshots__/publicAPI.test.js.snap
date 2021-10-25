@@ -1223,7 +1223,24 @@ Map {
               "type": "bool",
             },
             "hasRowExpansion": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "expandRowsExclusively": Object {
+                          "type": "bool",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hasRowNesting": Object {
               "args": Array [
@@ -16547,27 +16564,7 @@ Map {
       "showTimeInGMT": Object {
         "type": "bool",
       },
-      "size": Object {
-        "args": Array [
-          Array [
-            "XSMALL",
-            "XSMALLWIDE",
-            "TALL",
-            "WIDE",
-            "XLARGE",
-            "SMALL",
-            "SMALLWIDE",
-            "SMALLFULL",
-            "MEDIUMTHIN",
-            "MEDIUM",
-            "MEDIUMWIDE",
-            "LARGETHIN",
-            "LARGE",
-            "LARGEWIDE",
-          ],
-        ],
-        "type": "oneOf",
-      },
+      "size": [Function],
       "subtitle": Object {
         "type": "string",
       },
@@ -20026,6 +20023,7 @@ Map {
       "hasMoreData": false,
       "isLoading": false,
       "layout": "",
+      "size": "MEDIUM",
       "testId": "Card",
     },
     "displayName": "ListCard",
@@ -20771,27 +20769,7 @@ Map {
         "type": "shape",
       },
       "showOverflow": [Function],
-      "size": Object {
-        "args": Array [
-          Array [
-            "XSMALL",
-            "XSMALLWIDE",
-            "TALL",
-            "WIDE",
-            "XLARGE",
-            "SMALL",
-            "SMALLWIDE",
-            "SMALLFULL",
-            "MEDIUMTHIN",
-            "MEDIUM",
-            "MEDIUMWIDE",
-            "LARGETHIN",
-            "LARGE",
-            "LARGEWIDE",
-          ],
-        ],
-        "type": "oneOf",
-      },
+      "size": [Function],
       "subtitle": Object {
         "type": "string",
       },

@@ -208,8 +208,13 @@ export const SimpleStatefulExample = () => {
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
         hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
         hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
-        hasRowExpansion: boolean(
+        hasRowExpansion: select(
           'Enables expanding rows to show additional content (options.hasRowExpansion)',
+          {
+            true: true,
+            false: false,
+            '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
+          },
           false
         ),
         hasRowNesting: boolean(
