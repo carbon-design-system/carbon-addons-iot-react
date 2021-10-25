@@ -591,7 +591,7 @@ describe('Card', () => {
     fireEvent.click(secondItem);
     expect(mockExtraMultiple).toHaveBeenCalled();
 
-    // // Reopen menu to verify disabled item
+    // Reopen menu to verify disabled item
     fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
     const thirdItem = await screen.findByText('Item3');
     expect(thirdItem.closest('button')).toBeDisabled();

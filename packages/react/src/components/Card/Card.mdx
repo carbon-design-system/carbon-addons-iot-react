@@ -564,6 +564,23 @@ You can use extraActions on a Card. Which can be used in the card toolbar to eit
 ```
 
 ```jsx
+// Card with single disabled extra action.
+<Card
+  {...cardProps}
+  size={CARD_SIZES.LARGE}
+  availableActions={{
+    extra: true,
+  }}
+  extraActions={{
+    id: 'extrasingleaction',
+    icon: Add16,
+    callback: undefined,
+    disabled: true,
+  }}
+/>
+```
+
+```jsx
 // Card with multiple extra action.
 <Card
   {...cardProps}
@@ -583,6 +600,18 @@ You can use extraActions on a Card. Which can be used in the card toolbar to eit
         id: 'secondItem',
         itemText: 'Item2',
         callback: undefined,
+      },
+      {
+        id: 'thirdItem',
+        itemText: 'Item3',
+        callback: undefined,
+        hidden: true,
+      },
+      {
+        id: 'fourthItem',
+        itemText: 'Item4',
+        callback: undefined,
+        disabled: true,
       },
     ],
   }}

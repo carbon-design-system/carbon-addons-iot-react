@@ -810,11 +810,14 @@ export const CardPropTypes = {
     id: PropTypes.string.isRequired,
     icon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     callback: PropTypes.func,
+    disabled: PropTypes.bool,
     children: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         itemText: PropTypes.string.isRequired,
         callback: PropTypes.func.isRequired,
+        disabled: PropTypes.bool,
+        hidden: PropTypes.bool,
       })
     ),
   }),

@@ -6509,6 +6509,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -6523,6 +6529,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -12944,6 +12953,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -12958,6 +12973,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -14004,6 +14022,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -14018,6 +14042,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -15285,6 +15312,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -15299,6 +15332,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -16590,6 +16626,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -16604,6 +16646,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -17598,6 +17643,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -17612,6 +17663,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -18827,6 +18881,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -18841,6 +18901,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -19944,6 +20007,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -19958,6 +20027,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -20972,6 +21044,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -20986,6 +21064,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -24703,6 +24784,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -24717,6 +24804,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
@@ -26037,6 +26127,12 @@ Map {
                         "isRequired": true,
                         "type": "func",
                       },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
                       "id": Object {
                         "isRequired": true,
                         "type": "string",
@@ -26051,6 +26147,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
             },
             "icon": Object {
               "args": Array [
