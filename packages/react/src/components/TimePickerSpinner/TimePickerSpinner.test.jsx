@@ -2,7 +2,7 @@ import React from 'react';
 import { screen, render, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { keyCodes } from '../../constants/KeyCodeConstants';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
 
@@ -102,21 +102,15 @@ describe('TimePickerSpinner', () => {
     screen.getByRole('textbox').focus();
 
     fireEvent.keyUp(document.activeElement || document.body, {
-      key: 'ArrowLeft',
-      code: 'ArrowLeft',
-      keyCode: keyCodes.LEFT,
+      key: keyboardKeys.LEFT,
     });
     fireEvent.keyUp(document.activeElement || document.body, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
     expect(screen.getByRole('textbox').value).toEqual('01:00');
 
     fireEvent.keyUp(document.activeElement || document.body, {
-      key: 'ArrowDown',
-      code: 'ArrowDown',
-      keyCode: keyCodes.DOWN,
+      key: keyboardKeys.DOWN,
     });
     expect(screen.getByRole('textbox').value).toEqual('00:00');
   });
@@ -127,14 +121,10 @@ describe('TimePickerSpinner', () => {
     screen.getByRole('textbox').focus();
 
     fireEvent.keyDown(document.activeElement || document.body, {
-      key: 'Escape',
-      code: 'Escape',
-      keyCode: keyCodes.ESCAPE,
+      key: keyboardKeys.ESCAPE,
     });
     fireEvent.keyUp(document.activeElement || document.body, {
-      key: 'Escape',
-      code: 'Escape',
-      keyCode: keyCodes.ESCAPE,
+      key: keyboardKeys.ESCAPE,
     });
     expect(screen.getByRole('textbox').value).toEqual('');
   });
@@ -177,18 +167,14 @@ describe('TimePickerSpinner', () => {
 
     fireEvent.focus(input);
     fireEvent.keyUp(input, {
-      key: 'ArrowDown',
-      code: 'ArrowDown',
-      keyCode: keyCodes.DOWN,
+      key: keyboardKeys.DOWN,
     });
     act(() => {
       jest.runAllTimers();
     });
     expect(input).toHaveValue('00:00');
     fireEvent.keyUp(input, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
     act(() => {
       jest.runAllTimers();
@@ -250,9 +236,7 @@ describe('TimePickerSpinner', () => {
     // this keyEvent sets the selectionRange to 5 b/c of how testing-library always moves to the end
     // of the endup.
     fireEvent.keyUp(input, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
     act(() => {
       jest.runAllTimers();
@@ -262,29 +246,21 @@ describe('TimePickerSpinner', () => {
     // updates the input to group 2 (minutes)
     userEvent.click(input);
     fireEvent.keyUp(input, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
     act(() => {
       jest.runAllTimers();
     });
     expect(input).toHaveValue('01:01');
     fireEvent.keyUp(input, {
-      key: 'ArrowRight',
-      code: 'ArrowRight',
-      keyCode: keyCodes.RIGHT,
+      key: keyboardKeys.RIGHT,
     });
     fireEvent.keyUp(input, {
-      key: 'ArrowRight',
-      code: 'ArrowRight',
-      keyCode: keyCodes.RIGHT,
+      key: keyboardKeys.RIGHT,
     });
     expect(input.selectionStart).toBe(5);
     fireEvent.keyUp(input, {
-      key: 'ArrowLeft',
-      code: 'ArrowLeft',
-      keyCode: keyCodes.LEFT,
+      key: keyboardKeys.LEFT,
     });
     expect(input.selectionStart).toBe(4);
     act(() => {
@@ -292,9 +268,7 @@ describe('TimePickerSpinner', () => {
     });
     userEvent.click(input);
     fireEvent.keyUp(input, {
-      key: 'ArrowUp',
-      code: 'ArrowUp',
-      keyCode: keyCodes.UP,
+      key: keyboardKeys.UP,
     });
 
     act(() => {

@@ -36,6 +36,10 @@ describe('Table visual regression tests', () => {
           tooltip="This is a toltip"
           testId="snapshot-1"
           columns={columnsOverflowMenu}
+          columnGroups={[
+            { id: 'groupA', name: 'Group A' },
+            { id: 'groupB', name: 'Group B' },
+          ]}
           data={tableData}
           expandedData={tableData.map((data) => ({
             rowId: data.id,
@@ -77,6 +81,36 @@ describe('Table visual regression tests', () => {
               { columnId: 'object', value: ['option-C'] },
             ],
             table: {
+              ordering: [
+                {
+                  columnId: 'string',
+                  columnGroupId: 'groupA',
+                },
+                {
+                  columnId: 'node',
+                  columnGroupId: 'groupA',
+                },
+                {
+                  columnId: 'date',
+                },
+                {
+                  columnId: 'select',
+                },
+                {
+                  columnId: 'number',
+                  columnGroupId: 'groupB',
+                },
+                {
+                  columnId: 'boolean',
+                  columnGroupId: 'groupB',
+                },
+                {
+                  columnId: 'secretField',
+                },
+                {
+                  columnId: 'object',
+                },
+              ],
               isSelectAllSelected: false,
               expandedIds: ['row-2'],
               rowActions: [{ rowId: 'row-1', isEditMode: true }],
