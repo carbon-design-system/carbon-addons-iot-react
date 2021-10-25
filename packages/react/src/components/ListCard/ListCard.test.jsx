@@ -147,7 +147,7 @@ describe('ListCard', () => {
     const onLoadData = jest.fn();
     expect(() =>
       render(<ListCard title="Testing" data={data} size="REALLY_BIG_CARD" loadData={onLoadData} />)
-    ).toThrowError(`Cannot read property 'lg' of undefined`);
+    ).toThrowError();
 
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining('`ListCard` prop `size` must be one of ')

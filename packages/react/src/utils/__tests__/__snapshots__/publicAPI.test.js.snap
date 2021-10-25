@@ -8420,8 +8420,18 @@ Map {
         "type": "shape",
       },
       "body": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
         "isRequired": true,
-        "type": "string",
+        "type": "oneOfType",
       },
       "className": Object {
         "type": "string",
