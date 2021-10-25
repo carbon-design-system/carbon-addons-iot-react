@@ -474,6 +474,7 @@ Map {
         "hasPagination": false,
         "hasResize": false,
         "hasRowActions": false,
+        "hasRowEdit": false,
         "hasRowExpansion": false,
         "hasRowNesting": false,
         "hasRowSelection": false,
@@ -765,7 +766,7 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
-                "options": Object {
+                "overflowMenuItems": Object {
                   "args": Array [
                     Object {
                       "args": Array [
@@ -1218,8 +1219,28 @@ Map {
             "hasRowCountInHeader": Object {
               "type": "bool",
             },
-            "hasRowExpansion": Object {
+            "hasRowEdit": Object {
               "type": "bool",
+            },
+            "hasRowExpansion": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "expandRowsExclusively": Object {
+                          "type": "bool",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hasRowNesting": Object {
               "args": Array [
@@ -1971,7 +1992,7 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
-                "options": Object {
+                "overflowMenuItems": Object {
                   "args": Array [
                     Object {
                       "args": Array [
@@ -2582,7 +2603,7 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
-                "options": Object {
+                "overflowMenuItems": Object {
                   "args": Array [
                     Object {
                       "args": Array [
@@ -16562,27 +16583,7 @@ Map {
       "showTimeInGMT": Object {
         "type": "bool",
       },
-      "size": Object {
-        "args": Array [
-          Array [
-            "XSMALL",
-            "XSMALLWIDE",
-            "TALL",
-            "WIDE",
-            "XLARGE",
-            "SMALL",
-            "SMALLWIDE",
-            "SMALLFULL",
-            "MEDIUMTHIN",
-            "MEDIUM",
-            "MEDIUMWIDE",
-            "LARGETHIN",
-            "LARGE",
-            "LARGEWIDE",
-          ],
-        ],
-        "type": "oneOf",
-      },
+      "size": [Function],
       "subtitle": Object {
         "type": "string",
       },
@@ -20041,6 +20042,7 @@ Map {
       "hasMoreData": false,
       "isLoading": false,
       "layout": "",
+      "size": "MEDIUM",
       "testId": "Card",
     },
     "displayName": "ListCard",
@@ -20786,27 +20788,7 @@ Map {
         "type": "shape",
       },
       "showOverflow": [Function],
-      "size": Object {
-        "args": Array [
-          Array [
-            "XSMALL",
-            "XSMALLWIDE",
-            "TALL",
-            "WIDE",
-            "XLARGE",
-            "SMALL",
-            "SMALLWIDE",
-            "SMALLFULL",
-            "MEDIUMTHIN",
-            "MEDIUM",
-            "MEDIUMWIDE",
-            "LARGETHIN",
-            "LARGE",
-            "LARGEWIDE",
-          ],
-        ],
-        "type": "oneOf",
-      },
+      "size": [Function],
       "subtitle": Object {
         "type": "string",
       },
