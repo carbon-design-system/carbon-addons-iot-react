@@ -41,7 +41,7 @@ td.#{$iot-prefix}--table__cell--sortable {
 }
 
 .#{$iot-prefix}-table-container--dropdown-height-fix {
-  background-color: $background;
+  background-color: $ui-01;
   min-height: calc(#{$spacing-10} * 5);
   .#{$prefix}--data-table-content {
     min-height: calc(#{$spacing-10} * 5);
