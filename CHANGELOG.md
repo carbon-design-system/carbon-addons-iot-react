@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.25...v2.147.0-next.26) (2021-10-25)
+
+
+### Bug Fixes
+
+* **side-nav:** adjust z-index on overlay to cover table ([94941ac](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/94941ac46a79603b939c6cdf359f1d3b80977dd0))
+* **table:** pr feedback ([abe1ae9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/abe1ae9b706dfe51ee216758403d6d4033903151)), closes [#2623](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2623)
+
+
+### Features
+
+* **table:** add expandRowsExclusively and fix docs ([f1f001f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f1f001f3ce58edf290b6821529d0a1301bfd195f))
+
+
+
+
+
 # [2.147.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.24...v2.147.0-next.25) (2021-10-25)
 
 
