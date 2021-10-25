@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { keyCodes } from '../../../constants/KeyCodeConstants';
+import { keyboardKeys } from '../../../constants/KeyCodeConstants';
 
 import HeaderAction from './HeaderAction';
 
@@ -27,7 +27,7 @@ describe('HeaderAction', () => {
     expect(screen.getByRole('button', { name: /help/i })).toHaveAttribute('aria-expanded', 'false');
 
     const actionButtonGroup = screen.getByTestId('action-btn__group');
-    fireEvent.keyDown(actionButtonGroup, { keyCode: keyCodes.ENTER });
+    fireEvent.keyDown(actionButtonGroup, { key: keyboardKeys.ENTER });
 
     expect(screen.getByRole('button', { name: /help/i })).toHaveAttribute('aria-expanded', 'true');
   });
