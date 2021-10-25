@@ -529,20 +529,16 @@ describe('ImageHotspots', () => {
       // dumb tests for branching coverage on keyUp/Down handlers
       fireEvent.keyDown(screen.getByAltText(testImageText), {
         key: 'a',
-        keyCode: 65,
       });
       fireEvent.keyUp(screen.getByAltText(testImageText), {
         key: 'a',
-        keyCode: 65,
       });
       fireEvent.keyDown(screen.getByAltText(testImageText), {
         key: 'Control',
-        keyCode: 17,
         ctrlKey: true,
       });
       fireEvent.keyUp(screen.getByAltText(testImageText), {
         key: 'Control',
-        keyCode: 17,
       });
     });
 

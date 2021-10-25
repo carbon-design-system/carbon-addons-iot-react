@@ -143,6 +143,27 @@ const TimeSeriesCardPropTypes = {
   locale: PropTypes.string,
   /** Show timestamp in browser local time or GMT */
   showTimeInGMT: PropTypes.bool,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
   /** tooltip format pattern that follows the dayjs formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
   // TODO: remove deprecated 'testID' in v3

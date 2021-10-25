@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { AIListComponent, ListModule } from './index';
+import { AIListComponent, ListModule } from '../list-index';
 import { AIListItem } from './list-item/ai-list-item.class';
 
 const allSelected = (items: AIListItem[]) =>
