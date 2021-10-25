@@ -12,16 +12,6 @@ import { TableColumnsPropTypes, TableSortPropType } from '../TablePropTypes';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  /**
-   * The anticipatedColumn is used to add the most recently click columnId to the UI of the
-   * MultiSort modal. This gives the user a better experience by pre-emptively adding the column
-   * they clicked multi-sort on to the multisort modal without changing state. They still have to
-   * click "Sort" to save it, or can click 'Cancel' or the 'X' to clear it.
-   */
-  anticipatedColumn: PropTypes.shape({
-    columnId: PropTypes.string,
-    direction: PropTypes.oneOf(['ASC', 'DESC']),
-  }),
   columns: TableColumnsPropTypes.isRequired,
   ordering: PropTypes.arrayOf(
     PropTypes.shape({
@@ -62,7 +52,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  anticipatedColumn: undefined,
   showMultiSortModal: false,
   i18n: {
     multiSortModalTitle: 'Select columns to sort',
@@ -95,7 +84,6 @@ const cleanSortArray = (sort) => {
 };
 
 const TableMultiSortModal = ({
-  anticipatedColumn,
   columns,
   ordering,
   sort,
@@ -114,9 +102,6 @@ const TableMultiSortModal = ({
 
   const sortHelper = useCallback(() => {
     const sortArray = cleanSortArray(sort);
-    if (anticipatedColumn) {
-      return [...sortArray, anticipatedColumn];
-    }
 
     if (!sortArray.length) {
       return [
@@ -128,13 +113,13 @@ const TableMultiSortModal = ({
     }
 
     return sortArray;
-  }, [anticipatedColumn, sort]);
+  }, [sort]);
 
   const [selectedMultiSortColumns, setSelectedMultiSortColumns] = useState(sortHelper);
 
   useEffect(() => {
     setSelectedMultiSortColumns(sortHelper);
-  }, [anticipatedColumn, sort, sortHelper]);
+  }, [sort, sortHelper]);
 
   const sortDirections = useMemo(
     () => [

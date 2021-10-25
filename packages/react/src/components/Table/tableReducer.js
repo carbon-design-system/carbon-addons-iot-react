@@ -696,8 +696,10 @@ export const tableReducer = (state = {}, action) => {
             showMultiSortModal: {
               $set: !state.view.table.showMultiSortModal,
             },
-            anticipatedMultiSortColumn: {
-              $set: !alreadySortedBy ? { columnId, direction: 'ASC' } : undefined,
+            multiSortModal: {
+              $set: {
+                anticipatedColumn: !alreadySortedBy ? { columnId, direction: 'ASC' } : undefined,
+              },
             },
           },
         },

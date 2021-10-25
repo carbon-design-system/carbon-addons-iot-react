@@ -512,7 +512,6 @@ Map {
         },
         "selectedAdvancedFilterIds": Array [],
         "table": Object {
-          "anticipatedMultiSortColumn": undefined,
           "expandedIds": Array [],
           "isSelectAllSelected": undefined,
           "loadingMoreIds": Array [],
@@ -520,6 +519,7 @@ Map {
             "columnCount": 5,
             "rowCount": 5,
           },
+          "multiSortModal": undefined,
           "ordering": undefined,
           "rowActions": Array [],
           "selectedIds": Array [],
@@ -1486,25 +1486,6 @@ Map {
             "table": Object {
               "args": Array [
                 Object {
-                  "anticipatedMultiSortColumn": Object {
-                    "args": Array [
-                      Object {
-                        "columnId": Object {
-                          "type": "string",
-                        },
-                        "direction": Object {
-                          "args": Array [
-                            Array [
-                              "ASC",
-                              "DESC",
-                            ],
-                          ],
-                          "type": "oneOf",
-                        },
-                      },
-                    ],
-                    "type": "shape",
-                  },
                   "emptyState": Object {
                     "args": Array [
                       Array [
@@ -1577,6 +1558,32 @@ Map {
                         },
                         "rowCount": Object {
                           "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "multiSortModal": Object {
+                    "args": Array [
+                      Object {
+                        "anticipatedColumn": Object {
+                          "args": Array [
+                            Object {
+                              "columnId": Object {
+                                "type": "string",
+                              },
+                              "direction": Object {
+                                "args": Array [
+                                  Array [
+                                    "ASC",
+                                    "DESC",
+                                  ],
+                                ],
+                                "type": "oneOf",
+                              },
+                            },
+                          ],
+                          "type": "shape",
                         },
                       },
                     ],
