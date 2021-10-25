@@ -10,9 +10,11 @@ import Header from '../Header';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 import { settings } from '../../constants/Settings';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
+import './SideNav.story.scss';
+import StatefulTable from '../Table/StatefulTable';
+import { initialState } from '../Table/Table.story';
 
 import SideNav from './SideNav';
-import './SideNav.story.scss';
 
 const { iotPrefix } = settings;
 
@@ -153,6 +155,10 @@ export const SideNavComponent = () => (
           <SideNav links={links} isSideNavExpanded={isSideNavExpanded} />
           <div className={`${iotPrefix}--main-content`}>
             <PageTitleBar title="Title" description="Description" />
+
+            <div style={{ padding: '2rem' }}>
+              <StatefulTable {...initialState} />
+            </div>
           </div>
         </>
       )}
