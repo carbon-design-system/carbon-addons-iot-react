@@ -79,4 +79,4 @@ jobs:
 
       - name: Serve app
         if: ${{ success() }}
-        run: timeout 2m npx serve -s ../../../test-app/build || CODE="$?"; if [[ "$CODE" -ne 124 ]]; then exit $CODE; else exit 0; fi
+        run: timeout 40s npx serve -s ../../../test-app/build || CODE="$?"; if [[ "$CODE" -ne 124 ]]; then exit $CODE; else exit 0; fi

@@ -156,6 +156,12 @@ jobs:
             react:
               - 'packages/react/**'
 
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        if: steps.changes.outputs.react == 'true'
+        with:
+          node-version: '16.x'
+
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v2
 
