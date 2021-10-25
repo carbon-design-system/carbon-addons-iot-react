@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { format, setHours, setMinutes } from 'date-fns';
 
 @Component({
@@ -10,7 +10,7 @@ import { format, setHours, setMinutes } from 'date-fns';
           [range]="true"
           [label]="batchText.START_DATE"
           [rangeLabel]="batchText.END_DATE"
-          [dateFormat]="dateFormat"
+          [dateFormat]="datePickerFormat"
           [(ngModel)]="dateRange"
           [placeholder]="placeholder"
           [flatpickrOptions]="flatpickrOptions"
@@ -79,17 +79,31 @@ import { format, setHours, setMinutes } from 'date-fns';
     `,
   ],
 })
-export class DateTimeAbsoluteComponent implements OnChanges {
+export class DateTimeAbsoluteComponent implements OnInit, OnChanges {
   startTime = '00:00';
   endTime = '00:00';
   dateRange = null;
 
   @Input() value = [];
   @Input() batchText: any;
-  @Input() dateFormat = 'Y-m-d';
+  @Input() dateFormat = 'yyyy-MM-dd';
+  @Input() datePickerFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
   @Input() flatpickrOptions;
   @Output() valueChange: EventEmitter<[Date, Date]> = new EventEmitter();
+
+  ngOnInit() {
+    // handle switch from relative range
+    if (this.dateRange) {
+      console.info('before', this.dateRange);
+      console.info('type', typeof this.dateRange[0]);
+      let [startDate, endDate] = this.dateRange;
+      startDate = format(startDate, this.dateFormat);
+      endDate = format(endDate, this.dateFormat);
+      this.dateRange = [startDate, endDate];
+      console.info('after', this.dateRange);
+    }
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes?.value?.currentValue) {

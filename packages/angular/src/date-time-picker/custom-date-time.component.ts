@@ -35,6 +35,7 @@ import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.
       [value]="value"
       [batchText]="batchText"
       [dateFormat]="dateFormat"
+      [datePickerFormat]="datePickerFormat"
       [placeholder]="placeholder"
       [flatpickrOptions]="flatpickrOptions"
     >
@@ -60,7 +61,8 @@ export class CustomDateTimeComponent implements OnChanges {
    *
    * For reference: https://flatpickr.js.org/formatting/
    */
-  @Input() dateFormat = 'Y-m-d';
+  @Input() dateFormat = 'yyyy-MM-dd';
+  @Input() datePickerFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
   @Input() flatpickrOptions;
   @Output() rangeChange: EventEmitter<DateTimeSelection> = new EventEmitter();
