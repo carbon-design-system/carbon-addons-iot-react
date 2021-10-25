@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { format, setHours, setMinutes } from 'date-fns';
 
 @Component({
@@ -93,15 +101,12 @@ export class DateTimeAbsoluteComponent implements OnInit, OnChanges {
   @Output() valueChange: EventEmitter<[Date, Date]> = new EventEmitter();
 
   ngOnInit() {
-    // handle switch from relative range
+    // if dateRange is not null (e.g. switch from relative range)
     if (this.dateRange) {
-      console.info('before', this.dateRange);
-      console.info('type', typeof this.dateRange[0]);
       let [startDate, endDate] = this.dateRange;
       startDate = format(startDate, this.dateFormat);
       endDate = format(endDate, this.dateFormat);
       this.dateRange = [startDate, endDate];
-      console.info('after', this.dateRange);
     }
   }
 
