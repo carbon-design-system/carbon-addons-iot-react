@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.26...v2.147.0-next.27) (2021-10-25)
+
+
+### Bug Fixes
+
+* **table:** increase column title line height ([3edcb0a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3edcb0a80d3f8748503fcd70e0388845a85ac8e1)), closes [#2278](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2278)
+
+
+
+
+
 # [2.147.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.25...v2.147.0-next.26) (2021-10-25)
 
 
