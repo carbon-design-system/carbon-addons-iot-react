@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.27...v2.147.0-next.28) (2021-10-25)
+
+
+### Bug Fixes
+
+* **time-series-card:** add prop warnings for unsupported sizes ([3c3c41f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3c3c41f3483d21bb3c5e523ce6db305febd3674e))
+
+
+
+
+
 # [2.147.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.26...v2.147.0-next.27) (2021-10-25)
 
 
