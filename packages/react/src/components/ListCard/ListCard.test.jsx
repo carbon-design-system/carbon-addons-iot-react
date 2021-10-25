@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+
+import { CARD_SIZES } from '../..';
 
 import ListCard from './ListCard';
 
@@ -45,16 +46,43 @@ const mockScrollEvent = {
 };
 
 describe('ListCard', () => {
+  beforeEach(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
   it('should be selectable by testID or testId', () => {
+    const onLoadData = jest.fn();
     const { rerender } = render(
-      <ListCard title="Testing" hasMoreData isLoading data={data} testID="LIST_CARD" />
+      <ListCard
+        title="Testing"
+        hasMoreData
+        isLoading
+        data={data}
+        testID="LIST_CARD"
+        loadData={onLoadData}
+      />
     );
 
     expect(screen.getByTestId('LIST_CARD')).toBeDefined();
     expect(screen.getByTestId('LIST_CARD-list-body')).toBeDefined();
     expect(screen.getByTestId('LIST_CARD-loading')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(`The 'testID' prop has been deprecated.`)
+    );
+    jest.resetAllMocks();
 
-    rerender(<ListCard title="Testing" hasMoreData isLoading data={data} testID="list_card" />);
+    rerender(
+      <ListCard
+        title="Testing"
+        hasMoreData
+        isLoading
+        data={data}
+        testId="list_card"
+        loadData={onLoadData}
+      />
+    );
 
     expect(screen.getByTestId('list_card')).toBeDefined();
     expect(screen.getByTestId('list_card-list-body')).toBeDefined();
@@ -64,31 +92,65 @@ describe('ListCard', () => {
   it('calls loadData callback on scroll', () => {
     const onLoadData = jest.fn();
 
-    const wrapper = mount(
+    render(
       <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading={false} data={data} />
     );
 
-    wrapper.find('Card').prop('onScroll')(mockScrollEvent);
+    fireEvent.scroll(screen.getByTestId('Card'), mockScrollEvent.target);
     expect(onLoadData).toHaveBeenCalled();
   });
 
   it('LoadData when data is null', () => {
     const onLoadData = jest.fn();
 
-    const wrapper = mount(
-      <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading={false} />
-    );
+    render(<ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading={false} />);
 
-    expect(wrapper.find('InlineLoading')).toHaveLength(0);
+    expect(screen.queryByText('Loading data...')).toBeNull();
   });
 
   it('Inline Loading', () => {
     const onLoadData = jest.fn();
 
-    const wrapper = mount(
-      <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading data={data} />
+    render(<ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading data={data} />);
+
+    expect(screen.queryByText('Loading data...')).not.toBeNull();
+  });
+
+  it('should display a proptype error when using unsupoorted sizes', () => {
+    const onLoadData = jest.fn();
+    const { rerender } = render(
+      <ListCard title="Testing" data={data} size={CARD_SIZES.SMALL} loadData={onLoadData} />
     );
 
-    expect(wrapper.find('InlineLoading')).toHaveLength(1);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`ListCard` prop `size` cannot be `SMALL`')
+    );
+
+    rerender(
+      <ListCard title="Testing" data={data} size={CARD_SIZES.SMALLWIDE} loadData={onLoadData} />
+    );
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`ListCard` prop `size` cannot be `SMALLWIDE`')
+    );
+
+    rerender(
+      <ListCard title="Testing" data={data} size={CARD_SIZES.SMALLFULL} loadData={onLoadData} />
+    );
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`ListCard` prop `size` cannot be `SMALLFULL`')
+    );
+  });
+
+  it('should display a proptype error when using an unknown size.', () => {
+    const onLoadData = jest.fn();
+    expect(() =>
+      render(<ListCard title="Testing" data={data} size="REALLY_BIG_CARD" loadData={onLoadData} />)
+    ).toThrowError(`Cannot read property 'lg' of undefined`);
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`ListCard` prop `size` must be one of ')
+    );
   });
 });

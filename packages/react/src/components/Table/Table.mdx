@@ -9,6 +9,7 @@
   - [Multi-sorting](#multi-sorting)
 - [Expansion](#expansion)
   - [Programmatic expansion](#programmatic-expansion)
+  - [Additional configuration](#additional-configuration)
 - [Selection](#selection)
   - [Programmatic selection](#programmatic-selection)
 - [Filtering](#filtering)
@@ -440,16 +441,51 @@ This is used by the `StatefulTable` to show the column where the user just click
 
 ## Expansion
 
-The `Table` components supports row-level expansion by passing options.hasRowExpansion=true and passing the row content via the view.table.expandedRows prop.
+The `Table` components support row-level expansion by setting `options.hasRowExpansion` to true. The content
+of the expanded rows must be provided ahead of time using the prop [expandedData](#expandedData-prop).
+
+The StatefulTable will automatically expand and collapse a row when the row's toggle expand button
+is clicked. The `options.hasRowExpansion` can also be passed an object with additional configuration,
+i.e. the prop `expandRowsExclusively` which when true will force previously expanded rows to collapse when
+a new one is expanded.
 
 ```jsx
+<StatefulTable
+  id="table"
+  columns={columns}
+  data={data}
+  expandedData={[
+    {
+      rowId: 'row-1',
+      content: <div>My expanded content</div>,
+    },
+  ]},
+  options={{
+    hasRowExpansion: { expandRowsExclusively: true },
+  }}
+/>
+```
+
+### Programmatic expansion
+
+For the normal stateless table the currently expanded rows need to be programmatically managed through
+the `view.table.expandedIds` prop. The action callback `table.onRowExpanded` must be used to modify the
+array of `expandedIds`. The callback will receive two params; the row id and a boolean value stating
+if the row should be expanded or not. See full example below:
+
+```jsx
+const [expandedIds, setExpandedIds] = useState(['row-0']);
+
 const RowExpansionContent = ({ rowId }) => (
   <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
     <h3 key={`${rowId}-title`}>{rowId}</h3>
     <ul style={{ lineHeight: '22px' }}>
-      {Object.entries(data.find((i) => i.id === rowId).values).map(([key, value]) => (
+      {Object.entries(tableData.find((i) => i.id === rowId).values).map(([key, value]) => (
         <li key={`${rowId}-${key}`}>
-          <b>{key}</b>: {value}
+          <b>{key}</b>:{' '}
+          {!React.isValidElement(value) && typeof value === 'object' && value !== null
+            ? JSON.stringify(value, null, 2)
+            : value}
         </li>
       ))}
     </ul>
@@ -460,10 +496,23 @@ const RowExpansionContent = ({ rowId }) => (
   id="table"
   columns={columns}
   data={data}
+  expandedData={[
+    {
+      rowId: 'row-2',
+      content: <RowExpansionContent rowId="row-2" />,
+    },
+    {
+      rowId: 'row-5',
+      content: <RowExpansionContent rowId="row-5" />,
+    },
+  ]}
   actions={{
     table: {
-      onRowClicked: (rowId) => {},
-      onRowExpanded: (rowId, expanded) => {},
+      onRowExpanded: (rowId, expanded) => {
+        setExpandedIds(
+          expanded ? expandedIds.concat([rowId]) : expandedIds.filter((i) => i !== rowId)
+        );
+      },
     },
   }}
   options={{
@@ -471,21 +520,14 @@ const RowExpansionContent = ({ rowId }) => (
     shouldExpandOnRowClick: true,
   }}
   view={{
-    table: {
-      expandedRows: [
-        {
-          content: <RowExpansionContent rowId="string" />,
-          rowId: 'string',
-        },
-        {
-          content: <RowExpansionContent rowId="status" />,
-          rowId: 'status',
-        },
-      ],
-    },
+    table: { expandedIds },
   }}
 />;
 ```
+
+### Additional configuration
+
+If the prop `options.shouldExpandOnRowClick` is true then clicking anywhere on the row will expand it.
 
 ## Selection
 
@@ -1162,8 +1204,8 @@ A complete example of how to use the column grouping could look like this:
 | hasAggregations             | bool                                           |         | If true allows the table to aggregate values of columns in a special row                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | hasPagination               | bool                                           |         | If true the table uses pagination                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | hasRowSelection             | 'multi', 'single', or false                    |         | Enables multiple row selection, single row selection, or turns it off                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| hasRowExpansion             | bool, or {expandRowsExclusively: bool}         |         | Allows rows to be expanded, optionally by collapsing previously expanded rows when an new one is expanded                                                                                                                                                                                                                                                                                                                                                                                                         |
 | hasRowEdit                  | bool                                           |         | If true enables the row edit toolbar button and functionality                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| hasRowExpansion             | bool                                           |         | Allows rows to be expanded                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | hasRowNesting               | bool, or {hasSingleNestedHierarchy: bool}      |         | Allows nested rows, or only a depth of one nested row                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | hasRowActions               | bool                                           |         | If true, row actions are enabled                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | hasFilter                   | bool, 'onKeyPress', or 'onEnterAndBlur'        |         | enables simply filtering if true, simple filtering on demand if 'onKeyPress', or on enter/blur if 'onEnterAndBlur'                                                                                                                                                                                                                                                                                                                                                                                                |

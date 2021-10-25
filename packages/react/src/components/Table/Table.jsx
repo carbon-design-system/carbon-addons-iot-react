@@ -68,7 +68,14 @@ const propTypes = {
     hasAggregations: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
-    hasRowExpansion: PropTypes.bool,
+    /** True if the rows shuld be expandable */
+    hasRowExpansion: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** True if any previously expanded rows should be collapsed when a new row is expanded */
+        expandRowsExclusively: PropTypes.bool,
+      }),
+    ]),
     hasRowNesting: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
@@ -912,7 +919,6 @@ const Table = (props) => {
                   'hasColumnSelectionConfig',
                   'hasResize',
                   'hasRowActions',
-                  'hasRowExpansion',
                   'hasRowNesting',
                   'hasSingleRowEdit',
                   'hasRowSelection',
@@ -920,6 +926,7 @@ const Table = (props) => {
                   'hasMultiSort',
                   'preserveColumnWidths'
                 ),
+                hasRowExpansion: !!options.hasRowExpansion,
                 wrapCellText: options.wrapCellText,
                 truncateCellText: useCellTextTruncate,
               }}
@@ -964,7 +971,8 @@ const Table = (props) => {
             view.table.loadingState.isLoading ? (
               <TableSkeletonWithHeaders
                 columns={visibleColumns}
-                {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+                {...pick(options, 'hasRowSelection', 'hasRowActions')}
+                hasRowExpansion={!!options.hasRowExpansion}
                 rowCount={view.table.loadingState.rowCount}
                 columnCount={view.table.loadingState.columnCount}
                 // TODO: remove 'id' in v3.
@@ -1010,12 +1018,12 @@ const Table = (props) => {
                 {...pick(
                   options,
                   'hasRowSelection',
-                  'hasRowExpansion',
                   'hasRowActions',
                   'hasRowNesting',
                   'shouldExpandOnRowClick',
                   'shouldLazyRender'
                 )}
+                hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}
                 truncateCellText={useCellTextTruncate}
                 ordering={view.table.ordering}
@@ -1067,13 +1075,8 @@ const Table = (props) => {
           {options.hasAggregations && !aggregationsAreHidden ? (
             <TableFoot
               options={{
-                ...pick(
-                  options,
-                  'hasRowSelection',
-                  'hasRowExpansion',
-                  'hasRowActions',
-                  'hasRowNesting'
-                ),
+                ...pick(options, 'hasRowSelection', 'hasRowActions', 'hasRowNesting'),
+                hasRowExpansion: !!options.hasRowExpansion,
               }}
               tableState={{
                 aggregations,
