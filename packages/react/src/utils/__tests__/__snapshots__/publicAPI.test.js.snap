@@ -1223,7 +1223,24 @@ Map {
               "type": "bool",
             },
             "hasRowExpansion": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "expandRowsExclusively": Object {
+                          "type": "bool",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hasRowNesting": Object {
               "args": Array [
