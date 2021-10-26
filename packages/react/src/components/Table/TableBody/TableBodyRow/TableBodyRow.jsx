@@ -200,12 +200,12 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     ${(props) =>
       props['data-child-count'] === 0 && props['data-row-nesting']
         ? `
-    td > button.bx--table-expand__button {
+    td > button.${prefix}--table-expand__button {
       display: none;
     }
     `
         : `
-    td > button.bx--table-expand__button {
+    td > button.${prefix}--table-expand__button {
       position: relative;
       left: ${props['data-nesting-offset']}px;
     }
@@ -213,7 +213,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     ${(props) =>
       props['data-nesting-offset'] > 0
         ? `
-      td.bx--table-expand {
+      td.${prefix}--table-expand {
         position: relative;
       }
       td:first-of-type:before {
@@ -231,7 +231,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     `}
     cursor: pointer;
     td {
-      div .bx--btn--ghost:hover {
+      div .${prefix}--btn--ghost:hover {
         background: ${COLORS.gray20hover};
       }
     }
@@ -278,11 +278,11 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
       props['data-row-nesting']
         ? `
 
-        td.bx--table-expand, td {
+        td.${prefix}--table-expand, td {
           position: relative;
           border-color: ${COLORS.gray20};
         }
-        td > button.bx--table-expand__button {
+        td > button.${prefix}--table-expand__button {
           position: relative;
           left: ${props['data-nesting-offset']}px;
         }

@@ -1,7 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import { settings } from '../../../constants/Settings';
+
 import WizardFooter from './WizardFooter';
+
+const { prefix } = settings;
 
 const mockNext = jest.fn();
 const mockBack = jest.fn();
@@ -23,13 +27,13 @@ describe('WizardFooter', () => {
   it('check footer buttons', () => {
     const cancelAndNextButtons = mount(<WizardFooter {...commonFooterProps} hasPrev={false} />);
     // should only have Cancel and Next button
-    expect(cancelAndNextButtons.find('.bx--btn')).toHaveLength(2);
+    expect(cancelAndNextButtons.find(`.${prefix}--btn`)).toHaveLength(2);
     const backAndNextButtons = mount(<WizardFooter {...commonFooterProps} />);
     // should have Back and Next button
-    expect(backAndNextButtons.find('.bx--btn')).toHaveLength(2);
+    expect(backAndNextButtons.find(`.${prefix}--btn`)).toHaveLength(2);
     const backAndAddButtons = mount(<WizardFooter {...commonFooterProps} hasNext={false} />);
     // should have Back and Add button
-    expect(backAndAddButtons.find('.bx--btn')).toHaveLength(2);
-    expect(backAndAddButtons.find('.bx--btn').at(1).text()).toContain('Add');
+    expect(backAndAddButtons.find(`.${prefix}--btn`)).toHaveLength(2);
+    expect(backAndAddButtons.find(`.${prefix}--btn`).at(1).text()).toContain('Add');
   });
 });

@@ -203,7 +203,7 @@ describe('Table', () => {
         view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
       />
     );
-    expect(wrapper.find('.bx--select-option')).toHaveLength(5);
+    expect(wrapper.find(`.${prefix}--select-option`)).toHaveLength(5);
   });
 
   it('handles row collapse', () => {
@@ -217,7 +217,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find('.bx--table-expand__button').at(0).simulate('click');
+    wrapper.find(`.${prefix}--table-expand__button`).at(0).simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
@@ -231,7 +231,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find('.bx--table-expand__button').at(1).simulate('click');
+    wrapper.find(`.${prefix}--table-expand__button`).at(1).simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
@@ -506,20 +506,20 @@ describe('Table', () => {
       />
     );
 
-    expect(wrapper.find('.bx--search-input')).toHaveLength(1);
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find(`.${prefix}--search-input`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
 
     wrapper.setProps({
       view: { toolbar: { search: { defaultValue: 'ferrari' } } },
     });
     wrapper.update();
 
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('ferrari');
 
     wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
     wrapper.update();
 
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
   });
 
   it('cells should always wrap by default', () => {
@@ -578,7 +578,9 @@ describe('Table', () => {
     );
     expect(
       wrapper3
-        .find('TableCell .iot--table__cell--truncate .iot--table__cell-text--truncate')
+        .find(
+          `TableCell .${iotPrefix}--table__cell--truncate .${iotPrefix}--table__cell-text--truncate`
+        )
         .first()
     ).toHaveLength(1);
   });
@@ -607,7 +609,7 @@ describe('Table', () => {
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
       expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).toHaveClass(
-        'bx--overflow-menu--flip'
+        `${prefix}--overflow-menu--flip`
       );
     });
     document.documentElement.setAttribute('dir', 'rtl');
@@ -617,7 +619,7 @@ describe('Table', () => {
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
       expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).not.toHaveClass(
-        'bx--overflow-menu--flip'
+        `${prefix}--overflow-menu--flip`
       );
     });
 
@@ -1178,7 +1180,7 @@ describe('Table', () => {
     expect(inModal.mock.calls.length).toBe(0);
     fireEvent.click(screen.getByText('Drill in 2').closest('button'));
     expect(inModal.mock.calls.length).toBe(1);
-    fireEvent.click(container.querySelector('.iot--row-actions-cell--overflow-menu'));
+    fireEvent.click(container.querySelector(`.${iotPrefix}--row-actions-cell--overflow-menu`));
     fireEvent.click(screen.queryByText('Drill in').closest('button'));
     expect(inModal.mock.calls.length).toBe(2);
   });
