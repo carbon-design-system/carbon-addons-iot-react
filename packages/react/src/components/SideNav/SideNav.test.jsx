@@ -2,7 +2,11 @@ import React from 'react';
 import { Switcher24, Chip24, Group24 } from '@carbon/icons-react';
 import { render, screen } from '@testing-library/react';
 
+import { settings } from '../../constants/Settings';
+
 import SideNav from './SideNav';
+
+const { prefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
@@ -13,7 +17,7 @@ describe('SideNav', () => {
         <Switcher24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       isEnabled: true,
@@ -32,7 +36,7 @@ describe('SideNav', () => {
         <Chip24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       metaData: {
@@ -49,7 +53,7 @@ describe('SideNav', () => {
         <Group24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       metaData: {
@@ -77,7 +81,7 @@ describe('SideNav', () => {
         <Switcher24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       isEnabled: true,
@@ -97,7 +101,7 @@ describe('SideNav', () => {
         <Switcher24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       isEnabled: false,
@@ -116,7 +120,7 @@ describe('SideNav', () => {
         <Chip24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       metaData: {
@@ -133,7 +137,7 @@ describe('SideNav', () => {
         <Group24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       metaData: {
@@ -209,6 +213,8 @@ describe('SideNav', () => {
 
   it('parent item with active child should be active', () => {
     render(<SideNav {...mockProps} />);
-    expect(screen.getByText('Members').closest('li')).toHaveClass('bx--side-nav__item--active');
+    expect(screen.getByText('Members').closest('li')).toHaveClass(
+      `${prefix}--side-nav__item--active`
+    );
   });
 });

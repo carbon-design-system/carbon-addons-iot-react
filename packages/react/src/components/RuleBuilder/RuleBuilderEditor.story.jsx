@@ -3,7 +3,11 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { DatePicker, DatePickerInput, NumberInput } from 'carbon-components-react';
 
+import { settings } from '../../constants/Settings';
+
 import RuleBuilderEditor from './RuleBuilderEditor';
+
+const { prefix } = settings;
 
 export const columns = [
   { id: 'column1', name: 'Column 1' },
@@ -166,7 +170,7 @@ export const RuleBuilderCustomOperandsAndFieldRenderer = () => (
         operands: [{ id: 'includes', name: 'Includes' }],
         renderField: ({ value, onChange }) => (
           <input
-            className="bx--text-input bx--text__input bx--text-input--light"
+            className={`${prefix}--text-input ${prefix}--text__input ${prefix}--text-input--light`}
             type="text"
             defaultValue={value}
             onChange={(e) => onChange(e.target.value)}
