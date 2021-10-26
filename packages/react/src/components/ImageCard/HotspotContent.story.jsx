@@ -169,21 +169,3 @@ Locale.parameters = {
     escapeHTML: false, // needed for greater than less than
   },
 };
-
-export const EmptyValues = () => {
-  return (
-    <Tooltip open direction="right" triggerId="tooltipTrigger" id="tooltip" tooltipId="tooltip">
-      <HotspotContent
-        title={text('title', 'Hotspot title')}
-        description={text('description', 'description')}
-        values={null}
-        attributes={object('attributes', [
-          { dataSourceId: 'temperature', label: 'Temperature' },
-          { dataSourceId: 'humidity', label: 'Humidity' },
-        ])}
-      />
-    </Tooltip>
-  );
-};
-
-EmptyValues.storyName = 'empty values';
