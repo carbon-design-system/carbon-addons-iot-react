@@ -166,13 +166,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: cypress-coverage
-          path: ~/packages/react/cypress/coverage/
+          path: ~/work/carbon-addons-iot-react/carbon-addons-iot-react/packages/react/cypress/coverage/
 
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v2
         with:
           name: jest-coverage
-          path: ~/packages/react/jest/coverage/
+          path: ~/work/carbon-addons-iot-react/carbon-addons-iot-react/packages/react/jest/coverage/
 
       - name: Copy, combine, and report coverage
         run: |
