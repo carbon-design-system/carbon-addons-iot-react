@@ -176,7 +176,9 @@ jobs:
 
       - name: Copy, combine, and report coverage
         run: |
+          pwd
           cd packages/react
+          pwd
           yarn reports
 
       - name: Coveralls
