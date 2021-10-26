@@ -51,7 +51,7 @@ const propTypes = {
   /** render zebra stripes or not */
   useZebraStyles: PropTypes.bool,
   /**  lighter styling where regular table too visually heavy. Deprecated. */
-  lightweight: deprecate(PropTypes.bool, `The 'lightweight' prop has been deprecated.`),
+  lightweight: deprecate(PropTypes.bool, `The 'lightweight' prop has been deprecated and will be removed in the next major version.`),
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
   /** Specify the properties of each column group in the table. Defaults to empty column. */
