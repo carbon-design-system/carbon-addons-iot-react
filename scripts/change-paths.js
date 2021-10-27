@@ -2,11 +2,7 @@
 
 const fs = require('fs');
 
-const coverage = JSON.parse(
-  fs.readFileSync(
-    '~/work/carbon-addons-iot-react/carbon-addons-iot-react/packages/react/cypress/coverage/coverage-final.json'
-  )
-);
+const coverage = JSON.parse(fs.readFileSync('./coverage-final.json'));
 
 const fixedCoverage = {};
 Object.keys(coverage).forEach((key) => {
