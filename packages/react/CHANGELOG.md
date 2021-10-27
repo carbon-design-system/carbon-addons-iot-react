@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.31...v2.147.0-next.32) (2021-10-27)
+
+
+### Bug Fixes
+
+* **table:** update cursor on TableMultiSortModal ([f861578](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f861578c4ee1f938d4126b54b99a28fabf9afef1))
+
+
+### Features
+
+* **table:** initial addition of sortable multisort rows ([33f6df2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/33f6df239424e57377b3c666ee5c185d76e204b6))
+* **table:** PR feedback fixes for multisort drag and drop ([07a8dc5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/07a8dc54ed6b120af93cea70a28d3eeab3aadc89))
+
+
+
+
+
 # [2.147.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.30...v2.147.0-next.31) (2021-10-27)
 
 
