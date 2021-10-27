@@ -476,6 +476,7 @@ export const defaultProps = (baseProps) => ({
     multiSortAscending: 'Ascending',
     multiSortDescending: 'Descending',
     multiSortOverflowItem: 'Multi-sort',
+    multiSortDragHandle: 'Drag handle',
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',

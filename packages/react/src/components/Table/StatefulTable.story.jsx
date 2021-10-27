@@ -11,6 +11,7 @@ import StoryNotice from '../../internal/StoryNotice';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import Button from '../Button/Button';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import StatefulTable from './StatefulTable';
 import {
@@ -1596,3 +1597,10 @@ export const WithMultiSorting = () => {
 };
 
 WithMultiSorting.storyName = 'with multi-sorting';
+WithMultiSorting.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];

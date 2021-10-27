@@ -78895,485 +78895,545 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           className="bx--modal-content"
         >
           <div
-            className="bx--form-item"
+            className="iot--table-multi-sort-row"
+            data-handler-id="T481"
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
           >
             <div
-              className="bx--select"
+              className="iot--table-multi-sort-row__handle"
+              data-testid="drag-handle-select"
+              title="Drag handle"
             >
-              <label
-                className="bx--label"
-                htmlFor="select-select-sort-column"
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Sort by
-              </label>
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+            </div>
+            <div
+              className="bx--form-item"
+            >
               <div
-                className="bx--select-input__wrapper"
-                data-invalid={null}
+                className="bx--select"
               >
-                <select
-                  className="bx--select-input"
-                  data-testid="null-multi-sort-modal-column-select"
-                  defaultValue="select"
-                  id="select-select-sort-column"
-                  onChange={[Function]}
+                <label
+                  className="bx--label"
+                  htmlFor="select-select-sort-column"
                 >
-                  <option
-                    className="bx--select-option"
-                    disabled={true}
-                    hidden={false}
-                    value="string"
-                  >
-                    String
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={true}
-                    hidden={false}
-                    value="select"
-                  >
-                    Select
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="status"
-                  >
-                    Status
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="number"
-                  >
-                    Number
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="boolean"
-                  >
-                    Boolean
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="node"
-                  >
-                    React Node
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="object"
-                  >
-                    Object Id
-                  </option>
-                </select>
-                <svg
-                  aria-hidden={true}
-                  className="bx--select__arrow"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                  Sort by
+                </label>
+                <div
+                  className="bx--select-input__wrapper"
+                  data-invalid={null}
                 >
-                  <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="bx--form__helper-text"
-              >
-                Select a column
+                  <select
+                    className="bx--select-input"
+                    data-testid="null-multi-sort-modal-column-select"
+                    defaultValue="select"
+                    id="select-select-sort-column"
+                    onChange={[Function]}
+                  >
+                    <option
+                      className="bx--select-option"
+                      disabled={true}
+                      hidden={false}
+                      value="string"
+                    >
+                      String
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={true}
+                      hidden={false}
+                      value="select"
+                    >
+                      Select
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="status"
+                    >
+                      Status
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="number"
+                    >
+                      Number
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="boolean"
+                    >
+                      Boolean
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="node"
+                    >
+                      React Node
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="object"
+                    >
+                      Object Id
+                    </option>
+                  </select>
+                  <svg
+                    aria-hidden={true}
+                    className="bx--select__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="bx--form__helper-text"
+                >
+                  Select a column
+                </div>
               </div>
             </div>
+            <div
+              className="bx--form-item"
+            >
+              <div
+                className="bx--select"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="select-select-sort-direction"
+                >
+                  Sort order
+                </label>
+                <div
+                  className="bx--select-input__wrapper"
+                  data-invalid={null}
+                >
+                  <select
+                    className="bx--select-input"
+                    data-testid="null-multi-sort-modal-direction-select"
+                    defaultValue="ASC"
+                    id="select-select-sort-direction"
+                    onChange={[Function]}
+                  >
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="ASC"
+                    >
+                      Ascending
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="DESC"
+                    >
+                      Descending
+                    </option>
+                  </select>
+                  <svg
+                    aria-hidden={true}
+                    className="bx--select__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="bx--form__helper-text"
+                >
+                  Select a direction
+                </div>
+              </div>
+            </div>
+            <button
+              aria-describedby={null}
+              className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              data-testid="select-add-sort-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Add column
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Add column"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </button>
+            <button
+              aria-describedby={null}
+              className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              data-testid="select-remove-sort-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Remove column
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Remove column"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 15H24V17H8z"
+                />
+              </svg>
+            </button>
           </div>
           <div
-            className="bx--form-item"
+            className="iot--table-multi-sort-row"
+            data-handler-id="T483"
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
           >
             <div
-              className="bx--select"
+              className="iot--table-multi-sort-row__handle"
+              data-testid="drag-handle-string"
+              title="Drag handle"
             >
-              <label
-                className="bx--label"
-                htmlFor="select-select-sort-direction"
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Sort order
-              </label>
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+            </div>
+            <div
+              className="bx--form-item"
+            >
               <div
-                className="bx--select-input__wrapper"
-                data-invalid={null}
+                className="bx--select"
               >
-                <select
-                  className="bx--select-input"
-                  data-testid="null-multi-sort-modal-direction-select"
-                  defaultValue="ASC"
-                  id="select-select-sort-direction"
-                  onChange={[Function]}
+                <label
+                  className="bx--label"
+                  htmlFor="string-select-sort-column"
                 >
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="ASC"
-                  >
-                    Ascending
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="DESC"
-                  >
-                    Descending
-                  </option>
-                </select>
-                <svg
-                  aria-hidden={true}
-                  className="bx--select__arrow"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                  Then by
+                </label>
+                <div
+                  className="bx--select-input__wrapper"
+                  data-invalid={null}
                 >
-                  <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="bx--form__helper-text"
-              >
-                Select a direction
+                  <select
+                    className="bx--select-input"
+                    data-testid="null-multi-sort-modal-column-select"
+                    defaultValue="string"
+                    id="string-select-sort-column"
+                    onChange={[Function]}
+                  >
+                    <option
+                      className="bx--select-option"
+                      disabled={true}
+                      hidden={false}
+                      value="string"
+                    >
+                      String
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={true}
+                      hidden={false}
+                      value="select"
+                    >
+                      Select
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="status"
+                    >
+                      Status
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="number"
+                    >
+                      Number
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="boolean"
+                    >
+                      Boolean
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="node"
+                    >
+                      React Node
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="object"
+                    >
+                      Object Id
+                    </option>
+                  </select>
+                  <svg
+                    aria-hidden={true}
+                    className="bx--select__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="bx--form__helper-text"
+                >
+                  Select a column
+                </div>
               </div>
             </div>
+            <div
+              className="bx--form-item"
+            >
+              <div
+                className="bx--select"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="string-select-sort-direction"
+                >
+                  Sort order
+                </label>
+                <div
+                  className="bx--select-input__wrapper"
+                  data-invalid={null}
+                >
+                  <select
+                    className="bx--select-input"
+                    data-testid="null-multi-sort-modal-direction-select"
+                    defaultValue="ASC"
+                    id="string-select-sort-direction"
+                    onChange={[Function]}
+                  >
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="ASC"
+                    >
+                      Ascending
+                    </option>
+                    <option
+                      className="bx--select-option"
+                      disabled={false}
+                      hidden={false}
+                      value="DESC"
+                    >
+                      Descending
+                    </option>
+                  </select>
+                  <svg
+                    aria-hidden={true}
+                    className="bx--select__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="bx--form__helper-text"
+                >
+                  Select a direction
+                </div>
+              </div>
+            </div>
+            <button
+              aria-describedby={null}
+              className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              data-testid="string-add-sort-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Add column
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Add column"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </button>
+            <button
+              aria-describedby={null}
+              className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              data-testid="string-remove-sort-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Remove column
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Remove column"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 15H24V17H8z"
+                />
+              </svg>
+            </button>
           </div>
-          <button
-            aria-describedby={null}
-            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-            data-testid="select-add-sort-button"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <div
-              className="bx--assistive-text"
-              onMouseEnter={[Function]}
-            >
-              Add column
-            </div>
-            <svg
-              aria-hidden="true"
-              aria-label="Add column"
-              className="bx--btn__icon"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-              />
-            </svg>
-          </button>
-          <button
-            aria-describedby={null}
-            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-            data-testid="select-remove-sort-button"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <div
-              className="bx--assistive-text"
-              onMouseEnter={[Function]}
-            >
-              Remove column
-            </div>
-            <svg
-              aria-hidden="true"
-              aria-label="Remove column"
-              className="bx--btn__icon"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8 15H24V17H8z"
-              />
-            </svg>
-          </button>
-          <div
-            className="bx--form-item"
-          >
-            <div
-              className="bx--select"
-            >
-              <label
-                className="bx--label"
-                htmlFor="string-select-sort-column"
-              >
-                Then by
-              </label>
-              <div
-                className="bx--select-input__wrapper"
-                data-invalid={null}
-              >
-                <select
-                  className="bx--select-input"
-                  data-testid="null-multi-sort-modal-column-select"
-                  defaultValue="string"
-                  id="string-select-sort-column"
-                  onChange={[Function]}
-                >
-                  <option
-                    className="bx--select-option"
-                    disabled={true}
-                    hidden={false}
-                    value="string"
-                  >
-                    String
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={true}
-                    hidden={false}
-                    value="select"
-                  >
-                    Select
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="status"
-                  >
-                    Status
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="number"
-                  >
-                    Number
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="boolean"
-                  >
-                    Boolean
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="node"
-                  >
-                    React Node
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="object"
-                  >
-                    Object Id
-                  </option>
-                </select>
-                <svg
-                  aria-hidden={true}
-                  className="bx--select__arrow"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="bx--form__helper-text"
-              >
-                Select a column
-              </div>
-            </div>
-          </div>
-          <div
-            className="bx--form-item"
-          >
-            <div
-              className="bx--select"
-            >
-              <label
-                className="bx--label"
-                htmlFor="string-select-sort-direction"
-              >
-                Sort order
-              </label>
-              <div
-                className="bx--select-input__wrapper"
-                data-invalid={null}
-              >
-                <select
-                  className="bx--select-input"
-                  data-testid="null-multi-sort-modal-direction-select"
-                  defaultValue="ASC"
-                  id="string-select-sort-direction"
-                  onChange={[Function]}
-                >
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="ASC"
-                  >
-                    Ascending
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value="DESC"
-                  >
-                    Descending
-                  </option>
-                </select>
-                <svg
-                  aria-hidden={true}
-                  className="bx--select__arrow"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="bx--form__helper-text"
-              >
-                Select a direction
-              </div>
-            </div>
-          </div>
-          <button
-            aria-describedby={null}
-            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-            data-testid="string-add-sort-button"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <div
-              className="bx--assistive-text"
-              onMouseEnter={[Function]}
-            >
-              Add column
-            </div>
-            <svg
-              aria-hidden="true"
-              aria-label="Add column"
-              className="bx--btn__icon"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-              />
-            </svg>
-          </button>
-          <button
-            aria-describedby={null}
-            className="iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-            data-testid="string-remove-sort-button"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <div
-              className="bx--assistive-text"
-              onMouseEnter={[Function]}
-            >
-              Remove column
-            </div>
-            <svg
-              aria-hidden="true"
-              aria-label="Remove column"
-              className="bx--btn__icon"
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8 15H24V17H8z"
-              />
-            </svg>
-          </button>
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
