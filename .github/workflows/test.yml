@@ -178,7 +178,7 @@ jobs:
         run: |
           cd packages/react/cypress/coverage
           pwd
-          node ../../scripts/change-paths.js
+          node ../../../../scripts/change-paths.js
 
       - name: Copy, combine, and report coverage
         run: |
