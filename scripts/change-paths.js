@@ -13,6 +13,7 @@ Object.keys(coverage).forEach((key) => {
   const value = coverage[key];
   value.path = fixedKey;
   fixedCoverage[fixedKey] = value;
+  console.log(fixedKey);
 });
 
-fs.writeFileSync('coverage-final-fixed.json', JSON.stringify(fixedCoverage));
+fs.writeFileSync('coverage-final.json', JSON.stringify(fixedCoverage));
