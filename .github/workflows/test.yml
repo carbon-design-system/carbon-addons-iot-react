@@ -176,7 +176,7 @@ jobs:
 
       - name: Change file paths for cypress coverage report
         run: |
-          cd packages/react
+          cd packages/react/cypress/coverage
           pwd
           node ../../scripts/change-paths.js
 
