@@ -177,8 +177,9 @@ jobs:
       - name: Change file paths for cypress coverage report
         run: |
           cd scripts
+          chmod +x change-paths.js
           ls -la
-          yarn reports
+          node change-paths.js
 
       - name: Copy, combine, and report coverage
         run: |
