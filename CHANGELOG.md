@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.33...v2.147.0-next.34) (2021-10-28)
+
+
+### Bug Fixes
+
+* **table:** deprecate lightweight prop ([37dab95](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/37dab95f75dbfce600ab953f01e22eeb8d7f7078))
+* **table:** remove lightwight knob from story ([5ce8af3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5ce8af375be8c2178309793346045a26484c6c27))
+* **table:** removed lightweight prop from story ([6e6c133](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6e6c1339c8b6e8092e40ae2fde86de01a79a6ba6))
+
+
+
+
+
 # [2.147.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.32...v2.147.0-next.33) (2021-10-28)
 
 **Note:** Version bump only for package ibm-ai-applications
