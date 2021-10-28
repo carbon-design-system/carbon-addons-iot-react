@@ -60,7 +60,7 @@ export type DateRange = [Date, Date];
 
 /**
  * @member label label text in Relative to dropdown list
- * @member value integer relative to today. e.g. -1 for yesterday, 0 for today, 1 for tomorrow 
+ * @member value integer relative to today. e.g. -1 for yesterday, 0 for today, 1 for tomorrow
  */
 export type RelativeToOption = {
   label: string;
