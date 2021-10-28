@@ -11,6 +11,7 @@ import StoryNotice from '../../internal/StoryNotice';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import Button from '../Button/Button';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import StatefulTable from './StatefulTable';
 import {
@@ -208,8 +209,13 @@ export const SimpleStatefulExample = () => {
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
         hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
         hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
-        hasRowExpansion: boolean(
+        hasRowExpansion: select(
           'Enables expanding rows to show additional content (options.hasRowExpansion)',
+          {
+            true: true,
+            false: false,
+            '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
+          },
           false
         ),
         hasRowNesting: boolean(
@@ -1591,3 +1597,10 @@ export const WithMultiSorting = () => {
 };
 
 WithMultiSorting.storyName = 'with multi-sorting';
+WithMultiSorting.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
