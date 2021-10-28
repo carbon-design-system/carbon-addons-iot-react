@@ -3,6 +3,7 @@ import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Tree16, Add16 } from '@carbon/icons-react';
 
+import { settings } from '../../constants/Settings';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
@@ -11,6 +12,8 @@ import { INTERVAL_VALUES, RELATIVE_VALUES, PICKER_KINDS } from '../../constants/
 
 import CardREADME from './Card.mdx';
 import Card from './Card';
+
+const { prefix } = settings;
 
 export const getDataStateProp = () => ({
   label: text('dataState.label', 'No data available for this score at this time'),
@@ -23,7 +26,7 @@ export const getDataStateProp = () => ({
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   ),
   learnMoreElement: (
-    <a className="bx--link" href="#top">
+    <a className={`${prefix}--link`} href="#top">
       Learn more
     </a>
   ),

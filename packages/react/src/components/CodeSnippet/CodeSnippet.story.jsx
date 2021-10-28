@@ -10,7 +10,11 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 
+import { settings } from '../../constants/Settings';
+
 import { CodeSnippet, CodeSnippetSkeleton } from '.';
+
+const { prefix } = settings;
 
 export default {
   title: '3 - Carbon/CodeSnippet',
@@ -115,7 +119,7 @@ const lightPropMessage = (
 );
 
 export const playground = () => (
-  <div className={props().light ? 'bx--tile' : ''}>
+  <div className={props().light ? `${prefix}--tile` : ''}>
     {props().light && lightPropMessage}
     <CodeSnippet {...props()}>
       {props().type === 'multi'

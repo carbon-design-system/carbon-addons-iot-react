@@ -191,7 +191,9 @@ describe('FlyoutMenu', () => {
         direction={FlyoutMenuDirection.BottomStart}
       />
     );
-    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__bottom-start');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass(
+      `${iotPrefix}--flyout-menu--body__bottom-start`
+    );
   });
 
   it('Flyout Anchor Points Rendered bottom for bottom end', () => {
@@ -205,7 +207,9 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__bottom-end');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass(
+      `${iotPrefix}--flyout-menu--body__bottom-end`
+    );
   });
 
   it('Flyout Anchor Points Rendered bottom for top start', () => {
@@ -219,7 +223,9 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__top-start');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass(
+      `${iotPrefix}--flyout-menu--body__top-start`
+    );
   });
 
   it('Flyout Anchor Points Rendered bottom for top end', () => {
@@ -233,7 +239,9 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__top-end');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass(
+      `${iotPrefix}--flyout-menu--body__top-end`
+    );
   });
 
   it('Flyout Anchor Points Rendered bottom for left start', () => {
@@ -247,7 +255,9 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__left-start');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass(
+      `${iotPrefix}--flyout-menu--body__left-start`
+    );
   });
 
   it('Flyout Anchor Points Rendered bottom for left end', () => {
@@ -261,7 +271,9 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__left-end');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass(
+      `${iotPrefix}--flyout-menu--body__left-end`
+    );
   });
 
   it('Flyout Anchor Points Rendered bottom for right start', () => {
@@ -275,7 +287,9 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__right-start');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass(
+      `${iotPrefix}--flyout-menu--body__right-start`
+    );
   });
 
   it('Flyout Anchor Points Rendered bottom for right end', () => {
@@ -289,7 +303,9 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__right-end');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass(
+      `${iotPrefix}--flyout-menu--body__right-end`
+    );
   });
 
   it('should set tooltip visibility when hideTooltip:false', () => {
