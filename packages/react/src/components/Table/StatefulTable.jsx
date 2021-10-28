@@ -250,7 +250,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onSelectAll, isSelected);
       },
       onRowExpanded: (rowId, isExpanded) => {
-        dispatch(tableRowExpand(rowId, isExpanded));
+        const expansionOptions =
+          typeof options.hasRowExpansion === 'object' ? options.hasRowExpansion : {};
+        dispatch(tableRowExpand(rowId, isExpanded, null, expansionOptions));
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
       onRowLoadMore: (rowId) => {
