@@ -463,7 +463,7 @@ Map {
         "toolbarLabelAria": undefined,
       },
       "id": null,
-      "lightweight": false,
+      "lightweight": undefined,
       "locale": null,
       "options": Object {
         "hasAdvancedFilter": false,
@@ -1167,9 +1167,7 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "lightweight": Object {
-        "type": "bool",
-      },
+      "lightweight": [Function],
       "locale": Object {
         "type": "string",
       },
