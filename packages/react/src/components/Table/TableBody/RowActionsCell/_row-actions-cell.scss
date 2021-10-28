@@ -33,7 +33,7 @@
   flex-shrink: 0;
   opacity: 0;
   padding-left: $spacing-06;
-  padding-right: $spacing-06;
+  padding-right: $spacing-03;
   z-index: 0;
   @include backgroundGradient($hover-ui);
 }
