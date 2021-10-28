@@ -59,10 +59,12 @@ export type DateTimeSelection = PresetDateTimeSelection | CustomDateTimeSelectio
 export type DateRange = [Date, Date];
 
 /**
+ * @member key key for the RelativeTo item
  * @member label label text in Relative to dropdown list
  * @member value integer relative to today. e.g. -1 for yesterday, 0 for today, 1 for tomorrow
  */
 export type RelativeToOption = {
+  key: string;
   label: string;
   value: number;
 };
@@ -283,10 +285,12 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   };
   @Input() relativeToOptions: RelativeToOption[] = [
     {
+      key: 'YESTERDAY',
       label: 'Yesterday',
       value: -1,
     },
     {
+      key: 'TODAY',
       label: 'Today',
       value: 0,
     },

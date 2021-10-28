@@ -12,7 +12,7 @@ export const getEndDate = (
   const [hourStr, minStr] = relativeTime.split(':');
   const hour = parseInt(hourStr, 10);
   const min = parseInt(minStr, 10);
-  const numOfDays = relativeToOptions.filter((option) => option.label === relativeToLabel)[0].value;
+  const numOfDays = relativeToOptions.filter((option) => option.key === relativeToLabel)[0].value;
 
   // numOfDays < 0 for past, numOfDays == 0 for today, numOfDays > 0 for future
   if (numOfDays < 0) {
@@ -82,7 +82,7 @@ export const getRangeFromRelative = (
         >
           <option
             *ngFor="let option of relativeToOptions; let i = index"
-            [value]="option.label"
+            [value]="option.key"
             [selected]="i === 0"
           >
             {{ option.label }}
@@ -119,7 +119,7 @@ export class DateTimeRelativeComponent implements OnChanges {
 
   timeToSubtract = 0;
   timeRange = 'MINUTES';
-  relativeTo = 'Yesterday';
+  relativeTo = 'YESTERDAY';
   relativeTime = '00:00';
 
   ngOnChanges(changes: SimpleChanges) {

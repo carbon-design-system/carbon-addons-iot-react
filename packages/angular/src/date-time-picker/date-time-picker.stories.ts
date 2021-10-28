@@ -135,7 +135,7 @@ storiesOf('Components/DateTime Picker', module)
         null,
         {
           last: [5, 'WEEKS'],
-          relativeTo: ['Yesterday', '15:45'],
+          relativeTo: ['YESTERDAY', '15:45'],
         },
       ],
     }),
