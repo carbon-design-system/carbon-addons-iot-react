@@ -335,7 +335,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   disabled = false;
   timeFormat = 'HH:mm';
   absoluteDateFormat = 'Y-m-d';
-  datePickerParams: datePickerParameters = null;
+  datePickerParams: DatePickerParameters = null;
 
   get tooltipOffset() {
     return { x: 0, y: 4 };

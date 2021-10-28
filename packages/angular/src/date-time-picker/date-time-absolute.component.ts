@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { format, setHours, setMinutes } from 'date-fns';
-import { datePickerParameters } from './date-time-picker.component';
+import { DatePickerParameters } from './date-time-picker.component';
 
 @Component({
   selector: 'ai-date-time-absolute',
@@ -101,7 +101,7 @@ export class DateTimeAbsoluteComponent implements OnChanges {
   @Input() dateFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
   @Input() flatpickrOptions;
-  @Input() datePickerParams: datePickerParameters;
+  @Input() datePickerParams: DatePickerParameters;
   @Output() valueChange: EventEmitter<[Date, Date]> = new EventEmitter();
 
   ngOnChanges(changes: SimpleChanges) {

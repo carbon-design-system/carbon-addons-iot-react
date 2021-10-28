@@ -11,7 +11,7 @@ import {
   DateRange,
   DateTimeSelection,
   RelativeRange,
-  datePickerParameters,
+  DatePickerParameters,
 } from './date-time-picker.component';
 
 @Component({
@@ -69,7 +69,7 @@ export class CustomDateTimeComponent implements OnChanges {
   @Input() dateFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
   @Input() flatpickrOptions;
-  @Input() datePickerParams: datePickerParameters;
+  @Input() datePickerParams: DatePickerParameters;
   @Output() rangeChange: EventEmitter<DateTimeSelection> = new EventEmitter();
 
   @HostBinding('class.iot--date-time-picker__custom-wrapper') wrapperClass = true;
