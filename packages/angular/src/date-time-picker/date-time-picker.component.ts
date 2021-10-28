@@ -58,7 +58,7 @@ export type DateTimeSelection = PresetDateTimeSelection | CustomDateTimeSelectio
 
 export type DateRange = [Date, Date];
 
-export type datePickerParameters = {
+export type DatePickerParameters = {
   ariaLabel: string;
   disabled: boolean;
   invalid: boolean;
