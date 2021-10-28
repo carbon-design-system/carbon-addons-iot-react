@@ -1,7 +1,11 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 
+import { settings } from '../../constants/Settings';
+
 import GaugeCard, { getColor } from './GaugeCard';
+
+const { iotPrefix } = settings;
 
 const content = {
   gauges: [
@@ -110,7 +114,7 @@ describe('GaugeCard', () => {
   it('value should be zero', async () => {
     jest.useFakeTimers();
     const { container } = render(<GaugeCard content={content} />);
-    await waitFor(() => container.querySelector('.iot--gauge-trend'));
-    expect(container.querySelector('.iot--gauge-trend')).toEqual(null);
+    await waitFor(() => container.querySelector(`.${iotPrefix}--gauge-trend`));
+    expect(container.querySelector(`.${iotPrefix}--gauge-trend`)).toEqual(null);
   });
 });

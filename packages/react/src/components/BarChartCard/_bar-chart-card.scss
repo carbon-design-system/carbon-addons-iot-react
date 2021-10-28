@@ -27,7 +27,7 @@
   .axis-title {
     font-weight: 500;
   }
-  .bx--cc--chart-svg {
+  .#{$prefix}--cc--chart-svg {
     width: 100%;
     height: 100%;
   }
