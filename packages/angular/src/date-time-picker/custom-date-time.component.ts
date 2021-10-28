@@ -11,7 +11,7 @@ import {
   DateRange,
   DateTimeSelection,
   RelativeRange,
-  relativeToOption,
+  RelativeToOption,
 } from './date-time-picker.component';
 
 @Component({
@@ -68,7 +68,7 @@ export class CustomDateTimeComponent implements OnChanges {
    */
   @Input() dateFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
-  @Input() relativeToOptions: relativeToOption[];
+  @Input() relativeToOptions: RelativeToOption[];
   @Input() flatpickrOptions;
   @Output() rangeChange: EventEmitter<DateTimeSelection> = new EventEmitter();
 

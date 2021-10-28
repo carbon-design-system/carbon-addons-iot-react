@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { setHours, setMinutes, sub, subDays, addDays } from 'date-fns';
-import { DateRange, RelativeRange, relativeToOption } from './date-time-picker.component';
+import { DateRange, RelativeRange, RelativeToOption } from './date-time-picker.component';
 
 export type RelativeDateValue = [...DateRange, RelativeRange];
 
 export const getEndDate = (
   relativeTo: [string, string],
-  relativeToOptions: relativeToOption[]
+  relativeToOptions: RelativeToOption[]
 ): Date => {
   const [relativeToLabel, relativeTime] = relativeTo;
   const [hourStr, minStr] = relativeTime.split(':');
@@ -25,7 +25,7 @@ export const getEndDate = (
 
 export const getRangeFromRelative = (
   relativeConfig: RelativeRange,
-  relativeToOptions: relativeToOption[]
+  relativeToOptions: RelativeToOption[]
 ): DateRange => {
   const [valueToSubtract, valueRange] = relativeConfig.last;
   const endDate = getEndDate(relativeConfig.relativeTo, relativeToOptions);
@@ -114,7 +114,7 @@ export const getRangeFromRelative = (
 export class DateTimeRelativeComponent implements OnChanges {
   @Input() value: any[] = null;
   @Input() batchText: any;
-  @Input() relativeToOptions: relativeToOption[];
+  @Input() relativeToOptions: RelativeToOption[];
   @Output() valueChange: EventEmitter<RelativeDateValue> = new EventEmitter();
 
   timeToSubtract = 0;

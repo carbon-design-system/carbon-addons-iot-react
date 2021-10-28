@@ -58,7 +58,7 @@ export type DateTimeSelection = PresetDateTimeSelection | CustomDateTimeSelectio
 
 export type DateRange = [Date, Date];
 
-export type relativeToOption = {
+export type RelativeToOption = {
   label: string;
   value: number;
 };
@@ -277,7 +277,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     MINUTES: 'minutes',
     RANGE_SEPARATOR: 'to',
   };
-  @Input() relativeToOptions: relativeToOption[] = [
+  @Input() relativeToOptions: RelativeToOption[] = [
     {
       label: 'Yesterday',
       value: -1,
