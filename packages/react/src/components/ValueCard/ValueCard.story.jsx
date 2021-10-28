@@ -2,6 +2,7 @@ import React from 'react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
+import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES, CARD_DATA_STATE } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -58,7 +59,7 @@ export const SmallLongNoUnits = () => {
   );
 };
 
-SmallLongNoUnits.storyName = 'with long text and no units';
+SmallLongNoUnits.storyName = 'with long text, no units, no click handler';
 
 SmallLongNoUnits.parameters = {
   info: {
@@ -109,6 +110,7 @@ export const WithTrends = () => {
         isNumberValueCompact={boolean('isNumberValueCompact', false)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
       />
     </div>
   );
@@ -174,6 +176,7 @@ export const WithThresholds = () => {
         isNumberValueCompact={boolean('isNumberValueCompact', false)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
       />
     </div>
   );
@@ -221,6 +224,7 @@ export const SmallWideThresholdsString = () => {
         isNumberValueCompact={boolean('isNumberValueCompact', false)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
       />
     </div>
   );
@@ -314,6 +318,7 @@ export const MediumThin3 = () => {
         isNumberValueCompact={boolean('isNumberValueCompact', false)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
       />
     </div>
   );
@@ -365,6 +370,7 @@ export const WithFourDataPoints = () => {
         isNumberValueCompact={boolean('isNumberValueCompact', false)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
       />
     </div>
   );
@@ -415,6 +421,7 @@ export const Large5 = () => {
         isNumberValueCompact={boolean('isNumberValueCompact', false)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
       />
     </div>
   );
@@ -469,6 +476,7 @@ export const LargeThin6 = () => {
         isNumberValueCompact={boolean('isNumberValueCompact', false)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
       />
     </div>
   );
@@ -517,6 +525,7 @@ export const DataStateNoDataMediumScrollPage = () => {
         size={size}
         id="myStoryId"
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        onAttributeClick={action('onAttributeClick')}
       />
 
       <div style={{ height: '150vh' }} />
@@ -559,6 +568,7 @@ export const Editable = () => {
         isNumberValueCompact={boolean('isNumberValueCompact', false)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
       />
     </div>
   );
@@ -604,6 +614,7 @@ export const DataFilters = () => {
         isNumberValueCompact={boolean('isNumberValueCompact', false)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
         fontSize={number('fontSize', 42)}
+        onAttributeClick={action('onAttributeClick')}
       />
     </div>
   );

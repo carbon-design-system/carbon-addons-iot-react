@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import { CaretUp16, CaretDown16 } from '@carbon/icons-react';
 import classnames from 'classnames';
+import { gray60 } from '@carbon/colors';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
@@ -45,6 +46,8 @@ const propTypes = {
   /** number of attributes */
   attributeCount: PropTypes.number.isRequired,
   testId: PropTypes.string,
+  /** callback when the attribute is clicked to trigger further action like opening a modal */
+  onValueClick: PropTypes.func,
 };
 
 const defaultProps = {
@@ -56,6 +59,7 @@ const defaultProps = {
   customFormatter: null,
   isEditable: false,
   testId: 'attribute',
+  onValueClick: null,
 };
 
 const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
@@ -65,7 +69,7 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { label, unit, thresholds, precision },
+  attribute: { label, unit, thresholds, precision, dataSourceId },
   attributeCount,
   customFormatter,
   isEditable,
@@ -77,6 +81,7 @@ const Attribute = ({
   fontSize,
   isNumberValueCompact,
   testId,
+  onValueClick,
 }) => {
   // matching threshold will be the first match in the list, or a value of null if not isEditable
   const matchingThreshold = thresholds
@@ -148,6 +153,8 @@ const Attribute = ({
             fontSize={fontSize}
             isNumberValueCompact={isNumberValueCompact}
             testId={`${testId}-value`}
+            dataSourceId={dataSourceId}
+            onClick={onValueClick}
           />
           <UnitRenderer unit={unit} testId={`${testId}-unit`} />
         </div>
@@ -156,7 +163,7 @@ const Attribute = ({
             data-testid={`${testId}-secondary-value`}
             className={`${BEM_BASE}-secondary-value`}
             style={{
-              '--secondary-value-color': secondaryValue.color || '#777',
+              '--secondary-value-color': gray60,
             }}
           >
             {secondaryValue.trend && secondaryValue.trend === 'up' ? (
@@ -164,12 +171,14 @@ const Attribute = ({
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending up"
                 data-testid={`${testId}-trending-up`}
+                fill={secondaryValue.color || gray60}
               />
             ) : secondaryValue.trend === 'down' ? (
               <CaretDown16
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending down"
                 data-testid={`${testId}-trending-down`}
+                fill={secondaryValue.color || gray60}
               />
             ) : null}
             {secondaryValue.value}

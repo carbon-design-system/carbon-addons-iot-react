@@ -761,6 +761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           "--value-renderer-max-lines": 1,
                         }
                       }
+                      title="88"
                     >
                       88
                     </span>
@@ -782,7 +783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   data-testid="Card-attribute-0-secondary-value"
                   style={
                     Object {
-                      "--secondary-value-color": "red",
+                      "--secondary-value-color": "#6f6f6f",
                     }
                   }
                 >
@@ -790,7 +791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     aria-label="trending down"
                     className="iot--value-card__attribute_trend-icon"
                     data-testid="Card-attribute-0-trending-down"
-                    fill="currentColor"
+                    fill="red"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -1898,7 +1899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-155"
+                    aria-controls="accordion-item-168"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1928,7 +1929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-155"
+                    id="accordion-item-168"
                   >
                     <div
                       className="toggle-group"
@@ -1976,7 +1977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-156"
+                    aria-controls="accordion-item-169"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2006,7 +2007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-156"
+                    id="accordion-item-169"
                   >
                     More Map settings
                   </div>
@@ -2017,7 +2018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-157"
+                    aria-controls="accordion-item-170"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2047,7 +2048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-157"
+                    id="accordion-item-170"
                   >
                     Even more settings
                   </div>
@@ -2418,11 +2419,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             data-floating-menu-container={true}
                             id="column-alert"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                             width=""
                           >
                             <span
@@ -2488,11 +2484,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             data-floating-menu-container={true}
                             id="column-hour"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                             width=""
                           >
                             <span
@@ -2558,11 +2549,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             data-floating-menu-container={true}
                             id="column-pressure"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                             width=""
                           >
                             <span

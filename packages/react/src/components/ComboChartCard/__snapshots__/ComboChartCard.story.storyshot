@@ -370,11 +370,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-date"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -438,11 +433,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-health"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -506,11 +496,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-age"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -574,11 +559,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-condition"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -642,11 +622,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-floating-menu-container={true}
                             id="column-rul"
                             onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
                           >
                             <span
                               className="bx--table-header-label"

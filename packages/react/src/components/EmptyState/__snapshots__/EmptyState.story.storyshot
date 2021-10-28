@@ -170,7 +170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--md bx--btn--primary"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}
@@ -464,7 +464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--md bx--btn--primary"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}
@@ -742,7 +742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--md bx--btn--primary"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}
@@ -1036,7 +1036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--md bx--btn--primary"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}
@@ -1692,7 +1692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--md bx--btn--primary"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}
@@ -1986,7 +1986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--md bx--btn--primary"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}
@@ -2280,7 +2280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--md bx--btn--primary"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}
@@ -3716,7 +3716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--md bx--btn--primary"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}
@@ -3766,7 +3766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--md bx--btn--primary"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}

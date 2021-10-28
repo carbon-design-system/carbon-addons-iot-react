@@ -56,8 +56,13 @@
     height: $layout-01;
     display: flex;
     align-items: center;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     margin-bottom: $spacing-02;
     color: var(--secondary-value-color);
   }
+}
+
+html[dir='rtl'] .#{$iot-prefix}--value-card__attribute {
+  padding-right: 0;
+  padding-left: $spacing-05;
 }

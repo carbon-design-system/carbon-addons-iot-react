@@ -245,7 +245,7 @@ export const WithCustomRangeSelector = () => {
 WithCustomRangeSelector.storyName = 'with custom range selector';
 
 export const WithDateTimePickerRangeSelector = () => {
-  const dateTimePickerSetting = select('range', [true, false, 'iconOnly', 'full'], 'iconOnly');
+  const dateTimePickerSetting = select('range', [true, false, 'iconOnly'], 'iconOnly');
   return (
     <div style={{ width: `300px`, margin: 20 }}>
       <Card
@@ -256,18 +256,19 @@ export const WithDateTimePickerRangeSelector = () => {
         isEmpty={false}
         isEditable={false}
         isExpanded={false}
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         breakpoint="lg"
         onCardAction={action('onCardAction')}
         availableActions={{
           range: dateTimePickerSetting,
         }}
         timeRangeOptions={object('timeRangeOptions', {
-          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
-          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
-          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
-          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
-          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
-          lastHour: { label: 'Last Hour', offset: 60 * 60 },
+          last48Hours: 'Last 48 Hours',
+          last24Hours: 'Last 24 Hours',
+          last8Hours: 'Last 8 Hours',
+          last4Hours: 'Last 4 Hours',
+          last2Hours: 'Last 2 Hours',
+          lastHour: 'Last Hour',
         })}
       />
     </div>
@@ -286,7 +287,7 @@ export const WithDateTimePickerRangeSelectorExistingValue = () => {
       relativeToTime: '13:30',
     },
   };
-  const dateTimePickerSetting = select('range', [true, false, 'iconOnly', 'full'], 'full');
+  const dateTimePickerSetting = select('range', [true, false, 'iconOnly'], 'iconOnly');
   return (
     <div style={{ width: `400px`, margin: 20 }}>
       <Card
@@ -298,6 +299,7 @@ export const WithDateTimePickerRangeSelectorExistingValue = () => {
         isEditable={false}
         isExpanded={false}
         breakpoint="lg"
+        locale={select('locale', ['fr', 'en', 'es', 'de'], 'en')}
         onCardAction={action('onCardAction')}
         availableActions={{
           range: dateTimePickerSetting,

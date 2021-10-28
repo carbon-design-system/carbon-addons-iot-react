@@ -284,11 +284,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -354,11 +349,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -424,11 +414,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -1149,8 +1134,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-31"
-                id="bx-pagination-select-31-count-label"
+                htmlFor="bx-pagination-select-29"
+                id="bx-pagination-select-29-count-label"
               >
                 Items per page:
               </label>
@@ -1169,7 +1154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-31"
+                        id="bx-pagination-select-29"
                         onChange={[Function]}
                         value={10}
                       >
@@ -1234,7 +1219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-31-right"
+                    htmlFor="bx-pagination-select-29-right"
                   >
                     Page number, of 10 pages
                   </label>
@@ -1247,7 +1232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-31-right"
+                        id="bx-pagination-select-29-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -1834,11 +1819,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -1904,11 +1884,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -1974,11 +1949,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -2699,8 +2669,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-30"
-                id="bx-pagination-select-30-count-label"
+                htmlFor="bx-pagination-select-28"
+                id="bx-pagination-select-28-count-label"
               >
                 Items per page:
               </label>
@@ -2719,7 +2689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-30"
+                        id="bx-pagination-select-28"
                         onChange={[Function]}
                         value={10}
                       >
@@ -2784,7 +2754,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-30-right"
+                    htmlFor="bx-pagination-select-28-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -2797,7 +2767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-30-right"
+                        id="bx-pagination-select-28-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -3284,11 +3254,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -3354,11 +3319,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "250px",
-                          }
-                        }
                         width="250px"
                       >
                         <span
@@ -3424,11 +3384,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -3494,11 +3449,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -4419,8 +4369,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-28"
-                id="bx-pagination-select-28-count-label"
+                htmlFor="bx-pagination-select-26"
+                id="bx-pagination-select-26-count-label"
               >
                 Items per page:
               </label>
@@ -4439,7 +4389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-28"
+                        id="bx-pagination-select-26"
                         onChange={[Function]}
                         value={10}
                       >
@@ -4504,7 +4454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-28-right"
+                    htmlFor="bx-pagination-select-26-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -4517,7 +4467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-28-right"
+                        id="bx-pagination-select-26-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -4977,11 +4927,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -5047,11 +4992,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -5117,11 +5057,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -5187,11 +5122,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -5347,8 +5277,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-32"
-                id="bx-pagination-select-32-count-label"
+                htmlFor="bx-pagination-select-30"
+                id="bx-pagination-select-30-count-label"
               >
                 Items per page:
               </label>
@@ -5367,7 +5297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-32"
+                        id="bx-pagination-select-30"
                         onChange={[Function]}
                         value={10}
                       >
@@ -5432,7 +5362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-32-right"
+                    htmlFor="bx-pagination-select-30-right"
                   >
                     Page number, of 1 pages
                   </label>
@@ -5445,7 +5375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-32-right"
+                        id="bx-pagination-select-30-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -5924,11 +5854,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -5994,11 +5919,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-deviceId"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -6579,8 +6499,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-24"
-                id="bx-pagination-select-24-count-label"
+                htmlFor="bx-pagination-select-22"
+                id="bx-pagination-select-22-count-label"
               >
                 Items per page:
               </label>
@@ -6599,7 +6519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-24"
+                        id="bx-pagination-select-22"
                         onChange={[Function]}
                         value={10}
                       >
@@ -6664,7 +6584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-24-right"
+                    htmlFor="bx-pagination-select-22-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -6677,7 +6597,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-24-right"
+                        id="bx-pagination-select-22-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -7205,11 +7125,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -7275,11 +7190,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -7345,11 +7255,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -7415,11 +7320,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -9051,8 +8951,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-27"
-                id="bx-pagination-select-27-count-label"
+                htmlFor="bx-pagination-select-25"
+                id="bx-pagination-select-25-count-label"
               >
                 Items per page:
               </label>
@@ -9071,7 +8971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-27"
+                        id="bx-pagination-select-25"
                         onChange={[Function]}
                         value={10}
                       >
@@ -9136,7 +9036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-27-right"
+                    htmlFor="bx-pagination-select-25-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -9149,7 +9049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-27-right"
+                        id="bx-pagination-select-25-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -9636,11 +9536,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -9706,11 +9601,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -9776,11 +9666,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -9846,11 +9731,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -11357,8 +11237,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-23"
-                id="bx-pagination-select-23-count-label"
+                htmlFor="bx-pagination-select-21"
+                id="bx-pagination-select-21-count-label"
               >
                 Items per page:
               </label>
@@ -11377,7 +11257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-23"
+                        id="bx-pagination-select-21"
                         onChange={[Function]}
                         value={10}
                       >
@@ -11442,7 +11322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-23-right"
+                    htmlFor="bx-pagination-select-21-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -11455,7 +11335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-23-right"
+                        id="bx-pagination-select-21-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -11983,11 +11863,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -12053,11 +11928,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -12123,11 +11993,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -13178,8 +13043,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-29"
-                id="bx-pagination-select-29-count-label"
+                htmlFor="bx-pagination-select-27"
+                id="bx-pagination-select-27-count-label"
               >
                 Items per page:
               </label>
@@ -13198,7 +13063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-29"
+                        id="bx-pagination-select-27"
                         onChange={[Function]}
                         value={10}
                       >
@@ -13263,7 +13128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-29-right"
+                    htmlFor="bx-pagination-select-27-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -13276,7 +13141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-29-right"
+                        id="bx-pagination-select-27-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -13763,11 +13628,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -13833,11 +13693,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -13903,11 +13758,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -13973,11 +13823,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -15343,8 +15188,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-26"
-                id="bx-pagination-select-26-count-label"
+                htmlFor="bx-pagination-select-24"
+                id="bx-pagination-select-24-count-label"
               >
                 Items per page:
               </label>
@@ -15363,7 +15208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-26"
+                        id="bx-pagination-select-24"
                         onChange={[Function]}
                         value={10}
                       >
@@ -15428,7 +15273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-26-right"
+                    htmlFor="bx-pagination-select-24-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -15441,7 +15286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-26-right"
+                        id="bx-pagination-select-24-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -15933,11 +15778,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -16003,11 +15843,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -16073,11 +15908,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -16143,11 +15973,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -16213,11 +16038,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -16283,11 +16103,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "--table-header-width": "",
-                          }
-                        }
                         width=""
                       >
                         <span
@@ -18106,8 +17921,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-25"
-                id="bx-pagination-select-25-count-label"
+                htmlFor="bx-pagination-select-23"
+                id="bx-pagination-select-23-count-label"
               >
                 Items per page:
               </label>
@@ -18126,7 +17941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-25"
+                        id="bx-pagination-select-23"
                         onChange={[Function]}
                         value={10}
                       >
@@ -18191,7 +18006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-25-right"
+                    htmlFor="bx-pagination-select-23-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -18204,7 +18019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-25-right"
+                        id="bx-pagination-select-23-right"
                         onChange={[Function]}
                         value={1}
                       >

@@ -148,6 +148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="89"
                         >
                           89
                         </span>
@@ -198,6 +199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -248,6 +250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="21.4"
                         >
                           21.4
                         </span>
@@ -452,6 +455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -558,6 +562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -709,6 +714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -817,6 +823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="35"
                         >
                           35
                         </span>
@@ -838,7 +845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -846,7 +853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -968,6 +975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Bad"
                         >
                           Bad
                         </span>
@@ -1074,6 +1082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="13,572"
                         >
                           13,572
                         </span>
@@ -1095,7 +1104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -1103,7 +1112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -1388,6 +1397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Healthy"
                         >
                           Healthy
                         </span>
@@ -1910,11 +1920,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -1980,11 +1985,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -2050,11 +2050,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -3093,6 +3088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="89"
                         >
                           89
                         </span>
@@ -3143,6 +3139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -3193,6 +3190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="21.4"
                         >
                           21.4
                         </span>
@@ -3397,6 +3395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -3503,6 +3502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -3654,6 +3654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -3762,6 +3763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="35"
                         >
                           35
                         </span>
@@ -3783,7 +3785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -3791,7 +3793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -3913,6 +3915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Bad"
                         >
                           Bad
                         </span>
@@ -4019,6 +4022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="13,572"
                         >
                           13,572
                         </span>
@@ -4040,7 +4044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -4048,7 +4052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -4333,6 +4337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Healthy"
                         >
                           Healthy
                         </span>
@@ -4855,11 +4860,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -4925,11 +4925,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -4995,11 +4990,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -6073,6 +6063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="89"
                         >
                           89
                         </span>
@@ -6123,6 +6114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -6173,6 +6165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="21.4"
                         >
                           21.4
                         </span>
@@ -6377,6 +6370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -6483,6 +6477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -6634,6 +6629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -6742,6 +6738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="35"
                         >
                           35
                         </span>
@@ -6763,7 +6760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -6771,7 +6768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -6893,6 +6890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Bad"
                         >
                           Bad
                         </span>
@@ -6999,6 +6997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="13,572"
                         >
                           13,572
                         </span>
@@ -7020,7 +7019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -7028,7 +7027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -7313,6 +7312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Healthy"
                         >
                           Healthy
                         </span>
@@ -7835,11 +7835,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -7905,11 +7900,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -7975,11 +7965,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -9871,11 +9856,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-timestamp"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -9941,11 +9921,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-Campus_EGL"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -10011,11 +9986,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-peopleCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -10081,11 +10051,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-headCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -10151,11 +10116,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-capacity_EnterpriseBuilding_mean"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -11679,6 +11639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="89"
                         >
                           89
                         </span>
@@ -11729,6 +11690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -11779,6 +11741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="21.4"
                         >
                           21.4
                         </span>
@@ -11983,6 +11946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -12089,6 +12053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -12240,6 +12205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -12348,6 +12314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="35"
                         >
                           35
                         </span>
@@ -12369,7 +12336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -12377,7 +12344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -12499,6 +12466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Bad"
                         >
                           Bad
                         </span>
@@ -12605,6 +12573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="13,572"
                         >
                           13,572
                         </span>
@@ -12626,7 +12595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -12634,7 +12603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -12919,6 +12888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Healthy"
                         >
                           Healthy
                         </span>
@@ -13441,11 +13411,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -13511,11 +13476,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -13581,11 +13541,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -14605,7 +14560,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
   className="storybook-container"
 >
   <div
-    style={Object {}}
+    style={
+      Object {
+        "width": "calc(100vw - 6rem)",
+      }
+    }
   >
     <div
       style={
@@ -14757,6 +14716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="13"
                           >
                             13
                           </span>
@@ -14857,6 +14817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,352"
                           >
                             1,352
                           </span>
@@ -14959,6 +14920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.2"
                           >
                             103.2
                           </span>
@@ -15061,6 +15023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="107,324.3"
                           >
                             107,324.3
                           </span>
@@ -15163,6 +15126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,709,384.1"
                           >
                             1,709,384.1
                           </span>
@@ -15372,6 +15336,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-font-size": "42px",
                                 "--value-renderer-max-lines": 1,
                               }
+                            }
+                            title={
+                              <span
+                                className="iot--value-card__value-renderer--boolean"
+                                data-testid="Card-attribute-0-value-boolean"
+                              >
+                                true
+                              </span>
                             }
                           >
                             <span
@@ -15551,6 +15523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="13"
                           >
                             13
                           </span>
@@ -15651,6 +15624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,352"
                           >
                             1,352
                           </span>
@@ -15753,6 +15727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.2"
                           >
                             103.2
                           </span>
@@ -15855,6 +15830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="107,324.3"
                           >
                             107,324.3
                           </span>
@@ -15957,6 +15933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,709,384.1"
                           >
                             1,709,384.1
                           </span>
@@ -16167,6 +16144,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title={
+                              <span
+                                className="iot--value-card__value-renderer--boolean"
+                                data-testid="Card-attribute-0-value-boolean"
+                              >
+                                true
+                              </span>
+                            }
                           >
                             <span
                               className="iot--value-card__value-renderer--boolean"
@@ -16345,6 +16330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -16449,6 +16435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="48.7"
                           >
                             48.7
                           </span>
@@ -16551,6 +16538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="88.1"
                           >
                             88.1
                           </span>
@@ -16572,7 +16560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -16580,7 +16568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -16683,6 +16671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.2"
                           >
                             103.2
                           </span>
@@ -16704,7 +16693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -16712,7 +16701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -16886,6 +16875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -16990,6 +16980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="48.7"
                           >
                             48.7
                           </span>
@@ -17092,6 +17083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="88.1"
                           >
                             88.1
                           </span>
@@ -17113,7 +17105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -17121,7 +17113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -17224,6 +17216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.2"
                           >
                             103.2
                           </span>
@@ -17245,7 +17238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -17253,7 +17246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -17444,6 +17437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="38.2"
                           >
                             38.2
                           </span>
@@ -17568,6 +17562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -17691,6 +17686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="77.7"
                           >
                             77.7
                           </span>
@@ -17810,6 +17806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="91"
                           >
                             91
                           </span>
@@ -18002,6 +17999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="38.2"
                           >
                             38.2
                           </span>
@@ -18126,6 +18124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -18249,6 +18248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="77.7"
                           >
                             77.7
                           </span>
@@ -18368,6 +18368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="91"
                           >
                             91
                           </span>
@@ -18543,6 +18544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Low"
                           >
                             Low
                           </span>
@@ -18645,6 +18647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Guarded"
                           >
                             Guarded
                           </span>
@@ -18747,6 +18750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -18849,6 +18853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="High"
                           >
                             High
                           </span>
@@ -18951,6 +18956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Severe"
                           >
                             Severe
                           </span>
@@ -19126,6 +19132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Low"
                           >
                             Low
                           </span>
@@ -19228,6 +19235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Guarded"
                           >
                             Guarded
                           </span>
@@ -19330,6 +19338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -19432,6 +19441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="High"
                           >
                             High
                           </span>
@@ -19534,6 +19544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Severe"
                           >
                             Severe
                           </span>
@@ -19709,6 +19720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="13"
                           >
                             13
                           </span>
@@ -19809,6 +19821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,352"
                           >
                             1,352
                           </span>
@@ -19911,6 +19924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.2"
                           >
                             103.2
                           </span>
@@ -20013,6 +20027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="107,324.3"
                           >
                             107,324.3
                           </span>
@@ -20115,6 +20130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,709,384.1"
                           >
                             1,709,384.1
                           </span>
@@ -20216,6 +20232,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-font-size": "42px",
                                 "--value-renderer-max-lines": 1,
                               }
+                            }
+                            title={
+                              <span
+                                className="iot--value-card__value-renderer--boolean"
+                                data-testid="Card-attribute-0-value-boolean"
+                              >
+                                false
+                              </span>
                             }
                           >
                             <span
@@ -20322,6 +20346,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title={
+                              <span
+                                className="iot--value-card__value-renderer--boolean"
+                                data-testid="Card-attribute-0-value-boolean"
+                              >
+                                true
+                              </span>
+                            }
                           >
                             <span
                               className="iot--value-card__value-renderer--boolean"
@@ -20427,6 +20459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -20531,6 +20564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="48.7"
                           >
                             48.7
                           </span>
@@ -20633,6 +20667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="88.1"
                           >
                             88.1
                           </span>
@@ -20654,7 +20689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -20662,7 +20697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -20765,6 +20800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.2"
                           >
                             103.2
                           </span>
@@ -20786,7 +20822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -20794,7 +20830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -20912,6 +20948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="38.2"
                           >
                             38.2
                           </span>
@@ -21036,6 +21073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -21159,6 +21197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="77.7"
                           >
                             77.7
                           </span>
@@ -21278,6 +21317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="91"
                           >
                             91
                           </span>
@@ -21380,6 +21420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Low"
                           >
                             Low
                           </span>
@@ -21482,6 +21523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Guarded"
                           >
                             Guarded
                           </span>
@@ -21584,6 +21626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -21686,6 +21729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="High"
                           >
                             High
                           </span>
@@ -21788,6 +21832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Severe"
                           >
                             Severe
                           </span>
@@ -21963,6 +22008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="13"
                           >
                             13
                           </span>
@@ -22063,6 +22109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,352"
                           >
                             1,352
                           </span>
@@ -22165,6 +22212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.2"
                           >
                             103.2
                           </span>
@@ -22267,6 +22315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="107,324.3"
                           >
                             107,324.3
                           </span>
@@ -22369,6 +22418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,709,384.1"
                           >
                             1,709,384.1
                           </span>
@@ -22470,6 +22520,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-font-size": "42px",
                                 "--value-renderer-max-lines": 1,
                               }
+                            }
+                            title={
+                              <span
+                                className="iot--value-card__value-renderer--boolean"
+                                data-testid="Card-attribute-0-value-boolean"
+                              >
+                                false
+                              </span>
                             }
                           >
                             <span
@@ -22576,6 +22634,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title={
+                              <span
+                                className="iot--value-card__value-renderer--boolean"
+                                data-testid="Card-attribute-0-value-boolean"
+                              >
+                                true
+                              </span>
+                            }
                           >
                             <span
                               className="iot--value-card__value-renderer--boolean"
@@ -22681,6 +22747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -22785,6 +22852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="48.7"
                           >
                             48.7
                           </span>
@@ -22887,6 +22955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="88.1"
                           >
                             88.1
                           </span>
@@ -22908,7 +22977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -22916,7 +22985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -23019,6 +23088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.2"
                           >
                             103.2
                           </span>
@@ -23040,7 +23110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -23048,7 +23118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -23166,6 +23236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="38.2"
                           >
                             38.2
                           </span>
@@ -23290,6 +23361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -23413,6 +23485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="77.7"
                           >
                             77.7
                           </span>
@@ -23532,6 +23605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="91"
                           >
                             91
                           </span>
@@ -23634,6 +23708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Low"
                           >
                             Low
                           </span>
@@ -23736,6 +23811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Guarded"
                           >
                             Guarded
                           </span>
@@ -23838,6 +23914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -23940,6 +24017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="High"
                           >
                             High
                           </span>
@@ -24042,6 +24120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Severe"
                           >
                             Severe
                           </span>
@@ -24219,6 +24298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="89.2"
                           >
                             89.2
                           </span>
@@ -24269,6 +24349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="21.3"
                           >
                             21.3
                           </span>
@@ -24373,6 +24454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="88.3"
                           >
                             88.3
                           </span>
@@ -24423,6 +24505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -24525,6 +24608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.7"
                           >
                             103.7
                           </span>
@@ -24575,6 +24659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,709,384.1"
                           >
                             1,709,384.1
                           </span>
@@ -24752,6 +24837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="89.2"
                           >
                             89.2
                           </span>
@@ -24802,6 +24888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="21.3"
                           >
                             21.3
                           </span>
@@ -24906,6 +24993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="88.3"
                           >
                             88.3
                           </span>
@@ -24956,6 +25044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -25058,6 +25147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.7"
                           >
                             103.7
                           </span>
@@ -25108,6 +25198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,709,384.1"
                           >
                             1,709,384.1
                           </span>
@@ -25285,6 +25376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="89.2"
                           >
                             89.2
                           </span>
@@ -25306,7 +25398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25314,7 +25406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25363,6 +25455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="21.3"
                           >
                             21.3
                           </span>
@@ -25384,7 +25477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25392,7 +25485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25495,6 +25588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="88.3"
                           >
                             88.3
                           </span>
@@ -25516,7 +25610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25524,7 +25618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25573,6 +25667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -25675,6 +25770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.7"
                           >
                             103.7
                           </span>
@@ -25696,7 +25792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25704,7 +25800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25752,6 +25848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,709,384.1"
                           >
                             1,709,384.1
                           </span>
@@ -25773,7 +25870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25781,7 +25878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -25957,6 +26054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="89.2"
                           >
                             89.2
                           </span>
@@ -25978,7 +26076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -25986,7 +26084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26035,6 +26133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="21.3"
                           >
                             21.3
                           </span>
@@ -26056,7 +26155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -26064,7 +26163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26167,6 +26266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="88.3"
                           >
                             88.3
                           </span>
@@ -26188,7 +26288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -26196,7 +26296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26245,6 +26345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -26347,6 +26448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="103.7"
                           >
                             103.7
                           </span>
@@ -26368,7 +26470,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-0-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -26376,7 +26478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-0-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26424,6 +26526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,709,384.1"
                           >
                             1,709,384.1
                           </span>
@@ -26445,7 +26548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -26453,7 +26556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -26646,6 +26749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="38.2"
                           >
                             38.2
                           </span>
@@ -26718,6 +26822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -26843,6 +26948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="77.2"
                           >
                             77.2
                           </span>
@@ -26910,6 +27016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="91.3"
                           >
                             91.3
                           </span>
@@ -27104,6 +27211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="38.2"
                           >
                             38.2
                           </span>
@@ -27176,6 +27284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="65.3"
                           >
                             65.3
                           </span>
@@ -27301,6 +27410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="77.2"
                           >
                             77.2
                           </span>
@@ -27368,6 +27478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="91.3"
                           >
                             91.3
                           </span>
@@ -27545,6 +27656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="13,634.56"
                           >
                             13,634.56
                           </span>
@@ -27595,6 +27707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,047.2"
                           >
                             1,047.2
                           </span>
@@ -27616,7 +27729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -27624,7 +27737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -27673,6 +27786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="314.5"
                           >
                             314.5
                           </span>
@@ -27694,7 +27808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-2-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -27702,7 +27816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-2-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -27805,6 +27919,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Severe"
                           >
                             Severe
                           </span>
@@ -27853,6 +27968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Low"
                           >
                             Low
                           </span>
@@ -27901,6 +28017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="High"
                           >
                             High
                           </span>
@@ -28025,6 +28142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Low"
                           >
                             Low
                           </span>
@@ -28090,6 +28208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Severe"
                           >
                             Severe
                           </span>
@@ -28159,6 +28278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -28334,6 +28454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="13,634.56"
                           >
                             13,634.56
                           </span>
@@ -28384,6 +28505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="1,047.2"
                           >
                             1,047.2
                           </span>
@@ -28405,7 +28527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-1-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "green",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -28413,7 +28535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending up"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-1-trending-up"
-                          fill="currentColor"
+                          fill="green"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -28462,6 +28584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="314.5"
                           >
                             314.5
                           </span>
@@ -28483,7 +28606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         data-testid="Card-attribute-2-secondary-value"
                         style={
                           Object {
-                            "--secondary-value-color": "red",
+                            "--secondary-value-color": "#6f6f6f",
                           }
                         }
                       >
@@ -28491,7 +28614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           aria-label="trending down"
                           className="iot--value-card__attribute_trend-icon"
                           data-testid="Card-attribute-2-trending-down"
-                          fill="currentColor"
+                          fill="red"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -28594,6 +28717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Severe"
                           >
                             Severe
                           </span>
@@ -28642,6 +28766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Low"
                           >
                             Low
                           </span>
@@ -28690,6 +28815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="High"
                           >
                             High
                           </span>
@@ -28814,6 +28940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Low"
                           >
                             Low
                           </span>
@@ -28879,6 +29006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Severe"
                           >
                             Severe
                           </span>
@@ -28948,6 +29076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 "--value-renderer-max-lines": 1,
                               }
                             }
+                            title="Elevated"
                           >
                             Elevated
                           </span>
@@ -29156,6 +29285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="89"
                         >
                           89
                         </span>
@@ -29206,6 +29336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -29256,6 +29387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="21.4"
                         >
                           21.4
                         </span>
@@ -29460,6 +29592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -29566,6 +29699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="62.1"
                         >
                           62.1
                         </span>
@@ -29717,6 +29851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="76"
                         >
                           76
                         </span>
@@ -29825,6 +29960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="35"
                         >
                           35
                         </span>
@@ -29846,7 +29982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "green",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -29854,7 +29990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending up"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-up"
-                        fill="currentColor"
+                        fill="green"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -29976,6 +30112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Bad"
                         >
                           Bad
                         </span>
@@ -30082,6 +30219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="13,572"
                         >
                           13,572
                         </span>
@@ -30103,7 +30241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       data-testid="Card-attribute-0-secondary-value"
                       style={
                         Object {
-                          "--secondary-value-color": "red",
+                          "--secondary-value-color": "#6f6f6f",
                         }
                       }
                     >
@@ -30111,7 +30249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         aria-label="trending down"
                         className="iot--value-card__attribute_trend-icon"
                         data-testid="Card-attribute-0-trending-down"
-                        fill="currentColor"
+                        fill="red"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -30396,6 +30534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               "--value-renderer-max-lines": 1,
                             }
                           }
+                          title="Healthy"
                         >
                           Healthy
                         </span>
@@ -30918,11 +31057,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-alert"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -30988,11 +31122,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-hour"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span
@@ -31058,11 +31187,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                                 data-floating-menu-container={true}
                                 id="column-pressure"
                                 onClick={[Function]}
-                                style={
-                                  Object {
-                                    "--table-header-width": "",
-                                  }
-                                }
                                 width=""
                               >
                                 <span

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Tooltip, TooltipDefinition } from 'carbon-components-react';
+import warning from 'warning';
 
 import { settings } from '../../../constants/Settings';
 import { CellTextOverflowPropType } from '../TablePropTypes';
@@ -10,7 +11,12 @@ import { CELL_TEXT_OVERFLOW } from '../Table';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.bool,
+    PropTypes.object,
+    PropTypes.array,
+  ]),
   cellTextOverflow: CellTextOverflowPropType,
   allowTooltip: PropTypes.bool,
   /** What locale should the number be rendered in */
@@ -18,7 +24,9 @@ const propTypes = {
   renderDataFunction: PropTypes.func,
   columnId: PropTypes.string,
   rowId: PropTypes.string,
-  row: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool])),
+  row: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object, PropTypes.array])
+  ),
 };
 
 const defaultProps = {
@@ -55,6 +63,10 @@ const TableCellRenderer = ({
   columnId,
   rowId,
   row,
+  isSortable,
+  sortFunction,
+  isFilterable,
+  filterFunction,
 }) => {
   const mySpanRef = React.createRef();
   const myClasses = classnames({
@@ -67,7 +79,6 @@ const TableCellRenderer = ({
   const withTooltip = (element, tooltipForExtraInformation) => {
     return tooltip ? (
       <TooltipDefinition
-        showIcon={false}
         triggerClassName={`${iotPrefix}--table__cell-tooltip`}
         tooltipText={tooltipForExtraInformation}
         id="table-header-tooltip"
@@ -99,6 +110,27 @@ const TableCellRenderer = ({
     }
   }, [mySpanRef, children, cellTextOverflow, allowTooltip]);
 
+  if (__DEV__) {
+    const isObject =
+      !React.isValidElement(children) && typeof children === 'object' && children !== null;
+    const missingRender = isObject && typeof renderDataFunction !== 'function';
+    const missingSort = isObject && isSortable && typeof sortFunction !== 'function';
+    const missingFilter = isObject && isFilterable && typeof filterFunction !== 'function';
+    warning(
+      !missingRender,
+      `You must supply a 'renderDataFunction' when passing objects as column values.`
+    );
+
+    warning(
+      !missingSort,
+      `You must supply a 'sortFunction' when isSortable is true and you're passing objects as column values.`
+    );
+
+    warning(
+      !missingFilter,
+      `You must supply a 'filterFunction' when passing objects as column values and want them filterable.`
+    );
+  }
   const cellContent = renderDataFunction ? (
     renderCustomCell(renderDataFunction, { value: children, columnId, rowId, row }, myClasses)
   ) : typeof children === 'string' || typeof children === 'number' ? (
@@ -119,7 +151,7 @@ const TableCellRenderer = ({
     <span className={myClasses} title={children.toString()}>
       {children.toString()}
     </span>
-  ) : (
+  ) : typeof children === 'object' && !React.isValidElement(children) ? null : (
     children
   );
 

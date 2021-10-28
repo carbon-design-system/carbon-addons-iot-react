@@ -32,7 +32,6 @@ import {
   createNewWidthsMap,
   calculateWidthOnHide,
   calculateWidthsOnToggle,
-  adjustLastColumnWidth,
   calculateWidthOnShow,
   visibleColumnsHaveWidth,
   getIDsOfAddedVisibleColumns,
@@ -42,6 +41,8 @@ import {
   DEFAULT_COLUMN_WIDTH,
   addMissingColumnWidths,
   checkColumnWidthFormat,
+  hasVisibleColumns,
+  adjustInitialColumnWidths,
 } from './columnWidthUtilityFunctions';
 
 const { iotPrefix } = settings;
@@ -290,7 +291,7 @@ const TableHead = ({
     const measureAndAdjustColumns = () => {
       if (hasResize && columns.length) {
         const measuredWidths = measureColumnWidths();
-        const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
+        const adjustedWidths = adjustInitialColumnWidths(ordering, columns, measuredWidths);
         const newWidthsMap = createNewWidthsMap(ordering, currentColumnWidths, adjustedWidths);
         setCurrentColumnWidths(newWidthsMap);
       }
@@ -369,7 +370,7 @@ const TableHead = ({
 
         if (addedVisibleColumnIDs.length > 0 || removedColumnIDs.length > 0) {
           setCurrentColumnWidths(adjustedForRemovedAndAdded);
-        } else if (visibleColumnsHaveWidth(ordering, columns)) {
+        } else if (hasVisibleColumns(ordering) && visibleColumnsHaveWidth(ordering, columns)) {
           const propsColumnWidths = createNewWidthsMap(ordering, columns);
           if (!isEqual(currentColumnWidths, propsColumnWidths)) {
             setCurrentColumnWidths(propsColumnWidths);
@@ -475,12 +476,7 @@ const TableHead = ({
               hasMultiSort={hasMultiSort}
               hasOverflow={hasOverflow}
               thStyle={{
-                width:
-                  currentColumnWidths[matchingColumnMeta.id] &&
-                  currentColumnWidths[matchingColumnMeta.id].width,
-              }}
-              style={{
-                '--table-header-width': classnames(initialColumnWidths[matchingColumnMeta.id]),
+                width: currentColumnWidths[matchingColumnMeta.id]?.width,
               }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
@@ -520,6 +516,7 @@ const TableHead = ({
                   {hasOverflow &&
                     matchingColumnMeta.overflowMenuItems.map((menuItem) => (
                       <OverflowMenuItem
+                        data-testid={`${testID || testId}-column-overflow-menu-item-${menuItem.id}`}
                         itemText={menuItem.text}
                         key={`${columnIndex}--overflow-item-${menuItem.id}`}
                         onClick={(e) => handleOverflowItemClick(e, menuItem)}
@@ -527,6 +524,7 @@ const TableHead = ({
                     ))}
                   {hasMultiSort && (
                     <OverflowMenuItem
+                      data-testid={`${testID || testId}-column-overflow-menu-item-multi-sort`}
                       itemText={i18n.multiSortOverflowItem}
                       key={`${columnIndex}--overflow-item-multi-sort`}
                       onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}

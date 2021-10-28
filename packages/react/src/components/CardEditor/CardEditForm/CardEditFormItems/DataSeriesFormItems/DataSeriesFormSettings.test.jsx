@@ -1,13 +1,14 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import DataSeriesFormSettings from './DataSeriesFormSettings';
 
 const timeSeriesConfig = {
   id: 'timeSeries',
-  title: 'TimeSeriees',
+  title: 'TimeSeries',
   size: 'MEDIUM',
-  type: 'TIMESERIS',
+  type: 'TIMESERIES',
   content: {
     series: [
       {
@@ -45,6 +46,26 @@ describe('DataSeriesFormSettings', () => {
     expect(mockOnChange).toHaveBeenCalledWith({
       ...timeSeriesConfig,
       content: { ...timeSeriesConfig.content, includeZeroOnYaxis: true },
+    });
+  });
+
+  it('handles decimal precision onChange', () => {
+    render(<DataSeriesFormSettings cardConfig={timeSeriesConfig} onChange={mockOnChange} />);
+    const decimalPrecisionInput = screen.getByLabelText('Decimal precision');
+    expect(decimalPrecisionInput).toBeInTheDocument();
+    userEvent.type(decimalPrecisionInput, '2');
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      content: {
+        decimalPrecision: '2',
+        series: [{ color: 'red', dataSourceId: 'temperature', label: 'Temperature' }],
+        xLabel: 'Time',
+        yLabel: 'Temperature (˚F)',
+      },
+      id: 'timeSeries',
+      size: 'MEDIUM',
+      title: 'TimeSeries',
+      type: 'TIMESERIES',
     });
   });
 });

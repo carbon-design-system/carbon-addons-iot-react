@@ -106,7 +106,7 @@ const EmptyState = ({ title, icon, body, action, secondaryAction, className, tes
             // TODO: remove deprecated testID in v3.
             data-testid={`${testID || testId}-action`}
           >
-            <Button kind={action.kind} onClick={action.onClick}>
+            <Button kind={action.kind} onClick={action.onClick} size="field">
               {action.label}
             </Button>
           </div>

@@ -3,6 +3,7 @@ import { HeaderGlobalBar } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import { Close16, OverflowMenuVertical16 } from '@carbon/icons-react';
 import ReactDOM from 'react-dom';
+import { useLangDirection } from 'use-lang-direction';
 
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
@@ -22,6 +23,8 @@ const propTypes = {
   }),
 
   testId: PropTypes.string,
+  /** Returns true, if the icon should be shown. (actionItem) => {} */
+  isActionItemVisible: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -31,13 +34,23 @@ const defaultProps = {
   },
   testId: 'header-action-group',
 };
+
+const findFirstVisible = (el) => {
+  if (!el || !el.childNodes.length === 0) {
+    return undefined;
+  }
+
+  const visibleChildren = Array.from(el.childNodes).filter((child) => child.offsetParent !== null);
+
+  return visibleChildren.shift();
+};
 /**
  * Keeps track of the state of which header menu item is currently expanded
  *
  * Renders all the actions that can be clicked to navigate, open header panels (side panels),
  * or dropdown menus, passing an onToggleExpansion to each action
  */
-const HeaderActionGroup = ({ actionItems, i18n, testId }) => {
+const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) => {
   const overFlowContainerRef = useRef(null);
   const [overflowItems, setOverflowItems] = useState([]);
   const breakpoint = useRef(null);
@@ -52,17 +65,23 @@ const HeaderActionGroup = ({ actionItems, i18n, testId }) => {
     [i18n]
   );
 
+  const langDir = useLangDirection();
   const checkForOverflow = useCallback(() => {
     /* istanbul ignore else */
     if (overFlowContainerRef.current) {
-      const firstButtonInGroupRef = overFlowContainerRef.current?.lastChild?.firstChild?.getBoundingClientRect();
+      const firstButtonInGroupRef = findFirstVisible(
+        overFlowContainerRef.current?.lastChild
+      )?.getBoundingClientRect();
       const nameDivRef = overFlowContainerRef.current?.previousSibling?.getBoundingClientRect();
 
       /* istanbul ignore else */
       if (firstButtonInGroupRef && nameDivRef) {
         const windowWidth = window.innerWidth || document.documentElement.clientWidth;
         // check that it's also greater than zero to prevent collapsing in jest where all the values are 0.
-        const tooBig = nameDivRef.right > 0 && nameDivRef.right >= firstButtonInGroupRef.left;
+        const tooBig =
+          langDir === 'ltr'
+            ? nameDivRef.right > 0 && nameDivRef.right >= firstButtonInGroupRef.left
+            : firstButtonInGroupRef.right > 0 && firstButtonInGroupRef.right >= nameDivRef.left;
         const previousBreakpoint = breakpoint.current;
 
         if (tooBig && actionItems.length > 0 && overflowItems.length === 0) {
@@ -73,7 +92,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId }) => {
         }
       }
     }
-  }, [actionItems, overflowItems.length]);
+  }, [actionItems, langDir, overflowItems.length]);
 
   useLayoutEffect(() => {
     checkForOverflow();
@@ -135,6 +154,10 @@ const HeaderActionGroup = ({ actionItems, i18n, testId }) => {
                 }
               >
                 {overflowItems.map((child, i) => {
+                  if (!isActionItemVisible(child)) {
+                    return null;
+                  }
+
                   if (
                     child.hasHeaderPanel ||
                     (Array.isArray(child.childContent) && child.childContent.length > 0)
@@ -177,6 +200,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId }) => {
 
                         if (typeof child.onClick === 'function') {
                           child.onClick(event);
+                          setOverflowOpen(false);
                         }
                       }}
                       itemText={child.label}
@@ -200,18 +224,21 @@ const HeaderActionGroup = ({ actionItems, i18n, testId }) => {
                 setShowMenu(false);
                 setMenu(null);
               }}
+              inOverflow={overflowItems.length > 0}
             />
           ) : (
             // otherwise, if we have enough space to show all the items,
             // simple render them in the header as expected.
-            actionItems.map((item, i) => (
-              <HeaderAction
-                item={item}
-                index={i}
-                key={`header-action-item-${item.label}-${i}`}
-                testId={`header-action-item-${item.label}`}
-              />
-            ))
+            actionItems
+              .filter((item) => isActionItemVisible(item))
+              .map((item, i) => (
+                <HeaderAction
+                  item={item}
+                  index={i}
+                  key={`header-action-item-${item.label}-${i}`}
+                  testId={`header-action-item-${item.label}`}
+                />
+              ))
           )
         }
       </HeaderGlobalBar>

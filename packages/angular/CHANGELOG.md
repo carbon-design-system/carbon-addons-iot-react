@@ -3,6 +3,160 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.12](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.11...v2.147.0-next.12) (2021-10-06)
+
+
+### Features
+
+* **icon-content-switcher:** add it ([310aa15](https://github.com/IBM/carbon-components-angular/commit/310aa15c4214ec6745659b138286389c1338fd12))
+
+
+
+
+
+# [2.147.0-next.11](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.10...v2.147.0-next.11) (2021-10-06)
+
+
+### Bug Fixes
+
+* **table:** body ([f1cd8d6](https://github.com/IBM/carbon-components-angular/commit/f1cd8d677f7bb0afa20b448223484314d3300e05))
+* **table:** projectedRowLength ([f9740b7](https://github.com/IBM/carbon-components-angular/commit/f9740b76cb3194e8af2c32de7059df61e489bbd8))
+* **table:** projectedRowLength now does rowSpans ([0312581](https://github.com/IBM/carbon-components-angular/commit/031258157e03ec4a01ecf00a7b2168463cc3b703))
+
+
+
+
+
+# [2.147.0-next.0](https://github.com/IBM/carbon-components-angular/compare/v2.146.2-next.2...v2.147.0-next.0) (2021-09-27)
+
+
+### Bug Fixes
+
+* **table:** body not rendering ([1351cb6](https://github.com/IBM/carbon-components-angular/commit/1351cb66836f93d77c79c9458967748688dab96c))
+* **table:** build ([8b3554f](https://github.com/IBM/carbon-components-angular/commit/8b3554ff36e343de78e768a4478da34464def7e0))
+* **table:** move body columns ([7518964](https://github.com/IBM/carbon-components-angular/commit/75189641acbea092bd7c20e85ec00092aea396da))
+* **table:** tests ([1e23521](https://github.com/IBM/carbon-components-angular/commit/1e23521102e7d5235565f7525f9375cd8e14716d))
+
+
+### Features
+
+* **table:** add multi-line header move column - draft ([1524e58](https://github.com/IBM/carbon-components-angular/commit/1524e5873330d1b2fcce44dee4414ad3d95ac666))
+* **table:** add multi-line header support for setData ([d22bcaf](https://github.com/IBM/carbon-components-angular/commit/d22bcafa3e82cc1ee5d84f1d5975d3590ef23c44))
+
+
+
+
+
+## [2.146.1-next.5](https://github.com/IBM/carbon-components-angular/compare/v2.146.1-next.4...v2.146.1-next.5) (2021-09-22)
+
+
+### Bug Fixes
+
+* **datetimepicker:** format code ([3cfde74](https://github.com/IBM/carbon-components-angular/commit/3cfde743e9849eec0f8801fe8a00725ab2029f66))
+* **datetimepicker:** support blocking dates ([7429abe](https://github.com/IBM/carbon-components-angular/commit/7429abebdf5f7217c50bcb0edffc8ec349f17bbf))
+* **datetimepicker:** update format ([5240587](https://github.com/IBM/carbon-components-angular/commit/5240587eb746a502957dba31bb936e8147c8c97d))
+
+
+
+
+
+## [2.146.1-next.4](https://github.com/IBM/carbon-components-angular/compare/v2.146.1-next.3...v2.146.1-next.4) (2021-09-22)
+
+
+### Bug Fixes
+
+* **datetimepicker:** clear code ([3669d4a](https://github.com/IBM/carbon-components-angular/commit/3669d4a69cc1e7ddc2ac32d236d1b88672525892))
+* **datetimepicker:** format code ([cb63418](https://github.com/IBM/carbon-components-angular/commit/cb634186972af984af5e045426ff13e6c67ed565))
+* **datetimpicker:** customize range separator ([1e9f819](https://github.com/IBM/carbon-components-angular/commit/1e9f81932bab8da088d12bd6c75e7caf30ce8874))
+
+
+
+
+
+## [2.146.1-next.0](https://github.com/IBM/carbon-components-angular/compare/v2.146.0...v2.146.1-next.0) (2021-09-18)
+
+**Note:** Version bump only for package @ai-apps/angular
+
+
+
+
+
+# [2.146.0](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.187...v2.146.0) (2021-09-17)
+
+**Note:** Version bump only for package @ai-apps/angular
+
+
+
+
+
+# [2.146.0-next.152](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.151...v2.146.0-next.152) (2021-08-30)
+
+
+### Bug Fixes
+
+* **datetimepicker:** fix absolute date picker format ([b5b44dd](https://github.com/IBM/carbon-components-angular/commit/b5b44ddaf24fc8f593e6a520dba1cd8844dffbac))
+* **datetimepicker:** format code ([ae709ba](https://github.com/IBM/carbon-components-angular/commit/ae709ba57ca6934125e10d5012831d71399aa68a))
+* **datetimepicker:** format code ([2194a15](https://github.com/IBM/carbon-components-angular/commit/2194a154e8786a0cd38ea8d7be4215ce467f834e))
+* **datetimepicker:** remove console.log ([9da1832](https://github.com/IBM/carbon-components-angular/commit/9da1832f6d283dbef42863557e9ce257b063b7eb))
+* **datetimepicker:** rename ([e435cf6](https://github.com/IBM/carbon-components-angular/commit/e435cf6b49fe2d24d525b7cc544c3112ac47ba46))
+
+
+
+
+
+# [2.146.0-next.109](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.108...v2.146.0-next.109) (2021-08-20)
+
+
+### Bug Fixes
+
+* **table:** cell text position ([2921530](https://github.com/IBM/carbon-components-angular/commit/292153048aaad63f6ccc5b66c6400d9031b6dfec))
+* **table:** styling on firefox ([d7b810c](https://github.com/IBM/carbon-components-angular/commit/d7b810c34941e210721a99a4899920718b45bc1f))
+
+
+### Features
+
+* **table:** add new table model and multi-line headre implementation ([89819da](https://github.com/IBM/carbon-components-angular/commit/89819dab59872b0c46ed9123aa36e09ac018dc5e))
+
+
+
+
+
+# [2.146.0-next.108](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.107...v2.146.0-next.108) (2021-08-20)
+
+**Note:** Version bump only for package @ai-apps/angular
+
+
+
+
+
+# [2.146.0-next.107](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.106...v2.146.0-next.107) (2021-08-20)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add placeholder ([ba291ce](https://github.com/IBM/carbon-components-angular/commit/ba291ce2c4f68e06454788384770e5b4d5868cf6))
+* **datetimepicker:** handle null select ([dc9f64c](https://github.com/IBM/carbon-components-angular/commit/dc9f64cf67d771e9fef6217ad5eb38d36ee69534))
+* **datetimepicker:** rename disabled ([80f94d2](https://github.com/IBM/carbon-components-angular/commit/80f94d2025c8872f1ca232866d5ac9bb3d730199))
+
+
+
+
+
+# [2.146.0-next.105](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.104...v2.146.0-next.105) (2021-08-19)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add customized date format ([9b52103](https://github.com/IBM/carbon-components-angular/commit/9b52103a74c09760c128f301352c69d59b6b65e7))
+* **datetimepicker:** format code ([664ac95](https://github.com/IBM/carbon-components-angular/commit/664ac950bc77dd3b47d184f4e9ea66676f09dc6e))
+* **datetimepicker:** format code ([da493b4](https://github.com/IBM/carbon-components-angular/commit/da493b425d2839eecc26aeee3bad8d5f51e42d2a))
+* **datetimepicker:** remove type ([0a63ecb](https://github.com/IBM/carbon-components-angular/commit/0a63ecb49d6100d3a7726b371ad4e25c1ae1626d))
+* **datetimepicker:** update formatString ([6862f7b](https://github.com/IBM/carbon-components-angular/commit/6862f7b50dd8530cb0717ab9cb314d346572c2f0))
+
+
+
+
+
 # [2.146.0-next.84](https://github.com/IBM/carbon-components-angular/compare/v2.146.0-next.83...v2.146.0-next.84) (2021-08-12)
 
 **Note:** Version bump only for package @ai-apps/angular

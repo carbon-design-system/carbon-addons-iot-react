@@ -9,6 +9,7 @@ import { white } from '@carbon/colors';
 import { keyCodes } from '../../../constants/KeyCodeConstants';
 import { HeaderActionItemPropTypes } from '../Header';
 import deprecate from '../../../internal/deprecate';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 import HeaderActionMenu from './HeaderActionMenu';
 import HeaderActionPanel from './HeaderActionPanel';
@@ -40,6 +41,7 @@ export const HeaderActionPropTypes = {
   i18n: PropTypes.shape({
     closeMenu: PropTypes.string,
   }),
+  inOverflow: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -50,6 +52,7 @@ const defaultProps = {
   i18n: {
     closeMenu: 'Close menu',
   },
+  inOverflow: false,
 };
 
 /**
@@ -70,6 +73,7 @@ const HeaderAction = ({
   defaultExpanded,
   onClose,
   i18n,
+  inOverflow,
 }) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const parentContainerRef = useRef(null);
@@ -104,7 +108,7 @@ const HeaderAction = ({
   };
 
   /**
-   * Close expanded menu when ESC is pressed, then return focus to menu button
+   * Toggles expanded state and return focus to menu button
    */
   const handleHeaderKeyDown = (event) => {
     // Handle keydowns for opening and closing the menus
@@ -118,6 +122,7 @@ const HeaderAction = ({
       toggleExpandedState();
 
       // Return focus to menu button when the user hits ESC.
+      /* istanbul ignore else */
       if (menuButtonRef && menuButtonRef.current) {
         menuButtonRef.current.focus();
       }
@@ -145,6 +150,7 @@ const HeaderAction = ({
             index={index}
             renderLabel={renderLabel}
             i18n={mergedI18n}
+            inOverflow={inOverflow}
           />
         ) : (
           // otherwise render a submenu type dropdown
@@ -152,13 +158,13 @@ const HeaderAction = ({
             className={`${carbonPrefix}--header-action-btn`}
             key={`menu-item-${item.label}`}
             aria-label={item.label}
-            renderMenuContent={() =>
-              isExpanded ? (
+            renderMenuContent={() => {
+              return isExpanded && inOverflow ? (
                 <Close16 fill={white} description={mergedI18n.closeMenu} />
               ) : (
                 item.btnContent
-              )
-            }
+              );
+            }}
             menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
             isExpanded={isExpanded}
             ref={menuButtonRef}
@@ -173,6 +179,8 @@ const HeaderAction = ({
     );
   }
 
+  const onClick = item.onClick || (() => {});
+  const onKeyDown = item.onKeyDown || onClick;
   // Otherwise render a simple menu button with no wrapper div
   return (
     <HeaderGlobalAction
@@ -180,7 +188,8 @@ const HeaderAction = ({
       key={`menu-item-${item.label}-global-${index}`}
       data-testid={`menu-item-${item.label}-global`}
       aria-label={item.label}
-      onClick={item.onClick || (() => {})}
+      onClick={onClick}
+      onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
     >
       {renderLabel ? item.label : item.btnContent}
     </HeaderGlobalAction>
