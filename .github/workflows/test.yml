@@ -164,29 +164,34 @@ jobs:
 
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v2
+        if: steps.changes.outputs.react == 'true'
         with:
           name: cypress-coverage
           path: ~/work/carbon-addons-iot-react/carbon-addons-iot-react/packages/react/cypress/coverage/
 
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v2
+        if: steps.changes.outputs.react == 'true'
         with:
           name: jest-coverage
           path: ~/work/carbon-addons-iot-react/carbon-addons-iot-react/packages/react/jest/coverage/
 
       - name: Change file paths for cypress coverage report
+        if: steps.changes.outputs.react == 'true'
         run: |
           cd packages/react/cypress/coverage
           pwd
           node ../../../../scripts/change-paths.js
 
       - name: Copy, combine, and report coverage
+        if: steps.changes.outputs.react == 'true'
         run: |
           cd packages/react
           yarn reports
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
+        if: steps.changes.outputs.react == 'true'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: './packages/react/coverage/lcov.info'

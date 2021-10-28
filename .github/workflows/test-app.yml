@@ -62,14 +62,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
       - name: Run cli command to create test app
+        if: steps.changes.outputs.react == 'true'
         run: |
           npx create-iot-react-app test-app
 
       - name: Download all build artifacts
+        if: steps.changes.outputs.react == 'true'
         uses: actions/download-artifact@v2
 
       - name: Link dependencies and build test app
+        if: steps.changes.outputs.react == 'true'
         run: |
           cd dist
           yarn link
