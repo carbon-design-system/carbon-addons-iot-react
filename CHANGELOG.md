@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.34...v2.147.0-next.35) (2021-10-28)
+
+
+### Bug Fixes
+
+* **hotspotcontent:** protect against null values ([45c3289](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/45c32893db37783b1f498db1f499c9e5f1c29e41))
+
+
+
+
+
 # [2.147.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.33...v2.147.0-next.34) (2021-10-28)
 
 
