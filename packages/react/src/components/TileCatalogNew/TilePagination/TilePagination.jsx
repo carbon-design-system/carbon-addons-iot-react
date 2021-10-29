@@ -44,7 +44,7 @@ const TilePagination = ({ page, numPages, onChange, i18n, testId }) => {
       aria-disabled={page === pageNumber}
       data-testid={`${testId}-page-${pageNumber}-button`}
     >
-      <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelPage}</span>
+      <span className={`${prefix}--pagination-nav__accessibility-label`}>{i18n.ariaLabelPage}</span>
       {pageNumber}
     </button>
   );
