@@ -1,7 +1,11 @@
 import React from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 
+import { settings } from '../../constants/Settings';
+
 import SelectUsersModal from './SelectUsersModal';
+
+const { iotPrefix } = settings;
 
 const users = [
   {
@@ -165,12 +169,12 @@ describe('SelectUsersModal', () => {
 
     expect(selectedItems).toHaveLength(1);
     selectedItems.forEach((item) => {
-      expect(item).not.toHaveClass('iot--list-item--content--values__disabled');
+      expect(item).not.toHaveClass(`${iotPrefix}--list-item--content--values__disabled`);
     });
 
     expect(listedItems).toHaveLength(2);
     listedItems.forEach((item) => {
-      expect(item).toHaveClass('iot--list-item--content--values__disabled');
+      expect(item).toHaveClass(`${iotPrefix}--list-item--content--values__disabled`);
     });
   });
 
@@ -228,12 +232,12 @@ describe('SelectUsersModal', () => {
 
     expect(selectedItems).toHaveLength(1);
     selectedItems.forEach((item) => {
-      expect(item).not.toHaveClass('iot--list-item--content--values__disabled');
+      expect(item).not.toHaveClass(`${iotPrefix}--list-item--content--values__disabled`);
     });
 
     expect(listedItems).toHaveLength(1);
     listedItems.forEach((item) => {
-      expect(item).toHaveClass('iot--list-item--content--values__disabled');
+      expect(item).toHaveClass(`${iotPrefix}--list-item--content--values__disabled`);
     });
   });
 });

@@ -16,7 +16,7 @@ import { initialState } from '../Table/Table.story';
 
 import SideNav from './SideNav';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
@@ -124,7 +124,7 @@ const HeaderProps = {
         <Group
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
     },
@@ -196,25 +196,25 @@ SideNavComponent.parameters = {
 
   <br/>
 
-  If you want to style your main content to "push over" instead of being overlayed by the sidenav you can use the ".iot--side-nav--expanded" class. It could look something like this.
+  If you want to style your main content to "push over" instead of being overlayed by the sidenav you can use the ".${iotPrefix}--side-nav--expanded" class. It could look something like this.
 
   <br/>
 
   ~~~scss
-  .iot--main-content {
+  .${iotPrefix}--main-content {
     width: calc(100% - 3rem);
     transform: translateX(3rem);
     transition: all .2s ease-in;
   }
 
-  .iot--side-nav--expanded + .iot--main-content {
+  .${iotPrefix}--side-nav--expanded + .${iotPrefix}--main-content {
     width: calc(100% - 16rem);
     transform: translateX(16rem);
   }
 
   html[dir='rtl'] {
-    .iot--main-content,
-    .iot--side-nav--expanded + .iot--main-content {
+    .${iotPrefix}--main-content,
+    .${iotPrefix}--side-nav--expanded + .${iotPrefix}--main-content {
       transform: translateX(0);
     }
 
