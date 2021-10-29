@@ -441,4 +441,50 @@ describe('TableMultiSortModal', () => {
       },
     ]);
   });
+
+  it("should not allow the last column to be removed by the 'Remove column' button", () => {
+    const modalProps = {
+      columns: [
+        {
+          id: 'string',
+          name: 'String',
+          isSortable: true,
+        },
+        {
+          id: 'select',
+          name: 'Select',
+          isSortable: true,
+        },
+      ],
+      ordering: [
+        {
+          columnId: 'string',
+          isHidden: false,
+        },
+        {
+          columnId: 'select',
+          isHidden: false,
+        },
+      ],
+      actions: callbacks,
+      sort: [
+        {
+          columnId: 'string',
+          direction: 'ASC',
+        },
+      ],
+      showMultiSortModal: true,
+      testId: 'multi_sort_modal',
+    };
+
+    render(<TableMultiSortModal {...modalProps} />);
+
+    expect(screen.getByLabelText('Sort by')).toBeVisible();
+    expect(
+      within(screen.getByLabelText('Sort by')).getByRole('option', { name: 'String' }).selected
+    ).toBe(true);
+    expect(screen.queryByLabelText('Then by')).toBeNull();
+
+    expect(screen.queryAllByRole('button', { name: 'Remove column' })[0]).toBeDisabled();
+  });
 });
