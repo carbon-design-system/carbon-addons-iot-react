@@ -2,8 +2,12 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { render, screen } from '@testing-library/react';
 
+import { settings } from '../../constants/Settings';
+
 import WizardInline from './WizardInline';
 import { itemsAndComponents } from './WizardInline.story';
+
+const { iotPrefix } = settings;
 
 describe('WizardInline', () => {
   it('should be selectable by testId', () => {
@@ -21,7 +25,7 @@ describe('WizardInline', () => {
     expect(screen.getByTestId('wizard_inline')).toBeDefined();
     expect(screen.getByTestId('wizard_inline-header-page-title-bar')).toBeDefined();
     expect(screen.getByTestId('wizard_inline-content')).toBeDefined();
-    expect(screen.getByTestId('iot--progress-indicator-testid')).toBeDefined();
+    expect(screen.getByTestId(`${iotPrefix}--progress-indicator-testid`)).toBeDefined();
     expect(screen.getByTestId('wizard_inline-footer')).toBeDefined();
     expect(screen.getAllByTestId('Button').length).toBeGreaterThan(0);
   });

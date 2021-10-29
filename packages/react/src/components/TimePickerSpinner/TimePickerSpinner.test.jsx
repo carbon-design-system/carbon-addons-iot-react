@@ -2,9 +2,12 @@ import React from 'react';
 import { screen, render, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { settings } from '../../constants/Settings';
 import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
+
+const { iotPrefix } = settings;
 
 const timePickerProps = {
   id: 'timepickerspinner',
@@ -159,11 +162,11 @@ describe('TimePickerSpinner', () => {
       jest.runAllTimers();
     });
     expect(input).toHaveValue('01:00');
-    expect(wrapper).toHaveClass('iot--time-picker__wrapper--show-underline');
+    expect(wrapper).toHaveClass(`${iotPrefix}--time-picker__wrapper--show-underline`);
     fireEvent.mouseOver(upButton);
     fireEvent.mouseOut(upButton);
     fireEvent.blur(upButton);
-    expect(wrapper).not.toHaveClass('iot--time-picker__wrapper--show-underline');
+    expect(wrapper).not.toHaveClass(`${iotPrefix}--time-picker__wrapper--show-underline`);
 
     fireEvent.focus(input);
     fireEvent.keyUp(input, {

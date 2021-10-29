@@ -15907,6 +15907,7 @@ Map {
       "showTimeInGMT": false,
       "size": "MEDIUM",
       "tooltipDateFormatPattern": "L HH:mm:ss",
+      "tooltipShowTotals": true,
       "values": Array [],
     },
     "propTypes": Object {
@@ -17088,6 +17089,9 @@ Map {
       },
       "tooltipDateFormatPattern": Object {
         "type": "string",
+      },
+      "tooltipShowTotals": Object {
+        "type": "bool",
       },
       "values": Object {
         "args": Array [

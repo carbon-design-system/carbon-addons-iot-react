@@ -18,7 +18,7 @@ describe('SideNav', () => {
         <Switcher24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       isEnabled: true,
@@ -37,7 +37,7 @@ describe('SideNav', () => {
         <Chip24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       metaData: {
@@ -54,7 +54,7 @@ describe('SideNav', () => {
         <Group24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       metaData: {
@@ -82,7 +82,7 @@ describe('SideNav', () => {
         <Switcher24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       isEnabled: true,
@@ -102,7 +102,7 @@ describe('SideNav', () => {
         <Switcher24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       isEnabled: false,
@@ -121,7 +121,7 @@ describe('SideNav', () => {
         <Chip24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       metaData: {
@@ -138,7 +138,7 @@ describe('SideNav', () => {
         <Group24
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       metaData: {
@@ -214,7 +214,9 @@ describe('SideNav', () => {
 
   it('parent item with active child should be active', () => {
     render(<SideNav {...mockProps} />);
-    expect(screen.getByText('Members').closest('li')).toHaveClass('bx--side-nav__item--active');
+    expect(screen.getByText('Members').closest('li')).toHaveClass(
+      `${prefix}--side-nav__item--active`
+    );
   });
 
   it('should render nested levels of children', () => {
