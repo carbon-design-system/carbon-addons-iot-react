@@ -520,9 +520,11 @@ Map {
             "columnCount": 5,
             "rowCount": 5,
           },
+          "multiSortModal": undefined,
           "ordering": undefined,
           "rowActions": Array [],
           "selectedIds": Array [],
+          "showMultiSortModal": false,
           "singleRowEditButtons": null,
           "sort": Object {},
         },
@@ -1575,6 +1577,32 @@ Map {
                         },
                         "rowCount": Object {
                           "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "multiSortModal": Object {
+                    "args": Array [
+                      Object {
+                        "anticipatedColumn": Object {
+                          "args": Array [
+                            Object {
+                              "columnId": Object {
+                                "type": "string",
+                              },
+                              "direction": Object {
+                                "args": Array [
+                                  Array [
+                                    "ASC",
+                                    "DESC",
+                                  ],
+                                ],
+                                "type": "oneOf",
+                              },
+                            },
+                          ],
+                          "type": "shape",
                         },
                       },
                     ],

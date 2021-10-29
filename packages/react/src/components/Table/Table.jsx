@@ -238,6 +238,18 @@ const propTypes = {
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
+      multiSortModal: PropTypes.shape({
+        /**
+         * The anticipatedColumn is used to add the most recently click columnId to the UI of the
+         * MultiSort modal. This gives the user a better experience by pre-emptively adding the column
+         * they clicked multi-sort on to the multisort modal without changing state. They still have to
+         * click "Sort" to save it, or can click 'Cancel' or the 'X' to clear it.
+         */
+        anticipatedColumn: PropTypes.shape({
+          columnId: PropTypes.string,
+          direction: PropTypes.oneOf(['ASC', 'DESC']),
+        }),
+      }),
       /** Array with rowIds that are with loading active */
       loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
     }),
@@ -381,6 +393,8 @@ export const defaultProps = (baseProps) => ({
       },
       singleRowEditButtons: null,
       loadingMoreIds: [],
+      showMultiSortModal: false,
+      multiSortModal: undefined,
     },
   },
   actions: {
@@ -730,6 +744,20 @@ const Table = (props) => {
       'Column grouping (columnGroups) cannot be combined with the option hasColumnSelection:true'
     );
   }
+
+  const multiSortColumns = useMemo(() => {
+    const arrayifiedSort = Array.isArray(view.table.sort)
+      ? view.table.sort
+      : view.table.sort !== undefined
+      ? [view.table.sort]
+      : [];
+
+    if (view.table.multiSortModal?.anticipatedColumn) {
+      return [...arrayifiedSort, view.table.multiSortModal.anticipatedColumn];
+    }
+
+    return arrayifiedSort;
+  }, [view.table.multiSortModal, view.table.sort]);
 
   return (
     <TableContainer
@@ -1101,7 +1129,7 @@ const Table = (props) => {
           testId={`${id}-multi-sort-modal`}
           columns={columns}
           ordering={view.table.ordering}
-          sort={Array.isArray(view.table.sort) ? view.table.sort : [view.table.sort]}
+          sort={multiSortColumns}
           actions={{
             ...pick(
               actions.table,

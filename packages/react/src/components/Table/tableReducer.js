@@ -679,11 +679,27 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_MULTI_SORT_TOGGLE_MODAL: {
+      const { columnId } = action.payload;
+      const { sort: currentSort } = state.view.table;
+
+      const arrayifiedSort = Array.isArray(currentSort)
+        ? currentSort
+        : currentSort !== undefined
+        ? [currentSort]
+        : [];
+
+      const alreadySortedBy = arrayifiedSort.some((by) => by.columnId === columnId);
+
       return update(state, {
         view: {
           table: {
             showMultiSortModal: {
               $set: !state.view.table.showMultiSortModal,
+            },
+            multiSortModal: {
+              $set: {
+                anticipatedColumn: !alreadySortedBy ? { columnId, direction: 'ASC' } : undefined,
+              },
             },
           },
         },
