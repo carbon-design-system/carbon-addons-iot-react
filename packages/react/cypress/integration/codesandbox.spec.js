@@ -1,3 +1,7 @@
+import { settings } from '../../src/constants/Settings';
+
+const { prefix } = settings;
+
 describe('CodeSandbox', () => {
   it(
     'should build and load',
@@ -36,20 +40,9 @@ describe('CodeSandbox', () => {
             });
           });
 
-        // after the transpiling is finished, we can (from the context of the parent iframe) again
-        // check for children iframes. Again, there will be two: the "Open Sandbox" button and the
-        // finished rendered preview
-        cy.get('iframe')
-          .should('have.length', 2)
-          // read the contents of the rendered preview and check for the existance of the button.
-          .then(($iframes) => {
-            cy.wrap($iframes[1]).iframe(() => {
-              // TODO: this needs to be removed and the check for the button
-              // added back later after the sandbox is fixed.
-              cy.findByText('ModuleNotFoundError').should('be.visible');
-              // cy.get(`.${prefix}--btn`).should('be.visible');
-            });
-          });
+        // after the transpiling is finished, we can (from the context of the parent iframe)
+        // check for the rendered button to confirm the sandbox successfully loaded.
+        cy.findByText('Hello world').should('be.visible').should('have.class', `${prefix}--btn`);
       });
     }
   );
