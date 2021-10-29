@@ -135,7 +135,7 @@ describe('SuiteHeader', () => {
     expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
     userEvent.click(screen.getByTestId('suite-header-profile--logout'));
     expect(screen.getByRole('presentation')).toHaveClass('is-visible');
-    userEvent.click(screen.getByRole('button', { name: 'Close' }));
+    userEvent.click(screen.getByLabelText(/close/));
     expect(screen.getByRole('presentation')).not.toHaveClass('is-visible');
   });
   it('clicks logout link', async () => {
