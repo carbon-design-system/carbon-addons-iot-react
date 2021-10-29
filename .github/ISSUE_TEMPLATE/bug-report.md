@@ -25,7 +25,7 @@ Steps to reproduce the behavior:
 4. See error
 
 > Please create a reduced test case in CodeSandbox:
-> https://codesandbox.io/s/github/IBM/carbon-addons-iot-react/tree/master/examples/codesandbox
+> https://codesandbox.io/s/github/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/examples/codesandbox
 
 ### Expected behavior
 
