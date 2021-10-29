@@ -158,8 +158,7 @@
       "src/components/Dashboard/CardRenderer.jsx",
       "src/components/MapCard/storyFiles/*.jsx",
       "src/components/Table/Table.test.helpers.jsx",
-      "src/components/Table/TablePropTypes.js",
-      "src/internal/codesandbox.test.e2e.jsx"
+      "src/components/Table/TablePropTypes.js"
     ],
     "branches": 90,
     "lines": 90,
