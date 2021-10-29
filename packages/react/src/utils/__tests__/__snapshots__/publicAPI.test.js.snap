@@ -1860,6 +1860,7 @@ Map {
       "options": Object {},
       "selectAllText": "Select all",
       "showExpanderColumn": false,
+      "size": undefined,
       "testID": "",
       "testId": "",
     },
@@ -2312,6 +2313,7 @@ Map {
       "showExpanderColumn": Object {
         "type": "bool",
       },
+      "size": [Function],
       "tableId": Object {
         "isRequired": true,
         "type": "string",
