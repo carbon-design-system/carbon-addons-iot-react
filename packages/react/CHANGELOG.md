@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.39...v2.147.0-next.40) (2021-10-29)
+
+
+### Bug Fixes
+
+* **table:** fix removable last column in multi-sort ([43ff24f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/43ff24f64af4d6ff63ba556acbe11adf24d6def3))
+* **table:** fix situations with no sort, and no anticipatedColumn ([5e77483](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5e77483eb0782291128449503ed6c8d86511c0b7))
+
+
+### Features
+
+* **table:** add column anticipation to multi-sort clicks ([8730d65](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8730d658362799dbd0ca43b505189848068ee420))
+
+
+
+
+
 # [2.147.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.37...v2.147.0-next.38) (2021-10-29)
 
 
