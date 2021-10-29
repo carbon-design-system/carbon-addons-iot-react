@@ -19,10 +19,12 @@ describe('CodeSandbox', () => {
       // codesandbox is iframes all the way down.
       //               codesandbox
       //                    |
-      //                 iframe
-      //                /   |  \
-      //  "Open Sandbox"    |   "Final Preview"
-      //              "Transpiling"
+      //                 iframe <- "rendered preview content goes here if successful"
+      //               /         \
+      // "Open Sandbox" iframe    "Transpiling" or "Error" iframe <- While it's transpiling a child
+      //                             iframe is created to show the tranpiling animations. If it fails,
+      //                             an error message is show in this iframe instead of the parent.
+      //
       // We first load the main iframe and confirm it has two iframes inside it.
       cy.get('iframe').iframe(() => {
         cy.get('iframe')
