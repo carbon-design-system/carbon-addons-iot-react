@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.38...v2.147.0-next.39) (2021-10-29)
+
+
+### Bug Fixes
+
+* **datetimepicker:** remain selection on cancel ([5a723c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5a723c56731aa76e402787a966665fd92cc7f890))
+
+
+
+
+
 # [2.147.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.37...v2.147.0-next.38) (2021-10-29)
 
 
