@@ -7,6 +7,9 @@ import { gray100 } from '@carbon/colors';
 import warning from 'warning';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from 'carbon-components-react';
 
+import { settings } from '../../constants/Settings';
+
+const { prefix } = settings;
 export const HeroPropTypes = {
   /** Title of the page  */
   title: PropTypes.node,
@@ -142,8 +145,8 @@ const Hero = ({
                 >
                   <p>{tooltip.message}</p>
                   {tooltip.href && tooltip.linkLabel ? (
-                    <div className="bx--tooltip__footer">
-                      <a href={tooltip.href} className="bx--link">
+                    <div className={`${prefix}--tooltip__footer`}>
+                      <a href={tooltip.href} className={`${prefix}--link`}>
                         {tooltip.linkLabel}
                       </a>
                     </div>
@@ -154,7 +157,7 @@ const Hero = ({
             {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
             {onClose ? (
               <button
-                className="bx--modal-close"
+                className={`${prefix}--modal-close`}
                 type="button"
                 data-modal-close
                 aria-label={closeLabel}
@@ -162,7 +165,7 @@ const Hero = ({
                 data-testid={`${testId}-close-button`}
               >
                 <svg
-                  className="bx--modal-close__icon"
+                  className={`${prefix}--modal-close__icon`}
                   width="10"
                   height="10"
                   viewBox="0 0 10 10"

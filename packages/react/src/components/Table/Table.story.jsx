@@ -588,7 +588,6 @@ export const BasicDumbTable = () => {
     'Basic `dumb` table'
   );
   const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
-  const lightweight = boolean('Show an alternate header style (lightweight)', false);
   const hasColumnSelection = boolean(
     'Enables choosing which columns are visible or drag-and-drop reorder them (options.hasColumnSelection)',
     false
@@ -608,7 +607,6 @@ export const BasicDumbTable = () => {
       id="table"
       secondaryTitle={secondaryTitle}
       useZebraStyles={useZebraStyles}
-      lightweight={lightweight}
       tooltip={<div>Now with custom tooltip content!</div>}
       columns={
         hasMultiSort
@@ -768,7 +766,6 @@ export const TableWithColumnGrouping = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
-  const lightweight = boolean('Show an alternate header style (lightweight)', false);
   const ordering = object('Ordering (view.table.ordering)', [
     {
       columnId: 'string',
@@ -808,7 +805,6 @@ export const TableWithColumnGrouping = () => {
     <MyTable
       id="table"
       useZebraStyles={useZebraStyles}
-      lightweight={lightweight}
       columns={tableColumns.slice(0, 4)}
       columnGroups={object('Column groups (columnGroups)', [
         {
@@ -1288,7 +1284,6 @@ export const TableExampleWithCreateSaveViews = () => {
           },
         }}
         isSortable
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           ...baseState.options,
           hasResize: true,
@@ -1729,20 +1724,20 @@ export const WithRowExpansionAndActions = () => {
         ['xs', 'sm', 'md', 'lg', 'xl'],
         'lg'
       )}
+      expandedData={[
+        {
+          rowId: 'row-2',
+          content: <RowExpansionContent rowId="row-2" />,
+        },
+        {
+          rowId: 'row-5',
+          content: <RowExpansionContent rowId="row-5" />,
+        },
+      ]}
       view={{
         filters: [],
         table: {
           ordering: defaultOrdering,
-          expandedRows: [
-            {
-              rowId: 'row-2',
-              content: <RowExpansionContent rowId="row-2" />,
-            },
-            {
-              rowId: 'row-5',
-              content: <RowExpansionContent rowId="row-5" />,
-            },
-          ],
           rowActions: [
             {
               rowId: 'row-1',

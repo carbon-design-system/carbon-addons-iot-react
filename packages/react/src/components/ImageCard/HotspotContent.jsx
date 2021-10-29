@@ -143,7 +143,7 @@ const HotspotContent = ({
           (hotspotThreshold && hotspotThreshold.dataSourceId === dataSourceId // then see if the parent threshold might match this attribute
             ? hotspotThreshold
             : null);
-        const value = isNil(values[dataSourceId]) ? '--' : values[dataSourceId];
+        const value = isNil(values?.[dataSourceId]) ? '--' : values[dataSourceId];
         const thresholdIcon =
           thresholdMatch && thresholdMatch.dataSourceId === dataSourceId && thresholdMatch.icon ? (
             <CardIcon

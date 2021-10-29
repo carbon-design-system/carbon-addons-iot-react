@@ -14,6 +14,7 @@ import { settings } from '../../constants/Settings';
 import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 import experimental from '../../internal/experimental';
+import deprecate from '../../internal/deprecate';
 
 import {
   TableColumnsPropTypes,
@@ -49,8 +50,11 @@ const propTypes = {
   tooltip: PropTypes.node,
   /** render zebra stripes or not */
   useZebraStyles: PropTypes.bool,
-  /**  lighter styling where regular table too visually heavy */
-  lightweight: PropTypes.bool,
+  /**  lighter styling where regular table too visually heavy. Deprecated. */
+  lightweight: deprecate(
+    PropTypes.bool,
+    `The 'lightweight' prop has been deprecated and will be removed in the next major version.`
+  ),
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
   /** Specify the properties of each column group in the table. Defaults to empty column. */
@@ -68,7 +72,14 @@ const propTypes = {
     hasAggregations: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
-    hasRowExpansion: PropTypes.bool,
+    /** True if the rows shuld be expandable */
+    hasRowExpansion: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** True if any previously expanded rows should be collapsed when a new row is expanded */
+        expandRowsExclusively: PropTypes.bool,
+      }),
+    ]),
     hasRowNesting: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
@@ -316,7 +327,7 @@ export const defaultProps = (baseProps) => ({
   columnGroups: [],
   id: null,
   useZebraStyles: false,
-  lightweight: false,
+  lightweight: undefined,
   title: null,
   tooltip: null,
   secondaryTitle: null,
@@ -474,6 +485,7 @@ export const defaultProps = (baseProps) => ({
     multiSortAscending: 'Ascending',
     multiSortDescending: 'Descending',
     multiSortOverflowItem: 'Multi-sort',
+    multiSortDragHandle: 'Drag handle',
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
@@ -889,7 +901,6 @@ const Table = (props) => {
                   'hasColumnSelectionConfig',
                   'hasResize',
                   'hasRowActions',
-                  'hasRowExpansion',
                   'hasRowNesting',
                   'hasSingleRowEdit',
                   'hasRowSelection',
@@ -897,6 +908,7 @@ const Table = (props) => {
                   'hasMultiSort',
                   'preserveColumnWidths'
                 ),
+                hasRowExpansion: !!options.hasRowExpansion,
                 wrapCellText: options.wrapCellText,
                 truncateCellText: useCellTextTruncate,
               }}
@@ -941,7 +953,8 @@ const Table = (props) => {
             view.table.loadingState.isLoading ? (
               <TableSkeletonWithHeaders
                 columns={visibleColumns}
-                {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+                {...pick(options, 'hasRowSelection', 'hasRowActions')}
+                hasRowExpansion={!!options.hasRowExpansion}
                 rowCount={view.table.loadingState.rowCount}
                 columnCount={view.table.loadingState.columnCount}
                 // TODO: remove 'id' in v3.
@@ -987,12 +1000,12 @@ const Table = (props) => {
                 {...pick(
                   options,
                   'hasRowSelection',
-                  'hasRowExpansion',
                   'hasRowActions',
                   'hasRowNesting',
                   'shouldExpandOnRowClick',
                   'shouldLazyRender'
                 )}
+                hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}
                 truncateCellText={useCellTextTruncate}
                 ordering={view.table.ordering}
@@ -1044,13 +1057,8 @@ const Table = (props) => {
           {options.hasAggregations && !aggregationsAreHidden ? (
             <TableFoot
               options={{
-                ...pick(
-                  options,
-                  'hasRowSelection',
-                  'hasRowExpansion',
-                  'hasRowActions',
-                  'hasRowNesting'
-                ),
+                ...pick(options, 'hasRowSelection', 'hasRowActions', 'hasRowNesting'),
+                hasRowExpansion: !!options.hasRowExpansion,
               }}
               tableState={{
                 aggregations,

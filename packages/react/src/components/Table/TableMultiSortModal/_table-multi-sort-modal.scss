@@ -9,15 +9,21 @@
     }
   }
 
-  .#{$prefix}--modal-content {
+  .#{$iot-prefix}--table-multi-sort-row {
     display: grid;
     gap: $spacing-05;
-    grid-template-columns: 1fr 1fr 48px 48px;
+    grid-template-columns: 16px 1fr 1fr 48px 48px;
+    margin-bottom: $spacing-05;
     button.#{$prefix}--btn--icon-only {
       height: 40px;
       width: 48px;
       margin-top: 24px;
     }
+  }
+
+  .#{$iot-prefix}--table-multi-sort-row__handle {
+    align-self: center;
+    cursor: grab;
   }
 
   &__footer {

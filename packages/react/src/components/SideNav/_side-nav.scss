@@ -48,9 +48,9 @@ $hoverBgColor: #2c2c2c;
 
   .#{$prefix}--side-nav__menu
     .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover,
-  &.bx--side-nav__menu .bx--side-nav__link--current > span,
-  &.bx--side-nav__menu .bx--side-nav__link[aria-current='page'] > span,
-  &.bx--side-nav__link--current > span {
+  &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current > span,
+  &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'] > span,
+  &.#{$prefix}--side-nav__link--current > span {
     color: $textColor;
   }
 
@@ -75,4 +75,8 @@ html[dir='rtl'] {
     margin-left: mini-units(3);
     margin-right: unset;
   }
+}
+
+.#{$prefix}--side-nav__overlay-active {
+  z-index: z('overlay');
 }

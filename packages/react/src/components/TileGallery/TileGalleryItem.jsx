@@ -2,6 +2,10 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { ClickableTile } from 'carbon-components-react';
 
+import { settings } from '../../constants/Settings';
+
+const { prefix } = settings;
+
 const propTypes = {
   /** Card title */
   title: PropTypes.string.isRequired,
@@ -98,7 +102,7 @@ const TileGalleryItem = ({
   return (
     <Fragment>
       <ClickableTile
-        className={`${className} tile-gallery-item bx--tile bx--tile--clickable tile-${
+        className={`${className} tile-gallery-item ${prefix}--tile ${prefix}--tile--clickable tile-${
           mode === 'grid' ? 'card' : 'list'
         }-title`}
         key={`${title}-card-link`}

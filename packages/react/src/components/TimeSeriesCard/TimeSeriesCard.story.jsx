@@ -150,6 +150,7 @@ export const MultiLineIntervalDataChoices = () => {
         title={text('title', 'Temperature, Humidity, eCount, and Pressure')}
         isLoading={boolean('isLoading', false)}
         isExpanded={boolean('isExpanded', false)}
+        tooltipShowTotals={boolean('tooltipShowTotals', true)}
         content={{
           series: [
             {
