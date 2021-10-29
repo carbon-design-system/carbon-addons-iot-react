@@ -293,8 +293,10 @@ describe('TableHead', () => {
     });
 
     const column3 = screen.getByRole('columnheader', { name: /Column 3/i });
-    expect(column3).toHaveClass('iot--table-head--table-header--with-overflow');
-    expect(within(column3).getByText('1')).toHaveClass('iot--table-header-label__sort-order');
+    expect(column3).toHaveClass(`${iotPrefix}--table-head--table-header--with-overflow`);
+    expect(within(column3).getByText('1')).toHaveClass(
+      `${iotPrefix}--table-header-label__sort-order`
+    );
   });
 
   it('calls onOverflowItemClicked when multi-sort overflow is clicked', async () => {

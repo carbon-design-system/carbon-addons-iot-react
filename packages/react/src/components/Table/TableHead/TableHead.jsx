@@ -8,6 +8,7 @@ import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
 import debounce from 'lodash/debounce';
 import classnames from 'classnames';
+import warning from 'warning';
 
 import {
   TableColumnsPropTypes,
@@ -130,6 +131,17 @@ const propTypes = {
   testId: PropTypes.string,
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
+  /** Size prop from Carbon to shrink row height (and header height in some instances) */
+  size: function checkProps(props, propName, componentName) {
+    if (['compact', 'short', 'normal', 'tall'].includes(props[propName])) {
+      warning(
+        false,
+        `The value \`${props[propName]}\` has been deprecated for the ` +
+          `\`${propName}\` prop on the ${componentName} component. It will be removed in the next major ` +
+          `release. Please use 'xs', 'sm', 'md', 'lg', or 'xl' instead.`
+      );
+    }
+  },
 };
 
 const defaultProps = {
@@ -149,6 +161,7 @@ const defaultProps = {
   testID: '',
   testId: '',
   showExpanderColumn: false,
+  size: undefined,
 };
 
 const generateOrderedColumnRefs = (ordering) =>
@@ -204,6 +217,7 @@ const TableHead = ({
   i18n,
   hasFastFilter,
   showExpanderColumn,
+  size,
 }) => {
   const filterBarActive = activeBar === 'filter';
   const initialColumnWidths = {};
@@ -632,6 +646,7 @@ const TableHead = ({
           lightweight={lightweight}
           isDisabled={isDisabled}
           showExpanderColumn={showExpanderColumn}
+          size={size}
         />
       )}
       {activeBar === 'column' && (

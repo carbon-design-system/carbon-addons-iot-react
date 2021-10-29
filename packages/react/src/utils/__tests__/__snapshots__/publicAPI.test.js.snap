@@ -1888,6 +1888,7 @@ Map {
       "options": Object {},
       "selectAllText": "Select all",
       "showExpanderColumn": false,
+      "size": undefined,
       "testID": "",
       "testId": "",
     },
@@ -2340,6 +2341,7 @@ Map {
       "showExpanderColumn": Object {
         "type": "bool",
       },
+      "size": [Function],
       "tableId": Object {
         "isRequired": true,
         "type": "string",
@@ -15928,6 +15930,7 @@ Map {
       "showTimeInGMT": false,
       "size": "MEDIUM",
       "tooltipDateFormatPattern": "L HH:mm:ss",
+      "tooltipShowTotals": true,
       "values": Array [],
     },
     "propTypes": Object {
@@ -17109,6 +17112,9 @@ Map {
       },
       "tooltipDateFormatPattern": Object {
         "type": "string",
+      },
+      "tooltipShowTotals": Object {
+        "type": "bool",
       },
       "values": Object {
         "args": Array [

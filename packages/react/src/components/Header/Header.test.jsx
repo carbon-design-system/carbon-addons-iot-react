@@ -7,7 +7,7 @@ import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 import Header, { APP_SWITCHER } from './Header';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
@@ -28,7 +28,7 @@ describe('Header', () => {
           <Help20
             fill="white"
             description="Icon"
-            className="bx--header__menu-item bx--header__menu-title"
+            className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
           />
         ),
         childContent: [
@@ -146,11 +146,11 @@ describe('Header', () => {
     render(<Header {...HeaderProps} />);
     fireEvent.click(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+      `${prefix}--header-panel ${prefix}--header-panel--expanded action-btn__headerpanel`
     );
     fireEvent.click(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+      `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
@@ -160,7 +160,7 @@ describe('Header', () => {
     fireEvent.focus(screen.getByText('This is a link'));
     fireEvent.blur(screen.getByText('This is a link'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+      `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
@@ -168,11 +168,11 @@ describe('Header', () => {
     render(<Header {...HeaderProps} />);
     fireEvent.click(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+      `${prefix}--header-panel ${prefix}--header-panel--expanded action-btn__headerpanel`
     );
     fireEvent.blur(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+      `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
@@ -181,12 +181,12 @@ describe('Header', () => {
 
     fireEvent.click(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+      `${prefix}--header-panel ${prefix}--header-panel--expanded action-btn__headerpanel`
     );
     // focus leaves the first button
     fireEvent.blur(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+      `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
@@ -205,12 +205,12 @@ describe('Header', () => {
 
     fireEvent.click(screen.getByTitle(APP_SWITCHER));
     expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded bx--app-switcher'
+      `${prefix}--header-panel ${prefix}--header-panel--expanded ${prefix}--app-switcher`
     );
 
     fireEvent.click(screen.getByTitle(APP_SWITCHER));
     expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--app-switcher'
+      `${prefix}--header-panel ${prefix}--app-switcher`
     );
   });
 

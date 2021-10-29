@@ -4,11 +4,14 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import fileDownload from 'js-file-download';
 
+import { settings } from '../../constants/Settings';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import Table from '../Table/Table';
 
 import PieChartCard, { formatColors } from './PieChartCard';
+
+const { iotPrefix } = settings;
 
 jest.unmock('@carbon/charts-react');
 jest.mock('js-file-download');
@@ -111,7 +114,7 @@ describe('PieChartCard', () => {
   });
 
   it('shows loading skeleton for isLoading even for empty data  ', async () => {
-    const loadingSkeletonQuery = '.iot--pie-chart-container svg.chart-skeleton';
+    const loadingSkeletonQuery = `.${iotPrefix}--pie-chart-container svg.chart-skeleton`;
     const { container, rerender } = render(<PieChartCard {...pieChartCardProps} />);
     let svgLoadingIcon = container.querySelector(loadingSkeletonQuery);
     expect(svgLoadingIcon).toBeFalsy();

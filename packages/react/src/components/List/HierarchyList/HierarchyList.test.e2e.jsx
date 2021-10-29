@@ -1,9 +1,12 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 
+import { settings } from '../../../constants/Settings';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import HierarchyList from './HierarchyList';
+
+const { iotPrefix } = settings;
 
 const sampleHierarchy = {
   MLB: {
@@ -87,8 +90,8 @@ describe('HierarchyList', () => {
     );
 
     // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-    cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
-    cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Amed Rosario');
+    cy.get(`.${iotPrefix}--list-item`).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+    cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Amed Rosario');
 
     // Select Pete and drag above to Amed (one-based-index)
     cy.findByTitle('Pete Alonso')
@@ -98,8 +101,8 @@ describe('HierarchyList', () => {
       });
 
     // expect Pete in position 3 and Amed in position 4 (zero-based-index)
-    cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Pete Alonso');
-    cy.get('.iot--list-item').eq(3).find('[title]').should('have.text', 'Amed Rosario');
+    cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Pete Alonso');
+    cy.get(`.${iotPrefix}--list-item`).eq(3).find('[title]').should('have.text', 'Amed Rosario');
 
     // drag michael to the bottom of the list.
     cy.findByTitle('Michael Conforto is a super duper long name that will get cut off')
@@ -109,7 +112,7 @@ describe('HierarchyList', () => {
       });
 
     // expect Michael to be in position 5
-    cy.get('.iot--list-item')
+    cy.get(`.${iotPrefix}--list-item`)
       .eq(4)
       .find('[title]')
       .should('have.text', 'Michael Conforto is a super duper long name that will get cut off');
@@ -137,8 +140,8 @@ describe('HierarchyList', () => {
     );
 
     // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-    cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
-    cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Amed Rosario');
+    cy.get(`.${iotPrefix}--list-item`).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+    cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Amed Rosario');
 
     // Select Pete and drag above to Amed (one-based-index)
     cy.findByTitle('Pete Alonso')
@@ -148,8 +151,8 @@ describe('HierarchyList', () => {
       });
 
     // expect Pete in position 3 and Amed in position 4 (zero-based-index)
-    cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Pete Alonso');
-    cy.get('.iot--list-item').eq(3).find('[title]').should('have.text', 'Amed Rosario');
+    cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Pete Alonso');
+    cy.get(`.${iotPrefix}--list-item`).eq(3).find('[title]').should('have.text', 'Amed Rosario');
   });
 
   it('handles drag and drop on-top to create a new category with single-nesting', () => {
@@ -174,7 +177,7 @@ describe('HierarchyList', () => {
     );
 
     // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-    cy.get('.iot--list-item')
+    cy.get(`.${iotPrefix}--list-item`)
       .should('be.visible')
       .then(($els) => {
         cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
@@ -191,7 +194,7 @@ describe('HierarchyList', () => {
     cy.findAllByTestId('expand-icon').eq(2).click({ force: true });
 
     // expect Pete in position 4 and Amed in position 5 (zero-based-index)
-    cy.get('.iot--list-item')
+    cy.get(`.${iotPrefix}--list-item`)
       .should('be.visible')
       .then(($els) => {
         cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
@@ -220,7 +223,7 @@ describe('HierarchyList', () => {
     );
 
     // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-    cy.get('.iot--list-item')
+    cy.get(`.${iotPrefix}--list-item`)
       .should('be.visible')
       .then(($els) => {
         cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
@@ -240,7 +243,7 @@ describe('HierarchyList', () => {
     cy.findAllByTestId('expand-icon').eq(0).click();
 
     // expect Pete in position 3 and Amed in position 2 (zero-based-index)
-    cy.get('.iot--list-item')
+    cy.get(`.${iotPrefix}--list-item`)
       .should('be.visible')
       .then(($els) => {
         cy.wrap($els).eq(1).find('[title]').should('have.text', 'Amed Rosario');
@@ -271,9 +274,9 @@ describe('HierarchyList', () => {
         .then(() => {
           expect(onListUpdated).to.be.called;
         });
-      cy.get('.iot--list-item').eq(0).find('[title]').should('have.text', 'Item 15');
-      cy.get('.iot--list-item').eq(1).find('[title]').should('have.text', 'Item 5');
-      cy.get('.iot--list-item').should('have.length', 2);
+      cy.get(`.${iotPrefix}--list-item`).eq(0).find('[title]').should('have.text', 'Item 15');
+      cy.get(`.${iotPrefix}--list-item`).eq(1).find('[title]').should('have.text', 'Item 5');
+      cy.get(`.${iotPrefix}--list-item`).should('have.length', 2);
     });
 
     it('maintains page state when drag-and-drop happens', () => {
@@ -298,9 +301,9 @@ describe('HierarchyList', () => {
         .then(() => {
           expect(onListUpdated).to.be.called;
         });
-      cy.get('.iot--list-item').eq(0).find('[title]').should('have.text', 'Item 9');
-      cy.get('.iot--list-item').eq(1).find('[title]').should('have.text', 'Item 6');
-      cy.get('.iot--list-item').should('have.length', 5);
+      cy.get(`.${iotPrefix}--list-item`).eq(0).find('[title]').should('have.text', 'Item 9');
+      cy.get(`.${iotPrefix}--list-item`).eq(1).find('[title]').should('have.text', 'Item 6');
+      cy.get(`.${iotPrefix}--list-item`).should('have.length', 5);
       cy.findByText('Page 2').should('be.visible');
     });
 
@@ -327,8 +330,8 @@ describe('HierarchyList', () => {
       );
 
       // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-      cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
-      cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Amed Rosario');
+      cy.get(`.${iotPrefix}--list-item`).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+      cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Amed Rosario');
 
       // Select Pete and drag above to Amed (one-based-index)
       cy.findByTitle('Pete Alonso')
@@ -338,8 +341,8 @@ describe('HierarchyList', () => {
         });
 
       // expect Pete in position 3 and Amed in position 4 (zero-based-index)
-      cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Pete Alonso');
-      cy.get('.iot--list-item').eq(3).find('[title]').should('have.text', 'Amed Rosario');
+      cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Pete Alonso');
+      cy.get(`.${iotPrefix}--list-item`).eq(3).find('[title]').should('have.text', 'Amed Rosario');
 
       // drag michael to the bottom of the list.
       cy.findByTitle('Michael Conforto is a super duper long name that will get cut off')
@@ -349,7 +352,7 @@ describe('HierarchyList', () => {
         });
 
       // expect Michael to be in position 5
-      cy.get('.iot--list-item')
+      cy.get(`.${iotPrefix}--list-item`)
         .eq(4)
         .find('[title]')
         .should('have.text', 'Michael Conforto is a super duper long name that will get cut off');
@@ -378,8 +381,8 @@ describe('HierarchyList', () => {
       );
 
       // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-      cy.get('.iot--list-item').eq(4).find('[title]').should('have.text', 'Pete Alonso');
-      cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Amed Rosario');
+      cy.get(`.${iotPrefix}--list-item`).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+      cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Amed Rosario');
 
       // Select Pete and drag above to Amed (one-based-index)
       cy.findByTitle('Pete Alonso')
@@ -389,8 +392,8 @@ describe('HierarchyList', () => {
         });
 
       // expect Pete in position 3 and Amed in position 4 (zero-based-index)
-      cy.get('.iot--list-item').eq(2).find('[title]').should('have.text', 'Pete Alonso');
-      cy.get('.iot--list-item').eq(3).find('[title]').should('have.text', 'Amed Rosario');
+      cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Pete Alonso');
+      cy.get(`.${iotPrefix}--list-item`).eq(3).find('[title]').should('have.text', 'Amed Rosario');
     });
 
     it('handles drag and drop on-top to create a new category with single-nesting', () => {
@@ -416,7 +419,7 @@ describe('HierarchyList', () => {
       );
 
       // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-      cy.get('.iot--list-item')
+      cy.get(`.${iotPrefix}--list-item`)
         .should('be.visible')
         .then(($els) => {
           cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
@@ -437,7 +440,7 @@ describe('HierarchyList', () => {
         });
 
       // expect Pete in position 4 and Amed in position 5 (zero-based-index)
-      cy.get('.iot--list-item')
+      cy.get(`.${iotPrefix}--list-item`)
         .should('be.visible')
         .then(($els) => {
           cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
@@ -467,7 +470,7 @@ describe('HierarchyList', () => {
       );
 
       // expect Pete in position 5 and Amed in position 3 (zero-based-index)
-      cy.get('.iot--list-item')
+      cy.get(`.${iotPrefix}--list-item`)
         .should('be.visible')
         .then(($els) => {
           cy.wrap($els).eq(4).find('[title]').should('have.text', 'Pete Alonso');
@@ -486,7 +489,7 @@ describe('HierarchyList', () => {
 
       cy.findAllByTestId('expand-icon').eq(0).click({ force: true });
       // expect Pete in position 3 and Amed in position 2 (zero-based-index)
-      cy.get('.iot--list-item')
+      cy.get(`.${iotPrefix}--list-item`)
         .should('be.visible')
         .then(($els) => {
           cy.wrap($els).eq(1).find('[title]').should('have.text', 'Amed Rosario');
