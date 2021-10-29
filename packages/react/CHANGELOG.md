@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.36...v2.147.0-next.37) (2021-10-29)
+
+
+### Bug Fixes
+
+* **repo:** adjust dayjs imports to fix codesandbox ([1ed3ffd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1ed3ffda7c4005ec337f5aac3d538b3fcab51811))
+
+
+
+
+
 # [2.147.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.35...v2.147.0-next.36) (2021-10-29)
 
 
