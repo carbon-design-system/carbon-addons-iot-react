@@ -31,7 +31,7 @@ const props = {
   /** Title of empty state */
   title: PropTypes.string.isRequired,
   /** Description of empty state */
-  body: PropTypes.string.isRequired,
+  body: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   /** Optional image of state */
   icon: PropTypes.oneOfType([
     PropTypes.func,
@@ -93,13 +93,17 @@ const EmptyState = ({ title, icon, body, action, secondaryAction, className, tes
         >
           {title}
         </h3>
-        <p
-          className={`${iotPrefix}--empty-state--text`}
-          // TODO: remove deprecated testID in v3.
-          data-testid={`${testID || testId}-body`}
-        >
-          {body}
-        </p>
+        {typeof body === 'string' ? (
+          <p
+            className={`${iotPrefix}--empty-state--text`}
+            // TODO: remove deprecated testID in v3.
+            data-testid={`${testID || testId}-body`}
+          >
+            {body}
+          </p>
+        ) : (
+          body
+        )}
         {action && (
           <div
             className={`${iotPrefix}--empty-state--action`}

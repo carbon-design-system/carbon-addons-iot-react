@@ -14,6 +14,7 @@ import { settings } from '../../constants/Settings';
 import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 import experimental from '../../internal/experimental';
+import deprecate from '../../internal/deprecate';
 
 import {
   TableColumnsPropTypes,
@@ -49,8 +50,11 @@ const propTypes = {
   tooltip: PropTypes.node,
   /** render zebra stripes or not */
   useZebraStyles: PropTypes.bool,
-  /**  lighter styling where regular table too visually heavy */
-  lightweight: PropTypes.bool,
+  /**  lighter styling where regular table too visually heavy. Deprecated. */
+  lightweight: deprecate(
+    PropTypes.bool,
+    `The 'lightweight' prop has been deprecated and will be removed in the next major version.`
+  ),
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
   /** Specify the properties of each column group in the table. Defaults to empty column. */
@@ -331,7 +335,7 @@ export const defaultProps = (baseProps) => ({
   columnGroups: [],
   id: null,
   useZebraStyles: false,
-  lightweight: false,
+  lightweight: undefined,
   title: null,
   tooltip: null,
   secondaryTitle: null,
@@ -490,6 +494,7 @@ export const defaultProps = (baseProps) => ({
     multiSortAscending: 'Ascending',
     multiSortDescending: 'Descending',
     multiSortOverflowItem: 'Multi-sort',
+    multiSortDragHandle: 'Drag handle',
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',

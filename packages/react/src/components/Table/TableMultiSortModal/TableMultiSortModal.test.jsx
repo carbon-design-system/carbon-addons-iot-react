@@ -108,8 +108,12 @@ describe('TableMultiSortModal', () => {
       />
     );
 
+    expect(screen.getByLabelText('Sort by')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'Add column' }));
+    expect(screen.getByLabelText('Then by')).toBeVisible();
     userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
     expect(callbacks.onCancelMultiSortColumns).toHaveBeenCalled();
+    expect(screen.queryByLabelText('Then by')).toBeNull();
 
     userEvent.click(screen.getByRole('button', { name: 'Add column' }));
     expect(callbacks.onAddMultiSortColumn).toHaveBeenCalledWith(0);
@@ -143,6 +147,8 @@ describe('TableMultiSortModal', () => {
     ]);
 
     userEvent.click(screen.getByRole('button', { name: 'Clear sorting' }));
+    expect(callbacks.onClearMultiSortColumns).toHaveBeenCalled();
+    expect(screen.queryByLabelText('Then by')).toBeNull();
   });
 
   it('should only allow selecting isSortabled and visible columns', () => {
@@ -318,7 +324,7 @@ describe('TableMultiSortModal', () => {
     ]);
   });
 
-  it('should show the first column when no sort, and no anticipatedColumn are given', () => {
+  it('should properly set the default columnId when none given', () => {
     render(
       <TableMultiSortModal
         columns={[
@@ -403,6 +409,14 @@ describe('TableMultiSortModal', () => {
     ).toBe(true);
     expect(screen.queryByLabelText('Then by')).toBeNull();
 
+    rerender(<TableMultiSortModal {...modalProps} sort={[{}]} />);
+
+    expect(screen.getByLabelText('Sort by')).toBeVisible();
+    expect(
+      within(screen.getByLabelText('Sort by')).getByRole('option', { name: 'String' }).selected
+    ).toBe(true);
+    expect(screen.queryByLabelText('Then by')).toBeNull();
+
     rerender(
       <TableMultiSortModal {...modalProps} sort={{ columnId: 'select', direction: 'ASC' }} />
     );
@@ -412,5 +426,19 @@ describe('TableMultiSortModal', () => {
       within(screen.getByLabelText('Sort by')).getByRole('option', { name: 'Select' }).selected
     ).toBe(true);
     expect(screen.queryByLabelText('Then by')).toBeNull();
+    expect(screen.getByText('String')).toBeVisible();
+    userEvent.click(screen.getByLabelText('Add column'));
+    expect(screen.getAllByText('Select')[0]).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'Sort' }));
+    expect(callbacks.onSaveMultiSortColumns).toHaveBeenCalledWith([
+      {
+        columnId: 'select',
+        direction: 'ASC',
+      },
+      {
+        columnId: 'string',
+        direction: 'ASC',
+      },
+    ]);
   });
 });

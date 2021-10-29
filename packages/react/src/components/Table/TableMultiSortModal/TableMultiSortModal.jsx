@@ -1,13 +1,15 @@
-import { Add16, Subtract16 } from '@carbon/icons-react';
-import { Select, SelectItem } from 'carbon-components-react';
-import React, { Fragment, useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash/isEqual';
+import update from 'immutability-helper';
 
 import Button from '../../Button/Button';
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { settings } from '../../../constants/Settings';
 import { TableColumnsPropTypes, TableSortPropType } from '../TablePropTypes';
+import { DragAndDrop } from '../../..';
+
+import { TableMultiSortRow } from './TableMultiSortRow';
 
 const { iotPrefix } = settings;
 
@@ -44,9 +46,9 @@ const propTypes = {
     multiSortAscending: PropTypes.string,
     multiSortDescending: PropTypes.string,
     multiSortCloseModal: PropTypes.string,
-    multiSortClearAll: PropTypes.string,
     multiSortOpenMenu: PropTypes.string,
     multiSortCloseMenu: PropTypes.string,
+    multiSortDragHandle: PropTypes.string,
   }),
   testId: PropTypes.string,
 };
@@ -68,6 +70,7 @@ const defaultProps = {
     multiSortAscending: 'Ascending',
     multiSortDescending: 'Descending',
     multiSortCloseModal: 'Close',
+    multiSortDragHandle: 'Drag handle',
   },
   testId: 'multi-sort-modal',
 };
@@ -194,8 +197,19 @@ const TableMultiSortModal = ({
   const handleAddMultiSortColumn = (index) => () => {
     setSelectedMultiSortColumns((prev) => {
       const clone = [...prev];
+
+      let nextColumnIndex = 0;
+      // If the default column is in the first position, set it before adding the next column
+      if (clone.length === 1 && Object.keys(clone[0]).length === 0) {
+        clone.splice(index, 1, {
+          columnId: multiSortColumns.filter((col) => !col.disabled)[nextColumnIndex]?.id,
+          direction: 'ASC',
+        });
+        nextColumnIndex = 1;
+      }
+
       clone.splice(index + 1, 0, {
-        columnId: '',
+        columnId: multiSortColumns.filter((col) => !col.disabled)[nextColumnIndex]?.id,
         direction: 'ASC',
       });
       return clone;
@@ -241,6 +255,18 @@ const TableMultiSortModal = ({
     onClearMultiSortColumns();
   };
 
+  const onMoveRow = useCallback((dragIndex, hoverIndex) => {
+    setSelectedMultiSortColumns((prev) => {
+      const row = prev[dragIndex];
+      return update(prev, {
+        $splice: [
+          [dragIndex, 1],
+          [hoverIndex, 0, row],
+        ],
+      });
+    });
+  }, []);
+
   return (
     <ComposedModal
       testId={testId}
@@ -279,67 +305,31 @@ const TableMultiSortModal = ({
       }
       open={showMultiSortModal}
     >
-      {selectedMultiSortColumns.map(({ columnId, direction }, index) => {
-        const defaultColumn = getInitialSelectedColumn(columnId);
-        const defaultDirection = getInitialSelectedDirection(direction);
-        return (
-          <Fragment key={`${columnId}-${direction}-${index}`}>
-            <Select
-              data-testid={`${testId}-column-select`}
-              id={`${columnId}-select-sort-column`}
-              helperText={i18n.multiSortSelectColumnLabel}
-              onChange={handleSelectMultiSortColumn(index)}
-              labelText={
-                index === 0
-                  ? i18n.multiSortSelectColumnSortByTitle
-                  : i18n.multiSortSelectColumnThenByTitle
-              }
-              defaultValue={defaultColumn?.id}
-            >
-              {multiSortColumns.map((col) => (
-                <SelectItem
-                  key={`${col.id}-${col.name}`}
-                  text={col.name}
-                  value={col.id}
-                  disabled={col.disabled}
-                />
-              ))}
-            </Select>
-            <Select
-              data-testid={`${testId}-direction-select`}
-              id={`${columnId}-select-sort-direction`}
-              helperText={i18n.multiSortDirectionLabel}
-              labelText={i18n.multiSortDirectionTitle}
-              defaultValue={defaultDirection.id}
-              onChange={handleSelectMultiSortColumnDirection(index)}
-            >
-              {sortDirections.map((dir) => (
-                <SelectItem key={`${dir.id}-${dir.label}`} text={dir.label} value={dir.id} />
-              ))}
-            </Select>
-            <Button
-              hasIconOnly
-              renderIcon={Add16}
-              kind="ghost"
-              tooltipPosition="top"
-              iconDescription={i18n.multiSortAddColumn}
-              onClick={handleAddMultiSortColumn(index)}
-              testId={`${columnId}-add-sort-button`}
-              disabled={selectedMultiSortColumns.length >= multiSortColumns.length}
+      <DragAndDrop>
+        {selectedMultiSortColumns.map(({ columnId, direction }, index) => {
+          const defaultColumn = getInitialSelectedColumn(columnId);
+          const defaultDirection = getInitialSelectedDirection(direction);
+          return (
+            <TableMultiSortRow
+              key={`${columnId}-${direction}`}
+              columnId={columnId || defaultColumn?.id}
+              defaultColumnId={defaultColumn?.id}
+              defaultDirectionId={defaultDirection?.id}
+              i18n={i18n}
+              index={index}
+              multiSortColumns={multiSortColumns}
+              numSelectedColumns={selectedMultiSortColumns?.length}
+              onAddMultiSortColumn={handleAddMultiSortColumn(index)}
+              onMoveRow={onMoveRow}
+              onRemoveMultiSortColumn={handleRemoveMultiSortColumn(index)}
+              onSelectMultiSortColumn={handleSelectMultiSortColumn(index)}
+              onSelectMultiSortColumnDirection={handleSelectMultiSortColumnDirection(index)}
+              sortDirections={sortDirections}
+              testId={testId}
             />
-            <Button
-              hasIconOnly
-              renderIcon={Subtract16}
-              kind="ghost"
-              tooltipPosition="top"
-              iconDescription={i18n.multiSortRemoveColumn}
-              onClick={handleRemoveMultiSortColumn(index)}
-              testId={`${columnId}-remove-sort-button`}
-              disabled={selectedMultiSortColumns.length === 1}
-            />
-          </Fragment>
-        );
-      })}
+          );
+        })}
+      </DragAndDrop>
     </ComposedModal>
   );
 };
