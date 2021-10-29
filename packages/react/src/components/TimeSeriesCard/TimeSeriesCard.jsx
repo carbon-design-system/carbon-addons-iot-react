@@ -166,6 +166,8 @@ const TimeSeriesCardPropTypes = {
   },
   /** tooltip format pattern that follows the dayjs formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
+  /** should the tooltip total the line chart values? */
+  tooltipShowTotals: PropTypes.bool,
   // TODO: remove deprecated 'testID' in v3
   // eslint-disable-next-line react/require-default-props
   testID: deprecate(
@@ -203,6 +205,7 @@ const defaultProps = {
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
+  tooltipShowTotals: true,
 };
 
 const TimeSeriesCard = ({
@@ -222,6 +225,7 @@ const TimeSeriesCard = ({
   isLoading,
   domainRange,
   tooltipDateFormatPattern,
+  tooltipShowTotals,
   showTimeInGMT,
   // TODO: remove deprecated 'testID' in v3
   testID,
@@ -476,6 +480,7 @@ const TimeSeriesCard = ({
       },
       containerResizable: true,
       tooltip: {
+        showTotal: tooltipShowTotals,
         truncation: {
           type: 'none',
         },
@@ -531,6 +536,7 @@ const TimeSeriesCard = ({
       isEditable,
       showLegend,
       truncation,
+      tooltipShowTotals,
       mergedI18n.tooltipGroupLabel,
       mergedI18n.alertDetected,
       handleStrokeColor,
