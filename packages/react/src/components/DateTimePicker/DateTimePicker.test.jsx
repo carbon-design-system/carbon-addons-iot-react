@@ -722,6 +722,7 @@ describe('DateTimePicker', () => {
       code: 'ArrowDown',
     });
     expect(screen.getByText('Custom Range')).toHaveFocus();
+
     fireEvent.keyUp(screen.getByTestId(`date-time-picker__field`), {
       key: 'Escape',
       code: 'Escape',
@@ -729,5 +730,26 @@ describe('DateTimePicker', () => {
     expect(screen.getByRole('listbox')).not.toHaveClass(
       `${iotPrefix}--date-time-picker__menu-expanded`
     );
+  });
+
+  it('should allow keyboard navigation of absolute/relative types', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Custom Range'));
+    // relative → absolute
+    userEvent.type(screen.getByLabelText('Relative'), '{arrowright}');
+    expect(screen.getByLabelText('Absolute')).toBeChecked();
+
+    // absolute ← relative
+    userEvent.type(screen.getByLabelText('Absolute'), '{arrowleft}');
+    expect(screen.getByLabelText('Relative')).toBeChecked();
+
+    // relative ↑ absolute
+    userEvent.type(screen.getByLabelText('Relative'), '{arrowup}');
+    expect(screen.getByLabelText('Absolute')).toBeChecked();
+
+    // absolute ↓ relative
+    userEvent.type(screen.getByLabelText('Absolute'), '{arrowdown}');
+    expect(screen.getByLabelText('Relative')).toBeChecked();
   });
 });
