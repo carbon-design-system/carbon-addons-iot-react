@@ -520,9 +520,11 @@ Map {
             "columnCount": 5,
             "rowCount": 5,
           },
+          "multiSortModal": undefined,
           "ordering": undefined,
           "rowActions": Array [],
           "selectedIds": Array [],
+          "showMultiSortModal": false,
           "singleRowEditButtons": null,
           "sort": Object {},
         },
@@ -1580,6 +1582,32 @@ Map {
                     ],
                     "type": "shape",
                   },
+                  "multiSortModal": Object {
+                    "args": Array [
+                      Object {
+                        "anticipatedColumn": Object {
+                          "args": Array [
+                            Object {
+                              "columnId": Object {
+                                "type": "string",
+                              },
+                              "direction": Object {
+                                "args": Array [
+                                  Array [
+                                    "ASC",
+                                    "DESC",
+                                  ],
+                                ],
+                                "type": "oneOf",
+                              },
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
                   "ordering": Object {
                     "args": Array [
                       Object {
@@ -1860,6 +1888,7 @@ Map {
       "options": Object {},
       "selectAllText": "Select all",
       "showExpanderColumn": false,
+      "size": undefined,
       "testID": "",
       "testId": "",
     },
@@ -2312,6 +2341,7 @@ Map {
       "showExpanderColumn": Object {
         "type": "bool",
       },
+      "size": [Function],
       "tableId": Object {
         "isRequired": true,
         "type": "string",

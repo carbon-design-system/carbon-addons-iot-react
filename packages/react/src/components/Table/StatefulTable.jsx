@@ -293,11 +293,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         }
         callbackParent(onColumnResize, resizedColumns);
       },
-      onOverflowItemClicked: (id) => {
+      onOverflowItemClicked: (id, meta) => {
         if (id === 'multi-sort') {
-          dispatch(tableMultiSortToggleModal());
+          dispatch(tableMultiSortToggleModal(meta));
         }
-        callbackParent(onOverflowItemClicked, id);
+        callbackParent(onOverflowItemClicked, id, meta);
       },
       onSaveMultiSortColumns: (sortColumns) => {
         dispatch(tableSaveMultiSortColumns(sortColumns));

@@ -207,8 +207,9 @@ export const tableToggleAggregations = () => ({
   type: TABLE_TOGGLE_AGGREGATIONS,
 });
 
-export const tableMultiSortToggleModal = () => ({
+export const tableMultiSortToggleModal = (meta) => ({
   type: TABLE_MULTI_SORT_TOGGLE_MODAL,
+  payload: meta,
 });
 
 export const tableSaveMultiSortColumns = (sortColumns) => ({

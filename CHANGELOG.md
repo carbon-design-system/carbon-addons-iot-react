@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.39...v2.147.0-next.40) (2021-10-29)
+
+
+### Bug Fixes
+
+* **table:** fix removable last column in multi-sort ([43ff24f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/43ff24f64af4d6ff63ba556acbe11adf24d6def3))
+* **table:** fix situations with no sort, and no anticipatedColumn ([5e77483](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5e77483eb0782291128449503ed6c8d86511c0b7))
+
+
+### Features
+
+* **table:** add column anticipation to multi-sort clicks ([8730d65](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8730d658362799dbd0ca43b505189848068ee420))
+
+
+
+
+
+# [2.147.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.38...v2.147.0-next.39) (2021-10-29)
+
+
+### Bug Fixes
+
+* **datetimepicker:** remain selection on cancel ([5a723c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5a723c56731aa76e402787a966665fd92cc7f890))
+
+
+
+
+
+# [2.147.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.37...v2.147.0-next.38) (2021-10-29)
+
+
+### Bug Fixes
+
+* **repo:** update codesandbox check to confirm successfully loaded ([d9ac6a4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d9ac6a4e87c9b5c58d9ca501aa6a9b27bde63b38))
+* **table:** add background color to min-height table ([655e6b6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/655e6b66824249e5d5b628438bae1ec434034fe4))
+* **table:** calculate height of combobox, too ([973554a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/973554a234b7ef299003045f7e1e7213dd259976))
+* **table:** filter header dropdown overflow pr feedback fixes ([1ca46d6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1ca46d6a960e765c6555d3002f9455435855eeaf))
+* **table:** min-height to table max-height to dropdowns to fix overflow ([91dea12](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/91dea1270febb8fc5dcbabad3a55fbfa04320bcf))
+* **table:** update min-height background color ([92315e8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/92315e81583ef578ac3bc6f217171fb2dbc1f947))
+
+
+
+
+
 # [2.147.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.36...v2.147.0-next.37) (2021-10-29)
 
 
