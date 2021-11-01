@@ -441,10 +441,10 @@ describe('MapCards', () => {
     const triggerButton = screen.getByRole('button', {
       name: 'Layered controls',
     });
-    expect(triggerButton.closest('.iot--map-controls-layers--open')).toBe(null);
+    expect(triggerButton.closest(`.${iotPrefix}--map-controls-layers--open`)).toBe(null);
 
     userEvent.click(triggerButton);
-    expect(triggerButton.closest('.iot--map-controls-layers--open')).not.toBe(null);
+    expect(triggerButton.closest(`.${iotPrefix}--map-controls-layers--open`)).not.toBe(null);
 
     const rainyButton = screen.getByRole('button', {
       name: 'Rainy',
@@ -931,8 +931,8 @@ describe('MapCards', () => {
       />
     );
 
-    expect(mapRef.current).toHaveClass('iot--map__container');
-    expect(dropRef.current).toHaveClass('iot--map__container');
+    expect(mapRef.current).toHaveClass(`${iotPrefix}--map__container`);
+    expect(dropRef.current).toHaveClass(`${iotPrefix}--map__container`);
   });
 
   it('disabled scroll down button when at the bottom', () => {

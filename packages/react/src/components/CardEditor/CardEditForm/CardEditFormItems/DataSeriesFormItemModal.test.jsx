@@ -8,7 +8,7 @@ import { CARD_TYPES } from '../../../../constants/LayoutConstants';
 
 import DataSeriesFormItemModal from './DataSeriesFormItemModal';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 describe('DataSeriesFormItemModal', () => {
   beforeEach(() => {
@@ -967,12 +967,12 @@ describe('DataSeriesFormItemModal', () => {
 
     const xsContainer = screen
       .getByText('Customize data series')
-      .closest('.bx--modal-container--xs');
+      .closest(`.${prefix}--modal-container--xs`);
     expect(xsContainer).toBeInTheDocument();
 
     const largeContainer = screen
       .queryByText('Customize data series')
-      .closest('.iot--composed-modal--large');
+      .closest(`.${iotPrefix}--composed-modal--large`);
     expect(largeContainer).not.toBeInTheDocument();
   });
 
@@ -990,7 +990,7 @@ describe('DataSeriesFormItemModal', () => {
 
     const largeContainer = screen
       .getByText('Customize data series')
-      .closest('.iot--composed-modal--large');
+      .closest(`.${iotPrefix}--composed-modal--large`);
     expect(largeContainer).toBeInTheDocument();
   });
 

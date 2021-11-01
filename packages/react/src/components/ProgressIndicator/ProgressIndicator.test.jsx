@@ -1,8 +1,12 @@
 import React from 'react';
+import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 
-import '@testing-library/jest-dom/extend-expect';
+import { settings } from '../../constants/Settings';
+
 import ProgressIndicator from './ProgressIndicator';
+
+const { iotPrefix } = settings;
 
 const mockItems = [
   {
@@ -44,7 +48,7 @@ describe('ProgressIndicator', () => {
   it('simulate onClick on isClickable', () => {
     render(<ProgressIndicator items={mockItems} isClickable />);
     const beforeClick = screen.getAllByTitle('First Step')[0].children[0];
-    screen.getByTestId('iot--progress-step-button-main-second-step').click();
+    screen.getByTestId(`${iotPrefix}--progress-step-button-main-second-step`).click();
     expect(screen.getAllByTitle('First Step')[0].children[0]).not.toContain(beforeClick);
   });
 
@@ -57,7 +61,7 @@ describe('ProgressIndicator', () => {
   it('handleChange', () => {
     const mockOnClickItem = jest.fn();
     render(<ProgressIndicator items={mockItems} onClickItem={mockOnClickItem} isClickable />);
-    screen.getByTestId('iot--progress-step-button-main-second-step').click();
+    screen.getByTestId(`${iotPrefix}--progress-step-button-main-second-step`).click();
     expect(mockOnClickItem).toHaveBeenCalledWith('step2');
   });
 

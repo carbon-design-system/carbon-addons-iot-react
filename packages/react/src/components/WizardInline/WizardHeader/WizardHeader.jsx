@@ -7,7 +7,7 @@ import Button from '../../Button/Button';
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
 import { settings } from '../../../constants/Settings';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 class WizardHeader extends Component {
   static propTypes = {
@@ -64,7 +64,7 @@ class WizardHeader extends Component {
 
     const closeButton = (
       <Button
-        className="bx--modal-close"
+        className={`${prefix}--modal-close`}
         title={closeButtonTitle}
         type="button"
         // TODO: pass testId in v3 to override defaults

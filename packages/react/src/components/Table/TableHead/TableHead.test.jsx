@@ -293,8 +293,10 @@ describe('TableHead', () => {
     });
 
     const column3 = screen.getByRole('columnheader', { name: /Column 3/i });
-    expect(column3).toHaveClass('iot--table-head--table-header--with-overflow');
-    expect(within(column3).getByText('1')).toHaveClass('iot--table-header-label__sort-order');
+    expect(column3).toHaveClass(`${iotPrefix}--table-head--table-header--with-overflow`);
+    expect(within(column3).getByText('1')).toHaveClass(
+      `${iotPrefix}--table-header-label__sort-order`
+    );
   });
 
   it('calls onOverflowItemClicked when multi-sort overflow is clicked', async () => {
@@ -328,7 +330,9 @@ describe('TableHead', () => {
     await waitFor(() => expect(screen.getByText('Multi-sort')).toBeInTheDocument());
 
     userEvent.click(screen.getByText(/Multi-sort/i));
-    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort');
+    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort', {
+      columnId: 'col3',
+    });
   });
 
   describe('Column resizing active', () => {

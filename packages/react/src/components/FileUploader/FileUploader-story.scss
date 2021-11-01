@@ -1,3 +1,4 @@
-.bx--file__selected-file {
+@import '../../globals/vars';
+.#{$prefix}--file__selected-file {
   width: 288px;
 }
