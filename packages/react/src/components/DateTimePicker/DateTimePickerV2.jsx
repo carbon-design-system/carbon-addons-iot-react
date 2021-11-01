@@ -397,18 +397,33 @@ const DateTimePicker = ({
     }
   }, [datePickerElem, focusOnFirstField]);
 
-  const onDatePickerChange = ([start, end]) => {
+  const onDatePickerChange = ([start, end], _, flatpickr) => {
+    if (
+      dayjs(absoluteValue.start).isSame(dayjs(start)) &&
+      dayjs(absoluteValue.end).isSame(dayjs(end))
+    ) {
+      return;
+    }
+
     const newAbsolute = { ...absoluteValue };
+    newAbsolute.start = start;
+    newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
+    const prevFocusOnFirstField = focusOnFirstField;
     if (end) {
       setFocusOnFirstField(!focusOnFirstField);
       newAbsolute.start = start;
       newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
       newAbsolute.end = end;
       newAbsolute.endDate = dayjs(newAbsolute.end).format('MM/DD/YYYY');
+      if (prevFocusOnFirstField) {
+        flatpickr.jumpToDate(newAbsolute.start, true);
+      } else {
+        flatpickr.jumpToDate(newAbsolute.end, true);
+      }
+    } else {
+      setFocusOnFirstField(false);
+      flatpickr.jumpToDate(newAbsolute.start, true);
     }
-
-    newAbsolute.start = start;
-    newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
 
     setAbsoluteValue(newAbsolute);
   };

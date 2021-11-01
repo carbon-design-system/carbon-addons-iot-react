@@ -684,4 +684,50 @@ describe('DateTimePicker', () => {
     expect(relativeToTime).toBeInvalid();
     expect(applyBytton).toBeDisabled();
   });
+
+  it('should close picker when escape is pressed', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeVisible();
+    userEvent.click(screen.getByText('Last 6 hours'));
+    fireEvent.keyDown(screen.getByTestId('date-time-picker'), {
+      key: 'Escape',
+      code: 'Escape',
+    });
+    expect(screen.getByRole('listbox')).not.toHaveClass(
+      `${iotPrefix}--date-time-picker__menu-expanded`
+    );
+  });
+
+  it('should select a preset when hitting enter', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeVisible();
+    const last6HoursLabel = screen.getByText('Last 6 hours');
+    fireEvent.keyDown(last6HoursLabel, {
+      key: 'Enter',
+      code: 'Enter',
+    });
+    expect(last6HoursLabel).toHaveClass(
+      `${iotPrefix}--date-time-picker__listitem--preset-selected`
+    );
+  });
+
+  it('should allow keyboard navigation of presets', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeVisible();
+    fireEvent.keyUp(screen.getByTestId(`date-time-picker__field`), {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
+    });
+    expect(screen.getByText('Custom Range')).toHaveFocus();
+    fireEvent.keyUp(screen.getByTestId(`date-time-picker__field`), {
+      key: 'Escape',
+      code: 'Escape',
+    });
+    expect(screen.getByRole('listbox')).not.toHaveClass(
+      `${iotPrefix}--date-time-picker__menu-expanded`
+    );
+  });
 });
