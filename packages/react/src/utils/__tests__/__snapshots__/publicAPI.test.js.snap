@@ -9203,6 +9203,7 @@ Map {
         "closeText": "Close",
         "openText": "Open",
         "sideNavLabelText": "Side navigation",
+        "submenuLabel": "dropdown",
       },
       "isSideNavExpanded": false,
       "testId": "side-nav",
@@ -9221,6 +9222,9 @@ Map {
               "type": "string",
             },
             "sideNavLabelText": Object {
+              "type": "string",
+            },
+            "submenuLabel": Object {
               "type": "string",
             },
           },
@@ -9726,6 +9730,9 @@ Map {
                     "type": "string",
                   },
                   "sideNavLabelText": Object {
+                    "type": "string",
+                  },
+                  "submenuLabel": Object {
                     "type": "string",
                   },
                 },

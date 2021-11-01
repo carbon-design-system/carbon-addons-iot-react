@@ -6,7 +6,7 @@ describe('CodeSandbox', () => {
   it(
     'should build and load',
     {
-      defaultCommandTimeout: 30000,
+      defaultCommandTimeout: 60000,
     },
     () => {
       // load sandbox
@@ -38,7 +38,7 @@ describe('CodeSandbox', () => {
               cy.findByText('Transpiling Modules...').should('be.visible');
               // after the transpiling is finished, this text should no longer be visible--we need
               // a long timeout here, because sometimes the rendering can be _very_ slow.
-              cy.findByText('Transpiling Modules...', { timeout: 60 * 1000 }).should('not.exist');
+              cy.findByText('Transpiling Modules...').should('not.exist');
             });
           });
 

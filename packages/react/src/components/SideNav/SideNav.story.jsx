@@ -1,10 +1,8 @@
 import React, { useState, createElement, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
-import { Switcher24 } from '@carbon/icons-react';
-import Chip from '@carbon/icons-react/lib/chip/24';
-import Dashboard from '@carbon/icons-react/lib/dashboard/24';
-import Group from '@carbon/icons-react/lib/group/24';
+import { Switcher24, Chip24, Dashboard24, Group24, ParentChild24 } from '@carbon/icons-react';
 import { HeaderContainer } from 'carbon-components-react/lib/components/UIShell';
+import { boolean } from '@storybook/addon-knobs';
 
 import Header from '../Header';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
@@ -22,7 +20,7 @@ React.Fragment = ({ children }) => children;
 
 const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</div>;
 
-const links = [
+const links = (isActive = false) => [
   {
     icon: Switcher24,
     isEnabled: true,
@@ -48,7 +46,7 @@ const links = [
   },
   {
     isEnabled: true,
-    icon: Chip,
+    icon: Chip24,
     metaData: {
       label: 'Devices',
       href: 'https://google.com',
@@ -59,7 +57,7 @@ const links = [
   },
   {
     isEnabled: true,
-    icon: Dashboard,
+    icon: Dashboard24,
     metaData: {
       label: 'Dashboards',
       href: 'https://google.com',
@@ -90,7 +88,7 @@ const links = [
   },
   {
     isEnabled: true,
-    icon: Group,
+    icon: Group24,
     metaData: {
       label: 'Members',
       element: 'button',
@@ -105,7 +103,7 @@ const links = [
           element: 'button',
         },
         content: 'Link 3',
-        isActive: true,
+        isActive,
       },
     ],
   },
@@ -121,7 +119,7 @@ const HeaderProps = {
       label: 'user',
       onClick: action('click'),
       btnContent: (
-        <Group
+        <Group24
           fill="white"
           description="Icon"
           className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
@@ -142,29 +140,126 @@ export default {
   },
 };
 
-export const SideNavComponent = () => (
-  <FullWidthWrapper withPadding={false}>
-    <HeaderContainer
-      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-        <>
-          <Header
-            {...HeaderProps}
-            isSideNavExpanded={isSideNavExpanded}
-            onClickSideNavExpand={onClickSideNavExpand}
-          />
-          <SideNav links={links} isSideNavExpanded={isSideNavExpanded} />
-          <div className={`${iotPrefix}--main-content`}>
-            <PageTitleBar title="Title" description="Description" />
+export const SideNavComponent = () => {
+  const showDeepNesting = boolean('show deep nesting example', false);
+  const deepLinks = [
+    ...links(),
+    {
+      isEnabled: true,
+      icon: ParentChild24,
+      metaData: {
+        label: 'Nested Levels',
+        element: 'button',
+      },
+      linkContent: 'Nested Levels',
+      childContent: [
+        {
+          metaData: {
+            label: 'Co-Parent Link',
+            title: 'Co-Parent Link',
+            element: 'a',
+            href: 'https://www.ibm.com',
+          },
+          content: 'Co-Parent Link',
+        },
+        {
+          metaData: {
+            label: 'Parent',
+            title: 'Parent',
+            element: 'button',
+          },
+          content: 'Parent',
+          linkContent: 'Parent',
+          childContent: [
+            {
+              metaData: {
+                label: 'Sibling 1 Link',
+                title: 'Sibling 1 Link',
+                element: 'a',
+                href: 'https://www.ibm.com',
+              },
+              content: 'Sibling 1 Link',
+            },
+            {
+              isEnabled: true,
+              metaData: {
+                label: 'Child',
+                element: 'button',
+              },
+              linkContent: 'Child',
+              childContent: [
+                {
+                  metaData: {
+                    label: 'Grandchild Button',
+                    title: 'Grandchild Button',
+                    onClick: action('grandchild-button'),
+                    element: 'button',
+                  },
+                  content: 'Grandchild Button',
+                  isActive: true,
+                },
+                {
+                  metaData: {
+                    label: 'Grandchild Link',
+                    title: 'Grandchild Link',
+                    href: 'https://www.ibm.com',
+                    element: 'a',
+                  },
+                  content: 'Grandchild Link',
+                },
+              ],
+            },
+            {
+              metaData: {
+                label: 'Sibling 2 Button',
+                title: 'Sibling 2 Button',
+                element: 'button',
+                onClick: action('sibling-2-click'),
+              },
+              content: 'Sibling 2 Button',
+            },
+          ],
+        },
+        {
+          metaData: {
+            label: 'Co-Parent Button',
+            title: 'Co-Parent Button',
+            element: 'button',
+            onClick: action('co-parent-click'),
+          },
+          content: 'Co-Parent Button',
+        },
+      ],
+    },
+  ];
 
-            <div style={{ padding: '2rem' }}>
-              <StatefulTable {...initialState} />
+  return (
+    <FullWidthWrapper withPadding={false}>
+      <HeaderContainer
+        render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+          <>
+            <Header
+              {...HeaderProps}
+              isSideNavExpanded={isSideNavExpanded}
+              onClickSideNavExpand={onClickSideNavExpand}
+            />
+            <SideNav
+              links={showDeepNesting ? deepLinks : links(true)}
+              isSideNavExpanded={isSideNavExpanded}
+            />
+            <div className={`${iotPrefix}--main-content`}>
+              <PageTitleBar title="Title" description="Description" />
+
+              <div style={{ padding: '2rem' }}>
+                <StatefulTable {...initialState} />
+              </div>
             </div>
-          </div>
-        </>
-      )}
-    />
-  </FullWidthWrapper>
-);
+          </>
+        )}
+      />
+    </FullWidthWrapper>
+  );
+};
 
 SideNavComponent.storyName = 'SideNav component';
 
@@ -246,7 +341,7 @@ export const SideNavComponentWithState = () => {
     setLinksState([
       {
         isEnabled: true,
-        icon: Dashboard,
+        icon: Dashboard24,
         metaData: {
           label: 'Dashboards',
           element: 'button',
@@ -274,7 +369,7 @@ export const SideNavComponentWithState = () => {
       },
       {
         isEnabled: true,
-        icon: Group,
+        icon: Group24,
         metaData: {
           label: 'Members',
           element: 'button',
