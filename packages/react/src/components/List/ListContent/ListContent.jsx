@@ -32,7 +32,7 @@ const propTypes = {
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
   /** true if the list should have multiple selectable rows using checkboxes */
-  isMultiSelect: PropTypes.bool,
+  isCheckboxMultiSelect: PropTypes.bool,
   testId: PropTypes.string,
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
@@ -83,7 +83,7 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
-  isMultiSelect: false,
+  isCheckboxMultiSelect: false,
   items: [],
   itemWillMove: () => {
     return true;
@@ -104,7 +104,7 @@ const getAdjustedNestingLevel = (items, currentLevel) =>
 
 const ListContent = ({
   isLoading,
-  isMultiSelect,
+  isCheckboxMultiSelect,
   isFullHeight,
   items,
   testId,
@@ -153,14 +153,14 @@ const ListContent = ({
           nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
           value={value}
           icon={
-            editingStyleIsMultiple(editingStyle) || (isSelectable && isMultiSelect) ? (
+            editingStyleIsMultiple(editingStyle) || (isSelectable && isCheckboxMultiSelect) ? (
               <Checkbox
                 id={`${item.id}-checkbox`}
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
                 onClick={(evt) => {
-                  if (isSelectable && isMultiSelect) {
+                  if (isSelectable && isCheckboxMultiSelect) {
                     // When combing checkboxes with selectable rows (isSelectable) we are
                     // getting click events from the ListItemWrapper before this handler is called.
                     // Therefor we stop this one and rely on the ListItem onSelect handler to handle
@@ -195,6 +195,7 @@ const ListContent = ({
           i18n={mergedI18n}
           selectedItemRef={isSelected ? selectedItemRef : null}
           tags={tags}
+          preventRowFocus={isCheckboxMultiSelect}
         />
       </div>,
       ...(hasChildren && isExpanded

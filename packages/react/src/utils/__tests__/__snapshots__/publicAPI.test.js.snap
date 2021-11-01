@@ -5533,10 +5533,10 @@ Map {
       },
       "iconPosition": "left",
       "indeterminateIds": Array [],
+      "isCheckboxMultiSelect": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
-      "isMultiSelect": false,
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
@@ -5623,6 +5623,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "isCheckboxMultiSelect": Object {
+        "type": "bool",
+      },
       "isFullHeight": Object {
         "type": "bool",
       },
@@ -5630,9 +5633,6 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
-        "type": "bool",
-      },
-      "isMultiSelect": Object {
         "type": "bool",
       },
       "itemWillMove": Object {
@@ -5711,10 +5711,10 @@ Map {
       },
       "iconPosition": "left",
       "indeterminateIds": Array [],
+      "isCheckboxMultiSelect": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
-      "isMultiSelect": false,
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
@@ -5801,14 +5801,14 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "isCheckboxMultiSelect": Object {
+        "type": "bool",
+      },
       "isFullHeight": [Function],
       "isLargeRow": Object {
         "type": "bool",
       },
       "isLoading": Object {
-        "type": "bool",
-      },
-      "isMultiSelect": Object {
         "type": "bool",
       },
       "itemWillMove": Object {
@@ -21833,10 +21833,10 @@ Map {
       },
       "iconPosition": "left",
       "indeterminateIds": Array [],
+      "isCheckboxMultiSelect": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
-      "isMultiSelect": false,
       "isVirtualList": false,
       "itemWillMove": [Function],
       "items": Array [],
@@ -21936,6 +21936,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "isCheckboxMultiSelect": Object {
+        "type": "bool",
+      },
       "isFullHeight": Object {
         "type": "bool",
       },
@@ -21943,9 +21946,6 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
-        "type": "bool",
-      },
-      "isMultiSelect": Object {
         "type": "bool",
       },
       "isVirtualList": Object {

@@ -44,7 +44,7 @@ const propTypes = {
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
   /** true if the list should have multiple selectable rows using checkboxes */
-  isMultiSelect: PropTypes.bool,
+  isCheckboxMultiSelect: PropTypes.bool,
   testId: PropTypes.string,
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
@@ -95,7 +95,7 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
-  isMultiSelect: false,
+  isCheckboxMultiSelect: false,
   items: [],
   itemWillMove: () => {
     return true;
@@ -126,7 +126,7 @@ const VirtualListContent = ({
   isFullHeight,
   isLargeRow,
   isLoading,
-  isMultiSelect,
+  isCheckboxMultiSelect,
   items,
   itemWillMove,
   loadingMoreIds,
@@ -262,7 +262,7 @@ const VirtualListContent = ({
           nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
           value={value}
           icon={
-            editingStyleIsMultiple(editingStyle) || (isSelectable && isMultiSelect) ? (
+            editingStyleIsMultiple(editingStyle) || (isSelectable && isCheckboxMultiSelect) ? (
               <Checkbox
                 id={`${item.id}-checkbox`}
                 name={item.value}
@@ -293,6 +293,7 @@ const VirtualListContent = ({
           isSelectable={editingStyle === null && isSelectable}
           i18n={mergedI18n}
           tags={tags}
+          preventRowFocus={isCheckboxMultiSelect}
         />
       </div>,
     ];

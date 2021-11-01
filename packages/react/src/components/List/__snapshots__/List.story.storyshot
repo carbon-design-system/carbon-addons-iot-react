@@ -1952,7 +1952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2012,7 +2012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2072,7 +2072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2132,7 +2132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2192,7 +2192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2252,7 +2252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2312,7 +2312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2372,7 +2372,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2432,7 +2432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2492,7 +2492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--content"
@@ -2632,7 +2632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               aria-label="Expand"
@@ -2718,7 +2718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               aria-label="Expand"
@@ -2804,7 +2804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               aria-label="Expand"
@@ -2890,7 +2890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--nesting-offset"
@@ -2958,7 +2958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--nesting-offset"
@@ -3026,7 +3026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               className="iot--list-item--nesting-offset"

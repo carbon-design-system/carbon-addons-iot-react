@@ -444,7 +444,7 @@ export const WithCheckboxMultiSelection = () => {
           selectedIds={selectedIds}
           isLoading={boolean('isLoading', false)}
           isVirtualList={boolean('isVirtualList', false)}
-          isMultiSelect
+          isCheckboxMultiSelect
           handleSelect={handleSelection}
         />
       </div>
@@ -565,7 +565,7 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
           }}
           isLoading={boolean('isLoading', false)}
           isVirtualList={boolean('isVirtualList', false)}
-          isMultiSelect
+          isCheckboxMultiSelect
           handleSelect={(id) => handleSelection(nestedItems, id)}
         />
       </div>

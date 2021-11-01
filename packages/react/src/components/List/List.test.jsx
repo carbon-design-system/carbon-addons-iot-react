@@ -292,23 +292,23 @@ describe('List', () => {
     expect(onSelect).toHaveBeenCalledWith('1', null);
   });
 
-  it('adds checkboxes when isMultiSelect is set to true', () => {
+  it('adds checkboxes when isCheckboxMultiSelect is set to true', () => {
     const onSelect = jest.fn();
     const { container } = render(
-      <List title="list" items={getListItems(1)} handleSelect={onSelect} isMultiSelect />
+      <List title="list" items={getListItems(1)} handleSelect={onSelect} isCheckboxMultiSelect />
     );
     userEvent.click(container.querySelectorAll('.bx--checkbox-label')[0]);
     expect(onSelect).toHaveBeenCalledWith('1', null);
   });
 
-  it('sets selected checkboxes when isMultiSelect is set to true', () => {
+  it('sets selected checkboxes when isCheckboxMultiSelect is set to true', () => {
     const onSelect = jest.fn();
     const { rerender } = render(
       <List
         title="list"
         items={getListItems(1)}
         handleSelect={onSelect}
-        isMultiSelect
+        isCheckboxMultiSelect
         selectedIds={['1']}
       />
     );
@@ -319,21 +319,21 @@ describe('List', () => {
         title="list"
         items={getListItems(1)}
         handleSelect={onSelect}
-        isMultiSelect
+        isCheckboxMultiSelect
         selectedIds={[]}
       />
     );
     expect(screen.getByTestId('1-checkbox')).not.toBeChecked();
   });
 
-  it('sets indeterminate checkboxes when isMultiSelect is set to true', () => {
+  it('sets indeterminate checkboxes when isCheckboxMultiSelect is set to true', () => {
     const onSelect = jest.fn();
     const { rerender } = render(
       <List
         title="list"
         items={getListItems(1)}
         handleSelect={onSelect}
-        isMultiSelect
+        isCheckboxMultiSelect
         indeterminateIds={['1']}
       />
     );
@@ -344,11 +344,16 @@ describe('List', () => {
         title="list"
         items={getListItems(1)}
         handleSelect={onSelect}
-        isMultiSelect
+        isCheckboxMultiSelect
         indeterminateIds={[]}
       />
     );
     expect(screen.getByTestId('1-checkbox')).not.toBePartiallyChecked();
+  });
+
+  it('prevents row focus when isCheckboxMultiSelect is true', () => {
+    render(<List title="list" items={getListItems(1)} isCheckboxMultiSelect />);
+    expect(screen.getByRole('button')).toHaveAttribute('tabIndex', expect.stringMatching('-1'));
   });
 
   it('calls handleLoadMore when load more row clicked', () => {
@@ -725,14 +730,14 @@ describe('List', () => {
       expect(onSelect).toHaveBeenCalledWith('1', null);
     });
 
-    it('adds checkboxes when isMultiSelect is set to true', () => {
+    it('adds checkboxes when isCheckboxMultiSelect is set to true', () => {
       const onSelect = jest.fn();
       render(
         <List
           title="list"
           items={getListItems(1)}
           handleSelect={onSelect}
-          isMultiSelect
+          isCheckboxMultiSelect
           isVirtualList
         />
       );
@@ -740,14 +745,14 @@ describe('List', () => {
       expect(onSelect).toHaveBeenCalledWith('1', null);
     });
 
-    it('sets selected checkboxes when isMultiSelect is set to true', () => {
+    it('sets selected checkboxes when isCheckboxMultiSelect is set to true', () => {
       const onSelect = jest.fn();
       const { rerender } = render(
         <List
           title="list"
           items={getListItems(1)}
           handleSelect={onSelect}
-          isMultiSelect
+          isCheckboxMultiSelect
           selectedIds={['1']}
           isVirtualList
         />
@@ -759,7 +764,7 @@ describe('List', () => {
           title="list"
           items={getListItems(1)}
           handleSelect={onSelect}
-          isMultiSelect
+          isCheckboxMultiSelect
           selectedIds={[]}
           isVirtualList
         />
@@ -767,14 +772,14 @@ describe('List', () => {
       expect(screen.getByTestId('1-checkbox')).not.toBeChecked();
     });
 
-    it('sets indeterminate checkboxes when isMultiSelect is set to true', () => {
+    it('sets indeterminate checkboxes when isCheckboxMultiSelect is set to true', () => {
       const onSelect = jest.fn();
       const { rerender } = render(
         <List
           title="list"
           items={getListItems(1)}
           handleSelect={onSelect}
-          isMultiSelect
+          isCheckboxMultiSelect
           indeterminateIds={['1']}
           isVirtualList
         />
@@ -786,12 +791,17 @@ describe('List', () => {
           title="list"
           items={getListItems(1)}
           handleSelect={onSelect}
-          isMultiSelect
+          isCheckboxMultiSelect
           indeterminateIds={[]}
           isVirtualList
         />
       );
       expect(screen.getByTestId('1-checkbox')).not.toBePartiallyChecked();
+    });
+
+    it('prevents row focus when isCheckboxMultiSelect is true', () => {
+      render(<List title="list" items={getListItems(1)} isCheckboxMultiSelect isVirtualList />);
+      expect(screen.getByRole('button')).toHaveAttribute('tabIndex', expect.stringMatching('-1'));
     });
 
     it('calls handleLoadMore when load more row clicked', () => {

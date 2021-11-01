@@ -62,7 +62,7 @@ const propTypes = {
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
   /** true if the list should have multiple selectable rows using checkboxes */
-  isMultiSelect: PropTypes.bool,
+  isCheckboxMultiSelect: PropTypes.bool,
   /** optional prop to use a virtualized version of the list instead of rendering all items */
   isVirtualList: PropTypes.bool,
   /** icon can be left or right side of list row primary value */
@@ -108,7 +108,7 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
-  isMultiSelect: false,
+  isCheckboxMultiSelect: false,
   isVirtualList: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
@@ -154,7 +154,7 @@ const List = forwardRef((props, ref) => {
     indeterminateIds,
     isLargeRow,
     isLoading,
-    isMultiSelect,
+    isCheckboxMultiSelect,
     isVirtualList,
     onItemMoved,
     itemWillMove,
@@ -193,7 +193,7 @@ const List = forwardRef((props, ref) => {
           testId={testId}
           indeterminateIds={indeterminateIds}
           isLoading={isLoading}
-          isMultiSelect={isMultiSelect}
+          isCheckboxMultiSelect={isCheckboxMultiSelect}
           selectedIds={selectedIds}
           expandedIds={expandedIds}
           handleSelect={handleSelect}
