@@ -714,13 +714,57 @@ describe('DateTimePicker', () => {
   });
 
   it('should allow keyboard navigation of presets', () => {
-    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    const { container } = render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
     userEvent.click(screen.getByTestId('date-time-picker__field'));
     expect(screen.getByRole('button', { name: 'Apply' })).toBeVisible();
     fireEvent.keyUp(screen.getByTestId(`date-time-picker__field`), {
       key: 'ArrowDown',
       code: 'ArrowDown',
     });
+    expect(screen.getByText('Custom Range')).toHaveFocus();
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowDown',
+        code: 'ArrowDown',
+      }
+    );
+    expect(screen.getByText('Last 30 minutes', { selector: 'li' })).toHaveFocus();
+
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowUp',
+        code: 'ArrowUp',
+      }
+    );
+    expect(screen.getByText('Custom Range')).toHaveFocus();
+
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowRight',
+        code: 'ArrowRight',
+      }
+    );
+    expect(screen.getByText('Custom Range')).toHaveFocus();
+
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowUp',
+        code: 'ArrowUp',
+      }
+    );
+    expect(screen.getByText('Last 24 hours')).toHaveFocus();
+
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowDown',
+        code: 'ArrowDown',
+      }
+    );
     expect(screen.getByText('Custom Range')).toHaveFocus();
 
     fireEvent.keyUp(screen.getByTestId(`date-time-picker__field`), {
