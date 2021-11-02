@@ -5328,6 +5328,7 @@ Map {
       "isVirtualList": false,
       "itemWillMove": [Function],
       "items": Array [],
+      "lockedIds": Array [],
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
@@ -5525,6 +5526,14 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "lockedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "onListUpdated": Object {
         "type": "func",
       },
@@ -5575,6 +5584,7 @@ Map {
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
+      "lockedIds": Array [],
       "onItemMoved": [Function],
       "selectedIds": Array [],
       "selectedItemRef": Object {
@@ -5681,6 +5691,14 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "lockedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "onItemMoved": Object {
         "type": "func",
       },
@@ -5740,6 +5758,7 @@ Map {
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
+      "lockedIds": Array [],
       "onItemMoved": [Function],
       "selectedIds": Array [],
       "testId": "list",
@@ -5837,6 +5856,14 @@ Map {
         "type": "arrayOf",
       },
       "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "lockedIds": Object {
         "args": Array [
           Object {
             "type": "string",
@@ -22424,6 +22451,7 @@ Map {
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
+      "lockedIds": Array [],
       "onItemMoved": [Function],
       "overrides": null,
       "pagination": null,
@@ -22577,6 +22605,14 @@ Map {
         "type": "arrayOf",
       },
       "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "lockedIds": Object {
         "args": Array [
           Object {
             "type": "string",

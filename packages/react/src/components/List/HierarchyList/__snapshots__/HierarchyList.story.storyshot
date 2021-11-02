@@ -1414,60 +1414,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
           data-floating-menu-container={true}
         >
           <div
-            className="iot--list-item-editable--drag-container"
-            role="listitem"
+            className="iot--list-item"
           >
+            <svg
+              aria-hidden={true}
+              className="iot--list-item--lock"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24,14H22V8A6,6,0,0,0,10,8v6H8a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V16A2,2,0,0,0,24,14ZM12,8a4,4,0,0,1,8,0v6H12ZM24,28H8V16H24Z"
+              />
+            </svg>
             <div
-              className="iot--list-item iot--list-item-editable"
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
             >
               <div
-                className="iot--list-item-editable--drag-preview"
-              >
-                Jeff McNeil
-              </div>
-              <div
-                title="Drag handle"
-              >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "32px",
-                  }
-                }
-              />
-              <div
-                className="iot--list-item--content"
+                className="iot--list-item--content--values"
               >
                 <div
-                  className="iot--list-item--content--values"
+                  className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--main"
+                    className="iot--list-item--content--values--value"
+                    title="Jeff McNeil"
                   >
-                    <div
-                      className="iot--list-item--content--values--value"
-                      title="Jeff McNeil"
-                    >
-                      Jeff McNeil
-                    </div>
+                    Jeff McNeil
                   </div>
                 </div>
               </div>
