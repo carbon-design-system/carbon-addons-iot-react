@@ -6,8 +6,11 @@ import userEvent from '@testing-library/user-event';
 import { sampleHierarchy } from '../List.story';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { InlineLoading } from '../../..';
+import { settings } from '../../../constants/Settings';
 
 import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from './HierarchyList';
+
+const { iotPrefix } = settings;
 
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
 jest.mock('lodash/debounce', () => (fn) => fn);
@@ -797,6 +800,34 @@ describe('HierarchyList', () => {
     userEvent.click(within(screen.getByTestId('list')).getByText('Cancel'));
     expect(screen.queryByText('1 item selected')).toBeNull();
     expect(container.querySelectorAll('input[checked]').length).toBe(0);
+  });
+
+  it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
+    render(
+      <HierarchyList
+        title="Hierarchy List"
+        items={getListItems(2)}
+        editingStyle={EditingStyle.SingleNesting}
+        lockedIds={['1']}
+      />
+    );
+
+    expect(
+      within(screen.getByTestId('list'))
+        .getByText('Item 1')
+        .closest(`.${iotPrefix}--list-item-parent > *`)
+    ).not.toHaveAttribute('draggable');
+
+    expect(
+      within(screen.getByTestId('list')).getByText('Item 1').closest(`.${iotPrefix}--list-item`)
+        .firstChild
+    ).toHaveClass('iot--list-item--lock');
+
+    expect(
+      within(screen.getByTestId('list'))
+        .getAllByText('Item 2')[0]
+        .closest(`.${iotPrefix}--list-item-parent > *`)
+    ).toHaveAttribute('draggable');
   });
 
   describe('isVirtualList', () => {
