@@ -821,7 +821,7 @@ describe('HierarchyList', () => {
     expect(
       within(screen.getByTestId('list')).getByText('Item 1').closest(`.${iotPrefix}--list-item`)
         .firstChild
-    ).toHaveClass('iot--list-item--lock');
+    ).toHaveClass(`${iotPrefix}--list-item--lock`);
 
     expect(
       within(screen.getByTestId('list'))

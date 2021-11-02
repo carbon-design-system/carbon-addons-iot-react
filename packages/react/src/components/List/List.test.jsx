@@ -371,7 +371,7 @@ describe('List', () => {
     ).not.toHaveAttribute('draggable');
 
     expect(screen.getByText('Item 1').closest(`.${iotPrefix}--list-item`).firstChild).toHaveClass(
-      'iot--list-item--lock'
+      `${iotPrefix}--list-item--lock`
     );
 
     expect(
@@ -791,7 +791,7 @@ describe('List', () => {
       ).not.toHaveAttribute('draggable');
 
       expect(screen.getByText('Item 1').closest(`.${iotPrefix}--list-item`).firstChild).toHaveClass(
-        'iot--list-item--lock'
+        `${iotPrefix}--list-item--lock`
       );
 
       expect(

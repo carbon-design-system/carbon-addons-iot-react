@@ -266,6 +266,7 @@ const VirtualListContent = ({
                 labelText=""
                 onClick={() => handleSelect(item.id, parentId)}
                 checked={isSelected}
+                disabled={isLocked}
               />
             ) : (
               icon

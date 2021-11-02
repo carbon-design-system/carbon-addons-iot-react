@@ -157,6 +157,7 @@ const ListContent = ({
                 labelText=""
                 onClick={() => handleSelect(item.id, parentId)}
                 checked={isSelected}
+                disabled={isLocked}
               />
             ) : (
               icon
