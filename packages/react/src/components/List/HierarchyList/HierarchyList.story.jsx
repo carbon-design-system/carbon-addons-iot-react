@@ -471,7 +471,9 @@ export const WithLargeNumberOfItems = () => (
       items={[...Array(1000)].map((_, i) => ({
         id: `item-${i}`,
         content: {
-          value: `Item ${i}`,
+          value: i === 20 ? `Item ${i} `.repeat(i + 1 * 10) : `Item ${i}`,
+          secondaryValue:
+            i === 10 ? `Item ${i} Subvalue `.repeat(i + 1 * 10) : `Item ${i} Subvalue`,
         },
       }))}
       editingStyle={EditingStyle.Single}
