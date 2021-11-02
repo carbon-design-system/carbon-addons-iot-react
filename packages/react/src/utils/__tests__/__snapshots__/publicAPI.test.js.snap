@@ -483,6 +483,7 @@ Map {
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
         "preserveColumnWidths": false,
+        "shouldExpandOnRowClick": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
         "wrapCellText": "always",
@@ -1286,6 +1287,9 @@ Map {
               "type": "bool",
             },
             "preserveColumnWidths": Object {
+              "type": "bool",
+            },
+            "shouldExpandOnRowClick": Object {
               "type": "bool",
             },
             "shouldLazyRender": Object {
