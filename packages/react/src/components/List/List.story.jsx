@@ -158,8 +158,7 @@ export const BasicSingleColumnWithSearch = () => {
               content: { value: key },
             }))
             .filter(
-              ({ id }) =>
-                searchValue === null || id.toLowerCase().includes(searchValue?.toLowerCase())
+              ({ id }) => !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
             )}
           isLoading={boolean('isLoading', false)}
           search={{
