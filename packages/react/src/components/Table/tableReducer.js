@@ -511,11 +511,16 @@ export const tableReducer = (state = {}, action) => {
         ? searchFromState?.defaultValue
         : searchFromState?.value;
 
+      const nextPageSize = paginationFromState.pageSize || pageSize;
+      const nextTotalItems = totalItems || updatedData.length;
+      const currentPage = get(state, 'view.pagination.page');
+
       const pagination = get(state, 'view.pagination')
         ? {
-            totalItems: { $set: totalItems || updatedData.length },
-            pageSize: { $set: paginationFromState.pageSize || pageSize },
+            totalItems: { $set: nextTotalItems },
+            pageSize: { $set: nextPageSize },
             pageSizes: { $set: pageSizes },
+            page: { $set: nextPageSize * currentPage > nextTotalItems ? 1 : currentPage },
           }
         : {};
 
