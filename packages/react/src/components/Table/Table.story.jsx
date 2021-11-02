@@ -1283,7 +1283,6 @@ export const TableExampleWithCreateSaveViews = () => {
             },
           },
         }}
-        isSortable
         options={{
           ...baseState.options,
           hasResize: true,
