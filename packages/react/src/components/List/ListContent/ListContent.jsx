@@ -31,6 +31,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   testId: PropTypes.string,
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
@@ -84,6 +86,7 @@ const defaultProps = {
     return true;
   },
   loadingMoreIds: [],
+  lockedIds: [],
   onItemMoved: () => {},
   selectedIds: [],
   selectedItemRef: React.createRef(),
@@ -112,6 +115,7 @@ const ListContent = ({
   onItemMoved,
   itemWillMove,
   isLargeRow,
+  lockedIds,
   handleLoadMore,
   i18n,
   selectedItemRef,
@@ -122,6 +126,7 @@ const ListContent = ({
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
     const isLoadingMore = loadingMoreIds.includes(item.id);
+    const isLocked = lockedIds.includes(item.id);
 
     const {
       content: { value, secondaryValue, icon, rowActions, tags },
@@ -159,7 +164,7 @@ const ListContent = ({
           }
           disabled={disabled}
           iconPosition={iconPosition}
-          editingStyle={editingStyle}
+          editingStyle={isLocked ? null : editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
           onSelect={() => handleSelect(item.id, parentId)}
@@ -170,6 +175,7 @@ const ListContent = ({
           expanded={isExpanded}
           isExpandable={hasChildren}
           isLargeRow={isLargeRow}
+          isLocked={isLocked}
           isCategory={isCategory}
           isSelectable={editingStyle === null && isSelectable}
           i18n={mergedI18n}

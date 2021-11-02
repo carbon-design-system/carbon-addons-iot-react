@@ -60,6 +60,8 @@ const propTypes = {
   handleLoadMore: PropTypes.func,
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** list editing style */
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,
@@ -96,6 +98,7 @@ const defaultProps = {
     return true;
   },
   loadingMoreIds: [],
+  lockedIds: [],
   onItemMoved: () => {},
   selectedIds: [],
   testId: 'list',
@@ -122,6 +125,7 @@ const VirtualListContent = ({
   items,
   itemWillMove,
   loadingMoreIds,
+  lockedIds,
   onItemMoved,
   selectedIds,
   testId,
@@ -211,6 +215,7 @@ const VirtualListContent = ({
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
     const isLoadingMore = loadingMoreIds.includes(item.id);
+    const isLocked = lockedIds.includes(item.id);
     const parentIsExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
     const {
@@ -268,7 +273,7 @@ const VirtualListContent = ({
           }
           disabled={disabled}
           iconPosition={iconPosition}
-          editingStyle={editingStyle}
+          editingStyle={isLocked ? null : editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
           onSelect={() => handleSelect(item.id, parentId)}
@@ -279,6 +284,7 @@ const VirtualListContent = ({
           expanded={isExpanded}
           isExpandable={hasChildren}
           isLargeRow={isLargeRow}
+          isLocked={isLocked}
           isCategory={isCategory}
           isSelectable={editingStyle === null && isSelectable}
           i18n={mergedI18n}

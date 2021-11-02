@@ -101,7 +101,8 @@
     outline-offset: -$spacing-01;
   }
 
-  &--handle {
+  &--handle,
+  &--lock {
     flex-shrink: 0;
     fill: $inverse-02;
     margin-right: $spacing-04;
