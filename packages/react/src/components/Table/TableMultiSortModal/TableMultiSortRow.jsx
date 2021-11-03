@@ -187,7 +187,7 @@ export const TableMultiSortRow = ({
         iconDescription={i18n.multiSortRemoveColumn}
         onClick={onRemoveMultiSortColumn}
         testId={`${columnId}-remove-sort-button`}
-        disabled={numSelectedColumns.length === 1}
+        disabled={numSelectedColumns === 1}
       />
     </div>
   );

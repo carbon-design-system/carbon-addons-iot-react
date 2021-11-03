@@ -137,7 +137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--side-nav__items"
       >
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button
@@ -250,7 +250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           </a>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button
@@ -345,7 +345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           </ul>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button
@@ -739,7 +739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             </div>
           </section>
           <div
-            className="addons-iot-table-container"
+            className="addons-iot-table-container iot-table-container--dropdown-height-fix"
           >
             <div
               className="bx--data-table-content"
@@ -1278,6 +1278,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   </tr>
                   <tr
                     data-testid="null-table-head-filter-header-row"
+                    style={
+                      Object {
+                        "--filter-header-dropdown-max-height": "unset",
+                      }
+                    }
                   >
                     <th
                       className="iot--filter-header-row--header"
@@ -5312,7 +5317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--side-nav__items"
       >
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button
@@ -5406,7 +5411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           </ul>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button

@@ -1,8 +1,12 @@
+import { settings } from '../../src/constants/Settings';
+
+const { prefix } = settings;
+
 describe('CodeSandbox', () => {
   it(
     'should build and load',
     {
-      defaultCommandTimeout: 30000,
+      defaultCommandTimeout: 60000,
     },
     () => {
       // load sandbox
@@ -15,10 +19,12 @@ describe('CodeSandbox', () => {
       // codesandbox is iframes all the way down.
       //               codesandbox
       //                    |
-      //                 iframe
-      //                /   |  \
-      //  "Open Sandbox"    |   "Final Preview"
-      //              "Transpiling"
+      //                 iframe <- "rendered preview content goes here if successful"
+      //               /         \
+      // "Open Sandbox" iframe    "Transpiling" or "Error" iframe <- While it's transpiling a child
+      //                             iframe is created to show the tranpiling animations. If it fails,
+      //                             an error message is show in this iframe instead of the parent.
+      //
       // We first load the main iframe and confirm it has two iframes inside it.
       cy.get('iframe').iframe(() => {
         cy.get('iframe')
@@ -32,24 +38,13 @@ describe('CodeSandbox', () => {
               cy.findByText('Transpiling Modules...').should('be.visible');
               // after the transpiling is finished, this text should no longer be visible--we need
               // a long timeout here, because sometimes the rendering can be _very_ slow.
-              cy.findByText('Transpiling Modules...', { timeout: 60 * 1000 }).should('not.exist');
+              cy.findByText('Transpiling Modules...').should('not.exist');
             });
           });
 
-        // after the transpiling is finished, we can (from the context of the parent iframe) again
-        // check for children iframes. Again, there will be two: the "Open Sandbox" button and the
-        // finished rendered preview
-        cy.get('iframe')
-          .should('have.length', 2)
-          // read the contents of the rendered preview and check for the existance of the button.
-          .then(($iframes) => {
-            cy.wrap($iframes[1]).iframe(() => {
-              // TODO: this needs to be removed and the check for the button
-              // added back later after the sandbox is fixed.
-              cy.findByText('ModuleNotFoundError').should('be.visible');
-              // cy.get(`.${prefix}--btn`).should('be.visible');
-            });
-          });
+        // after the transpiling is finished, we can (from the context of the parent iframe)
+        // check for the rendered button to confirm the sandbox successfully loaded.
+        cy.findByText('Hello world').should('be.visible').should('have.class', `${prefix}--btn`);
       });
     }
   );

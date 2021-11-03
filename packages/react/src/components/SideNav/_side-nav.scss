@@ -75,6 +75,71 @@ html[dir='rtl'] {
     margin-left: mini-units(3);
     margin-right: unset;
   }
+
+  .#{$iot-prefix}--side-nav__item--depth-0 {
+    .#{$prefix}--side-nav__link-text {
+      padding-right: $spacing-09 + $spacing-03;
+    }
+  }
+}
+
+.#{$iot-prefix}--side-nav__item--depth-1 {
+  .#{$prefix}--side-nav__submenu-title {
+    padding-left: $spacing-09 + $spacing-03;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-09 + $spacing-03;
+    }
+  }
+  .#{$prefix}--side-nav__link-text {
+    padding-left: $spacing-05;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-10 + $spacing-03;
+    }
+  }
+}
+
+.#{$iot-prefix}--side-nav__item--depth-2 {
+  .#{$prefix}--side-nav__submenu-title {
+    padding-left: $spacing-10 + $spacing-03;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-10 + $spacing-03;
+    }
+  }
+
+  .#{$prefix}--side-nav__link-text {
+    padding-left: $spacing-07;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-10 + $spacing-06;
+    }
+  }
+}
+
+.#{$iot-prefix}--side-nav__item--depth-3 {
+  .#{$prefix}--side-nav__submenu-title {
+    padding-left: $spacing-10 + $spacing-06;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-10 + $spacing-06;
+    }
+  }
+
+  .#{$prefix}--side-nav__link-text {
+    padding-left: $spacing-09;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-09;
+    }
+  }
 }
 
 .#{$prefix}--side-nav__overlay-active {

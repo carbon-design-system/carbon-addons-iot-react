@@ -2262,33 +2262,53 @@ describe('Table', () => {
     const { rerender } = render(
       <Table id="loading-table" columns={tableColumns} data={tableData} size="compact" />
     );
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `compact` has been deprecated for the `size` prop on the Table component.'
       )
     );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `compact` has been deprecated for the `size` prop on the TableHead component.'
+      )
+    );
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="short" />);
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `short` has been deprecated for the `size` prop on the Table component.'
       )
     );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `short` has been deprecated for the `size` prop on the TableHead component.'
+      )
+    );
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="normal" />);
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `normal` has been deprecated for the `size` prop on the Table component.'
       )
     );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `normal` has been deprecated for the `size` prop on the TableHead component.'
+      )
+    );
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="tall" />);
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `tall` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `tall` has been deprecated for the `size` prop on the TableHead component.'
       )
     );
     rerender(
       <Table id="loading-table" columns={tableColumns} data={tableData} size="unsupported" />
     );
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'Failed prop type: Invalid prop `size` of value `unsupported` supplied to `Table`'
       )
