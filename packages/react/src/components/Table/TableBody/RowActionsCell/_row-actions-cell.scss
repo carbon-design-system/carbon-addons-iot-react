@@ -64,11 +64,12 @@
 .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
   opacity: 1;
   transition: opacity $duration--fast-02 motion(entrance, productive);
+  background: transparent;
 }
 
 .#{$prefix}--data-table tbody tr {
   &:not(:hover) .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
-    @include backgroundGradient($ui-01);
+    background: transparent;
   }
 
   &.#{$prefix}--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
