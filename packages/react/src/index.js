@@ -11,6 +11,7 @@ export AddCard from './components/AddCard';
 export Button from './components/Button';
 export Breadcrumb, { BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export ComposedModal from './components/ComposedModal';
+export CardCodeEditor from './components/CardCodeEditor/CardCodeEditor';
 export EmptyTable from './components/Table/EmptyTable/EmptyTable';
 export Table from './components/Table';
 export TableHead from './components/Table/TableHead/TableHead';
