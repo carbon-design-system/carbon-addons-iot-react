@@ -71,6 +71,8 @@ const TableCellRenderer = ({
   const myClasses = classnames({
     [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
     [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never',
+    [`${iotPrefix}--table__cell-text--pre-wrap`]:
+      typeof children === 'string' && children.includes('  '),
   });
 
   const [useTooltip, setUseTooltip] = useState(false);

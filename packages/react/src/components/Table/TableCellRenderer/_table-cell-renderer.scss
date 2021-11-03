@@ -28,3 +28,7 @@
 .#{$iot-prefix}--table__cell-text--no-wrap {
   white-space: nowrap;
 }
+
+.#{$iot-prefix}--table__cell-text--pre-wrap {
+  white-space: pre;
+}

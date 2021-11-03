@@ -172,6 +172,32 @@ describe('TableCellRenderer', () => {
     expect(screen.getByText('35.1234567')).toBeDefined(); // no limit on the count of decimals
   });
 
+  it('should set pre-wrap class on string children with multiple spaces', () => {
+    const { container } = render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string">
+        {'1  1   1    1     1'}
+      </TableCellRenderer>
+    );
+
+    // have to select by querySelector, because selecting by title or text fails, because it
+    // returns '1 1 1 1 1' instead of preserving spaces as expected, so this seems more clear
+    // than using a text or title query that is the exact opposite of the output we're desiring
+    // (that the whitespace be preserved)
+    expect(container.querySelector('span')).toBeVisible();
+    expect(container.querySelector('span')).toHaveClass(`${iotPrefix}--table__cell-text--pre-wrap`);
+  });
+
+  it('should not set pre-wrap class on string children with single spaces', () => {
+    render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string">
+        {'1 1'}
+      </TableCellRenderer>
+    );
+
+    expect(screen.getByText('1 1')).toBeVisible();
+    expect(screen.getByText('1 1')).not.toHaveClass(`${iotPrefix}--table__cell-text--pre-wrap`);
+  });
+
   describe('warning should be thrown for objects as data without needed functions', () => {
     const { __DEV__ } = global;
     const { error } = console;
