@@ -14,6 +14,7 @@ import { settings } from '../../constants/Settings';
 import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 import experimental from '../../internal/experimental';
+import deprecate from '../../internal/deprecate';
 
 import {
   TableColumnsPropTypes,
@@ -25,6 +26,8 @@ import {
   RowActionsStatePropTypes,
   ActiveTableToolbarPropType,
   TableSortPropType,
+  TableColumnGroupPropType,
+  TableOrderingPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -47,10 +50,15 @@ const propTypes = {
   tooltip: PropTypes.node,
   /** render zebra stripes or not */
   useZebraStyles: PropTypes.bool,
-  /**  lighter styling where regular table too visually heavy */
-  lightweight: PropTypes.bool,
+  /**  lighter styling where regular table too visually heavy. Deprecated. */
+  lightweight: deprecate(
+    PropTypes.bool,
+    `The 'lightweight' prop has been deprecated and will be removed in the next major version.`
+  ),
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
+  /** Specify the properties of each column group in the table. Defaults to empty column. */
+  columnGroups: TableColumnGroupPropType,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
   /** Expanded data for the table details */
@@ -64,7 +72,14 @@ const propTypes = {
     hasAggregations: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
-    hasRowExpansion: PropTypes.bool,
+    /** True if the rows shuld be expandable */
+    hasRowExpansion: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** True if any previously expanded rows should be collapsed when a new row is expanded */
+        expandRowsExclusively: PropTypes.bool,
+      }),
+    ]),
     hasRowNesting: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
@@ -101,6 +116,8 @@ const propTypes = {
     hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
+    /** If true enables the row edit toolbar button and functionality */
+    hasRowEdit: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
     hasUserViewManagement: PropTypes.bool,
@@ -205,14 +222,8 @@ const propTypes = {
       isSelectAllIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string),
       sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]),
-      /** Specify column ordering and visibility */
-      ordering: PropTypes.arrayOf(
-        PropTypes.shape({
-          columnId: PropTypes.string.isRequired,
-          /* Visibility of column in table, defaults to false */
-          isHidden: PropTypes.bool,
-        })
-      ),
+      /** Specify the order, visibility and group belonging of the table columns */
+      ordering: TableOrderingPropType,
       /** what is the current state of the row actions */
       rowActions: RowActionsStatePropTypes,
       singleRowEditButtons: PropTypes.element,
@@ -227,6 +238,18 @@ const propTypes = {
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
+      multiSortModal: PropTypes.shape({
+        /**
+         * The anticipatedColumn is used to add the most recently click columnId to the UI of the
+         * MultiSort modal. This gives the user a better experience by pre-emptively adding the column
+         * they clicked multi-sort on to the multisort modal without changing state. They still have to
+         * click "Sort" to save it, or can click 'Cancel' or the 'X' to clear it.
+         */
+        anticipatedColumn: PropTypes.shape({
+          columnId: PropTypes.string,
+          direction: PropTypes.oneOf(['ASC', 'DESC']),
+        }),
+      }),
       /** Array with rowIds that are with loading active */
       loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
     }),
@@ -309,9 +332,10 @@ const propTypes = {
 };
 
 export const defaultProps = (baseProps) => ({
+  columnGroups: [],
   id: null,
   useZebraStyles: false,
-  lightweight: false,
+  lightweight: undefined,
   title: null,
   tooltip: null,
   secondaryTitle: null,
@@ -322,6 +346,7 @@ export const defaultProps = (baseProps) => ({
     hasRowExpansion: false,
     hasRowActions: false,
     hasRowNesting: false,
+    hasRowEdit: false,
     hasFilter: false,
     hasAdvancedFilter: false,
     hasOnlyPageData: false,
@@ -368,6 +393,8 @@ export const defaultProps = (baseProps) => ({
       },
       singleRowEditButtons: null,
       loadingMoreIds: [],
+      showMultiSortModal: false,
+      multiSortModal: undefined,
     },
   },
   actions: {
@@ -467,6 +494,7 @@ export const defaultProps = (baseProps) => ({
     multiSortAscending: 'Ascending',
     multiSortDescending: 'Descending',
     multiSortOverflowItem: 'Multi-sort',
+    multiSortDragHandle: 'Drag handle',
     // table error state
     tableErrorStateTitle: 'Unable to load the page',
     buttonLabelOnTableError: 'Refresh the page',
@@ -483,6 +511,7 @@ const Table = (props) => {
   const {
     id,
     columns,
+    columnGroups,
     data,
     expandedData,
     locale,
@@ -707,6 +736,29 @@ const Table = (props) => {
       ? someRowsAreSelected
       : view.table.isSelectAllIndeterminate;
 
+  const minHeaderSizeIsLarge = visibleColumns.some((col) => col.isSortable);
+
+  if (__DEV__ && columnGroups.length && options.hasColumnSelection) {
+    warning(
+      false,
+      'Column grouping (columnGroups) cannot be combined with the option hasColumnSelection:true'
+    );
+  }
+
+  const multiSortColumns = useMemo(() => {
+    const arrayifiedSort = Array.isArray(view.table.sort)
+      ? view.table.sort
+      : view.table.sort !== undefined
+      ? [view.table.sort]
+      : [];
+
+    if (view.table.multiSortModal?.anticipatedColumn) {
+      return [...arrayifiedSort, view.table.multiSortModal.anticipatedColumn];
+    }
+
+    return arrayifiedSort;
+  }, [view.table.multiSortModal, view.table.sort]);
+
   return (
     <TableContainer
       style={style}
@@ -844,12 +896,24 @@ const Table = (props) => {
           </FilterTags>
         </section>
       ) : null}
-      <div className="addons-iot-table-container">
+      <div
+        className={classnames('addons-iot-table-container', {
+          // workaround hack to prevent double scrolling of the table and a filter dropdown
+          // because the Dropdown and Multiselect components don't support opening the menu
+          // items outside of the parent. This sets a minimum height for the table and applies
+          // a max-height to the dropdown list container based on that minimum height to prevent
+          // this issue.
+          [`${iotPrefix}-table-container--dropdown-height-fix`]: options.hasFilter,
+        })}
+      >
         <CarbonTable
           id={id}
           // TODO: remove id in v3
           data-testid={id || testId}
           className={classnames({
+            [`${iotPrefix}--data-table--column-groups`]: columnGroups.length,
+            [`${iotPrefix}--data-table--column-groups--min-size-large`]:
+              columnGroups.length && minHeaderSizeIsLarge,
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
               options.hasResize && !options.useAutoTableLayoutForResize,
@@ -869,7 +933,6 @@ const Table = (props) => {
                   'hasColumnSelectionConfig',
                   'hasResize',
                   'hasRowActions',
-                  'hasRowExpansion',
                   'hasRowNesting',
                   'hasSingleRowEdit',
                   'hasRowSelection',
@@ -877,10 +940,12 @@ const Table = (props) => {
                   'hasMultiSort',
                   'preserveColumnWidths'
                 ),
+                hasRowExpansion: !!options.hasRowExpansion,
                 wrapCellText: options.wrapCellText,
                 truncateCellText: useCellTextTruncate,
               }}
               columns={columns}
+              columnGroups={columnGroups}
               filters={view.filters}
               actions={{
                 ...pick(actions.toolbar, 'onApplyFilter'),
@@ -920,7 +985,8 @@ const Table = (props) => {
             view.table.loadingState.isLoading ? (
               <TableSkeletonWithHeaders
                 columns={visibleColumns}
-                {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+                {...pick(options, 'hasRowSelection', 'hasRowActions')}
+                hasRowExpansion={!!options.hasRowExpansion}
                 rowCount={view.table.loadingState.rowCount}
                 columnCount={view.table.loadingState.columnCount}
                 // TODO: remove 'id' in v3.
@@ -966,12 +1032,12 @@ const Table = (props) => {
                 {...pick(
                   options,
                   'hasRowSelection',
-                  'hasRowExpansion',
                   'hasRowActions',
                   'hasRowNesting',
                   'shouldExpandOnRowClick',
                   'shouldLazyRender'
                 )}
+                hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}
                 truncateCellText={useCellTextTruncate}
                 ordering={view.table.ordering}
@@ -1023,13 +1089,8 @@ const Table = (props) => {
           {options.hasAggregations && !aggregationsAreHidden ? (
             <TableFoot
               options={{
-                ...pick(
-                  options,
-                  'hasRowSelection',
-                  'hasRowExpansion',
-                  'hasRowActions',
-                  'hasRowNesting'
-                ),
+                ...pick(options, 'hasRowSelection', 'hasRowActions', 'hasRowNesting'),
+                hasRowExpansion: !!options.hasRowExpansion,
               }}
               tableState={{
                 aggregations,
@@ -1068,7 +1129,7 @@ const Table = (props) => {
           testId={`${id}-multi-sort-modal`}
           columns={columns}
           ordering={view.table.ordering}
-          sort={Array.isArray(view.table.sort) ? view.table.sort : [view.table.sort]}
+          sort={multiSortColumns}
           actions={{
             ...pick(
               actions.table,

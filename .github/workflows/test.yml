@@ -34,7 +34,7 @@ jobs:
         uses: actions/setup-node@v1
         if: steps.changes.outputs.react == 'true'
         with:
-          node-version: '14.x'
+          node-version: '16.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -100,6 +100,12 @@ jobs:
           path-to-lcov: './packages/react/coverage/lcov.info'
           base-path: 'packages/react'
 
+      - name: Test CodeSandbox
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react
+          yarn test:sandbox
+
   test-angular:
     name: Test Angular
     runs-on: ubuntu-latest
@@ -119,7 +125,7 @@ jobs:
         uses: actions/setup-node@v1
         if: steps.changes.outputs.angular == 'true'
         with:
-          node-version: '14.x'
+          node-version: '16.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2

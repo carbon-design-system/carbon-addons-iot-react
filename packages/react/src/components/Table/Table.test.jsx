@@ -8,6 +8,7 @@ import { ArrowRight16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 import {
   getTableColumns,
@@ -202,7 +203,7 @@ describe('Table', () => {
         view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
       />
     );
-    expect(wrapper.find('.bx--select-option')).toHaveLength(5);
+    expect(wrapper.find(`.${prefix}--select-option`)).toHaveLength(5);
   });
 
   it('handles row collapse', () => {
@@ -216,7 +217,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find('.bx--table-expand__button').at(0).simulate('click');
+    wrapper.find(`.${prefix}--table-expand__button`).at(0).simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
@@ -230,7 +231,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find('.bx--table-expand__button').at(1).simulate('click');
+    wrapper.find(`.${prefix}--table-expand__button`).at(1).simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
@@ -505,20 +506,20 @@ describe('Table', () => {
       />
     );
 
-    expect(wrapper.find('.bx--search-input')).toHaveLength(1);
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find(`.${prefix}--search-input`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
 
     wrapper.setProps({
       view: { toolbar: { search: { defaultValue: 'ferrari' } } },
     });
     wrapper.update();
 
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('ferrari');
 
     wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
     wrapper.update();
 
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
   });
 
   it('cells should always wrap by default', () => {
@@ -577,7 +578,9 @@ describe('Table', () => {
     );
     expect(
       wrapper3
-        .find('TableCell .iot--table__cell--truncate .iot--table__cell-text--truncate')
+        .find(
+          `TableCell .${iotPrefix}--table__cell--truncate .${iotPrefix}--table__cell-text--truncate`
+        )
         .first()
     ).toHaveLength(1);
   });
@@ -606,7 +609,7 @@ describe('Table', () => {
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
       expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).toHaveClass(
-        'bx--overflow-menu--flip'
+        `${prefix}--overflow-menu--flip`
       );
     });
     document.documentElement.setAttribute('dir', 'rtl');
@@ -616,7 +619,7 @@ describe('Table', () => {
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
       expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).not.toHaveClass(
-        'bx--overflow-menu--flip'
+        `${prefix}--overflow-menu--flip`
       );
     });
 
@@ -1177,7 +1180,7 @@ describe('Table', () => {
     expect(inModal.mock.calls.length).toBe(0);
     fireEvent.click(screen.getByText('Drill in 2').closest('button'));
     expect(inModal.mock.calls.length).toBe(1);
-    fireEvent.click(container.querySelector('.iot--row-actions-cell--overflow-menu'));
+    fireEvent.click(container.querySelector(`.${iotPrefix}--row-actions-cell--overflow-menu`));
     fireEvent.click(screen.queryByText('Drill in').closest('button'));
     expect(inModal.mock.calls.length).toBe(2);
   });
@@ -2029,10 +2032,7 @@ describe('Table', () => {
       fireEvent.change(screen.getByPlaceholderText('pick a number'), { target: { value: '16' } });
       // ensure keyDown events also get called with hasFastFilter is false
       fireEvent.keyDown(screen.getByPlaceholderText('pick a number'), {
-        key: 'Enter',
-        code: 'Enter',
-        keyCode: 13,
-        charCode: 13,
+        key: keyboardKeys.ENTER,
       });
       userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
@@ -2158,10 +2158,7 @@ describe('Table', () => {
       const numberInputClear = screen.getAllByRole('button', { name: 'Clear filter' })[1];
       fireEvent.focus(numberInputClear);
       fireEvent.keyDown(numberInputClear, {
-        key: 'Enter',
-        code: 'Enter',
-        keyCode: 13,
-        charCode: 13,
+        key: keyboardKeys.ENTER,
       });
       userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
       expect(handleApplyFilter).toHaveBeenLastCalledWith({
@@ -2265,33 +2262,53 @@ describe('Table', () => {
     const { rerender } = render(
       <Table id="loading-table" columns={tableColumns} data={tableData} size="compact" />
     );
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `compact` has been deprecated for the `size` prop on the Table component.'
       )
     );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `compact` has been deprecated for the `size` prop on the TableHead component.'
+      )
+    );
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="short" />);
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `short` has been deprecated for the `size` prop on the Table component.'
       )
     );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `short` has been deprecated for the `size` prop on the TableHead component.'
+      )
+    );
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="normal" />);
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `normal` has been deprecated for the `size` prop on the Table component.'
       )
     );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `normal` has been deprecated for the `size` prop on the TableHead component.'
+      )
+    );
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="tall" />);
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `tall` has been deprecated for the `size` prop on the Table component.'
+      )
+    );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `tall` has been deprecated for the `size` prop on the TableHead component.'
       )
     );
     rerender(
       <Table id="loading-table" columns={tableColumns} data={tableData} size="unsupported" />
     );
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'Failed prop type: Invalid prop `size` of value `unsupported` supplied to `Table`'
       )
@@ -2299,6 +2316,93 @@ describe('Table', () => {
     jest.clearAllMocks();
     rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="lg" />);
     expect(console.error).not.toHaveBeenCalled();
+  });
+
+  it('adds --column-groups class to the CarbonTable if columnGroups are present', () => {
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px' },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('my-table')).toHaveClass(`${iotPrefix}--data-table--column-groups`);
+  });
+
+  it('adds min-size class if columnGroups are present and there at least one sortable column', () => {
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px', isSortable: true },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('my-table')).toHaveClass(
+      `${iotPrefix}--data-table--column-groups--min-size-large`
+    );
+  });
+
+  it('throws an error when using both column groups and hasColumnSelection prop', () => {
+    const { __DEV__ } = global;
+    global.__DEV__ = true;
+    render(
+      <Table
+        testId="my-table"
+        columns={[
+          { id: 'col1', name: 'Column 1', width: '100px' },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ]}
+        columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+        data={[]}
+        view={{
+          table: {
+            ordering: [
+              { columnId: 'col1', columnGroupId: 'groupA' },
+              { columnId: 'col2', columnGroupId: 'groupA' },
+              { columnId: 'col3' },
+            ],
+          },
+        }}
+        options={{ hasColumnSelection: true }}
+      />
+    );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Column grouping (columnGroups) cannot be combined with the option hasColumnSelection'
+      )
+    );
+    global.__DEV__ = __DEV__;
   });
 
   it('should not show toggle aggregations when toolbar is disabled', async () => {

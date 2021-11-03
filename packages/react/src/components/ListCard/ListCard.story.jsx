@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { text, select } from '@storybook/addon-knobs';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { spacing06 } from '@carbon/layout';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -285,7 +285,14 @@ export default {
 export const Basic = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
 
-  return <ListCardSimple id="ListCard" title={text('Text', 'Simple List with Icon')} size={size} />;
+  return (
+    <ListCardSimple
+      id="ListCard"
+      title={text('Text', 'Simple List with Icon')}
+      size={size}
+      isLoading={boolean('isLoading', false)}
+    />
+  );
 };
 
 Basic.storyName = 'basic';

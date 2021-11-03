@@ -1,9 +1,13 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 
+import { settings } from '../../constants/Settings';
+
 import AccordionItemDefer from './AccordionItemDefer';
 
 import { Accordion } from '.';
+
+const { prefix } = settings;
 
 describe('AccordionItemDefer', () => {
   it('should be selectable by testId', () => {
@@ -29,12 +33,12 @@ describe('AccordionItemDefer', () => {
     expect(
       screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(0);
-    fireEvent.click(container.querySelector('.bx--accordion__heading'));
+    fireEvent.click(container.querySelector(`.${prefix}--accordion__heading`));
     expect(
       screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);
     // test that content will not close accordion
-    fireEvent.click(container.querySelector('.bx--accordion__content'));
+    fireEvent.click(container.querySelector(`.${prefix}--accordion__content`));
     expect(
       screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);
@@ -51,7 +55,7 @@ describe('AccordionItemDefer', () => {
     expect(
       screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);
-    fireEvent.click(container.querySelector('.bx--accordion__heading'));
+    fireEvent.click(container.querySelector(`.${prefix}--accordion__heading`));
     expect(
       screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);

@@ -11,12 +11,20 @@ import * as reducer from './baseTableReducer';
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import { StatefulTableWithNestedRowItems } from './StatefulTable.story';
-import { getMockActions, getNestedRows, getNestedRowIds } from './Table.test.helpers';
+import {
+  getMockActions,
+  getNestedRows,
+  getNestedRowIds,
+  getSelectData,
+  getTableColumns,
+} from './Table.test.helpers';
 import { initialState, tableData } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 const mockActions = getMockActions(jest.fn);
+const selectData = getSelectData();
+const tableColumns = getTableColumns(selectData);
 
 describe('stateful table with real reducer', () => {
   it('should clear filters', async () => {
@@ -56,7 +64,7 @@ describe('stateful table with real reducer', () => {
         actions={mockActions}
       />
     );
-    statefulTable.find('button.bx--pagination__button--forward').simulate('click');
+    statefulTable.find(`button.${prefix}--pagination__button--forward`).simulate('click');
     expect(statefulTable.text()).toContain('100 of 100');
   });
   it('should show singleRowEditButtons when choosing to edit a row', async () => {
@@ -93,7 +101,7 @@ describe('stateful table with real reducer', () => {
       screen
         .getByText('whiteboard can eat 2')
         .closest('tr')
-        .querySelector('.bx--table-expand__button')
+        .querySelector(`.${prefix}--table-expand__button`)
     );
     expect(screen.getByText('whiteboard can eat 2A')).toBeTruthy();
     userEvent.click(screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`));
@@ -107,19 +115,19 @@ describe('stateful table with real reducer', () => {
       screen
         .getByText('can pinocchio whiteboard 4')
         .closest('tr')
-        .querySelector('.bx--table-expand__button')
+        .querySelector(`.${prefix}--table-expand__button`)
     );
     userEvent.click(
       screen
         .getByText('can pinocchio whiteboard 4B')
         .closest('tr')
-        .querySelector('.bx--table-expand__button')
+        .querySelector(`.${prefix}--table-expand__button`)
     );
     userEvent.click(
       screen
         .getByText('can pinocchio whiteboard 4B-2')
         .closest('tr')
-        .querySelector('.bx--table-expand__button')
+        .querySelector(`.${prefix}--table-expand__button`)
     );
     expect(screen.getByText('can pinocchio whiteboard 4B-2-B')).toBeTruthy();
     userEvent.click(screen.getByTestId(`${tableId}-row-4_B-2-B-row-actions-cell-overflow`));
@@ -129,6 +137,30 @@ describe('stateful table with real reducer', () => {
     });
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
   });
+  it('handles row expansion with expandRowsExclusively', () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={tableData}
+        actions={mockActions}
+        options={{
+          hasRowExpansion: { expandRowsExclusively: true },
+        }}
+        view={{
+          table: {
+            expandedIds: ['row-1'],
+          },
+        }}
+      />
+    );
+
+    expect(screen.getAllByRole('button', { name: 'Click to collapse content' })).toHaveLength(1);
+    userEvent.click(screen.getAllByRole('button', { name: 'Click to expand content' })[2]);
+
+    expect(screen.getAllByRole('button', { name: 'Click to collapse content' })).toHaveLength(1);
+    expect(mockActions.table.onRowExpanded).toHaveBeenCalledWith('row-3', true);
+  });
+
   it('multiselect should filter properly with pre-selected filter', async () => {
     render(
       <StatefulTable

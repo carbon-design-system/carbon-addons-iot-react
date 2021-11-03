@@ -588,7 +588,6 @@ export const BasicDumbTable = () => {
     'Basic `dumb` table'
   );
   const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
-  const lightweight = boolean('Show an alternate header style (lightweight)', false);
   const hasColumnSelection = boolean(
     'Enables choosing which columns are visible or drag-and-drop reorder them (options.hasColumnSelection)',
     false
@@ -608,7 +607,6 @@ export const BasicDumbTable = () => {
       id="table"
       secondaryTitle={secondaryTitle}
       useZebraStyles={useZebraStyles}
-      lightweight={lightweight}
       tooltip={<div>Now with custom tooltip content!</div>}
       columns={
         hasMultiSort
@@ -763,6 +761,86 @@ BasicDumbTable.parameters = {
     `,
   },
 };
+
+export const TableWithColumnGrouping = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
+  const ordering = object('Ordering (view.table.ordering)', [
+    {
+      columnId: 'string',
+      columnGroupId: 'groupA',
+    },
+    {
+      columnId: 'date',
+      columnGroupId: 'groupA',
+    },
+    {
+      columnId: 'select',
+      columnGroupId: 'groupB',
+    },
+    {
+      columnId: 'secretField',
+      columnGroupId: 'groupB',
+    },
+  ]);
+  const options = {
+    hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
+    hasRowExpansion: boolean(
+      'Enables expanding rows to show additional content (options.hasRowExpansion)',
+      false
+    ),
+    hasRowNesting: boolean(
+      'Enables rows to have nested rows within (options.hasRowNesting)',
+      false
+    ),
+    hasRowSelection: select(
+      'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
+      ['multi', 'single', false],
+      false
+    ),
+  };
+
+  return (
+    <MyTable
+      id="table"
+      useZebraStyles={useZebraStyles}
+      columns={tableColumns.slice(0, 4)}
+      columnGroups={object('Column groups (columnGroups)', [
+        {
+          id: 'groupA',
+          name: 'Group A',
+        },
+        {
+          id: 'groupB',
+          name: 'Group B',
+        },
+      ])}
+      data={tableData.slice(0, 10).map((i) => ({
+        ...i,
+        rowActions: [
+          {
+            id: 'textOnly',
+            labelText: 'Text only sample action',
+            isOverflow: true,
+          },
+        ],
+      }))}
+      options={options}
+      actions={tableActions}
+      size={select(
+        'Sets the height of the table rows (size)',
+        ['xs', 'sm', 'md', 'lg', 'xl'],
+        'lg'
+      )}
+      view={{
+        table: { ordering },
+      }}
+    />
+  );
+};
+
+TableWithColumnGrouping.storyName = 'with column grouping';
 
 export const TableExampleWithCreateSaveViews = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
@@ -1206,7 +1284,6 @@ export const TableExampleWithCreateSaveViews = () => {
           },
         }}
         isSortable
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           ...baseState.options,
           hasResize: true,
@@ -1647,20 +1724,20 @@ export const WithRowExpansionAndActions = () => {
         ['xs', 'sm', 'md', 'lg', 'xl'],
         'lg'
       )}
+      expandedData={[
+        {
+          rowId: 'row-2',
+          content: <RowExpansionContent rowId="row-2" />,
+        },
+        {
+          rowId: 'row-5',
+          content: <RowExpansionContent rowId="row-5" />,
+        },
+      ]}
       view={{
         filters: [],
         table: {
           ordering: defaultOrdering,
-          expandedRows: [
-            {
-              rowId: 'row-2',
-              content: <RowExpansionContent rowId="row-2" />,
-            },
-            {
-              rowId: 'row-5',
-              content: <RowExpansionContent rowId="row-5" />,
-            },
-          ],
           rowActions: [
             {
               rowId: 'row-1',

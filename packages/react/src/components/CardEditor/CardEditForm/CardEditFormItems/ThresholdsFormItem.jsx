@@ -13,7 +13,7 @@ import { validThresholdIcons, validThresholdColors } from '../../../DashboardEdi
 import SimpleIconDropdown from '../../../SimpleIconDropdown/SimpleIconDropdown';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const propTypes = {
   /* card value */
@@ -124,7 +124,7 @@ const ThresholdsFormItem = ({
   return (
     <>
       {!isEmpty(thresholds) && (
-        <span className={`bx--label ${baseClassName}--input-label`}>
+        <span className={`${prefix}--label ${baseClassName}--input-label`}>
           {mergedI18n.dataItemEditorDataItemThresholds}
         </span>
       )}

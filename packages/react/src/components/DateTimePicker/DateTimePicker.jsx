@@ -375,6 +375,7 @@ const DateTimePicker = ({
         }
 
         // if we were focused on the Absolute radio button previously, restore focus to it.
+        /* istanbul ignore if */
         if (previousActiveElement.current) {
           previousActiveElement.current.focus();
           previousActiveElement.current = null;
@@ -438,6 +439,7 @@ const DateTimePicker = ({
   );
 
   const getFocusableSiblings = () => {
+    /* istanbul ignore else */
     if (presetListRef?.current) {
       const siblings = presetListRef.current.querySelectorAll('[tabindex]');
       return Array.from(siblings).filter(
@@ -456,8 +458,10 @@ const DateTimePicker = ({
       // if the input box is focused and a down arrow is pressed this
       // moves focus to the first item in the preset list that has a tabindex
       case 'ArrowDown':
+        /* istanbul ignore else */
         if (presetListRef?.current) {
           const listItems = getFocusableSiblings();
+          /* istanbul ignore else */
           if (listItems?.[0]?.focus) {
             listItems[0].focus();
           }
@@ -539,20 +543,51 @@ const DateTimePicker = ({
     }
   }, [datePickerElem, focusOnFirstField]);
 
-  const onDatePickerChange = ([start, end]) => {
+  const onDatePickerChange = ([start, end], _, flatpickr) => {
+    const calendarInFocus = document.activeElement.closest(
+      `.${iotPrefix}--date-time-picker__datepicker`
+    );
+
+    const daysDidntChange =
+      dayjs(absoluteValue.start).isSame(dayjs(start)) &&
+      dayjs(absoluteValue.end).isSame(dayjs(end));
+
+    if (daysDidntChange || !calendarInFocus) {
+      // jump back to start to fix bug where flatpickr will change the month to the start
+      // after it loses focus if you click outside the calendar
+      if (focusOnFirstField) {
+        flatpickr.jumpToDate(start);
+      } else {
+        flatpickr.jumpToDate(end);
+      }
+
+      // In some situations, when the calendar loses focus flatpickr is firing the onChange event
+      // twice, but the dates reset to where both start and end are the same. This fixes that.
+      if (!calendarInFocus && dayjs(start).isSame(dayjs(end))) {
+        flatpickr.setDate([absoluteValue.start, absoluteValue.end]);
+      }
+      return;
+    }
+
     const newAbsolute = { ...absoluteValue };
+    newAbsolute.start = start;
+    newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
+    const prevFocusOnFirstField = focusOnFirstField;
     if (end) {
       setFocusOnFirstField(!focusOnFirstField);
       newAbsolute.start = start;
       newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
       newAbsolute.end = end;
       newAbsolute.endDate = dayjs(newAbsolute.end).format('MM/DD/YYYY');
+      if (prevFocusOnFirstField) {
+        flatpickr.jumpToDate(newAbsolute.start);
+      } else {
+        flatpickr.jumpToDate(newAbsolute.end);
+      }
     } else {
       setFocusOnFirstField(false);
+      flatpickr.jumpToDate(newAbsolute.start);
     }
-
-    newAbsolute.start = start;
-    newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
 
     setAbsoluteValue(newAbsolute);
   };
