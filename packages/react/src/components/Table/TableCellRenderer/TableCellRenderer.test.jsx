@@ -184,7 +184,7 @@ describe('TableCellRenderer', () => {
     // than using a text or title query that is the exact opposite of the output we're desiring
     // (that the whitespace be preserved)
     expect(container.querySelector('span')).toBeVisible();
-    expect(container.querySelector('span')).toHaveClass(`${iotPrefix}--table__cell-text--pre-wrap`);
+    expect(container.querySelector('span')).toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
   });
 
   it('should not set pre-wrap class on string children with single spaces', () => {
@@ -195,7 +195,7 @@ describe('TableCellRenderer', () => {
     );
 
     expect(screen.getByText('1 1')).toBeVisible();
-    expect(screen.getByText('1 1')).not.toHaveClass(`${iotPrefix}--table__cell-text--pre-wrap`);
+    expect(screen.getByText('1 1')).not.toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
   });
 
   describe('warning should be thrown for objects as data without needed functions', () => {

@@ -71,7 +71,7 @@ const TableCellRenderer = ({
   const myClasses = classnames({
     [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
     [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never',
-    [`${iotPrefix}--table__cell-text--pre-wrap`]:
+    [`${iotPrefix}--table__cell-text--preserve`]:
       typeof children === 'string' && children.includes('  '),
   });
 
