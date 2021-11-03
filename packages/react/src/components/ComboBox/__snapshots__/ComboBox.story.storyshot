@@ -116,7 +116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             </button>
           </div>
           <div
-            aria-label="Choose an item"
+            aria-label="combobox aria label"
             aria-labelledby={null}
             className="bx--list-box__menu"
             id="downshift-0-menu"
@@ -249,7 +249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             </button>
           </div>
           <div
-            aria-label="Choose an item"
+            aria-label="combobox aria label"
             aria-labelledby={null}
             className="bx--list-box__menu"
             id="downshift-0-menu"
@@ -361,7 +361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             </button>
           </div>
           <div
-            aria-label="Choose an item"
+            aria-label="combobox aria label"
             aria-labelledby={null}
             className="bx--list-box__menu"
             id="downshift-0-menu"
@@ -473,7 +473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             </button>
           </div>
           <div
-            aria-label="Choose an item"
+            aria-label="combobox aria label"
             aria-labelledby={null}
             className="bx--list-box__menu"
             id="downshift-0-menu"
@@ -600,7 +600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           </button>
         </div>
         <div
-          aria-label="Choose an item"
+          aria-label="combobox aria label"
           aria-labelledby={null}
           className="bx--list-box__menu"
           id="downshift-0-menu"
@@ -732,7 +732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             </button>
           </div>
           <div
-            aria-label="Choose an item"
+            aria-label="combobox aria label"
             aria-labelledby={null}
             className="bx--list-box__menu"
             id="downshift-0-menu"

@@ -60,6 +60,16 @@ const props = () => ({
     ['start', 'end'],
     'end'
   ),
+  ariaLabel: text('The ariaLabel applied to the combobox list (ariaLabel)', 'combobox aria label'),
+  direction: select(
+    'The direction to open the ComboBox',
+    { 'Bottom (default)': 'bottom', Top: 'top' },
+    'bottom'
+  ),
+  onToggleClick: action('onClick'),
+  type: select('The type of combobox to render (type)', ['default', 'inline'], 'default'),
+  warn: boolean('Show warning state (warn)', false),
+  warnText: text('Warning state text (warnText)', 'This mode may perform worse on older machines'),
 });
 
 const itemToElement = (item) => {
