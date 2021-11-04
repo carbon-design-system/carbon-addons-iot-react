@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.42...v2.147.0-next.43) (2021-11-04)
+
+
+### Bug Fixes
+
+* **day-js:** different method of importing locales ([288361d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/288361db02266e2de065fbd5b97accb83e38004d))
+
+
+
+
+
 # [2.147.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.41...v2.147.0-next.42) (2021-11-02)
 
 
