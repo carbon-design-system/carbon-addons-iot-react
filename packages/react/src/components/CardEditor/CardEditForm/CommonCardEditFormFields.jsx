@@ -7,7 +7,9 @@ import {
   ALLOWED_CARD_SIZES_PER_TYPE,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import { TextArea, TextInput, Dropdown } from '../../../index';
+import { TextArea } from '../../TextArea';
+import { TextInput } from '../../TextInput';
+import { Dropdown } from '../../Dropdown';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
 
 const { iotPrefix } = settings;

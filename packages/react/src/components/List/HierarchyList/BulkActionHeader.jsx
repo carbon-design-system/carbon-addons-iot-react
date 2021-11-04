@@ -1,7 +1,7 @@
 import React from 'react';
 import { Move16 } from '@carbon/icons-react';
 
-import { Button } from '../../..';
+import Button from '../../Button';
 import { settings } from '../../../constants/Settings';
 
 const { iotPrefix } = settings;

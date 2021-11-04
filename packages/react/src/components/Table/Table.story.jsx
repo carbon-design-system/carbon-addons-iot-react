@@ -11,7 +11,12 @@ import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
 import { firstBy } from 'thenby';
 
-import { TextInput, Checkbox, ToastNotification, Button, FormGroup, Form } from '../../index';
+import { TextInput } from '../TextInput';
+import { Checkbox } from '../Checkbox';
+import { ToastNotification } from '../Notification';
+import Button from '../Button';
+import { FormGroup } from '../FormGroup';
+import { Form } from '../Form';
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';

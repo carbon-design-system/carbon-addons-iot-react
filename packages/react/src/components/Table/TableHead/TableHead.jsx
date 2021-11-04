@@ -22,7 +22,8 @@ import {
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
-import { OverflowMenu, OverflowMenuItem } from '../../../index';
+import { OverflowMenu } from '../../OverflowMenu';
+import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { usePrevious } from '../../../hooks/usePrevious';
 import deprecate from '../../../internal/deprecate';
 

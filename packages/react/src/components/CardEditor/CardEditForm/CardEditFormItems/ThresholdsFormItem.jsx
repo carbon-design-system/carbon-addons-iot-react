@@ -8,7 +8,9 @@ import { red60 } from '@carbon/colors';
 import { TextInput } from 'carbon-components-react';
 
 import { settings } from '../../../../constants/Settings';
-import { Button, NumberInput, Dropdown } from '../../../../index';
+import Button from '../../../Button';
+import { NumberInput } from '../../../NumberInput';
+import { Dropdown } from '../../../Dropdown';
 import { validThresholdIcons, validThresholdColors } from '../../../DashboardEditor/editorUtils';
 import SimpleIconDropdown from '../../../SimpleIconDropdown/SimpleIconDropdown';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';

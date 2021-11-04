@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Tag } from '../../index';
+import { Tag } from '../Tag';
 
 import FilterTags from './FilterTags';
 import { tagData } from './FilterTags.story';

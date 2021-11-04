@@ -22,7 +22,9 @@ import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 
 import { settings } from '../../../../constants/Settings';
-import { ComposedModal, TextInput, Dropdown } from '../../../../index';
+import { Dropdown } from '../../../Dropdown';
+import ComposedModal from '../../../ComposedModal';
+import { TextInput } from '../../../TextInput';
 import { handleDataItemEdit, DataItemsPropTypes } from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';

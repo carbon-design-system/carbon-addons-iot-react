@@ -10,7 +10,7 @@ import ListItem from '../ListItem/ListItem';
 import { Checkbox } from '../../Checkbox';
 import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
-import { ListItemPropTypes } from '../List';
+import { ListItemPropTypes } from '../ListPropTypes';
 import { useResize } from '../../../internal/UseResizeObserver';
 
 const { iotPrefix } = settings;

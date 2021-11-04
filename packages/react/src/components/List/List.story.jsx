@@ -5,7 +5,10 @@ import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import someDeep from 'deepdash/someDeep';
 
-import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
+import { Checkbox } from '../Checkbox';
+import Button from '../Button';
+import { OverflowMenu } from '../OverflowMenu';
+import { OverflowMenuItem } from '../OverflowMenuItem';
 import { Tag } from '../Tag';
 
 import List from './List';

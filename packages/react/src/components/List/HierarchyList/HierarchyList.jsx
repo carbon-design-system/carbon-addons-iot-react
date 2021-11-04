@@ -6,7 +6,8 @@ import isEqual from 'lodash/isEqual';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
-import List, { ListItemPropTypes } from '../List';
+import List from '../List';
+import { ListItemPropTypes } from '../ListPropTypes';
 import {
   EditingStyle,
   handleEditModeSelect,

@@ -4,15 +4,13 @@ import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
 
 import { CARD_TYPES } from '../../constants/LayoutConstants';
-import {
-  ValueCard,
-  TimeSeriesCard,
-  BarChartCard,
-  ImageCard,
-  TableCard,
-  ListCard,
-  Card,
-} from '../../index';
+import ValueCard from '../ValueCard/ValueCard';
+import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
+import BarChartCard from '../BarChartCard/BarChartCard';
+import ImageCard from '../ImageCard/ImageCard';
+import TableCard from '../TableCard/TableCard';
+import ListCard from '../ListCard/ListCard';
+import Card from '../Card/Card';
 
 import { timeRangeToJSON, isCardJsonValid } from './editorUtils';
 

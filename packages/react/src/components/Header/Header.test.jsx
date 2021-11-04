@@ -5,7 +5,8 @@ import { User20, Help20 } from '@carbon/icons-react';
 import { settings } from '../../constants/Settings';
 import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
-import Header, { APP_SWITCHER } from './Header';
+import Header from './Header';
+import { APP_SWITCHER } from './headerConstants';
 
 const { prefix, iotPrefix } = settings;
 

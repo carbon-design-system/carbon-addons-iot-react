@@ -10,22 +10,9 @@ import { OverridePropTypes } from '../../constants/SharedPropTypes';
 import DefaultListHeader from './ListHeader/ListHeader';
 import DefaultListContent from './ListContent/ListContent';
 import VirtualListContent from './VirtualListContent/VirtualListContent';
+import { ListItemPropTypes } from './ListPropTypes';
 
 const { iotPrefix } = settings;
-
-export const ListItemPropTypes = {
-  id: PropTypes.string,
-  content: PropTypes.shape({
-    value: PropTypes.string,
-    icon: PropTypes.node,
-    /** The nodes should be Carbon Tags components */
-    tags: PropTypes.arrayOf(PropTypes.node),
-  }),
-  children: PropTypes.arrayOf(PropTypes.object),
-  isSelectable: PropTypes.bool,
-  /** boolean to define load more row is needed */
-  hasLoadMore: PropTypes.bool,
-};
 
 const propTypes = {
   /** Specify an optional className to be applied to the container */

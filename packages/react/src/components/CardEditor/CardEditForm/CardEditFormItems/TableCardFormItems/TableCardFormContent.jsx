@@ -11,7 +11,10 @@ import {
   handleDataSeriesChange,
   DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
-import { Button, List, MultiSelect, ComboBox } from '../../../../../index';
+import Button from '../../../../Button';
+import List from '../../../../List/List';
+import { MultiSelect } from '../../../../MultiSelect';
+import ComboBox from '../../../../ComboBox';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';

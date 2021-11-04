@@ -7,7 +7,7 @@ import Button from '../../Button/Button';
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { settings } from '../../../constants/Settings';
 import { TableColumnsPropTypes, TableSortPropType } from '../TablePropTypes';
-import { DragAndDrop } from '../../..';
+import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 
 import { TableMultiSortRow } from './TableMultiSortRow';
 
