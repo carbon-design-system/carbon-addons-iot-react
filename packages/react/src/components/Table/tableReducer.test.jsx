@@ -448,6 +448,7 @@ describe('table reducer', () => {
 
       expect(tableWithDataSizeChanges.view.pagination).toEqual({
         pageSize: 10,
+        pageSizes: undefined,
         page: 1,
         totalItems: 100,
       });
@@ -483,7 +484,8 @@ describe('table reducer', () => {
       expect(increaseDataLength.data.length).toEqual(100);
       expect(increaseDataLength.view.pagination).toEqual({
         pageSize: 3,
-        page: 3,
+        page: 1,
+        pageSizes: undefined,
         totalItems: 100,
       });
 

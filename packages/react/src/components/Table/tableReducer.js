@@ -493,7 +493,7 @@ export const tableReducer = (state = {}, action) => {
         }) ?? [];
 
       const { view, totalItems, hasUserViewManagement } = action.payload;
-      const { pageSize, pageSizes } = get(view, 'pagination') || {};
+      const { pageSize, pageSizes, page } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
       const initialDefaultSearch =
         get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
@@ -513,14 +513,13 @@ export const tableReducer = (state = {}, action) => {
 
       const nextPageSize = paginationFromState.pageSize || pageSize;
       const nextTotalItems = totalItems || updatedData.length;
-      const currentPage = get(state, 'view.pagination.page');
-
+      const nextPage = page || 1;
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: nextTotalItems },
             pageSize: { $set: nextPageSize },
             pageSizes: { $set: pageSizes },
-            page: { $set: nextPageSize * currentPage > nextTotalItems ? 1 : currentPage },
+            page: { $set: nextPage },
           }
         : {};
 
