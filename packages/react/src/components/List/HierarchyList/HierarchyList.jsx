@@ -258,6 +258,8 @@ const HierarchyList = ({
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
       setFilteredItems(items);
+      setSearchValue('');
+      setCurrentPageNumber(1);
     }
   }, [items, previousItems]);
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select, boolean, object } from '@storybook/addon-knobs';
+import { text, select, boolean, object, number } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
@@ -468,7 +468,7 @@ export const WithLargeNumberOfItems = () => (
     <HierarchyList
       title={text('Title', 'Big List')}
       isFullHeight={boolean('isFullHeight', false)}
-      items={[...Array(1000)].map((_, i) => ({
+      items={[...Array(number('number of items to render', 1000))].map((_, i) => ({
         id: `item-${i}`,
         content: {
           value: `Item ${i}`,
