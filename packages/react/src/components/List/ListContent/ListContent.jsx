@@ -36,15 +36,18 @@ const propTypes = {
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
-  /** call back function of select */
+  /** callback function of select */
   handleSelect: PropTypes.func,
+  /** callback used to limit which items that should get drop targets rendered.
+   * recieves the id of the item that is being dragged and returns a list of ids. */
+  getAllowedDropIds: PropTypes.func,
   /** call back function of expansion */
   toggleExpansion: PropTypes.func,
   /** callback function for reorder */
   onItemMoved: PropTypes.func,
   /** callback function when reorder will occur - can cancel the move by returning false */
   itemWillMove: PropTypes.func,
-  /** call back function for when load more row is clicked  (rowId) => {} */
+  /** callback function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
@@ -67,6 +70,7 @@ const defaultProps = {
   editingStyle: null,
   emptyState: 'No list items to show',
   expandedIds: [],
+  getAllowedDropIds: null,
   handleLoadMore: () => {},
   handleSelect: () => {},
   i18n: {
@@ -107,6 +111,7 @@ const ListContent = ({
   loadingMoreIds,
   handleSelect,
   editingStyle,
+  getAllowedDropIds,
   iconPosition,
   toggleExpansion,
   onItemMoved,
@@ -166,6 +171,7 @@ const ListContent = ({
           onExpand={toggleExpansion}
           onItemMoved={onItemMoved}
           itemWillMove={itemWillMove}
+          getAllowedDropIds={getAllowedDropIds}
           selected={isSelected}
           expanded={isExpanded}
           isExpandable={hasChildren}

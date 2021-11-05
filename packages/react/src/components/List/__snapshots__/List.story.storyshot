@@ -5206,6 +5206,619 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with reorder and drop target restrictions 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": 300,
+        "overflow": "auto",
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            NY Yankees
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+      </div>
+      <div
+        className="iot--list--content"
+      >
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                DJ LeMahieu
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="DJ LeMahieu"
+                    >
+                      DJ LeMahieu
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Luke Voit
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Luke Voit"
+                    >
+                      Luke Voit
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Gary Sanchez
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gary Sanchez"
+                    >
+                      Gary Sanchez
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Kendrys Morales
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Kendrys Morales"
+                    >
+                      Kendrys Morales
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Gleyber Torres
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gleyber Torres"
+                    >
+                      Gleyber Torres
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Clint Frazier
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Clint Frazier"
+                    >
+                      Clint Frazier
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Brett Gardner
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Brett Gardner"
+                    >
+                      Brett Gardner
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Gio Urshela
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gio Urshela"
+                    >
+                      Gio Urshela
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Cameron Maybin
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Cameron Maybin"
+                    >
+                      Cameron Maybin
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Robinson Cano
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Robinson Cano"
+                    >
+                      Robinson Cano
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with row actions (multiple) 1`] = `
 <div
   className="storybook-container"
