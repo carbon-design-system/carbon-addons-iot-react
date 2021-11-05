@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useLangDirection } from 'use-lang-direction';
+
 /**
  * This is used as the callback for menuOffset on Tooltips, OverflowMenus, and FlyoutMenus.
  * That callback returns the underlying FloatingMenu element, direction, trigger element, and flipped
@@ -70,6 +72,7 @@ export const usePopoverPositioning = ({
   const [adjustedFlipped, setAdjustedFlipped] = React.useState();
   const [{ flyoutAlignment }, setDirections] = React.useState({});
   const previousDirection = React.useRef();
+  const langDir = useLangDirection();
 
   React.useEffect(() => {
     previousDirection.current = direction;
@@ -105,7 +108,6 @@ export const usePopoverPositioning = ({
         : buttonElement.getBoundingClientRect();
       const windowWidth = window.innerWidth || document.documentElement.clientWidth;
       const directionChange = `${previousDirection.current}->${adjustedDirection}`;
-
       if (previousDirection.current !== adjustedDirection && flyoutAlignment) {
         switch (directionChange) {
           default:
@@ -114,6 +116,12 @@ export const usePopoverPositioning = ({
               left: tooltipRect.x - buttonRect.x,
             };
         }
+      }
+
+      let left = 0;
+
+      if (langDir === 'rtl' && isOverflowMenu) {
+        left = -16;
       }
 
       if (previousDirection.current !== adjustedDirection) {
@@ -132,17 +140,17 @@ export const usePopoverPositioning = ({
           default:
             return {
               top: 0,
-              left: 0,
+              left,
             };
         }
       }
 
       return {
         top: 0,
-        left: 0,
+        left,
       };
     },
-    [adjustedDirection, flyoutAlignment]
+    [adjustedDirection, flyoutAlignment, isOverflowMenu, langDir]
   );
 
   /**
@@ -252,6 +260,10 @@ export const usePopoverPositioning = ({
     (...args) => {
       const defaultOffset = getOffset(...args);
 
+      if (langDir === 'rtl' && isOverflowMenu) {
+        defaultOffset.left -= 16;
+      }
+
       if (!useAutoPositioning) {
         return defaultOffset;
       }
@@ -276,7 +288,7 @@ export const usePopoverPositioning = ({
           return defaultOffset;
       }
     },
-    [fixOverflow, getOffset, useAutoPositioning]
+    [fixOverflow, getOffset, isOverflowMenu, langDir, useAutoPositioning]
   );
 
   /**
