@@ -172,9 +172,9 @@ describe('TableCellRenderer', () => {
     expect(screen.getByText('35.1234567')).toBeDefined(); // no limit on the count of decimals
   });
 
-  it('should set pre-wrap class on string children with multiple spaces', () => {
+  it('should set preserve class when preserveCellWhiteSpace:true', () => {
     const { container } = render(
-      <TableCellRenderer wrapText="never" truncateCellText columnId="string">
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string" preserveCellWhiteSpace>
         {'1  1   1    1     1'}
       </TableCellRenderer>
     );
@@ -187,10 +187,10 @@ describe('TableCellRenderer', () => {
     expect(container.querySelector('span')).toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
   });
 
-  it('should not set pre-wrap class on string children with single spaces', () => {
+  it('should not set preserve class when preserveCellWhiteSpace:false', () => {
     render(
       <TableCellRenderer wrapText="never" truncateCellText columnId="string">
-        {'1 1'}
+        {'1        1'}
       </TableCellRenderer>
     );
 

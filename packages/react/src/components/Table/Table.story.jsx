@@ -1490,6 +1490,10 @@ export const BasicTableWithFullRowEditExample = () => {
             'Enables row editing for a single row (options.hasSingleRowEdit)',
             true
           ),
+          preserveCellWhiteSpace: boolean(
+            'Adds classes to keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
+            false
+          ),
           hasRowActions: true,
           hasPagination: true,
         }}
