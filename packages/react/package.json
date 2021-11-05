@@ -39,7 +39,7 @@
     "postinstall": "carbon-telemetry collect --install",
     "start": "yarn test:engines && yarn storybook",
     "storybook": "yarn test:engines && start-storybook -p 3000 -s public/development",
-    "svg-convert": "svgr --ext jsx -d src/icons/components src/icons/svg && prettier --write src/icons/components/index.jsx ",
+    "svg-convert": "svgr --ext jsx -d src/icons/components src/icons/svg && prettier --write src/icons/components/index.jsx  && eslint --fix --ext .jsx src/icons/components",
     "test": "yarn test:engines && yarn test:a11y && yarn test:base",
     "test:base": "yarn test:engines && cross-env TZ=America/Chicago jest --no-watchman --testPathPattern='.*\\.test\\.js(x)?' --coverage --colors --maxWorkers=50%",
     "test:debug": "yarn test:engines && cross-env TZ=America/Chicago node --inspect node_modules/.bin/jest --no-watchman --testPathPattern='.*\\.test\\.js(x)?' --watch --coverage --colors --runInBand",
