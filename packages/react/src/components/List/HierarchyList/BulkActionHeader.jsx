@@ -7,12 +7,13 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 /* this component is only used internally where props are defined and set. */
+/* eslint-disable react/prop-types */
 const BulkActionHeader = ({
   className,
-  i18n /* eslint-disable-line react/prop-types */,
-  editModeSelectedIds /* eslint-disable-line react/prop-types */,
-  cancelMoveClicked /* eslint-disable-line react/prop-types */,
-  setShowModal /* eslint-disable-line react/prop-types */,
+  i18n,
+  editModeSelectedIds,
+  cancelMoveClicked,
+  setShowModal,
 }) => (
   <div className={className}>
     <div className={`${iotPrefix}--hierarchy-list-bulk-header--title`}>
@@ -45,5 +46,6 @@ const BulkActionHeader = ({
     </div>
   </div>
 );
+/* esline-enable react/prop-types */
 
 export default BulkActionHeader;

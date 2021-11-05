@@ -27,7 +27,7 @@ const propTypes = {
   title: PropTypes.node,
   /** initial dashboard data to edit */
   initialValue: PropTypes.shape({
-    cards: PropTypes.array,
+    cards: PropTypes.arrayOf(PropTypes.object),
     layouts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   }),
   isSummaryDashboard: PropTypes.bool,

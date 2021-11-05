@@ -24,6 +24,8 @@ const propTypes = {
           color: PropTypes.string,
         })
       ),
+      layout: PropTypes.string,
+      precision: PropTypes.number,
       xLabel: PropTypes.string,
       yLabel: PropTypes.string,
       unit: PropTypes.string,

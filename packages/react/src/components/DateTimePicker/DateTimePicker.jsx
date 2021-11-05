@@ -117,6 +117,7 @@ const propTypes = {
     PropTypes.shape({
       label: PropTypes.string,
       offset: PropTypes.number,
+      id: PropTypes.string,
     })
   ),
   /** a list of options to put on the 'Last' interval dropdown */
@@ -176,6 +177,7 @@ const propTypes = {
     decrement: PropTypes.string,
     hours: PropTypes.string,
     minutes: PropTypes.string,
+    number: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,

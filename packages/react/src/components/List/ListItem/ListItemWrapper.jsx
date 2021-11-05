@@ -121,7 +121,6 @@ const ListItemWrapper = ({
 };
 
 const ListItemWrapperProps = {
-  dragPreviewText: PropTypes.string,
   id: PropTypes.string.isRequired,
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,
@@ -129,6 +128,8 @@ const ListItemWrapperProps = {
     EditingStyle.SingleNesting,
     EditingStyle.MultipleNesting,
   ]),
+  connectDragSource: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
   expanded: PropTypes.bool.isRequired,
   isLargeRow: PropTypes.bool.isRequired,
   isSelectable: PropTypes.bool.isRequired,
@@ -142,5 +143,8 @@ const ListItemWrapperProps = {
 };
 
 ListItemWrapper.propTypes = ListItemWrapperProps;
-
+ListItemWrapper.defaultProps = {
+  editingStyle: null,
+  disabled: false,
+};
 export default ListItemWrapper;

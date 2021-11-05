@@ -21,6 +21,17 @@ const propTypes = {
     title: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
+    description: PropTypes.string,
+    timeRange: PropTypes.string,
+    dataSource: PropTypes.shape({
+      attributes: PropTypes.arrayOf(
+        PropTypes.shape({
+          aggregator: PropTypes.string,
+          attribute: PropTypes.string,
+          id: PropTypes.string,
+        })
+      ),
+    }),
     content: PropTypes.oneOfType([
       PropTypes.shape({
         series: PropTypes.arrayOf(
@@ -128,7 +139,7 @@ export const getCardSizeText = (size, i18n, breakpoint) => {
   return `${sizeName} ${sizeDimensions}`;
 };
 
-const CardEditFormContent = ({
+const CommonCardEditFormFields = ({
   cardConfig,
   onChange,
   i18n,
@@ -228,7 +239,7 @@ const CardEditFormContent = ({
   );
 };
 
-CardEditFormContent.propTypes = propTypes;
-CardEditFormContent.defaultProps = defaultProps;
+CommonCardEditFormFields.propTypes = propTypes;
+CommonCardEditFormFields.defaultProps = defaultProps;
 
-export default CardEditFormContent;
+export default CommonCardEditFormFields;

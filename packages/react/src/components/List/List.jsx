@@ -23,6 +23,7 @@ const propTypes = {
   search: PropTypes.shape({
     onChange: PropTypes.func,
     value: PropTypes.string,
+    id: PropTypes.string,
   }),
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),

@@ -22,6 +22,7 @@ const propTypes = {
           color: PropTypes.string,
         })
       ),
+      decimalPrecision: PropTypes.number,
       xLabel: PropTypes.string,
       yLabel: PropTypes.string,
       unit: PropTypes.string,

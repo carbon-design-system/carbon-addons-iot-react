@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import omit from 'lodash/omit';
 import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
+import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../constants/LayoutConstants';
 import ValueCard from '../ValueCard/ValueCard';
@@ -98,6 +99,18 @@ const DashboardEditorDefaultCardRenderer = ({ card: cardProps, availableDimensio
         renderDefaultCard(cardProps)
       );
   }
+};
+
+DashboardEditorDefaultCardRenderer.propTypes = {
+  card: PropTypes.oneOfType([PropTypes.object]),
+  availableDimensions: PropTypes.objectOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
+  ),
+};
+
+DashboardEditorDefaultCardRenderer.defaultProps = {
+  card: undefined,
+  availableDimensions: undefined,
 };
 
 export default DashboardEditorDefaultCardRenderer;

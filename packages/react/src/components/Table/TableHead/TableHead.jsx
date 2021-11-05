@@ -62,6 +62,13 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
+    hasRowNesting: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** If the hierarchy only has 1 nested level of children */
+        hasSingleNestedHierarchy: PropTypes.bool,
+      }),
+    ]),
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
     hasMultiSort: PropTypes.bool,
