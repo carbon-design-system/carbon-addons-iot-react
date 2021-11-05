@@ -352,7 +352,9 @@ const HierarchyList = ({
     setItemsToShow(filteredItems.slice(startIndex, startIndex + rowsPerPage));
   }, [currentPageNumber, filteredItems, rowsPerPage]);
 
-  const maxPage = Math.ceil(numberOfItems / rowsPerPage);
+  const maxPage = !Number.isNaN(Math.ceil(numberOfItems / rowsPerPage))
+    ? Math.ceil(numberOfItems / rowsPerPage)
+    : 1;
 
   const onPage = useCallback(
     (page) => {

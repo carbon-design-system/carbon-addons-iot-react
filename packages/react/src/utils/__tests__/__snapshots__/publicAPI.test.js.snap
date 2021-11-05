@@ -24135,13 +24135,7 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
-            "applyButton": Object {
-              "type": "string",
-            },
             "applyButtonText": Object {
-              "type": "string",
-            },
-            "cancelButton": Object {
               "type": "string",
             },
             "cancelButtonText": Object {

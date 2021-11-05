@@ -271,7 +271,7 @@ export const HeaderComponentSubtitle = () => (
       className={`${iotPrefix}--header--story-test-class`}
       subtitle={
         <div>
-          {'Monitor'}
+          Monitor
           <span style={{ marginLeft: '1rem' }}>
             <Tag>Admin Mode</Tag>
           </span>

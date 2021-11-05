@@ -5668,7 +5668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
           >
             <span
               className="iot-simple-pagination-page-label"
-              maxpage={NaN}
+              maxpage={1}
             >
               Page 1
             </span>

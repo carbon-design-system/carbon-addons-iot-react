@@ -1002,12 +1002,13 @@ describe('DataSeriesFormItemModal', () => {
         cardConfig={timeSeriesCardConfig}
         editDataItem={{
           ...editTimeseriesDataItem,
-          aggregationMethod: ['min'],
+          aggregationMethod: 'min',
         }}
         editDataSeries={editDataSeriesTimeSeries}
         isSummaryDashboard
         validDataItems={[
           {
+            dataItemId: 'testDataItem',
             dataSourceId: 'temperature',
             aggregationMethod: 'min',
             grain: 'hourly',
@@ -1016,7 +1017,7 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    expect(screen.getByText('MIN')).toBeVisible();
+    expect(screen.getByText('Min')).toBeVisible();
     expect(screen.getByText('Hourly')).toBeVisible();
   });
 
@@ -1031,6 +1032,7 @@ describe('DataSeriesFormItemModal', () => {
         isSummaryDashboard
         validDataItems={[
           {
+            dataItemId: 'testItemId',
             dataSourceId: 'temperature',
             aggregationMethod: 'min',
             grain: 'hourly',

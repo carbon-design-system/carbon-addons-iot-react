@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Tag } from '../Tag';
@@ -8,6 +8,7 @@ import FilterTags from './FilterTags';
 import { tagData } from './FilterTags.story';
 
 describe('Filtertags', () => {
+  const originalBounding = Element.prototype.getBoundingClientRect;
   beforeEach(() => {
     Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
       writable: true,
@@ -19,14 +20,19 @@ describe('Filtertags', () => {
       configurable: true,
       value: 500,
     });
+    Element.prototype.getBoundingClientRect = () => ({
+      height: 100,
+      width: 100,
+    });
   });
 
   afterAll(() => {
     delete HTMLElement.prototype.clientWidth;
     delete HTMLElement.prototype.scrollWidth;
+    HTMLElement.prototype.getBoundingClientRect = originalBounding;
   });
 
-  it('should be selectable by testId', () => {
+  it('should be selectable by testId', async () => {
     const { rerender } = render(
       <FilterTags id="FILTER_TAGS_CONTAINER">
         {tagData.map((tag) => (
@@ -62,8 +68,20 @@ describe('Filtertags', () => {
     );
     expect(screen.getByTestId('filter-tag-container')).toBeDefined();
     expect(screen.getByTestId('filter_tags-overflow-menu')).toBeDefined();
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     userEvent.click(screen.getByTestId('filter_tags-overflow-menu'));
-    expect(screen.getByTestId('filter_tags-overflow-menu-item-0')).toBeDefined();
+    await waitFor(() => {
+      expect(screen.getByTestId('filter_tags-overflow-menu-item-0')).toBeVisible();
+    });
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s'
+      ),
+      '<button>',
+      'button',
+      expect.stringContaining('FilterTags')
+    );
+    console.error.mockReset();
   });
 
   it('will render tags without overflow when size is large enough', () => {

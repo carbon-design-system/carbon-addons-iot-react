@@ -28,7 +28,12 @@ const tableColumns = getTableColumns(selectData);
 
 describe('stateful table with real reducer', () => {
   it('should clear filters', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     render(<StatefulTable {...initialState} actions={mockActions} />);
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
     expect(whiteboardFilter).toBeInTheDocument();
     expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();

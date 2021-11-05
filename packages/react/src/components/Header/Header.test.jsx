@@ -298,10 +298,17 @@ describe('Header', () => {
     expect(screen.getByLabelText('user')).toBeTruthy();
   });
   it('should not display the shortname if none given', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { container } = render(
       <Header {...HeaderPropsWithoutOnClick} shortAppName={undefined} appName={undefined} />
     );
     expect(container.querySelectorAll(`.${iotPrefix}--header__short-name`)).toHaveLength(0);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Failed prop type: The prop `appName` is marked as required in `Header`'
+      )
+    );
+    console.error.mockReset();
   });
 
   it('should not display an action item if isActionItemVisible returns false', () => {

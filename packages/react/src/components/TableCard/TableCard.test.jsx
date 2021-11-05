@@ -24,6 +24,7 @@ describe('TableCard', () => {
       };
     });
 
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <TableCard
         title="Open Alerts"
@@ -37,6 +38,10 @@ describe('TableCard', () => {
       />
     );
     expect(screen.getByTestId('TABLE_CARD')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(
       <TableCard
@@ -1076,6 +1081,7 @@ describe('TableCard', () => {
 
   it('fallback to dataSourceId or empty string if no label/dataSourceId is given for the column', () => {
     const onCardAction = jest.fn();
+
     const { rerender } = render(
       <TableCard
         id="table-test"
@@ -1104,6 +1110,7 @@ describe('TableCard', () => {
 
     expect(screen.getByTitle('alert')).toBeVisible();
 
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     rerender(
       <TableCard
         id="table-test"
@@ -1133,6 +1140,12 @@ describe('TableCard', () => {
 
     expect(screen.queryByTitle('alert')).toBeNull();
     expect(screen.queryByTitle('Alert')).toBeNull();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Failed prop type: The prop `content.columns[0].dataSourceId` is marked as required in `TableCard`'
+      )
+    );
+    console.error.mockReset();
   });
 
   it('should only show thresholds if showOnContent is true', () => {
