@@ -422,16 +422,10 @@ describe('TableMultiSortModal', () => {
     ).toBe(true);
     expect(screen.queryByLabelText('Then by')).toBeNull();
 
-    jest.spyOn(console, 'error').mockImplementation(() => {});
     rerender(
       <TableMultiSortModal {...modalProps} sort={{ columnId: 'select', direction: 'ASC' }} />
     );
-    expect(console.error).toHaveBeenCalledWith(
-      expect.stringContaining(
-        'Failed prop type: Invalid prop `sort` of type `object` supplied to `TableMultiSortModal`'
-      )
-    );
-    console.error.mockReset();
+
     expect(screen.getByLabelText('Sort by')).toBeVisible();
     expect(
       within(screen.getByLabelText('Sort by')).getByRole('option', { name: 'Select' }).selected

@@ -29,7 +29,7 @@ const propTypes = {
     onCancelMultiSortColumns: PropTypes.func,
     onClearMultiSortColumns: PropTypes.func,
   }).isRequired,
-  sort: PropTypes.arrayOf(TableSortPropType).isRequired,
+  sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]).isRequired,
   showMultiSortModal: PropTypes.bool,
   i18n: PropTypes.shape({
     multiSortModalTitle: PropTypes.string,
