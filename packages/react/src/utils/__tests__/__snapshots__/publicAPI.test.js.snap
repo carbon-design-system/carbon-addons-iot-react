@@ -487,6 +487,7 @@ Map {
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
         "preserveColumnWidths": false,
+        "shouldExpandOnRowClick": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
         "wrapCellText": "always",
@@ -1302,6 +1303,9 @@ Map {
               "type": "bool",
             },
             "preserveColumnWidths": Object {
+              "type": "bool",
+            },
+            "shouldExpandOnRowClick": Object {
               "type": "bool",
             },
             "shouldLazyRender": Object {
@@ -5877,6 +5881,8 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
+      "indeterminateIds": Array [],
+      "isCheckboxMultiSelect": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
@@ -5957,6 +5963,17 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "indeterminateIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "isCheckboxMultiSelect": Object {
+        "type": "bool",
       },
       "isFullHeight": Object {
         "type": "bool",
@@ -6088,6 +6105,8 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
+      "indeterminateIds": Array [],
+      "isCheckboxMultiSelect": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
@@ -6166,6 +6185,17 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "indeterminateIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "isCheckboxMultiSelect": Object {
+        "type": "bool",
       },
       "isFullHeight": [Function],
       "isLargeRow": Object {
@@ -23261,6 +23291,8 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
+      "indeterminateIds": Array [],
+      "isCheckboxMultiSelect": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
@@ -23354,6 +23386,17 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "indeterminateIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "isCheckboxMultiSelect": Object {
+        "type": "bool",
       },
       "isFullHeight": Object {
         "type": "bool",

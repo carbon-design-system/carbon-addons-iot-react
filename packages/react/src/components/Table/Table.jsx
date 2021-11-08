@@ -124,6 +124,8 @@ const propTypes = {
     hasUserViewManagement: PropTypes.bool,
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
+    /* If true, fire the onRowExpanded callback with the rowId when a row is clicked */
+    shouldExpandOnRowClick: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     /**
@@ -350,6 +352,7 @@ export const defaultProps = (baseProps) => ({
     preserveColumnWidths: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
+    shouldExpandOnRowClick: false,
     wrapCellText: 'always',
   },
   size: undefined,

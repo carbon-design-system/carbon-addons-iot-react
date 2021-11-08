@@ -195,7 +195,6 @@ describe('stateful table with real reducer', () => {
         }}
         secondaryTitle={`Row count: ${initialState.data.length}`}
         actions={mockActions}
-        isSortable
         options={{
           ...initialState.options,
           hasFilter: 'onKeyPress',
@@ -289,7 +288,6 @@ describe('stateful table with real reducer', () => {
         }}
         secondaryTitle={`Row count: ${initialState.data.length}`}
         actions={mockActions}
-        isSortable
         options={{
           ...initialState.options,
           hasFilter: 'onKeyPress',

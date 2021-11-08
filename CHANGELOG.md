@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.43...v2.147.0-next.44) (2021-11-08)
+
+
+### Bug Fixes
+
+* **list:** prevent multiple handleselect callbacks ([c96cf6c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c96cf6c717487476df88e6d7f075f0af13913232))
+
+
+### Features
+
+* **list:** add multiselection checkbox ([05011fa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/05011fa15812118d68b4c51a2006bcaed0593d0c)), closes [#2987](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2987)
+* **list:** multiselection checkbox feedback ([035394c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/035394c46cef7b6507dfea9ef58bd18394e2bcee)), closes [#2987](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2987)
+
+
+
+
+
+# [2.147.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.42...v2.147.0-next.43) (2021-11-04)
+
+
+### Bug Fixes
+
+* **day-js:** different method of importing locales ([288361d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/288361db02266e2de065fbd5b97accb83e38004d))
+
+
+
+
+
 # [2.147.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.41...v2.147.0-next.42) (2021-11-02)
 
 

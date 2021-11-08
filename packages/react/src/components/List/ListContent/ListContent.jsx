@@ -32,6 +32,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** true if the list should have multiple selectable rows using checkboxes */
+  isCheckboxMultiSelect: PropTypes.bool,
   testId: PropTypes.string,
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
@@ -47,6 +49,8 @@ const propTypes = {
   itemWillMove: PropTypes.func,
   /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
+  /** ids of selectable rows with indeterminate selection state */
+  indeterminateIds: PropTypes.arrayOf(PropTypes.string),
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
   /** list editing style */
@@ -77,10 +81,12 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
+  isCheckboxMultiSelect: false,
   items: [],
   itemWillMove: () => {
     return true;
   },
+  indeterminateIds: [],
   loadingMoreIds: [],
   onItemMoved: () => {},
   selectedIds: [],
@@ -96,12 +102,14 @@ const getAdjustedNestingLevel = (items, currentLevel) =>
 
 const ListContent = ({
   isLoading,
+  isCheckboxMultiSelect,
   isFullHeight,
   items,
   testId,
   emptyState,
   selectedIds,
   expandedIds,
+  indeterminateIds,
   loadingMoreIds,
   handleSelect,
   editingStyle,
@@ -120,6 +128,7 @@ const ListContent = ({
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
     const isLoadingMore = loadingMoreIds.includes(item.id);
+    const isIndeterminate = indeterminateIds.includes(item.id);
 
     const {
       content: { value, secondaryValue, icon, rowActions, tags },
@@ -142,14 +151,25 @@ const ListContent = ({
           nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
           value={value}
           icon={
-            editingStyleIsMultiple(editingStyle) ? (
+            editingStyleIsMultiple(editingStyle) || (isSelectable && isCheckboxMultiSelect) ? (
               <Checkbox
                 id={`${item.id}-checkbox`}
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={() => handleSelect(item.id, parentId)}
+                onClick={(evt) => {
+                  if (isSelectable && isCheckboxMultiSelect) {
+                    // When combing checkboxes with selectable rows (isSelectable) we are
+                    // getting click events from the ListItemWrapper before this handler is called.
+                    // Therefor we stop this one and rely on the ListItem onSelect handler to handle
+                    // the selection. If we don't the handleSelect callback will be called multiple times.
+                    evt.stopPropagation();
+                  } else {
+                    handleSelect(item.id, parentId);
+                  }
+                }}
                 checked={isSelected}
+                indeterminate={isIndeterminate}
               />
             ) : (
               icon
@@ -173,6 +193,7 @@ const ListContent = ({
           i18n={mergedI18n}
           selectedItemRef={isSelected ? selectedItemRef : null}
           tags={tags}
+          preventRowFocus={isCheckboxMultiSelect}
         />
       </div>,
       ...(hasChildren && isExpanded
