@@ -9,7 +9,8 @@ import ListItem from '../ListItem/ListItem';
 import { Checkbox } from '../../Checkbox';
 import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
-import { ListItemPropTypes } from '../List';
+import { ListItemPropTypes } from '../ListPropTypes';
+import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
 
 const { iotPrefix } = settings;
 
@@ -63,10 +64,7 @@ const propTypes = {
   ]),
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
-  selectedItemRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.any }),
-  ]),
+  selectedItemRef: HtmlElementRefProp,
 };
 
 const defaultProps = {

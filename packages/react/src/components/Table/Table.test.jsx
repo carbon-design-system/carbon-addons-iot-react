@@ -108,6 +108,8 @@ describe('Table', () => {
   ];
 
   it('should be selectable with testId or id', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <Table
         columns={tableColumns}
@@ -132,6 +134,10 @@ describe('Table', () => {
         testId="__table__"
       />
     );
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('__table__')).toBeDefined();
     expect(screen.getByTestId('__table__-table-container')).toBeDefined();
     expect(screen.getByTestId('__table__-table-toolbar')).toBeDefined();
@@ -149,6 +155,7 @@ describe('Table', () => {
     ).toBeDefined();
     // close menu
     userEvent.click(screen.getByTestId('table-head--overflow'));
+
     rerender(
       <Table
         columns={tableColumns}
@@ -173,7 +180,6 @@ describe('Table', () => {
         id="__TABLE__"
       />
     );
-
     expect(screen.getByTestId('__TABLE__')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-container')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-toolbar')).toBeDefined();
@@ -1935,17 +1941,17 @@ describe('Table', () => {
       expect(filterFlyout).toHaveAttribute('open');
 
       userEvent.click(screen.getByTestId('flyout-menu-apply'));
-      expect(handleApplyFilter).toBeCalledWith({
+      expect(handleApplyFilter).toHaveBeenCalledWith({
         simple: {},
         advanced: {
           filterIds: [],
         },
       });
       userEvent.click(screen.getByTestId('flyout-menu-cancel'));
-      expect(handleCancelFilter).toBeCalledTimes(1);
+      expect(handleCancelFilter).toHaveBeenCalledTimes(1);
       userEvent.click(screen.getByRole('tab', { name: 'Advanced filters' }));
       userEvent.click(screen.getByRole('button', { name: 'create a new advanced filter' }));
-      expect(handleCreateAdvancedFilter).toBeCalledTimes(1);
+      expect(handleCreateAdvancedFilter).toHaveBeenCalledTimes(1);
       expect(screen.getByText('Select a filter')).toBeVisible();
 
       rerender(

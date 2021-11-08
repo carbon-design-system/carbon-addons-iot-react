@@ -35,15 +35,15 @@ const propTypes = {
   /** internationalized label */
   clickToCollapseAria: PropTypes.string,
   /** I18N label for in progress */
-  inProgressText: PropTypes.string, // eslint-disable-line react/require-default-props
+  inProgressText: PropTypes.string,
   /** I18N label for action failed */
-  actionFailedText: PropTypes.string, // eslint-disable-line react/require-default-props
+  actionFailedText: PropTypes.string,
   /** I18N label for learn more */
-  learnMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
+  learnMoreText: PropTypes.string,
   /** I18N label for dismiss */
-  dismissText: PropTypes.string, // eslint-disable-line react/require-default-props
+  dismissText: PropTypes.string,
   /** I18N label for load more */
-  loadMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
+  loadMoreText: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -123,6 +123,11 @@ const defaultProps = {
   langDir: 'ltr',
   showExpanderColumn: false,
   testId: '',
+  loadMoreText: 'Load more...',
+  learnMoreText: 'Learn more',
+  inProgressText: 'In progress',
+  dismissText: 'Dismiss',
+  actionFailedText: 'Action failed',
 };
 
 const TableBody = ({

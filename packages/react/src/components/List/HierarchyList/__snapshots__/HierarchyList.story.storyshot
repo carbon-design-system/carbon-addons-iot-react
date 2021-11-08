@@ -5653,7 +5653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
           >
             <span
               className="iot-simple-pagination-page-label"
-              maxpage={NaN}
+              maxpage={1}
             >
               Page 1
             </span>
@@ -6992,7 +6992,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   onChange={[Function]}
                   tabIndex={0}
                   type="radio"
-                  value="Item 20"
+                  value="Item 20 that has an extra long label that will definitely be truncated"
                 />
                 <label
                   className="bx--radio-button__label"
@@ -7004,7 +7004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <span
                     className="bx--visually-hidden"
                   >
-                    Item 20
+                    Item 20 that has an extra long label that will definitely be truncated
                   </span>
                 </label>
               </div>
@@ -7018,7 +7018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 <div
                   className="iot--hierarchy-list-bulk-modal--list-item-value"
                 >
-                  Item 20
+                  Item 20 that has an extra long label that will definitely be truncated
                 </div>
               </div>
             </div>
@@ -50319,6 +50319,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                       >
                         Item 0
                       </div>
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="Item 0 Subvalue"
+                      >
+                        Item 0 Subvalue
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -50385,6 +50391,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                       >
                         Item 1
                       </div>
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="Item 1 Subvalue"
+                      >
+                        Item 1 Subvalue
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -50450,6 +50462,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                         title="Item 2"
                       >
                         Item 2
+                      </div>
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="Item 2 Subvalue"
+                      >
+                        Item 2 Subvalue
                       </div>
                     </div>
                   </div>

@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.45...v2.147.0-next.46) (2021-11-08)
+
+
+### Bug Fixes
+
+* **hierarchy-list:** pr feedback to make label more clear ([b97c8af](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b97c8af079d84c5e777c5e822a9a4824e5a8207f))
+* **list:** fix styles to keep secondaryValue aligned when overflowing ([14c7626](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/14c7626bddae72fcc56938350fce640b943f55e1))
+
+
+
+
+
+# [2.147.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.44...v2.147.0-next.45) (2021-11-08)
+
+
+### Bug Fixes
+
+* **list-story:** fix clearing search in story ([36a3e21](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/36a3e2163748ff9a5dd8b87b07936d56f9dfecfe))
+* **stateful-table:** handle resetting pagination when necessary ([006a031](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/006a031c810be3cda9699a0417cb58f3724e1999))
+* **stateful-table:** reset pagination on data change ([9e34cd3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9e34cd36ccf0836d177e51a543aef3e0c555975e))
+* **stateful-table:** update reducer for rowEdit actions ([e4ded1a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e4ded1a3b937cd902c071b24d1e8de98dc3a7919))
+* **table:** fix shouldExpandOnRowClick proptype ([941ce17](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/941ce173073ea06f60f83d77915e51946fa99674))
+
+
+
+
+
 # [2.147.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.43...v2.147.0-next.44) (2021-11-08)
 
 
