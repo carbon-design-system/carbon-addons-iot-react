@@ -43,20 +43,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Session Timeout
         </h3>
         <button
+          aria-label="close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"
         >
           <svg
-            aria-hidden="true"
-            aria-label="close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
-            focusable="true"
+            focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
-            tabIndex="-1"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
