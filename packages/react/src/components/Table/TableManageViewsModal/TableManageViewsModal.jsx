@@ -89,7 +89,7 @@ const defaultProps = {
   displayPublicDefaultChecked: true,
   error: undefined,
   i18n: {
-    closeIconDescription: undefined,
+    closeIconDescription: 'Close',
     defaultLabelText: 'default',
     deleteIconText: 'delete',
     deleteWarningTextTemplate: (label) => `You are about to delete view ${label}.`,
@@ -228,6 +228,7 @@ const TableManageViewsModal = ({
       {showDeleteWarning && (
         <MyWarningModal
           className={`${iotPrefix}--manage-views-modal-warning`}
+          aria-label={closeIconDescription}
           modalHeading={getDeleteWarningText(viewIdToDelete, views)}
           onRequestClose={() => {
             setShowDeleteWarning(false);

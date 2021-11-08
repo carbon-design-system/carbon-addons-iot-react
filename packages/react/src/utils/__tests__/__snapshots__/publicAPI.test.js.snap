@@ -3285,7 +3285,7 @@ Map {
       "displayPublicDefaultChecked": true,
       "error": undefined,
       "i18n": Object {
-        "closeIconDescription": undefined,
+        "closeIconDescription": "Close",
         "defaultLabelText": "default",
         "deleteIconText": "delete",
         "deleteWarningCancel": "Cancel",
@@ -9022,7 +9022,7 @@ Map {
       "gridButtonText": "Grid",
       "instructionText": "Select the image that you want to display on this card.",
       "listButtonText": "List",
-      "modalCloseIconDescriptionText": undefined,
+      "modalCloseIconDescriptionText": "Close",
       "modalLabelText": "New image card",
       "modalPrimaryButtonLabelText": "Select",
       "modalSecondaryButtonLabelText": "Cancel",

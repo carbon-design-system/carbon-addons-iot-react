@@ -95,7 +95,7 @@ const defaultProps = {
   deleteModalLabelText: 'Delete image',
   deleteModalTitleText: (image) => `Are you sure you want to delete the image: ${image}?`,
   modalSecondaryButtonLabelText: 'Cancel',
-  modalCloseIconDescriptionText: undefined,
+  modalCloseIconDescriptionText: 'Close',
   searchPlaceHolderText: 'Search image by file name',
   // TODO: update this default in v3 to match the component.
   // kept here for backwards compat.
@@ -171,7 +171,7 @@ const ImageGalleryModal = ({
           secondaryButtonText={modalSecondaryButtonLabelText}
           modalHeading={deleteModalTitleText(selectedImage?.id)}
           size="xs"
-          iconDescription={modalCloseIconDescriptionText}
+          aria-label={modalCloseIconDescriptionText}
           onRequestClose={() => setIsDeleteWarningModalOpen(false)}
           onRequestSubmit={handleDelete}
           data-testid={`${testId}-warning-modal`}
