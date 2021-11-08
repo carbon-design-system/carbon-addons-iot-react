@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, FormItem, TextInput, MultiSelect } from 'carbon-components-react';
+import { DataTable, FormItem, TextInput, FilterableMultiSelect } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
 import memoize from 'lodash/memoize';
 import classnames from 'classnames';
@@ -265,7 +265,7 @@ class FilterHeaderRow extends Component {
               <div />
             ) : column.options ? (
               column.isMultiselect ? (
-                <MultiSelect.Filterable
+                <FilterableMultiSelect
                   key={columnStateValue}
                   className={classnames(
                     `${iotPrefix}--filterheader-multiselect`,

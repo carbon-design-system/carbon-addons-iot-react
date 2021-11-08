@@ -980,7 +980,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                 <div
                   className="bx--structured-list-td"
                   role="cell"
-                />
+                >
+                  FilterableMultiSelect
+                </div>
               </div>
               <div
                 className="bx--structured-list-row"

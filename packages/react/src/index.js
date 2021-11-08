@@ -185,6 +185,7 @@ export {
   FileUploaderButton,
   FileUploaderDropContainer,
   FileUploaderItem,
+  FilterableMultiSelect,
   Form,
   FormGroup,
   FormItem,

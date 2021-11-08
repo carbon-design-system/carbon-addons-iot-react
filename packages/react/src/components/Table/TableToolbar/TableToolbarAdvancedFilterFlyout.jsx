@@ -4,6 +4,7 @@ import {
   ComboBox,
   FormItem,
   MultiSelect,
+  FilterableMultiSelect,
   Tab,
   Tabs,
   TextInput,
@@ -313,7 +314,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                     if (column.options) {
                       if (column.isMultiselect) {
                         return (
-                          <MultiSelect.Filterable
+                          <FilterableMultiSelect
                             className={`${iotPrefix}--filter-flyout__simple-field`}
                             key={`${columnIndex}-${columnFilterValue}`}
                             id={`column-${rowIndex}-${columnIndex}`}
