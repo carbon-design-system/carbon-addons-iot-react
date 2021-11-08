@@ -95,7 +95,7 @@ const defaultProps = {
   deleteModalLabelText: 'Delete image',
   deleteModalTitleText: (image) => `Are you sure you want to delete the image: ${image}?`,
   modalSecondaryButtonLabelText: 'Cancel',
-  modalCloseIconDescriptionText: 'Close',
+  modalCloseIconDescriptionText: undefined,
   searchPlaceHolderText: 'Search image by file name',
   // TODO: update this default in v3 to match the component.
   // kept here for backwards compat.
