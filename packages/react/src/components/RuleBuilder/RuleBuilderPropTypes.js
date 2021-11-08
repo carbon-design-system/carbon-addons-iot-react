@@ -33,7 +33,12 @@ export const GroupLogicPropType = PropTypes.oneOf(['ALL', 'ANY']);
 export const RulesPropType = PropTypes.shape({
   id: PropTypes.string.isRequired,
   columnId: PropTypes.string.isRequired,
-  value: PropTypes.any.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.number])),
+  ]).isRequired,
   operand: PropTypes.string.isRequired,
 });
 
@@ -52,7 +57,7 @@ export const RuleBuilderFilterPropType = PropTypes.shape({
   /** Text for metadata for the filter */
   filterMetaText: PropTypes.string,
   /** tags associated with particular filter */
-  filterTags: PropTypes.array,
+  filterTags: PropTypes.arrayOf(PropTypes.string),
   /** users that have access to particular filter */
   filterAccess: PropTypes.arrayOf(
     PropTypes.shape({

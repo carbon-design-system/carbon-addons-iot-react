@@ -57,13 +57,14 @@ describe('DynamicHotspotSourcePicker', () => {
 
     const { rerender } = render(
       <DynamicHotspotSourcePicker
-        testID="test-picker"
+        testId="test-picker"
         dataSourceItems={getDataItems()}
         {...getCallbacks()}
       />
     );
     expect(screen.getByTestId(pickerTestId)).toHaveClass(invisible);
 
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     rerender(
       <DynamicHotspotSourcePicker
         testID="test-picker"
@@ -74,6 +75,10 @@ describe('DynamicHotspotSourcePicker', () => {
     );
 
     expect(screen.getByTestId(pickerTestId)).toHaveClass(invisible);
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(
       <DynamicHotspotSourcePicker

@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
-import { Button } from '../../index';
+import Button from '../Button';
 import { MapControlPropType } from '../../constants/CardPropTypes';
 
 import ScrollingControls from './ScrollingControls';

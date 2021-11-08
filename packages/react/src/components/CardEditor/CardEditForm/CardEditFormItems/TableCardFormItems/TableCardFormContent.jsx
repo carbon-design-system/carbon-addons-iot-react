@@ -11,7 +11,10 @@ import {
   handleDataSeriesChange,
   DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
-import { Button, List, MultiSelect, ComboBox } from '../../../../../index';
+import Button from '../../../../Button';
+import List from '../../../../List/List';
+import { MultiSelect } from '../../../../MultiSelect';
+import ComboBox from '../../../../ComboBox';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
@@ -32,6 +35,18 @@ const propTypes = {
           type: PropTypes.string,
         })
       ),
+      thresholds: PropTypes.arrayOf(
+        PropTypes.shape({
+          color: PropTypes.string,
+          comparison: PropTypes.string,
+          dataSourceId: PropTypes.string,
+          icon: PropTypes.string,
+          value: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.bool]),
+        })
+      ),
+    }),
+    dataSource: PropTypes.shape({
+      groupBy: PropTypes.arrayOf(PropTypes.string),
     }),
   }),
   /* callback when any changes are made to the card config, the full updated card JSON is passed as the argument */

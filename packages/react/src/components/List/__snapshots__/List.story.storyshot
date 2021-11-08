@@ -1952,7 +1952,697 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="DJ LeMahieu-checkbox"
+                    id="DJ LeMahieu-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="DJ LeMahieu-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="DJ LeMahieu"
+                  >
+                    DJ LeMahieu
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="Luke Voit-checkbox"
+                    id="Luke Voit-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="Luke Voit-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Luke Voit"
+                  >
+                    Luke Voit
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="Gary Sanchez-checkbox"
+                    id="Gary Sanchez-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="Gary Sanchez-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Gary Sanchez"
+                  >
+                    Gary Sanchez
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="Kendrys Morales-checkbox"
+                    id="Kendrys Morales-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="Kendrys Morales-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Kendrys Morales"
+                  >
+                    Kendrys Morales
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="Gleyber Torres-checkbox"
+                    id="Gleyber Torres-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="Gleyber Torres-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Gleyber Torres"
+                  >
+                    Gleyber Torres
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="Clint Frazier-checkbox"
+                    id="Clint Frazier-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="Clint Frazier-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Clint Frazier"
+                  >
+                    Clint Frazier
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="Brett Gardner-checkbox"
+                    id="Brett Gardner-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="Brett Gardner-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Brett Gardner"
+                  >
+                    Brett Gardner
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="Gio Urshela-checkbox"
+                    id="Gio Urshela-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="Gio Urshela-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Gio Urshela"
+                  >
+                    Gio Urshela
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="Cameron Maybin-checkbox"
+                    id="Cameron Maybin-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="Cameron Maybin-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Cameron Maybin"
+                  >
+                    Cameron Maybin
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--icon iot--list-item--content--icon__left"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-testid="Robinson Cano-checkbox"
+                    id="Robinson Cano-checkbox"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="Robinson Cano-checkbox"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text"
+                      dir="auto"
+                    >
+                      
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Robinson Cano"
+                  >
+                    Robinson Cano
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with checkbox multi-selection and hierarchy 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            Sports Teams
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              data-testid="Button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Add
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Add"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--content"
+      >
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={-1}
           >
             <div
               aria-label="Expand"
@@ -1993,8 +2683,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   <input
                     checked={false}
                     className="bx--checkbox"
+                    data-testid="Chicago White Sox-checkbox"
                     id="Chicago White Sox-checkbox"
-                    name="Chicago White Sox"
                     onChange={[Function]}
                     type="checkbox"
                   />
@@ -2004,10 +2694,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     title={null}
                   >
                     <span
-                      className="bx--checkbox-label-text bx--visually-hidden"
+                      className="bx--checkbox-label-text"
                       dir="auto"
                     >
-                      Chicago White Sox
+                      
                     </span>
                   </label>
                 </div>
@@ -2039,7 +2729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               aria-label="Expand"
@@ -2080,8 +2770,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   <input
                     checked={false}
                     className="bx--checkbox"
+                    data-testid="New York Yankees-checkbox"
                     id="New York Yankees-checkbox"
-                    name="New York Yankees"
                     onChange={[Function]}
                     type="checkbox"
                   />
@@ -2091,10 +2781,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     title={null}
                   >
                     <span
-                      className="bx--checkbox-label-text bx--visually-hidden"
+                      className="bx--checkbox-label-text"
                       dir="auto"
                     >
-                      New York Yankees
+                      
                     </span>
                   </label>
                 </div>
@@ -2126,7 +2816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
               aria-label="Expand"
@@ -2167,8 +2857,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   <input
                     checked={false}
                     className="bx--checkbox"
+                    data-testid="Houston Astros-checkbox"
                     id="Houston Astros-checkbox"
-                    name="Houston Astros"
                     onChange={[Function]}
                     type="checkbox"
                   />
@@ -2178,10 +2868,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     title={null}
                   >
                     <span
-                      className="bx--checkbox-label-text bx--visually-hidden"
+                      className="bx--checkbox-label-text"
                       dir="auto"
                     >
-                      Houston Astros
+                      
                     </span>
                   </label>
                 </div>
@@ -2213,34 +2903,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
-              aria-label="Expand"
-              className="iot--list-item--expand-icon"
-              data-testid="expand-icon"
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              role="button"
-              tabIndex={0}
-              title="Expand"
-            >
-              <svg
-                aria-label="Expand-icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                />
-              </svg>
-            </div>
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
             <div
               className="iot--list-item--content"
             >
@@ -2254,8 +2926,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   <input
                     checked={false}
                     className="bx--checkbox"
+                    data-testid="Atlanta Braves-checkbox"
                     id="Atlanta Braves-checkbox"
-                    name="Atlanta Braves"
                     onChange={[Function]}
                     type="checkbox"
                   />
@@ -2265,10 +2937,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     title={null}
                   >
                     <span
-                      className="bx--checkbox-label-text bx--visually-hidden"
+                      className="bx--checkbox-label-text"
                       dir="auto"
                     >
-                      Atlanta Braves
+                      
                     </span>
                   </label>
                 </div>
@@ -2300,34 +2972,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
-              aria-label="Expand"
-              className="iot--list-item--expand-icon"
-              data-testid="expand-icon"
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              role="button"
-              tabIndex={0}
-              title="Expand"
-            >
-              <svg
-                aria-label="Expand-icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                />
-              </svg>
-            </div>
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
             <div
               className="iot--list-item--content"
             >
@@ -2341,8 +2995,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   <input
                     checked={false}
                     className="bx--checkbox"
+                    data-testid="New York Mets-checkbox"
                     id="New York Mets-checkbox"
-                    name="New York Mets"
                     onChange={[Function]}
                     type="checkbox"
                   />
@@ -2352,10 +3006,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     title={null}
                   >
                     <span
-                      className="bx--checkbox-label-text bx--visually-hidden"
+                      className="bx--checkbox-label-text"
                       dir="auto"
                     >
-                      New York Mets
+                      
                     </span>
                   </label>
                 </div>
@@ -2387,34 +3041,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             onClick={[Function]}
             onKeyPress={[Function]}
             role="button"
-            tabIndex={0}
+            tabIndex={-1}
           >
             <div
-              aria-label="Expand"
-              className="iot--list-item--expand-icon"
-              data-testid="expand-icon"
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              role="button"
-              tabIndex={0}
-              title="Expand"
-            >
-              <svg
-                aria-label="Expand-icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                />
-              </svg>
-            </div>
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
             <div
               className="iot--list-item--content"
             >
@@ -2428,8 +3064,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   <input
                     checked={false}
                     className="bx--checkbox"
+                    data-testid="Washington Nationals-checkbox"
                     id="Washington Nationals-checkbox"
-                    name="Washington Nationals"
                     onChange={[Function]}
                     type="checkbox"
                   />
@@ -2439,10 +3075,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     title={null}
                   >
                     <span
-                      className="bx--checkbox-label-text bx--visually-hidden"
+                      className="bx--checkbox-label-text"
                       dir="auto"
                     >
-                      Washington Nationals
+                      
                     </span>
                   </label>
                 </div>
@@ -2874,6 +3510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -2986,6 +3623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -3688,6 +4326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -3909,6 +4548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -4021,6 +4661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -4133,6 +4774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -5285,6 +5927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -5369,6 +6012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -5453,6 +6097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -5537,6 +6182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -5621,6 +6267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -5705,6 +6352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -5789,6 +6437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -5873,6 +6522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -5957,6 +6607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -6041,6 +6692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                       aria-haspopup={true}
                       aria-label="open and close list of options"
                       className="bx--overflow-menu"
+                      data-testid="overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}

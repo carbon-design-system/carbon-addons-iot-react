@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
-import { Link } from '../../../index';
+import { Link } from '../../Link';
 
 import DashboardEditorHeader from './DashboardEditorHeader';
 

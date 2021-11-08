@@ -21,6 +21,7 @@ describe('CardEditor', () => {
   };
 
   it('is selectable by testID and testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <CardEditor
         supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
@@ -33,6 +34,10 @@ describe('CardEditor', () => {
     );
 
     expect(screen.getByTestId('CARD_EDITOR')).toBeTruthy();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(
       <CardEditor

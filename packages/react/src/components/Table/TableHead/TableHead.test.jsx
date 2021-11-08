@@ -56,6 +56,8 @@ describe('TableHead', () => {
         },
       ],
     }));
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <TableHead {...commonTableHeadProps} columns={columns} testID="TABLE_HEAD" />,
       {
@@ -71,6 +73,10 @@ describe('TableHead', () => {
     userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[1]);
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-1')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-2')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(<TableHead {...commonTableHeadProps} columns={columns} testId="table_head" />, {
       container: document.body.appendChild(document.createElement('table')),
@@ -597,10 +603,28 @@ describe('TableHead', () => {
       ];
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
-
+      jest.spyOn(console, 'error').mockImplementation(() => {});
       const { container, rerender } = render(<TableHead {...myProps} />, {
         container: document.body.appendChild(document.createElement('table')),
       });
+      // fallbacks to clean up output for old options. these can be removed
+      // when we move to new props in v3
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'Failed prop type: The prop `options.wrapCellText` is marked as required in `TableHead`'
+        )
+      );
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'Failed prop type: The prop `wrapText` is marked as required in `TableCellRenderer`'
+        )
+      );
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'Failed prop type: The prop `truncateCellText` is marked as required in `TableCellRenderer`'
+        )
+      );
+      console.error.mockReset();
 
       myProps.tableState = {
         ...myProps.tableState,

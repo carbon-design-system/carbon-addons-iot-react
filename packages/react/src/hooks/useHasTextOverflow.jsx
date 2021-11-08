@@ -9,7 +9,7 @@ const useHasTextOverflow = (elementRef) => {
       (elementRef.current.scrollHeight > elementRef.current.clientHeight ||
         elementRef.current.scrollWidth > elementRef.current.clientWidth);
     setIsOverflowed(overFlowing);
-  });
+  }, [elementRef]);
 
   return isOverflowed;
 };

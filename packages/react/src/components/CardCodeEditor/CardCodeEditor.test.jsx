@@ -12,6 +12,7 @@ const { iotPrefix, prefix } = settings;
 describe('CardEditor', () => {
   it('is selectable by testID or testId', async () => {
     const handleOnCopy = jest.fn();
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <CardCodeEditor
         onSubmit={isValidCallback}
@@ -22,6 +23,10 @@ describe('CardEditor', () => {
       />
     );
     expect(screen.getByTestId('CARD_CODE_EDITOR')).toBeTruthy();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(
       <CardCodeEditor

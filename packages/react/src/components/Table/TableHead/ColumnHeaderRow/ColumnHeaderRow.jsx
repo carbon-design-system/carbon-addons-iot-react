@@ -31,6 +31,7 @@ class ColumnHeaderRow extends Component {
       hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
       hasRowExpansion: PropTypes.bool,
       hasColumnSelectionConfig: PropTypes.bool,
+      hasRowActions: PropTypes.bool,
     }).isRequired,
     onChangeOrdering: PropTypes.func.isRequired,
     onColumnToggle: PropTypes.func.isRequired,

@@ -98,7 +98,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   value=""
                 />
                 <button
-                  aria-label="Clear search input"
+                  aria-label="Clear search"
                   className="bx--search-close bx--search-close--hidden"
                   onClick={[Function]}
                   type="button"
@@ -200,7 +200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-1566"
+                    aria-controls="accordion-item-1567"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -231,7 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-1566"
+                    id="accordion-item-1567"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -307,6 +307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -454,6 +455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -573,6 +575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -641,7 +644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-1567"
+                    aria-controls="accordion-item-1568"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -672,7 +675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-1567"
+                    id="accordion-item-1568"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -748,6 +751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -895,6 +899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -1014,6 +1019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -1168,6 +1174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="bx--overflow-menu"
+              data-testid="overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -1274,6 +1281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="bx--overflow-menu"
+              data-testid="overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -1438,7 +1446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   value=""
                 />
                 <button
-                  aria-label="Clear search input"
+                  aria-label="__Search Close Button__"
                   className="bx--search-close bx--search-close--hidden"
                   onClick={[Function]}
                   type="button"
@@ -1540,7 +1548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-1573"
+                    aria-controls="accordion-item-1574"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1571,7 +1579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-1573"
+                    id="accordion-item-1574"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -1647,6 +1655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -1741,7 +1750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-1570"
+              aria-controls="accordion-item-1571"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -1772,7 +1781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-1570"
+              id="accordion-item-1571"
             >
               <div
                 className="tile-gallery--section--items"
@@ -1859,6 +1868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           aria-haspopup={true}
                           aria-label="open and close list of options"
                           className="bx--overflow-menu"
+                          data-testid="overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -1985,6 +1995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           aria-haspopup={true}
                           aria-label="open and close list of options"
                           className="bx--overflow-menu"
+                          data-testid="overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -2139,6 +2150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           aria-haspopup={true}
                           aria-label="open and close list of options"
                           className="bx--overflow-menu"
+                          data-testid="overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -2207,7 +2219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-1571"
+              aria-controls="accordion-item-1572"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -2238,7 +2250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-1571"
+              id="accordion-item-1572"
             >
               <div
                 className="tile-gallery--section--items"
@@ -2349,6 +2361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           aria-haspopup={true}
                           aria-label="open and close list of options"
                           className="bx--overflow-menu"
+                          data-testid="overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -2500,7 +2513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1568"
+                aria-controls="accordion-item-1569"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2531,7 +2544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1568"
+                id="accordion-item-1569"
               >
                 <div
                   className="tile-gallery--section--items"
@@ -2618,6 +2631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             aria-haspopup={true}
                             aria-label="open and close list of options"
                             className="bx--overflow-menu"
+                            data-testid="overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -2744,6 +2758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             aria-haspopup={true}
                             aria-label="open and close list of options"
                             className="bx--overflow-menu"
+                            data-testid="overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -2898,6 +2913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             aria-haspopup={true}
                             aria-label="open and close list of options"
                             className="bx--overflow-menu"
+                            data-testid="overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -2966,7 +2982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1569"
+                aria-controls="accordion-item-1570"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2997,7 +3013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1569"
+                id="accordion-item-1570"
               >
                 <div
                   className="tile-gallery--section--items"
@@ -3108,6 +3124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             aria-haspopup={true}
                             aria-label="open and close list of options"
                             className="bx--overflow-menu"
+                            data-testid="overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
