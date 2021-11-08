@@ -326,7 +326,8 @@ export const WithNestedReorderingRestricted = () => {
           onListUpdated={(updatedItems) => {
             setItems(updatedItems);
           }}
-          itemWillMove={() => true}
+          // Prevent nested dropping, so that a team cannot be dropped in a team
+          itemWillMove={(...args) => args[2] !== 'nested'}
           hasSearch={boolean('hasSearch', true)}
           isVirtualList={boolean('hasVirtualList', false)}
           getAllowedDropIds={
