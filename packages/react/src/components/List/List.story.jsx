@@ -762,6 +762,11 @@ export const WithReorderAndLockedRows = () => (
       isVirtualList={boolean('isVirtualList', false)}
       editingStyle={EditingStyle.Single}
       lockedIds={['DJ LeMahieu', 'Luke Voit']}
+      onItemMoved={action('onItemMoved')}
+      itemWillMove={(args) => {
+        action('itemWillMove')(args);
+        return true;
+      }}
     />
   </div>
 );
