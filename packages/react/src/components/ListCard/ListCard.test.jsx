@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { CARD_SIZES } from '../..';
+import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 import ListCard from './ListCard';
 

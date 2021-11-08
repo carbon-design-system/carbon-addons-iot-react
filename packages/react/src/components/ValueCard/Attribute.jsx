@@ -16,6 +16,7 @@ const propTypes = {
   attribute: PropTypes.shape({
     label: PropTypes.string,
     unit: PropTypes.string,
+    dataSourceId: PropTypes.string,
     // decimal precision
     precision: PropTypes.number,
     thresholds: PropTypes.arrayOf(
@@ -37,9 +38,9 @@ const propTypes = {
   secondaryValue: PropTypes.shape({
     color: PropTypes.string,
     trend: PropTypes.oneOf(['up', 'down']),
-    value: PropTypes.any,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
   }),
-  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
   fontSize: PropTypes.number.isRequired,
   /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool.isRequired,

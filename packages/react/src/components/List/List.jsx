@@ -10,22 +10,9 @@ import { OverridePropTypes } from '../../constants/SharedPropTypes';
 import DefaultListHeader from './ListHeader/ListHeader';
 import DefaultListContent from './ListContent/ListContent';
 import VirtualListContent from './VirtualListContent/VirtualListContent';
+import { ListItemPropTypes } from './ListPropTypes';
 
 const { iotPrefix } = settings;
-
-export const ListItemPropTypes = {
-  id: PropTypes.string,
-  content: PropTypes.shape({
-    value: PropTypes.string,
-    icon: PropTypes.node,
-    /** The nodes should be Carbon Tags components */
-    tags: PropTypes.arrayOf(PropTypes.node),
-  }),
-  children: PropTypes.arrayOf(PropTypes.object),
-  isSelectable: PropTypes.bool,
-  /** boolean to define load more row is needed */
-  hasLoadMore: PropTypes.bool,
-};
 
 const propTypes = {
   /** Specify an optional className to be applied to the container */
@@ -36,6 +23,7 @@ const propTypes = {
   search: PropTypes.shape({
     onChange: PropTypes.func,
     value: PropTypes.string,
+    id: PropTypes.string,
   }),
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
@@ -44,9 +32,11 @@ const propTypes = {
     header: OverridePropTypes,
     content: OverridePropTypes,
   }),
+  /** ids of selectable rows with indeterminate selection state */
+  indeterminateIds: PropTypes.arrayOf(PropTypes.string),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
-  /** list editing style */
+  /** list editing style for Drag and Drop */
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,
     EditingStyle.Multiple,
@@ -59,6 +49,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** true if the list should have multiple selectable rows using checkboxes */
+  isCheckboxMultiSelect: PropTypes.bool,
   /** optional prop to use a virtualized version of the list instead of rendering all items */
   isVirtualList: PropTypes.bool,
   /** icon can be left or right side of list row primary value */
@@ -100,9 +92,11 @@ const defaultProps = {
   buttons: [],
   editingStyle: null,
   overrides: null,
+  indeterminateIds: [],
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
+  isCheckboxMultiSelect: false,
   isVirtualList: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
@@ -145,8 +139,10 @@ const List = forwardRef((props, ref) => {
     toggleExpansion,
     iconPosition,
     editingStyle,
+    indeterminateIds,
     isLargeRow,
     isLoading,
+    isCheckboxMultiSelect,
     isVirtualList,
     onItemMoved,
     itemWillMove,
@@ -183,7 +179,9 @@ const List = forwardRef((props, ref) => {
           items={items}
           isFullHeight={isFullHeight}
           testId={testId}
+          indeterminateIds={indeterminateIds}
           isLoading={isLoading}
+          isCheckboxMultiSelect={isCheckboxMultiSelect}
           selectedIds={selectedIds}
           expandedIds={expandedIds}
           handleSelect={handleSelect}

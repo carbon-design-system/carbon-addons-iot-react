@@ -61,6 +61,10 @@ $small-screen-breakpoint: 65.99em;
 
   .#{$prefix}--side-nav__item.#{$prefix}--side-nav__item--icon .#{$prefix}--side-nav__link {
     padding-left: mini-units(9);
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+    }
   }
 
   .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current,

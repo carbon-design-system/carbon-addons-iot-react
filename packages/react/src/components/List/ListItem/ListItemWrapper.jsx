@@ -24,12 +24,13 @@ const ListItemWrapper = ({
   children,
   connectDragSource,
   disabled,
+  preventRowFocus,
 }) => {
   const body =
     isSelectable && !disabled ? (
       <div
         role="button"
-        tabIndex={0}
+        tabIndex={preventRowFocus ? -1 : 0}
         className={classnames(
           `${iotPrefix}--list-item`,
           `${iotPrefix}--list-item__selectable`,
@@ -121,7 +122,6 @@ const ListItemWrapper = ({
 };
 
 const ListItemWrapperProps = {
-  dragPreviewText: PropTypes.string,
   id: PropTypes.string.isRequired,
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,
@@ -129,6 +129,8 @@ const ListItemWrapperProps = {
     EditingStyle.SingleNesting,
     EditingStyle.MultipleNesting,
   ]),
+  connectDragSource: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
   expanded: PropTypes.bool.isRequired,
   isLargeRow: PropTypes.bool.isRequired,
   isSelectable: PropTypes.bool.isRequired,
@@ -139,8 +141,12 @@ const ListItemWrapperProps = {
   children: PropTypes.node.isRequired,
   onItemMoved: PropTypes.func.isRequired,
   itemWillMove: PropTypes.func.isRequired,
+  preventRowFocus: PropTypes.bool.isRequired,
 };
 
 ListItemWrapper.propTypes = ListItemWrapperProps;
-
+ListItemWrapper.defaultProps = {
+  editingStyle: null,
+  disabled: false,
+};
 export default ListItemWrapper;

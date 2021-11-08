@@ -28,6 +28,7 @@ import {
   TableSortPropType,
   TableColumnGroupPropType,
   TableOrderingPropType,
+  TableFiltersPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -123,6 +124,8 @@ const propTypes = {
     hasUserViewManagement: PropTypes.bool,
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
+    /* If true, fire the onRowExpanded callback with the rowId when a row is clicked */
+    shouldExpandOnRowClick: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     /**
@@ -174,17 +177,7 @@ const propTypes = {
       maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
     }),
-    filters: PropTypes.arrayOf(
-      PropTypes.shape({
-        columnId: PropTypes.string.isRequired,
-        value: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.number,
-          PropTypes.bool,
-          PropTypes.arrayOf(PropTypes.string),
-        ]).isRequired,
-      })
-    ),
+    filters: TableFiltersPropType,
     /** a stripped down version of the RuleBuilderFilterPropType */
     advancedFilters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -238,6 +231,18 @@ const propTypes = {
       }),
       /* show the modal for selecting multi-sort columns */
       showMultiSortModal: PropTypes.bool,
+      multiSortModal: PropTypes.shape({
+        /**
+         * The anticipatedColumn is used to add the most recently click columnId to the UI of the
+         * MultiSort modal. This gives the user a better experience by pre-emptively adding the column
+         * they clicked multi-sort on to the multisort modal without changing state. They still have to
+         * click "Sort" to save it, or can click 'Cancel' or the 'X' to clear it.
+         */
+        anticipatedColumn: PropTypes.shape({
+          columnId: PropTypes.string,
+          direction: PropTypes.oneOf(['ASC', 'DESC']),
+        }),
+      }),
       /** Array with rowIds that are with loading active */
       loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
     }),
@@ -347,6 +352,7 @@ export const defaultProps = (baseProps) => ({
     preserveColumnWidths: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
+    shouldExpandOnRowClick: false,
     wrapCellText: 'always',
   },
   size: undefined,
@@ -381,6 +387,8 @@ export const defaultProps = (baseProps) => ({
       },
       singleRowEditButtons: null,
       loadingMoreIds: [],
+      showMultiSortModal: false,
+      multiSortModal: undefined,
     },
   },
   actions: {
@@ -486,6 +494,10 @@ export const defaultProps = (baseProps) => ({
     buttonLabelOnTableError: 'Refresh the page',
     /* table load more */
     loadMoreText: 'Load more...',
+    learnMoreText: 'Learn more',
+    inProgressText: 'In progress',
+    dismissText: 'Dismiss',
+    actionFailedText: 'Action failed',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -731,6 +743,20 @@ const Table = (props) => {
     );
   }
 
+  const multiSortColumns = useMemo(() => {
+    const arrayifiedSort = Array.isArray(view.table.sort)
+      ? view.table.sort
+      : view.table.sort !== undefined
+      ? [view.table.sort]
+      : [];
+
+    if (view.table.multiSortModal?.anticipatedColumn) {
+      return [...arrayifiedSort, view.table.multiSortModal.anticipatedColumn];
+    }
+
+    return arrayifiedSort;
+  }, [view.table.multiSortModal, view.table.sort]);
+
   return (
     <TableContainer
       style={style}
@@ -868,7 +894,16 @@ const Table = (props) => {
           </FilterTags>
         </section>
       ) : null}
-      <div className="addons-iot-table-container">
+      <div
+        className={classnames('addons-iot-table-container', {
+          // workaround hack to prevent double scrolling of the table and a filter dropdown
+          // because the Dropdown and Multiselect components don't support opening the menu
+          // items outside of the parent. This sets a minimum height for the table and applies
+          // a max-height to the dropdown list container based on that minimum height to prevent
+          // this issue.
+          [`${iotPrefix}-table-container--dropdown-height-fix`]: options.hasFilter,
+        })}
+      >
         <CarbonTable
           id={id}
           // TODO: remove id in v3
@@ -1092,7 +1127,7 @@ const Table = (props) => {
           testId={`${id}-multi-sort-modal`}
           columns={columns}
           ordering={view.table.ordering}
-          sort={Array.isArray(view.table.sort) ? view.table.sort : [view.table.sort]}
+          sort={multiSortColumns}
           actions={{
             ...pick(
               actions.table,

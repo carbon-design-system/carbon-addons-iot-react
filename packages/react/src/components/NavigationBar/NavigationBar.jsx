@@ -4,8 +4,11 @@ import styled from 'styled-components';
 import { Tabs, Tab } from 'carbon-components-react';
 import { spacing09 } from '@carbon/layout';
 
+import { settings } from '../../constants/Settings';
 import Button from '../Button';
 import { COLORS, PADDING, SIZES } from '../../styles/styles';
+
+const { prefix } = settings;
 
 const StyledNavigationContainer = styled.div`
   position: relative;
@@ -22,7 +25,7 @@ const StyledNavigationContainer = styled.div`
       align-items: flex-end;
 
       @media (min-width: 42em) {
-        a.bx--tabs__nav-link {
+        a.${prefix}--tabs__nav-link {
           height: 100%;
         }
       }
@@ -60,7 +63,7 @@ const StyledTabToContent = styled.div`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  .bx--tabs-trigger {
+  .${prefix}--tabs-trigger {
     background-color: ${COLORS.white};
   }
 `;

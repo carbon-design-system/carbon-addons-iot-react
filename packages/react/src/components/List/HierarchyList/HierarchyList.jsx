@@ -6,7 +6,8 @@ import isEqual from 'lodash/isEqual';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
-import List, { ListItemPropTypes } from '../List';
+import List from '../List';
+import { ListItemPropTypes } from '../ListPropTypes';
 import {
   EditingStyle,
   handleEditModeSelect,
@@ -351,7 +352,9 @@ const HierarchyList = ({
     setItemsToShow(filteredItems.slice(startIndex, startIndex + rowsPerPage));
   }, [currentPageNumber, filteredItems, rowsPerPage]);
 
-  const maxPage = Math.ceil(numberOfItems / rowsPerPage);
+  const maxPage = !Number.isNaN(Math.ceil(numberOfItems / rowsPerPage))
+    ? Math.ceil(numberOfItems / rowsPerPage)
+    : 1;
 
   const onPage = useCallback(
     (page) => {

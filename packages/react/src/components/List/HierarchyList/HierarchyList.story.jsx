@@ -4,8 +4,9 @@ import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-import { Button, InlineLoading, DragAndDrop } from '../../..';
-import { EditingStyle } from '../../../utils/DragAndDropUtils';
+import Button from '../../Button';
+import { InlineLoading } from '../../InlineLoading';
+import { EditingStyle, DragAndDrop } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
 import HierarchyList from './HierarchyList';
@@ -471,7 +472,14 @@ export const WithLargeNumberOfItems = () => (
       items={[...Array(1000)].map((_, i) => ({
         id: `item-${i}`,
         content: {
-          value: `Item ${i}`,
+          value:
+            i === 20
+              ? `Item ${i} that has an extra long label that will definitely be truncated`
+              : `Item ${i}`,
+          secondaryValue:
+            i === 10
+              ? `Item ${i} that has an extra long label that will definitely be truncated`
+              : `Item ${i} Subvalue`,
         },
       }))}
       editingStyle={EditingStyle.Single}

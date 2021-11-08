@@ -48,9 +48,9 @@ $hoverBgColor: #2c2c2c;
 
   .#{$prefix}--side-nav__menu
     .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover,
-  &.bx--side-nav__menu .bx--side-nav__link--current > span,
-  &.bx--side-nav__menu .bx--side-nav__link[aria-current='page'] > span,
-  &.bx--side-nav__link--current > span {
+  &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current > span,
+  &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'] > span,
+  &.#{$prefix}--side-nav__link--current > span {
     color: $textColor;
   }
 
@@ -74,6 +74,71 @@ html[dir='rtl'] {
   .#{$prefix}--side-nav__icon:not(.#{$prefix}--side-nav__submenu-chevron) {
     margin-left: mini-units(3);
     margin-right: unset;
+  }
+
+  .#{$iot-prefix}--side-nav__item--depth-0 {
+    .#{$prefix}--side-nav__link-text {
+      padding-right: $spacing-09 + $spacing-03;
+    }
+  }
+}
+
+.#{$iot-prefix}--side-nav__item--depth-1 {
+  .#{$prefix}--side-nav__submenu-title {
+    padding-left: $spacing-09 + $spacing-03;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-09 + $spacing-03;
+    }
+  }
+  .#{$prefix}--side-nav__link-text {
+    padding-left: $spacing-05;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-10 + $spacing-03;
+    }
+  }
+}
+
+.#{$iot-prefix}--side-nav__item--depth-2 {
+  .#{$prefix}--side-nav__submenu-title {
+    padding-left: $spacing-10 + $spacing-03;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-10 + $spacing-03;
+    }
+  }
+
+  .#{$prefix}--side-nav__link-text {
+    padding-left: $spacing-07;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-10 + $spacing-06;
+    }
+  }
+}
+
+.#{$iot-prefix}--side-nav__item--depth-3 {
+  .#{$prefix}--side-nav__submenu-title {
+    padding-left: $spacing-10 + $spacing-06;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-10 + $spacing-06;
+    }
+  }
+
+  .#{$prefix}--side-nav__link-text {
+    padding-left: $spacing-09;
+
+    html[dir='rtl'] & {
+      padding-left: unset;
+      padding-right: $spacing-09;
+    }
   }
 }
 
