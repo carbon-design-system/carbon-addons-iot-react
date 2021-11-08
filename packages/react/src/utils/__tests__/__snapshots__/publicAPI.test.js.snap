@@ -3555,9 +3555,11 @@ Map {
             },
             "size": Object {
               "args": Array [
-                "sm",
-                "md",
-                "lg",
+                Array [
+                  "sm",
+                  "md",
+                  "lg",
+                ],
               ],
               "type": "oneOf",
             },
@@ -5100,9 +5102,11 @@ Map {
       },
       "size": Object {
         "args": Array [
-          "sm",
-          "md",
-          "lg",
+          Array [
+            "sm",
+            "md",
+            "lg",
+          ],
         ],
         "type": "oneOf",
       },
@@ -23589,9 +23593,11 @@ Map {
             },
             "size": Object {
               "args": Array [
-                "sm",
-                "md",
-                "lg",
+                Array [
+                  "sm",
+                  "md",
+                  "lg",
+                ],
               ],
               "type": "oneOf",
             },
