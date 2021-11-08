@@ -7007,7 +7007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   onChange={[Function]}
                   tabIndex={0}
                   type="radio"
-                  value="Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 "
+                  value="Item 20 that has an extra long label that will definitely be truncated"
                 />
                 <label
                   className="bx--radio-button__label"
@@ -7019,7 +7019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   <span
                     className="bx--visually-hidden"
                   >
-                    Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 
+                    Item 20 that has an extra long label that will definitely be truncated
                   </span>
                 </label>
               </div>
@@ -7033,7 +7033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 <div
                   className="iot--hierarchy-list-bulk-modal--list-item-value"
                 >
-                  Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 Item 20 
+                  Item 20 that has an extra long label that will definitely be truncated
                 </div>
               </div>
             </div>
