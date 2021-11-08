@@ -37,7 +37,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Do you wish to log out?
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"
@@ -761,7 +761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Do you wish to log out?
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"
@@ -1737,7 +1737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Do you wish to log out?
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"
@@ -2460,7 +2460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Session Timeout
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"
@@ -2565,7 +2565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Do you wish to log out?
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"
@@ -3272,7 +3272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Do you wish to log out?
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"
@@ -4379,7 +4379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Do you wish to log out?
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"
@@ -5080,7 +5080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Do you wish to log out?
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"
@@ -5666,7 +5666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Do you wish to log out?
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"

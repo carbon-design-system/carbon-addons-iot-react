@@ -43,7 +43,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           Session Timeout
         </h3>
         <button
-          aria-label="close"
+          aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
           type="button"

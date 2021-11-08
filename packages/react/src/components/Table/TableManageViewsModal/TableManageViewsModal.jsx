@@ -228,7 +228,7 @@ const TableManageViewsModal = ({
       {showDeleteWarning && (
         <MyWarningModal
           className={`${iotPrefix}--manage-views-modal-warning`}
-          aria-label={closeIconDescription}
+          closeButtonLabel={closeIconDescription}
           modalHeading={getDeleteWarningText(viewIdToDelete, views)}
           onRequestClose={() => {
             setShowDeleteWarning(false);

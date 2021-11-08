@@ -10555,6 +10555,7 @@ Map {
     "defaultProps": Object {
       "i18n": Object {
         "body": "Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.",
+        "closeButtonLabel": "Close",
         "heading": "Do you wish to log out?",
         "primaryButton": "Log out",
         "secondaryButton": "Cancel",
@@ -10567,6 +10568,9 @@ Map {
         "args": Array [
           Object {
             "body": Object {
+              "type": "string",
+            },
+            "closeButton": Object {
               "type": "string",
             },
             "heading": Object {
@@ -10602,6 +10606,7 @@ Map {
     "defaultProps": Object {
       "className": null,
       "i18n": Object {
+        "closeButtonLabel": "Close",
         "sessionTimeoutModalBody": "You will be logged out due to inactivity in {countdown} seconds.",
         "sessionTimeoutModalHeading": "Session Timeout",
         "sessionTimeoutModalLogoutButton": "Log out",
