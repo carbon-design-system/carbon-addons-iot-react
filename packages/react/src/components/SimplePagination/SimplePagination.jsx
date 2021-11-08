@@ -36,7 +36,7 @@ export const SimplePaginationPropTypes = {
   /** Id that can be used for testing */
   testId: PropTypes.string,
   /** the size of the buttons in pagination */
-  size: PropTypes.oneOf('sm', 'md', 'lg'),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
 };
 
 const SimplePaginationDefaultProps = {

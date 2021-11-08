@@ -25,7 +25,7 @@ const propTypes = {
     primaryButton: PropTypes.string,
     secondaryButton: PropTypes.string,
     body: PropTypes.string,
-    closeButton: PropTypes.string,
+    closeButtonLabel: PropTypes.string,
   }),
   testId: PropTypes.string,
 };
