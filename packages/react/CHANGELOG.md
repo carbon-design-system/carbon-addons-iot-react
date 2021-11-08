@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.45...v2.147.0-next.46) (2021-11-08)
+
+
+### Bug Fixes
+
+* **hierarchy-list:** pr feedback to make label more clear ([b97c8af](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b97c8af079d84c5e777c5e822a9a4824e5a8207f))
+* **list:** fix styles to keep secondaryValue aligned when overflowing ([14c7626](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/14c7626bddae72fcc56938350fce640b943f55e1))
+
+
+
+
+
 # [2.147.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.44...v2.147.0-next.45) (2021-11-08)
 
 
