@@ -28,6 +28,7 @@ import {
   TableSortPropType,
   TableColumnGroupPropType,
   TableOrderingPropType,
+  TableFiltersPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -176,17 +177,7 @@ const propTypes = {
       maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
     }),
-    filters: PropTypes.arrayOf(
-      PropTypes.shape({
-        columnId: PropTypes.string.isRequired,
-        value: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.number,
-          PropTypes.bool,
-          PropTypes.arrayOf(PropTypes.string),
-        ]).isRequired,
-      })
-    ),
+    filters: TableFiltersPropType,
     /** a stripped down version of the RuleBuilderFilterPropType */
     advancedFilters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -503,6 +494,10 @@ export const defaultProps = (baseProps) => ({
     buttonLabelOnTableError: 'Refresh the page',
     /* table load more */
     loadMoreText: 'Load more...',
+    learnMoreText: 'Learn more',
+    inProgressText: 'In progress',
+    dismissText: 'Dismiss',
+    actionFailedText: 'Action failed',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was

@@ -4,8 +4,9 @@ import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-import { Button, InlineLoading, DragAndDrop } from '../../..';
-import { EditingStyle } from '../../../utils/DragAndDropUtils';
+import Button from '../../Button';
+import { InlineLoading } from '../../InlineLoading';
+import { EditingStyle, DragAndDrop } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
 import HierarchyList from './HierarchyList';

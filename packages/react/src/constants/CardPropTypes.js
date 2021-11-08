@@ -27,7 +27,7 @@ import {
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
-import { ButtonIconPropType, OverridePropTypes } from './SharedPropTypes';
+import { ButtonIconPropType, OverridePropTypes, SvgPropType } from './SharedPropTypes';
 
 export const CHART_COLORS = [
   purple70,
@@ -185,7 +185,16 @@ export const TableCardPropTypes = {
   value: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      values: PropTypes.object.isRequired,
+      values: PropTypes.objectOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.bool,
+          PropTypes.number,
+          PropTypes.instanceOf(Date),
+          PropTypes.object,
+          PropTypes.node,
+        ])
+      ).isRequired,
       actions: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.string.isRequired,
@@ -196,7 +205,7 @@ export const TableCardPropTypes = {
               width: PropTypes.string,
               height: PropTypes.string,
               viewBox: PropTypes.string.isRequired,
-              svgData: PropTypes.object.isRequired,
+              svgData: SvgPropType.isRequired,
             }),
           ]),
         })
@@ -379,7 +388,7 @@ export const PieCardPropTypes = {
   /** Configuration content for the PieChart */
   content: PropTypes.shape({
     /** Object that maps the groupDataSourceId with a specific color, e.g. {'Group A': 'red', 'Group B': 'blue', ... } */
-    colors: PropTypes.object,
+    colors: PropTypes.objectOf(PropTypes.string),
     /** Function to output custom HTML for the tooltip. Passed an array or object with the data,
      * and the default tooltip markup */
     customTooltip: PropTypes.func,
@@ -433,6 +442,43 @@ export const DonutCardPropTypes = {
   }).isRequired,
 };
 
+export const ImageCardValuesPropType = PropTypes.shape({
+  hotspots: PropTypes.arrayOf(
+    PropTypes.shape({
+      x: PropTypes.number,
+      y: PropTypes.number,
+      icon: PropTypes.string,
+      color: PropTypes.string,
+      height: PropTypes.number,
+      width: PropTypes.number,
+      content: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node,
+        PropTypes.shape({
+          title: PropTypes.string,
+          description: PropTypes.string,
+          values: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+          attributes: PropTypes.arrayOf(
+            PropTypes.shape({
+              dataSourceId: PropTypes.string,
+              label: PropTypes.string,
+              precision: PropTypes.number,
+              thresholds: PropTypes.arrayOf(
+                PropTypes.shape({
+                  comparison: PropTypes.oneOf(['>', '>=', '=', '<=', '<']),
+                  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+                  icon: PropTypes.string,
+                  color: PropTypes.string,
+                })
+              ),
+            })
+          ),
+        }),
+      ]),
+    })
+  ),
+});
+
 export const ImageCardPropTypes = {
   content: PropTypes.shape({
     id: PropTypes.string,
@@ -441,9 +487,7 @@ export const ImageCardPropTypes = {
     /** value for object-fit property - contain, cover, fill */
     displayOption: PropTypes.string,
   }).isRequired,
-  values: PropTypes.shape({
-    hotspots: PropTypes.array,
-  }),
+  values: ImageCardValuesPropType,
   /** the maximum supported file size in bytes */
   maxFileSizeInBytes: PropTypes.number,
   onUpload: PropTypes.func,
@@ -512,7 +556,7 @@ export const GaugeCardPropTypes = {
 };
 
 export const DashboardLayoutPropTypes = PropTypes.shape({
-  i: PropTypes.any,
+  i: PropTypes.string,
   x: PropTypes.number,
   y: PropTypes.number,
   w: PropTypes.number,
@@ -587,7 +631,14 @@ export const ComboChartPropTypes = {
           'area',
           'stacked-area',
         ]),
-        options: PropTypes.object,
+        options: PropTypes.shape({
+          points: PropTypes.shape({
+            enabled: PropTypes.bool,
+            radius: PropTypes.number,
+            filled: PropTypes.bool,
+            opacity: PropTypes.number,
+          }),
+        }),
         /* Name of the dataset/series the chart should follow */
         correspondingDatasets: PropTypes.arrayOf(PropTypes.string),
       })

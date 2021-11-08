@@ -46,7 +46,7 @@ const props = () => ({
 
 export const inline = () => (
   <CodeSnippet type="inline" feedback="Copied to clipboard">
-    {'node -v'}
+    node -v
   </CodeSnippet>
 );
 

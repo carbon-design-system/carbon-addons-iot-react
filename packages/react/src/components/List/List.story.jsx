@@ -4,7 +4,9 @@ import { boolean, text } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 
-import { Button, OverflowMenu, OverflowMenuItem } from '../..';
+import Button from '../Button';
+import { OverflowMenu } from '../OverflowMenu';
+import { OverflowMenuItem } from '../OverflowMenuItem';
 import { Tag } from '../Tag';
 
 import List from './List';

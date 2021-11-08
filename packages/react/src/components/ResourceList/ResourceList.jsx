@@ -6,6 +6,8 @@ import { spacing02 } from '@carbon/layout';
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
 import { COLORS } from '../../styles/styles';
+import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 const { prefix } = settings;
 
@@ -64,6 +66,7 @@ class ResourceList extends Component {
     customAction: PropTypes.shape({
       onClick: PropTypes.func.isRequired,
       label: PropTypes.string.isRequired,
+      icon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     }),
     /** Current item selected id */
     currentItemId: PropTypes.string,
@@ -132,7 +135,7 @@ class ResourceList extends Component {
     const listContent = data.map(({ id, title, description }, idx) => {
       const activeItem = id === currentItemId;
       return (
-        // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
+        // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control, jsx-a11y/no-noninteractive-element-interactions
         <label
           key={id}
           aria-label={title}
@@ -141,6 +144,11 @@ class ResourceList extends Component {
           } ${prefix}--structured-list-row`}
           tabIndex={customAction ? -1 : idx}
           onClick={onRowClick ? () => onRowClick(id) : null}
+          onKeyDown={
+            onRowClick
+              ? handleSpecificKeyDown([keyboardKeys.ENTER], () => onRowClick(id))
+              : undefined
+          }
           data-testid={`${testId}-row-${id}`}
         >
           {extraContent ? (

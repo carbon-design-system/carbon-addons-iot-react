@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 import { sampleHierarchy } from '../List.story';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
-import { InlineLoading } from '../../..';
+import { InlineLoading } from '../../InlineLoading';
 
 import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from './HierarchyList';
 

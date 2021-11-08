@@ -10,8 +10,9 @@ import ListItem from '../ListItem/ListItem';
 import { Checkbox } from '../../Checkbox';
 import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
-import { ListItemPropTypes } from '../List';
+import { ListItemPropTypes } from '../ListPropTypes';
 import { useResize } from '../../../internal/UseResizeObserver';
+import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
 
 const { iotPrefix } = settings;
 
@@ -73,10 +74,7 @@ const propTypes = {
   ]),
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
-  virtualListRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.any }),
-  ]),
+  virtualListRef: HtmlElementRefProp,
 };
 
 const defaultProps = {
@@ -106,7 +104,7 @@ const defaultProps = {
   selectedIds: [],
   testId: 'list',
   toggleExpansion: () => {},
-  virtualListRef: React.createRef(),
+  virtualListRef: undefined,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -134,13 +132,15 @@ const VirtualListContent = ({
   selectedIds,
   testId,
   toggleExpansion,
-  virtualListRef,
+  virtualListRef: virtualListRefProp,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const rowSize = isLargeRow ? 96 : 40;
   const [listHeight, setListHeight] = useState(0);
   const listOuterRef = useResize(useRef(null));
   const didScrollRef = useRef(false);
+  const internalVirtualListRef = useRef(null);
+  const virtualListRef = virtualListRefProp || internalVirtualListRef;
 
   const flatten = useCallback(
     (initialItems, parentId = null, currentLevel = 0) => {
@@ -177,8 +177,8 @@ const VirtualListContent = ({
         return tmp;
       }, []);
     },
-    // eslint-disable-next-line no-use-before-define
-    [expandedIds, flatten]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [expandedIds]
   );
 
   const [flattened, setFlattened] = useState(() => {

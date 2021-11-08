@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { DataTable } from 'carbon-components-react';
 
 import { settings } from '../../../../constants/Settings';
-import { Button } from '../../../..';
+import Button from '../../../Button';
 
 const { TableRow, TableCell } = DataTable;
 const { iotPrefix } = settings;
@@ -35,7 +35,7 @@ const TableBodyLoadMoreRow = ({
   isLoadingMore,
 }) => {
   return (
-    <TableRow isSelected={false} isSelectable isEditMode={false}>
+    <TableRow isSelected={false}>
       <TableCell
         key={`${tableId}-${id}-row-load-more-cell`}
         colSpan={totalColumns}

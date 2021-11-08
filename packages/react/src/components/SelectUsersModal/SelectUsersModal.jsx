@@ -4,7 +4,7 @@ import { ArrowRight16, Subtract16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
 
 import ComposedModal from '../ComposedModal/ComposedModal';
-import { Button } from '../..';
+import Button from '../Button';
 import { settings } from '../../constants/Settings';
 import ListBuilder from '../ListBuilder/ListBuilder';
 

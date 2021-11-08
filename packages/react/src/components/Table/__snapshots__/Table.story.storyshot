@@ -25120,10 +25120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </span>
               </td>
             </tr>
-            <tr
-              isEditMode={false}
-              isSelectable={true}
-            >
+            <tr>
               <td
                 className="iot--load-more-cell"
                 colSpan={10}
@@ -26031,10 +26028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </span>
               </td>
             </tr>
-            <tr
-              isEditMode={false}
-              isSelectable={true}
-            >
+            <tr>
               <td
                 className="iot--load-more-cell"
                 colSpan={10}

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Checkbox } from '../..';
+import { Checkbox } from '../Checkbox';
 import { settings } from '../../constants/Settings';
 
 import List, { UnconnectedList } from './List';
