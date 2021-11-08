@@ -60,7 +60,7 @@ const props = () => ({
     ['start', 'end'],
     'end'
   ),
-  ariaLabel: text('The ariaLabel applied to the combobox list (ariaLabel)', 'combobox aria label'),
+  ariaLabel: text('The ariaLabel applied to the combobox list (ariaLabel)', 'Choose an item'),
   direction: select(
     'The direction to open the ComboBox',
     { 'Bottom (default)': 'bottom', Top: 'top' },
