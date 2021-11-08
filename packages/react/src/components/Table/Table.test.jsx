@@ -953,9 +953,7 @@ describe('Table', () => {
       },
     };
 
-    const { rerender } = render(
-      <Table {...initialState} {...additionalProps} isSortable i18n={i18nTest} />
-    );
+    const { rerender } = render(<Table {...initialState} {...additionalProps} i18n={i18nTest} />);
 
     expect(screen.getAllByLabelText(i18nTest.overflowMenuAria)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.clickToExpandAria)[0]).toBeInTheDocument();
@@ -1067,7 +1065,7 @@ describe('Table', () => {
       },
     };
 
-    const { rerender } = render(<Table {...initialState} {...additionalProps} isSortable />);
+    const { rerender } = render(<Table {...initialState} {...additionalProps} />);
 
     expect(screen.getByText(i18nDefault.itemsSelected(2))).toBeInTheDocument();
     expect(screen.getByText(i18nDefault.pageRange(1, 10))).toBeInTheDocument();
@@ -1075,7 +1073,7 @@ describe('Table', () => {
     expect(screen.getByText(i18nDefault.rowCountInHeader(100))).toBeInTheDocument();
 
     additionalProps.view.table.selectedIds = ['row-1'];
-    rerender(<Table {...initialState} {...additionalProps} isSortable />);
+    rerender(<Table {...initialState} {...additionalProps} />);
     expect(screen.getByText(i18nDefault.itemSelected(1))).toBeInTheDocument();
   });
 
@@ -1102,7 +1100,7 @@ describe('Table', () => {
     };
 
     const { rerender } = render(
-      <Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />
+      <Table {...initialState} {...additionalProps} i18n={i18nFunctions} />
     );
     expect(screen.getByText(i18nFunctions.itemsSelected(2))).toBeInTheDocument();
     expect(screen.getByText(i18nFunctions.pageRange(1, 10))).toBeInTheDocument();
@@ -1110,7 +1108,7 @@ describe('Table', () => {
     expect(screen.getByText(i18nFunctions.rowCountInHeader(100))).toBeInTheDocument();
 
     additionalProps.view.table.selectedIds = ['row-1'];
-    rerender(<Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />);
+    rerender(<Table {...initialState} {...additionalProps} i18n={i18nFunctions} />);
     expect(screen.getByText(i18nFunctions.itemSelected(1))).toBeInTheDocument();
   });
 
