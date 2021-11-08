@@ -550,6 +550,92 @@ describe('table reducer', () => {
       );
 
       expect(tableWithLoadingMoreDataComplete.view.table.loadingMoreIds).toHaveLength(2);
+
+      const addTableRowActionsFromProps = tableReducer(
+        initialState,
+        tableRegister({
+          view: {
+            table: { rowActions: [{ rowId: 'row-0', isEditMode: true }] },
+            toolbar: { activeBar: 'rowEdit' },
+          },
+        })
+      );
+
+      expect(addTableRowActionsFromProps.view.table.rowActions).toHaveLength(1);
+      expect(addTableRowActionsFromProps.view.table.rowActions).toEqual([
+        {
+          rowId: 'row-0',
+          isEditMode: true,
+        },
+      ]);
+      expect(addTableRowActionsFromProps.view.toolbar.activeBar).toEqual('rowEdit');
+
+      const addSecondTableRowActionsFromProps = tableReducer(
+        addTableRowActionsFromProps,
+        tableRegister({
+          view: {
+            table: {
+              rowActions: [
+                { rowId: 'row-0', isEditMode: true },
+                { rowId: 'row-1', isEditMode: true },
+              ],
+            },
+            toolbar: { activeBar: 'rowEdit' },
+          },
+        })
+      );
+
+      expect(addSecondTableRowActionsFromProps.view.table.rowActions).toHaveLength(2);
+      expect(addSecondTableRowActionsFromProps.view.table.rowActions).toEqual([
+        {
+          rowId: 'row-0',
+          isEditMode: true,
+        },
+        {
+          rowId: 'row-1',
+          isEditMode: true,
+        },
+      ]);
+      expect(addSecondTableRowActionsFromProps.view.toolbar.activeBar).toEqual('rowEdit');
+
+      const removeOneTableRowActionsFromProps = tableReducer(
+        addTableRowActionsFromProps,
+        tableRegister({
+          view: {
+            table: {
+              rowActions: [{ rowId: 'row-1', isEditMode: true }],
+            },
+            toolbar: { activeBar: 'rowEdit' },
+          },
+        })
+      );
+
+      expect(removeOneTableRowActionsFromProps.view.table.rowActions).toHaveLength(1);
+      expect(removeOneTableRowActionsFromProps.view.table.rowActions).toEqual([
+        {
+          rowId: 'row-1',
+          isEditMode: true,
+        },
+      ]);
+      expect(removeOneTableRowActionsFromProps.view.toolbar.activeBar).toEqual('rowEdit');
+
+      const turnOffRowEditActiveBar = tableReducer(
+        removeOneTableRowActionsFromProps,
+        tableRegister({
+          view: {
+            toolbar: {
+              activeBar: undefined,
+            },
+            table: {
+              rowActions: [],
+            },
+          },
+        })
+      );
+
+      expect(turnOffRowEditActiveBar.view.table.rowActions).toHaveLength(0);
+      expect(turnOffRowEditActiveBar.view.table.rowActions).toEqual([]);
+      expect(turnOffRowEditActiveBar.view.toolbar.activeBar).toBeUndefined();
     });
   });
 });
