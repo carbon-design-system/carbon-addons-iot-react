@@ -24,12 +24,13 @@ const ListItemWrapper = ({
   children,
   connectDragSource,
   disabled,
+  preventRowFocus,
 }) => {
   const body =
     isSelectable && !disabled ? (
       <div
         role="button"
-        tabIndex={0}
+        tabIndex={preventRowFocus ? -1 : 0}
         className={classnames(
           `${iotPrefix}--list-item`,
           `${iotPrefix}--list-item__selectable`,
@@ -139,6 +140,7 @@ const ListItemWrapperProps = {
   children: PropTypes.node.isRequired,
   onItemMoved: PropTypes.func.isRequired,
   itemWillMove: PropTypes.func.isRequired,
+  preventRowFocus: PropTypes.bool.isRequired,
 };
 
 ListItemWrapper.propTypes = ListItemWrapperProps;
