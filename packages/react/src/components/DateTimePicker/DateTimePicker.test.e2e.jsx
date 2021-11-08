@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 
+import dayjs from '../../utils/dayjs';
 import { settings } from '../../constants/Settings';
 
 import DateTimePicker, { PICKER_KINDS } from './DateTimePicker';
@@ -271,5 +272,44 @@ describe('DateTimePicker', () => {
     cy.get('body').realPress('Tab');
     cy.focused().click().type('{downarrow}');
     cy.findAllByRole('button').eq(0).should('be.focused');
+  });
+
+  it('should pick ranges across months', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    // the calendar in Flatpickr does not respect MockDate or cy.clock, so we must resort to using
+    // the current date, but picking specific days to test and format the dynamic output as expected
+    const now = dayjs();
+    const thisMonthLabel = now.format(`MMMM [12], YYYY`);
+    const lastMonth = now.subtract(1, 'month');
+    const lastMonthLabel = lastMonth.format(`MMMM [20], YYYY`);
+    mount(
+      <DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" hasTimeInput={false} />
+    );
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).should('be.visible').click();
+    cy.findByText('Custom Range').should('be.visible').click();
+    cy.findByText('Absolute').should('be.visible').click();
+    cy.get(`.flatpickr-prev-month`).click();
+    cy.findByLabelText(lastMonthLabel).click();
+    cy.findByLabelText(lastMonthLabel).should('have.class', 'selected');
+    cy.get(`.flatpickr-next-month`).click();
+    cy.findByLabelText(thisMonthLabel).click();
+    cy.findByLabelText(thisMonthLabel).should('have.class', 'selected');
+    cy.findByText('Apply')
+      .click()
+      .should(() => {
+        expect(onApply).to.be.calledWith({
+          timeRangeKind: 'ABSOLUTE',
+          timeRangeValue: {
+            end: Cypress.sinon.match.any,
+            endDate: now.format(`MM/[12]/YYYY`),
+            endTime: '00:00',
+            start: Cypress.sinon.match.any,
+            startDate: lastMonth.format(`MM/[20]/YYYY`),
+            startTime: '00:00',
+          },
+        });
+      });
   });
 });

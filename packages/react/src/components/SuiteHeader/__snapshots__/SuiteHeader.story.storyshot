@@ -3985,7 +3985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       className="bx--side-nav__items"
     >
       <li
-        className="bx--side-nav__item bx--side-nav__item--icon"
+        className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
         onKeyDown={[Function]}
       >
         <button
@@ -4097,7 +4097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </a>
       </li>
       <li
-        className="bx--side-nav__item bx--side-nav__item--icon"
+        className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
         onKeyDown={[Function]}
       >
         <button
@@ -4189,7 +4189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </ul>
       </li>
       <li
-        className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon"
+        className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon iot--side-nav__item--depth-0"
         onKeyDown={[Function]}
       >
         <button

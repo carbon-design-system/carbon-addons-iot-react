@@ -44,9 +44,11 @@ const propTypes = {
     header: OverridePropTypes,
     content: OverridePropTypes,
   }),
+  /** ids of selectable rows with indeterminate selection state */
+  indeterminateIds: PropTypes.arrayOf(PropTypes.string),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
-  /** list editing style */
+  /** list editing style for Drag and Drop */
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,
     EditingStyle.Multiple,
@@ -59,6 +61,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** true if the list should have multiple selectable rows using checkboxes */
+  isCheckboxMultiSelect: PropTypes.bool,
   /** optional prop to use a virtualized version of the list instead of rendering all items */
   isVirtualList: PropTypes.bool,
   /** icon can be left or right side of list row primary value */
@@ -102,9 +106,11 @@ const defaultProps = {
   buttons: [],
   editingStyle: null,
   overrides: null,
+  indeterminateIds: [],
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
+  isCheckboxMultiSelect: false,
   isVirtualList: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
@@ -149,8 +155,10 @@ const List = forwardRef((props, ref) => {
     toggleExpansion,
     iconPosition,
     editingStyle,
+    indeterminateIds,
     isLargeRow,
     isLoading,
+    isCheckboxMultiSelect,
     isVirtualList,
     onItemMoved,
     itemWillMove,
@@ -187,7 +195,9 @@ const List = forwardRef((props, ref) => {
           items={items}
           isFullHeight={isFullHeight}
           testId={testId}
+          indeterminateIds={indeterminateIds}
           isLoading={isLoading}
+          isCheckboxMultiSelect={isCheckboxMultiSelect}
           selectedIds={selectedIds}
           expandedIds={expandedIds}
           handleSelect={handleSelect}

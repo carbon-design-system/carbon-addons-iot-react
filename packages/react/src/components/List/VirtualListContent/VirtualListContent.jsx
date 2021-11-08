@@ -43,6 +43,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** true if the list should have multiple selectable rows using checkboxes */
+  isCheckboxMultiSelect: PropTypes.bool,
   testId: PropTypes.string,
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
@@ -58,6 +60,8 @@ const propTypes = {
   itemWillMove: PropTypes.func,
   /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
+  /** ids of selectable rows with indeterminate selection state */
+  indeterminateIds: PropTypes.arrayOf(PropTypes.string),
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
   /** the ids of locked items that cannot be reordered */
@@ -93,10 +97,12 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
+  isCheckboxMultiSelect: false,
   items: [],
   itemWillMove: () => {
     return true;
   },
+  indeterminateIds: [],
   loadingMoreIds: [],
   lockedIds: [],
   onItemMoved: () => {},
@@ -119,9 +125,11 @@ const VirtualListContent = ({
   handleSelect,
   i18n,
   iconPosition,
+  indeterminateIds,
   isFullHeight,
   isLargeRow,
   isLoading,
+  isCheckboxMultiSelect,
   items,
   itemWillMove,
   loadingMoreIds,
@@ -216,6 +224,7 @@ const VirtualListContent = ({
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
     const isLoadingMore = loadingMoreIds.includes(item.id);
     const isLocked = lockedIds.includes(item.id);
+    const isIndeterminate = indeterminateIds.includes(item.id);
     const parentIsExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
     const {
@@ -258,7 +267,7 @@ const VirtualListContent = ({
           nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
           value={value}
           icon={
-            editingStyleIsMultiple(editingStyle) ? (
+            editingStyleIsMultiple(editingStyle) || (isSelectable && isCheckboxMultiSelect) ? (
               <Checkbox
                 id={`${item.id}-checkbox`}
                 name={item.value}
@@ -267,6 +276,7 @@ const VirtualListContent = ({
                 onClick={() => handleSelect(item.id, parentId)}
                 checked={isSelected}
                 disabled={isLocked}
+                indeterminate={isIndeterminate}
               />
             ) : (
               icon
@@ -290,6 +300,7 @@ const VirtualListContent = ({
           isSelectable={editingStyle === null && isSelectable}
           i18n={mergedI18n}
           tags={tags}
+          preventRowFocus={isCheckboxMultiSelect}
         />
       </div>,
     ];

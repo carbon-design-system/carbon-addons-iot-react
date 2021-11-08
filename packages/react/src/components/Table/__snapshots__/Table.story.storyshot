@@ -29196,7 +29196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           className="bx--data-table-content"
         >
           <table
-            className="bx--data-table iot--data-table--resize iot--data-table--fixed iot--data-table--row-actions bx--data-table--lg bx--data-table--sort bx--data-table--no-border"
+            className="bx--data-table iot--data-table--resize iot--data-table--fixed iot--data-table--row-actions bx--data-table--lg bx--data-table--no-border"
             data-testid="table"
             id="table"
             title={null}

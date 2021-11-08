@@ -441,6 +441,54 @@ describe('table reducer', () => {
       expect(newTableSingleWithExpandedRow.view.table.expandedIds).toEqual(['row-2']);
     });
     it('REGISTER_TABLE', () => {
+      const tableWithDataSizeChanges = tableReducer(
+        initialState,
+        tableRegister({ view: { table: { pagination: { pageSize: 10 } } } })
+      );
+
+      expect(tableWithDataSizeChanges.view.pagination).toEqual({
+        pageSize: 10,
+        pageSizes: undefined,
+        page: 1,
+        totalItems: 100,
+      });
+      const changePagesState = tableReducer(
+        tableWithDataSizeChanges,
+        tablePageChange({ page: 3, pageSize: 10 })
+      );
+      expect(changePagesState.data.length).toEqual(100);
+      expect(changePagesState.view.pagination.page).toEqual(3);
+
+      const reduceDataLength = tableReducer(
+        changePagesState,
+        tableRegister({ data: changePagesState.data.slice(0, 10) })
+      );
+      expect(reduceDataLength.data.length).toEqual(10);
+      expect(reduceDataLength.view.pagination.page).toEqual(1);
+
+      const changePageSizeState = tableReducer(reduceDataLength, tablePageChange({ pageSize: 3 }));
+      expect(changePageSizeState.data.length).toEqual(10);
+      expect(changePageSizeState.view.pagination.page).toEqual(1);
+
+      const movePageState = tableReducer(
+        changePageSizeState,
+        tablePageChange({ page: 3, pageSize: 3 })
+      );
+      expect(movePageState.data.length).toEqual(10);
+      expect(movePageState.view.pagination.page).toEqual(3);
+
+      const increaseDataLength = tableReducer(
+        movePageState,
+        tableRegister({ data: changePagesState.data })
+      );
+      expect(increaseDataLength.data.length).toEqual(100);
+      expect(increaseDataLength.view.pagination).toEqual({
+        pageSize: 3,
+        page: 1,
+        pageSizes: undefined,
+        totalItems: 100,
+      });
+
       // Data should be filtered once table registers
       expect(initialState.view.table.filteredData).toBeUndefined();
       const tableWithFilteredData = tableReducer(
@@ -550,6 +598,92 @@ describe('table reducer', () => {
       );
 
       expect(tableWithLoadingMoreDataComplete.view.table.loadingMoreIds).toHaveLength(2);
+
+      const addTableRowActionsFromProps = tableReducer(
+        initialState,
+        tableRegister({
+          view: {
+            table: { rowActions: [{ rowId: 'row-0', isEditMode: true }] },
+            toolbar: { activeBar: 'rowEdit' },
+          },
+        })
+      );
+
+      expect(addTableRowActionsFromProps.view.table.rowActions).toHaveLength(1);
+      expect(addTableRowActionsFromProps.view.table.rowActions).toEqual([
+        {
+          rowId: 'row-0',
+          isEditMode: true,
+        },
+      ]);
+      expect(addTableRowActionsFromProps.view.toolbar.activeBar).toEqual('rowEdit');
+
+      const addSecondTableRowActionsFromProps = tableReducer(
+        addTableRowActionsFromProps,
+        tableRegister({
+          view: {
+            table: {
+              rowActions: [
+                { rowId: 'row-0', isEditMode: true },
+                { rowId: 'row-1', isEditMode: true },
+              ],
+            },
+            toolbar: { activeBar: 'rowEdit' },
+          },
+        })
+      );
+
+      expect(addSecondTableRowActionsFromProps.view.table.rowActions).toHaveLength(2);
+      expect(addSecondTableRowActionsFromProps.view.table.rowActions).toEqual([
+        {
+          rowId: 'row-0',
+          isEditMode: true,
+        },
+        {
+          rowId: 'row-1',
+          isEditMode: true,
+        },
+      ]);
+      expect(addSecondTableRowActionsFromProps.view.toolbar.activeBar).toEqual('rowEdit');
+
+      const removeOneTableRowActionsFromProps = tableReducer(
+        addTableRowActionsFromProps,
+        tableRegister({
+          view: {
+            table: {
+              rowActions: [{ rowId: 'row-1', isEditMode: true }],
+            },
+            toolbar: { activeBar: 'rowEdit' },
+          },
+        })
+      );
+
+      expect(removeOneTableRowActionsFromProps.view.table.rowActions).toHaveLength(1);
+      expect(removeOneTableRowActionsFromProps.view.table.rowActions).toEqual([
+        {
+          rowId: 'row-1',
+          isEditMode: true,
+        },
+      ]);
+      expect(removeOneTableRowActionsFromProps.view.toolbar.activeBar).toEqual('rowEdit');
+
+      const turnOffRowEditActiveBar = tableReducer(
+        removeOneTableRowActionsFromProps,
+        tableRegister({
+          view: {
+            toolbar: {
+              activeBar: undefined,
+            },
+            table: {
+              rowActions: [],
+            },
+          },
+        })
+      );
+
+      expect(turnOffRowEditActiveBar.view.table.rowActions).toHaveLength(0);
+      expect(turnOffRowEditActiveBar.view.table.rowActions).toEqual([]);
+      expect(turnOffRowEditActiveBar.view.toolbar.activeBar).toBeUndefined();
     });
   });
 });

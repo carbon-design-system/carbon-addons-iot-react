@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.43...v2.147.0-next.44) (2021-11-08)
+
+
+### Bug Fixes
+
+* **list:** prevent multiple handleselect callbacks ([c96cf6c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c96cf6c717487476df88e6d7f075f0af13913232))
+
+
+### Features
+
+* **list:** add multiselection checkbox ([05011fa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/05011fa15812118d68b4c51a2006bcaed0593d0c)), closes [#2987](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2987)
+* **list:** multiselection checkbox feedback ([035394c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/035394c46cef7b6507dfea9ef58bd18394e2bcee)), closes [#2987](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2987)
+
+
+
+
+
+# [2.147.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.42...v2.147.0-next.43) (2021-11-04)
+
+
+### Bug Fixes
+
+* **day-js:** different method of importing locales ([288361d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/288361db02266e2de065fbd5b97accb83e38004d))
+
+
+
+
+
+# [2.147.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.41...v2.147.0-next.42) (2021-11-02)
+
+
+### Bug Fixes
+
+* **date-time-picker:** allow selecting ranges across months ([a9686d7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a9686d7c140bf4cd9dc0c88a38e4114a683d80f1))
+* **date-time-picker:** handle situations where calendar loses focus ([57a914c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/57a914c9682acc22cdd7e6230c25cf9d4cb130b7))
+
+
+
+
+
+# [2.147.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.40...v2.147.0-next.41) (2021-11-01)
+
+
+### Bug Fixes
+
+* **side-nav:** add submenuLabel to i18n prop ([26d9849](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/26d9849740916c7d490d343a99e57864716ffc20))
+* **side-nav:** fix RTL issues with nested nav ([784aaa2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/784aaa25f51e7800ce28e0acfc8036586b41d1ff))
+
+
+### Features
+
+* **side-nav:** allow nested levels of children ([aba4247](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aba4247d920dfe9ae723b47ac1b4ddfc320f796c))
+
+
+
+
+
 # [2.147.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.39...v2.147.0-next.40) (2021-10-29)
 
 
