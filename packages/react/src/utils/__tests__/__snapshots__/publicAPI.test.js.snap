@@ -334,6 +334,7 @@ Map {
           "onRemoveAdvancedFilter": [Function],
           "onShowRowEdit": [Function],
           "onToggleAdvancedFilter": [Function],
+          "onToggleAggregations": [Function],
           "onToggleColumnSelection": [Function],
           "onToggleFilter": [Function],
         },
