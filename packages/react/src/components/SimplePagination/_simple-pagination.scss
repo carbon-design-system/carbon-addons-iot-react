@@ -7,11 +7,6 @@
   width: 100%;
   border: rem(1px) solid $ui-03;
   background-color: $ui-01;
-
-  .#{$prefix}--pagination__button {
-    height: 100%;
-    width: $spacing-09;
-  }
 }
 
 .#{$iot-prefix}-simple-pagination-page-bar {

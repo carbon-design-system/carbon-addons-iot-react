@@ -3553,6 +3553,14 @@ Map {
             "prevPageText": Object {
               "type": "string",
             },
+            "size": Object {
+              "args": Array [
+                "sm",
+                "md",
+                "lg",
+              ],
+              "type": "oneOf",
+            },
             "testID": [Function],
             "testId": Object {
               "type": "string",
@@ -5060,6 +5068,7 @@ Map {
       "pageOfPagesText": [Function],
       "pageText": null,
       "prevPageText": "Prev page",
+      "size": "lg",
       "testId": "iot-simple-pagination",
       "totalItems": undefined,
       "totalItemsText": "Items",
@@ -5088,6 +5097,14 @@ Map {
       },
       "prevPageText": Object {
         "type": "string",
+      },
+      "size": Object {
+        "args": Array [
+          "sm",
+          "md",
+          "lg",
+        ],
+        "type": "oneOf",
       },
       "testID": [Function],
       "testId": Object {
@@ -10570,7 +10587,7 @@ Map {
             "body": Object {
               "type": "string",
             },
-            "closeButton": Object {
+            "closeButtonLabel": Object {
               "type": "string",
             },
             "heading": Object {
@@ -23569,6 +23586,14 @@ Map {
             },
             "prevPageText": Object {
               "type": "string",
+            },
+            "size": Object {
+              "args": Array [
+                "sm",
+                "md",
+                "lg",
+              ],
+              "type": "oneOf",
             },
             "testID": [Function],
             "testId": Object {
