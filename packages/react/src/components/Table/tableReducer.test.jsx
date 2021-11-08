@@ -441,6 +441,54 @@ describe('table reducer', () => {
       expect(newTableSingleWithExpandedRow.view.table.expandedIds).toEqual(['row-2']);
     });
     it('REGISTER_TABLE', () => {
+      const tableWithDataSizeChanges = tableReducer(
+        initialState,
+        tableRegister({ view: { table: { pagination: { pageSize: 10 } } } })
+      );
+
+      expect(tableWithDataSizeChanges.view.pagination).toEqual({
+        pageSize: 10,
+        pageSizes: undefined,
+        page: 1,
+        totalItems: 100,
+      });
+      const changePagesState = tableReducer(
+        tableWithDataSizeChanges,
+        tablePageChange({ page: 3, pageSize: 10 })
+      );
+      expect(changePagesState.data.length).toEqual(100);
+      expect(changePagesState.view.pagination.page).toEqual(3);
+
+      const reduceDataLength = tableReducer(
+        changePagesState,
+        tableRegister({ data: changePagesState.data.slice(0, 10) })
+      );
+      expect(reduceDataLength.data.length).toEqual(10);
+      expect(reduceDataLength.view.pagination.page).toEqual(1);
+
+      const changePageSizeState = tableReducer(reduceDataLength, tablePageChange({ pageSize: 3 }));
+      expect(changePageSizeState.data.length).toEqual(10);
+      expect(changePageSizeState.view.pagination.page).toEqual(1);
+
+      const movePageState = tableReducer(
+        changePageSizeState,
+        tablePageChange({ page: 3, pageSize: 3 })
+      );
+      expect(movePageState.data.length).toEqual(10);
+      expect(movePageState.view.pagination.page).toEqual(3);
+
+      const increaseDataLength = tableReducer(
+        movePageState,
+        tableRegister({ data: changePagesState.data })
+      );
+      expect(increaseDataLength.data.length).toEqual(100);
+      expect(increaseDataLength.view.pagination).toEqual({
+        pageSize: 3,
+        page: 1,
+        pageSizes: undefined,
+        totalItems: 100,
+      });
+
       // Data should be filtered once table registers
       expect(initialState.view.table.filteredData).toBeUndefined();
       const tableWithFilteredData = tableReducer(
