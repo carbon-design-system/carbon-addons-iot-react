@@ -1471,7 +1471,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                 <div
                   className="bx--structured-list-td"
                   role="cell"
-                />
+                >
+                  ControlledPasswordInput
+                </div>
               </div>
               <div
                 className="bx--structured-list-row"
@@ -1486,7 +1488,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                 <div
                   className="bx--structured-list-td"
                   role="cell"
-                />
+                >
+                  PasswordInput
+                </div>
               </div>
               <div
                 className="bx--structured-list-row"
