@@ -132,8 +132,18 @@
   }
 
   &__selected {
-    border-left: solid $spacing-02 $interactive-01;
-    padding-left: $spacing-04; // account for the border
+    $selected-mark-width: $spacing-02;
+    // Box shadow used to avoid mitered corner with the bottom border
+    box-shadow: calc(-1 * #{$selected-mark-width}) 0 $interactive-01;
+    // Can't use inset box-shadow because of bottom border so we need a left margin
+    margin-left: $selected-mark-width;
+    // Make sure content is unaffected by extra left margin
+    padding-left: calc(#{$spacing-05} - #{$selected-mark-width});
+
+    &:focus {
+      margin-left: $spacing-01;
+      padding-left: calc(#{$spacing-05} - #{$spacing-01});
+    }
     color: $text-01;
     background: $selected-ui;
   }
@@ -160,6 +170,7 @@
     width: 100%;
     height: 100%;
     align-items: center;
+    min-width: 0;
     &__large {
       align-items: flex-start;
     }
@@ -190,7 +201,6 @@
       }
       &--value {
         flex: 1;
-
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;

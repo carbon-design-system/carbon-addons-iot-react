@@ -85,7 +85,7 @@ describe('TableCellRenderer', () => {
           <tr>
             <td>
               <TableCellRenderer wrapText="never" truncateCellText>
-                {'my string'}
+                my string
               </TableCellRenderer>
             </td>
             <td>

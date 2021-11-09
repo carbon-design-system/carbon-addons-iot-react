@@ -41,7 +41,7 @@
     // We want app label to use ellipsis for longer texts and
     // we can't have overflow:hidden due to tooltip scrolling.
     // This shrinks the width to fit the app-label grid area.
-    .bx--tooltip__label {
+    .#{$prefix}--tooltip__label {
       display: grid;
     }
   }

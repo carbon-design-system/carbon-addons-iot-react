@@ -16,7 +16,7 @@ import {
 import DateTimePicker from './DateTimePicker';
 import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePicker.story';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const defaultPresets = [
   ...PRESET_VALUES,
@@ -101,8 +101,8 @@ describe('DateTimePicker', () => {
   it('should have the first preset as value', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} i18n={i18n} />);
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--tooltip__trigger`).text()).toEqual(PRESET_VALUES[0].label);
   });
 
   it('should change to another preset value when clicked', () => {
@@ -135,20 +135,20 @@ describe('DateTimePicker', () => {
       />
     );
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--assistive-text').text()).toEqual('User tooltip');
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--assistive-text`).text()).toEqual('User tooltip');
   });
 
   it('should call onApply', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} preset={defaultPresets} />);
-    wrapper.find('.iot--date-time-picker__menu-btn-apply').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-apply`).first().simulate('click');
     jest.runAllTimers();
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
   it('onCancel should be called', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
-    wrapper.find('.iot--date-time-picker__menu-btn-cancel').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-cancel`).first().simulate('click');
     jest.runAllTimers();
     expect(dateTimePickerProps.onCancel).toHaveBeenCalled();
   });
@@ -164,8 +164,8 @@ describe('DateTimePicker', () => {
       />
     );
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[1].label);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--tooltip__trigger`).text()).toEqual(PRESET_VALUES[1].label);
   });
 
   it('should render with a predefined relative range', () => {
@@ -173,37 +173,37 @@ describe('DateTimePicker', () => {
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
 
     wrapper
-      .find('.bx--select-input')
+      .find(`.${prefix}--select-input`)
       .first()
       .simulate('change', { target: { value: INTERVAL_VALUES.DAYS } });
 
     wrapper
-      .find('.bx--select-input')
+      .find(`.${prefix}--select-input`)
       .at(1)
       .simulate('change', { target: { value: RELATIVE_VALUES.YESTERDAY } });
 
     const today = dayjs();
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       `${today.format('YYYY-MM-DD')} 13:10 to ${today.format('YYYY-MM-DD')} 13:30`
     );
 
-    wrapper.find('.bx--number__control-btn.up-icon').first().simulate('click');
+    wrapper.find(`.${prefix}--number__control-btn.up-icon`).first().simulate('click');
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       `${today.format('YYYY-MM-DD')} 13:09 to ${today.format('YYYY-MM-DD')} 13:30`
     );
 
-    wrapper.find('.iot--time-picker__controls--btn.up-icon').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).first().simulate('click');
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       `${today.format('YYYY-MM-DD')} 14:09 to ${today.format('YYYY-MM-DD')} 14:30`
     );
 
-    wrapper.find('.iot--date-time-picker__menu-btn-apply').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-apply`).first().simulate('click');
     jest.runAllTimers();
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
@@ -213,24 +213,24 @@ describe('DateTimePicker', () => {
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />
     );
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       '2020-04-01 12:34 to 2020-04-06 10:49'
     );
 
-    wrapper.find('.iot--time-picker__controls--btn.up-icon').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).first().simulate('click');
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       '2020-04-01 13:34 to 2020-04-06 10:49'
     );
 
-    wrapper.find('.iot--time-picker__controls--btn.up-icon').at(1).simulate('click');
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).at(1).simulate('click');
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       '2020-04-01 13:34 to 2020-04-06 11:49'
     );
 
-    wrapper.find('.iot--date-time-picker__menu-btn-apply').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-apply`).first().simulate('click');
     jest.runAllTimers();
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
@@ -265,8 +265,8 @@ describe('DateTimePicker', () => {
       />
     );
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--radio-button`)).toHaveLength(0);
   });
 
   // https://github.com/IBM/carbon-addons-iot-react/issues/1179
@@ -282,8 +282,8 @@ describe('DateTimePicker', () => {
       />
     );
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--radio-button`)).toHaveLength(0);
   });
 
   it('should set the value relative to yesterday', () => {
@@ -304,11 +304,11 @@ describe('DateTimePicker', () => {
         ]}
       />
     );
-    wrapper.find('.iot--date-time-picker__listitem--custom').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__listitem--custom`).first().simulate('click');
     const today = dayjs().subtract(1, 'days');
-    wrapper.find('.bx--number__control-btn.up-icon').first().simulate('click');
+    wrapper.find(`.${prefix}--number__control-btn.up-icon`).first().simulate('click');
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       `${today.subtract(1, 'minute').format('YYYY-MM-DD HH:mm')} to ${today.format(
         'YYYY-MM-DD HH:mm'
       )}`
@@ -320,61 +320,61 @@ describe('DateTimePicker', () => {
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    wrapper.find('.iot--date-time-picker__field').first().simulate('click');
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().simulate('click');
 
-    wrapper.find('.iot--date-time-picker__menu-btn-back').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-back`).first().simulate('click');
     jest.runAllTimers();
-    expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(0);
+    expect(wrapper.find(`.${iotPrefix}--time-picker__controls--btn`)).toHaveLength(0);
   });
 
   it('should keep preset value when switching from presets to relative and back', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
-    wrapper.find('.iot--date-time-picker__field').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().simulate('click');
     // if you are wondering about hostNodes https://github.com/enzymejs/enzyme/issues/836#issuecomment-401260477
     expect(
-      wrapper.find('.iot--date-time-picker__listitem--preset-selected').hostNodes()
+      wrapper.find(`.${iotPrefix}--date-time-picker__listitem--preset-selected`).hostNodes()
     ).toHaveLength(1);
 
-    wrapper.find('.iot--date-time-picker__listitem--custom').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__listitem--custom`).first().simulate('click');
 
-    wrapper.find('.iot--date-time-picker__menu-btn-back').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-back`).first().simulate('click');
 
     expect(
-      wrapper.find('.iot--date-time-picker__listitem--preset-selected').hostNodes()
+      wrapper.find(`.${iotPrefix}--date-time-picker__listitem--preset-selected`).hostNodes()
     ).toHaveLength(1);
   });
 
   it('should render with programmatically set absolute range', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--tooltip__trigger`).text()).toEqual(PRESET_VALUES[0].label);
 
     wrapper.setProps({ defaultValue: defaultAbsoluteValue });
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       '2020-04-01 12:34 to 2020-04-06 10:49'
     );
 
-    wrapper.find('.iot--date-time-picker__icon').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__icon`).first().simulate('click');
     jest.runAllTimers();
 
-    wrapper.find('.iot--time-picker__controls--btn.up-icon').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).first().simulate('click');
     jest.runAllTimers();
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       '2020-04-01 13:34 to 2020-04-06 10:49'
     );
 
-    wrapper.find('.iot--date-time-picker__menu-btn-back').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-back`).first().simulate('click');
     jest.runAllTimers();
-    wrapper.find('.iot--date-time-picker__menu-btn-cancel').first().simulate('click');
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-cancel`).first().simulate('click');
     jest.runAllTimers();
 
     expect(dateTimePickerProps.onCancel).toHaveBeenCalled();
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.iot--date-time-picker__field').first().text()).toEqual(
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       '2020-04-01 12:34 to 2020-04-06 10:49'
     );
   });
@@ -683,5 +683,117 @@ describe('DateTimePicker', () => {
     userEvent.type(relativeToTime, '{backspace}{backspace}61');
     expect(relativeToTime).toBeInvalid();
     expect(applyBytton).toBeDisabled();
+  });
+
+  it('should close picker when escape is pressed', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeVisible();
+    userEvent.click(screen.getByText('Last 6 hours'));
+    fireEvent.keyDown(screen.getByTestId('date-time-picker'), {
+      key: 'Escape',
+      code: 'Escape',
+    });
+    expect(screen.getByRole('listbox')).not.toHaveClass(
+      `${iotPrefix}--date-time-picker__menu-expanded`
+    );
+  });
+
+  it('should select a preset when hitting enter', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeVisible();
+    const last6HoursLabel = screen.getByText('Last 6 hours');
+    fireEvent.keyDown(last6HoursLabel, {
+      key: 'Enter',
+      code: 'Enter',
+    });
+    expect(last6HoursLabel).toHaveClass(
+      `${iotPrefix}--date-time-picker__listitem--preset-selected`
+    );
+  });
+
+  it('should allow keyboard navigation of presets', () => {
+    const { container } = render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeVisible();
+    fireEvent.keyUp(screen.getByTestId(`date-time-picker__field`), {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
+    });
+    expect(screen.getByText('Custom Range')).toHaveFocus();
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowDown',
+        code: 'ArrowDown',
+      }
+    );
+    expect(screen.getByText('Last 30 minutes', { selector: 'li' })).toHaveFocus();
+
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowUp',
+        code: 'ArrowUp',
+      }
+    );
+    expect(screen.getByText('Custom Range')).toHaveFocus();
+
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowRight',
+        code: 'ArrowRight',
+      }
+    );
+    expect(screen.getByText('Custom Range')).toHaveFocus();
+
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowUp',
+        code: 'ArrowUp',
+      }
+    );
+    expect(screen.getByText('Last 24 hours')).toHaveFocus();
+
+    fireEvent.keyDown(
+      container.querySelector(`.${iotPrefix}--date-time-picker__menu-scroll > div`),
+      {
+        key: 'ArrowDown',
+        code: 'ArrowDown',
+      }
+    );
+    expect(screen.getByText('Custom Range')).toHaveFocus();
+
+    fireEvent.keyUp(screen.getByTestId(`date-time-picker__field`), {
+      key: 'Escape',
+      code: 'Escape',
+    });
+    expect(screen.getByRole('listbox')).not.toHaveClass(
+      `${iotPrefix}--date-time-picker__menu-expanded`
+    );
+  });
+
+  it('should allow keyboard navigation of absolute/relative types', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Custom Range'));
+    // relative → absolute
+    userEvent.type(screen.getByLabelText('Relative'), '{arrowright}');
+    expect(screen.getByLabelText('Absolute')).toBeChecked();
+
+    // absolute ← relative
+    userEvent.type(screen.getByLabelText('Absolute'), '{arrowleft}');
+    expect(screen.getByLabelText('Relative')).toBeChecked();
+
+    // relative ↑ absolute
+    userEvent.type(screen.getByLabelText('Relative'), '{arrowup}');
+    expect(screen.getByLabelText('Absolute')).toBeChecked();
+
+    // absolute ↓ relative
+    userEvent.type(screen.getByLabelText('Absolute'), '{arrowdown}');
+    expect(screen.getByLabelText('Relative')).toBeChecked();
   });
 });

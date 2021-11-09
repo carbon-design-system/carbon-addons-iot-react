@@ -16,6 +16,7 @@ const commonTableProps = {
 
 describe('ErrorTable', () => {
   it('should be selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <ErrorTable
         {...commonTableProps}
@@ -27,6 +28,10 @@ describe('ErrorTable', () => {
       }
     );
     expect(screen.getByTestId('ERROR')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    jest.resetAllMocks();
     rerender(
       <ErrorTable
         {...commonTableProps}

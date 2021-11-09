@@ -31,12 +31,16 @@ const commonProps = {
 
 describe('ListBuilder', () => {
   it('should be selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(<ListBuilder {...commonProps} testID="LIST_BUILDER" />);
-
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('LIST_BUILDER')).toBeDefined();
     expect(screen.getByTestId('LIST_BUILDER__all')).toBeDefined();
     expect(screen.getByTestId('LIST_BUILDER__selected')).toBeDefined();
-    rerender(<ListBuilder {...commonProps} testID="list_builder" />);
+    rerender(<ListBuilder {...commonProps} testId="list_builder" />);
 
     expect(screen.getByTestId('list_builder')).toBeDefined();
     expect(screen.getByTestId('list_builder__all')).toBeDefined();

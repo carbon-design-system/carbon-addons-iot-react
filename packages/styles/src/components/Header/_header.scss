@@ -144,20 +144,6 @@ $hoverBgColor: #2c2c2c;
   width: 3rem;
   padding: 0;
 
-  &.#{$prefix}--btn--primary {
-    background-color: $ui-05;
-
-    &:hover {
-      background-color: $hoverBgColor;
-    }
-
-    &.#{$prefix}--btn:focus {
-      outline-color: $ui-01;
-      border-color: $ui-01;
-      box-shadow: none;
-    }
-  }
-
   .#{$prefix}--header__menu-item {
     &[role='menuitem'] {
       height: 100%;
