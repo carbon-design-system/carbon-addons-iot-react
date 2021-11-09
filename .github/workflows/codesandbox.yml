@@ -1,0 +1,34 @@
+name: codesandbox
+
+on: [push, pull_request]
+
+jobs:
+  test-codesandbox:
+    name: Test Codesandbox
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
+      - name: Increase watchers
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        if: steps.changes.outputs.react == 'true'
+        with:
+          node-version: '16.x'
+
+      - name: Test CodeSandbox
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react
+          yarn test:sandbox
