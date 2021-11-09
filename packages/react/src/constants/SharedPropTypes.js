@@ -15,7 +15,7 @@ export const OverridePropTypes = PropTypes.shape({
 
 export const HotspotIconPropType = PropTypes.shape({
   id: PropTypes.string,
-  icon: PropTypes.object,
+  icon: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   text: PropTypes.string,
 });
 
@@ -37,7 +37,7 @@ export const HotspotContentPropTypes = {
       thresholds: PropTypes.arrayOf(
         PropTypes.shape({
           comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']),
-          value: PropTypes.any,
+          value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
           icon: PropTypes.string,
           color: PropTypes.string,
         })
@@ -48,7 +48,7 @@ export const HotspotContentPropTypes = {
   hotspotThreshold: PropTypes.shape({
     dataSourceId: PropTypes.string,
     comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']),
-    value: PropTypes.any,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
     icon: PropTypes.string,
     color: PropTypes.string,
   }),
@@ -120,13 +120,24 @@ export const HotspotPropTypes = {
   borderWidth: PropTypes.number,
 };
 
+export const SvgPropType = PropTypes.shape({
+  type: PropTypes.oneOf(['svg']),
+});
+
 export const ButtonIconPropType = PropTypes.oneOfType([
   PropTypes.shape({
     width: PropTypes.string,
     height: PropTypes.string,
     viewBox: PropTypes.string.isRequired,
-    svgData: PropTypes.object.isRequired,
+    svgData: SvgPropType.isRequired,
   }),
   PropTypes.object, // Could be a react icon name
   PropTypes.element,
+]);
+
+export const CarbonIconPropType = PropTypes.oneOfType([PropTypes.func, PropTypes.object]);
+
+export const HtmlElementRefProp = PropTypes.oneOfType([
+  PropTypes.func,
+  PropTypes.shape({ current: PropTypes.oneOfType([PropTypes.object]) }),
 ]);

@@ -614,9 +614,8 @@ export const HeaderWithIdleLogoutConfirmation = () => (
     />
     <p>The logout confirmation dialog will show up after 10 seconds of inactivity.</p>
     <p>
-      {
-        'Open this story in another tab, wait for the dialog to show up in both tabs, then click "Stay logged in" to see the other dialog go away.'
-      }
+      Open this story in another tab, wait for the dialog to show up in both tabs, then click
+      &ldquo;Stay logged in&ldquo; to see the other dialog go away.
     </p>
   </>
 );

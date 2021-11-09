@@ -6,7 +6,8 @@ import isEqual from 'lodash/isEqual';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
-import List, { ListItemPropTypes } from '../List';
+import List from '../List';
+import { ListItemPropTypes } from '../ListPropTypes';
 import {
   EditingStyle,
   handleEditModeSelect,
@@ -80,6 +81,9 @@ const propTypes = {
   defaultSelectedId: PropTypes.string,
   /** Item ids to be pre-expanded */
   defaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** callback used to limit which items that should get drop targets rendered.
+   * recieves the id of the item that is being dragged and returns a list of ids. */
+  getAllowedDropIds: PropTypes.func,
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
   /** callback function returned a modified list */
@@ -128,6 +132,7 @@ const defaultProps = {
   defaultExpandedIds: [],
   onSelect: null,
   sendingData: null,
+  getAllowedDropIds: null,
   onListUpdated: () => {},
   cancelMoveClicked: () => {},
   itemWillMove: () => {
@@ -232,6 +237,7 @@ const HierarchyList = ({
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
+  getAllowedDropIds,
   onSelect,
   onListUpdated,
   itemWillMove,
@@ -258,6 +264,8 @@ const HierarchyList = ({
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
       setFilteredItems(items);
+      setSearchValue('');
+      setCurrentPageNumber(1);
     }
   }, [items, previousItems]);
 
@@ -351,7 +359,9 @@ const HierarchyList = ({
     setItemsToShow(filteredItems.slice(startIndex, startIndex + rowsPerPage));
   }, [currentPageNumber, filteredItems, rowsPerPage]);
 
-  const maxPage = Math.ceil(numberOfItems / rowsPerPage);
+  const maxPage = !Number.isNaN(Math.ceil(numberOfItems / rowsPerPage))
+    ? Math.ceil(numberOfItems / rowsPerPage)
+    : 1;
 
   const onPage = useCallback(
     (page) => {
@@ -506,6 +516,7 @@ const HierarchyList = ({
         isVirtualList={isVirtualList}
         itemWillMove={itemWillMove}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
+        getAllowedDropIds={getAllowedDropIds}
         handleSelect={handleSelect}
         ref={selectedItemRef}
         onItemMoved={handleDrag}

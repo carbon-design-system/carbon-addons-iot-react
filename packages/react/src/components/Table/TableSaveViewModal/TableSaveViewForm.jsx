@@ -28,7 +28,7 @@ const propTypes = {
     form: OverridePropTypes,
     titleTextInput: OverridePropTypes,
     viewDescriptionContainer: OverridePropTypes,
-    defaultChecbox: OverridePropTypes,
+    defaultCheckbox: OverridePropTypes,
     publicCheckbox: OverridePropTypes,
   }),
   /** The id of the form elememt that should be initially focused */

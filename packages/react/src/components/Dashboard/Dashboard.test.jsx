@@ -127,6 +127,7 @@ const cardValues = [
 ];
 
 const onClick = jest.fn();
+jest.spyOn(console, 'error').mockImplementation(() => {});
 let wrapper = mount(
   <Dashboard
     description="This is a description for this Dashboard"
@@ -147,6 +148,12 @@ let wrapper = mount(
   />
 );
 describe('Dashboard', () => {
+  it('should show an error for testID', () => {
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
+  });
   it('should be selectable with testId', () => {
     render(
       <Dashboard

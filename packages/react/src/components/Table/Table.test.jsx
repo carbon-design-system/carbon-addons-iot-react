@@ -108,6 +108,8 @@ describe('Table', () => {
   ];
 
   it('should be selectable with testId or id', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <Table
         columns={tableColumns}
@@ -132,6 +134,10 @@ describe('Table', () => {
         testId="__table__"
       />
     );
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('__table__')).toBeDefined();
     expect(screen.getByTestId('__table__-table-container')).toBeDefined();
     expect(screen.getByTestId('__table__-table-toolbar')).toBeDefined();
@@ -149,6 +155,7 @@ describe('Table', () => {
     ).toBeDefined();
     // close menu
     userEvent.click(screen.getByTestId('table-head--overflow'));
+
     rerender(
       <Table
         columns={tableColumns}
@@ -173,7 +180,6 @@ describe('Table', () => {
         id="__TABLE__"
       />
     );
-
     expect(screen.getByTestId('__TABLE__')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-container')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-toolbar')).toBeDefined();
@@ -953,9 +959,7 @@ describe('Table', () => {
       },
     };
 
-    const { rerender } = render(
-      <Table {...initialState} {...additionalProps} isSortable i18n={i18nTest} />
-    );
+    const { rerender } = render(<Table {...initialState} {...additionalProps} i18n={i18nTest} />);
 
     expect(screen.getAllByLabelText(i18nTest.overflowMenuAria)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.clickToExpandAria)[0]).toBeInTheDocument();
@@ -1067,7 +1071,7 @@ describe('Table', () => {
       },
     };
 
-    const { rerender } = render(<Table {...initialState} {...additionalProps} isSortable />);
+    const { rerender } = render(<Table {...initialState} {...additionalProps} />);
 
     expect(screen.getByText(i18nDefault.itemsSelected(2))).toBeInTheDocument();
     expect(screen.getByText(i18nDefault.pageRange(1, 10))).toBeInTheDocument();
@@ -1075,7 +1079,7 @@ describe('Table', () => {
     expect(screen.getByText(i18nDefault.rowCountInHeader(100))).toBeInTheDocument();
 
     additionalProps.view.table.selectedIds = ['row-1'];
-    rerender(<Table {...initialState} {...additionalProps} isSortable />);
+    rerender(<Table {...initialState} {...additionalProps} />);
     expect(screen.getByText(i18nDefault.itemSelected(1))).toBeInTheDocument();
   });
 
@@ -1102,7 +1106,7 @@ describe('Table', () => {
     };
 
     const { rerender } = render(
-      <Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />
+      <Table {...initialState} {...additionalProps} i18n={i18nFunctions} />
     );
     expect(screen.getByText(i18nFunctions.itemsSelected(2))).toBeInTheDocument();
     expect(screen.getByText(i18nFunctions.pageRange(1, 10))).toBeInTheDocument();
@@ -1110,7 +1114,7 @@ describe('Table', () => {
     expect(screen.getByText(i18nFunctions.rowCountInHeader(100))).toBeInTheDocument();
 
     additionalProps.view.table.selectedIds = ['row-1'];
-    rerender(<Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />);
+    rerender(<Table {...initialState} {...additionalProps} i18n={i18nFunctions} />);
     expect(screen.getByText(i18nFunctions.itemSelected(1))).toBeInTheDocument();
   });
 
@@ -1937,17 +1941,17 @@ describe('Table', () => {
       expect(filterFlyout).toHaveAttribute('open');
 
       userEvent.click(screen.getByTestId('flyout-menu-apply'));
-      expect(handleApplyFilter).toBeCalledWith({
+      expect(handleApplyFilter).toHaveBeenCalledWith({
         simple: {},
         advanced: {
           filterIds: [],
         },
       });
       userEvent.click(screen.getByTestId('flyout-menu-cancel'));
-      expect(handleCancelFilter).toBeCalledTimes(1);
+      expect(handleCancelFilter).toHaveBeenCalledTimes(1);
       userEvent.click(screen.getByRole('tab', { name: 'Advanced filters' }));
       userEvent.click(screen.getByRole('button', { name: 'create a new advanced filter' }));
-      expect(handleCreateAdvancedFilter).toBeCalledTimes(1);
+      expect(handleCreateAdvancedFilter).toHaveBeenCalledTimes(1);
       expect(screen.getByText('Select a filter')).toBeVisible();
 
       rerender(

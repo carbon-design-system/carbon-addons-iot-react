@@ -157,6 +157,14 @@ export const SimpleStatefulExample = () => {
       id="table"
       key={`table${demoInitialColumnSizes}`}
       {...initialState}
+      data={initialState.data.slice(
+        0,
+        select(
+          'number of data items in table',
+          [initialState.data.length, 50, 20, 5],
+          initialState.data.length
+        )
+      )}
       actions={tableActions}
       columns={initialState.columns
         .map((column) => {
@@ -165,7 +173,7 @@ export const SimpleStatefulExample = () => {
               ...column,
               filter: {
                 ...column.filter,
-                isMultiselect: !!column.filter?.options,
+                isMultiselect: boolean('force MultiSelect filter', !!column.filter?.options),
               },
             };
           }

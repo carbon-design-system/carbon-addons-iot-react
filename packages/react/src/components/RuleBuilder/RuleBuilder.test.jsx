@@ -16,7 +16,7 @@ describe('The RuleBuilder', () => {
     const handleDelete = jest.fn();
     const handleApply = jest.fn();
     const handlePreview = jest.fn();
-
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     render(
       <RuleBuilder
         testId="rule_builder"
@@ -74,7 +74,10 @@ describe('The RuleBuilder', () => {
         ]}
       />
     );
-
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('rule_builder')).toBeDefined();
     expect(screen.getByTestId('rule_builder-tabs')).toBeDefined();
     expect(screen.getByTestId('rule_builder-editor')).toBeDefined();
@@ -278,13 +281,12 @@ describe('The RuleBuilder', () => {
     userEvent.click(screen.getAllByRole('button', { name: 'Add' })[0]);
     userEvent.click(screen.getAllByRole('button', { name: 'OK' })[0]);
 
-    expect(IntersectionObserver).toBeCalledWith(expect.any(Function)); // callback arg
+    expect(IntersectionObserver).toHaveBeenCalledWith(expect.any(Function)); // callback arg
 
     act(() => {
       const [callback] = IntersectionObserverMock.mock.calls[0];
       callback([{ isIntersecting: true }]); // test a callback
     });
-
     const saveButton = screen.getByRole('button', { name: 'Save' });
     expect(saveButton).toBeVisible();
     userEvent.click(saveButton);
