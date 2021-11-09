@@ -1029,6 +1029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="bx--search-input"
                     data-testid="TimeSeries-table-table-toolbar-search"
                     id="TimeSeries-table-toolbar-search"
+                    onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}

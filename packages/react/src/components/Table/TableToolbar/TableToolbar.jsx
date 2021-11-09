@@ -52,6 +52,7 @@ const propTypes = {
   options: PropTypes.shape({
     hasAdvancedFilter: PropTypes.bool,
     hasAggregations: PropTypes.bool,
+    /** If true, search is applied as typed. If false, only after 'Enter' is pressed */
     hasFastSearch: PropTypes.bool,
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
@@ -310,9 +311,8 @@ const TableToolbar = ({
               translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               id={`${tableId}-toolbar-search`}
               onChange={(event, defaultValue) => {
-                const value = event?.target?.value || defaultValue;
+                const value = event?.target?.value || (defaultValue ?? '');
                 if (hasFastSearch) {
-                  // https://github.com/carbon-design-system/carbon/issues/6157
                   onApplySearch(value);
                 }
               }}
@@ -321,7 +321,11 @@ const TableToolbar = ({
                   ? undefined
                   : handleSpecificKeyDown(['Enter'], (e) => onApplySearch(e.target.value))
               }
-              onBlur={hasFastSearch ? undefined : (e) => onApplySearch(e.target.value)}
+              onClear={() => onApplySearch('')}
+              // This can't be used yet b/c it prevents the search box from automatically
+              // closing on blur.
+              // https://github.com/carbon-design-system/carbon/issues/10077
+              // onBlur={!hasFastSearch ? (e) => onApplySearch(e.target.value) : undefined}
               disabled={isDisabled}
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}
