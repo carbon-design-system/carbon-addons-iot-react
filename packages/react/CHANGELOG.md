@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.46...v2.147.0-next.47) (2021-11-08)
+
+
+### Bug Fixes
+
+* **table:** fix TableMultiSortModal proptypes ([28a3e6b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/28a3e6b0308ad3c32783cff4a1ea3a307d047e7f))
+
+
+
+
+
 # [2.147.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.45...v2.147.0-next.46) (2021-11-08)
 
 
