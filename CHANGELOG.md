@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.49...v2.147.0-next.50) (2021-11-09)
+
+
+### Bug Fixes
+
+* **hierarchy-list:** reset pageination and search when data changes ([6a71e46](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6a71e46777da03466ee53c8d1007667a6d4c6b33))
+
+
+### Features
+
+* **table:** focus on first filterable column when filter row opened ([8251487](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8251487a9a3eb2e3cf9289eb4d9b63c3be8f0b6f))
+
+
+
+
+
 # [2.147.0-next.49](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.48...v2.147.0-next.49) (2021-11-09)
 
 
