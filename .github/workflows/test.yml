@@ -197,12 +197,6 @@ jobs:
           path-to-lcov: './packages/react/coverage/lcov.info'
           base-path: 'packages/react'
 
-      - name: Test CodeSandbox
-        if: steps.changes.outputs.react == 'true'
-        run: |
-          cd packages/react
-          yarn test:sandbox
-
   test-angular:
     name: Test Angular
     runs-on: ubuntu-latest
