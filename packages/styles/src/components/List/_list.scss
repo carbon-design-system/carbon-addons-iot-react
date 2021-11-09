@@ -61,3 +61,22 @@
 .#{$iot-prefix}--list--skeleton {
   margin: $spacing-03 0 $spacing-03 $spacing-05;
 }
+
+.#{$iot-prefix}--load-more-row {
+  justify-content: center;
+  cursor: pointer;
+  min-width: 100%;
+  border: none;
+  background: $ui-01;
+  &--content {
+    color: $interactive-01;
+  }
+  .#{prefix}--loading__stroke {
+    stroke: $interactive-01;
+  }
+  &.#{$prefix}--btn--disabled,
+  .#{$prefix}--btn--disabled:focus,
+  .#{$prefix}--btn--disabled:hover {
+    border-bottom: 1px solid $decorative-01;
+  }
+}
