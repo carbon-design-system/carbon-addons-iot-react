@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text } from '@storybook/addon-knobs';
+import { boolean, text, object } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 
@@ -8,6 +8,7 @@ import Button from '../Button';
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
 import { Tag } from '../Tag';
+import { EditingStyle } from '../../utils/DragAndDropUtils';
 
 import List from './List';
 import ListREADME from './List.mdx';
@@ -748,3 +749,25 @@ export const WithVirtualList = () => (
 );
 
 WithVirtualList.storyName = 'with virtual list';
+
+export const WithReorderAndDropTargetRestrictions = () => {
+  const allowedDropIds = object('getAllowedDropIds return value', ['Luke Voit', 'Gleyber Torres']);
+  return (
+    <div style={{ height: 300, overflow: 'auto', width: 400 }}>
+      <List
+        title={text('title', 'NY Yankees')}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key]) => ({
+            id: key,
+            content: { value: key },
+          })
+        )}
+        isVirtualList={boolean('isVirtualList', false)}
+        editingStyle={EditingStyle.Single}
+        getAllowedDropIds={() => allowedDropIds}
+      />
+    </div>
+  );
+};
+
+WithReorderAndDropTargetRestrictions.storyName = 'with reorder and drop target restrictions';

@@ -840,4 +840,31 @@ describe('HierarchyList', () => {
 
     expect(screen.getByText('A CUSTOM EMPTY NODE')).toBeVisible();
   });
+
+  it('should reset pagination and search when data changes', () => {
+    const { rerender } = render(
+      <HierarchyList items={getListItems(100)} hasSearch title="Changing List" pageSize="sm" />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Enter a value'), '5');
+    expect(screen.getByTitle('Item 5')).toBeVisible();
+    expect(screen.getByTitle('Item 15')).toBeVisible();
+    expect(screen.getByTitle('Item 25')).toBeVisible();
+    expect(screen.getByTitle('Item 35')).toBeVisible();
+    expect(screen.getByTitle('Item 45')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getByText('Page 2')).toBeVisible();
+    expect(screen.getByTitle('Item 50')).toBeVisible();
+    expect(screen.getByTitle('Item 51')).toBeVisible();
+    expect(screen.getByTitle('Item 52')).toBeVisible();
+    expect(screen.getByTitle('Item 53')).toBeVisible();
+    expect(screen.getByTitle('Item 54')).toBeVisible();
+    rerender(<HierarchyList items={getListItems(50)} title="Changing List" pageSize="sm" />);
+    expect(screen.getByText('Page 1')).toBeVisible();
+    expect(screen.getByTitle('Item 1')).toBeVisible();
+    expect(screen.getByTitle('Item 2')).toBeVisible();
+    expect(screen.getByTitle('Item 3')).toBeVisible();
+    expect(screen.getByTitle('Item 4')).toBeVisible();
+    expect(screen.getByTitle('Item 5')).toBeVisible();
+  });
 });

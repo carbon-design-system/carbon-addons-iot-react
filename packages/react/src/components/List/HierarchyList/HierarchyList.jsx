@@ -81,6 +81,9 @@ const propTypes = {
   defaultSelectedId: PropTypes.string,
   /** Item ids to be pre-expanded */
   defaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** callback used to limit which items that should get drop targets rendered.
+   * recieves the id of the item that is being dragged and returns a list of ids. */
+  getAllowedDropIds: PropTypes.func,
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
   /** callback function returned a modified list */
@@ -129,6 +132,7 @@ const defaultProps = {
   defaultExpandedIds: [],
   onSelect: null,
   sendingData: null,
+  getAllowedDropIds: null,
   onListUpdated: () => {},
   cancelMoveClicked: () => {},
   itemWillMove: () => {
@@ -233,6 +237,7 @@ const HierarchyList = ({
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
+  getAllowedDropIds,
   onSelect,
   onListUpdated,
   itemWillMove,
@@ -259,6 +264,8 @@ const HierarchyList = ({
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
       setFilteredItems(items);
+      setSearchValue('');
+      setCurrentPageNumber(1);
     }
   }, [items, previousItems]);
 
@@ -509,6 +516,7 @@ const HierarchyList = ({
         isVirtualList={isVirtualList}
         itemWillMove={itemWillMove}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
+        getAllowedDropIds={getAllowedDropIds}
         handleSelect={handleSelect}
         ref={selectedItemRef}
         onItemMoved={handleDrag}

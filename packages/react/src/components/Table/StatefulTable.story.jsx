@@ -173,7 +173,7 @@ export const SimpleStatefulExample = () => {
               ...column,
               filter: {
                 ...column.filter,
-                isMultiselect: !!column.filter?.options,
+                isMultiselect: boolean('force MultiSelect filter', !!column.filter?.options),
               },
             };
           }

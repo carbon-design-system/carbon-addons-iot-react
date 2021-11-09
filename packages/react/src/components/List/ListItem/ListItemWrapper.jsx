@@ -20,6 +20,7 @@ const ListItemWrapper = ({
   selected,
   isDragging,
   renderDropTargets,
+  getAllowedDropIds,
   isLargeRow,
   children,
   connectDragSource,
@@ -63,6 +64,9 @@ const ListItemWrapper = ({
     const canNest =
       editingStyle === EditingStyle.SingleNesting || editingStyle === EditingStyle.MultipleNesting;
 
+    const allowedDropIds = renderDropTargets && getAllowedDropIds && getAllowedDropIds();
+    const preventDrop = Array.isArray(allowedDropIds) && !allowedDropIds.includes(id);
+
     return (
       <div
         role="listitem"
@@ -75,7 +79,7 @@ const ListItemWrapper = ({
           }
         }}
       >
-        {renderDropTargets && (
+        {renderDropTargets && !preventDrop && (
           <div
             className={classnames(`${iotPrefix}--list-item-editable--drop-targets`, {
               [`${iotPrefix}--list-item__large`]: isLargeRow,
@@ -141,11 +145,13 @@ const ListItemWrapperProps = {
   children: PropTypes.node.isRequired,
   onItemMoved: PropTypes.func.isRequired,
   itemWillMove: PropTypes.func.isRequired,
+  getAllowedDropIds: PropTypes.func,
   preventRowFocus: PropTypes.bool.isRequired,
 };
 
 ListItemWrapper.propTypes = ListItemWrapperProps;
 ListItemWrapper.defaultProps = {
+  getAllowedDropIds: null,
   editingStyle: null,
   disabled: false,
 };
