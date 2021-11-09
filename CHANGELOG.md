@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.47...v2.147.0-next.48) (2021-11-09)
+
+
+### Bug Fixes
+
+* **table:** fix action cell styling ([a456590](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a4565908576eb7dd95c9de59d8e9e68fa2b140c8)), closes [#2292](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2292)
+
+
+
+
+
 # [2.147.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.46...v2.147.0-next.47) (2021-11-08)
 
 
