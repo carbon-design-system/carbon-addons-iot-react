@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.52...v2.147.0-next.53) (2021-11-09)
+
+
+### Bug Fixes
+
+* **table:** don't display native title when using tooltip in header ([d830b89](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d830b89c30c7444a79a0082eb66161e8a575c95b))
+
+
+
+
+
 # [2.147.0-next.52](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.51...v2.147.0-next.52) (2021-11-09)
 
 
