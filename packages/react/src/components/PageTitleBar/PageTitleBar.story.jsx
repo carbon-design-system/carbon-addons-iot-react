@@ -9,6 +9,8 @@ import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import TileCatalogNew from '../TileCatalogNew/TileCatalogNew';
 import { getTiles } from '../TileCatalogNew/TileCatalogNew.story';
 import Button from '../Button';
+import StatefulTable from '../Table/StatefulTable';
+import { initialState } from '../Table/Table.story';
 
 import PageTitleBar from './PageTitleBar';
 import PageTitleBarREADME from './PageTitleBar.mdx';
@@ -79,19 +81,27 @@ export default {
 
 export const Base = () => {
   return (
-    <PageTitleBar
-      title={text('title', commonPageTitleBarProps.title)}
-      headerMode={select('headerMode', ['CONDENSED', 'DYNAMIC', 'STATIC', 'STICKY'], 'STATIC')}
-      description={text('description', '')}
-      breadcrumb={optionsKnob('breadcrumb', breadcrumbKnobOptions, breadcrumbDefaultValue, {
-        display: 'select',
-      })}
-      stickyHeaderOffset={number('stickyHeaderOffset', 0)}
-      collapsed={boolean('collapsed', false)}
-      editable={boolean('editable', false)}
-      isLoading={boolean('isLoading', false)}
-      forceContentOutside={boolean('forceContentOutside', false)}
-    />
+    <div style={{ minHeight: '200vh' }}>
+      <PageTitleBar
+        title={text('title', commonPageTitleBarProps.title)}
+        headerMode={select('headerMode', ['CONDENSED', 'DYNAMIC', 'STATIC', 'STICKY'], 'STATIC')}
+        description={text('description', '')}
+        breadcrumb={optionsKnob('breadcrumb', breadcrumbKnobOptions, breadcrumbDefaultValue, {
+          display: 'select',
+        })}
+        stickyHeaderOffset={number('stickyHeaderOffset', 0)}
+        collapsed={boolean('collapsed', false)}
+        editable={boolean('editable', false)}
+        isLoading={boolean('isLoading', false)}
+        forceContentOutside={boolean('forceContentOutside', false)}
+        content={
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <StatefulTable {...initialState} data={initialState.data.slice(0, 5)} />
+            <StatefulTable {...initialState} data={initialState.data.slice(0, 5)} />
+          </div>
+        }
+      />
+    </div>
   );
 };
 

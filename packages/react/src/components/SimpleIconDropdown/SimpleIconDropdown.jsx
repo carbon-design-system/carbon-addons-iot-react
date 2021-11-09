@@ -5,11 +5,12 @@ import { Dropdown } from 'carbon-components-react';
 import { validThresholdIcons } from '../DashboardEditor/editorUtils';
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
+import { CarbonIconPropType } from '../../constants/SharedPropTypes';
 
 const { iotPrefix } = settings;
 
 const iconProptype = PropTypes.shape({
-  carbonIcon: PropTypes.any,
+  carbonIcon: CarbonIconPropType,
   name: PropTypes.string,
 });
 

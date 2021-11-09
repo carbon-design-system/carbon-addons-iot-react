@@ -43,14 +43,14 @@
       background: transparent;
 
       &:hover {
-        > .bx--list-box__menu-item__option {
+        > .#{$prefix}--list-box__menu-item__option {
           > .#{$iot-prefix}--dropdown__image-button {
             border-color: transparent;
           }
         }
       }
 
-      > .bx--list-box__menu-item__option {
+      > .#{$prefix}--list-box__menu-item__option {
         > .#{$iot-prefix}--dropdown__image-button {
           border-color: $focus;
         }
@@ -114,7 +114,7 @@
             color: transparent;
           }
 
-          > .bx--assistive-text {
+          > .#{$prefix}--assistive-text {
             display: none;
           }
         }

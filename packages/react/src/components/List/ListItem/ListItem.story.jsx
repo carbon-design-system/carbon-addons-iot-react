@@ -3,7 +3,9 @@ import { action } from '@storybook/addon-actions';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { Edit16, Star16, StarFilled16 } from '@carbon/icons-react';
 
-import { Button, OverflowMenu, OverflowMenuItem } from '../../..';
+import Button from '../../Button';
+import { OverflowMenu } from '../../OverflowMenu';
+import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { Tag } from '../../Tag';
 
 import { UnconnectedListItem as ListItem } from './ListItem';

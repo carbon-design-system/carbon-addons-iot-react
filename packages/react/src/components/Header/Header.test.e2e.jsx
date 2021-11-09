@@ -2,7 +2,11 @@ import React from 'react';
 import { mount } from '@cypress/react';
 import { Checkbox16, Help20, User20 } from '@carbon/icons-react';
 
+import { settings } from '../../constants/Settings';
+
 import Header from './Header';
+
+const { prefix } = settings;
 
 const commonProps = {
   user: 'JohnDoe@ibm.com',
@@ -37,7 +41,7 @@ const commonProps = {
         <Help20
           fill="white"
           description="Help icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       childContent: [

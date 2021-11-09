@@ -12,16 +12,15 @@ import {
 import { green40 } from '@carbon/colors';
 import { spacing07 } from '@carbon/layout';
 
-import {
-  TileGallery,
-  TileGallerySection,
-  TileGalleryItem,
-  TileGalleryViewSwitcher,
-  StatefulTileGallery,
-  OverflowMenu,
-  OverflowMenuItem,
-} from '../../index';
+import { OverflowMenu } from '../OverflowMenu';
+import { OverflowMenuItem } from '../OverflowMenuItem';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
+
+import TileGallery from './TileGallery';
+import TileGallerySection from './TileGallerySection';
+import TileGalleryItem from './TileGalleryItem';
+import TileGalleryViewSwitcher from './TileGalleryViewSwitcher';
+import StatefulTileGallery from './StatefulTileGallery';
 
 const overflowComponent = (
   <OverflowMenu onClick={(evt) => evt.preventDefault()} style={{ height: spacing07 }}>

@@ -1,7 +1,7 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--select-users-modal {
-  .bx--modal-container .bx--modal-content {
+  .#{$prefix}--modal-container .#{$prefix}--modal-content {
     padding-right: $spacing-05;
   }
 

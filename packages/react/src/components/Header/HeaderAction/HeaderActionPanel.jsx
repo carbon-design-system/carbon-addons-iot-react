@@ -6,10 +6,9 @@ import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/es/comp
 import { Close16 } from '@carbon/icons-react';
 import { white } from '@carbon/colors';
 
-import { APP_SWITCHER } from '../Header';
+import { APP_SWITCHER } from '../headerConstants';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
-
-import { HeaderActionPropTypes } from './HeaderAction';
+import { HeaderActionPropTypes } from '../HeaderPropTypes';
 
 const { prefix: carbonPrefix } = settings;
 

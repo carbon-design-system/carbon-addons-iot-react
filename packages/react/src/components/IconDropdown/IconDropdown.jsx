@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
-import { Button } from '../../index';
-import { Dropdown } from '../Dropdown/index';
+import Button from '../Button';
+import { Dropdown } from '../Dropdown';
 
 const { iotPrefix, prefix } = settings;
 
