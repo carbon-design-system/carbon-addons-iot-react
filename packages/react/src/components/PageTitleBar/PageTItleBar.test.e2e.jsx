@@ -17,9 +17,10 @@ describe('PageTitleBar', () => {
     );
 
     cy.findByTestId('page-title-bar')
+      .should('have.class', 'page-title-bar--dynamic')
+      .should('have.class', 'page-title-bar--dynamic--before')
       .should('not.have.class', 'page-title-bar--dynamic--during')
       .should('not.have.class', 'page-title-bar--dynamic--after')
-      .should('not.have.class', 'page-title-bar--dynamic--before')
       .should('have.attr', 'style', '--header-offset:48px; --scroll-transition-progress:0;');
 
     cy.scrollTo(0, 114);
