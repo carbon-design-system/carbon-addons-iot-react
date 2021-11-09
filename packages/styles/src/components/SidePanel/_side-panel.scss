@@ -12,7 +12,8 @@ $border-width: 1px;
   overflow-x: hidden;
   display: inline-block;
   min-width: $side-panel-width;
-  transition: min-width $duration--moderate-02, width $duration--moderate-02, left $duration--moderate-02, right $duration--moderate-02;
+  transition: min-width $duration--moderate-02, width $duration--moderate-02,
+    left $duration--moderate-02, right $duration--moderate-02;
   transition-timing-function: carbon--motion(standard);
 
   &.#{$iot-prefix}--side-panel__right {
@@ -136,7 +137,8 @@ $border-width: 1px;
     width: $side-panel-width;
     height: 100%;
     position: relative;
-    transition: width carbon--motion(standard), left carbon--motion(standard), right carbon--motion(standard);
+    transition: width carbon--motion(standard), left carbon--motion(standard),
+      right carbon--motion(standard);
 
     &.#{$iot-prefix}--side-panel__left {
       left: -$side-panel-width;
