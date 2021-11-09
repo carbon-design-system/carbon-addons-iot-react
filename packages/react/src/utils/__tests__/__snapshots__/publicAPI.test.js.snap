@@ -23889,6 +23889,7 @@ Map {
     },
   },
   "ComboBox" => Object {
+    "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
       "addToList": false,
       "ariaLabel": "Choose an item",
@@ -24105,6 +24106,7 @@ Map {
         "type": "string",
       },
     },
+    "render": [Function],
   },
   "FlyoutMenu" => Object {
     "defaultProps": Object {
