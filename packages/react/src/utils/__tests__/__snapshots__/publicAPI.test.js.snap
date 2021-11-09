@@ -301,6 +301,185 @@ Map {
       },
     },
   },
+  "CardCodeEditor" => Object {
+    "defaultProps": Object {
+      "i18n": Object {
+        "errorTitle": "Error:",
+        "expandBtnLabel": "Expand",
+        "modalHelpText": null,
+        "modalIconDescription": "Close",
+        "modalLabel": "JSON Editor",
+        "modalPrimaryButtonLabel": "Save",
+        "modalSecondaryButtonLabel": "Cancel",
+        "modalTitle": "Edit the JSONs",
+      },
+      "initialValue": null,
+      "language": "json",
+      "onCopy": null,
+      "testId": "card-code-editor",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "footer": Object {
+        "args": Array [
+          Array [
+            Object {
+              "isRequired": true,
+              "type": "element",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "isPrimaryButtonDisabled": Object {
+                    "type": "bool",
+                  },
+                  "isPrimaryButtonHidden": Object {
+                    "type": "bool",
+                  },
+                  "primaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                  "secondaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "header": Object {
+        "args": Array [
+          Object {
+            "helpText": Object {
+              "type": "node",
+            },
+            "label": Object {
+              "type": "node",
+            },
+            "title": Object {
+              "type": "node",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "copyBtnDescription": Object {
+              "type": "string",
+            },
+            "copyBtnFeedBack": Object {
+              "type": "string",
+            },
+            "errorTitle": Object {
+              "type": "string",
+            },
+            "expandBtnLabel": Object {
+              "type": "string",
+            },
+            "modalHelpText": Object {
+              "type": "string",
+            },
+            "modalIconDescription": Object {
+              "type": "string",
+            },
+            "modalLabel": Object {
+              "type": "string",
+            },
+            "modalPrimaryButtonLabel": Object {
+              "type": "string",
+            },
+            "modalSecondaryButtonLabel": Object {
+              "type": "string",
+            },
+            "modalTitle": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconDescription": Object {
+        "type": "string",
+      },
+      "initialValue": Object {
+        "type": "string",
+      },
+      "invalid": Object {
+        "type": "bool",
+      },
+      "isFetchingData": Object {
+        "type": "bool",
+      },
+      "isFullScreen": Object {
+        "type": "bool",
+      },
+      "isLarge": Object {
+        "type": "bool",
+      },
+      "language": Object {
+        "type": "string",
+      },
+      "onClearError": Object {
+        "type": "func",
+      },
+      "onClose": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onCopy": Object {
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "passiveModal": Object {
+        "type": "bool",
+      },
+      "sendingData": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "bool",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "submitFailed": Object {
+        "type": "bool",
+      },
+      "testID": [Function],
+      "testId": Object {
+        "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "warn",
+            "normal",
+          ],
+        ],
+        "type": "oneOf",
+      },
+    },
+  },
   "EmptyTable" => Object {
     "defaultProps": Object {
       "id": "EmptyTable",
@@ -5617,6 +5796,7 @@ Map {
       "defaultSelectedId": null,
       "editingStyle": null,
       "emptyState": "No list items to show",
+      "getAllowedDropIds": null,
       "hasDeselection": true,
       "hasMultiSelect": false,
       "hasPagination": true,
@@ -5697,6 +5877,9 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "getAllowedDropIds": Object {
+        "type": "func",
       },
       "hasDeselection": Object {
         "type": "bool",
@@ -5881,6 +6064,7 @@ Map {
       "editingStyle": null,
       "emptyState": "No list items to show",
       "expandedIds": Array [],
+      "getAllowedDropIds": null,
       "handleLoadMore": [Function],
       "handleSelect": [Function],
       "i18n": Object {
@@ -5939,6 +6123,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "getAllowedDropIds": Object {
+        "type": "func",
       },
       "handleLoadMore": Object {
         "type": "func",
@@ -6114,6 +6301,7 @@ Map {
       "editingStyle": null,
       "emptyState": "No list items to show",
       "expandedIds": Array [],
+      "getAllowedDropIds": null,
       "handleLoadMore": [Function],
       "handleSelect": [Function],
       "i18n": Object {
@@ -6170,6 +6358,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "getAllowedDropIds": Object {
+        "type": "func",
       },
       "handleLoadMore": Object {
         "type": "func",
@@ -23309,6 +23500,7 @@ Map {
       "editingStyle": null,
       "emptyState": "No list items to show",
       "expandedIds": Array [],
+      "getAllowedDropIds": null,
       "handleLoadMore": [Function],
       "handleSelect": [Function],
       "i18n": Object {
@@ -23380,6 +23572,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "getAllowedDropIds": Object {
+        "type": "func",
       },
       "handleLoadMore": Object {
         "type": "func",
@@ -23909,6 +24104,7 @@ Map {
     },
   },
   "ComboBox" => Object {
+    "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
       "addToList": false,
       "ariaLabel": "Choose an item",
@@ -24125,6 +24321,7 @@ Map {
         "type": "string",
       },
     },
+    "render": [Function],
   },
   "FlyoutMenu" => Object {
     "defaultProps": Object {
