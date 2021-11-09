@@ -11,6 +11,7 @@ export { default as AddCard } from './components/AddCard';
 export { default as Button } from './components/Button';
 export { default as Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export { default as ComposedModal } from './components/ComposedModal';
+export { default as CardCodeEditor } from './components/CardCodeEditor/CardCodeEditor';
 export { default as EmptyTable } from './components/Table/EmptyTable/EmptyTable';
 export { default as Table } from './components/Table';
 export { default as TableHead } from './components/Table/TableHead/TableHead';
