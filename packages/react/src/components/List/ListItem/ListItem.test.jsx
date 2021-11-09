@@ -472,4 +472,14 @@ describe('ListItem', () => {
       'width:32px'
     );
   });
+
+  it('should have negative tabIndex when preventRowFocus is true', () => {
+    const { rerender } = render(
+      <UnconnectedListItem id="test-item" value="Test item" isSelectable />
+    );
+    expect(screen.getByRole('button')).toHaveAttribute('tabIndex', expect.not.stringMatching('-1'));
+
+    rerender(<UnconnectedListItem id="test-item" value="Test item" isSelectable preventRowFocus />);
+    expect(screen.getByRole('button')).toHaveAttribute('tabIndex', expect.stringMatching('-1'));
+  });
 });

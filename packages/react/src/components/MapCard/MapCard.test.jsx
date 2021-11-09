@@ -42,6 +42,7 @@ describe('MapCards', () => {
   };
 
   it('should be selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <MapCard
         id="map-card"
@@ -76,7 +77,10 @@ describe('MapCards', () => {
         ]}
       />
     );
-
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('MAP_CARD')).toBeDefined();
     expect(screen.getByTestId('MAP_CARD-map-controls')).toBeDefined();
     expect(screen.getByTestId('MAP_CARD-zoom-control')).toBeDefined();

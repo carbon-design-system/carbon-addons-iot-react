@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
 
-import { Dropdown as CarbonDropdown } from './index';
+import { Dropdown as CarbonDropdown } from '.';
 
 const { iotPrefix } = settings;
 

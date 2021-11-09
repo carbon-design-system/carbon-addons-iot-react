@@ -214,7 +214,7 @@ describe('PageTitleBar', () => {
           breadcrumb={[<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>]}
           title="testTitle"
           headerMode="DYNAMIC"
-          description={<p data-testid="test-description">test</p>}
+          description={<span data-testid="test-description">test</span>}
           testId="page-title-bar"
           upperActions={
             <button data-testid="upper-action-delete" type="button">

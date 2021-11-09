@@ -11,6 +11,9 @@ import React from 'react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
+import { CarbonIconPropType } from '../../constants/SharedPropTypes';
+
+import { SideNavMetaDataPropType } from './sideNavPropTypes';
 
 const { iotPrefix, prefix } = settings;
 
@@ -33,9 +36,9 @@ export const SideNavPropTypes = {
           // url to link to
           href: PropTypes.string,
       */
-      metaData: PropTypes.object,
+      metaData: SideNavMetaDataPropType,
       /** the icon component to render */
-      icon: PropTypes.any.isRequired,
+      icon: CarbonIconPropType.isRequired,
       /** string for the title of overall submenu */
       linkContent: PropTypes.string,
       /** array of child links to render in a subnav */
@@ -50,9 +53,14 @@ export const SideNavPropTypes = {
             // url to link to
             href: PropTypes.string,
           */
-          metaData: PropTypes.object,
+          metaData: SideNavMetaDataPropType,
           /** content to render inside sub menu link */
-          content: PropTypes.any.isRequired,
+          content: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.node,
+            PropTypes.bool,
+            PropTypes.func,
+          ]).isRequired,
         })
       ),
     })

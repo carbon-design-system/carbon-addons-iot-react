@@ -89,19 +89,15 @@ describe('utility functions', () => {
 */
 
 describe('PieChartCard', () => {
-  const originalDev = global.__DEV__;
-  const originalError = console.error;
-  const error = jest.fn();
+  const { __DEV__ } = global;
   beforeEach(() => {
-    console.error = error;
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     global.__DEV__ = true;
   });
   afterEach(() => {
-    error.mockReset();
-    console.error = originalError;
-    global.__DEV__ = originalDev;
+    jest.resetAllMocks();
+    global.__DEV__ = __DEV__;
   });
-
   it('should be selectable by testId or testID', async () => {
     const { testID, ...props } = pieChartCardProps;
     const { rerender } = render(<PieChartCard {...props} isExpanded testId="pie_chart_card" />);
@@ -111,6 +107,9 @@ describe('PieChartCard', () => {
     rerender(<PieChartCard {...props} isExpanded testID="PIE_CHART_CARD" />);
     expect(screen.getByTestId('PIE_CHART_CARD')).toBeDefined();
     expect(screen.getByTestId('PIE_CHART_CARD-table')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
   });
 
   it('shows loading skeleton for isLoading even for empty data  ', async () => {
@@ -132,7 +131,8 @@ describe('PieChartCard', () => {
     expect(svgLoadingIcon).toBeVisible();
 
     await waitFor(() => {
-      expect(error).toHaveBeenCalledWith(
+      jest.spyOn(console, 'error').mockImplementation(() => {});
+      expect(console.error).toHaveBeenCalledWith(
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
@@ -148,7 +148,7 @@ describe('PieChartCard', () => {
     render(<PieChartCard {...pieChartCardProps} isExpanded />);
     expect(screen.getByTestId('test-pie-chart-card-table')).toBeVisible();
     await waitFor(() => {
-      expect(error).toHaveBeenCalledWith(
+      expect(console.error).toHaveBeenCalledWith(
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
@@ -165,7 +165,7 @@ describe('PieChartCard', () => {
     expect(screen.getByText(categoryBasedLabelExample)).toBeVisible();
     expect(screen.queryByText(groupBasedLabelExample)).toBeFalsy();
     await waitFor(() => {
-      expect(error).toHaveBeenCalledWith(
+      expect(console.error).toHaveBeenCalledWith(
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
@@ -186,7 +186,7 @@ describe('PieChartCard', () => {
     );
     expect(screen.getByText(variableValue)).toBeInTheDocument();
     await waitFor(() => {
-      expect(error).toHaveBeenCalledWith(
+      expect(console.error).toHaveBeenCalledWith(
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
@@ -218,7 +218,7 @@ describe('PieChartCard', () => {
       expect(slices.item(index)).toHaveStyle(`fill:${orderedColors[index]}`);
     }
     await waitFor(() => {
-      expect(error).toHaveBeenCalledWith(
+      expect(console.error).toHaveBeenCalledWith(
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
@@ -241,7 +241,7 @@ describe('PieChartCard', () => {
     });
 
     await waitFor(() => {
-      expect(error).toHaveBeenCalledWith(
+      expect(console.error).toHaveBeenCalledWith(
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
@@ -255,7 +255,7 @@ describe('PieChartCard', () => {
     expect(screen.getByText('Sample 3')).toBeVisible();
 
     await waitFor(() => {
-      expect(error).toHaveBeenCalledWith(
+      expect(console.error).toHaveBeenCalledWith(
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
@@ -286,7 +286,7 @@ describe('PieChartCard', () => {
     expect([firstSliceColor, secondSliceColor]).toContain('fill: green;');
 
     await waitFor(() => {
-      expect(error).toHaveBeenCalledWith(
+      expect(console.error).toHaveBeenCalledWith(
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
@@ -344,7 +344,7 @@ describe('PieChartCard', () => {
     expect(screen.getByTestId('custom-test-table')).toBeInTheDocument();
 
     await waitFor(() => {
-      expect(error).toHaveBeenCalledWith(
+      expect(console.error).toHaveBeenCalledWith(
         expect.stringContaining('Missing CSS styles for Carbon Charts')
       );
     });
@@ -383,8 +383,7 @@ describe('PieChartCard', () => {
     expect(screen.getByText('custom-tooltip-test')).toBeVisible();
   });
 
-  it('should throw a prop warnings with an unsupported size', async () => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+  it('should throw a prop warnings with an unsupported size', () => {
     const { testID, ...props } = pieChartCardProps;
     const { rerender } = render(<PieChartCard {...props} size={CARD_SIZES.SMALL} />);
     expect(console.error).toHaveBeenCalledWith(
@@ -398,6 +397,5 @@ describe('PieChartCard', () => {
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(`PieChartCard does not support card size ${CARD_SIZES.SMALLFULL}`)
     );
-    jest.resetAllMocks();
   });
 });

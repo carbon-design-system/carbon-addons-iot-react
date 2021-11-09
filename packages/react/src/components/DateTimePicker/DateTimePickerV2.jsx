@@ -139,6 +139,7 @@ const propTypes = {
     decrement: PropTypes.string,
     hours: PropTypes.string,
     minutes: PropTypes.string,
+    number: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,

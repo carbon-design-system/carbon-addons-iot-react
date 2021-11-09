@@ -28,6 +28,7 @@ import {
   TableSortPropType,
   TableColumnGroupPropType,
   TableOrderingPropType,
+  TableFiltersPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -123,6 +124,8 @@ const propTypes = {
     hasUserViewManagement: PropTypes.bool,
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
+    /* If true, fire the onRowExpanded callback with the rowId when a row is clicked */
+    shouldExpandOnRowClick: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     /**
@@ -174,17 +177,7 @@ const propTypes = {
       maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
     }),
-    filters: PropTypes.arrayOf(
-      PropTypes.shape({
-        columnId: PropTypes.string.isRequired,
-        value: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.number,
-          PropTypes.bool,
-          PropTypes.arrayOf(PropTypes.string),
-        ]).isRequired,
-      })
-    ),
+    filters: TableFiltersPropType,
     /** a stripped down version of the RuleBuilderFilterPropType */
     advancedFilters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -359,6 +352,7 @@ export const defaultProps = (baseProps) => ({
     preserveColumnWidths: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
+    shouldExpandOnRowClick: false,
     wrapCellText: 'always',
   },
   size: undefined,
@@ -500,6 +494,10 @@ export const defaultProps = (baseProps) => ({
     buttonLabelOnTableError: 'Refresh the page',
     /* table load more */
     loadMoreText: 'Load more...',
+    learnMoreText: 'Learn more',
+    inProgressText: 'In progress',
+    dismissText: 'Dismiss',
+    actionFailedText: 'Action failed',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was

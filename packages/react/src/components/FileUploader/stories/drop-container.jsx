@@ -13,7 +13,6 @@ import { settings } from 'carbon-components';
 import uid from 'carbon-components-react/es/tools/uniqueId';
 
 import { FileUploaderItem, FileUploaderDropContainer } from '..';
-
 import { FormItem } from '../../FormItem';
 import '../FileUploader-story.scss';
 

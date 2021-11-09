@@ -68,6 +68,8 @@ const ListItemPropTypes = {
   isDragging: PropTypes.bool.isRequired,
   onItemMoved: PropTypes.func.isRequired,
   itemWillMove: PropTypes.func.isRequired,
+  /** true if the list item should not be focusable even though isSelectable is true */
+  preventRowFocus: PropTypes.bool,
 };
 
 const ListItemDefaultProps = {
@@ -97,6 +99,7 @@ const ListItemDefaultProps = {
   },
   selectedItemRef: null,
   tags: null,
+  preventRowFocus: false,
 };
 
 const ListItem = ({
@@ -129,6 +132,7 @@ const ListItem = ({
   connectDragPreview,
   itemWillMove,
   dragPreviewText,
+  preventRowFocus,
 }) => {
   const mergedI18n = useMemo(() => ({ ...ListItemDefaultProps.i18n, ...i18n }), [i18n]);
 
@@ -253,6 +257,7 @@ const ListItem = ({
         disabled,
         renderDropTargets,
         getAllowedDropIds: getAllowedDropIds ? () => getAllowedDropIds(draggingId) : null,
+        preventRowFocus,
       }}
     >
       {renderDragPreview()}

@@ -4,17 +4,15 @@ import { withKnobs, boolean, text, object, array } from '@storybook/addon-knobs'
 
 import { DataScientistIcon } from '../../icons/components';
 import { EmptystateDefaultIcon } from '../../icons/static';
-import {
-  NumberInput,
-  TextInput,
-  Card,
-  Link,
-  InlineNotification,
-  OverflowMenu,
-  OverflowMenuItem,
-  Toggle,
-  Dropdown,
-} from '../../index';
+import { NumberInput } from '../NumberInput';
+import { TextInput } from '../TextInput';
+import Card from '../Card/Card';
+import { Link } from '../Link';
+import { InlineNotification } from '../Notification';
+import { OverflowMenu } from '../OverflowMenu';
+import { OverflowMenuItem } from '../OverflowMenuItem';
+import { Toggle } from '../Toggle';
+import { Dropdown } from '../Dropdown';
 import assemblyline from '../ImageGalleryModal/images/assemblyline.jpg';
 import floow_plan from '../ImageGalleryModal/images/floow_plan.png'; // eslint-disable-line camelcase
 import manufacturing_plant from '../ImageGalleryModal/images/Manufacturing_plant.png'; // eslint-disable-line camelcase
