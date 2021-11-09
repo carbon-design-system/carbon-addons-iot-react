@@ -73,7 +73,10 @@ const SimplePagination = ({
   const handlePrev = () => onPage(page - 1);
 
   return (
-    <div className={`${iotPrefix}-simple-pagination-container`} data-testid={testID || testId}>
+    <div
+      className={`${iotPrefix}-simple-pagination-container ${prefix}--pagination--${size}`}
+      data-testid={testID || testId}
+    >
       {totalItems ? (
         <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
           {typeof totalItemsText === 'function'
@@ -90,8 +93,8 @@ const SimplePagination = ({
             <div
               className={
                 hasPrev
-                  ? `${prefix}--pagination__button ${prefix}--pagination__button--${size} ${prefix}--pagination__button--backward ${iotPrefix}-addons-simple-pagination-button`
-                  : `${prefix}--pagination__button ${prefix}--pagination__button--${size} ${prefix}--pagination__button--backward ${iotPrefix}-addons-simple-pagination-button-disabled`
+                  ? `${prefix}--pagination__button ${prefix}--pagination__button--backward ${iotPrefix}-addons-simple-pagination-button`
+                  : `${prefix}--pagination__button ${prefix}--pagination__button--backward ${iotPrefix}-addons-simple-pagination-button-disabled`
               }
               role="button"
               tabIndex={hasPrev ? 0 : -1}
@@ -112,8 +115,8 @@ const SimplePagination = ({
             <div
               className={
                 hasNext
-                  ? `${prefix}--pagination__button ${prefix}--pagination__button--${size} ${prefix}--pagination__button--forward ${iotPrefix}-addons-simple-pagination-button`
-                  : `${prefix}--pagination__button ${prefix}--pagination__button--${size} ${prefix}--pagination__button--forward ${iotPrefix}-addons-simple-pagination-button-disabled`
+                  ? `${prefix}--pagination__button ${prefix}--pagination__button--forward ${iotPrefix}-addons-simple-pagination-button`
+                  : `${prefix}--pagination__button ${prefix}--pagination__button--forward ${iotPrefix}-addons-simple-pagination-button-disabled`
               }
               role="button"
               tabIndex={hasNext ? 0 : -1}
