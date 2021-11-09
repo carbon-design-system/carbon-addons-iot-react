@@ -8,7 +8,7 @@ function SvgValueKpiIcon(props) {
         <path fill="#8EC1FF" d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z" />
         <text fontFamily="IBMPlexSans, IBM Plex Sans" fontSize={10} fill="#2160F8">
           <tspan x={4.969} y={15.5}>
-            25%
+            {'25%'}
           </tspan>
         </text>
       </g>
