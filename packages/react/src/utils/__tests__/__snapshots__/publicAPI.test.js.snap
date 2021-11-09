@@ -5617,6 +5617,7 @@ Map {
       "defaultSelectedId": null,
       "editingStyle": null,
       "emptyState": "No list items to show",
+      "getAllowedDropIds": null,
       "hasDeselection": true,
       "hasMultiSelect": false,
       "hasPagination": true,
@@ -5696,6 +5697,9 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "getAllowedDropIds": Object {
+        "type": "func",
       },
       "hasDeselection": Object {
         "type": "bool",
@@ -5872,6 +5876,7 @@ Map {
       "editingStyle": null,
       "emptyState": "No list items to show",
       "expandedIds": Array [],
+      "getAllowedDropIds": null,
       "handleLoadMore": [Function],
       "handleSelect": [Function],
       "i18n": Object {
@@ -5929,6 +5934,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "getAllowedDropIds": Object {
+        "type": "func",
       },
       "handleLoadMore": Object {
         "type": "func",
@@ -6096,6 +6104,7 @@ Map {
       "editingStyle": null,
       "emptyState": "No list items to show",
       "expandedIds": Array [],
+      "getAllowedDropIds": null,
       "handleLoadMore": [Function],
       "handleSelect": [Function],
       "i18n": Object {
@@ -6151,6 +6160,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "getAllowedDropIds": Object {
+        "type": "func",
       },
       "handleLoadMore": Object {
         "type": "func",
@@ -23282,6 +23294,7 @@ Map {
       "editingStyle": null,
       "emptyState": "No list items to show",
       "expandedIds": Array [],
+      "getAllowedDropIds": null,
       "handleLoadMore": [Function],
       "handleSelect": [Function],
       "i18n": Object {
@@ -23352,6 +23365,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "getAllowedDropIds": Object {
+        "type": "func",
       },
       "handleLoadMore": Object {
         "type": "func",

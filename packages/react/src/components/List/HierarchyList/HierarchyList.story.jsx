@@ -280,6 +280,88 @@ WithNestedReorder.decorators = [
   ),
 ];
 
+export const WithNestedReorderingRestricted = () => {
+  const HierarchyListWithReorderAndRestrictions = () => {
+    const [items, setItems] = useState([
+      ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
+        id: team,
+        isCategory: true,
+        content: {
+          value: team,
+        },
+        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+          },
+          isSelectable: true,
+        })),
+      })),
+      ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
+        id: team,
+        isCategory: true,
+        content: {
+          value: team,
+        },
+        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+          },
+          isSelectable: true,
+        })),
+      })),
+    ]);
+
+    const demoDropRestrictions = boolean(
+      'Demo drop restrictions to preserve teams (using getAllowedDropIds)',
+      true
+    );
+
+    return (
+      <div style={{ width: 400, height: 400 }}>
+        <HierarchyList
+          title={text('Title', 'Preserve team compositions')}
+          items={items}
+          editingStyle={EditingStyle.Single}
+          onListUpdated={(updatedItems) => {
+            setItems(updatedItems);
+          }}
+          // Prevent nested dropping, so that a team cannot be dropped in a team
+          itemWillMove={(...args) => args[2] !== 'nested'}
+          hasSearch={boolean('hasSearch', true)}
+          isVirtualList={boolean('hasVirtualList', false)}
+          getAllowedDropIds={
+            demoDropRestrictions
+              ? (dragId) => {
+                  const teamIsDragged = items.find(({ id }) => id === dragId);
+                  return teamIsDragged
+                    ? // Return team ids
+                      items.map(({ id }) => id)
+                    : // Return teammate ids
+                      items
+                        .find((team) => team.children.find(({ id }) => dragId === id))
+                        .children.map(({ id }) => id);
+                }
+              : null
+          }
+        />
+      </div>
+    );
+  };
+
+  return <HierarchyListWithReorderAndRestrictions />;
+};
+
+WithNestedReorderingRestricted.storyName = 'With nested reordering restricted';
+WithNestedReorderingRestricted.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
 export const WithDefaultExpandedIds = () => (
   <div style={{ width: 400, height: 400 }}>
     <HierarchyList

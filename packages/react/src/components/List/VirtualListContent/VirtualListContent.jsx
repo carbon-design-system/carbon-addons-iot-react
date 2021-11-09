@@ -51,6 +51,9 @@ const propTypes = {
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** callback used to limit which items that should get drop targets rendered.
+   * recieves the id of the item that is being dragged and returns a list of ids. */
+  getAllowedDropIds: PropTypes.func,
   /** call back function of select */
   handleSelect: PropTypes.func,
   /** call back function of expansion */
@@ -81,6 +84,7 @@ const defaultProps = {
   editingStyle: null,
   emptyState: 'No list items to show',
   expandedIds: [],
+  getAllowedDropIds: null,
   handleLoadMore: () => {},
   handleSelect: () => {},
   i18n: {
@@ -127,6 +131,7 @@ const VirtualListContent = ({
   isCheckboxMultiSelect,
   items,
   itemWillMove,
+  getAllowedDropIds,
   loadingMoreIds,
   onItemMoved,
   selectedIds,
@@ -285,6 +290,7 @@ const VirtualListContent = ({
           onExpand={toggleExpansion}
           onItemMoved={onItemMoved}
           itemWillMove={itemWillMove}
+          getAllowedDropIds={getAllowedDropIds}
           selected={isSelected}
           expanded={isExpanded}
           isExpandable={hasChildren}
