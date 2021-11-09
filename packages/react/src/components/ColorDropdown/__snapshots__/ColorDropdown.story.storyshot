@@ -39,6 +39,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title="Select a color"
           type="button"
         >
           <span
@@ -125,6 +126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title="Select a color"
           type="button"
         >
           <span
@@ -211,6 +213,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title={
+            <div
+              className="iot--color-dropdown__item"
+              title="purple70"
+            >
+              <div
+                className="iot--color-dropdown__item-border"
+              >
+                <div
+                  className="iot--color-dropdown__color-sample"
+                  style={
+                    Object {
+                      "backgroundColor": "#6929c4",
+                    }
+                  }
+                  title="#6929c4"
+                />
+              </div>
+            </div>
+          }
           type="button"
         >
           <span
@@ -314,6 +336,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title={
+            <div
+              className="iot--color-dropdown__item"
+              title="teal70"
+            >
+              <div
+                className="iot--color-dropdown__item-border"
+              >
+                <div
+                  className="iot--color-dropdown__color-sample"
+                  style={
+                    Object {
+                      "backgroundColor": "#005d5d",
+                    }
+                  }
+                  title="#005d5d"
+                />
+                <div
+                  className="iot--color-dropdown__color-name"
+                >
+                  teal70
+                </div>
+              </div>
+            </div>
+          }
           type="button"
         >
           <span
@@ -410,11 +457,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Zm-1.125-5h2.25V12h-2.25Z"
+        data-icon-path="inner-path"
         fill="none"
       />
       <path
-        d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16.002,6.1714h-.004L4.6487,27.9966,4.6506,28H27.3494l.0019-.0034ZM14.875,12h2.25v9h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+      />
+      <path
+        d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
       />
       <title>
         warning-alt icon

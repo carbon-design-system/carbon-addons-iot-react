@@ -30,12 +30,19 @@ describe('TableSaveViewModal', () => {
   });
 
   it('passes along all input data onSave callback', () => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
     render(
       <TableSaveViewModal actions={actions} open testID="my-modal" viewDescription="My view text" />
     );
     expect(console.error).toHaveBeenCalledWith(
       `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
     );
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The prop `wrapperClassName` for Checkbox will be deprecated in V11 in favor of `className`. `className` will then be placed on the outer wrapper.'
+      )
+    );
+    console.warn.mockReset();
     console.error.mockReset();
     fireEvent.change(screen.getByTestId('my-modal-form-title-input'), {
       target: { value: 'testval1' },

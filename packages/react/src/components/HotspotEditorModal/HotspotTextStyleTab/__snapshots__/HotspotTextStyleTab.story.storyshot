@@ -179,6 +179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select a color"
                 type="button"
               >
                 <span
@@ -342,6 +343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select a color"
                 type="button"
               >
                 <span
@@ -505,6 +507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-2-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select a color"
                 type="button"
               >
                 <span
@@ -862,6 +865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select a color"
                 type="button"
               >
                 <span
@@ -1025,6 +1029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select a color"
                 type="button"
               >
                 <span
@@ -1188,6 +1193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-2-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select a color"
                 type="button"
               >
                 <span

@@ -49,6 +49,7 @@ describe('TableManageViewsModal', () => {
 
   it('should be selectable by testID or testId', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
     const { rerender } = render(
       <TableManageViewsModal views={testViews} actions={actions} open testID={testID} />
     );
@@ -56,6 +57,12 @@ describe('TableManageViewsModal', () => {
     expect(console.error).toHaveBeenCalledWith(
       `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
     );
+    expect(console.warn).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The prop `wrapperClassName` for Checkbox will be deprecated in V11 in favor of `className`. `className` will then be placed on the outer wrapper.'
+      )
+    );
+    console.warn.mockReset();
     console.error.mockReset();
 
     rerender(

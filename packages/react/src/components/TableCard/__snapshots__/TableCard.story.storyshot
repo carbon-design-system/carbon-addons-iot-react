@@ -1121,7 +1121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
             style={
               Object {
@@ -2655,7 +2655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
             style={
               Object {
@@ -4354,7 +4354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
             style={
               Object {
@@ -5261,7 +5261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-undefined-table-pagination"
             style={
               Object {
@@ -6482,7 +6482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
             style={
               Object {
@@ -8933,7 +8933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
             style={
               Object {
@@ -11218,7 +11218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
             style={
               Object {
@@ -13023,7 +13023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
             style={
               Object {
@@ -15167,7 +15167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
             style={
               Object {
@@ -17899,7 +17899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page"
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
             style={
               Object {
