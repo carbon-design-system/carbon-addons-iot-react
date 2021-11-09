@@ -121,7 +121,7 @@ export const usePopoverPositioning = ({
       let left = 0;
 
       if (langDir === 'rtl' && isOverflowMenu) {
-        left = -16;
+        left = -15;
       }
 
       if (previousDirection.current !== adjustedDirection) {
@@ -261,7 +261,7 @@ export const usePopoverPositioning = ({
       const defaultOffset = getOffset(...args);
 
       if (langDir === 'rtl' && isOverflowMenu) {
-        defaultOffset.left -= 16;
+        defaultOffset.left -= 15;
       }
 
       if (!useAutoPositioning) {
