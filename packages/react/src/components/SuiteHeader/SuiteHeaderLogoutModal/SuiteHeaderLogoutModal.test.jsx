@@ -24,7 +24,7 @@ describe('SuiteHeaderLogoutModal', () => {
 
     const modalCloseButton = within(
       container.querySelector(`.${prefix}--modal-header`)
-    ).getByLabelText(/close/i);
+    ).getByLabelText('Close');
     userEvent.click(modalCloseButton);
     expect(mockOnClose).toHaveBeenCalled();
 
