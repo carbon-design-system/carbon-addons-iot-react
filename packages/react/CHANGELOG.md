@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.49](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.48...v2.147.0-next.49) (2021-11-09)
+
+
+### Bug Fixes
+
+* **dropcontainer:** fix import error ([e459be4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e459be451f8f026827d031e487f25a854feb0f50))
+* **hierarchylist:** pr feedback for story ([71a33c2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71a33c284f94f35cad934490fa4572528ff4d5b9))
+* **valuekpiicon:** lint fix ([d874179](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d87417916e1d29d8dfe03121649366fb6d43d754))
+
+
+### Features
+
+* **list:** add allowed droptarget limitation ([4d67bd6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4d67bd66bdca3d6fd5a2396b400878b1733080c8)), closes [#3025](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3025)
+
+
+
+
+
 # [2.147.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.47...v2.147.0-next.48) (2021-11-09)
 
 
