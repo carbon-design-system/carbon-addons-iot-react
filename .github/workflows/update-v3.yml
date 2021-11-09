@@ -13,10 +13,8 @@ jobs:
       - name: Reset next branch
         run: |
           git fetch origin
-          git checkout --track origin/next
-          git pull
           git checkout --track origin/v3
-          git merge next
+          git merge origin/next
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
