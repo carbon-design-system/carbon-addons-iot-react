@@ -3,3 +3,9 @@
 button.#{$prefix}--overflow-menu {
   background: none;
 }
+
+.#{$prefix}--overflow-menu-options[data-floating-menu-direction] {
+  &:after {
+    width: $spacing-09;
+  }
+}
