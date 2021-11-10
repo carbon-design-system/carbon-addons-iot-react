@@ -70,7 +70,9 @@
 
 .#{$prefix}--data-table tbody tr {
   &:not(:hover) .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
-    @include backgroundGradient($ui-01);
+    // doesn't use the mixin above because safari has problems with 229 rgb values being rendered
+    // as transparent.
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #{$ui-01} 16px);
   }
 
   &.#{$prefix}--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
