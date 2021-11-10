@@ -63,6 +63,8 @@ const propTypes = {
     close: PropTypes.string,
     loadMore: PropTypes.string,
   }),
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** pagination at the bottom of list */
@@ -112,6 +114,7 @@ const defaultProps = {
     loadMore: 'Load more...',
   },
   iconPosition: 'left',
+  lockedIds: [],
   pagination: null,
   selectedIds: [],
   expandedIds: [],
@@ -138,6 +141,7 @@ const List = forwardRef((props, ref) => {
     items,
     isFullHeight,
     i18n,
+    lockedIds,
     pagination,
     selectedIds,
     expandedIds,
@@ -207,6 +211,7 @@ const List = forwardRef((props, ref) => {
           loadingMoreIds={loadingMoreIds}
           selectedItemRef={ref}
           i18n={mergedI18n}
+          lockedIds={lockedIds}
           {...overrides?.content?.props}
         />
         {pagination && !isLoading ? (

@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import { Checkbox } from '../Checkbox';
 import { settings } from '../../constants/Settings';
+import { EditingStyle } from '../../utils/DragAndDropUtils';
 
 import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
@@ -418,6 +419,21 @@ describe('List', () => {
     );
     expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
     userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+  });
+
+  it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
+    render(<List items={getListItems(2)} editingStyle={EditingStyle.Single} lockedIds={['1']} />);
+    expect(
+      screen.getByText('Item 1').closest(`.${iotPrefix}--list-item-parent > *`)
+    ).not.toHaveAttribute('draggable');
+
+    expect(screen.getByText('Item 1').closest(`.${iotPrefix}--list-item`).firstChild).toHaveClass(
+      `${iotPrefix}--list-item--lock`
+    );
+
+    expect(
+      screen.getAllByText('Item 2')[0].closest(`.${iotPrefix}--list-item-parent > *`)
+    ).toHaveAttribute('draggable');
   });
 
   describe('isVirtualList', () => {
@@ -888,6 +904,28 @@ describe('List', () => {
         />
       );
       expect(screen.getByTestId('__test-list-virtual-content__-loading')).toBeInTheDocument();
+    });
+
+    it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
+      render(
+        <List
+          items={getListItems(2)}
+          isVirtualList
+          editingStyle={EditingStyle.Single}
+          lockedIds={['1']}
+        />
+      );
+      expect(
+        screen.getByText('Item 1').closest(`.${iotPrefix}--list-item-parent > *`)
+      ).not.toHaveAttribute('draggable');
+
+      expect(screen.getByText('Item 1').closest(`.${iotPrefix}--list-item`).firstChild).toHaveClass(
+        `${iotPrefix}--list-item--lock`
+      );
+
+      expect(
+        screen.getAllByText('Item 2')[0].closest(`.${iotPrefix}--list-item-parent > *`)
+      ).toHaveAttribute('draggable');
     });
   });
 });

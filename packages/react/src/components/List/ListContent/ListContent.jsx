@@ -32,6 +32,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** true if the list should have multiple selectable rows using checkboxes */
   isCheckboxMultiSelect: PropTypes.bool,
   testId: PropTypes.string,
@@ -92,6 +94,7 @@ const defaultProps = {
   },
   indeterminateIds: [],
   loadingMoreIds: [],
+  lockedIds: [],
   onItemMoved: () => {},
   selectedIds: [],
   selectedItemRef: React.createRef(),
@@ -123,6 +126,7 @@ const ListContent = ({
   onItemMoved,
   itemWillMove,
   isLargeRow,
+  lockedIds,
   handleLoadMore,
   i18n,
   selectedItemRef,
@@ -133,6 +137,7 @@ const ListContent = ({
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
     const isLoadingMore = loadingMoreIds.includes(item.id);
+    const isLocked = lockedIds.includes(item.id);
     const isIndeterminate = indeterminateIds.includes(item.id);
 
     const {
@@ -164,6 +169,7 @@ const ListContent = ({
                 labelText=""
                 onClick={() => handleSelect(item.id, parentId)}
                 checked={isSelected}
+                disabled={isLocked}
                 indeterminate={isIndeterminate}
               />
             ) : (
@@ -172,7 +178,7 @@ const ListContent = ({
           }
           disabled={disabled}
           iconPosition={iconPosition}
-          editingStyle={editingStyle}
+          editingStyle={isLocked ? null : editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
           onSelect={() => handleSelect(item.id, parentId)}
@@ -184,6 +190,7 @@ const ListContent = ({
           expanded={isExpanded}
           isExpandable={hasChildren}
           isLargeRow={isLargeRow}
+          isLocked={isLocked}
           isCategory={isCategory}
           isSelectable={editingStyle === null && isSelectable}
           i18n={mergedI18n}
