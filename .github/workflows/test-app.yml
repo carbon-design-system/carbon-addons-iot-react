@@ -41,7 +41,6 @@ jobs:
         run: |
           yarn --frozen-lockfile
           yarn lerna run --stream postinstall
-          yarn lerna link
 
       - name: Run build
         if: steps.changes.outputs.react == 'true'
