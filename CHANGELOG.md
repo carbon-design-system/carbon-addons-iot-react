@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.53...v2.147.0-next.54) (2021-11-10)
+
+
+### Bug Fixes
+
+* **hierarchylist:** add reorder lock ([6ae4e97](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6ae4e9707f93ab1f0a690d1f98dc73af9403860f)), closes [#3016](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3016)
+* **list:** add reorder lock ([0c39452](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0c39452130789bbd9626ddd4b2c48b942daa8a84)), closes [#3016](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3016)
+* **list:** pr feedback added story actions ([1f288c0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1f288c0d24f216890e88f495841a99f1a68c70f2))
+* **table:** fix background gradient artifacting on rowActions open ([a5f57b7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a5f57b7ed8c8aa395489fe5ba4f33f5c89b487aa))
+* **table:** row-actions-cell safari css bug ([88d705a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/88d705a7f1f919e1e0cc5921f5a398c0b58ef587))
+
+
+### Features
+
+* **list:** pr feedback fixes ([b992302](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b9923027fa0d97b0461a9082c2368939b57c5b64)), closes [#3016](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3016)
+
+
+
+
+
 # [2.147.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.52...v2.147.0-next.53) (2021-11-09)
 
 

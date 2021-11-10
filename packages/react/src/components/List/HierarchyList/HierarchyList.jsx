@@ -75,6 +75,8 @@ const propTypes = {
   isLoading: PropTypes.bool,
   /** optionally makings each list item a large / fat row */
   isLargeRow: PropTypes.bool,
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** Determines the number of rows per page */
   pageSize: PropTypes.string,
   /** Item id to be pre-selected */
@@ -127,6 +129,7 @@ const defaultProps = {
   isLoading: false,
   isLargeRow: false,
   isVirtualList: false,
+  lockedIds: [],
   pageSize: null,
   defaultSelectedId: null,
   defaultExpandedIds: [],
@@ -234,6 +237,7 @@ const HierarchyList = ({
   isLoading,
   isLargeRow,
   isVirtualList,
+  lockedIds,
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
@@ -515,6 +519,7 @@ const HierarchyList = ({
         isLargeRow={isLargeRow}
         isVirtualList={isVirtualList}
         itemWillMove={itemWillMove}
+        lockedIds={lockedIds}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
         getAllowedDropIds={getAllowedDropIds}
         handleSelect={handleSelect}
