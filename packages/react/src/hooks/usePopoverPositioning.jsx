@@ -2,6 +2,11 @@ import * as React from 'react';
 import { useLangDirection } from 'use-lang-direction';
 
 /**
+ * constant override to fix the calculated result returned from getMenuOffset in carbon
+ */
+const RTL_OFFSET_FIX = 15;
+
+/**
  * This is used as the callback for menuOffset on Tooltips, OverflowMenus, and FlyoutMenus.
  * That callback returns the underlying FloatingMenu element, direction, trigger element, and flipped
  * prop. It grabs the window dimentions and bounds for the menu element and determines if it is
@@ -121,7 +126,7 @@ export const usePopoverPositioning = ({
       let left = 0;
 
       if (langDir === 'rtl' && isOverflowMenu) {
-        left = -15;
+        left -= RTL_OFFSET_FIX;
       }
 
       if (previousDirection.current !== adjustedDirection) {
@@ -261,7 +266,7 @@ export const usePopoverPositioning = ({
       const defaultOffset = getOffset(...args);
 
       if (langDir === 'rtl' && isOverflowMenu) {
-        defaultOffset.left -= 15;
+        defaultOffset.left -= RTL_OFFSET_FIX;
       }
 
       if (!useAutoPositioning) {
