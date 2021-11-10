@@ -157,6 +157,14 @@ export const SimpleStatefulExample = () => {
       id="table"
       key={`table${demoInitialColumnSizes}`}
       {...initialState}
+      data={initialState.data.slice(
+        0,
+        select(
+          'number of data items in table',
+          [initialState.data.length, 50, 20, 5],
+          initialState.data.length
+        )
+      )}
       actions={tableActions}
       columns={initialState.columns
         .map((column) => {
@@ -165,7 +173,7 @@ export const SimpleStatefulExample = () => {
               ...column,
               filter: {
                 ...column.filter,
-                isMultiselect: !!column.filter?.options,
+                isMultiselect: boolean('force MultiSelect filter', !!column.filter?.options),
               },
             };
           }
@@ -174,7 +182,11 @@ export const SimpleStatefulExample = () => {
         .map((col, i) => ({
           ...col,
           width: demoInitialColumnSizes ? (i % 2 === 0 ? '100px' : '200px') : undefined,
-          tooltip: demoColumnTooltips ? `A tooltip for ${col.name} here` : undefined,
+          tooltip: demoColumnTooltips
+            ? col.id === 'select'
+              ? `This tooltip displays extra information about the select box. You can choose from a variety of options. Pick one today!`
+              : `A tooltip for ${col.name} here`
+            : undefined,
         }))}
       columnGroups={object('Column groups definition (columnGroups)', [
         {

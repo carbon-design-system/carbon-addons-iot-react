@@ -21484,7 +21484,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <span
                         className=""
-                        title="Select"
                       >
                         Select
                       </span>
@@ -78906,7 +78905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--table-multi-sort-row"
-            data-handler-id="T481"
+            data-handler-id="T517"
             style={
               Object {
                 "opacity": 1,
@@ -79176,7 +79175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <div
             className="iot--table-multi-sort-row"
-            data-handler-id="T483"
+            data-handler-id="T519"
             style={
               Object {
                 "opacity": 1,

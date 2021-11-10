@@ -650,4 +650,83 @@ describe('FilterHeaderRow', () => {
 
     expect(container).toBeEmptyDOMElement();
   });
+
+  it('should focus on first filterable text field when opened', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true, placeholderText: 'col1' },
+          { id: 'col2', isFilterable: true, placeholderText: 'col2' },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('col1')).toHaveFocus();
+    expect(screen.getByPlaceholderText('col2')).not.toHaveFocus();
+  });
+
+  it('should focus on first filterable text field when opened even if not first column', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: false },
+          { id: 'col2', isFilterable: true, placeholderText: 'col2' },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('col2')).toHaveFocus();
+  });
+
+  it('should focus on first combobox field when opened', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          {
+            id: 'col1',
+            isFilterable: true,
+            placeholderText: 'col1',
+            isMultiselect: false,
+            options: [{ id: 'option-1', text: 'Option 1' }],
+          },
+          { id: 'col2', isFilterable: true, placeholderText: 'col2' },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('col1')).toHaveFocus();
+    expect(screen.getByPlaceholderText('col2')).not.toHaveFocus();
+  });
+
+  it('should focus on first filterable multiselect field when opened', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          {
+            id: 'col1',
+            isFilterable: true,
+            placeholderText: 'col1',
+            isMultiselect: true,
+            options: [{ id: 'option-1', text: 'Option 1' }],
+          },
+          { id: 'col2', isFilterable: true, placeholderText: 'col2' },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('col1')).toHaveFocus();
+    expect(screen.getByPlaceholderText('col2')).not.toHaveFocus();
+  });
 });

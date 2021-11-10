@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 
 import { settings } from '../../../../../constants/Settings';
-import { Dropdown } from '../../../../../index';
+import { Dropdown } from '../../../../Dropdown';
 import { BAR_CHART_TYPES } from '../../../../../constants/LayoutConstants';
 
 const { iotPrefix } = settings;

@@ -6,6 +6,7 @@ import warning from 'warning';
 import icons, { bundledIconNames } from '../../utils/bundledIcons';
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
+import { SvgPropType } from '../../constants/SharedPropTypes';
 
 const { prefix } = settings;
 
@@ -36,7 +37,7 @@ const propTypes = {
           width: PropTypes.string,
           height: PropTypes.string,
           viewBox: PropTypes.string.isRequired,
-          svgData: PropTypes.object.isRequired,
+          svgData: SvgPropType.isRequired,
         }),
         PropTypes.object, // Could be a react icon name
         PropTypes.element,
