@@ -175,14 +175,10 @@ describe('TableCellRenderer', () => {
   it('should set preserve class when preserveCellWhiteSpace:true', () => {
     const { container } = render(
       <TableCellRenderer wrapText="never" truncateCellText columnId="string" preserveCellWhiteSpace>
-        {'1  1   1    1     1'}
+        1 1 1 1 1
       </TableCellRenderer>
     );
 
-    // have to select by querySelector, because selecting by title or text fails, because it
-    // returns '1 1 1 1 1' instead of preserving spaces as expected, so this seems more clear
-    // than using a text or title query that is the exact opposite of the output we're desiring
-    // (that the whitespace be preserved)
     expect(container.querySelector('span')).toBeVisible();
     expect(container.querySelector('span')).toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
   });
@@ -190,7 +186,7 @@ describe('TableCellRenderer', () => {
   it('should not set preserve class when preserveCellWhiteSpace:false', () => {
     render(
       <TableCellRenderer wrapText="never" truncateCellText columnId="string">
-        {'1        1'}
+        1 1
       </TableCellRenderer>
     );
 
