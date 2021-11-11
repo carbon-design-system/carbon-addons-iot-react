@@ -15,7 +15,7 @@ import {
 } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 import { COLORS } from '../../../../styles/styles';
-import { CELL_TEXT_OVERFLOW } from '../../Table';
+import { CELL_TEXT_OVERFLOW } from '../../tableConstants';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
 const { prefix, iotPrefix } = settings;

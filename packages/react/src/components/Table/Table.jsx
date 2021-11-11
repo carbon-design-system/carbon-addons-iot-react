@@ -16,6 +16,7 @@ import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 import experimental from '../../internal/experimental';
 import deprecate from '../../internal/deprecate';
 
+import { CELL_TEXT_OVERFLOW } from './tableConstants';
 import {
   TableColumnsPropTypes,
   TableRowPropTypes,
@@ -501,12 +502,6 @@ export const defaultProps = (baseProps) => ({
   // previously used as testId.
   testId: null,
 });
-
-export const CELL_TEXT_OVERFLOW = {
-  TRUNCATE: 'truncate',
-  GROW: 'grow',
-  WRAP: 'wrap',
-};
 
 const Table = (props) => {
   const {

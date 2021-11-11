@@ -6,7 +6,7 @@ import warning from 'warning';
 
 import { settings } from '../../../constants/Settings';
 import { CellTextOverflowPropType } from '../TablePropTypes';
-import { CELL_TEXT_OVERFLOW } from '../Table';
+import { CELL_TEXT_OVERFLOW } from '../tableConstants';
 
 const { iotPrefix } = settings;
 
