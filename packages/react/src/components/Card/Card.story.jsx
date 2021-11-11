@@ -1,8 +1,9 @@
 import React from 'react';
 import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Tree16 } from '@carbon/icons-react';
+import { Tree16, Add16 } from '@carbon/icons-react';
 
+import { settings } from '../../constants/Settings';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
@@ -11,6 +12,8 @@ import { INTERVAL_VALUES, RELATIVE_VALUES, PICKER_KINDS } from '../../constants/
 
 import CardREADME from './Card.mdx';
 import Card from './Card';
+
+const { prefix } = settings;
 
 export const getDataStateProp = () => ({
   label: text('dataState.label', 'No data available for this score at this time'),
@@ -23,7 +26,7 @@ export const getDataStateProp = () => ({
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   ),
   learnMoreElement: (
-    <a className="bx--link" href="#top">
+    <a className={`${prefix}--link`} href="#top">
       Learn more
     </a>
   ),
@@ -120,6 +123,39 @@ Basic.storyName = 'basic stateful example with custom expand icon';
 export const WithEllipsedTitleTooltipExternalTooltip = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  const extraaction = select('extra actions', ['Single', 'Multiple'], 'Single');
+  const singleExtraAction = {
+    id: 'extrasingleaction',
+    icon: Add16,
+    callback: action('extra single action icon clicked.'),
+  };
+  const multiExtraAction = {
+    id: 'extramultiaction',
+    children: [
+      {
+        id: 'firstItem',
+        itemText: 'Item1',
+        callback: action('extra three dot action item1 clicked.'),
+      },
+      {
+        id: 'secondItem',
+        itemText: 'Item2',
+        callback: action('extra three dot action item2 clicked.'),
+      },
+      {
+        id: 'thirdItem',
+        itemText: 'Item3',
+        disabled: true,
+        callback: action('extra three dot action item3 clicked.'),
+      },
+      {
+        id: 'fourthItem',
+        itemText: 'Item4',
+        hidden: true,
+        callback: action('extra three dot action item4 clicked.'),
+      },
+    ],
+  };
   return (
     <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <Card
@@ -146,6 +182,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           edit: false,
           clone: true,
           delete: true,
+          extra: true,
         })}
         onCardAction={action('onCardAction')}
         onFocus={action('onFocus')}
@@ -158,6 +195,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           </Button>
         )}
         tooltip={<p>this is the external tooltip content</p>}
+        extraActions={extraaction === 'Single' ? singleExtraAction : multiExtraAction}
       />
     </div>
   );
@@ -247,7 +285,7 @@ WithCustomRangeSelector.storyName = 'with custom range selector';
 export const WithDateTimePickerRangeSelector = () => {
   const dateTimePickerSetting = select('range', [true, false, 'iconOnly'], 'iconOnly');
   return (
-    <div style={{ width: `300px`, margin: 20 }}>
+    <div style={{ width: text(`card width`, '300px'), margin: 20 }}>
       <Card
         title="Card with date picker"
         id="facilitycard-with-date-picker"
@@ -263,12 +301,12 @@ export const WithDateTimePickerRangeSelector = () => {
           range: dateTimePickerSetting,
         }}
         timeRangeOptions={object('timeRangeOptions', {
-          last48Hours: 'Last 48 Hours',
-          last24Hours: 'Last 24 Hours',
-          last8Hours: 'Last 8 Hours',
-          last4Hours: 'Last 4 Hours',
-          last2Hours: 'Last 2 Hours',
-          lastHour: 'Last Hour',
+          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
+          lastHour: { label: 'Last Hour', offset: 60 * 60 },
         })}
       />
     </div>

@@ -8,12 +8,15 @@ import { red60 } from '@carbon/colors';
 import { TextInput } from 'carbon-components-react';
 
 import { settings } from '../../../../constants/Settings';
-import { Button, NumberInput, Dropdown } from '../../../../index';
+import Button from '../../../Button';
+import { NumberInput } from '../../../NumberInput';
+import { Dropdown } from '../../../Dropdown';
 import { validThresholdIcons, validThresholdColors } from '../../../DashboardEditor/editorUtils';
 import SimpleIconDropdown from '../../../SimpleIconDropdown/SimpleIconDropdown';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
+import { CarbonIconPropType } from '../../../../constants/SharedPropTypes';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const propTypes = {
   /* card value */
@@ -51,14 +54,14 @@ const propTypes = {
   ),
   icons: PropTypes.arrayOf(
     PropTypes.shape({
-      carbonIcon: PropTypes.any,
+      carbonIcon: CarbonIconPropType,
       name: PropTypes.string,
       color: PropTypes.string,
     })
   ),
   /** default icon for each threshold */
   selectedIcon: PropTypes.shape({
-    carbonIcon: PropTypes.any,
+    carbonIcon: CarbonIconPropType,
     name: PropTypes.string,
     color: PropTypes.string,
   }),
@@ -124,7 +127,7 @@ const ThresholdsFormItem = ({
   return (
     <>
       {!isEmpty(thresholds) && (
-        <span className={`bx--label ${baseClassName}--input-label`}>
+        <span className={`${prefix}--label ${baseClassName}--input-label`}>
           {mergedI18n.dataItemEditorDataItemThresholds}
         </span>
       )}

@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import merge from 'lodash/merge';
 
 import { settings } from '../../constants/Settings';
-import { keyCodes } from '../../constants/KeyCodeConstants';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 const { iotPrefix } = settings;
 
@@ -174,18 +174,18 @@ const TimePickerSpinner = ({
   const onInputKeyDown = (e) => {
     const target = e.currentTarget;
     setFocusTarget(target);
-    switch (e.keyCode) {
-      case keyCodes.UP:
-      case keyCodes.DOWN:
+    switch (e.key) {
+      case keyboardKeys.UP:
+      case keyboardKeys.DOWN:
         setKeyUpOrDownPosition(target.selectionStart);
         break;
-      case keyCodes.BACKSPACE:
-      case keyCodes.DELETE:
-      case keyCodes.TAB:
-      case keyCodes.END:
-      case keyCodes.HOME:
-      case keyCodes.LEFT:
-      case keyCodes.RIGHT:
+      case keyboardKeys.BACKSPACE:
+      case keyboardKeys.DELETE:
+      case keyboardKeys.TAB:
+      case keyboardKeys.END:
+      case keyboardKeys.HOME:
+      case keyboardKeys.LEFT:
+      case keyboardKeys.RIGHT:
         break;
       default:
         return preventNonAllowedKeyboardInput(e);
@@ -203,15 +203,15 @@ const TimePickerSpinner = ({
 
   let lastSelectionStart = -1;
   const onInputKeyUp = (e) => {
-    switch (e.keyCode) {
-      case keyCodes.LEFT:
-      case keyCodes.RIGHT:
+    switch (e.key) {
+      case keyboardKeys.LEFT:
+      case keyboardKeys.RIGHT:
         setCurrentTimeGroup(e.currentTarget.selectionStart <= 2 ? 0 : 1);
 
         // this is to fix the event hijacking from sibling components, ie. DatePicker
         // in this case we need to set the proper cursor position artificially
         if (e.currentTarget.selectionStart === lastSelectionStart) {
-          if (e.keyCode === keyCodes.LEFT) {
+          if (e.key === keyboardKeys.LEFT) {
             e.currentTarget.selectionStart -= 1;
           } else {
             e.currentTarget.selectionStart += 1;
@@ -221,10 +221,10 @@ const TimePickerSpinner = ({
         lastSelectionStart = e.currentTarget.selectionStart;
 
         break;
-      case keyCodes.UP:
+      case keyboardKeys.UP:
         handleArrowClick('up');
         break;
-      case keyCodes.DOWN:
+      case keyboardKeys.DOWN:
         handleArrowClick('down');
         break;
       default:

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../constants/Settings';
 
@@ -237,6 +238,54 @@ describe('TableCellRenderer', () => {
       expect(console.error).not.toHaveBeenCalled();
       expect(renderDataFunction).toHaveBeenCalled();
       expect(screen.getByText('124556')).toBeDefined();
+    });
+
+    it('should render a tooltip and display it on focus when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      expect(document.body).toHaveFocus();
+      userEvent.tab();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveFocus();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+    });
+
+    it('should render a tooltip and display it on hover when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      userEvent.hover(screen.getByText('Select'));
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
     });
   });
 });

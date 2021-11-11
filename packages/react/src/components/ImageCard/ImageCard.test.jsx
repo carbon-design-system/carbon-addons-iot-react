@@ -21,6 +21,7 @@ function stringToArrayBuffer(str) {
 
 describe('ImageCard', () => {
   it('should be selectable by testId or testID', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const testID = 'IMAGE_CARD';
 
     const { rerender } = render(
@@ -28,6 +29,9 @@ describe('ImageCard', () => {
     );
 
     expect(screen.getByTestId(testID)).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
 
     const testId = 'image_card';
     rerender(<ImageCard content={{ src: landscape }} size={CARD_SIZES.LARGE} testID={testId} />);
@@ -40,12 +44,6 @@ describe('ImageCard', () => {
     rerender(<ImageCard content={{ src: '' }} size={CARD_SIZES.LARGE} testID={testId} />);
     expect(screen.getByTestId(testId)).toBeDefined();
     expect(screen.getByTestId(`${testId}-empty`)).toBeDefined();
-  });
-
-  it("should show 'size not supported' when an invalid size is given", () => {
-    render(<ImageCard content={{ src: landscape }} size={CARD_SIZES.SMALL} />);
-
-    expect(screen.getByText(/size not supported/gi)).toBeInTheDocument();
   });
 
   it('should show ImageUploader when editable and no image is given', () => {
@@ -261,7 +259,7 @@ describe('ImageCard', () => {
     const galleryButton = screen.getByRole('button', { name: 'Add from gallery' });
     expect(galleryButton).toBeVisible();
     userEvent.click(galleryButton);
-    expect(handleClick).toBeCalled();
+    expect(handleClick).toHaveBeenCalled();
     const fileInput = container.querySelector('input[type="file"]');
     expect(fileInput).toBeVisible();
 
@@ -307,7 +305,7 @@ describe('ImageCard', () => {
     });
 
     expect(screen.queryByText(/This file is not one of the accepted file types/gi)).toBeNull();
-    expect(validate).toBeCalledWith(validFile);
+    expect(validate).toHaveBeenCalledWith(validFile);
     const reader = FileReader.mock.instances[0];
     expect(reader.readAsDataURL).toHaveBeenCalledWith(validFile);
     act(() => {
@@ -356,7 +354,7 @@ describe('ImageCard', () => {
     const galleryButton = screen.getByRole('button', { name: 'Add from gallery' });
     expect(galleryButton).toBeVisible();
     userEvent.click(galleryButton);
-    expect(handleClick).toBeCalled();
+    expect(handleClick).toHaveBeenCalled();
     const fileInput = container.querySelector('input[type="file"]');
     expect(fileInput).toBeVisible();
 
@@ -402,7 +400,7 @@ describe('ImageCard', () => {
     });
 
     expect(screen.queryByText(/This file is not one of the accepted file types/gi)).toBeNull();
-    expect(validate).toBeCalledWith(validFile);
+    expect(validate).toHaveBeenCalledWith(validFile);
     expect(screen.getByText(/image file is too large/gi)).toBeVisible();
     jest.resetAllMocks();
   });
@@ -437,7 +435,7 @@ describe('ImageCard', () => {
     const galleryButton = screen.getByRole('button', { name: 'Add from gallery' });
     expect(galleryButton).toBeVisible();
     userEvent.click(galleryButton);
-    expect(handleClick).toBeCalled();
+    expect(handleClick).toHaveBeenCalled();
     const fileInput = container.querySelector('input[type="file"]');
     expect(fileInput).toBeVisible();
 
@@ -483,7 +481,7 @@ describe('ImageCard', () => {
     });
 
     expect(screen.queryByText(/This file is not one of the accepted file types/gi)).toBeNull();
-    expect(validate).toBeCalledWith(validFile);
+    expect(validate).toHaveBeenCalledWith(validFile);
     expect(screen.getByText(/this file does not pass muster/gi)).toBeVisible();
     jest.resetAllMocks();
   });
@@ -518,7 +516,7 @@ describe('ImageCard', () => {
     const galleryButton = screen.getByRole('button', { name: 'Add from gallery' });
     expect(galleryButton).toBeVisible();
     userEvent.click(galleryButton);
-    expect(handleClick).toBeCalled();
+    expect(handleClick).toHaveBeenCalled();
     const fileInput = container.querySelector('input[type="file"]');
     expect(fileInput).toBeVisible();
 
@@ -564,7 +562,7 @@ describe('ImageCard', () => {
     });
 
     expect(screen.queryByText(/This file is not one of the accepted file types/gi)).toBeNull();
-    expect(validate).toBeCalledWith(validFile);
+    expect(validate).toHaveBeenCalledWith(validFile);
     const reader = FileReader.mock.instances[0];
     expect(reader.readAsDataURL).toHaveBeenCalledWith(validFile);
     act(() => {
@@ -618,8 +616,8 @@ describe('ImageCard', () => {
       userEvent.click(screen.getByRole('button', { name: 'OK' }));
     });
 
-    expect(fetch).toBeCalledWith('http://example.com/example.png');
-    expect(handleUpload).toBeCalledWith(
+    expect(fetch).toHaveBeenCalledWith('http://example.com/example.png');
+    expect(handleUpload).toHaveBeenCalledWith(
       expect.objectContaining({
         addedFiles: expect.arrayContaining([
           new File([fileContents], 'example.png', {
@@ -665,7 +663,7 @@ describe('ImageCard', () => {
       userEvent.click(screen.getByRole('button', { name: 'OK' }));
     });
 
-    expect(fetch).toBeCalledWith('http://example.com/example.png');
+    expect(fetch).toHaveBeenCalledWith('http://example.com/example.png');
     expect(screen.getByText(/fetch failed/gi)).toBeVisible();
     const closeErrorButton = screen.getByTitle('closes notification');
     expect(closeErrorButton).toBeVisible();
@@ -673,5 +671,31 @@ describe('ImageCard', () => {
     expect(screen.queryByText(/fetch failed/gi)).toBeNull();
 
     global.fetch = undefined;
+  });
+
+  it('should throw a prop error when using an unsupported size', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const { rerender } = render(<ImageCard content={{ src: landscape }} size={CARD_SIZES.SMALL} />);
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`ImageCard` prop `size` cannot be `SMALL`')
+    );
+
+    rerender(<ImageCard content={{ src: landscape }} size={CARD_SIZES.SMALLWIDE} />);
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`ImageCard` prop `size` cannot be `SMALLWIDE`')
+    );
+    rerender(<ImageCard content={{ src: landscape }} size={CARD_SIZES.SMALLFULL} />);
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`ImageCard` prop `size` cannot be `SMALLFULL`')
+    );
+    rerender(<ImageCard content={{ src: landscape }} size={CARD_SIZES.LARGETHIN} />);
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`ImageCard` prop `size` cannot be `LARGETHIN`')
+    );
+    jest.resetAllMocks();
   });
 });

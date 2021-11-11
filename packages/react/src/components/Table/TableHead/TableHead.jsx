@@ -8,6 +8,7 @@ import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
 import debounce from 'lodash/debounce';
 import classnames from 'classnames';
+import warning from 'warning';
 
 import {
   TableColumnsPropTypes,
@@ -16,11 +17,14 @@ import {
   ActiveTableToolbarPropType,
   TableSortPropType,
   CellTextOverflowPropType,
+  TableColumnGroupPropType,
+  TableOrderingPropType,
 } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
-import { OverflowMenu, OverflowMenuItem } from '../../../index';
+import { OverflowMenu } from '../../OverflowMenu';
+import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { usePrevious } from '../../../hooks/usePrevious';
 import deprecate from '../../../internal/deprecate';
 
@@ -44,6 +48,7 @@ import {
   hasVisibleColumns,
   adjustInitialColumnWidths,
 } from './columnWidthUtilityFunctions';
+import ColumnGrouping from './ColumnGrouping/ColumnGrouping';
 
 const { iotPrefix } = settings;
 
@@ -58,6 +63,13 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
+    hasRowNesting: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** If the hierarchy only has 1 nested level of children */
+        hasSingleNestedHierarchy: PropTypes.bool,
+      }),
+    ]),
     hasMultiSort: PropTypes.bool,
     useAutoTableLayoutForResize: PropTypes.bool,
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
@@ -66,7 +78,8 @@ const propTypes = {
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
-
+  /** Specify the properties of each column group in the table. Defaults to empty column. */
+  columnGroups: TableColumnGroupPropType,
   /** internationalized labels */
   selectAllText: PropTypes.string,
   clearFilterText: PropTypes.string,
@@ -88,14 +101,8 @@ const propTypes = {
     }).isRequired,
     /** What sorting is currently applied */
     sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]).isRequired,
-    /** What column ordering is currently applied to the table */
-    ordering: PropTypes.arrayOf(
-      PropTypes.shape({
-        columnId: PropTypes.string.isRequired,
-        /* Visibility of column in table, defaults to false */
-        isHidden: PropTypes.bool,
-      })
-    ).isRequired,
+    /** Specify the order, visibility and group belonging of the table columns */
+    ordering: TableOrderingPropType.isRequired,
     /** Optional list of applied column filters */
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -132,9 +139,21 @@ const propTypes = {
   testId: PropTypes.string,
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
+  /** Size prop from Carbon to shrink row height (and header height in some instances) */
+  size: function checkProps(props, propName, componentName) {
+    if (['compact', 'short', 'normal', 'tall'].includes(props[propName])) {
+      warning(
+        false,
+        `The value \`${props[propName]}\` has been deprecated for the ` +
+          `\`${propName}\` prop on the ${componentName} component. It will be removed in the next major ` +
+          `release. Please use 'xs', 'sm', 'md', 'lg', or 'xl' instead.`
+      );
+    }
+  },
 };
 
 const defaultProps = {
+  columnGroups: [],
   options: {},
   lightweight: false,
   selectAllText: 'Select all',
@@ -150,6 +169,7 @@ const defaultProps = {
   testID: '',
   testId: '',
   showExpanderColumn: false,
+  size: undefined,
 };
 
 const generateOrderedColumnRefs = (ordering) =>
@@ -176,6 +196,7 @@ const TableHead = ({
     preserveColumnWidths,
   },
   columns,
+  columnGroups,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
     sort,
@@ -203,6 +224,7 @@ const TableHead = ({
   i18n,
   hasFastFilter,
   showExpanderColumn,
+  size,
 }) => {
   const filterBarActive = activeBar === 'filter';
   const initialColumnWidths = {};
@@ -283,7 +305,7 @@ const TableHead = ({
     e.stopPropagation();
 
     if (onOverflowItemClicked) {
-      onOverflowItemClicked(option.id);
+      onOverflowItemClicked(option.id, option.meta);
     }
   };
 
@@ -385,17 +407,29 @@ const TableHead = ({
     [hasResize, columns, ordering, previousColumns]
   );
 
-  const lastVisibleColumn = ordering.filter((col) => !col.isHidden).slice(-1)[0];
+  const visibleColumns = ordering.filter((col) => !col.isHidden);
+  const lastVisibleColumn = visibleColumns.slice(-1)[0];
+  const showColumnGroups = columnGroups.some(({ id }) =>
+    visibleColumns.find(({ columnGroupId }) => id === columnGroupId)
+  );
 
   return (
     <CarbonTableHead
-      className={classnames({ lightweight })}
+      className={classnames({
+        lightweight,
+        [`${iotPrefix}--table-head--with-column-groups`]: showColumnGroups,
+      })}
       onMouseMove={hasResize ? forwardMouseEvent : null}
       onMouseUp={hasResize ? forwardMouseEvent : null}
       // TODO: remove deprecated 'testID' in v3
       data-testid={testID || testId}
     >
-      <TableRow>
+      <TableRow
+        className={classnames({
+          [`${iotPrefix}--table-header__column-row`]: showColumnGroups,
+          [`${iotPrefix}--table-header__column-row--prevent-small-sizes`]: showColumnGroups,
+        })}
+      >
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
             // TODO: remove deprecated 'testID' in v3
@@ -460,9 +494,14 @@ const TableHead = ({
               : PADDING_WITH_OVERFLOW
             : 0;
 
+          const columnBelongsToExistingGroup = columnGroups.some(
+            ({ id }) => id === item.columnGroupId
+          );
+
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
               // TODO: remove deprecated 'testID' in v3
+              spanGroupRow={showColumnGroups && !columnBelongsToExistingGroup}
               testId={`${testID || testId}-column-${matchingColumnMeta.id}`}
               width={initialColumnWidths[matchingColumnMeta.id]}
               initialWidth={initialColumnWidths[matchingColumnMeta.id]}
@@ -492,6 +531,8 @@ const TableHead = ({
                 [`${iotPrefix}--table-header-resize`]: hasResize,
                 [`${iotPrefix}--table-head--table-header--with-overflow`]:
                   hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable),
+                [`${iotPrefix}--table-header--last-data-column`]:
+                  showColumnGroups && item === lastVisibleColumn,
               })}
               // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
               data-floating-menu-container
@@ -527,7 +568,12 @@ const TableHead = ({
                       data-testid={`${testID || testId}-column-overflow-menu-item-multi-sort`}
                       itemText={i18n.multiSortOverflowItem}
                       key={`${columnIndex}--overflow-item-multi-sort`}
-                      onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}
+                      onClick={(e) =>
+                        handleOverflowItemClick(e, {
+                          id: 'multi-sort',
+                          meta: { columnId: matchingColumnMeta.id },
+                        })
+                      }
                     />
                   )}
                 </OverflowMenu>
@@ -568,6 +614,19 @@ const TableHead = ({
           />
         ) : null}
       </TableRow>
+      {showColumnGroups ? (
+        // Column grouping should visually appear above the normal column headers but since we
+        // need the normal column headers to control the width of the columns, and since rowspan
+        // only works downward, we place the groups below the normal columns and then switch
+        // places using scss.
+        <ColumnGrouping
+          appendedColumns={+showExpanderColumn + !!options.hasRowActions}
+          testId={`${testId}-column-grouping`}
+          prependedColumns={+(hasRowSelection === 'multi') + !!(hasRowExpansion || hasRowNesting)}
+          columnGroups={columnGroups}
+          ordering={ordering}
+        />
+      ) : null}
       {filterBarActive && (
         <FilterHeaderRow
           // TODO: remove deprecated 'testID' in v3
@@ -593,6 +652,7 @@ const TableHead = ({
           lightweight={lightweight}
           isDisabled={isDisabled}
           showExpanderColumn={showExpanderColumn}
+          size={size}
         />
       )}
       {activeBar === 'column' && (

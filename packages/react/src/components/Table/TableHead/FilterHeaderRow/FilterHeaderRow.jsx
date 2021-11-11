@@ -6,6 +6,7 @@ import memoize from 'lodash/memoize';
 import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 import isEqual from 'lodash/isEqual';
+import warning from 'warning';
 
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
@@ -78,6 +79,17 @@ class FilterHeaderRow extends Component {
     testId: PropTypes.string,
     /** shows an additional column that can expand/shrink as the table is resized  */
     showExpanderColumn: PropTypes.bool.isRequired,
+    /** Size prop from Carbon to shrink row height (and header height in some instances) */
+    size: function checkProps(props, propName, componentName) {
+      if (['compact', 'short', 'normal', 'tall'].includes(props[propName])) {
+        warning(
+          false,
+          `The value \`${props[propName]}\` has been deprecated for the ` +
+            `\`${propName}\` prop on the ${componentName} component. It will be removed in the next major ` +
+            `release. Please use 'xs', 'sm', 'md', 'lg', or 'xl' instead.`
+        );
+      }
+    },
   };
 
   static defaultProps = {
@@ -94,9 +106,11 @@ class FilterHeaderRow extends Component {
     lightweight: false,
     hasFastFilter: true,
     testId: '',
+    size: undefined,
   };
 
   state = {
+    dropdownMaxHeight: 'unset',
     filterValues: this.props.columns.reduce(
       (acc, curr) => ({
         ...acc,
@@ -130,6 +144,59 @@ class FilterHeaderRow extends Component {
     }
     return null;
   }
+
+  constructor(props) {
+    super(props);
+
+    this.rowRef = React.createRef();
+    this.firstFilterableRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.updateDropdownHeight();
+    this.updateFocus();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { dropdownMaxHeight } = this.state;
+    const { size } = this.props;
+    if (dropdownMaxHeight !== prevState.dropdownMaxHeight || size !== prevProps.size) {
+      this.updateDropdownHeight();
+    }
+  }
+
+  updateDropdownHeight = () => {
+    if (this.rowRef.current) {
+      const tableContainer = this.rowRef.current.closest(`.${prefix}--data-table-content`);
+      const tableHead = this.rowRef.current.closest(`thead`);
+      if (tableContainer) {
+        const { height: containerHeight } = tableContainer.getBoundingClientRect();
+        const { height: headHeight } = tableHead.getBoundingClientRect();
+
+        const height = containerHeight - headHeight - 16;
+
+        this.setState({
+          dropdownMaxHeight: `${height}px`,
+        });
+      }
+    }
+  };
+
+  setFirstFilterableRef = (node) => {
+    if (!this.firstFilterableRef.current && node) {
+      this.firstFilterableRef.current = node;
+    }
+  };
+
+  updateFocus = () => {
+    if (this.firstFilterableRef.current) {
+      if (typeof this.firstFilterableRef.current.focus === 'function') {
+        this.firstFilterableRef.current.focus();
+      } else if (typeof this.firstFilterableRef.current.textInput.current.focus === 'function') {
+        this.firstFilterableRef.current.textInput.current.focus();
+      }
+    }
+  };
 
   /**
    * take the state with the filter values and send to our listener
@@ -183,12 +250,17 @@ class FilterHeaderRow extends Component {
       testId,
       showExpanderColumn,
     } = this.props;
-    const { filterValues } = this.state;
+    const { dropdownMaxHeight, filterValues } = this.state;
     const visibleColumns = ordering.filter((c) => !c.isHidden);
     return isVisible ? (
-      <TableRow data-testid={testId}>
+      <TableRow
+        data-testid={testId}
+        style={{
+          '--filter-header-dropdown-max-height': dropdownMaxHeight,
+        }}
+      >
         {hasRowSelection === 'multi' ? (
-          <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
+          <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />
         ) : null}
         {hasRowExpansion ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
@@ -212,6 +284,7 @@ class FilterHeaderRow extends Component {
             ) : column.options ? (
               column.isMultiselect ? (
                 <MultiSelect.Filterable
+                  ref={this.setFirstFilterableRef}
                   key={columnStateValue}
                   className={classnames(
                     `${iotPrefix}--filterheader-multiselect`,
@@ -252,6 +325,7 @@ class FilterHeaderRow extends Component {
                 />
               ) : (
                 <ComboBox
+                  ref={this.setFirstFilterableRef}
                   menuFitContent
                   horizontalDirection={isLastColumn ? 'start' : 'end'}
                   key={columnStateValue}
@@ -288,6 +362,7 @@ class FilterHeaderRow extends Component {
             ) : (
               <FormItem className={`${iotPrefix}--filter-header-row--form-item`}>
                 <TextInput
+                  ref={this.setFirstFilterableRef}
                   id={column.id}
                   labelText={column.id}
                   hideLabel

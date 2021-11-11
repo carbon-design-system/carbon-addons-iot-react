@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../../../../constants/Settings';
-import { NumberInput, Toggle, Tooltip } from '../../../../../index';
+import { NumberInput } from '../../../../NumberInput';
+import { Toggle } from '../../../../Toggle';
+import { Tooltip } from '../../../../Tooltip';
 import { DEFAULT_FONT_SIZE } from '../../../../ValueCard/valueCardUtils';
 import { isNumberValidForMinMax } from '../../../../../utils/componentUtilityFunctions';
 

@@ -5,7 +5,11 @@ import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 import { Loading } from 'carbon-components-react';
 
+import { settings } from '../../constants/Settings';
+
 import WizardModal from './WizardModal';
+
+const { prefix, iotPrefix } = settings;
 
 const commonWizardProps = {
   isClickable: true,
@@ -47,7 +51,7 @@ describe('WizardModal', () => {
 
     expect(screen.getByTestId('ComposedModal')).toBeDefined();
     expect(screen.getByTestId('wizard_modal-content')).toBeDefined();
-    expect(screen.getByTestId('iot--progress-indicator-testid')).toBeDefined();
+    expect(screen.getByTestId(`${iotPrefix}--progress-indicator-testid`)).toBeDefined();
     expect(screen.getByTestId('wizard_modal-footer')).toBeDefined();
   });
   it('handleNext', () => {
@@ -137,13 +141,13 @@ describe('WizardModal', () => {
     wrapper.setState({ step: 2 });
 
     // Close
-    expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--modal-close`)).toHaveLength(1);
 
     // Previous
-    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--btn--secondary`)).toHaveLength(1);
 
     // Submit button
-    expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--btn--primary`)).toHaveLength(1);
 
     // Submit button should validate the last page
     wrapper.instance().handleSubmit();
@@ -162,33 +166,33 @@ describe('WizardModal', () => {
       />
     );
     // Close
-    expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--modal-close`)).toHaveLength(1);
 
     // Cancel
-    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--btn--secondary`)).toHaveLength(1);
 
     // Submit button
-    expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--btn--primary`)).toHaveLength(1);
 
     // Close Next Previous and Cancel
     wrapper.setState({ step: 1 });
     // Close
-    expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--modal-close`)).toHaveLength(1);
 
     // Previous
-    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--btn--secondary`)).toHaveLength(1);
 
     // Submit button
-    expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--btn--primary`)).toHaveLength(1);
     // Close Previous Submit and Cancel
     // Close
-    expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--modal-close`)).toHaveLength(1);
 
     // Previous
-    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--btn--secondary`)).toHaveLength(1);
 
     // Submit button
-    expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--btn--primary`)).toHaveLength(1);
     wrapper.setState({ step: 2 });
   });
   it('sendingData', () => {
@@ -211,7 +215,7 @@ describe('WizardModal', () => {
   it('clicking on previous button or previous step will call onBack', () => {
     const callBack = jest.fn();
 
-    const getStep = (step) => screen.getByTestId(`iot--progress-step-button-main-${step}`);
+    const getStep = (step) => screen.getByTestId(`${iotPrefix}--progress-step-button-main-${step}`);
 
     render(
       <WizardModal
@@ -256,7 +260,7 @@ describe('WizardModal', () => {
     // analogue to ProgressIndicator test we check if clicking step will show related content
     const [beforeClick1] = screen.getAllByTitle('step1')[0].children;
 
-    screen.getByTestId('iot--progress-step-button-main-step2').click();
+    screen.getByTestId(`${iotPrefix}--progress-step-button-main-step2`).click();
 
     // content should be page2
     expect(screen.getAllByTitle('step1')[0].children[0]).not.toContain(beforeClick1);
@@ -264,13 +268,13 @@ describe('WizardModal', () => {
 
     // clicking on step3 should not progress the modal
     const [beforeClick2] = screen.getAllByTitle('step2')[0].children;
-    screen.getByTestId('iot--progress-step-button-main-step3').click();
+    screen.getByTestId(`${iotPrefix}--progress-step-button-main-step3`).click();
 
     expect(screen.getAllByTitle('step2')[0].children[0]).toEqual(beforeClick2);
     expect(screen.getByText('page 2')).toBeDefined();
 
     // clicking on page 1 should go back to step 1
-    screen.getByTestId('iot--progress-step-button-main-step1').click();
+    screen.getByTestId(`${iotPrefix}--progress-step-button-main-step1`).click();
     expect(screen.getAllByTitle('step1')[0].children[0]).toEqual(beforeClick1);
     expect(screen.getByText('page 1')).toBeDefined();
   });

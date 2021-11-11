@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { Maximize16, Close16 } from '@carbon/icons-react';
 import { useLangDirection } from 'use-lang-direction';
 
-import { Button } from '../../index';
+import Button from '../Button';
 import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { CARD_ACTIONS, CARD_SIZES } from '../../constants/LayoutConstants';

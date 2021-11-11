@@ -7,7 +7,7 @@ import { CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
 
 import DataStateRenderer, { TooltipContent } from './DataStateRenderer';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 function getDataStateProp() {
   return {
@@ -114,17 +114,17 @@ describe('ValueCard', () => {
     const wrapper = mount(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.MEDIUM} />);
     const iconTooltipTrigger = wrapper
       .find(`svg.${iotPrefix}--data-state-default-warning-icon`)
-      .closest('.bx--tooltip__label');
+      .closest(`.${prefix}--tooltip__label`);
     expect(iconTooltipTrigger).toHaveLength(1);
 
     const labelTooltipTrigger = wrapper
       .find(`.${iotPrefix}--data-state-grid__label`)
-      .closest('.bx--tooltip__label');
+      .closest(`.${prefix}--tooltip__label`);
     expect(labelTooltipTrigger).toHaveLength(1);
 
     const descriptionTooltipTrigger = wrapper
       .find(`.${iotPrefix}--data-state-grid__description`)
-      .closest('.bx--tooltip__label');
+      .closest(`.${prefix}--tooltip__label`);
     expect(descriptionTooltipTrigger).toHaveLength(1);
   });
 

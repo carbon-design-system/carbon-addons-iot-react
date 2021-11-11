@@ -13,6 +13,8 @@ const { iotPrefix } = settings;
 
 describe('ValueCard', () => {
   it('should be selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <ValueCard
         id="myIdTest"
@@ -27,6 +29,10 @@ describe('ValueCard', () => {
     expect(screen.getByTestId('VALUE_CARD-attribute-0-threshold-label')).toBeDefined();
     expect(screen.getByTestId('VALUE_CARD-attribute-0-value')).toBeDefined();
     expect(screen.getByTestId('VALUE_CARD-title')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     rerender(
       <ValueCard
         id="myIdTest"

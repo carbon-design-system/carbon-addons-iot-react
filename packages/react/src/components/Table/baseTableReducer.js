@@ -297,13 +297,15 @@ export const baseTableReducer = (state = {}, action) => {
       });
     }
     case TABLE_ROW_EXPAND: {
-      const { rowId, isExpanded } = action.payload;
+      const { rowId, isExpanded, options } = action.payload;
       return update(state, {
         view: {
           table: {
             expandedIds: {
               $set: isExpanded
-                ? state.view.table.expandedIds.concat([rowId])
+                ? options?.expandRowsExclusively
+                  ? [rowId]
+                  : state.view.table.expandedIds.concat([rowId])
                 : state.view.table.expandedIds.filter((i) => i !== rowId),
             },
           },

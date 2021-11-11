@@ -2,6 +2,8 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { render, screen } from '@testing-library/react';
 
+import { settings } from '../../constants/Settings';
+
 import { galleryData } from './TileGallery.story';
 import TileGalleryItem from './TileGalleryItem';
 import TileGallerySection from './TileGallerySection';
@@ -10,6 +12,7 @@ import TileGalleryViewSwitcher from './TileGalleryViewSwitcher';
 import TileGallery from './TileGallery';
 import StatefulTileGallery from './StatefulTileGallery';
 
+const { prefix } = settings;
 describe('TileGallery', () => {
   it('should be selectable by testId', () => {
     const { rerender } = render(
@@ -132,7 +135,7 @@ describe('TileGallery', () => {
       </TileGallerySection>
     );
 
-    wrapper.find('button.bx--accordion__heading').first().simulate('click');
+    wrapper.find(`button.${prefix}--accordion__heading`).first().simulate('click');
 
     expect(wrapper.find('Accordion')).toHaveLength(1);
     expect(wrapper.find('AccordionItem').props().open).toEqual(false);
@@ -156,7 +159,7 @@ describe('TileGallery', () => {
 
     const wrapper = mount(<TileGallerySearch onChange={onChange} />);
 
-    wrapper.find('input.bx--search-input').simulate('change', { target: { value: 'foo' } });
+    wrapper.find(`input.${prefix}--search-input`).simulate('change', { target: { value: 'foo' } });
 
     expect(onChange).toHaveBeenCalled(); // https://github.com/carbon-design-system/carbon/issues/7595
   });
@@ -169,7 +172,7 @@ describe('TileGallery', () => {
 
     const wrapper = mount(<TileGalleryViewSwitcher onChange={onChange} />);
 
-    wrapper.find('button.bx--content-switcher-btn').last().simulate('click');
+    wrapper.find(`button.${prefix}--content-switcher-btn`).last().simulate('click');
 
     expect(onChange).toHaveBeenCalledTimes(1);
   });
@@ -211,11 +214,11 @@ describe('TileGallery', () => {
     );
 
     wrapper
-      .find('input.bx--search-input')
+      .find(`input.${prefix}--search-input`)
       .simulate('change', { currentTarget: { value: searchValue } });
 
     // test input value have changed
-    // expect(wrapper.find('input.bx--search-input').props().value).toEqual(searchValue);
+    // expect(wrapper.find(`input.${prefix}--search-input`).props().value).toEqual(searchValue);
 
     // Test default mode
     expect(wrapper.find('TileGalleryItem').first().props().mode).toEqual('grid');
@@ -225,7 +228,7 @@ describe('TileGallery', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
 
     // Change Tile Item mode
-    wrapper.find('button.bx--content-switcher-btn').first().simulate('click');
+    wrapper.find(`button.${prefix}--content-switcher-btn`).first().simulate('click');
 
     // test have changes mode prop
     expect(wrapper.find('TileGalleryItem').first().props().mode).toEqual('list');

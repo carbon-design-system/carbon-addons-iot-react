@@ -137,7 +137,9 @@ const TableCellRenderer = ({
     <span
       className={myClasses}
       title={
-        typeof children === 'number' && locale
+        useTooltip || tooltip
+          ? undefined
+          : typeof children === 'number' && locale
           ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
           : children
       }
@@ -148,7 +150,7 @@ const TableCellRenderer = ({
         : children}
     </span>
   ) : typeof children === 'boolean' ? ( // handle booleans
-    <span className={myClasses} title={children.toString()}>
+    <span className={myClasses} title={useTooltip || tooltip ? undefined : children.toString()}>
       {children.toString()}
     </span>
   ) : typeof children === 'object' && !React.isValidElement(children) ? null : (

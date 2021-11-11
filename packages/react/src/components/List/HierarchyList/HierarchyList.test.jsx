@@ -5,9 +5,12 @@ import userEvent from '@testing-library/user-event';
 
 import { sampleHierarchy } from '../List.story';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
-import { InlineLoading } from '../../..';
+import { settings } from '../../../constants/Settings';
+import { InlineLoading } from '../../InlineLoading';
 
 import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from './HierarchyList';
+
+const { iotPrefix } = settings;
 
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
 jest.mock('lodash/debounce', () => (fn) => fn);
@@ -799,6 +802,34 @@ describe('HierarchyList', () => {
     expect(container.querySelectorAll('input[checked]').length).toBe(0);
   });
 
+  it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
+    render(
+      <HierarchyList
+        title="Hierarchy List"
+        items={getListItems(2)}
+        editingStyle={EditingStyle.SingleNesting}
+        lockedIds={['1']}
+      />
+    );
+
+    expect(
+      within(screen.getByTestId('list'))
+        .getByText('Item 1')
+        .closest(`.${iotPrefix}--list-item-parent > *`)
+    ).not.toHaveAttribute('draggable');
+
+    expect(
+      within(screen.getByTestId('list')).getByText('Item 1').closest(`.${iotPrefix}--list-item`)
+        .firstChild
+    ).toHaveClass(`${iotPrefix}--list-item--lock`);
+
+    expect(
+      within(screen.getByTestId('list'))
+        .getAllByText('Item 2')[0]
+        .closest(`.${iotPrefix}--list-item-parent > *`)
+    ).toHaveAttribute('draggable');
+  });
+
   describe('isVirtualList', () => {
     beforeEach(() => {
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
@@ -839,5 +870,32 @@ describe('HierarchyList', () => {
     );
 
     expect(screen.getByText('A CUSTOM EMPTY NODE')).toBeVisible();
+  });
+
+  it('should reset pagination and search when data changes', () => {
+    const { rerender } = render(
+      <HierarchyList items={getListItems(100)} hasSearch title="Changing List" pageSize="sm" />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Enter a value'), '5');
+    expect(screen.getByTitle('Item 5')).toBeVisible();
+    expect(screen.getByTitle('Item 15')).toBeVisible();
+    expect(screen.getByTitle('Item 25')).toBeVisible();
+    expect(screen.getByTitle('Item 35')).toBeVisible();
+    expect(screen.getByTitle('Item 45')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getByText('Page 2')).toBeVisible();
+    expect(screen.getByTitle('Item 50')).toBeVisible();
+    expect(screen.getByTitle('Item 51')).toBeVisible();
+    expect(screen.getByTitle('Item 52')).toBeVisible();
+    expect(screen.getByTitle('Item 53')).toBeVisible();
+    expect(screen.getByTitle('Item 54')).toBeVisible();
+    rerender(<HierarchyList items={getListItems(50)} title="Changing List" pageSize="sm" />);
+    expect(screen.getByText('Page 1')).toBeVisible();
+    expect(screen.getByTitle('Item 1')).toBeVisible();
+    expect(screen.getByTitle('Item 2')).toBeVisible();
+    expect(screen.getByTitle('Item 3')).toBeVisible();
+    expect(screen.getByTitle('Item 4')).toBeVisible();
+    expect(screen.getByTitle('Item 5')).toBeVisible();
   });
 });

@@ -493,7 +493,7 @@ export const tableReducer = (state = {}, action) => {
         }) ?? [];
 
       const { view, totalItems, hasUserViewManagement } = action.payload;
-      const { pageSize, pageSizes } = get(view, 'pagination') || {};
+      const { pageSize, pageSizes, page } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
       const initialDefaultSearch =
         get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
@@ -511,11 +511,15 @@ export const tableReducer = (state = {}, action) => {
         ? searchFromState?.defaultValue
         : searchFromState?.value;
 
+      const nextPageSize = paginationFromState.pageSize || pageSize;
+      const nextTotalItems = totalItems || updatedData.length;
+      const nextPage = page || 1;
       const pagination = get(state, 'view.pagination')
         ? {
-            totalItems: { $set: totalItems || updatedData.length },
-            pageSize: { $set: paginationFromState.pageSize || pageSize },
+            totalItems: { $set: nextTotalItems },
+            pageSize: { $set: nextPageSize },
             pageSizes: { $set: pageSizes },
+            page: { $set: nextPage },
           }
         : {};
 
@@ -525,6 +529,20 @@ export const tableReducer = (state = {}, action) => {
       const selectedAdvancedFilters = advancedFilters.filter((advFilter) =>
         selectedAdvancedFilterIds.includes(advFilter.filterId)
       );
+
+      const rowActionsFromState = get(state, 'view.table.rowActions', []);
+      const rowActionsFromProps = view?.table?.rowActions ?? [];
+      const rowActions = rowActionsFromState
+        // filter actions from state that have been removed from props
+        .filter(({ rowId }) => rowActionsFromProps.some((row) => row.rowId === rowId))
+        .concat(
+          // add actions from props that aren't in state
+          rowActionsFromProps.filter(({ rowId }) =>
+            rowActionsFromState.every((row) => row.rowId !== rowId)
+          )
+        );
+
+      const activeBar = view?.toolbar?.activeBar;
       return update(state, {
         data: {
           $set: updatedData,
@@ -537,6 +555,9 @@ export const tableReducer = (state = {}, action) => {
           toolbar: {
             initialDefaultSearch: { $set: initialDefaultSearch },
             search: { $set: searchFromState },
+            activeBar: {
+              $set: activeBar,
+            },
           },
           table: {
             ordering: { $set: ordering },
@@ -556,6 +577,9 @@ export const tableReducer = (state = {}, action) => {
                 rowCount: get(state, 'view.table.loadingState.rowCount') || 0,
                 columnCount: get(state, 'view.table.loadingState.columnCount') || 0,
               },
+            },
+            rowActions: {
+              $set: rowActions,
             },
             // Reset the selection to the previous values
             selectedIds: {
@@ -679,11 +703,27 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_MULTI_SORT_TOGGLE_MODAL: {
+      const { columnId } = action.payload;
+      const { sort: currentSort } = state.view.table;
+
+      const arrayifiedSort = Array.isArray(currentSort)
+        ? currentSort
+        : currentSort !== undefined
+        ? [currentSort]
+        : [];
+
+      const alreadySortedBy = arrayifiedSort.some((by) => by.columnId === columnId);
+
       return update(state, {
         view: {
           table: {
             showMultiSortModal: {
               $set: !state.view.table.showMultiSortModal,
+            },
+            multiSortModal: {
+              $set: {
+                anticipatedColumn: !alreadySortedBy ? { columnId, direction: 'ASC' } : undefined,
+              },
             },
           },
         },
