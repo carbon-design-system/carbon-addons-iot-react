@@ -71,7 +71,6 @@ describe('SuiteHeader', () => {
   });
 
   it('should be selectable with testId', () => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
     render(
       <SuiteHeader
         {...commonProps}
@@ -93,14 +92,6 @@ describe('SuiteHeader', () => {
         testId="suite_header"
       />
     );
-    expect(console.error).toHaveBeenCalledWith(
-      expect.stringContaining(
-        'Warning: A future version of React will block javascript: URLs as a security precaution.'
-      ),
-      `"javascript:void(0)"`,
-      expect.stringContaining('SuiteHeader')
-    );
-    console.error.mockReset();
     expect(screen.getByTestId('suite_header')).toBeDefined();
     expect(screen.getByTestId('suite_header-name')).toBeDefined();
     expect(screen.getByTestId('suite_header-menu-button')).toBeDefined();

@@ -603,28 +603,9 @@ describe('TableHead', () => {
       ];
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
-      jest.spyOn(console, 'error').mockImplementation(() => {});
       const { container, rerender } = render(<TableHead {...myProps} />, {
         container: document.body.appendChild(document.createElement('table')),
       });
-      // fallbacks to clean up output for old options. these can be removed
-      // when we move to new props in v3
-      expect(console.error).toHaveBeenCalledWith(
-        expect.stringContaining(
-          'Failed prop type: The prop `options.wrapCellText` is marked as required in `TableHead`'
-        )
-      );
-      expect(console.error).toHaveBeenCalledWith(
-        expect.stringContaining(
-          'Failed prop type: The prop `wrapText` is marked as required in `TableCellRenderer`'
-        )
-      );
-      expect(console.error).toHaveBeenCalledWith(
-        expect.stringContaining(
-          'Failed prop type: The prop `truncateCellText` is marked as required in `TableCellRenderer`'
-        )
-      );
-      console.error.mockReset();
 
       myProps.tableState = {
         ...myProps.tableState,
