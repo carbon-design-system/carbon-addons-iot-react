@@ -1,8 +1,12 @@
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/typography';
+@use '../../globals/layout';
 
-.#{$iot-prefix}--tile-catalog {
+.#{vars.$iot-prefix}--tile-catalog {
   &--persistent-search {
-    margin-bottom: $spacing-05;
+    margin-bottom: spacing.$spacing-05;
   }
   &--canvas-container {
     display: flex;
@@ -11,73 +15,73 @@
   &--tile-canvas {
     flex: 1;
     &--featured-tile-title {
-      @include type-style('productive-heading-01');
+      @include typography.type-style('productive-heading-01');
     }
     &--featured-tile {
-      background: $ui-03;
+      background: theme.$ui-03;
       height: 17rem;
-      margin-bottom: $spacing-05;
-      margin-top: $spacing-05;
+      margin-bottom: spacing.$spacing-05;
+      margin-top: spacing.$spacing-05;
     }
     &--header {
       display: flex;
       align-items: center;
-      padding-bottom: $spacing-05;
+      padding-bottom: spacing.$spacing-05;
       justify-content: flex-end;
       &--title {
-        @include type-style('productive-heading-01');
+        @include typography.type-style('productive-heading-01');
         flex: 1;
       }
 
-      .#{$prefix}--toolbar-action {
+      .#{vars.$prefix}--toolbar-action {
         height: 2.5rem;
         width: 2.5rem;
-        margin-right: $spacing-05;
+        margin-right: spacing.$spacing-05;
       }
 
       &--search {
         flex: 1;
-        height: rem(40px);
-        width: rem(40px);
-        .#{$prefix}--search {
+        height: layout.rem(40px);
+        width: layout.rem(40px);
+        .#{vars.$prefix}--search {
           svg {
             height: 2.5rem;
             width: 2.5rem;
-            padding: $spacing-04;
+            padding: spacing.$spacing-04;
           }
         }
       }
 
       &--select {
-        .#{$prefix}--label {
+        .#{vars.$prefix}--label {
           margin-bottom: 0;
         }
       }
     }
 
     &--content {
-      .#{$prefix}--grid {
+      .#{vars.$prefix}--grid {
         padding: 0;
       }
-      .#{$prefix}--row {
-        padding-bottom: $spacing-05;
-        margin-left: -$spacing-03;
-        margin-right: -$spacing-03;
+      .#{vars.$prefix}--row {
+        padding-bottom: spacing.$spacing-05;
+        margin-left: -(spacing.$spacing-03);
+        margin-right: -(spacing.$spacing-03);
       }
-      .#{$prefix}--col {
-        padding-left: $spacing-03;
-        padding-right: $spacing-03;
+      .#{vars.$prefix}--col {
+        padding-left: spacing.$spacing-03;
+        padding-right: spacing.$spacing-03;
       }
     }
 
     &--placeholder-tile {
-      background: $ui-03;
-      height: rem(224px);
+      background: theme.$ui-03;
+      height: layout.rem(224px);
     }
 
     &--no-placeholder-tile {
-      background: $ui-02;
-      height: rem(224px);
+      background: theme.$ui-02;
+      height: layout.rem(224px);
     }
 
     &--bottom {
@@ -86,54 +90,54 @@
     }
   }
   &--filter {
-    margin-left: $spacing-05;
+    margin-left: spacing.$spacing-05;
 
-    width: rem(212px);
+    width: layout.rem(212px);
     &--title {
-      @include type-style('productive-heading-01');
-      margin-bottom: $spacing-05;
+      @include typography.type-style('productive-heading-01');
+      margin-bottom: spacing.$spacing-05;
     }
     &--content {
-      background: $ui-01;
+      background: theme.$ui-01;
 
       &--select {
-        width: rem(212px);
-        padding: $spacing-05;
+        width: layout.rem(212px);
+        padding: spacing.$spacing-05;
 
-        .#{$prefix}--select-input {
-          width: rem(180px);
-          background: $ui-02;
+        .#{vars.$prefix}--select-input {
+          width: layout.rem(180px);
+          background: theme.$ui-02;
         }
       }
 
       &--checkbox {
-        border-top: 1px solid $ui-03;
-        padding: $spacing-05;
+        border-top: 1px solid theme.$ui-03;
+        padding: spacing.$spacing-05;
       }
 
-      .#{$prefix}--link {
-        padding: $spacing-05;
-        color: $interactive-04;
+      .#{vars.$prefix}--link {
+        padding: spacing.$spacing-05;
+        color: theme.$interactive-04;
       }
     }
   }
 }
 
 .sample-tile {
-  background: $ui-01;
-  padding: $spacing-05;
-  height: rem(224px);
+  background: theme.$ui-01;
+  padding: spacing.$spacing-05;
+  height: layout.rem(224px);
   &--title {
-    @include type-style('productive-heading-01');
-    padding-bottom: $spacing-03;
+    @include typography.type-style('productive-heading-01');
+    padding-bottom: spacing.$spacing-03;
   }
 
   &--content {
-    @include type-style('label-01');
+    @include typography.type-style('label-01');
   }
 }
 
-.#{$iot-prefix}--tile-catalog--grid-container {
+.#{vars.$iot-prefix}--tile-catalog--grid-container {
   display: grid;
   grid-template-columns: var(--columns);
   gap: 1rem;

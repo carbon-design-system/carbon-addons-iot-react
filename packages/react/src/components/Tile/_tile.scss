@@ -1,1 +1,4 @@
-@import '~carbon-components/scss/components/tile/tile';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/tile';

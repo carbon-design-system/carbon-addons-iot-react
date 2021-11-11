@@ -1,7 +1,8 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}--sample-tile {
+.#{vars.$iot-prefix}--sample-tile {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -9,7 +10,7 @@
   height: 100%;
   overflow: hidden;
 }
-.#{$iot-prefix}--sample-tile-icon {
+.#{vars.$iot-prefix}--sample-tile-icon {
   background-color: #dfe3e6;
   height: 100px;
   width: 100px;
@@ -21,28 +22,28 @@
   justify-content: center;
 }
 
-.#{$iot-prefix}--sample-tile-title {
-  color: $link-01;
+.#{vars.$iot-prefix}--sample-tile-title {
+  color: theme.$link-01;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;
-  padding-bottom: $spacing-03;
+  padding-bottom: spacing.$spacing-03;
   max-width: calc(100vw - 20rem);
-  @media screen and (min-width: $two-pane) {
+  @media screen and (min-width: vars.$two-pane) {
     max-width: calc(100vw / 2 - 15rem);
   }
-  @media screen and (min-width: $three-pane) {
+  @media screen and (min-width: vars.$three-pane) {
     max-width: calc(100vw / 3 - 15rem);
   }
 }
 
-.#{$iot-prefix}--sample-tile-contents {
+.#{vars.$iot-prefix}--sample-tile-contents {
   display: flex;
   flex-flow: column nowrap;
-  padding: 0 $spacing-05;
+  padding: 0 spacing.$spacing-05;
   align-self: flex-start;
 }
 
-.#{$iot-prefix}--sample-tile-description {
-  font-size: $typography-01;
+.#{vars.$iot-prefix}--sample-tile-description {
+  font-size: vars.$typography-01;
 }

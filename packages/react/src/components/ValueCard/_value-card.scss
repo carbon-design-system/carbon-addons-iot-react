@@ -1,8 +1,10 @@
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}--value-card {
+.#{vars.$iot-prefix}--value-card {
   &__vertical {
-    .#{$iot-prefix}--card--content {
+    .#{vars.$iot-prefix}--card--content {
       overflow-x: auto;
     }
   }
@@ -13,7 +15,7 @@
 
     &--vertical {
       flex-direction: column;
-      padding: 0 0 $spacing-05;
+      padding: 0 0 spacing.$spacing-05;
     }
   }
 }

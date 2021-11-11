@@ -1,13 +1,14 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}--tile-catalog {
+.#{vars.$iot-prefix}--tile-catalog {
   display: flex;
   flex-flow: column nowrap;
 }
 
-.#{$iot-prefix}--tile-catalog--header {
-  background: $ui-02;
+.#{vars.$iot-prefix}--tile-catalog--header {
+  background: theme.$ui-02;
 
   display: flex;
   height: 3rem;
@@ -27,24 +28,24 @@
   }
 }
 
-.#{$iot-prefix}--tile-catalog--empty-tile {
+.#{vars.$iot-prefix}--tile-catalog--empty-tile {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   > * {
-    padding-bottom: $spacing-03;
+    padding-bottom: spacing.$spacing-03;
   }
 }
 
 html[dir='rtl'] {
-  .#{$prefix}--tile--selectable {
-    padding-left: $spacing-09;
-    padding-right: $spacing-05;
+  .#{vars.$prefix}--tile--selectable {
+    padding-left: spacing.$spacing-09;
+    padding-right: spacing.$spacing-05;
   }
 
-  .#{$prefix}--tile__checkmark {
+  .#{vars.$prefix}--tile__checkmark {
     right: initial;
-    left: $spacing-05;
+    left: spacing.$spacing-05;
   }
 }

@@ -1,5 +1,9 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/typography';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/colors';
+@use "../../globals/layout";
+@use "../../globals/motion";
 
 // StatefulTileGallery extra content
 .extra-content {
@@ -7,26 +11,26 @@
   flex-grow: 1;
   justify-content: flex-end;
   align-items: center;
-  .#{$prefix}--search-input {
-    height: $spacing-08;
+  .#{vars.$prefix}--search-input {
+    height: spacing.$spacing-08;
     font-size: 0.875rem;
   }
   & > * {
-    margin-left: $spacing-05;
-    margin-right: $spacing-05;
+    margin-left: spacing.$spacing-05;
+    margin-right: spacing.$spacing-05;
   }
-  .#{$prefix}--form-item {
+  .#{vars.$prefix}--form-item {
     flex-grow: 0;
     flex-basis: 20rem;
   }
-  .#{$prefix}--content-switcher {
+  .#{vars.$prefix}--content-switcher {
     width: 10rem;
     display: flex;
-    margin-left: $spacing-06;
-    margin-right: $spacing-06;
+    margin-left: spacing.$spacing-06;
+    margin-right: spacing.$spacing-06;
   }
-  .#{$prefix}--content-switcher-btn {
-    padding: 0 $spacing-05;
+  .#{vars.$prefix}--content-switcher-btn {
+    padding: 0 spacing.$spacing-05;
     width: 5rem;
   }
 }
@@ -34,26 +38,26 @@
 // TileGallery component
 .tile-gallery {
   &--section {
-    .#{$prefix}--accordion__title {
-      font-size: $spacing-05;
+    .#{vars.$prefix}--accordion__title {
+      font-size: spacing.$spacing-05;
       font-weight: bold;
     }
-    .#{$prefix}--accordion__content {
+    .#{vars.$prefix}--accordion__content {
       padding-left: 0;
     }
-    .#{$prefix}--accordion__item:last-child {
+    .#{vars.$prefix}--accordion__item:last-child {
       border-bottom: none;
     }
-    .#{$prefix}--accordion__item {
+    .#{vars.$prefix}--accordion__item {
       border-top: none;
     }
-    .#{$prefix}--accordion__heading {
-      border-bottom: rem(1px) solid $ui-03;
+    .#{vars.$prefix}--accordion__heading {
+      border-bottom: layout.rem(1px) solid theme.$ui-03;
     }
 
     &--items {
       display: flex;
-      padding-bottom: $spacing-07;
+      padding-bottom: spacing.$spacing-07;
       flex-flow: row wrap;
     }
   }
@@ -61,28 +65,28 @@
 
 .tile-gallery-item {
   text-decoration: none;
-  margin-right: $spacing-05;
+  margin-right: spacing.$spacing-05;
   flex-basis: 30%;
-  height: rem(128px);
-  min-width: rem(256px);
-  width: rem(256px);
+  height: layout.rem(128px);
+  min-width: layout.rem(256px);
+  width: layout.rem(256px);
   position: relative;
-  margin-top: $spacing-05;
+  margin-top: spacing.$spacing-05;
   box-shadow: none;
-  border: solid rem(1px) $ui-background;
+  border: solid layout.rem(1px) theme.$ui-background;
 
   .options {
     flex: 0;
-    color: $text-01;
-    .#{$prefix}--overflow-menu {
-      height: $spacing-07;
-      margin-right: -$spacing-03;
+    color: theme.$text-01;
+    .#{vars.$prefix}--overflow-menu {
+      height: spacing.$spacing-07;
+      margin-right: -(spacing.$spacing-03);
     }
-    .#{$prefix}--inline-loading {
+    .#{vars.$prefix}--inline-loading {
       flex-direction: row-reverse;
-      margin-left: $spacing-03;
+      margin-left: spacing.$spacing-03;
     }
-    .#{$prefix}--inline-loading__text {
+    .#{vars.$prefix}--inline-loading__text {
       margin-bottom: 0;
       min-width: 3.5rem;
     }
@@ -93,26 +97,26 @@
     overflow-x: hidden;
   }
   small {
-    color: $text-01;
+    color: theme.$text-01;
   }
   .title-card {
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: $carbon--black-100;
+    color: colors.$black-100;
     font-weight: bold;
     flex: 1;
-    padding-right: $spacing-05;
+    padding-right: spacing.$spacing-05;
     overflow-x: hidden;
   }
-  &.#{$prefix}--tile--clickable:hover,
+  &.#{vars.$prefix}--tile--clickable:hover,
   .tile-list-title:hover {
-    background: $carbon--white-0;
+    background: colors.$white-0;
   }
   .overflow-menu {
-    margin-top: -$spacing-03;
+    margin-top: -(spacing.$spacing-03);
     margin-left: auto;
   }
-  &.#{$prefix}--link:hover {
+  &.#{vars.$prefix}--link:hover {
     text-decoration: none;
   }
 
@@ -121,22 +125,22 @@
     flex: 0 0 31.25rem;
     box-shadow: none;
     border-bottom: 0.0625rem solid rgb(223, 227, 230);
-    background: $ui-01;
+    background: theme.$ui-01;
     cursor: pointer;
     pointer-events: auto;
     touch-action: auto;
 
     &:hover {
-      background: $ui-03;
+      background: theme.$ui-03;
       border: none;
     }
     .title-card {
-      margin-left: $spacing-05;
+      margin-left: spacing.$spacing-05;
     }
     .description-card {
       span {
-        padding-left: $spacing-07;
-        color: $ui-04;
+        padding-left: spacing.$spacing-07;
+        color: theme.$ui-04;
       }
     }
   }
@@ -151,7 +155,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: $ui-02;
+      background: theme.$ui-02;
       margin-bottom: 0.9375rem;
       position: relative;
       width: 100%;
@@ -159,7 +163,7 @@
     }
     .thumbnail {
       display: block;
-      padding-left: rem(5px);
+      padding-left: layout.rem(5px);
     }
     .description-card {
       position: absolute;
@@ -169,13 +173,13 @@
       transform: translate(-50%, -50%);
       width: 100%;
       height: 100%;
-      transition: $duration--slow-01 ease;
+      transition: motion.$duration-slow-01 ease;
       opacity: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       span {
-        color: $ui-background;
+        color: theme.$ui-background;
       }
     }
     .description-card:hover {
@@ -183,9 +187,9 @@
       opacity: 1;
     }
     .title-card {
-      margin-left: $spacing-03;
+      margin-left: spacing.$spacing-03;
       width: 11rem;
-      margin-top: $spacing-01;
+      margin-top: spacing.$spacing-01;
     }
   }
   .content-container {

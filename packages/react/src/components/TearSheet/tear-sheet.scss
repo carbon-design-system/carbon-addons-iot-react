@@ -1,5 +1,10 @@
-.#{$iot-prefix}--tear-sheet {
-  background-color: $ui-01;
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/typography';
+
+.#{vars.$iot-prefix}--tear-sheet {
+  background-color: theme.$ui-01;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -9,24 +14,24 @@
   }
 
   &--header {
-    padding: $spacing-06 $spacing-11 $spacing-06 $spacing-07;
-    border-bottom: 1px solid $selected-ui;
+    padding: spacing.$spacing-06 spacing.$spacing-11 spacing.$spacing-06 spacing.$spacing-07;
+    border-bottom: 1px solid theme.$selected-ui;
 
     [dir='rtl'] & {
-      padding: $spacing-06 $spacing-07 $spacing-06 $spacing-11;
+      padding: spacing.$spacing-06 spacing.$spacing-07 spacing.$spacing-06 spacing.$spacing-11;
     }
 
     h1 {
-      margin-bottom: $spacing-03;
+      margin-bottom: spacing.$spacing-03;
     }
     &__extraContent {
-      padding-bottom: $spacing-03;
+      padding-bottom: spacing.$spacing-03;
     }
     &--description {
-      @include type-style('body-long-01');
-      color: $text-02;
+      @include typography.type-style('body-long-01');
+      color: theme.$text-02;
     }
-    .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
+    .#{vars.$prefix}--btn.#{vars.$prefix}--btn--icon-only.#{vars.$prefix}--tooltip__trigger {
       position: absolute;
       top: 0;
       right: 0;

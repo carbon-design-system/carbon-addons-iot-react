@@ -1,1 +1,4 @@
-@import '~carbon-components/scss/components/time-picker/time-picker';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/time-picker';
