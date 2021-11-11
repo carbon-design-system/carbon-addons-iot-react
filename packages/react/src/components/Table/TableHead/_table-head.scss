@@ -3,10 +3,10 @@
 @use '../../../globals/vars';
 @use '../../../globals/colors';
 @use '../../../globals/mixins';
-@use 'column-resize';
-@use 'ColumnHeaderRow/column-header-row';
-@use 'FilterHeaderRow/filter-header-row';
-@use 'ColumnGrouping/column-grouping';
+@use './column-resize';
+@use './ColumnHeaderRow/column-header-row';
+@use './FilterHeaderRow/filter-header-row';
+@use './ColumnGrouping/column-grouping';
 
 .#{vars.$prefix}--data-table {
   th {

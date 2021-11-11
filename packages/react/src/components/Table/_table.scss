@@ -3,12 +3,12 @@
 @use '../../globals/vars';
 @use "../../globals/colors";
 @use "../../globals/mixins";
-@use 'TableHead/table-head';
-@use 'TableFoot/table-foot';
-@use 'TableSkeletonWithHeaders/table-skeleton-with-headers';
-@use 'TableCellRenderer/table-cell-renderer';
-@use 'TableDetailWizard/table-detail-wizard';
-@use 'TableMultiSortModal/table-multi-sort-modal';
+@use './TableHead/table-head';
+@use './TableFoot/table-foot';
+@use './TableSkeletonWithHeaders/table-skeleton-with-headers';
+@use './TableCellRenderer/table-cell-renderer';
+@use './TableDetailWizard/table-detail-wizard';
+@use './TableMultiSortModal/table-multi-sort-modal';
 
 table.#{vars.$prefix}--side-nav--data-table {
   white-space: nowrap;

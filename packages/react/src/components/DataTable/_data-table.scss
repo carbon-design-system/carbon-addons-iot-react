@@ -2,6 +2,10 @@
 @use '../../globals/spacing';
 @use '../../globals/vars';
 @use '~@carbon/styles/scss/components/data-table';
+@use '~@carbon/styles/scss/components/data-table/action';
+@use '~@carbon/styles/scss/components/data-table/expandable';
+@use '~@carbon/styles/scss/components/data-table/skeleton';
+@use '~@carbon/styles/scss/components/data-table/sort';
 
 .table-header-label {
   &-start {

@@ -22,51 +22,55 @@
 // 🍕 Carbon Components
 //-------------------------
 
+@use 'components/Accordion/accordion';
+@use 'components/Breadcrumb/breadcrumb';
 @use 'components/Checkbox/checkbox';
-@use 'components/CopyButton/copy-button';
-@use 'components/FileUploader/file-uploader';
+@use 'components/CodeSnippet/code-snippet';
 @use 'components/ComboBox/combo-box';
+@use 'components/ContentSwitcher/content-switcher';
+@use 'components/CopyButton/copy-button';
+@use 'components/DataTable/data-table';
+@use 'components/DatePicker/date-picker';
+@use 'components/Dropdown/dropdown';
+@use 'components/FileUploader/file-uploader';
+@use 'components/Form/form';
+@use 'components/InlineLoading/inline-loading';
+@use 'components/Link/link';
+@use 'components/List/carbon-list';
+@use 'components/ListBox/list-box';
+@use 'components/Loading/loading';
+@use 'components/Modal/modal';
+@use 'components/Menu/menu';
+@use 'components/MultiSelect/multi-select';
+@use 'components/Notification/actionable-notification';
+@use 'components/Notification/inline-notification';
+@use 'components/Notification/toast-notification';
 @use 'components/NumberInput/number-input';
+@use 'components/OverflowMenu/overflow-menu';
+@use 'components/Pagination/pagination';
+@use 'components/PaginationNav/pagination-nav';
+@use 'components/Popover/popover';
+@use 'components/ProgressBar/progress-bar';
 @use 'components/RadioButton/radio-button';
 @use 'components/Search/search';
 @use 'components/Select/select';
-@use 'components/TextInput/text-input';
-@use 'components/TextArea/text-area';
-@use 'components/Toggle/toggle';
-@use 'components/Form/form';
-@use 'components/Link/link';
-@use 'components/ListBox/list-box';
-@use 'components/DataTable/data-table';
+@use 'components/Skeleton/skeleton';
+@use 'components/Slider/slider';
+@use 'components/Stack/stack';
 @use 'components/StructuredList/structured-list';
-@use 'components/CodeSnippet/code-snippet';
-@use 'components/OverflowMenu/overflow-menu';
-@use 'components/ContentSwitcher/content-switcher';
-@use 'components/DatePicker/date-picker';
-@use 'components/Dropdown/dropdown';
-@use 'components/Loading/loading';
-@use 'components/Modal/modal';
-@use 'components/MultiSelect/multi-select';
-@use 'components/Notification/inline-notification';
-@use 'components/Notification/toast-notification';
-@use 'components/Tooltip/tooltip';
 @use 'components/Tabs/tabs';
 @use 'components/Tag/tag';
-@use 'components/Pagination/pagination';
-@use 'components/Accordion/accordion';
-@use 'components/Breadcrumb/breadcrumb';
-@use 'components/Toolbar/toolbar';
-@use 'components/TimePicker/time-picker';
-@use 'components/Slider/slider';
+@use 'components/TextArea/text-area';
+@use 'components/TextInput/text-input';
 @use 'components/Tile/tile';
-@use 'components/Skeleton/skeleton';
-@use 'components/InlineLoading/inline-loading';
-@use 'components/PaginationNav/pagination-nav';
+@use 'components/TimePicker/time-picker';
+@use 'components/Toggle/toggle';
+@use 'components/Toolbar/toolbar';
+@use 'components/Tooltip/tooltip';
 @use 'components/UIShell/ui-shell';
-@use 'components/List/carbon-list';
-@use 'components/Table/TableBody/TableBodyLoadMoreRow/table-body-load-more-row';
-// //-------------------------------------
-// // 🔬 Experimental
-// //-------------------------------------
+//-------------------------------------
+// 🔬 Experimental
+//-------------------------------------
 @use 'components/ColorDropdown/color-dropdown';
 @use 'components/FlyoutMenu/flyout-menu';
 @use 'components/HotspotEditorModal/HotspotEditorTooltipTab/hotspot-editor-tooltip-tab';
@@ -74,20 +78,21 @@
 @use 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker';
 @use 'components/SimpleIconDropdown/simple-icon-dropdown';
 @use 'components/RuleBuilder/rule-builder';
-// //-------------------------------------
-// // carbon-addons-iot-react components
-// //-------------------------------------
+//-------------------------------------
+// carbon-addons-iot-react components
+//-------------------------------------
 @use 'components/AddCard/add-card';
 @use 'components/BarChartCard/bar-chart-card';
 @use 'components/Button/button';
 @use 'components/Card/card';
+@use 'components/CardCodeEditor/card-code-editor';
 @use 'components/CardEditor/card-editor';
 @use 'components/CardEditor/CardEditForm/card-edit-form';
+@use 'components/ComboChartCard/combo-chart-card';
 @use 'components/ComposedModal/composed-modal';
 @use 'components/ComposedStructuredList/composed-structured-list';
-@use 'components/CardCodeEditor/card-code-editor';
-@use 'components/Dashboard/dashboard';
 @use 'components/Dashboard/dashboard-grid';
+@use 'components/Dashboard/dashboard';
 @use 'components/DashboardEditor/dashboard-editor';
 @use 'components/DateTimePicker/date-time-picker';
 @use 'components/DateTimePicker/date-time-pickerv2';
@@ -99,21 +104,19 @@
 @use 'components/HotspotEditorModal/HotspotTextStyleTab/hotspot-text-style-tab';
 @use 'components/IconDropdown/icon-dropdown';
 @use 'components/IconSwitch/icon-switch';
+@use 'components/ImageCard/hotspot-content';
+@use 'components/ImageCard/hotspot';
 @use 'components/ImageCard/image-card';
 @use 'components/ImageCard/image-uploader';
-@use 'components/ImageCard/hotspot';
-@use 'components/ImageCard/hotspot-content';
 @use 'components/ImageGalleryModal/image-gallery-modal';
 @use 'components/ImageGalleryModal/image-tile';
-@use 'components/ListCard/listCard';
-@use 'components/List/list';
-@use 'components/ListBuilder/list-builder';
-@use 'components/TearSheet/tear-sheet-wrapper';
-@use 'components/TearSheet/tear-sheet';
-@use 'components/List/ListItem/list-item';
-@use 'components/List/ListHeader/list-header';
-@use 'components/MapCard/map-card';
 @use 'components/List/HierarchyList/hierarchy-list';
+@use 'components/List/list';
+@use 'components/List/ListHeader/list-header';
+@use 'components/List/ListItem/list-item';
+@use 'components/ListBuilder/list-builder';
+@use 'components/ListCard/listCard';
+@use 'components/MapCard/map-card';
 @use 'components/MenuButton/menu-button';
 @use 'components/PageTitleBar/page-title-bar';
 @use 'components/PageWizard/page-wizard';
@@ -124,30 +127,32 @@
 @use 'components/SideNav/side-nav';
 @use 'components/SimplePagination/simple-pagination';
 @use 'components/SuiteHeader/suite-header';
-@use 'components/Table/TableToolbar/table-toolbar';
 @use 'components/Table/pagination' as table-pagination;
-@use 'components/Table/TableBody/RowActionsCell/row-actions-cell';
 @use 'components/Table/table';
-@use 'components/Table/TableViewDropdown/table-view-dropdown';
-@use 'components/Table/TableSaveViewModal/table-save-view-modal';
-@use 'components/Table/TableManageViewsModal/table-manage-views-modal';
+@use 'components/Table/TableBody/RowActionsCell/row-actions-cell';
+@use 'components/Table/TableBody/TableBodyLoadMoreRow/table-body-load-more-row';
 @use 'components/Table/TableManageViewsModal/table-manage-views-list';
-@use 'components/TableCard/threshold-icon';
+@use 'components/Table/TableManageViewsModal/table-manage-views-modal';
+@use 'components/Table/TableSaveViewModal/table-save-view-modal';
+@use 'components/Table/TableToolbar/table-toolbar';
+@use 'components/Table/TableViewDropdown/table-view-dropdown';
 @use 'components/TableCard/table-card';
-@use 'components/TileCatalogNew/tile-catalog' as tile-catalog-new;
+@use 'components/TableCard/threshold-icon';
+@use 'components/TearSheet/tear-sheet-wrapper';
+@use 'components/TearSheet/tear-sheet';
+@use 'components/TileCatalog/catalog-content';
 @use 'components/TileCatalog/tile-catalog';
 @use 'components/TileCatalog/tile-group';
-@use 'components/TileCatalog/catalog-content';
+@use 'components/TileCatalogNew/tile-catalog' as tile-catalog-new;
 @use 'components/TileGallery/tile-gallery';
 @use 'components/TimePickerSpinner/time-picker-spinner';
 @use 'components/TimeSeriesCard/time-series-card';
-@use 'components/ValueCard/value-card';
 @use 'components/ValueCard/attribute';
 @use 'components/ValueCard/unit-renderer';
+@use 'components/ValueCard/value-card';
 @use 'components/ValueCard/value-renderer';
 @use 'components/WizardInline/wizard-inline';
 @use 'components/WizardModal/wizard-modal';
-@use 'components/ComboChartCard/combo-chart-card';
 
 //-------------------------
 // ⚠️ Manage deprecations

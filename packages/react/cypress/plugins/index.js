@@ -87,6 +87,14 @@ const webpackConfig = {
           },
         ],
       },
+      {
+        test: /\.(woff|woff2|ttf|eot)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   },
   resolve: {
