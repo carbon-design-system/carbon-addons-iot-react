@@ -67,6 +67,8 @@ describe('StatefulTable', () => {
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}'
     );
     cy.get('tr').should('have.length', 5);
+    // add back on blur tests when https://github.com/carbon-design-system/carbon/issues/10077
+    // is resolved.
     // cy.findByRole('searchbox').trigger('blur');
     // cy.get('tr').should('have.length', 101);
   });
