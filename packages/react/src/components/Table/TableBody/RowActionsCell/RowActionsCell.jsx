@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, OverflowMenu, OverflowMenuItem, Loading } from 'carbon-components-react';
+import { DataTable, Loading } from 'carbon-components-react';
 import classnames from 'classnames';
 import omit from 'lodash/omit';
 
@@ -8,6 +8,8 @@ import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import icons from '../../../../utils/bundledIcons';
+import { OverflowMenu } from '../../../OverflowMenu';
+import { OverflowMenuItem } from '../../../OverflowMenuItem';
 
 import RowActionsError from './RowActionsError';
 
@@ -183,6 +185,7 @@ class RowActionsCell extends React.Component {
                     onClose={this.handleClose}
                     className={`${iotPrefix}--row-actions-cell--overflow-menu`}
                     selectorPrimaryFocus={`.${iotPrefix}--action-overflow-item--initialFocus`}
+                    useAutoPositioning
                   >
                     {overflowActions.map((action, actionIndex) => (
                       <OverflowMenuItem

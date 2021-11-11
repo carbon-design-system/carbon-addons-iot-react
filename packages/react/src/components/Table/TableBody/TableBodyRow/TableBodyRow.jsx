@@ -60,6 +60,8 @@ const propTypes = {
     shouldExpandOnRowClick: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
+    /** use white-space: pre; css when true */
+    preserveCellWhiteSpace: PropTypes.bool,
   }),
 
   /** The unique row id */
@@ -398,6 +400,7 @@ const TableBodyRow = ({
     shouldExpandOnRowClick,
     wrapCellText,
     truncateCellText,
+    preserveCellWhiteSpace,
   },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
@@ -510,6 +513,7 @@ const TableBodyRow = ({
                   columnId={col.columnId}
                   rowId={id}
                   row={values}
+                  preserveCellWhiteSpace={preserveCellWhiteSpace}
                 >
                   {values[col.columnId]}
                 </TableCellRenderer>

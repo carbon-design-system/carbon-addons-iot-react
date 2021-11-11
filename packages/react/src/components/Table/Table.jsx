@@ -137,6 +137,8 @@ const propTypes = {
      * alwaysTruncate - Always truncate if needed for all table column configurations
      */
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
+    /** use white-space: pre; css when true */
+    preserveCellWhiteSpace: PropTypes.bool,
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -361,6 +363,7 @@ export const defaultProps = (baseProps) => ({
     shouldLazyRender: false,
     shouldExpandOnRowClick: false,
     wrapCellText: 'always',
+    preserveCellWhiteSpace: false,
   },
   size: undefined,
   view: {
@@ -1042,7 +1045,8 @@ const Table = (props) => {
                   'hasRowActions',
                   'hasRowNesting',
                   'shouldExpandOnRowClick',
-                  'shouldLazyRender'
+                  'shouldLazyRender',
+                  'preserveCellWhiteSpace'
                 )}
                 hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}

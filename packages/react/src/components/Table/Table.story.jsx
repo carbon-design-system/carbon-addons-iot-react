@@ -1470,6 +1470,19 @@ export const BasicTableWithFullRowEditExample = () => {
     />
   );
 
+  const hasMultiSort = boolean(
+    'Enable MultiSort to sort the table my multiple columns, (options.hasMultiSort)',
+    false
+  );
+
+  const sortedData = hasMultiSort
+    ? currentData.sort(
+        firstBy((row) => row.values.select).thenBy((row) => {
+          return row.values.string;
+        })
+      )
+    : getSortedData(currentData, 'select', 'ASC');
+
   return (
     <div>
       {showToast ? myToast : null}
@@ -1489,9 +1502,24 @@ export const BasicTableWithFullRowEditExample = () => {
           table: {
             rowActions: rowActionsState,
             singleRowEditButtons: saveCancelButtons,
+            sort: hasMultiSort
+              ? [
+                  {
+                    columnId: 'select',
+                    direction: 'ASC',
+                  },
+                  {
+                    columnId: 'string',
+                    direction: 'ASC',
+                  },
+                ]
+              : {
+                  columnId: 'select',
+                  direction: 'ASC',
+                },
           },
         }}
-        data={currentData}
+        data={sortedData}
         actions={{
           table: { onApplyRowAction },
           toolbar: { onShowRowEdit: onShowMultiRowEdit },
@@ -1505,10 +1533,19 @@ export const BasicTableWithFullRowEditExample = () => {
             'Enables row editing for a single row (options.hasSingleRowEdit)',
             true
           ),
+          preserveCellWhiteSpace: boolean(
+            'Adds classes to keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
+            false
+          ),
           hasRowActions: true,
           hasPagination: true,
+          hasMultiSort,
         }}
-        columns={tableColumns.map((i) => ({ ...i, editDataFunction }))}
+        columns={tableColumns.map((i) => ({
+          ...i,
+          isSortable: i.id === 'string' || i.id === 'select',
+          editDataFunction,
+        }))}
       />
     </div>
   );
