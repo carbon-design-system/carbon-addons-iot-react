@@ -264,6 +264,7 @@ export const WithNestedReorder = () => {
           hasDeselection={boolean('hasDeselection', true)}
           hasMultiSelect={boolean('hasMultiSelect', false)}
           isVirtualList={boolean('hasVirtualList', false)}
+          lockedIds={object('lockedIds', ['New York Mets_Jeff McNeil'])}
         />
       </div>
     );

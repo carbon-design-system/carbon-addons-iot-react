@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
-import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
+import { Draggable16, ChevronUp16, ChevronDown16, Locked16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 
@@ -24,6 +24,7 @@ const ListItemPropTypes = {
     EditingStyle.MultipleNesting,
   ]),
   isLargeRow: PropTypes.bool,
+  isLocked: PropTypes.bool,
   isExpandable: PropTypes.bool,
   onExpand: PropTypes.func,
   isSelectable: PropTypes.bool,
@@ -75,6 +76,7 @@ const ListItemPropTypes = {
 const ListItemDefaultProps = {
   editingStyle: null,
   isLargeRow: false,
+  isLocked: false,
   isExpandable: false,
   dragPreviewText: null,
   onExpand: () => {},
@@ -124,6 +126,7 @@ const ListItem = ({
   onItemMoved,
   nestingLevel,
   isCategory,
+  isLocked,
   i18n,
   isDragging,
   selectedItemRef,
@@ -228,7 +231,9 @@ const ListItem = ({
   };
 
   const dragIcon = () =>
-    editingStyle ? (
+    isLocked ? (
+      <Locked16 className={classnames(`${iotPrefix}--list-item--lock`)} />
+    ) : editingStyle ? (
       <div title={mergedI18n.dragHandle}>
         <Draggable16
           className={classnames(`${iotPrefix}--list-item--handle`, {

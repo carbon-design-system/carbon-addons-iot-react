@@ -135,6 +135,8 @@ const propTypes = {
      * alwaysTruncate - Always truncate if needed for all table column configurations
      */
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
+    /** use white-space: pre; css when true */
+    preserveCellWhiteSpace: PropTypes.bool,
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -176,6 +178,10 @@ const propTypes = {
       /** Number of pages rendered in pagination */
       maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
+      /**
+       * Specify the size of the Pagination buttons. Currently supports either `sm`, 'md' (default) or 'lg` as an option.
+       */
+      size: PropTypes.oneOf(['sm', 'md', 'lg']),
     }),
     filters: TableFiltersPropType,
     /** a stripped down version of the RuleBuilderFilterPropType */
@@ -354,6 +360,7 @@ export const defaultProps = (baseProps) => ({
     shouldLazyRender: false,
     shouldExpandOnRowClick: false,
     wrapCellText: 'always',
+    preserveCellWhiteSpace: false,
   },
   size: undefined,
   view: {
@@ -365,6 +372,7 @@ export const defaultProps = (baseProps) => ({
       totalItems: baseProps.data && baseProps.data.length,
       maxPages: 100,
       isItemPerPageHidden: false,
+      size: 'lg',
     },
     filters: [],
     advancedFilters: [],
@@ -1033,7 +1041,8 @@ const Table = (props) => {
                   'hasRowActions',
                   'hasRowNesting',
                   'shouldExpandOnRowClick',
-                  'shouldLazyRender'
+                  'shouldLazyRender',
+                  'preserveCellWhiteSpace'
                 )}
                 hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}
@@ -1120,6 +1129,7 @@ const Table = (props) => {
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}
+          carbonSize={paginationProps.size}
         />
       ) : null}
       {options.hasMultiSort && (

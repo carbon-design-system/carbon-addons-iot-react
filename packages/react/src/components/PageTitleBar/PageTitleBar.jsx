@@ -152,7 +152,7 @@ const PageTitleBar = ({
           const total = breadcrumbDims.height;
           percentComplete = (total - Math.abs(distanceLeftToGo)) / total;
 
-          if (percentComplete < 0.05) {
+          if (percentComplete < 0.06) {
             percentComplete = 0;
           }
 

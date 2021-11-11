@@ -750,6 +750,31 @@ export const WithVirtualList = () => (
 
 WithVirtualList.storyName = 'with virtual list';
 
+export const WithReorderAndLockedRows = () => (
+  <div style={{ width: 400 }}>
+    <List
+      title={text('title', 'NY Yankees')}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key]) => ({
+          id: key,
+          content: { value: key },
+        })
+      )}
+      isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
+      editingStyle={EditingStyle.Single}
+      lockedIds={['DJ LeMahieu', 'Luke Voit']}
+      onItemMoved={action('onItemMoved')}
+      itemWillMove={(args) => {
+        action('itemWillMove')(args);
+        return true;
+      }}
+    />
+  </div>
+);
+
+WithReorderAndLockedRows.storyName = 'with reorder and locked rows';
+
 export const WithReorderAndDropTargetRestrictions = () => {
   const allowedDropIds = object('getAllowedDropIds return value', ['Luke Voit', 'Gleyber Torres']);
   return (

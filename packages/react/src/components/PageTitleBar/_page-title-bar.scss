@@ -152,7 +152,7 @@
     flex-direction: row;
     align-items: center;
     padding: $spacing-04 0 $spacing-02 $spacing-07;
-    max-height: clamp(0rem, $spacing-02, $spacing-08);
+    max-height: $spacing-07;
     white-space: nowrap;
 
     [dir='rtl'] & {
@@ -164,7 +164,6 @@
       overflow: hidden;
       transition: all $duration--fast-02;
       border-bottom: 1px solid transparent;
-      margin-bottom: -1px;
     }
 
     .page-title-bar--dynamic--during &,
@@ -172,6 +171,7 @@
       padding-bottom: $spacing-04;
       transition: all $duration--fast-02;
       z-index: 900;
+      max-height: $spacing-08;
     }
 
     .page-title-bar--condensed-static & {
@@ -179,6 +179,7 @@
       grid-area: title;
       padding-bottom: $spacing-04;
       z-index: 1000;
+      max-height: $spacing-08;
     }
 
     > nav {
