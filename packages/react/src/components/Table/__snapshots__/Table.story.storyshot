@@ -37638,12 +37638,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <tr>
                 <th
-                  align="start"
-                  className="table-header-label-start iot--table-head--table-header"
-                  data-column="string"
-                  data-floating-menu-container={true}
+                  aria-sort="none"
+                  className="table-header-label-start iot--table-head--table-header table-header-sortable"
                   data-testid="table-table-head-column-string"
-                  id="column-string"
                   scope="col"
                   style={
                     Object {
@@ -37651,16 +37648,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     }
                   }
                 >
-                  <span
-                    className="bx--table-header-label"
+                  <button
+                    align="start"
+                    className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                    data-column="string"
+                    data-floating-menu-container={true}
+                    id="column-string"
+                    onClick={[Function]}
                   >
                     <span
-                      className=""
-                      title="String"
+                      className="bx--table-header-label"
                     >
-                      String
+                      <span
+                        className=""
+                        title="String"
+                      >
+                        String
+                      </span>
                     </span>
-                  </span>
+                    <svg
+                      aria-label="Sort rows by this header in ascending order"
+                      className="bx--table-sort__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                      />
+                    </svg>
+                    <svg
+                      aria-label="Sort rows by this header in ascending order"
+                      className="bx--table-sort__icon-unsorted"
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                      />
+                    </svg>
+                  </button>
                 </th>
                 <th
                   align="start"
@@ -37688,12 +37726,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </span>
                 </th>
                 <th
-                  align="start"
-                  className="table-header-label-start iot--table-head--table-header"
-                  data-column="select"
-                  data-floating-menu-container={true}
+                  aria-sort="ascending"
+                  className="table-header-label-start iot--table-head--table-header table-header-sortable"
                   data-testid="table-table-head-column-select"
-                  id="column-select"
                   scope="col"
                   style={
                     Object {
@@ -37701,16 +37736,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     }
                   }
                 >
-                  <span
-                    className="bx--table-header-label"
+                  <button
+                    align="start"
+                    className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active"
+                    data-column="select"
+                    data-floating-menu-container={true}
+                    id="column-select"
+                    onClick={[Function]}
                   >
                     <span
-                      className=""
-                      title="Select"
+                      className="bx--table-header-label"
                     >
-                      Select
+                      <span
+                        className=""
+                        title="Select"
+                      >
+                        Select
+                      </span>
                     </span>
-                  </span>
+                    <svg
+                      aria-label="Sort rows by this header in descending order"
+                      className="bx--table-sort__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                      />
+                    </svg>
+                    <svg
+                      aria-label="Sort rows by this header in descending order"
+                      className="bx--table-sort__icon-unsorted"
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                      />
+                    </svg>
+                  </button>
                 </th>
                 <th
                   align="start"
@@ -37886,7 +37962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-3-string"
@@ -37924,7 +38000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-3-select"
@@ -38134,7 +38210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-33-string"
@@ -38172,7 +38248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-33-select"
@@ -38382,7 +38458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-63-string"
@@ -38420,7 +38496,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-63-select"
@@ -38630,7 +38706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-93-string"
@@ -38668,7 +38744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-93-select"
@@ -38878,7 +38954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-15-string"
@@ -38916,7 +38992,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-15-select"
@@ -39126,7 +39202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-45-string"
@@ -39164,7 +39240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-45-select"
@@ -39374,7 +39450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-75-string"
@@ -39412,7 +39488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-75-select"
@@ -39622,7 +39698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-24-string"
@@ -39660,7 +39736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-24-select"
@@ -39870,7 +39946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-54-string"
@@ -39908,7 +39984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-54-select"
@@ -40118,7 +40194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="string"
                   data-offset={0}
                   id="cell-table-row-84-string"
@@ -40156,7 +40232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </td>
                 <td
                   align="start"
-                  className="data-table-start"
+                  className="data-table-start iot--table__cell--sortable"
                   data-column="select"
                   data-offset={0}
                   id="cell-table-row-84-select"
