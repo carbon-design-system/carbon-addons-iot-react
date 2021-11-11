@@ -1,5 +1,9 @@
-@import '~carbon-components/scss/globals/scss/mixins';
-@import 'vars';
+@use 'theme';
+@use 'vars';
+@forward '@carbon/styles/scss/utilities/box-shadow';
+@forward '@carbon/styles/scss/utilities/focus-outline';
+@forward '@carbon/styles/scss/utilities/text-overflow';
+@forward '@carbon/styles/scss/utilities/z-index';
 
 @mixin multiline-text-overflow($max-lines: 3, $line-height-rem: 1) {
   overflow: hidden;
@@ -19,7 +23,7 @@
 @mixin disabled-icon-button() {
   cursor: not-allowed;
   svg {
-    fill: $disabled;
+    fill: theme.$disabled-02;
   }
   &:active,
   &:focus {
@@ -44,14 +48,14 @@
 }
 
 @mixin list-box-menu-fits-content() {
-  .#{$prefix}--list-box__menu {
+  .#{vars.$prefix}--list-box__menu {
     width: fit-content;
     min-width: 100%;
   }
 }
 
 @mixin list-box-menu-flip-horizontal() {
-  .#{$prefix}--list-box__menu {
+  .#{vars.$prefix}--list-box__menu {
     left: unset;
     right: 0;
     [dir='rtl'] & {

@@ -1,80 +1,153 @@
+@use 'globals/config';
+@use 'globals/theme';
+
+@use "sass:list" as sass-list;
+@use "sass:meta";
+@use 'globals/feature-flags';
+@use 'globals/vars';
+@use 'globals/colors';
+@use 'globals/mixins';
+@use 'globals/layout';
+@use 'globals/spacing';
+@use 'globals/typography';
+@use 'globals/css--reset';
+@use 'globals/css--font-face';
+@use 'globals/css--helpers';
+// this hasn't been converted yet.
+// @use 'globals/css--body';
+@use 'globals/grid';
+@use 'globals/charts';
+
 //-------------------------
-// 🌍 Global
+// 🍕 Carbon Components
 //-------------------------
 
-/// If true, includes font face mixins in `_css--font-face.scss` depending on the `css--plex` feature flag
-/// @access public
-/// @type Bool
-/// @group feature-flags
-$css--font-face: true !default;
-
-/// If true, includes the `css-helpers()` mixin
-/// @access public
-/// @type Bool
-/// @group feature-flags
-$css--helpers: true !default;
-
-/// If true, includes the `css-body()` mixin
-/// @access public
-/// @type Bool
-/// @group feature-flags
-$css--body: true !default;
-
-/// If true, the `layer()` mixin sets `box-shadow` values
-/// @access public
-/// @type Bool
-/// @group feature-flags
-$css--use-layer: true !default;
-
-/// If true, include reset CSS
-/// @access public
-/// @type Bool
-/// @group feature-flags
-$css--reset: true !default;
-
-/// Used with `css--font-face` feature flag, if true, uses Plex font families instead of Helvetica
-/// @access public
-/// @type Bool
-/// @group feature-flags
-$css--plex: true !default;
-
-/// This feature flag was used during development of the v10 experimental grid.
-/// TODO: remove in next major release. Synced in `feature-flags` as an adapter in the interim
-/// @deprecated (For v10) v10 always uses `@carbon/grid`
-/// @access public
-/// @type Bool
-/// @group feature-flags
-$css--use-experimental-grid: false !default;
-
-/// This feature flag was used during development of the v10 experimental grid.
-/// TODO: remove in next major release. Synced in `feature-flags` as an adapter in the interim.
-/// @access public
-/// @type Bool
-/// @group feature-flags
-/// @deprecated (For v10) v10 always uses `@carbon/grid`
-$css--use-experimental-grid-fallback: false !default;
-
-/// Set the theme to Gray 10
-@import '~@carbon/themes/scss/themes';
-$carbon--theme: $carbon--theme--g10;
-// Use the gray 10 theme
-@include carbon--theme();
-
-@import 'globals/feature-flags';
-@import 'globals/vars';
-@import 'globals/colors';
-@import 'globals/theme';
-@import 'globals/mixins';
-@import 'globals/layout';
-@import 'globals/spacing';
-@import 'globals/typography';
-@import 'globals/import-once';
-@import 'globals/css--reset';
-@import 'globals/css--font-face';
-@import 'globals/css--helpers';
-@import 'globals/css--body';
-@import 'globals/grid';
-@import 'globals/charts';
+@use 'components/Checkbox/checkbox';
+@use 'components/CopyButton/copy-button';
+@use 'components/FileUploader/file-uploader';
+@use 'components/ComboBox/combo-box';
+@use 'components/NumberInput/number-input';
+@use 'components/RadioButton/radio-button';
+@use 'components/Search/search';
+@use 'components/Select/select';
+@use 'components/TextInput/text-input';
+@use 'components/TextArea/text-area';
+@use 'components/Toggle/toggle';
+@use 'components/Form/form';
+@use 'components/Link/link';
+@use 'components/ListBox/list-box';
+@use 'components/DataTable/data-table';
+@use 'components/StructuredList/structured-list';
+@use 'components/CodeSnippet/code-snippet';
+@use 'components/OverflowMenu/overflow-menu';
+@use 'components/ContentSwitcher/content-switcher';
+@use 'components/DatePicker/date-picker';
+@use 'components/Dropdown/dropdown';
+@use 'components/Loading/loading';
+@use 'components/Modal/modal';
+@use 'components/MultiSelect/multi-select';
+@use 'components/Notification/inline-notification';
+@use 'components/Notification/toast-notification';
+@use 'components/Tooltip/tooltip';
+@use 'components/Tabs/tabs';
+@use 'components/Tag/tag';
+@use 'components/Pagination/pagination';
+@use 'components/Accordion/accordion';
+@use 'components/Breadcrumb/breadcrumb';
+@use 'components/Toolbar/toolbar';
+@use 'components/TimePicker/time-picker';
+@use 'components/Slider/slider';
+@use 'components/Tile/tile';
+@use 'components/Skeleton/skeleton';
+@use 'components/InlineLoading/inline-loading';
+@use 'components/PaginationNav/pagination-nav';
+@use 'components/UIShell/ui-shell';
+@use 'components/List/carbon-list';
+@use 'components/Table/TableBody/TableBodyLoadMoreRow/table-body-load-more-row';
+// //-------------------------------------
+// // 🔬 Experimental
+// //-------------------------------------
+@use 'components/ColorDropdown/color-dropdown';
+@use 'components/FlyoutMenu/flyout-menu';
+@use 'components/HotspotEditorModal/HotspotEditorTooltipTab/hotspot-editor-tooltip-tab';
+@use 'components/HotspotEditorModal/hotspot-editor-modal';
+@use 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker';
+@use 'components/SimpleIconDropdown/simple-icon-dropdown';
+@use 'components/RuleBuilder/rule-builder';
+// //-------------------------------------
+// // carbon-addons-iot-react components
+// //-------------------------------------
+@use 'components/AddCard/add-card';
+@use 'components/BarChartCard/bar-chart-card';
+@use 'components/Button/button';
+@use 'components/Card/card';
+@use 'components/CardEditor/card-editor';
+@use 'components/CardEditor/CardEditForm/card-edit-form';
+@use 'components/ComposedModal/composed-modal';
+@use 'components/ComposedStructuredList/composed-structured-list';
+@use 'components/CardCodeEditor/card-code-editor';
+@use 'components/Dashboard/dashboard';
+@use 'components/Dashboard/dashboard-grid';
+@use 'components/DashboardEditor/dashboard-editor';
+@use 'components/DateTimePicker/date-time-picker';
+@use 'components/DateTimePicker/date-time-pickerv2';
+@use 'components/EmptyState/emptystate';
+@use 'components/FileDrop/file-drop';
+@use 'components/FilterTags/filter-tags';
+@use 'components/GaugeCard/gauge-card';
+@use 'components/Header/header';
+@use 'components/HotspotEditorModal/HotspotTextStyleTab/hotspot-text-style-tab';
+@use 'components/IconDropdown/icon-dropdown';
+@use 'components/IconSwitch/icon-switch';
+@use 'components/ImageCard/image-card';
+@use 'components/ImageCard/image-uploader';
+@use 'components/ImageCard/hotspot';
+@use 'components/ImageCard/hotspot-content';
+@use 'components/ImageGalleryModal/image-gallery-modal';
+@use 'components/ImageGalleryModal/image-tile';
+@use 'components/ListCard/listCard';
+@use 'components/List/list';
+@use 'components/ListBuilder/list-builder';
+@use 'components/TearSheet/tear-sheet-wrapper';
+@use 'components/TearSheet/tear-sheet';
+@use 'components/List/ListItem/list-item';
+@use 'components/List/ListHeader/list-header';
+@use 'components/MapCard/map-card';
+@use 'components/List/HierarchyList/hierarchy-list';
+@use 'components/MenuButton/menu-button';
+@use 'components/PageTitleBar/page-title-bar';
+@use 'components/PageWizard/page-wizard';
+@use 'components/PieChartCard/pie-chart-card';
+@use 'components/ProgressIndicator/progress-indicator';
+@use 'components/RuleBuilder/rulebuilder';
+@use 'components/SelectUsersModal/select-users-modal';
+@use 'components/SideNav/side-nav';
+@use 'components/SimplePagination/simple-pagination';
+@use 'components/SuiteHeader/suite-header';
+@use 'components/Table/TableToolbar/table-toolbar';
+@use 'components/Table/pagination' as table-pagination;
+@use 'components/Table/TableBody/RowActionsCell/row-actions-cell';
+@use 'components/Table/table';
+@use 'components/Table/TableViewDropdown/table-view-dropdown';
+@use 'components/Table/TableSaveViewModal/table-save-view-modal';
+@use 'components/Table/TableManageViewsModal/table-manage-views-modal';
+@use 'components/Table/TableManageViewsModal/table-manage-views-list';
+@use 'components/TableCard/threshold-icon';
+@use 'components/TableCard/table-card';
+@use 'components/TileCatalogNew/tile-catalog' as tile-catalog-new;
+@use 'components/TileCatalog/tile-catalog';
+@use 'components/TileCatalog/tile-group';
+@use 'components/TileCatalog/catalog-content';
+@use 'components/TileGallery/tile-gallery';
+@use 'components/TimePickerSpinner/time-picker-spinner';
+@use 'components/TimeSeriesCard/time-series-card';
+@use 'components/ValueCard/value-card';
+@use 'components/ValueCard/attribute';
+@use 'components/ValueCard/unit-renderer';
+@use 'components/ValueCard/value-renderer';
+@use 'components/WizardInline/wizard-inline';
+@use 'components/WizardModal/wizard-modal';
+@use 'components/ComboChartCard/combo-chart-card';
 
 //-------------------------
 // ⚠️ Manage deprecations
@@ -104,70 +177,13 @@ $deprecations--reasons: ();
 /// @group global-deprecate
 $deprecations--message: 'Deprecated code was found, this code will be removed before the next release of Carbon.';
 
-//-------------------------
-// 🍕 Carbon Components
-//-------------------------
-
-@import 'components/Checkbox/checkbox';
-@import 'components/CopyButton/copy-button';
-@import 'components/FileUploader/file-uploader';
-@import 'components/ComboBox/combo-box';
-@import 'components/NumberInput/number-input';
-@import 'components/RadioButton/radio-button';
-@import 'components/Search/search';
-@import 'components/Select/select';
-@import 'components/TextInput/text-input';
-@import 'components/TextArea/text-area';
-@import 'components/Toggle/toggle';
-@import 'components/Form/form';
-@import 'components/Link/link';
-@import 'components/ListBox/list-box';
-@import 'components/DataTable/data-table';
-@import 'components/StructuredList/structured-list';
-@import 'components/CodeSnippet/code-snippet';
-@import 'components/OverflowMenu/overflow-menu';
-@import 'components/ContentSwitcher/content-switcher';
-@import 'components/DatePicker/date-picker';
-@import 'components/Dropdown/dropdown';
-@import 'components/Loading/loading';
-@import 'components/Modal/modal';
-@import 'components/MultiSelect/multi-select';
-@import 'components/Notification/inline-notification';
-@import 'components/Notification/toast-notification';
-@import 'components/Tooltip/tooltip';
-@import 'components/Tabs/tabs';
-@import 'components/Tag/tag';
-@import 'components/Pagination/pagination';
-@import 'components/Accordion/accordion';
-@import 'components/Breadcrumb/breadcrumb';
-@import 'components/Toolbar/toolbar';
-@import 'components/TimePicker/time-picker';
-@import 'components/Slider/slider';
-@import 'components/Tile/tile';
-@import 'components/Skeleton/skeleton';
-@import 'components/InlineLoading/inline-loading';
-@import 'components/PaginationNav/pagination-nav';
-@import 'components/UIShell/ui-shell';
-@import 'components/List/carbon-list';
-@import 'components/Table/TableBody/TableBodyLoadMoreRow/table-body-load-more-row';
-//-------------------------------------
-// 🔬 Experimental
-//-------------------------------------
-@import 'components/ColorDropdown/color-dropdown';
-@import 'components/FlyoutMenu/flyout-menu';
-@import 'components/HotspotEditorModal/HotspotEditorTooltipTab/hotspot-editor-tooltip-tab';
-@import 'components/HotspotEditorModal/hotspot-editor-modal';
-@import 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker';
-@import 'components/SimpleIconDropdown/simple-icon-dropdown';
-@import 'components/RuleBuilder/rule-builder';
-
 //-------------------------------------
 // 🙈 Hidden (Not exposed on website)
 //-------------------------------------
 
 // Cycle through all the deprecation reasons, if any exist, that have been
 // accumulated through the @import process.
-@if (length($deprecations--reasons) > 0) {
+@if (sass-list.length($deprecations--reasons) > 0) {
   $deprecations--message: '';
   @each $reason in $deprecations--reasons {
     $deprecations--message: '#{$deprecations--message} REASON: #{$reason}';
@@ -175,78 +191,3 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 
   @warn $deprecations--message;
 }
-
-//-------------------------------------
-// carbon-addons-iot-react components
-//-------------------------------------
-@import 'components/AddCard/add-card';
-@import 'components/BarChartCard/bar-chart-card';
-@import 'components/Button/button';
-@import 'components/Card/card';
-@import 'components/CardEditor/card-editor';
-@import 'components/CardEditor/CardEditForm/card-edit-form';
-@import 'components/ComposedModal/composed-modal';
-@import 'components/ComposedStructuredList/composed-structured-list';
-@import 'components/CardCodeEditor/card-code-editor';
-@import 'components/Dashboard/dashboard';
-@import 'components/Dashboard/dashboard-grid';
-@import 'components/DashboardEditor/dashboard-editor';
-@import 'components/DateTimePicker/date-time-picker';
-@import 'components/DateTimePicker/date-time-pickerv2';
-@import 'components/EmptyState/emptystate';
-@import 'components/FileDrop/file-drop';
-@import 'components/FilterTags/filter-tags';
-@import 'components/GaugeCard/gauge-card';
-@import 'components/Header/header';
-@import 'components/HotspotEditorModal/HotspotTextStyleTab/hotspot-text-style-tab';
-@import 'components/IconDropdown/icon-dropdown';
-@import 'components/IconSwitch/icon-switch';
-@import 'components/ImageCard/image-card';
-@import 'components/ImageCard/image-uploader';
-@import 'components/ImageCard/hotspot';
-@import 'components/ImageCard/hotspot-content';
-@import 'components/ImageGalleryModal/image-gallery-modal';
-@import 'components/ImageGalleryModal/image-tile';
-@import 'components/ListCard/listCard';
-@import 'components/List/list';
-@import 'components/ListBuilder/list-builder';
-@import 'components/TearSheet/tear-sheet-wrapper';
-@import 'components/TearSheet/tear-sheet';
-@import 'components/List/ListItem/list-item';
-@import 'components/List/ListHeader/list-header';
-@import 'components/MapCard/map-card';
-@import 'components/List/HierarchyList/hierarchy-list';
-@import 'components/MenuButton/menu-button';
-@import 'components/PageTitleBar/page-title-bar';
-@import 'components/PageWizard/page-wizard';
-@import 'components/PieChartCard/pie-chart-card';
-@import 'components/ProgressIndicator/progress-indicator';
-@import 'components/RuleBuilder/rulebuilder';
-@import 'components/SelectUsersModal/select-users-modal';
-@import 'components/SideNav/side-nav';
-@import 'components/SimplePagination/simple-pagination';
-@import 'components/SuiteHeader/suite-header';
-@import 'components/Table/TableToolbar/table-toolbar';
-@import 'components/Table/pagination';
-@import 'components/Table/TableBody/RowActionsCell/row-actions-cell';
-@import 'components/Table/table';
-@import 'components/Table/TableViewDropdown/table-view-dropdown';
-@import 'components/Table/TableSaveViewModal/table-save-view-modal';
-@import 'components/Table/TableManageViewsModal/table-manage-views-modal';
-@import 'components/Table/TableManageViewsModal/table-manage-views-list';
-@import 'components/TableCard/threshold-icon';
-@import 'components/TableCard/table-card';
-@import 'components/TileCatalogNew/tile-catalog';
-@import 'components/TileCatalog/tile-catalog';
-@import 'components/TileCatalog/tile-group';
-@import 'components/TileCatalog/catalog-content';
-@import 'components/TileGallery/tile-gallery';
-@import 'components/TimePickerSpinner/time-picker-spinner';
-@import 'components/TimeSeriesCard/time-series-card';
-@import 'components/ValueCard/value-card';
-@import 'components/ValueCard/attribute';
-@import 'components/ValueCard/unit-renderer';
-@import 'components/ValueCard/value-renderer';
-@import 'components/WizardInline/wizard-inline';
-@import 'components/WizardModal/wizard-modal';
-@import 'components/ComboChartCard/combo-chart-card';

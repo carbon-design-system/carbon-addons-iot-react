@@ -1,0 +1,7 @@
+@use '~@carbon/styles/scss/config' with (
+  $css--font-face: true,
+  $css--reset: true,
+  $css--default-type: true,
+  $css--plex-arabic: false,
+  $prefix: 'bx',
+);

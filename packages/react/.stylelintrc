@@ -1,0 +1,40 @@
+{
+  "extends": "stylelint-config-recommended-scss",
+  "rules": {
+    "declaration-property-unit-blacklist": [
+      {
+        "font-size": [
+          "em",
+          "px",
+          "pt"
+        ],
+        "margin": [
+          "px",
+          "rem"
+        ],
+        "padding": [
+          "px",
+          "rem"
+        ],
+        "transition": [
+          "s",
+          "ms"
+        ]
+      },
+      {
+        "severity": "error"
+      }
+    ],
+    "declaration-property-value-blacklist": [
+      {
+        "color": [
+          "/^#/",
+          "/^rgb/"
+        ]
+      },
+      {
+        "severity": "error"
+      }
+    ]
+  }
+}

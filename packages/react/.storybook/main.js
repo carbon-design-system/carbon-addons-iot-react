@@ -85,9 +85,15 @@ module.exports = {
         },
         // Compiles Sass to CSS
         {
-          loader: 'fast-sass-loader',
+          loader: 'sass-loader',
           options: {
-            includePaths: [path.resolve(__dirname, '..', 'node_modules')],
+            implementation: require('sass'),
+            sassOptions: {
+              includePaths: [
+                path.resolve(__dirname, '..', 'node_modules'),
+                path.resolve(__dirname, '../../../node_modules'),
+              ],
+            },
           },
         },
       ],

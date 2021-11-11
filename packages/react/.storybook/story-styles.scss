@@ -1,4 +1,5 @@
-@import '../src/globals/vars';
+@use '../src/globals/config';
+@use '../src/globals/vars';
 
 /* stylelint-disable */
 .storybook-container {
@@ -12,15 +13,15 @@
 /* stylelint-enable */
 
 // header-specific
-.#{$iot-prefix}--header--story-test-class {
-  .#{$prefix}--text-truncate--end span {
+.#{vars.$iot-prefix}--header--story-test-class {
+  .#{vars.$prefix}--text-truncate--end span {
     display: flex;
     width: 100%;
     justify-content: space-between;
   }
 
-  .#{$prefix}--header__menu-title[role='menuitem'][aria-expanded='true']
-    + .#{$prefix}--header__menu {
+  .#{vars.$prefix}--header__menu-title[role='menuitem'][aria-expanded='true']
+    + .#{vars.$prefix}--header__menu {
     z-index: 6001;
   }
 }

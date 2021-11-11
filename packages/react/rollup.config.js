@@ -1,3 +1,6 @@
+import path from 'path';
+import fs from 'fs';
+
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -8,6 +11,7 @@ import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
 import json from '@rollup/plugin-json';
+import sass from 'sass';
 
 const packageJson = require('./package.json');
 
@@ -89,6 +93,71 @@ export default [
         sourceMap: true,
         use: ['sass'],
         plugins: [autoprefixer],
+        loaders: [
+          {
+            name: 'sass',
+            test: /\.s?css$/,
+            process: (context) => {
+              const results = sass.renderSync({
+                data: context.code,
+                outFile: 'lib/css/carbon-addons-iot-react.css',
+                sourceMap: true,
+                includePaths: [
+                  path.resolve('src'),
+                  path.resolve('node_modules'),
+                  path.resolve('../../node_modules'),
+                ],
+                importer: [
+                  (url) => {
+                    const findFullPath = (importPath) => {
+                      return [
+                        path.resolve('node_modules'),
+                        path.resolve('../../node_modules'),
+                      ].reduce((resolvedPath, modulesPath) => {
+                        if (resolvedPath) {
+                          return resolvedPath;
+                        }
+
+                        const parsedPath = path.parse(importPath);
+                        const fullResolvedFilePath = path.join(modulesPath, importPath);
+                        const underscoredPath = path.join(
+                          modulesPath,
+                          parsedPath.dir,
+                          `_${parsedPath.base}.scss`
+                        );
+                        const possiblePaths = [
+                          `${fullResolvedFilePath}.scss`,
+                          path.join(fullResolvedFilePath, '_index.scss'),
+                          underscoredPath,
+                        ];
+
+                        const fileExists = possiblePaths.find((aPath) => fs.existsSync(aPath));
+                        if (fileExists) {
+                          return fileExists;
+                        }
+
+                        return null;
+                      }, undefined);
+                    };
+
+                    if (url.startsWith('~')) {
+                      return {
+                        file: findFullPath(url.replace('~', '')),
+                      };
+                    }
+
+                    return null;
+                  },
+                ],
+              });
+
+              return {
+                code: results.css.toString(),
+                map: results.map.toString(),
+              };
+            },
+          },
+        ],
       }),
     ],
   },

@@ -1,1 +1,4 @@
-@import '~carbon-components/scss/globals/scss/theme';
+@use '~@carbon/styles/scss/compat/themes' as compat;
+@forward '@carbon/styles/scss/compat/theme' with (
+  $theme: compat.$g10,
+);

@@ -1,1 +1,2 @@
-@import '~carbon-components/scss/globals/scss/typography';
+@forward '@carbon/styles/scss/type';
+@forward '@carbon/type/scss/modules/scale';
