@@ -21,17 +21,20 @@
       left: spacing.$spacing-06;
 
       &--complete {
-        @extend %#{vars.$iot-prefix}--progress-step-line;
+        /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+        @extend .#{vars.$iot-prefix}--progress-step-line;
         background-color: theme.$interactive-01;
       }
 
       &--sub {
-        @extend %#{vars.$iot-prefix}--progress-step-line;
+        /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+        @extend .#{vars.$iot-prefix}--progress-step-line;
         left: spacing.$spacing-05;
         width: calc(100% - #{spacing.$spacing-05});
 
         &-complete {
-          @extend %#{vars.$iot-prefix}--progress-step-line--sub;
+          /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+          @extend .#{vars.$iot-prefix}--progress-step-line--sub;
           background-color: theme.$interactive-03;
         }
       }
@@ -280,15 +283,18 @@
         left: layout.rem(11px);
 
         &--complete {
-          @extend %#{vars.$iot-prefix}--progress-step-line;
+          /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+          @extend .#{vars.$iot-prefix}--progress-step-line;
         }
         &--sub {
-          @extend %#{vars.$iot-prefix}--progress-step-line;
+          /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+          @extend .#{vars.$iot-prefix}--progress-step-line;
           top: spacing.$spacing-05;
           height: calc(100% - #{spacing.$spacing-05});
           width: spacing.$spacing-01;
           &-complete {
-            @extend %#{vars.$iot-prefix}--progress-step-line--sub;
+            /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+            @extend .#{vars.$iot-prefix}--progress-step-line--sub;
           }
         }
       }
