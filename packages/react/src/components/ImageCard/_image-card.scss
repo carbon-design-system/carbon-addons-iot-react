@@ -1,6 +1,8 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}--image-card {
+.#{vars.$iot-prefix}--image-card {
   &__wrapper {
     height: 100%;
     max-height: 100%;

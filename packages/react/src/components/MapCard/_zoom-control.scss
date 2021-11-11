@@ -1,16 +1,19 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/mixins';
 
-.#{$iot-prefix}--map {
+.#{vars.$iot-prefix}--map {
   &-zoom {
     position: relative;
     background: #fff;
     display: flex;
     flex-direction: column;
     z-index: 2;
-    @include box-shadow();
+    @include mixins.box-shadow();
 
     & > *:first-child {
-      border-bottom: 1px solid $ui-03; // should be updated to $button-separator once available
+      border-bottom: 1px solid theme.$ui-03; // should be updated to $button-separator once available
     }
   }
 }

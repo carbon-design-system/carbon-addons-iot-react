@@ -1,36 +1,39 @@
-@import '~carbon-components/scss/components/menu/menu';
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/mixins';
+@use '~@carbon/styles/scss/components/menu';
 
-.#{$iot-prefix}--menu-button {
-  .#{$iot-prefix}--menu-button__primary + .#{$iot-prefix}--menu-button__secondary {
-    border-left: 1px solid $ui-01;
+.#{vars.$iot-prefix}--menu-button {
+  .#{vars.$iot-prefix}--menu-button__primary + .#{vars.$iot-prefix}--menu-button__secondary {
+    border-left: 1px solid theme.$ui-01;
   }
 
-  .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {
-    color: $icon-01;
+  .#{vars.$prefix}--btn--ghost.#{vars.$prefix}--btn--icon-only {
+    color: theme.$icon-01;
   }
 
   &--open {
-    .#{$iot-prefix}--menu-button__trigger {
-      background-color: $active-primary;
+    .#{vars.$iot-prefix}--menu-button__trigger {
+      background-color: theme.$active-primary;
     }
 
-    .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {
-      background-color: $ui-01;
-      @include box-shadow;
+    .#{vars.$prefix}--btn--ghost.#{vars.$prefix}--btn--icon-only {
+      background-color: theme.$ui-01;
+      @include mixins.box-shadow();
     }
   }
 }
 
-html[dir='rtl'] .#{$iot-prefix}--menu-button {
-  .#{$prefix}--context-menu-option__icon {
+html[dir='rtl'] .#{vars.$iot-prefix}--menu-button {
+  .#{vars.$prefix}--context-menu-option__icon {
     margin-right: 0;
-    margin-left: $spacing-03;
+    margin-left: spacing.$spacing-03;
   }
 
-  .#{$prefix}--context-menu-option__info {
+  .#{vars.$prefix}--context-menu-option__info {
     margin-left: 0;
-    margin-right: $spacing-05;
+    margin-right: spacing.$spacing-05;
     transform: rotate(180deg);
   }
 }

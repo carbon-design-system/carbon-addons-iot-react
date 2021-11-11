@@ -1,1 +1,4 @@
-@import '~carbon-components/scss/components/inline-loading/inline-loading';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/inline-loading';

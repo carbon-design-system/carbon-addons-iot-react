@@ -1,30 +1,35 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/mixins';
+@use '../../globals/motion';
+@use '../../globals/typography';
 
-.#{$iot-prefix}--map {
+.#{vars.$iot-prefix}--map {
   &-legend {
     max-width: 50%;
-    background: $ui-02;
-    bottom: $spacing-05;
-    left: $spacing-05;
-    padding: $spacing-05;
+    background: theme.$ui-02;
+    bottom: spacing.$spacing-05;
+    left: spacing.$spacing-05;
+    padding: spacing.$spacing-05;
     position: absolute;
     z-index: 2;
     opacity: 0.8;
-    @include box-shadow();
+    @include mixins.box-shadow();
 
     [dir='rtl'] & {
       left: unset;
-      right: $spacing-05;
+      right: spacing.$spacing-05;
     }
   }
 
   &-legend--increased-margin {
-    bottom: $spacing-07;
-    left: $spacing-07;
+    bottom: spacing.$spacing-07;
+    left: spacing.$spacing-07;
 
     [dir='rtl'] & {
       left: unset;
-      right: $spacing-07;
+      right: spacing.$spacing-07;
     }
   }
 
@@ -32,24 +37,24 @@
     // We want the same height independent if scrollbars are present and
     // we need space for the logo and attribution links.
     height: 6.5rem;
-    transition: width $duration--fast-02 motion(entrance, productive);
+    transition: width motion.$duration-fast-02 motion.motion(entrance, productive);
     max-width: unset;
     bottom: 0;
     display: flex;
     left: 0;
     right: 0;
     width: 100%;
-    padding: $spacing-03;
-    padding-bottom: $spacing-02; // Needed for horizontal scrollbar
+    padding: spacing.$spacing-03;
+    padding-bottom: spacing.$spacing-02; // Needed for horizontal scrollbar
 
-    .#{$iot-prefix}--map-legend__keys-container {
+    .#{vars.$iot-prefix}--map-legend__keys-container {
       overflow-x: auto;
-      .#{$iot-prefix}--map-legend-keys {
+      .#{vars.$iot-prefix}--map-legend-keys {
         margin-bottom: 0;
       }
 
-      & > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
-        margin-right: $spacing-03;
+      & > .#{vars.$iot-prefix}--map-legend-keys:not(:last-child) {
+        margin-right: spacing.$spacing-03;
       }
     }
 
@@ -59,30 +64,30 @@
   }
 
   &-legend--fullwidth-collapsed {
-    width: $spacing-09;
+    width: spacing.$spacing-09;
   }
 
   [dir='rtl']
-    &-legend.#{$iot-prefix}--map-legend--fullwidth
-    .#{$iot-prefix}--map-legend__keys-container
-    > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
-    margin-left: $spacing-03;
+    &-legend.#{vars.$iot-prefix}--map-legend--fullwidth
+    .#{vars.$iot-prefix}--map-legend__keys-container
+    > .#{vars.$iot-prefix}--map-legend-keys:not(:last-child) {
+    margin-left: spacing.$spacing-03;
     margin-right: unset;
   }
 
   [dir='rtl'] &-legend__collapse-btn {
-    margin-left: $spacing-02;
+    margin-left: spacing.$spacing-02;
     margin-right: 0;
   }
 
   &-legend__collapse-btn {
-    margin-right: $spacing-02;
-    margin-bottom: $spacing-08;
+    margin-right: spacing.$spacing-02;
+    margin-bottom: spacing.$spacing-08;
   }
 
   &-legend__label {
-    @include type-style('productive-heading-01');
-    padding-bottom: $spacing-03;
+    @include typography.type-style('productive-heading-01');
+    padding-bottom: spacing.$spacing-03;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -91,31 +96,31 @@
   &-legend-content {
     display: flex;
     flex-direction: column;
-    width: calc(100% - #{$spacing-09});
+    width: calc(100% - #{spacing.$spacing-09});
   }
 
-  &-legend--fullwidth-collapsed .#{$iot-prefix}--map-legend__keys-container {
+  &-legend--fullwidth-collapsed .#{vars.$iot-prefix}--map-legend__keys-container {
     overflow-x: hidden;
   }
 
   &-legend__keys-container {
     display: flex;
-    padding-bottom: $spacing-02;
+    padding-bottom: spacing.$spacing-02;
   }
 
   &-legend-keys {
     display: flex;
-    margin-bottom: $spacing-04;
+    margin-bottom: spacing.$spacing-04;
   }
 
   &-legend-keys-color {
     height: 1rem;
-    margin-right: $spacing-03;
+    margin-right: spacing.$spacing-03;
     width: 1rem;
     flex-shrink: 0;
 
     [dir='rtl'] & {
-      margin-left: $spacing-03;
+      margin-left: spacing.$spacing-03;
       margin-right: unset;
     }
   }

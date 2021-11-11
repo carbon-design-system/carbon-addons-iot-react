@@ -1,21 +1,24 @@
-@import '../../../globals/vars';
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars';
+@use '../../../globals/layout';
 
-.#{$iot-prefix}--hierarchy-list-bulk {
+.#{vars.$iot-prefix}--hierarchy-list-bulk {
   &-header {
     width: 100%;
-    background-color: $focus;
+    background-color: theme.$focus;
 
     display: flex;
 
     &--title {
-      padding-left: $spacing-05;
+      padding-left: spacing.$spacing-05;
       margin: auto;
       flex-grow: 1;
-      color: $ui-background;
+      color: theme.$ui-background;
 
       html[dir='rtl'] & {
         padding-left: 0;
-        padding-right: $spacing-05;
+        padding-right: spacing.$spacing-05;
       }
     }
 
@@ -25,21 +28,21 @@
     }
 
     &--divider {
-      height: $spacing-04;
-      padding-right: $spacing-02;
-      margin: auto 0 auto $spacing-02;
-      border-left: 1px solid $ui-background;
+      height: spacing.$spacing-04;
+      padding-right: spacing.$spacing-02;
+      margin: auto 0 auto spacing.$spacing-02;
+      border-left: 1px solid theme.$ui-background;
     }
 
     &--button-no-icon,
-    html[dir='rtl'] &--button-no-icon.#{$iot-prefix}--btn {
-      padding: 0 $spacing-05;
+    html[dir='rtl'] &--button-no-icon.#{vars.$iot-prefix}--btn {
+      padding: 0 spacing.$spacing-05;
     }
   }
 
   &-modal {
     .breadcrumb--container {
-      padding: $spacing-05 0;
+      padding: spacing.$spacing-05 0;
     }
 
     &--breadcrumb > button {
@@ -60,27 +63,27 @@
       width: 100%;
 
       align-items: flex-start;
-      margin-top: rem(6px);
+      margin-top: layout.rem(6px);
       flex-direction: column;
 
       &-item {
         display: flex;
         position: relative;
         width: 100%;
-        background-color: $ui-background;
+        background-color: theme.$ui-background;
 
         &:hover {
-          background-color: $hover-ui;
+          background-color: theme.$hover-ui;
         }
 
         &::after {
           height: 1px;
 
           content: '';
-          background: $ui-03;
+          background: theme.$ui-03;
           position: absolute;
           bottom: 0px;
-          right: $spacing-08;
+          right: spacing.$spacing-08;
           left: 0;
         }
 
@@ -89,7 +92,7 @@
           cursor: pointer;
           display: flex;
           flex-grow: 1;
-          padding: 0 $spacing-03;
+          padding: 0 spacing.$spacing-03;
 
           &:focus {
             z-index: 1;
@@ -102,12 +105,12 @@
       }
     }
 
-    & .#{$iot-prefix}--hierarchy-list-bulk-modal--radio {
-      padding: $spacing-05;
+    & .#{vars.$iot-prefix}--hierarchy-list-bulk-modal--radio {
+      padding: spacing.$spacing-05;
       margin-right: 0;
     }
 
-    &--radio .#{$prefix}--radio-button__appearance {
+    &--radio .#{vars.$prefix}--radio-button__appearance {
       margin-right: 0;
     }
   }

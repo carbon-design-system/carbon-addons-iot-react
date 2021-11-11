@@ -1,4 +1,6 @@
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
 $title-height: 3rem;
 
@@ -14,64 +16,64 @@ $title-height: 3rem;
   }
 }
 
-.#{$iot-prefix}--image-tile {
+.#{vars.$iot-prefix}--image-tile {
   $image-max-height: 12rem;
   $image-max-width: 20rem;
 
-  background-color: $ui-01;
+  background-color: theme.$ui-01;
   width: $image-max-width;
   height: calc(#{$image-max-height} + #{$title-height});
   padding: 0;
 
-  .#{$iot-prefix}--image-tile__image-container {
+  .#{vars.$iot-prefix}--image-tile__image-container {
     @include image-container($image-max-height, $image-max-width);
   }
 }
 
-.#{$iot-prefix}--image-tile--wide {
+.#{vars.$iot-prefix}--image-tile--wide {
   $image-max-height: 3rem;
   $image-max-width: 5rem;
 
   width: 100%;
   height: $title-height;
-  padding: $spacing-03;
-  border-top: 1px solid $ui-03;
+  padding: spacing.$spacing-03;
+  border-top: 1px solid theme.$ui-03;
 
   &:nth-of-type(1) {
     border-color: transparent;
   }
   // The border must be hidded when focused or selected, also for sibling
-  &.#{$prefix}--tile--is-selected,
+  &.#{vars.$prefix}--tile--is-selected,
   &:focus {
     border-color: transparent;
-    & + input + .#{$prefix}--tile {
+    & + input + .#{vars.$prefix}--tile {
       border-color: transparent;
     }
   }
 
-  .#{$prefix}--tile-content {
+  .#{vars.$prefix}--tile-content {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
   }
 
-  .#{$iot-prefix}--image-tile__image-container {
+  .#{vars.$iot-prefix}--image-tile__image-container {
     @include image-container($image-max-height, $image-max-width);
   }
 
-  .#{$iot-prefix}--image-tile__title {
+  .#{vars.$iot-prefix}--image-tile__title {
     background-color: unset;
     width: calc(100% - #{$image-max-width});
   }
 }
 
-.#{$iot-prefix}--image-tile__title {
+.#{vars.$iot-prefix}--image-tile__title {
   height: $title-height;
   display: flex;
   align-items: center;
-  background-color: $ui-01;
-  padding-left: $spacing-05;
-  padding-right: $spacing-07; // Make room for check mark when selected
+  background-color: theme.$ui-01;
+  padding-left: spacing.$spacing-05;
+  padding-right: spacing.$spacing-07; // Make room for check mark when selected
   span {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -80,22 +82,22 @@ $title-height: 3rem;
 }
 
 // position the button on the far right
-.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$iot-prefix}--image-tile__title__delete {
+.#{vars.$prefix}--btn.#{vars.$prefix}--btn--icon-only.#{vars.$iot-prefix}--image-tile__title__delete {
   position: absolute;
   right: 0rem;
   bottom: 0rem;
 }
 
 html[dir='rtl'] {
-  .#{$iot-prefix}--image-tile.#{$prefix}--tile--selectable {
+  .#{vars.$iot-prefix}--image-tile.#{vars.$prefix}--tile--selectable {
     padding: 0;
   }
-  .#{$iot-prefix}--image-tile--wide.#{$prefix}--tile--selectable {
-    padding: $spacing-03;
+  .#{vars.$iot-prefix}--image-tile--wide.#{vars.$prefix}--tile--selectable {
+    padding: spacing.$spacing-03;
   }
 
-  .#{$iot-prefix}--image-tile__title {
-    padding-left: $spacing-08;
-    padding-right: $spacing-05;
+  .#{vars.$iot-prefix}--image-tile__title {
+    padding-left: spacing.$spacing-08;
+    padding-right: spacing.$spacing-05;
   }
 }

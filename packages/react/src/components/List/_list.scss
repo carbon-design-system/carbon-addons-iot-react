@@ -1,6 +1,9 @@
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/layout';
 
-.#{$iot-prefix}--list {
+.#{vars.$iot-prefix}--list {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -9,7 +12,7 @@
     flex: 0;
   }
   &--content {
-    background: $ui-01;
+    background: theme.$ui-01;
     flex: 1;
     overflow-y: auto;
 
@@ -25,19 +28,19 @@
   &--page {
     position: relative;
     div[class^='SimplePagination__StyledContainer'] {
-      border-top: $ui-03;
-      background: $ui-01;
-      height: rem(40px);
+      border-top: theme.$ui-03;
+      background: theme.$ui-01;
+      height: layout.rem(40px);
       border: none;
     }
     div > span {
-      padding-left: $spacing-05;
+      padding-left: spacing.$spacing-05;
       margin-right: auto;
     }
   }
 
   &--empty-state {
-    padding: $spacing-05 0 $spacing-05;
+    padding: spacing.$spacing-05 0 spacing.$spacing-05;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -49,34 +52,34 @@
     }
 
     svg {
-      margin-bottom: $spacing-06;
+      margin-bottom: spacing.$spacing-06;
     }
 
     .explore-button {
-      margin-top: $spacing-06;
+      margin-top: spacing.$spacing-06;
     }
   }
 }
 
-.#{$iot-prefix}--list--skeleton {
-  margin: $spacing-03 0 $spacing-03 $spacing-05;
+.#{vars.$iot-prefix}--list--skeleton {
+  margin: spacing.$spacing-03 0 spacing.$spacing-03 spacing.$spacing-05;
 }
 
-.#{$iot-prefix}--load-more-row {
+.#{vars.$iot-prefix}--load-more-row {
   justify-content: center;
   cursor: pointer;
   min-width: 100%;
   border: none;
-  background: $ui-01;
+  background: theme.$ui-01;
   &--content {
-    color: $interactive-01;
+    color: theme.$interactive-01;
   }
   .#{prefix}--loading__stroke {
-    stroke: $interactive-01;
+    stroke: theme.$interactive-01;
   }
-  &.#{$prefix}--btn--disabled,
-  .#{$prefix}--btn--disabled:focus,
-  .#{$prefix}--btn--disabled:hover {
-    border-bottom: 1px solid $decorative-01;
+  &.#{vars.$prefix}--btn--disabled,
+  .#{vars.$prefix}--btn--disabled:focus,
+  .#{vars.$prefix}--btn--disabled:hover {
+    border-bottom: 1px solid theme.$decorative-01;
   }
 }

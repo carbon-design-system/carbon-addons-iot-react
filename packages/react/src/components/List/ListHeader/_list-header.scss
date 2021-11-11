@@ -1,46 +1,50 @@
-@import '../../../globals/vars';
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars';
+@use '../../../globals/layout';
+@use '../../../globals/typography';
 
-.#{$iot-prefix}--list-header {
+.#{vars.$iot-prefix}--list-header {
   display: flex;
   align-items: center;
-  background: $ui-01;
-  padding: $spacing-04;
-  border-bottom: 1px solid $ui-03;
-  height: rem(56px);
+  background: theme.$ui-01;
+  padding: spacing.$spacing-04;
+  border-bottom: 1px solid theme.$ui-03;
+  height: layout.rem(56px);
   &--title {
-    @include type-style('productive-heading-02');
+    @include typography.type-style('productive-heading-02');
     flex: 1;
   }
 
   &--btn-container {
     display: flex;
-    padding: $spacing-03;
+    padding: spacing.$spacing-03;
     align-items: center;
     & > * {
-      margin-left: $spacing-05;
+      margin-left: spacing.$spacing-05;
     }
   }
 
   &--search {
-    padding: 0 $spacing-05;
-    height: rem(56px);
+    padding: 0 spacing.$spacing-05;
+    height: layout.rem(56px);
     display: flex;
     align-items: center;
     width: 100%;
-    background: $ui-01;
+    background: theme.$ui-01;
     & > div {
       flex: 1;
     }
   }
 
   &--search__expanded {
-    background: $ui-01;
+    background: theme.$ui-01;
     width: 80%;
     left: 1.5rem;
     position: absolute;
   }
 
   &--add {
-    padding: $spacing-03;
+    padding: spacing.$spacing-03;
   }
 }

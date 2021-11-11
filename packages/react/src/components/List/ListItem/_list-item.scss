@@ -1,23 +1,27 @@
-@import '../../../globals/vars';
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars';
+@use '../../../globals/layout';
+@use '../../../globals/typography';
 
-.#{$iot-prefix}--list-item-parent {
+.#{vars.$iot-prefix}--list-item-parent {
   position: relative;
 }
 
-.#{$iot-prefix}--list-item-editable {
+.#{vars.$iot-prefix}--list-item-editable {
   &--drag-container {
     position: relative;
     overflow: hidden;
     align-items: stretch;
     justify-content: space-between;
-    background: $ui-01;
+    background: theme.$ui-01;
 
     &:hover {
       cursor: grab;
     }
 
     &:active {
-      background: $hover-ui;
+      background: theme.$hover-ui;
 
       cursor: grabbing;
     }
@@ -25,7 +29,7 @@
 
   &--drop-targets {
     width: 100%;
-    height: rem(40px);
+    height: layout.rem(40px);
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -38,7 +42,7 @@
     bottom: 0;
 
     &__over {
-      border-top: solid 2px $focus;
+      border-top: solid 2px theme.$focus;
     }
   }
 
@@ -50,7 +54,7 @@
     bottom: 0;
 
     &__over {
-      border: solid 2px $focus;
+      border: solid 2px theme.$focus;
     }
   }
 
@@ -61,15 +65,15 @@
     bottom: 0;
 
     &__over {
-      border-bottom: solid 2px $focus;
+      border-bottom: solid 2px theme.$focus;
     }
   }
 
   &--drag-preview {
     position: absolute;
-    background: $inverse-02;
-    color: $text-04;
-    padding: $spacing-02 $spacing-04;
+    background: theme.$inverse-02;
+    color: theme.$text-04;
+    padding: spacing.$spacing-02 spacing.$spacing-04;
     border-radius: 0.125rem;
     opacity: 1;
 
@@ -77,85 +81,85 @@
   }
 
   &--dragging {
-    background: $hover-ui;
+    background: theme.$hover-ui;
     cursor: grabbing;
   }
 
   &:hover {
-    background: $hover-ui;
+    background: theme.$hover-ui;
     cursor: grab;
   }
 }
 
-.#{$iot-prefix}--list-item {
-  border-bottom: 1px solid $ui-03;
+.#{vars.$iot-prefix}--list-item {
+  border-bottom: 1px solid theme.$ui-03;
   display: flex;
-  height: rem(40px);
-  color: $text-02;
-  padding: $spacing-03 $spacing-05;
+  height: layout.rem(40px);
+  color: theme.$text-02;
+  padding: spacing.$spacing-03 spacing.$spacing-05;
   align-items: center;
   overflow: hidden;
 
   &:focus {
-    outline: 2px solid $focus;
-    outline-offset: -$spacing-01;
+    outline: 2px solid theme.$focus;
+    outline-offset: -(spacing.$spacing-01);
   }
 
   &--handle {
     flex-shrink: 0;
-    fill: $inverse-02;
-    margin-right: $spacing-04;
+    fill: theme.$inverse-02;
+    margin-right: spacing.$spacing-04;
 
     &__disabled {
-      fill: $disabled-02;
+      fill: theme.$disabled-02;
       cursor: not-allowed;
     }
   }
 
   &__large {
-    height: rem(96px);
-    padding: $spacing-05;
+    height: layout.rem(96px);
+    padding: spacing.$spacing-05;
     align-items: start;
   }
 
   &--category {
-    @include type-style('productive-heading-01');
-    color: $text-01;
+    @include typography.type-style('productive-heading-01');
+    color: theme.$text-01;
   }
 
   &__selectable {
     cursor: pointer;
     &:hover {
-      background: $hover-row;
-      color: $text-01;
+      background: theme.$hover-row;
+      color: theme.$text-01;
     }
   }
 
   &__selected {
-    border-left: solid $spacing-02 $interactive-01;
-    padding-left: $spacing-04; // account for the border
-    color: $text-01;
-    background: $selected-ui;
+    border-left: solid spacing.$spacing-02 theme.$interactive-01;
+    padding-left: spacing.$spacing-04; // account for the border
+    color: theme.$text-01;
+    background: theme.$selected-ui;
   }
 
   &--expand-icon {
     cursor: pointer;
-    padding: $spacing-01;
-    margin-right: $spacing-04 - $spacing-01; // account for padding
+    padding: spacing.$spacing-01;
+    margin-right: spacing.$spacing-04 - spacing.$spacing-01; // account for padding
 
     &:focus {
-      outline: 2px solid $focus;
+      outline: 2px solid theme.$focus;
     }
 
     &__disabled {
-      fill: $disabled-02;
-      color: $disabled-02;
+      fill: theme.$disabled-02;
+      color: theme.$disabled-02;
       cursor: not-allowed;
     }
   }
 
   &--content {
-    @include type-style('body-short-01');
+    @include typography.type-style('body-short-01');
     display: flex;
     width: 100%;
     height: 100%;
@@ -164,12 +168,12 @@
       align-items: flex-start;
     }
     &--icon {
-      padding-top: $spacing-01;
+      padding-top: spacing.$spacing-01;
       &__left {
-        padding-right: $spacing-04;
+        padding-right: spacing.$spacing-04;
       }
       &__right {
-        padding-left: $spacing-04;
+        padding-left: spacing.$spacing-04;
         order: 9;
       }
     }
@@ -183,9 +187,9 @@
         max-width: 100%;
         align-items: center;
         &__large {
-          @include type-style('productive-heading-01');
-          color: $text-01;
-          padding-bottom: $spacing-03;
+          @include typography.type-style('productive-heading-01');
+          color: theme.$text-01;
+          padding-bottom: spacing.$spacing-03;
         }
       }
       &--value {
@@ -194,20 +198,20 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-right: $spacing-09;
+        padding-right: spacing.$spacing-09;
         &__with-actions {
-          padding-right: $spacing-07; // save room for the action button
-          width: $spacing-05;
+          padding-right: spacing.$spacing-07; // save room for the action button
+          width: spacing.$spacing-05;
         }
         &__large {
-          color: $text-05;
+          color: theme.$text-05;
           white-space: wrap;
-          height: rem(36px);
+          height: layout.rem(36px);
           overflow: hidden;
         }
       }
       &__disabled {
-        color: $disabled-02;
+        color: theme.$disabled-02;
       }
     }
     &--row-actions {
@@ -216,7 +220,7 @@
       overflow: none;
       display: flex;
       position: absolute;
-      right: -$spacing-03;
+      right: -(spacing.$spacing-03);
     }
   }
   &--nesting-offset {
