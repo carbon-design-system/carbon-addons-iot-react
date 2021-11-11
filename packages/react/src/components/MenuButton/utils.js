@@ -22,8 +22,8 @@ export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDi
     width: 0,
   };
 
-  const hasScrollY = document.body.scrollHeight > bodyHeight;
-  const scrollXOffset = hasScrollY ? 14 : 0;
+  const hasScrollY = document.body.scrollHeight >= bodyHeight;
+  const scrollXOffset = hasScrollY ? 15 : 0;
   let y = buttonY + buttonHeight;
   let x = isSplitButton ? buttonX + primaryButtonWidth : buttonX;
 
