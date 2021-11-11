@@ -4,7 +4,7 @@ import { Apps16, Data_116 as Data116 } from '@carbon/icons-react';
 import isNil from 'lodash/isNil';
 import warning from 'warning';
 
-import { Button } from '../../index';
+import Button from '../Button';
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
 import deprecate from '../../internal/deprecate';

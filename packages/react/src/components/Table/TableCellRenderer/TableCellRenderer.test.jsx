@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { screen, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../constants/Settings';
 
@@ -85,7 +85,7 @@ describe('TableCellRenderer', () => {
           <tr>
             <td>
               <TableCellRenderer wrapText="never" truncateCellText>
-                {'my string'}
+                my string
               </TableCellRenderer>
             </td>
             <td>
@@ -114,7 +114,7 @@ describe('TableCellRenderer', () => {
     setOffsetWidth(10);
     setScrollWidth(20);
 
-    const { container } = render(
+    const { container, rerender } = render(
       <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
       </TableCellRenderer>
@@ -125,14 +125,14 @@ describe('TableCellRenderer', () => {
 
     setOffsetWidth(20);
     setScrollWidth(10);
-    const wrapper2 = mount(
+    rerender(
       <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper2.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
 
     setOffsetWidth(0);
     setScrollWidth(0);
@@ -287,6 +287,54 @@ describe('TableCellRenderer', () => {
       expect(console.error).not.toHaveBeenCalled();
       expect(renderDataFunction).toHaveBeenCalled();
       expect(screen.getByText('124556')).toBeDefined();
+    });
+
+    it('should render a tooltip and display it on focus when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      expect(document.body).toHaveFocus();
+      userEvent.tab();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveFocus();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+    });
+
+    it('should render a tooltip and display it on hover when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      userEvent.hover(screen.getByText('Select'));
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
     });
   });
 });

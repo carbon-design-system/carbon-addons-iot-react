@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
 
-import { ChildContentPropTypes } from '../Header';
+import { ChildContentPropTypes } from '../HeaderPropTypes';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const { prefix } = settings;

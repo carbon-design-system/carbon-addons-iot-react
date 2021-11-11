@@ -22,6 +22,8 @@ export const useShowExpanderColumn = ({
 }) => {
   const [showDelayedExpander, setShowDelayedExpander] = useState(false);
 
+  // extra deps will be automatically added by `eslint --fix` and it breaks the tests
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (hasResize && !useAutoTableLayoutForResize) {
       setShowDelayedExpander(true);

@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import List16 from '@carbon/icons-react';
+import { List16 } from '@carbon/icons-react';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../constants/Settings';

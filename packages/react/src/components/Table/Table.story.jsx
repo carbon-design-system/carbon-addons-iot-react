@@ -11,7 +11,12 @@ import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
 import { firstBy } from 'thenby';
 
-import { TextInput, Checkbox, ToastNotification, Button, FormGroup, Form } from '../../index';
+import { TextInput } from '../TextInput';
+import { Checkbox } from '../Checkbox';
+import { ToastNotification } from '../Notification';
+import Button from '../Button';
+import { FormGroup } from '../FormGroup';
+import { Form } from '../Form';
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
@@ -1283,7 +1288,6 @@ export const TableExampleWithCreateSaveViews = () => {
             },
           },
         }}
-        isSortable
         options={{
           ...baseState.options,
           hasResize: true,
@@ -1327,6 +1331,8 @@ TableExampleWithCreateSaveViews.parameters = {
 };
 
 export const BasicTableWithFullRowEditExample = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const [showRowEditBar, setShowRowEditBar] = useState(false);
   const startingData = tableData.map((i) => ({
     ...i,
@@ -1363,12 +1369,17 @@ export const BasicTableWithFullRowEditExample = () => {
     setRowActionsState([]);
   };
   const onSaveRowEdit = () => {
-    setShowToast(true);
-    setPreviousData(currentData);
-    setCurrentData(rowEditedData);
-    setRowEditedData([]);
-    setShowRowEditBar(false);
-    setRowActionsState([]);
+    // because of the nature of rendering these buttons dynamically (and asyncronously via dispatch)
+    // in the StatefulTable we need to wrap these calls inside the setRowEditedData callback to ensure
+    // we're always working with the correctly updated data.
+    setRowEditedData((prev) => {
+      setShowToast(true);
+      setPreviousData(currentData);
+      setCurrentData(prev);
+      setShowRowEditBar(false);
+      setRowActionsState([]);
+      return [];
+    });
   };
   const onUndoRowEdit = () => {
     setCurrentData(previousData);
@@ -1458,7 +1469,7 @@ export const BasicTableWithFullRowEditExample = () => {
   return (
     <div>
       {showToast ? myToast : null}
-      <Table
+      <MyTable
         id="table"
         secondaryTitle="My editable table"
         size={select(

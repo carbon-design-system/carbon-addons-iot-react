@@ -259,7 +259,7 @@ describe('ImageCard', () => {
     const galleryButton = screen.getByRole('button', { name: 'Add from gallery' });
     expect(galleryButton).toBeVisible();
     userEvent.click(galleryButton);
-    expect(handleClick).toBeCalled();
+    expect(handleClick).toHaveBeenCalled();
     const fileInput = container.querySelector('input[type="file"]');
     expect(fileInput).toBeVisible();
 
@@ -305,7 +305,7 @@ describe('ImageCard', () => {
     });
 
     expect(screen.queryByText(/This file is not one of the accepted file types/gi)).toBeNull();
-    expect(validate).toBeCalledWith(validFile);
+    expect(validate).toHaveBeenCalledWith(validFile);
     const reader = FileReader.mock.instances[0];
     expect(reader.readAsDataURL).toHaveBeenCalledWith(validFile);
     act(() => {
@@ -354,7 +354,7 @@ describe('ImageCard', () => {
     const galleryButton = screen.getByRole('button', { name: 'Add from gallery' });
     expect(galleryButton).toBeVisible();
     userEvent.click(galleryButton);
-    expect(handleClick).toBeCalled();
+    expect(handleClick).toHaveBeenCalled();
     const fileInput = container.querySelector('input[type="file"]');
     expect(fileInput).toBeVisible();
 
@@ -400,7 +400,7 @@ describe('ImageCard', () => {
     });
 
     expect(screen.queryByText(/This file is not one of the accepted file types/gi)).toBeNull();
-    expect(validate).toBeCalledWith(validFile);
+    expect(validate).toHaveBeenCalledWith(validFile);
     expect(screen.getByText(/image file is too large/gi)).toBeVisible();
     jest.resetAllMocks();
   });
@@ -435,7 +435,7 @@ describe('ImageCard', () => {
     const galleryButton = screen.getByRole('button', { name: 'Add from gallery' });
     expect(galleryButton).toBeVisible();
     userEvent.click(galleryButton);
-    expect(handleClick).toBeCalled();
+    expect(handleClick).toHaveBeenCalled();
     const fileInput = container.querySelector('input[type="file"]');
     expect(fileInput).toBeVisible();
 
@@ -481,7 +481,7 @@ describe('ImageCard', () => {
     });
 
     expect(screen.queryByText(/This file is not one of the accepted file types/gi)).toBeNull();
-    expect(validate).toBeCalledWith(validFile);
+    expect(validate).toHaveBeenCalledWith(validFile);
     expect(screen.getByText(/this file does not pass muster/gi)).toBeVisible();
     jest.resetAllMocks();
   });
@@ -516,7 +516,7 @@ describe('ImageCard', () => {
     const galleryButton = screen.getByRole('button', { name: 'Add from gallery' });
     expect(galleryButton).toBeVisible();
     userEvent.click(galleryButton);
-    expect(handleClick).toBeCalled();
+    expect(handleClick).toHaveBeenCalled();
     const fileInput = container.querySelector('input[type="file"]');
     expect(fileInput).toBeVisible();
 
@@ -562,7 +562,7 @@ describe('ImageCard', () => {
     });
 
     expect(screen.queryByText(/This file is not one of the accepted file types/gi)).toBeNull();
-    expect(validate).toBeCalledWith(validFile);
+    expect(validate).toHaveBeenCalledWith(validFile);
     const reader = FileReader.mock.instances[0];
     expect(reader.readAsDataURL).toHaveBeenCalledWith(validFile);
     act(() => {
@@ -616,8 +616,8 @@ describe('ImageCard', () => {
       userEvent.click(screen.getByRole('button', { name: 'OK' }));
     });
 
-    expect(fetch).toBeCalledWith('http://example.com/example.png');
-    expect(handleUpload).toBeCalledWith(
+    expect(fetch).toHaveBeenCalledWith('http://example.com/example.png');
+    expect(handleUpload).toHaveBeenCalledWith(
       expect.objectContaining({
         addedFiles: expect.arrayContaining([
           new File([fileContents], 'example.png', {
@@ -663,7 +663,7 @@ describe('ImageCard', () => {
       userEvent.click(screen.getByRole('button', { name: 'OK' }));
     });
 
-    expect(fetch).toBeCalledWith('http://example.com/example.png');
+    expect(fetch).toHaveBeenCalledWith('http://example.com/example.png');
     expect(screen.getByText(/fetch failed/gi)).toBeVisible();
     const closeErrorButton = screen.getByTitle('closes notification');
     expect(closeErrorButton).toBeVisible();

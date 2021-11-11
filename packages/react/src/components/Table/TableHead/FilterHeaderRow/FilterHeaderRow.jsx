@@ -149,10 +149,12 @@ class FilterHeaderRow extends Component {
     super(props);
 
     this.rowRef = React.createRef();
+    this.firstFilterableRef = React.createRef();
   }
 
   componentDidMount() {
     this.updateDropdownHeight();
+    this.updateFocus();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -176,6 +178,22 @@ class FilterHeaderRow extends Component {
         this.setState({
           dropdownMaxHeight: `${height}px`,
         });
+      }
+    }
+  };
+
+  setFirstFilterableRef = (node) => {
+    if (!this.firstFilterableRef.current && node) {
+      this.firstFilterableRef.current = node;
+    }
+  };
+
+  updateFocus = () => {
+    if (this.firstFilterableRef.current) {
+      if (typeof this.firstFilterableRef.current.focus === 'function') {
+        this.firstFilterableRef.current.focus();
+      } else if (typeof this.firstFilterableRef.current.textInput.current.focus === 'function') {
+        this.firstFilterableRef.current.textInput.current.focus();
       }
     }
   };
@@ -266,6 +284,7 @@ class FilterHeaderRow extends Component {
             ) : column.options ? (
               column.isMultiselect ? (
                 <MultiSelect.Filterable
+                  ref={this.setFirstFilterableRef}
                   key={columnStateValue}
                   className={classnames(
                     `${iotPrefix}--filterheader-multiselect`,
@@ -306,6 +325,7 @@ class FilterHeaderRow extends Component {
                 />
               ) : (
                 <ComboBox
+                  ref={this.setFirstFilterableRef}
                   menuFitContent
                   horizontalDirection={isLastColumn ? 'start' : 'end'}
                   key={columnStateValue}
@@ -342,6 +362,7 @@ class FilterHeaderRow extends Component {
             ) : (
               <FormItem className={`${iotPrefix}--filter-header-row--form-item`}>
                 <TextInput
+                  ref={this.setFirstFilterableRef}
                   id={column.id}
                   labelText={column.id}
                   hideLabel

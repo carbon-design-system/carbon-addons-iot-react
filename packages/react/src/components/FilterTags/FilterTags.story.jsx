@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 
-import { Tag, Button } from '../../index';
+import { Tag } from '../Tag';
+import Button from '../Button';
 
 import FilterTags from './FilterTags';
 
