@@ -1,6 +1,7 @@
-@import '~react-grid-layout/css/styles';
-@import '~react-resizable/css/styles';
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use 'react-grid-layout/css/styles';
+@use 'react-resizable/css/styles' as styles2;
 
 .dashboard {
   &--header {
@@ -14,7 +15,7 @@
     align-items: center;
 
     & > p {
-      margin-left: $spacing-05;
+      margin-left: spacing.$spacing-05;
       margin-bottom: 0;
     }
   }
@@ -24,7 +25,7 @@
     flex-flow: column;
 
     & > p {
-      padding-bottom: $spacing-05;
+      padding-bottom: spacing.$spacing-05;
       margin-bottom: 0;
     }
 
@@ -36,7 +37,7 @@
 
     & > p,
     div {
-      color: $text-02;
+      color: theme.$text-02;
     }
   }
 
@@ -46,7 +47,7 @@
     flex-grow: 0;
 
     & > div + div {
-      margin-left: $spacing-05;
+      margin-left: spacing.$spacing-05;
     }
   }
 
@@ -57,12 +58,12 @@
     flex-grow: 0;
 
     & > div + div {
-      margin-left: $spacing-03;
+      margin-left: spacing.$spacing-03;
     }
   }
 }
 
 .react-grid-item.react-grid-placeholder {
   background: none;
-  border: 3px dashed $active-secondary;
+  border: 3px dashed theme.$active-secondary;
 }

@@ -1,19 +1,24 @@
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/colors';
+@use '../../globals/mixins';
+@use '../../globals/typography';
 
-.#{$iot-prefix}--data-state-container {
+.#{vars.$iot-prefix}--data-state-container {
   // the custom property (CSS var) is defined in the Card that is using it
   padding: 0 var(--container-padding);
   width: inherit;
 }
 
-.#{$iot-prefix}--data-state-dashes {
-  color: $gray-20;
+.#{vars.$iot-prefix}--data-state-dashes {
+  color: colors.$gray-20;
   font-size: 4rem;
   line-height: 0.67;
 }
 
-.#{$iot-prefix}--data-state-grid {
-  margin-top: $spacing-05;
+.#{vars.$iot-prefix}--data-state-grid {
+  margin-top: spacing.$spacing-05;
   display: grid;
   align-items: center;
   grid-template-columns: auto auto 1fr;
@@ -22,7 +27,7 @@
     'app-icon  app-label             .        '
     '    .     app-description app-description';
 
-  > .#{$prefix}--tooltip__label {
+  > .#{vars.$prefix}--tooltip__label {
     overflow: hidden;
     &:focus {
       outline: none;
@@ -32,7 +37,7 @@
   & > *:first-child {
     grid-area: app-icon;
     cursor: pointer;
-    margin-right: $spacing-03;
+    margin-right: spacing.$spacing-03;
   }
 
   & > *:nth-child(2) {
@@ -51,45 +56,45 @@
   }
 }
 
-.#{$iot-prefix}--data-state-grid__label {
-  @include type-style('productive-heading-01');
-  @include text-overflow();
+.#{vars.$iot-prefix}--data-state-grid__label {
+  @include typography.type-style('productive-heading-01');
+  @include mixins.text-overflow;
 }
 
-.#{$iot-prefix}--data-state-grid__description {
-  @include type-style('helper-text-01');
-  color: $gray-70;
+.#{vars.$iot-prefix}--data-state-grid__description {
+  @include typography.type-style('helper-text-01');
+  color: colors.$gray-70;
 
   $max-lines: 2;
   $line-height: 1rem;
-  @include multiline-text-overflow($max-lines, $line-height);
+  @include mixins.multiline-text-overflow($max-lines, $line-height);
 }
 
-.#{$iot-prefix}--data-state-tooltip:focus {
+.#{vars.$iot-prefix}--data-state-tooltip:focus {
   outline: none;
 }
 
-.#{$iot-prefix}--data-state-tooltip {
+.#{vars.$iot-prefix}--data-state-tooltip {
   > * {
-    margin-bottom: $spacing-05;
+    margin-bottom: spacing.$spacing-05;
   }
 
-  .#{$iot-prefix}--data-state-tooltip__label {
-    @include type-style('productive-heading-01');
+  .#{vars.$iot-prefix}--data-state-tooltip__label {
+    @include typography.type-style('productive-heading-01');
   }
 }
 
-.#{$iot-prefix}--data-state-default-error-icon {
-  fill: $carbon--red-60;
+.#{vars.$iot-prefix}--data-state-default-error-icon {
+  fill: colors.$red-60;
 }
 
-.#{$iot-prefix}--data-state-default-warning-icon {
-  fill: $carbon--yellow-30;
+.#{vars.$iot-prefix}--data-state-default-warning-icon {
+  fill: colors.$yellow-30;
 }
 
-html[dir='rtl'] .#{$iot-prefix}--data-state-grid {
+html[dir='rtl'] .#{vars.$iot-prefix}--data-state-grid {
   & > *:first-child {
     margin-right: 0;
-    margin-left: $spacing-03;
+    margin-left: spacing.$spacing-03;
   }
 }

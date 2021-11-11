@@ -1,14 +1,16 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}--composed-structured-list {
+.#{vars.$iot-prefix}--composed-structured-list {
   &__wrapper {
     width: inherit;
   }
 
   &__empty-content {
-    background-color: $ui-01;
+    background-color: theme.$ui-01;
     text-align: center;
-    color: $text-03;
+    color: theme.$text-03;
     // stylelint-disable-next-line declaration-property-unit-blacklist
     font-size: 14px;
     padding-top: 90px;
@@ -19,7 +21,7 @@
   }
 
   &__loading {
-    padding-top: $spacing-05;
+    padding-top: spacing.$spacing-05;
   }
 
   &__list-cell {

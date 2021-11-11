@@ -1,13 +1,13 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/layout';
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}-add-card {
+.#{vars.$iot-prefix}-add-card {
   border: 1px solid transparent;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: $ui-01;
+  background-color: theme.$ui-01;
   min-height: 8rem;
   min-width: 8.5rem;
   max-width: 18.75rem;
@@ -18,6 +18,6 @@
   }
 }
 
-.#{$iot-prefix}-addcard-title {
-  color: $text-01;
+.#{vars.$iot-prefix}-addcard-title {
+  color: theme.$text-01;
 }

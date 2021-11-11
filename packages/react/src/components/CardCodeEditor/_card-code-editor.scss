@@ -1,18 +1,21 @@
-.#{$iot-prefix}--editor {
-  .#{$prefix}--modal-content {
-    padding-right: $spacing-05;
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+.#{vars.$iot-prefix}--editor {
+  .#{vars.$prefix}--modal-content {
+    padding-right: spacing.$spacing-05;
   }
 
   &-container {
-    background-color: $ui-background;
+    background-color: theme.$ui-background;
     height: 100%;
     overflow: hidden;
     min-height: 3.5rem;
-    padding-top: $spacing-05;
+    padding-top: spacing.$spacing-05;
   }
 
   &-notification {
-    margin: 0 auto $spacing-05;
+    margin: 0 auto spacing.$spacing-05;
   }
 
   &-copy-wrapper {
@@ -21,29 +24,29 @@
   }
 
   &-copy {
-    background-color: $ui-background;
+    background-color: theme.$ui-background;
     position: absolute;
     right: 0;
     top: 0;
     z-index: 1;
   }
 
-  & .#{$prefix}--copy {
+  & .#{vars.$prefix}--copy {
     font-size: 0;
   }
 
-  & .#{$iot-prefix}--editor-expand.#{$prefix}--btn {
+  & .#{vars.$iot-prefix}--editor-expand.#{vars.$prefix}--btn {
     color: transparent;
     position: absolute;
-    right: $spacing-09;
+    right: spacing.$spacing-09;
     top: 0;
 
-    .#{$prefix}--assistive-text,
-    .#{$prefix}--tooltip--a11y::before {
+    .#{vars.$prefix}--assistive-text,
+    .#{vars.$prefix}--tooltip--a11y::before {
       display: none;
     }
   }
-  .#{$prefix}--tooltip--a11y::before {
+  .#{vars.$prefix}--tooltip--a11y::before {
     display: none;
   }
 
@@ -58,7 +61,7 @@
     background-color: transparent;
   }
 
-  &.#{$iot-prefix}--editor__expanded .#{$prefix}--modal-container {
+  &.#{vars.$iot-prefix}--editor__expanded .#{vars.$prefix}--modal-container {
     height: calc(100vh - 50px);
     max-width: 100vw;
     max-height: 100vh;

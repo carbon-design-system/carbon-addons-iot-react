@@ -1,1 +1,4 @@
-@import '~carbon-components/scss/components/checkbox/checkbox';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/checkbox';

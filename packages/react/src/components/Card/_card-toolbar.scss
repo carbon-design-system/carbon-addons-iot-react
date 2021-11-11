@@ -1,20 +1,22 @@
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}--card--toolbar {
+.#{vars.$iot-prefix}--card--toolbar {
   margin: 0;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
 
   // shrink the default text of the date-time-picker
-  .#{$iot-prefix}--date-time-picker__field {
+  .#{vars.$iot-prefix}--date-time-picker__field {
     font-size: 0.875rem;
     font-weight: normal;
   }
 }
 
-.#{$iot-prefix}--card--toolbar-action {
-  color: $ui-05;
+.#{vars.$iot-prefix}--card--toolbar-action {
+  color: theme.$ui-05;
   border-width: 2px;
   display: flex;
   height: 2rem;
@@ -24,27 +26,27 @@
   width: 2rem;
 
   &:hover {
-    background-color: $hover-ui;
-    color: $ui-05;
+    background-color: theme.$hover-ui;
+    color: theme.$ui-05;
   }
 
   &:focus {
     border-color: transparent;
-    outline: 2px solid $focus;
+    outline: 2px solid theme.$focus;
     outline-offset: -2px;
   }
 
   svg {
-    fill: $icon-02;
+    fill: theme.$icon-02;
   }
 
-  svg.#{$prefix}--overflow-menu__icon {
+  svg.#{vars.$prefix}--overflow-menu__icon {
     height: auto;
     width: auto;
   }
 }
 
-.#{$iot-prefix}--card--toolbar-svg-wrapper {
+.#{vars.$iot-prefix}--card--toolbar-svg-wrapper {
   align-items: center;
   background: transparent;
   border: none;
@@ -56,11 +58,11 @@
   margin: 0;
 
   :hover {
-    background: $hover-ui;
+    background: theme.$hover-ui;
   }
 
   &:active {
-    outline: 2px solid $focus;
+    outline: 2px solid theme.$focus;
     outline-offset: -2px;
   }
 }
