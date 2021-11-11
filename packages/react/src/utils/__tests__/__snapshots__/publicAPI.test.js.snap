@@ -602,6 +602,7 @@ Map {
         "hasSearch": false,
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
+        "preserveCellWhiteSpace": false,
         "preserveColumnWidths": false,
         "shouldExpandOnRowClick": false,
         "shouldLazyRender": false,
@@ -1416,6 +1417,9 @@ Map {
               "type": "bool",
             },
             "hasUserViewManagement": Object {
+              "type": "bool",
+            },
+            "preserveCellWhiteSpace": Object {
               "type": "bool",
             },
             "preserveColumnWidths": Object {

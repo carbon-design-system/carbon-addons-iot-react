@@ -96,6 +96,8 @@ const propTypes = {
   testId: PropTypes.string,
   /** Array with rowIds that are with loading active */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
+  /** use white-space: pre; css when true */
+  preserveCellWhiteSpace: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -124,6 +126,7 @@ const defaultProps = {
   showExpanderColumn: false,
   testId: '',
   cellTextOverflow: null,
+  preserveCellWhiteSpace: false,
   loadMoreText: 'Load more...',
   learnMoreText: 'Learn more',
   inProgressText: 'In progress',
@@ -167,6 +170,7 @@ const TableBody = ({
   testID,
   testId,
   showExpanderColumn,
+  preserveCellWhiteSpace,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -300,6 +304,7 @@ const TableBody = ({
           hasRowActions,
           shouldExpandOnRowClick,
           cellTextOverflow,
+          preserveCellWhiteSpace,
         }}
         nestingLevel={nestingLevel}
         nestingChildCount={row.children ? row.children.length : 0}

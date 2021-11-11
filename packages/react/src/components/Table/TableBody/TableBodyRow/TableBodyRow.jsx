@@ -61,6 +61,8 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
     cellTextOverflow: CellTextOverflowPropType,
+    /** use white-space: pre; css when true */
+    preserveCellWhiteSpace: PropTypes.bool,
   }),
 
   /** The unique row id */
@@ -398,6 +400,7 @@ const TableBodyRow = ({
     hasRowNesting,
     shouldExpandOnRowClick,
     cellTextOverflow,
+    preserveCellWhiteSpace,
   },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
@@ -510,6 +513,7 @@ const TableBodyRow = ({
                   columnId={col.columnId}
                   rowId={id}
                   row={values}
+                  preserveCellWhiteSpace={preserveCellWhiteSpace}
                 >
                   {values[col.columnId]}
                 </TableCellRenderer>

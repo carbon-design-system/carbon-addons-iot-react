@@ -149,6 +149,28 @@ describe('TableCellRenderer', () => {
     expect(screen.getByText('35.1234567')).toBeInTheDocument(); // no limit on the count of decimals
   });
 
+  it('should set preserve class when preserveCellWhiteSpace:true', () => {
+    const { container } = render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string" preserveCellWhiteSpace>
+        1 1 1 1 1
+      </TableCellRenderer>
+    );
+
+    expect(container.querySelector('span')).toBeVisible();
+    expect(container.querySelector('span')).toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
+  });
+
+  it('should not set preserve class when preserveCellWhiteSpace:false', () => {
+    render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string">
+        1 1
+      </TableCellRenderer>
+    );
+
+    expect(screen.getByText('1 1')).toBeVisible();
+    expect(screen.getByText('1 1')).not.toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
+  });
+
   describe('warning should be thrown for objects as data without needed functions', () => {
     const { __DEV__ } = global;
     const { error } = console;
