@@ -1,28 +1,30 @@
-@import '../../globals/vars';
-@import '~carbon-components/scss/globals/scss/layout';
-@import '~carbon-components/scss/globals/scss/helper-mixins';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/mixins';
+@use "../../globals/colors";
 
 $shadow-plus-padding: 1.4rem;
 $shadow: 0.4rem;
 
-.#{$iot-prefix}--flyout-menu {
+.#{vars.$iot-prefix}--flyout-menu {
   display: flex;
 
-  &.#{$iot-prefix}--flyout-menu__top {
+  &.#{vars.$iot-prefix}--flyout-menu__top {
     flex-direction: column-reverse;
   }
 
-  &.#{$iot-prefix}--flyout-menu__bottom {
+  &.#{vars.$iot-prefix}--flyout-menu__bottom {
     flex-direction: column;
   }
 
-  &.#{$iot-prefix}--flyout-menu__right,
-  [dir='rtl'] &.#{$iot-prefix}--flyout-menu__left {
+  &.#{vars.$iot-prefix}--flyout-menu__right,
+  [dir='rtl'] &.#{vars.$iot-prefix}--flyout-menu__left {
     flex-direction: row;
   }
 
-  &.#{$iot-prefix}--flyout-menu__left,
-  [dir='rtl'] &.#{$iot-prefix}-flyout-menu__right {
+  &.#{vars.$iot-prefix}--flyout-menu__left,
+  [dir='rtl'] &.#{vars.$iot-prefix}-flyout-menu__right {
     flex-direction: row-reverse;
   }
 
@@ -30,130 +32,131 @@ $shadow: 0.4rem;
     color: initial;
     border-radius: 0;
 
-    &:not(.#{$iot-prefix}--flyout-menu--body__light) {
-      background: $ui-01;
+    &:not(.#{vars.$iot-prefix}--flyout-menu--body__light) {
+      background: theme.$ui-01;
 
-      .#{$prefix}--tooltip__content::after {
-        background-color: $ui-01;
+      .#{vars.$prefix}--tooltip__content::after {
+        background-color: theme.$ui-01;
       }
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__light {
-      background: $ui-02;
+    &.#{vars.$iot-prefix}--flyout-menu--body__light {
+      background: theme.$ui-02;
 
-      .#{$prefix}--tooltip__content::after {
-        background-color: $ui-02;
+      .#{vars.$prefix}--tooltip__content::after {
+        background-color: theme.$ui-02;
       }
     }
 
-    .#{$prefix}--tooltip__caret {
+    .#{vars.$prefix}--tooltip__caret {
       display: none;
     }
 
-    .#{$prefix}--tooltip__content {
+    .#{vars.$prefix}--tooltip__content {
       position: relative;
       max-width: 480px;
     }
 
     // Box shadow cover with all its various positons
-    &.#{$iot-prefix}--flyout-menu--body__open .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__open .#{vars.$prefix}--tooltip__content::after {
       content: '';
       position: absolute;
-      top: -$shadow;
+      top: -(theme.$shadow);
       left: 0;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__bottom-end .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__bottom-end .#{vars.$prefix}--tooltip__content::after {
       left: unset;
       right: 0;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__top-start .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__top-start .#{vars.$prefix}--tooltip__content::after {
       top: unset;
-      bottom: -$shadow;
+      bottom: -(theme.$shadow);
       left: 0;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__top-end .#{$prefix}--tooltip__content::after {
-      bottom: -$shadow;
+    &.#{vars.$iot-prefix}--flyout-menu--body__top-end .#{vars.$prefix}--tooltip__content::after {
+      bottom: -(theme.$shadow);
       left: unset;
       right: 0;
       top: unset;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__left-start .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__left-start .#{vars.$prefix}--tooltip__content::after {
       left: unset;
-      right: -$shadow;
+      right: -(theme.$shadow);
       top: 0;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__left-end .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__left-end .#{vars.$prefix}--tooltip__content::after {
       display: none;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__right-start .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__right-start
+      .#{vars.$prefix}--tooltip__content::after {
       top: 0;
-      left: -$shadow;
+      left: -(theme.$shadow);
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__right-end .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__right-end .#{vars.$prefix}--tooltip__content::after {
       top: unset;
       bottom: 0;
-      left: -$shadow;
+      left: -(theme.$shadow);
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__bottom-start,
-    &.#{$iot-prefix}--flyout-menu--body__bottom-end,
-    &.#{$iot-prefix}--flyout-menu--body__top-start,
-    &.#{$iot-prefix}--flyout-menu--body__top-end {
-      .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__bottom-start,
+    &.#{vars.$iot-prefix}--flyout-menu--body__bottom-end,
+    &.#{vars.$iot-prefix}--flyout-menu--body__top-start,
+    &.#{vars.$iot-prefix}--flyout-menu--body__top-end {
+      .#{vars.$prefix}--tooltip__content::after {
         width: 3rem;
-        height: $shadow;
+        height: theme.$shadow;
       }
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__bottom-start.#{$iot-prefix}--flyout-menu--body__field,
-    &.#{$iot-prefix}--flyout-menu--body__bottom-end.#{$iot-prefix}--flyout-menu--body__field,
-    &.#{$iot-prefix}--flyout-menu--body__top-start.#{$iot-prefix}--flyout-menu--body__field,
-    &.#{$iot-prefix}--flyout-menu--body__top-end.#{$iot-prefix}--flyout-menu--body__field {
-      .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__bottom-start.#{vars.$iot-prefix}--flyout-menu--body__field,
+    &.#{vars.$iot-prefix}--flyout-menu--body__bottom-end.#{vars.$iot-prefix}--flyout-menu--body__field,
+    &.#{vars.$iot-prefix}--flyout-menu--body__top-start.#{vars.$iot-prefix}--flyout-menu--body__field,
+    &.#{vars.$iot-prefix}--flyout-menu--body__top-end.#{vars.$iot-prefix}--flyout-menu--body__field {
+      .#{vars.$prefix}--tooltip__content::after {
         width: 2.5rem;
       }
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__bottom-start.#{$iot-prefix}--flyout-menu--body__small,
-    &.#{$iot-prefix}--flyout-menu--body__bottom-end.#{$iot-prefix}--flyout-menu--body__small,
-    &.#{$iot-prefix}--flyout-menu--body__top-start.#{$iot-prefix}--flyout-menu--body__small,
-    &.#{$iot-prefix}--flyout-menu--body__top-end.#{$iot-prefix}--flyout-menu--body__small {
-      .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__bottom-start.#{vars.$iot-prefix}--flyout-menu--body__small,
+    &.#{vars.$iot-prefix}--flyout-menu--body__bottom-end.#{vars.$iot-prefix}--flyout-menu--body__small,
+    &.#{vars.$iot-prefix}--flyout-menu--body__top-start.#{vars.$iot-prefix}--flyout-menu--body__small,
+    &.#{vars.$iot-prefix}--flyout-menu--body__top-end.#{vars.$iot-prefix}--flyout-menu--body__small {
+      .#{vars.$prefix}--tooltip__content::after {
         width: 2rem;
       }
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__left-start,
-    &.#{$iot-prefix}--flyout-menu--body__left-end,
-    &.#{$iot-prefix}--flyout-menu--body__right-start,
-    &.#{$iot-prefix}--flyout-menu--body__right-end {
-      .#{$prefix}--tooltip__content::after {
-        width: $shadow;
+    &.#{vars.$iot-prefix}--flyout-menu--body__left-start,
+    &.#{vars.$iot-prefix}--flyout-menu--body__left-end,
+    &.#{vars.$iot-prefix}--flyout-menu--body__right-start,
+    &.#{vars.$iot-prefix}--flyout-menu--body__right-end {
+      .#{vars.$prefix}--tooltip__content::after {
+        width: theme.$shadow;
         height: 3rem;
       }
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__left-start.#{$iot-prefix}--flyout-menu--body__field,
-    &.#{$iot-prefix}--flyout-menu--body__left-end.#{$iot-prefix}--flyout-menu--body__field,
-    &.#{$iot-prefix}--flyout-menu--body__right-start.#{$iot-prefix}--flyout-menu--body__field,
-    &.#{$iot-prefix}--flyout-menu--body__right-end.#{$iot-prefix}--flyout-menu--body__field {
-      .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__left-start.#{vars.$iot-prefix}--flyout-menu--body__field,
+    &.#{vars.$iot-prefix}--flyout-menu--body__left-end.#{vars.$iot-prefix}--flyout-menu--body__field,
+    &.#{vars.$iot-prefix}--flyout-menu--body__right-start.#{vars.$iot-prefix}--flyout-menu--body__field,
+    &.#{vars.$iot-prefix}--flyout-menu--body__right-end.#{vars.$iot-prefix}--flyout-menu--body__field {
+      .#{vars.$prefix}--tooltip__content::after {
         height: 2.5rem;
       }
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__left-start.#{$iot-prefix}--flyout-menu--body__small,
-    &.#{$iot-prefix}--flyout-menu--body__left-end.#{$iot-prefix}--flyout-menu--body__small,
-    &.#{$iot-prefix}--flyout-menu--body__right-start.#{$iot-prefix}--flyout-menu--body__small,
-    &.#{$iot-prefix}--flyout-menu--body__right-end.#{$iot-prefix}--flyout-menu--body__small {
-      .#{$prefix}--tooltip__content::after {
+    &.#{vars.$iot-prefix}--flyout-menu--body__left-start.#{vars.$iot-prefix}--flyout-menu--body__small,
+    &.#{vars.$iot-prefix}--flyout-menu--body__left-end.#{vars.$iot-prefix}--flyout-menu--body__small,
+    &.#{vars.$iot-prefix}--flyout-menu--body__right-start.#{vars.$iot-prefix}--flyout-menu--body__small,
+    &.#{vars.$iot-prefix}--flyout-menu--body__right-end.#{vars.$iot-prefix}--flyout-menu--body__small {
+      .#{vars.$prefix}--tooltip__content::after {
         height: 2rem;
       }
     }
@@ -162,7 +165,7 @@ $shadow: 0.4rem;
   &__shadow-block {
     display: block;
     position: absolute;
-    background: $ui-02;
+    background: theme.$ui-02;
 
     &.bottom-start {
       height: $shadow-plus-padding;
@@ -220,7 +223,7 @@ $shadow: 0.4rem;
   }
 
   &__open {
-    @include box-shadow;
+    @include mixins.box-shadow;
   }
 
   &__bottom-container {
@@ -231,7 +234,7 @@ $shadow: 0.4rem;
       flex-grow: 1;
     }
 
-    > button.#{$iot-prefix}--btn {
+    > button.#{vars.$iot-prefix}--btn {
       padding-right: 60px;
     }
   }
@@ -242,41 +245,41 @@ $shadow: 0.4rem;
   }
 }
 
-.#{$iot-prefix}--flyout-menu--body.#{$prefix}--tooltip {
+.#{vars.$iot-prefix}--flyout-menu--body.#{vars.$prefix}--tooltip {
   min-width: unset;
   max-width: unset;
   padding: 0;
 }
 
-.#{$iot-prefix}--flyout-menu--content {
-  padding: $spacing-05 $spacing-05 $spacing-09 $spacing-05;
+.#{vars.$iot-prefix}--flyout-menu--content {
+  padding: spacing.$spacing-05 spacing.$spacing-05 spacing.$spacing-09 spacing.$spacing-05;
 }
 
-.#{$iot-prefix}--flyout-menu--trigger-button {
-  color: $icon-01;
+.#{vars.$iot-prefix}--flyout-menu--trigger-button {
+  color: theme.$icon-01;
 
   &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger svg,
   &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger:hover svg {
-    fill: $gray-70;
+    fill: colors.$gray-70;
   }
 
-  .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light) & {
-    background-color: $ui-01;
+  .#{vars.$iot-prefix}--flyout-menu:not(.#{vars.$iot-prefix}--flyout-menu__light) & {
+    background-color: theme.$ui-01;
   }
 
-  .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__open) &:hover {
-    background-color: $hover-ui;
+  .#{vars.$iot-prefix}--flyout-menu:not(.#{vars.$iot-prefix}--flyout-menu__open) &:hover {
+    background-color: theme.$hover-ui;
   }
 
-  .#{$iot-prefix}--flyout-menu__light.#{$iot-prefix}--flyout-menu__open &:hover {
-    background-color: $ui-02;
+  .#{vars.$iot-prefix}--flyout-menu__light.#{vars.$iot-prefix}--flyout-menu__open &:hover {
+    background-color: theme.$ui-02;
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 2px $focus, inset 0 0 0 3px $ui-background;
+    box-shadow: inset 0 0 0 2px theme.$focus, inset 0 0 0 3px theme.$ui-background;
   }
 
-  .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger::before {
+  .#{vars.$prefix}--btn.#{vars.$prefix}--btn--icon-only.#{vars.$prefix}--tooltip__trigger::before {
     width: 100%;
   }
 
@@ -285,8 +288,8 @@ $shadow: 0.4rem;
   }
 
   // What are we doing with these tool tips for buttons. We will want to be consistent across all button types.
-  .#{$prefix}--assistive-text,
-  &.#{$prefix}--tooltip--a11y::before {
+  .#{vars.$prefix}--assistive-text,
+  &.#{vars.$prefix}--tooltip--a11y::before {
     visibility: var(--tooltip-visibility);
   }
 }

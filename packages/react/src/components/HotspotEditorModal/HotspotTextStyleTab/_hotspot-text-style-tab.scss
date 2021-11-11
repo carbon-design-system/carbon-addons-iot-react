@@ -1,22 +1,25 @@
-@import '../../../globals/vars';
-@import '../mixins';
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars';
+@use '../mixins';
+@use "../../../globals/mixins" as globals-mixins;
 
 $border-radius: 5px;
 
-.#{$iot-prefix}--hotspot-text-style-tab {
+.#{vars.$iot-prefix}--hotspot-text-style-tab {
   &__form {
-    @include vertical-form();
-    .#{$prefix}--number input[type='number'] {
+    @include mixins.vertical-form();
+    .#{vars.$prefix}--number input[type='number'] {
       padding-right: 5rem;
     }
   }
 
   &__text-style {
-    @include content-switcher-border-radius($border-radius, left, right);
+    @include globals-mixins.content-switcher-border-radius($border-radius, left, right);
   }
 
   html[dir='rtl'] &__text-style {
-    @include content-switcher-border-radius($border-radius, right, left);
+    @include globals-mixins.content-switcher-border-radius($border-radius, right, left);
   }
 
   &__dropdown {
@@ -27,23 +30,23 @@ $border-radius: 5px;
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    gap: $spacing-06;
+    gap: spacing.$spacing-06;
 
-    .#{$prefix}--dropdown__wrapper.#{$prefix}--list-box__wrapper {
+    .#{vars.$prefix}--dropdown__wrapper.#{vars.$prefix}--list-box__wrapper {
       width: 100%;
     }
 
-    .#{$prefix}--form-item {
+    .#{vars.$prefix}--form-item {
       min-width: 10rem;
     }
   }
 }
 
-.#{$iot-prefix}--hotspot-editor--text-info-message {
-  @include info-message();
+.#{vars.$iot-prefix}--hotspot-editor--text-info-message {
+  @include mixins.info-message();
 }
 
-.#{$iot-prefix}--hotspot-text-style-tab__delete-button-container {
+.#{vars.$iot-prefix}--hotspot-text-style-tab__delete-button-container {
   display: flex;
   justify-content: flex-end;
 }

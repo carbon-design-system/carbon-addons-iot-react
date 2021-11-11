@@ -1,8 +1,10 @@
-@import '~carbon-components/scss/components/dropdown/dropdown';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use "../../globals/mixins";
+@use '~@carbon/styles/scss/components/dropdown';
 
-@import '../../globals/vars';
-
-.#{$iot-prefix}--dropdown__image-button:hover {
+.#{vars.$iot-prefix}--dropdown__image-button:hover {
   border-color: transparent;
 
   ::before {
@@ -10,58 +12,58 @@
   }
 }
 
-.#{$iot-prefix}--icon-dropdown__footer {
-  @include box-shadow();
-  outline: 1px solid $focus;
+.#{vars.$iot-prefix}--icon-dropdown__footer {
+  @include mixins.box-shadow();
+  outline: 1px solid theme.$focus;
   position: absolute;
 
-  background-color: $ui-01;
+  background-color: theme.$ui-01;
   z-index: 5999; // dropdown z-index is 6000, this needs to render just below
   width: 100%;
 
   &-content {
-    padding: $spacing-03;
+    padding: spacing.$spacing-03;
   }
 }
 
-.#{$iot-prefix}--icon-dropdown__selection-buttons {
-  > .#{$prefix}--list-box__field {
-    padding: 0 $spacing-09 0 $spacing-05;
+.#{vars.$iot-prefix}--icon-dropdown__selection-buttons {
+  > .#{vars.$prefix}--list-box__field {
+    padding: 0 spacing.$spacing-09 0 spacing.$spacing-05;
   }
 
-  > .#{$prefix}--list-box__menu {
+  > .#{vars.$prefix}--list-box__menu {
     transition: initial;
     box-shadow: none;
     outline-style: none;
     border: none;
 
-    > .#{$prefix}--list-box__menu-item--active {
+    > .#{vars.$prefix}--list-box__menu-item--active {
       background: transparent;
     }
 
-    > .#{$prefix}--list-box__menu-item.#{$prefix}--list-box__menu-item--highlighted {
+    > .#{vars.$prefix}--list-box__menu-item.#{vars.$prefix}--list-box__menu-item--highlighted {
       background: transparent;
 
       &:hover {
         > .bx--list-box__menu-item__option {
-          > .#{$iot-prefix}--dropdown__image-button {
+          > .#{vars.$iot-prefix}--dropdown__image-button {
             border-color: transparent;
           }
         }
       }
 
       > .bx--list-box__menu-item__option {
-        > .#{$iot-prefix}--dropdown__image-button {
-          border-color: $focus;
+        > .#{vars.$iot-prefix}--dropdown__image-button {
+          border-color: theme.$focus;
         }
       }
     }
 
-    > .#{$prefix}--list-box__menu-item {
+    > .#{vars.$prefix}--list-box__menu-item {
       display: inline-flex;
       height: min-content;
 
-      > .#{$prefix}--list-box__menu-item__option {
+      > .#{vars.$prefix}--list-box__menu-item__option {
         overflow: visible;
         border: none;
         height: min-content;
@@ -73,23 +75,23 @@
         justify-items: center;
 
         &:hover {
-          background: $hover-ui;
+          background: theme.$hover-ui;
         }
 
-        > .#{$iot-prefix}--icon-dropdown__selected-icon-label {
+        > .#{vars.$iot-prefix}--icon-dropdown__selected-icon-label {
           display: none;
         }
 
-        > .#{$prefix}--list-box__menu-item__selected-icon {
+        > .#{vars.$prefix}--list-box__menu-item__selected-icon {
           display: none;
         }
 
-        > .#{$iot-prefix}--icon-dropdown__image-button {
+        > .#{vars.$iot-prefix}--icon-dropdown__image-button {
           border-width: 1px;
           border-style: solid;
           border-top-color: transparent;
-          border-right-color: $ui-03;
-          border-bottom-color: $ui-03;
+          border-right-color: theme.$ui-03;
+          border-bottom-color: theme.$ui-03;
           border-left-color: transparent;
 
           color: transparent;
@@ -107,7 +109,7 @@
           }
 
           &--top {
-            border-top-color: $ui-03;
+            border-top-color: theme.$ui-03;
           }
 
           &:hover {
@@ -122,18 +124,18 @@
     }
   }
 
-  .#{$prefix}--list-box__label {
-    > .#{$iot-prefix}--icon-dropdown__image-button {
+  .#{vars.$prefix}--list-box__label {
+    > .#{vars.$iot-prefix}--icon-dropdown__image-button {
       display: none;
     }
 
-    > .#{$iot-prefix}--icon-dropdown__text {
+    > .#{vars.$iot-prefix}--icon-dropdown__text {
       height: 100%;
     }
   }
 }
 
-.#{$iot-prefix}--icon-dropdown__selected-icon-label {
+.#{vars.$iot-prefix}--icon-dropdown__selected-icon-label {
   display: flex;
   height: 100%;
 
@@ -144,13 +146,13 @@
   }
 
   &__content {
-    margin: auto $spacing-03;
+    margin: auto spacing.$spacing-03;
 
     overflow: hidden;
     text-overflow: ellipsis;
 
     &--open {
-      color: $active-ui;
+      color: theme.$active-ui;
     }
   }
 }

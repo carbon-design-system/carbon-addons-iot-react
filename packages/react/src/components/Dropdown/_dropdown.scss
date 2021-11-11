@@ -1,6 +1,9 @@
-@import '~carbon-components/scss/components/dropdown/dropdown';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/dropdown';
 
-.#{$iot-prefix}--dropdown__label {
+.#{vars.$iot-prefix}--dropdown__label {
   display: flex;
   align-items: center;
   height: 100%;
@@ -13,13 +16,13 @@
 
   &__content {
     margin: auto 0;
-    margin-left: $spacing-03;
+    margin-left: spacing.$spacing-03;
 
     overflow: hidden;
     text-overflow: ellipsis;
 
     &--open {
-      color: $active-ui;
+      color: theme.$active-ui;
     }
   }
 }

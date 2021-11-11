@@ -1,25 +1,27 @@
-@import '../../../globals/vars';
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars' as globals-vars;
 
-.#{$iot-prefix}--dynamic-hotspot-source-picker {
+.#{globals-vars.$iot-prefix}--dynamic-hotspot-source-picker {
   display: flex;
-  margin-top: $spacing-06;
-  margin-bottom: $spacing-07;
+  margin-top: spacing.$spacing-06;
+  margin-bottom: spacing.$spacing-07;
   align-items: flex-end;
 
   & > *:first-child {
-    margin-right: $spacing-05;
+    margin-right: spacing.$spacing-05;
   }
 
-  .#{$prefix}--dropdown__wrapper {
+  .#{globals-vars.$prefix}--dropdown__wrapper {
     width: 100%;
   }
 }
 
-.#{$iot-prefix}--dynamic-hotspot-source-picker__clear-button {
-  margin-left: $spacing-02;
-  height: $spacing-08;
+.#{globals-vars.$iot-prefix}--dynamic-hotspot-source-picker__clear-button {
+  margin-left: spacing.$spacing-02;
+  height: spacing.$spacing-08;
 }
 
-.#{$iot-prefix}--dynamic-hotspot-source-picker__clear-button--invisible {
+.#{globals-vars.$iot-prefix}--dynamic-hotspot-source-picker__clear-button--invisible {
   visibility: hidden;
 }

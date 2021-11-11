@@ -1,34 +1,35 @@
-@import '../../globals/vars';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}--hotspot-editor-modal.#{$iot-prefix}--composed-modal {
+.#{vars.$iot-prefix}--hotspot-editor-modal.#{vars.$iot-prefix}--composed-modal {
   // Only apply to the top level modal, in case there is another modal nested inside the modal
-  & > .#{$prefix}--modal-container > .#{$prefix}--modal-content {
+  & > .#{vars.$prefix}--modal-container > .#{vars.$prefix}--modal-content {
     $right-side-width: 420px;
     padding-right: 0;
     display: flex;
     & > *:first-child {
-      margin-right: $layout-03;
+      margin-right: spacing.$spacing-07;
       flex-grow: 1;
-      max-width: calc(100% - (#{$right-side-width} + (#{$layout-03} * 2)));
+      max-width: calc(100% - (#{$right-side-width} + (#{spacing.$spacing-07} * 2)));
     }
     & > *:last-child {
-      margin-right: $layout-03;
+      margin-right: spacing.$spacing-07;
       min-width: $right-side-width;
       overflow-y: auto;
     }
 
-    .#{$prefix}--tabs {
-      margin-top: $layout-01;
+    .#{vars.$prefix}--tabs {
+      margin-top: spacing.$spacing-05;
     }
 
-    .#{$prefix}--tab-content {
+    .#{vars.$prefix}--tab-content {
       padding-right: 0;
       padding-left: 0;
     }
   }
 }
 
-.#{$iot-prefix}--hotspot-editor-modal__variable-loading {
-  margin-top: $layout-05;
+.#{vars.$iot-prefix}--hotspot-editor-modal__variable-loading {
+  margin-top: spacing.$spacing-10;
   justify-content: center;
 }

@@ -1,20 +1,23 @@
-@import '~carbon-components/scss/components/data-table/data-table';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/data-table';
 
 .table-header-label {
   &-start {
-    .#{$prefix}--table-header-label {
+    .#{vars.$prefix}--table-header-label {
       text-align: start;
     }
   }
 
   &-center {
-    .#{$prefix}--table-header-label {
+    .#{vars.$prefix}--table-header-label {
       text-align: center;
     }
   }
 
   &-end {
-    .#{$prefix}--table-header-label {
+    .#{vars.$prefix}--table-header-label {
       text-align: end;
     }
   }
@@ -23,7 +26,7 @@
 .table-header-label-start .table-header-label-start,
 .table-header-label-center .table-header-label-center,
 .table-header-label-end .table-header-label-end {
-  .#{$prefix}--table-header-label {
+  .#{vars.$prefix}--table-header-label {
     width: 100%;
   }
 }
@@ -43,16 +46,16 @@ td.data-table {
 }
 
 html[dir='rtl'] {
-  .#{$prefix}--table-sort__icon-unsorted,
-  .#{$prefix}--table-sort__icon {
-    margin-right: $spacing-03;
+  .#{vars.$prefix}--table-sort__icon-unsorted,
+  .#{vars.$prefix}--table-sort__icon {
+    margin-right: spacing.$spacing-03;
     margin-left: 0;
   }
 
   td.data-table {
     &-start {
       text-align: start;
-      padding-right: $spacing-04;
+      padding-right: spacing.$spacing-04;
     }
 
     &-center {
@@ -61,44 +64,44 @@ html[dir='rtl'] {
 
     &-end {
       text-align: end;
-      padding-left: $spacing-05;
+      padding-left: spacing.$spacing-05;
     }
   }
 }
 
-.#{$prefix}--data-table {
-  .table-header-sortable:not(.#{$prefix}--table-sort) {
+.#{vars.$prefix}--data-table {
+  .table-header-sortable:not(.#{vars.$prefix}--table-sort) {
     padding: 0;
   }
-  .#{$prefix}--table-sort {
-    padding-left: $spacing-04;
-    padding-right: $spacing-04;
+  .#{vars.$prefix}--table-sort {
+    padding-left: spacing.$spacing-04;
+    padding-right: spacing.$spacing-04;
 
-    .#{$prefix}--table-header-label {
+    .#{vars.$prefix}--table-header-label {
       padding-left: 0;
       padding-right: 0;
     }
   }
 
   // override padding on chexkbox cells, so that it aligns with cell content in tables with xl size prop
-  &.#{$prefix}--data-table--xl {
-    .#{$prefix}--checkbox-table-cell {
-      padding-top: $spacing-05;
+  &.#{vars.$prefix}--data-table--xl {
+    .#{vars.$prefix}--checkbox-table-cell {
+      padding-top: spacing.$spacing-05;
     }
   }
 
-  &.#{$prefix}--data-table--xs,
-  &.#{$prefix}--data-table--sm,
-  &.#{$prefix}--data-table--md {
-    .#{$prefix}--checkbox-table-cell {
-      padding-top: $spacing-01;
-      padding-bottom: $spacing-01;
+  &.#{vars.$prefix}--data-table--xs,
+  &.#{vars.$prefix}--data-table--sm,
+  &.#{vars.$prefix}--data-table--md {
+    .#{vars.$prefix}--checkbox-table-cell {
+      padding-top: spacing.$spacing-01;
+      padding-bottom: spacing.$spacing-01;
     }
   }
 
-  .#{$prefix}--checkbox-table-cell {
-    padding-bottom: $spacing-03;
-    padding-top: $spacing-03;
+  .#{vars.$prefix}--checkbox-table-cell {
+    padding-bottom: spacing.$spacing-03;
+    padding-top: spacing.$spacing-03;
     width: 2.5rem;
 
     /* Added to undo carbon component. this needs to be removed when we redo this table */
@@ -108,33 +111,36 @@ html[dir='rtl'] {
   }
 }
 
-.#{$prefix}--toolbar-search-container-active .#{$prefix}--search .#{$prefix}--search-input {
-  padding-right: $spacing-09;
+.#{vars.$prefix}--toolbar-search-container-active
+  .#{vars.$prefix}--search
+  .#{vars.$prefix}--search-input {
+  padding-right: spacing.$spacing-09;
 }
 
 // Fixes bug when modal is opened, then closed. The toolbar moves to the top
-section.#{$prefix}--table-toolbar {
+section.#{vars.$prefix}--table-toolbar {
   overflow: unset;
 }
 
-.#{$prefix}--data-table th {
+.#{vars.$prefix}--data-table th {
   position: relative;
 }
 
-.#{$prefix}--expandable-row .#{$prefix}--table-expand {
+.#{vars.$prefix}--expandable-row .#{vars.$prefix}--table-expand {
   z-index: 2;
 }
 
-.#{$prefix}--expandable-row .#{$prefix}--checkbox-table-cell {
+.#{vars.$prefix}--expandable-row .#{vars.$prefix}--checkbox-table-cell {
   z-index: 1;
 }
 
-tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected td,
-tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected:not(.#{$prefix}--expandable-row):hover
+tr.#{vars.$prefix}--parent-row.#{vars.$prefix}--data-table--selected td,
+tr.#{vars.$prefix}--parent-row.#{vars.$prefix}--data-table--selected:not(.#{vars.$prefix}--expandable-row):hover
   td,
-tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row td,
-tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row
+tr.#{vars.$prefix}--parent-row.#{vars.$prefix}--data-table--selected.#{vars.$prefix}--expandable-row
+  td,
+tr.#{vars.$prefix}--parent-row.#{vars.$prefix}--data-table--selected.#{vars.$prefix}--expandable-row
   td:first-of-type {
-  border-bottom-color: $active-ui;
+  border-bottom-color: theme.$active-ui;
   box-shadow: none;
 }

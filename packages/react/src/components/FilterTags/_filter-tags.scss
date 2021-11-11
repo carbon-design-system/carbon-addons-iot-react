@@ -1,28 +1,31 @@
-.#{$iot-prefix}--filtertags-container {
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+.#{vars.$iot-prefix}--filtertags-container {
   &__wrap {
     white-space: nowrap;
     min-width: 0;
     flex: 1;
 
-    .#{$prefix}--overflow-menu {
+    .#{vars.$prefix}--overflow-menu {
       width: auto;
       min-width: 4.5rem;
     }
   }
 
-  .#{$iot-prefix}--filtertags-overflow-menu,
-  .#{$iot-prefix}--filtertags-overflow-menu.#{$prefix}--overflow-menu--open,
-  .#{$prefix}--overflow-menu.#{$prefix}--overflow-menu--open:hover,
-  .#{$iot-prefix}--filtertags-overflow-menu:hover {
+  .#{vars.$iot-prefix}--filtertags-overflow-menu,
+  .#{vars.$iot-prefix}--filtertags-overflow-menu.#{vars.$prefix}--overflow-menu--open,
+  .#{vars.$prefix}--overflow-menu.#{vars.$prefix}--overflow-menu--open:hover,
+  .#{vars.$iot-prefix}--filtertags-overflow-menu:hover {
     box-shadow: none;
     background-color: unset;
     display: inline-block;
 
-    .#{$prefix}--tag {
+    .#{vars.$prefix}--tag {
       cursor: pointer;
     }
   }
-  .#{$iot-prefix}--filtertags-overflow-items[data-floating-menu-direction='bottom']::after {
+  .#{vars.$iot-prefix}--filtertags-overflow-items[data-floating-menu-direction='bottom']::after {
     background-color: unset;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
@@ -36,7 +39,7 @@
   }
 }
 
-.#{$iot-prefix}--filtertags-overflow-item span {
+.#{vars.$iot-prefix}--filtertags-overflow-item span {
   display: flex;
   align-items: center;
   justify-content: space-between;

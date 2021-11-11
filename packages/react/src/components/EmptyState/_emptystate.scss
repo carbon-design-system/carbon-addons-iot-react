@@ -1,15 +1,16 @@
-@import '../../globals/vars';
-@import '../../globals/spacing';
-@import '../../globals/typography';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/typography';
 
-.#{$iot-prefix}--empty-state {
+.#{vars.$iot-prefix}--empty-state {
   display: flex;
   flex-flow: column;
   justify-content: center;
   height: 100%;
-  padding: $spacing-09;
+  padding: spacing.$spacing-09;
   &--icon {
-    margin-bottom: $spacing-05;
+    margin-bottom: spacing.$spacing-05;
     height: 80px;
     width: auto;
   }
@@ -20,23 +21,23 @@
   }
 
   &--title {
-    @include type-style('productive-heading-03');
-    color: $text-01;
-    margin-bottom: $spacing-03;
+    @include typography.type-style('productive-heading-03');
+    color: theme.$text-01;
+    margin-bottom: spacing.$spacing-03;
   }
 
   &--text {
-    color: $text-01;
-    @include type-style('body-short-01');
+    color: theme.$text-01;
+    @include typography.type-style('body-short-01');
   }
 
   &--action {
-    margin-top: $spacing-05;
+    margin-top: spacing.$spacing-05;
   }
 
   &--link {
-    margin-top: $spacing-05;
-    @include type-style('body-short-01');
-    color: $interactive-01;
+    margin-top: spacing.$spacing-05;
+    @include typography.type-style('body-short-01');
+    color: theme.$interactive-01;
   }
 }

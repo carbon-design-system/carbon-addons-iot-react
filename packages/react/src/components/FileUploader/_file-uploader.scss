@@ -1,1 +1,4 @@
-@import '~carbon-components/scss/components/file-uploader/file-uploader';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/file-uploader';

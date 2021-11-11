@@ -1,6 +1,8 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}--file-drop {
+.#{vars.$iot-prefix}--file-drop {
   &__selected-file {
     background-color: rgba(85, 150, 230, 0.1);
   }
@@ -11,14 +13,14 @@
     padding: 0;
     font: inherit;
     outline: none;
-    color: $interactive-01;
+    color: theme.$interactive-01;
     cursor: pointer;
     margin-left: 0.25rem;
     text-decoration: underline;
   }
 
   &__text {
-    padding: $spacing-05;
+    padding: spacing.$spacing-05;
     line-height: 30px;
   }
 }

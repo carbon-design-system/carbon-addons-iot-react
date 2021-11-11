@@ -1,1 +1,4 @@
-@import '~carbon-components/scss/components/date-picker/date-picker';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/date-picker';

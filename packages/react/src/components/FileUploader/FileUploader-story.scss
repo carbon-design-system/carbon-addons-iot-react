@@ -1,3 +1,8 @@
+@use '../../globals/config';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+
 .bx--file__selected-file {
   width: 288px;
 }
