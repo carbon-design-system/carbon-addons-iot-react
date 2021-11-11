@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.54...v2.147.0-next.55) (2021-11-10)
+
+
+### Bug Fixes
+
+* **overflow:** rtl offset ([7b763e8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7b763e808f74fd97243962640da371762c91b09b))
+* **overflow-menu:** increase width of the spacer to batch button width ([071c3eb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/071c3eb3d64a151ca0429d26ff0dd245666ac340))
+* **page-title-bar:** fix bottom alignment in dynamic mode ([f85e893](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f85e8935cfc3df3df613f71adc0c6e14188e8992))
+* **page-title-bar:** header height and margin ([8e6405f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e6405f2a5b42873d1a63dbac9cabf72743ae071))
+* **page-title-bar:** remove clamp ([a12611c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a12611ca278a7da9896154152c7b392343646f40))
+
+
+### Features
+
+* **table:** fix RTL overflow menu, replace with autopositioning version ([4b0711b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4b0711b1d32d06446f1127b15afa7559897095e8))
+
+
+
+
+
 # [2.147.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.53...v2.147.0-next.54) (2021-11-10)
 
 
