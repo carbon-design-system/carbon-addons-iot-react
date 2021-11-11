@@ -659,6 +659,7 @@ export const WithLoadMore = () => {
           },
         ],
       },
+      { id: 'org2', content: { value: 'Organization 2' }, hasLoadMore: true },
     ]);
     return (
       <div style={{ width: 400 }}>
@@ -717,6 +718,16 @@ export const WithLoadMore = () => {
                     },
                   ],
                 },
+                {
+                  id: 'org2',
+                  content: { value: 'Organization 2' },
+                  hasLoadMore: id === 'org2' ? false : prevItems[1]?.hasLoadMore,
+                },
+                ...(id === 'org2'
+                  ? [{ id: 'org3', content: { value: 'Organization 3' } }]
+                  : prevItems[2]
+                  ? [prevItems[2]]
+                  : []),
               ]);
               setLoadingMoreIds((prev) => prev.filter((prevId) => prevId !== id));
             }, 2000);

@@ -5466,6 +5466,61 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             </div>
           </div>
         </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Organization 2"
+                  >
+                    Organization 2
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--list-item iot--load-more-row iot--btn bx--btn bx--btn--ghost"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <div
+            className="iot--load-more-row--content"
+          >
+            Load more...
+          </div>
+        </button>
       </div>
     </div>
   </div>
