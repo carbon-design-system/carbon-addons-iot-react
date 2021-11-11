@@ -45,6 +45,15 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
+      - name: Cache Cypress binary
+        uses: actions/cache@v2
+        if: steps.changes.outputs.react == 'true'
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            cypress-${{ runner.os }}-cypress-
+
       - name: Install dependencies
         if: steps.changes.outputs.react == 'true'
         run: |
