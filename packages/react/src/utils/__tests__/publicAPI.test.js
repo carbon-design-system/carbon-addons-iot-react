@@ -109,6 +109,7 @@ beforeEach(() => {
  * the components that we export and their corresponding API.
  */
 test('Public API should only change with a semver change', () => {
+  jest.spyOn(console, 'warn').mockImplementation(() => {});
   function mapComponentToAPI(Component) {
     const api = {};
 
@@ -159,4 +160,14 @@ test('Public API should only change with a semver change', () => {
   });
 
   expect(PublicAPI).toMatchSnapshot();
+  expect(console.warn).toHaveBeenCalledWith(
+    `Warning: The Filterable field has been deprecated on the MultiSelect object. Please import and use MultiSelect.Filterable directly.`
+  );
+  expect(console.warn).toHaveBeenCalledWith(
+    `Warning: The ControlledPasswordInput field has been deprecated on the TextInput object. Please import and use ControlledPasswordInput directly.`
+  );
+  expect(console.warn).toHaveBeenCalledWith(
+    `Warning: The PasswordInput field has been deprecated on the TextInput object. Please import and use PasswordInput directly.`
+  );
+  expect(console.warn).toHaveBeenCalledTimes(3);
 });

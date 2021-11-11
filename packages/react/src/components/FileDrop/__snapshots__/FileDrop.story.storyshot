@@ -89,7 +89,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       Any file can be uploaded.  Feel free to upload more than one!
     </p>
     <label
-      aria-disabled={false}
       className="bx--btn bx--btn--secondary"
       data-testid="file-drop-uploader-button"
       htmlFor="id12"
@@ -97,6 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       tabIndex={0}
     >
       <span
+        aria-disabled={false}
         role="button"
       >
         Try it out!
@@ -142,7 +142,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       Only one file can be uploaded
     </p>
     <label
-      aria-disabled={false}
       className="bx--btn bx--btn--secondary"
       data-testid="file-drop-uploader-button"
       htmlFor="id13"
@@ -150,6 +149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       tabIndex={0}
     >
       <span
+        aria-disabled={false}
         role="button"
       >
         Try it out!

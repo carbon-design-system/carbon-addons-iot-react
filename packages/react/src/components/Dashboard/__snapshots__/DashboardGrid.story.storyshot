@@ -1923,6 +1923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     </svg>
                     <div
                       className="bx--accordion__title"
+                      dir="auto"
                     >
                       GDP vs Population
                     </div>
@@ -2001,6 +2002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     </svg>
                     <div
                       className="bx--accordion__title"
+                      dir="auto"
                     >
                       Panel B
                     </div>
@@ -2042,6 +2044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     </svg>
                     <div
                       className="bx--accordion__title"
+                      dir="auto"
                     >
                       Panel C
                     </div>
@@ -3256,7 +3259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 </div>
               </div>
               <div
-                className="bx--pagination iot--pagination iot--pagination--hide-page"
+                className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                 data-testid="table-for-card-tableCard-table-pagination"
                 style={
                   Object {

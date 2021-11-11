@@ -6,7 +6,7 @@ describe('CodeSandbox', () => {
   it(
     'should build and load',
     {
-      defaultCommandTimeout: 60000,
+      defaultCommandTimeout: 120000,
     },
     () => {
       // load sandbox

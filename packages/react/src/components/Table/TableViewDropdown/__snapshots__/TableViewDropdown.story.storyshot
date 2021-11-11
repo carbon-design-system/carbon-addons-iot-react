@@ -36,6 +36,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             id="downshift-0-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            title={
+              <TableViewDropdownItem
+                activeViewEdited={false}
+                i18n={
+                  Object {
+                    "ariaLabel": "Select view",
+                    "edited": "Edited",
+                    "manageViews": "Manage views",
+                    "saveAsNewView": "Save as new view",
+                    "saveChanges": "Save changes",
+                    "tableViewMenu": "Table view menu",
+                    "view": "View",
+                    "viewAll": "View All",
+                  }
+                }
+                isCompact={false}
+                isSelected={true}
+                item={
+                  Object {
+                    "id": "view-1",
+                    "text": "My saved 1",
+                  }
+                }
+                testID="TableViewDropdownItem-view-1"
+              />
+            }
             type="button"
           >
             <span
@@ -152,6 +178,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             id="downshift-0-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            title={
+              <TableViewDropdownItem
+                activeViewEdited={true}
+                i18n={
+                  Object {
+                    "ariaLabel": "Select view",
+                    "edited": "Edited",
+                    "manageViews": "Manage views",
+                    "saveAsNewView": "Save as new view",
+                    "saveChanges": "Save changes",
+                    "tableViewMenu": "Table view menu",
+                    "view": "View",
+                    "viewAll": "View All",
+                  }
+                }
+                isCompact={false}
+                isSelected={true}
+                item={
+                  Object {
+                    "id": "view-all",
+                    "text": "View All",
+                  }
+                }
+                testID="TableViewDropdownItem-view-all"
+              />
+            }
             type="button"
           >
             <span
@@ -273,6 +325,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             id="downshift-0-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            title={
+              <TableViewDropdownItem
+                activeViewEdited={false}
+                i18n={
+                  Object {
+                    "ariaLabel": "Select view",
+                    "edited": "Edited",
+                    "manageViews": "Manage views",
+                    "saveAsNewView": "Save as new view",
+                    "saveChanges": "Save changes",
+                    "tableViewMenu": "Table view menu",
+                    "view": "View",
+                    "viewAll": "View All",
+                  }
+                }
+                isCompact={false}
+                isSelected={true}
+                item={
+                  Object {
+                    "id": "view-all",
+                    "text": "View All",
+                  }
+                }
+                testID="TableViewDropdownItem-view-all"
+              />
+            }
             type="button"
           >
             <span

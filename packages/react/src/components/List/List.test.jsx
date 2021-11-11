@@ -9,7 +9,7 @@ import { EditingStyle } from '../../utils/DragAndDropUtils';
 import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 const defaultEmptyText = 'No list items to show';
 
 describe('List', () => {
@@ -298,7 +298,7 @@ describe('List', () => {
     const { container } = render(
       <List title="list" items={getListItems(1)} handleSelect={onSelect} isCheckboxMultiSelect />
     );
-    userEvent.click(container.querySelectorAll('.bx--checkbox-label')[0]);
+    userEvent.click(container.querySelectorAll(`.${prefix}--checkbox-label`)[0]);
     expect(onSelect).toHaveBeenCalledWith('1', null);
   });
 

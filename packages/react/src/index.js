@@ -144,6 +144,7 @@ export {
   ButtonSet,
   Checkbox,
   CodeSnippet,
+  ControlledPasswordInput,
   // TODO: unify combobox
   // ComboBox,
   ModalHeader,
@@ -186,6 +187,7 @@ export {
   FileUploaderButton,
   FileUploaderDropContainer,
   FileUploaderItem,
+  FilterableMultiSelect,
   Form,
   FormGroup,
   FormItem,
@@ -213,6 +215,7 @@ export {
   OverflowMenuItem,
   Pagination,
   PaginationNav,
+  PasswordInput,
   PrimaryButton,
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,
