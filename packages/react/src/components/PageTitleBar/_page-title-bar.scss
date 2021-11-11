@@ -1,12 +1,15 @@
-/* stylelint-disable declaration-property-unit-blacklist */
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/typography';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/typography';
+@use "../../globals/motion";
+@use '../../globals/layout';
 
 @mixin condensed-style() {
   @include make-sticky();
-  background: rgba($ui-01, var(--scroll-transition-progress));
-  border-bottom: 1px solid rgba($ui-03, var(--scroll-transition-progress));
-  transition: all $duration--fast-02;
+  background: rgba(theme.$ui-01, var(--scroll-transition-progress));
+  border-bottom: 1px solid rgba(theme.$ui-03, var(--scroll-transition-progress));
+  transition: all motion.$duration-fast-02;
 }
 
 @mixin make-sticky() {
@@ -37,8 +40,8 @@
     grid-row-gap: 0;
     grid-column-gap: 0;
     grid-template:
-      'breadcrumb           actions-condensed   actions-upper' minmax($spacing-03, auto)
-      'title                actions             actions' $spacing-08
+      'breadcrumb           actions-condensed   actions-upper' minmax(spacing.$spacing-03, auto)
+      'title                actions             actions' spacing.$spacing-08
       'description          description         description' auto
       'content              content             content' max-content /
       auto auto min-content;
@@ -46,7 +49,7 @@
     .page-title-bar--sticky & {
       @include condensed-style();
       width: 100%;
-      padding-bottom: $spacing-05;
+      padding-bottom: spacing.$spacing-05;
       z-index: 1000;
     }
   }
@@ -57,21 +60,21 @@
     grid-area: actions;
     justify-content: flex-end;
     align-content: center;
-    padding-right: $spacing-07;
+    padding-right: spacing.$spacing-07;
     [dir='rtl'] & {
       padding-right: unset;
-      padding-left: $spacing-07;
+      padding-left: spacing.$spacing-07;
     }
 
-    .#{$prefix}--btn--primary {
-      margin-left: $spacing-03;
+    .#{vars.$prefix}--btn--primary {
+      margin-left: spacing.$spacing-03;
       [dir='rtl'] & {
         margin-left: unset;
-        margin-right: $spacing-03;
+        margin-right: spacing.$spacing-03;
       }
     }
 
-    .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary {
+    .#{vars.$prefix}--btn--secondary + .#{vars.$prefix}--btn--primary {
       margin-left: 0;
       [dir='rtl'] & {
         margin-left: unset;
@@ -80,16 +83,17 @@
     }
 
     /* search boxes, selects, etc should have slightly wider margin */
-    .#{$prefix}--btn ~ :not(.#{$prefix}--btn) {
-      margin-left: $spacing-05;
-      margin-right: $spacing-05;
+    .#{vars.$prefix}--btn ~ :not(.#{vars.$prefix}--btn) {
+      margin-left: spacing.$spacing-05;
+      margin-right: spacing.$spacing-05;
     }
 
-    .#{$prefix}--btn + .#{$prefix}--btn--secondary:not(.#{$iot-prefix}--icon-switch) {
-      margin-left: $spacing-05;
+    .#{vars.$prefix}--btn
+      + .#{vars.$prefix}--btn--secondary:not(.#{vars.$iot-prefix}--icon-switch) {
+      margin-left: spacing.$spacing-05;
     }
 
-    transition: opacity $duration--moderate-02;
+    transition: opacity motion.$duration-moderate-02;
 
     .page-title-bar--condensed-static & {
       @include condensed-style();
@@ -97,10 +101,10 @@
 
     .page-title-bar--dynamic & {
       @include make-sticky();
-      margin-left: $spacing-05;
+      margin-left: spacing.$spacing-05;
       [dir='rtl'] & {
         margin-left: unset;
-        margin-right: $spacing-05;
+        margin-right: spacing.$spacing-05;
       }
     }
 
@@ -109,7 +113,7 @@
       grid-area: actions-condensed;
       padding-right: 0;
       opacity: 1;
-      transition: opacity $duration--moderate-02;
+      transition: opacity motion.$duration-moderate-02;
     }
 
     // Fade out the action buttons and scroll them underneath the backdrop
@@ -141,8 +145,8 @@
       z-index: 1;
       display: grid;
       content: '';
-      background: rgba($ui-01, var(--scroll-transition-progress));
-      border-bottom: 1px solid rgba($ui-03, var(--scroll-transition-progress));
+      background: rgba(theme.$ui-01, var(--scroll-transition-progress));
+      border-bottom: 1px solid rgba(theme.$ui-03, var(--scroll-transition-progress));
     }
   }
 
@@ -151,39 +155,39 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: $spacing-04 0 $spacing-02 $spacing-07;
+    padding: spacing.$spacing-04 0 spacing.$spacing-02 spacing.$spacing-07;
     max-height: clamp(0rem, $spacing-02, $spacing-08);
     white-space: nowrap;
 
     [dir='rtl'] & {
-      padding: $spacing-04 $spacing-07 $spacing-02 0;
+      padding: spacing.$spacing-04 spacing.$spacing-07 spacing.$spacing-02 0;
     }
 
     .page-title-bar--dynamic & {
       @include make-sticky();
       overflow: hidden;
-      transition: all $duration--fast-02;
+      transition: all motion.$duration-fast-02;
       border-bottom: 1px solid transparent;
       margin-bottom: -1px;
     }
 
     .page-title-bar--dynamic--during &,
     .page-title-bar--dynamic--after & {
-      padding-bottom: $spacing-04;
-      transition: all $duration--fast-02;
+      padding-bottom: spacing.$spacing-04;
+      transition: all motion.$duration-fast-02;
       z-index: 900;
     }
 
     .page-title-bar--condensed-static & {
       @include condensed-style();
       grid-area: title;
-      padding-bottom: $spacing-04;
+      padding-bottom: spacing.$spacing-04;
       z-index: 1000;
     }
 
     > nav {
       width: 100%;
-      .#{$prefix}--breadcrumb-item:first-child {
+      .#{vars.$prefix}--breadcrumb-item:first-child {
         [dir='rtl'] & {
           margin-right: 0;
         }
@@ -195,12 +199,12 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      transition: opacity $duration--fast-01 linear, transform $duration--fast-01 linear;
+      transition: opacity motion.$duration-fast-01 linear, transform motion.$duration-fast-01 linear;
       margin-left: 0;
 
       [dir='rtl'] & {
         text-align: right;
-        margin-right: $spacing-03;
+        margin-right: spacing.$spacing-03;
       }
 
       .page-title-bar--dynamic & {
@@ -210,10 +214,11 @@
 
       .page-title-bar--dynamic--during &,
       .page-title-bar--dynamic--after & {
+        /* prevents line-break and scss/operator-no-newline-after error */
+        /* prettier-ignore */
         transform: translateY(
           calc(
-            var(--breadcrumb-scroll-distance) -
-              (var(--scroll-transition-progress) * var(--breadcrumb-scroll-distance))
+            var(--breadcrumb-scroll-distance) - (var(--scroll-transition-progress) * var(--breadcrumb-scroll-distance))
           )
         );
         opacity: var(--scroll-transition-progress);
@@ -222,7 +227,7 @@
   }
 
   &-actions-upper {
-    @include type-style('label-01');
+    @include typography.type-style('label-01');
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -231,11 +236,11 @@
     grid-row-end: 2;
     grid-column-start: actions-condensed-start;
     grid-column-end: actions-upper-end;
-    padding-right: $spacing-07;
+    padding-right: spacing.$spacing-07;
     z-index: 100;
     [dir='rtl'] & {
       padding-right: unset;
-      padding-left: $spacing-07;
+      padding-left: spacing.$spacing-07;
     }
 
     .page-title-bar--dynamic & {
@@ -254,8 +259,8 @@
     display: grid;
     grid-area: title;
     justify-content: space-between;
-    padding-left: $spacing-07;
-    padding-right: $spacing-07;
+    padding-left: spacing.$spacing-07;
+    padding-right: spacing.$spacing-07;
 
     .page-title-bar--dynamic--during &,
     .page-title-bar--dynamic--after & {
@@ -271,9 +276,9 @@
       overflow: hidden;
 
       h2 {
-        @include type-style('productive-heading-04');
+        @include typography.type-style('productive-heading-04');
         // need to match the 40x40px icons that could render in
-        height: $spacing-08;
+        height: spacing.$spacing-08;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -281,90 +286,90 @@
       }
 
       & #tooltip {
-        fill: $icon-01;
+        fill: theme.$icon-01;
       }
 
-      .#{$prefix}--tooltip__label {
+      .#{vars.$prefix}--tooltip__label {
         height: 100%;
-        width: $spacing-08;
+        width: spacing.$spacing-08;
       }
 
-      .#{$prefix}--tooltip__trigger {
+      .#{vars.$prefix}--tooltip__trigger {
         margin-left: 0;
-        padding-left: $spacing-04;
-        padding-right: $spacing-04;
+        padding-left: spacing.$spacing-04;
+        padding-right: spacing.$spacing-04;
         height: calc(100% - 2px); // make room for outline
-        width: calc(#{$spacing-08} - 1px);
+        width: calc(#{spacing.$spacing-08} - 1px);
 
         svg {
-          width: $spacing-05;
-          height: $spacing-05;
+          width: spacing.$spacing-05;
+          height: spacing.$spacing-05;
         }
       }
     }
-    .#{$prefix}--text-input {
-      margin-right: $spacing-05;
+    .#{vars.$prefix}--text-input {
+      margin-right: spacing.$spacing-05;
       [dir='rtl'] & {
         margin-right: unset;
-        margin-left: $spacing-05;
+        margin-left: spacing.$spacing-05;
       }
     }
 
-    &--edit.#{$prefix}--btn.#{$prefix}--btn--field {
-      margin-left: $spacing-05;
+    &--edit.#{vars.$prefix}--btn.#{vars.$prefix}--btn--field {
+      margin-left: spacing.$spacing-05;
       [dir='rtl'] & {
         margin-left: unset;
-        margin-right: $spacing-05;
+        margin-right: spacing.$spacing-05;
       }
     }
   }
 
-  .#{$prefix}--tab-content {
+  .#{vars.$prefix}--tab-content {
     padding: unset;
-    padding-top: $spacing-05;
+    padding-top: spacing.$spacing-05;
   }
 
   &-description {
     display: grid;
     grid-area: description;
-    @include type-style('body-long-01');
-    margin-top: $spacing-02;
+    @include typography.type-style('body-long-01');
+    margin-top: spacing.$spacing-02;
     max-width: 40rem;
-    padding-left: $spacing-07;
-    padding-right: $spacing-07;
+    padding-left: spacing.$spacing-07;
+    padding-right: spacing.$spacing-07;
 
-    .#{$prefix}--inline-loading {
-      @include type-style('label-01');
-      height: $spacing-04;
+    .#{vars.$prefix}--inline-loading {
+      @include typography.type-style('label-01');
+      height: spacing.$spacing-04;
       min-height: unset;
       &__animation {
-        width: $spacing-05;
-        height: $spacing-05;
-        margin-right: $spacing-03;
+        width: spacing.$spacing-05;
+        height: spacing.$spacing-05;
+        margin-right: spacing.$spacing-03;
       }
     }
   }
 
   &-loading {
-    height: carbon--rem(20px);
-    margin: $spacing-05 0 0 $spacing-07;
+    height: layout.rem(20px);
+    margin: spacing.$spacing-05 0 0 spacing.$spacing-07;
   }
 
   &-content {
     display: grid;
     grid-area: content;
-    padding: 0 $spacing-07;
-    margin-top: $spacing-06;
+    padding: 0 spacing.$spacing-07;
+    margin-top: spacing.$spacing-06;
 
     &.page-title-bar-content--active {
-      .#{$prefix}--tabs--scrollable {
-        transition: all $duration--fast-02 ease-in;
-        background: $ui-01;
+      .#{vars.$prefix}--tabs--scrollable {
+        transition: all motion.$duration-fast-02 ease-in;
+        background: theme.$ui-01;
       }
     }
 
-    .#{$prefix}--tabs--scrollable {
-      .#{$prefix}--tabs--scrollable__nav-link {
+    .#{vars.$prefix}--tabs--scrollable {
+      .#{vars.$prefix}--tabs--scrollable__nav-link {
         text-align: left;
 
         [dir='rtl'] & {

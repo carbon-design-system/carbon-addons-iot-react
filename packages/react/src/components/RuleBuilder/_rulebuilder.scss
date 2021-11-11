@@ -1,6 +1,9 @@
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/colors';
 
-.#{$iot-prefix}--rule-builder-header {
+.#{vars.$iot-prefix}--rule-builder-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,29 +15,29 @@
   }
 }
 
-.#{$iot-prefix}--rule-builder-header__dropdown {
+.#{vars.$iot-prefix}--rule-builder-header__dropdown {
   display: inline-block;
 }
 
-.#{$iot-prefix}--rule-builder-header__buttons {
+.#{vars.$iot-prefix}--rule-builder-header__buttons {
   justify-content: flex-end;
   display: flex;
 }
 
-.#{$iot-prefix}--rule-builder-rule,
-%#{$iot-prefix}--rule-builder-rule {
+.#{vars.$iot-prefix}--rule-builder-rule,
+%#{vars.$iot-prefix}--rule-builder-rule {
   display: grid;
   align-items: center;
-  column-gap: $spacing-04;
-  padding: $spacing-04 0 0 $spacing-06;
+  column-gap: spacing.$spacing-04;
+  padding: spacing.$spacing-04 0 0 spacing.$spacing-06;
   grid-template-columns: 1fr 1fr 1fr minmax(145px, 0.5fr);
-  margin-left: $spacing-04;
+  margin-left: spacing.$spacing-04;
   position: relative;
   &:before {
     content: ' ';
     width: 2px;
     height: 100%;
-    background-color: $blue-70;
+    background-color: colors.$blue-70;
     position: absolute;
     top: 0;
     left: 0;
@@ -48,9 +51,9 @@
 
   &:after {
     content: ' ';
-    width: $spacing-06;
+    width: spacing.$spacing-06;
     height: 2px;
-    background-color: $blue-70;
+    background-color: colors.$blue-70;
     position: absolute;
     top: 60%;
     left: 0;
@@ -58,8 +61,8 @@
   }
 
   html[dir='rtl'] & {
-    margin-right: $spacing-04;
-    padding: $spacing-04 $spacing-06 0 0;
+    margin-right: spacing.$spacing-04;
+    padding: spacing.$spacing-04 spacing.$spacing-06 0 0;
 
     &:before,
     &:after {
@@ -68,22 +71,22 @@
   }
 }
 
-.#{$iot-prefix}--rule-builder-rule--group {
-  @extend %#{$iot-prefix}--rule-builder-rule;
+.#{vars.$iot-prefix}--rule-builder-rule--group {
+  @extend %#{vars.$iot-prefix}--rule-builder-rule;
   grid-template-columns: repeat(1, 1fr);
 
   &:last-child {
     &:before {
-      height: $spacing-07;
+      height: spacing.$spacing-07;
     }
   }
 
   &:after {
-    top: $spacing-07;
+    top: spacing.$spacing-07;
     transform: translateY(0);
   }
 }
 
-.#{$iot-prefix}--rule-builder-rule__actions {
+.#{vars.$iot-prefix}--rule-builder-rule__actions {
   justify-self: end;
 }

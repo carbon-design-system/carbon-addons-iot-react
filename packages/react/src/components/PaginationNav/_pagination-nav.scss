@@ -1,1 +1,4 @@
-@import '~carbon-components/scss/components/pagination-nav/pagination-nav';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/pagination-nav';

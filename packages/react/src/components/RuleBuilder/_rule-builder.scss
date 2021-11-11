@@ -1,23 +1,28 @@
-.#{$iot-prefix}--rule-builder-wrap {
-  background: $ui-01;
-  border: 1px solid $ui-03;
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/typography';
+
+.#{vars.$iot-prefix}--rule-builder-wrap {
+  background: theme.$ui-01;
+  border: 1px solid theme.$ui-03;
   display: flex;
   flex-direction: column;
   min-height: 100%;
 
   &--header {
-    border-bottom: 1px solid $ui-03;
+    border-bottom: 1px solid theme.$ui-03;
     display: flex;
     justify-content: space-between;
-    padding: $spacing-05;
+    padding: spacing.$spacing-05;
 
-    .#{$iot-prefix}--card--toolbar-svg-wrapper {
-      height: $spacing-07;
-      width: $spacing-07;
+    .#{vars.$iot-prefix}--card--toolbar-svg-wrapper {
+      height: spacing.$spacing-07;
+      width: spacing.$spacing-07;
     }
 
     &-title {
-      @include type-style('productive-heading-03');
+      @include typography.type-style('productive-heading-03');
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -25,7 +30,7 @@
     }
 
     &-metatext {
-      @include type-style('body-short-01');
+      @include typography.type-style('body-short-01');
     }
 
     & div:first-child {
@@ -38,7 +43,7 @@
     }
 
     &-actions-save {
-      margin-left: $spacing-03;
+      margin-left: spacing.$spacing-03;
     }
   }
 
@@ -46,46 +51,46 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: $spacing-05;
+    padding: spacing.$spacing-05;
 
-    .#{$prefix}--tab-content {
+    .#{vars.$prefix}--tab-content {
       flex: 1;
       padding: 0;
     }
 
-    .#{$prefix}--accordion {
+    .#{vars.$prefix}--accordion {
       padding-top: 0;
     }
 
-    .#{$prefix}--accordion__item {
+    .#{vars.$prefix}--accordion__item {
       border-top: 0;
-      border-bottom: 1px solid $ui-03;
+      border-bottom: 1px solid theme.$ui-03;
 
       &--active {
         border-bottom: 0;
 
-        .#{$prefix}--accordion__content {
-          border-top: 1px solid $ui-03;
-          padding: $spacing-05 0;
+        .#{vars.$prefix}--accordion__content {
+          border-top: 1px solid theme.$ui-03;
+          padding: spacing.$spacing-05 0;
         }
       }
     }
 
-    .#{$iot-prefix}--filtertags-container {
+    .#{vars.$iot-prefix}--filtertags-container {
       position: relative;
     }
 
-    .#{$iot-prefix}--filtertags-overflow-menu {
+    .#{vars.$iot-prefix}--filtertags-overflow-menu {
       position: relative;
       bottom: 0;
     }
 
-    .#{$prefix}--accordion__heading {
-      padding: $spacing-06 0;
+    .#{vars.$prefix}--accordion__heading {
+      padding: spacing.$spacing-06 0;
     }
 
-    .#{$prefix}--accordion__title {
-      @include type-style('productive-heading-02');
+    .#{vars.$prefix}--accordion__title {
+      @include typography.type-style('productive-heading-02');
       margin-left: 0;
     }
   }
@@ -94,39 +99,39 @@
     border-bottom: 2px solid #e0e0e0;
     width: 100%;
 
-    .#{$iot-prefix}--rule-builder--tab {
+    .#{vars.$iot-prefix}--rule-builder--tab {
       width: auto;
-      &:not(.#{$prefix}--tabs__nav-item--selected),
+      &:not(.#{vars.$prefix}--tabs__nav-item--selected),
       &:not(:hover) {
         border-bottom: none;
       }
     }
 
-    & + .#{$prefix}--tab-content {
-      padding-top: $spacing-06;
-      padding-right: $spacing-12;
+    & + .#{vars.$prefix}--tab-content {
+      padding-top: spacing.$spacing-06;
+      padding-right: spacing.$spacing-12;
     }
   }
 
   &--footer {
-    border-top: 1px solid $ui-03;
+    border-top: 1px solid theme.$ui-03;
     display: flex;
     justify-content: flex-end;
     margin: auto 0 0;
-    padding: $spacing-05;
+    padding: spacing.$spacing-05;
 
-    .#{$iot-prefix}--btn:not(:last-child) {
-      margin-right: $spacing-03;
+    .#{vars.$iot-prefix}--btn:not(:last-child) {
+      margin-right: spacing.$spacing-03;
     }
   }
 
   &--title-input {
-    margin-bottom: $spacing-06;
+    margin-bottom: spacing.$spacing-06;
   }
 
   &--tag-container {
     height: 0;
-    padding-left: $spacing-02;
+    padding-left: spacing.$spacing-02;
     display: inline-block;
     position: absolute;
     bottom: 38px;
@@ -142,23 +147,23 @@
   &--user-list__header {
     display: flex;
     flex-direction: row;
-    padding: $spacing-02 $spacing-04;
+    padding: spacing.$spacing-02 spacing.$spacing-04;
 
     justify-content: flex-start;
     align-items: center;
   }
 
   &--user-list__header {
-    background-color: $ui-03;
+    background-color: theme.$ui-03;
     font-weight: bold;
   }
 
   &--user-container {
     display: grid;
-    padding: $spacing-06 0;
+    padding: spacing.$spacing-06 0;
     align-items: center;
     grid-template-columns: auto auto;
     grid-row-start: 3;
-    column-gap: $spacing-12;
+    column-gap: spacing.$spacing-12;
   }
 }

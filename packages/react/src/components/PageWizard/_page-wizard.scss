@@ -1,25 +1,27 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/typography';
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '../../globals/typography';
+@use "../../globals/layout";
 
-.#{$iot-prefix}--page-wizard {
+.#{vars.$iot-prefix}--page-wizard {
   display: flex;
 
   &__sticky {
-    padding-bottom: $layout-06;
+    padding-bottom: spacing.$spacing-12;
   }
 
   &--progress {
     &--vertical {
-      padding-right: $spacing-05;
+      padding-right: spacing.$spacing-05;
       flex: 0 0 12rem;
     }
 
     &--horizontal {
-      padding-bottom: $spacing-05;
+      padding-bottom: spacing.$spacing-05;
     }
 
-    .#{$prefix}--progress--vertical {
+    .#{vars.$prefix}--progress--vertical {
       li {
         min-height: 4.5rem;
       }
@@ -27,15 +29,15 @@
   }
 
   &--step {
-    padding-bottom: $spacing-07;
-    @include type-style('body-long-01');
+    padding-bottom: spacing.$spacing-07;
+    @include typography.type-style('body-long-01');
 
     &--title {
-      @include type-style('productive-heading-02');
-      margin-bottom: $spacing-03;
+      @include typography.type-style('productive-heading-02');
+      margin-bottom: spacing.$spacing-03;
     }
     &--description {
-      margin-bottom: $spacing-04;
+      margin-bottom: spacing.$spacing-04;
       max-width: 40rem;
     }
     &--extra-content {
@@ -47,10 +49,10 @@
     flex: 1;
 
     &--actions {
-      padding-top: $spacing-07;
+      padding-top: spacing.$spacing-07;
 
-      .#{$prefix}--btn {
-        margin-right: $spacing-05;
+      .#{vars.$prefix}--btn {
+        margin-right: spacing.$spacing-05;
       }
     }
 
@@ -59,11 +61,11 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: $ui-01;
-      padding: $spacing-05 $spacing-07;
-      border-top: rem(1px) solid $ui-03;
-      .#{$prefix}--btn {
-        margin-right: $spacing-05;
+      background: theme.$ui-01;
+      padding: spacing.$spacing-05 spacing.$spacing-07;
+      border-top: layout.rem(1px) solid theme.$ui-03;
+      .#{vars.$prefix}--btn {
+        margin-right: spacing.$spacing-05;
       }
     }
 

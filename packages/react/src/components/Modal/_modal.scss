@@ -1,1 +1,4 @@
-@import '~carbon-components/scss/components/modal/modal';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/modal';

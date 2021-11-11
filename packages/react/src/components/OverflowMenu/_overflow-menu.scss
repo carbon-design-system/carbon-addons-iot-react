@@ -1,5 +1,8 @@
-@import '~carbon-components/scss/components/overflow-menu/overflow-menu';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use '~@carbon/styles/scss/components/overflow-menu';
 
-button.#{$prefix}--overflow-menu {
+button.#{vars.$prefix}--overflow-menu {
   background: none;
 }
