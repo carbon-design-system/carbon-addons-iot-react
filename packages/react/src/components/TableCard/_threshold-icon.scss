@@ -1,10 +1,10 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '../../globals/vars';
+@use '../../globals/spacing';
+@use '../../globals/vars';
 
-.#{$iot-prefix}--threshold-icon--wrapper {
+.#{vars.$iot-prefix}--threshold-icon--wrapper {
   display: flex;
 }
 
-.#{$iot-prefix}--threshold-icon--text {
-  margin-left: $spacing-02;
+.#{vars.$iot-prefix}--threshold-icon--text {
+  margin-left: spacing.$spacing-02;
 }

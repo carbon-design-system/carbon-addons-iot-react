@@ -1,41 +1,44 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import 'TableHead/table-head';
-@import 'TableFoot/table-foot';
-@import 'TableSkeletonWithHeaders/table-skeleton-with-headers';
-@import 'TableCellRenderer/table-cell-renderer';
-@import 'TableDetailWizard/table-detail-wizard';
-@import 'TableMultiSortModal/table-multi-sort-modal';
-@import '../../globals/vars';
+@use '../../globals/theme';
+@use '../../globals/spacing';
+@use '../../globals/vars';
+@use "../../globals/colors";
+@use "../../globals/mixins";
+@use 'TableHead/table-head';
+@use 'TableFoot/table-foot';
+@use 'TableSkeletonWithHeaders/table-skeleton-with-headers';
+@use 'TableCellRenderer/table-cell-renderer';
+@use 'TableDetailWizard/table-detail-wizard';
+@use 'TableMultiSortModal/table-multi-sort-modal';
 
-table.#{$prefix}--side-nav--data-table {
+table.#{vars.$prefix}--side-nav--data-table {
   white-space: nowrap;
 }
 
-.#{$iot-prefix}--data-table--row-actions {
+.#{vars.$iot-prefix}--data-table--row-actions {
   height: 0;
 }
 
-.#{$iot-prefix}--data-table--fixed {
+.#{vars.$iot-prefix}--data-table--fixed {
   table-layout: fixed;
 }
 
-.#{$iot-prefix}--data-table--column-groups {
+.#{vars.$iot-prefix}--data-table--column-groups {
   border-collapse: separate;
 }
 
-.#{$iot-prefix}--table__cell--truncate {
+.#{vars.$iot-prefix}--table__cell--truncate {
   max-width: 0;
 }
 
-td.#{$iot-prefix}--table__cell--sortable {
-  padding-right: $spacing-09;
+td.#{vars.$iot-prefix}--table__cell--sortable {
+  padding-right: spacing.$spacing-09;
 }
 
-.#{$iot-prefix}--data-table--resize td {
+.#{vars.$iot-prefix}--data-table--resize td {
   word-break: break-all;
 }
 
-.#{$iot-prefix}--table-container {
+.#{vars.$iot-prefix}--table-container {
   min-width: unset;
   padding-top: 0;
 
@@ -45,21 +48,21 @@ td.#{$iot-prefix}--table__cell--sortable {
 }
 
 html[dir='rtl'] {
-  .#{$iot-prefix}--expanded-tablerow td:first-of-type:before {
+  .#{vars.$iot-prefix}--expanded-tablerow td:first-of-type:before {
     left: auto;
     right: 0;
   }
-  .#{$iot-prefix}--expanded-tablerow > td * {
+  .#{vars.$iot-prefix}--expanded-tablerow > td * {
     text-align: right;
   }
 
-  td.#{$iot-prefix}--table__cell--sortable {
-    padding-left: $spacing-08;
+  td.#{vars.$iot-prefix}--table__cell--sortable {
+    padding-left: spacing.$spacing-08;
   }
 }
 
-.#{$iot-prefix}--empty-table--table-row {
-  height: calc(100% - #{$spacing-09});
+.#{vars.$iot-prefix}--empty-table--table-row {
+  height: calc(100% - #{spacing.$spacing-09});
   &:hover td {
     background: inherit;
   }
@@ -74,11 +77,11 @@ html[dir='rtl'] {
     // stylelint-disable-next-line declaration-property-unit-blacklist
     padding: Max(calc(48 * var(--is-large-card)), 0px);
     svg {
-      margin: $spacing-05;
+      margin: spacing.$spacing-05;
     }
 
     & > * {
-      margin: $spacing-03;
+      margin: spacing.$spacing-03;
     }
   }
 
@@ -87,30 +90,30 @@ html[dir='rtl'] {
   }
 }
 
-.#{$iot-prefix}--table__advanced-filters-container {
-  background-color: $ui-01;
-  padding: $spacing-02 $spacing-04;
-  border-top: 1px solid $ui-03;
+.#{vars.$iot-prefix}--table__advanced-filters-container {
+  background-color: theme.$ui-01;
+  padding: spacing.$spacing-02 spacing.$spacing-04;
+  border-top: 1px solid theme.$ui-03;
 
-  .#{$prefix}--tag {
-    color: $interactive-01;
-    background-color: $carbon--blue-20;
+  .#{vars.$prefix}--tag {
+    color: theme.$interactive-01;
+    background-color: colors.$blue-20;
   }
 }
 
 // needed specificity to override .iot--tooltip-svg-wrapper and allow flyout to align
 // properly with button
-button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost.#{$iot-prefix}--table-toolbar__advanced-filters-button {
+button.#{vars.$prefix}--btn.#{vars.$iot-prefix}--tooltip-svg-wrapper.#{vars.$prefix}--btn--ghost.#{vars.$iot-prefix}--table-toolbar__advanced-filters-button {
   border: 1px solid transparent;
 
-  &.#{$iot-prefix}--table-toolbar-button-active {
-    @include box-shadow;
+  &.#{vars.$iot-prefix}--table-toolbar-button-active {
+    @include mixins.box-shadow;
   }
 }
 
 // regression fix for tiny expand chrevron on some expandable table rows
-.#{$prefix}--data-table thead th.#{$prefix}--table-expand,
-.#{$prefix}--data-table tbody td.#{$prefix}--table-expand {
-  height: $spacing-07;
-  width: $spacing-08;
+.#{vars.$prefix}--data-table thead th.#{vars.$prefix}--table-expand,
+.#{vars.$prefix}--data-table tbody td.#{vars.$prefix}--table-expand {
+  height: spacing.$spacing-07;
+  width: spacing.$spacing-08;
 }

@@ -1,11 +1,14 @@
-@import '../../../globals/vars';
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars';
+@use '../../../globals/colors';
 
-.#{$iot-prefix}--save-view-modal__body-text {
-  margin-bottom: $spacing-06;
+.#{vars.$iot-prefix}--save-view-modal__body-text {
+  margin-bottom: spacing.$spacing-06;
 }
 
-.#{$iot-prefix}--save-view-modal__view-description {
-  margin-top: $spacing-04;
-  margin-bottom: $spacing-04;
-  color: $carbon--gray-60;
+.#{vars.$iot-prefix}--save-view-modal__view-description {
+  margin-top: spacing.$spacing-04;
+  margin-bottom: spacing.$spacing-04;
+  color: colors.$gray-60;
 }

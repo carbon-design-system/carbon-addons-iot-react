@@ -1,39 +1,42 @@
-@import '../../../globals/vars';
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars';
+@use '../../../globals/typography';
 
-.#{$iot-prefix}-table-foot {
-  border-top: 2px solid $ui-03;
+.#{vars.$iot-prefix}-table-foot {
+  border-top: 2px solid theme.$ui-03;
 
-  .#{$prefix}--data-table--xs & tr {
-    height: $spacing-06;
+  .#{vars.$prefix}--data-table--xs & tr {
+    height: spacing.$spacing-06;
   }
 
-  .#{$prefix}--data-table--sm & tr {
-    height: $spacing-07;
+  .#{vars.$prefix}--data-table--sm & tr {
+    height: spacing.$spacing-07;
   }
 
-  .#{$prefix}--data-table--md & tr {
-    height: $spacing-08;
+  .#{vars.$prefix}--data-table--md & tr {
+    height: spacing.$spacing-08;
   }
 
-  .#{$prefix}--data-table--xl & tr {
-    height: $spacing-10;
+  .#{vars.$prefix}--data-table--xl & tr {
+    height: spacing.$spacing-10;
   }
 }
 
-.#{$iot-prefix}-table-foot--label {
-  @include type-style('productive-heading-01');
+.#{vars.$iot-prefix}-table-foot--label {
+  @include typography.type-style('productive-heading-01');
 }
 
-.#{$iot-prefix}-table-foot--value {
-  @include type-style('productive-heading-01');
+.#{vars.$iot-prefix}-table-foot--value {
+  @include typography.type-style('productive-heading-01');
 }
 
-td.#{$iot-prefix}-table-foot--value__sortable {
-  padding-right: $spacing-09;
+td.#{vars.$iot-prefix}-table-foot--value__sortable {
+  padding-right: spacing.$spacing-09;
 }
 
 html[dir='rtl'] {
-  td.#{$iot-prefix}-table-foot--value__sortable {
-    padding-left: $spacing-08;
+  td.#{vars.$iot-prefix}-table-foot--value__sortable {
+    padding-left: spacing.$spacing-08;
   }
 }

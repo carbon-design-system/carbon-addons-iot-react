@@ -1,27 +1,29 @@
-@import '../../../globals/vars';
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars' as globals-vars;
 
-.#{$iot-prefix}--manage-views-modal .#{$prefix}--modal-content {
-  padding-right: $spacing-05;
+.#{globals-vars.$iot-prefix}--manage-views-modal .#{globals-vars.$prefix}--modal-content {
+  padding-right: spacing.$spacing-05;
 }
 
-.#{$iot-prefix}--manage-views-modal .#{$prefix}--modal-container {
+.#{globals-vars.$iot-prefix}--manage-views-modal .#{globals-vars.$prefix}--modal-container {
   // We need a a height that doesn't change with the content of the modal
   // since the content will be dynamic during filtering and pagination.
   height: 80%;
 }
 
-.#{$iot-prefix}--manage-views-modal__filter-container {
-  margin-bottom: $spacing-06;
+.#{globals-vars.$iot-prefix}--manage-views-modal__filter-container {
+  margin-bottom: spacing.$spacing-06;
   display: flex;
   align-items: baseline;
 }
 
-.#{$iot-prefix}--manage-views-modal__public-checkbox {
+.#{globals-vars.$iot-prefix}--manage-views-modal__public-checkbox {
   flex-shrink: 0;
-  margin-left: $spacing-05;
+  margin-left: spacing.$spacing-05;
 }
 
-html[dir='rtl'] .#{$iot-prefix}--manage-views-modal__public-checkbox {
+html[dir='rtl'] .#{globals-vars.$iot-prefix}--manage-views-modal__public-checkbox {
   margin-left: 0;
-  margin-right: $spacing-05;
+  margin-right: spacing.$spacing-05;
 }

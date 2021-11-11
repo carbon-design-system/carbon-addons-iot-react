@@ -1,6 +1,8 @@
-@import '../../../globals/vars';
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars';
 
-.#{$iot-prefix}--column-resize-handle {
+.#{vars.$iot-prefix}--column-resize-handle {
   top: 0;
   cursor: col-resize;
   height: 100%;
@@ -8,24 +10,24 @@
   position: absolute;
   outline: none;
   &:hover {
-    background-color: $ui-05;
+    background-color: theme.$ui-05;
   }
 }
 
-.#{$iot-prefix}--column-resize-handle--dragging {
-  background-color: $ui-05;
+.#{vars.$iot-prefix}--column-resize-handle--dragging {
+  background-color: theme.$ui-05;
 }
 
-.#{$iot-prefix}--table-expand-resize {
+.#{vars.$iot-prefix}--table-expand-resize {
   width: '40px';
 }
 
-html:not([dir]) .#{$iot-prefix}--column-resize-handle {
+html:not([dir]) .#{vars.$iot-prefix}--column-resize-handle {
   right: 0;
 }
-html[dir='rtl'] .#{$iot-prefix}--column-resize-handle {
+html[dir='rtl'] .#{vars.$iot-prefix}--column-resize-handle {
   left: 0;
 }
-html[dir='ltr'] .#{$iot-prefix}--column-resize-handle {
+html[dir='ltr'] .#{vars.$iot-prefix}--column-resize-handle {
   right: 0;
 }

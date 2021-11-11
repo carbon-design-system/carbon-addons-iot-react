@@ -1,19 +1,23 @@
-.#{$iot-prefix}--table-multi-sort-modal {
+@use '../../../globals/theme';
+@use '../../../globals/spacing';
+@use '../../../globals/vars' as globals-vars;
+
+.#{globals-vars.$iot-prefix}--table-multi-sort-modal {
   html[dir='rtl'] & {
-    .#{$prefix}--modal-content {
-      padding-right: $spacing-05;
-      padding-left: $spacing-09;
+    .#{globals-vars.$prefix}--modal-content {
+      padding-right: spacing.$spacing-05;
+      padding-left: spacing.$spacing-09;
     }
-    .#{$prefix}--modal-header {
-      padding-right: $spacing-09;
+    .#{globals-vars.$prefix}--modal-header {
+      padding-right: spacing.$spacing-09;
     }
   }
 
-  .#{$prefix}--modal-content {
+  .#{globals-vars.$prefix}--modal-content {
     display: grid;
-    gap: $spacing-05;
+    gap: spacing.$spacing-05;
     grid-template-columns: 1fr 1fr 48px 48px;
-    button.#{$prefix}--btn--icon-only {
+    button.#{globals-vars.$prefix}--btn--icon-only {
       height: 40px;
       width: 48px;
       margin-top: 24px;
