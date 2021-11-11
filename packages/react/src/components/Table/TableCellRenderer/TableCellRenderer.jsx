@@ -26,6 +26,8 @@ const propTypes = {
   row: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object, PropTypes.array])
   ),
+  /** use white-space: pre; css when true */
+  preserveCellWhiteSpace: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -36,6 +38,7 @@ const defaultProps = {
   renderDataFunction: null,
   columnId: null,
   rowId: null,
+  preserveCellWhiteSpace: false,
 };
 
 const isElementTruncated = (element) => element.offsetWidth < element.scrollWidth;
@@ -66,11 +69,13 @@ const TableCellRenderer = ({
   sortFunction,
   isFilterable,
   filterFunction,
+  preserveCellWhiteSpace,
 }) => {
   const mySpanRef = React.createRef();
   const myClasses = classnames({
     [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
     [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never',
+    [`${iotPrefix}--table__cell-text--preserve`]: preserveCellWhiteSpace,
   });
 
   const [useTooltip, setUseTooltip] = useState(false);
