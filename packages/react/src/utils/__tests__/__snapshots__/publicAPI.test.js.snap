@@ -665,6 +665,7 @@ Map {
         "hasSearch": false,
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
+        "preserveCellWhiteSpace": false,
         "preserveColumnWidths": false,
         "shouldExpandOnRowClick": false,
         "shouldLazyRender": false,
@@ -1479,6 +1480,9 @@ Map {
               "type": "bool",
             },
             "hasUserViewManagement": Object {
+              "type": "bool",
+            },
+            "preserveCellWhiteSpace": Object {
               "type": "bool",
             },
             "preserveColumnWidths": Object {
@@ -2743,6 +2747,7 @@ Map {
       "loadingMoreIds": Array [],
       "locale": null,
       "overflowMenuAria": "More actions",
+      "preserveCellWhiteSpace": false,
       "rowActionsState": Array [],
       "rowEditMode": false,
       "rows": Array [],
@@ -3031,6 +3036,9 @@ Map {
       },
       "overflowMenuAria": Object {
         "type": "string",
+      },
+      "preserveCellWhiteSpace": Object {
+        "type": "bool",
       },
       "rowActionsState": Object {
         "args": Array [
