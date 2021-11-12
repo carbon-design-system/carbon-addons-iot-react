@@ -386,7 +386,14 @@ const TableCard = ({
           isSortable: true,
           width: i.width ? `${i.width}px` : newSize === CARD_SIZES.LARGETHIN ? '150px' : '', // force the text wrap
           filter: i.filter
-            ? i.filter
+            ? i.type === 'TIMESTAMP'
+              ? {
+                  filterFunction: (cellValue, filterValue) => {
+                    const dateString = dayjs(cellValue).format('L HH:mm');
+                    return dateString.includes(filterValue);
+                  },
+                }
+              : i.filter
             : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
           renderDataFunction: i.renderDataFunction // use the default render function of the column
             ? i.renderDataFunction
