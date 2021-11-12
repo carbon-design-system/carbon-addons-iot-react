@@ -653,6 +653,7 @@ Map {
         "hasAggregations": false,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
+        "hasFastSearch": true,
         "hasFilter": false,
         "hasOnlyPageData": false,
         "hasPagination": false,
@@ -1382,6 +1383,9 @@ Map {
               "type": "bool",
             },
             "hasColumnSelectionConfig": Object {
+              "type": "bool",
+            },
+            "hasFastSearch": Object {
               "type": "bool",
             },
             "hasFilter": Object {
@@ -4218,6 +4222,9 @@ Map {
               "type": "bool",
             },
             "hasColumnSelection": Object {
+              "type": "bool",
+            },
+            "hasFastSearch": Object {
               "type": "bool",
             },
             "hasFilter": Object {
