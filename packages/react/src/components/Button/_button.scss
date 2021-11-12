@@ -2,7 +2,6 @@
 @use '../../globals/spacing';
 @use '../../globals/vars';
 @use "../../globals/colors";
-@use '~@carbon/styles/scss/components/button';
 
 .#{vars.$iot-prefix}--btn {
   justify-content: flex-start;

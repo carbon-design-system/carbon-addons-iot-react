@@ -1,1 +1,24 @@
-@forward 'carbon-components/scss/globals/scss/css--body';
+@use './config';
+@use './theme';
+@use './typography';
+@use './css--reset';
+
+// This hasn't been converted to @carbon/styles yet, so I copied it out manually.
+
+/// Body styles
+/// @access private
+/// @group global-body
+@mixin css-body {
+  body {
+    @include css--reset.reset;
+    @include typography.type-style('body-short-01');
+
+    background-color: theme.$ui-background;
+    color: theme.$text-01;
+    line-height: 1;
+  }
+}
+
+@if variable-exists('css--body') == false or $css--body == true {
+  @include css-body;
+}

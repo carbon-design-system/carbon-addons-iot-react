@@ -4,7 +4,7 @@
 @use "../../globals/typography";
 @use "../../globals/colors";
 @use "../../globals/motion";
-@use "carbon-components/scss/components/ui-shell/ui-shell" as shell;
+@use "~@carbon/styles/scss/components/ui-shell/functions";
 
 $hoverBgColor: #2c2c2c;
 
@@ -88,7 +88,7 @@ $hoverBgColor: #2c2c2c;
       }
 
       &__btn {
-        color: shell.$shell-header-text-02;
+        color: theme.$text-secondary;
         background-color: colors.$gray-90;
         text-decoration: none;
       }
@@ -106,7 +106,7 @@ $hoverBgColor: #2c2c2c;
         padding-left: spacing.$spacing-05;
         padding-right: spacing.$spacing-05;
         text-decoration: none;
-        color: shell.$shell-header-text-02;
+        color: theme.$text-secondary;
       }
     }
 
@@ -117,7 +117,7 @@ $hoverBgColor: #2c2c2c;
       padding-left: spacing.$spacing-05;
       padding-right: spacing.$spacing-05;
       text-decoration: none;
-      color: shell.$shell-header-text-02;
+      color: theme.$text-secondary;
     }
   }
 }
@@ -221,8 +221,8 @@ $hoverBgColor: #2c2c2c;
   position: relative;
   display: flex;
   align-items: center;
-  color: shell.$shell-header-text-02;
-  padding: 0 shell.mini-units(2);
+  color: theme.$text-secondary;
+  padding: 0 functions.mini-units(2);
   // Used for links that are directly in the menubar to span the full height
   height: 100%;
   // Text styles

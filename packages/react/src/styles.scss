@@ -10,11 +10,10 @@
 @use 'globals/layout';
 @use 'globals/spacing';
 @use 'globals/typography';
-@use 'globals/css--reset';
+// @use 'globals/css--reset';
 @use 'globals/css--font-face';
 @use 'globals/css--helpers';
-// this hasn't been converted yet.
-// @use 'globals/css--body';
+@use 'globals/css--body';
 @use 'globals/grid';
 @use 'globals/charts';
 
@@ -24,11 +23,14 @@
 
 @use 'components/Accordion/accordion';
 @use 'components/Breadcrumb/breadcrumb';
+@use 'components/Button/carbon-button';
 @use 'components/Checkbox/checkbox';
 @use 'components/CodeSnippet/code-snippet';
 @use 'components/ComboBox/combo-box';
 @use 'components/ContentSwitcher/content-switcher';
 @use 'components/CopyButton/copy-button';
+// search before data-table, so it doesn't mess up the expanding search bar in the table
+@use 'components/Search/search';
 @use 'components/DataTable/data-table';
 @use 'components/DatePicker/date-picker';
 @use 'components/Dropdown/dropdown';
@@ -39,8 +41,8 @@
 @use 'components/List/carbon-list';
 @use 'components/ListBox/list-box';
 @use 'components/Loading/loading';
-@use 'components/Modal/modal';
 @use 'components/Menu/menu';
+@use 'components/Modal/modal';
 @use 'components/MultiSelect/multi-select';
 @use 'components/Notification/actionable-notification';
 @use 'components/Notification/inline-notification';
@@ -52,7 +54,7 @@
 @use 'components/Popover/popover';
 @use 'components/ProgressBar/progress-bar';
 @use 'components/RadioButton/radio-button';
-@use 'components/Search/search';
+
 @use 'components/Select/select';
 @use 'components/Skeleton/skeleton';
 @use 'components/Slider/slider';
@@ -68,6 +70,7 @@
 @use 'components/Toolbar/toolbar';
 @use 'components/Tooltip/tooltip';
 @use 'components/UIShell/ui-shell';
+
 //-------------------------------------
 // 🔬 Experimental
 //-------------------------------------

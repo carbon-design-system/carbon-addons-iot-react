@@ -4,7 +4,7 @@
 @use "../../globals/motion";
 @use "../../globals/mixins";
 @use 'side-nav-carbon';
-@use "carbon-components/scss/components/ui-shell/ui-shell" as shell;
+@use "~@carbon/styles/scss/components/ui-shell/functions";
 
 /////////////////////////////////////////////
 // AI applications dark sidenav theme styles
@@ -79,7 +79,7 @@ html[dir='rtl'] {
   }
 
   .#{vars.$prefix}--side-nav__icon:not(.#{vars.$prefix}--side-nav__submenu-chevron) {
-    margin-left: shell.mini-units(3);
+    margin-left: functions.mini-units(3);
     margin-right: unset;
   }
 }

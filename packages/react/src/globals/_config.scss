@@ -1,4 +1,4 @@
-@use '~@carbon/styles/scss/config' with (
+@forward '~@carbon/styles/scss/config' with (
   $css--font-face: true,
   $css--reset: true,
   $css--default-type: true,

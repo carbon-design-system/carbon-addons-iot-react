@@ -6,8 +6,8 @@
 @use '../../globals/motion';
 @use '../../globals/typography';
 @use '../../globals/layout';
-@use '~carbon-components/scss/components/ui-shell/ui-shell' as shell;
-@use '~carbon-components/scss/components/ui-shell/side-nav' as nav;
+@use '~@carbon/styles/scss/components/ui-shell/functions';
+@use '~@carbon/styles/scss/components/ui-shell/mixins' as shell-mixins;
 
 /*****************************
 *
@@ -58,19 +58,19 @@ $small-screen-breakpoint: 65.99em;
   .#{vars.$prefix}--side-nav__menu
     .#{vars.$prefix}--side-nav__link:not(.#{vars.$prefix}--side-nav__link--current):not([aria-current='page']):hover {
     color: colors.$gray-100;
-    background-color: shell.$shell-side-nav-bg-04;
+    background-color: theme.$background-hover;
   }
 
   .#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link {
-    height: shell.mini-units(4);
-    min-height: shell.mini-units(4);
-    padding-left: shell.mini-units(4);
+    height: functions.mini-units(4);
+    min-height: functions.mini-units(4);
+    padding-left: functions.mini-units(4);
     font-weight: 400;
   }
 
   .#{vars.$prefix}--side-nav__item.#{vars.$prefix}--side-nav__item--icon
     .#{vars.$prefix}--side-nav__link {
-    padding-left: shell.mini-units(9);
+    padding-left: functions.mini-units(9);
   }
 
   .#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link--current,
@@ -91,17 +91,17 @@ $small-screen-breakpoint: 65.99em;
     position: relative;
     display: flex;
     align-items: center;
-    min-height: shell.mini-units(4);
-    padding: 0 shell.mini-units(2);
+    min-height: functions.mini-units(4);
+    padding: 0 functions.mini-units(2);
     text-decoration: none;
     transition: color motion.$duration-fast-02, background-color motion.$duration-fast-02,
       outline motion.$duration-fast-02;
   }
 
   .#{vars.$prefix}--side-nav__link > .#{vars.$prefix}--side-nav__link-text {
-    @include shell.text-overflow();
+    @include shell-mixins.text-overflow();
 
-    color: shell.$shell-side-nav-text-01;
+    color: theme.$text-secondary;
     font-size: layout.rem(14px);
     line-height: 1.25rem;
     letter-spacing: 0.1px;
@@ -121,7 +121,7 @@ $small-screen-breakpoint: 65.99em;
   .#{vars.$prefix}--side-nav__link[aria-current='page'],
   .#{vars.$prefix}--side-nav__link--current {
     font-weight: 600;
-    background-color: shell.$shell-side-nav-bg-04;
+    background-color: theme.$background-hover;
   }
 
   .#{vars.$prefix}--side-nav__link[aria-current='page'] .#{vars.$prefix}--side-nav__link-text,
@@ -136,19 +136,19 @@ $small-screen-breakpoint: 65.99em;
     bottom: 0;
     left: 0;
     width: 4px;
-    background-color: shell.$shell-side-nav-accent-01;
+    background-color: colors.$blue-60;
     content: '';
   }
 
   &.#{vars.$prefix}--side-nav--fixed .#{vars.$prefix}--side-nav__link {
-    padding-left: shell.mini-units(2);
+    padding-left: functions.mini-units(2);
   }
 
   &.#{vars.$prefix}--side-nav--fixed
     .#{vars.$prefix}--side-nav__item:not(.#{vars.$prefix}--side-nav__item--icon)
     .#{vars.$prefix}--side-nav__menu
     .#{vars.$prefix}--side-nav__link {
-    padding-left: shell.mini-units(4);
+    padding-left: functions.mini-units(4);
   }
 }
 /* stylelint-enable */

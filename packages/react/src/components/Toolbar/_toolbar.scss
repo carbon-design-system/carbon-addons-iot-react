@@ -1,1 +1,125 @@
-@use '~carbon-components/scss/components/toolbar/toolbar';
+// this hasn't been converted to @carbon/styles, so I manually
+// copied it here to create it.
+
+// @use '~carbon-components/scss/components/toolbar/toolbar';
+@use '../../globals/vars';
+@use '../../globals/layout';
+@use '../../globals/theme';
+@use '../../globals/motion';
+@use '../../globals/typography';
+@use '../../globals/mixins';
+
+.#{vars.$prefix}--toolbar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 1rem 0;
+
+  > div {
+    margin: 0 layout.rem(4px);
+  }
+
+  .#{vars.$prefix}--search-input {
+    height: layout.rem(32px);
+    background-color: transparent;
+    outline: none;
+  }
+
+  .#{vars.$prefix}--search-close {
+    display: none;
+  }
+
+  .#{vars.$prefix}--overflow-menu__icon {
+    fill: theme.$text-02;
+    transition: fill 50ms motion.$standard-easing;
+  }
+
+  .#{vars.$prefix}--search-magnifier {
+    top: layout.rem(8px);
+    left: layout.rem(6px);
+    cursor: pointer;
+    fill: theme.$text-02;
+    transform: scale(1.15);
+    transition: all 175ms motion.$standard-easing;
+  }
+
+  fieldset {
+    padding: 0;
+    border: 0;
+  }
+
+  .#{vars.$prefix}--toolbar-search--active {
+    width: layout.rem(250px);
+
+    .#{vars.$prefix}--search-magnifier {
+      top: layout.rem(9px);
+      transform: scale(1);
+    }
+
+    .#{vars.$prefix}--search-input {
+      background-color: theme.$field-02;
+    }
+
+    .#{vars.$prefix}--search-close {
+      display: block;
+    }
+  }
+
+  .#{vars.$prefix}--checkbox-label {
+    margin-bottom: 0;
+  }
+
+  .#{vars.$prefix}--overflow-menu--open > .#{vars.$prefix}--overflow-menu__icon {
+    fill: theme.$interactive-01;
+  }
+}
+
+.#{vars.$prefix}--toolbar-search {
+  width: 1.8rem;
+  transition: all 175ms motion.$standard-easing;
+}
+
+.#{vars.$prefix}--toolbar-search__btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: layout.rem(32px);
+  height: layout.rem(32px);
+  border: 0;
+  background: transparent;
+
+  &:focus {
+    @include mixins.focus-outline;
+  }
+}
+
+.#{vars.$prefix}--toolbar-filter-icon {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.#{vars.$prefix}--toolbar-menu__title {
+  @include typography.type-style('caption-01');
+
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+}
+
+.#{vars.$prefix}--toolbar-menu__option {
+  padding: 0.5rem 1.25rem;
+}
+
+.#{vars.$prefix}--toolbar-menu__divider {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid theme.$ui-03;
+}
+
+.#{vars.$prefix}--radio-button-group {
+  border: none;
+}
+
+.#{vars.$prefix}--toolbar-search:not(.#{vars.$prefix}--toolbar-search--active)
+  .#{vars.$prefix}--search-input {
+  border-bottom: none;
+}
