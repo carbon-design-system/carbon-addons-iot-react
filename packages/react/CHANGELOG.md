@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.57...v2.147.0-next.58) (2021-11-12)
+
+
+### Bug Fixes
+
+* **repo:** add cypress image to codesandbox action, comments to tests ([29b55e0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/29b55e0771d6055202527e8e0e1a6556c41a6fbf))
+* **table:** add onClear to TableToolbarSearch to fix hasFastSearch ([0b79d6b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0b79d6b78893a0338691313308d9d5bf4f94172d))
+
+
+### Features
+
+* **table:** add `hasFastSearch` prop to toggle onChange/onBlur ([2610b61](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2610b61878ec3699a8e77023e1f30931dfd8b619))
+
+
+
+
+
 # [2.147.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.56...v2.147.0-next.57) (2021-11-11)
 
 
