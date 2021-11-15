@@ -1167,7 +1167,7 @@ describe('DashboardGrid', () => {
     cy.viewport(1680, 900);
     MockDate.reset();
   });
-  ['lg', 'sm'].forEach((breakpoint) => {
+  ['lg'].forEach((breakpoint) => {
     CARD_TYPES.forEach((type) => {
       it(`matches image snapshot - ${breakpoint}, ${type}`, () => {
         switch (breakpoint) {
@@ -1228,6 +1228,7 @@ describe('DashboardGrid', () => {
             // });
           }
         }
+
         if (type === 'TableCard') {
           cy.findByTestId('tableCard-LARGETHIN').within(() => {
             cy.findAllByRole('button', { name: 'Click to expand content' }).eq(2).click();
