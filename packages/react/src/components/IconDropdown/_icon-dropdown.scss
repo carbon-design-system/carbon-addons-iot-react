@@ -116,7 +116,7 @@
             color: transparent;
           }
 
-          > .#{$prefix}--assistive-text {
+          > .#{vars.$prefix}--assistive-text {
             display: none;
           }
         }

@@ -175,7 +175,7 @@
       padding-bottom: spacing.$spacing-04;
       transition: all motion.$duration-fast-02;
       z-index: 900;
-      max-height: $spacing-08;
+      max-height: spacing.$spacing-08;
     }
 
     .page-title-bar--condensed-static & {
@@ -183,7 +183,7 @@
       grid-area: title;
       padding-bottom: spacing.$spacing-04;
       z-index: 1000;
-      max-height: $spacing-08;
+      max-height: spacing.$spacing-08;
     }
 
     > nav {

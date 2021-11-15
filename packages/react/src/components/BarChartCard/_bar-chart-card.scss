@@ -28,7 +28,7 @@
   .axis-title {
     font-weight: 500;
   }
-  .#{$prefix}--cc--chart-svg {
+  .#{vars.$prefix}--cc--chart-svg {
     width: 100%;
     height: 100%;
   }

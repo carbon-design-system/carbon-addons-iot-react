@@ -23,7 +23,7 @@
   .#{vars.$prefix}--loading--small {
     width: 1.875rem;
     height: 1.875rem;
-    margin-right: $spacing-03;
+    margin-right: spacing.$spacing-03;
   }
 
   > * {
@@ -113,12 +113,12 @@ html[dir='rtl'] {
       transform: rotate(180deg);
     }
 
-    .#{$prefix}--loading--small {
+    .#{vars.$prefix}--loading--small {
       margin-right: unset;
-      margin-left: $spacing-03;
+      margin-left: spacing.$spacing-03;
     }
 
-    .#{$iot-prefix}--row-actions-cell--overflow-menu {
+    .#{vars.$iot-prefix}--row-actions-cell--overflow-menu {
       margin-left: unset;
     }
   }

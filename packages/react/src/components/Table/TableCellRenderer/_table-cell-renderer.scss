@@ -33,6 +33,6 @@
   white-space: nowrap;
 }
 
-.#{$iot-prefix}--table__cell-text--preserve {
+.#{vars.$iot-prefix}--table__cell-text--preserve {
   white-space: pre;
 }

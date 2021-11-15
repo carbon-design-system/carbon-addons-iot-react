@@ -42,7 +42,7 @@ div.#{vars.$prefix}--toolbar-action.#{vars.$prefix}--toolbar-search-container-ex
 .#{vars.$iot-prefix}--table-batch-actions {
   z-index: 3;
 
-  & + .#{$prefix}--toolbar-action {
+  & + .#{vars.$prefix}--toolbar-action {
     padding: 0;
   }
 

@@ -48,7 +48,7 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
     }
   }
 
-  .#{$prefix}--tooltip__label {
+  .#{vars.$prefix}--tooltip__label {
     display: flex;
     cursor: pointer;
     border-radius: 13px;

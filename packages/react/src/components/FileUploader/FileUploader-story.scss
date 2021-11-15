@@ -1,4 +1,4 @@
-@import '../../globals/vars';
-.#{$prefix}--file__selected-file {
+@use '../../globals/vars';
+.#{vars.$prefix}--file__selected-file {
   width: 288px;
 }
