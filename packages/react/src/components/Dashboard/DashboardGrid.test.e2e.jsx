@@ -724,7 +724,7 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
           breakpoint={breakpoint}
         />,
         <ValueCard
-          title={`ValueCard - Trends and {a-variable}`}
+          title="ValueCard - Trends and {a-variable}"
           id="valueCard-Trends-and-Variables"
           key="valueCard-Trends-and-Variables"
           cardVariables={{ 'a-variable': 'working' }}
@@ -1167,7 +1167,7 @@ describe('DashboardGrid', () => {
     cy.viewport(1680, 900);
     MockDate.reset();
   });
-  BREAKPOINTS.forEach((breakpoint) => {
+  ['lg', 'sm'].forEach((breakpoint) => {
     CARD_TYPES.forEach((type) => {
       it(`matches image snapshot - ${breakpoint}, ${type}`, () => {
         switch (breakpoint) {
