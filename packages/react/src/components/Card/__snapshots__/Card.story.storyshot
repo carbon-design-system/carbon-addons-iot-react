@@ -192,7 +192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           }
         >
           <section
-            aria-label="data table toolbar"
+            aria-label="Custom Card Title Toolbar"
             className="bx--table-toolbar"
             data-testid="my table-table-toolbar"
           >
@@ -1984,6 +1984,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               />
               <path
                 d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-extra-single-action"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Action Label"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Action Label"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
               />
             </svg>
           </button>

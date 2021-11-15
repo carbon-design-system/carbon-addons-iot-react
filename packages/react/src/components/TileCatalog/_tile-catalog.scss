@@ -13,17 +13,17 @@
   display: flex;
   height: 3rem;
 
-  .bx--toolbar-action:active:not([disabled]) {
+  .#{$prefix}--toolbar-action:active:not([disabled]) {
     outline-color: transparent;
   }
 
-  .bx--toolbar-search-container-expandable {
+  .#{$prefix}--toolbar-search-container-expandable {
     max-width: 40%;
     padding: 0;
     width: auto;
   }
 
-  .bx--search-input:focus {
+  .#{$prefix}--search-input:focus {
     width: 100%;
   }
 }

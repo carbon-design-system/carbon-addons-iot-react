@@ -7,7 +7,7 @@ button.#{vars.$iot-prefix}--tooltip-svg-wrapper,
 .#{vars.$iot-prefix}--tooltip-svg-wrapper.#{vars.$prefix}--btn--ghost:hover {
   color: colors.$gray-70;
 }
-button.bx--btn.#{vars.$iot-prefix}--tooltip-svg-wrapper.#{vars.$prefix}--btn--ghost {
+button.#{vars.$prefix}--btn.#{vars.$iot-prefix}--tooltip-svg-wrapper.#{vars.$prefix}--btn--ghost {
   border: 0;
   &.#{vars.$iot-prefix}--table-toolbar-button-active:not(:hover) {
     background-color: theme.$ui-02;

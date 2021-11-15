@@ -142,7 +142,7 @@ $cardPadding: spacing.$spacing-05;
   }
 
   &-controls-btn:not(:last-child) {
-    &:not(.iot--btn-icon-selection--selected) {
+    &:not(.#{vars.$iot-prefix}--btn-icon-selection--selected) {
       border-bottom: 1px solid theme.$ui-03;
     }
   }
@@ -223,12 +223,12 @@ $cardPadding: spacing.$spacing-05;
 
   &-controls-layers-btn {
     background-color: white;
-    &:not(.iot--btn-icon-selection--selected) {
+    &:not(.#{vars.$iot-prefix}--btn-icon-selection--selected) {
       border-right: 1px solid theme.$ui-03;
     }
 
     [dir='rtl'] & {
-      &:not(.iot--btn-icon-selection--selected) {
+      &:not(.#{vars.$iot-prefix}--btn-icon-selection--selected) {
         border-left: 1px solid theme.$ui-03;
         border-right: none;
       }

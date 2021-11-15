@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { screen, render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../constants/Settings';
 
@@ -10,6 +11,8 @@ const { iotPrefix, prefix } = settings;
 
 describe('TableCellRenderer', () => {
   const cellText = 'This text is not actually measured';
+  const textTruncateClassName = `${iotPrefix}--table__cell-text--truncate`;
+  const textNoWrapClassName = `${iotPrefix}--table__cell-text--no-wrap`;
 
   const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetWidth');
   const originalScrollWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollWidth');
@@ -35,71 +38,51 @@ describe('TableCellRenderer', () => {
     Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalScrollWidth);
   });
 
-  it('truncates only for truncateCellText={true}', () => {
-    const { rerender, container } = render(
-      <TableCellRenderer wrapText="never" truncateCellText>
-        {cellText}
-      </TableCellRenderer>
+  it('truncates only for cellTextOverflow:"truncate"', () => {
+    const { rerender } = render(
+      <TableCellRenderer cellTextOverflow="truncate">{cellText}</TableCellRenderer>
     );
-    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    expect(screen.getByText(cellText)).toHaveClass(textTruncateClassName);
 
-    rerender(
-      <TableCellRenderer wrapText="never" truncateCellText={false}>
-        {cellText}
-      </TableCellRenderer>
-    );
-    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
+    rerender(<TableCellRenderer>{cellText}</TableCellRenderer>);
+    expect(screen.getByText(cellText)).not.toHaveClass(textTruncateClassName);
   });
 
-  it('does not truncat when wrapText={always}', () => {
-    const { container } = render(
-      <TableCellRenderer wrapText="always" truncateCellText>
-        {cellText}
-      </TableCellRenderer>
-    );
-    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
+  it('does not allow wrapping for cellTextOverflow:"grow"', () => {
+    render(<TableCellRenderer cellTextOverflow="grow">{cellText}</TableCellRenderer>);
+    expect(screen.getByText(cellText)).toHaveClass(textNoWrapClassName);
   });
 
-  it('does not allow wrap when wrapText={never}', () => {
-    const { container } = render(
-      <TableCellRenderer wrapText="never" truncateCellText={false}>
-        {cellText}
-      </TableCellRenderer>
-    );
-    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+  it('allows wrapping by default', () => {
+    render(<TableCellRenderer>{cellText}</TableCellRenderer>);
+    expect(screen.getByText(cellText)).not.toHaveClass(textNoWrapClassName);
+    expect(screen.getByText(cellText)).not.toHaveClass(textTruncateClassName);
   });
 
-  it('allows wrap when wrapText={always}', () => {
-    const { container } = render(
-      <TableCellRenderer wrapText="always" truncateCellText={false}>
-        {cellText}
-      </TableCellRenderer>
-    );
-    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(0);
+  it('allows wrapping for cellTextOverflow:"wrap" ', () => {
+    render(<TableCellRenderer cellTextOverflow="wrap">{cellText}</TableCellRenderer>);
+    // Wrapping is Carbon default, so the the absense of these classes
+    // indicates that the text is wrapping.
+    expect(screen.getByText(cellText)).not.toHaveClass(textNoWrapClassName);
+    expect(screen.getByText(cellText)).not.toHaveClass(textTruncateClassName);
   });
 
   it('only truncates children that are strings, numbers or booleans', () => {
-    const { container } = render(
+    render(
       <table>
         <tbody>
           <tr>
             <td>
-              <TableCellRenderer wrapText="never" truncateCellText>
-                {'my string'}
-              </TableCellRenderer>
+              <TableCellRenderer cellTextOverflow="truncate">my string</TableCellRenderer>
             </td>
             <td>
-              <TableCellRenderer wrapText="never" truncateCellText>
-                {true}
-              </TableCellRenderer>
+              <TableCellRenderer cellTextOverflow="truncate">{true}</TableCellRenderer>
             </td>
             <td>
-              <TableCellRenderer wrapText="never" truncateCellText>
-                {127}
-              </TableCellRenderer>
+              <TableCellRenderer cellTextOverflow="truncate">{127}</TableCellRenderer>
             </td>
             <td>
-              <TableCellRenderer wrapText="never" truncateCellText>
+              <TableCellRenderer cellTextOverflow="truncate">
                 <div>a div</div>
               </TableCellRenderer>
             </td>
@@ -107,32 +90,27 @@ describe('TableCellRenderer', () => {
         </tbody>
       </table>
     );
-    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(3);
+    expect(screen.getByText('my string')).toHaveClass(textTruncateClassName);
+    expect(screen.getByText('true')).toHaveClass(textTruncateClassName);
+    expect(screen.getByText('127')).toHaveClass(textTruncateClassName);
+    expect(screen.getByText('a div').parentNode).not.toHaveClass(textTruncateClassName);
   });
 
   it('only shows tooltip if text is actually truncated', () => {
     setOffsetWidth(10);
     setScrollWidth(20);
 
-    const { container } = render(
-      <TableCellRenderer wrapText="never" truncateCellText>
-        {cellText}
-      </TableCellRenderer>
+    const { rerender, container } = render(
+      <TableCellRenderer cellTextOverflow="truncate">{cellText}</TableCellRenderer>
     );
     expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(1);
     expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
 
     setOffsetWidth(20);
     setScrollWidth(10);
-    const wrapper2 = mount(
-      <TableCellRenderer wrapText="never" truncateCellText>
-        {cellText}
-      </TableCellRenderer>
-    );
-    expect(wrapper2.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    rerender(<TableCellRenderer cellTextOverflow="truncate">{cellText}</TableCellRenderer>);
+    expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
 
     setOffsetWidth(0);
     setScrollWidth(0);
@@ -144,13 +122,12 @@ describe('TableCellRenderer', () => {
 
     const cellText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
     const { container } = render(
-      <TableCellRenderer wrapText="never" truncateCellText allowTooltip={false}>
+      <TableCellRenderer cellTextOverflow="truncate" allowTooltip={false}>
         {cellText}
       </TableCellRenderer>
     );
     expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(0);
     expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
 
     setOffsetWidth(0);
     setScrollWidth(0);
@@ -162,14 +139,36 @@ describe('TableCellRenderer', () => {
         {35.6}
       </TableCellRenderer>
     );
-    expect(screen.getByText('35,6')).toBeDefined(); // french locale should have commas for decimals
+    expect(screen.getByText('35,6')).toBeInTheDocument(); // french locale should have commas for decimals
 
     rerender(
       <TableCellRenderer locale="en" truncateCellText wrapText="never">
         {35.1234567}
       </TableCellRenderer>
     );
-    expect(screen.getByText('35.1234567')).toBeDefined(); // no limit on the count of decimals
+    expect(screen.getByText('35.1234567')).toBeInTheDocument(); // no limit on the count of decimals
+  });
+
+  it('should set preserve class when preserveCellWhiteSpace:true', () => {
+    const { container } = render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string" preserveCellWhiteSpace>
+        1 1 1 1 1
+      </TableCellRenderer>
+    );
+
+    expect(container.querySelector('span')).toBeVisible();
+    expect(container.querySelector('span')).toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
+  });
+
+  it('should not set preserve class when preserveCellWhiteSpace:false', () => {
+    render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string">
+        1 1
+      </TableCellRenderer>
+    );
+
+    expect(screen.getByText('1 1')).toBeVisible();
+    expect(screen.getByText('1 1')).not.toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
   });
 
   describe('warning should be thrown for objects as data without needed functions', () => {
@@ -261,6 +260,54 @@ describe('TableCellRenderer', () => {
       expect(console.error).not.toHaveBeenCalled();
       expect(renderDataFunction).toHaveBeenCalled();
       expect(screen.getByText('124556')).toBeDefined();
+    });
+
+    it('should render a tooltip and display it on focus when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      expect(document.body).toHaveFocus();
+      userEvent.tab();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveFocus();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+    });
+
+    it('should render a tooltip and display it on hover when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      userEvent.hover(screen.getByText('Select'));
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
     });
   });
 });

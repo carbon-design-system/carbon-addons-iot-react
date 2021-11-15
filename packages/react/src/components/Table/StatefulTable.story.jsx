@@ -11,6 +11,7 @@ import StoryNotice from '../../internal/StoryNotice';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import Button from '../Button/Button';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import StatefulTable from './StatefulTable';
 import {
@@ -118,7 +119,6 @@ export const StatefulTableWithNestedRowItems = (props) => {
           },
         }}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         {...props}
       />
     </div>
@@ -157,6 +157,14 @@ export const SimpleStatefulExample = () => {
       id="table"
       key={`table${demoInitialColumnSizes}`}
       {...initialState}
+      data={initialState.data.slice(
+        0,
+        select(
+          'number of data items in table',
+          [initialState.data.length, 50, 20, 5],
+          initialState.data.length
+        )
+      )}
       actions={tableActions}
       columns={initialState.columns
         .map((column) => {
@@ -165,7 +173,7 @@ export const SimpleStatefulExample = () => {
               ...column,
               filter: {
                 ...column.filter,
-                isMultiselect: !!column.filter?.options,
+                isMultiselect: boolean('force MultiSelect filter', !!column.filter?.options),
               },
             };
           }
@@ -174,7 +182,11 @@ export const SimpleStatefulExample = () => {
         .map((col, i) => ({
           ...col,
           width: demoInitialColumnSizes ? (i % 2 === 0 ? '100px' : '200px') : undefined,
-          tooltip: demoColumnTooltips ? `A tooltip for ${col.name} here` : undefined,
+          tooltip: demoColumnTooltips
+            ? col.id === 'select'
+              ? `This tooltip displays extra information about the select box. You can choose from a variety of options. Pick one today!`
+              : `A tooltip for ${col.name} here`
+            : undefined,
         }))}
       columnGroups={object('Column groups definition (columnGroups)', [
         {
@@ -185,7 +197,6 @@ export const SimpleStatefulExample = () => {
       ])}
       style={{ maxWidth: select('table width', ['auto', '300px'], 'auto') }}
       useZebraStyles={boolean('Alternate colors in table rows (useZebraStyles)', false)}
-      lightweight={boolean('Show an alternate header style (lightweight)', false)}
       size={select(
         'Sets the height of the table rows (size)',
         ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -387,7 +398,6 @@ export const StatefulExampleWithSingleNestedHierarchy = () => {
           ),
         }}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
       />
     </div>
   );
@@ -459,7 +469,6 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => {
           width: '150px',
         }))}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         size={select(
           'Sets the height of the table rows (size)',
           ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -543,7 +552,6 @@ export const SimpleStatefulExampleWithAlignment = () => {
           'lg'
         )}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           hasRowSelection: select(
             'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
@@ -595,7 +603,6 @@ export const StatefulExampleWithEveryThirdRowUnselectable = () => {
         isSelectable: index % 3 !== 0,
       }))}
       actions={tableActions}
-      lightweight={boolean('Show an alternate header style (lightweight)', false)}
       size={select(
         'Sets the height of the table rows (size)',
         ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -671,7 +678,6 @@ export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => {
             onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, 'my table data'),
           },
         }}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         size={select(
           'Sets the height of the table rows (size)',
           ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -1155,7 +1161,6 @@ export const StatefulExampleWithCreateSaveViews = () => {
           ...tableActions,
           onUserViewModified,
         }}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         size={select(
           'Sets the height of the table rows (size)',
           ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -1596,3 +1601,10 @@ export const WithMultiSorting = () => {
 };
 
 WithMultiSorting.storyName = 'with multi-sorting';
+WithMultiSorting.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];

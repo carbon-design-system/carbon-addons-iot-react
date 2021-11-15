@@ -8,23 +8,23 @@
   position: relative;
 
   &.#{vars.$iot-prefix}--time-picker__wrapper--with-spinner {
-    .bx--time-picker__input-field {
+    .#{vars.$prefix}--time-picker__input-field {
       width: 5.875rem;
       padding-right: spacing.$spacing-07;
     }
   }
 
   &.#{vars.$iot-prefix}--time-picker__wrapper--updown {
-    .bx--time-picker__input-field {
+    .#{vars.$prefix}--time-picker__input-field {
       caret-color: transparent;
     }
   }
 
   &.#{vars.$iot-prefix}--time-picker__wrapper--show-underline {
-    .bx--time-picker--invalid .bx--time-picker__input:before {
+    .#{vars.$prefix}--time-picker--invalid .#{vars.$prefix}--time-picker__input:before {
       bottom: 1.6rem;
     }
-    .bx--time-picker__input:before {
+    .#{vars.$prefix}--time-picker__input:before {
       content: '__';
       position: absolute;
       bottom: 0.365rem;
@@ -32,13 +32,13 @@
     }
 
     &.#{vars.$iot-prefix}--time-picker__wrapper--show-underline-minutes {
-      .bx--time-picker__input:before {
+      .#{vars.$prefix}--time-picker__input:before {
         left: 2.7rem;
       }
     }
   }
 
-  .bx--time-picker--invalid {
+  .#{vars.$prefix}--time-picker--invalid {
     .#{vars.$iot-prefix}--time-picker__controls {
       bottom: calc(#{spacing.$spacing-06} - #{spacing.$spacing-01});
     }
@@ -97,12 +97,12 @@
 html[dir='rtl'] {
   .#{vars.$iot-prefix}--time-picker__wrapper {
     &.#{vars.$iot-prefix}--time-picker__wrapper--show-underline {
-      .bx--time-picker__input:before {
+      .#{vars.$prefix}--time-picker__input:before {
         left: unset;
         right: 3.7rem;
       }
       &.#{vars.$iot-prefix}--time-picker__wrapper--show-underline-minutes {
-        .bx--time-picker__input:before {
+        .#{vars.$prefix}--time-picker__input:before {
           left: unset;
           right: 2rem;
         }

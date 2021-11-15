@@ -6,20 +6,22 @@ import warning from 'warning';
 
 import { PADDING } from '../../styles/styles';
 import deprecate from '../../internal/deprecate';
+import { settings } from '../../constants/Settings';
 
 import WizardHeader from './WizardHeader/WizardHeader';
 import WizardFooter from './WizardFooter/WizardFooter';
 import WizardSidebar from './WizardLeftSidebar/WizardSidebar';
 import WizardContent from './WizardContent/WizardContent';
 
+const { prefix } = settings;
 const StyledWizardWrapper = styled.div`
-  .bx--modal-content[data-id='WizardInlineContent'] {
+  .${prefix}--modal-content[data-id='WizardInlineContent'] {
     max-height: 80vh;
     overflow: auto;
     width: auto;
   }
 
-  .bx--modal-container[data-id='WizardInlineContainer'] {
+  .${prefix}--modal-container[data-id='WizardInlineContainer'] {
     min-width: 630px;
     max-width: 90%;
     margin: ${PADDING.verticalPadding} auto;
@@ -49,7 +51,7 @@ const StyledFooter = styled.div`
   align-items: center;
   line-height: 40px;
 
-  .bx--modal-footer[data-id='WizardInlineFooter'] {
+  .${prefix}--modal-footer[data-id='WizardInlineFooter'] {
     width: 100%;
 
     & > * {
@@ -214,7 +216,7 @@ const WizardInline = ({
 
   return (
     <StyledWizardWrapper data-testid={testId} className={className}>
-      <div data-id="WizardInlineContainer" className="bx--modal-container">
+      <div data-id="WizardInlineContainer" className={`${prefix}--modal-container`}>
         <WizardHeader
           title={title}
           description={description}
@@ -243,13 +245,13 @@ const WizardInline = ({
 
         <StyledWizardContainer>
           {sidebar ? <WizardSidebar sidebar={sidebar} testId={`${testId}-sidebar`} /> : null}
-          <div data-id="WizardInlineContent" className="bx--modal-content">
+          <div data-id="WizardInlineContent" className={`${prefix}--modal-content`}>
             <WizardContent component={currentItemObj.component} testId={`${testId}-content`} />
           </div>
         </StyledWizardContainer>
 
         <StyledFooter className={className}>
-          <div data-id="WizardInlineFooter" className="bx--modal-footer">
+          <div data-id="WizardInlineFooter" className={`${prefix}--modal-footer`}>
             <WizardFooter
               backLabel={backLabel}
               nextLabel={nextLabel}

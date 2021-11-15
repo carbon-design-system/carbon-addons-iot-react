@@ -22,8 +22,13 @@ const iconSelectionCommonProps = {
 
 describe('Button', () => {
   it('is selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(<Button {...commonProps} testID="BUTTON_TEST" />);
     expect(screen.getByTestId('BUTTON_TEST')).toBeTruthy();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    jest.resetAllMocks();
 
     rerender(<Button {...commonProps} testId="button-test" />);
     expect(screen.getByTestId('button-test')).toBeTruthy();

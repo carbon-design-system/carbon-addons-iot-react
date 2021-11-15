@@ -7,7 +7,8 @@ import pick from 'lodash/pick';
 
 import { CARD_DIMENSIONS, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import { Tabs, Tab, Button } from '../../../index';
+import Button from '../../Button';
+import { Tabs, Tab } from '../../Tabs';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
 import { DataItemsPropTypes } from '../../DashboardEditor/editorUtils';
 

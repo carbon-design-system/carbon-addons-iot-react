@@ -2,12 +2,17 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { settings } from '../../constants/Settings';
+
 import CardCodeEditor from './CardCodeEditor';
 import { isValidCallback } from './CardCodeEditor.story';
+
+const { iotPrefix, prefix } = settings;
 
 describe('CardEditor', () => {
   it('is selectable by testID or testId', async () => {
     const handleOnCopy = jest.fn();
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <CardCodeEditor
         onSubmit={isValidCallback}
@@ -18,6 +23,10 @@ describe('CardEditor', () => {
       />
     );
     expect(screen.getByTestId('CARD_CODE_EDITOR')).toBeTruthy();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(
       <CardCodeEditor
@@ -49,7 +58,7 @@ describe('CardEditor', () => {
     userEvent.click(save);
     expect(screen.getByTestId('card-code-editor-notification')).toBeTruthy();
     await waitFor(() => expect(screen.queryByRole('alert')).toBeTruthy());
-    userEvent.click(container.querySelector('.bx--inline-notification__close-button'));
+    userEvent.click(container.querySelector(`.${prefix}--inline-notification__close-button`));
     await waitFor(() => expect(screen.queryByRole('alert')).toBeFalsy());
   });
 
@@ -66,7 +75,7 @@ describe('CardEditor', () => {
     const expand = screen.queryByLabelText('Expand');
     userEvent.click(expand);
     await waitFor(() =>
-      expect(container.querySelector('.iot--editor__expanded')).toBeInTheDocument()
+      expect(container.querySelector(`.${iotPrefix}--editor__expanded`)).toBeInTheDocument()
     );
   });
 
@@ -80,7 +89,7 @@ describe('CardEditor', () => {
         onClose={() => {}}
       />
     );
-    const copy = container.querySelector('.iot--editor-copy');
+    const copy = container.querySelector(`.${iotPrefix}--editor-copy`);
     userEvent.click(copy);
     expect(handleOnCopy).toHaveBeenCalledWith('/* write your code here */');
   });

@@ -56,6 +56,8 @@ describe('TableHead', () => {
         },
       ],
     }));
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <TableHead {...commonTableHeadProps} columns={columns} testID="TABLE_HEAD" />,
       {
@@ -71,6 +73,10 @@ describe('TableHead', () => {
     userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[1]);
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-1')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-2')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(<TableHead {...commonTableHeadProps} columns={columns} testId="table_head" />, {
       container: document.body.appendChild(document.createElement('table')),
@@ -293,8 +299,10 @@ describe('TableHead', () => {
     });
 
     const column3 = screen.getByRole('columnheader', { name: /Column 3/i });
-    expect(column3).toHaveClass('iot--table-head--table-header--with-overflow');
-    expect(within(column3).getByText('1')).toHaveClass('iot--table-header-label__sort-order');
+    expect(column3).toHaveClass(`${iotPrefix}--table-head--table-header--with-overflow`);
+    expect(within(column3).getByText('1')).toHaveClass(
+      `${iotPrefix}--table-header-label__sort-order`
+    );
   });
 
   it('calls onOverflowItemClicked when multi-sort overflow is clicked', async () => {
@@ -328,7 +336,9 @@ describe('TableHead', () => {
     await waitFor(() => expect(screen.getByText('Multi-sort')).toBeInTheDocument());
 
     userEvent.click(screen.getByText(/Multi-sort/i));
-    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort');
+    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort', {
+      columnId: 'col3',
+    });
   });
 
   describe('Column resizing active', () => {
@@ -593,7 +603,6 @@ describe('TableHead', () => {
       ];
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
-
       const { container, rerender } = render(<TableHead {...myProps} />, {
         container: document.body.appendChild(document.createElement('table')),
       });

@@ -183,7 +183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </span>
         <a
           data-testid="suite-header-app-switcher--no-access"
-          href="javascript:void(0)"
+          href="#"
           onClick={[Function]}
         >
           Learn more

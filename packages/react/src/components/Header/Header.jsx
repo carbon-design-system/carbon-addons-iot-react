@@ -11,41 +11,10 @@ import { Switcher20 } from '@carbon/icons-react';
 import { settings } from '../../constants/Settings';
 
 import HeaderActionGroup from './HeaderActionGroup';
+import { HeaderActionItemPropTypes, HeaderPanelPropTypes } from './HeaderPropTypes';
+import { APP_SWITCHER } from './headerConstants';
 
 const { prefix: carbonPrefix, iotPrefix } = settings;
-
-/** common proptypes associated with child content for a header action */
-export const ChildContentPropTypes = {
-  metaData: PropTypes.shape({
-    /** The specific type of element to render */
-    element: PropTypes.string,
-  }),
-  content: PropTypes.node,
-};
-
-/** common proptypes associated with a header action */
-export const HeaderActionItemPropTypes = {
-  /** Optionally provide a custom class to apply to the button */
-  className: PropTypes.string,
-  /** label for the menu button */
-  label: PropTypes.string.isRequired,
-  /** should the action render a panel or a submenu */
-  hasHeaderPanel: PropTypes.bool,
-  /** Menu button that pops out the action panel */
-  btnContent: PropTypes.node.isRequired,
-  /** content to render in the action panel */
-  childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
-  onClick: PropTypes.func,
-  /** a string id that can be used by the isActionItemVisible function to determine if an item should be shown */
-  id: PropTypes.string,
-};
-
-export const HeaderPanelPropTypes = {
-  /** Optionally provide a custom class to apply to the underlying <li> node */
-  className: PropTypes.string,
-  /** the content of the header panel  */
-  content: PropTypes.any,
-};
 
 const propTypes = {
   /** Add a prefix other than IBM */
@@ -83,8 +52,6 @@ const propTypes = {
   /** Returns true, if the icon should be shown. (actionItem) => {} */
   isActionItemVisible: PropTypes.func,
 };
-
-export const APP_SWITCHER = 'AppSwitcher';
 
 const defaultProps = {
   onClickSideNavExpand: null,

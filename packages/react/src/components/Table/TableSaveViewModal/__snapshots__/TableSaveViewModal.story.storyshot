@@ -110,7 +110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1495"
+                aria-controls="accordion-item-1499"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -140,7 +140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1495"
+                id="accordion-item-1499"
               >
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -152,7 +152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1496"
+                aria-controls="accordion-item-1500"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -182,7 +182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1496"
+                id="accordion-item-1500"
               >
                 <p>
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

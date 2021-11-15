@@ -5,6 +5,8 @@ import { Tooltip, TooltipDefinition } from 'carbon-components-react';
 import warning from 'warning';
 
 import { settings } from '../../../constants/Settings';
+import { CellTextOverflowPropType } from '../TablePropTypes';
+import { CELL_TEXT_OVERFLOW } from '../tableConstants';
 
 const { iotPrefix } = settings;
 
@@ -15,8 +17,7 @@ const propTypes = {
     PropTypes.object,
     PropTypes.array,
   ]),
-  wrapText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
-  truncateCellText: PropTypes.bool.isRequired,
+  cellTextOverflow: CellTextOverflowPropType,
   allowTooltip: PropTypes.bool,
   /** What locale should the number be rendered in */
   locale: PropTypes.string,
@@ -26,6 +27,8 @@ const propTypes = {
   row: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object, PropTypes.array])
   ),
+  /** use white-space: pre; css when true */
+  preserveCellWhiteSpace: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -36,6 +39,8 @@ const defaultProps = {
   renderDataFunction: null,
   columnId: null,
   rowId: null,
+  cellTextOverflow: null,
+  preserveCellWhiteSpace: false,
 };
 
 const isElementTruncated = (element) => element.offsetWidth < element.scrollWidth;
@@ -53,9 +58,8 @@ const renderCustomCell = (renderDataFunction, args, className) => {
 /** Supports our default render decisions for primitive values */
 const TableCellRenderer = ({
   children,
-  wrapText,
   allowTooltip,
-  truncateCellText,
+  cellTextOverflow,
   locale,
   tooltip,
   renderDataFunction,
@@ -66,11 +70,13 @@ const TableCellRenderer = ({
   sortFunction,
   isFilterable,
   filterFunction,
+  preserveCellWhiteSpace,
 }) => {
   const mySpanRef = React.createRef();
   const myClasses = classnames({
-    [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
-    [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never',
+    [`${iotPrefix}--table__cell-text--truncate`]: cellTextOverflow === CELL_TEXT_OVERFLOW.TRUNCATE,
+    [`${iotPrefix}--table__cell-text--no-wrap`]: cellTextOverflow === CELL_TEXT_OVERFLOW.GROW,
+    [`${iotPrefix}--table__cell-text--preserve`]: preserveCellWhiteSpace,
   });
 
   const [useTooltip, setUseTooltip] = useState(false);
@@ -99,10 +105,15 @@ const TableCellRenderer = ({
   useEffect(() => {
     const canBeTruncated =
       typeof children === 'string' || typeof children === 'number' || typeof children === 'boolean';
-    if (canBeTruncated && truncateCellText && allowTooltip && mySpanRef && mySpanRef.current) {
+    if (
+      canBeTruncated &&
+      cellTextOverflow === CELL_TEXT_OVERFLOW.TRUNCATE &&
+      allowTooltip &&
+      mySpanRef.current
+    ) {
       setUseTooltip(isElementTruncated(mySpanRef.current));
     }
-  }, [mySpanRef, children, wrapText, truncateCellText, allowTooltip]);
+  }, [mySpanRef, children, cellTextOverflow, allowTooltip]);
 
   if (__DEV__) {
     const isObject =
@@ -131,7 +142,9 @@ const TableCellRenderer = ({
     <span
       className={myClasses}
       title={
-        typeof children === 'number' && locale
+        useTooltip || tooltip
+          ? undefined
+          : typeof children === 'number' && locale
           ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
           : children
       }
@@ -142,7 +155,7 @@ const TableCellRenderer = ({
         : children}
     </span>
   ) : typeof children === 'boolean' ? ( // handle booleans
-    <span className={myClasses} title={children.toString()}>
+    <span className={myClasses} title={useTooltip || tooltip ? undefined : children.toString()}>
       {children.toString()}
     </span>
   ) : typeof children === 'object' && !React.isValidElement(children) ? null : (

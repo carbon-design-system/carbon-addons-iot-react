@@ -10,7 +10,7 @@ import { settings } from '../../../constants/Settings';
 import TableDetailWizardHeader from './TableDetailWizardHeader/TableDetailWizardHeader';
 import DetailWizardSidebar from './TableDetailWizardSidebar/TableDetailWizardSidebar';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 export const propTypes = {
   /** Title in the header */
@@ -151,7 +151,7 @@ const TableDetailWizard = ({
         />
       ) : null}
       <div className={classnames(className, `${iotPrefix}--table-detail-wizard--footer`)}>
-        <div className="bx--modal-footer">
+        <div className={`${prefix}--modal-footer`}>
           <WizardFooter
             backLabel={backLabel}
             nextLabel={nextLabel}

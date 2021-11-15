@@ -23,6 +23,7 @@
   .#{vars.$prefix}--loading--small {
     width: 1.875rem;
     height: 1.875rem;
+    margin-right: $spacing-03;
   }
 
   > * {
@@ -37,6 +38,7 @@
   flex-shrink: 0;
   opacity: 0;
   padding-left: spacing.$spacing-06;
+  padding-right: spacing.$spacing-03;
   z-index: 0;
   @include backgroundGradient(theme.$hover-ui);
 }
@@ -80,7 +82,9 @@
 
 .#{vars.$prefix}--data-table tbody tr {
   &:not(:hover) .#{vars.$iot-prefix}--row-actions-container__background--overflow-menu-open {
-    @include backgroundGradient(theme.$ui-01);
+    // doesn't use the mixin above because safari has problems with 229 rgb values being rendered
+    // as transparent.
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #{theme.$ui-01} 16px);
   }
 
   &.#{vars.$prefix}--data-table--selected:hover
@@ -100,13 +104,22 @@ html[dir='rtl'] {
   .#{vars.$iot-prefix}--row-actions-container__background {
     margin-left: unset;
     margin-right: spacing.$spacing-04;
-    padding-left: unset;
+    padding-left: spacing.$spacing-06;
     padding-right: spacing.$spacing-06;
 
     .#{vars.$prefix}--btn__icon {
       margin-left: unset;
       margin-right: spacing.$spacing-03;
       transform: rotate(180deg);
+    }
+
+    .#{$prefix}--loading--small {
+      margin-right: unset;
+      margin-left: $spacing-03;
+    }
+
+    .#{$iot-prefix}--row-actions-cell--overflow-menu {
+      margin-left: unset;
     }
   }
 }

@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import { ContentSwitcher, Switch } from 'carbon-components-react';
 import styled from 'styled-components';
 
+import { settings } from '../../constants/Settings';
+
+const { prefix } = settings;
 const StyledContentSwitcher = styled(ContentSwitcher)`
   && {
     height: auto;
     margin-bottom: $spacing-05;
     justify-content: flex-start;
 
-    .bx--content-switcher-btn {
+    .${prefix}--content-switcher-btn {
       position: relative;
       max-width: 10rem;
     }

@@ -12,11 +12,14 @@ import Bee from '@carbon/icons-react/lib/bee/24';
 import Car from '@carbon/icons-react/lib/car/24';
 import Chat from '@carbon/icons-react/lib/chat/24';
 
+import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
 import SuiteHeaderREADME from './SuiteHeader.mdx';
+
+const { prefix } = settings;
 
 const sideNavLinks = [
   {
@@ -122,7 +125,7 @@ const customActionItems = [
         <Bee
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       </span>
     ),
@@ -233,8 +236,11 @@ const customHelpLinks = [
   {
     metaData: {
       element: 'a',
-      href: 'javascript:void(0)',
-      onClick: () => alert('custom help menu action'),
+      href: '#',
+      onClick: (e) => {
+        e.preventDefault();
+        alert('custom help menu action');
+      },
     },
     content: (
       <span id="yet-another-custom-help-link">
@@ -266,8 +272,11 @@ const customProfileLinks = [
   {
     metaData: {
       element: 'a',
-      href: 'javascript:void(0)',
-      onClick: () => alert('custom profile menu action'),
+      href: '#',
+      onClick: (e) => {
+        e.preventDefault();
+        alert('custom profile menu action');
+      },
     },
     content: (
       <span id="yet-another-custom-profile-link">
@@ -611,9 +620,8 @@ export const HeaderWithIdleLogoutConfirmation = () => (
     />
     <p>The logout confirmation dialog will show up after 10 seconds of inactivity.</p>
     <p>
-      {
-        'Open this story in another tab, wait for the dialog to show up in both tabs, then click "Stay logged in" to see the other dialog go away.'
-      }
+      Open this story in another tab, wait for the dialog to show up in both tabs, then click
+      &ldquo;Stay logged in&ldquo; to see the other dialog go away.
     </p>
   </>
 );

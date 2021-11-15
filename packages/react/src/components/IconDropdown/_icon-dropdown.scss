@@ -45,14 +45,14 @@
       background: transparent;
 
       &:hover {
-        > .bx--list-box__menu-item__option {
+        > .#{vars.$prefix}--list-box__menu-item__option {
           > .#{vars.$iot-prefix}--dropdown__image-button {
             border-color: transparent;
           }
         }
       }
 
-      > .bx--list-box__menu-item__option {
+      > .#{vars.$prefix}--list-box__menu-item__option {
         > .#{vars.$iot-prefix}--dropdown__image-button {
           border-color: theme.$focus;
         }
@@ -116,7 +116,7 @@
             color: transparent;
           }
 
-          > .bx--assistive-text {
+          > .#{$prefix}--assistive-text {
             display: none;
           }
         }

@@ -4,17 +4,15 @@ import { withKnobs, boolean, text, object, array } from '@storybook/addon-knobs'
 
 import { DataScientistIcon } from '../../icons/components';
 import { EmptystateDefaultIcon } from '../../icons/static';
-import {
-  NumberInput,
-  TextInput,
-  Card,
-  Link,
-  InlineNotification,
-  OverflowMenu,
-  OverflowMenuItem,
-  Toggle,
-  Dropdown,
-} from '../../index';
+import { NumberInput } from '../NumberInput';
+import { TextInput } from '../TextInput';
+import Card from '../Card/Card';
+import { Link } from '../Link';
+import { InlineNotification } from '../Notification';
+import { OverflowMenu } from '../OverflowMenu';
+import { OverflowMenuItem } from '../OverflowMenuItem';
+import { Toggle } from '../Toggle';
+import { Dropdown } from '../Dropdown';
 import assemblyline from '../ImageGalleryModal/images/assemblyline.jpg';
 import floow_plan from '../ImageGalleryModal/images/floow_plan.png'; // eslint-disable-line camelcase
 import manufacturing_plant from '../ImageGalleryModal/images/Manufacturing_plant.png'; // eslint-disable-line camelcase
@@ -321,6 +319,14 @@ export const WithInitialValue = () => (
             timeDataSourceId: 'timestamp',
           },
         },
+        {
+          id: 'Custom-2',
+          title: 'Custom rendered card',
+          type: 'CUSTOM',
+          size: 'MEDIUM',
+          content: <div>custom react element content</div>,
+          value: 35,
+        },
       ],
       layouts: {
         lg: [
@@ -341,6 +347,11 @@ export const WithInitialValue = () => (
             x: 1,
             y: 8,
           },
+          {
+            i: 'Custom-2',
+            x: 0,
+            y: 12,
+          },
         ],
         md: [
           { i: 'Table', x: 0, y: 0 },
@@ -360,6 +371,11 @@ export const WithInitialValue = () => (
             x: 0,
             y: 10,
           },
+          {
+            i: 'Custom-2',
+            x: 0,
+            y: 12,
+          },
         ],
         sm: [
           { i: 'Table', x: 0, y: 0 },
@@ -378,6 +394,11 @@ export const WithInitialValue = () => (
             i: 'Bar',
             x: 1,
             y: 6,
+          },
+          {
+            i: 'Custom-2',
+            x: 0,
+            y: 8,
           },
         ],
       },

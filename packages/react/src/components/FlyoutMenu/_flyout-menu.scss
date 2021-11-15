@@ -258,8 +258,9 @@ $shadow: 0.4rem;
 .#{vars.$iot-prefix}--flyout-menu--trigger-button {
   color: theme.$icon-01;
 
-  &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger svg,
-  &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger:hover svg {
+  &.#{vars.$prefix}--btn.#{vars.$prefix}--btn--icon-only.#{vars.$prefix}--tooltip__trigger svg,
+  &.#{vars.$prefix}--btn.#{vars.$prefix}--btn--icon-only.#{vars.$prefix}--tooltip__trigger:hover
+    svg {
     fill: colors.$gray-70;
   }
 

@@ -110,10 +110,10 @@
     input[type='number'] {
       min-width: unset;
     }
-    .iot--table-container .addons-iot-table-container {
+    .#{$iot-prefix}--table-container .addons-iot-table-container {
       overflow: visible;
     }
-    .bx--data-table-content {
+    .#{$prefix}--data-table-content {
       overflow: visible;
     }
   }

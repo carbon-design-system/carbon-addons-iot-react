@@ -105,7 +105,8 @@
     outline-offset: -(spacing.$spacing-01);
   }
 
-  &--handle {
+  &--handle,
+  &--lock {
     flex-shrink: 0;
     fill: theme.$inverse-02;
     margin-right: spacing.$spacing-04;
@@ -136,8 +137,18 @@
   }
 
   &__selected {
-    border-left: solid spacing.$spacing-02 theme.$interactive-01;
-    padding-left: spacing.$spacing-04; // account for the border
+    $selected-mark-width: spacing.$spacing-02;
+    // Box shadow used to avoid mitered corner with the bottom border
+    box-shadow: calc(-1 * #{$selected-mark-width}) 0 theme.$interactive-01;
+    // Can't use inset box-shadow because of bottom border so we need a left margin
+    margin-left: $selected-mark-width;
+    // Make sure content is unaffected by extra left margin
+    padding-left: calc(#{spacing.$spacing-05} - #{$selected-mark-width});
+
+    &:focus {
+      margin-left: spacing.$spacing-01;
+      padding-left: calc(#{spacing.$spacing-05} - #{spacing.$spacing-01});
+    }
     color: theme.$text-01;
     background: theme.$selected-ui;
   }
@@ -164,6 +175,7 @@
     width: 100%;
     height: 100%;
     align-items: center;
+    min-width: 0;
     &__large {
       align-items: flex-start;
     }
@@ -194,7 +206,6 @@
       }
       &--value {
         flex: 1;
-
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;

@@ -19,6 +19,9 @@ import {
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
   TableRowPropTypes,
+  TableColumnsPropTypes,
+  TableFiltersPropType,
+  TableOrderingPropType,
 } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
@@ -50,6 +53,10 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
     hasRowEdit: PropTypes.bool,
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
+    onApplySearch: PropTypes.func,
+    onDownloadCSV: PropTypes.func,
+    onApplyAdvancedFilter: PropTypes.func,
     /** Optional boolean to render rowCount in header
      *  NOTE: Deprecated in favor of secondaryTitle for custom use
      */
@@ -76,6 +83,8 @@ const propTypes = {
     filterDescending: PropTypes.string,
     toggleAggregations: PropTypes.string,
     toolbarLabelAria: PropTypes.string,
+    rowCountInHeader: PropTypes.func,
+    downloadIconDescription: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -91,7 +100,10 @@ const propTypes = {
     onCreateAdvancedFilter: PropTypes.func,
     onChangeAdvancedFilter: PropTypes.func,
     onCancelAdvancedFilter: PropTypes.func,
+    onApplyAdvancedFilter: PropTypes.func,
     onShowRowEdit: PropTypes.func,
+    onApplySearch: PropTypes.func,
+    onDownloadCSV: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -104,6 +116,11 @@ const propTypes = {
     /** total number of selected rows */
     totalSelected: PropTypes.number,
     totalItemsCount: PropTypes.number,
+    advancedFilterFlyoutOpen: PropTypes.bool,
+    totalFilters: PropTypes.number,
+    filters: TableFiltersPropType,
+    columns: TableColumnsPropTypes,
+    ordering: TableOrderingPropType,
     /** row selection option */
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     /** optional content to render inside the toolbar  */
@@ -216,7 +233,7 @@ const TableToolbar = ({
       // TODO: remove deprecated 'testID' in v3
       data-testid={testID || testId}
       className={classnames(`${iotPrefix}--table-toolbar`, className)}
-      aria-label={i18n.toolbarLabelAria}
+      aria-label={i18n.toolbarLabelAria || secondaryTitle ? `${secondaryTitle} Toolbar` : undefined}
     >
       <TableBatchActions
         // TODO: remove deprecated 'testID' in v3

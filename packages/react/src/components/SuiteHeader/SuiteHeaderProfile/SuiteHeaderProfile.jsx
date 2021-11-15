@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonSkeleton } from 'carbon-components-react';
 
-import { Button } from '../../../index';
+import Button from '../../Button';
 import { SkeletonText } from '../../SkeletonText';
 import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';

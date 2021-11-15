@@ -36,7 +36,7 @@
     .#{vars.$iot-prefix}--color-dropdown__item-border {
       border-color: transparent;
     }
-    & + .bx--list-box__menu-item .#{vars.$iot-prefix}--color-dropdown__item-border {
+    & + .#{vars.$prefix}--list-box__menu-item .#{vars.$iot-prefix}--color-dropdown__item-border {
       border-color: transparent;
     }
   }

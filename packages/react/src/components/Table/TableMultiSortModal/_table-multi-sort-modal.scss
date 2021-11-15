@@ -1,27 +1,33 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars' as globals-vars;
+@use '../../../globals/vars';
 
-.#{globals-vars.$iot-prefix}--table-multi-sort-modal {
+.#{vars.$iot-prefix}--table-multi-sort-modal {
   html[dir='rtl'] & {
-    .#{globals-vars.$prefix}--modal-content {
+    .#{vars.$prefix}--modal-content {
       padding-right: spacing.$spacing-05;
       padding-left: spacing.$spacing-09;
     }
-    .#{globals-vars.$prefix}--modal-header {
+    .#{vars.$prefix}--modal-header {
       padding-right: spacing.$spacing-09;
     }
   }
 
-  .#{globals-vars.$prefix}--modal-content {
+  .#{vars.$iot-prefix}--table-multi-sort-row {
     display: grid;
     gap: spacing.$spacing-05;
-    grid-template-columns: 1fr 1fr 48px 48px;
-    button.#{globals-vars.$prefix}--btn--icon-only {
+    grid-template-columns: 16px 1fr 1fr 48px 48px;
+    margin-bottom: spacing.$spacing-05;
+    button.#{vars.$prefix}--btn--icon-only {
       height: 40px;
       width: 48px;
       margin-top: 24px;
     }
+  }
+
+  .#{vars.$iot-prefix}--table-multi-sort-row__handle {
+    align-self: center;
+    cursor: grab;
   }
 
   &__footer {

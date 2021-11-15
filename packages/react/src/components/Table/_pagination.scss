@@ -30,7 +30,7 @@
 }
 // This is a workaround to hide the select controls since the
 // page size select can't be disabled.
-.#{vars.$iot-prefix}--pagination--hide-select .bx--select {
+.#{vars.$iot-prefix}--pagination--hide-select .#{vars.$prefix}--select {
   display: none;
 }
 

@@ -3,7 +3,7 @@
 @use '../../globals/vars';
 
 .#{vars.$iot-prefix}--select-users-modal {
-  .bx--modal-container .bx--modal-content {
+  .#{vars.$prefix}--modal-container .#{vars.$prefix}--modal-content {
     padding-right: spacing.$spacing-05;
   }
 

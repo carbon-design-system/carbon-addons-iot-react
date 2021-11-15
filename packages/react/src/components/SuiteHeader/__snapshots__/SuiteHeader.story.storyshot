@@ -290,7 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -311,7 +311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -332,7 +332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -353,7 +353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -374,7 +374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -395,7 +395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -543,7 +543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-profile--logout"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1330,7 +1330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1366,7 +1366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1387,7 +1387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1408,7 +1408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1429,7 +1429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1450,7 +1450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1471,7 +1471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1656,7 +1656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1678,7 +1678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-profile--logout"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -1993,7 +1993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2014,7 +2014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2035,7 +2035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2056,7 +2056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2077,7 +2077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2098,7 +2098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2246,7 +2246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-profile--logout"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2803,7 +2803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2824,7 +2824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2845,7 +2845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2866,7 +2866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2887,7 +2887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -2908,7 +2908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -3056,7 +3056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-profile--logout"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -3240,7 +3240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     The logout confirmation dialog will show up after 10 seconds of inactivity.
   </p>
   <p>
-    Open this story in another tab, wait for the dialog to show up in both tabs, then click "Stay logged in" to see the other dialog go away.
+    Open this story in another tab, wait for the dialog to show up in both tabs, then click “Stay logged in“ to see the other dialog go away.
   </p>
 </div>
 `;
@@ -3535,7 +3535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -3556,7 +3556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -3577,7 +3577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -3598,7 +3598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -3619,7 +3619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -3640,7 +3640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -3788,7 +3788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-profile--logout"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -3985,7 +3985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       className="bx--side-nav__items"
     >
       <li
-        className="bx--side-nav__item bx--side-nav__item--icon"
+        className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
         onKeyDown={[Function]}
       >
         <button
@@ -4097,7 +4097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </a>
       </li>
       <li
-        className="bx--side-nav__item bx--side-nav__item--icon"
+        className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
         onKeyDown={[Function]}
       >
         <button
@@ -4189,7 +4189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </ul>
       </li>
       <li
-        className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon"
+        className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon iot--side-nav__item--depth-0"
         onKeyDown={[Function]}
       >
         <button
@@ -4311,7 +4311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <a
           className="bx--link"
-          href="javascript:void(0)"
+          href="#"
           onClick={[Function]}
           rel={null}
         >
@@ -4322,7 +4322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <a
             className="bx--link"
-            href="javascript:void(0)"
+            href="#"
             onClick={[Function]}
             rel={null}
           >
@@ -4620,7 +4620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -4641,7 +4641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -4662,7 +4662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -4683,7 +4683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -4704,7 +4704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -4725,7 +4725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -4873,7 +4873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-profile--logout"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -5182,7 +5182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     <a
       className="bx--header__name"
       data-testid="suite-header-name"
-      href="javascript:void(0)"
+      href="#"
     >
       <span
         className="bx--header__name--prefix"
@@ -5915,7 +5915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -5936,7 +5936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -5957,7 +5957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -5978,7 +5978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -5999,7 +5999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -6020,7 +6020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}
@@ -6168,7 +6168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-profile--logout"
-                  href="javascript:void(0)"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   tabIndex={0}

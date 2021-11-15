@@ -20,7 +20,7 @@
   }
 }
 
-.bx--tooltip__trigger.bx--tooltip--a11y.#{vars.$iot-prefix}--table__cell-tooltip {
+.#{vars.$prefix}--tooltip__trigger.#{vars.$prefix}--tooltip--a11y.#{vars.$iot-prefix}--table__cell-tooltip {
   @include typography.type-style('productive-heading-01');
 }
 
@@ -31,4 +31,8 @@
 
 .#{vars.$iot-prefix}--table__cell-text--no-wrap {
   white-space: nowrap;
+}
+
+.#{$iot-prefix}--table__cell-text--preserve {
+  white-space: pre;
 }

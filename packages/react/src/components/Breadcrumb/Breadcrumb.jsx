@@ -4,7 +4,8 @@ import classnames from 'classnames';
 import { OverflowMenuHorizontal20 } from '@carbon/icons-react';
 import { Breadcrumb as CarbonBreadcrumb } from 'carbon-components-react';
 
-import { OverflowMenuItem, OverflowMenu } from '../../index';
+import { OverflowMenu } from '../OverflowMenu';
+import { OverflowMenuItem } from '../OverflowMenuItem';
 import { useResize } from '../../internal/UseResizeObserver';
 
 const propTypes = {

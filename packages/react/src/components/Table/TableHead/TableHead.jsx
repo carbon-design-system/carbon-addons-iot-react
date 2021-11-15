@@ -8,6 +8,7 @@ import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
 import debounce from 'lodash/debounce';
 import classnames from 'classnames';
+import warning from 'warning';
 
 import {
   TableColumnsPropTypes,
@@ -15,13 +16,15 @@ import {
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
   TableSortPropType,
+  CellTextOverflowPropType,
   TableColumnGroupPropType,
   TableOrderingPropType,
 } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
-import { OverflowMenu, OverflowMenuItem } from '../../../index';
+import { OverflowMenu } from '../../OverflowMenu';
+import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { usePrevious } from '../../../hooks/usePrevious';
 import deprecate from '../../../internal/deprecate';
 
@@ -60,12 +63,18 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
-    truncateCellText: PropTypes.bool.isRequired,
+    hasRowNesting: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** If the hierarchy only has 1 nested level of children */
+        hasSingleNestedHierarchy: PropTypes.bool,
+      }),
+    ]),
     hasMultiSort: PropTypes.bool,
     useAutoTableLayoutForResize: PropTypes.bool,
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
+    cellTextOverflow: CellTextOverflowPropType,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -130,6 +139,17 @@ const propTypes = {
   testId: PropTypes.string,
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
+  /** Size prop from Carbon to shrink row height (and header height in some instances) */
+  size: function checkProps(props, propName, componentName) {
+    if (['compact', 'short', 'normal', 'tall'].includes(props[propName])) {
+      warning(
+        false,
+        `The value \`${props[propName]}\` has been deprecated for the ` +
+          `\`${propName}\` prop on the ${componentName} component. It will be removed in the next major ` +
+          `release. Please use 'xs', 'sm', 'md', 'lg', or 'xl' instead.`
+      );
+    }
+  },
 };
 
 const defaultProps = {
@@ -149,6 +169,7 @@ const defaultProps = {
   testID: '',
   testId: '',
   showExpanderColumn: false,
+  size: undefined,
 };
 
 const generateOrderedColumnRefs = (ordering) =>
@@ -168,8 +189,7 @@ const TableHead = ({
     hasRowSelection,
     hasRowNesting,
     hasResize,
-    wrapCellText,
-    truncateCellText,
+    cellTextOverflow,
     hasSingleRowEdit,
     hasMultiSort,
     useAutoTableLayoutForResize,
@@ -204,6 +224,7 @@ const TableHead = ({
   i18n,
   hasFastFilter,
   showExpanderColumn,
+  size,
 }) => {
   const filterBarActive = activeBar === 'filter';
   const initialColumnWidths = {};
@@ -284,7 +305,7 @@ const TableHead = ({
     e.stopPropagation();
 
     if (onOverflowItemClicked) {
-      onOverflowItemClicked(option.id);
+      onOverflowItemClicked(option.id, option.meta);
     }
   };
 
@@ -506,10 +527,10 @@ const TableHead = ({
               align={align}
               className={classnames(`table-header-label-${align}`, {
                 [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
-                'table-header-sortable': matchingColumnMeta.isSortable,
+                'table-header-sortable': matchingColumnMeta.isSortable && !isDisabled,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
                 [`${iotPrefix}--table-head--table-header--with-overflow`]:
-                  hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable),
+                  hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable && !isDisabled),
                 [`${iotPrefix}--table-header--last-data-column`]:
                   showColumnGroups && item === lastVisibleColumn,
               })}
@@ -518,15 +539,14 @@ const TableHead = ({
             >
               <TableCellRenderer
                 className={`${iotPrefix}--table-head--text`}
-                wrapText={wrapCellText}
-                truncateCellText={truncateCellText}
+                cellTextOverflow={cellTextOverflow}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
 
-              {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable) ? (
+              {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable && !isDisabled) ? (
                 <OverflowMenu
                   className={`${iotPrefix}--table-head--overflow`}
                   direction="bottom"
@@ -548,12 +568,17 @@ const TableHead = ({
                       data-testid={`${testID || testId}-column-overflow-menu-item-multi-sort`}
                       itemText={i18n.multiSortOverflowItem}
                       key={`${columnIndex}--overflow-item-multi-sort`}
-                      onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}
+                      onClick={(e) =>
+                        handleOverflowItemClick(e, {
+                          id: 'multi-sort',
+                          meta: { columnId: matchingColumnMeta.id },
+                        })
+                      }
                     />
                   )}
                 </OverflowMenu>
               ) : null}
-              {sortOrder > 0 && (
+              {sortOrder > 0 && !isDisabled && (
                 <span className={`${iotPrefix}--table-header-label__sort-order`}>{sortOrder}</span>
               )}
               {hasResize && (item !== lastVisibleColumn || showExpanderColumn) ? (
@@ -627,6 +652,7 @@ const TableHead = ({
           lightweight={lightweight}
           isDisabled={isDisabled}
           showExpanderColumn={showExpanderColumn}
+          size={size}
         />
       )}
       {activeBar === 'column' && (
