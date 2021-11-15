@@ -48,13 +48,15 @@ jobs:
         run: |
           cd packages/react
           yarn build
+          mkdir -p dist
+          cp -rf package.json umd scss lib es css ./dist
 
       - name: Archive build artifacts
         if: ${{ success() }} && steps.changes.outputs.react == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: dist
-          path: packages/react
+          path: packages/react/dist
 
   create-test-app:
     name: Create test app and build
@@ -85,6 +87,7 @@ jobs:
         if: steps.changes.outputs.react == 'true'
         run: |
           cd dist
+          yarn install --frozen-lockfile --production
           yarn link
           cd ../test-app
           yarn link carbon-addons-iot-react

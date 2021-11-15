@@ -47,6 +47,7 @@ const defaultProps = {
     sessionTimeoutModalBody: 'You will be logged out due to inactivity in {countdown} seconds.',
     sessionTimeoutModalLogoutButton: 'Log out',
     sessionTimeoutModalStayLoggedInButton: 'Stay logged in',
+    closeButtonLabel: 'Close',
   },
 };
 
@@ -122,6 +123,7 @@ const IdleLogoutConfirmationModal = ({
       data-testid="idle-logout-confirmation"
       className={classnames(`${settings.iotPrefix}--session-timeout-modal`, className)}
       size="sm"
+      closeButtonLabel={mergedI18N.closeButtonLabel}
       open={logoutConfirmationCountdown > 0}
       modalHeading={mergedI18N.sessionTimeoutModalHeading}
       primaryButtonText={mergedI18N.sessionTimeoutModalStayLoggedInButton}

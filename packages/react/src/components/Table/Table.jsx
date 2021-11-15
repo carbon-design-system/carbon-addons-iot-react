@@ -71,6 +71,8 @@ const propTypes = {
   options: PropTypes.shape({
     /** If true allows the table to aggregate values of columns in a special row */
     hasAggregations: PropTypes.bool,
+    /** If true, search is applied as typed. If false, only after 'Enter' is pressed */
+    hasFastSearch: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     /** True if the rows shuld be expandable */
@@ -135,6 +137,8 @@ const propTypes = {
      * alwaysTruncate - Always truncate if needed for all table column configurations
      */
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
+    /** use white-space: pre; css when true */
+    preserveCellWhiteSpace: PropTypes.bool,
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -176,6 +180,10 @@ const propTypes = {
       /** Number of pages rendered in pagination */
       maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
+      /**
+       * Specify the size of the Pagination buttons. Currently supports either `sm`, 'md' (default) or 'lg` as an option.
+       */
+      size: PropTypes.oneOf(['sm', 'md', 'lg']),
     }),
     filters: TableFiltersPropType,
     /** a stripped down version of the RuleBuilderFilterPropType */
@@ -343,6 +351,7 @@ export const defaultProps = (baseProps) => ({
     hasFilter: false,
     hasAdvancedFilter: false,
     hasOnlyPageData: false,
+    hasFastSearch: true,
     hasSearch: false,
     hasColumnSelection: false,
     hasColumnSelectionConfig: false,
@@ -354,6 +363,7 @@ export const defaultProps = (baseProps) => ({
     shouldLazyRender: false,
     shouldExpandOnRowClick: false,
     wrapCellText: 'always',
+    preserveCellWhiteSpace: false,
   },
   size: undefined,
   view: {
@@ -365,6 +375,7 @@ export const defaultProps = (baseProps) => ({
       totalItems: baseProps.data && baseProps.data.length,
       maxPages: 100,
       isItemPerPageHidden: false,
+      size: 'lg',
     },
     filters: [],
     advancedFilters: [],
@@ -830,6 +841,7 @@ const Table = (props) => {
                 options,
                 'hasAggregations',
                 'hasColumnSelection',
+                'hasFastSearch',
                 'hasSearch',
                 'hasRowSelection',
                 'hasRowCountInHeader',
@@ -1033,7 +1045,8 @@ const Table = (props) => {
                   'hasRowActions',
                   'hasRowNesting',
                   'shouldExpandOnRowClick',
-                  'shouldLazyRender'
+                  'shouldLazyRender',
+                  'preserveCellWhiteSpace'
                 )}
                 hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}
@@ -1120,6 +1133,7 @@ const Table = (props) => {
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}
+          carbonSize={paginationProps.size}
         />
       ) : null}
       {options.hasMultiSort && (

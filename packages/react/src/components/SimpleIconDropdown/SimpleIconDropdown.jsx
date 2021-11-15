@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'carbon-components-react';
 
@@ -6,6 +6,7 @@ import { validThresholdIcons } from '../DashboardEditor/editorUtils';
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
 import { CarbonIconPropType } from '../../constants/SharedPropTypes';
+import { useDropdownTitleFixer } from '../IconDropdown/dropdownHooks';
 
 const { iotPrefix } = settings;
 
@@ -61,6 +62,14 @@ const SimpleIconDropdown = ({
   translateWithId,
 }) => {
   const [selectedIcon, setSelectedIcon] = useState(selectedIconProp);
+  const [dropdownRef, updateTitle] = useDropdownTitleFixer();
+
+  useEffect(() => {
+    const selected = selectedIcon ?? icons[0];
+    if (selected?.name && dropdownRef?.current) {
+      updateTitle(selected.name);
+    }
+  }, [dropdownRef, icons, selectedIcon, selectedIconProp, updateTitle]);
 
   const renderIconItem = (item) => (
     <div style={{ color: item.color || 'unset' }} className={`${iotPrefix}--icon-dropdown__item`}>
@@ -70,6 +79,7 @@ const SimpleIconDropdown = ({
 
   return (
     <Dropdown
+      ref={dropdownRef}
       className={`${iotPrefix}--icon-dropdown`}
       id={id}
       itemToString={renderIconItem}
@@ -79,6 +89,7 @@ const SimpleIconDropdown = ({
       onChange={({ selectedItem }) => {
         setSelectedIcon(selectedItem);
         onChange({ icon: selectedItem });
+        updateTitle(selectedItem?.name);
       }}
       translateWithId={translateWithId}
       selectedItem={selectedIcon || icons[0]}

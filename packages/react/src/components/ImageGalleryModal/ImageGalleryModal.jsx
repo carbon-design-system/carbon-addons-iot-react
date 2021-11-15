@@ -171,7 +171,7 @@ const ImageGalleryModal = ({
           secondaryButtonText={modalSecondaryButtonLabelText}
           modalHeading={deleteModalTitleText(selectedImage?.id)}
           size="xs"
-          iconDescription={modalCloseIconDescriptionText}
+          closeButtonLabel={modalCloseIconDescriptionText}
           onRequestClose={() => setIsDeleteWarningModalOpen(false)}
           onRequestSubmit={handleDelete}
           data-testid={`${testId}-warning-modal`}
