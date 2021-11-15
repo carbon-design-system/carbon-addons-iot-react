@@ -10,7 +10,7 @@ import { OverflowMenuItem } from '../OverflowMenuItem';
 import { settings } from '../../constants/Settings';
 
 import HeaderAction from './HeaderAction/HeaderAction';
-import { HeaderActionItemPropTypes } from './Header';
+import { HeaderActionItemPropTypes } from './HeaderPropTypes';
 
 const { iotPrefix, prefix } = settings;
 

@@ -25,7 +25,13 @@ describe('StatefulTable tests with Mock reducer', () => {
     jest.resetModules();
   });
   it('check renders nested table', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const statefulTable = mount(<StatefulTable {...initialState} actions={mockActions} />);
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(statefulTable.find(Table)).toHaveLength(1);
   });
   it('check renders nested table passthrough props', () => {

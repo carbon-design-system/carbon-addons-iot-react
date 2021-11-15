@@ -4,7 +4,7 @@ import { Filename, FileUploaderButton } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 export const FILE_TYPES = {
   TEXT: 'TEXT',
@@ -251,19 +251,19 @@ class FileDrop extends React.Component {
     );
 
     const fileNameElements = (
-      <div className="bx--file-container">
+      <div className={`${prefix}--file-container`}>
         {this.state.files.length === 0
           ? null
           : this.state.files.map(({ name, uploadState }, index) => (
               <span
                 key={`${name}-${index}`}
-                className={`bx--file__selected-file ${iotPrefix}--file-drop__selected-file`}
+                className={`${prefix}--file__selected-file ${iotPrefix}--file-drop__selected-file`}
                 ref={(node) => {
                   this.nodes[index] = node;
                 }}
               >
-                <p className="bx--file-filename">{name}</p>
-                <span className="bx--file__state-container">
+                <p className={`${prefix}--file-filename`}>{name}</p>
+                <span className={`${prefix}--file__state-container`}>
                   <Filename
                     data-testid={`${testId}-file-${name}`}
                     status={uploadState}
@@ -286,7 +286,7 @@ class FileDrop extends React.Component {
 
     return kind === 'drag-and-drop' ? (
       <div data-testid={testId} className={className}>
-        <strong data-testid={`${testId}-title`} className="bx--label">
+        <strong data-testid={`${testId}-title`} className={`${prefix}--label`}>
           {title}
         </strong>
         <input
@@ -311,14 +311,14 @@ class FileDrop extends React.Component {
         {showFiles ? fileNameElements : null}
       </div>
     ) : (
-      <div data-testid={testId} id={id} className="bx--form-item">
+      <div data-testid={testId} id={id} className={`${prefix}--form-item`}>
         {title ? (
-          <strong data-testid={`${testId}-title`} className="bx--label">
+          <strong data-testid={`${testId}-title`} className={`${prefix}--label`}>
             {title}
           </strong>
         ) : null}
         {description ? (
-          <p data-testid={`${testId}-description`} className="bx--label-description">
+          <p data-testid={`${testId}-description`} className={`${prefix}--label-description`}>
             {description}
           </p>
         ) : null}

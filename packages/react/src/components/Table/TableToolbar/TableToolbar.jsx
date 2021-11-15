@@ -19,8 +19,14 @@ import {
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
   TableRowPropTypes,
+  TableColumnsPropTypes,
+  TableFiltersPropType,
+  TableOrderingPropType,
 } from '../TablePropTypes';
-import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
+import {
+  handleSpecificKeyDown,
+  tableTranslateWithId,
+} from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { RuleGroupPropType } from '../../RuleBuilder/RuleBuilderPropTypes';
 
@@ -46,10 +52,16 @@ const propTypes = {
   options: PropTypes.shape({
     hasAdvancedFilter: PropTypes.bool,
     hasAggregations: PropTypes.bool,
+    /** If true, search is applied as typed. If false, only after 'Enter' is pressed */
+    hasFastSearch: PropTypes.bool,
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
     hasRowEdit: PropTypes.bool,
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
+    onApplySearch: PropTypes.func,
+    onDownloadCSV: PropTypes.func,
+    onApplyAdvancedFilter: PropTypes.func,
     /** Optional boolean to render rowCount in header
      *  NOTE: Deprecated in favor of secondaryTitle for custom use
      */
@@ -76,6 +88,8 @@ const propTypes = {
     filterDescending: PropTypes.string,
     toggleAggregations: PropTypes.string,
     toolbarLabelAria: PropTypes.string,
+    rowCountInHeader: PropTypes.func,
+    downloadIconDescription: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -91,7 +105,10 @@ const propTypes = {
     onCreateAdvancedFilter: PropTypes.func,
     onChangeAdvancedFilter: PropTypes.func,
     onCancelAdvancedFilter: PropTypes.func,
+    onApplyAdvancedFilter: PropTypes.func,
     onShowRowEdit: PropTypes.func,
+    onApplySearch: PropTypes.func,
+    onDownloadCSV: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -104,6 +121,11 @@ const propTypes = {
     /** total number of selected rows */
     totalSelected: PropTypes.number,
     totalItemsCount: PropTypes.number,
+    advancedFilterFlyoutOpen: PropTypes.bool,
+    totalFilters: PropTypes.number,
+    filters: TableFiltersPropType,
+    columns: TableColumnsPropTypes,
+    ordering: TableOrderingPropType,
     /** row selection option */
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     /** optional content to render inside the toolbar  */
@@ -165,6 +187,7 @@ const TableToolbar = ({
     hasAdvancedFilter,
     hasAggregations,
     hasColumnSelection,
+    hasFastSearch,
     hasFilter,
     hasSearch,
     hasRowSelection,
@@ -288,9 +311,21 @@ const TableToolbar = ({
               translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               id={`${tableId}-toolbar-search`}
               onChange={(event, defaultValue) => {
-                // https://github.com/carbon-design-system/carbon/issues/6157
-                onApplySearch(event?.target?.value || defaultValue);
+                const value = event?.target?.value || (defaultValue ?? '');
+                if (hasFastSearch) {
+                  onApplySearch(value);
+                }
               }}
+              onKeyDown={
+                hasFastSearch
+                  ? undefined
+                  : handleSpecificKeyDown(['Enter'], (e) => onApplySearch(e.target.value))
+              }
+              onClear={() => onApplySearch('')}
+              // This can't be used yet b/c it prevents the search box from automatically
+              // closing on blur.
+              // https://github.com/carbon-design-system/carbon/issues/10077
+              // onBlur={!hasFastSearch ? (e) => onApplySearch(e.target.value) : undefined}
               disabled={isDisabled}
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}

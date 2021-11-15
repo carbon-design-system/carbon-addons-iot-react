@@ -2,8 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { render, fireEvent, screen } from '@testing-library/react';
 
+import { settings } from '../../constants/Settings';
+
 import PageWizard, { defaultProps } from './PageWizard';
 import { content, StepValidation } from './PageWizard.story';
+
+const { iotPrefix } = settings;
 
 describe('PageWizard', () => {
   const i18n = {
@@ -124,7 +128,7 @@ describe('PageWizard', () => {
         {content[0]}
       </PageWizard>
     );
-    expect(wrapper.find('[data-testid="iot--progress-indicator-testid"]')).toHaveLength(0);
+    expect(wrapper.find(`[data-testid="${iotPrefix}--progress-indicator-testid"]`)).toHaveLength(0);
   });
 
   it('i18n string tests', () => {

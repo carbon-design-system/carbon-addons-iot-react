@@ -234,6 +234,7 @@ describe('TableCardFormSettings', () => {
 
   it('dataItems should default to an empty array and no sort options available if columns is not an array', () => {
     const mockOnChange = jest.fn();
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     render(
       <TableCardFormSettings
         {...{
@@ -252,5 +253,11 @@ describe('TableCardFormSettings', () => {
 
     expect(screen.queryByText('Ascending')).toBeNull();
     expect(screen.queryByText('Descending')).toBeNull();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Failed prop type: The prop `cardConfig.content.columns` is marked as required'
+      )
+    );
+    console.error.mockReset();
   });
 });

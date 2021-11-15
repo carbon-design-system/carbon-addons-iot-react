@@ -34,7 +34,7 @@ $selected-border: solid $selected-border-width $interactive-04;
     );
   }
   &.#{$iot-prefix}--hotspot-container--has-icon {
-    .bx--tooltip__label {
+    .#{$prefix}--tooltip__label {
       border: solid 1px $gray-40;
       cursor: pointer;
       padding: $spacing-02;
@@ -45,7 +45,7 @@ $selected-border: solid $selected-border-width $interactive-04;
     }
   }
 
-  .bx--tooltip__label {
+  .#{$prefix}--tooltip__label {
     display: flex;
     cursor: pointer;
     border-radius: 13px;

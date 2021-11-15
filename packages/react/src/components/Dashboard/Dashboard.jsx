@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import warning from 'warning';
 
+import { SvgPropType } from '../../constants/SharedPropTypes';
+
 import DashboardHeader from './DashboardHeader';
 import DashboardGrid, { DashboardGridPropTypes } from './DashboardGrid';
 import CardRenderer from './CardRenderer';
@@ -21,7 +23,7 @@ const propTypes = {
           width: PropTypes.string,
           height: PropTypes.string,
           viewBox: PropTypes.string.isRequired,
-          svgData: PropTypes.object.isRequired,
+          svgData: SvgPropType.isRequired,
         }),
         PropTypes.string,
         PropTypes.node,

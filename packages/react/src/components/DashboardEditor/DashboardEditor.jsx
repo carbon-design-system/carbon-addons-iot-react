@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { InlineNotification, SkeletonText } from 'carbon-components-react';
+import { InlineNotification, SkeletonText, ErrorBoundary } from 'carbon-components-react';
 import classnames from 'classnames';
 import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES, CARD_TYPES } from '../../constants/LayoutConstants';
-import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
+import DashboardGrid from '../Dashboard/DashboardGrid';
+import CardEditor from '../CardEditor/CardEditor';
 import ImageGalleryModal, { ImagePropTypes } from '../ImageGalleryModal/ImageGalleryModal';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
@@ -26,7 +27,7 @@ const propTypes = {
   title: PropTypes.node,
   /** initial dashboard data to edit */
   initialValue: PropTypes.shape({
-    cards: PropTypes.array,
+    cards: PropTypes.arrayOf(PropTypes.object),
     layouts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   }),
   isSummaryDashboard: PropTypes.bool,

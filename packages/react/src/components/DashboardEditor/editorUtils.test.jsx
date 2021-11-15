@@ -1,7 +1,7 @@
 import omit from 'lodash/omit';
 import { render, screen } from '@testing-library/react';
 
-import { CARD_TYPES, BAR_CHART_TYPES } from '../..';
+import { CARD_TYPES, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 
 import {
   getDuplicateCard,

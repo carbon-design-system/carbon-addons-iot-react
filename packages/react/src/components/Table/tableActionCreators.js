@@ -157,9 +157,9 @@ export const tableRowClick = (rowId, instanceId = null) => ({
   instanceId,
 });
 
-export const tableRowExpand = (rowId, isExpanded, instanceId = null) => ({
+export const tableRowExpand = (rowId, isExpanded, instanceId = null, options) => ({
   type: TABLE_ROW_EXPAND,
-  payload: { rowId, isExpanded },
+  payload: { rowId, isExpanded, options },
   instanceId,
 });
 
@@ -207,8 +207,9 @@ export const tableToggleAggregations = () => ({
   type: TABLE_TOGGLE_AGGREGATIONS,
 });
 
-export const tableMultiSortToggleModal = () => ({
+export const tableMultiSortToggleModal = (meta) => ({
   type: TABLE_MULTI_SORT_TOGGLE_MODAL,
+  payload: meta,
 });
 
 export const tableSaveMultiSortColumns = (sortColumns) => ({

@@ -38,7 +38,7 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 .#{$iot-prefix}--table-batch-actions {
   z-index: 3;
 
-  & + .bx--toolbar-action {
+  & + .#{$prefix}--toolbar-action {
     padding: 0;
   }
 

@@ -12,7 +12,10 @@ import {
   handleDataSeriesChange,
   DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
-import { Button, List, ComboBox, Dropdown } from '../../../../../index';
+import Button from '../../../../Button';
+import List from '../../../../List/List';
+import ComboBox from '../../../../ComboBox';
+import { Dropdown } from '../../../../Dropdown';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import { CARD_TYPES, BAR_CHART_TYPES } from '../../../../../constants/LayoutConstants';
 import ContentFormItemTitle from '../ContentFormItemTitle';

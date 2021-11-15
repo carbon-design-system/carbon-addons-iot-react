@@ -2,7 +2,11 @@ import { screen, render, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
+import { settings } from '../../../constants/Settings';
+
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal';
+
+const { prefix } = settings;
 
 const commonProps = {
   suiteName: 'Application Suite',
@@ -18,9 +22,9 @@ describe('SuiteHeaderLogoutModal', () => {
       <SuiteHeaderLogoutModal {...commonProps} onClose={mockOnClose} onLogout={mockOnLogout} />
     );
 
-    const modalCloseButton = within(container.querySelector('.bx--modal-header')).getByTitle(
-      'Close'
-    );
+    const modalCloseButton = within(
+      container.querySelector(`.${prefix}--modal-header`)
+    ).getByLabelText('Close');
     userEvent.click(modalCloseButton);
     expect(mockOnClose).toHaveBeenCalled();
 

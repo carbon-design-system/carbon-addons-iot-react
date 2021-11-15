@@ -2,12 +2,15 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { SkeletonText, Tabs, Tab } from 'carbon-components-react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
+import '@testing-library/jest-dom/extend-expect';
+import { settings } from '../../constants/Settings';
 import Button from '../Button';
 
 import PageTitleBar from './PageTitleBar';
 import { commonPageTitleBarProps, pageTitleBarBreadcrumb } from './PageTitleBar.story';
+
+const { prefix } = settings;
 
 describe('PageTitleBar', () => {
   it('should be selectable via testId', () => {
@@ -60,7 +63,7 @@ describe('PageTitleBar', () => {
         collapsed
       />
     );
-    expect(wrapper.find('.bx--tooltip__label')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(1);
     expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
   });
 
@@ -78,7 +81,7 @@ describe('PageTitleBar', () => {
         }
       />
     );
-    expect(wrapper.find('.bx--tooltip__label')).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(1);
     expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
     expect(wrapper.find('.page-title-bar-content')).toHaveLength(1);
   });
@@ -92,7 +95,7 @@ describe('PageTitleBar', () => {
         collapsed
       />
     );
-    expect(wrapper.find('.bx--tooltip__label')).toHaveLength(0);
+    expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
     expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
   });
 
@@ -155,7 +158,7 @@ describe('PageTitleBar', () => {
         }
       />
     );
-    expect(wrapper.find('.bx--tooltip__label')).toHaveLength(0);
+    expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
     expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
     expect(wrapper.find('.page-title-bar-content')).toHaveLength(1);
   });
@@ -211,7 +214,7 @@ describe('PageTitleBar', () => {
           breadcrumb={[<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>]}
           title="testTitle"
           headerMode="DYNAMIC"
-          description={<p data-testid="test-description">test</p>}
+          description={<span data-testid="test-description">test</span>}
           testId="page-title-bar"
           upperActions={
             <button data-testid="upper-action-delete" type="button">

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 
+import { SvgPropType } from '../../constants/SharedPropTypes';
 import deprecate from '../../internal/deprecate';
 import { bundledIconNames } from '../../utils/bundledIcons';
 
@@ -13,7 +14,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
         width: PropTypes.string,
         height: PropTypes.string,
         viewBox: PropTypes.string.isRequired,
-        svgData: PropTypes.object.isRequired,
+        svgData: SvgPropType.isRequired,
       }),
       PropTypes.oneOf(bundledIconNames),
       PropTypes.node,
@@ -132,7 +133,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     /**
      * If omitted, column overflow menu will not render
      */
-    options: PropTypes.arrayOf(
+    overflowMenuItems: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
         text: PropTypes.string.isRequired,
@@ -196,6 +197,7 @@ export const I18NPropTypes = PropTypes.shape({
   multiSortModalTitle: PropTypes.string,
   multiSortModalPrimaryLabel: PropTypes.string,
   multiSortModalSecondaryLabel: PropTypes.string,
+  multiSortModalClearLabel: PropTypes.string,
   multiSortSelectColumnLabel: PropTypes.string,
   multiSortSelectColumnSortByTitle: PropTypes.string,
   multiSortSelectColumnThenByTitle: PropTypes.string,
@@ -206,9 +208,9 @@ export const I18NPropTypes = PropTypes.shape({
   multiSortAscending: PropTypes.string,
   multiSortDescending: PropTypes.string,
   multiSortCloseModal: PropTypes.string,
-  multiSortClearAll: PropTypes.string,
   multiSortOpenMenu: PropTypes.string,
   multiSortCloseMenu: PropTypes.string,
+  multiSortDragHandle: PropTypes.string,
   /** I18N label for load more row */
   loadMoreText: PropTypes.string,
 });
@@ -275,6 +277,7 @@ export const defaultI18NPropTypes = {
   multiSortCloseModal: 'Close',
   multiSortOpenMenu: 'Open menu',
   multiSortCloseMenu: 'Close menu',
+  multiSortDragHandle: 'Drag handle',
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
@@ -312,5 +315,17 @@ export const TableOrderingPropType = PropTypes.arrayOf(
     isHidden: PropTypes.bool,
     /* The id of the column group this column belongs to if any */
     columnGroupId: PropTypes.string,
+  })
+);
+
+export const TableFiltersPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    columnId: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.bool,
+      PropTypes.arrayOf(PropTypes.string),
+    ]).isRequired,
   })
 );

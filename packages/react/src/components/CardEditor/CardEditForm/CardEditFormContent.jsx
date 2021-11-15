@@ -20,6 +20,8 @@ const propTypes = {
     title: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
+    timeRange: PropTypes.string,
+    renderEditContent: PropTypes.func,
     content: PropTypes.oneOfType([
       PropTypes.shape({
         series: PropTypes.arrayOf(
@@ -45,6 +47,15 @@ const propTypes = {
       // custom card content is a function
       PropTypes.func,
     ]),
+    dataSource: PropTypes.shape({
+      attributes: PropTypes.arrayOf(
+        PropTypes.shape({
+          aggregator: PropTypes.string,
+          attribute: PropTypes.string,
+          id: PropTypes.string,
+        })
+      ),
+    }),
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,

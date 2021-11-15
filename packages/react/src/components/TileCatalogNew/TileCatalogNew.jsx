@@ -46,6 +46,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     placeHolderText: PropTypes.string,
     error: PropTypes.string,
+    searchPlaceHolderText: PropTypes.string,
   }),
   testId: PropTypes.string,
 };

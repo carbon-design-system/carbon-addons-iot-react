@@ -11,6 +11,9 @@ import React from 'react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
+import { CarbonIconPropType } from '../../constants/SharedPropTypes';
+
+import { SideNavMetaDataPropType } from './sideNavPropTypes';
 
 const { iotPrefix, prefix } = settings;
 
@@ -33,9 +36,9 @@ export const SideNavPropTypes = {
           // url to link to
           href: PropTypes.string,
       */
-      metaData: PropTypes.object,
+      metaData: SideNavMetaDataPropType,
       /** the icon component to render */
-      icon: PropTypes.any.isRequired,
+      icon: CarbonIconPropType.isRequired,
       /** string for the title of overall submenu */
       linkContent: PropTypes.string,
       /** array of child links to render in a subnav */
@@ -50,9 +53,14 @@ export const SideNavPropTypes = {
             // url to link to
             href: PropTypes.string,
           */
-          metaData: PropTypes.object,
+          metaData: SideNavMetaDataPropType,
           /** content to render inside sub menu link */
-          content: PropTypes.any.isRequired,
+          content: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.node,
+            PropTypes.bool,
+            PropTypes.func,
+          ]).isRequired,
         })
       ),
     })
@@ -62,6 +70,7 @@ export const SideNavPropTypes = {
     closeText: PropTypes.string,
     openText: PropTypes.string,
     sideNavLabelText: PropTypes.string,
+    submenuLabel: PropTypes.string,
   }),
 
   testId: PropTypes.string,
@@ -74,50 +83,92 @@ const defaultProps = {
     closeText: 'Close',
     openText: 'Open',
     sideNavLabelText: 'Side navigation',
+    submenuLabel: 'dropdown',
   },
   testId: 'side-nav',
 };
 
 /**
+ * Simply recursive check for active children, so that a grandparent
+ * can also be marked as active when necessary.
+ *
+ * @param {Object} link
+ * @returns boolean
+ */
+const isAnyChildActive = (link) => {
+  if (link.isActive) {
+    return true;
+  }
+
+  if (link.hasOwnProperty('childContent')) {
+    return link.childContent.some((childLink) => {
+      return isAnyChildActive(childLink);
+    });
+  }
+
+  return false;
+};
+/**
  * Side Navigation. part of UI shell
  */
 const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, testId, ...props }) => {
+  /**
+   * Recursive function for rendering all the nested children nav items
+   *
+   * @param {Object} link a single link object
+   * @param {Number} index The index of the item in the array
+   * @param {Number} level The number of levels deep this link is
+   * @returns ReactElement
+   */
+  const renderLinkMenu = (link, index, level = 0) => {
+    let parentActive = false;
+    const children = link.childContent.map((childLink, childIndex) => {
+      if (isAnyChildActive(childLink)) {
+        parentActive = true;
+      }
+
+      if (childLink.hasOwnProperty('childContent')) {
+        return renderLinkMenu(childLink, childIndex, level + 1);
+      }
+
+      return (
+        <SideNavMenuItem
+          key={`menu-link-${link.childContent.indexOf(childLink)}-child`}
+          isActive={childLink.isActive}
+          data-testid={`${testId}-menu-item-${index}`}
+          {...childLink.metaData}
+        >
+          {childLink.content}
+        </SideNavMenuItem>
+      );
+    });
+
+    return (
+      <SideNavMenu
+        isActive={parentActive}
+        renderIcon={link.icon}
+        aria-label={i18n.submenuLabel}
+        key={`menu-link-${links.indexOf(link)}-dropdown`}
+        title={link.linkContent}
+        data-testid={`${testId}-menu-${index}`}
+        className={`${iotPrefix}--side-nav__item--depth-${level}`}
+      >
+        {children}
+      </SideNavMenu>
+    );
+  };
+
   const nav = links
     .map((link, index) => {
       const enabled = link.isEnabled ? link.isEnabled : false;
       if (!enabled) {
         return null;
       }
+
       if (link.hasOwnProperty('childContent')) {
-        let parentActive = false;
-        const children = link.childContent.map((childlink) => {
-          if (childlink.isActive) {
-            parentActive = true;
-          }
-          return (
-            <SideNavMenuItem
-              key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
-              isActive={childlink.isActive}
-              data-testid={`${testId}-menu-item-${index}`}
-              {...childlink.metaData}
-            >
-              {childlink.content}
-            </SideNavMenuItem>
-          );
-        });
-        return (
-          <SideNavMenu
-            isActive={parentActive}
-            renderIcon={link.icon}
-            aria-label="dropdown"
-            key={`menu-link-${links.indexOf(link)}-dropdown`}
-            title={link.linkContent}
-            data-testid={`${testId}-menu-${index}`}
-          >
-            {children}
-          </SideNavMenu>
-        );
+        return renderLinkMenu(link, index, 0);
       }
+
       return (
         <SideNavLink
           key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}

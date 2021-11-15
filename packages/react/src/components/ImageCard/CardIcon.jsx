@@ -18,6 +18,10 @@ const propTypes = {
 
 const defaultProps = {
   testId: 'card-icon',
+  icon: undefined,
+  renderIconByName: undefined,
+  height: 16,
+  width: 16,
 };
 
 /** This component calls out to our renderIconByName callback function with the icon name OR fails over to our legacy card icons from our legacy icon bundle */

@@ -1,7 +1,11 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { settings } from '../../../constants/Settings';
+
 import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker';
+
+const { iotPrefix } = settings;
 
 const getDataItems = () => [
   {
@@ -48,18 +52,19 @@ describe('DynamicHotspotSourcePicker', () => {
   it('Shows clear button when both x & y cources are selected', () => {
     const xSourceItem = getDataItems()[0];
     const ySourceItem = getDataItems()[1];
-    const invisible = 'iot--dynamic-hotspot-source-picker__clear-button--invisible';
+    const invisible = `${iotPrefix}--dynamic-hotspot-source-picker__clear-button--invisible`;
     const pickerTestId = 'test-picker-clear-dropdown';
 
     const { rerender } = render(
       <DynamicHotspotSourcePicker
-        testID="test-picker"
+        testId="test-picker"
         dataSourceItems={getDataItems()}
         {...getCallbacks()}
       />
     );
     expect(screen.getByTestId(pickerTestId)).toHaveClass(invisible);
 
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     rerender(
       <DynamicHotspotSourcePicker
         testID="test-picker"
@@ -70,6 +75,10 @@ describe('DynamicHotspotSourcePicker', () => {
     );
 
     expect(screen.getByTestId(pickerTestId)).toHaveClass(invisible);
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(
       <DynamicHotspotSourcePicker

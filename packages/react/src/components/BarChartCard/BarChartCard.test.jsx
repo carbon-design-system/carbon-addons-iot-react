@@ -42,8 +42,13 @@ const barChartCardProps = {
 
 describe('BarChartCard', () => {
   it('is selectable with either testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(<BarChartCard {...barChartCardProps} testID="BAR-CHART-CARD" />);
     expect(screen.getByTestId('BAR-CHART-CARD')).toBeTruthy();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     rerender(<BarChartCard {...barChartCardProps} testId="barchart-card" />);
     expect(screen.getByTestId('barchart-card')).toBeTruthy();
   });
