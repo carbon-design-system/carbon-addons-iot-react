@@ -361,10 +361,18 @@
       .#{$prefix}--tabs--scrollable {
         transition: all $duration--fast-02 ease-in;
         background: $ui-01;
+        border-bottom: 1px solid $ui-03;
       }
     }
 
     .#{$prefix}--tabs--scrollable {
+      padding-left: $spacing-05;
+
+      [dir='rtl'] & {
+        padding-left: 0;
+        padding-right: $spacing-05;
+      }
+
       .#{$prefix}--tabs--scrollable__nav-link {
         text-align: left;
 
