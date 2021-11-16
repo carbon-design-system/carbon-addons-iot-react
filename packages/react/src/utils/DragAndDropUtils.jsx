@@ -111,7 +111,7 @@ export const moveItemsInList = (items, dragIds, dropId, location) => {
  * Returns every child id from the ListItem and their children's ids
  * @param {ListItem} listItem
  */
-const getAllChildIds = (listItem, lockedIds) => {
+const getAllChildIds = (listItem, lockedIds = []) => {
   let childIds = [];
 
   if (listItem.children) {
@@ -166,10 +166,48 @@ export const handleEditModeSelect = (list, currentSelection, id, parentId, locke
       if (currentSelection.some((selectionId) => selectionId === editItem.id)) {
         newSelection.push(editItem.id);
       }
+
+      // if there is a parentId, list is simply the current items siblings here, because of the
+      // recursive call if the else if above.
+      if (parentId && list.every((sibling) => newSelection.includes(sibling.id))) {
+        newSelection.push(parentId);
+      }
     });
   }
 
   return newSelection;
+};
+
+/**
+ * checks if the given child id is selected.
+ *
+ * @param {array} selectedIds an array of selected ids
+ * @returns function used in some/every calls in handleEditModeIndeterminateIds below
+ */
+const childIsSelected = (selectedIds) => (childId) => selectedIds.includes(childId);
+
+/**
+ *
+ * @param {array} list aray of list objects
+ * @param {array} editModeSelectedIds an array of the selected ids
+ * @returns an array of ids of the indeterminate rows
+ */
+export const handleEditModeIndeterminateIds = (list, editModeSelectedIds) => {
+  let indeterminateIds = [];
+  if (!editModeSelectedIds.length) {
+    return indeterminateIds;
+  }
+
+  list.forEach((item) => {
+    const childIds = getAllChildIds(item);
+    const allSelected = childIds.every(childIsSelected(editModeSelectedIds));
+
+    if (!allSelected && childIds.some(childIsSelected(editModeSelectedIds))) {
+      indeterminateIds = [...indeterminateIds, item.id];
+    }
+  });
+
+  return indeterminateIds;
 };
 
 export function DragAndDrop(props) {
