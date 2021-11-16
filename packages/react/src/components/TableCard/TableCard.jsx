@@ -27,7 +27,7 @@ import {
 import icons from '../../utils/bundledIcons';
 
 import {
-  timeStampfilterFunction,
+  determineFilterFunction,
   createColumnsWithFormattedLinks,
   determinePrecisionAndValue,
   handleExpandedItemLinks,
@@ -386,13 +386,7 @@ const TableCard = ({
           name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
           isSortable: true,
           width: i.width ? `${i.width}px` : newSize === CARD_SIZES.LARGETHIN ? '150px' : '', // force the text wrap
-          filter: i.filter
-            ? i.type === 'TIMESTAMP' 
-              ? { ...i.filter,
-                filterFunction: typeof i.filter.filterFunction === 'function' ? i.filter.filterFunction : timeStampfilterFunction
-                }
-              : i.filter
-            : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
+          filter: determineFilterFunction(column, mergedI18n.defaultFilterStringPlaceholdText),
           renderDataFunction: i.renderDataFunction // use the default render function of the column
             ? i.renderDataFunction
             : (
