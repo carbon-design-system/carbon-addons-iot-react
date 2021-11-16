@@ -167,15 +167,7 @@ const ListContent = ({
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={(evt) => {
-                  // after the carbon upgrade to 10.47 this event
-                  // is being fired twice, once on the label and once on the
-                  // input, so filtering out the LABEL event here and only firing on
-                  // the input.
-                  if (evt.target.tagName === 'INPUT' && !isLocked) {
-                    handleSelect(item.id, parentId);
-                  }
-                }}
+                onChange={() => handleSelect(item.id, parentId)}
                 checked={isSelected}
                 disabled={isLocked}
                 indeterminate={isIndeterminate}
