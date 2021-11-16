@@ -386,7 +386,7 @@ const TableCard = ({
           name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
           isSortable: true,
           width: i.width ? `${i.width}px` : newSize === CARD_SIZES.LARGETHIN ? '150px' : '', // force the text wrap
-          filter: determineFilterFunction(column, mergedI18n.defaultFilterStringPlaceholdText),
+          filter: determineFilterFunction(i.column, mergedI18n.defaultFilterStringPlaceholdText),
           renderDataFunction: i.renderDataFunction // use the default render function of the column
             ? i.renderDataFunction
             : (
