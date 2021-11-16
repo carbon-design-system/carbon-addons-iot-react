@@ -830,6 +830,48 @@ describe('HierarchyList', () => {
     ).toHaveAttribute('draggable');
   });
 
+  it('should uncheck children when the parent is unchecked.', () => {
+    const onSelect = jest.fn();
+    const { container } = render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+        onSelect={onSelect}
+      />
+    );
+
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.getByText('10 items selected')).toBeVisible();
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.queryByText('10 items selected')).toBeNull();
+    expect(container.querySelectorAll('input[checked]').length).toBe(0);
+  });
+
+  it('should not selected a locked row when parent selected', () => {
+    const onSelect = jest.fn();
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+        lockedIds={['Atlanta Braves_Dansby Swanson']}
+        defaultExpandedIds={['Atlanta Braves']}
+        onSelect={onSelect}
+      />
+    );
+
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.getByText('9 items selected')).toBeVisible();
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.queryByText('9 items selected')).toBeNull();
+    expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
+  });
+
   describe('isVirtualList', () => {
     beforeEach(() => {
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
@@ -855,6 +897,50 @@ describe('HierarchyList', () => {
 
       expect(screen.getByText('Page 2')).toBeVisible();
       expect(screen.getByText('Item 9')).toBeVisible();
+    });
+
+    it('should uncheck children when the parent is unchecked.', () => {
+      const onSelect = jest.fn();
+      const { container } = render(
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          editingStyle={EditingStyle.MultipleNesting}
+          onSelect={onSelect}
+          isVirtualList
+        />
+      );
+
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.getByText('10 items selected')).toBeVisible();
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.queryByText('10 items selected')).toBeNull();
+      expect(container.querySelectorAll('input[checked]').length).toBe(0);
+    });
+
+    it('should not selected a locked row when parent selected', () => {
+      const onSelect = jest.fn();
+      render(
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          editingStyle={EditingStyle.MultipleNesting}
+          lockedIds={['Atlanta Braves_Dansby Swanson']}
+          defaultExpandedIds={['Atlanta Braves']}
+          onSelect={onSelect}
+          isVirtualList
+        />
+      );
+
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.getByText('9 items selected')).toBeVisible();
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.queryByText('9 items selected')).toBeNull();
+      expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
     });
   });
 
