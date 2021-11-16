@@ -72,10 +72,10 @@
     }
 
     .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary {
-      margin-left: 0;
+      margin-left: 1px;
       [dir='rtl'] & {
         margin-left: unset;
-        margin-right: 0;
+        margin-right: 1px;
       }
     }
 
