@@ -27,6 +27,7 @@ import {
 import icons from '../../utils/bundledIcons';
 
 import {
+  timeStampfilterFunction,
   createColumnsWithFormattedLinks,
   determinePrecisionAndValue,
   handleExpandedItemLinks,
@@ -386,12 +387,9 @@ const TableCard = ({
           isSortable: true,
           width: i.width ? `${i.width}px` : newSize === CARD_SIZES.LARGETHIN ? '150px' : '', // force the text wrap
           filter: i.filter
-            ? i.type === 'TIMESTAMP'
-              ? {
-                  filterFunction: (cellValue, filterValue) => {
-                    const dateString = dayjs(cellValue).format('L HH:mm');
-                    return dateString.includes(filterValue);
-                  },
+            ? i.type === 'TIMESTAMP' 
+              ? { ...i.filter,
+                filterFunction: typeof i.filter.filterFunction === 'function' ? i.filter.filterFunction : timeStampfilterFunction
                 }
               : i.filter
             : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object

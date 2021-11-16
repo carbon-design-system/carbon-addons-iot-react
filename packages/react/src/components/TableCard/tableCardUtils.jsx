@@ -114,3 +114,8 @@ export const handleExpandedItemLinks = (row, expandedRow, cardVariables) => {
   });
   return updatedExpandedRow;
 };
+
+export const timeStampfilterFunction = (cellValue, filterValue) => {
+    const dateString = dayjs(cellValue).format('L HH:mm');
+    return dateString.includes(filterValue);
+}
