@@ -25,7 +25,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -55,6 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -149,6 +149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
+                        aria-describedby="table card_title-helper-text"
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="table card_title"
@@ -1928,7 +1929,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -1958,6 +1958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -2052,6 +2053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
+                        aria-describedby="calculated_title-helper-text"
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
@@ -2548,7 +2550,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -2578,6 +2579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -2672,6 +2674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
+                        aria-describedby="table card_title-helper-text"
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="table card_title"
@@ -4062,7 +4065,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -4092,6 +4094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -4186,6 +4189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
+                        aria-describedby="calculated_title-helper-text"
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
@@ -4597,6 +4601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      aria-describedby="custom-content-textinput-helper-text"
                       className="bx--text-input"
                       disabled={false}
                       id="custom-content-textinput"
@@ -4637,6 +4642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      aria-describedby="calculated_title-helper-text"
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_title"
@@ -4668,6 +4674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      aria-describedby="calculated_y-axis-label-helper-text"
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_y-axis-label"
@@ -4699,6 +4706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      aria-describedby="calculated_unit-selection-helper-text"
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_unit-selection"
@@ -4730,6 +4738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      aria-describedby="calculated_decimal-precision-helper-text"
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_decimal-precision"
@@ -4954,7 +4963,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -4984,6 +4992,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -5078,6 +5087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
+                        aria-describedby="calculated_title-helper-text"
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
@@ -5574,7 +5584,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -5604,6 +5613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -5698,6 +5708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
+                        aria-describedby="image_title-helper-text"
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="image_title"
@@ -6406,7 +6417,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -6436,6 +6446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -6530,6 +6541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
+                        aria-describedby="timeseries_title-helper-text"
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="timeseries_title"
@@ -7144,6 +7156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      aria-describedby="timeseries_title-helper-text"
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_title"
@@ -7176,6 +7189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      aria-describedby="timeseries_y-axis-label-helper-text"
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_y-axis-label"
@@ -7208,6 +7222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      aria-describedby="timeseries_unit-selection-helper-text"
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_unit-selection"
@@ -7240,6 +7255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      aria-describedby="timeseries_decimal-precision-helper-text"
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_decimal-precision"
@@ -7481,7 +7497,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="bx--tabs--scrollable"
-              onScroll={[Function]}
               selected={0}
             >
               <button
@@ -7511,6 +7526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <ul
                 className="bx--tabs--scrollable__nav"
+                onScroll={[Function]}
                 role="tablist"
                 tabIndex={-1}
               >
@@ -7605,6 +7621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
+                          aria-describedby="card-1_title-helper-text"
                           className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="card-1_title"
