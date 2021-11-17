@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.59](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.58...v2.147.0-next.59) (2021-11-17)
+
+
+### Bug Fixes
+
+* **dashboard-grid:** only lg and sm breakpoints in VRT ([163bdaf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/163bdafdea172384e57952bc979adc54b9f58cd7))
+* **dashboard-grid:** only VRT the lg breakpoint ([9727465](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9727465a03b342411bcff5c9004bc4c05bd9a6bb))
+* **dashboard-grid:** remove old screenshots ([9315080](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/93150806ca6f0ce386028efc090a3ad15870193f))
+
+
+
+
+
 # [2.147.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.57...v2.147.0-next.58) (2021-11-12)
 
 
