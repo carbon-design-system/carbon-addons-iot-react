@@ -391,6 +391,7 @@ describe('List', () => {
     expect(mockLoadMore).toHaveBeenCalledWith('site-02');
     expect(mockLoadMore).toHaveBeenCalledTimes(1);
 
+    // Call load more from the top level
     mockLoadMore.mockClear();
     rerender(
       <List
