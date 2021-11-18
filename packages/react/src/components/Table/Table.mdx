@@ -17,6 +17,7 @@
   - [☢️ Advanced Filtering Experimental](#%EF%B8%8F-advanced-filtering-experimental)
 - [Pagination](#pagination)
 - [Batch actions](#batch-actions)
+- [Extra actions](#extra-actions)
 - [Aggregation](#aggregation)
 - [Row data editing](#row-data-editing)
 - [Column grouping](#column-grouping)
@@ -954,7 +955,7 @@ the following props:
 ## Extra actions
 
 You can add other actions to the toolbar overflow menu by using the extraActions prop on the view.toolbar.
-When clicking on an action it will trigger the onApplyExtraActions callback passing the object
+When clicking on an action it will trigger the `onApplyExtraAction` callback passing the object
 used to create the action.
 
 ```jsx
@@ -964,7 +965,7 @@ used to create the action.
   data={data}
   actions={{
     toolbar: {
-      onApplyExtraActions: (actionObject) => {},
+      onApplyExtraAction: (actionObject) => {},
     },
   }}
   view={{
@@ -1383,7 +1384,7 @@ A complete example of how to use the column grouping could look like this:
 | toolbar.onCancelAdvancedFilter  | func   |         | Fired when then 'Cancel' button is clicked in the advanced filter flyout menu                                                                                                                                   |
 | toolbar.onChangeAdvancedFilter  | func   |         | Fired when an advanced filter is selected or removed.                                                                                                                                                           |
 | toolbar.onToggleAggregations    | func   |         | Fired when the "Toggle aggregations" option is clicked from the overflow menu in the table toolbar                                                                                                              |
-| toolbar.onApplyExtraActions     | func   |         | Fired when clicking on extraActions in the table toolbar                                                                                                                                                        |
+| toolbar.onApplyExtraAction      | func   |         | Fired when clicking on extraActions in the table toolbar                                                                                                                                                        |
 | table                           | object |         |                                                                                                                                                                                                                 |
 | table.onRowSelected             | func   |         |                                                                                                                                                                                                                 |
 | table.onRowClicked              | func   |         |                                                                                                                                                                                                                 |
