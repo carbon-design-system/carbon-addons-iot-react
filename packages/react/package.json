@@ -185,7 +185,7 @@
     "dayjs": "^1.10.4",
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
-    "lodash": "^4.17.19",
+    "lodash-es": "^4.17.21",
     "object-hash": "^2.2.0",
     "prop-types": "^15.7.2",
     "react-dnd": "14.0.2",

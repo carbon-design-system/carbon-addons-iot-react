@@ -1,10 +1,7 @@
 import React, { useMemo, useCallback } from 'react';
 import { OverflowMenu, OverflowMenuItem, Link } from 'carbon-components-react';
 import styled from 'styled-components';
-import isNil from 'lodash/isNil';
-import uniqBy from 'lodash/uniqBy';
-import cloneDeep from 'lodash/cloneDeep';
-import capitalize from 'lodash/capitalize';
+import { isNil, uniqBy, cloneDeep, capitalize } from 'lodash-es';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import { spacing01, spacing05 } from '@carbon/layout';
 import classnames from 'classnames';

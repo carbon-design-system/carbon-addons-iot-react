@@ -1,7 +1,4 @@
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import capitalize from 'lodash/capitalize';
-import omit from 'lodash/omit';
+import { isNil, isEmpty, capitalize, omit } from 'lodash-es';
 
 import dayjs from '../../utils/dayjs';
 import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';

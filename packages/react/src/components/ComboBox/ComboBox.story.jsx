@@ -4,8 +4,7 @@
 // TODO: https://github.com/carbon-design-system/carbon/issues/5067
 
 import React, { useState } from 'react';
-import isEmpty from 'lodash/isEmpty';
-import isEqual from 'lodash/isEqual';
+import { isEmpty, isEqual } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
 import { spacing05 } from '@carbon/layout';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen, within, waitFor } from '@testing-library/react';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 import userEvent from '@testing-library/user-event';
 
 import { sampleHierarchy } from '../List.story';
@@ -13,7 +13,7 @@ import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from
 const { iotPrefix } = settings;
 
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
-jest.mock('lodash/debounce', () => (fn) => fn);
+jest.mock('lodash-es/debounce', () => (fn) => fn);
 
 const getListItems = (num) =>
   Array(num)

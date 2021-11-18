@@ -18,8 +18,7 @@ import {
 import { WarningAlt32 } from '@carbon/icons-react';
 import { FormLabel } from 'carbon-components-react';
 import classnames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import omit from 'lodash/omit';
+import { isEmpty, omit } from 'lodash-es';
 
 import { settings } from '../../../../constants/Settings';
 import { Dropdown } from '../../../Dropdown';

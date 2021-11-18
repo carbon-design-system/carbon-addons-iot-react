@@ -1,5 +1,5 @@
 import React from 'react';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import { render, screen } from '@testing-library/react';
 import { purple70, cyan50, teal70 } from '@carbon/colors';
 import userEvent from '@testing-library/user-event';

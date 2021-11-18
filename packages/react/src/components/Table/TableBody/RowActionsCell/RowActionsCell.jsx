@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Loading } from 'carbon-components-react';
 import classnames from 'classnames';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 
 import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';

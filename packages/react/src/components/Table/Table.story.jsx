@@ -6,9 +6,7 @@ import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
 import { spacing03 } from '@carbon/layout';
 import { Add20, TrashCan16 } from '@carbon/icons-react';
-import cloneDeep from 'lodash/cloneDeep';
-import assign from 'lodash/assign';
-import isEqual from 'lodash/isEqual';
+import { cloneDeep, assign, isEqual } from 'lodash-es';
 import { firstBy } from 'thenby';
 
 import { TextInput } from '../TextInput';

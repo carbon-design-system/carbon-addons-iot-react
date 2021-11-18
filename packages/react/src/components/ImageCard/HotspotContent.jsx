@@ -8,8 +8,7 @@
  * Office.
  */
 import React, { useRef, useState, useMemo } from 'react';
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
+import { isNil, isEmpty } from 'lodash-es';
 import { Edit20 } from '@carbon/icons-react';
 
 import {

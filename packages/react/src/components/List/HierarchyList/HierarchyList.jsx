@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'lodash/debounce';
-import isNil from 'lodash/isNil';
-import isEqual from 'lodash/isEqual';
+import { debounce, isNil, isEqual } from 'lodash-es';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';

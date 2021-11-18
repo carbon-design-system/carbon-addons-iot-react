@@ -3,7 +3,7 @@ import React, { useEffect, useState, useMemo, useRef } from 'react';
 import classnames from 'classnames';
 import { Information16, Edit16 } from '@carbon/icons-react';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
-import throttle from 'lodash/throttle';
+import { throttle } from 'lodash-es';
 
 import deprecate from '../../internal/deprecate';
 import Button from '../Button';

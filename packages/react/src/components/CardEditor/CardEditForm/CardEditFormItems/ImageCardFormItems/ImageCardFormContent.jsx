@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Close16, Scale32 } from '@carbon/icons-react';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 
 import Button from '../../../../Button';
 import { DataItemsPropTypes } from '../../../../DashboardEditor/editorUtils';

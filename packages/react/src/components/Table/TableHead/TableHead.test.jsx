@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import cloneDeep from 'lodash/cloneDeep';
+import { cloneDeep } from 'lodash-es';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -39,7 +39,7 @@ const commonTableHeadProps = {
 
 // Needed to get the debounced window resize tested
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
-jest.mock('lodash/debounce', () => (fn) => fn);
+jest.mock('lodash-es/debounce', () => (fn) => fn);
 
 describe('TableHead', () => {
   it('be selectable by testID or testId', () => {

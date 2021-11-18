@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, FormItem, TextInput, FilterableMultiSelect } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
-import memoize from 'lodash/memoize';
+import { memoize, debounce, isEqual } from 'lodash-es';
 import classnames from 'classnames';
-import debounce from 'lodash/debounce';
-import isEqual from 'lodash/isEqual';
 import warning from 'warning';
 
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';

@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
 import { PieChart } from '@carbon/charts-react';
 import classNames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import defaultsDeep from 'lodash/defaultsDeep';
+import { isEmpty, defaultsDeep } from 'lodash-es';
 
 import { PieCardPropTypes, CardPropTypes, CHART_COLORS } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
