@@ -228,6 +228,20 @@ const ListContent = ({
                 : []
             )
         : []),
+      ...(!hasChildren && item.hasLoadMore
+        ? [
+            <Button
+              key={`${item.id}-list-item-parent-loading`}
+              className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
+              onClick={() => handleLoadMore(item.id)}
+              data-testid={`${testId}-${item.id}-load-more`}
+              kind="ghost"
+              loading={isLoadingMore}
+            >
+              <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
+            </Button>,
+          ]
+        : []),
     ];
   };
 
