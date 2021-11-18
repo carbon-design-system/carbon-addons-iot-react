@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.60](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.59...v2.147.0-next.60) (2021-11-18)
+
+
+### Bug Fixes
+
+* **card-edit-form:** fix threshold dropdown width ([d3a34cf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d3a34cf1be96bb0aee3c3446218a19aa7af4bdbd))
+* **simple-list:** adjust secondary value css to prevent cut-off ([73a0a89](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/73a0a8948fbaf7871696430f28b0663c0ec8aef5))
+
+
+### Features
+
+* **list:** load more from top level ([e30a71c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e30a71ca4c5c99175b876704bd543495957b986f))
+
+
+
+
+
 # [2.147.0-next.59](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.58...v2.147.0-next.59) (2021-11-17)
 
 
