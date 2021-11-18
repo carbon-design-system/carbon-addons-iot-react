@@ -886,9 +886,10 @@ describe('HierarchyList', () => {
     expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
     userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
     expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
   });
 
-  it('should unset indeterminate state on parent when a child is unchecked', () => {
+  it('should unset indeterminate state on parent when a preselected child is unchecked', () => {
     render(
       <HierarchyList
         items={items}
@@ -902,6 +903,7 @@ describe('HierarchyList', () => {
     expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
     userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
     expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
   });
 
   it('should check the parent when all children are checked', () => {
@@ -1058,9 +1060,10 @@ describe('HierarchyList', () => {
       expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
       userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
       expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
     });
 
-    it('should unset indeterminate state on parent when a child is unchecked', () => {
+    it('should unset indeterminate state on parent when a preselected child is unchecked', () => {
       render(
         <HierarchyList
           items={items}
@@ -1075,6 +1078,7 @@ describe('HierarchyList', () => {
       expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
       userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
       expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
     });
 
     it('should check the parent when all children are checked', () => {
