@@ -2816,6 +2816,7 @@ export const RowExpansionAndLoadMore = () => {
 RowExpansionAndLoadMore.storyName = 'row expansion: with load more ';
 
 export const WithColumnCustomizationModal = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const demoGroupExample = boolean('demo grouping example', true);
   const demoHasLoadMore = boolean('demo load more example (hasLoadMore)', true);
   const pinnedColumnId = text('Pin column (pinnedColumnId)', 'string');
@@ -2860,9 +2861,10 @@ export const WithColumnCustomizationModal = () => {
   const [ordering, setOrdering] = useState(initialOrdering);
   const [modalKey, setModalKey] = useState('initial-key');
 
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   return (
     <>
-      <Table
+      <MyTable
         columns={activeColumns}
         columnGroups={demoGroupExample ? columnGroups : undefined}
         data={smallDataSet}
@@ -2873,7 +2875,7 @@ export const WithColumnCustomizationModal = () => {
               <Button
                 kind="ghost"
                 renderIcon={Column20}
-                iconDescription="Manage columns"
+                iconDescription="Customize columns"
                 hasIconOnly
                 onClick={() => setShowModal(true)}
               />

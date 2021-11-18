@@ -113,7 +113,7 @@ const propTypes = {
     /** icon description label for the clear search icon */
     clearSearchIconDescription: PropTypes.string,
   }),
-  /** if true checkboxes will be used for selection so selected items can stay in the left list */
+  /** the icon used as button to remove items from the selected list */
   removeIcon: ButtonIconPropType,
   /** the editing style of the hirerchy list showing the selected items */
   selectedEditingStyle: PropTypes.oneOf([EditingStyle.Single, EditingStyle.SingleNesting]),

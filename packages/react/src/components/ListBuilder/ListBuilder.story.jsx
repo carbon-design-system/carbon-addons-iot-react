@@ -7,6 +7,7 @@ import { ArrowRight16, CloseOutline16, Subtract16 } from '@carbon/icons-react';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 import Button from '../Button/Button';
 import { generateUserList } from '../SelectUsersModal/SelectUsersModal.story';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import ListBuilder from './ListBuilder';
 import ListBuilderREADME from './ListBuilder.mdx';
@@ -161,7 +162,13 @@ export const StatefulExampleWithCheckboxes = () => {
 };
 
 StatefulExampleWithCheckboxes.storyName = 'stateful example with checkboxes';
-StatefulExampleWithCheckboxes.decorators = [createElement];
+StatefulExampleWithCheckboxes.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 const itemsAreEqual = (item1, item2) => {
   if (!item1 || !item2) {

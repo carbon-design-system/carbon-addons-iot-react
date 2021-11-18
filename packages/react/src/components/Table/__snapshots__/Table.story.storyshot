@@ -111382,11 +111382,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             className="bx--assistive-text"
             onMouseEnter={[Function]}
           >
-            Manage columns
+            Customize columns
           </div>
           <svg
             aria-hidden="true"
-            aria-label="Manage columns"
+            aria-label="Customize columns"
             className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
