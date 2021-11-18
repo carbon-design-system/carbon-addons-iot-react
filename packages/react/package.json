@@ -184,7 +184,6 @@
     "core-js": "3.6.5",
     "dayjs": "^1.10.4",
     "downshift": "5.2.1",
-    "fbjs": "^3.0.0",
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
     "lodash": "^4.17.19",
