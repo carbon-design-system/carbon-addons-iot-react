@@ -19,6 +19,7 @@ $hoverBgColor: #2c2c2c;
     padding-left: $spacing-03;
     min-width: 150px;
     display: inline-flex;
+    align-items: center;
 
     > span.#{$prefix}--header__name--prefix {
       white-space: nowrap;
@@ -125,6 +126,11 @@ $hoverBgColor: #2c2c2c;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  min-height: $spacing-06;
+
+  .#{$prefix}--tag {
+    margin: 0;
+  }
 }
 
 .#{$prefix}--overflow-menu {
