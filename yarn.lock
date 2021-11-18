@@ -3877,10 +3877,10 @@
     "@carbon/type" "^10.20.0"
     color "^3.1.2"
 
-"@carbon/themes@10.46.0":
-  version "10.46.0"
-  resolved "https://registry.yarnpkg.com/@carbon/themes/-/themes-10.46.0.tgz#ffa1b226350e7e69ae8efa1713bd1c49f3bebeb4"
-  integrity sha512-1gNBKch4qLRrO/cqVlMnmgj1OQCZwHFvWRHLLr4HprQilRJ499iLpu/5o10SC2GG4RbxH714BdzBQ2ZLn/JZ8g==
+"@carbon/themes@10.47.0":
+  version "10.47.0"
+  resolved "https://registry.yarnpkg.com/@carbon/themes/-/themes-10.47.0.tgz#c83d666d270e7c21f27b297557ad98e8f29e360b"
+  integrity sha512-/HDFq5JeQbxADhV8yCcNpTN2sNMlgTjaEBtgPDdmLlqU2hj5cl7NwHXGcixVfZa9Kp+Nha+njx9+shM19nd7ag==
   dependencies:
     "@carbon/colors" "^10.34.0"
     "@carbon/layout" "^10.34.0"
