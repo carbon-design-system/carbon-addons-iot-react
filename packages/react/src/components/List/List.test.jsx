@@ -359,7 +359,7 @@ describe('List', () => {
 
   it('calls handleLoadMore when load more row clicked', () => {
     const mockLoadMore = jest.fn();
-    render(
+    const { rerender } = render(
       <List
         title="Sports Teams"
         items={[
@@ -389,6 +389,20 @@ describe('List', () => {
     expect(mockLoadMore).not.toHaveBeenCalled();
     userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
     expect(mockLoadMore).toHaveBeenCalledWith('site-02');
+    expect(mockLoadMore).toHaveBeenCalledTimes(1);
+
+    // Call load more from the top level
+    mockLoadMore.mockClear();
+    rerender(
+      <List
+        title="Sports Teams"
+        items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
+        handleLoadMore={mockLoadMore}
+      />
+    );
+    expect(mockLoadMore).not.toHaveBeenCalled();
+    userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+    expect(mockLoadMore).toHaveBeenCalledWith('org');
     expect(mockLoadMore).toHaveBeenCalledTimes(1);
   });
   it(' load more row clicked without handleLoadMore function provided', () => {
@@ -822,7 +836,7 @@ describe('List', () => {
 
     it('calls handleLoadMore when load more row clicked', () => {
       const mockLoadMore = jest.fn();
-      render(
+      const { rerender } = render(
         <List
           title="Sports Teams"
           items={[
@@ -853,6 +867,20 @@ describe('List', () => {
       expect(mockLoadMore).not.toHaveBeenCalled();
       userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
       expect(mockLoadMore).toHaveBeenCalledWith('site-02');
+      expect(mockLoadMore).toHaveBeenCalledTimes(1);
+
+      mockLoadMore.mockClear();
+      rerender(
+        <List
+          title="Sports Teams"
+          items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
+          isVirtualList
+          handleLoadMore={mockLoadMore}
+        />
+      );
+      expect(mockLoadMore).not.toHaveBeenCalled();
+      userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+      expect(mockLoadMore).toHaveBeenCalledWith('org');
       expect(mockLoadMore).toHaveBeenCalledTimes(1);
     });
     it('should load more row clicked without handleLoadMore function provided', () => {
