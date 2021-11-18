@@ -2577,4 +2577,139 @@ describe('Table', () => {
     expect(screen.getByText('Total:')).toBeVisible();
     jest.resetAllMocks();
   });
+
+  it('should allow other actions to be passed to the overflow menu when using aggregations', async () => {
+    jest
+      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+      .mockImplementation(() => ({ width: 100, height: 100 }));
+    const onApplyExtraAction = jest.fn();
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+        options={{
+          ...options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...view,
+          aggregations: {
+            label: 'Total: ',
+            columns: [
+              {
+                id: 'number',
+                value: 100000,
+              },
+            ],
+          },
+          toolbar: {
+            ...view.toolbar,
+            extraActions: [
+              {
+                id: 'edit',
+                itemText: 'Edit something',
+                disabled: true,
+              },
+              {
+                id: 'hide',
+                itemText: 'Hide something',
+              },
+              {
+                id: 'divider',
+                itemText: '',
+                isDivider: true,
+              },
+              {
+                id: 'delete',
+                itemText: 'Delete something',
+                isDelete: true,
+              },
+              {
+                id: 'hidden',
+                itemText: 'Hidden option',
+                hidden: true,
+              },
+            ],
+          },
+        }}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+    expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+    expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
+    expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
+    expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+      `${prefix}--overflow-menu-options__option--danger`
+    );
+    userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+    expect(onApplyExtraAction).toHaveBeenCalledWith({ id: 'hide', itemText: 'Hide something' });
+  });
+
+  it('should add items to the extraActions overflow menu when aggregations are not used', async () => {
+    jest
+      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+      .mockImplementation(() => ({ width: 100, height: 100 }));
+    const onApplyExtraAction = jest.fn();
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+        options={{
+          ...options,
+          hasAggregations: false,
+        }}
+        view={{
+          ...view,
+          toolbar: {
+            ...view.toolbar,
+            extraActions: [
+              {
+                id: 'edit',
+                itemText: 'Edit something',
+                disabled: true,
+              },
+              {
+                id: 'hide',
+                itemText: 'Hide something',
+              },
+              {
+                id: 'divider',
+                itemText: '',
+                isDivider: true,
+              },
+              {
+                id: 'delete',
+                itemText: 'Delete something',
+                isDelete: true,
+              },
+              {
+                id: 'hidden',
+                itemText: 'Hidden option',
+                hidden: true,
+              },
+            ],
+          },
+        }}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+    expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+    expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
+    expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
+    expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+      `${prefix}--overflow-menu-options__option--danger`
+    );
+    userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+    expect(onApplyExtraAction).toHaveBeenCalledWith({ id: 'hide', itemText: 'Hide something' });
+  });
 });

@@ -570,6 +570,7 @@ Map {
         "toolbar": Object {
           "onApplyAdvancedFilter": [Function],
           "onApplyBatchAction": [Function],
+          "onApplyExtraAction": [Function],
           "onCancelAdvancedFilter": [Function],
           "onCancelBatchAction": [Function],
           "onChangeAdvancedFilter": [Function],
@@ -811,6 +812,9 @@ Map {
                     "type": "func",
                   },
                   "onApplyBatchAction": Object {
+                    "type": "func",
+                  },
+                  "onApplyExtraAction": Object {
                     "type": "func",
                   },
                   "onApplyFilter": Object {
@@ -1996,6 +2000,35 @@ Map {
                   },
                   "customToolbarContent": Object {
                     "type": "node",
+                  },
+                  "extraActions": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "disabled": Object {
+                              "type": "bool",
+                            },
+                            "hidden": Object {
+                              "type": "bool",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "isDelete": Object {
+                              "type": "bool",
+                            },
+                            "itemText": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
                   },
                   "isDisabled": Object {
                     "type": "bool",
@@ -3953,6 +3986,9 @@ Map {
             "onApplyBatchAction": Object {
               "type": "func",
             },
+            "onApplyExtraAction": Object {
+              "type": "func",
+            },
             "onApplySearch": Object {
               "type": "func",
             },
@@ -4484,6 +4520,35 @@ Map {
             },
             "customToolbarContent": Object {
               "type": "node",
+            },
+            "extraActions": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
+                      "id": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "isDelete": Object {
+                        "type": "bool",
+                      },
+                      "itemText": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
             },
             "filters": Object {
               "args": Array [

@@ -329,3 +329,17 @@ export const TableFiltersPropType = PropTypes.arrayOf(
     ]).isRequired,
   })
 );
+
+export const TableExtraActionsPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    /** the item is displayed, but disabled */
+    disabled: PropTypes.bool,
+    /** the text for the option */
+    itemText: PropTypes.string.isRequired,
+    /** filters out the option so it isn't displayed */
+    hidden: PropTypes.bool,
+    /** displays the option in red */
+    isDelete: PropTypes.bool,
+  })
+);

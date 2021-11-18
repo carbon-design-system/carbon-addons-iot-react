@@ -421,6 +421,7 @@ export const tableActions = {
     // since they won't be adding this prop to any of their components
     // can be readded in V3.
     // onToggleAggregations: action('onToggleAggregations'),
+    onApplyExtraAction: action('onApplyExtraAction'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -690,6 +691,27 @@ export const BasicDumbTable = () => {
         toolbar: {
           activeBar: hasColumnSelection || hasColumnSelectionConfig ? 'column' : undefined,
           isDisabled: boolean('Disable the table toolbar (view.toolbar.isDisabled)', false),
+          extraActions: [
+            {
+              id: 'edit',
+              itemText: 'Edit',
+              disabled: true,
+            },
+            {
+              id: 'toggle',
+              itemText: 'Toggle something',
+            },
+            {
+              id: 'delete',
+              itemText: 'Delete',
+              isDelete: true,
+            },
+            {
+              id: 'hidden',
+              itemText: 'Hidden',
+              hidden: true,
+            },
+          ],
         },
         table: {
           loadingState: {
@@ -2028,6 +2050,27 @@ export const WithFilters = () => {
         },
         toolbar: {
           activeBar: 'filter',
+          extraActions: [
+            {
+              id: 'edit',
+              itemText: 'Edit',
+              disabled: true,
+            },
+            {
+              id: 'toggle',
+              itemText: 'Toggle something',
+            },
+            {
+              id: 'delete',
+              itemText: 'Delete',
+              isDelete: true,
+            },
+            {
+              id: 'hidden',
+              itemText: 'Hidden',
+              hidden: true,
+            },
+          ],
           customToolbarContent: (
             <div style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}>
               custom content
@@ -2042,7 +2085,7 @@ export const WithFilters = () => {
   );
 };
 
-WithFilters.storyName = 'with filtering and custom toolbar content';
+WithFilters.storyName = 'with filtering, extraActions, and custom toolbar content';
 
 export const WithAdvancedFilters = () => {
   const operands = {

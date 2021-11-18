@@ -951,6 +951,50 @@ the following props:
 />
 ```
 
+## Extra actions
+
+You can add other actions to the toolbar overflow menu by using the extraActions prop on the view.toolbar.
+When clicking on an action it will trigger the onApplyExtraActions callback passing the object
+used to create the action.
+
+```jsx
+<Table
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    toolbar: {
+      onApplyExtraActions: (actionObject) => {},
+    },
+  }}
+  view={{
+    toolbar: {
+      extraActions: [
+        {
+          id: 'edit',
+          itemText: 'Edit',
+          disabled: true,
+        },
+        {
+          id: 'toggle',
+          itemText: 'Toggle something',
+        },
+        {
+          id: 'delete',
+          itemText: 'Delete',
+          isDelete: true,
+        },
+        {
+          id: 'hidden',
+          itemText: 'Hidden',
+          hidden: true,
+        },
+      ],
+    },
+  }}
+/>
+```
+
 ## Aggregation
 
 The table can sum columns and show their aggregate total in a footer. A custom value can be passed, a function to sum the rows, or a default sum function will be provided. The `onToggleAggregations` prop passed to `actions.toolbar` serves as a callback to show or hide the the aggregations row in the bottom by changing the `aggregations.isHidden` prop.
@@ -1273,6 +1317,12 @@ A complete example of how to use the column grouping could look like this:
 | toolbar.search.onExpand                          | func                             |           |                                                                                                                                                     |
 | toolbar.isDisabled                               | bool                             |           | Disable the toolbar                                                                                                                                 |
 | toolbar.rowEditBarButtons                        | node                             |           | buttons to be shown with when activeBar is 'rowEdit'                                                                                                |
+| toolbar.extraActions                             | arrayOf(object)                  |           | An array of objects for adding actions to the overflow menu in the toolbar                                                                          |
+| toolbar.extraActions[].id                        | string                           |           | the id of this action                                                                                                                               |
+| toolbar.extraActions[].itemText                  | string                           |           | The text to display in the overflow menu                                                                                                            |
+| toolbar.extraActions[].hidden                    | bool                             |           | This will hide this item from the menu                                                                                                              |
+| toolbar.extraActions[].disabled                  | bool                             |           | This will show the item, but it will be disabled                                                                                                    |
+| toolbar.extraActions[].isDelete                  | bool                             |           | Show the item, and turn the background red on hover                                                                                                 |
 | table                                            | object                           |           |                                                                                                                                                     |
 | table.isSelectAllSelected                        | bool                             |           | If true, the select all option is checked                                                                                                           |
 | table.isSelectAllIndeterminate                   | bool                             |           |                                                                                                                                                     |
@@ -1333,6 +1383,7 @@ A complete example of how to use the column grouping could look like this:
 | toolbar.onCancelAdvancedFilter  | func   |         | Fired when then 'Cancel' button is clicked in the advanced filter flyout menu                                                                                                                                   |
 | toolbar.onChangeAdvancedFilter  | func   |         | Fired when an advanced filter is selected or removed.                                                                                                                                                           |
 | toolbar.onToggleAggregations    | func   |         | Fired when the "Toggle aggregations" option is clicked from the overflow menu in the table toolbar                                                                                                              |
+| toolbar.onApplyExtraActions     | func   |         | Fired when clicking on extraActions in the table toolbar                                                                                                                                                        |
 | table                           | object |         |                                                                                                                                                                                                                 |
 | table.onRowSelected             | func   |         |                                                                                                                                                                                                                 |
 | table.onRowClicked              | func   |         |                                                                                                                                                                                                                 |

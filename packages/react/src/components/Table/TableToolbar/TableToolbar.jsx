@@ -22,6 +22,7 @@ import {
   TableColumnsPropTypes,
   TableFiltersPropType,
   TableOrderingPropType,
+  TableExtraActionsPropType,
 } from '../TablePropTypes';
 import {
   handleSpecificKeyDown,
@@ -109,6 +110,7 @@ const propTypes = {
     onShowRowEdit: PropTypes.func,
     onApplySearch: PropTypes.func,
     onDownloadCSV: PropTypes.func,
+    onApplyExtraAction: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -155,6 +157,8 @@ const propTypes = {
     ),
     /** currently selected advanced filters */
     selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
+    /** extra actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
+    extraActions: TableExtraActionsPropType,
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
@@ -210,6 +214,7 @@ const TableToolbar = ({
     onCreateAdvancedFilter,
     onChangeAdvancedFilter,
     onToggleAdvancedFilter,
+    onApplyExtraAction,
   },
   tableState: {
     advancedFilterFlyoutOpen,
@@ -227,6 +232,7 @@ const TableToolbar = ({
     selectedAdvancedFilterIds,
     columns,
     ordering,
+    extraActions,
   },
   data,
   // TODO: remove deprecated 'testID' in v3
@@ -426,7 +432,7 @@ const TableToolbar = ({
               disabled={isDisabled}
             />
           ) : null}
-          {hasAggregations ? (
+          {hasAggregations || extraActions?.length > 0 ? (
             <OverflowMenu
               className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
               direction="bottom"
@@ -436,16 +442,31 @@ const TableToolbar = ({
               renderIcon={OverflowMenuVertical20}
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
             >
-              <OverflowMenuItem
-                data-testid={`${testID || testId}-toolbar-overflow-menu-item-aggregations`}
-                itemText={i18n.toggleAggregations}
-                key="table-aggregations-overflow-item"
-                // wrapping in function to prevent error in netlify storybook deploys.
-                // When passing the event directly to the storybook action it throws an iframe access
-                // error. This might a temporary issue and can be removed later.
-                onClick={() => onToggleAggregations()}
-                disabled={isDisabled}
-              />
+              {hasAggregations && (
+                <OverflowMenuItem
+                  data-testid={`${testID || testId}-toolbar-overflow-menu-item-aggregations`}
+                  itemText={i18n.toggleAggregations}
+                  key="table-aggregations-overflow-item"
+                  // wrapping in function to prevent error in netlify storybook deploys.
+                  // When passing the event directly to the storybook action it throws an iframe access
+                  // error. This might a temporary issue and can be removed later.
+                  onClick={() => onToggleAggregations()}
+                  disabled={isDisabled}
+                />
+              )}
+              {extraActions
+                ?.filter(({ hidden }) => hidden !== true)
+                .map((action) => (
+                  <OverflowMenuItem
+                    data-testid={`${testID || testId}-toolbar-overflow-menu-item-${action.id}`}
+                    itemText={action.itemText}
+                    key={`table-aggregations-overflow-item-${action.id}`}
+                    onClick={() => onApplyExtraAction(action)}
+                    disabled={isDisabled || action.disabled}
+                    isDivider={action.isDivider}
+                    isDelete={action.isDelete}
+                  />
+                ))}
             </OverflowMenu>
           ) : null}
           {

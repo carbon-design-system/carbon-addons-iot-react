@@ -29,6 +29,7 @@ import {
   TableColumnGroupPropType,
   TableOrderingPropType,
   TableFiltersPropType,
+  TableExtraActionsPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -75,7 +76,7 @@ const propTypes = {
     hasFastSearch: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
-    /** True if the rows shuld be expandable */
+    /** True if the rows should be expandable */
     hasRowExpansion: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
@@ -191,7 +192,7 @@ const propTypes = {
       PropTypes.shape({
         /** Unique id for particular filter */
         filterId: PropTypes.string.isRequired,
-        /** Text for main tilte of page */
+        /** Text for main title of page */
         filterTitleText: PropTypes.string.isRequired,
         filterRules: RuleGroupPropType.isRequired,
       })
@@ -217,6 +218,8 @@ const propTypes = {
       isDisabled: PropTypes.bool,
       /** buttons to be shown with when activeBar is 'rowEdit' */
       rowEditBarButtons: PropTypes.node,
+      /** extra actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
+      extraActions: TableExtraActionsPropType,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -288,6 +291,8 @@ const propTypes = {
       onChangeAdvancedFilter: PropTypes.func,
       /** fired when 'Toggle aggregations' is clicked in the overflow menu */
       onToggleAggregations: PropTypes.func,
+      /** fired with clicking an 'extraAction' in the table toolbar overflow menu */
+      onApplyExtraAction: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -412,12 +417,14 @@ export const defaultProps = (baseProps) => ({
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
+      onApplyExtraAction: defaultFunction('actions.toolbar.onApplyExtraAction'),
       onRemoveAdvancedFilter: defaultFunction('actions.toolbar.onRemoveAdvancedFilter'),
       onCancelAdvancedFilter: defaultFunction('actions.toolbar.onCancelFilter'),
       onCreateAdvancedFilter: defaultFunction('actions.toolbar.onCreateAdvancedFilter'),
       onApplyAdvancedFilter: defaultFunction('actions.toolbar.onApplyAdvancedFilter'),
       onChangeAdvancedFilter: defaultFunction('actions.toolbar.onChangeAdvancedFilter'),
       onToggleAdvancedFilter: defaultFunction('actions.toolbar.onToggleAdvancedFilter'),
+
       // TODO: removed to mimic the current state of consumers in the wild
       // since they won't be adding this prop to any of their components
       // can be readded in V3.
@@ -541,14 +548,14 @@ const Table = (props) => {
   } = merge({}, defaultProps(props), props);
 
   // There is no way to access the current search value in the Table
-  // so we need to track that for the save view fuctionality.
+  // so we need to track that for the save view functionality.
   const searchValue = useRef(view?.toolbar?.search?.defaultValue);
 
   const initialRendering = useRef(true);
 
   // The save/load view functionality needs access to the latest view configuration
   // and also needs to know when the configuration has changed for the StatefulTable.
-  // This effect satifies both those needs.
+  // This effect satisfies both those needs.
   useDeepCompareEffect(() => {
     if (options.hasUserViewManagement && onUserViewModified) {
       if (!initialRendering.current) {
@@ -826,7 +833,8 @@ const Table = (props) => {
                 'onCreateAdvancedFilter',
                 'onChangeAdvancedFilter',
                 'onRemoveAdvancedFilter',
-                'onToggleAdvancedFilter'
+                'onToggleAdvancedFilter',
+                'onApplyExtraAction'
               ),
               onToggleAggregations,
               onApplySearch: (value) => {
@@ -868,7 +876,8 @@ const Table = (props) => {
                 'activeBar',
                 'customToolbarContent',
                 'rowEditBarButtons',
-                'advancedFilterFlyoutOpen'
+                'advancedFilterFlyoutOpen',
+                'extraActions'
               ),
             }}
             data={data}
