@@ -1,7 +1,7 @@
 import React, { useState, createElement, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
 import { Switcher24, Chip24, Dashboard24, Group24, ParentChild24 } from '@carbon/icons-react';
-import { HeaderContainer } from 'carbon-components-react/lib/components/UIShell';
+import { HeaderContainer } from 'carbon-components-react/es/components/UIShell';
 import { boolean } from '@storybook/addon-knobs';
 
 import Header from '../Header';

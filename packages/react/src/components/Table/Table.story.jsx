@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useEffect, useCallback, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select, array, object } from '@storybook/addon-knobs';
-import Arrow from '@carbon/icons-react/lib/arrow--right/16';
-import Add from '@carbon/icons-react/lib/add/16';
-import Edit from '@carbon/icons-react/lib/edit/16';
+import Arrow from '@carbon/icons-react/es/arrow--right/16';
+import Add from '@carbon/icons-react/es/add/16';
+import Edit from '@carbon/icons-react/es/edit/16';
 import { spacing03 } from '@carbon/layout';
 import { Add20, TrashCan16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
