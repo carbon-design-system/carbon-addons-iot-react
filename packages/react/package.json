@@ -189,7 +189,6 @@
     "js-file-download": "^0.4.7",
     "lodash": "^4.17.19",
     "object-hash": "^2.2.0",
-    "polished": "^2.3.3",
     "prop-types": "^15.7.2",
     "react-dnd": "14.0.2",
     "react-dnd-html5-backend": "14.0.0",
