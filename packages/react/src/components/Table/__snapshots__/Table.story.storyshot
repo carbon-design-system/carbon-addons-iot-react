@@ -112135,6 +112135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       Focus sentinel
     </span>
     <div
+      aria-label="Customize columns"
       aria-modal="true"
       className="bx--modal-container"
       role="dialog"
@@ -112142,6 +112143,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="bx--modal-header"
       >
+        <h2
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Customize columns
+        </h2>
         <h3
           className="bx--modal-header__heading bx--type-beta"
         >
