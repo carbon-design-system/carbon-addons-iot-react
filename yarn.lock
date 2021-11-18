@@ -9763,10 +9763,10 @@ carbon-components-angular@4.53.5:
     flatpickr "4.6.1"
     tslib "^1.9.0"
 
-carbon-components-react@7.48.0:
-  version "7.48.0"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.48.0.tgz#46c1cdf9c9b7dd0d61e5d63a831ff1f665d491e1"
-  integrity sha512-RIUCzdusyYdfrhaADLQJq4bcZN4covEnb0V9qI/DTSi3ANQQiAokT7A+J40JiO+8WGARYmce0YtZjqcEknQJhw==
+carbon-components-react@7.48.1:
+  version "7.48.1"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.48.1.tgz#ab7e83557b87357e12adc714135673456e647029"
+  integrity sha512-41l294GoKsKZ3Ncc0SJZ/NyaGUGq4Kmer4WR7PzI44z3RTCrF2LjcgjcXAn4Etvea35vdY6Reb4bPtFkmPT4TA==
   dependencies:
     "@babel/runtime" "^7.14.6"
     "@carbon/feature-flags" "^0.6.0"
@@ -9807,7 +9807,7 @@ carbon-components@10.40.0:
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-components@10.48.0:
+carbon-components@10.48.1:
   version "10.48.0"
   resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.48.0.tgz#e1c31b7b5d27cf12299fd86f6c9b8f0546bb6b43"
   integrity sha512-kz6WlB4sVyOW/fUZLQ+f83cS2AAvcNRXkMi6au1guUHMdoTtIBz62AGKGxq54Xy2hQZK0Ca6aH01NopxOV4wUw==
