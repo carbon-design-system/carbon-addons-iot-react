@@ -727,7 +727,7 @@ describe('Table', () => {
       [new TableItem({ data: 'D' }), new TableItem({ data: 'E' }), new TableItem({ data: 'F' })],
     ]);
 
-    tableModel.moveColumn(1, 3);
+    tableModel.moveColumn(1, 2);
 
     expect(tableModel.column(0)).toEqual([
       new TableItem({ data: 'A' }),
@@ -796,7 +796,7 @@ describe('Table', () => {
       [new TableItem({ data: 'D' }), new TableItem({ data: 'E' }), new TableItem({ data: 'F' })],
     ]);
 
-    tableModel.moveColumn(0, 2);
+    tableModel.moveColumn(0, 1);
 
     expect(tableModel.column(0)).toEqual([
       new TableItem({ data: 'B' }),
@@ -896,6 +896,214 @@ describe('Table', () => {
       'h25',
       'h21',
       'h26',
+    ]);
+  });
+
+  it('should move (multi-line header with row spans) column to beginning', () => {
+    let tableModel = new AITableModel();
+    tableModel.setHeader([
+      [
+        new TableHeaderItem({ data: 'h1', colSpan: 4 }),
+        new TableHeaderItem({ data: 'h2', rowSpan: 4 }),
+        new TableHeaderItem({ data: 'h3', colSpan: 2, rowSpan: 2 }),
+        new TableHeaderItem({ data: 'h4', colSpan: 2 }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h11' }),
+        new TableHeaderItem({ data: 'h12', rowSpan: 2, colSpan: 2 }),
+        new TableHeaderItem({ data: 'h13', rowSpan: 3 }),
+        new TableHeaderItem({ data: 'h41', rowSpan: 3 }),
+        new TableHeaderItem({ data: 'h42' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h111' }),
+        new TableHeaderItem({ data: 'h31', colSpan: 2 }),
+        new TableHeaderItem({ data: 'h421' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h1111' }),
+        new TableHeaderItem({ data: 'h121' }),
+        new TableHeaderItem({ data: 'h122' }),
+        new TableHeaderItem({ data: 'h311' }),
+        new TableHeaderItem({ data: 'h312' }),
+        new TableHeaderItem({ data: 'h422' }),
+      ],
+    ]);
+
+    tableModel.setData([
+      [
+        new TableItem({ data: 'd1111' }),
+        new TableItem({ data: 'd121' }),
+        new TableItem({ data: 'd122' }),
+        new TableItem({ data: 'd13' }),
+        new TableItem({ data: 'd2' }),
+        new TableItem({ data: 'd311' }),
+        new TableItem({ data: 'd312' }),
+        new TableItem({ data: 'd41' }),
+        new TableItem({ data: 'd422' }),
+      ],
+      [
+        new TableItem({ data: 'd1111' }),
+        new TableItem({ data: 'd121' }),
+        new TableItem({ data: 'd122' }),
+        new TableItem({ data: 'd13' }),
+        new TableItem({ data: 'd2' }),
+        new TableItem({ data: 'd311' }),
+        new TableItem({ data: 'd312' }),
+        new TableItem({ data: 'd41' }),
+        new TableItem({ data: 'd422' }),
+      ],
+    ]);
+
+    tableModel.moveColumn(2, 0, 0);
+
+    expect(tableModel.column(0)).toEqual([
+      new TableItem({ data: 'd311' }),
+      new TableItem({ data: 'd311' })
+    ]);
+
+    expect(tableModel.column(1)).toEqual([
+      new TableItem({ data: 'd312' }),
+      new TableItem({ data: 'd312' })
+    ]);
+
+    expect(tableModel.column(2)).toEqual([
+      new TableItem({ data: 'd1111' }),
+      new TableItem({ data: 'd1111' })
+    ]);
+
+    expect(tableModel.column(3)).toEqual([
+      new TableItem({ data: 'd121' }),
+      new TableItem({ data: 'd121' })
+    ]);
+
+    expect(tableModel.column(4)).toEqual([
+      new TableItem({ data: 'd122' }),
+      new TableItem({ data: 'd122' })
+    ]);
+
+    expect(tableModel.column(5)).toEqual([
+      new TableItem({ data: 'd13' }),
+      new TableItem({ data: 'd13' })
+    ]);
+
+    expect(tableModel.column(6)).toEqual([
+      new TableItem({ data: 'd2' }),
+      new TableItem({ data: 'd2' })
+    ]);
+
+    expect(tableModel.column(7)).toEqual([
+      new TableItem({ data: 'd41' }),
+      new TableItem({ data: 'd41' })
+    ]);
+
+    expect(tableModel.column(8)).toEqual([
+      new TableItem({ data: 'd422' }),
+      new TableItem({ data: 'd422' })
+    ]);
+  });
+
+  it('should move (multi-line header with row spans) column to the end', () => {
+    let tableModel = new AITableModel();
+    tableModel.setHeader([
+      [
+        new TableHeaderItem({ data: 'h1', colSpan: 4 }),
+        new TableHeaderItem({ data: 'h2', rowSpan: 4 }),
+        new TableHeaderItem({ data: 'h3', colSpan: 2, rowSpan: 2 }),
+        new TableHeaderItem({ data: 'h4', colSpan: 2 }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h11' }),
+        new TableHeaderItem({ data: 'h12', rowSpan: 2, colSpan: 2 }),
+        new TableHeaderItem({ data: 'h13', rowSpan: 3 }),
+        new TableHeaderItem({ data: 'h41', rowSpan: 3 }),
+        new TableHeaderItem({ data: 'h42' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h111' }),
+        new TableHeaderItem({ data: 'h31', colSpan: 2 }),
+        new TableHeaderItem({ data: 'h421' }),
+      ],
+      [
+        new TableHeaderItem({ data: 'h1111' }),
+        new TableHeaderItem({ data: 'h121' }),
+        new TableHeaderItem({ data: 'h122' }),
+        new TableHeaderItem({ data: 'h311' }),
+        new TableHeaderItem({ data: 'h312' }),
+        new TableHeaderItem({ data: 'h422' }),
+      ],
+    ]);
+
+    tableModel.setData([
+      [
+        new TableItem({ data: 'd1111' }),
+        new TableItem({ data: 'd121' }),
+        new TableItem({ data: 'd122' }),
+        new TableItem({ data: 'd13' }),
+        new TableItem({ data: 'd2' }),
+        new TableItem({ data: 'd311' }),
+        new TableItem({ data: 'd312' }),
+        new TableItem({ data: 'd41' }),
+        new TableItem({ data: 'd422' }),
+      ],
+      [
+        new TableItem({ data: 'd1111' }),
+        new TableItem({ data: 'd121' }),
+        new TableItem({ data: 'd122' }),
+        new TableItem({ data: 'd13' }),
+        new TableItem({ data: 'd2' }),
+        new TableItem({ data: 'd311' }),
+        new TableItem({ data: 'd312' }),
+        new TableItem({ data: 'd41' }),
+        new TableItem({ data: 'd422' }),
+      ],
+    ]);
+
+    tableModel.moveColumn(1, 3, 0);
+
+    expect(tableModel.column(0)).toEqual([
+      new TableItem({ data: 'd1111' }),
+      new TableItem({ data: 'd1111' })
+    ]);
+
+    expect(tableModel.column(1)).toEqual([
+      new TableItem({ data: 'd121' }),
+      new TableItem({ data: 'd121' })
+    ]);
+
+    expect(tableModel.column(2)).toEqual([
+      new TableItem({ data: 'd122' }),
+      new TableItem({ data: 'd122' })
+    ]);
+
+    expect(tableModel.column(3)).toEqual([
+      new TableItem({ data: 'd13' }),
+      new TableItem({ data: 'd13' })
+    ]);
+
+    expect(tableModel.column(4)).toEqual([
+      new TableItem({ data: 'd311' }),
+      new TableItem({ data: 'd311' })
+    ]);
+
+    expect(tableModel.column(5)).toEqual([
+      new TableItem({ data: 'd312' }),
+      new TableItem({ data: 'd312' })
+    ]);
+
+    expect(tableModel.column(6)).toEqual([
+      new TableItem({ data: 'd41' }),
+      new TableItem({ data: 'd41' })
+    ]);
+
+    expect(tableModel.column(7)).toEqual([
+      new TableItem({ data: 'd422' }),
+      new TableItem({ data: 'd422' })
+    ]);
+
+    expect(tableModel.column(8)).toEqual([
+      new TableItem({ data: 'd2' }),
+      new TableItem({ data: 'd2' })
     ]);
   });
 
@@ -1008,7 +1216,7 @@ describe('Table', () => {
     ];
     const tableModel = new AITableModel();
 
-    tableModel['moveMultipleToIndex']([1, 2, 3], 5, header);
+    tableModel['moveMultipleToIndex']([1, 2, 3], 4, header);
 
     expect(header.map((item) => item.data)).toEqual(['h1', 'h5', 'h2', 'h3', 'h4', 'h6']);
   });
@@ -1024,7 +1232,7 @@ describe('Table', () => {
     ];
     const tableModel = new AITableModel();
 
-    tableModel['moveMultipleToIndex']([1], 3, header);
+    tableModel['moveMultipleToIndex']([1], 2, header);
     expect(header.map((item) => item.data)).toEqual(['h1', 'h3', 'h2', 'h4', 'h5', 'h6']);
   });
 

@@ -16,6 +16,8 @@ export class AITableModel implements PaginationModel {
    */
   protected static COUNT = 0;
 
+  protected static HEADER_COUNT = 0;
+
   dataChange = new Subject();
   rowsSelectedChange = new Subject<number>();
   rowsExpandedChange = new Subject<number>();
@@ -178,6 +180,8 @@ export class AITableModel implements PaginationModel {
       });
     }
 
+    this.setHeaderIds(this.header);
+
     this.dataChange.next();
   }
 
@@ -196,6 +200,8 @@ export class AITableModel implements PaginationModel {
     }
 
     this.header = newHeader as TableHeaderItem[][];
+
+    this.setHeaderIds(this.header);
 
     this.dataChange.next();
   }
@@ -707,23 +713,11 @@ export class AITableModel implements PaginationModel {
    * |  f  |  g  |  h  |  j  |  i  |
    */
   moveColumn(indexFrom: number, indexTo: number, rowIndex = 0) {
-    // ignore everything above rowIndex
-    // find the "projected indices" of the header column we're moving
-    const projectedIndices = this.actualIndexToProjectedIndices(indexFrom, this.header[rowIndex]);
-    // based on those indices, find the "actual indices" of child rows
-    for (let nextRowIndex = rowIndex; nextRowIndex < this.header.length; nextRowIndex++) {
-      const actualIndices = this.projectedIndicesToActualIndices(
-        projectedIndices,
-        this.header[nextRowIndex]
-      );
-      // move them to the right place (based on the "projected indexTo")
-      this.moveMultipleToIndex(actualIndices, indexTo, this.header[nextRowIndex]);
-    }
-
-    // move the data columns as well
-    for (let dataRowIndex = 0; dataRowIndex < this._data.length; dataRowIndex++) {
-      this.moveMultipleToIndex(projectedIndices, indexTo, this._data[dataRowIndex]);
-    }
+    const nested = this.tabularToNested(this.header, this._data);
+    this.moveNested(nested, indexFrom, indexTo, rowIndex);
+    const { header, data } = this.nestedToTabular(nested);
+    this.header = header;
+    this._data = data;
   }
 
   /**
@@ -996,8 +990,216 @@ export class AITableModel implements PaginationModel {
     } else {
       // if moving to right
       const block = list.slice(blockStart, blockEnd + 1);
-      list.splice.apply(list, [index, 0].concat(block));
+      list.splice.apply(list, [index + 1, 0].concat(block));
       list.splice(blockStart, blockEnd - blockStart + 1);
+    }
+  }
+
+  protected setHeaderIds(
+    header: TableHeaderItem[][],
+    headerRow: TableHeaderItem[] = [],
+    availableHeaderItems: TableHeaderItem[][] = [],
+    rowIndex = 0,
+    parentId = null
+  ) {
+    if (!headerRow.length && rowIndex === 0) {
+      headerRow = header[0];
+    }
+
+    if (!availableHeaderItems.length) {
+      availableHeaderItems = header.map((headerRow) => headerRow.filter((headerItem) => headerItem !== null));
+    }
+
+    return headerRow
+      .filter((headerItem) => headerItem !== null)
+      .map((headerItem) => {
+        const headerId = `header-${AITableModel.HEADER_COUNT++}`;
+
+        const colSpan = headerItem?.colSpan || 1;
+        const rowSpan = headerItem?.rowSpan || 1;
+
+        if (rowIndex + rowSpan >= this.header.length) {
+          headerItem.metadata = {
+            ...headerItem.metadata,
+            id: headerId,
+            parentId
+          }
+          return headerId;
+        }
+
+        let spaceLeft = colSpan;
+        const availableChildren = availableHeaderItems[rowIndex + rowSpan];
+        const children = [];
+
+        while (spaceLeft > 0 && availableChildren.length) {
+          const nextChild = availableChildren.shift();
+          spaceLeft -= nextChild?.colSpan || 1;
+          children.push(nextChild);
+        }
+
+        headerItem.metadata = {
+          ...headerItem.metadata,
+          id: headerId,
+          parentId,
+          childIds: this.setHeaderIds(header, children, availableHeaderItems, rowIndex + rowSpan, headerId),
+        }
+
+        return headerId;
+      });
+  }
+
+  protected getViewIndex(colIndex: number, rowIndex: number, header: TableHeaderItem[][]) {
+    let id = header[rowIndex][colIndex].metadata.id;
+    let parentId = header[rowIndex][colIndex].metadata.parentId;
+    let indexOffset = 0;
+
+    for (let i = rowIndex - 1; i >= 0; i--) {
+      let parentHeader;
+      // Find parent header, this loop is to account for row spans.
+      for (let j = i; j >= 0; j--) {
+        parentHeader = header[j].find(headerItem => headerItem?.metadata?.id === parentId);
+        if (parentHeader) {
+          i = j;
+          break;
+        }
+      }
+      const parentChildrenIds = parentHeader?.metadata?.childIds;
+      const children = header[i + (parentHeader?.rowSpan || 1)].filter((headerItem) => parentChildrenIds.includes(headerItem.metadata.id))
+      const precedingChildren = children?.slice(0, children.indexOf(children.find(child => child.metadata.id === id)));
+
+      if (precedingChildren?.length) {
+        indexOffset += precedingChildren.reduce((total, headerItem) => total += headerItem?.colSpan || 1, 0)
+      }
+
+      id = parentHeader?.metadata.id;
+      parentId = parentHeader?.metadata?.parentId;
+    }
+
+    const projectedIndex = this.actualIndexToProjectedIndices(
+      header[0].findIndex((headerItem) => headerItem?.metadata?.id === id),
+      header[0]
+    );
+
+    return projectedIndex[0] + indexOffset;
+  }
+
+  protected tabularToNested(
+    header: TableHeaderItem[][],
+    data: TableItem[][],
+    headerRow: TableHeaderItem[] = [],
+    rowIndex = 0,
+    relativeIndex = 0
+  ) {
+    if (!headerRow.length && rowIndex === 0) {
+      headerRow = header[0];
+    }
+    return headerRow
+      .filter(Boolean)
+      .map((headerItem, i) => {
+        const colSpan = headerItem?.colSpan || 1;
+        const rowSpan = headerItem?.rowSpan || 1;
+        const childIds = headerItem.metadata.childIds;
+
+        if (rowIndex + rowSpan >= this.header.length) {
+          const columnIndex = relativeIndex + i;
+          const viewIndex = this.getViewIndex(columnIndex, rowIndex, header);
+
+          // Table body items directly undernearth this header.
+          const dataChildren = [];
+          data.forEach(row => {
+            dataChildren.push(row.slice(viewIndex, viewIndex + colSpan));
+          });
+
+          return {
+            headerItem,
+            index: columnIndex,
+            children: [],
+            dataChildren
+          }
+        }
+
+        const children = header[rowIndex + rowSpan].filter(headerItem => childIds.includes(headerItem.metadata.id));
+        const index = header[rowIndex + rowSpan].indexOf(children[0]);
+
+        return {
+          headerItem,
+          children: this.tabularToNested(header, data, children, rowIndex + rowSpan, index),
+          index: relativeIndex + i,
+          dataChildren: []
+        }
+      });
+  }
+
+  protected nestedToTabular(
+    nested: any,
+    header: TableHeaderItem[][] = new Array(this.header.length).fill([]),
+    data: TableItem[][] = new Array(this._data.length).fill([]),
+    rowIndex = 0
+  ) {
+    nested.forEach((headerObj) => {
+      const rowSpan = headerObj.headerItem?.rowSpan || 1;
+      header[rowIndex] = [...header[rowIndex], headerObj.headerItem];
+
+      if (headerObj.dataChildren.length) {
+        for (let i = 0; i < data.length; i++) {
+          data[i] = [...data[i], ...headerObj.dataChildren[i]]
+        }
+      }
+
+      if (rowIndex + rowSpan >= this.header.length) {
+        return;
+      }
+
+      const children = headerObj.children;
+
+      this.nestedToTabular(children, header, data, rowIndex + rowSpan);
+    });
+
+    return {
+      header,
+      data
+    };
+  }
+
+  /**
+   * Move `nested` element at depth `rowIndex` with index `indexFrom` to `indexTo`.
+   */
+  protected moveNested(
+    nested: any,
+    indexFrom: number,
+    indexTo: number,
+    rowIndex = 0,
+    currentLevel = 0
+  ) {
+    if (rowIndex === 0) {
+      const indexFromElement = nested.find((obj: any) => obj.index === indexFrom);
+      const indexToElement = nested.find((obj: any) => obj.index === indexTo);
+
+      if (indexFromElement && indexToElement) {
+        const relativeIndexFrom = nested.indexOf(indexFromElement);
+        const relativeIndexTo = nested.indexOf(indexToElement);
+        this.moveMultipleToIndex([relativeIndexFrom], relativeIndexTo, nested);
+      }
+      return;
+    }
+
+    for (let i = 0; i < nested.length; i++) {
+      const headerObj = nested[i];
+      const rowSpan = headerObj.headerItem?.rowSpan || 1;
+
+      if (currentLevel === rowIndex - rowSpan) {
+        const indexFromElement = headerObj.children.find((obj: any) => obj.index === indexFrom);
+        const indexToElement = headerObj.children.find((obj: any) => obj.index === indexTo);
+
+        if (indexFromElement && indexToElement) {
+          const relativeIndexFrom = headerObj.children.indexOf(indexFromElement);
+          const relativeIndexTo = headerObj.children.indexOf(indexToElement);
+          this.moveMultipleToIndex([relativeIndexFrom], relativeIndexTo, headerObj.children);
+          return;
+        }
+      } else {
+        this.moveNested(headerObj.children, indexFrom, indexTo, rowIndex, currentLevel + rowSpan);
+      }
     }
   }
 }
