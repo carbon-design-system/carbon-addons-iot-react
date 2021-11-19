@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Column20,
@@ -11,6 +11,7 @@ import { DataTable, Tooltip, OverflowMenu, OverflowMenuItem } from 'carbon-compo
 import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 import pick from 'lodash/pick';
+import { useLangDirection } from 'use-lang-direction';
 
 import Button from '../../Button';
 import deprecate from '../../../internal/deprecate';
@@ -240,6 +241,38 @@ const TableToolbar = ({
   testId,
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
+  const langDir = useLangDirection();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const trackOpenState = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
+
+  /**
+   * allow dynamically rendering the extra items from a callback when the overflow menu is opened.
+   */
+  const renderExtraActions = useCallback(() => {
+    const actions = typeof extraActions === 'function' ? extraActions() : extraActions;
+
+    if (!actions?.length) {
+      return null;
+    }
+
+    return actions
+      .filter(({ hidden }) => hidden !== true)
+      .map((action) => (
+        <OverflowMenuItem
+          data-testid={`${testID || testId}-toolbar-overflow-menu-item-${action.id}`}
+          itemText={action.itemText}
+          key={`table-aggregations-overflow-item-${action.id}`}
+          onClick={() => onApplyExtraAction(action)}
+          disabled={isDisabled || action.disabled}
+          isDivider={action.isDivider}
+          isDelete={action.isDelete}
+        />
+      ));
+  }, [extraActions, isDisabled, onApplyExtraAction, testID, testId]);
+
   return (
     <CarbonTableToolbar
       // TODO: remove deprecated 'testID' in v3
@@ -432,15 +465,17 @@ const TableToolbar = ({
               disabled={isDisabled}
             />
           ) : null}
-          {hasAggregations || extraActions?.length > 0 ? (
+          {hasAggregations || typeof extraActions === 'function' || extraActions?.length > 0 ? (
             <OverflowMenu
               className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
               direction="bottom"
-              flipped
+              flipped={langDir === 'ltr'}
               data-testid="table-head--overflow"
               onClick={(e) => e.stopPropagation()}
               renderIcon={OverflowMenuVertical20}
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
+              onOpen={trackOpenState}
+              onClose={trackOpenState}
             >
               {hasAggregations && (
                 <OverflowMenuItem
@@ -454,19 +489,7 @@ const TableToolbar = ({
                   disabled={isDisabled}
                 />
               )}
-              {extraActions
-                ?.filter(({ hidden }) => hidden !== true)
-                .map((action) => (
-                  <OverflowMenuItem
-                    data-testid={`${testID || testId}-toolbar-overflow-menu-item-${action.id}`}
-                    itemText={action.itemText}
-                    key={`table-aggregations-overflow-item-${action.id}`}
-                    onClick={() => onApplyExtraAction(action)}
-                    disabled={isDisabled || action.disabled}
-                    isDivider={action.isDivider}
-                    isDelete={action.isDelete}
-                  />
-                ))}
+              {isOpen && renderExtraActions()}
             </OverflowMenu>
           ) : null}
           {

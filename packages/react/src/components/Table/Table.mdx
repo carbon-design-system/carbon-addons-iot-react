@@ -956,7 +956,9 @@ the following props:
 
 You can add other actions to the toolbar overflow menu by using the extraActions prop on the view.toolbar.
 When clicking on an action it will trigger the `onApplyExtraAction` callback passing the object
-used to create the action.
+used to create the action. If `extraActions` is a function, it can return an array of objects
+representing the extraActions and these will be rendered dynamically
+when the overflow menu is opened.
 
 ```jsx
 <Table

@@ -2003,32 +2003,42 @@ Map {
                   },
                   "extraActions": Object {
                     "args": Array [
-                      Object {
-                        "args": Array [
-                          Object {
-                            "disabled": Object {
-                              "type": "bool",
+                      Array [
+                        Object {
+                          "type": "func",
+                        },
+                        Object {
+                          "args": Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "disabled": Object {
+                                    "type": "bool",
+                                  },
+                                  "hidden": Object {
+                                    "type": "bool",
+                                  },
+                                  "id": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "isDelete": Object {
+                                    "type": "bool",
+                                  },
+                                  "itemText": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
-                            "hidden": Object {
-                              "type": "bool",
-                            },
-                            "id": Object {
-                              "isRequired": true,
-                              "type": "string",
-                            },
-                            "isDelete": Object {
-                              "type": "bool",
-                            },
-                            "itemText": Object {
-                              "isRequired": true,
-                              "type": "string",
-                            },
-                          },
-                        ],
-                        "type": "shape",
-                      },
+                          ],
+                          "type": "arrayOf",
+                        },
+                      ],
                     ],
-                    "type": "arrayOf",
+                    "type": "oneOfType",
                   },
                   "isDisabled": Object {
                     "type": "bool",
@@ -4523,32 +4533,42 @@ Map {
             },
             "extraActions": Object {
               "args": Array [
-                Object {
-                  "args": Array [
-                    Object {
-                      "disabled": Object {
-                        "type": "bool",
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "disabled": Object {
+                              "type": "bool",
+                            },
+                            "hidden": Object {
+                              "type": "bool",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "isDelete": Object {
+                              "type": "bool",
+                            },
+                            "itemText": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
                       },
-                      "hidden": Object {
-                        "type": "bool",
-                      },
-                      "id": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "isDelete": Object {
-                        "type": "bool",
-                      },
-                      "itemText": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                    },
-                  ],
-                  "type": "shape",
-                },
+                    ],
+                    "type": "arrayOf",
+                  },
+                ],
               ],
-              "type": "arrayOf",
+              "type": "oneOfType",
             },
             "filters": Object {
               "args": Array [

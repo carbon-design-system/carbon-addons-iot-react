@@ -2648,6 +2648,7 @@ describe('Table', () => {
     );
     userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
     expect(onApplyExtraAction).toHaveBeenCalledWith({ id: 'hide', itemText: 'Hide something' });
+    jest.resetAllMocks();
   });
 
   it('should add items to the extraActions overflow menu when aggregations are not used', async () => {
@@ -2711,5 +2712,77 @@ describe('Table', () => {
     );
     userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
     expect(onApplyExtraAction).toHaveBeenCalledWith({ id: 'hide', itemText: 'Hide something' });
+    jest.resetAllMocks();
+  });
+
+  it('should allow dynamically creating the extraActions from a callback', async () => {
+    jest
+      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+      .mockImplementation(() => ({ width: 100, height: 100 }));
+    const onApplyExtraAction = jest.fn();
+    const obj = {
+      extraActions: () => [
+        {
+          id: 'edit',
+          itemText: 'Edit something',
+          disabled: true,
+        },
+        {
+          id: 'hide',
+          itemText: 'Hide something',
+        },
+        {
+          id: 'divider',
+          itemText: '',
+          isDivider: true,
+        },
+        {
+          id: 'delete',
+          itemText: 'Delete something',
+          isDelete: true,
+        },
+        {
+          id: 'hidden',
+          itemText: 'Hidden option',
+          hidden: true,
+        },
+      ],
+    };
+
+    jest.spyOn(obj, 'extraActions');
+
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 1)}
+        expandedData={expandedData}
+        actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+        options={{
+          ...options,
+          hasAggregations: false,
+        }}
+        view={{
+          ...view,
+          toolbar: {
+            ...view.toolbar,
+            extraActions: obj.extraActions,
+          },
+        }}
+      />
+    );
+
+    // ensure the items aren't rendered until the menu is open
+    expect(obj.extraActions).not.toHaveBeenCalled();
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    expect(obj.extraActions).toHaveBeenCalledTimes(1);
+
+    // check an item is present with correct state
+    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+
+    // ensure that item isn't preset anymore
+    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    expect(screen.queryByRole('menuitem', { name: 'Edit something' })).toBeNull();
+    jest.resetAllMocks();
   });
 });

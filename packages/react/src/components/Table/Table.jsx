@@ -245,7 +245,7 @@ const propTypes = {
       multiSortModal: PropTypes.shape({
         /**
          * The anticipatedColumn is used to add the most recently click columnId to the UI of the
-         * MultiSort modal. This gives the user a better experience by pre-emptively adding the column
+         * MultiSort modal. This gives the user a better experience by preemptively adding the column
          * they clicked multi-sort on to the multisort modal without changing state. They still have to
          * click "Sort" to save it, or can click 'Cancel' or the 'X' to clear it.
          */
@@ -269,7 +269,7 @@ const propTypes = {
       onToggleFilter: PropTypes.func,
       onShowRowEdit: PropTypes.func,
       onToggleColumnSelection: PropTypes.func,
-      /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
+      /** Specify a callback for when the user clicks toolbar button to clear all filters. Receives a parameter of the current filter values for each column */
       onClearAllFilters: PropTypes.func,
       onCancelBatchAction: PropTypes.func,
       onApplyBatchAction: PropTypes.func,
@@ -291,7 +291,7 @@ const propTypes = {
       onChangeAdvancedFilter: PropTypes.func,
       /** fired when 'Toggle aggregations' is clicked in the overflow menu */
       onToggleAggregations: PropTypes.func,
-      /** fired with clicking an 'extraAction' in the table toolbar overflow menu */
+      /** fired when clicking an 'extraAction' in the table toolbar overflow menu */
       onApplyExtraAction: PropTypes.func,
     }),
     /** table wide actions */
