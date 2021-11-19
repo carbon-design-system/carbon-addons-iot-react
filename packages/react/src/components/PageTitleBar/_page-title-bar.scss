@@ -367,10 +367,14 @@
 
     .#{$prefix}--tabs--scrollable {
       padding-left: $spacing-05;
+      margin-left: -($spacing-07);
+      width: calc(100% + #{$spacing-10});
 
       [dir='rtl'] & {
         padding-left: 0;
         padding-right: $spacing-05;
+        margin-left: 0;
+        margin-right: -($spacing-07);
       }
 
       .#{$prefix}--tabs--scrollable__nav-link {
