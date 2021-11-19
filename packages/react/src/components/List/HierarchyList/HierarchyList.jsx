@@ -288,7 +288,9 @@ const HierarchyList = ({
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
-      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+      setEditModeSelectedIds(
+        handleEditModeSelect(items, editModeSelectedIds, id, parentId, lockedIds)
+      );
     } else if (selectedIds.includes(id) && hasDeselection) {
       setSelectedIds(selectedIds.filter((item) => item !== id));
       // else, no-op because the item can't be deselected
