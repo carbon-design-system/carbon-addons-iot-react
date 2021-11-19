@@ -1311,7 +1311,7 @@ using the `hasLoadMore` prop. This will append a "Load more" button at the end o
 button a call to the `onLoadMore` function will be made with the column id of the last item in the list. The `onLoadMore`
 function should
 
-1. Update the prop `loadingMoreIds` with an array containing the id just recieved.
+1. Update the prop `loadingMoreIds` with an array containing the id just received.
 2. Load more columns from the backend and when those columns have been loaded remove the id from `loadingMoreIds` and append the new data
    to the `availableColumns` prop. If needed also update the `groupMapping` prop with additional mappings.
 3. If all columns have been loaded then set the `hasLoadMore` prop to false.
