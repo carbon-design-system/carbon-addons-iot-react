@@ -2819,7 +2819,7 @@ export const WithColumnCustomizationModal = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const demoGroupExample = boolean('demo grouping example', true);
   const demoHasLoadMore = boolean('demo load more example (hasLoadMore)', true);
-  const pinnedColumnId = text('Pin column (pinnedColumnId)', 'string');
+  const demoPinnedColumn = boolean('demo pinned column (pinnedColumnId)', true);
   const hasVisibilityToggle = boolean('Allow toggling visibility (hasVisibilityToggle)', true);
 
   const smallDataSet = tableData.slice(0, 5);
@@ -2917,7 +2917,7 @@ export const WithColumnCustomizationModal = () => {
           action('onSave')(updatedOrdering, updatedColumns);
         }}
         open={showModal}
-        pinnedColumnId={pinnedColumnId}
+        pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
       />
     </>
   );

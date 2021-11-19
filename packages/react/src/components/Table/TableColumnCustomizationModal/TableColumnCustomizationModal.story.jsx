@@ -79,6 +79,7 @@ export default {
 export const PlaygroundWithKnobs = () => {
   const hasVisibilityToggle = boolean('hasVisibilityToggle', false);
   const demoGroupMapping = boolean('demo column groups', false);
+  const demoPinnedColumn = boolean('demo pinned column (pinnedColumnId)', true);
 
   return (
     <TableColumnCustomizationModal
@@ -92,7 +93,7 @@ export const PlaygroundWithKnobs = () => {
       onReset={action('onReset')}
       onSave={action('onSave')}
       open={boolean('open', true)}
-      pinnedColumnId={text('pinnedColumnId', '')}
+      pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
       i18n={{
         availableColumnsLabel: text('i18.availableColumnsLabel', 'Available columns'),
         cancelButtonLabel: text('i18.cancelButtonLabel', 'Cancel'),
