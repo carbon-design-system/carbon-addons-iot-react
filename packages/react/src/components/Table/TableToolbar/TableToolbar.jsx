@@ -265,13 +265,16 @@ const TableToolbar = ({
           data-testid={`${testID || testId}-toolbar-overflow-menu-item-${action.id}`}
           itemText={action.itemText}
           key={`table-aggregations-overflow-item-${action.id}`}
-          onClick={() => onApplyExtraAction(action)}
+          onClick={() => {
+            trackOpenState();
+            onApplyExtraAction(action);
+          }}
           disabled={isDisabled || action.disabled}
           isDivider={action.isDivider}
           isDelete={action.isDelete}
         />
       ));
-  }, [extraActions, isDisabled, onApplyExtraAction, testID, testId]);
+  }, [extraActions, isDisabled, onApplyExtraAction, testID, testId, trackOpenState]);
 
   return (
     <CarbonTableToolbar
@@ -485,7 +488,10 @@ const TableToolbar = ({
                   // wrapping in function to prevent error in netlify storybook deploys.
                   // When passing the event directly to the storybook action it throws an iframe access
                   // error. This might a temporary issue and can be removed later.
-                  onClick={() => onToggleAggregations()}
+                  onClick={() => {
+                    trackOpenState();
+                    onToggleAggregations();
+                  }}
                   disabled={isDisabled}
                 />
               )}

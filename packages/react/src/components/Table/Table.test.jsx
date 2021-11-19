@@ -2617,11 +2617,6 @@ describe('Table', () => {
                 itemText: 'Hide something',
               },
               {
-                id: 'divider',
-                itemText: '',
-                isDivider: true,
-              },
-              {
                 id: 'delete',
                 itemText: 'Delete something',
                 isDelete: true,
@@ -2681,11 +2676,6 @@ describe('Table', () => {
                 itemText: 'Hide something',
               },
               {
-                id: 'divider',
-                itemText: '',
-                isDivider: true,
-              },
-              {
                 id: 'delete',
                 itemText: 'Delete something',
                 isDelete: true,
@@ -2732,11 +2722,6 @@ describe('Table', () => {
           itemText: 'Hide something',
         },
         {
-          id: 'divider',
-          itemText: '',
-          isDivider: true,
-        },
-        {
           id: 'delete',
           itemText: 'Delete something',
           isDelete: true,
@@ -2780,9 +2765,21 @@ describe('Table', () => {
     expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
     expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
 
-    // ensure that item isn't preset anymore
+    userEvent.click(screen.getByRole('menuitem', { name: 'Delete something' }));
+    expect(onApplyExtraAction).toHaveBeenCalledWith({
+      id: 'delete',
+      itemText: 'Delete something',
+      isDelete: true,
+    });
+
+    // ensure state tracking is working and items are visible again when re-opening.
     userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
-    expect(screen.queryByRole('menuitem', { name: 'Edit something' })).toBeNull();
+    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+    userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+    expect(onApplyExtraAction).toHaveBeenCalledWith({
+      id: 'hide',
+      itemText: 'Hide something',
+    });
     jest.resetAllMocks();
   });
 });
