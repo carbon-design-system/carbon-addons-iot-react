@@ -2015,6 +2015,9 @@ Map {
                                   "disabled": Object {
                                     "type": "bool",
                                   },
+                                  "hasDivider": Object {
+                                    "type": "bool",
+                                  },
                                   "hidden": Object {
                                     "type": "bool",
                                   },
@@ -2025,9 +2028,76 @@ Map {
                                   "isDelete": Object {
                                     "type": "bool",
                                   },
-                                  "itemText": Object {
+                                  "labelText": Object {
                                     "isRequired": true,
                                     "type": "string",
+                                  },
+                                  "renderIcon": Object {
+                                    "args": Array [
+                                      Array [
+                                        Object {
+                                          "args": Array [
+                                            Object {
+                                              "height": Object {
+                                                "type": "string",
+                                              },
+                                              "svgData": Object {
+                                                "args": Array [
+                                                  Object {
+                                                    "type": Object {
+                                                      "args": Array [
+                                                        Array [
+                                                          "svg",
+                                                        ],
+                                                      ],
+                                                      "type": "oneOf",
+                                                    },
+                                                  },
+                                                ],
+                                                "isRequired": true,
+                                                "type": "shape",
+                                              },
+                                              "viewBox": Object {
+                                                "isRequired": true,
+                                                "type": "string",
+                                              },
+                                              "width": Object {
+                                                "type": "string",
+                                              },
+                                            },
+                                          ],
+                                          "type": "shape",
+                                        },
+                                        Object {
+                                          "args": Array [
+                                            Array [
+                                              "caretUp",
+                                              "caretDown",
+                                              "edit",
+                                              "close",
+                                              "checkmark",
+                                              "warning",
+                                              "arrowUp",
+                                              "arrowDown",
+                                              "user",
+                                              "info",
+                                              "help",
+                                            ],
+                                          ],
+                                          "type": "oneOf",
+                                        },
+                                        Object {
+                                          "type": "node",
+                                        },
+                                        Object {
+                                          "type": "object",
+                                        },
+                                        Object {
+                                          "type": "func",
+                                        },
+                                      ],
+                                    ],
+                                    "type": "oneOfType",
                                   },
                                 },
                               ],
@@ -4545,6 +4615,9 @@ Map {
                             "disabled": Object {
                               "type": "bool",
                             },
+                            "hasDivider": Object {
+                              "type": "bool",
+                            },
                             "hidden": Object {
                               "type": "bool",
                             },
@@ -4555,9 +4628,76 @@ Map {
                             "isDelete": Object {
                               "type": "bool",
                             },
-                            "itemText": Object {
+                            "labelText": Object {
                               "isRequired": true,
                               "type": "string",
+                            },
+                            "renderIcon": Object {
+                              "args": Array [
+                                Array [
+                                  Object {
+                                    "args": Array [
+                                      Object {
+                                        "height": Object {
+                                          "type": "string",
+                                        },
+                                        "svgData": Object {
+                                          "args": Array [
+                                            Object {
+                                              "type": Object {
+                                                "args": Array [
+                                                  Array [
+                                                    "svg",
+                                                  ],
+                                                ],
+                                                "type": "oneOf",
+                                              },
+                                            },
+                                          ],
+                                          "isRequired": true,
+                                          "type": "shape",
+                                        },
+                                        "viewBox": Object {
+                                          "isRequired": true,
+                                          "type": "string",
+                                        },
+                                        "width": Object {
+                                          "type": "string",
+                                        },
+                                      },
+                                    ],
+                                    "type": "shape",
+                                  },
+                                  Object {
+                                    "args": Array [
+                                      Array [
+                                        "caretUp",
+                                        "caretDown",
+                                        "edit",
+                                        "close",
+                                        "checkmark",
+                                        "warning",
+                                        "arrowUp",
+                                        "arrowDown",
+                                        "user",
+                                        "info",
+                                        "help",
+                                      ],
+                                    ],
+                                    "type": "oneOf",
+                                  },
+                                  Object {
+                                    "type": "node",
+                                  },
+                                  Object {
+                                    "type": "object",
+                                  },
+                                  Object {
+                                    "type": "func",
+                                  },
+                                ],
+                              ],
+                              "type": "oneOfType",
                             },
                           },
                         ],
