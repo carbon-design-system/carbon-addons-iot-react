@@ -38,7 +38,7 @@ export const ListBuilderItemPropTypes = {
 
 const propTypes = {
   /** callback used to limit which items that should get drop targets rendered.
-   * recieves the id of the item that is being dragged and returns a list of ids. */
+   * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
   // TODO: remove deprecated testID in v3.
   // eslint-disable-next-line react/require-default-props
