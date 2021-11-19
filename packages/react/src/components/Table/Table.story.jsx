@@ -5,7 +5,7 @@ import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
 import { spacing03 } from '@carbon/layout';
-import { Add20, TrashCan16 } from '@carbon/icons-react';
+import { Add20, TrashCan16, ViewOff16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
@@ -559,6 +559,32 @@ export const initialState = {
   },
 };
 
+const tableToolbarActions = [
+  {
+    id: 'edit',
+    labelText: 'Edit',
+    renderIcon: 'edit',
+    disabled: true,
+  },
+  {
+    id: 'toggle',
+    labelText: 'Toggle something',
+    renderIcon: ViewOff16,
+  },
+  {
+    id: 'delete',
+    labelText: 'Delete',
+    isDelete: true,
+    hasDivider: true,
+    renderIcon: () => <TrashCan16 />,
+  },
+  {
+    id: 'hidden',
+    labelText: 'Hidden',
+    hidden: true,
+  },
+];
+
 export default {
   title: '1 - Watson IoT/Table/Table',
 
@@ -691,27 +717,7 @@ export const BasicDumbTable = () => {
         toolbar: {
           activeBar: hasColumnSelection || hasColumnSelectionConfig ? 'column' : undefined,
           isDisabled: boolean('Disable the table toolbar (view.toolbar.isDisabled)', false),
-          extraActions: [
-            {
-              id: 'edit',
-              itemText: 'Edit',
-              disabled: true,
-            },
-            {
-              id: 'toggle',
-              itemText: 'Toggle something',
-            },
-            {
-              id: 'delete',
-              itemText: 'Delete',
-              isDelete: true,
-            },
-            {
-              id: 'hidden',
-              itemText: 'Hidden',
-              hidden: true,
-            },
-          ],
+          extraActions: tableToolbarActions,
         },
         table: {
           loadingState: {
@@ -2050,27 +2056,7 @@ export const WithFilters = () => {
         },
         toolbar: {
           activeBar: 'filter',
-          extraActions: [
-            {
-              id: 'edit',
-              itemText: 'Edit',
-              disabled: true,
-            },
-            {
-              id: 'toggle',
-              itemText: 'Toggle something',
-            },
-            {
-              id: 'delete',
-              itemText: 'Delete',
-              isDelete: true,
-            },
-            {
-              id: 'hidden',
-              itemText: 'Hidden',
-              hidden: true,
-            },
-          ],
+          extraActions: tableToolbarActions,
           customToolbarContent: (
             <div style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}>
               custom content

@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import merge from 'lodash/merge';
-import { ArrowRight16 } from '@carbon/icons-react';
+import { ArrowRight16, ViewOff16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
@@ -2578,208 +2578,238 @@ describe('Table', () => {
     jest.resetAllMocks();
   });
 
-  it('should allow other actions to be passed to the overflow menu when using aggregations', async () => {
-    jest
-      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
-      .mockImplementation(() => ({ width: 100, height: 100 }));
+  describe('extraActions in toolbar', () => {
+    const extraActions = [
+      {
+        id: 'edit',
+        labelText: 'Edit something',
+        disabled: true,
+      },
+      {
+        id: 'hide',
+        labelText: 'Hide something',
+        renderIcon: ViewOff16,
+        hasDivider: true,
+      },
+      {
+        id: 'delete',
+        labelText: 'Delete something',
+        isDelete: true,
+      },
+      {
+        id: 'hidden',
+        labelText: 'Hidden option',
+        hidden: true,
+      },
+    ];
     const onApplyExtraAction = jest.fn();
-    render(
-      <Table
-        columns={tableColumns}
-        data={tableData.slice(0, 1)}
-        expandedData={expandedData}
-        actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
-        options={{
-          ...options,
-          hasAggregations: true,
-        }}
-        view={{
-          ...view,
-          aggregations: {
-            label: 'Total: ',
-            columns: [
-              {
-                id: 'number',
-                value: 100000,
-              },
-            ],
-          },
-          toolbar: {
-            ...view.toolbar,
-            extraActions: [
-              {
-                id: 'edit',
-                itemText: 'Edit something',
-                disabled: true,
-              },
-              {
-                id: 'hide',
-                itemText: 'Hide something',
-              },
-              {
-                id: 'delete',
-                itemText: 'Delete something',
-                isDelete: true,
-              },
-              {
-                id: 'hidden',
-                itemText: 'Hidden option',
-                hidden: true,
-              },
-            ],
-          },
-        }}
-      />
-    );
 
-    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
-    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
-    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
-    expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
-    expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
-    expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
-    expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
-      `${prefix}--overflow-menu-options__option--danger`
-    );
-    userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
-    expect(onApplyExtraAction).toHaveBeenCalledWith({ id: 'hide', itemText: 'Hide something' });
-    jest.resetAllMocks();
-  });
-
-  it('should add items to the extraActions overflow menu when aggregations are not used', async () => {
-    jest
-      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
-      .mockImplementation(() => ({ width: 100, height: 100 }));
-    const onApplyExtraAction = jest.fn();
-    render(
-      <Table
-        columns={tableColumns}
-        data={tableData.slice(0, 1)}
-        expandedData={expandedData}
-        actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
-        options={{
-          ...options,
-          hasAggregations: false,
-        }}
-        view={{
-          ...view,
-          toolbar: {
-            ...view.toolbar,
-            extraActions: [
-              {
-                id: 'edit',
-                itemText: 'Edit something',
-                disabled: true,
-              },
-              {
-                id: 'hide',
-                itemText: 'Hide something',
-              },
-              {
-                id: 'delete',
-                itemText: 'Delete something',
-                isDelete: true,
-              },
-              {
-                id: 'hidden',
-                itemText: 'Hidden option',
-                hidden: true,
-              },
-            ],
-          },
-        }}
-      />
-    );
-
-    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
-    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
-    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
-    expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
-    expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
-    expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
-    expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
-      `${prefix}--overflow-menu-options__option--danger`
-    );
-    userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
-    expect(onApplyExtraAction).toHaveBeenCalledWith({ id: 'hide', itemText: 'Hide something' });
-    jest.resetAllMocks();
-  });
-
-  it('should allow dynamically creating the extraActions from a callback', async () => {
-    jest
-      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
-      .mockImplementation(() => ({ width: 100, height: 100 }));
-    const onApplyExtraAction = jest.fn();
-    const obj = {
-      extraActions: () => [
-        {
-          id: 'edit',
-          itemText: 'Edit something',
-          disabled: true,
-        },
-        {
-          id: 'hide',
-          itemText: 'Hide something',
-        },
-        {
-          id: 'delete',
-          itemText: 'Delete something',
-          isDelete: true,
-        },
-        {
-          id: 'hidden',
-          itemText: 'Hidden option',
-          hidden: true,
-        },
-      ],
-    };
-
-    jest.spyOn(obj, 'extraActions');
-
-    render(
-      <Table
-        columns={tableColumns}
-        data={tableData.slice(0, 1)}
-        expandedData={expandedData}
-        actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
-        options={{
-          ...options,
-          hasAggregations: false,
-        }}
-        view={{
-          ...view,
-          toolbar: {
-            ...view.toolbar,
-            extraActions: obj.extraActions,
-          },
-        }}
-      />
-    );
-
-    // ensure the items aren't rendered until the menu is open
-    expect(obj.extraActions).not.toHaveBeenCalled();
-    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
-    expect(obj.extraActions).toHaveBeenCalledTimes(1);
-
-    // check an item is present with correct state
-    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
-    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
-
-    userEvent.click(screen.getByRole('menuitem', { name: 'Delete something' }));
-    expect(onApplyExtraAction).toHaveBeenCalledWith({
-      id: 'delete',
-      itemText: 'Delete something',
-      isDelete: true,
+    beforeEach(() => {
+      jest
+        .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+        .mockImplementation(() => ({ width: 100, height: 100 }));
     });
 
-    // ensure state tracking is working and items are visible again when re-opening.
-    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
-    expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
-    userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
-    expect(onApplyExtraAction).toHaveBeenCalledWith({
-      id: 'hide',
-      itemText: 'Hide something',
+    afterEach(() => {
+      jest.resetAllMocks();
     });
-    jest.resetAllMocks();
+
+    it('should allow other actions to be passed to the overflow menu when using aggregations', async () => {
+      render(
+        <Table
+          columns={tableColumns}
+          data={tableData.slice(0, 1)}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+          options={{
+            ...options,
+            hasAggregations: true,
+          }}
+          view={{
+            ...view,
+            aggregations: {
+              label: 'Total: ',
+              columns: [
+                {
+                  id: 'number',
+                  value: 100000,
+                },
+              ],
+            },
+            toolbar: {
+              ...view.toolbar,
+              extraActions,
+            },
+          }}
+        />
+      );
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+      expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+      expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+        `${prefix}--overflow-menu-options__option--danger`
+      );
+      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(onApplyExtraAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        hasDivider: true,
+        renderIcon: expect.anything(),
+      });
+    });
+
+    it('should add items to the extraActions overflow menu when aggregations are not used', async () => {
+      render(
+        <Table
+          columns={tableColumns}
+          data={tableData.slice(0, 1)}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              extraActions,
+            },
+          }}
+        />
+      );
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+      expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+      expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+        `${prefix}--overflow-menu-options__option--danger`
+      );
+      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(onApplyExtraAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        renderIcon: expect.anything(),
+        hasDivider: true,
+      });
+    });
+
+    it('should allow dynamically creating the extraActions from a callback', async () => {
+      const obj = {
+        extraActions: () => extraActions,
+      };
+
+      jest.spyOn(obj, 'extraActions');
+
+      render(
+        <Table
+          columns={tableColumns}
+          data={tableData.slice(0, 1)}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              extraActions: obj.extraActions,
+            },
+          }}
+        />
+      );
+
+      // ensure the items aren't rendered until the menu is open
+      expect(obj.extraActions).not.toHaveBeenCalled();
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(obj.extraActions).toHaveBeenCalledTimes(1);
+
+      // check an item is present with correct state
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+
+      userEvent.click(screen.getByRole('menuitem', { name: 'Delete something' }));
+      expect(onApplyExtraAction).toHaveBeenCalledWith({
+        id: 'delete',
+        labelText: 'Delete something',
+        isDelete: true,
+      });
+
+      // ensure state tracking is working and items are visible again when re-opening.
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(onApplyExtraAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        hasDivider: true,
+        renderIcon: expect.anything(),
+      });
+    });
+
+    it('should render icons given various renderIcon types', async () => {
+      render(
+        <Table
+          columns={tableColumns}
+          data={tableData.slice(0, 1)}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              extraActions: [
+                {
+                  id: 'string',
+                  renderIcon: 'warning',
+                  labelText: 'a-warning-label',
+                },
+                {
+                  id: 'off',
+                  renderIcon: () => <ViewOff16 aria-label="View off" />,
+                  labelText: 'View off',
+                },
+                {
+                  id: 'arrow-right',
+                  renderIcon: ArrowRight16,
+                  labelText: 'Arrow right',
+                },
+                {
+                  id: 'text',
+                  labelText: 'Just text',
+                },
+              ],
+            },
+          }}
+        />
+      );
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'a-warning-label' })).toBeVisible();
+      expect(screen.getByLabelText('a-warning-label', { selector: 'svg' })).toBeVisible();
+      expect(screen.getByTitle('View off')).toBeVisible();
+      expect(screen.getByTitle('View off').firstChild).toBeVisible();
+      expect(screen.getByTitle('View off').firstChild).toHaveAttribute('aria-label', 'View off');
+      expect(screen.getByTitle('Arrow right')).toBeVisible();
+      expect(screen.getByTitle('Arrow right').firstChild).toBeVisible();
+      expect(screen.getByTitle('Arrow right').firstChild).toHaveAttribute(
+        'description',
+        'Arrow right'
+      );
+      expect(screen.getByRole('menuitem', { name: 'Just text' })).toBeVisible();
+    });
   });
 });
