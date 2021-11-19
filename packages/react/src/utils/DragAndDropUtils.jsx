@@ -111,12 +111,14 @@ export const moveItemsInList = (items, dragIds, dropId, location) => {
  * Returns every child id from the ListItem and their children's ids
  * @param {ListItem} listItem
  */
-const getAllChildIds = (listItem) => {
+const getAllChildIds = (listItem, lockedIds) => {
   let childIds = [];
 
   if (listItem.children) {
     listItem.children.forEach((child) => {
-      childIds.push(child.id);
+      if (!lockedIds.includes(child.id)) {
+        childIds.push(child.id);
+      }
 
       childIds = [...childIds, ...getAllChildIds(child)];
     });
@@ -132,21 +134,32 @@ const getAllChildIds = (listItem) => {
  * @param {string} id the id of an item that has been selected or deselected
  * @param {string} parentId the parent id of the selected or deselected item - if unselected, the parent is also unselected
  */
-export const handleEditModeSelect = (list, currentSelection, id, parentId) => {
+export const handleEditModeSelect = (list, currentSelection, id, parentId, lockedIds) => {
   let newSelection = [];
 
   if (currentSelection.filter((editId) => editId === id).length > 0) {
-    newSelection = currentSelection.filter((selected) => selected !== id && selected !== parentId);
+    const selectedItem = list.find((item) => item.id === id);
+    const hasChildren = selectedItem?.children?.length > 0 ?? false;
+    const selectedItemChildrenIds = hasChildren
+      ? selectedItem.children.map((child) => child.id)
+      : [];
+    newSelection = currentSelection.filter((selected) => {
+      const notCurrentOrParent = selected !== id && selected !== parentId;
+
+      return hasChildren
+        ? !selectedItemChildrenIds.includes(selected) && notCurrentOrParent
+        : notCurrentOrParent;
+    });
   } else {
     list.forEach((editItem) => {
       if (editItem.id === id) {
         newSelection.push(id);
 
-        newSelection = [...newSelection, ...getAllChildIds(editItem)];
+        newSelection = [...newSelection, ...getAllChildIds(editItem, lockedIds)];
       } else if (editItem.children) {
         newSelection = [
           ...newSelection,
-          ...handleEditModeSelect(editItem.children, currentSelection, id, parentId),
+          ...handleEditModeSelect(editItem.children, currentSelection, id, parentId, lockedIds),
         ];
       }
 

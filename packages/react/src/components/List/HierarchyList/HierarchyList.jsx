@@ -288,7 +288,9 @@ const HierarchyList = ({
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
-      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+      setEditModeSelectedIds(
+        handleEditModeSelect(items, editModeSelectedIds, id, parentId, lockedIds)
+      );
     } else if (selectedIds.includes(id) && hasDeselection) {
       setSelectedIds(selectedIds.filter((item) => item !== id));
       // else, no-op because the item can't be deselected
@@ -313,31 +315,28 @@ const HierarchyList = ({
     cancelMoveClicked();
   };
 
-  useEffect(
-    () => {
-      // Expand the parent elements of the defaultSelectedId
-      if (defaultSelectedId) {
-        const tempFilteredItems = searchForNestedItemIds(
-          itemsStrippedOfNodeElements,
-          defaultSelectedId
-        );
-        const tempExpandedIds = [...expandedIds];
-        // Expand the categories that have found results
-        tempFilteredItems.forEach((categoryItem) => {
-          tempExpandedIds.push(categoryItem.id);
-        });
-        setExpandedIds(tempExpandedIds);
-
-        /* istanbul ignore else */
-        if (!isEqual(selectedIds, [defaultSelectedId])) {
-          // If the defaultSelectedId prop is updated from the outside, we need to use it
-          setSelected(defaultSelectedId);
-        }
-      }
-    },
+  useEffect(() => {
+    // Expand the parent elements of the defaultSelectedId
+    if (defaultSelectedId) {
+      const tempFilteredItems = searchForNestedItemIds(
+        itemsStrippedOfNodeElements,
+        defaultSelectedId
+      );
+      const tempExpandedIds = [...expandedIds];
+      // Expand the categories that have found results
+      tempFilteredItems.forEach((categoryItem) => {
+        tempExpandedIds.push(categoryItem.id);
+      });
+      setExpandedIds(tempExpandedIds);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultSelectedId, itemsStrippedOfNodeElements]
-  );
+  }, [defaultSelectedId, itemsStrippedOfNodeElements]);
+
+  useEffect(() => {
+    // If the defaultSelectedId prop is updated from the outside, we need to use it
+    setSelected(defaultSelectedId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultSelectedId]);
 
   const numberOfItems = filteredItems.length;
   let rowsPerPage;
