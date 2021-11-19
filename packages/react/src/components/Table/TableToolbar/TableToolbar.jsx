@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Column20,
@@ -7,12 +7,14 @@ import {
   Edit20,
   OverflowMenuVertical20,
 } from '@carbon/icons-react';
-import { DataTable, Tooltip, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+import { DataTable, Tooltip } from 'carbon-components-react';
 import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 import pick from 'lodash/pick';
 import { useLangDirection } from 'use-lang-direction';
 
+import { OverflowMenuItem } from '../../OverflowMenuItem';
+import { OverflowMenu } from '../../OverflowMenu';
 import Button from '../../Button';
 import deprecate from '../../../internal/deprecate';
 import {
@@ -31,6 +33,7 @@ import {
 } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { RuleGroupPropType } from '../../RuleBuilder/RuleBuilderPropTypes';
+import useDynamicOverflowMenuItems from '../../../hooks/useDynamicOverflowMenuItems';
 
 import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout';
 import TableToolbarSVGButton from './TableToolbarSVGButton';
@@ -151,7 +154,7 @@ const propTypes = {
       PropTypes.shape({
         /** Unique id for particular filter */
         filterId: PropTypes.string.isRequired,
-        /** Text for main tilte of page */
+        /** Text for main title of page */
         filterTitleText: PropTypes.string.isRequired,
         filterRules: RuleGroupPropType.isRequired,
       })
@@ -242,39 +245,14 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
-  const [isOpen, setIsOpen] = useState(false);
 
-  const trackOpenState = useCallback(() => {
-    setIsOpen((prev) => !prev);
-  }, []);
-
-  /**
-   * allow dynamically rendering the extra items from a callback when the overflow menu is opened.
-   */
-  const renderExtraActions = useCallback(() => {
-    const actions = typeof extraActions === 'function' ? extraActions() : extraActions;
-
-    if (!actions?.length) {
-      return null;
-    }
-
-    return actions
-      .filter(({ hidden }) => hidden !== true)
-      .map((action) => (
-        <OverflowMenuItem
-          data-testid={`${testID || testId}-toolbar-overflow-menu-item-${action.id}`}
-          itemText={action.itemText}
-          key={`table-aggregations-overflow-item-${action.id}`}
-          onClick={() => {
-            trackOpenState();
-            onApplyExtraAction(action);
-          }}
-          disabled={isDisabled || action.disabled}
-          isDivider={action.isDivider}
-          isDelete={action.isDelete}
-        />
-      ));
-  }, [extraActions, isDisabled, onApplyExtraAction, testID, testId, trackOpenState]);
+  const [isOpen, setIsOpen, renderExtraActions] = useDynamicOverflowMenuItems({
+    actions: extraActions,
+    className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
+    isDisabled,
+    onClick: onApplyExtraAction,
+    testId: testID || testId,
+  });
 
   return (
     <CarbonTableToolbar
@@ -477,19 +455,16 @@ const TableToolbar = ({
               onClick={(e) => e.stopPropagation()}
               renderIcon={OverflowMenuVertical20}
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
-              onOpen={trackOpenState}
-              onClose={trackOpenState}
+              onOpen={() => setIsOpen(true)}
+              onClose={() => setIsOpen(false)}
             >
               {hasAggregations && (
                 <OverflowMenuItem
                   data-testid={`${testID || testId}-toolbar-overflow-menu-item-aggregations`}
                   itemText={i18n.toggleAggregations}
                   key="table-aggregations-overflow-item"
-                  // wrapping in function to prevent error in netlify storybook deploys.
-                  // When passing the event directly to the storybook action it throws an iframe access
-                  // error. This might a temporary issue and can be removed later.
                   onClick={() => {
-                    trackOpenState();
+                    setIsOpen(false);
                     onToggleAggregations();
                   }}
                   disabled={isDisabled}
