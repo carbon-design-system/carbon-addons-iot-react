@@ -339,11 +339,26 @@ export const TableExtraActionsPropType = PropTypes.oneOfType([
       /** the item is displayed, but disabled */
       disabled: PropTypes.bool,
       /** the text for the option */
-      itemText: PropTypes.string.isRequired,
+      labelText: PropTypes.string.isRequired,
       /** filters out the option so it isn't displayed */
       hidden: PropTypes.bool,
       /** displays the option in red */
       isDelete: PropTypes.bool,
+      /** the icon to render for this action */
+      renderIcon: PropTypes.oneOfType([
+        PropTypes.shape({
+          width: PropTypes.string,
+          height: PropTypes.string,
+          viewBox: PropTypes.string.isRequired,
+          svgData: SvgPropType.isRequired,
+        }),
+        PropTypes.oneOf(bundledIconNames),
+        PropTypes.node,
+        PropTypes.object,
+        PropTypes.func,
+      ]),
+      /** show a divider above this item */
+      hasDivider: PropTypes.bool,
     })
   ),
 ]);
