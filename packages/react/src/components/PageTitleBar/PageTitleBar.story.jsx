@@ -100,6 +100,7 @@ export const Base = () => {
             <StatefulTable {...initialState} data={initialState.data.slice(0, 5)} />
           </div>
         }
+        stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
       />
     </div>
   );
@@ -121,6 +122,7 @@ export const WithTooltipDescriptionWithNode = () => (
       editable={boolean('editable', false)}
       isLoading={boolean('isLoading', false)}
       forceContentOutside={boolean('forceContentOutside', false)}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
     />
   </div>
 );
@@ -137,6 +139,7 @@ export const WithStatusDescriptionAndCrumbs = () => (
       })}
       collapsed={boolean('collapse description', false)}
       headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'STATIC')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
     />
   </div>
 );
@@ -154,6 +157,7 @@ export const WithEditableTitleBar = () => (
       collapsed={boolean('collapse description', false)}
       editable={boolean('editable', true)}
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
     />
   </div>
 );
@@ -215,6 +219,7 @@ export const WithSelect = () => (
         </div>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
     />
   </div>
 );
@@ -291,6 +296,7 @@ export const WithEverything = () => (
         </Tabs>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
     />
   </div>
 );
@@ -332,6 +338,7 @@ export const WithCondensedHeader = () => (
         </div>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
     />
   </div>
 );
@@ -351,6 +358,7 @@ export const WithCustomRenderFunction = () => (
         display: 'select',
       })}
       extraContent={commonPageTitleBarProps.extraContent}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
     />
   </div>
 );
@@ -409,6 +417,7 @@ export const WithDynamicScrolling = () => (
         </div>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
     />
   </div>
 );
@@ -459,27 +468,26 @@ export const WithDynamicScrollingAndTabs = () => (
         </div>
       }
       content={
-        <div style={{ marginLeft: '-16px', marginRight: '-16px' }}>
-          <Tabs>
-            <Tab label="Tab 1">
-              <div style={{ height: '100rem', marginTop: '-16px' }}>
-                <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
-              </div>
-            </Tab>
-            <Tab label="Tab 2">
-              <div style={{ height: '100rem', marginTop: '-16px' }}>
-                <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
-              </div>
-            </Tab>
-            <Tab label="Tab 3">
-              <div style={{ height: '100rem', marginTop: '-16px' }}>
-                <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
-              </div>
-            </Tab>
-          </Tabs>
-        </div>
+        <Tabs>
+          <Tab label="Tab 1">
+            <div style={{ height: '100rem', marginTop: '-16px' }}>
+              <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
+            </div>
+          </Tab>
+          <Tab label="Tab 2">
+            <div style={{ height: '100rem', marginTop: '-16px' }}>
+              <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
+            </div>
+          </Tab>
+          <Tab label="Tab 3">
+            <div style={{ height: '100rem', marginTop: '-16px' }}>
+              <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
+            </div>
+          </Tab>
+        </Tabs>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', true)}
     />
   </div>
 );
