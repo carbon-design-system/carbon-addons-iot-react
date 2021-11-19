@@ -1,6 +1,5 @@
 import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { ListItem } from 'carbon-components-angular';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ai-rule',
@@ -25,7 +24,7 @@ import { Observable } from 'rxjs';
         [(ngModel)]="rule.columnId"
         value="id"
       >
-        <ibm-dropdown-list [items]="columns"></ibm-dropdown-list>
+        <ibm-dropdown-list [items]="getColumns()"></ibm-dropdown-list>
       </ibm-dropdown>
       <ibm-dropdown
         theme="light"
@@ -33,9 +32,21 @@ import { Observable } from 'rxjs';
         [(ngModel)]="rule.operand"
         value="id"
       >
-        <ibm-dropdown-list [items]="columnOperands"></ibm-dropdown-list>
+        <ibm-dropdown-list [items]="getColumnOperands()"></ibm-dropdown-list>
       </ibm-dropdown>
-      <input ibmText theme="light" placeholder="Enter a value" [(ngModel)]="rule.value" />
+      <input
+        *ngIf="!hasTemplate()"
+        ibmText
+        theme="light"
+        placeholder="Enter a value"
+        [(ngModel)]="rule.value"
+      />
+      <ng-template
+        *ngIf="hasTemplate()"
+        [ngTemplateOutlet]="getTemplate()"
+        [ngTemplateOutletContext]="{ $implicit: rule }"
+      >
+      </ng-template>
       <div class="iot--rule-builder-rule__actions">
         <button ibmButton="ghost" [iconOnly]="true" (click)="removeRule.emit(rule.id)">
           <svg class="bx--btn__icon" ibmIcon="subtract" size="32"></svg>
@@ -58,8 +69,8 @@ import { Observable } from 'rxjs';
   `,
 })
 export class RuleComponent {
-  @Input() columns: Array<ListItem> | Observable<Array<ListItem>> = [];
-  @Input() columnOperands: Array<ListItem> | Observable<Array<ListItem>> = [];
+  @Input() columns: Array<ListItem | any> = [];
+  @Input() columnOperands: Array<ListItem> = [];
 
   @Input() rule: any;
   @Output() ruleChange = new EventEmitter();
@@ -76,5 +87,41 @@ export class RuleComponent {
     return this.rule && this.rule.groupLogic && Array.isArray(this.rule.rules);
   }
 
+  dropdownColumns: Array<ListItem>;
+
   constructor() {}
+
+  hasTemplate() {
+    const selectedColumn = this.columns.find((column: any) => column.id === this.rule.columnId);
+    return !!selectedColumn?.valueTemplate;
+  }
+
+  getTemplate() {
+    const selectedColumn = this.columns.find((column: any) => column.id === this.rule.columnId);
+    return selectedColumn?.valueTemplate;
+  }
+
+  getColumnOperands() {
+    const selectedColumn = this.columns.find((column: any) => column.id === this.rule.columnId);
+
+    if (selectedColumn?.operands) {
+      return selectedColumn.operands;
+    }
+
+    return this.columnOperands;
+  }
+
+  getColumns() {
+    // we cache this because adding operands throws a "circular" error from cca
+    // and doing it on the fly makes ngModel not work
+    if (!this.dropdownColumns) {
+      this.dropdownColumns = this.columns.map((column) => ({
+        content: column.content,
+        id: column.id,
+        selected: column.selected,
+      }));
+    }
+
+    return this.dropdownColumns;
+  }
 }
