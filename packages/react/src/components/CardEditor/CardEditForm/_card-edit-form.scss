@@ -148,6 +148,11 @@
     &--item-dropdown {
       margin-right: $spacing-05;
       max-width: 5rem;
+
+      [dir='rtl'] & {
+        margin-right: 0;
+        margin-left: $spacing-05;
+      }
     }
 
     &--span {
@@ -175,11 +180,20 @@
       }
       .#{$prefix}--form-item input[type='text'] {
         min-width: 9.375rem;
+
+        [dir='rtl'] & {
+          min-width: 8.375rem;
+        }
       }
     }
     &--item-dropdown {
       margin-right: $spacing-05;
       max-width: 6rem;
+
+      [dir='rtl'] & {
+        margin-right: 0;
+        margin-left: $spacing-05;
+      }
     }
   }
 
