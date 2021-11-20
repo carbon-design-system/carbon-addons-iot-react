@@ -91,6 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -1517,6 +1518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -2988,6 +2990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -5588,6 +5591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -6818,6 +6822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -9270,6 +9275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -11556,6 +11562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -13362,6 +13369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -15507,6 +15515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
