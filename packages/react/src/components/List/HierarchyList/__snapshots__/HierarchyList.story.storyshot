@@ -2093,7 +2093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With OverflowMenu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With OverflowMenu and controlled expandedIds 1`] = `
 <div
   className="storybook-container"
 >
@@ -2206,17 +2206,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             className="iot--list-item"
           >
             <div
-              aria-label="Expand"
+              aria-label="Close"
               className="iot--list-item--expand-icon"
               data-testid="expand-icon"
               onClick={[Function]}
               onKeyPress={[Function]}
               role="button"
               tabIndex={0}
-              title="Expand"
+              title="Close"
             >
               <svg
-                aria-label="Expand-icon"
+                aria-label="Close-icon"
                 fill="currentColor"
                 focusable="false"
                 height={16}
@@ -2227,7 +2227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"
                 />
               </svg>
             </div>
@@ -2245,6 +2245,834 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                     title="Chicago White Sox"
                   >
                     Chicago White Sox
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    title="Leury Garcia"
+                  >
+                    Leury Garcia
+                  </div>
+                  <div
+                    className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      title="data-item-menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    title="Yoan Moncada"
+                  >
+                    Yoan Moncada
+                  </div>
+                  <div
+                    className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      title="data-item-menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    title="Jose Abreu"
+                  >
+                    Jose Abreu
+                  </div>
+                  <div
+                    className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      title="data-item-menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    title="Welington Castillo"
+                  >
+                    Welington Castillo
+                  </div>
+                  <div
+                    className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      title="data-item-menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    title="Eloy Jimenez"
+                  >
+                    Eloy Jimenez
+                  </div>
+                  <div
+                    className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      title="data-item-menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    title="Charlie Tilson"
+                  >
+                    Charlie Tilson
+                  </div>
+                  <div
+                    className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      title="data-item-menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    title="Tim Anderson"
+                  >
+                    Tim Anderson
+                  </div>
+                  <div
+                    className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      title="data-item-menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    title="Yolmer Sanchez"
+                  >
+                    Yolmer Sanchez
+                  </div>
+                  <div
+                    className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      title="data-item-menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "32px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    title="Dylan Covey"
+                  >
+                    Dylan Covey
+                  </div>
+                  <div
+                    className="iot--list-item--content--row-actions"
+                    onClick={[Function]}
+                    onKeyPress={[Function]}
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      title="data-item-menu"
+                      type="button"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>

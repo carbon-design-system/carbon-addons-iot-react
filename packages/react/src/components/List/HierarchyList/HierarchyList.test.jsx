@@ -872,6 +872,49 @@ describe('HierarchyList', () => {
     expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
   });
 
+  it('should force ids to be expanded when expandedIds is passed', () => {
+    const expectTeamToBeExpanded = (id) => {
+      expect(
+        within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).getByLabelText('Close')
+      ).toBeVisible();
+    };
+
+    const expectTeamNotToBeExpanded = (id) => {
+      expect(
+        within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).queryByLabelText('Close')
+      ).toBeNull();
+    };
+
+    const { rerender } = render(
+      <HierarchyList items={items} title="Force expanded ids" expandedIds={['Chicago White Sox']} />
+    );
+
+    expectTeamToBeExpanded('Chicago White Sox');
+
+    rerender(
+      <HierarchyList
+        items={items}
+        title="Force expanded ids"
+        expandedIds={['Chicago White Sox', 'New York Yankees']}
+      />
+    );
+
+    expectTeamToBeExpanded('Chicago White Sox');
+    expectTeamToBeExpanded('New York Yankees');
+
+    rerender(
+      <HierarchyList items={items} title="Force expanded ids" expandedIds={['Houston Astros']} />
+    );
+
+    expectTeamToBeExpanded('Houston Astros');
+    expectTeamNotToBeExpanded('Chicago White Sox');
+    expectTeamNotToBeExpanded('New York Yankees');
+
+    rerender(<HierarchyList items={items} title="Force expanded ids" expandedIds={[]} />);
+
+    expect(screen.queryByLabelText('Close')).toBeNull();
+  });
+
   describe('isVirtualList', () => {
     beforeEach(() => {
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
@@ -941,6 +984,64 @@ describe('HierarchyList', () => {
       expect(onSelect).toHaveBeenCalled();
       expect(screen.queryByText('9 items selected')).toBeNull();
       expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
+    });
+
+    it('should force ids to be expanded when expandedIds is passed', () => {
+      const expectTeamToBeExpanded = (id) => {
+        expect(
+          within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).getByLabelText('Close')
+        ).toBeVisible();
+      };
+
+      const expectTeamNotToBeExpanded = (id) => {
+        expect(
+          within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).queryByLabelText(
+            'Close'
+          )
+        ).toBeNull();
+      };
+
+      const { rerender } = render(
+        <HierarchyList
+          items={items}
+          title="Force expanded ids"
+          expandedIds={['Chicago White Sox']}
+          isVirtualList
+        />
+      );
+
+      expectTeamToBeExpanded('Chicago White Sox');
+
+      rerender(
+        <HierarchyList
+          items={items}
+          title="Force expanded ids"
+          expandedIds={['Chicago White Sox', 'New York Yankees']}
+          isVirtualList
+        />
+      );
+
+      expectTeamToBeExpanded('Chicago White Sox');
+      expectTeamToBeExpanded('New York Yankees');
+
+      rerender(
+        <HierarchyList
+          items={items}
+          title="Force expanded ids"
+          expandedIds={['Houston Astros']}
+          isVirtualList
+        />
+      );
+
+      expectTeamToBeExpanded('Houston Astros');
+      expectTeamNotToBeExpanded('Chicago White Sox');
+      expectTeamNotToBeExpanded('New York Yankees');
+
+      rerender(
+        <HierarchyList items={items} title="Force expanded ids" expandedIds={[]} isVirtualList />
+      );
+
+      expect(screen.queryByLabelText('Close')).toBeNull();
     });
   });
 

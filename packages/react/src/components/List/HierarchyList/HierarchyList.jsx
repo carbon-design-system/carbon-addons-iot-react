@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
@@ -30,6 +30,8 @@ const propTypes = {
     EditingStyle.SingleNesting,
     EditingStyle.MultipleNesting,
   ]),
+  /** an array of user controlled expanded ids */
+  expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** List heading */
   title: PropTypes.string,
   /** Determines whether the search function is enabled */
@@ -84,7 +86,7 @@ const propTypes = {
   /** Item ids to be pre-expanded */
   defaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
   /** callback used to limit which items that should get drop targets rendered.
-   * recieves the id of the item that is being dragged and returns a list of ids. */
+   * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
@@ -106,6 +108,7 @@ const propTypes = {
 
 const defaultProps = {
   editingStyle: null,
+  expandedIds: [],
   title: null,
   hasSearch: false,
   hasPagination: true,
@@ -225,6 +228,7 @@ const reduceItems = (items) =>
 
 const HierarchyList = ({
   editingStyle,
+  expandedIds: expandedIdsProp,
   title,
   hasSearch,
   hasPagination,
@@ -252,14 +256,15 @@ const HierarchyList = ({
   emptyState,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-
-  const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
+  const initialExpandedIds = expandedIdsProp?.length > 0 ? expandedIdsProp : defaultExpandedIds;
+  const [expandedIds, setExpandedIds] = useState(initialExpandedIds);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const isFirstRender = useRef(true);
   // these are used in filtering, and since items may contain nodes or react elements
   // we don't want to do equality checks against those, so we strip the items down to
   // the basics need for filtering checks and memoize them for use in the useEffect below
@@ -272,6 +277,14 @@ const HierarchyList = ({
       setCurrentPageNumber(1);
     }
   }, [items, previousItems]);
+
+  useEffect(() => {
+    if (!isFirstRender.current) {
+      setExpandedIds(expandedIdsProp);
+    }
+    isFirstRender.current = false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [expandedIdsProp]);
 
   const selectedItemRef = useCallback(
     (node) => {

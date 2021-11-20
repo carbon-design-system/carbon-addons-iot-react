@@ -5843,6 +5843,7 @@ Map {
       "defaultSelectedId": null,
       "editingStyle": null,
       "emptyState": "No list items to show",
+      "expandedIds": Array [],
       "getAllowedDropIds": null,
       "hasDeselection": true,
       "hasMultiSelect": false,
@@ -5924,6 +5925,14 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
       },
       "getAllowedDropIds": Object {
         "type": "func",

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select, boolean, object, number } from '@storybook/addon-knobs';
+import { text, select, boolean, object, number, array } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
@@ -79,6 +79,7 @@ export const StatefulListWithNestedSearching = () => (
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
     />
   </div>
 );
@@ -128,6 +129,7 @@ export const WithDefaultSelectedId = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
     />
   </div>
 );
@@ -198,11 +200,16 @@ export const WithOverflowMenu = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array(
+        'A comma separated list of expandedIds (expandedIds)',
+        ['Chicago White Sox'],
+        ','
+      )}
     />
   </div>
 );
 
-WithOverflowMenu.storyName = 'With OverflowMenu';
+WithOverflowMenu.storyName = 'With OverflowMenu and controlled expandedIds';
 
 export const WithNestedReorder = () => {
   const HierarchyListWithReorder = () => {
@@ -265,6 +272,7 @@ export const WithNestedReorder = () => {
           hasMultiSelect={boolean('hasMultiSelect', false)}
           isVirtualList={boolean('hasVirtualList', false)}
           lockedIds={object('lockedIds', ['New York Mets_Jeff McNeil'])}
+          expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
         />
       </div>
     );
@@ -332,6 +340,7 @@ export const WithNestedReorderingRestricted = () => {
           itemWillMove={(...args) => args[2] !== 'nested'}
           hasSearch={boolean('hasSearch', true)}
           isVirtualList={boolean('hasVirtualList', false)}
+          expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
           getAllowedDropIds={
             demoDropRestrictions
               ? (dragId) => {
@@ -406,6 +415,7 @@ export const WithDefaultExpandedIds = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
     />
   </div>
 );
@@ -491,6 +501,7 @@ export const WithMixedHierarchies = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
     />
   </div>
 );
@@ -541,6 +552,7 @@ export const WithSelectableCategories = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
     />
   </div>
 );
