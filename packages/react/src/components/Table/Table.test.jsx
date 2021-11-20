@@ -2582,7 +2582,7 @@ describe('Table', () => {
     render(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 10)}
+        data={tableData.slice(0, 9)}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -2594,13 +2594,14 @@ describe('Table', () => {
           pagination: {
             pageSize: 5,
             pageSizes: [5, 10],
-            maxPages: 3.4,
+            maxPages: 1.5,
           },
         }}
       />
     );
 
     expect(screen.getByText('1 of 2 pages')).toBeVisible();
-    expect(screen.getByText('1–5 of 10 items')).toBeVisible();
+    // 5 * 1.5 = 7.5, rounded is 8 items.
+    expect(screen.getByText('1–5 of 8 items')).toBeVisible();
   });
 });
