@@ -104,7 +104,7 @@ const defaultProps = {
   content: undefined,
   renderTitleFunction: undefined,
   headerMode: HEADER_MODES.STATIC,
-  stackBreadcrumbsWithTabs: true,
+  stackBreadcrumbsWithTabs: false,
   stickyHeaderOffset: 48, // default to 3rem to stick to the bottom of the suite header
   testId: 'page-title-bar',
 };
@@ -148,18 +148,35 @@ const PageTitleBar = ({
 
   const stickyHeaderOffset = `${stickyHeaderOffsetProp}px`; // convert to px for styling
 
+  /** We need the tabs to render outside the header so the tab stickiness will push away
+     the header stickiness naturally with the scroll.
+
+     We also want sticky mode to render outside so we can sticky the entire header element
+  */
+  const hasTabs =
+    (titleBarContent && titleBarContent.type === Tabs) ||
+    (titleBarContent &&
+      [].concat(titleBarContent.props.children).filter((e) => e?.type && e.type === Tabs).length >
+        0);
+
+  const renderContentOutside =
+    (hasTabs && headerMode === HEADER_MODES.DYNAMIC) ||
+    headerMode === HEADER_MODES.STICKY ||
+    forceContentOutside;
+
   const checkForActiveContent = useCallback(() => {
     // Detect when content area rises above sticky header offset, to set background
     // on tabs, which replaces existing sticky header. We add 40 to it, to account for
     // the height of the breadcrumbs (2.5rem) when stacking them together.
-    const activeThreshold = stackBreadcrumbsWithTabs
-      ? stickyHeaderOffsetProp + BREADCRUMB_CONDENSED_HEIGHT
-      : stickyHeaderOffsetProp;
+    const activeThreshold =
+      stackBreadcrumbsWithTabs && hasTabs
+        ? stickyHeaderOffsetProp + BREADCRUMB_CONDENSED_HEIGHT
+        : stickyHeaderOffsetProp;
 
     setContentActive(
       contentRef.current && contentRef.current.getBoundingClientRect().top <= activeThreshold
     );
-  }, [stackBreadcrumbsWithTabs, stickyHeaderOffsetProp]);
+  }, [hasTabs, stackBreadcrumbsWithTabs, stickyHeaderOffsetProp]);
 
   const checkToShowBreadcrumbs = useCallback(() => {
     const previousY = previousScrollY.current;
@@ -241,7 +258,7 @@ const PageTitleBar = ({
     }
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [checkForActiveContent, checkToShowBreadcrumbs, headerMode, stackBreadcrumbsWithTabs]);
+  }, [checkForActiveContent, headerMode, stackBreadcrumbsWithTabs]);
 
   useEffect(() => {
     setStackBreadcrumbsWithTabs(stackBreadcrumbsWithTabsProp);
@@ -262,7 +279,7 @@ const PageTitleBar = ({
             tooltipId="tooltip"
             renderIcon={Information16}
             iconDescription={tooltipIconDescription}
-            testId={`${testId}-tooltip`}
+            data-testid={`${testId}-tooltip`}
           >
             {typeof description === 'string' ? <p>{description}</p> : description}
           </Tooltip>
@@ -296,21 +313,6 @@ const PageTitleBar = ({
       testId,
     ]
   );
-
-  /** We need the tabs to render outside the header so the tab stickiness will push away
-     the header stickiness naturally with the scroll.
-
-     We also want sticky mode to render outside so we can sticky the entire header element
-  */
-  const hasTabs =
-    (titleBarContent && titleBarContent.type === Tabs) ||
-    (titleBarContent &&
-      [].concat(titleBarContent.props.children).filter((e) => e?.type && e.type === Tabs).length >
-        0);
-  const renderContentOutside =
-    (hasTabs && headerMode === HEADER_MODES.DYNAMIC) ||
-    headerMode === HEADER_MODES.STICKY ||
-    forceContentOutside;
 
   return (
     <div

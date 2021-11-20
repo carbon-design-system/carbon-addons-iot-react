@@ -397,7 +397,8 @@
 .page-title-bar--stack-tabs,
 .page-title-bar--stack-tabs-override-show,
 .page-title-bar--stack-tabs-override-hide {
-  &.page-title-bar--dynamic--after {
+  &.page-title-bar--dynamic--after,
+  &.page-title-bar--condensed-static {
     .page-title-bar-header {
       @include make-sticky();
       top: calc(var(--header-offset) * -1);
@@ -425,6 +426,6 @@
 
 .page-title-bar--stack-tabs-override-hide.page-title-bar--stack-tabs-override-hide {
   .page-title-bar-header {
-    top: -($spacing-10);
+    top: -(#{$spacing-10 + $spacing-05});
   }
 }
