@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     data-testid="navigation-bar"
   >
     <div
-      className="page-title-bar"
+      className="page-title-bar page-title-bar--stack-tabs"
       data-testid="page-title-bar"
       style={
         Object {
@@ -226,7 +226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     data-testid="navigation-bar"
   >
     <div
-      className="page-title-bar"
+      className="page-title-bar page-title-bar--stack-tabs"
       data-testid="page-title-bar"
       style={
         Object {
@@ -417,7 +417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     data-testid="navigation-bar"
   >
     <div
-      className="page-title-bar"
+      className="page-title-bar page-title-bar--stack-tabs"
       data-testid="page-title-bar"
       style={
         Object {
@@ -608,7 +608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
     data-testid="navigation-bar"
   >
     <div
-      className="page-title-bar"
+      className="page-title-bar page-title-bar--stack-tabs"
       data-testid="page-title-bar"
       style={
         Object {

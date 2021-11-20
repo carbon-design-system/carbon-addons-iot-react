@@ -12,7 +12,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="page-title-bar"
+      className="page-title-bar page-title-bar--stack-tabs"
       data-testid="stateful-tile-gallery-page-title-bar"
       style={
         Object {
@@ -1360,7 +1360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      className="page-title-bar"
+      className="page-title-bar page-title-bar--stack-tabs"
       data-testid="stateful-tile-gallery-page-title-bar"
       style={
         Object {

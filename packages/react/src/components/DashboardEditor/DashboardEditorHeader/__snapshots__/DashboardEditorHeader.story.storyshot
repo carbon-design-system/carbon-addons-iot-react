@@ -12,7 +12,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     }
   >
     <div
-      className="page-title-bar"
+      className="page-title-bar page-title-bar--stack-tabs"
       data-testid="dashboard-editor-header-page-title-bar"
       style={
         Object {
@@ -288,7 +288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     }
   >
     <div
-      className="page-title-bar"
+      className="page-title-bar page-title-bar--stack-tabs"
       data-testid="dashboard-editor-header-page-title-bar"
       style={
         Object {
