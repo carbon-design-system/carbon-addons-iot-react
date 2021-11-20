@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useState, useMemo, useRef } from 'react';
+import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import classnames from 'classnames';
 import { Information16, Edit16 } from '@carbon/icons-react';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
@@ -15,13 +15,15 @@ const HEADER_MODES = {
   CONDENSED: 'CONDENSED',
 };
 
+const BREADCRUMB_CONDENSED_HEIGHT = 40;
+
 const PageTitleBarPropTypes = {
   /** Title of the page  */
   title: PropTypes.node.isRequired,
   /** Details about what the page shows */
   description: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   /** How the header should react to scrolling */
-  headerMode: PropTypes.oneOf(Object.values(HEADER_MODES)),
+  headerMode: PropTypes.oneOf(['STATIC', 'STICKY', 'DYNAMIC', 'CONDENSED']),
   /** offset for the 'top' attribute on the sticky header. Number will be converted to px */
   stickyHeaderOffset: PropTypes.number,
 
@@ -74,6 +76,11 @@ const PageTitleBarPropTypes = {
   renderTitleFunction: PropTypes.func,
 
   testId: PropTypes.string,
+  /**
+   * In dynamic or condensed modes, when true keep both the breadcrumbs and tabs on the screen
+   * If false, only keep tabs after scrolling passed breadcrumbs
+   */
+  stackBreadcrumbsWithTabs: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -97,6 +104,7 @@ const defaultProps = {
   content: undefined,
   renderTitleFunction: undefined,
   headerMode: HEADER_MODES.STATIC,
+  stackBreadcrumbsWithTabs: true,
   stickyHeaderOffset: 48, // default to 3rem to stick to the bottom of the suite header
   testId: 'page-title-bar',
 };
@@ -119,6 +127,7 @@ const PageTitleBar = ({
   i18n: { editIconDescription, tooltipIconDescription },
   onEdit,
   tabs,
+  stackBreadcrumbsWithTabs: stackBreadcrumbsWithTabsProp,
   style,
   content,
   testId,
@@ -128,12 +137,43 @@ const PageTitleBar = ({
   const [condensed, setCondensed] = useState(headerMode === HEADER_MODES.CONDENSED);
   const [transitionProgress, setTransitionProgress] = useState(0);
   const [contentActive, setContentActive] = useState(false);
+  const [stackBreadcrumbsWithTabs, setStackBreadcrumbsWithTabs] = useState(
+    stackBreadcrumbsWithTabsProp
+  );
 
   const breadcrumbRef = useRef(null);
   const contentRef = useRef(null);
   const titleRef = useRef(null);
+  const previousScrollY = useRef(null);
 
   const stickyHeaderOffset = `${stickyHeaderOffsetProp}px`; // convert to px for styling
+
+  const checkForActiveContent = useCallback(() => {
+    // Detect when content area rises above sticky header offset, to set background
+    // on tabs, which replaces existing sticky header. We add 40 to it, to account for
+    // the height of the breadcrumbs (2.5rem) when stacking them together.
+    const activeThreshold = stackBreadcrumbsWithTabs
+      ? stickyHeaderOffsetProp + BREADCRUMB_CONDENSED_HEIGHT
+      : stickyHeaderOffsetProp;
+
+    setContentActive(
+      contentRef.current && contentRef.current.getBoundingClientRect().top <= activeThreshold
+    );
+  }, [stackBreadcrumbsWithTabs, stickyHeaderOffsetProp]);
+
+  const checkToShowBreadcrumbs = useCallback(() => {
+    const previousY = previousScrollY.current;
+    const currentY = window.scrollY;
+    if (!stackBreadcrumbsWithTabsProp && currentY < previousY - BREADCRUMB_CONDENSED_HEIGHT / 2) {
+      setStackBreadcrumbsWithTabs(true);
+    } else if (
+      !stackBreadcrumbsWithTabsProp &&
+      currentY > previousY + BREADCRUMB_CONDENSED_HEIGHT / 2
+    ) {
+      setStackBreadcrumbsWithTabs(false);
+    }
+    previousScrollY.current = window.scrollY;
+  }, [stackBreadcrumbsWithTabsProp]);
 
   useEffect(() => {
     const handleScroll = throttle(() => {
@@ -146,6 +186,7 @@ const PageTitleBar = ({
       if (breadcrumbRef.current && titleRef.current) {
         const breadcrumbDims = breadcrumbRef.current.getBoundingClientRect();
         const titleDims = titleRef.current.getBoundingClientRect();
+
         if (titleDims.top < breadcrumbDims.bottom) {
           isCondensed = true;
           const distanceLeftToGo = breadcrumbDims.top - titleDims.top;
@@ -159,20 +200,19 @@ const PageTitleBar = ({
           if (titleDims.top <= breadcrumbDims.top) {
             percentComplete = 1;
           }
-        } else {
+        } else if (window.scrollY < breadcrumbDims.bottom) {
           isCondensed = false;
           percentComplete = 0;
+        } else {
+          isCondensed = condensed;
+          percentComplete = transitionProgress;
         }
         setCondensed(isCondensed);
         setTransitionProgress(percentComplete);
       }
 
-      // Detect when content area rises above sticky header offset, to set background
-      // on tabs, which replaces existing sticky header
-      setContentActive(
-        contentRef.current &&
-          contentRef.current.getBoundingClientRect().top <= stickyHeaderOffsetProp
-      );
+      checkForActiveContent();
+      checkToShowBreadcrumbs();
     }, 50);
 
     if (headerMode === HEADER_MODES.DYNAMIC) {
@@ -181,7 +221,35 @@ const PageTitleBar = ({
     }
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [headerMode, stickyHeaderOffsetProp]);
+  }, [
+    checkForActiveContent,
+    condensed,
+    checkToShowBreadcrumbs,
+    headerMode,
+    stackBreadcrumbsWithTabs,
+    stickyHeaderOffsetProp,
+    transitionProgress,
+  ]);
+
+  useEffect(() => {
+    const handleScroll = throttle(() => {
+      checkForActiveContent();
+    }, 50);
+
+    if (stackBreadcrumbsWithTabs && headerMode === HEADER_MODES.CONDENSED) {
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [checkForActiveContent, checkToShowBreadcrumbs, headerMode, stackBreadcrumbsWithTabs]);
+
+  useEffect(() => {
+    setStackBreadcrumbsWithTabs(stackBreadcrumbsWithTabsProp);
+  }, [stackBreadcrumbsWithTabsProp]);
+
+  useEffect(() => {
+    setContentActive(false);
+  }, [headerMode]);
 
   const titleActions = useMemo(
     () => (
@@ -260,9 +328,22 @@ const PageTitleBar = ({
           headerMode === HEADER_MODES.DYNAMIC && condensed && transitionProgress === 1,
         'page-title-bar--dynamic': headerMode === HEADER_MODES.DYNAMIC,
         'page-title-bar--with-actions': upperActions && headerMode === HEADER_MODES.DYNAMIC,
+        'page-title-bar--stack-tabs': stackBreadcrumbsWithTabs,
+        'page-title-bar--stack-tabs-override-show':
+          headerMode === HEADER_MODES.DYNAMIC &&
+          stackBreadcrumbsWithTabs &&
+          !stackBreadcrumbsWithTabsProp,
+        'page-title-bar--stack-tabs-override-hide':
+          headerMode === HEADER_MODES.DYNAMIC &&
+          !stackBreadcrumbsWithTabs &&
+          !stackBreadcrumbsWithTabsProp,
       })}
       style={{
-        '--header-offset': stickyHeaderOffset,
+        '--header-offset':
+          stackBreadcrumbsWithTabs &&
+          (headerMode === HEADER_MODES.DYNAMIC || headerMode === HEADER_MODES.CONDENSED)
+            ? `${stickyHeaderOffsetProp + BREADCRUMB_CONDENSED_HEIGHT}px`
+            : stickyHeaderOffset,
         '--scroll-transition-progress':
           headerMode !== HEADER_MODES.DYNAMIC ? 1 : transitionProgress,
         ...style,
@@ -307,7 +388,12 @@ const PageTitleBar = ({
             ) : null}
             <div className="page-title-bar-header-right">{extraContent || rightContent}</div>
             {titleBarContent && !renderContentOutside ? (
-              <div className="page-title-bar-content" ref={contentRef}>
+              <div
+                className={classnames('page-title-bar-content', {
+                  'page-title-bar-content--active': contentActive,
+                })}
+                ref={contentRef}
+              >
                 {titleBarContent}
               </div>
             ) : null}

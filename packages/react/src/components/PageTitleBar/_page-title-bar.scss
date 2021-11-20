@@ -392,3 +392,39 @@
     }
   }
 }
+
+/* styles for sticky breadcrumbs and tabs */
+.page-title-bar--stack-tabs,
+.page-title-bar--stack-tabs-override-show,
+.page-title-bar--stack-tabs-override-hide {
+  &.page-title-bar--dynamic--after {
+    .page-title-bar-header {
+      @include make-sticky();
+      top: calc(var(--header-offset) * -1);
+    }
+  }
+
+  .page-title-bar-breadcrumb,
+  .page-title-bar-breadcrumb-bg,
+  .page-title-bar-header-right.page-title-bar-header-right {
+    top: 0;
+  }
+
+  &.page-title-bar--condensed-static {
+    .#{$prefix}--tabs--scrollable {
+      @include make-sticky();
+    }
+  }
+}
+
+.page-title-bar--stack-tabs-override-show.page-title-bar--stack-tabs-override-show {
+  .page-title-bar-header {
+    top: calc(var(--header-offset) * -1);
+  }
+}
+
+.page-title-bar--stack-tabs-override-hide.page-title-bar--stack-tabs-override-hide {
+  .page-title-bar-header {
+    top: -($spacing-10);
+  }
+}
