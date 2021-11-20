@@ -604,7 +604,7 @@ export const BasicDumbTable = () => {
   );
 
   const hasMultiSort = boolean(
-    'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
+    'Enables sorting the table by multiple dimensions (options.hasMultiSort)',
     false
   );
   return (
