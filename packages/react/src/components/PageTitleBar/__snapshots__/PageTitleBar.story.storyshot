@@ -19,7 +19,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--stack-tabs"
+        className="page-title-bar"
         data-testid="page-title-bar"
         style={
           Object {
@@ -4330,7 +4330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--stack-tabs"
+        className="page-title-bar"
         data-testid="page-title-bar"
         style={
           Object {
@@ -4864,11 +4864,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--condensed-static page-title-bar--stack-tabs"
+        className="page-title-bar page-title-bar--condensed-static"
         data-testid="page-title-bar"
         style={
           Object {
-            "--header-offset": "40px",
+            "--header-offset": "0px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -5148,7 +5148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--stack-tabs"
+        className="page-title-bar"
         data-testid="page-title-bar"
         style={
           Object {
@@ -5316,11 +5316,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic page-title-bar--stack-tabs"
+        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic page-title-bar--stack-tabs-override-hide"
         data-testid="page-title-bar"
         style={
           Object {
-            "--header-offset": "40px",
+            "--header-offset": "0px",
             "--scroll-transition-progress": 0,
           }
         }
@@ -5661,11 +5661,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic page-title-bar--stack-tabs"
+        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic page-title-bar--stack-tabs-override-hide"
         data-testid="page-title-bar"
         style={
           Object {
-            "--header-offset": "40px",
+            "--header-offset": "0px",
             "--scroll-transition-progress": 0,
           }
         }
@@ -6637,7 +6637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--stack-tabs"
+        className="page-title-bar"
         data-testid="page-title-bar"
         style={
           Object {
@@ -6737,11 +6737,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic page-title-bar--stack-tabs"
+        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic page-title-bar--stack-tabs-override-hide"
         data-testid="page-title-bar"
         style={
           Object {
-            "--header-offset": "40px",
+            "--header-offset": "0px",
             "--scroll-transition-progress": 0,
           }
         }
@@ -7050,7 +7050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--stack-tabs"
+        className="page-title-bar"
         data-testid="page-title-bar"
         style={
           Object {
@@ -7187,7 +7187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--stack-tabs"
+        className="page-title-bar"
         data-testid="page-title-bar"
         style={
           Object {

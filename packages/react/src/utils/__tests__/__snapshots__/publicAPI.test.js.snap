@@ -5730,7 +5730,7 @@ Map {
       "onEdit": null,
       "renderTitleFunction": undefined,
       "rightContent": undefined,
-      "stackBreadcrumbsWithTabs": true,
+      "stackBreadcrumbsWithTabs": false,
       "stickyHeaderOffset": 48,
       "style": null,
       "tabs": undefined,

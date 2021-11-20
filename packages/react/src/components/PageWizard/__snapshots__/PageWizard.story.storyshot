@@ -608,7 +608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 >
   <div>
     <div
-      className="page-title-bar page-title-bar--stack-tabs"
+      className="page-title-bar"
       data-testid="page-title-bar"
       style={
         Object {
@@ -1014,7 +1014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 >
   <div>
     <div
-      className="page-title-bar page-title-bar--stack-tabs"
+      className="page-title-bar"
       data-testid="page-title-bar"
       style={
         Object {
@@ -1477,7 +1477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 >
   <div>
     <div
-      className="page-title-bar page-title-bar--stack-tabs"
+      className="page-title-bar"
       data-testid="page-title-bar"
       style={
         Object {
@@ -2301,7 +2301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 >
   <div>
     <div
-      className="page-title-bar page-title-bar--stack-tabs"
+      className="page-title-bar"
       data-testid="page-title-bar"
       style={
         Object {
@@ -3309,7 +3309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 >
   <div>
     <div
-      className="page-title-bar page-title-bar--stack-tabs"
+      className="page-title-bar"
       data-testid="page-title-bar"
       style={
         Object {
