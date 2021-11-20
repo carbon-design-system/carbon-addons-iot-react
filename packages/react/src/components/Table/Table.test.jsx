@@ -2577,4 +2577,30 @@ describe('Table', () => {
     expect(screen.getByText('Total:')).toBeVisible();
     jest.resetAllMocks();
   });
+
+  it('should properly round maxPages to prevent decimals', async () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 10)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasPagination: true,
+        }}
+        view={{
+          ...view,
+          pagination: {
+            pageSize: 5,
+            pageSizes: [5, 10],
+            maxPages: 3.4,
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByText('1 of 2 pages')).toBeVisible();
+    expect(screen.getByText('1–5 of 10 items')).toBeVisible();
+  });
 });
