@@ -2051,7 +2051,13 @@ Map {
                                     "isRequired": true,
                                     "type": "string",
                                   },
+                                  "isActive": Object {
+                                    "type": "bool",
+                                  },
                                   "isDelete": Object {
+                                    "type": "bool",
+                                  },
+                                  "isOverflow": Object {
                                     "type": "bool",
                                   },
                                   "labelText": Object {
@@ -4732,7 +4738,13 @@ Map {
                               "isRequired": true,
                               "type": "string",
                             },
+                            "isActive": Object {
+                              "type": "bool",
+                            },
                             "isDelete": Object {
+                              "type": "bool",
+                            },
+                            "isOverflow": Object {
                               "type": "bool",
                             },
                             "labelText": Object {
