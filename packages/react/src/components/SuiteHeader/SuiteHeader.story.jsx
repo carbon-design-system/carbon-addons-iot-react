@@ -354,7 +354,7 @@ export const HeaderWithExtraContent = () => {
     <SuiteHeader
       suiteName="Application Suite"
       appName="Application Name"
-      extraContent={<Tag>Admin Mode</Tag>}
+      extraContent={<Tag size="sm">Admin Mode</Tag>}
       userDisplayName="Admin User"
       username="adminuser"
       routes={{
