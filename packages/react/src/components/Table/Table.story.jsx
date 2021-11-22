@@ -421,7 +421,7 @@ export const tableActions = {
     // since they won't be adding this prop to any of their components
     // can be readded in V3.
     // onToggleAggregations: action('onToggleAggregations'),
-    onApplyExtraAction: action('onApplyExtraAction'),
+    onApplyToolbarAction: action('onApplyToolbarAction'),
   },
   table: {
     onRowClicked: action('onRowClicked'),

@@ -417,7 +417,7 @@ export const defaultProps = (baseProps) => ({
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
-      onApplyExtraAction: defaultFunction('actions.toolbar.onApplyExtraAction'),
+      onApplyToolbarAction: defaultFunction('actions.toolbar.onApplyToolbarAction'),
       onRemoveAdvancedFilter: defaultFunction('actions.toolbar.onRemoveAdvancedFilter'),
       onCancelAdvancedFilter: defaultFunction('actions.toolbar.onCancelFilter'),
       onCreateAdvancedFilter: defaultFunction('actions.toolbar.onCreateAdvancedFilter'),
@@ -834,7 +834,7 @@ const Table = (props) => {
                 'onChangeAdvancedFilter',
                 'onRemoveAdvancedFilter',
                 'onToggleAdvancedFilter',
-                'onApplyExtraAction'
+                'onApplyToolbarAction'
               ),
               onToggleAggregations,
               onApplySearch: (value) => {

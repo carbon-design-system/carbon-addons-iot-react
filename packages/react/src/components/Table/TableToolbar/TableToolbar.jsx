@@ -114,7 +114,7 @@ const propTypes = {
     onShowRowEdit: PropTypes.func,
     onApplySearch: PropTypes.func,
     onDownloadCSV: PropTypes.func,
-    onApplyExtraAction: PropTypes.func,
+    onApplyToolbarAction: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -218,7 +218,7 @@ const TableToolbar = ({
     onCreateAdvancedFilter,
     onChangeAdvancedFilter,
     onToggleAdvancedFilter,
-    onApplyExtraAction,
+    onApplyToolbarAction,
   },
   tableState: {
     advancedFilterFlyoutOpen,
@@ -250,7 +250,7 @@ const TableToolbar = ({
     actions: toolbarActions,
     className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
     isDisabled,
-    onClick: onApplyExtraAction,
+    onClick: onApplyToolbarAction,
     testId: testID || testId,
   });
 
@@ -465,7 +465,7 @@ const TableToolbar = ({
                 description={action.labelText || action.iconDescription}
                 onClick={(e) => {
                   e.stopPropagation();
-                  onApplyExtraAction(action);
+                  onApplyToolbarAction(action);
                 }}
                 testId={`${tableId}-toolbar-actions-button-${action.id}`}
                 key={`${tableId}-toolbar-actions-button-${action.id}`}

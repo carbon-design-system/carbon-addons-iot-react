@@ -2611,7 +2611,7 @@ describe('Table', () => {
         isOverflow: true,
       },
     ];
-    const onApplyExtraAction = jest.fn();
+    const onApplyToolbarAction = jest.fn();
 
     beforeEach(() => {
       jest
@@ -2629,7 +2629,7 @@ describe('Table', () => {
           columns={tableColumns}
           data={tableData.slice(0, 1)}
           expandedData={expandedData}
-          actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
           options={{
             ...options,
             hasAggregations: true,
@@ -2654,7 +2654,7 @@ describe('Table', () => {
       );
       expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
       userEvent.click(screen.getByRole('button', { name: 'Do something' }));
-      expect(onApplyExtraAction).toHaveBeenCalledWith({
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'in-toolbar',
         labelText: 'Do something',
         renderIcon: expect.anything(),
@@ -2670,7 +2670,7 @@ describe('Table', () => {
         `${prefix}--overflow-menu-options__option--danger`
       );
       userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
-      expect(onApplyExtraAction).toHaveBeenCalledWith({
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'hide',
         labelText: 'Hide something',
         hasDivider: true,
@@ -2685,7 +2685,7 @@ describe('Table', () => {
           columns={tableColumns}
           data={tableData.slice(0, 1)}
           expandedData={expandedData}
-          actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
           options={{
             ...options,
             hasAggregations: false,
@@ -2702,7 +2702,7 @@ describe('Table', () => {
 
       expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
       userEvent.click(screen.getByRole('button', { name: 'Do something' }));
-      expect(onApplyExtraAction).toHaveBeenCalledWith({
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'in-toolbar',
         labelText: 'Do something',
         renderIcon: expect.anything(),
@@ -2718,7 +2718,7 @@ describe('Table', () => {
         `${prefix}--overflow-menu-options__option--danger`
       );
       userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
-      expect(onApplyExtraAction).toHaveBeenCalledWith({
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'hide',
         labelText: 'Hide something',
         renderIcon: expect.anything(),
@@ -2739,7 +2739,7 @@ describe('Table', () => {
           columns={tableColumns}
           data={tableData.slice(0, 1)}
           expandedData={expandedData}
-          actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
           options={{
             ...options,
             hasAggregations: false,
@@ -2758,7 +2758,7 @@ describe('Table', () => {
 
       expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
       userEvent.click(screen.getByRole('button', { name: 'Do something' }));
-      expect(onApplyExtraAction).toHaveBeenCalledWith({
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'in-toolbar',
         labelText: 'Do something',
         renderIcon: expect.anything(),
@@ -2773,7 +2773,7 @@ describe('Table', () => {
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
 
       userEvent.click(screen.getByRole('menuitem', { name: 'Delete something' }));
-      expect(onApplyExtraAction).toHaveBeenCalledWith({
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'delete',
         labelText: 'Delete something',
         isDelete: true,
@@ -2784,7 +2784,7 @@ describe('Table', () => {
       userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
       userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
-      expect(onApplyExtraAction).toHaveBeenCalledWith({
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'hide',
         labelText: 'Hide something',
         hasDivider: true,
@@ -2800,7 +2800,7 @@ describe('Table', () => {
           columns={tableColumns}
           data={tableData.slice(0, 1)}
           expandedData={expandedData}
-          actions={merge(mockActions, { toolbar: { onApplyExtraAction } })}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
           options={{
             ...options,
             hasAggregations: false,

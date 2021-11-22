@@ -570,7 +570,7 @@ Map {
         "toolbar": Object {
           "onApplyAdvancedFilter": [Function],
           "onApplyBatchAction": [Function],
-          "onApplyExtraAction": [Function],
+          "onApplyToolbarAction": [Function],
           "onCancelAdvancedFilter": [Function],
           "onCancelBatchAction": [Function],
           "onChangeAdvancedFilter": [Function],
@@ -4072,10 +4072,10 @@ Map {
             "onApplyBatchAction": Object {
               "type": "func",
             },
-            "onApplyExtraAction": Object {
+            "onApplySearch": Object {
               "type": "func",
             },
-            "onApplySearch": Object {
+            "onApplyToolbarAction": Object {
               "type": "func",
             },
             "onCancelAdvancedFilter": Object {
