@@ -29,7 +29,7 @@ const useDynamicOverflowMenuItems = ({ className, actions, testId, isDisabled, o
     }
 
     return actionsArray
-      .filter(({ hidden }) => hidden !== true)
+      .filter(({ hidden, isOverflow }) => hidden !== true && isOverflow === true)
       .map((action) => (
         <OverflowMenuItem
           data-testid={`${testId}-toolbar-overflow-menu-item-${action.id}`}

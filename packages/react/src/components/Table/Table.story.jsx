@@ -565,23 +565,21 @@ const tableToolbarActions = [
     labelText: 'Edit',
     renderIcon: 'edit',
     disabled: true,
-  },
-  {
-    id: 'toggle',
-    labelText: 'Toggle something',
-    renderIcon: ViewOff16,
+    isOverflow: true,
   },
   {
     id: 'delete',
     labelText: 'Delete',
     isDelete: true,
     hasDivider: true,
+    isOverflow: true,
     renderIcon: () => <TrashCan16 />,
   },
   {
     id: 'hidden',
     labelText: 'Hidden',
     hidden: true,
+    isOverflow: true,
   },
 ];
 
@@ -2056,7 +2054,14 @@ export const WithFilters = () => {
         },
         toolbar: {
           activeBar: 'filter',
-          toolbarActions: tableToolbarActions,
+          toolbarActions: [
+            ...tableToolbarActions,
+            {
+              id: 'toggle',
+              labelText: 'toolbarAction shown in toolbar instead of overflow',
+              renderIcon: ViewOff16,
+            },
+          ],
           customToolbarContent: (
             <div style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}>
               custom content

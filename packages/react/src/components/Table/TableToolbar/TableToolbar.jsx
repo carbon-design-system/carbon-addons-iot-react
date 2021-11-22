@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   Column20,
@@ -254,6 +254,18 @@ const TableToolbar = ({
     testId: testID || testId,
   });
 
+  const hasToolbarOverflowActions =
+    typeof toolbarActions === 'function' ||
+    (toolbarActions?.length > 0 && toolbarActions.some((action) => action.isOverflow));
+
+  const visibleToolbarActions = useMemo(() => {
+    if (typeof toolbarActions === 'function') {
+      return toolbarActions().filter(({ isOverflow }) => !isOverflow);
+    }
+
+    return toolbarActions?.filter(({ isOverflow }) => !isOverflow) ?? [];
+  }, [toolbarActions]);
+
   return (
     <CarbonTableToolbar
       // TODO: remove deprecated 'testID' in v3
@@ -446,7 +458,23 @@ const TableToolbar = ({
               disabled={isDisabled}
             />
           ) : null}
-          {hasAggregations || typeof toolbarActions === 'function' || toolbarActions?.length > 0 ? (
+          {visibleToolbarActions.map((action) => {
+            return (
+              <TableToolbarSVGButton
+                isActive={action.isActive}
+                description={action.labelText || action.iconDescription}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onApplyExtraAction(action);
+                }}
+                testId={`${tableId}-toolbar-actions-button-${action.id}`}
+                key={`${tableId}-toolbar-actions-button-${action.id}`}
+                renderIcon={action.renderIcon}
+                disabled={isDisabled || action.disabled}
+              />
+            );
+          })}
+          {hasAggregations || hasToolbarOverflowActions ? (
             <OverflowMenu
               className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
               direction="bottom"
@@ -471,6 +499,15 @@ const TableToolbar = ({
                 />
               )}
               {isOpen && renderToolbarOverflowActions()}
+
+              {
+                /**
+                 * a placeholder node to ensure the menu will always open. If there are no children,
+                 * the renderToolbarOverflowAction method above will never fire, because the
+                 * OverflowMenu doesn't open properly if no children are provided.
+                 */
+                !isOpen && <OverflowMenuItem itemText="" disabled />
+              }
             </OverflowMenu>
           ) : null}
           {

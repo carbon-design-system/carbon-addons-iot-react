@@ -359,6 +359,10 @@ export const TableToolbarActionsPropType = PropTypes.oneOfType([
       ]),
       /** show a divider above this item */
       hasDivider: PropTypes.bool,
+      /** should this action be shown in the overflow menu */
+      isOverflow: PropTypes.bool,
+      /** only used for actions in the toolbar (not overflow menu) to show when they are active */
+      isActive: PropTypes.bool,
     })
   ),
 ]);

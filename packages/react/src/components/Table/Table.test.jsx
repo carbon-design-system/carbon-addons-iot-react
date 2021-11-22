@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import merge from 'lodash/merge';
-import { ArrowRight16, ViewOff16 } from '@carbon/icons-react';
+import { ArrowRight16, Screen16, ViewOff16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
@@ -2581,25 +2581,34 @@ describe('Table', () => {
   describe('toolbarActions in toolbar', () => {
     const toolbarActions = [
       {
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: Screen16,
+      },
+      {
         id: 'edit',
         labelText: 'Edit something',
         disabled: true,
+        isOverflow: true,
       },
       {
         id: 'hide',
         labelText: 'Hide something',
         renderIcon: ViewOff16,
         hasDivider: true,
+        isOverflow: true,
       },
       {
         id: 'delete',
         labelText: 'Delete something',
         isDelete: true,
+        isOverflow: true,
       },
       {
         id: 'hidden',
         labelText: 'Hidden option',
         hidden: true,
+        isOverflow: true,
       },
     ];
     const onApplyExtraAction = jest.fn();
@@ -2643,6 +2652,13 @@ describe('Table', () => {
           }}
         />
       );
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyExtraAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
 
       userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
@@ -2658,6 +2674,7 @@ describe('Table', () => {
         id: 'hide',
         labelText: 'Hide something',
         hasDivider: true,
+        isOverflow: true,
         renderIcon: expect.anything(),
       });
     });
@@ -2683,6 +2700,14 @@ describe('Table', () => {
         />
       );
 
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyExtraAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
+
       userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
@@ -2698,6 +2723,7 @@ describe('Table', () => {
         labelText: 'Hide something',
         renderIcon: expect.anything(),
         hasDivider: true,
+        isOverflow: true,
       });
     });
 
@@ -2727,11 +2753,20 @@ describe('Table', () => {
           }}
         />
       );
-
-      // ensure the items aren't rendered until the menu is open
-      expect(obj.toolbarActions).not.toHaveBeenCalled();
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      // once to check if there are non-overflow toolbarActions in the callback
       expect(obj.toolbarActions).toHaveBeenCalledTimes(1);
+
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyExtraAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      // second after the toolbar has been opened
+      expect(obj.toolbarActions).toHaveBeenCalledTimes(2);
 
       // check an item is present with correct state
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
@@ -2742,6 +2777,7 @@ describe('Table', () => {
         id: 'delete',
         labelText: 'Delete something',
         isDelete: true,
+        isOverflow: true,
       });
 
       // ensure state tracking is working and items are visible again when re-opening.
@@ -2752,6 +2788,7 @@ describe('Table', () => {
         id: 'hide',
         labelText: 'Hide something',
         hasDivider: true,
+        isOverflow: true,
         renderIcon: expect.anything(),
       });
     });
@@ -2759,6 +2796,7 @@ describe('Table', () => {
     it('should render icons given various renderIcon types', async () => {
       render(
         <Table
+          testId="icon-render"
           columns={tableColumns}
           data={tableData.slice(0, 1)}
           expandedData={expandedData}
@@ -2776,25 +2814,52 @@ describe('Table', () => {
                   id: 'string',
                   renderIcon: 'warning',
                   labelText: 'a-warning-label',
+                  isOverflow: true,
                 },
                 {
                   id: 'off',
                   renderIcon: () => <ViewOff16 aria-label="View off" />,
                   labelText: 'View off',
+                  isOverflow: true,
                 },
                 {
                   id: 'arrow-right',
                   renderIcon: ArrowRight16,
                   labelText: 'Arrow right',
+                  isOverflow: true,
                 },
                 {
                   id: 'text',
                   labelText: 'Just text',
+                  isOverflow: true,
+                },
+                {
+                  id: 'off-in-toolbar',
+                  renderIcon: () => <ViewOff16 aria-label="View off toolbar" />,
+                  labelText: 'View off toolbar',
+                },
+                {
+                  id: 'arrow-right-in-toolbar',
+                  renderIcon: ArrowRight16,
+                  labelText: 'Arrow right toolbar',
                 },
               ],
             },
           }}
         />
+      );
+
+      expect(screen.getByTitle('View off toolbar')).toBeVisible();
+      expect(screen.getByTitle('View off toolbar').firstChild).toBeVisible();
+      expect(screen.getByTitle('View off toolbar').firstChild).toHaveAttribute(
+        'aria-label',
+        'View off toolbar'
+      );
+      expect(screen.getByTitle('Arrow right toolbar')).toBeVisible();
+      expect(screen.getByTitle('Arrow right toolbar').firstChild).toBeVisible();
+      expect(screen.getByTitle('Arrow right toolbar').firstChild).toHaveAttribute(
+        'aria-label',
+        'Arrow right toolbar'
       );
 
       userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
