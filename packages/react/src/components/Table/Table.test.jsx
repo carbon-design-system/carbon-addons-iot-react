@@ -2578,8 +2578,8 @@ describe('Table', () => {
     jest.resetAllMocks();
   });
 
-  describe('extraActions in toolbar', () => {
-    const extraActions = [
+  describe('toolbarActions in toolbar', () => {
+    const toolbarActions = [
       {
         id: 'edit',
         labelText: 'Edit something',
@@ -2638,7 +2638,7 @@ describe('Table', () => {
             },
             toolbar: {
               ...view.toolbar,
-              extraActions,
+              toolbarActions,
             },
           }}
         />
@@ -2662,7 +2662,7 @@ describe('Table', () => {
       });
     });
 
-    it('should add items to the extraActions overflow menu when aggregations are not used', async () => {
+    it('should add items to the toolbarActions overflow menu when aggregations are not used', async () => {
       render(
         <Table
           columns={tableColumns}
@@ -2677,7 +2677,7 @@ describe('Table', () => {
             ...view,
             toolbar: {
               ...view.toolbar,
-              extraActions,
+              toolbarActions,
             },
           }}
         />
@@ -2701,12 +2701,12 @@ describe('Table', () => {
       });
     });
 
-    it('should allow dynamically creating the extraActions from a callback', async () => {
+    it('should allow dynamically creating the toolbarActions from a callback', async () => {
       const obj = {
-        extraActions: () => extraActions,
+        toolbarActions: () => toolbarActions,
       };
 
-      jest.spyOn(obj, 'extraActions');
+      jest.spyOn(obj, 'toolbarActions');
 
       render(
         <Table
@@ -2722,16 +2722,16 @@ describe('Table', () => {
             ...view,
             toolbar: {
               ...view.toolbar,
-              extraActions: obj.extraActions,
+              toolbarActions: obj.toolbarActions,
             },
           }}
         />
       );
 
       // ensure the items aren't rendered until the menu is open
-      expect(obj.extraActions).not.toHaveBeenCalled();
+      expect(obj.toolbarActions).not.toHaveBeenCalled();
       userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
-      expect(obj.extraActions).toHaveBeenCalledTimes(1);
+      expect(obj.toolbarActions).toHaveBeenCalledTimes(1);
 
       // check an item is present with correct state
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
@@ -2771,7 +2771,7 @@ describe('Table', () => {
             ...view,
             toolbar: {
               ...view.toolbar,
-              extraActions: [
+              toolbarActions: [
                 {
                   id: 'string',
                   renderIcon: 'warning',

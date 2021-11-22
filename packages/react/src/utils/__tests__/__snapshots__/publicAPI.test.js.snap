@@ -814,13 +814,13 @@ Map {
                   "onApplyBatchAction": Object {
                     "type": "func",
                   },
-                  "onApplyExtraAction": Object {
-                    "type": "func",
-                  },
                   "onApplyFilter": Object {
                     "type": "func",
                   },
                   "onApplySearch": Object {
+                    "type": "func",
+                  },
+                  "onApplyToolbarAction": Object {
                     "type": "func",
                   },
                   "onCancelAdvancedFilter": Object {
@@ -2001,7 +2001,33 @@ Map {
                   "customToolbarContent": Object {
                     "type": "node",
                   },
-                  "extraActions": Object {
+                  "isDisabled": Object {
+                    "type": "bool",
+                  },
+                  "rowEditBarButtons": Object {
+                    "type": "node",
+                  },
+                  "search": Object {
+                    "args": Array [
+                      Object {
+                        "defaultExpanded": Object {
+                          "type": "bool",
+                        },
+                        "defaultValue": Object {
+                          "type": "string",
+                        },
+                        "onChange": Object {
+                          "type": "func",
+                        },
+                        "onExpand": Object {
+                          "type": "func",
+                        },
+                        "value": [Function],
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "toolbarActions": Object {
                     "args": Array [
                       Array [
                         Object {
@@ -2109,32 +2135,6 @@ Map {
                       ],
                     ],
                     "type": "oneOfType",
-                  },
-                  "isDisabled": Object {
-                    "type": "bool",
-                  },
-                  "rowEditBarButtons": Object {
-                    "type": "node",
-                  },
-                  "search": Object {
-                    "args": Array [
-                      Object {
-                        "defaultExpanded": Object {
-                          "type": "bool",
-                        },
-                        "defaultValue": Object {
-                          "type": "string",
-                        },
-                        "onChange": Object {
-                          "type": "func",
-                        },
-                        "onExpand": Object {
-                          "type": "func",
-                        },
-                        "value": [Function],
-                      },
-                    ],
-                    "type": "shape",
                   },
                 },
               ],
@@ -4601,7 +4601,114 @@ Map {
             "customToolbarContent": Object {
               "type": "node",
             },
-            "extraActions": Object {
+            "filters": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "columnId": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                            Object {
+                              "type": "bool",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                          ],
+                        ],
+                        "isRequired": true,
+                        "type": "oneOfType",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "hasRowSelection": Object {
+              "args": Array [
+                Array [
+                  "multi",
+                  "single",
+                  false,
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "isDisabled": Object {
+              "type": "bool",
+            },
+            "ordering": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "columnGroupId": Object {
+                        "type": "string",
+                      },
+                      "columnId": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "isHidden": Object {
+                        "type": "bool",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "rowEditBarButtons": Object {
+              "type": "node",
+            },
+            "search": Object {
+              "args": Array [
+                Object {
+                  "defaultExpanded": Object {
+                    "type": "bool",
+                  },
+                  "defaultValue": Object {
+                    "type": "string",
+                  },
+                  "onChange": Object {
+                    "type": "func",
+                  },
+                  "onExpand": Object {
+                    "type": "func",
+                  },
+                  "value": [Function],
+                },
+              ],
+              "type": "shape",
+            },
+            "selectedAdvancedFilterIds": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "toolbarActions": Object {
               "args": Array [
                 Array [
                   Object {
@@ -4709,113 +4816,6 @@ Map {
                 ],
               ],
               "type": "oneOfType",
-            },
-            "filters": Object {
-              "args": Array [
-                Object {
-                  "args": Array [
-                    Object {
-                      "columnId": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "value": Object {
-                        "args": Array [
-                          Array [
-                            Object {
-                              "type": "string",
-                            },
-                            Object {
-                              "type": "number",
-                            },
-                            Object {
-                              "type": "bool",
-                            },
-                            Object {
-                              "args": Array [
-                                Object {
-                                  "type": "string",
-                                },
-                              ],
-                              "type": "arrayOf",
-                            },
-                          ],
-                        ],
-                        "isRequired": true,
-                        "type": "oneOfType",
-                      },
-                    },
-                  ],
-                  "type": "shape",
-                },
-              ],
-              "type": "arrayOf",
-            },
-            "hasRowSelection": Object {
-              "args": Array [
-                Array [
-                  "multi",
-                  "single",
-                  false,
-                ],
-              ],
-              "type": "oneOf",
-            },
-            "isDisabled": Object {
-              "type": "bool",
-            },
-            "ordering": Object {
-              "args": Array [
-                Object {
-                  "args": Array [
-                    Object {
-                      "columnGroupId": Object {
-                        "type": "string",
-                      },
-                      "columnId": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "isHidden": Object {
-                        "type": "bool",
-                      },
-                    },
-                  ],
-                  "type": "shape",
-                },
-              ],
-              "type": "arrayOf",
-            },
-            "rowEditBarButtons": Object {
-              "type": "node",
-            },
-            "search": Object {
-              "args": Array [
-                Object {
-                  "defaultExpanded": Object {
-                    "type": "bool",
-                  },
-                  "defaultValue": Object {
-                    "type": "string",
-                  },
-                  "onChange": Object {
-                    "type": "func",
-                  },
-                  "onExpand": Object {
-                    "type": "func",
-                  },
-                  "value": [Function],
-                },
-              ],
-              "type": "shape",
-            },
-            "selectedAdvancedFilterIds": Object {
-              "args": Array [
-                Object {
-                  "type": "string",
-                },
-              ],
-              "type": "arrayOf",
             },
             "totalFilters": Object {
               "type": "number",

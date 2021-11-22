@@ -952,12 +952,12 @@ the following props:
 />
 ```
 
-## Extra actions
+## Toolbar actions
 
-You can add other actions to the toolbar overflow menu by using the extraActions prop on the view.toolbar.
+You can add other actions to the toolbar overflow menu by using the toolbarActions prop on the view.toolbar.
 When clicking on an action it will trigger the `onApplyExtraAction` callback passing the object
-used to create the action. If `extraActions` is a function, it can return an array of objects
-representing the extraActions and these will be rendered dynamically
+used to create the action. If `toolbarActions` is a function, it can return an array of objects
+representing the toolbarActions and these will be rendered dynamically
 when the overflow menu is opened.
 
 ```jsx
@@ -967,12 +967,12 @@ when the overflow menu is opened.
   data={data}
   actions={{
     toolbar: {
-      onApplyExtraAction: (actionObject) => {},
+      onApplyToolbarAction: (actionObject) => {},
     },
   }}
   view={{
     toolbar: {
-      extraActions: [
+      toolbarActions: [
         {
           id: 'edit',
           labelText: 'Edit',
@@ -1327,14 +1327,14 @@ A complete example of how to use the column grouping could look like this:
 | toolbar.search.onExpand                          | func                             |                                                                                                  |                                                                                                                                                     |
 | toolbar.isDisabled                               | bool                             |                                                                                                  | Disable the toolbar                                                                                                                                 |
 | toolbar.rowEditBarButtons                        | node                             |                                                                                                  | buttons to be shown with when activeBar is 'rowEdit'                                                                                                |
-| toolbar.extraActions                             | arrayOf(object)                  |                                                                                                  | An array of objects for adding actions to the overflow menu in the toolbar                                                                          |
-| toolbar.extraActions[].id                        | string                           |                                                                                                  | the id of this action                                                                                                                               |
-| toolbar.extraActions[].labelText                 | string                           |                                                                                                  | The text to display in the overflow menu                                                                                                            |
-| toolbar.extraActions[].hidden                    | bool                             |                                                                                                  | This will hide this item from the menu                                                                                                              |
-| toolbar.extraActions[].disabled                  | bool                             |                                                                                                  | This will show the item, but it will be disabled                                                                                                    |
-| toolbar.extraActions[].isDelete                  | bool                             |                                                                                                  | Show the item, and turn the background red on hover                                                                                                 |
-| toolbar.extraActions[].hasDivider                | bool                             |                                                                                                  | Show a divider at the top of this action item                                                                                                       |
-| toolbar.extraActions[].renderIcon                | node, func, string               | Can be a string of a handful of included icons, a function to render an icon, or an icon element |
+| toolbar.toolbarActions                           | arrayOf(object)                  |                                                                                                  | An array of objects for adding actions to the overflow menu in the toolbar                                                                          |
+| toolbar.toolbarActions[].id                      | string                           |                                                                                                  | the id of this action                                                                                                                               |
+| toolbar.toolbarActions[].labelText               | string                           |                                                                                                  | The text to display in the overflow menu                                                                                                            |
+| toolbar.toolbarActions[].hidden                  | bool                             |                                                                                                  | This will hide this item from the menu                                                                                                              |
+| toolbar.toolbarActions[].disabled                | bool                             |                                                                                                  | This will show the item, but it will be disabled                                                                                                    |
+| toolbar.toolbarActions[].isDelete                | bool                             |                                                                                                  | Show the item, and turn the background red on hover                                                                                                 |
+| toolbar.toolbarActions[].hasDivider              | bool                             |                                                                                                  | Show a divider at the top of this action item                                                                                                       |
+| toolbar.toolbarActions[].renderIcon              | node, func, string               | Can be a string of a handful of included icons, a function to render an icon, or an icon element |
 | table                                            | object                           |                                                                                                  |                                                                                                                                                     |
 | table.isSelectAllSelected                        | bool                             |                                                                                                  | If true, the select all option is checked                                                                                                           |
 | table.isSelectAllIndeterminate                   | bool                             |                                                                                                  |                                                                                                                                                     |
@@ -1395,7 +1395,7 @@ A complete example of how to use the column grouping could look like this:
 | toolbar.onCancelAdvancedFilter  | func   |         | Fired when then 'Cancel' button is clicked in the advanced filter flyout menu                                                                                                                                   |
 | toolbar.onChangeAdvancedFilter  | func   |         | Fired when an advanced filter is selected or removed.                                                                                                                                                           |
 | toolbar.onToggleAggregations    | func   |         | Fired when the "Toggle aggregations" option is clicked from the overflow menu in the table toolbar                                                                                                              |
-| toolbar.onApplyExtraAction      | func   |         | Fired when clicking on extraActions in the table toolbar                                                                                                                                                        |
+| toolbar.onApplyExtraAction      | func   |         | Fired when clicking on toolbarActions in the table toolbar                                                                                                                                                      |
 | table                           | object |         |                                                                                                                                                                                                                 |
 | table.onRowSelected             | func   |         |                                                                                                                                                                                                                 |
 | table.onRowClicked              | func   |         |                                                                                                                                                                                                                 |

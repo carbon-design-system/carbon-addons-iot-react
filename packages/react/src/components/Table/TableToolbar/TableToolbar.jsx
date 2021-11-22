@@ -25,7 +25,7 @@ import {
   TableColumnsPropTypes,
   TableFiltersPropType,
   TableOrderingPropType,
-  TableExtraActionsPropType,
+  TableToolbarActionsPropType,
 } from '../TablePropTypes';
 import {
   handleSpecificKeyDown,
@@ -161,8 +161,8 @@ const propTypes = {
     ),
     /** currently selected advanced filters */
     selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
-    /** extra actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
-    extraActions: TableExtraActionsPropType,
+    /** toolbar actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
+    toolbarActions: TableToolbarActionsPropType,
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
@@ -236,7 +236,7 @@ const TableToolbar = ({
     selectedAdvancedFilterIds,
     columns,
     ordering,
-    extraActions,
+    toolbarActions,
   },
   data,
   // TODO: remove deprecated 'testID' in v3
@@ -246,8 +246,8 @@ const TableToolbar = ({
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
 
-  const [isOpen, setIsOpen, renderExtraActions] = useDynamicOverflowMenuItems({
-    actions: extraActions,
+  const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
+    actions: toolbarActions,
     className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
     isDisabled,
     onClick: onApplyExtraAction,
@@ -446,7 +446,7 @@ const TableToolbar = ({
               disabled={isDisabled}
             />
           ) : null}
-          {hasAggregations || typeof extraActions === 'function' || extraActions?.length > 0 ? (
+          {hasAggregations || typeof toolbarActions === 'function' || toolbarActions?.length > 0 ? (
             <OverflowMenu
               className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
               direction="bottom"
@@ -470,7 +470,7 @@ const TableToolbar = ({
                   disabled={isDisabled}
                 />
               )}
-              {isOpen && renderExtraActions()}
+              {isOpen && renderToolbarOverflowActions()}
             </OverflowMenu>
           ) : null}
           {

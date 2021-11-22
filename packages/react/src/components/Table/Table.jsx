@@ -29,7 +29,7 @@ import {
   TableColumnGroupPropType,
   TableOrderingPropType,
   TableFiltersPropType,
-  TableExtraActionsPropType,
+  TableToolbarActionsPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -219,7 +219,7 @@ const propTypes = {
       /** buttons to be shown with when activeBar is 'rowEdit' */
       rowEditBarButtons: PropTypes.node,
       /** extra actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
-      extraActions: TableExtraActionsPropType,
+      toolbarActions: TableToolbarActionsPropType,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -291,8 +291,8 @@ const propTypes = {
       onChangeAdvancedFilter: PropTypes.func,
       /** fired when 'Toggle aggregations' is clicked in the overflow menu */
       onToggleAggregations: PropTypes.func,
-      /** fired when clicking an 'extraAction' in the table toolbar overflow menu */
-      onApplyExtraAction: PropTypes.func,
+      /** fired when clicking a 'toolbarAction' in the table toolbar */
+      onApplyToolbarAction: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -877,7 +877,7 @@ const Table = (props) => {
                 'customToolbarContent',
                 'rowEditBarButtons',
                 'advancedFilterFlyoutOpen',
-                'extraActions'
+                'toolbarActions'
               ),
             }}
             data={data}

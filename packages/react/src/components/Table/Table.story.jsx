@@ -717,7 +717,7 @@ export const BasicDumbTable = () => {
         toolbar: {
           activeBar: hasColumnSelection || hasColumnSelectionConfig ? 'column' : undefined,
           isDisabled: boolean('Disable the table toolbar (view.toolbar.isDisabled)', false),
-          extraActions: tableToolbarActions,
+          toolbarActions: tableToolbarActions,
         },
         table: {
           loadingState: {
@@ -2056,7 +2056,7 @@ export const WithFilters = () => {
         },
         toolbar: {
           activeBar: 'filter',
-          extraActions: tableToolbarActions,
+          toolbarActions: tableToolbarActions,
           customToolbarContent: (
             <div style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}>
               custom content
@@ -2071,7 +2071,7 @@ export const WithFilters = () => {
   );
 };
 
-WithFilters.storyName = 'with filtering, extraActions, and custom toolbar content';
+WithFilters.storyName = 'with filtering, toolbarActions, and custom toolbar content';
 
 export const WithAdvancedFilters = () => {
   const operands = {

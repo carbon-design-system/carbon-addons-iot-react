@@ -330,7 +330,7 @@ export const TableFiltersPropType = PropTypes.arrayOf(
   })
 );
 
-export const TableExtraActionsPropType = PropTypes.oneOfType([
+export const TableToolbarActionsPropType = PropTypes.oneOfType([
   /** allow the actions to be generated dynamically by a callback */
   PropTypes.func,
   PropTypes.arrayOf(
