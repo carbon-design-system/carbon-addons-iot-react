@@ -13,6 +13,7 @@ import {
   handleEditModeSelect,
   moveItemsInList,
   DropLocation,
+  handleEditModeIndeterminateIds,
 } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 import { usePrevious } from '../../../hooks/usePrevious';
@@ -260,6 +261,8 @@ const HierarchyList = ({
   const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [indeterminateIds, setIndeterminateIds] = useState([]);
+
   // these are used in filtering, and since items may contain nodes or react elements
   // we don't want to do equality checks against those, so we strip the items down to
   // the basics need for filtering checks and memoize them for use in the useEffect below
@@ -272,6 +275,12 @@ const HierarchyList = ({
       setCurrentPageNumber(1);
     }
   }, [items, previousItems]);
+
+  useEffect(() => {
+    if (editingStyle) {
+      setIndeterminateIds(handleEditModeIndeterminateIds(items, editModeSelectedIds));
+    }
+  }, [editModeSelectedIds, editingStyle, items]);
 
   const selectedItemRef = useCallback(
     (node) => {
@@ -513,6 +522,7 @@ const HierarchyList = ({
         }}
         i18n={mergedI18n}
         pagination={hasPagination ? pagination : null}
+        indeterminateIds={indeterminateIds}
         isFullHeight={isFullHeight}
         isLoading={isLoading}
         isLargeRow={isLargeRow}
