@@ -5,9 +5,11 @@ import { Information16, Edit16 } from '@carbon/icons-react';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
 import throttle from 'lodash/throttle';
 
+import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
 import Button from '../Button';
 
+const { iotPrefix } = settings;
 const HEADER_MODES = {
   STATIC: 'STATIC',
   STICKY: 'STICKY',
@@ -23,7 +25,7 @@ const PageTitleBarPropTypes = {
   /** Details about what the page shows */
   description: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   /** How the header should react to scrolling */
-  headerMode: PropTypes.oneOf(['STATIC', 'STICKY', 'DYNAMIC', 'CONDENSED']),
+  headerMode: PropTypes.oneOf(Object.values(HEADER_MODES)),
   /** offset for the 'top' attribute on the sticky header. Number will be converted to px */
   stickyHeaderOffset: PropTypes.number,
 
@@ -154,10 +156,8 @@ const PageTitleBar = ({
      We also want sticky mode to render outside so we can sticky the entire header element
   */
   const hasTabs =
-    (titleBarContent && titleBarContent.type === Tabs) ||
-    (titleBarContent &&
-      [].concat(titleBarContent.props.children).filter((e) => e?.type && e.type === Tabs).length >
-        0);
+    titleBarContent?.type === Tabs ||
+    [].concat(titleBarContent?.props?.children ?? []).filter(({ type }) => type === Tabs).length;
 
   const renderContentOutside =
     (hasTabs && headerMode === HEADER_MODES.DYNAMIC) ||
@@ -330,12 +330,12 @@ const PageTitleBar = ({
           headerMode === HEADER_MODES.DYNAMIC && condensed && transitionProgress === 1,
         'page-title-bar--dynamic': headerMode === HEADER_MODES.DYNAMIC,
         'page-title-bar--with-actions': upperActions && headerMode === HEADER_MODES.DYNAMIC,
-        'page-title-bar--stack-tabs': stackBreadcrumbsWithTabs,
-        'page-title-bar--stack-tabs-override-show':
+        [`${iotPrefix}--page-title-bar--stack-tabs`]: stackBreadcrumbsWithTabs,
+        [`${iotPrefix}--page-title-bar--stack-tabs-override-show`]:
           headerMode === HEADER_MODES.DYNAMIC &&
           stackBreadcrumbsWithTabs &&
           !stackBreadcrumbsWithTabsProp,
-        'page-title-bar--stack-tabs-override-hide':
+        [`${iotPrefix}--page-title-bar--stack-tabs-override-hide`]:
           headerMode === HEADER_MODES.DYNAMIC &&
           !stackBreadcrumbsWithTabs &&
           !stackBreadcrumbsWithTabsProp,

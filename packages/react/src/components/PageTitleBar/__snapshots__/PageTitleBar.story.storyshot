@@ -5316,7 +5316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic page-title-bar--stack-tabs-override-hide"
+        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic iot--page-title-bar--stack-tabs-override-hide"
         data-testid="page-title-bar"
         style={
           Object {
@@ -5661,7 +5661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic page-title-bar--stack-tabs-override-hide"
+        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic iot--page-title-bar--stack-tabs-override-hide"
         data-testid="page-title-bar"
         style={
           Object {
@@ -6737,7 +6737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       }
     >
       <div
-        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic page-title-bar--stack-tabs-override-hide"
+        className="page-title-bar page-title-bar--dynamic--before page-title-bar--dynamic iot--page-title-bar--stack-tabs-override-hide"
         data-testid="page-title-bar"
         style={
           Object {

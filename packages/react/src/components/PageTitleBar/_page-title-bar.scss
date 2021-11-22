@@ -394,9 +394,9 @@
 }
 
 /* styles for sticky breadcrumbs and tabs */
-.page-title-bar--stack-tabs,
-.page-title-bar--stack-tabs-override-show,
-.page-title-bar--stack-tabs-override-hide {
+.#{$iot-prefix}--page-title-bar--stack-tabs,
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-show,
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide {
   &.page-title-bar--dynamic--after,
   &.page-title-bar--condensed-static {
     .page-title-bar-header {
@@ -418,13 +418,13 @@
   }
 }
 
-.page-title-bar--stack-tabs-override-show.page-title-bar--stack-tabs-override-show {
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-show.#{$iot-prefix}--page-title-bar--stack-tabs-override-show {
   .page-title-bar-header {
     top: calc(var(--header-offset) * -1);
   }
 }
 
-.page-title-bar--stack-tabs-override-hide.page-title-bar--stack-tabs-override-hide {
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide {
   .page-title-bar-header {
     top: -(#{$spacing-10 + $spacing-05});
   }
