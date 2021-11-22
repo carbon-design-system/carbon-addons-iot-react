@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.63](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.62...v2.147.0-next.63) (2021-11-22)
+
+
+### Reverts
+
+* **header:** remove accidentally changed style ([5980439](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5980439b865cdf70315d337924769f624914a5bf))
+
+
+
+
+
+# [2.147.0-next.62](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.61...v2.147.0-next.62) (2021-11-22)
+
+
+### Bug Fixes
+
+* **hierarchy-list:** add indeterminate state handling to checkboxes ([b72cdda](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b72cdda3432503b152b43b502fc988e36fd525b1))
+
+
+
+
+
+# [2.147.0-next.61](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.60...v2.147.0-next.61) (2021-11-19)
+
+
+### Bug Fixes
+
+* **hierarchy-list:** don't reset selected items on drag and drop ([9608486](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/960848679388f8c8e3633a11997afca9e06d96bc))
+* **hierarchy-list:** uncheck children when parnet unchecked ([54feb61](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/54feb61fe1fd2dc2be52c2b3df76520bb94b13eb))
+* **list-content:** fire handleSelect from onChange, not onClick ([9b2b3f7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9b2b3f7b5c7aea9843c2b6e99bfdd496d7e126f7))
+
+
+
+
+
 # [2.147.0-next.60](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.59...v2.147.0-next.60) (2021-11-18)
 
 
