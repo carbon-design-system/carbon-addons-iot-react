@@ -1,10 +1,12 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 
+import { settings } from '../../constants/Settings';
 import { Tabs, Tab } from '../Tabs';
 
 import PageTitleBar from './PageTitleBar';
 
+const { iotPrefix, prefix } = settings;
 describe('PageTitleBar', () => {
   const breadcrumbsAndTabsAreStickyAndInTheCorrectPosition = () => {
     cy.findByTestId('page-title-bar')
@@ -23,7 +25,7 @@ describe('PageTitleBar', () => {
       .should('equal', '0px');
 
     cy.findByTestId('page-title-bar')
-      .find('.bx--tabs--scrollable')
+      .find(`.${prefix}--tabs--scrollable`)
       .invoke('css', 'top')
       .should('equal', '40px');
   };
@@ -46,7 +48,7 @@ describe('PageTitleBar', () => {
       .should('equal', '0px');
 
     cy.findByTestId('page-title-bar')
-      .find('.bx--tabs--scrollable')
+      .find(`.${prefix}--tabs--scrollable`)
       .invoke('css', 'top')
       .should('equal', '0px');
   };
@@ -68,7 +70,7 @@ describe('PageTitleBar', () => {
       .should('equal', '0px');
 
     cy.findByTestId('page-title-bar')
-      .find('.bx--tabs--scrollable')
+      .find(`.${prefix}--tabs--scrollable`)
       .invoke('css', 'top')
       .should('equal', '40px');
   };
@@ -148,7 +150,7 @@ describe('PageTitleBar', () => {
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--dynamic')
       .should('have.class', 'page-title-bar--dynamic--before')
-      .should('have.class', 'page-title-bar--stack-tabs')
+      .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs`)
       .should('not.have.class', 'page-title-bar--dynamic--during')
       .should('not.have.class', 'page-title-bar--dynamic--after')
       .should('have.attr', 'style', '--header-offset:40px; --scroll-transition-progress:0;');
@@ -194,7 +196,7 @@ describe('PageTitleBar', () => {
 
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--condensed-static')
-      .should('have.class', 'page-title-bar--stack-tabs')
+      .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs`)
       .should('have.attr', 'style', '--header-offset:40px; --scroll-transition-progress:1;');
 
     cy.scrollTo(0, 50);
@@ -239,15 +241,15 @@ describe('PageTitleBar', () => {
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--dynamic')
       .should('have.class', 'page-title-bar--dynamic--before')
-      .should('have.class', 'page-title-bar--stack-tabs-override-hide')
-      .should('not.have.class', 'page-title-bar--stack-tabs')
+      .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs-override-hide`)
+      .should('not.have.class', `${iotPrefix}--page-title-bar--stack-tabs`)
       .should('have.attr', 'style', '--header-offset:0px; --scroll-transition-progress:0;');
 
     cy.scrollTo(0, 250);
 
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--dynamic--after')
-      .should('have.class', 'page-title-bar--stack-tabs-override-hide')
+      .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs-override-hide`)
       .should('have.attr', 'style', '--header-offset:0px; --scroll-transition-progress:1;');
 
     tabsAreStickyAndBreadcrumbsAreHidden();
@@ -255,8 +257,8 @@ describe('PageTitleBar', () => {
     cy.scrollTo(0, 220);
 
     cy.findByTestId('page-title-bar')
-      .should('have.class', 'page-title-bar--stack-tabs')
-      .should('have.class', 'page-title-bar--stack-tabs-override-show');
+      .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs`)
+      .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs-override-show`);
 
     tabsAreStickyAndBreadcrumbsAreShown();
   });
