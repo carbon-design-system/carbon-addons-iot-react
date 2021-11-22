@@ -56,6 +56,8 @@ describe('TableHead', () => {
         },
       ],
     }));
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <TableHead {...commonTableHeadProps} columns={columns} testID="TABLE_HEAD" />,
       {
@@ -71,6 +73,10 @@ describe('TableHead', () => {
     userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[1]);
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-1')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-2')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(<TableHead {...commonTableHeadProps} columns={columns} testId="table_head" />, {
       container: document.body.appendChild(document.createElement('table')),
@@ -293,8 +299,10 @@ describe('TableHead', () => {
     });
 
     const column3 = screen.getByRole('columnheader', { name: /Column 3/i });
-    expect(column3).toHaveClass('iot--table-head--table-header--with-overflow');
-    expect(within(column3).getByText('1')).toHaveClass('iot--table-header-label__sort-order');
+    expect(column3).toHaveClass(`${iotPrefix}--table-head--table-header--with-overflow`);
+    expect(within(column3).getByText('1')).toHaveClass(
+      `${iotPrefix}--table-header-label__sort-order`
+    );
   });
 
   it('calls onOverflowItemClicked when multi-sort overflow is clicked', async () => {
@@ -328,7 +336,9 @@ describe('TableHead', () => {
     await waitFor(() => expect(screen.getByText('Multi-sort')).toBeInTheDocument());
 
     userEvent.click(screen.getByText(/Multi-sort/i));
-    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort');
+    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort', {
+      columnId: 'col3',
+    });
   });
 
   describe('Column resizing active', () => {
@@ -593,7 +603,6 @@ describe('TableHead', () => {
       ];
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
-
       const { container, rerender } = render(<TableHead {...myProps} />, {
         container: document.body.appendChild(document.createElement('table')),
       });
@@ -1573,6 +1582,302 @@ describe('TableHead', () => {
       expect(screen.getAllByText('Column 4')[0].closest('th')).not.toHaveStyle({
         width: '100px',
       });
+    });
+  });
+
+  describe('Column grouping', () => {
+    let myProps;
+
+    beforeEach(() => {
+      myProps = {
+        tableId: 'my Table',
+        columns: [
+          { id: 'col1', name: 'Column 1', width: '100px' },
+          { id: 'col2', name: 'Column 2', width: '100px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+          { id: 'col4', name: 'Column 4', width: '100px' },
+          { id: 'col5', name: 'Column 5', width: '100px' },
+        ],
+        columnGroups: [
+          { id: 'groupA', name: 'Group A' },
+          { id: 'groupB', name: 'Group B' },
+        ],
+        tableState: {
+          sort: {},
+          ordering: [
+            { columnId: 'col1', columnGroupId: 'groupA' },
+            { columnId: 'col2', columnGroupId: 'groupA' },
+            { columnId: 'col3', columnGroupId: 'groupB' },
+            { columnId: 'col4', columnGroupId: 'groupB' },
+            { columnId: 'col5' },
+          ],
+          selection: {},
+        },
+        actions: { onChangeOrdering: jest.fn(), onColumnResize: jest.fn() },
+        // wrapCellText & truncateCellText are required in versions < 3.0
+        options: { wrapCellText: 'auto', truncateCellText: false },
+      };
+    });
+
+    it('shows column groups row if there are visible columns belonging to that group', () => {
+      const ordering = [
+        { columnId: 'col1', columnGroupId: 'groupA' },
+        { columnId: 'col2', columnGroupId: 'groupA' },
+        { columnId: 'col3' },
+        { columnId: 'col4' },
+        { columnId: 'col5' },
+      ];
+      const columnGroups = [{ id: 'groupA', name: 'Group A' }];
+
+      render(
+        <TableHead
+          {...myProps}
+          columnGroups={columnGroups}
+          tableState={{ ...myProps.tableState, ordering }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      expect(screen.getByTestId('my-tablehead-column-grouping')).toBeDefined();
+      expect(screen.getByText('Group A')).toBeDefined();
+    });
+
+    it('does not show column groups row if there are no visible columns belonging to that group', () => {
+      const ordering = [
+        { columnId: 'col1', columnGroupId: 'groupB' },
+        { columnId: 'col2', columnGroupId: 'groupC' },
+        { columnId: 'col3' },
+        { columnId: 'col4' },
+        { columnId: 'col5' },
+      ];
+      const columnGroups = [{ id: 'groupA', name: 'Group A' }];
+
+      render(
+        <TableHead
+          {...myProps}
+          columnGroups={columnGroups}
+          tableState={{ ...myProps.tableState, ordering }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      expect(screen.queryByText('Group A')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('my-tablehead-column-grouping')).not.toBeInTheDocument();
+    });
+
+    it('adds the correct number of column headers', () => {
+      render(<TableHead {...myProps} testId="my-tablehead" />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(
+        within(screen.getByTestId('my-tablehead-column-grouping')).getAllByRole('columnheader')
+      ).toHaveLength(2);
+    });
+
+    it('appends an extra column header for resize with showExpanderColumn', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasResize: true,
+            preserveColumnWidths: true,
+          }}
+          showExpanderColumn
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+      const lastHeaderIndex = 2;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(2 + 1);
+      expect(theHeadersInGroupRow[lastHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
+    it('appends an extra column header for row actions', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasRowActions: true,
+          }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+      const lastHeaderIndex = 2;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(2 + 1);
+      expect(theHeadersInGroupRow[lastHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
+    it('only appends one extra column header for both row actions and resize with showExpanderColumn', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasRowActions: true,
+            hasResize: true,
+            preserveColumnWidths: true,
+          }}
+          testId="my-tablehead"
+          showExpanderColumn
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      const lastHeaderIndex = 2;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(2 + 1);
+      expect(theHeadersInGroupRow[lastHeaderIndex]).toHaveAttribute('colspan', '2');
+      expect(theHeadersInGroupRow[lastHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
+    it('prepends one extra column header for multi row selection', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasRowSelection: 'multi',
+          }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      const firstHeaderIndex = 0;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(2 + 1);
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
+    it('prepends one extra column header for row expansion', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasRowExpansion: true,
+          }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      const firstHeaderIndex = 0;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(1 + 2);
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
+    it('prepends one extra column header for row nesting', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasRowNesting: true,
+          }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      const firstHeaderIndex = 0;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(1 + 2);
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
+    it('only prepends one extra column header for row nesting and multi row selection', () => {
+      render(
+        <TableHead
+          {...myProps}
+          options={{
+            hasRowNesting: true,
+            hasRowSelection: 'multi',
+          }}
+          testId="my-tablehead"
+        />,
+        {
+          container: document.body.appendChild(document.createElement('table')),
+        }
+      );
+
+      const firstHeaderIndex = 0;
+      const theHeadersInGroupRow = within(
+        screen.getByTestId('my-tablehead-column-grouping')
+      ).getAllByRole('columnheader');
+
+      expect(theHeadersInGroupRow).toHaveLength(1 + 2);
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveAttribute('colspan', '2');
+      expect(theHeadersInGroupRow[firstHeaderIndex]).toHaveClass(
+        `${iotPrefix}--table-header__group-row-spacer`
+      );
+    });
+
+    it('adds rowspan to "normal column headers" that do not belong to a group while group row is showing', () => {
+      render(<TableHead {...myProps} testId="my-tablehead" />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getByText('Column 5').closest('th')).toHaveAttribute('rowspan', '2');
+    });
+
+    it('adds with-column-groups class to table head container', () => {
+      render(<TableHead {...myProps} testId="my-tablehead" />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      expect(screen.getByTestId('my-tablehead')).toHaveClass(
+        `${iotPrefix}--table-head--with-column-groups`
+      );
     });
   });
 });

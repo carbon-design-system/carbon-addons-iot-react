@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../constants/Settings';
 
@@ -148,6 +149,28 @@ describe('TableCellRenderer', () => {
     expect(screen.getByText('35.1234567')).toBeInTheDocument(); // no limit on the count of decimals
   });
 
+  it('should set preserve class when preserveCellWhiteSpace:true', () => {
+    const { container } = render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string" preserveCellWhiteSpace>
+        1 1 1 1 1
+      </TableCellRenderer>
+    );
+
+    expect(container.querySelector('span')).toBeVisible();
+    expect(container.querySelector('span')).toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
+  });
+
+  it('should not set preserve class when preserveCellWhiteSpace:false', () => {
+    render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string">
+        1 1
+      </TableCellRenderer>
+    );
+
+    expect(screen.getByText('1 1')).toBeVisible();
+    expect(screen.getByText('1 1')).not.toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
+  });
+
   describe('warning should be thrown for objects as data without needed functions', () => {
     const { __DEV__ } = global;
     const { error } = console;
@@ -237,6 +260,54 @@ describe('TableCellRenderer', () => {
       expect(console.error).not.toHaveBeenCalled();
       expect(renderDataFunction).toHaveBeenCalled();
       expect(screen.getByText('124556')).toBeDefined();
+    });
+
+    it('should render a tooltip and display it on focus when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      expect(document.body).toHaveFocus();
+      userEvent.tab();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveFocus();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+    });
+
+    it('should render a tooltip and display it on hover when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      userEvent.hover(screen.getByText('Select'));
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
     });
   });
 });

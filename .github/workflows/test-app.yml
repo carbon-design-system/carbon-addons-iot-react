@@ -1,0 +1,95 @@
+name: Test-app
+
+on: [push, pull_request]
+
+jobs:
+  build-pal:
+    name: Build PAL
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
+      - name: Increase watchers
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        if: steps.changes.outputs.react == 'true'
+        with:
+          node-version: '16.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        if: steps.changes.outputs.react == 'true'
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
+
+      - name: Run build
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react
+          yarn build
+
+      - name: Archive build artifacts
+        if: ${{ success() }} && steps.changes.outputs.react == 'true'
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: packages/react
+
+  create-test-app:
+    name: Create test app and build
+    needs: build-pal
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
+      - name: Run cli command to create test app
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          npx create-iot-react-app test-app
+
+      - name: Download all build artifacts
+        if: steps.changes.outputs.react == 'true'
+        uses: actions/download-artifact@v2
+
+      - name: Link dependencies and build test app
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd dist
+          yarn link
+          cd ../test-app
+          yarn link carbon-addons-iot-react
+          yarn build
+
+      - name: Serve app
+        if: ${{ success() }}
+        run: timeout 40s npx serve -s ../../../test-app/build || CODE="$?"; if [[ "$CODE" -ne 124 ]]; then exit $CODE; else exit 0; fi

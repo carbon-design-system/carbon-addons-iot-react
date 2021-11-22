@@ -14,7 +14,7 @@ describe('RuleBuilderHeader', () => {
     const onAddRuleFactory = jest.fn(() => onAddRule);
     const onChange = jest.fn();
     render(
-      <RuleBuilderHeader id={id} testID={testId} onAddRule={onAddRuleFactory} onChange={onChange} />
+      <RuleBuilderHeader id={id} testId={testId} onAddRule={onAddRuleFactory} onChange={onChange} />
     );
     expect(screen.getByTestId(testId)).toHaveClass(`${iotPrefix}--rule-builder-header`);
     expect(onAddRuleFactory).toHaveBeenCalledTimes(2);
@@ -32,9 +32,14 @@ describe('RuleBuilderHeader', () => {
     const onAddRule = jest.fn();
     const onAddRuleFactory = jest.fn(() => onAddRule);
     const onChange = jest.fn();
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     render(
       <RuleBuilderHeader id={id} testID={testId} onAddRule={onAddRuleFactory} onChange={onChange} />
     );
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     fireEvent.click(screen.getByText('ALL'));
     fireEvent.click(screen.getAllByText('ANY')[0]);

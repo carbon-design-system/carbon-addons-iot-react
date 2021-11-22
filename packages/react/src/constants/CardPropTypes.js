@@ -27,7 +27,7 @@ import {
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
-import { ButtonIconPropType, OverridePropTypes } from './SharedPropTypes';
+import { ButtonIconPropType, OverridePropTypes, SvgPropType } from './SharedPropTypes';
 
 export const CHART_COLORS = [
   purple70,
@@ -185,7 +185,16 @@ export const TableCardPropTypes = {
   value: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      values: PropTypes.object.isRequired,
+      values: PropTypes.objectOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.bool,
+          PropTypes.number,
+          PropTypes.instanceOf(Date),
+          PropTypes.object,
+          PropTypes.node,
+        ])
+      ).isRequired,
       actions: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.string.isRequired,
@@ -196,7 +205,7 @@ export const TableCardPropTypes = {
               width: PropTypes.string,
               height: PropTypes.string,
               viewBox: PropTypes.string.isRequired,
-              svgData: PropTypes.object.isRequired,
+              svgData: SvgPropType.isRequired,
             }),
           ]),
         })
@@ -270,9 +279,13 @@ export const BarChartCardPropTypes = {
       );
     }
     // If the size
-    if (props[propName] === CARD_SIZES.SMALL || props[propName] === CARD_SIZES.SMALLWIDE) {
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL
+    ) {
       error = new Error(
-        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`SMALL\` || \`SMALLWIDE\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
       );
     }
     return error;
@@ -375,7 +388,7 @@ export const PieCardPropTypes = {
   /** Configuration content for the PieChart */
   content: PropTypes.shape({
     /** Object that maps the groupDataSourceId with a specific color, e.g. {'Group A': 'red', 'Group B': 'blue', ... } */
-    colors: PropTypes.object,
+    colors: PropTypes.objectOf(PropTypes.string),
     /** Function to output custom HTML for the tooltip. Passed an array or object with the data,
      * and the default tooltip markup */
     customTooltip: PropTypes.func,
@@ -429,6 +442,43 @@ export const DonutCardPropTypes = {
   }).isRequired,
 };
 
+export const ImageCardValuesPropType = PropTypes.shape({
+  hotspots: PropTypes.arrayOf(
+    PropTypes.shape({
+      x: PropTypes.number,
+      y: PropTypes.number,
+      icon: PropTypes.string,
+      color: PropTypes.string,
+      height: PropTypes.number,
+      width: PropTypes.number,
+      content: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node,
+        PropTypes.shape({
+          title: PropTypes.string,
+          description: PropTypes.string,
+          values: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+          attributes: PropTypes.arrayOf(
+            PropTypes.shape({
+              dataSourceId: PropTypes.string,
+              label: PropTypes.string,
+              precision: PropTypes.number,
+              thresholds: PropTypes.arrayOf(
+                PropTypes.shape({
+                  comparison: PropTypes.oneOf(['>', '>=', '=', '<=', '<']),
+                  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+                  icon: PropTypes.string,
+                  color: PropTypes.string,
+                })
+              ),
+            })
+          ),
+        }),
+      ]),
+    })
+  ),
+});
+
 export const ImageCardPropTypes = {
   content: PropTypes.shape({
     id: PropTypes.string,
@@ -437,9 +487,7 @@ export const ImageCardPropTypes = {
     /** value for object-fit property - contain, cover, fill */
     displayOption: PropTypes.string,
   }).isRequired,
-  values: PropTypes.shape({
-    hotspots: PropTypes.array,
-  }),
+  values: ImageCardValuesPropType,
   /** the maximum supported file size in bytes */
   maxFileSizeInBytes: PropTypes.number,
   onUpload: PropTypes.func,
@@ -447,6 +495,28 @@ export const ImageCardPropTypes = {
   accept: PropTypes.arrayOf(PropTypes.string),
   /** callback that you can use to validate the image, if you return a message we will display it as an error */
   validateUploadedImage: PropTypes.func,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.LARGETHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the lists will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
 };
 
 export const GaugeCardPropTypes = {
@@ -486,7 +556,7 @@ export const GaugeCardPropTypes = {
 };
 
 export const DashboardLayoutPropTypes = PropTypes.shape({
-  i: PropTypes.any,
+  i: PropTypes.string,
   x: PropTypes.number,
   y: PropTypes.number,
   w: PropTypes.number,
@@ -561,7 +631,14 @@ export const ComboChartPropTypes = {
           'area',
           'stacked-area',
         ]),
-        options: PropTypes.object,
+        options: PropTypes.shape({
+          points: PropTypes.shape({
+            enabled: PropTypes.bool,
+            radius: PropTypes.number,
+            filled: PropTypes.bool,
+            opacity: PropTypes.number,
+          }),
+        }),
         /* Name of the dataset/series the chart should follow */
         correspondingDatasets: PropTypes.arrayOf(PropTypes.string),
       })
@@ -700,6 +777,7 @@ export const CardPropTypes = {
       PropTypes.oneOf(Object.values(DATE_PICKER_OPTIONS)), // these are the new'iconOnly' will only show icon, 'full' shows whole field
     ]),
     settings: PropTypes.bool,
+    extra: PropTypes.bool,
   }),
   /** All the labels that need translation */
   i18n: PropTypes.shape({
@@ -779,4 +857,19 @@ export const CardPropTypes = {
   renderEditContent: PropTypes.func,
   footerContent: PropTypes.elementType,
   dateTimeMask: PropTypes.string,
+  extraActions: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    icon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    callback: PropTypes.func,
+    disabled: PropTypes.bool,
+    children: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        itemText: PropTypes.string.isRequired,
+        callback: PropTypes.func.isRequired,
+        disabled: PropTypes.bool,
+        hidden: PropTypes.bool,
+      })
+    ),
+  }),
 };

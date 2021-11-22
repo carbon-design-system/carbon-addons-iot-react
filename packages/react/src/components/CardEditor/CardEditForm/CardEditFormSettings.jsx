@@ -36,6 +36,7 @@ const propTypes = {
       timeDataSourceId: PropTypes.string,
       showLegend: PropTypes.bool,
     }),
+    renderEditSettings: PropTypes.func,
     interval: PropTypes.string,
   }),
   /** Callback function when form data changes */

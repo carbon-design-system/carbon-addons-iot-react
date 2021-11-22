@@ -250,7 +250,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onSelectAll, isSelected);
       },
       onRowExpanded: (rowId, isExpanded) => {
-        dispatch(tableRowExpand(rowId, isExpanded));
+        const expansionOptions =
+          typeof options.hasRowExpansion === 'object' ? options.hasRowExpansion : {};
+        dispatch(tableRowExpand(rowId, isExpanded, null, expansionOptions));
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
       onRowLoadMore: (rowId) => {
@@ -291,11 +293,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         }
         callbackParent(onColumnResize, resizedColumns);
       },
-      onOverflowItemClicked: (id) => {
+      onOverflowItemClicked: (id, meta) => {
         if (id === 'multi-sort') {
-          dispatch(tableMultiSortToggleModal());
+          dispatch(tableMultiSortToggleModal(meta));
         }
-        callbackParent(onOverflowItemClicked, id);
+        callbackParent(onOverflowItemClicked, id, meta);
       },
       onSaveMultiSortColumns: (sortColumns) => {
         dispatch(tableSaveMultiSortColumns(sortColumns));

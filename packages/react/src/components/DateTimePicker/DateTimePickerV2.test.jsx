@@ -24,7 +24,7 @@ const defaultPresets = [
   },
 ];
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const dateTimePickerProps = {
   onCancel: jest.fn(),
@@ -266,8 +266,8 @@ describe('DateTimePicker', () => {
         hasTimeInput={false}
       />
     );
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--radio-button`)).toHaveLength(0);
   });
 
   // https://github.com/IBM/carbon-addons-iot-react/issues/1179
@@ -282,8 +282,8 @@ describe('DateTimePicker', () => {
         showRelativeOption={false}
       />
     );
-    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--radio-button`)).toHaveLength(0);
   });
 
   it('should set the value relative to yesterday', () => {

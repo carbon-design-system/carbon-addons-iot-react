@@ -56,7 +56,8 @@ const propTypes = {
           PropTypes.string,
           PropTypes.number,
           PropTypes.bool,
-          PropTypes.arrayOf(PropTypes.string),
+          PropTypes.object,
+          PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])),
         ]).isRequired,
       })
     ),

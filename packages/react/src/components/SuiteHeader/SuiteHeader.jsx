@@ -7,11 +7,11 @@ import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 import { ButtonSkeleton } from 'carbon-components-react';
 import classnames from 'classnames';
 
-import { SideNav, Header } from '../../index';
-import { SideNavPropTypes } from '../SideNav/SideNav';
+import SideNav, { SideNavPropTypes } from '../SideNav/SideNav';
 import { ToastNotification } from '../Notification';
 import { Link } from '../Link';
-import { HeaderActionItemPropTypes, ChildContentPropTypes } from '../Header/Header';
+import Header from '../Header/Header';
+import { HeaderActionItemPropTypes, ChildContentPropTypes } from '../Header/HeaderPropTypes';
 import { settings } from '../../constants/Settings';
 import { SkeletonText } from '../SkeletonText';
 import Walkme from '../Walkme/Walkme';
@@ -21,77 +21,16 @@ import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitc
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 import IdleLogoutConfirmationModal, {
   IdleLogoutConfirmationModalIdleTimeoutPropTypes,
-  IdleLogoutConfirmationModalI18NPropTypes,
 } from './IdleLogoutConfirmationModal/IdleLogoutConfirmationModal';
 import SuiteHeaderI18N from './i18n';
-
-const ROUTE_TYPES = {
-  ADMIN: 'ADMIN',
-  NAVIGATOR: 'NAVIGATOR',
-  REFERRER: 'REFERRER',
-  APPLICATION: 'APPLICATION',
-  PROFILE: 'PROFILE',
-  ABOUT: 'ABOUT',
-  LOGOUT: 'LOGOUT',
-  DOCUMENTATION: 'DOCUMENTATION',
-  SURVEY: 'SURVEY',
-};
-
-export const SuiteHeaderRoutePropTypes = {
-  profile: PropTypes.string,
-  navigator: PropTypes.string,
-  admin: PropTypes.string,
-  logout: PropTypes.string,
-  logoutInactivity: PropTypes.string,
-  whatsNew: PropTypes.string,
-  gettingStarted: PropTypes.string,
-  documentation: PropTypes.string,
-  requestEnhancement: PropTypes.string,
-  support: PropTypes.string,
-  about: PropTypes.string,
-  // properties rendered as data attributes
-  workspaceId: PropTypes.string,
-  domain: PropTypes.string,
-};
-
-export const SuiteHeaderApplicationPropTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  isExternal: PropTypes.bool,
-};
-
-export const SuiteHeaderSurveyDataPropTypes = {
-  surveyLink: PropTypes.string.isRequired,
-  privacyLink: PropTypes.string.isRequired,
-};
-
-export const SuiteHeaderI18NPropTypes = {
-  help: PropTypes.string,
-  profileTitle: PropTypes.string,
-  profileManageButton: PropTypes.string,
-  profileLogoutButton: PropTypes.string,
-  logout: PropTypes.string,
-  userIcon: PropTypes.string,
-  administrationIcon: PropTypes.string,
-  settingsIcon: PropTypes.string,
-  profileLogoutModalHeading: PropTypes.string,
-  profileLogoutModalSecondaryButton: PropTypes.string,
-  profileLogoutModalPrimaryButton: PropTypes.string,
-  profileLogoutModalBody: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  switcherMyApplications: PropTypes.string,
-  switcherNavigatorLink: PropTypes.string,
-  whatsNew: PropTypes.string,
-  documentation: PropTypes.string,
-  requestEnhancement: PropTypes.string,
-  about: PropTypes.string,
-  support: PropTypes.string,
-  gettingStarted: PropTypes.string,
-  surveyTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  surveyText: PropTypes.string,
-  surveyPrivacyPolicy: PropTypes.string,
-  ...IdleLogoutConfirmationModalI18NPropTypes,
-};
+import { shouldOpenInNewWindow } from './suiteHeaderUtils';
+import {
+  SuiteHeaderApplicationPropTypes,
+  SuiteHeaderI18NPropTypes,
+  SuiteHeaderRoutePropTypes,
+  SuiteHeaderSurveyDataPropTypes,
+} from './SuiteHeaderPropTypes';
+import { SUITE_HEADER_ROUTE_TYPES } from './suiteHeaderConstants';
 
 const defaultProps = {
   className: null,
@@ -173,9 +112,6 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-foreign-prop-types
   isActionItemVisible: Header.propTypes.isActionItemVisible,
 };
-
-export const shouldOpenInNewWindow = (e) =>
-  navigator.userAgent.indexOf('Mac') !== -1 ? e.metaKey : e.ctrlKey;
 
 const SuiteHeader = ({
   className,
@@ -275,14 +211,22 @@ const SuiteHeader = ({
             <>
               <Link
                 href="#"
-                onClick={handleOnClick(ROUTE_TYPES.SURVEY, surveyData.surveyLink, true)}
+                onClick={handleOnClick(
+                  SUITE_HEADER_ROUTE_TYPES.SURVEY,
+                  surveyData.surveyLink,
+                  true
+                )}
               >
                 {mergedI18N.surveyText}
               </Link>
               <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
                 <Link
                   href="#"
-                  onClick={handleOnClick(ROUTE_TYPES.SURVEY, surveyData.privacyLink, true)}
+                  onClick={handleOnClick(
+                    SUITE_HEADER_ROUTE_TYPES.SURVEY,
+                    surveyData.privacyLink,
+                    true
+                  )}
                 >
                   {mergedI18N.surveyPrivacyPolicy}
                 </Link>
@@ -306,7 +250,7 @@ const SuiteHeader = ({
       <SuiteHeaderLogoutModal
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
-        onLogout={handleOnClick(ROUTE_TYPES.LOGOUT, routes?.logout)}
+        onLogout={handleOnClick(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes?.logout)}
         i18n={{
           heading: mergedI18N.profileLogoutModalHeading,
           primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
@@ -393,10 +337,10 @@ const SuiteHeader = ({
             ),
             onClick: async (e) => {
               let href = routes.admin;
-              let routeType = ROUTE_TYPES.ADMIN;
+              let routeType = SUITE_HEADER_ROUTE_TYPES.ADMIN;
               if (isAdminView) {
                 href = navigatorRoute;
-                routeType = ROUTE_TYPES.NAVIGATOR;
+                routeType = SUITE_HEADER_ROUTE_TYPES.NAVIGATOR;
               }
               handleOnClick(routeType, href)(e);
             },
@@ -425,7 +369,11 @@ const SuiteHeader = ({
                       'data-testid': `suite-header-help--${item}`,
                       href: '#',
                       title: mergedI18N[item],
-                      onClick: handleOnClick(ROUTE_TYPES.DOCUMENTATION, routes[item], true),
+                      onClick: handleOnClick(
+                        SUITE_HEADER_ROUTE_TYPES.DOCUMENTATION,
+                        routes[item],
+                        true
+                      ),
                     },
                     content: <span id={`suite-header-help-menu-${item}`}>{mergedI18N[item]}</span>,
                   })),
@@ -435,7 +383,7 @@ const SuiteHeader = ({
                       'data-testid': 'suite-header-help--about',
                       href: '#',
                       title: mergedI18N.about,
-                      onClick: handleOnClick(ROUTE_TYPES.ABOUT, routes.about),
+                      onClick: handleOnClick(SUITE_HEADER_ROUTE_TYPES.ABOUT, routes.about),
                     },
                     content: <span id="suite-header-help-menu-about">{mergedI18N.about}</span>,
                   },
@@ -478,7 +426,10 @@ const SuiteHeader = ({
                     <SuiteHeaderProfile
                       displayName={userDisplayName}
                       username={username}
-                      onProfileClick={handleOnClick(ROUTE_TYPES.PROFILE, routes?.profile)}
+                      onProfileClick={handleOnClick(
+                        SUITE_HEADER_ROUTE_TYPES.PROFILE,
+                        routes?.profile
+                      )}
                       i18n={{
                         profileTitle: mergedI18N.profileTitle,
                         profileButton: mergedI18N.profileManageButton,
@@ -536,6 +487,6 @@ const SuiteHeader = ({
 SuiteHeader.defaultProps = defaultProps;
 SuiteHeader.propTypes = propTypes;
 
-SuiteHeader.ROUTE_TYPES = ROUTE_TYPES;
+SuiteHeader.ROUTE_TYPES = SUITE_HEADER_ROUTE_TYPES;
 
 export default SuiteHeader;

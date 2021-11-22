@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.39](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.38...v2.147.0-next.39) (2021-10-29)
+
+
+### Bug Fixes
+
+* **datetimepicker:** remain selection on cancel ([5a723c5](https://github.com/IBM/carbon-components-angular/commit/5a723c56731aa76e402787a966665fd92cc7f890))
+
+
+
+
+
+# [2.147.0-next.22](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.21...v2.147.0-next.22) (2021-10-21)
+
+
+### Bug Fixes
+
+* **build:** move entry points to the same level ([4a4756b](https://github.com/IBM/carbon-components-angular/commit/4a4756b1de2a4e4cdb82cd12b1d197ce1c45fa16))
+* **list-header:** change imports ([6fcf26e](https://github.com/IBM/carbon-components-angular/commit/6fcf26ea86cd549ceebb6d59cf4e57e25aeaa1f0))
+
+
+
+
+
 # [2.147.0-next.12](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.11...v2.147.0-next.12) (2021-10-06)
 
 

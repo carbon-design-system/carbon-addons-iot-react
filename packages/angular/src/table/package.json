@@ -1,7 +1,7 @@
 {
   "ngPackage": {
     "lib": {
-      "entryFile": "index.ts"
+      "entryFile": "../table-index.ts"
     }
   }
 }

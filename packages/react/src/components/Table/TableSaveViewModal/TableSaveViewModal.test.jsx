@@ -18,13 +18,25 @@ describe('TableSaveViewModal', () => {
   };
 
   beforeEach(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
     jest.clearAllMocks();
+  });
+
+  afterAll(() => {
+    jest.resetAllMocks();
   });
 
   it('passes along all input data onSave callback', () => {
     render(
       <TableSaveViewModal actions={actions} open testID="my-modal" viewDescription="My view text" />
     );
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     fireEvent.change(screen.getByTestId('my-modal-form-title-input'), {
       target: { value: 'testval1' },
     });
@@ -125,6 +137,7 @@ describe('TableSaveViewModal', () => {
 
   it('has disabled Save unless the view title input has gotten a value', () => {
     render(<TableSaveViewModal actions={actions} open testID="my-modal" />);
+
     fireEvent.click(screen.getByText(i18n.saveButtonLabelText));
 
     expect(actions.onSave).not.toHaveBeenCalled();

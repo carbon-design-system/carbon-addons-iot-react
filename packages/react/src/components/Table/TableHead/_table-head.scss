@@ -3,6 +3,7 @@
 @import 'column-resize';
 @import 'ColumnHeaderRow/column-header-row';
 @import 'FilterHeaderRow/filter-header-row';
+@import 'ColumnGrouping/column-grouping';
 
 .#{$prefix}--data-table {
   th {
@@ -75,6 +76,7 @@
       flex-grow: 1;
       overflow: hidden;
       text-overflow: ellipsis;
+      line-height: 1.1rem;
     }
   }
 
