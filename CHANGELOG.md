@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.63](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.62...v2.147.0-next.63) (2021-11-22)
+
+
+### Reverts
+
+* **header:** remove accidentally changed style ([5980439](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5980439b865cdf70315d337924769f624914a5bf))
+
+
+
+
+
 # [2.147.0-next.62](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.61...v2.147.0-next.62) (2021-11-22)
 
 
