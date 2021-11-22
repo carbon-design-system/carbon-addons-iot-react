@@ -167,7 +167,7 @@ const ListContent = ({
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={() => handleSelect(item.id, parentId)}
+                onChange={() => handleSelect(item.id, parentId)}
                 checked={isSelected}
                 disabled={disabled || isLocked}
                 indeterminate={isIndeterminate}
