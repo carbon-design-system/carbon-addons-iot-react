@@ -830,32 +830,103 @@ describe('HierarchyList', () => {
     ).toHaveAttribute('draggable');
   });
 
-  describe('isVirtualList', () => {
-    beforeEach(() => {
-      jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
-        height: 800,
-      }));
-    });
+  it('should uncheck children when the parent is unchecked.', () => {
+    const onSelect = jest.fn();
+    const { container } = render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+        onSelect={onSelect}
+      />
+    );
 
-    afterEach(() => {
-      jest.resetAllMocks();
-    });
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.getByText('10 items selected')).toBeVisible();
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.queryByText('10 items selected')).toBeNull();
+    expect(container.querySelectorAll('input[checked]').length).toBe(0);
+  });
 
-    it('should maintain the current page when page size changes', () => {
-      const listItems = getListItems(20);
-      const { rerender } = render(
-        <HierarchyList title="Test List" items={listItems} pageSize="lg" isVirtualList />
-      );
+  it('should not selected a locked row when parent selected', () => {
+    const onSelect = jest.fn();
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+        lockedIds={['Atlanta Braves_Dansby Swanson']}
+        defaultExpandedIds={['Atlanta Braves']}
+        onSelect={onSelect}
+      />
+    );
 
-      expect(screen.getByText('Item 9')).toBeVisible();
-      userEvent.click(screen.getByRole('button', { name: 'Next page' }));
-      expect(screen.getByText('Item 19')).toBeVisible();
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.getByText('9 items selected')).toBeVisible();
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.queryByText('9 items selected')).toBeNull();
+    expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
+  });
 
-      rerender(<HierarchyList title="Test List" items={listItems} pageSize="sm" isVirtualList />);
+  it('should set indeterminate state on parent when a child is checked', () => {
+    render(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        defaultExpandedIds={['Atlanta Braves']}
+        title="indeterminate Ids"
+      />
+    );
 
-      expect(screen.getByText('Page 2')).toBeVisible();
-      expect(screen.getByText('Item 9')).toBeVisible();
-    });
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
+  });
+
+  it('should unset indeterminate state on parent when a preselected child is unchecked', () => {
+    render(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        defaultExpandedIds={['Atlanta Braves']}
+        defaultSelectedId="Atlanta Braves_Ronald Acuna Jr."
+        title="indeterminate Ids"
+      />
+    );
+
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
+  });
+
+  it('should check the parent when all children are checked', () => {
+    render(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        defaultExpandedIds={['Atlanta Braves']}
+        title="indeterminate Ids"
+      />
+    );
+
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Freddie Freeman-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Josh Donaldson-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Nick Markakis-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Austin Riley-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Brian McCann-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ozzie Albies-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Kevin Gausman-checkbox'));
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).toBeChecked();
   });
 
   it('should show custom empty state when given', () => {
@@ -897,5 +968,141 @@ describe('HierarchyList', () => {
     expect(screen.getByTitle('Item 3')).toBeVisible();
     expect(screen.getByTitle('Item 4')).toBeVisible();
     expect(screen.getByTitle('Item 5')).toBeVisible();
+  });
+
+  /** ***********************************************
+   * VirtualListTests
+   ************************************************ */
+
+  describe('isVirtualList', () => {
+    beforeEach(() => {
+      jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+        height: 800,
+      }));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('should maintain the current page when page size changes', () => {
+      const listItems = getListItems(20);
+      const { rerender } = render(
+        <HierarchyList title="Test List" items={listItems} pageSize="lg" isVirtualList />
+      );
+
+      expect(screen.getByText('Item 9')).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+      expect(screen.getByText('Item 19')).toBeVisible();
+
+      rerender(<HierarchyList title="Test List" items={listItems} pageSize="sm" isVirtualList />);
+
+      expect(screen.getByText('Page 2')).toBeVisible();
+      expect(screen.getByText('Item 9')).toBeVisible();
+    });
+
+    it('should uncheck children when the parent is unchecked.', () => {
+      const onSelect = jest.fn();
+      const { container } = render(
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          editingStyle={EditingStyle.MultipleNesting}
+          onSelect={onSelect}
+          isVirtualList
+        />
+      );
+
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.getByText('10 items selected')).toBeVisible();
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.queryByText('10 items selected')).toBeNull();
+      expect(container.querySelectorAll('input[checked]').length).toBe(0);
+    });
+
+    it('should not selected a locked row when parent selected', () => {
+      const onSelect = jest.fn();
+      render(
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          editingStyle={EditingStyle.MultipleNesting}
+          lockedIds={['Atlanta Braves_Dansby Swanson']}
+          defaultExpandedIds={['Atlanta Braves']}
+          onSelect={onSelect}
+          isVirtualList
+        />
+      );
+
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.getByText('9 items selected')).toBeVisible();
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.queryByText('9 items selected')).toBeNull();
+      expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
+    });
+
+    it('should set indeterminate state on parent when a child is checked', () => {
+      render(
+        <HierarchyList
+          items={items}
+          editingStyle={EditingStyle.MultipleNesting}
+          defaultExpandedIds={['Atlanta Braves']}
+          title="indeterminate Ids"
+          isVirtualList
+        />
+      );
+
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
+    });
+
+    it('should unset indeterminate state on parent when a preselected child is unchecked', () => {
+      render(
+        <HierarchyList
+          items={items}
+          editingStyle={EditingStyle.MultipleNesting}
+          defaultExpandedIds={['Atlanta Braves']}
+          defaultSelectedId="Atlanta Braves_Ronald Acuna Jr."
+          title="indeterminate Ids"
+          isVirtualList
+        />
+      );
+
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
+    });
+
+    it('should check the parent when all children are checked', () => {
+      render(
+        <HierarchyList
+          items={items}
+          editingStyle={EditingStyle.MultipleNesting}
+          defaultExpandedIds={['Atlanta Braves']}
+          title="indeterminate Ids"
+          isVirtualList
+        />
+      );
+
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Freddie Freeman-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Josh Donaldson-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Nick Markakis-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Austin Riley-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Brian McCann-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ozzie Albies-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Kevin Gausman-checkbox'));
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).toBeChecked();
+    });
   });
 });
