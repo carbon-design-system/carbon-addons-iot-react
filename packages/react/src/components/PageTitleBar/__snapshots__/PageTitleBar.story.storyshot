@@ -24,6 +24,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "0px",
+            "--negative-header-offset": "-0px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -4335,6 +4336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "0px",
+            "--negative-header-offset": "-0px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -4869,6 +4871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "0px",
+            "--negative-header-offset": "-0px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -5153,6 +5156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -5321,6 +5325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "0px",
+            "--negative-header-offset": "-0px",
             "--scroll-transition-progress": 0,
           }
         }
@@ -5666,6 +5671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "0px",
+            "--negative-header-offset": "-0px",
             "--scroll-transition-progress": 0,
           }
         }
@@ -6642,6 +6648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -6742,6 +6749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "0px",
+            "--negative-header-offset": "-0px",
             "--scroll-transition-progress": 0,
           }
         }
@@ -7055,6 +7063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -7192,6 +7201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         style={
           Object {
             "--header-offset": "0px",
+            "--negative-header-offset": "-0px",
             "--scroll-transition-progress": 1,
           }
         }
