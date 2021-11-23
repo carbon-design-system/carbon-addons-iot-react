@@ -27,7 +27,6 @@ import {
           [(rule)]="rule"
         ></ai-rule>
       </ng-container>
-      {{ tree | json }}
     </div>
   `,
 })
