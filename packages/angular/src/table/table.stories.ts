@@ -160,9 +160,9 @@ storiesOf('Components/Table', module)
         rowClick: action('row clicked'),
         indexFrom: null,
         indexTo: null,
-        moveRandomColumns: function() {
-          this.indexFrom = Math.floor(Math.random() * (complexModel['header'][0].length));
-          this.indexTo = Math.floor(Math.random() * (complexModel['header'][0].length));
+        moveRandomColumns: function () {
+          this.indexFrom = Math.floor(Math.random() * complexModel['header'][0].length);
+          this.indexTo = Math.floor(Math.random() * complexModel['header'][0].length);
           this.model.moveColumn(this.indexFrom, this.indexTo, 0);
         },
       },

@@ -959,47 +959,47 @@ describe('Table', () => {
 
     expect(tableModel.column(0)).toEqual([
       new TableItem({ data: 'd311' }),
-      new TableItem({ data: 'd311' })
+      new TableItem({ data: 'd311' }),
     ]);
 
     expect(tableModel.column(1)).toEqual([
       new TableItem({ data: 'd312' }),
-      new TableItem({ data: 'd312' })
+      new TableItem({ data: 'd312' }),
     ]);
 
     expect(tableModel.column(2)).toEqual([
       new TableItem({ data: 'd1111' }),
-      new TableItem({ data: 'd1111' })
+      new TableItem({ data: 'd1111' }),
     ]);
 
     expect(tableModel.column(3)).toEqual([
       new TableItem({ data: 'd121' }),
-      new TableItem({ data: 'd121' })
+      new TableItem({ data: 'd121' }),
     ]);
 
     expect(tableModel.column(4)).toEqual([
       new TableItem({ data: 'd122' }),
-      new TableItem({ data: 'd122' })
+      new TableItem({ data: 'd122' }),
     ]);
 
     expect(tableModel.column(5)).toEqual([
       new TableItem({ data: 'd13' }),
-      new TableItem({ data: 'd13' })
+      new TableItem({ data: 'd13' }),
     ]);
 
     expect(tableModel.column(6)).toEqual([
       new TableItem({ data: 'd2' }),
-      new TableItem({ data: 'd2' })
+      new TableItem({ data: 'd2' }),
     ]);
 
     expect(tableModel.column(7)).toEqual([
       new TableItem({ data: 'd41' }),
-      new TableItem({ data: 'd41' })
+      new TableItem({ data: 'd41' }),
     ]);
 
     expect(tableModel.column(8)).toEqual([
       new TableItem({ data: 'd422' }),
-      new TableItem({ data: 'd422' })
+      new TableItem({ data: 'd422' }),
     ]);
   });
 
@@ -1063,47 +1063,47 @@ describe('Table', () => {
 
     expect(tableModel.column(0)).toEqual([
       new TableItem({ data: 'd1111' }),
-      new TableItem({ data: 'd1111' })
+      new TableItem({ data: 'd1111' }),
     ]);
 
     expect(tableModel.column(1)).toEqual([
       new TableItem({ data: 'd121' }),
-      new TableItem({ data: 'd121' })
+      new TableItem({ data: 'd121' }),
     ]);
 
     expect(tableModel.column(2)).toEqual([
       new TableItem({ data: 'd122' }),
-      new TableItem({ data: 'd122' })
+      new TableItem({ data: 'd122' }),
     ]);
 
     expect(tableModel.column(3)).toEqual([
       new TableItem({ data: 'd13' }),
-      new TableItem({ data: 'd13' })
+      new TableItem({ data: 'd13' }),
     ]);
 
     expect(tableModel.column(4)).toEqual([
       new TableItem({ data: 'd311' }),
-      new TableItem({ data: 'd311' })
+      new TableItem({ data: 'd311' }),
     ]);
 
     expect(tableModel.column(5)).toEqual([
       new TableItem({ data: 'd312' }),
-      new TableItem({ data: 'd312' })
+      new TableItem({ data: 'd312' }),
     ]);
 
     expect(tableModel.column(6)).toEqual([
       new TableItem({ data: 'd41' }),
-      new TableItem({ data: 'd41' })
+      new TableItem({ data: 'd41' }),
     ]);
 
     expect(tableModel.column(7)).toEqual([
       new TableItem({ data: 'd422' }),
-      new TableItem({ data: 'd422' })
+      new TableItem({ data: 'd422' }),
     ]);
 
     expect(tableModel.column(8)).toEqual([
       new TableItem({ data: 'd2' }),
-      new TableItem({ data: 'd2' })
+      new TableItem({ data: 'd2' }),
     ]);
   });
 

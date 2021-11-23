@@ -1003,7 +1003,9 @@ export class AITableModel implements PaginationModel {
     }
 
     if (!availableHeaderItems.length) {
-      availableHeaderItems = header.map((headerRow) => headerRow.filter((headerItem) => headerItem !== null));
+      availableHeaderItems = header.map((headerRow) =>
+        headerRow.filter((headerItem) => headerItem !== null)
+      );
     }
 
     return headerRow
@@ -1014,7 +1016,7 @@ export class AITableModel implements PaginationModel {
 
         if (rowIndex + rowSpan >= this.header.length) {
           const dataChildren = [];
-          data.forEach(row => {
+          data.forEach((row) => {
             dataChildren.push(row.slice(leafIndex.index, leafIndex.index + colSpan));
           });
 
@@ -1025,7 +1027,7 @@ export class AITableModel implements PaginationModel {
             index: relativeIndex + i,
             rowIndex,
             dataChildren,
-            children: []
+            children: [],
           };
         }
 
@@ -1052,7 +1054,7 @@ export class AITableModel implements PaginationModel {
             leafIndex,
             header[rowIndex + rowSpan].indexOf(children[0]),
             rowIndex + rowSpan
-          )
+          ),
         };
       });
   }
@@ -1069,7 +1071,7 @@ export class AITableModel implements PaginationModel {
 
       if (headerObj.dataChildren.length) {
         for (let i = 0; i < data.length; i++) {
-          data[i] = [...data[i], ...headerObj.dataChildren[i]]
+          data[i] = [...data[i], ...headerObj.dataChildren[i]];
         }
       }
 
@@ -1084,38 +1086,33 @@ export class AITableModel implements PaginationModel {
 
     return {
       header,
-      data
+      data,
     };
   }
 
   /**
    * Move `nested` element at `rowIndex` with index `indexFrom` to `indexTo`.
    */
-  protected moveNested(
-      nested: any,
-      indexFrom: number,
-      indexTo: number,
-      rowIndex = 0
-    ) {
-      if (!nested.length) {
+  protected moveNested(nested: any, indexFrom: number, indexTo: number, rowIndex = 0) {
+    if (!nested.length) {
+      return;
+    }
+
+    const currentRowIndex = nested[0].rowIndex;
+    if (currentRowIndex === rowIndex) {
+      const indexFromElement = nested.find((obj: any) => obj.index === indexFrom);
+      const indexToElement = nested.find((obj: any) => obj.index === indexTo);
+
+      if (indexFromElement && indexToElement) {
+        const relativeIndexFrom = nested.indexOf(indexFromElement);
+        const relativeIndexTo = nested.indexOf(indexToElement);
+        this.moveMultipleToIndex([relativeIndexFrom], relativeIndexTo, nested);
         return;
       }
-
-      const currentRowIndex = nested[0].rowIndex;
-      if (currentRowIndex === rowIndex) {
-        const indexFromElement = nested.find((obj: any) => obj.index === indexFrom);
-        const indexToElement = nested.find((obj: any) => obj.index === indexTo);
-
-        if (indexFromElement && indexToElement) {
-          const relativeIndexFrom = nested.indexOf(indexFromElement);
-          const relativeIndexTo = nested.indexOf(indexToElement);
-          this.moveMultipleToIndex([relativeIndexFrom], relativeIndexTo, nested);
-          return;
-        }
-      }
-
-      nested.forEach((headerObj: any) => {
-        this.moveNested(headerObj.children, indexFrom, indexTo, rowIndex);
-      });
     }
+
+    nested.forEach((headerObj: any) => {
+      this.moveNested(headerObj.children, indexFrom, indexTo, rowIndex);
+    });
+  }
 }
