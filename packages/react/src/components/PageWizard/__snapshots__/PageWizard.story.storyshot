@@ -912,6 +912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
+                                aria-describedby="first-name-helper-text"
                                 className="bx--text-input"
                                 data-testid="first-name"
                                 disabled={false}
@@ -945,6 +946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
+                                aria-describedby="last-name-helper-text"
                                 className="bx--text-input"
                                 data-testid="last-name"
                                 disabled={false}
@@ -1318,6 +1320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
+                                aria-describedby="first-name-helper-text"
                                 className="bx--text-input"
                                 data-testid="first-name"
                                 disabled={false}
@@ -1351,6 +1354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
+                                aria-describedby="last-name-helper-text"
                                 className="bx--text-input"
                                 data-testid="last-name"
                                 disabled={false}
@@ -2605,6 +2609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
+                                aria-describedby="first-name-helper-text"
                                 className="bx--text-input"
                                 data-testid="first-name"
                                 disabled={false}
@@ -2638,6 +2643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
+                                aria-describedby="last-name-helper-text"
                                 className="bx--text-input"
                                 data-testid="last-name"
                                 disabled={false}
