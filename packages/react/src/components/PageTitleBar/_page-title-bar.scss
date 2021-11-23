@@ -1,6 +1,5 @@
-/* stylelint-disable declaration-property-unit-blacklist */
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/typography';
+@import '../../globals/vars';
+@import '../../globals/typography';
 
 @mixin condensed-style() {
   @include make-sticky();
