@@ -80,6 +80,7 @@ export const StatefulListWithNestedSearching = () => (
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
       expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -130,6 +131,7 @@ export const WithDefaultSelectedId = () => (
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
       expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -205,6 +207,7 @@ export const WithOverflowMenu = () => (
         ['Chicago White Sox'],
         ','
       )}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -273,6 +276,7 @@ export const WithNestedReorder = () => {
           isVirtualList={boolean('hasVirtualList', false)}
           lockedIds={object('lockedIds', ['New York Mets_Jeff McNeil'])}
           expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+          onExpandedChange={action('onExpandedChange')}
         />
       </div>
     );
@@ -341,6 +345,7 @@ export const WithNestedReorderingRestricted = () => {
           hasSearch={boolean('hasSearch', true)}
           isVirtualList={boolean('hasVirtualList', false)}
           expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+          onExpandedChange={action('onExpandedChange')}
           getAllowedDropIds={
             demoDropRestrictions
               ? (dragId) => {
@@ -416,6 +421,7 @@ export const WithDefaultExpandedIds = () => (
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
       expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -502,6 +508,7 @@ export const WithMixedHierarchies = () => (
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
       expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -553,6 +560,7 @@ export const WithSelectableCategories = () => (
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
       expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -590,6 +598,7 @@ export const WithLargeNumberOfItems = () => (
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', true)}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -614,6 +623,7 @@ export const WithEmptyState = () => (
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       emptyState={text('emptyState', '__a custom empty state__')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
