@@ -89,6 +89,8 @@ const propTypes = {
   /** callback used to limit which items that should get drop targets rendered.
    * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
+  /** a callback used to notify when the expanded items in the list change. */
+  onExpandedChange: PropTypes.func,
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
   /** callback function returned a modified list */
@@ -142,6 +144,7 @@ const defaultProps = {
   getAllowedDropIds: null,
   onListUpdated: () => {},
   cancelMoveClicked: () => {},
+  onExpandedChange: () => {},
   itemWillMove: () => {
     return true;
   },
@@ -247,6 +250,7 @@ const HierarchyList = ({
   defaultSelectedId,
   defaultExpandedIds,
   getAllowedDropIds,
+  onExpandedChange,
   onSelect,
   onListUpdated,
   itemWillMove,
@@ -273,6 +277,7 @@ const HierarchyList = ({
   // the basics need for filtering checks and memoize them for use in the useEffect below
   const itemsStrippedOfNodeElements = useMemo(() => reduceItems(items), [items]);
   const previousItems = usePrevious(items);
+  const previousExpandedIds = usePrevious(expandedIds);
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
       setFilteredItems(items);
@@ -281,6 +286,10 @@ const HierarchyList = ({
     }
   }, [items, previousItems]);
 
+  /**
+   * Effect to change the currently expanded hierarchies. Ignore it on the first render to allow
+   * defaultExpandedIds to work, but fire it on all other changes
+   */
   useEffect(() => {
     if (!isFirstRender.current) {
       setExpandedIds(expandedIdsProp);
@@ -289,6 +298,21 @@ const HierarchyList = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [expandedIdsProp]);
 
+  /**
+   * effect to trigger calling the onExpandedChange callback. Ignore it on the initial render
+   * when previousExpandedIds is undefined, but fire it on every change afterward
+   */
+  useEffect(() => {
+    if (previousExpandedIds !== undefined && !isEqual(previousExpandedIds, expandedIds)) {
+      onExpandedChange(expandedIds);
+    }
+  }, [expandedIds, onExpandedChange, previousExpandedIds]);
+
+  /**
+   * Effect to handle indeterminate state for parent checkboxes. If we're in an editMode and
+   * the selected ids changes, fire this effect to determine the currently indeterminate ids
+   * in the list.
+   */
   useEffect(() => {
     if (editingStyle) {
       setIndeterminateIds(handleEditModeIndeterminateIds(items, editModeSelectedIds));

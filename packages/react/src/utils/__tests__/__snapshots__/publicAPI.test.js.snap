@@ -5869,6 +5869,7 @@ Map {
       "itemWillMove": [Function],
       "items": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": [Function],
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
@@ -6084,6 +6085,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onListUpdated": Object {
         "type": "func",
