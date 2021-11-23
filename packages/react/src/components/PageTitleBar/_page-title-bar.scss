@@ -400,7 +400,7 @@
   &.page-title-bar--condensed-static {
     .page-title-bar-header {
       @include make-sticky();
-      top: calc(var(--header-offset) * -1);
+      top: var(--negative-header-offset);
     }
   }
 
@@ -419,12 +419,12 @@
 
 .#{$iot-prefix}--page-title-bar--stack-tabs-override-show.#{$iot-prefix}--page-title-bar--stack-tabs-override-show {
   .page-title-bar-header {
-    top: calc(var(--header-offset) * -1);
+    top: var(--negative-header-offset);
   }
 }
 
 .#{$iot-prefix}--page-title-bar--stack-tabs-override-hide.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide {
   .page-title-bar-header {
-    top: -(#{$spacing-10 + $spacing-05});
+    top: -($spacing-10 + $spacing-05);
   }
 }

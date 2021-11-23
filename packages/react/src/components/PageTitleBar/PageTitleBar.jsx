@@ -314,6 +314,11 @@ const PageTitleBar = ({
     ]
   );
 
+  const headerOffsetCssVar =
+    stackBreadcrumbsWithTabs &&
+    (headerMode === HEADER_MODES.DYNAMIC || headerMode === HEADER_MODES.CONDENSED)
+      ? `${stickyHeaderOffsetProp + BREADCRUMB_CONDENSED_HEIGHT}px`
+      : stickyHeaderOffset;
   return (
     <div
       data-testid={testId}
@@ -341,11 +346,8 @@ const PageTitleBar = ({
           !stackBreadcrumbsWithTabsProp,
       })}
       style={{
-        '--header-offset':
-          stackBreadcrumbsWithTabs &&
-          (headerMode === HEADER_MODES.DYNAMIC || headerMode === HEADER_MODES.CONDENSED)
-            ? `${stickyHeaderOffsetProp + BREADCRUMB_CONDENSED_HEIGHT}px`
-            : stickyHeaderOffset,
+        '--header-offset': headerOffsetCssVar,
+        '--negative-header-offset': `-${headerOffsetCssVar}`,
         '--scroll-transition-progress':
           headerMode !== HEADER_MODES.DYNAMIC ? 1 : transitionProgress,
         ...style,
