@@ -92,7 +92,11 @@ describe('PageTitleBar', () => {
       .should('have.class', 'page-title-bar--dynamic--before')
       .should('not.have.class', 'page-title-bar--dynamic--during')
       .should('not.have.class', 'page-title-bar--dynamic--after')
-      .should('have.attr', 'style', '--header-offset:48px; --scroll-transition-progress:0;');
+      .should(
+        'have.attr',
+        'style',
+        '--header-offset:48px; --negative-header-offset:-48px; --scroll-transition-progress:0;'
+      );
 
     cy.scrollTo(0, 118);
     cy.findByTestId('page-title-bar')
@@ -112,7 +116,11 @@ describe('PageTitleBar', () => {
       .should('not.have.class', 'page-title-bar--dynamic--during')
       .should('have.class', 'page-title-bar--dynamic--after')
       .should('not.have.class', 'page-title-bar--dynamic--before')
-      .should('have.attr', 'style', '--header-offset:48px; --scroll-transition-progress:1;');
+      .should(
+        'have.attr',
+        'style',
+        '--header-offset:48px; --negative-header-offset:-48px; --scroll-transition-progress:1;'
+      );
   });
 
   it('should stack the tabs and breadcrumbs in dynamic mode', () => {
@@ -153,13 +161,21 @@ describe('PageTitleBar', () => {
       .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs`)
       .should('not.have.class', 'page-title-bar--dynamic--during')
       .should('not.have.class', 'page-title-bar--dynamic--after')
-      .should('have.attr', 'style', '--header-offset:40px; --scroll-transition-progress:0;');
+      .should(
+        'have.attr',
+        'style',
+        '--header-offset:40px; --negative-header-offset:-40px; --scroll-transition-progress:0;'
+      );
 
     cy.scrollTo(0, 100);
 
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--dynamic--after')
-      .should('have.attr', 'style', '--header-offset:40px; --scroll-transition-progress:1;');
+      .should(
+        'have.attr',
+        'style',
+        '--header-offset:40px; --negative-header-offset:-40px; --scroll-transition-progress:1;'
+      );
 
     breadcrumbsAndTabsAreStickyAndInTheCorrectPosition();
   });
@@ -197,13 +213,21 @@ describe('PageTitleBar', () => {
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--condensed-static')
       .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs`)
-      .should('have.attr', 'style', '--header-offset:40px; --scroll-transition-progress:1;');
+      .should(
+        'have.attr',
+        'style',
+        '--header-offset:40px; --negative-header-offset:-40px; --scroll-transition-progress:1;'
+      );
 
     cy.scrollTo(0, 50);
 
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--condensed-static')
-      .should('have.attr', 'style', '--header-offset:40px; --scroll-transition-progress:1;');
+      .should(
+        'have.attr',
+        'style',
+        '--header-offset:40px; --negative-header-offset:-40px; --scroll-transition-progress:1;'
+      );
 
     breadcrumbsAndTabsAreStickyAndInTheCorrectPosition();
   });
@@ -243,14 +267,22 @@ describe('PageTitleBar', () => {
       .should('have.class', 'page-title-bar--dynamic--before')
       .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs-override-hide`)
       .should('not.have.class', `${iotPrefix}--page-title-bar--stack-tabs`)
-      .should('have.attr', 'style', '--header-offset:0px; --scroll-transition-progress:0;');
+      .should(
+        'have.attr',
+        'style',
+        '--header-offset:0px; --negative-header-offset:0px; --scroll-transition-progress:0;'
+      );
 
     cy.scrollTo(0, 250);
 
     cy.findByTestId('page-title-bar')
       .should('have.class', 'page-title-bar--dynamic--after')
       .should('have.class', `${iotPrefix}--page-title-bar--stack-tabs-override-hide`)
-      .should('have.attr', 'style', '--header-offset:0px; --scroll-transition-progress:1;');
+      .should(
+        'have.attr',
+        'style',
+        '--header-offset:0px; --negative-header-offset:0px; --scroll-transition-progress:1;'
+      );
 
     tabsAreStickyAndBreadcrumbsAreHidden();
 
