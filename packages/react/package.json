@@ -331,7 +331,7 @@
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-uglify": "^6.0.4",
-    "sass": "1.36.0",
+    "sass": "^1.42.1",
     "storybook-addon-rtl": "^0.2.2",
     "style-loader": "^0.23.1",
     "stylelint": "^10.1.0",

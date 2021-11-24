@@ -87,7 +87,7 @@
     "lodash-es": "4.17.15",
     "ng-packagr": "11.1.4",
     "rxjs": "6.5.3",
-    "sass": "1.36.0",
+    "sass": "^1.42.1",
     "ts-helpers": "1.1.2",
     "tsickle": "0.35.0",
     "tslib": "1.9.3",

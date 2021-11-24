@@ -33,7 +33,7 @@
     "react-grid-layout": "1.2.0",
     "react-resizable": "1.11.0",
     "rimraf": "3.0.2",
-    "sass": "1.36.0"
+    "sass": "^1.42.1"
   },
   "author": "IBM",
   "license": "Apache-2.0"
