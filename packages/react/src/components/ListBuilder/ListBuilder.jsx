@@ -47,6 +47,8 @@ const propTypes = {
     `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   testId: PropTypes.string,
+  /** will increase the height of the list items to make to room for a secondary value */
+  isLargeRow: PropTypes.bool,
   /** the list of all items available to select in the ListBuilder */
   items: PropTypes.arrayOf(PropTypes.shape(ListBuilderItemPropTypes)),
   /** current search value of the items search */
@@ -126,6 +128,7 @@ const defaultProps = {
   hasSelectedItemsSearch: true,
   hasReset: false,
   testId: 'list-builder',
+  isLargeRow: false,
   items: [],
   itemsSearchValue: null,
   itemCount: null,
@@ -169,6 +172,7 @@ const ListBuilder = ({
   // TODO: remove deprecated testID in v3.
   testID,
   testId,
+  isLargeRow,
   items,
   itemsSearchValue,
   itemCount,
@@ -326,6 +330,7 @@ const ListBuilder = ({
 
     return (
       <List
+        isLargeRow={isLargeRow}
         emptyState={allListEmptyText}
         handleLoadMore={handleLoadMore}
         loadingMoreIds={loadingMoreIds}
@@ -370,6 +375,7 @@ const ListBuilder = ({
           renderCheckboxList()
         ) : (
           <HierarchyList
+            isLargeRow={isLargeRow}
             emptyState={allListEmptyText}
             title={allListTitle(itemCount ?? allListItems.length)}
             items={allListItems}
@@ -389,6 +395,7 @@ const ListBuilder = ({
         data-testid={`${testID || testId}__selected`}
       >
         <HierarchyList
+          isLargeRow={isLargeRow}
           emptyState={selectedListEmptyText}
           buttons={
             hasReset

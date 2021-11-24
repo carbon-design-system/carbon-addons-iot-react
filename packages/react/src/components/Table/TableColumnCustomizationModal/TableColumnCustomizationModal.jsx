@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
+import isNil from 'lodash/isNil';
 import { CloseOutline16 } from '@carbon/icons-react';
 import warning from 'warning';
 
@@ -15,6 +16,10 @@ import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { useVisibilityToggle } from './visibilityToggleHook';
 
 const { iotPrefix } = settings;
+const ITEM_VALUE_KEYS = {
+  ID: 'id',
+  NAME: 'name',
+};
 
 const propTypes = {
   /** Defines the groups and which columns they contain. The order of the groups is relevant. */
@@ -90,6 +95,12 @@ const propTypes = {
   }),
   /** The id of a column that is pinned as the first column and cannot be deselected */
   pinnedColumnId: PropTypes.string,
+  /** The column key used as primary display value for the items in the lists */
+  primaryValue: PropTypes.oneOf(Object.values(ITEM_VALUE_KEYS)),
+  /** The column key used as secondary display value for the items in the lists.
+   * Defaults to undefined but if present will appear below the default value
+   * and make the list items taller.  */
+  secondaryValue: PropTypes.oneOf([...Object.values(ITEM_VALUE_KEYS), undefined]),
   /** Id that can be used for testing */
   testId: PropTypes.string,
 };
@@ -125,6 +136,8 @@ const defaultProps = {
   onReset: () => {},
   overrides: undefined,
   pinnedColumnId: undefined,
+  primaryValue: ITEM_VALUE_KEYS.NAME,
+  secondaryValue: undefined,
   testId: 'table-column-customization-modal',
 };
 
@@ -207,6 +220,23 @@ const transformToSelectedItems = (initialOrdering, availableColumnItems, groupMa
     : [];
 };
 
+const setPrimaryAndSecondaryContentValues = (item, primaryKey, secondaryKey) => {
+  const columnName = item.content.value;
+  const columnId = item.id;
+  return {
+    ...item,
+    content: {
+      value: primaryKey === ITEM_VALUE_KEYS.ID ? columnId : columnName,
+      secondaryValue:
+        secondaryKey === ITEM_VALUE_KEYS.ID
+          ? columnId
+          : secondaryKey === ITEM_VALUE_KEYS.NAME
+          ? columnName
+          : undefined,
+    },
+  };
+};
+
 const preventDropInOtherGroup = (...args) => args[2] !== 'nested';
 
 const TableColumnCustomizationModal = ({
@@ -225,6 +255,8 @@ const TableColumnCustomizationModal = ({
   open,
   overrides,
   pinnedColumnId,
+  primaryValue,
+  secondaryValue,
   testId,
 }) => {
   const {
@@ -250,8 +282,11 @@ const TableColumnCustomizationModal = ({
   const nrOfItemsNotNeedingSearch = 12;
 
   const availableColumnItems = useMemo(
-    () => transformToAvailableItems(availableColumns, pinnedColumnId, hasLoadMore),
-    [availableColumns, pinnedColumnId, hasLoadMore]
+    () =>
+      transformToAvailableItems(availableColumns, pinnedColumnId, hasLoadMore).map((item) => {
+        return setPrimaryAndSecondaryContentValues(item, primaryValue, secondaryValue);
+      }),
+    [availableColumns, pinnedColumnId, hasLoadMore, primaryValue, secondaryValue]
   );
 
   const [searchValue, setSearchValue] = useState(null);
@@ -365,7 +400,6 @@ const TableColumnCustomizationModal = ({
       {...overrides?.composedModal?.props}
     >
       <MyListBuilder
-        testId={`${testId}-list-builder`}
         getAllowedDropIds={
           groupMapping.length
             ? (dragId) => {
@@ -395,6 +429,7 @@ const TableColumnCustomizationModal = ({
           selectedListTitle: () => selectedColumnsLabel,
           selectedListEmptyText: selectedColumnsEmptyText,
         }}
+        isLargeRow={!isNil(secondaryValue)}
         items={availableColumnItems}
         itemWillMove={preventDropInOtherGroup}
         itemsSearchValue={searchValue}
@@ -422,6 +457,7 @@ const TableColumnCustomizationModal = ({
           .filter((item) => item.isCategory)
           .map(({ id }) => id)}
         selectedEditingStyle={EditingStyle.Single}
+        testId={`${testId}-list-builder`}
         useCheckboxes
         {...overrides?.listBuilder?.props}
       />

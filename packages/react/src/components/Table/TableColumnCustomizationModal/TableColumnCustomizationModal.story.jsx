@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, object, text } from '@storybook/addon-knobs';
+import { boolean, object, select, text } from '@storybook/addon-knobs';
 
 import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 import StoryNotice, { experimentalStoryTitle } from '../../../internal/StoryNotice';
@@ -177,9 +177,20 @@ WithColumnGroups.decorators = [
 ];
 
 export const WithManyColumnsAndLoadMore = () => {
+  const primaryValue = select(
+    'Column key used for primary value (primaryValue)',
+    ['id', 'name'],
+    'name'
+  );
+  const secondaryValue = select(
+    'Column key used for secondary value (secondaryValue)',
+    ['id', 'name', 'NONE'],
+    'NONE'
+  );
+
   const allAvailableColumns = new Array(1000)
     .fill(0)
-    .map((col, index) => ({ id: `${index + 1}`, name: `Column ${index + 1}` }));
+    .map((col, index) => ({ id: `id-${index + 1}`, name: `Column ${index + 1}` }));
   const [loadedColumns, setLoadedColumns] = useState(allAvailableColumns.slice(0, 100));
   const [loadingMoreIds, setLoadingMoreIds] = useState([]);
   const [canLoadMore, setCanLoadMore] = useState(true);
@@ -204,6 +215,8 @@ export const WithManyColumnsAndLoadMore = () => {
       onReset={action('onReset')}
       onSave={action('onSave')}
       open
+      primaryValue={primaryValue}
+      secondaryValue={secondaryValue === 'NONE' ? undefined : secondaryValue}
     />
   );
 };

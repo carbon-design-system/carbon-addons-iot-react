@@ -2821,6 +2821,16 @@ export const WithColumnCustomizationModal = () => {
   const demoHasLoadMore = boolean('demo load more example (hasLoadMore)', true);
   const demoPinnedColumn = boolean('demo pinned column (pinnedColumnId)', true);
   const hasVisibilityToggle = boolean('Allow toggling visibility (hasVisibilityToggle)', true);
+  const primaryValue = select(
+    'Column key used for primary value (primaryValue)',
+    ['id', 'name'],
+    'name'
+  );
+  const secondaryValue = select(
+    'Column key used for secondary value (secondaryValue)',
+    ['id', 'name', 'NONE'],
+    'NONE'
+  );
 
   const smallDataSet = tableData.slice(0, 5);
   const allAvailableColumns = tableColumns;
@@ -2918,6 +2928,8 @@ export const WithColumnCustomizationModal = () => {
         }}
         open={showModal}
         pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
+        primaryValue={primaryValue}
+        secondaryValue={secondaryValue === 'NONE' ? undefined : secondaryValue}
       />
     </>
   );

@@ -562,6 +562,53 @@ describe('TableColumnCustomizationModal', () => {
     expect(screen.getByText('test-title')).toBeVisible();
   });
 
+  it('can render primary and seondary values based on provided keys', () => {
+    const defaultProps = getDefaultProps();
+    defaultProps.availableColumns = [
+      {
+        id: 'col1',
+        name: 'column 1',
+      },
+    ];
+
+    const { rerender } = render(
+      <TableColumnCustomizationModal {...defaultProps} primaryValue="id" />
+    );
+    expect(screen.getByText('col1')).toBeVisible();
+    expect(
+      screen.getByText('col1').closest(`.${iotPrefix}--list-item--content--values--main`)
+    ).toBeVisible();
+    expect(screen.queryByText('column 1')).toBeNull();
+
+    rerender(
+      <TableColumnCustomizationModal {...defaultProps} primaryValue="name" secondaryValue="id" />
+    );
+    expect(screen.getByText('column 1')).toBeVisible();
+    expect(
+      screen.getByText('column 1').closest(`.${iotPrefix}--list-item--content--values--main`)
+    ).toBeVisible();
+    expect(screen.queryByText('col1')).toBeVisible();
+    expect(
+      screen.getByText('col1').closest(`.${iotPrefix}--list-item--content--values--main`)
+    ).toBeNull();
+  });
+
+  it('renders all rows large when a secondary value is used', () => {
+    const defaultProps = getDefaultProps();
+    defaultProps.availableColumns = [
+      {
+        id: 'col1',
+        name: 'column 1',
+      },
+    ];
+
+    const { rerender } = render(<TableColumnCustomizationModal {...defaultProps} />);
+    expect(screen.getByText('column 1').closest(`.${iotPrefix}--list-item__large`)).toBeNull();
+
+    rerender(<TableColumnCustomizationModal {...defaultProps} secondaryValue="id" />);
+    expect(screen.getByText('column 1').closest(`.${iotPrefix}--list-item__large`)).toBeVisible();
+  });
+
   describe('Groups', () => {
     it('should render groups as expanded on init', () => {
       render(

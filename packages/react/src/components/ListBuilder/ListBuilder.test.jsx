@@ -162,6 +162,14 @@ describe('ListBuilder', () => {
     ).toHaveLength(0);
   });
 
+  it('should use tall list items when isLargeRow:true', () => {
+    const { rerender } = render(<ListBuilder {...commonProps} />);
+    expect(screen.getByText('one').closest(`.${iotPrefix}--list-item__large`)).toBeNull();
+
+    rerender(<ListBuilder {...commonProps} isLargeRow />);
+    expect(screen.getByText('one').closest(`.${iotPrefix}--list-item__large`)).toBeVisible();
+  });
+
   describe('new design triggered by useCheckboxes:true', () => {
     it('should render checkboxes for selection', () => {
       render(<ListBuilder {...commonProps} useCheckboxes />);
