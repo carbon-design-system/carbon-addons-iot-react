@@ -31129,6 +31129,7 @@ Map {
       "labelText": "Add file",
       "multiple": false,
       "onAddFiles": [Function],
+      "pattern": ".[0-9a-z]+$",
       "tabIndex": 0,
     },
     "propTypes": Object {
@@ -31161,6 +31162,9 @@ Map {
       },
       "onAddFiles": Object {
         "type": "func",
+      },
+      "pattern": Object {
+        "type": "string",
       },
       "role": Object {
         "type": "string",
