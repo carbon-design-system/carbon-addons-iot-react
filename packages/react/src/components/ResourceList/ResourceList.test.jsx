@@ -1,6 +1,6 @@
 import React from 'react';
 import Edit16 from '@carbon/icons-react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { spacing02 } from '@carbon/layout';
 
@@ -119,5 +119,19 @@ describe('ResourceList', () => {
     expect(row.nextSibling).toHaveStyleRule('font-weight', 'normal');
     expect(row.nextSibling).toHaveStyleRule('padding-left', '0px !important');
     expect(row.nextSibling).toHaveStyleRule('padding-top', `${spacing02} !important`);
+  });
+
+  it('should trigger callback for keyboard events', () => {
+    const onRowClick = jest.fn();
+    const { rerender } = render(<ResourceList data={resourceData} onRowClick={onRowClick} />);
+
+    fireEvent.keyDown(screen.getByLabelText('Item A'), { key: 'Enter' });
+    expect(onRowClick).toHaveBeenCalledWith('row-0');
+
+    rerender(<ResourceList data={resourceData} onRowClick={null} />);
+    expect(() => {
+      userEvent.click(screen.getByLabelText('Item A'));
+      fireEvent.keyDown(screen.getByLabelText('Item A'), { key: 'Enter' });
+    }).not.toThrow();
   });
 });

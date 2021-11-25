@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import * as utils from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
+import { keyboardKeys } from '../../../../constants/KeyCodeConstants';
 
 import FilterHeaderRow from './FilterHeaderRow';
 
@@ -179,13 +180,11 @@ describe('FilterHeaderRow', () => {
     expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[1]).toHaveValue('test2');
     // hitting buttons other than enter doesn't clear the filters
     fireEvent.keyDown(screen.getAllByTitle('Clear filter')[0], {
-      keyCode: 27,
-      key: 'Escape',
+      key: keyboardKeys.ESCAPE,
     });
     expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[0]).toHaveValue('test1');
     fireEvent.keyDown(screen.getAllByTitle('Clear filter')[0], {
-      keyCode: 13,
-      key: 'Enter',
+      key: keyboardKeys.ENTER,
     });
     expect(screen.getAllByPlaceholderText('Type and hit enter to apply')[0]).toHaveValue('');
   });
@@ -650,5 +649,84 @@ describe('FilterHeaderRow', () => {
     );
 
     expect(container).toBeEmptyDOMElement();
+  });
+
+  it('should focus on first filterable text field when opened', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true, placeholderText: 'col1' },
+          { id: 'col2', isFilterable: true, placeholderText: 'col2' },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('col1')).toHaveFocus();
+    expect(screen.getByPlaceholderText('col2')).not.toHaveFocus();
+  });
+
+  it('should focus on first filterable text field when opened even if not first column', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: false },
+          { id: 'col2', isFilterable: true, placeholderText: 'col2' },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('col2')).toHaveFocus();
+  });
+
+  it('should focus on first combobox field when opened', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          {
+            id: 'col1',
+            isFilterable: true,
+            placeholderText: 'col1',
+            isMultiselect: false,
+            options: [{ id: 'option-1', text: 'Option 1' }],
+          },
+          { id: 'col2', isFilterable: true, placeholderText: 'col2' },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('col1')).toHaveFocus();
+    expect(screen.getByPlaceholderText('col2')).not.toHaveFocus();
+  });
+
+  it('should focus on first filterable multiselect field when opened', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          {
+            id: 'col1',
+            isFilterable: true,
+            placeholderText: 'col1',
+            isMultiselect: true,
+            options: [{ id: 'option-1', text: 'Option 1' }],
+          },
+          { id: 'col2', isFilterable: true, placeholderText: 'col2' },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('col1')).toHaveFocus();
+    expect(screen.getByPlaceholderText('col2')).not.toHaveFocus();
   });
 });

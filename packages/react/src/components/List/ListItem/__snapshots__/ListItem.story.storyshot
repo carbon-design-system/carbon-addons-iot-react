@@ -188,6 +188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                 aria-haspopup={true}
                 aria-label="open and close list of options"
                 className="bx--overflow-menu"
+                data-testid="overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -200,8 +201,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                   fill="currentColor"
                   focusable="false"
                   height={16}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
                   viewBox="0 0 32 32"

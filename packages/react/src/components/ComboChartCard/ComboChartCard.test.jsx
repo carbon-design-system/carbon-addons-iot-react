@@ -78,11 +78,17 @@ const commonOptions = {
 
 describe('ComboChartCard', () => {
   it('is selectable by testID ot testId ', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <ComboChartCard {...commonOptions} testID="COMBO_CHART_CARD_TEST" />
     );
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('COMBO_CHART_CARD_TEST')).toBeDefined();
-    rerender(<ComboChartCard {...commonOptions} testID="combo-chart-card-test" />);
+    rerender(<ComboChartCard {...commonOptions} testId="combo-chart-card-test" />);
     expect(screen.getByTestId('combo-chart-card-test')).toBeDefined();
   });
 

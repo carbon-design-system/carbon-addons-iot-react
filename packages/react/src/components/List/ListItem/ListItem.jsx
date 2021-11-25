@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
-import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
+import { Draggable16, ChevronUp16, ChevronDown16, Locked16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 
@@ -24,12 +24,16 @@ const ListItemPropTypes = {
     EditingStyle.MultipleNesting,
   ]),
   isLargeRow: PropTypes.bool,
+  isLocked: PropTypes.bool,
   isExpandable: PropTypes.bool,
   onExpand: PropTypes.func,
   isSelectable: PropTypes.bool,
   disabled: PropTypes.bool,
   onSelect: PropTypes.func,
   renderDropTargets: PropTypes.bool,
+  getAllowedDropIds: PropTypes.func,
+  /** the id of the item currently being dragged if any */
+  draggingId: PropTypes.string,
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
@@ -65,11 +69,14 @@ const ListItemPropTypes = {
   isDragging: PropTypes.bool.isRequired,
   onItemMoved: PropTypes.func.isRequired,
   itemWillMove: PropTypes.func.isRequired,
+  /** true if the list item should not be focusable even though isSelectable is true */
+  preventRowFocus: PropTypes.bool,
 };
 
 const ListItemDefaultProps = {
   editingStyle: null,
   isLargeRow: false,
+  isLocked: false,
   isExpandable: false,
   dragPreviewText: null,
   onExpand: () => {},
@@ -77,6 +84,8 @@ const ListItemDefaultProps = {
   disabled: false,
   onSelect: () => {},
   renderDropTargets: false,
+  getAllowedDropIds: null,
+  draggingId: null,
   selected: false,
   expanded: false,
   secondaryValue: null,
@@ -92,6 +101,7 @@ const ListItemDefaultProps = {
   },
   selectedItemRef: null,
   tags: null,
+  preventRowFocus: false,
 };
 
 const ListItem = ({
@@ -109,11 +119,14 @@ const ListItem = ({
   secondaryValue,
   rowActions,
   renderDropTargets,
+  getAllowedDropIds,
+  draggingId,
   icon,
   iconPosition, // or "right"
   onItemMoved,
   nestingLevel,
   isCategory,
+  isLocked,
   i18n,
   isDragging,
   selectedItemRef,
@@ -122,6 +135,7 @@ const ListItem = ({
   connectDragPreview,
   itemWillMove,
   dragPreviewText,
+  preventRowFocus,
 }) => {
   const mergedI18n = useMemo(() => ({ ...ListItemDefaultProps.i18n, ...i18n }), [i18n]);
 
@@ -217,7 +231,9 @@ const ListItem = ({
   };
 
   const dragIcon = () =>
-    editingStyle ? (
+    isLocked ? (
+      <Locked16 className={classnames(`${iotPrefix}--list-item--lock`)} />
+    ) : editingStyle ? (
       <div title={mergedI18n.dragHandle}>
         <Draggable16
           className={classnames(`${iotPrefix}--list-item--handle`, {
@@ -245,6 +261,8 @@ const ListItem = ({
         itemWillMove,
         disabled,
         renderDropTargets,
+        getAllowedDropIds: getAllowedDropIds ? () => getAllowedDropIds(draggingId) : null,
+        preventRowFocus,
       }}
     >
       {renderDragPreview()}
@@ -344,22 +362,27 @@ const ListItem = ({
   );
 };
 
-const cardSource = {
+const dragSourceSpecification = {
   beginDrag(props) {
     return {
-      id: props.columnId,
-      props,
-      index: props.index,
+      id: props.id,
     };
   },
 };
 
-const ds = DragSource(ItemType, cardSource, (connect, monitor) => ({
-  connectDragSource: connect.dragSource(),
-  connectDragPreview: connect.dragPreview(),
-  isDragging: monitor.isDragging(),
-  renderDropTargets: monitor.getItemType() !== null, // render drop targets if anything is dragging
-}));
+// These props origininate from React DND and are passed down to
+// the ListItem via the DragSource wrapper.
+const dndPropsCollecting = (connect, monitor) => {
+  return {
+    connectDragSource: connect.dragSource(),
+    connectDragPreview: connect.dragPreview(),
+    isDragging: monitor.isDragging(),
+    renderDropTargets: monitor.getItemType() !== null, // render drop targets if anything is dragging
+    draggingId: monitor.getItem()?.id,
+  };
+};
+
+const ds = DragSource(ItemType, dragSourceSpecification, dndPropsCollecting);
 
 ListItem.propTypes = ListItemPropTypes;
 ListItem.defaultProps = ListItemDefaultProps;

@@ -16,7 +16,7 @@ import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import Button from '../Button';
 import deprecate from '../../internal/deprecate';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 export const ComposedModalPropTypes = {
   /** Header Props
@@ -202,7 +202,7 @@ class ComposedModal extends React.Component {
           buttonOnClick={onClose}
           iconDescription={iconDescription}
         >
-          {helpText ? <p className="bx--modal-content__text">{helpText}</p> : null}
+          {helpText ? <p className={`${prefix}--modal-content__text`}>{helpText}</p> : null}
         </ModalHeader>
         {children ? (
           <ModalBody

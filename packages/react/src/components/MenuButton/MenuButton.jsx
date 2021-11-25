@@ -110,7 +110,26 @@ const MenuButton = ({
         y,
       });
     }
-  }, [label, langDir, onPrimaryActionClick]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [label, langDir, onPrimaryActionClick, isMenuOpen]);
+
+  /**
+   * This is a hacky work-around, because the current Menu (7.42.1) won't allow us
+   * to set classNames or a target for where the menu should be placed via the portal
+   * So, to fix the autopositioning, I have to open it, hide it with a property, check
+   * the positioning, reposition it, and then show it. ugh. They are adding these other
+   * features. Hopefully they'll be released soon, and we can use the `target` prop to open
+   * the menu in this container div where it used to be...
+   */
+  useEffect(() => {
+    document
+      .querySelector(':root')
+      .style.setProperty('--iot-menu-button-menu-opacity', isMenuOpen ? 0 : 1);
+
+    setTimeout(() => {
+      document.querySelector(':root').style.setProperty('--iot-menu-button-menu-opacity', 1);
+    }, 0);
+  }, [isMenuOpen]);
 
   useLayoutEffect(() => {
     window.addEventListener('resize', handleResize);

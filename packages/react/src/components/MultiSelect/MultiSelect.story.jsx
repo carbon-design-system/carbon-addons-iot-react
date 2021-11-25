@@ -14,7 +14,7 @@ import { Checkbox } from '../Checkbox';
 
 import MultiSelectREADME from './MultiSelect.mdx';
 
-import { MultiSelect } from '.';
+import { MultiSelect, FilterableMultiSelect } from '.';
 
 const items = [
   {
@@ -105,7 +105,7 @@ export default {
   parameters: {
     component: MultiSelect,
     subcomponents: {
-      'MultiSelect.Filterable': MultiSelect.Filterable,
+      FilterableMultiSelect,
     },
     docs: {
       page: MultiSelectREADME,
@@ -170,7 +170,7 @@ export const _Filterable = () => {
 
   return (
     <div style={{ width: 300 }}>
-      <MultiSelect.Filterable
+      <FilterableMultiSelect
         {...multiSelectProps}
         items={items}
         itemToString={(item) => (item ? item.text : '')}
@@ -190,7 +190,7 @@ _Filterable.storyName = 'filterable';
 _Filterable.parameters = {
   info: {
     text: `
-        When a list contains more than 25 items, use \`MultiSelect.Filterable\` to help find options from the list.
+        When a list contains more than 25 items, use \`FilterableMultiSelect\` to help find options from the list.
       `,
   },
 };

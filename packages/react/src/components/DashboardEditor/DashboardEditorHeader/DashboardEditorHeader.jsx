@@ -18,7 +18,8 @@ import {
 import isEmpty from 'lodash/isEmpty';
 
 import { settings } from '../../../constants/Settings';
-import { Button, PageTitleBar } from '../../../index';
+import Button from '../../Button';
+import PageTitleBar from '../../PageTitleBar';
 import IconSwitch from '../../IconSwitch/IconSwitch';
 
 const { iotPrefix } = settings;

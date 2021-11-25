@@ -6,12 +6,14 @@ import isEqual from 'lodash/isEqual';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
-import List, { ListItemPropTypes } from '../List';
+import List from '../List';
+import { ListItemPropTypes } from '../ListPropTypes';
 import {
   EditingStyle,
   handleEditModeSelect,
   moveItemsInList,
   DropLocation,
+  handleEditModeIndeterminateIds,
 } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 import { usePrevious } from '../../../hooks/usePrevious';
@@ -74,12 +76,17 @@ const propTypes = {
   isLoading: PropTypes.bool,
   /** optionally makings each list item a large / fat row */
   isLargeRow: PropTypes.bool,
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** Determines the number of rows per page */
   pageSize: PropTypes.string,
   /** Item id to be pre-selected */
   defaultSelectedId: PropTypes.string,
   /** Item ids to be pre-expanded */
   defaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** callback used to limit which items that should get drop targets rendered.
+   * recieves the id of the item that is being dragged and returns a list of ids. */
+  getAllowedDropIds: PropTypes.func,
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
   /** callback function returned a modified list */
@@ -123,11 +130,13 @@ const defaultProps = {
   isLoading: false,
   isLargeRow: false,
   isVirtualList: false,
+  lockedIds: [],
   pageSize: null,
   defaultSelectedId: null,
   defaultExpandedIds: [],
   onSelect: null,
   sendingData: null,
+  getAllowedDropIds: null,
   onListUpdated: () => {},
   cancelMoveClicked: () => {},
   itemWillMove: () => {
@@ -229,9 +238,11 @@ const HierarchyList = ({
   isLoading,
   isLargeRow,
   isVirtualList,
+  lockedIds,
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
+  getAllowedDropIds,
   onSelect,
   onListUpdated,
   itemWillMove,
@@ -250,6 +261,8 @@ const HierarchyList = ({
   const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [indeterminateIds, setIndeterminateIds] = useState([]);
+
   // these are used in filtering, and since items may contain nodes or react elements
   // we don't want to do equality checks against those, so we strip the items down to
   // the basics need for filtering checks and memoize them for use in the useEffect below
@@ -258,8 +271,16 @@ const HierarchyList = ({
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
       setFilteredItems(items);
+      setSearchValue('');
+      setCurrentPageNumber(1);
     }
   }, [items, previousItems]);
+
+  useEffect(() => {
+    if (editingStyle) {
+      setIndeterminateIds(handleEditModeIndeterminateIds(items, editModeSelectedIds));
+    }
+  }, [editModeSelectedIds, editingStyle, items]);
 
   const selectedItemRef = useCallback(
     (node) => {
@@ -276,7 +297,9 @@ const HierarchyList = ({
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
-      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+      setEditModeSelectedIds(
+        handleEditModeSelect(items, editModeSelectedIds, id, parentId, lockedIds)
+      );
     } else if (selectedIds.includes(id) && hasDeselection) {
       setSelectedIds(selectedIds.filter((item) => item !== id));
       // else, no-op because the item can't be deselected
@@ -301,31 +324,28 @@ const HierarchyList = ({
     cancelMoveClicked();
   };
 
-  useEffect(
-    () => {
-      // Expand the parent elements of the defaultSelectedId
-      if (defaultSelectedId) {
-        const tempFilteredItems = searchForNestedItemIds(
-          itemsStrippedOfNodeElements,
-          defaultSelectedId
-        );
-        const tempExpandedIds = [...expandedIds];
-        // Expand the categories that have found results
-        tempFilteredItems.forEach((categoryItem) => {
-          tempExpandedIds.push(categoryItem.id);
-        });
-        setExpandedIds(tempExpandedIds);
-
-        /* istanbul ignore else */
-        if (!isEqual(selectedIds, [defaultSelectedId])) {
-          // If the defaultSelectedId prop is updated from the outside, we need to use it
-          setSelected(defaultSelectedId);
-        }
-      }
-    },
+  useEffect(() => {
+    // Expand the parent elements of the defaultSelectedId
+    if (defaultSelectedId) {
+      const tempFilteredItems = searchForNestedItemIds(
+        itemsStrippedOfNodeElements,
+        defaultSelectedId
+      );
+      const tempExpandedIds = [...expandedIds];
+      // Expand the categories that have found results
+      tempFilteredItems.forEach((categoryItem) => {
+        tempExpandedIds.push(categoryItem.id);
+      });
+      setExpandedIds(tempExpandedIds);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultSelectedId, itemsStrippedOfNodeElements]
-  );
+  }, [defaultSelectedId, itemsStrippedOfNodeElements]);
+
+  useEffect(() => {
+    // If the defaultSelectedId prop is updated from the outside, we need to use it
+    setSelected(defaultSelectedId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultSelectedId]);
 
   const numberOfItems = filteredItems.length;
   let rowsPerPage;
@@ -351,7 +371,9 @@ const HierarchyList = ({
     setItemsToShow(filteredItems.slice(startIndex, startIndex + rowsPerPage));
   }, [currentPageNumber, filteredItems, rowsPerPage]);
 
-  const maxPage = Math.ceil(numberOfItems / rowsPerPage);
+  const maxPage = !Number.isNaN(Math.ceil(numberOfItems / rowsPerPage))
+    ? Math.ceil(numberOfItems / rowsPerPage)
+    : 1;
 
   const onPage = useCallback(
     (page) => {
@@ -500,12 +522,15 @@ const HierarchyList = ({
         }}
         i18n={mergedI18n}
         pagination={hasPagination ? pagination : null}
+        indeterminateIds={indeterminateIds}
         isFullHeight={isFullHeight}
         isLoading={isLoading}
         isLargeRow={isLargeRow}
         isVirtualList={isVirtualList}
         itemWillMove={itemWillMove}
+        lockedIds={lockedIds}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
+        getAllowedDropIds={getAllowedDropIds}
         handleSelect={handleSelect}
         ref={selectedItemRef}
         onItemMoved={handleDrag}

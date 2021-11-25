@@ -22,6 +22,10 @@
   }
 }
 
+.#{$prefix}--menu.#{$prefix}--menu--open.#{$prefix}--menu--root {
+  opacity: var(--iot-menu-button-menu-opacity);
+}
+
 html[dir='rtl'] .#{$iot-prefix}--menu-button {
   .#{$prefix}--context-menu-option__icon {
     margin-right: 0;

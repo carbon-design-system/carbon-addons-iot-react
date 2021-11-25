@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Tree16 } from '@carbon/icons-react';
+import { Tree16, Add16 } from '@carbon/icons-react';
 
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -477,5 +477,127 @@ describe('Card', () => {
     expect(screen.getByText('ven')).toBeVisible();
     expect(screen.getByText('sam')).toBeVisible();
     expect(screen.getByText('dim')).toBeVisible();
+  });
+
+  it('card extra actions(single/multiple)', async () => {
+    const mockExtraSingle = jest.fn();
+    const mockExtraMultiple = jest.fn();
+    const singleExtraAction = {
+      id: 'extrasingleaction',
+      icon: Add16,
+      callback: mockExtraSingle,
+    };
+    const singleExtraDisabledAction = {
+      id: 'extrasingleaction',
+      icon: Add16,
+      disabled: true,
+      callback: mockExtraSingle,
+    };
+    const multiExtraAction = {
+      id: 'extramultiaction',
+      children: [
+        {
+          id: 'firstItem',
+          itemText: 'Item1',
+          callback: mockExtraMultiple,
+        },
+        {
+          id: 'secondItem',
+          itemText: 'Item2',
+          callback: mockExtraMultiple,
+        },
+        {
+          id: 'thirdItem',
+          itemText: 'Item3',
+          disabled: true,
+          callback: mockExtraMultiple,
+        },
+        {
+          id: 'fourthItem',
+          itemText: 'Item4',
+          hidden: true,
+          callback: mockExtraMultiple,
+        },
+      ],
+    };
+
+    // Test single icon button action
+    const { rerender } = render(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    expect(mockExtraSingle).toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    // Test disabled icon button action
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraDisabledAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    expect(screen.getAllByTitle('Action Label')[0]).toBeDisabled();
+    expect(mockExtraSingle).not.toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    // Test extra action when card isExpanded
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraAction}
+        isExpanded
+        availableActions={{
+          extra: true,
+          expand: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    expect(mockExtraSingle).toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    // Test multiple extra actions
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={multiExtraAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    const firstItem = await screen.findByText('Item1');
+    fireEvent.click(firstItem);
+    expect(mockExtraMultiple).toHaveBeenCalled();
+
+    // Reopen menu
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    mockExtraMultiple.mockClear();
+    const secondItem = await screen.findByText('Item2');
+    fireEvent.click(secondItem);
+    expect(mockExtraMultiple).toHaveBeenCalled();
+
+    // Reopen menu to verify disabled item
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    const thirdItem = await screen.findByText('Item3');
+    expect(thirdItem.closest('button')).toBeDisabled();
+
+    // Reopen menu to verify hidden item
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    expect(screen.queryByText('Item4')).not.toBeInTheDocument();
   });
 });

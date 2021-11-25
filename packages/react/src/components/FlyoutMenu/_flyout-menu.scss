@@ -246,6 +246,10 @@ $shadow: 0.4rem;
   min-width: unset;
   max-width: unset;
   padding: 0;
+
+  &[data-floating-menu-direction='bottom'] {
+    margin-top: 0;
+  }
 }
 
 .#{$iot-prefix}--flyout-menu--content {
@@ -255,8 +259,8 @@ $shadow: 0.4rem;
 .#{$iot-prefix}--flyout-menu--trigger-button {
   color: $icon-01;
 
-  &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger svg,
-  &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger:hover svg {
+  &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger svg,
+  &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger:hover svg {
     fill: $gray-70;
   }
 

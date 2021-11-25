@@ -156,7 +156,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div
           className="iot--rule-builder-wrap--tabs bx--tabs--scrollable"
           data-testid="rule-builder-tabs"
-          onScroll={[Function]}
           selected={0}
         >
           <button
@@ -186,6 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </button>
           <ul
             className="bx--tabs--scrollable__nav"
+            onScroll={[Function]}
             role="tablist"
             tabIndex={-1}
           >
@@ -291,6 +291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-0-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="ALL"
                         type="button"
                       >
                         <span
@@ -431,6 +432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-1-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Select a column"
                     type="button"
                   >
                     <span
@@ -495,6 +497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-2-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Select an operand"
                     type="button"
                   >
                     <span
@@ -549,7 +552,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby="rsiru4rjba-value-helper-text"
+                      className="bx--text-input bx--text-input--light"
                       data-testid="rsiru4rjba-value"
                       defaultValue=""
                       disabled={false}
@@ -696,7 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-609"
+                aria-controls="accordion-item-655"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -720,13 +724,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   Details
                 </div>
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-609"
+                id="accordion-item-655"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -745,6 +750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
+                        aria-describedby="rule-builder-title-input-helper-text"
                         className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
                         data-testid="rule-builder-title-input"
                         disabled={false}
@@ -780,7 +786,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
+                          aria-describedby="rule-builder-tags-input-helper-text"
+                          className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="rule-builder-tags-input"
                           onChange={[Function]}
@@ -807,7 +814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-610"
+                aria-controls="accordion-item-656"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -831,13 +838,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   Sharing and permissions
                 </div>
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-610"
+                id="accordion-item-656"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -855,6 +863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
                         data-testid="edit-table-table-toolbar-batch-actions"
+                        onScroll={[Function]}
                       >
                         <div
                           className="bx--batch-summary"
@@ -1370,6 +1379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
                         data-testid="read-table-table-toolbar-batch-actions"
+                        onScroll={[Function]}
                       >
                         <div
                           className="bx--batch-summary"
@@ -2821,7 +2831,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div
           className="iot--rule-builder-wrap--tabs bx--tabs--scrollable"
           data-testid="rule-builder-tabs"
-          onScroll={[Function]}
           selected={0}
         >
           <button
@@ -2851,6 +2860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           </button>
           <ul
             className="bx--tabs--scrollable__nav"
+            onScroll={[Function]}
             role="tablist"
             tabIndex={-1}
           >
@@ -2956,6 +2966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-0-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="ALL"
                         type="button"
                       >
                         <span
@@ -3096,6 +3107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-1-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Column 1"
                     type="button"
                   >
                     <span
@@ -3160,6 +3172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-2-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Equals"
                     type="button"
                   >
                     <span
@@ -3214,7 +3227,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby="rsiru4rjba-value-helper-text"
+                      className="bx--text-input bx--text-input--light"
                       data-testid="rsiru4rjba-value"
                       defaultValue="45"
                       disabled={false}
@@ -3369,6 +3383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-3-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Column 2"
                     type="button"
                   >
                     <span
@@ -3433,6 +3448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-4-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Less than"
                     type="button"
                   >
                     <span
@@ -3487,7 +3503,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby="34bvyub9jq-value-helper-text"
+                      className="bx--text-input bx--text-input--light"
                       data-testid="34bvyub9jq-value"
                       defaultValue="14"
                       disabled={false}
@@ -3645,6 +3662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-5-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="ANY"
                         type="button"
                       >
                         <span
@@ -3718,6 +3736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-6-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Column 2"
                       type="button"
                     >
                       <span
@@ -3782,6 +3801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-7-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Greater than or equal to"
                       type="button"
                     >
                       <span
@@ -3836,7 +3856,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        aria-describedby="ewc2z5kyfu-value-helper-text"
+                        className="bx--text-input bx--text-input--light"
                         data-testid="ewc2z5kyfu-value"
                         defaultValue="46"
                         disabled={false}
@@ -3991,6 +4012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-8-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Column 1"
                       type="button"
                     >
                       <span
@@ -4055,6 +4077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-9-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Less than"
                       type="button"
                     >
                       <span
@@ -4109,7 +4132,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        aria-describedby="hks7h2zin4-value-helper-text"
+                        className="bx--text-input bx--text-input--light"
                         data-testid="hks7h2zin4-value"
                         defaultValue="45"
                         disabled={false}
@@ -4267,6 +4291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-10-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="ALL"
                           type="button"
                         >
                           <span
@@ -4340,6 +4365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-11-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="Select a column"
                         type="button"
                       >
                         <span
@@ -4404,6 +4430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-12-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="Select an operand"
                         type="button"
                       >
                         <span
@@ -4458,7 +4485,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
+                          aria-describedby="wg9hlv197c-value-helper-text"
+                          className="bx--text-input bx--text-input--light"
                           data-testid="wg9hlv197c-value"
                           defaultValue=""
                           disabled={false}
@@ -4616,6 +4644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             id="downshift-13-toggle-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
+                            title="ALL"
                             type="button"
                           >
                             <span
@@ -4689,6 +4718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-14-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="Column 1"
                           type="button"
                         >
                           <span
@@ -4753,6 +4783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-15-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="Equals"
                           type="button"
                         >
                           <span
@@ -4807,7 +4838,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           data-invalid={null}
                         >
                           <input
-                            className="bx--text-input bx--text__input bx--text-input--light"
+                            aria-describedby="7kadk2wfv8-value-helper-text"
+                            className="bx--text-input bx--text-input--light"
                             data-testid="7kadk2wfv8-value"
                             defaultValue="44"
                             disabled={false}
@@ -4962,6 +4994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-16-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="Column 2"
                           type="button"
                         >
                           <span
@@ -5026,6 +5059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           id="downshift-17-toggle-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
+                          title="Equals"
                           type="button"
                         >
                           <span
@@ -5080,7 +5114,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           data-invalid={null}
                         >
                           <input
-                            className="bx--text-input bx--text__input bx--text-input--light"
+                            aria-describedby="49mf09vjhn-value-helper-text"
+                            className="bx--text-input bx--text-input--light"
                             data-testid="49mf09vjhn-value"
                             defaultValue="46"
                             disabled={false}
@@ -5230,7 +5265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-649"
+                aria-controls="accordion-item-695"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -5254,13 +5289,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   Details
                 </div>
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-649"
+                id="accordion-item-695"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -5279,6 +5315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
+                        aria-describedby="rule-builder-title-input-helper-text"
                         className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
                         data-testid="rule-builder-title-input"
                         defaultValue="My Filter"
@@ -5315,7 +5352,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
+                          aria-describedby="rule-builder-tags-input-helper-text"
+                          className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="rule-builder-tags-input"
                           onChange={[Function]}
@@ -5423,7 +5461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-650"
+                aria-controls="accordion-item-696"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -5447,13 +5485,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   Sharing and permissions
                 </div>
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-650"
+                id="accordion-item-696"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -5471,6 +5510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
                         data-testid="edit-table-table-toolbar-batch-actions"
+                        onScroll={[Function]}
                       >
                         <div
                           className="bx--batch-summary"
@@ -5750,6 +5790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-hidden={true}
                         className="bx--batch-actions iot--table-batch-actions"
                         data-testid="read-table-table-toolbar-batch-actions"
+                        onScroll={[Function]}
                       >
                         <div
                           className="bx--batch-summary"
@@ -7462,11 +7503,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Zm-1.125-5h2.25V12h-2.25Z"
+        data-icon-path="inner-path"
         fill="none"
       />
       <path
-        d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16.002,6.1714h-.004L4.6487,27.9966,4.6506,28H27.3494l.0019-.0034ZM14.875,12h2.25v9h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+      />
+      <path
+        d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
       />
       <title>
         warning-alt icon

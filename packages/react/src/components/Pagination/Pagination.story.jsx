@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, array, boolean, number, text } from '@storybook/addon-knobs';
+import { withKnobs, array, boolean, number, text, select } from '@storybook/addon-knobs';
 
 import { Pagination } from '.';
 
@@ -23,6 +23,7 @@ const props = () => ({
   pageSizes: array('Choices of `pageSize` (pageSizes)', [10, 20, 30, 40, 50]),
   itemsPerPageText: text('Label for `pageSizes` select UI (itemsPerPageText)', 'Items per page:'),
   onChange: action('onChange'),
+  size: select('The size of the pagination buttons', ['sm', 'md', 'lg'], 'lg'),
 });
 
 export default {

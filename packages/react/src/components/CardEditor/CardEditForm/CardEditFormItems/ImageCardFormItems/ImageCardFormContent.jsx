@@ -8,6 +8,7 @@ import { DataItemsPropTypes } from '../../../../DashboardEditor/editorUtils';
 import HotspotEditorModal from '../../../../HotspotEditorModal/HotspotEditorModal';
 import { settings } from '../../../../../constants/Settings';
 import ContentFormItemTitle from '../ContentFormItemTitle';
+import { ImageCardValuesPropType } from '../../../../../constants/CardPropTypes';
 
 const { iotPrefix, prefix } = settings;
 
@@ -22,7 +23,9 @@ const propTypes = {
       id: PropTypes.string,
       src: PropTypes.string,
       zoomMax: PropTypes.number,
+      displayOption: PropTypes.string,
     }),
+    values: ImageCardValuesPropType,
     interval: PropTypes.string,
   }),
   /* callback when image cardConfig needs to be updated */

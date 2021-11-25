@@ -27,7 +27,8 @@ FullWidthWrapper.propTypes = {
   /**
    * allow for over rides and additional styles to wrapper
    */
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
 };
 
 FullWidthWrapper.defaultProps = {

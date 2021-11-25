@@ -1,1 +1,6 @@
-export { TextInput, TextInputSkeleton } from 'carbon-components-react';
+export {
+  TextInput,
+  TextInputSkeleton,
+  ControlledPasswordInput,
+  PasswordInput,
+} from 'carbon-components-react';

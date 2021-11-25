@@ -136,54 +136,54 @@ describe('MenuButton', () => {
   });
 
   it('should be open the menu when clicking the button in single button mode', () => {
-    const { container } = render(<MenuButton label="Create">{menuItems}</MenuButton>);
+    render(<MenuButton label="Create">{menuItems}</MenuButton>);
 
-    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
+    expect(document.body.querySelector(`.${prefix}--menu`)).toBeNull();
     userEvent.click(screen.getByRole('button', { name: 'Create' }));
     expect(screen.getByText('Publish')).toBeVisible();
-    expect(container.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
+    expect(document.body.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should be open the menu when clicking the secondary button split button mode', () => {
-    const { container } = render(
+    render(
       <MenuButton label="Create" onPrimaryActionClick={callbacks.primary}>
         {menuItems}
       </MenuButton>
     );
 
-    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
+    expect(document.body.querySelector(`.${prefix}--menu`)).toBeNull();
     userEvent.click(screen.getByLabelText('open menu button'));
     expect(screen.getByText('Publish')).toBeVisible();
-    expect(container.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
+    expect(document.body.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
   });
 
   it('should not open when clicking the primary action of a split button', () => {
-    const { container } = render(
+    render(
       <MenuButton label="Create" onPrimaryActionClick={callbacks.primary}>
         {menuItems}
       </MenuButton>
     );
 
-    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
+    expect(document.body.querySelector(`.${prefix}--menu`)).toBeNull();
     userEvent.click(screen.getByRole('button', { name: 'Create' }));
     expect(callbacks.primary).toHaveBeenCalled();
-    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
+    expect(document.body.querySelector(`.${prefix}--menu`)).toBeNull();
   });
 
   it('should close the menu when clicking a child item with an onClick handler', () => {
-    const { container } = render(
+    render(
       <MenuButton label="Create" onPrimaryActionClick={callbacks.primary}>
         {menuItems}
       </MenuButton>
     );
 
-    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
+    expect(document.body.querySelector(`.${prefix}--menu`)).toBeNull();
     userEvent.click(screen.getByLabelText('open menu button'));
 
-    expect(container.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
+    expect(document.body.querySelector(`.${prefix}--menu`)).toHaveClass(`${prefix}--menu--open`);
     userEvent.click(screen.getByTitle('Duplicate'));
     expect(callbacks.duplicate).toHaveBeenCalled();
-    expect(container.querySelector(`.${prefix}--menu`)).not.toHaveClass(`${prefix}--menu--open`);
+    expect(document.body.querySelector(`.${prefix}--menu`)).toBeNull();
   });
 
   it('should show a warning when using an icon without an icon description', () => {

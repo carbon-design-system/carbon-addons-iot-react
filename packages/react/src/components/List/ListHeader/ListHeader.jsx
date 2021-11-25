@@ -12,6 +12,7 @@ const propTypes = {
   search: PropTypes.shape({
     onChange: PropTypes.func,
     value: PropTypes.string,
+    id: PropTypes.string,
   }),
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,

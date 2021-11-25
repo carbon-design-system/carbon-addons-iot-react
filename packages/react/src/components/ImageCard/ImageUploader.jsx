@@ -43,6 +43,8 @@ const propTypes = {
     insertUrl: PropTypes.string,
     urlInput: PropTypes.string,
     fileTooLarge: PropTypes.string,
+    wrongFileType: PropTypes.func,
+    errorTitle: PropTypes.string,
   }),
   testId: PropTypes.string,
 };

@@ -180,7 +180,7 @@ describe('HotspotEditorModal', () => {
     );
     expect(screen.getByRole('tab', { name: i18n.fixedTypeDataSourceTabLabelText })).toBeVisible();
     expect(screen.queryByRole('tab', { name: i18n.textStyleLabelText })).not.toBeInTheDocument();
-  });
+  }, 30000);
 
   it('should be selectable by testId', async () => {
     const { rerender } = render(

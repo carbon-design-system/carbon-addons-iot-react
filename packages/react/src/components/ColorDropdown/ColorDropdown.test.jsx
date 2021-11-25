@@ -25,11 +25,17 @@ describe('ColorDropdown', () => {
   };
 
   it('is selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <ColorDropdown id="myColorDropdown" onChange={() => {}} testID="COLOR_DROPDOWN" />
     );
 
     expect(screen.getByTestId('COLOR_DROPDOWN')).toBeTruthy();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    jest.resetAllMocks();
 
     rerender(<ColorDropdown id="myColorDropdown" onChange={() => {}} testId="color_dropdown" />);
 

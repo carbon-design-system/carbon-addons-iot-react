@@ -2,47 +2,17 @@ import React, { useMemo, useRef, useState } from 'react';
 import { settings } from 'carbon-components';
 import { HeaderGlobalAction } from 'carbon-components-react/es/components/UIShell';
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
 import { Close16 } from '@carbon/icons-react';
 import { white } from '@carbon/colors';
 
-import { keyCodes } from '../../../constants/KeyCodeConstants';
-import { HeaderActionItemPropTypes } from '../Header';
-import deprecate from '../../../internal/deprecate';
+import { keyboardKeys } from '../../../constants/KeyCodeConstants';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import { HeaderActionPropTypes } from '../HeaderPropTypes';
 
 import HeaderActionMenu from './HeaderActionMenu';
 import HeaderActionPanel from './HeaderActionPanel';
 
 const { prefix: carbonPrefix } = settings;
-
-export const HeaderActionPropTypes = {
-  /** details of the item to render in the action */
-  item: PropTypes.shape(HeaderActionItemPropTypes).isRequired,
-  /** unique index for the menu item */
-  index: PropTypes.number.isRequired,
-  // eslint-disable-next-line react/require-default-props
-  testID: deprecate(
-    PropTypes.string,
-    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
-  ),
-  /** Id that can be used for testing */
-  testId: PropTypes.string,
-
-  /** render only the label instead of the button */
-  renderLabel: PropTypes.bool,
-
-  /** should this action item be expanded by default */
-  defaultExpanded: PropTypes.bool,
-
-  /** a callback to trigger when the item is closed. used to managing icons for the overflow menu */
-  onClose: PropTypes.func,
-
-  i18n: PropTypes.shape({
-    closeMenu: PropTypes.string,
-  }),
-  inOverflow: PropTypes.bool,
-};
 
 const defaultProps = {
   testId: 'header-action',
@@ -113,9 +83,9 @@ const HeaderAction = ({
   const handleHeaderKeyDown = (event) => {
     // Handle keydowns for opening and closing the menus
     if (
-      (event.keyCode === keyCodes.ESCAPE && isExpanded) ||
-      event.keyCode === keyCodes.SPACE ||
-      event.keyCode === keyCodes.ENTER
+      (event.key === keyboardKeys.ESCAPE && isExpanded) ||
+      event.key === keyboardKeys.SPACE ||
+      event.key === keyboardKeys.ENTER
     ) {
       event.stopPropagation();
       event.preventDefault();

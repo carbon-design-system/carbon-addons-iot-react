@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Modal } from '../../../index';
+import { Modal } from '../../Modal';
 
 const defaultProps = {
   isOpen: false,
@@ -11,6 +11,7 @@ const defaultProps = {
     primaryButton: 'Log out',
     body:
       'Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.',
+    closeButtonLabel: 'Close',
   },
   testId: 'suite-header-logout-modal',
 };
@@ -24,6 +25,7 @@ const propTypes = {
     primaryButton: PropTypes.string,
     secondaryButton: PropTypes.string,
     body: PropTypes.string,
+    closeButtonLabel: PropTypes.string,
   }),
   testId: PropTypes.string,
 };
@@ -40,6 +42,7 @@ const SuiteHeaderLogoutModal = ({ isOpen, onClose, onLogout, i18n, testId }) => 
       onRequestSubmit={onLogout}
       onRequestClose={onClose}
       data-testid={testId}
+      closeButtonLabel={mergedI18N.closeButtonLabel}
     >
       {mergedI18N.body}
     </Modal>

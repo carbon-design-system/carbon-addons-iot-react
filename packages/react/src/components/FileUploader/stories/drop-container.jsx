@@ -12,8 +12,7 @@ import classnames from 'classnames';
 import { settings } from 'carbon-components';
 import uid from 'carbon-components-react/es/tools/uniqueId';
 
-import { FileUploaderItem, FileUploaderDropContainer } from '..';
-
+import { FileUploaderItem, FileUploaderDropContainer } from '../index';
 import { FormItem } from '../../FormItem';
 import '../FileUploader-story.scss';
 

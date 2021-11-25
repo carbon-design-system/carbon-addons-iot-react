@@ -195,6 +195,7 @@ export const defaultProps = {
     range: false,
     expand: false,
     settings: false,
+    extra: false,
   },
   renderExpandIcon: undefined,
   rowHeight: ROW_HEIGHT,
@@ -232,6 +233,7 @@ export const defaultProps = {
     expandLabel: 'Expand to fullscreen',
     overflowMenuDescription: 'Open and close list of options',
     toLabel: 'to',
+    extraActionLabel: 'Action Label',
   },
   onMouseDown: undefined,
   onMouseUp: undefined,
@@ -282,6 +284,7 @@ const Card = (props) => {
     contentClassName,
     footerContent: CardFooter,
     dateTimeMask,
+    extraActions,
     ...others
   } = props;
 
@@ -406,6 +409,7 @@ const Card = (props) => {
                 // TODO: remove deprecated testID prop in v3
                 testId={`${testID || testId}-toolbar`}
                 dateTimeMask={dateTimeMask}
+                extraActions={extraActions}
               />
             ) : null;
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { screen, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../constants/Settings';
 
@@ -85,7 +85,7 @@ describe('TableCellRenderer', () => {
           <tr>
             <td>
               <TableCellRenderer wrapText="never" truncateCellText>
-                {'my string'}
+                my string
               </TableCellRenderer>
             </td>
             <td>
@@ -114,7 +114,7 @@ describe('TableCellRenderer', () => {
     setOffsetWidth(10);
     setScrollWidth(20);
 
-    const { container } = render(
+    const { container, rerender } = render(
       <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
       </TableCellRenderer>
@@ -125,14 +125,14 @@ describe('TableCellRenderer', () => {
 
     setOffsetWidth(20);
     setScrollWidth(10);
-    const wrapper2 = mount(
+    rerender(
       <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper2.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${prefix}--tooltip__label`)).toHaveLength(0);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    expect(container.querySelectorAll(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
 
     setOffsetWidth(0);
     setScrollWidth(0);
@@ -170,6 +170,28 @@ describe('TableCellRenderer', () => {
       </TableCellRenderer>
     );
     expect(screen.getByText('35.1234567')).toBeDefined(); // no limit on the count of decimals
+  });
+
+  it('should set preserve class when preserveCellWhiteSpace:true', () => {
+    const { container } = render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string" preserveCellWhiteSpace>
+        1 1 1 1 1
+      </TableCellRenderer>
+    );
+
+    expect(container.querySelector('span')).toBeVisible();
+    expect(container.querySelector('span')).toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
+  });
+
+  it('should not set preserve class when preserveCellWhiteSpace:false', () => {
+    render(
+      <TableCellRenderer wrapText="never" truncateCellText columnId="string">
+        1 1
+      </TableCellRenderer>
+    );
+
+    expect(screen.getByText('1 1')).toBeVisible();
+    expect(screen.getByText('1 1')).not.toHaveClass(`${iotPrefix}--table__cell-text--preserve`);
   });
 
   describe('warning should be thrown for objects as data without needed functions', () => {
@@ -261,6 +283,54 @@ describe('TableCellRenderer', () => {
       expect(console.error).not.toHaveBeenCalled();
       expect(renderDataFunction).toHaveBeenCalled();
       expect(screen.getByText('124556')).toBeDefined();
+    });
+
+    it('should render a tooltip and display it on focus when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      expect(document.body).toHaveFocus();
+      userEvent.tab();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveFocus();
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+    });
+
+    it('should render a tooltip and display it on hover when one is given', () => {
+      render(
+        <TableCellRenderer
+          wrapText="never"
+          truncateCellText
+          locale="en"
+          tooltip="This is a test tooltip"
+        >
+          Select
+        </TableCellRenderer>
+      );
+
+      expect(screen.getByText('Select')).toBeVisible();
+      expect(screen.getByRole('tooltip')).toBeDefined();
+      expect(screen.getByRole('button', { name: 'Select' })).not.toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
+      userEvent.hover(screen.getByText('Select'));
+      expect(screen.getByRole('button', { name: 'Select' })).toHaveClass(
+        `${prefix}--tooltip--visible`
+      );
     });
   });
 });

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text } from '@storybook/addon-knobs';
+import { boolean, text, object } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
-import someDeep from 'deepdash/someDeep';
 
-import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
+import Button from '../Button';
+import { OverflowMenu } from '../OverflowMenu';
+import { OverflowMenuItem } from '../OverflowMenuItem';
 import { Tag } from '../Tag';
+import { EditingStyle } from '../../utils/DragAndDropUtils';
 
 import List from './List';
 import ListREADME from './List.mdx';
@@ -158,8 +160,7 @@ export const BasicSingleColumnWithSearch = () => {
               content: { value: key },
             }))
             .filter(
-              ({ id }) =>
-                searchValue === null || id.toLowerCase().includes(searchValue?.toLowerCase())
+              ({ id }) => !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
             )}
           isLoading={boolean('isLoading', false)}
           search={{
@@ -419,6 +420,46 @@ WithEmptyState.storyName = 'with empty state';
 export const WithCheckboxMultiSelection = () => {
   const MultiSelectList = () => {
     const [selectedIds, setSelectedIds] = useState([]);
+
+    const handleSelection = (id) => {
+      setSelectedIds((currentSelectedIds) => {
+        const isDeselecting = currentSelectedIds.includes(id);
+        return isDeselecting
+          ? currentSelectedIds.filter((selectedId) => selectedId !== id)
+          : [...currentSelectedIds, id];
+      });
+    };
+
+    return (
+      <div style={{ width: 400 }}>
+        <List
+          title="Sports Teams"
+          buttons={[headerButton]}
+          iconPosition="left"
+          items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+            ([key]) => ({
+              id: key,
+              content: { value: key },
+              isSelectable: true,
+            })
+          )}
+          selectedIds={selectedIds}
+          isLoading={boolean('isLoading', false)}
+          isVirtualList={boolean('isVirtualList', false)}
+          isCheckboxMultiSelect
+          handleSelect={handleSelection}
+        />
+      </div>
+    );
+  };
+  return <MultiSelectList />;
+};
+
+WithCheckboxMultiSelection.storyName = 'with checkbox multi-selection';
+
+export const WithCheckboxMultiSelectionAndHierarchy = () => {
+  const MultiSelectList = () => {
+    const [selectedIds, setSelectedIds] = useState([]);
     const [expandedIds, setExpandedIds] = useState([]);
 
     const searchNestedItems = (items, value, parentMatch) => {
@@ -437,35 +478,37 @@ export const WithCheckboxMultiSelection = () => {
       return filteredItems;
     };
 
-    const handleCheckboxChange = (event, items, id) => {
-      // If checked, add to selectedIds
-      if (event.target.checked) {
-        // find item and children being changed
-        const nestedIds = searchNestedItems(items, id);
-        let tempSelectedIds = [...selectedIds];
-        if (nestedIds.length > 0) {
-          tempSelectedIds = tempSelectedIds.concat(nestedIds);
-        } else {
-          tempSelectedIds.push(id);
-        }
-        setSelectedIds(tempSelectedIds);
-      } // If unchecked, remove from selectedIds
-      else {
-        // find children
-        const deselectedNestedIds = searchNestedItems(items, id);
-        let tempSelectedIds = [...selectedIds];
-        if (deselectedNestedIds.length === 0) {
-          deselectedNestedIds.push(id);
-        }
-        deselectedNestedIds.forEach((deselectedId) => {
-          tempSelectedIds = tempSelectedIds.filter((id) => id !== deselectedId);
-        });
-        setSelectedIds(tempSelectedIds);
-      }
+    const findParent = (items, id) =>
+      items.find((parent) => parent?.children && parent.children.find((child) => child.id === id));
+
+    const parentSelectionAffected = (parent, currentSelectedIds, isDeselecting) => {
+      const deselectParent =
+        isDeselecting &&
+        parent?.children.filter((child) => currentSelectedIds.includes(child.id)).length === 1;
+      const selectParent =
+        !isDeselecting &&
+        parent?.children.filter((child) => currentSelectedIds.includes(child.id)).length ===
+          parent.children.length - 1;
+      return deselectParent || selectParent;
     };
 
-    const checkSelectedChildren = (items, parent) =>
-      someDeep(items, (value, key) => selectedIds.some((id) => `${parent}-${key}` === id));
+    const handleSelection = (items, id) => {
+      setSelectedIds((currentSelectedIds) => {
+        const isDeselecting = currentSelectedIds.includes(id);
+        const parent = findParent(items, id);
+        const affectedIds = [...new Set([...searchNestedItems(items, id), id])];
+
+        if (parent && parentSelectionAffected(parent, currentSelectedIds, isDeselecting)) {
+          affectedIds.push(parent.id);
+        }
+
+        return isDeselecting
+          ? currentSelectedIds.filter(
+              (selectedId) => !affectedIds.includes(selectedId) && selectedId !== id
+            )
+          : [...currentSelectedIds, ...affectedIds];
+      });
+    };
 
     const nestedItems = [
       ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
@@ -474,21 +517,6 @@ export const WithCheckboxMultiSelection = () => {
         isSelectable: true,
         content: {
           value: team,
-          icon: (
-            <Checkbox
-              id={`${team}-checkbox`}
-              name={team}
-              labelText={team}
-              hideLabel
-              onClick={(e) => handleCheckboxChange(e, nestedItems, team)}
-              checked={selectedIds.some((id) => team === id)}
-              indeterminate={
-                selectedIds.some((id) => team === id)
-                  ? false
-                  : checkSelectedChildren(sampleHierarchy.MLB['American League'][team], team)
-              }
-            />
-          ),
         },
         children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
           id: `${team}-${player}`,
@@ -496,18 +524,6 @@ export const WithCheckboxMultiSelection = () => {
           content: {
             value: player,
             secondaryValue: sampleHierarchy.MLB['American League'][team][player],
-            icon: (
-              <Checkbox
-                id={`${team}-${player}-checkbox`}
-                name={player}
-                labelText={team}
-                hideLabel
-                onClick={(e) => {
-                  handleCheckboxChange(e, nestedItems, `${team}-${player}`);
-                }}
-                checked={selectedIds.some((id) => `${team}-${player}` === id)}
-              />
-            ),
           },
         })),
       })),
@@ -517,44 +533,19 @@ export const WithCheckboxMultiSelection = () => {
         isSelectable: true,
         content: {
           value: team,
-          icon: (
-            <Checkbox
-              id={`${team}-checkbox`}
-              name={team}
-              labelText={team}
-              hideLabel
-              onClick={(e) => handleCheckboxChange(e, nestedItems, team)}
-              checked={selectedIds.some((id) => team === id)}
-              indeterminate={
-                selectedIds.some((id) => team === id)
-                  ? false
-                  : checkSelectedChildren(sampleHierarchy.MLB['National League'][team], team)
-              }
-            />
-          ),
         },
-        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
-          id: `${team}-${player}`,
-          isSelectable: true,
-          content: {
-            value: player,
-            secondaryValue: sampleHierarchy.MLB['National League'][team][player],
-            icon: (
-              <Checkbox
-                id={`${team}-${player}-checkbox`}
-                name={player}
-                labelText={team}
-                hideLabel
-                onClick={(e) => {
-                  handleCheckboxChange(e, nestedItems, `${team}-${player}`);
-                }}
-                checked={selectedIds.some((id) => `${team}-${player}` === id)}
-              />
-            ),
-          },
-        })),
+        children: [],
       })),
     ];
+
+    const indeterminateIds = nestedItems
+      .filter(
+        (parent) =>
+          parent.children &&
+          parent.children.some((sibling) => selectedIds.includes(sibling.id)) &&
+          parent.children.some((sibling) => !selectedIds.includes(sibling.id))
+      )
+      .map((parent) => parent.id);
 
     return (
       <div style={{ width: 400 }}>
@@ -565,6 +556,7 @@ export const WithCheckboxMultiSelection = () => {
           items={nestedItems}
           selectedIds={selectedIds}
           expandedIds={expandedIds}
+          indeterminateIds={indeterminateIds}
           toggleExpansion={(id) => {
             if (expandedIds.filter((rowId) => rowId === id).length > 0) {
               // remove id from array
@@ -575,6 +567,8 @@ export const WithCheckboxMultiSelection = () => {
           }}
           isLoading={boolean('isLoading', false)}
           isVirtualList={boolean('isVirtualList', false)}
+          isCheckboxMultiSelect
+          handleSelect={(id) => handleSelection(nestedItems, id)}
         />
       </div>
     );
@@ -582,7 +576,7 @@ export const WithCheckboxMultiSelection = () => {
   return <MultiSelectList />;
 };
 
-WithCheckboxMultiSelection.storyName = 'with checkbox multi-selection';
+WithCheckboxMultiSelectionAndHierarchy.storyName = 'with checkbox multi-selection and hierarchy';
 
 export const WithTags = () => (
   <div style={{ width: 400 }}>
@@ -665,6 +659,7 @@ export const WithLoadMore = () => {
           },
         ],
       },
+      { id: 'org2', content: { value: 'Organization 2' }, hasLoadMore: true },
     ]);
     return (
       <div style={{ width: 400 }}>
@@ -723,6 +718,16 @@ export const WithLoadMore = () => {
                     },
                   ],
                 },
+                {
+                  id: 'org2',
+                  content: { value: 'Organization 2' },
+                  hasLoadMore: id === 'org2' ? false : prevItems[1]?.hasLoadMore,
+                },
+                ...(id === 'org2'
+                  ? [{ id: 'org3', content: { value: 'Organization 3' } }]
+                  : prevItems[2]
+                  ? [prevItems[2]]
+                  : []),
               ]);
               setLoadingMoreIds((prev) => prev.filter((prevId) => prevId !== id));
             }, 2000);
@@ -755,3 +760,50 @@ export const WithVirtualList = () => (
 );
 
 WithVirtualList.storyName = 'with virtual list';
+
+export const WithReorderAndLockedRows = () => (
+  <div style={{ width: 400 }}>
+    <List
+      title={text('title', 'NY Yankees')}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key]) => ({
+          id: key,
+          content: { value: key },
+        })
+      )}
+      isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
+      editingStyle={EditingStyle.Single}
+      lockedIds={['DJ LeMahieu', 'Luke Voit']}
+      onItemMoved={action('onItemMoved')}
+      itemWillMove={(args) => {
+        action('itemWillMove')(args);
+        return true;
+      }}
+    />
+  </div>
+);
+
+WithReorderAndLockedRows.storyName = 'with reorder and locked rows';
+
+export const WithReorderAndDropTargetRestrictions = () => {
+  const allowedDropIds = object('getAllowedDropIds return value', ['Luke Voit', 'Gleyber Torres']);
+  return (
+    <div style={{ height: 300, overflow: 'auto', width: 400 }}>
+      <List
+        title={text('title', 'NY Yankees')}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key]) => ({
+            id: key,
+            content: { value: key },
+          })
+        )}
+        isVirtualList={boolean('isVirtualList', false)}
+        editingStyle={EditingStyle.Single}
+        getAllowedDropIds={() => allowedDropIds}
+      />
+    </div>
+  );
+};
+
+WithReorderAndDropTargetRestrictions.storyName = 'with reorder and drop target restrictions';

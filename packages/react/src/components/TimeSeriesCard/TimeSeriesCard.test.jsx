@@ -1,14 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import { mount } from 'enzyme';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import fileDownload from 'js-file-download';
 
-import Table from '../Table/Table';
+import { settings } from '../../constants/Settings';
 import { getIntervalChartData } from '../../utils/sample';
 import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 
 import TimeSeriesCard from './TimeSeriesCard';
+
+const { prefix } = settings;
 
 jest.mock('js-file-download');
 
@@ -37,6 +38,7 @@ const timeSeriesCardProps = {
 
 describe('TimeSeriesCard', () => {
   it('should be selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <TimeSeriesCard
         {...timeSeriesCardProps}
@@ -48,6 +50,10 @@ describe('TimeSeriesCard', () => {
 
     expect(screen.getByTestId('TIME_SERIES_CARD')).toBeDefined();
     expect(screen.getByTestId('TimeSeries-table')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    jest.resetAllMocks();
 
     rerender(
       <TimeSeriesCard
@@ -63,15 +69,15 @@ describe('TimeSeriesCard', () => {
   });
 
   it('does not show line chart when loading', () => {
-    let wrapper = mount(
+    const { container, rerender } = render(
       <TimeSeriesCard {...timeSeriesCardProps} isLoading size={CARD_SIZES.MEDIUM} />
     );
-    expect(wrapper.find('#mock-line-chart')).toHaveLength(0);
-    expect(wrapper.find('SkeletonText')).toHaveLength(1);
+    expect(container.querySelectorAll('#mock-line-chart')).toHaveLength(0);
+    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)).toHaveLength(3);
 
-    wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUM} />);
-    expect(wrapper.find('#mock-line-chart')).toHaveLength(1);
-    expect(wrapper.find('SkeletonText')).toHaveLength(0);
+    rerender(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUM} />);
+    expect(container.querySelectorAll('#mock-line-chart')).toHaveLength(1);
+    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)).toHaveLength(0);
   });
   it('does not fail to render if no data is given', () => {
     // For whatever reason, these devices do not give back real data so the No data message
@@ -84,12 +90,12 @@ describe('TimeSeriesCard', () => {
     expect(screen.getByText('No data is available for this time range.')).toBeInTheDocument();
   });
   it('shows table with data when expanded', () => {
-    const wrapper = mount(
+    const { container } = render(
       <TimeSeriesCard {...timeSeriesCardProps} isExpanded size={CARD_SIZES.MEDIUMTHIN} />
     );
-    expect(wrapper.find('#mock-line-chart')).toHaveLength(1);
+    expect(container.querySelectorAll('#mock-line-chart')).toHaveLength(1);
     // Carbon Table should be there
-    expect(wrapper.find(Table)).toHaveLength(1);
+    expect(container.querySelectorAll('#TimeSeries-table')).toHaveLength(1);
   });
 
   it('type bar shows', () => {
@@ -98,7 +104,7 @@ describe('TimeSeriesCard', () => {
     const error = jest.fn();
     console.error = error;
     global.__DEV__ = true;
-    const wrapper = mount(
+    const { container } = render(
       <TimeSeriesCard
         {...timeSeriesCardProps}
         content={{
@@ -108,7 +114,7 @@ describe('TimeSeriesCard', () => {
         size={CARD_SIZES.MEDIUMWIDE}
       />
     );
-    expect(wrapper.find('#mock-bar-chart-stacked')).toHaveLength(1);
+    expect(container.querySelectorAll('#mock-bar-chart-stacked')).toHaveLength(1);
     expect(error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
@@ -165,8 +171,8 @@ describe('TimeSeriesCard', () => {
       size: CARD_SIZES.LARGE,
       onCardAction: () => {},
     };
-    const wrapper = mount(<TimeSeriesCard {...timeSeriesCardWithOneColorProps} />);
-    expect(wrapper.find('#mock-line-chart')).toHaveLength(1);
+    const { container } = render(<TimeSeriesCard {...timeSeriesCardWithOneColorProps} />);
+    expect(container.querySelectorAll('#mock-line-chart')).toHaveLength(1);
   });
 
   it('tableColumn headers should use the label, not the dataSourceId', () => {
@@ -191,7 +197,7 @@ describe('TimeSeriesCard', () => {
       },
       values: undefined,
       isExpanded: true,
-      size: CARD_SIZES.SMALL,
+      size: CARD_SIZES.MEDIUM,
       isEditable: false,
     };
     render(<TimeSeriesCard {...props} />);
@@ -228,7 +234,7 @@ describe('TimeSeriesCard', () => {
       interval: 'quarter',
       isExpanded: true,
       isResizable: true,
-      size: CARD_SIZES.SMALL,
+      size: CARD_SIZES.MEDIUM,
     };
 
     const { container } = render(<TimeSeriesCard {...props} />);
@@ -241,5 +247,30 @@ describe('TimeSeriesCard', () => {
       `temperature,timestamp\n100,03/05/2021 15:30,\n`,
       'Temperature.csv'
     );
+  });
+
+  it('should display a proptype error when using unsupported sizes', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const { rerender } = render(
+      <TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.SMALL} />
+    );
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`TimeSeriesCard` prop `size` cannot be `SMALL`')
+    );
+
+    rerender(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.SMALLWIDE} />);
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`TimeSeriesCard` prop `size` cannot be `SMALLWIDE`')
+    );
+
+    rerender(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.SMALLFULL} />);
+
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('`TimeSeriesCard` prop `size` cannot be `SMALLFULL`')
+    );
+
+    jest.resetAllMocks();
   });
 });

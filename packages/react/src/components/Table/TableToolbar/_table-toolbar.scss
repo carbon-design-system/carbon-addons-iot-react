@@ -21,6 +21,10 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   padding-top: $spacing-01;
 }
 
+.#{$prefix}--table-toolbar {
+  height: $spacing-09;
+}
+
 .#{$iot-prefix}--table-toolbar-content {
   flex: 1;
   font-size: 0.875rem;
@@ -38,22 +42,8 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 .#{$iot-prefix}--table-batch-actions {
   z-index: 3;
 
-  & + .bx--toolbar-action {
+  & + .#{$prefix}--toolbar-action {
     padding: 0;
-  }
-
-  // TODO - remove this entire selector once we've upgraded to Carbon v10.18.0+
-  // https://github.com/carbon-design-system/carbon/pull/6660
-  .#{$prefix}--action-list {
-    position: absolute;
-    right: 0;
-  }
-
-  // TODO - remove this entire selector once we've upgraded to Carbon v10.18.0+
-  // https://github.com/carbon-design-system/carbon/pull/6660
-  .#{$prefix}--batch-summary {
-    position: absolute;
-    left: 0;
   }
 }
 

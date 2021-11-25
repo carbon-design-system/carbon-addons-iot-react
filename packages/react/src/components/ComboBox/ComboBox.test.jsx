@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { keyCodes } from '../../constants/KeyCodeConstants';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 import { settings } from '../../constants/Settings';
 
 import ComboBox from './ComboBox';
@@ -30,9 +30,8 @@ describe('ComboBox', () => {
   // Helper function to open the list and return it
   const getListBox = async () => {
     // open the list by clicking the open menu icon
-    userEvent.click(screen.getByTitle('Open'));
-    const list = await screen.findByRole('listbox');
-    return list;
+    userEvent.click(screen.getByRole('button', { name: 'Open' }));
+    return screen.getByRole('listbox');
   };
 
   it('should filter bad props, but not good ones.', async () => {
@@ -208,8 +207,8 @@ describe('ComboBox', () => {
     const control = screen.getByPlaceholderText('Filter...');
 
     await userEvent.click(control);
-    fireEvent.keyDown(control, { keyCode: keyCodes.DOWN });
-    fireEvent.keyDown(control, { keyCode: keyCodes.ENTER });
+    fireEvent.keyDown(control, { key: keyboardKeys.DOWN });
+    fireEvent.keyDown(control, { key: keyboardKeys.ENTER });
 
     expect(tags.childElementCount).toEqual(1);
 

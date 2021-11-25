@@ -41,17 +41,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
