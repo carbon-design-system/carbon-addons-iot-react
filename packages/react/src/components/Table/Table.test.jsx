@@ -330,7 +330,7 @@ describe('Table', () => {
         columns={columns}
         data={[{ id: 'row-1', values: { col1: 'a', col2: 'b', col3: 'c' } }]}
         actions={mockActions}
-        options={{ hasResize: true, hasColumnSelection: true }}
+        options={{ hasResize: true, hasColumnSelection: true, preserveColumnWidths: false }}
         view={{ table: { ordering }, toolbar: { activeBar: 'column' } }}
       />
     );

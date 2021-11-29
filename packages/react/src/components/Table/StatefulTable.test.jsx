@@ -763,6 +763,7 @@ describe('stateful table with real reducer', () => {
         options={{
           hasUserViewManagement: true,
           hasResize: true,
+          preserveColumnWidths: false,
         }}
         data={tableData.slice(0, 2)}
         actions={{
