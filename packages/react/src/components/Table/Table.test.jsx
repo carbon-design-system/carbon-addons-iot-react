@@ -2585,7 +2585,7 @@ describe('Table', () => {
     render(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 9)}
+        data={tableData.slice(0, 10)}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -2602,6 +2602,10 @@ describe('Table', () => {
         }}
       />
     );
+
+    expect(screen.getByText('1 of 2 pages')).toBeVisible();
+    // 5 * 1.5 = 7.5, rounded is 8 items.
+    expect(screen.getByText('1–5 of 8 items')).toBeVisible();
 
     expect(console.error).toHaveBeenLastCalledWith(
       expect.stringContaining(
