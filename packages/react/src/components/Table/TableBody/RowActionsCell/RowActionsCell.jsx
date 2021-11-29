@@ -134,11 +134,13 @@ class RowActionsCell extends React.Component {
         className={`${iotPrefix}--row-actions-cell--table-cell`}
       >
         <div className={`${iotPrefix}--row-actions-container`}>
+          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
           <div
             data-testid="row-action-container-background"
             className={classnames(`${iotPrefix}--row-actions-container__background`, {
               [`${iotPrefix}--row-actions-container__background--overflow-menu-open`]: isOpen,
             })}
+            onClick={(evt) => evt.stopPropagation()}
           >
             {rowActionsError ? (
               <RowActionsError
