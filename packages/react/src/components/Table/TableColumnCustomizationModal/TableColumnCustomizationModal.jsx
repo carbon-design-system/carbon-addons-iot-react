@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useMemo } from 'react';
+import React, { useCallback, useState, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import uniqBy from 'lodash/uniqBy';
@@ -6,6 +6,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import isNil from 'lodash/isNil';
 import { CloseOutline16 } from '@carbon/icons-react';
 import warning from 'warning';
+import classNames from 'classnames';
 
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { settings } from '../../../constants/Settings';
@@ -21,7 +22,16 @@ const ITEM_VALUE_KEYS = {
   NAME: 'name',
 };
 
-const propTypes = {
+export const propTypes = {
+  /** The list of all the selectable columns  */
+  availableColumns: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  /** Will show a modal error notification with the supplied string if present */
+  error: PropTypes.string,
   /** Defines the groups and which columns they contain. The order of the groups is relevant. */
   groupMapping: PropTypes.arrayOf(
     PropTypes.shape({
@@ -66,17 +76,14 @@ const propTypes = {
       isHidden: PropTypes.bool,
     })
   ).isRequired,
-  /** The list of all the selectable columns  */
-  availableColumns: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  /** Disables the primary (save) button when true */
+  isPrimaryButtonDisabled: PropTypes.bool,
   /** RowIds for rows currently loading more available columns */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
   /** Called when columns are selected, deselected, hidden, shown and reordered */
   onChange: PropTypes.func,
+  /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
+  onClearError: PropTypes.func,
   /** Called with the id of the last item when the load more button is clicked */
   onLoadMore: PropTypes.func,
   /** Called on cancel button click and on the top right close icon click */
@@ -101,11 +108,16 @@ const propTypes = {
    * Defaults to undefined but if present will appear below the default value
    * and make the list items taller.  */
   secondaryValue: PropTypes.oneOf([...Object.values(ITEM_VALUE_KEYS), undefined]),
+  /** if true the list for available columns will show a loader only */
+  showLoaderInAvailableList: PropTypes.bool,
+  /** if true the list for selected columns will show a loader only */
+  showLoaderInSelectedList: PropTypes.bool,
   /** Id that can be used for testing */
   testId: PropTypes.string,
 };
 
-const defaultProps = {
+export const defaultProps = {
+  error: undefined,
   groupMapping: [],
   hasLoadMore: false,
   hasVisibilityToggle: false,
@@ -130,14 +142,18 @@ const defaultProps = {
     selectedColumnsLabel: 'Selected columns',
     showIconDescription: 'Column is hidden, click to show.',
   },
+  isPrimaryButtonDisabled: false,
   loadingMoreIds: [],
   onChange: () => {},
+  onClearError: () => {},
   onLoadMore: () => {},
   onReset: () => {},
   overrides: undefined,
   pinnedColumnId: undefined,
   primaryValue: ITEM_VALUE_KEYS.NAME,
   secondaryValue: undefined,
+  showLoaderInAvailableList: false,
+  showLoaderInSelectedList: false,
   testId: 'table-column-customization-modal',
 };
 
@@ -184,7 +200,7 @@ const transformToAvailableItems = (availableColumns, pinnedColumnId, hasLoadMore
     content: { value: column.name },
     disabled: pinnedColumnId === column.id,
   }));
-  if (hasLoadMore) {
+  if (hasLoadMore && availableItems.length) {
     availableItems[availableItems.length - 1].hasLoadMore = true;
   }
   return availableItems;
@@ -240,14 +256,17 @@ const setPrimaryAndSecondaryContentValues = (item, primaryKey, secondaryKey) => 
 const preventDropInOtherGroup = (...args) => args[2] !== 'nested';
 
 const TableColumnCustomizationModal = ({
+  error,
   groupMapping,
   hasLoadMore,
   hasVisibilityToggle,
   i18n,
   initialOrdering,
+  isPrimaryButtonDisabled,
   availableColumns,
   loadingMoreIds,
   onChange,
+  onClearError,
   onClose,
   onLoadMore,
   onReset,
@@ -257,6 +276,8 @@ const TableColumnCustomizationModal = ({
   pinnedColumnId,
   primaryValue,
   secondaryValue,
+  showLoaderInAvailableList,
+  showLoaderInSelectedList,
   testId,
 }) => {
   const {
@@ -294,8 +315,22 @@ const TableColumnCustomizationModal = ({
     initialOrdering.filter((col) => col.isHidden).map((col) => col.columnId)
   );
   const [selectedColumnItems, setSelectedColumnItems] = useState(() => {
-    return transformToSelectedItems(initialOrdering, availableColumnItems, groupMapping);
+    return !availableColumnItems.length
+      ? []
+      : transformToSelectedItems(initialOrdering, availableColumnItems, groupMapping);
   });
+
+  const initialSelectionForAsyncLoadedColumnsRequired = useRef(
+    initialOrdering.length && !availableColumnItems.length
+  );
+  useEffect(() => {
+    if (initialSelectionForAsyncLoadedColumnsRequired.current && availableColumnItems.length) {
+      initialSelectionForAsyncLoadedColumnsRequired.current = false;
+      setSelectedColumnItems(
+        transformToSelectedItems(initialOrdering, availableColumnItems, groupMapping)
+      );
+    }
+  }, [initialOrdering, availableColumnItems, groupMapping, selectedColumnItems]);
 
   const onSave = () => {
     // Column group mapping is not exported as part of save
@@ -381,11 +416,14 @@ const TableColumnCustomizationModal = ({
 
   return (
     <MyComposedModal
+      className={classNames(`${iotPrefix}--column-customization-modal`, {
+        [`${iotPrefix}--column-customization-modal--error-state`]: error,
+      })}
+      error={error}
       footer={{
+        isPrimaryButtonDisabled,
         ...i18nFooter,
       }}
-      iconDescription={closeIconDescription}
-      testId={testId}
       header={{
         // label is needed since it generates the aria-label,
         // but we hide the actual label element using css
@@ -393,10 +431,12 @@ const TableColumnCustomizationModal = ({
         title: modalTitle,
         helpText: modalBody,
       }}
+      iconDescription={closeIconDescription}
+      onClearError={onClearError}
       onClose={onClose}
       onSubmit={onSave}
       open={open}
-      className={`${iotPrefix}--column-customization-modal`}
+      testId={testId}
       {...overrides?.composedModal?.props}
     >
       <MyListBuilder
@@ -457,6 +497,8 @@ const TableColumnCustomizationModal = ({
           .filter((item) => item.isCategory)
           .map(({ id }) => id)}
         selectedEditingStyle={EditingStyle.Single}
+        showLoaderInAvailableList={showLoaderInAvailableList}
+        showLoaderInSelectedList={showLoaderInSelectedList}
         testId={`${testId}-list-builder`}
         useCheckboxes
         {...overrides?.listBuilder?.props}

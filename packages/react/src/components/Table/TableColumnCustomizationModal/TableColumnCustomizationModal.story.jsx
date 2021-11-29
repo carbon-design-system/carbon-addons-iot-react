@@ -6,6 +6,7 @@ import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 import StoryNotice, { experimentalStoryTitle } from '../../../internal/StoryNotice';
 
 import TableColumnCustomizationModal from './TableColumnCustomizationModal';
+import AsyncTableColumnCustomizationModal from './AsyncTableColumnCustomizationModal';
 
 const getColumns = () => [
   {
@@ -118,6 +119,66 @@ export const PlaygroundWithKnobs = () => {
 
 PlaygroundWithKnobs.storyName = 'playground with knobs';
 PlaygroundWithKnobs.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
+export const AsyncWithLoadingState = () => {
+  const hasVisibilityToggle = boolean('hasVisibilityToggle', false);
+  const demoGroupMapping = boolean('demo column groups', false);
+  const demoPinnedColumn = boolean('demo pinned column (pinnedColumnId)', true);
+  const demoHasLoadMore = boolean('demo load more example (hasLoadMore)', true);
+  const demoLoadError = boolean('demo load error', false);
+  const errorText = text('text in error', 'There was a problem loading the columns.');
+  const [canLoadMore, setCanLoadMore] = useState(true);
+
+  const [storyColumns, setStoryColumns] = useState(
+    new Promise((resolve, reject) => {
+      setTimeout(
+        () => (demoLoadError ? reject(new Error(errorText)) : resolve(getColumns().slice(0, 7))),
+        3000
+      );
+    })
+  );
+
+  return (
+    <AsyncTableColumnCustomizationModal
+      groupMapping={demoGroupMapping ? object('groupMapping', getColumnGroupMapping()) : []}
+      hasVisibilityToggle={hasVisibilityToggle}
+      availableColumns={storyColumns}
+      initialOrdering={getOrdering()}
+      i18n={{
+        modalBody:
+          'This modal is the AsyncTableColumnCustomizationModal which accepts a Promise for the prop availableColumns. It also and manages the loading state and errors.',
+      }}
+      onClearError={action('onClearError')}
+      onClose={action('onClose')}
+      onChange={action('onChange')}
+      onReset={action('onReset')}
+      onSave={action('onSave')}
+      open={boolean('open', true)}
+      pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
+      hasLoadMore={demoHasLoadMore && canLoadMore}
+      onLoadMore={() => {
+        setStoryColumns(
+          new Promise((resolve) => {
+            setTimeout(() => {
+              console.info('reloaded');
+              setCanLoadMore(false);
+              resolve(getColumns());
+            }, 2000);
+          })
+        );
+      }}
+    />
+  );
+};
+
+AsyncWithLoadingState.storyName = 'with async data and loading state';
+AsyncWithLoadingState.decorators = [
   (Story) => (
     <DragAndDrop>
       <Story />

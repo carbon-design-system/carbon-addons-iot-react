@@ -119,6 +119,10 @@ const propTypes = {
   removeIcon: ButtonIconPropType,
   /** the editing style of the hirerchy list showing the selected items */
   selectedEditingStyle: PropTypes.oneOf([EditingStyle.Single, EditingStyle.SingleNesting]),
+  /** if true the list for available columns will show a loader only */
+  showLoaderInAvailableList: PropTypes.bool,
+  /** if true the list for selected columns will show a loader only */
+  showLoaderInSelectedList: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -161,6 +165,8 @@ const defaultProps = {
   useCheckboxes: false,
   removeIcon: Subtract16,
   selectedEditingStyle: undefined,
+  showLoaderInAvailableList: false,
+  showLoaderInSelectedList: false,
 };
 
 const ListBuilder = ({
@@ -190,6 +196,8 @@ const ListBuilder = ({
   useCheckboxes,
   removeIcon,
   selectedEditingStyle,
+  showLoaderInAvailableList,
+  showLoaderInSelectedList,
 }) => {
   // When the checkbox design is used there are currently a few restrictions
   // and additional requirements
@@ -331,6 +339,7 @@ const ListBuilder = ({
     return (
       <List
         isLargeRow={isLargeRow}
+        isLoading={showLoaderInAvailableList}
         emptyState={allListEmptyText}
         handleLoadMore={handleLoadMore}
         loadingMoreIds={loadingMoreIds}
@@ -376,6 +385,7 @@ const ListBuilder = ({
         ) : (
           <HierarchyList
             isLargeRow={isLargeRow}
+            isLoading={showLoaderInAvailableList}
             emptyState={allListEmptyText}
             title={allListTitle(itemCount ?? allListItems.length)}
             items={allListItems}
@@ -396,6 +406,7 @@ const ListBuilder = ({
       >
         <HierarchyList
           isLargeRow={isLargeRow}
+          isLoading={showLoaderInSelectedList}
           emptyState={selectedListEmptyText}
           buttons={
             hasReset
