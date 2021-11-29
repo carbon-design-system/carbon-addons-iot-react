@@ -7,7 +7,7 @@ export class AITableHeaderItem extends TableHeaderItem {
   /**
    * Defines the alignment of the the header item and the column below it.
    */
-  alignment: 'start' | 'center' | 'end';
+  alignment: 'start' | 'center' | 'end' = 'start';
 }
 
 /**

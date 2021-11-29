@@ -9,7 +9,7 @@ import { AITableModule } from './table.module';
 import { EmptyStateModule } from '../empty-state-index';
 
 const simpleModel = new AITableModel();
-const emptyModel = new AITableModel();
+const emptyDataModel = new AITableModel();
 
 simpleModel.setHeader([
   [
@@ -42,7 +42,7 @@ simpleModel.setData([
   ],
 ]);
 
-emptyModel.setHeader([
+emptyDataModel.setHeader([
   [
     new AITableHeaderItem({
       data: 'Name',
@@ -125,7 +125,7 @@ storiesOf('Components/Table', module)
       </ng-template>
 		`,
       props: {
-        model: emptyModel,
+        model: emptyDataModel,
         icon: select(
           'icon',
           ['error', 'error404', 'not-authorized', 'no-results', 'success', 'default', 'no-icon'],
