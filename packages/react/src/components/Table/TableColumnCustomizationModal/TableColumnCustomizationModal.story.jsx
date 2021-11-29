@@ -7,6 +7,7 @@ import StoryNotice, { experimentalStoryTitle } from '../../../internal/StoryNoti
 
 import TableColumnCustomizationModal from './TableColumnCustomizationModal';
 import AsyncTableColumnCustomizationModal from './AsyncTableColumnCustomizationModal';
+import TableColumnCustomizationModalREADME from './TableColumnCustomizationModal.mdx';
 
 const getColumns = () => [
   {
@@ -74,6 +75,9 @@ export default {
 
   parameters: {
     component: TableColumnCustomizationModal,
+    docs: {
+      page: TableColumnCustomizationModalREADME,
+    },
   },
 };
 

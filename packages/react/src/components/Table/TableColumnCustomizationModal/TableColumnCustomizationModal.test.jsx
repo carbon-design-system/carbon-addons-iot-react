@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { act } from 'react-dom/test-utils';
 
 import { settings } from '../../../constants/Settings';
 import ListBuilder from '../../ListBuilder/ListBuilder';
@@ -11,7 +12,6 @@ import TableColumnCustomizationModal, {
 } from './TableColumnCustomizationModal';
 import AsyncTableColumnCustomizationModal from './AsyncTableColumnCustomizationModal';
 import { generateColumns, getColumns } from './tableColumnCustomizationTestUtils';
-import { act } from 'react-dom/test-utils';
 
 const { iotPrefix } = settings;
 
