@@ -1,6 +1,5 @@
-/* stylelint-disable declaration-property-unit-blacklist */
-@import '~carbon-components/scss/globals/scss/vars';
-@import '~carbon-components/scss/globals/scss/typography';
+@import '../../globals/vars';
+@import '../../globals/typography';
 
 @mixin condensed-style() {
   @include make-sticky();
@@ -72,10 +71,10 @@
     }
 
     .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary {
-      margin-left: 0;
+      margin-left: 1px;
       [dir='rtl'] & {
         margin-left: unset;
-        margin-right: 0;
+        margin-right: 1px;
       }
     }
 
@@ -361,10 +360,22 @@
       .#{$prefix}--tabs--scrollable {
         transition: all $duration--fast-02 ease-in;
         background: $ui-01;
+        border-bottom: 1px solid $ui-03;
       }
     }
 
     .#{$prefix}--tabs--scrollable {
+      padding-left: $spacing-05;
+      margin-left: -($spacing-07);
+      width: calc(100% + #{$spacing-10});
+
+      [dir='rtl'] & {
+        padding-left: 0;
+        padding-right: $spacing-05;
+        margin-left: 0;
+        margin-right: -($spacing-07);
+      }
+
       .#{$prefix}--tabs--scrollable__nav-link {
         text-align: left;
 
@@ -378,5 +389,42 @@
         @include make-sticky();
       }
     }
+  }
+}
+
+/* styles for sticky breadcrumbs and tabs */
+.#{$iot-prefix}--page-title-bar--stack-tabs,
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-show,
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide {
+  &.page-title-bar--dynamic--after,
+  &.page-title-bar--condensed-static {
+    .page-title-bar-header {
+      @include make-sticky();
+      top: var(--negative-header-offset);
+    }
+  }
+
+  .page-title-bar-breadcrumb,
+  .page-title-bar-breadcrumb-bg,
+  .page-title-bar-header-right.page-title-bar-header-right {
+    top: 0;
+  }
+
+  &.page-title-bar--condensed-static {
+    .#{$prefix}--tabs--scrollable {
+      @include make-sticky();
+    }
+  }
+}
+
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-show.#{$iot-prefix}--page-title-bar--stack-tabs-override-show {
+  .page-title-bar-header {
+    top: var(--negative-header-offset);
+  }
+}
+
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide {
+  .page-title-bar-header {
+    top: -($spacing-10 + $spacing-05);
   }
 }
