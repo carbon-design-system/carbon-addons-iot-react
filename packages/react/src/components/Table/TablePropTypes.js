@@ -213,6 +213,8 @@ export const I18NPropTypes = PropTypes.shape({
   multiSortDragHandle: PropTypes.string,
   /** I18N label for load more row */
   loadMoreText: PropTypes.string,
+  /** aria-label applied to the tooltip in the toolbar (if given) */
+  toolbarTooltipLabel: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
@@ -278,6 +280,7 @@ export const defaultI18NPropTypes = {
   multiSortOpenMenu: 'Open menu',
   multiSortCloseMenu: 'Close menu',
   multiSortDragHandle: 'Drag handle',
+  toolbarTooltipLabel: 'Toolbar tooltip',
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
