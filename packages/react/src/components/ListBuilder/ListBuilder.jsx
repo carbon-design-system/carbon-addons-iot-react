@@ -114,6 +114,14 @@ const propTypes = {
     selectedListEmptyText: PropTypes.string,
     /** icon description label for the clear search icon */
     clearSearchIconDescription: PropTypes.string,
+    expand: deprecate(
+      PropTypes.string,
+      `The 'expand' prop has been deprecated. Please use 'expandIconDescription' instead.`
+    ),
+    close: deprecate(
+      PropTypes.string,
+      `The 'close' prop has been deprecated. Please use 'collapseIconDescription' instead.`
+    ),
   }),
   /** the icon used as button to remove items from the selected list */
   removeIcon: ButtonIconPropType,
@@ -158,6 +166,8 @@ const defaultProps = {
     allListSearchPlaceholderText: 'Enter a value to search all items',
     selectedListSearchPlaceholderText: 'Enter a value to search selected items',
     expandIconDescription: 'Expand',
+    expand: 'Expand',
+    close: 'Close',
     collapseIconDescription: 'Collapse',
     resetLabel: 'Reset',
     loadMoreButtonLabel: 'Load more...',
@@ -395,6 +405,8 @@ const ListBuilder = ({
             i18n={{
               clearSearchIconDescription,
               searchPlaceHolderText: mergedI18n.allListSearchPlaceholderText,
+              expand: mergedI18n.expandIconDescription || mergedI18n.expand,
+              close: mergedI18n.collapseIconDescription || mergedI18n.close,
             }}
           />
         )}
@@ -439,8 +451,8 @@ const ListBuilder = ({
           searchId={`${iotPrefix}--list-builder__selected--search`}
           i18n={{
             searchPlaceHolderText: mergedI18n.selectedListSearchPlaceholderText,
-            expand: mergedI18n.expandIconDescription,
-            close: mergedI18n.collapseIconDescription,
+            expand: mergedI18n.expandIconDescription || mergedI18n.expand,
+            close: mergedI18n.collapseIconDescription || mergedI18n.close,
           }}
         />
       </div>
