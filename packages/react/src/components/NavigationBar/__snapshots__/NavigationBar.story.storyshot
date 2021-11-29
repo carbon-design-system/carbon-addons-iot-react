@@ -63,7 +63,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
         className="bx--tabs--scrollable"
         data-testid="navigation-bar-tabs"
         hidden={false}
-        onScroll={[Function]}
         selected={0}
       >
         <button
@@ -93,6 +92,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
         </button>
         <ul
           className="bx--tabs--scrollable__nav"
+          onScroll={[Function]}
           role="tablist"
           tabIndex={-1}
         >
@@ -275,7 +275,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
         className="bx--tabs--scrollable"
         data-testid="navigation-bar-tabs"
         hidden={false}
-        onScroll={[Function]}
         selected={0}
       >
         <button
@@ -305,6 +304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
         </button>
         <ul
           className="bx--tabs--scrollable__nav"
+          onScroll={[Function]}
           role="tablist"
           tabIndex={-1}
         >
@@ -466,7 +466,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
         className="bx--tabs--scrollable"
         data-testid="navigation-bar-tabs"
         hidden={false}
-        onScroll={[Function]}
         selected={1}
       >
         <button
@@ -496,6 +495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
         </button>
         <ul
           className="bx--tabs--scrollable__nav"
+          onScroll={[Function]}
           role="tablist"
           tabIndex={-1}
         >
@@ -657,7 +657,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
         className="bx--tabs--scrollable"
         data-testid="navigation-bar-tabs"
         hidden={false}
-        onScroll={[Function]}
         selected={0}
       >
         <button
@@ -687,6 +686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/N
         </button>
         <ul
           className="bx--tabs--scrollable__nav"
+          onScroll={[Function]}
           role="tablist"
           tabIndex={-1}
         >
