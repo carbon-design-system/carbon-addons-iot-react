@@ -95,6 +95,8 @@ const propTypes = {
     toolbarLabelAria: PropTypes.string,
     rowCountInHeader: PropTypes.func,
     downloadIconDescription: PropTypes.string,
+    /** aria-label applied to the tooltip in the toolbar (if given) */
+    toolbarTooltipLabel: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -313,6 +315,7 @@ const TableToolbar = ({
             triggerId={`card-tooltip-trigger-${tableId}`}
             tooltipId={`card-tooltip-${tableId}`}
             triggerText=""
+            iconDescription={i18n.toolbarTooltipLabel}
           >
             {tooltip}
           </Tooltip>

@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.66](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.65...v2.147.0-next.66) (2021-11-29)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.147.0-next.65](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.64...v2.147.0-next.65) (2021-11-29)
+
+
+### Bug Fixes
+
+* **page-title-bar:** add padding on tab edge and bottom border ([9436cd5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9436cd5ee47e863ec5e2ca2c90da086badbacd21))
+* **page-title-bar:** add space between header buttons ([f0df65a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f0df65a8a71b01af833791d04c10155539f72955))
+* **page-title-bar:** changed imports ([1578ffa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1578ffa17750604f3245969300ddd0fbe663584e))
+* **page-title-bar:** minor style fixes for tab to overhang content ([ec5b8a5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ec5b8a5f6de87ed6eb7fe225a302d3f7f01556ba))
+* **page-title-bar:** pr feedback updates ([0db9c21](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0db9c2130962a92a70afc0fa227c00a827ca15a0))
+* **page-title-bar:** syntax error building consumer app ([84ac351](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/84ac351e3946ace86b5ccb0625074f348f7fa0f3))
+
+
+### Features
+
+* **page-title-bar:** add stackable breadcrumbs and tabs ([cd2de98](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd2de9868bbbba74caaf8b5881de024e01e2e8ad))
+
+
+
+
+
 # [2.147.0-next.64](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.63...v2.147.0-next.64) (2021-11-23)
 
 

@@ -645,6 +645,7 @@ Map {
         "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle aggregations",
         "toolbarLabelAria": undefined,
+        "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "id": null,
       "lightweight": undefined,
@@ -1363,6 +1364,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarTooltipLabel": Object {
               "type": "string",
             },
           },
@@ -2219,6 +2223,7 @@ Map {
         "selectRowAria": "Select row",
         "simpleFiltersTabLabel": "Simple filters",
         "toggleAggregations": "Toggle aggregations",
+        "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "lightweight": false,
       "openMenuText": "Open menu",
@@ -2606,6 +2611,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarTooltipLabel": Object {
               "type": "string",
             },
           },
@@ -4057,6 +4065,7 @@ Map {
         "selectRowAria": "Select row",
         "simpleFiltersTabLabel": "Simple filters",
         "toggleAggregations": "Toggle aggregations",
+        "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "secondaryTitle": null,
       "testId": "",
@@ -4328,6 +4337,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarTooltipLabel": Object {
               "type": "string",
             },
           },
@@ -5967,6 +5979,7 @@ Map {
       "onEdit": null,
       "renderTitleFunction": undefined,
       "rightContent": undefined,
+      "stackBreadcrumbsWithTabs": false,
       "stickyHeaderOffset": 48,
       "style": null,
       "tabs": undefined,
@@ -6047,6 +6060,9 @@ Map {
         "type": "func",
       },
       "rightContent": [Function],
+      "stackBreadcrumbsWithTabs": Object {
+        "type": "bool",
+      },
       "stickyHeaderOffset": Object {
         "type": "number",
       },
