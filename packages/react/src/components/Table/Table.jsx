@@ -509,6 +509,7 @@ export const defaultProps = (baseProps) => ({
     inProgressText: 'In progress',
     dismissText: 'Dismiss',
     actionFailedText: 'Action failed',
+    toolbarTooltipLabel: 'Toolbar tooltip',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -809,6 +810,7 @@ const Table = (props) => {
               rowCountInHeader: i18n.rowCountInHeader,
               toggleAggregations: i18n.toggleAggregations,
               toolbarLabelAria: i18n.toolbarLabelAria,
+              toolbarTooltipLabel: i18n.toolbarTooltipLabel,
             }}
             actions={{
               ...pick(
