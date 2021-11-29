@@ -1120,9 +1120,9 @@ const Table = (props) => {
           page={paginationProps.page}
           isItemPerPageHidden={paginationProps.isItemPerPageHidden}
           totalItems={
-            paginationProps.totalItems < Math.round(maxPages * paginationProps.pageSize)
+            paginationProps.totalItems < maxPages * paginationProps.pageSize
               ? paginationProps.totalItems
-              : Math.round(maxPages * paginationProps.pageSize)
+              : maxPages * paginationProps.pageSize
           }
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
