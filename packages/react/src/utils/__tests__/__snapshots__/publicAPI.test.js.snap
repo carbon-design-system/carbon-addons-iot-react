@@ -3614,6 +3614,7 @@ Map {
       "onEdit": null,
       "renderTitleFunction": undefined,
       "rightContent": undefined,
+      "stackBreadcrumbsWithTabs": false,
       "stickyHeaderOffset": 48,
       "style": null,
       "tabs": undefined,
@@ -3694,6 +3695,9 @@ Map {
         "type": "func",
       },
       "rightContent": [Function],
+      "stackBreadcrumbsWithTabs": Object {
+        "type": "bool",
+      },
       "stickyHeaderOffset": Object {
         "type": "number",
       },
