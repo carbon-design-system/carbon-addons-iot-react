@@ -707,7 +707,7 @@ export class AITableModel implements PaginationModel {
    * |  f  |  g  |  h  |  j  |  i  |
    */
   moveColumn(indexFrom: number, indexTo: number, rowIndex = 0) {
-    const nested = this.tabularToNested(this.header, this._data);
+    const nested = this.tabularToNested();
     this.moveNested(nested, indexFrom, indexTo, rowIndex);
     const { header, data } = this.nestedToTabular(nested);
     this.header = header;
@@ -990,20 +990,20 @@ export class AITableModel implements PaginationModel {
   }
 
   protected tabularToNested(
-    header: TableHeaderItem[][],
-    data: TableItem[][],
     headerRow: TableHeaderItem[] = [],
     availableHeaderItems: TableHeaderItem[][] = [],
-    leafIndex = { index: 0 }, // So we can pass by reference
+    // This allows us to walk the leaves as if they were in a list from left to right.
+    // We need to pass by reference so that we can update this value from within the recursion.
+    leafIndexRef = { current: 0 },
     relativeIndex = 0,
     rowIndex = 0
   ) {
     if (!headerRow.length && rowIndex === 0) {
-      headerRow = header[0];
+      headerRow = this.header[0];
     }
 
     if (!availableHeaderItems.length) {
-      availableHeaderItems = header.map((headerRow) =>
+      availableHeaderItems = this.header.map((headerRow) =>
         headerRow.filter((headerItem) => headerItem !== null)
       );
     }
@@ -1014,19 +1014,16 @@ export class AITableModel implements PaginationModel {
         const colSpan = headerItem?.colSpan || 1;
         const rowSpan = headerItem?.rowSpan || 1;
 
+        // Leaf
         if (rowIndex + rowSpan >= this.header.length) {
-          const dataChildren = [];
-          data.forEach((row) => {
-            dataChildren.push(row.slice(leafIndex.index, leafIndex.index + colSpan));
-          });
-
-          leafIndex.index += colSpan;
+          const leafIndex = leafIndexRef.current;
+          leafIndexRef.current += colSpan;
 
           return {
             headerItem,
-            index: relativeIndex + i,
+            tabularIndex: relativeIndex + i,
+            leafIndex,
             rowIndex,
-            dataChildren,
             children: [],
           };
         }
@@ -1043,16 +1040,14 @@ export class AITableModel implements PaginationModel {
 
         return {
           headerItem,
-          index: relativeIndex + i,
+          tabularIndex: relativeIndex + i,
+          leafIndex: -1,
           rowIndex,
-          dataChildren: [],
           children: this.tabularToNested(
-            header,
-            data,
             children,
             availableHeaderItems,
-            leafIndex,
-            header[rowIndex + rowSpan].indexOf(children[0]),
+            leafIndexRef,
+            this.header[rowIndex + rowSpan].indexOf(children[0]),
             rowIndex + rowSpan
           ),
         };
@@ -1067,11 +1062,16 @@ export class AITableModel implements PaginationModel {
   ) {
     nested.forEach((headerObj: any) => {
       const rowSpan = headerObj.headerItem?.rowSpan || 1;
+      const colSpan = headerObj.headerItem?.colSpan || 1;
+
       header[rowIndex] = [...header[rowIndex], headerObj.headerItem];
 
-      if (headerObj.dataChildren.length) {
+      if (headerObj.leafIndex >= 0) {
         for (let i = 0; i < data.length; i++) {
-          data[i] = [...data[i], ...headerObj.dataChildren[i]];
+          data[i] = [
+            ...data[i],
+            ...this._data[i].slice(headerObj.leafIndex, headerObj.leafIndex + colSpan)
+          ];
         }
       }
 
@@ -1080,7 +1080,6 @@ export class AITableModel implements PaginationModel {
       }
 
       const children = headerObj.children;
-
       this.nestedToTabular(children, header, data, rowIndex + rowSpan);
     });
 
@@ -1100,8 +1099,8 @@ export class AITableModel implements PaginationModel {
 
     const currentRowIndex = nested[0].rowIndex;
     if (currentRowIndex === rowIndex) {
-      const indexFromElement = nested.find((obj: any) => obj.index === indexFrom);
-      const indexToElement = nested.find((obj: any) => obj.index === indexTo);
+      const indexFromElement = nested.find((obj: any) => obj.tabularIndex === indexFrom);
+      const indexToElement = nested.find((obj: any) => obj.tabularIndex === indexTo);
 
       if (indexFromElement && indexToElement) {
         const relativeIndexFrom = nested.indexOf(indexFromElement);
