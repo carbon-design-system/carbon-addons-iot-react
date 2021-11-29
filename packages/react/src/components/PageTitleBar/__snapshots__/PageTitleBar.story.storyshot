@@ -115,6 +115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
                     data-testid="null-table-toolbar-batch-actions"
+                    onScroll={[Function]}
                   >
                     <div
                       className="bx--batch-summary"
@@ -405,6 +406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <div
                                 className="bx--form-item bx--checkbox-wrapper"
+                                onClick={[Function]}
                               >
                                 <input
                                   checked={false}
@@ -421,6 +423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 >
                                   <span
                                     className="bx--checkbox-label-text bx--visually-hidden"
+                                    dir="auto"
                                   >
                                     Select all items
                                   </span>
@@ -951,7 +954,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="string-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="string"
                                         onBlur={[Function]}
@@ -1021,7 +1025,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="date-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="date"
                                         onBlur={[Function]}
@@ -1085,6 +1090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                         placeholder="pick an option"
                                         role="combobox"
                                         tabIndex="0"
+                                        title=""
                                         type="text"
                                         value="option-B"
                                       />
@@ -1195,7 +1201,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="number-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="number"
                                         onBlur={[Function]}
@@ -1241,7 +1248,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="boolean-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="boolean"
                                         onBlur={[Function]}
@@ -1298,7 +1306,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="object-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="object"
                                         onBlur={[Function]}
@@ -1373,6 +1382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <div
                                 className="bx--form-item bx--checkbox-wrapper"
+                                onClick={[Function]}
                               >
                                 <input
                                   checked={false}
@@ -1389,6 +1399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 >
                                   <span
                                     className="bx--checkbox-label-text bx--visually-hidden"
+                                    dir="auto"
                                   >
                                     Select row
                                   </span>
@@ -1576,6 +1587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               <div
                                 className="iot--row-actions-container__background"
                                 data-testid="row-action-container-background"
+                                onClick={[Function]}
                               >
                                 <button
                                   aria-describedby={null}
@@ -1629,8 +1641,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                     fill="currentColor"
                                     focusable="false"
                                     height={16}
-                                    onClick={[Function]}
-                                    onKeyDown={[Function]}
                                     preserveAspectRatio="xMidYMid meet"
                                     role="img"
                                     viewBox="0 0 32 32"
@@ -1708,6 +1718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <div
                                 className="bx--form-item bx--checkbox-wrapper"
+                                onClick={[Function]}
                               >
                                 <input
                                   checked={false}
@@ -1724,6 +1735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 >
                                   <span
                                     className="bx--checkbox-label-text bx--visually-hidden"
+                                    dir="auto"
                                   >
                                     Select row
                                   </span>
@@ -1911,6 +1923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               <div
                                 className="iot--row-actions-container__background"
                                 data-testid="row-action-container-background"
+                                onClick={[Function]}
                               >
                                 <button
                                   aria-expanded={false}
@@ -1931,8 +1944,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                     fill="currentColor"
                                     focusable="false"
                                     height={16}
-                                    onClick={[Function]}
-                                    onKeyDown={[Function]}
                                     preserveAspectRatio="xMidYMid meet"
                                     role="img"
                                     viewBox="0 0 32 32"
@@ -1968,7 +1979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   </div>
                 </div>
                 <div
-                  className="bx--pagination iot--pagination"
+                  className="bx--pagination iot--pagination bx--pagination--lg"
                   data-testid="null-table-pagination"
                   style={
                     Object {
@@ -2208,6 +2219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     aria-hidden={true}
                     className="bx--batch-actions iot--table-batch-actions"
                     data-testid="null-table-toolbar-batch-actions"
+                    onScroll={[Function]}
                   >
                     <div
                       className="bx--batch-summary"
@@ -2498,6 +2510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <div
                                 className="bx--form-item bx--checkbox-wrapper"
+                                onClick={[Function]}
                               >
                                 <input
                                   checked={false}
@@ -2514,6 +2527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 >
                                   <span
                                     className="bx--checkbox-label-text bx--visually-hidden"
+                                    dir="auto"
                                   >
                                     Select all items
                                   </span>
@@ -3044,7 +3058,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="string-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="string"
                                         onBlur={[Function]}
@@ -3114,7 +3129,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="date-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="date"
                                         onBlur={[Function]}
@@ -3178,6 +3194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                         placeholder="pick an option"
                                         role="combobox"
                                         tabIndex="0"
+                                        title=""
                                         type="text"
                                         value="option-B"
                                       />
@@ -3288,7 +3305,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="number-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="number"
                                         onBlur={[Function]}
@@ -3334,7 +3352,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="boolean-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="boolean"
                                         onBlur={[Function]}
@@ -3391,7 +3410,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                       data-invalid={null}
                                     >
                                       <input
-                                        className="bx--text-input bx--text__input"
+                                        aria-describedby="object-helper-text"
+                                        className="bx--text-input"
                                         disabled={false}
                                         id="object"
                                         onBlur={[Function]}
@@ -3466,6 +3486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <div
                                 className="bx--form-item bx--checkbox-wrapper"
+                                onClick={[Function]}
                               >
                                 <input
                                   checked={false}
@@ -3482,6 +3503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 >
                                   <span
                                     className="bx--checkbox-label-text bx--visually-hidden"
+                                    dir="auto"
                                   >
                                     Select row
                                   </span>
@@ -3669,6 +3691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               <div
                                 className="iot--row-actions-container__background"
                                 data-testid="row-action-container-background"
+                                onClick={[Function]}
                               >
                                 <button
                                   aria-describedby={null}
@@ -3722,8 +3745,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                     fill="currentColor"
                                     focusable="false"
                                     height={16}
-                                    onClick={[Function]}
-                                    onKeyDown={[Function]}
                                     preserveAspectRatio="xMidYMid meet"
                                     role="img"
                                     viewBox="0 0 32 32"
@@ -3801,6 +3822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <div
                                 className="bx--form-item bx--checkbox-wrapper"
+                                onClick={[Function]}
                               >
                                 <input
                                   checked={false}
@@ -3817,6 +3839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 >
                                   <span
                                     className="bx--checkbox-label-text bx--visually-hidden"
+                                    dir="auto"
                                   >
                                     Select row
                                   </span>
@@ -4004,6 +4027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               <div
                                 className="iot--row-actions-container__background"
                                 data-testid="row-action-container-background"
+                                onClick={[Function]}
                               >
                                 <button
                                   aria-expanded={false}
@@ -4024,8 +4048,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                     fill="currentColor"
                                     focusable="false"
                                     height={16}
-                                    onClick={[Function]}
-                                    onKeyDown={[Function]}
                                     preserveAspectRatio="xMidYMid meet"
                                     role="img"
                                     viewBox="0 0 32 32"
@@ -4061,7 +4083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   </div>
                 </div>
                 <div
-                  className="bx--pagination iot--pagination"
+                  className="bx--pagination iot--pagination bx--pagination--lg"
                   data-testid="null-table-pagination"
                   style={
                     Object {
@@ -4673,7 +4695,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           >
             <div
               className="bx--tabs--scrollable"
-              onScroll={[Function]}
               selected={0}
               style={
                 Object {
@@ -4709,6 +4730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
               </button>
               <ul
                 className="bx--tabs--scrollable__nav"
+                onScroll={[Function]}
                 role="tablist"
                 tabIndex={-1}
               >
@@ -5918,7 +5940,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           >
             <div
               className="bx--tabs--scrollable"
-              onScroll={[Function]}
               selected={0}
             >
               <button
@@ -5948,6 +5969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
               </button>
               <ul
                 className="bx--tabs--scrollable__nav"
+                onScroll={[Function]}
                 role="tablist"
                 tabIndex={-1}
               >

@@ -35,6 +35,8 @@ export const SimplePaginationPropTypes = {
   ),
   /** Id that can be used for testing */
   testId: PropTypes.string,
+  /** the size of the buttons in pagination */
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
 };
 
 const SimplePaginationDefaultProps = {
@@ -45,6 +47,7 @@ const SimplePaginationDefaultProps = {
   totalItemsText: 'Items',
   totalItems: undefined,
   testId: `${iotPrefix}-simple-pagination`,
+  size: 'lg',
 };
 
 /** This is a lighter weight pagination component than the default Carbon one */
@@ -61,6 +64,7 @@ const SimplePagination = ({
   // TODO: remove deprecated 'testID' in v3
   testID,
   testId,
+  size,
 }) => {
   const hasPrev = page > 1;
   const hasNext = page <= maxPage - 1;
@@ -69,7 +73,10 @@ const SimplePagination = ({
   const handlePrev = () => onPage(page - 1);
 
   return (
-    <div className={`${iotPrefix}-simple-pagination-container`} data-testid={testID || testId}>
+    <div
+      className={`${iotPrefix}-simple-pagination-container ${prefix}--pagination--${size}`}
+      data-testid={testID || testId}
+    >
       {totalItems ? (
         <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
           {typeof totalItemsText === 'function'

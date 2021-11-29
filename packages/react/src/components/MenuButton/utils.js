@@ -1,10 +1,20 @@
+import { settings } from '../../constants/Settings';
+
+const { prefix } = settings;
 export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDir }) => {
   const isSplitButton = label && typeof onPrimaryActionClick === 'function';
   const buttonRect = buttonRef.current.getBoundingClientRect();
   const primaryButtonRect = isSplitButton
     ? buttonRef?.current?.previousSibling?.getBoundingClientRect()
     : null;
-  const menuRect = buttonRef.current.nextSibling?.getBoundingClientRect();
+  const node =
+    buttonRef.current?.nextSibling ??
+    document.querySelector(`.${prefix}--menu.${prefix}--menu--open.${prefix}--menu--root`);
+  const menuRect = node?.getBoundingClientRect();
+  // Once the menuButton can accept a target for the react portal, we can
+  // use this method again once the menu is placed within the same div as the
+  // button.
+  // const menuRect = buttonRef.current.nextSibling?.getBoundingClientRect();
   const isRtl = langDir === 'rtl';
   const { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight } = buttonRect;
   const { clientHeight: bodyHeight } = document.body;
@@ -12,8 +22,8 @@ export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDi
     width: 0,
   };
 
-  const hasScrollY = document.body.scrollHeight > bodyHeight;
-  const scrollXOffset = hasScrollY ? 14 : 0;
+  const hasScrollY = document.body.scrollHeight >= bodyHeight;
+  const scrollXOffset = hasScrollY ? 15 : 0;
   let y = buttonY + buttonHeight;
   let x = isSplitButton ? buttonX + primaryButtonWidth : buttonX;
 

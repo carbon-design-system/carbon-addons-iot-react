@@ -838,7 +838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--lg"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -1529,7 +1529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--lg"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -1789,8 +1789,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -1873,8 +1871,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -1957,8 +1953,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -2041,8 +2035,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -2125,8 +2117,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -2170,7 +2160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--lg"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -2578,7 +2568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--lg"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -2964,7 +2954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--lg"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -3625,7 +3615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--lg"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -3885,8 +3875,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -3963,8 +3951,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -4041,8 +4027,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -4119,8 +4103,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -4197,8 +4179,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -4236,7 +4216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--lg"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -5309,7 +5289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--lg"
           data-testid="iot-simple-pagination"
         >
           <div

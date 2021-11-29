@@ -122,6 +122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
           </svg>
           <div
             className="bx--accordion__title"
+            dir="auto"
           >
             Exports table
           </div>
@@ -968,6 +969,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
+                  FilterableMultiSelect
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  FilterableMultiSelect
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
                   Form
                 </div>
                 <div
@@ -1240,6 +1258,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
+                  ActionableNotification
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
                   ToastNotification
                 </div>
                 <div
@@ -1417,6 +1450,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   role="cell"
                 >
                   PaginationNav
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  ControlledPasswordInput
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  ControlledPasswordInput
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  PasswordInput
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  PasswordInput
                 </div>
               </div>
               <div
@@ -1816,6 +1883,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
+                  unstable_ContainedTab
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
                   TabContent
                 </div>
                 <div
@@ -1841,6 +1923,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                 >
                   Tabs
                 </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_ContainedTabs
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
               </div>
               <div
                 className="bx--structured-list-row"
@@ -3440,6 +3537,111 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   role="cell"
                 >
                   unstable_ProgressBar
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_usePrefix
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_Popover
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_PopoverContent
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_HStack
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_Stack
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_VStack
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_Tooltip
                 </div>
                 <div
                   className="bx--structured-list-td"

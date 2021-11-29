@@ -469,6 +469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         />
                         <span
                           className=""
+                          dir="auto"
                         >
                           Relative
                         </span>
@@ -496,6 +497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         />
                         <span
                           className=""
+                          dir="auto"
                         >
                           Absolute
                         </span>
@@ -960,6 +962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         />
                         <span
                           className=""
+                          dir="auto"
                         >
                           Relative
                         </span>
@@ -987,6 +990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         />
                         <span
                           className=""
+                          dir="auto"
                         >
                           Absolute
                         </span>
@@ -1635,6 +1639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         />
                         <span
                           className=""
+                          dir="auto"
                         >
                           Relative
                         </span>
@@ -1662,6 +1667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         />
                         <span
                           className=""
+                          dir="auto"
                         >
                           Absolute
                         </span>
