@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.64](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.63...v2.147.0-next.64) (2021-11-23)
+
+
+### Bug Fixes
+
+* **repo:** fix bad carbon-components version ([6f490e7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6f490e7bccd990d95cac03a2aa6fd78db315eeb9))
+* **repo:** minor style adjustments for 10.48/7.48 updates ([dce3c20](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dce3c205f0b4ad1e2ed7196ede92eed551b74782))
+* **repo:** revert bad carbon-components version ([f674945](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f6749457c067e2d748b6dd07ef22b842ca465653))
+* **row-actions-cell:** add onClick catch to prevent bubbling ([03ff92e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/03ff92e689fbea1cc312878ade500246b0ca8606))
+* upgrade carbon to 10.47/7.48 ([74be726](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/74be726504bd75ebdd6dd13887bc961efb814742))
+
+
+### Features
+
+* **repo:** upgrade carbon-components-react to 7.48.1 ([357701c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/357701c8a18ea77461e475dea8fb5e4c236545b0))
+
+
+
+
+
+# [2.147.0-next.63](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.62...v2.147.0-next.63) (2021-11-22)
+
+
+### Reverts
+
+* **header:** remove accidentally changed style ([5980439](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5980439b865cdf70315d337924769f624914a5bf))
+
+
+
+
+
 # [2.147.0-next.62](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.61...v2.147.0-next.62) (2021-11-22)
 
 
