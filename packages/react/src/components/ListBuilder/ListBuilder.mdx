@@ -38,19 +38,53 @@ import { ListBuilder } from 'carbon-addons-iot-react';
 
 ## Props
 
-| Name                   | Type     | Default                                 | Description                                                                 |
-| :--------------------- | :------- | :-------------------------------------- | :-------------------------------------------------------------------------- |
-| testId                 | string   | 'list-builder'                          |                                                                             |
-| items                  | arrayOf  | []                                      | the list of all items available to select in the ListBuilder                |
-| itemCount              | number   | null                                    | if the items contain children or groups, a proper count can be passed here. |
-| selectedItems          | arrayOf  | []                                      | an array of all selected items                                              |
-| onAdd                  | function | null                                    | (event, itemId) => {}                                                       |
-| onRemove               | function | null                                    | (event, itemId) => {}                                                       |
-| i18n                   | object   |                                         |                                                                             |
-| i18n.allListTitle      | function | (count) => `Items (${count} available)` |                                                                             |
-| i18n.selectedListTitle | function | (count) => `${count} Selected`          |                                                                             |
-| i18n.removeLabel       | string   | 'Remove item from list'                 |                                                                             |
-| i18n.addLabel          | string   | 'Add item to list'                      |                                                                             |
+| Name                       | Type                        | Default        | Description                                                                                                                                            |
+| :------------------------- | :-------------------------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| getAllowedDropIds          | funct                       | null           | Callback used to limit which items that should get drop targets rendered. Receives the id of the item that is being dragged and returns a list of ids. |
+| handleLoadMore             | func                        | undefined      | Callback function for when load more row is clicked (rowId) => {}                                                                                      |
+| hasItemsSearch             | boolean                     | true           | True if the items list should have search                                                                                                              |
+| hasSelectedItemsSearch     | boolean                     | true           | True if the selected items list should have search                                                                                                     |
+| hasReset                   | boolean                     | false          | True if the reset button should be shown                                                                                                               |
+| isLargeRow                 | boolean                     | false          | Will increase the height of the list items to make to room for a secondary value                                                                       |
+| itemCount                  | number                      | null           | If the items contain children or groups, a proper count can be passed here.                                                                            |
+| items                      | arrayOf                     | []             | The list of all items available to select in the ListBuilder                                                                                           |
+| itemsSearchValue           | string                      | null           | Current search value of the items search                                                                                                               |
+| itemWillMove               | func                        | () => true     | Callback function returned before an item in the selected list is repositioned. Returning false cancels the move                                       |
+| loadingMoreIds             | arrayOf                     | []             | RowIds for rows currently loading more rows                                                                                                            |
+| lockedIds                  | arrayOf                     | []             | The ids of locked items that cannot be reordered in the selected list                                                                                  |
+| onAdd                      | function                    | null           | (event, itemId) => {}                                                                                                                                  |
+| onItemsSearchChange        | func                        | null           | Called when the items search value changes. Receives the latest value as a string. Required when useCheckboxes is true                                 |
+| onRemove                   | function                    | null           | (event, itemId) => {}                                                                                                                                  |
+| onReset                    | func                        | () => {}       | Called when the reset button is clicked                                                                                                                |
+| onSelectedListReordered    | func                        | () => {}       | Receives an updated array of the selected items after reordering                                                                                       |
+| removeIcon                 | shape, object or element    | Subtract16     | The icon used as button to remove items from the selected list                                                                                         |
+| selectedDefaultExpandedIds | arrayOf                     |                | An array of the ids of the selected items that should be expanded                                                                                      |
+| selectedEditingStyle       | 'single' or 'single-nesting | undefined      | The editing style of the hirerchy list showing the selected items                                                                                      |
+| selectedItems              | arrayOf                     | []             | An array of all selected items                                                                                                                         |
+| showLoaderInAvailableList  | boolean                     | false          | If true the list for available columns will show a loader only                                                                                         |
+| showLoaderInSelectedList   | boolean                     | false          | If true the list for selected columns will show a loader only                                                                                          |
+| testId                     | string                      | 'list-builder' |                                                                                                                                                        |
+| useCheckboxes              | boolean                     | false          | If true checkboxes will be used for selection so selected items can stay in the left list                                                              |
+| i18n                       | object                      |                | (see [i18n prop](#i18n-prop))                                                                                                                          |
+
+### i18n Prop
+
+| Name                              | Type     | Default                                  | Description                                            |
+| :-------------------------------- | :------- | :--------------------------------------- | :----------------------------------------------------- |
+| addLabel                          | string   | 'Add item to list'                       | Label for the add button                               |
+| allListEmptyText                  | string   |                                          | Message shown if the all items list is empty           |
+| allListSearchPlaceholderText      | string   | 'Enter a value to search all items'      | Placeholder text for the search box for all items      |
+| allListTitle                      | function | (count) => `Items (${count} available)`  | Title for the list of all items                        |
+| clearSearchIconDescription        | string   | xxx                                      | Icon description label for the clear search icon       |
+| collapseIconDescription           | string   | 'Collapse'                               | Collapse icon description when using nested groups     |
+| expandIconDescription             | string   | 'Expand'                                 | Expand icon description when using nested groups       |
+| loadMoreButtonLabel               | string   | 'Load more...'                           | Label for the "Load more" button                       |
+| removeIconDescription             | string   | 'Remove item from list'                  | Remove icons description on selected items             |
+| removeLabel                       | string   | 'Remove item from list'                  | Remove button label                                    |
+| resetLabel                        | string   | 'Reset'                                  | Reset button label                                     |
+| selectedListEmptyText             | string   |                                          | Message shown if selected list is empty                |
+| selectedListSearchPlaceholderText | string   | 'Enter a value to search selected items' | Placeholder text for the search box for selected items |
+| selectedListTitle                 | function | (count) => `${count} Selected`           | Title for the selected list                            |
 
 ## Feedback
 
