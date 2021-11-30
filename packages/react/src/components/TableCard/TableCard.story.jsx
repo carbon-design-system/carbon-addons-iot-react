@@ -567,7 +567,6 @@ export const WithCustomFilters = () => {
         }
   );
 
-  console.log('tableColumnsWithFilters', tableColumnsWithCustomFilters);
   return (
     <div
       style={{

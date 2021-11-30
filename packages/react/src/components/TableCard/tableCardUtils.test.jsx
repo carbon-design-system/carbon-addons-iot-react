@@ -133,7 +133,7 @@ describe('tableCardUtils', () => {
 describe('determineFilterFunction', () => {
   it('determaine filter columns', () => {
     const mockPlaceholderText = 'filter text';
-    const customFilterFunction = () => console.log();
+    const customFilterFunction = jest.fn();
     const customPlaceholderText = 'customPlaceholdertext';
     const mockColumns = [
       // no filter on timestamp
