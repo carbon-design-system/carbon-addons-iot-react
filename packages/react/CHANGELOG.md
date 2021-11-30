@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.68](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.67...v2.147.0-next.68) (2021-11-30)
+
+
+### Bug Fixes
+
+* **tablecard:** fix the tablecard all to the new function ([9f577f3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9f577f3263ae8400004f39cf9b7189a23e350f68))
+
+
+### Features
+
+* **tablecard:** custom timestamp filter ([8c5bbf4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8c5bbf4a489c5c169f2745525bac7c6bd16198ee))
+
+
+
+
+
 # [2.147.0-next.67](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.66...v2.147.0-next.67) (2021-11-29)
 
 
