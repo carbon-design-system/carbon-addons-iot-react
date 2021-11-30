@@ -109,20 +109,17 @@ storiesOf('Components/Table', module)
             <ai-table
               [showSelectionColumn]="false"
               [model]="model">
-              <ai-empty-state
-                [icon]="icon"
-                [title]="title"
-                [body]="body"
-                [action]="action">
+              <ai-empty-state [icon]="icon">
+                <h3 aiEmptyStateTitle>{{ title }}</h3>
+                <p aiEmptyStateBody>{{ body }}</p>
+                <div aiEmptyStateAction>
+                  <button ibmButton (click)="actionOnClick()">Create some data</button>
+                </div>
               </ai-empty-state>
             </ai-table>
           </div>
         </div>
       </div>
-
-      <ng-template #action>
-        <button ibmButton (click)="actionOnClick()">Create some data</button>
-      </ng-template>
 		`,
       props: {
         model: emptyDataModel,

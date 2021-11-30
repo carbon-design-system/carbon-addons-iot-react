@@ -26,16 +26,13 @@ storiesOf('Components/EmptyState', module)
   .addDecorator(withKnobs)
   .add('Default', () => ({
     template: `
-      <ai-empty-state
-        [icon]="icon"
-        [title]="title"
-        [body]="body"
-        [action]="action">
+      <ai-empty-state [icon]="icon">
+        <h3 aiEmptyStateTitle>{{ title }}</h3>
+        <p aiEmptyStateBody>{{ body }}</p>
+        <div aiEmptyStateAction>
+          <button ibmButton (click)="actionOnClick()">Action</button>
+        </div>
       </ai-empty-state>
-
-      <ng-template #action>
-        <button ibmButton (click)="actionOnClick()">Action</button>
-      </ng-template>
 		`,
     props: {
       icon: select(
@@ -57,21 +54,17 @@ storiesOf('Components/EmptyState', module)
     template: `
       <ai-empty-state
         [icon]="icon"
-        [title]="title"
-        [body]="body"
-        [action]="action"
-        [actionContext]="actionContext"
         [secondaryAction]="secondaryAction"
         [secondaryActionContext]="secondaryActionContext">
+        <h3 aiEmptyStateTitle>{{ title }}</h3>
+        <p aiEmptyStateBody>{{ body }}</p>
+        <div aiEmptyStateAction>
+          <button ibmButton (click)="actionOnClick()">Action</button>
+        </div>
+        <div aiEmptyStateSecondaryAction>
+          <a ibmLink (click)="secondaryActionClick()">Secondary action</a>
+        </div>
       </ai-empty-state>
-
-      <ng-template #action let-data="data">
-        <button ibmButton (click)="data.action()">Action</button>
-      </ng-template>
-
-      <ng-template #secondaryAction let-data="data">
-        <a ibmLink (click)="data.action()">Secondary action</a>
-      </ng-template>
 		`,
     props: {
       icon: select(
@@ -84,19 +77,11 @@ storiesOf('Components/EmptyState', module)
         'body',
         'Optional extra sentence or sentences to describe the resource and how to create it or the action a first-time user needs to take.'
       ),
-      actionContext: {
-        data: {
-          action: () => {
-            console.log('Action button clicked');
-          },
-        },
+      actionOnClick: () => {
+        console.log('Action button clicked');
       },
-      secondaryActionContext: {
-        data: {
-          action: () => {
-            console.log('Secondary action link clicked');
-          },
-        },
+      secondaryActionClick: () => {
+        console.log('Secondary action clicked');
       },
     },
   }))
@@ -105,7 +90,10 @@ storiesOf('Components/EmptyState', module)
       <ng-template #icon>
         <svg ibmIcon="bee" size="32"></svg>
       </ng-template>
-      <ai-empty-state [icon]="icon" [title]="title" [body]="body"></ai-empty-state>
+      <ai-empty-state [icon]="icon">
+        <h3 aiEmptyStateTitle>{{ title }}</h3>
+        <p aiEmptyStateBody>{{ body }}</p>
+      </ai-empty-state>
       <app-demo-icons></app-demo-icons>
 		`,
     props: {

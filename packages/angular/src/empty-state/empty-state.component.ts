@@ -28,23 +28,10 @@ import { Component, Input, TemplateRef } from '@angular/core';
             </empty-state-default-icon>
           </ng-container>
         </ng-container>
-        <h3 class="iot--empty-state--title">
-          {{ title }}
-        </h3>
-        <p class="iot--empty-state--text">
-          {{ body }}
-        </p>
-        <div *ngIf="action" class="iot--empty-state--action">
-          <ng-container [ngTemplateOutlet]="action" [ngTemplateOutletContext]="actionContext">
-          </ng-container>
-        </div>
-        <div *ngIf="secondaryAction" class="iot--empty-state--link">
-          <ng-container
-            [ngTemplateOutlet]="secondaryAction"
-            [ngTemplateOutletContext]="secondaryActionContext"
-          >
-          </ng-container>
-        </div>
+        <ng-content select="[aiEmptyStateTitle]"></ng-content>
+        <ng-content select="[aiEmptyStateBody]"></ng-content>
+        <ng-content select="[aiEmptyStateAction]"></ng-content>
+        <ng-content select="[aiEmptyStateSecondaryAction]"></ng-content>
       </div>
     </div>
   `,
@@ -59,51 +46,6 @@ export class EmptyStateComponent {
     | 'success'
     | 'no-icon'
     | TemplateRef<any>;
-
-  /**
-   * Specify an optional className to be applied to the container
-   */
-  @Input() containerClass: string;
-
-  /**
-   * Title of empty state
-   */
-  @Input() title: string;
-  /**
-   * Description of empty state
-   */
-  @Input() body: string;
-
-  /**
-   * Specifies an empty state action.
-   *
-   * For example
-   *
-   * ```typescript
-   *  <ai-empty-state
-   *     [action]="action"
-   *     [actionContext]="actionContext">
-   *  </ai-empty-state>
-   *
-   *  <ng-template #action let-data="data">
-   *     <button ibmButton (click)="data.action()">Action</button>
-   *  </ng-template>
-   * ```
-   *
-   * Where
-   *
-   * ```typescript
-   * actionContext = {
-   *   data: {
-   *     action: () => { **Do something** }
-   *   }
-   * }
-   *
-   * `actionContext` is optional.
-   * ```
-   */
-  @Input() action: TemplateRef<any>;
-  @Input() actionContext: any;
 
   /**
    * Specifies an empty state action.
