@@ -47,37 +47,6 @@ export class EmptyStateComponent {
     | 'no-icon'
     | TemplateRef<any>;
 
-  /**
-   * Specifies an empty state action.
-   *
-   * For example
-   *
-   * ```typescript
-   *  <ai-empty-state
-   *     [secondaryAction]="secondaryAction"
-   *     [secondaryActionContext]="secondaryActionContext">
-   *  </ai-empty-state>
-   *
-   *  <ng-template #secondaryAction let-data="data">
-   *     <button ibmButton (click)="data.action()">Action</button>
-   *  </ng-template>
-   * ```
-   *
-   * Where
-   *
-   * ```typescript
-   * secondaryActionContext = {
-   *   data: {
-   *     action: () => { **Do something** }
-   *   }
-   * }
-   *
-   * `secondaryActionContext` is optional.
-   * ```
-   */
-  @Input() secondaryAction: TemplateRef<any>;
-  @Input() secondaryActionContext: any;
-
   public isTemplate(value: any) {
     return value instanceof TemplateRef;
   }
