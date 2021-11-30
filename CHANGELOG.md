@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.69](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.68...v2.147.0-next.69) (2021-11-30)
+
+
+### Bug Fixes
+
+* **pagetitlebar:** child content component might be null ([c65f0b4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c65f0b419deea7ccce459ce3f57a54d1bc1c13fe))
+
+
+
+
+
 # [2.147.0-next.68](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.67...v2.147.0-next.68) (2021-11-30)
 
 
