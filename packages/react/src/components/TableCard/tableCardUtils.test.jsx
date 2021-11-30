@@ -4,6 +4,8 @@ import {
   createColumnsWithFormattedLinks,
   determinePrecisionAndValue,
   handleExpandedItemLinks,
+  determineFilterFunction,
+  timeStampFilterFunction,
 } from './tableCardUtils';
 
 describe('tableCardUtils', () => {
@@ -124,6 +126,90 @@ describe('tableCardUtils', () => {
       expect(determinePrecisionAndValue(undefined, false, 'en')).toBe('--');
       expect(determinePrecisionAndValue(undefined, 'ibm', 'en')).toBe('--');
       expect(determinePrecisionAndValue(undefined, {}, 'en')).toBe('--');
+    });
+  });
+});
+
+describe('determineFilterFunction', () => {
+  it('determaine filter columns', () => {
+    const mockPlaceholderText = 'filter text';
+    const customFilterFunction = jest.fn();
+    const customPlaceholderText = 'customPlaceholdertext';
+    const mockColumns = [
+      // no filter on timestamp
+      { type: 'TIMESTAMP', name: 'columnName' },
+      {
+        // a filter on timestamp
+        type: 'TIMESTAMP',
+        name: 'columnNameWithFilter',
+        filter: { name: 'my existing filter' },
+      },
+      // no filter on LITERAL
+      { type: 'LITERAL', name: 'columnName' },
+      {
+        // a filter on LITERAL
+        type: 'LITERAL',
+        name: 'columnNameWithFilter',
+        filter: { name: 'my existing filter' },
+      },
+      {
+        // a filter on timestamp
+        type: 'TIMESTAMP',
+        name: 'columnNameWithFilter',
+        filter: { name: 'my existing filter', filterFunction: customFilterFunction },
+      },
+      {
+        // a custom placeholder text
+        type: 'TIMESTAMP',
+        name: 'columnNameWithFilter',
+        filter: {
+          name: 'my existing filter',
+          filterFunction: customFilterFunction,
+          placeholderText: customPlaceholderText,
+        },
+      },
+    ];
+    const timestampColumnHasNoFilter = determineFilterFunction(mockColumns[0], mockPlaceholderText);
+    expect(timestampColumnHasNoFilter).toEqual({
+      filterFunction: timeStampFilterFunction,
+      placeholderText: mockPlaceholderText,
+    });
+
+    const timestampColumnHasFilter = determineFilterFunction(mockColumns[1], mockPlaceholderText);
+    expect(timestampColumnHasFilter).toEqual({
+      filterFunction: timeStampFilterFunction,
+      name: 'my existing filter',
+      placeholderText: mockPlaceholderText,
+    });
+    const literalColumnHasNoFilter = determineFilterFunction(mockColumns[2], mockPlaceholderText);
+    expect(literalColumnHasNoFilter).toEqual({
+      placeholderText: mockPlaceholderText,
+    });
+
+    const literalColumnHasFilter = determineFilterFunction(mockColumns[3], mockPlaceholderText);
+    expect(literalColumnHasFilter).toEqual({
+      name: 'my existing filter',
+      placeholderText: mockPlaceholderText,
+    });
+
+    const timestampColumnHasFilterWithCustomFilterFunction = determineFilterFunction(
+      mockColumns[4],
+      mockPlaceholderText
+    );
+    expect(timestampColumnHasFilterWithCustomFilterFunction).toEqual({
+      filterFunction: customFilterFunction,
+      name: 'my existing filter',
+      placeholderText: mockPlaceholderText,
+    });
+
+    const timestampColumnHasFilterWithCustomPlaceholderText = determineFilterFunction(
+      mockColumns[5],
+      mockPlaceholderText
+    );
+    expect(timestampColumnHasFilterWithCustomPlaceholderText).toEqual({
+      filterFunction: customFilterFunction,
+      name: 'my existing filter',
+      placeholderText: customPlaceholderText,
     });
   });
 });
