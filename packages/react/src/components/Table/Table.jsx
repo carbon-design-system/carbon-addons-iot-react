@@ -190,7 +190,7 @@ const propTypes = {
               props[propName]
             )}`;
             return new Error(
-              `Invalid prop \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` must be a positive integer. ${roundedStr}`
+              `Invalid prop \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` must be a positive integer. ${roundedStr}.`
             );
           }
         }
