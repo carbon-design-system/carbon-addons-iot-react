@@ -178,7 +178,25 @@ const propTypes = {
       page: PropTypes.number,
       totalItems: PropTypes.number,
       /** Number of pages rendered in pagination */
-      maxPages: PropTypes.number,
+      maxPages: (props, propName, componentName) => {
+        if (__DEV__) {
+          if (typeof props[propName] !== 'number') {
+            return new Error(
+              `Invalid type of \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` must be a positive integer.`
+            );
+          }
+          if (props[propName] < 0 || !Number.isInteger(props[propName])) {
+            const roundedStr = `${props[propName]} will be rounded to ${Math.ceil(
+              props[propName]
+            )}`;
+            return new Error(
+              `Invalid prop \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` must be a positive integer. ${roundedStr}.`
+            );
+          }
+        }
+
+        return '';
+      },
       isItemPerPageHidden: PropTypes.bool,
       /**
        * Specify the size of the Pagination buttons. Currently supports either `sm`, 'md' (default) or 'lg` as an option.
@@ -1122,9 +1140,9 @@ const Table = (props) => {
           page={paginationProps.page}
           isItemPerPageHidden={paginationProps.isItemPerPageHidden}
           totalItems={
-            paginationProps.totalItems < maxPages * paginationProps.pageSize
+            paginationProps.totalItems < Math.ceil(maxPages * paginationProps.pageSize)
               ? paginationProps.totalItems
-              : maxPages * paginationProps.pageSize
+              : Math.ceil(maxPages * paginationProps.pageSize)
           }
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}

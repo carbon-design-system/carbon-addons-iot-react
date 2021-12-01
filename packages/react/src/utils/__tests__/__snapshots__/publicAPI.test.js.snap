@@ -1682,9 +1682,7 @@ Map {
                   "isItemPerPageHidden": Object {
                     "type": "bool",
                   },
-                  "maxPages": Object {
-                    "type": "number",
-                  },
+                  "maxPages": [Function],
                   "page": Object {
                     "type": "number",
                   },
