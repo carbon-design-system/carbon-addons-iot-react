@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.70](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.69...v2.147.0-next.70) (2021-12-01)
+
+
+### Bug Fixes
+
+* **table:** round maxPages to prevent floating point numbers in UI ([fa2adae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa2adaefd862a94f4f1a97675c6bcbea9505912e))
+* **table:** use round instead of floor ([6abdf78](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6abdf78c2a5fc95249613a46db61d52110c435f8))
+
+
+### Features
+
+* **hierarchy-list:** add controlled expandedIds prop ([afc3b58](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/afc3b58da66542bc6b0bce8e0db77fcb41330b12))
+* **hierarchy-list:** add onExpandedChange callback ([29bda3b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/29bda3b040716ca2d4734e5865850b443f966bf3))
+
+
+
+
+
 # [2.147.0-next.69](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.68...v2.147.0-next.69) (2021-11-30)
 
 
