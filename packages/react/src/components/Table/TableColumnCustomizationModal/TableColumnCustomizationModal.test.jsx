@@ -103,7 +103,7 @@ describe('TableColumnCustomizationModal', () => {
       showIconDescription: 'test-show-icon-description',
     };
 
-    const { rerender } = render(
+    render(
       <TableColumnCustomizationModal
         {...getDefaultTestProps()}
         availableColumns={generateColumns(13)}
@@ -146,7 +146,7 @@ describe('TableColumnCustomizationModal', () => {
     userEvent.click(screen.getByLabelText(i18n.clearSearchIconDescription));
 
     // Render the load more button
-    rerender(
+    render(
       <TableColumnCustomizationModal
         {...getDefaultTestProps()}
         availableColumns={generateColumns(1)}
@@ -656,7 +656,100 @@ describe('TableColumnCustomizationModal', () => {
       expect(withinSelected().queryAllByText('Number')).toHaveLength(0);
     });
 
-    it('should render group only if it has selected column(s)', () => {
+    it('is possible to expand and collapse groups', () => {
+      const defaultTestProps = getDefaultTestProps();
+      render(
+        <TableColumnCustomizationModal
+          {...defaultTestProps}
+          groupMapping={[{ id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] }]}
+          initialOrdering={[{ columnId: 'date' }]}
+        />
+      );
+      expect(withinAvailable().getByTitle('Group A')).toBeVisible();
+      expect(withinAvailable().getByTitle('Date')).toBeVisible();
+
+      userEvent.click(withinAvailable().getByTestId('expand-icon'));
+      expect(withinAvailable().queryByTitle('Date')).toBeNull();
+
+      expect(withinSelected().queryByTitle('Group A')).toBeVisible();
+      expect(withinSelected().getByTitle('Date')).toBeVisible();
+
+      userEvent.click(withinSelected().getByTestId('expand-icon'));
+      expect(withinSelected().queryByTitle('Date')).toBeNull();
+
+      userEvent.click(withinSelected().getByTestId('expand-icon'));
+      expect(withinSelected().getByTitle('Date')).toBeVisible();
+    });
+
+    it('shows groups with selected columns as expanded on initial rendering', () => {
+      const defaultTestProps = getDefaultTestProps();
+
+      // With initial selection
+      render(
+        <TableColumnCustomizationModal
+          {...defaultTestProps}
+          groupMapping={[
+            { id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] },
+            {
+              id: 'groupB',
+              name: 'Group B',
+              columnIds: ['secretField', 'status', 'number', 'boolean'],
+            },
+          ]}
+          initialOrdering={[{ columnId: 'date' }]}
+        />
+      );
+      expect(withinAvailable().getByTitle('Group A')).toBeVisible();
+      expect(withinAvailable().getByTitle('Date')).toBeVisible();
+
+      expect(withinSelected().getByTitle('Group A')).toBeVisible();
+      expect(withinSelected().getByTitle('Date')).toBeVisible();
+    });
+
+    it('shows non selected available groups as expanded on initial rendering', () => {
+      const defaultTestProps = getDefaultTestProps();
+      // With no initial selection
+      render(
+        <TableColumnCustomizationModal
+          {...defaultTestProps}
+          groupMapping={[
+            { id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] },
+            {
+              id: 'groupB',
+              name: 'Group B',
+              columnIds: ['secretField', 'status', 'number', 'boolean'],
+            },
+          ]}
+          initialOrdering={[]}
+        />
+      );
+      expect(withinAvailable().getByTitle('Group A')).toBeVisible();
+      expect(withinAvailable().getByTitle('Date')).toBeVisible();
+    });
+
+    it('immediately shows selected groups as expanded when a child column is selected', () => {
+      const defaultTestProps = getDefaultTestProps();
+      render(
+        <TableColumnCustomizationModal
+          {...defaultTestProps}
+          groupMapping={[
+            { id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] },
+            {
+              id: 'groupB',
+              name: 'Group B',
+              columnIds: ['secretField', 'status', 'number', 'boolean'],
+            },
+          ]}
+          initialOrdering={[]}
+        />
+      );
+      expect(withinSelected().queryByTitle('Group A')).toBeNull();
+      userEvent.click(withinAvailable().getByTitle('Date'));
+      expect(withinSelected().getByTitle('Group A')).toBeVisible();
+      expect(withinSelected().getByTitle('Date')).toBeVisible();
+    });
+
+    it('should render selected group only if it has selected column(s)', () => {
       const defaultTestProps = getDefaultTestProps();
       render(
         <TableColumnCustomizationModal
@@ -677,7 +770,6 @@ describe('TableColumnCustomizationModal', () => {
       userEvent.click(withinAvailable().getByTitle('Date'));
       expect(withinSelected().getByTitle('Group A')).toBeVisible();
 
-      userEvent.click(withinSelected().getByTestId('expand-icon'));
       userEvent.click(
         withinSelected().getByTestId(
           'table-column-customization-modal-list-builder-remove-button-date'
@@ -686,7 +778,7 @@ describe('TableColumnCustomizationModal', () => {
       expect(withinSelected().queryByTitle('Group A')).toBeNull();
     });
 
-    it('supports selecting a column belong to a visible group', () => {
+    it('supports selecting a column belonging to a visible group', () => {
       const defaultTestProps = getDefaultTestProps();
       render(
         <TableColumnCustomizationModal
@@ -702,7 +794,7 @@ describe('TableColumnCustomizationModal', () => {
       expect(withinSelected().queryByTitle('Select')).toBeVisible();
     });
 
-    it('keeps group when a child column is deselected as long as it has more children', () => {
+    it('keeps selected group when a child column is deselected as long as it has more children', () => {
       const defaultTestProps = getDefaultTestProps();
       render(
         <TableColumnCustomizationModal
@@ -719,6 +811,91 @@ describe('TableColumnCustomizationModal', () => {
       );
       expect(withinSelected().queryByTitle('Group A')).toBeVisible();
       expect(withinSelected().queryByText('Date')).toBeNull();
+    });
+
+    it('selects all child columns when a group is selected', () => {
+      const defaultTestProps = getDefaultTestProps();
+      render(
+        <TableColumnCustomizationModal
+          {...defaultTestProps}
+          groupMapping={[{ id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] }]}
+          initialOrdering={[]}
+        />
+      );
+      expect(withinSelected().queryByTitle('Group A')).toBeNull();
+      expect(withinSelected().queryByTitle('Date')).toBeNull();
+      expect(withinSelected().queryByTitle('Select')).toBeNull();
+
+      userEvent.click(withinAvailable().getByTitle('Group A'));
+
+      expect(withinSelected().queryByTitle('Group A')).toBeVisible();
+      expect(withinSelected().getByTitle('Date')).toBeVisible();
+      expect(withinSelected().getByTitle('Select')).toBeVisible();
+    });
+
+    it('corretly sets the available group checkbox state when the user selects columns', () => {
+      const defaultTestProps = getDefaultTestProps();
+      render(
+        <TableColumnCustomizationModal
+          {...defaultTestProps}
+          groupMapping={[{ id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] }]}
+          initialOrdering={[]}
+        />
+      );
+
+      expect(withinAvailable().getByTestId('groupA-checkbox')).not.toBeChecked();
+      expect(withinAvailable().getByTestId('groupA-checkbox')).not.toBePartiallyChecked();
+
+      userEvent.click(withinAvailable().getByTitle('Date'));
+      expect(withinAvailable().getByTestId('groupA-checkbox')).toBePartiallyChecked();
+
+      userEvent.click(withinAvailable().getByTitle('Select'));
+      expect(withinAvailable().getByTestId('groupA-checkbox')).toBeChecked();
+
+      userEvent.click(withinAvailable().getByTitle('Date'));
+      expect(withinAvailable().getByTestId('groupA-checkbox')).toBePartiallyChecked();
+
+      userEvent.click(withinAvailable().getByTitle('Select'));
+      expect(withinAvailable().getByTestId('groupA-checkbox')).not.toBeChecked();
+      expect(withinAvailable().getByTestId('groupA-checkbox')).not.toBePartiallyChecked();
+    });
+
+    it('does not alter the available group checkbox state on initial rendering if no child columns are selected', () => {
+      const defaultTestProps = getDefaultTestProps();
+      render(
+        <TableColumnCustomizationModal
+          {...defaultTestProps}
+          groupMapping={[{ id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] }]}
+          initialOrdering={[]}
+        />
+      );
+
+      expect(withinAvailable().getByTestId('groupA-checkbox')).not.toBeChecked();
+      expect(withinAvailable().getByTestId('groupA-checkbox')).not.toBePartiallyChecked();
+    });
+
+    it('checks the available group checkbox on initial rendering if all the child columns are selected', () => {
+      const defaultTestProps = getDefaultTestProps();
+      render(
+        <TableColumnCustomizationModal
+          {...defaultTestProps}
+          groupMapping={[{ id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] }]}
+          initialOrdering={[{ columnId: 'date' }, { columnId: 'select' }]}
+        />
+      );
+      expect(withinAvailable().getByTestId('groupA-checkbox')).toBeChecked();
+    });
+
+    it('partially checks the available group checkbox on initial rendering if some of the child columns are selected', () => {
+      const defaultTestProps = getDefaultTestProps();
+      render(
+        <TableColumnCustomizationModal
+          {...defaultTestProps}
+          groupMapping={[{ id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] }]}
+          initialOrdering={[{ columnId: 'date' }]}
+        />
+      );
+      expect(withinAvailable().getByTestId('groupA-checkbox')).toBePartiallyChecked();
     });
 
     it('should deselect all columns in a group if the group is deselected', () => {
@@ -902,6 +1079,37 @@ describe('TableColumnCustomizationModal', () => {
           { id: 'string', name: 'String' },
         ]
       );
+    });
+
+    it('should filter grouped columns using search string', () => {
+      const { i18n } = realDefaultProps;
+
+      render(
+        <TableColumnCustomizationModal
+          {...getDefaultTestProps()}
+          availableColumns={generateColumns(13)}
+          groupMapping={[{ id: 'groupA', name: 'Group A', columnIds: ['1', '2'] }]}
+          initialOrdering={[]}
+        />
+      );
+      expect(withinAvailable().getByTitle('Group A')).toBeVisible();
+
+      userEvent.type(screen.queryByRole('searchbox'), '2');
+      expect(withinAvailable().getByTitle('Group A')).toBeVisible();
+      expect(withinAvailable().getByTitle('Item 2')).toBeVisible();
+      expect(withinAvailable().getByTitle('Item 12')).toBeVisible();
+      expect(withinAvailable().queryByTitle('Item 1')).toBeNull();
+      expect(withinAvailable().queryByTitle('Item 3')).toBeNull();
+
+      userEvent.click(screen.getByLabelText(i18n.clearSearchIconDescription));
+      userEvent.type(screen.queryByRole('searchbox'), '3');
+      expect(withinAvailable().queryByTitle('Item 3')).toBeVisible();
+      expect(withinAvailable().queryByTitle('Group A')).toBeNull();
+      expect(withinAvailable().queryByTitle('Item 2')).toBeNull();
+      expect(withinAvailable().queryByTitle('Item 1')).toBeNull();
+
+      userEvent.click(screen.getByLabelText(i18n.clearSearchIconDescription));
+      expect(withinAvailable().getByTitle('Item 1')).toBeVisible();
     });
   });
 

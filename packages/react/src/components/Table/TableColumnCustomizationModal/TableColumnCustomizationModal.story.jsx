@@ -85,6 +85,16 @@ export const PlaygroundWithKnobs = () => {
   const hasVisibilityToggle = boolean('hasVisibilityToggle', false);
   const demoGroupMapping = boolean('demo column groups', false);
   const demoPinnedColumn = boolean('demo pinned column (pinnedColumnId)', true);
+  const primaryValue = select(
+    'Column key used for primary value (primaryValue)',
+    ['id', 'name'],
+    'name'
+  );
+  const secondaryValue = select(
+    'Column key used for secondary value (secondaryValue)',
+    ['id', 'name', 'NONE'],
+    'NONE'
+  );
 
   return (
     <TableColumnCustomizationModal
@@ -98,6 +108,8 @@ export const PlaygroundWithKnobs = () => {
       onReset={action('onReset')}
       onSave={action('onSave')}
       open={boolean('open', true)}
+      primaryValue={primaryValue}
+      secondaryValue={secondaryValue === 'NONE' ? undefined : secondaryValue}
       pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
       i18n={{
         availableColumnsLabel: text('i18.availableColumnsLabel', 'Available columns'),
@@ -252,8 +264,22 @@ export const WithManyColumnsAndLoadMore = () => {
     ['id', 'name', 'NONE'],
     'NONE'
   );
+  const hasVisibilityToggle = boolean('hasVisibilityToggle', false);
+  const demoGroupMapping = boolean('demo column groups', false);
+  const groupMapping = [
+    {
+      id: 'groupA',
+      name: 'Group A',
+      columnIds: new Array(10).fill(0).map((col, index) => `id-${index + 1}`),
+    },
+    {
+      id: 'groupB',
+      name: 'Group B',
+      columnIds: new Array(10).fill(0).map((col, index) => `id-${index + 11}`),
+    },
+  ];
 
-  const allAvailableColumns = new Array(1000)
+  const allAvailableColumns = new Array(5000)
     .fill(0)
     .map((col, index) => ({ id: `id-${index + 1}`, name: `Column ${index + 1}` }));
   const [loadedColumns, setLoadedColumns] = useState(allAvailableColumns.slice(0, 100));
@@ -262,7 +288,9 @@ export const WithManyColumnsAndLoadMore = () => {
 
   return (
     <TableColumnCustomizationModal
+      groupMapping={demoGroupMapping ? groupMapping : []}
       hasLoadMore={canLoadMore}
+      hasVisibilityToggle={hasVisibilityToggle}
       availableColumns={loadedColumns}
       initialOrdering={[]}
       loadingMoreIds={loadingMoreIds}
@@ -288,6 +316,87 @@ export const WithManyColumnsAndLoadMore = () => {
 
 WithManyColumnsAndLoadMore.storyName = 'with many columns and "Load more"';
 WithManyColumnsAndLoadMore.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
+export const Test = () => {
+  const getTestColumns = () => [
+    {
+      id: 'string',
+      name: 'String',
+    },
+    {
+      id: 'date',
+      name: 'Date',
+    },
+    {
+      id: 'select',
+      name: 'Select',
+    },
+    {
+      id: 'secretField',
+      name: 'Secret Information',
+    },
+    {
+      id: 'status',
+      name: 'Status',
+    },
+    {
+      id: 'number',
+      name: 'Number',
+    },
+    {
+      id: 'boolean',
+      name: 'Boolean',
+    },
+    {
+      id: 'node',
+      name: 'React Node',
+    },
+    {
+      id: 'object',
+      name: 'Object Id',
+    },
+  ];
+  const getCallbacks = () => ({
+    onClose: () => {},
+    onChange: () => {},
+    onReset: () => {},
+    onSave: () => {},
+    onLoadMore: () => {},
+  });
+
+  const getDefaultTestProps = () => ({
+    ...getCallbacks(),
+    availableColumns: getTestColumns(),
+    initialOrdering: [],
+    open: true,
+  });
+
+  const defaultTestProps = getDefaultTestProps();
+
+  return (
+    <TableColumnCustomizationModal
+      {...defaultTestProps}
+      groupMapping={[
+        { id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] },
+        {
+          id: 'groupB',
+          name: 'Group B',
+          columnIds: ['secretField', 'status', 'number', 'boolean'],
+        },
+      ]}
+      initialOrdering={[{ columnId: 'date' }]}
+    />
+  );
+};
+
+Test.storyName = 'TEST';
+Test.decorators = [
   (Story) => (
     <DragAndDrop>
       <Story />

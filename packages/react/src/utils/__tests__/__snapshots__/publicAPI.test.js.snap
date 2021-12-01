@@ -26673,6 +26673,7 @@ Map {
   },
   "ListBuilder" => Object {
     "defaultProps": Object {
+      "allDefaultExpandedIds": Array [],
       "getAllowedDropIds": null,
       "handleLoadMore": undefined,
       "hasItemsSearch": true,
@@ -26690,6 +26691,7 @@ Map {
         "selectedListSearchPlaceholderText": "Enter a value to search selected items",
         "selectedListTitle": [Function],
       },
+      "isLargeRow": false,
       "itemCount": null,
       "itemWillMove": [Function],
       "items": Array [],
@@ -26708,10 +26710,20 @@ Map {
       "selectedDefaultExpandedIds": Array [],
       "selectedEditingStyle": undefined,
       "selectedItems": Array [],
+      "showLoaderInAvailableList": false,
+      "showLoaderInSelectedList": false,
       "testId": "list-builder",
       "useCheckboxes": false,
     },
     "propTypes": Object {
+      "allDefaultExpandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "getAllowedDropIds": Object {
         "type": "func",
       },
@@ -26745,9 +26757,11 @@ Map {
             "clearSearchIconDescription": Object {
               "type": "string",
             },
+            "close": [Function],
             "collapseIconDescription": Object {
               "type": "string",
             },
+            "expand": [Function],
             "expandIconDescription": Object {
               "type": "string",
             },
@@ -26772,6 +26786,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isLargeRow": Object {
+        "type": "bool",
       },
       "itemCount": Object {
         "type": "number",
@@ -26960,6 +26977,12 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "showLoaderInAvailableList": Object {
+        "type": "bool",
+      },
+      "showLoaderInSelectedList": Object {
+        "type": "bool",
+      },
       "testID": [Function],
       "testId": Object {
         "type": "string",
@@ -26971,6 +26994,7 @@ Map {
   },
   "TableColumnCustomizationModal" => Object {
     "defaultProps": Object {
+      "error": undefined,
       "groupMapping": Array [],
       "hasLoadMore": false,
       "hasVisibilityToggle": false,
@@ -26994,12 +27018,18 @@ Map {
         "selectedColumnsLabel": "Selected columns",
         "showIconDescription": "Column is hidden, click to show.",
       },
+      "isPrimaryButtonDisabled": false,
       "loadingMoreIds": Array [],
       "onChange": [Function],
+      "onClearError": [Function],
       "onLoadMore": [Function],
       "onReset": [Function],
       "overrides": undefined,
       "pinnedColumnId": undefined,
+      "primaryValue": "name",
+      "secondaryValue": undefined,
+      "showLoaderInAvailableList": false,
+      "showLoaderInSelectedList": false,
       "testId": "table-column-customization-modal",
     },
     "propTypes": Object {
@@ -27023,6 +27053,9 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "error": Object {
+        "type": "string",
       },
       "groupMapping": Object {
         "args": Array [
@@ -27139,6 +27172,9 @@ Map {
         "isRequired": true,
         "type": "arrayOf",
       },
+      "isPrimaryButtonDisabled": Object {
+        "type": "bool",
+      },
       "loadingMoreIds": Object {
         "args": Array [
           Object {
@@ -27148,6 +27184,9 @@ Map {
         "type": "arrayOf",
       },
       "onChange": Object {
+        "type": "func",
+      },
+      "onClearError": Object {
         "type": "func",
       },
       "onClose": Object {
@@ -27223,6 +27262,31 @@ Map {
       },
       "pinnedColumnId": Object {
         "type": "string",
+      },
+      "primaryValue": Object {
+        "args": Array [
+          Array [
+            "id",
+            "name",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "secondaryValue": Object {
+        "args": Array [
+          Array [
+            "id",
+            "name",
+            undefined,
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "showLoaderInAvailableList": Object {
+        "type": "bool",
+      },
+      "showLoaderInSelectedList": Object {
+        "type": "bool",
       },
       "testId": Object {
         "type": "string",

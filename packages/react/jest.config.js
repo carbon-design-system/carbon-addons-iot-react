@@ -84,9 +84,7 @@ module.exports = {
       functions: 71,
     },
     './src/components/Table/TableColumnCustomizationModal/TableColumnCustomizationModal.jsx': {
-      statements: 89,
-      branches: 88,
-      functions: 84,
+      functions: 86,
     },
     './src/components/ListBuilder/ListBuilder.jsx': {
       functions: 88,

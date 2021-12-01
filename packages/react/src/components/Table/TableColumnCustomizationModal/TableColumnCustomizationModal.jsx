@@ -183,7 +183,20 @@ const createGroupItem = (id, name, children) => ({
   children,
 });
 
-const findAndCloneColumnItem = (id, availableColumnItems) => {
+const findAndCloneItem = (id, availableColumnItems) => {
+  const matchingTopLevelItem = cloneDeep(
+    availableColumnItems.find(
+      (topLevelItem) =>
+        topLevelItem.id === id ||
+        (topLevelItem.children?.length && topLevelItem.children.find((child) => child.id === id))
+    )
+  );
+  return matchingTopLevelItem.id === id
+    ? matchingTopLevelItem
+    : matchingTopLevelItem.children.find((child) => child.id === id);
+};
+
+const findAndCloneInitialTopLevelItem = (id, availableColumnItems) => {
   const column = availableColumnItems.find((item) => item.id === id);
   if (column === undefined && __DEV__) {
     warning(
@@ -194,49 +207,37 @@ const findAndCloneColumnItem = (id, availableColumnItems) => {
   return column ? cloneDeep(column) : undefined;
 };
 
-const transformToAvailableItems = (availableColumns, pinnedColumnId, hasLoadMore) => {
-  const availableItems = availableColumns.map((column) => ({
-    id: column.id,
-    content: { value: column.name },
-    disabled: pinnedColumnId === column.id,
-  }));
-  if (hasLoadMore && availableItems.length) {
-    availableItems[availableItems.length - 1].hasLoadMore = true;
-  }
-  return availableItems;
+const createAvailableItem = (column) => ({
+  id: column.id,
+  content: { value: column.name },
+  isSelectable: true,
+});
+
+const createPinnedItemArray = (pinnedColumnId, availableColumns) => {
+  const pinnedColumn = pinnedColumnId && availableColumns.find(({ id }) => id === pinnedColumnId);
+  return pinnedColumn ? [{ ...createAvailableItem(pinnedColumn), disabled: true }] : [];
 };
 
-const transformToSelectedGroupItem = (initialOrdering, availableColumnItems, group) => {
-  const columns = group.columnIds
-    // Only select children that are in the initial ordering
-    .filter((childId) => initialOrdering.find((column) => column.columnId === childId))
-    // Sort the children according to the initialOrdering
-    .sort(
-      (a, b) =>
-        initialOrdering.findIndex((ord) => ord.columnId === a) -
-        initialOrdering.findIndex((ord) => ord.columnId === b)
-    )
-    .map((childId) => findAndCloneColumnItem(childId, availableColumnItems))
-    .filter((column) => column !== undefined);
-  return createGroupItem(group.id, group.name, columns);
+const createGroupItems = (availableColumns, groupMapping) => {
+  const groupItems = groupMapping.map(({ id: groupId, name, columnIds }) => {
+    const childItems = columnIds.flatMap((childId) => {
+      const childColumn = availableColumns.find((column) => column.id === childId);
+      return childColumn ? createAvailableItem(childColumn) : [];
+    });
+    return createGroupItem(groupId, name, childItems);
+  });
+  return groupItems;
 };
 
-const transformToSelectedItems = (initialOrdering, availableColumnItems, groupMapping) => {
-  const orderedSelectedColumnItems = initialOrdering
-    .map(({ columnId }) => {
-      const group = groupMapping.find((groupDef) => groupDef.columnIds.includes(columnId));
-      return group
-        ? transformToSelectedGroupItem(initialOrdering, availableColumnItems, group)
-        : findAndCloneColumnItem(columnId, availableColumnItems);
+const createNormalItems = (availableColumns, groupMapping, pinnedColumnId) =>
+  availableColumns
+    .filter((item) => {
+      const belongsInGroup = groupMapping.some((groupDef) => groupDef.columnIds.includes(item.id));
+      return !belongsInGroup && item.id !== pinnedColumnId;
     })
-    .filter((column) => (column?.children ? column?.children.length : column));
+    .map((column) => createAvailableItem(column));
 
-  return orderedSelectedColumnItems.length
-    ? uniqBy(orderedSelectedColumnItems, (item) => item.id)
-    : [];
-};
-
-const setPrimaryAndSecondaryContentValues = (item, primaryKey, secondaryKey) => {
+const setItemValues = (item, primaryKey, secondaryKey) => {
   const columnName = item.content.value;
   const columnId = item.id;
   return {
@@ -251,6 +252,73 @@ const setPrimaryAndSecondaryContentValues = (item, primaryKey, secondaryKey) => 
           : undefined,
     },
   };
+};
+
+const setItemsValues = (items, primaryKey, secondaryKey) =>
+  items.map((item) =>
+    item.isCategory
+      ? { ...item, children: setItemsValues(item.children, primaryKey, secondaryKey) }
+      : setItemValues(item, primaryKey, secondaryKey)
+  );
+
+const transformToAvailableItems = ({
+  availableColumns,
+  pinnedColumnId,
+  hasLoadMore,
+  groupMapping,
+  primaryValueKey,
+  secondaryValueKey,
+}) => {
+  if (availableColumns.length === 0) return [];
+
+  const pinnedItems = createPinnedItemArray(pinnedColumnId, availableColumns);
+  const groupItems = createGroupItems(availableColumns, groupMapping);
+  const normalItems = createNormalItems(availableColumns, groupMapping, pinnedColumnId);
+  const availableItems = setItemsValues(
+    [...pinnedItems, ...groupItems, ...normalItems],
+    primaryValueKey,
+    secondaryValueKey
+  );
+
+  if (hasLoadMore && availableItems.length) {
+    availableItems[availableItems.length - 1].hasLoadMore = true;
+  }
+  return availableItems;
+};
+
+const transformToSelectedGroupItem = (initialOrdering, groupItem) => {
+  const selectedChildItems = groupItem.children
+    // Only keep children that are in the initial ordering
+    .filter(({ id }) => initialOrdering.find((column) => column.columnId === id))
+    // Sort the children according to the initialOrdering
+    .sort(
+      (a, b) =>
+        initialOrdering.findIndex((ord) => ord.columnId === a) -
+        initialOrdering.findIndex((ord) => ord.columnId === b)
+    );
+  return { ...groupItem, children: selectedChildItems };
+};
+
+const transformToSelectedItems = (initialOrdering, availableColumnItems, groupMapping) => {
+  const orderedSelectedColumnItems = initialOrdering
+    .map(({ columnId }) => {
+      const groupDef = groupMapping.find((group) => group.columnIds.includes(columnId));
+      const groupItem = groupDef
+        ? availableColumnItems.find(({ id }) => id === groupDef.id)
+        : undefined;
+      const selectedItem = groupDef
+        ? transformToSelectedGroupItem(initialOrdering, groupItem)
+        : findAndCloneInitialTopLevelItem(columnId, availableColumnItems);
+
+      if (selectedItem?.hasLoadMore) delete selectedItem.hasLoadMore;
+
+      return selectedItem;
+    })
+    .filter((column) => (column?.children ? column?.children.length : column));
+
+  return orderedSelectedColumnItems.length
+    ? uniqBy(orderedSelectedColumnItems, (item) => item.id)
+    : [];
 };
 
 const preventDropInOtherGroup = (...args) => args[2] !== 'nested';
@@ -304,10 +372,17 @@ const TableColumnCustomizationModal = ({
 
   const availableColumnItems = useMemo(
     () =>
-      transformToAvailableItems(availableColumns, pinnedColumnId, hasLoadMore).map((item) => {
-        return setPrimaryAndSecondaryContentValues(item, primaryValue, secondaryValue);
-      }),
-    [availableColumns, pinnedColumnId, hasLoadMore, primaryValue, secondaryValue]
+      availableColumns.length
+        ? transformToAvailableItems({
+            availableColumns,
+            pinnedColumnId,
+            hasLoadMore,
+            groupMapping,
+            primaryValueKey: primaryValue,
+            secondaryValueKey: secondaryValue,
+          })
+        : [],
+    [availableColumns, pinnedColumnId, hasLoadMore, primaryValue, secondaryValue, groupMapping]
   );
 
   const [searchValue, setSearchValue] = useState(null);
@@ -323,6 +398,7 @@ const TableColumnCustomizationModal = ({
   const initialSelectionForAsyncLoadedColumnsRequired = useRef(
     initialOrdering.length && !availableColumnItems.length
   );
+
   useEffect(() => {
     if (initialSelectionForAsyncLoadedColumnsRequired.current && availableColumnItems.length) {
       initialSelectionForAsyncLoadedColumnsRequired.current = false;
@@ -381,27 +457,30 @@ const TableColumnCustomizationModal = ({
 
   const handleAdd = (event, id) => {
     setSelectedColumnItems((prev) => {
-      const newItem = cloneDeep(availableColumnItems.find((item) => item.id === id));
-      const group = groupMapping.find((selectionGroup) => selectionGroup.columnIds.includes(id));
-      const previousGroupItem = group && prev.find((item) => item.id === group.id);
-      const unmodifiedItems = prev.filter((item) => item.id !== group?.id);
+      const newItem = findAndCloneItem(id, availableColumnItems);
+      const isGroupItem = newItem.isCategory;
+      const parentGroup =
+        !isGroupItem && groupMapping.find((group) => group.columnIds.includes(id));
+      const groupId = isGroupItem ? newItem.id : parentGroup?.id;
+      const previousGroupItem = groupId && prev.find((item) => item.id === groupId);
+
       delete newItem.hasLoadMore;
 
       const itemToAdd =
-        group && !previousGroupItem
-          ? {
-              id: group.id,
-              isCategory: true,
-              content: {
-                value: group.name,
-              },
-              children: [newItem],
-            }
-          : group && previousGroupItem
+        parentGroup && !previousGroupItem
+          ? createGroupItem(parentGroup.id, parentGroup.name, [newItem])
+          : parentGroup && previousGroupItem
           ? { ...previousGroupItem, children: [...previousGroupItem.children, newItem] }
+          : isGroupItem && previousGroupItem
+          ? { ...previousGroupItem, children: [...newItem.children] }
           : newItem;
 
-      return [...unmodifiedItems, itemToAdd];
+      const insertAtIndex = previousGroupItem ? prev.indexOf(previousGroupItem) : prev.length;
+      const deleteCount = groupId ? 1 : 0;
+      const prevCopy = [...prev];
+      prevCopy.splice(insertAtIndex, deleteCount, itemToAdd);
+
+      return prevCopy;
     });
     onChange('select', id);
   };
@@ -410,6 +489,8 @@ const TableColumnCustomizationModal = ({
     primaryButtonLabel: saveButtonLabel,
     secondaryButtonLabel: cancelButtonLabel,
   };
+
+  const allGroupIds = groupMapping.map(({ id }) => id);
 
   const MyComposedModal = overrides?.composedModal?.component || ComposedModal;
   const MyListBuilder = overrides?.listBuilder?.component || ListBuilder;
@@ -440,6 +521,7 @@ const TableColumnCustomizationModal = ({
       {...overrides?.composedModal?.props}
     >
       <MyListBuilder
+        allDefaultExpandedIds={allGroupIds}
         getAllowedDropIds={
           groupMapping.length
             ? (dragId) => {
@@ -453,7 +535,7 @@ const TableColumnCustomizationModal = ({
             : null
         }
         handleLoadMore={handleLoadMore}
-        hasItemsSearch={availableColumnItems.length > nrOfItemsNotNeedingSearch}
+        hasItemsSearch={availableColumns.length > nrOfItemsNotNeedingSearch}
         hasSelectedItemsSearch={false}
         hasReset
         i18n={{
@@ -493,9 +575,7 @@ const TableColumnCustomizationModal = ({
         }}
         removeIcon={CloseOutline16}
         selectedItems={selectedItems}
-        selectedDefaultExpandedIds={selectedItems
-          .filter((item) => item.isCategory)
-          .map(({ id }) => id)}
+        selectedDefaultExpandedIds={allGroupIds}
         selectedEditingStyle={EditingStyle.Single}
         showLoaderInAvailableList={showLoaderInAvailableList}
         showLoaderInSelectedList={showLoaderInSelectedList}

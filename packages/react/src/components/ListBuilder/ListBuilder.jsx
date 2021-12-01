@@ -1,9 +1,8 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight16, Reset16, Subtract16 } from '@carbon/icons-react';
 import warning from 'warning';
 import isNil from 'lodash/isNil';
-import flatten from 'lodash/flatten';
 
 import HierarchyList from '../List/HierarchyList';
 import { settings } from '../../constants/Settings';
@@ -37,6 +36,8 @@ export const ListBuilderItemPropTypes = {
 };
 
 const propTypes = {
+  /** an array of the ids of the items in the "all list" that should be expanded  */
+  allDefaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
   /** callback used to limit which items that should get drop targets rendered.
    * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
@@ -134,6 +135,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  allDefaultExpandedIds: [],
   getAllowedDropIds: null,
   handleLoadMore: undefined,
   hasItemsSearch: true,
@@ -166,8 +168,6 @@ const defaultProps = {
     allListSearchPlaceholderText: 'Enter a value to search all items',
     selectedListSearchPlaceholderText: 'Enter a value to search selected items',
     expandIconDescription: 'Expand',
-    expand: 'Expand',
-    close: 'Close',
     collapseIconDescription: 'Collapse',
     resetLabel: 'Reset',
     loadMoreButtonLabel: 'Load more...',
@@ -179,7 +179,25 @@ const defaultProps = {
   showLoaderInSelectedList: false,
 };
 
+const getSelectedItemIds = (nestedSelectedItems) =>
+  nestedSelectedItems.flatMap((selectedItem) =>
+    selectedItem.isCategory ? getSelectedItemIds(selectedItem.children) : selectedItem.id
+  );
+
+const getSelectedParentIds = (nestedSelectedItems, selectedChildIds, allListItems) => {
+  const parentsWithChildSelection = nestedSelectedItems.filter(
+    (item) => item.isCategory && item.children?.length
+  );
+  return parentsWithChildSelection.flatMap((currentParent) => {
+    const originalParent = allListItems.find(({ id }) => currentParent.id === id);
+    return originalParent.children.every(({ id }) => selectedChildIds.includes(id))
+      ? [currentParent.id]
+      : [];
+  });
+};
+
 const ListBuilder = ({
+  allDefaultExpandedIds,
   getAllowedDropIds,
   handleLoadMore,
   hasItemsSearch,
@@ -212,9 +230,6 @@ const ListBuilder = ({
   // When the checkbox design is used there are currently a few restrictions
   // and additional requirements
   if (__DEV__ && useCheckboxes) {
-    if (items.some((item) => item.children?.length > 0)) {
-      warning(false, 'Nested items are not supported when `useCheckboxes` is true.');
-    }
     if (!onItemsSearchChange) {
       warning(
         false,
@@ -291,18 +306,24 @@ const ListBuilder = ({
     [handleAdd, items, mergedI18n.addLabel, testID, testId, useCheckboxes]
   );
 
-  const filteredListItems = useMemo(
-    () =>
-      useCheckboxes && !isNil(itemsSearchValue) && itemsSearchValue !== ''
-        ? allListItems.filter(
-            ({ id, content }) =>
-              id.toLowerCase().includes(itemsSearchValue.toLowerCase()) ||
-              content.value.toLowerCase().includes(itemsSearchValue.toLowerCase())
-          )
-        : allListItems,
+  const filteredListItems = useMemo(() => {
+    const lowerCaseSearchValue =
+      typeof itemsSearchValue === 'string' && itemsSearchValue.toLowerCase();
+    const isMatch = ({ id, content: { value } }) =>
+      id.toLowerCase().includes(lowerCaseSearchValue) ||
+      value.toLowerCase().includes(lowerCaseSearchValue);
 
-    [allListItems, itemsSearchValue, useCheckboxes]
-  );
+    return useCheckboxes && !isNil(itemsSearchValue) && itemsSearchValue !== ''
+      ? allListItems.flatMap((item) => {
+          const directMatch = isMatch(item);
+          const matchingChildren = item.children?.length && item.children.filter(isMatch);
+          const matchingItem = directMatch || matchingChildren?.length ? { ...item } : [];
+          return matchingChildren?.length
+            ? { ...matchingItem, children: matchingChildren }
+            : matchingItem;
+        })
+      : allListItems;
+  }, [allListItems, itemsSearchValue, useCheckboxes]);
 
   const selectedListItems = useMemo(() => {
     const appendRemoveAction = (item) => {
@@ -339,29 +360,49 @@ const ListBuilder = ({
     return selectedItems?.map((item) => appendRemoveAction(item)) ?? [];
   }, [handleRemove, mergedI18n.removeIconDescription, selectedItems, testID, testId, removeIcon]);
 
-  const renderCheckboxList = () => {
-    const selectedIds = flatten(
-      selectedItems.map((item) =>
-        item.isCategory ? item.children.map((child) => child.id) : item.id
-      )
-    );
+  const flattenedSelectedIds = useMemo(() => {
+    const selectedChildIds = getSelectedItemIds(selectedItems, allListItems);
+    const selectedParentIds = getSelectedParentIds(selectedItems, selectedChildIds, allListItems);
+    return [...selectedChildIds, ...selectedParentIds];
+  }, [selectedItems, allListItems]);
 
+  const indeterminateIds = useMemo(() => {
+    return allListItems
+      .filter(
+        (parent) =>
+          parent.children &&
+          parent.children.some((sibling) => flattenedSelectedIds.includes(sibling.id)) &&
+          parent.children.some((sibling) => !flattenedSelectedIds.includes(sibling.id))
+      )
+      .map((parent) => parent.id);
+  }, [allListItems, flattenedSelectedIds]);
+
+  const [checkboxListExpandedIds, setCheckboxListExpandedIds] = useState(allDefaultExpandedIds);
+
+  const renderCheckboxList = () => {
     return (
       <List
+        toggleExpansion={(id) => {
+          setCheckboxListExpandedIds((prev) => {
+            return prev.includes(id) ? prev.filter((expId) => id !== expId) : [...prev, id];
+          });
+        }}
+        expandedIds={checkboxListExpandedIds}
         isLargeRow={isLargeRow}
         isLoading={showLoaderInAvailableList}
+        indeterminateIds={indeterminateIds}
         emptyState={allListEmptyText}
         handleLoadMore={handleLoadMore}
         loadingMoreIds={loadingMoreIds}
         title={allListTitle(itemCount ?? allListItems.length)}
         items={filteredListItems}
         isVirtualList
-        selectedIds={selectedIds}
+        selectedIds={flattenedSelectedIds}
         isCheckboxMultiSelect
         handleSelect={(id) => {
           // Stay backwards compatible with the non-checkbox design where an event was
           // passed before the selected id
-          return selectedIds.find((selectedId) => selectedId === id)
+          return flattenedSelectedIds.find((selectedId) => selectedId === id)
             ? onRemove(null, id)
             : onAdd(null, id);
         }}
@@ -394,6 +435,7 @@ const ListBuilder = ({
           renderCheckboxList()
         ) : (
           <HierarchyList
+            defaultExpandedIds={allDefaultExpandedIds}
             isLargeRow={isLargeRow}
             isLoading={showLoaderInAvailableList}
             emptyState={allListEmptyText}

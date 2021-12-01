@@ -247,6 +247,7 @@ const SelectUsersModal = ({
   const usersList = displayAllUsersList(users, selectedUsers);
   const userCount = useMemo(() => usersList.reduce(flattenUsers, []).length, [usersList]);
   const selectedList = displaySelectedUsersList(selectedUsers);
+  const { addUser, removeUser, expand, close, ...i18nListBuilder } = mergedI18n;
 
   return (
     <div data-testid={`${testId}-container`} className={`${iotPrefix}--select-users-modal`}>
@@ -282,9 +283,11 @@ const SelectUsersModal = ({
           testId="select-users"
           selectedItems={selectedList}
           i18n={{
-            ...mergedI18n,
-            addLabel: mergedI18n.addUser,
-            removeLabel: mergedI18n.removeUser,
+            ...i18nListBuilder,
+            addLabel: addUser,
+            removeLabel: removeUser,
+            expandIconDescription: expand,
+            collapseIconDescription: close,
           }}
         />
       </ComposedModal>
