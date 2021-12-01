@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.71](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.70...v2.147.0-next.71) (2021-12-01)
+
+
+### Bug Fixes
+
+* **repo:** move mockdate to devDeps ([3a02664](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3a026643e3e6ae64bb9ea53742483a85a79d5e25))
+* **repo:** remove downshift ([e20974b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e20974bb0789ecc4dc15aef2b80233730841e048))
+* **repo:** remove fbjs ([5aa09fb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5aa09fb74d9c7b0a28cd4737ceeb453839eab24f))
+* **repo:** remove polished ([a4a8c93](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a4a8c9311ccf3e182aae61d4b538c77766eda36a))
+* **repo:** remove react-transition-group ([4f9e840](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4f9e840e97d084456e45312047546d03b04c0340))
+
+
+
+
+
 # [2.147.0-next.70](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.69...v2.147.0-next.70) (2021-12-01)
 
 
