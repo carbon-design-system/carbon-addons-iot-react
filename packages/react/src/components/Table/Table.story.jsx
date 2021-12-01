@@ -653,11 +653,15 @@ export const BasicDumbTable = () => {
           ['multi', 'single', false],
           'multi'
         ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
+          true
+        ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
         hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
         preserveColumnWidths: boolean(
           'Preserve column widths when resizing (options.preserveColumnWidths)',
-          false
+          true
         ),
         useAutoTableLayoutForResize: boolean(
           'Removes table-layout:fixed to allow resizable tables (options.useAutoTableLayoutForResize)',
@@ -2665,6 +2669,10 @@ export const AsyncColumnLoading = () => {
       options={{
         hasAggregations: boolean(
           'Aggregates column values and displays in a footer row (options.hasAggregations)',
+          true
+        ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
           true
         ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', true),

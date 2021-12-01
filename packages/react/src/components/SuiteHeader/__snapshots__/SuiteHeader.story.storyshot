@@ -40,17 +40,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -766,17 +764,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -1744,17 +1740,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -1867,7 +1861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             className="iot--suite-header-subtitle"
           >
             <div
-              className="bx--tag"
+              className="bx--tag bx--tag--sm"
               disabled={null}
               id="tag-28"
             >
@@ -2469,17 +2463,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -2576,17 +2568,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -3285,17 +3275,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -4289,6 +4277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     >
       <path
         d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+        data-icon-path="inner-path"
         fill="none"
       />
       <path
@@ -4393,17 +4382,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -5096,17 +5083,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
@@ -5684,17 +5669,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-label="Close"
           className="bx--modal-close"
           onClick={[Function]}
-          title="Close"
           type="button"
         >
           <svg
-            aria-label="Close"
+            aria-hidden={true}
             className="bx--modal-close__icon"
             fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"

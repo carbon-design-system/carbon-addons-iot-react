@@ -167,17 +167,7 @@ const ListContent = ({
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={(evt) => {
-                  if (isSelectable && isCheckboxMultiSelect) {
-                    // When combing checkboxes with selectable rows (isSelectable) we are
-                    // getting click events from the ListItemWrapper before this handler is called.
-                    // Therefor we stop this one and rely on the ListItem onSelect handler to handle
-                    // the selection. If we don't the handleSelect callback will be called multiple times.
-                    evt.stopPropagation();
-                  } else {
-                    handleSelect(item.id, parentId);
-                  }
-                }}
+                onChange={() => handleSelect(item.id, parentId)}
                 checked={isSelected}
                 disabled={isLocked}
                 indeterminate={isIndeterminate}
@@ -237,6 +227,20 @@ const ListContent = ({
                   ]
                 : []
             )
+        : []),
+      ...(!hasChildren && item.hasLoadMore
+        ? [
+            <Button
+              key={`${item.id}-list-item-parent-loading`}
+              className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
+              onClick={() => handleLoadMore(item.id)}
+              data-testid={`${testId}-${item.id}-load-more`}
+              kind="ghost"
+              loading={isLoadingMore}
+            >
+              <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
+            </Button>,
+          ]
         : []),
     ];
   };

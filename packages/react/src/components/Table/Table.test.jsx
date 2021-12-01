@@ -330,7 +330,7 @@ describe('Table', () => {
         columns={columns}
         data={[{ id: 'row-1', values: { col1: 'a', col2: 'b', col3: 'c' } }]}
         actions={mockActions}
-        options={{ hasResize: true, hasColumnSelection: true }}
+        options={{ hasResize: true, hasColumnSelection: true, preserveColumnWidths: false }}
         view={{ table: { ordering }, toolbar: { activeBar: 'column' } }}
       />
     );
@@ -524,6 +524,101 @@ describe('Table', () => {
     wrapper.update();
 
     expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
+  });
+
+  it('should call onApplySearch when typing in the search box with hasFastSearch:true', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+      />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(7);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}'
+    );
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(7);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'test');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(4);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('test');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.click(screen.getByRole('button', { name: 'Clear search input' }));
+    // once from onChange, once from onClear
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(2);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    mockActions.toolbar.onApplySearch.mockClear();
+  });
+
+  it('should only call onApplySearch when hitting Enter or Blur in the search box with hasFastSearch:false', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: false,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+      />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing{enter}');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}test{enter}'
+    );
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('test');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    // these tests can be added back once this issue is resolved:
+    // https://github.com/carbon-design-system/carbon/issues/10077
+    // userEvent.type(
+    //   screen.getByPlaceholderText('Search'),
+    //   '{backspace}{backspace}{backspace}{backspace}testing'
+    // );
+    // fireEvent.blur(screen.getByPlaceholderText('Search'));
+    // expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    // expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    // mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.click(screen.getByRole('button', { name: 'Clear search input' }));
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    mockActions.toolbar.onApplySearch.mockClear();
   });
 
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {

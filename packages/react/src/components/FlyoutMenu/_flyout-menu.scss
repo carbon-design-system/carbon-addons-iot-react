@@ -249,6 +249,10 @@ $shadow: 0.4rem;
   min-width: unset;
   max-width: unset;
   padding: 0;
+
+  &[data-floating-menu-direction='bottom'] {
+    margin-top: 0;
+  }
 }
 
 .#{vars.$iot-prefix}--flyout-menu--content {

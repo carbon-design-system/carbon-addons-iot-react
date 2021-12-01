@@ -133,6 +133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <div
             className="bx--form-item bx--checkbox-wrapper iot--manage-views-modal__public-checkbox"
+            onClick={[Function]}
           >
             <input
               className="bx--checkbox"
@@ -150,6 +151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <span
                 className="bx--checkbox-label-text"
+                dir="auto"
               >
                 Display public views
               </span>
@@ -1359,7 +1361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             className="iot--list--page"
           >
             <div
-              className="iot-simple-pagination-container"
+              className="iot-simple-pagination-container bx--pagination--lg"
               data-testid="iot-simple-pagination"
             >
               <div
@@ -1571,6 +1573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <div
             className="bx--form-item bx--checkbox-wrapper iot--manage-views-modal__public-checkbox"
+            onClick={[Function]}
           >
             <input
               className="bx--checkbox"
@@ -1588,6 +1591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <span
                 className="bx--checkbox-label-text"
+                dir="auto"
               >
                 Display public views
               </span>

@@ -1488,8 +1488,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -1612,6 +1610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       aria-hidden={true}
                       className="bx--batch-actions iot--table-batch-actions"
                       data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
+                      onScroll={[Function]}
                     >
                       <div
                         className="bx--batch-summary"
@@ -1821,8 +1820,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2458,8 +2455,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -4428,8 +4423,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -4552,6 +4545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       aria-hidden={true}
                       className="bx--batch-actions iot--table-batch-actions"
                       data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
+                      onScroll={[Function]}
                     >
                       <div
                         className="bx--batch-summary"
@@ -4761,8 +4755,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -5398,8 +5390,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -7403,8 +7393,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -7527,6 +7515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       aria-hidden={true}
                       className="bx--batch-actions iot--table-batch-actions"
                       data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
+                      onScroll={[Function]}
                     >
                       <div
                         className="bx--batch-summary"
@@ -7736,8 +7725,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -8373,8 +8360,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -9586,6 +9571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       aria-hidden={true}
                       className="bx--batch-actions iot--table-batch-actions"
                       data-testid="table-for-card-expandedcard-table-toolbar-batch-actions"
+                      onScroll={[Function]}
                     >
                       <div
                         className="bx--batch-summary"
@@ -9793,8 +9779,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -11223,7 +11207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                     </div>
                   </div>
                   <div
-                    className="bx--pagination iot--pagination iot--pagination--hide-page"
+                    className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                     data-testid="table-for-card-expandedcard-table-pagination"
                     style={
                       Object {
@@ -12979,8 +12963,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -13103,6 +13085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       aria-hidden={true}
                       className="bx--batch-actions iot--table-batch-actions"
                       data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
+                      onScroll={[Function]}
                     >
                       <div
                         className="bx--batch-summary"
@@ -13312,8 +13295,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -13949,8 +13930,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -30657,8 +30636,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -30781,6 +30758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       aria-hidden={true}
                       className="bx--batch-actions iot--table-batch-actions"
                       data-testid="table-for-card-alert-table1-table-toolbar-batch-actions"
+                      onScroll={[Function]}
                     >
                       <div
                         className="bx--batch-summary"
@@ -30990,8 +30968,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -31627,8 +31603,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"

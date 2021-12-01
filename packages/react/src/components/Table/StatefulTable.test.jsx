@@ -27,6 +27,10 @@ const selectData = getSelectData();
 const tableColumns = getTableColumns(selectData);
 
 describe('stateful table with real reducer', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should clear filters', async () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     render(<StatefulTable {...initialState} actions={mockActions} />);
@@ -759,6 +763,7 @@ describe('stateful table with real reducer', () => {
         options={{
           hasUserViewManagement: true,
           hasResize: true,
+          preserveColumnWidths: false,
         }}
         data={tableData.slice(0, 2)}
         actions={{

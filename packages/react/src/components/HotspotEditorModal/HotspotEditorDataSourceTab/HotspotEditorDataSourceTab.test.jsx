@@ -175,7 +175,7 @@ describe('HotspotEditorDataSourceTab', () => {
     );
 
     // edit button
-    userEvent.click(screen.getAllByRole('button')[1]);
+    userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[0]);
 
     userEvent.click(
       screen.getByRole('button', {
@@ -214,13 +214,13 @@ describe('HotspotEditorDataSourceTab', () => {
       />
     );
     // edit button
-    userEvent.click(screen.getAllByRole('button')[1]);
+    userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[0]);
     // add threshold
-    userEvent.click(screen.getAllByRole('button')[3]);
+    userEvent.click(screen.getByRole('button', { name: 'Add threshold' }));
     // increment value of threshold
     userEvent.click(screen.getByTitle('Increment number'));
     // save
-    userEvent.click(screen.getAllByRole('button')[11]);
+    userEvent.click(screen.getByRole('button', { name: 'Update' }));
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
       dataItemId: 'temp_last',

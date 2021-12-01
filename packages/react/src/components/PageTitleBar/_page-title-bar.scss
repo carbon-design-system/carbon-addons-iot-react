@@ -75,10 +75,10 @@
     }
 
     .#{vars.$prefix}--btn--secondary + .#{vars.$prefix}--btn--primary {
-      margin-left: 0;
+      margin-left: 1px;
       [dir='rtl'] & {
         margin-left: unset;
-        margin-right: 0;
+        margin-right: 1px;
       }
     }
 
@@ -366,10 +366,22 @@
       .#{vars.$prefix}--tabs--scrollable {
         transition: all motion.$duration-fast-02 ease-in;
         background: theme.$ui-01;
+        border-bottom: 1px solid theme.$ui-03;
       }
     }
 
     .#{vars.$prefix}--tabs--scrollable {
+      padding-left: spacing.$spacing-05;
+      margin-left: -(spacing.$spacing-07);
+      width: calc(100% + #{spacing.$spacing-10});
+
+      [dir='rtl'] & {
+        padding-left: 0;
+        padding-right: spacing.$spacing-05;
+        margin-left: 0;
+        margin-right: -(spacing.$spacing-07);
+      }
+
       .#{vars.$prefix}--tabs--scrollable__nav-link {
         text-align: left;
 
@@ -383,5 +395,42 @@
         @include make-sticky();
       }
     }
+  }
+}
+
+/* styles for sticky breadcrumbs and tabs */
+.#{vars.$iot-prefix}--page-title-bar--stack-tabs,
+.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-show,
+.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-hide {
+  &.page-title-bar--dynamic--after,
+  &.page-title-bar--condensed-static {
+    .page-title-bar-header {
+      @include make-sticky();
+      top: var(--negative-header-offset);
+    }
+  }
+
+  .page-title-bar-breadcrumb,
+  .page-title-bar-breadcrumb-bg,
+  .page-title-bar-header-right.page-title-bar-header-right {
+    top: 0;
+  }
+
+  &.page-title-bar--condensed-static {
+    .#{vars.$prefix}--tabs--scrollable {
+      @include make-sticky();
+    }
+  }
+}
+
+.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-show.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-show {
+  .page-title-bar-header {
+    top: var(--negative-header-offset);
+  }
+}
+
+.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-hide.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-hide {
+  .page-title-bar-header {
+    top: -(spacing.$spacing-10 + spacing.$spacing-05);
   }
 }

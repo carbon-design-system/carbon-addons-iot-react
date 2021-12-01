@@ -17,12 +17,12 @@
   .#{vars.$prefix}--tabs--scrollable__nav {
     width: 100%;
 
-    // stretch each tabe to evenly fill the space
+    // stretch each tab to evenly fill the space
     .#{vars.$prefix}--tabs--scrollable__nav-item {
       flex: 1;
 
-      // overfide width on buttons within tabs, so they don't
-      // have a width of 10rem, and fill space evently.
+      // override width on buttons within tabs, so they don't
+      // have a width of 10rem, and fill space evenly.
       .#{vars.$prefix}--tabs--scrollable__nav-link {
         width: auto;
         flex: 1;
@@ -153,6 +153,11 @@
     &--item-dropdown {
       margin-right: spacing.$spacing-05;
       max-width: 5rem;
+
+      [dir='rtl'] & {
+        margin-right: 0;
+        margin-left: spacing.$spacing-05;
+      }
     }
 
     &--span {
@@ -180,11 +185,21 @@
       }
       .#{vars.$prefix}--form-item input[type='text'] {
         min-width: 9.375rem;
+
+        [dir='rtl'] & {
+          // 8.375rem + 2px for the transparent, inset, outline
+          min-width: calc(8.375rem + 2px);
+        }
       }
     }
     &--item-dropdown {
       margin-right: spacing.$spacing-05;
-      max-width: 5rem;
+      max-width: 6rem;
+
+      [dir='rtl'] & {
+        margin-right: 0;
+        margin-left: spacing.$spacing-05;
+      }
     }
   }
 

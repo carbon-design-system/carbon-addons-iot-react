@@ -212,11 +212,10 @@
         padding-right: spacing.$spacing-09;
         &__with-actions {
           padding-right: spacing.$spacing-07; // save room for the action button
-          width: spacing.$spacing-05;
         }
         &__large {
           color: theme.$text-05;
-          white-space: wrap;
+          white-space: normal;
           height: layout.rem(36px);
           overflow: hidden;
         }

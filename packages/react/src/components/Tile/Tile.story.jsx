@@ -40,7 +40,7 @@ const props = {
   }),
   selectable: () => ({
     selected: boolean('Selected (selected)', false),
-    handleClick: action('handleClick'),
+    onClick: action('onClick'),
     handleKeyDown: action('handleKeyDown'),
     light: boolean('Light variant (light)', false),
   }),
@@ -71,7 +71,7 @@ const props = {
     ),
     tileCollapsedLabel: text('Collapsed icon text (tileCollapsedLabel)'),
     tileExpandedLabel: text('Collapsed icon text (tileExpandedLabel)'),
-    handleClick: action('handleClick'),
+    onClick: action('onClick'),
     light: boolean('Light variant (light)', false),
   }),
 };

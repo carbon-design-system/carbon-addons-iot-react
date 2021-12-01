@@ -89,6 +89,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title={
+                  <div
+                    className="iot--icon-dropdown__item"
+                    style={
+                      Object {
+                        "color": "#da1e28",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--icon-dropdown__item-border"
+                    >
+                      <ForwardRef(Warning24) />
+                    </div>
+                  </div>
+                }
                 type="button"
               >
                 <span
@@ -187,6 +203,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title={
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="red60"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#da1e28",
+                          }
+                        }
+                        title="#da1e28"
+                      />
+                    </div>
+                  </div>
+                }
                 type="button"
               >
                 <span
@@ -271,6 +307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-2-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title=">"
                 type="button"
               >
                 <span
@@ -471,6 +508,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-3-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title={
+                  <div
+                    className="iot--icon-dropdown__item"
+                    style={
+                      Object {
+                        "color": "#24a148",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--icon-dropdown__item-border"
+                    >
+                      <ForwardRef(Warning24) />
+                    </div>
+                  </div>
+                }
                 type="button"
               >
                 <span
@@ -569,6 +622,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-4-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title={
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="green50"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#24a148",
+                          }
+                        }
+                        title="#24a148"
+                      />
+                    </div>
+                  </div>
+                }
                 type="button"
               >
                 <span
@@ -653,6 +726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-5-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="<"
                 type="button"
               >
                 <span
@@ -853,6 +927,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-6-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title={
+                  <div
+                    className="iot--icon-dropdown__item"
+                    style={
+                      Object {
+                        "color": "#ff832b",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--icon-dropdown__item-border"
+                    >
+                      <ForwardRef(Warning24) />
+                    </div>
+                  </div>
+                }
                 type="button"
               >
                 <span
@@ -951,6 +1041,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-7-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title={
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="orange40"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#ff832b",
+                          }
+                        }
+                        title="#ff832b"
+                      />
+                    </div>
+                  </div>
+                }
                 type="button"
               >
                 <span
@@ -1035,6 +1145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-8-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="="
                 type="button"
               >
                 <span
@@ -1093,7 +1204,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text__input"
+                  aria-describedby="undefined_value-card-threshold-value_2-helper-text"
+                  className="bx--text-input"
                   data-testid="threshold-2-text-input"
                   disabled={false}
                   id="undefined_value-card-threshold-value_2"

@@ -30,9 +30,8 @@ describe('ComboBox', () => {
   // Helper function to open the list and return it
   const getListBox = async () => {
     // open the list by clicking the open menu icon
-    userEvent.click(screen.getByTitle('Open'));
-    const list = await screen.findByRole('listbox');
-    return list;
+    userEvent.click(screen.getByRole('button', { name: 'Open' }));
+    return screen.getByRole('listbox');
   };
 
   it('should filter bad props, but not good ones.', async () => {

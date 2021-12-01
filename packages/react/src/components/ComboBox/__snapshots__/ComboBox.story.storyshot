@@ -24,6 +24,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       >
         <label
           className="bx--label"
+          dir="auto"
           htmlFor="carbon-combobox-example"
           id="downshift-0-label"
         >
@@ -56,6 +57,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value="Option 1"
             />
@@ -125,6 +127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
+          dir="auto"
           id="combobox-helper-text-30"
         >
           Optional helper text here
@@ -180,6 +183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       >
         <label
           className="bx--label"
+          dir="auto"
           htmlFor="carbon-combobox-example"
           id="downshift-0-label"
         >
@@ -212,6 +216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value=""
             />
@@ -258,6 +263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
+          dir="auto"
           id="combobox-helper-text-15"
         >
           Optional helper text here
@@ -292,6 +298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       >
         <label
           className="bx--label"
+          dir="auto"
           htmlFor="carbon-combobox-example"
           id="downshift-0-label"
         >
@@ -324,6 +331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value=""
             />
@@ -370,6 +378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
+          dir="auto"
           id="combobox-helper-text-18"
         >
           Optional helper text here
@@ -404,6 +413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       >
         <label
           className="bx--label"
+          dir="auto"
           htmlFor="carbon-combobox-example"
           id="downshift-0-label"
         >
@@ -436,6 +446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value=""
             />
@@ -482,6 +493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
+          dir="auto"
           id="combobox-helper-text-27"
         >
           Optional helper text here
@@ -508,6 +520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
     >
       <label
         className="bx--label"
+        dir="auto"
         htmlFor="carbon-combobox-example"
         id="downshift-0-label"
       >
@@ -540,6 +553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             placeholder="Filter..."
             role="combobox"
             tabIndex="0"
+            title=""
             type="text"
             value="Option 1"
           />
@@ -609,6 +623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="bx--form__helper-text"
+        dir="auto"
         id="combobox-helper-text-21"
       >
         Optional helper text here
@@ -663,6 +678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       >
         <label
           className="bx--label"
+          dir="auto"
           htmlFor="carbon-combobox-example"
           id="downshift-0-label"
         >
@@ -695,6 +711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               placeholder="Filter..."
               role="combobox"
               tabIndex="0"
+              title=""
               type="text"
               value=""
             />
@@ -741,6 +758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         </div>
         <div
           className="bx--form__helper-text"
+          dir="auto"
           id="combobox-helper-text-24"
         >
           Optional helper text here

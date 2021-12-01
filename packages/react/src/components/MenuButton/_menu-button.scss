@@ -25,6 +25,10 @@
   }
 }
 
+.#{vars.$prefix}--menu.#{vars.$prefix}--menu--open.#{vars.$prefix}--menu--root {
+  opacity: var(--iot-menu-button-menu-opacity);
+}
+
 html[dir='rtl'] .#{vars.$iot-prefix}--menu-button {
   .#{vars.$prefix}--context-menu-option__icon {
     margin-right: 0;

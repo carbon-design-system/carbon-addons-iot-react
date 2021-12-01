@@ -2465,7 +2465,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
 >
   <div
     className="bx--tabs--scrollable"
-    onScroll={[Function]}
     selected={1}
   >
     <button
@@ -2495,6 +2494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/E
     </button>
     <ul
       className="bx--tabs--scrollable__nav"
+      onScroll={[Function]}
       role="tablist"
       tabIndex={-1}
     >

@@ -80,7 +80,7 @@ const webpackConfig = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|woff|woff2|ttf|eot)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -88,12 +88,8 @@ const webpackConfig = {
         ],
       },
       {
-        test: /\.(woff|woff2|ttf|eot)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        test: /\.mdx?$/,
+        use: ['babel-loader', '@mdx-js/loader'],
       },
     ],
   },
