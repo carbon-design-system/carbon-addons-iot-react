@@ -5857,6 +5857,7 @@ Map {
       "defaultSelectedId": null,
       "editingStyle": null,
       "emptyState": "No list items to show",
+      "expandedIds": Array [],
       "getAllowedDropIds": null,
       "hasDeselection": true,
       "hasMultiSelect": false,
@@ -5882,6 +5883,7 @@ Map {
       "itemWillMove": [Function],
       "items": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": [Function],
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
@@ -5938,6 +5940,14 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
       },
       "getAllowedDropIds": Object {
         "type": "func",
@@ -6089,6 +6099,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onListUpdated": Object {
         "type": "func",
