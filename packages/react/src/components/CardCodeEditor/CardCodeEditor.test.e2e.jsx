@@ -39,6 +39,7 @@ describe('CardCodeEditor loaded editor test', () => {
     cy.findByTitle(/Copy to clipboard/)
       .should('be.visible')
       .click()
+      .realClick()
       .then(() => {
         expect(onCopy).to.be.called;
       });

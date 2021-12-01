@@ -1,10 +1,12 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
 import { Dropdown } from '../Dropdown';
+
+import { useDropdownTitleFixer } from './dropdownHooks';
 
 const { iotPrefix, prefix } = settings;
 
@@ -133,12 +135,18 @@ const IconDropdown = ({
   const selectedItem =
     controlledSelectedItem !== null ? controlledSelectedItem : internalSelectedItem;
 
-  const dropdownRef = useRef(null);
+  const [dropdownRef, updateTitle] = useDropdownTitleFixer();
 
   const highlightedItem =
     highlightedIndex >= 0 && highlightedIndex < items.length ? items[highlightedIndex] : null;
 
   const hasFooter = highlightedItem || selectedItem;
+
+  useEffect(() => {
+    if (selectedItem?.text && dropdownRef?.current) {
+      updateTitle(selectedItem?.text);
+    }
+  }, [dropdownRef, selectedItem, updateTitle]);
 
   const handleClick = useCallback(() => {
     // Takes measurements of the dropdown and text that renders beneath this - used to position the footer
@@ -168,7 +176,8 @@ const IconDropdown = ({
     setHeight(Math.ceil(items.length / columnCount) * defaultItemSize);
     setTopTranslate(helperTextHeight + validationTextHeight + labelHeight + 1); // Add one for the border width
     setBottomTranslate(helperTextHeight + validationTextHeight);
-  }, [columnCount, items, dropdownRef]);
+    updateTitle(selectedItem?.text);
+  }, [columnCount, dropdownRef, items.length, selectedItem, updateTitle]);
 
   const Footer = () => {
     const selectedFooter = highlightedItem !== null ? highlightedItem : selectedItem;
@@ -257,6 +266,7 @@ const IconDropdown = ({
         onChange={({ selectedItem: newSelected }) => {
           setInternalSelectedItem(newSelected);
           onChange(newSelected);
+          updateTitle(newSelected?.text);
         }}
         translateWithId={translateWithId}
         downshiftProps={{

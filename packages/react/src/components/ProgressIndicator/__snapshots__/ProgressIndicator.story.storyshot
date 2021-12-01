@@ -43,16 +43,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             Step 1: Getting started with Carbon Design System
           </title>
         </svg>
-        <p
-          className="bx--progress-label"
+        <div
+          className="bx--progress-text"
         >
-          First step
-        </p>
-        <p
-          className="bx--progress-optional"
-        >
-          Optional label
-        </p>
+          <p
+            className="bx--progress-label"
+          >
+            First step
+          </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
+          </p>
+        </div>
         <span
           className="bx--progress-line"
         />
@@ -97,20 +101,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </title>
         </svg>
         <div
-          aria-labelledby="tooltipTrigger-0"
-          className="bx--tooltip__label bx--progress-label"
-          id="tooltipTrigger-0"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          role="button"
-          tabIndex={0}
+          className="bx--progress-text"
         >
-          Second step with tooltip
+          <div
+            aria-labelledby="tooltipTrigger-0"
+            className="bx--tooltip__label bx--progress-label"
+            id="tooltipTrigger-0"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Second step with tooltip
+          </div>
         </div>
         <span
           className="bx--progress-line"
@@ -151,20 +159,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </title>
         </svg>
         <div
-          aria-labelledby="tooltipTrigger-1"
-          className="bx--tooltip__label bx--progress-label"
-          id="tooltipTrigger-1"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          role="button"
-          tabIndex={0}
+          className="bx--progress-text"
         >
-          Third step with tooltip
+          <div
+            aria-labelledby="tooltipTrigger-1"
+            className="bx--tooltip__label bx--progress-label"
+            id="tooltipTrigger-1"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Third step with tooltip
+          </div>
         </div>
         <span
           className="bx--progress-line"
@@ -208,16 +220,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             Step 4: Getting started with Carbon Design System
           </title>
         </svg>
-        <p
-          className="bx--progress-label"
+        <div
+          className="bx--progress-text"
         >
-          Fourth step
-        </p>
-        <p
-          className="bx--progress-optional"
-        >
-          Example invalid step
-        </p>
+          <p
+            className="bx--progress-label"
+          >
+            Fourth step
+          </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Example invalid step
+          </p>
+        </div>
         <span
           className="bx--progress-line"
         />
@@ -258,11 +274,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             Step 5: Getting started with Carbon Design System
           </title>
         </svg>
-        <p
-          className="bx--progress-label"
+        <div
+          className="bx--progress-text"
         >
-          Fifth step
-        </p>
+          <p
+            className="bx--progress-label"
+          >
+            Fifth step
+          </p>
+        </div>
         <span
           className="bx--progress-line"
         />
