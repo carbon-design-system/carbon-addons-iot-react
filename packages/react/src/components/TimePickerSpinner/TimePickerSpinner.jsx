@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { TimePicker } from 'carbon-components-react';
 import { CaretDownGlyph, CaretUpGlyph } from '@carbon/icons-react';
 import classnames from 'classnames';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import { keyboardKeys } from '../../constants/KeyCodeConstants';

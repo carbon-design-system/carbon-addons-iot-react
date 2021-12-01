@@ -111,7 +111,7 @@ module.exports = {
   },
   testPathIgnorePatterns: ['/config/', '/lib/'],
   transformIgnorePatterns: [
-    '/node_modules/(?!(@carbon/charts|@storybook/addon-docs)).+(.jsx?)',
+    '/node_modules/(?!(@carbon/charts|@storybook/addon-docs|lodash-es)).+(.jsx?)',
     '/__mocks__/.+(.jsx?)',
   ],
   watchPathIgnorePatterns: ['/coverage/', '/results/', '/.git/'],

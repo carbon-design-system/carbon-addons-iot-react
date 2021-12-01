@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { ContentSwitcher, Switch, Tabs, Tab, InlineNotification } from 'carbon-components-react';
-import pick from 'lodash/pick';
-import sortBy from 'lodash/sortBy';
+import { pick, sortBy } from 'lodash-es';
 import withSize from 'react-sizeme';
 import update from 'immutability-helper';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';

@@ -8,7 +8,7 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
-import { sliderValuePropSync } from 'carbon-components-react/lib/components/Slider';
+import { sliderValuePropSync } from 'carbon-components-react/es/components/Slider';
 
 import { Slider, SliderSkeleton } from '.';
 

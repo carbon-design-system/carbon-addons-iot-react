@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import { NumberInput } from 'carbon-components-react';
 import {
   TrashCan32,

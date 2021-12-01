@@ -9,8 +9,7 @@ import {
 } from '@carbon/icons-react';
 import { DataTable, Tooltip, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classnames from 'classnames';
-import isNil from 'lodash/isNil';
-import pick from 'lodash/pick';
+import { isNil, pick } from 'lodash-es';
 
 import Button from '../../Button';
 import deprecate from '../../../internal/deprecate';

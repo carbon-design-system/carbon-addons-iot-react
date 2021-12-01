@@ -1,7 +1,7 @@
 import React, { createElement, useMemo, useState } from 'react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import isEmpty from 'lodash/isEmpty';
+import { isEmpty } from 'lodash-es';
 import { ArrowRight16, CloseOutline16, Subtract16 } from '@carbon/icons-react';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';

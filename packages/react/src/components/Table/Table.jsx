@@ -1,10 +1,8 @@
 import React, { useMemo, useState, useRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import merge from 'lodash/merge';
-import pick from 'lodash/pick';
+import { merge, pick, uniqueId } from 'lodash-es';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { Table as CarbonTable, TableContainer, Tag } from 'carbon-components-react';
-import uniqueId from 'lodash/uniqueId';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 import warning from 'warning';

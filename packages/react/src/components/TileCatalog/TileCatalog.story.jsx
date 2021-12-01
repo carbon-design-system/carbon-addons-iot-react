@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
-import Add from '@carbon/icons-react/lib/add/32';
+import Add from '@carbon/icons-react/es/add/32';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
