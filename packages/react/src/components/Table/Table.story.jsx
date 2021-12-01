@@ -661,7 +661,7 @@ export const BasicDumbTable = () => {
         hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
         preserveColumnWidths: boolean(
           'Preserve column widths when resizing (options.preserveColumnWidths)',
-          false
+          true
         ),
         useAutoTableLayoutForResize: boolean(
           'Removes table-layout:fixed to allow resizable tables (options.useAutoTableLayoutForResize)',

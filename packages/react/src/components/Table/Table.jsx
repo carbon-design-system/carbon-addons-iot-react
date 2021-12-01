@@ -126,7 +126,17 @@ const propTypes = {
     hasSingleRowEdit: PropTypes.bool,
     hasUserViewManagement: PropTypes.bool,
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
-    preserveColumnWidths: PropTypes.bool,
+    preserveColumnWidths: (props, propName, componentName) => {
+      if (__DEV__) {
+        if (props?.[propName] === false) {
+          return new Error(
+            `The \`${componentName}\` default is now to \`${propName}\`. The old behavior, triggered by setting \`${propName}\` to false, is deprecated.`
+          );
+        }
+      }
+
+      return '';
+    },
     /* If true, fire the onRowExpanded callback with the rowId when a row is clicked */
     shouldExpandOnRowClick: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
@@ -359,7 +369,7 @@ export const defaultProps = (baseProps) => ({
     hasResize: false,
     hasSingleRowEdit: false,
     hasUserViewManagement: false,
-    preserveColumnWidths: false,
+    preserveColumnWidths: true,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
     shouldExpandOnRowClick: false,
