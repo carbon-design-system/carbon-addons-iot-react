@@ -644,6 +644,7 @@ Map {
         "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle aggregations",
         "toolbarLabelAria": undefined,
+        "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "id": null,
       "lightweight": undefined,
@@ -1361,6 +1362,9 @@ Map {
             "toolbarLabelAria": Object {
               "type": "string",
             },
+            "toolbarTooltipLabel": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -1678,9 +1682,7 @@ Map {
                   "isItemPerPageHidden": Object {
                     "type": "bool",
                   },
-                  "maxPages": Object {
-                    "type": "number",
-                  },
+                  "maxPages": [Function],
                   "page": Object {
                     "type": "number",
                   },
@@ -2100,6 +2102,7 @@ Map {
         "selectRowAria": "Select row",
         "simpleFiltersTabLabel": "Simple filters",
         "toggleAggregations": "Toggle aggregations",
+        "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "lightweight": false,
       "openMenuText": "Open menu",
@@ -2487,6 +2490,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarTooltipLabel": Object {
               "type": "string",
             },
           },
@@ -3938,6 +3944,7 @@ Map {
         "selectRowAria": "Select row",
         "simpleFiltersTabLabel": "Simple filters",
         "toggleAggregations": "Toggle aggregations",
+        "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "secondaryTitle": null,
       "testId": "",
@@ -4206,6 +4213,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarTooltipLabel": Object {
               "type": "string",
             },
           },
@@ -5730,6 +5740,7 @@ Map {
       "onEdit": null,
       "renderTitleFunction": undefined,
       "rightContent": undefined,
+      "stackBreadcrumbsWithTabs": false,
       "stickyHeaderOffset": 48,
       "style": null,
       "tabs": undefined,
@@ -5810,6 +5821,9 @@ Map {
         "type": "func",
       },
       "rightContent": [Function],
+      "stackBreadcrumbsWithTabs": Object {
+        "type": "bool",
+      },
       "stickyHeaderOffset": Object {
         "type": "number",
       },
@@ -5843,6 +5857,7 @@ Map {
       "defaultSelectedId": null,
       "editingStyle": null,
       "emptyState": "No list items to show",
+      "expandedIds": Array [],
       "getAllowedDropIds": null,
       "hasDeselection": true,
       "hasMultiSelect": false,
@@ -5868,6 +5883,7 @@ Map {
       "itemWillMove": [Function],
       "items": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": [Function],
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
@@ -5924,6 +5940,14 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
       },
       "getAllowedDropIds": Object {
         "type": "func",
@@ -6075,6 +6099,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onListUpdated": Object {
         "type": "func",
