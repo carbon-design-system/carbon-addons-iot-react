@@ -112,9 +112,9 @@ storiesOf('Components/Table', module)
               <ai-empty-state [icon]="icon">
                 <h3 aiEmptyStateTitle>{{ title }}</h3>
                 <p aiEmptyStateBody>{{ body }}</p>
-                <div aiEmptyStateAction>
+                <ai-empty-state-action>
                   <button ibmButton (click)="actionOnClick()">Create some data</button>
-                </div>
+                </ai-empty-state-action>
               </ai-empty-state>
             </ai-table>
           </div>

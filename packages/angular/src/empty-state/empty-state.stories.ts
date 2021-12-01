@@ -29,9 +29,9 @@ storiesOf('Components/EmptyState', module)
       <ai-empty-state [icon]="icon">
         <h3 aiEmptyStateTitle>{{ title }}</h3>
         <p aiEmptyStateBody>{{ body }}</p>
-        <div aiEmptyStateAction>
+        <ai-empty-state-action>
           <button ibmButton (click)="actionOnClick()">Action</button>
-        </div>
+        </ai-empty-state-action>
       </ai-empty-state>
 		`,
     props: {
@@ -52,18 +52,15 @@ storiesOf('Components/EmptyState', module)
   }))
   .add('With actions and context', () => ({
     template: `
-      <ai-empty-state
-        [icon]="icon"
-        [secondaryAction]="secondaryAction"
-        [secondaryActionContext]="secondaryActionContext">
+      <ai-empty-state [icon]="icon">
         <h3 aiEmptyStateTitle>{{ title }}</h3>
         <p aiEmptyStateBody>{{ body }}</p>
-        <div aiEmptyStateAction>
+        <ai-empty-state-action>
           <button ibmButton (click)="actionOnClick()">Action</button>
-        </div>
-        <div aiEmptyStateSecondaryAction>
+        </ai-empty-state-action>
+        <ai-empty-state-secondary-action>
           <a ibmLink (click)="secondaryActionClick()">Secondary action</a>
-        </div>
+        </ai-empty-state-secondary-action>
       </ai-empty-state>
 		`,
     props: {

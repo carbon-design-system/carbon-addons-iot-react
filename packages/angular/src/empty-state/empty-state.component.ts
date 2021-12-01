@@ -30,8 +30,8 @@ import { Component, Input, TemplateRef } from '@angular/core';
         </ng-container>
         <ng-content select="[aiEmptyStateTitle]"></ng-content>
         <ng-content select="[aiEmptyStateBody]"></ng-content>
-        <ng-content select="[aiEmptyStateAction]"></ng-content>
-        <ng-content select="[aiEmptyStateSecondaryAction]"></ng-content>
+        <ng-content select="ai-empty-state-action"></ng-content>
+        <ng-content select="ai-empty-state-secondary-action"></ng-content>
       </div>
     </div>
   `,

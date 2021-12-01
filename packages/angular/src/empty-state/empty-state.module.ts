@@ -2,25 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EmptyStateComponent } from './empty-state.component';
-import { EmptyStateActionDirective } from './empty-state-action.directive';
+import { EmptyStateActionComponent } from './empty-state-action-wrapper.component';
 import { EmptyStateBodyDirective } from './empty-state-body.directive';
-import { EmptyStateSecondaryActionDirective } from './empty-state-secondary-action.directive';
+import { EmptyStateSecondaryActionComponent } from './empty-state-secondary-action-wrapper.component';
 import { EmptyStateTitleDirective } from './empty-state-title.directive';
 import { AIIconsModule } from '@ai-apps/angular/icons';
 
 @NgModule({
   declarations: [
     EmptyStateComponent,
-    EmptyStateActionDirective,
+    EmptyStateActionComponent,
     EmptyStateBodyDirective,
-    EmptyStateSecondaryActionDirective,
+    EmptyStateSecondaryActionComponent,
     EmptyStateTitleDirective,
   ],
   exports: [
     EmptyStateComponent,
-    EmptyStateActionDirective,
+    EmptyStateActionComponent,
     EmptyStateBodyDirective,
-    EmptyStateSecondaryActionDirective,
+    EmptyStateSecondaryActionComponent,
     EmptyStateTitleDirective,
   ],
   imports: [CommonModule, AIIconsModule],
