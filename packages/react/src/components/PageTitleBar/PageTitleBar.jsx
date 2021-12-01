@@ -157,7 +157,8 @@ const PageTitleBar = ({
   */
   const hasTabs =
     titleBarContent?.type === Tabs ||
-    [].concat(titleBarContent?.props?.children ?? []).filter(({ type }) => type === Tabs).length;
+    [].concat(titleBarContent?.props?.children ?? []).filter((child) => child?.type === Tabs)
+      .length;
 
   const renderContentOutside =
     (hasTabs && headerMode === HEADER_MODES.DYNAMIC) ||

@@ -114,3 +114,28 @@ export const handleExpandedItemLinks = (row, expandedRow, cardVariables) => {
   });
   return updatedExpandedRow;
 };
+
+/**
+ * Support filtering on partial strings in timestamp columns
+ * @param {*} cellValue
+ * @param {*} filterValue
+ * @returns
+ */
+export const timeStampFilterFunction = (cellValue, filterValue) => {
+  const dateString = dayjs(cellValue).format('L HH:mm');
+  return dateString.includes(filterValue);
+};
+
+/**
+ *
+ * @param {*} column
+ * @param {*} defaultFilterStringPlaceholdText
+ * @returns  what the filter object should be
+ */
+export const determineFilterFunction = (column, defaultFilterStringPlaceholdText) => {
+  return {
+    ...(column.type === 'TIMESTAMP' ? { filterFunction: timeStampFilterFunction } : {}), // only add custom filter for timestamps
+    placeholderText: defaultFilterStringPlaceholdText,
+    ...(column.filter ? column.filter : {}), // preserve their custom filter fields too
+  };
+};
