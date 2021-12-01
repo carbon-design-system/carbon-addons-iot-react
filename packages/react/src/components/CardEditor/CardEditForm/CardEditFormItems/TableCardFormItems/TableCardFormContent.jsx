@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
-import isEmpty from 'lodash/isEmpty';
-import omit from 'lodash/omit';
+import { isEmpty, omit } from 'lodash-es';
 import uuid from 'uuid';
 import hash from 'object-hash';
 

@@ -1,1 +1,1 @@
-export { default as IconStory } from 'carbon-components-react/lib/components/Icon/Icon-story';
+export { default as IconStory } from 'carbon-components-react/es/components/Icon/Icon-story';

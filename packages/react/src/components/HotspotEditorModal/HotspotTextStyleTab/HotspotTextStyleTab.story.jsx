@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
 import { boolean, withKnobs } from '@storybook/addon-knobs';
 import {

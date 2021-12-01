@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { settings } from '../../../constants/Settings';

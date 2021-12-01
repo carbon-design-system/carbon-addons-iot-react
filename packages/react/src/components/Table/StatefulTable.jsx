@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import merge from 'lodash/merge';
-import get from 'lodash/get';
+import { merge, get } from 'lodash-es';
 
 import { getRowAction } from './tableUtilities';
 import { tableReducer } from './tableReducer';
