@@ -44254,6 +44254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -44600,6 +44601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -44946,6 +44948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -45292,6 +45295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -45638,6 +45642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -45984,6 +45989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -46330,6 +46336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -46676,6 +46683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -47022,6 +47030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -47368,6 +47377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -72806,6 +72816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -73144,6 +73155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -73449,6 +73461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -73754,6 +73767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -74092,6 +74106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -74430,6 +74445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -74768,6 +74784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -75106,6 +75123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -75411,6 +75429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -75749,6 +75768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -79629,7 +79649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--table-multi-sort-row"
-            data-handler-id="T521"
+            data-handler-id="T527"
             style={
               Object {
                 "opacity": 1,
@@ -79899,7 +79919,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <div
             className="iot--table-multi-sort-row"
-            data-handler-id="T523"
+            data-handler-id="T529"
             style={
               Object {
                 "opacity": 1,
@@ -82052,6 +82072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -82363,6 +82384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -82707,6 +82729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -83044,6 +83067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -83388,6 +83412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -83699,6 +83724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -84036,6 +84062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -84380,6 +84407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -84724,6 +84752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -85028,6 +85057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -86648,6 +86678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -86989,6 +87020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -87297,6 +87329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -87605,6 +87638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -87946,6 +87980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -88287,6 +88322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -88628,6 +88664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -88969,6 +89006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -89277,6 +89315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -89618,6 +89657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
