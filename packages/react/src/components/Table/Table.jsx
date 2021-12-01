@@ -186,8 +186,11 @@ const propTypes = {
             );
           }
           if (props[propName] < 0 || !Number.isInteger(props[propName])) {
+            const roundedStr = `${props[propName]} will be rounded to ${Math.ceil(
+              props[propName]
+            )}`;
             return new Error(
-              `Invalid prop \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` must be a positive integer.`
+              `Invalid prop \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` must be a positive integer. ${roundedStr}`
             );
           }
         }
