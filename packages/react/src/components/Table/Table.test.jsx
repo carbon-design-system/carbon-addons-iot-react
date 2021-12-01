@@ -2577,4 +2577,42 @@ describe('Table', () => {
     expect(screen.getByText('Total:')).toBeVisible();
     jest.resetAllMocks();
   });
+  it('should throw a prop-type warning if float used for maxPages', () => {
+    const { __DEV__ } = global;
+    global.__DEV__ = true;
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 10)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasPagination: true,
+        }}
+        view={{
+          ...view,
+          pagination: {
+            pageSize: 5,
+            pageSizes: [5, 10],
+            maxPages: 1.5,
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByText('1 of 2 pages')).toBeVisible();
+    // 5 * 1.5 = 7.5, rounded is 8 items.
+    expect(screen.getByText('1–5 of 8 items')).toBeVisible();
+
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'Warning: Failed prop type: Invalid prop `maxPages` supplied to `Table`. `maxPages` must be a positive integer.'
+      )
+    );
+    global.__DEV__ = __DEV__;
+    jest.resetAllMocks();
+  });
 });

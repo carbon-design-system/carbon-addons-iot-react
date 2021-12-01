@@ -855,8 +855,9 @@ Advanced filtering is experimental and may be subject to change, so it's usage i
 
 ## Pagination
 
-Pagination is controlled through the `options.hasPagingation` prop combined with the `view.pagination` prop. Pagination has one callback event for onChangePage that is fired when the page or the number of items per page changes.
+Pagination is controlled through the `options.hasPagination` prop combined with the `view.pagination` prop. Pagination has one callback event for onChangePage that is fired when the page or the number of items per page changes.
 By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number. In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior. With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.
+The maxPages prop must be a positive integer and is used to limit the number of pages available the dropdown when working with very large datasets.
 
 ```jsx
 <Table
@@ -1339,7 +1340,7 @@ import TableColumnCustomizationModalContent from './TableColumnCustomizationModa
 | pagination.pageSizes                             | number[]                         |           | An array of selections for choosing how many rows are displayed per page.                                                                           |
 | pagination.page                                  | number                           |           | The current page number                                                                                                                             |
 | pagination.totalItems                            | number                           |           | The total number of items available to the table                                                                                                    |
-| pagination.maxPages                              | number                           |           | Number of pages rendered in pagination                                                                                                              |
+| pagination.maxPages                              | number                           |           | Number of pages rendered in pagination. Must be a positive integer.                                                                                 |
 | pagination.isItemPerPageHidden                   | bool                             |           | Hide displaying the text for the number of rows per page                                                                                            |
 | filters                                          | object[]                         |           | An array of objects setting the current filter state                                                                                                |
 | filters[].columnId                               | string                           |           | The columnId of the column being filtered by this value                                                                                             |

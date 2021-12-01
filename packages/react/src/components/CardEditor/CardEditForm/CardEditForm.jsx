@@ -214,7 +214,7 @@ export const hideCardPropertiesForEditor = (card) => {
       : columns // TABLE CARD
       ? { ...card, content: { ...card.content, columns } }
       : card,
-    ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
+    ['content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
   );
 };
 
