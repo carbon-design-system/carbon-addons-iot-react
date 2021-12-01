@@ -361,12 +361,14 @@ const ListBuilder = ({
   }, [handleRemove, mergedI18n.removeIconDescription, selectedItems, testID, testId, removeIcon]);
 
   const flattenedSelectedIds = useMemo(() => {
+    if (!useCheckboxes) return [];
     const selectedChildIds = getSelectedItemIds(selectedItems, allListItems);
     const selectedParentIds = getSelectedParentIds(selectedItems, selectedChildIds, allListItems);
     return [...selectedChildIds, ...selectedParentIds];
-  }, [selectedItems, allListItems]);
+  }, [selectedItems, allListItems, useCheckboxes]);
 
   const indeterminateIds = useMemo(() => {
+    if (!useCheckboxes) return [];
     return allListItems
       .filter(
         (parent) =>
@@ -375,7 +377,7 @@ const ListBuilder = ({
           parent.children.some((sibling) => !flattenedSelectedIds.includes(sibling.id))
       )
       .map((parent) => parent.id);
-  }, [allListItems, flattenedSelectedIds]);
+  }, [allListItems, flattenedSelectedIds, useCheckboxes]);
 
   const [checkboxListExpandedIds, setCheckboxListExpandedIds] = useState(allDefaultExpandedIds);
 
