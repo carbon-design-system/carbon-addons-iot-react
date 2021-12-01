@@ -46,9 +46,9 @@ module.exports = {
       functions: 89,
     },
     './src/components/PageTitleBar/PageTitleBar.jsx': {
-      statements: 82,
-      branches: 87,
-      lines: 81,
+      statements: 81,
+      branches: 81,
+      lines: 80,
     },
     './src/components/DateTimePicker/DateTimePickerV2.jsx': {
       branches: 89,
