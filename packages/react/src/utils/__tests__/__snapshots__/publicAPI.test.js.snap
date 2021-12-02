@@ -570,6 +570,7 @@ Map {
         "toolbar": Object {
           "onApplyAdvancedFilter": [Function],
           "onApplyBatchAction": [Function],
+          "onApplyToolbarAction": [Function],
           "onCancelAdvancedFilter": [Function],
           "onCancelBatchAction": [Function],
           "onChangeAdvancedFilter": [Function],
@@ -818,6 +819,9 @@ Map {
                     "type": "func",
                   },
                   "onApplySearch": Object {
+                    "type": "func",
+                  },
+                  "onApplyToolbarAction": Object {
                     "type": "func",
                   },
                   "onCancelAdvancedFilter": Object {
@@ -2024,6 +2028,121 @@ Map {
                       },
                     ],
                     "type": "shape",
+                  },
+                  "toolbarActions": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "func",
+                        },
+                        Object {
+                          "args": Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "disabled": Object {
+                                    "type": "bool",
+                                  },
+                                  "hasDivider": Object {
+                                    "type": "bool",
+                                  },
+                                  "hidden": Object {
+                                    "type": "bool",
+                                  },
+                                  "id": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "isActive": Object {
+                                    "type": "bool",
+                                  },
+                                  "isDelete": Object {
+                                    "type": "bool",
+                                  },
+                                  "isOverflow": Object {
+                                    "type": "bool",
+                                  },
+                                  "labelText": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "renderIcon": Object {
+                                    "args": Array [
+                                      Array [
+                                        Object {
+                                          "args": Array [
+                                            Object {
+                                              "height": Object {
+                                                "type": "string",
+                                              },
+                                              "svgData": Object {
+                                                "args": Array [
+                                                  Object {
+                                                    "type": Object {
+                                                      "args": Array [
+                                                        Array [
+                                                          "svg",
+                                                        ],
+                                                      ],
+                                                      "type": "oneOf",
+                                                    },
+                                                  },
+                                                ],
+                                                "isRequired": true,
+                                                "type": "shape",
+                                              },
+                                              "viewBox": Object {
+                                                "isRequired": true,
+                                                "type": "string",
+                                              },
+                                              "width": Object {
+                                                "type": "string",
+                                              },
+                                            },
+                                          ],
+                                          "type": "shape",
+                                        },
+                                        Object {
+                                          "args": Array [
+                                            Array [
+                                              "caretUp",
+                                              "caretDown",
+                                              "edit",
+                                              "close",
+                                              "checkmark",
+                                              "warning",
+                                              "arrowUp",
+                                              "arrowDown",
+                                              "user",
+                                              "info",
+                                              "help",
+                                            ],
+                                          ],
+                                          "type": "oneOf",
+                                        },
+                                        Object {
+                                          "type": "node",
+                                        },
+                                        Object {
+                                          "type": "object",
+                                        },
+                                        Object {
+                                          "type": "func",
+                                        },
+                                      ],
+                                    ],
+                                    "type": "oneOfType",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                          ],
+                          "type": "arrayOf",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                 },
               ],
@@ -3963,6 +4082,9 @@ Map {
             "onApplySearch": Object {
               "type": "func",
             },
+            "onApplyToolbarAction": Object {
+              "type": "func",
+            },
             "onCancelAdvancedFilter": Object {
               "type": "func",
             },
@@ -4601,6 +4723,121 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "toolbarActions": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "disabled": Object {
+                              "type": "bool",
+                            },
+                            "hasDivider": Object {
+                              "type": "bool",
+                            },
+                            "hidden": Object {
+                              "type": "bool",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "isActive": Object {
+                              "type": "bool",
+                            },
+                            "isDelete": Object {
+                              "type": "bool",
+                            },
+                            "isOverflow": Object {
+                              "type": "bool",
+                            },
+                            "labelText": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "renderIcon": Object {
+                              "args": Array [
+                                Array [
+                                  Object {
+                                    "args": Array [
+                                      Object {
+                                        "height": Object {
+                                          "type": "string",
+                                        },
+                                        "svgData": Object {
+                                          "args": Array [
+                                            Object {
+                                              "type": Object {
+                                                "args": Array [
+                                                  Array [
+                                                    "svg",
+                                                  ],
+                                                ],
+                                                "type": "oneOf",
+                                              },
+                                            },
+                                          ],
+                                          "isRequired": true,
+                                          "type": "shape",
+                                        },
+                                        "viewBox": Object {
+                                          "isRequired": true,
+                                          "type": "string",
+                                        },
+                                        "width": Object {
+                                          "type": "string",
+                                        },
+                                      },
+                                    ],
+                                    "type": "shape",
+                                  },
+                                  Object {
+                                    "args": Array [
+                                      Array [
+                                        "caretUp",
+                                        "caretDown",
+                                        "edit",
+                                        "close",
+                                        "checkmark",
+                                        "warning",
+                                        "arrowUp",
+                                        "arrowDown",
+                                        "user",
+                                        "info",
+                                        "help",
+                                      ],
+                                    ],
+                                    "type": "oneOf",
+                                  },
+                                  Object {
+                                    "type": "node",
+                                  },
+                                  Object {
+                                    "type": "object",
+                                  },
+                                  Object {
+                                    "type": "func",
+                                  },
+                                ],
+                              ],
+                              "type": "oneOfType",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "totalFilters": Object {
               "type": "number",
