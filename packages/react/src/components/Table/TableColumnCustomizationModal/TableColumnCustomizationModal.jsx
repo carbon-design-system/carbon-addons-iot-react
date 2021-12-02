@@ -1,9 +1,6 @@
 import React, { useCallback, useState, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import merge from 'lodash/merge';
-import uniqBy from 'lodash/uniqBy';
-import cloneDeep from 'lodash/cloneDeep';
-import isNil from 'lodash/isNil';
+import { isNil, uniqBy, cloneDeep, merge } from 'lodash-es';
 import { CloseOutline16 } from '@carbon/icons-react';
 import warning from 'warning';
 import classNames from 'classnames';

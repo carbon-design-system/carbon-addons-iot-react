@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight16, Reset16, Subtract16 } from '@carbon/icons-react';
 import warning from 'warning';
-import isNil from 'lodash/isNil';
+import { isNil } from 'lodash-es';
 
 import HierarchyList from '../List/HierarchyList';
 import { settings } from '../../constants/Settings';
