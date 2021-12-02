@@ -1,18 +1,18 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/layout';
 @use '../../globals/mixins';
 
 $top-section-height: 6.25rem;
 $border-radius: 0.25rem;
 
-.#{vars.$iot-prefix}--image-gallery-modal {
+.#{$iot-prefix}--image-gallery-modal {
   &--warning-modal {
     z-index: 30000;
   }
-  &.#{vars.$iot-prefix}--composed-modal.#{vars.$iot-prefix}--composed-modal--large {
-    .#{vars.$prefix}--modal-container {
+  &.#{$iot-prefix}--composed-modal.#{$iot-prefix}--composed-modal--large {
+    .#{$prefix}--modal-container {
       background-color: theme.$ui-02;
       overflow: hidden;
       height: 80%;
@@ -34,32 +34,32 @@ $border-radius: 0.25rem;
     }
   }
 
-  .#{vars.$prefix}--search-input {
+  .#{$prefix}--search-input {
     background-color: theme.$field-01;
   }
 
-  .#{vars.$prefix}--modal-content {
+  .#{$prefix}--modal-content {
     padding-right: spacing.$spacing-05;
   }
 }
 
-.#{vars.$iot-prefix}--image-gallery-modal__top-section {
+.#{$iot-prefix}--image-gallery-modal__top-section {
   height: $top-section-height;
 }
 
-.#{vars.$iot-prefix}--image-gallery-modal__instruction-text {
+.#{$iot-prefix}--image-gallery-modal__instruction-text {
   margin-bottom: spacing.$spacing-05;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.#{vars.$iot-prefix}--image-gallery-modal__search-list-view-container {
+.#{$iot-prefix}--image-gallery-modal__search-list-view-container {
   display: flex;
   margin-bottom: spacing.$spacing-05;
 }
 
-.#{vars.$iot-prefix}--image-gallery-modal__content-switcher {
+.#{$iot-prefix}--image-gallery-modal__content-switcher {
   width: auto;
   margin-left: spacing.$spacing-05;
   margin-right: spacing.$spacing-05;
@@ -67,18 +67,18 @@ $border-radius: 0.25rem;
 }
 
 // Container that lets the scroll panel use negative margin.
-.#{vars.$iot-prefix}--image-gallery-modal__flex-wrapper {
+.#{$iot-prefix}--image-gallery-modal__flex-wrapper {
   overflow: hidden;
   height: calc(100% - #{$top-section-height});
 }
 
-.#{vars.$iot-prefix}--image-gallery-modal__scroll-panel {
+.#{$iot-prefix}--image-gallery-modal__scroll-panel {
   display: flex;
   overflow-y: scroll;
   height: 100%;
 }
 
-.#{vars.$iot-prefix}--image-gallery-modal__scroll-panel--grid {
+.#{$iot-prefix}--image-gallery-modal__scroll-panel--grid {
   flex-wrap: wrap;
   // We only want space between the children, not to the edges of the panel.
   & > * {
@@ -89,12 +89,12 @@ $border-radius: 0.25rem;
   margin-bottom: calc(-1 * #{spacing.$spacing-05});
 }
 
-.#{vars.$iot-prefix}--image-gallery-modal__scroll-panel--list {
+.#{$iot-prefix}--image-gallery-modal__scroll-panel--list {
   flex-direction: column;
 }
 
 html[dir='rtl'] {
-  .#{vars.$iot-prefix}--image-gallery-modal__content-switcher {
+  .#{$iot-prefix}--image-gallery-modal__content-switcher {
     @include mixins.content-switcher-border-radius($border-radius, right, left);
   }
 }

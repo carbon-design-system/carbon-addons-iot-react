@@ -1,10 +1,10 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/typography";
 @use "../../globals/motion";
 
-.#{vars.$iot-prefix}--gauge-container {
+.#{$iot-prefix}--gauge-container {
   display: flex;
   flex-wrap: wrap;
   font-size: typography.type-scale(1);
@@ -14,7 +14,7 @@
   column-gap: spacing.$spacing-05;
 }
 
-.#{vars.$iot-prefix}--gauge {
+.#{$iot-prefix}--gauge {
   fill: none;
   font-size: inherit;
   height: var(--gauge-size);
@@ -27,12 +27,12 @@
   }
 }
 
-.#{vars.$iot-prefix}--gauge-bg {
+.#{$iot-prefix}--gauge-bg {
   stroke: var(--gauge-bg);
   stroke-width: 0.25rem;
 }
 
-.#{vars.$iot-prefix}--gauge-fg {
+.#{$iot-prefix}--gauge-fg {
   paint-order: stroke;
   stroke: var(--gauge-colors);
   stroke-dasharray: 0 var(--stroke-dash-array);
@@ -40,34 +40,34 @@
   transform-origin: center;
   transition: all motion.$duration-moderate-01 ease-in;
 
-  .#{vars.$iot-prefix}--gauge__loaded & {
+  .#{$iot-prefix}--gauge__loaded & {
     stroke-dasharray: var(--stroke-dash) var(--stroke-dash-array);
   }
 }
 
-.#{vars.$iot-prefix}--gauge-value-sm {
+.#{$iot-prefix}--gauge-value-sm {
   tspan:first-of-type {
     font-size: 1rem;
   }
 }
 
-.#{vars.$iot-prefix}--gauge-value-md {
+.#{$iot-prefix}--gauge-value-md {
   tspan:first-of-type {
     font-size: 1.25rem;
   }
 }
 
-.#{vars.$iot-prefix}--gauge-value-lg {
+.#{$iot-prefix}--gauge-value-lg {
   tspan:first-of-type {
     font-size: 1.5rem;
   }
 }
 
-.#{vars.$iot-prefix}--meter__centered::after {
+.#{$iot-prefix}--meter__centered::after {
   display: none;
 }
 
-.#{vars.$iot-prefix}--gauge-trend {
+.#{$iot-prefix}--gauge-trend {
   padding-left: spacing.$spacing-05;
   display: flex;
   align-items: center;

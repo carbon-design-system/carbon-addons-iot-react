@@ -1,50 +1,50 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/layout';
 @use '../../globals/mixins';
 
-.#{vars.$iot-prefix}--time-picker__wrapper {
+.#{$iot-prefix}--time-picker__wrapper {
   position: relative;
 
-  &.#{vars.$iot-prefix}--time-picker__wrapper--with-spinner {
-    .#{vars.$prefix}--time-picker__input-field {
+  &.#{$iot-prefix}--time-picker__wrapper--with-spinner {
+    .#{$prefix}--time-picker__input-field {
       width: 5.875rem;
       padding-right: spacing.$spacing-07;
     }
   }
 
-  &.#{vars.$iot-prefix}--time-picker__wrapper--updown {
-    .#{vars.$prefix}--time-picker__input-field {
+  &.#{$iot-prefix}--time-picker__wrapper--updown {
+    .#{$prefix}--time-picker__input-field {
       caret-color: transparent;
     }
   }
 
-  &.#{vars.$iot-prefix}--time-picker__wrapper--show-underline {
-    .#{vars.$prefix}--time-picker--invalid .#{vars.$prefix}--time-picker__input:before {
+  &.#{$iot-prefix}--time-picker__wrapper--show-underline {
+    .#{$prefix}--time-picker--invalid .#{$prefix}--time-picker__input:before {
       bottom: 1.6rem;
     }
-    .#{vars.$prefix}--time-picker__input:before {
+    .#{$prefix}--time-picker__input:before {
       content: '__';
       position: absolute;
       bottom: 0.365rem;
       left: 1rem;
     }
 
-    &.#{vars.$iot-prefix}--time-picker__wrapper--show-underline-minutes {
-      .#{vars.$prefix}--time-picker__input:before {
+    &.#{$iot-prefix}--time-picker__wrapper--show-underline-minutes {
+      .#{$prefix}--time-picker__input:before {
         left: 2.7rem;
       }
     }
   }
 
-  .#{vars.$prefix}--time-picker--invalid {
-    .#{vars.$iot-prefix}--time-picker__controls {
+  .#{$prefix}--time-picker--invalid {
+    .#{$iot-prefix}--time-picker__controls {
       bottom: calc(#{spacing.$spacing-06} - #{spacing.$spacing-01});
     }
   }
 
-  .#{vars.$iot-prefix}--time-picker__controls {
+  .#{$iot-prefix}--time-picker__controls {
     position: absolute;
     left: 4rem;
     display: flex;
@@ -53,7 +53,7 @@
     align-items: center;
     bottom: 2px;
 
-    .#{vars.$iot-prefix}--time-picker__controls--btn {
+    .#{$iot-prefix}--time-picker__controls--btn {
       border: none;
       display: inline-flex;
       justify-content: center;
@@ -95,21 +95,21 @@
 }
 
 html[dir='rtl'] {
-  .#{vars.$iot-prefix}--time-picker__wrapper {
-    &.#{vars.$iot-prefix}--time-picker__wrapper--show-underline {
-      .#{vars.$prefix}--time-picker__input:before {
+  .#{$iot-prefix}--time-picker__wrapper {
+    &.#{$iot-prefix}--time-picker__wrapper--show-underline {
+      .#{$prefix}--time-picker__input:before {
         left: unset;
         right: 3.7rem;
       }
-      &.#{vars.$iot-prefix}--time-picker__wrapper--show-underline-minutes {
-        .#{vars.$prefix}--time-picker__input:before {
+      &.#{$iot-prefix}--time-picker__wrapper--show-underline-minutes {
+        .#{$prefix}--time-picker__input:before {
           left: unset;
           right: 2rem;
         }
       }
     }
 
-    .#{vars.$iot-prefix}--time-picker__controls {
+    .#{$iot-prefix}--time-picker__controls {
       left: unset;
       right: 2px;
     }

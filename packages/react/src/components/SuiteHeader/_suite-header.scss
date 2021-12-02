@@ -1,11 +1,11 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/mixins';
 @use '../../globals/typography';
 @use '../../globals/layout';
 
-.#{vars.$iot-prefix}--suite-header-profile {
+.#{$iot-prefix}--suite-header-profile {
   background-color: theme.$ui-05;
   color: theme.$inverse-01;
   width: 100%;
@@ -45,7 +45,7 @@
     padding-bottom: spacing.$spacing-08;
 
     /* mimic tertiary button from grey-100 theme */
-    .#{vars.$prefix}--btn {
+    .#{$prefix}--btn {
       border: solid 1px theme.$ui-02;
       background-color: theme.$ui-05;
 
@@ -74,7 +74,7 @@
   &--logout {
     margin: -(spacing.$spacing-05);
 
-    .#{vars.$prefix}--btn {
+    .#{$prefix}--btn {
       width: 100%;
     }
     &--loading {
@@ -85,7 +85,7 @@
   }
 }
 
-.#{vars.$iot-prefix}--suite-header-survey-toast {
+.#{$iot-prefix}--suite-header-survey-toast {
   position: fixed;
   top: spacing.$spacing-09;
   right: 0;
@@ -93,18 +93,18 @@
   width: auto;
   z-index: mixins.z('overlay');
 
-  .#{vars.$prefix}--toast-notification__title {
+  .#{$prefix}--toast-notification__title {
     margin-top: spacing.$spacing-04;
   }
 }
 
-.#{vars.$iot-prefix}--suite-header-survey-policy-link {
+.#{$iot-prefix}--suite-header-survey-policy-link {
   margin: auto;
   width: 50%;
   padding-top: spacing.$spacing-04;
 }
 
-.#{vars.$iot-prefix}--suite-header-app-switcher {
+.#{$iot-prefix}--suite-header-app-switcher {
   padding-top: 0;
 
   li {
@@ -206,7 +206,7 @@
   }
 }
 
-.#{vars.$iot-prefix}--suite-header {
+.#{$iot-prefix}--suite-header {
   &-data {
     display: none;
   }
@@ -214,7 +214,7 @@
     margin-left: spacing.$spacing-05;
   }
   button.admin-icon {
-    .#{vars.$prefix}--tooltip__trigger svg {
+    .#{$prefix}--tooltip__trigger svg {
       fill: theme.$ui-01;
     }
   }
@@ -228,7 +228,7 @@
     padding-top: spacing.$spacing-01;
   }
 
-  .#{vars.$prefix}--header__global {
+  .#{$prefix}--header__global {
     position: relative;
 
     button {
@@ -237,8 +237,8 @@
     }
   }
 
-  .#{vars.$prefix}--header__menu {
-    div.#{vars.$prefix}--header__menu-item {
+  .#{$prefix}--header__menu {
+    div.#{$prefix}--header__menu-item {
       padding: 0;
       border: none;
       color: theme.$text-02;
@@ -256,7 +256,7 @@
       justify-content: center;
     }
 
-    a.#{vars.$prefix}--header__menu-item {
+    a.#{$prefix}--header__menu-item {
       padding: spacing.$spacing-05;
 
       &:hover {
@@ -265,12 +265,12 @@
     }
   }
 
-  .#{vars.$prefix}--header__menu-title[role='menuitem'][aria-expanded='true']
-    + .#{vars.$prefix}--header__menu {
+  .#{$prefix}--header__menu-title[role='menuitem'][aria-expanded='true']
+    + .#{$prefix}--header__menu {
     width: 16rem;
   }
 
-  .#{vars.$iot-prefix}--suite-header-help--loading {
+  .#{$iot-prefix}--suite-header-help--loading {
     background-color: theme.$ui-05;
     color: theme.$inverse-01;
     width: 100%;
@@ -281,7 +281,7 @@
     }
   }
 
-  .#{vars.$iot-prefix}--suite-header-help--separator {
+  .#{$iot-prefix}--suite-header-help--separator {
     padding: 0;
     height: 0;
     border-bottom: 1px solid theme.$hover-secondary;
@@ -305,9 +305,9 @@
   }
 }
 
-.#{vars.$iot-prefix}--session-timeout-modal {
+.#{$iot-prefix}--session-timeout-modal {
   z-index: 9999;
-  .#{vars.$prefix}--modal-header .#{vars.$prefix}--modal-close {
+  .#{$prefix}--modal-header .#{$prefix}--modal-close {
     display: none;
   }
 }

@@ -1,13 +1,13 @@
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/radio-button';
 
 html[dir='rtl'] {
-  .#{vars.$prefix}--radio-button-wrapper:not(:last-of-type) {
+  .#{$prefix}--radio-button-wrapper:not(:last-of-type) {
     margin-left: spacing.$spacing-05;
     margin-right: unset;
   }
-  .#{vars.$prefix}--radio-button__appearance {
+  .#{$prefix}--radio-button__appearance {
     margin-left: spacing.$spacing-03;
     margin-right: unset;
   }

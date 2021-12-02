@@ -1,27 +1,27 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/colors";
 
-.#{vars.$iot-prefix}--btn {
+.#{$iot-prefix}--btn {
   justify-content: flex-start;
 
-  .#{vars.$prefix}--loading {
+  .#{$prefix}--loading {
     margin-top: -(spacing.$spacing-05);
     margin-bottom: -(spacing.$spacing-05);
     margin-right: spacing.$spacing-03;
   }
-  .#{vars.$prefix}--loading__stroke {
+  .#{$prefix}--loading__stroke {
     stroke: colors.$gray-50;
   }
 }
 
-.#{vars.$iot-prefix}--btn.#{vars.$prefix}--btn.#{vars.$prefix}--btn--ghost.#{vars.$prefix}--btn--icon-only:not(.#{vars.$iot-prefix}--btn-icon-selection--selected).#{vars.$iot-prefix}--btn-icon-selection--recommended {
+.#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only:not(.#{$iot-prefix}--btn-icon-selection--selected).#{$iot-prefix}--btn-icon-selection--recommended {
   border: 1px solid theme.$support-02;
 }
 
-.#{vars.$iot-prefix}--btn:not(.#{vars.$iot-prefix}--btn-icon-selection--selected)
-  .#{vars.$iot-prefix}--btn-icon-selection--recommended_marker {
+.#{$iot-prefix}--btn:not(.#{$iot-prefix}--btn-icon-selection--selected)
+  .#{$iot-prefix}--btn-icon-selection--recommended_marker {
   position: absolute;
   top: 0;
   right: 0;
@@ -30,28 +30,28 @@
   border-color: theme.$support-02 transparent;
 }
 
-.#{vars.$iot-prefix}--btn.#{vars.$prefix}--btn--field:not(.#{vars.$iot-prefix}--btn-icon-selection--selected)
-  .#{vars.$iot-prefix}--btn-icon-selection--recommended_marker {
+.#{$iot-prefix}--btn.#{$prefix}--btn--field:not(.#{$iot-prefix}--btn-icon-selection--selected)
+  .#{$iot-prefix}--btn-icon-selection--recommended_marker {
   border-width: spacing.$spacing-03 0 0 spacing.$spacing-03;
 }
 
-.#{vars.$iot-prefix}--btn.#{vars.$prefix}--btn--sm:not(.#{vars.$iot-prefix}--btn-icon-selection--selected)
-  .#{vars.$iot-prefix}--btn-icon-selection--recommended_marker {
+.#{$iot-prefix}--btn.#{$prefix}--btn--sm:not(.#{$iot-prefix}--btn-icon-selection--selected)
+  .#{$iot-prefix}--btn-icon-selection--recommended_marker {
   border-width: spacing.$spacing-02 0 0 spacing.$spacing-02;
 }
 
-.#{vars.$iot-prefix}--btn-icon-selection--selected {
+.#{$iot-prefix}--btn-icon-selection--selected {
   border-color: theme.$focus;
 }
 
-.#{vars.$iot-prefix}--btn.#{vars.$prefix}--btn.#{vars.$prefix}--btn--ghost.#{vars.$prefix}--btn--icon-only.#{vars.$iot-prefix}--btn-icon-selection
+.#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only.#{$iot-prefix}--btn-icon-selection
   svg
   path {
   fill: theme.$icon-01;
   outline-color: transparent;
 }
 
-.#{vars.$iot-prefix}--btn.#{vars.$prefix}--btn.#{vars.$prefix}--btn--ghost.#{vars.$prefix}--btn--icon-only.#{vars.$iot-prefix}--btn-icon-selection.#{vars.$iot-prefix}--btn-icon-selection--selected
+.#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only.#{$iot-prefix}--btn-icon-selection.#{$iot-prefix}--btn-icon-selection--selected
   svg
   path {
   fill: theme.$interactive-01;
@@ -59,13 +59,13 @@
 }
 
 [dir='rtl'] {
-  .#{vars.$iot-prefix}--btn:not(.#{vars.$prefix}--btn--icon-only) {
+  .#{$iot-prefix}--btn:not(.#{$prefix}--btn--icon-only) {
     text-align: right;
     padding-left: 60px; // fixed values to invert $button-padding of Carbon's theme-tokens.scss
     padding-right: 12px;
   }
 
-  .#{vars.$prefix}--btn .#{vars.$prefix}--btn__icon {
+  .#{$prefix}--btn .#{$prefix}--btn__icon {
     left: spacing.$spacing-05;
     right: initial;
   }

@@ -1,7 +1,7 @@
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--bar-chart-container {
+.#{$iot-prefix}--bar-chart-container {
   width: 100%;
   height: 100%;
 
@@ -13,10 +13,10 @@
   }
 
   &--editable {
-    .#{vars.$prefix}--cc--tooltip {
+    .#{$prefix}--cc--tooltip {
       display: none;
     }
-    .#{vars.$prefix}--cc--ruler line.ruler-line {
+    .#{$prefix}--cc--ruler line.ruler-line {
       display: none;
     }
   }
@@ -28,7 +28,7 @@
   .axis-title {
     font-weight: 500;
   }
-  .#{vars.$prefix}--cc--chart-svg {
+  .#{$prefix}--cc--chart-svg {
     width: 100%;
     height: 100%;
   }

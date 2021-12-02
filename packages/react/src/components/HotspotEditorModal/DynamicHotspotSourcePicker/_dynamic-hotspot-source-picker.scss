@@ -1,8 +1,8 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars' as globals-vars;
+@use '../../../globals/vars' as *;
 
-.#{globals-vars.$iot-prefix}--dynamic-hotspot-source-picker {
+.#{$iot-prefix}--dynamic-hotspot-source-picker {
   display: flex;
   margin-top: spacing.$spacing-06;
   margin-bottom: spacing.$spacing-07;
@@ -12,16 +12,16 @@
     margin-right: spacing.$spacing-05;
   }
 
-  .#{globals-vars.$prefix}--dropdown__wrapper {
+  .#{$prefix}--dropdown__wrapper {
     width: 100%;
   }
 }
 
-.#{globals-vars.$iot-prefix}--dynamic-hotspot-source-picker__clear-button {
+.#{$iot-prefix}--dynamic-hotspot-source-picker__clear-button {
   margin-left: spacing.$spacing-02;
   height: spacing.$spacing-08;
 }
 
-.#{globals-vars.$iot-prefix}--dynamic-hotspot-source-picker__clear-button--invisible {
+.#{$iot-prefix}--dynamic-hotspot-source-picker__clear-button--invisible {
   visibility: hidden;
 }

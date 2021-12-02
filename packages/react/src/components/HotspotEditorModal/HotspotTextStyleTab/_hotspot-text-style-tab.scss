@@ -1,15 +1,15 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../mixins';
 @use "../../../globals/mixins" as globals-mixins;
 
 $border-radius: 5px;
 
-.#{vars.$iot-prefix}--hotspot-text-style-tab {
+.#{$iot-prefix}--hotspot-text-style-tab {
   &__form {
     @include mixins.vertical-form();
-    .#{vars.$prefix}--number input[type='number'] {
+    .#{$prefix}--number input[type='number'] {
       padding-right: 5rem;
     }
   }
@@ -32,21 +32,21 @@ $border-radius: 5px;
     align-items: baseline;
     gap: spacing.$spacing-06;
 
-    .#{vars.$prefix}--dropdown__wrapper.#{vars.$prefix}--list-box__wrapper {
+    .#{$prefix}--dropdown__wrapper.#{$prefix}--list-box__wrapper {
       width: 100%;
     }
 
-    .#{vars.$prefix}--form-item {
+    .#{$prefix}--form-item {
       min-width: 10rem;
     }
   }
 }
 
-.#{vars.$iot-prefix}--hotspot-editor--text-info-message {
+.#{$iot-prefix}--hotspot-editor--text-info-message {
   @include mixins.info-message();
 }
 
-.#{vars.$iot-prefix}--hotspot-text-style-tab__delete-button-container {
+.#{$iot-prefix}--hotspot-text-style-tab__delete-button-container {
   display: flex;
   justify-content: flex-end;
 }

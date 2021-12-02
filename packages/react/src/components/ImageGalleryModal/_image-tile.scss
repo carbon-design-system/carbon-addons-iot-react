@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
 $title-height: 3rem;
 
@@ -16,7 +16,7 @@ $title-height: 3rem;
   }
 }
 
-.#{vars.$iot-prefix}--image-tile {
+.#{$iot-prefix}--image-tile {
   $image-max-height: 12rem;
   $image-max-width: 20rem;
 
@@ -25,12 +25,12 @@ $title-height: 3rem;
   height: calc(#{$image-max-height} + #{$title-height});
   padding: 0;
 
-  .#{vars.$iot-prefix}--image-tile__image-container {
+  .#{$iot-prefix}--image-tile__image-container {
     @include image-container($image-max-height, $image-max-width);
   }
 }
 
-.#{vars.$iot-prefix}--image-tile--wide {
+.#{$iot-prefix}--image-tile--wide {
   $image-max-height: 3rem;
   $image-max-width: 5rem;
 
@@ -43,31 +43,31 @@ $title-height: 3rem;
     border-color: transparent;
   }
   // The border must be hidded when focused or selected, also for sibling
-  &.#{vars.$prefix}--tile--is-selected,
+  &.#{$prefix}--tile--is-selected,
   &:focus {
     border-color: transparent;
-    & + input + .#{vars.$prefix}--tile {
+    & + input + .#{$prefix}--tile {
       border-color: transparent;
     }
   }
 
-  .#{vars.$prefix}--tile-content {
+  .#{$prefix}--tile-content {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
   }
 
-  .#{vars.$iot-prefix}--image-tile__image-container {
+  .#{$iot-prefix}--image-tile__image-container {
     @include image-container($image-max-height, $image-max-width);
   }
 
-  .#{vars.$iot-prefix}--image-tile__title {
+  .#{$iot-prefix}--image-tile__title {
     background-color: unset;
     width: calc(100% - #{$image-max-width});
   }
 }
 
-.#{vars.$iot-prefix}--image-tile__title {
+.#{$iot-prefix}--image-tile__title {
   height: $title-height;
   display: flex;
   align-items: center;
@@ -82,21 +82,21 @@ $title-height: 3rem;
 }
 
 // position the button on the far right
-.#{vars.$prefix}--btn.#{vars.$prefix}--btn--icon-only.#{vars.$iot-prefix}--image-tile__title__delete {
+.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$iot-prefix}--image-tile__title__delete {
   position: absolute;
   right: 0rem;
   bottom: 0rem;
 }
 
 html[dir='rtl'] {
-  .#{vars.$iot-prefix}--image-tile.#{vars.$prefix}--tile--selectable {
+  .#{$iot-prefix}--image-tile.#{$prefix}--tile--selectable {
     padding: 0;
   }
-  .#{vars.$iot-prefix}--image-tile--wide.#{vars.$prefix}--tile--selectable {
+  .#{$iot-prefix}--image-tile--wide.#{$prefix}--tile--selectable {
     padding: spacing.$spacing-03;
   }
 
-  .#{vars.$iot-prefix}--image-tile__title {
+  .#{$iot-prefix}--image-tile__title {
     padding-left: spacing.$spacing-08;
     padding-right: spacing.$spacing-05;
   }

@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/typography";
 
-.#{vars.$iot-prefix}--value-card__attribute-unit {
+.#{$iot-prefix}--value-card__attribute-unit {
   @include typography.type-style('productive-heading-03');
   padding-left: spacing.$spacing-02;
   padding-bottom: spacing.$spacing-02;

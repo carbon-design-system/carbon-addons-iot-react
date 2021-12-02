@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/typography';
 
-.#{vars.$iot-prefix}--card-editor {
+.#{$iot-prefix}--card-editor {
   height: 100%;
   width: 16rem;
   display: flex;
@@ -35,7 +35,7 @@
     height: 100%;
     overflow: auto;
 
-    .#{vars.$iot-prefix}--list-item {
+    .#{$iot-prefix}--list-item {
       height: spacing.$spacing-09;
     }
   }
@@ -47,7 +47,7 @@
   }
 }
 
-.#{vars.$iot-prefix}--card-gallery-list__icon > svg {
+.#{$iot-prefix}--card-gallery-list__icon > svg {
   height: 34px;
   width: 40px;
 }

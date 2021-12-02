@@ -1,13 +1,13 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 .list-card {
   height: 100%;
   overflow-y: auto;
   padding: 0;
   width: 100%;
 
-  .#{vars.$prefix}--structured-list {
+  .#{$prefix}--structured-list {
     min-width: inherit;
     margin-bottom: spacing.$spacing-04;
   }

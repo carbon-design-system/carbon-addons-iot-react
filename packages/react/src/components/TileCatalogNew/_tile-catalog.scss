@@ -1,10 +1,10 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/typography';
 @use '../../globals/layout';
 
-.#{vars.$iot-prefix}--tile-catalog {
+.#{$iot-prefix}--tile-catalog {
   &--persistent-search {
     margin-bottom: spacing.$spacing-05;
   }
@@ -33,7 +33,7 @@
         flex: 1;
       }
 
-      .#{vars.$prefix}--toolbar-action {
+      .#{$prefix}--toolbar-action {
         height: 2.5rem;
         width: 2.5rem;
         margin-right: spacing.$spacing-05;
@@ -43,7 +43,7 @@
         flex: 1;
         height: layout.rem(40px);
         width: layout.rem(40px);
-        .#{vars.$prefix}--search {
+        .#{$prefix}--search {
           svg {
             height: 2.5rem;
             width: 2.5rem;
@@ -53,22 +53,22 @@
       }
 
       &--select {
-        .#{vars.$prefix}--label {
+        .#{$prefix}--label {
           margin-bottom: 0;
         }
       }
     }
 
     &--content {
-      .#{vars.$prefix}--grid {
+      .#{$prefix}--grid {
         padding: 0;
       }
-      .#{vars.$prefix}--row {
+      .#{$prefix}--row {
         padding-bottom: spacing.$spacing-05;
         margin-left: -(spacing.$spacing-03);
         margin-right: -(spacing.$spacing-03);
       }
-      .#{vars.$prefix}--col {
+      .#{$prefix}--col {
         padding-left: spacing.$spacing-03;
         padding-right: spacing.$spacing-03;
       }
@@ -104,7 +104,7 @@
         width: layout.rem(212px);
         padding: spacing.$spacing-05;
 
-        .#{vars.$prefix}--select-input {
+        .#{$prefix}--select-input {
           width: layout.rem(180px);
           background: theme.$ui-02;
         }
@@ -115,7 +115,7 @@
         padding: spacing.$spacing-05;
       }
 
-      .#{vars.$prefix}--link {
+      .#{$prefix}--link {
         padding: spacing.$spacing-05;
         color: theme.$interactive-04;
       }
@@ -137,7 +137,7 @@
   }
 }
 
-.#{vars.$iot-prefix}--tile-catalog--grid-container {
+.#{$iot-prefix}--tile-catalog--grid-container {
   display: grid;
   grid-template-columns: var(--columns);
   gap: 1rem;

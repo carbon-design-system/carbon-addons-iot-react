@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--image-card {
+.#{$iot-prefix}--image-card {
   &__wrapper {
     height: 100%;
     max-height: 100%;

@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/colors';
 
-.#{vars.$iot-prefix}--rule-builder-header {
+.#{$iot-prefix}--rule-builder-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,17 +15,17 @@
   }
 }
 
-.#{vars.$iot-prefix}--rule-builder-header__dropdown {
+.#{$iot-prefix}--rule-builder-header__dropdown {
   display: inline-block;
 }
 
-.#{vars.$iot-prefix}--rule-builder-header__buttons {
+.#{$iot-prefix}--rule-builder-header__buttons {
   justify-content: flex-end;
   display: flex;
 }
 
-.#{vars.$iot-prefix}--rule-builder-rule,
-%#{vars.$iot-prefix}--rule-builder-rule {
+.#{$iot-prefix}--rule-builder-rule,
+%#{$iot-prefix}--rule-builder-rule {
   display: grid;
   align-items: center;
   column-gap: spacing.$spacing-04;
@@ -71,8 +71,8 @@
   }
 }
 
-.#{vars.$iot-prefix}--rule-builder-rule--group {
-  @extend %#{vars.$iot-prefix}--rule-builder-rule;
+.#{$iot-prefix}--rule-builder-rule--group {
+  @extend %#{$iot-prefix}--rule-builder-rule;
   grid-template-columns: repeat(1, 1fr);
 
   &:last-child {
@@ -87,6 +87,6 @@
   }
 }
 
-.#{vars.$iot-prefix}--rule-builder-rule__actions {
+.#{$iot-prefix}--rule-builder-rule__actions {
   justify-self: end;
 }

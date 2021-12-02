@@ -1,36 +1,36 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../../../globals/typography';
 
-.#{vars.$iot-prefix}--card-edit-form {
+.#{$iot-prefix}--card-edit-form {
   height: 100%;
   background: theme.$ui-01;
   display: flex;
   flex-direction: column;
 
-  .#{vars.$prefix}--tab-content {
+  .#{$prefix}--tab-content {
     flex: 1;
   }
 
   // give the tabs the full space available in the editor column
-  .#{vars.$prefix}--tabs--scrollable__nav {
+  .#{$prefix}--tabs--scrollable__nav {
     width: 100%;
 
     // stretch each tab to evenly fill the space
-    .#{vars.$prefix}--tabs--scrollable__nav-item {
+    .#{$prefix}--tabs--scrollable__nav-item {
       flex: 1;
 
       // override width on buttons within tabs, so they don't
       // have a width of 10rem, and fill space evenly.
-      .#{vars.$prefix}--tabs--scrollable__nav-link {
+      .#{$prefix}--tabs--scrollable__nav-link {
         width: auto;
         flex: 1;
       }
     }
   }
 
-  .#{vars.$prefix}--file__selected-file {
+  .#{$prefix}--file__selected-file {
     background-color: theme.$ui-02;
   }
 
@@ -72,7 +72,7 @@
 
   &--input {
     padding-bottom: spacing.$spacing-05;
-    .#{vars.$prefix}--fieldset {
+    .#{$prefix}--fieldset {
       margin-bottom: unset;
     }
 
@@ -83,10 +83,10 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      .#{vars.$prefix}--form-item {
+      .#{$prefix}--form-item {
         flex: 0;
       }
-      .#{vars.$prefix}--toggle-input__label .#{vars.$prefix}--toggle__switch {
+      .#{$prefix}--toggle-input__label .#{$prefix}--toggle__switch {
         margin-top: 0;
       }
     }
@@ -98,22 +98,22 @@
     &--label {
       flex: 1;
     }
-    .#{vars.$prefix}--form-item {
+    .#{$prefix}--form-item {
       flex: 0;
     }
-    .#{vars.$prefix}--toggle-input__label .#{vars.$prefix}--toggle__switch {
+    .#{$prefix}--toggle-input__label .#{$prefix}--toggle__switch {
       margin-top: 0;
     }
   }
   &--modal-wrapper {
-    .#{vars.$prefix}--number,
+    .#{$prefix}--number,
     input[type='number'] {
       min-width: unset;
     }
-    .#{vars.$iot-prefix}--table-container .addons-iot-table-container {
+    .#{$iot-prefix}--table-container .addons-iot-table-container {
       overflow: visible;
     }
-    .#{vars.$prefix}--data-table-content {
+    .#{$prefix}--data-table-content {
       overflow: visible;
     }
   }
@@ -126,7 +126,7 @@
       align-items: flex-end;
     }
     &--item {
-      .#{vars.$iot-prefix}--color-dropdown {
+      .#{$iot-prefix}--color-dropdown {
         margin-bottom: 1.25rem;
       }
       margin-right: spacing.$spacing-05;
@@ -180,10 +180,10 @@
     &--item-end {
       width: 100%;
 
-      .#{vars.$prefix}--number input[type='number'] {
+      .#{$prefix}--number input[type='number'] {
         padding-right: 0;
       }
-      .#{vars.$prefix}--form-item input[type='text'] {
+      .#{$prefix}--form-item input[type='text'] {
         min-width: 9.375rem;
 
         [dir='rtl'] & {
@@ -210,28 +210,28 @@
       width: 100%;
     }
   }
-  .#{vars.$prefix}--modal-container--xs {
+  .#{$prefix}--modal-container--xs {
     max-height: none;
     min-width: 30rem;
   }
-  .#{vars.$iot-prefix}--combobox {
+  .#{$iot-prefix}--combobox {
     padding-top: 0;
   }
-  .#{vars.$iot-prefix}--combobox-tags {
+  .#{$iot-prefix}--combobox-tags {
     // hide multi-select combobox tags in editor form
     display: none;
   }
 }
 
 // Table card form styles
-.#{vars.$iot-prefix}--table-card-form--content {
+.#{$iot-prefix}--table-card-form--content {
   display: flex;
   flex-flow: column;
 }
 
 // Image card form styles
-.#{vars.$iot-prefix}--card-edit-form--form-section-image {
-  .#{vars.$prefix}--fieldset {
+.#{$iot-prefix}--card-edit-form--form-section-image {
+  .#{$prefix}--fieldset {
     margin-bottom: 0;
   }
 
@@ -255,24 +255,24 @@
     }
     border: 0;
     min-height: 2rem;
-    > svg.#{vars.$prefix}--btn__icon {
+    > svg.#{$prefix}--btn__icon {
       margin-left: 0;
     }
   }
 
-  .#{vars.$prefix}--slider {
+  .#{$prefix}--slider {
     min-width: 4.5rem;
   }
 }
 
-div.#{vars.$iot-prefix}--card-edit-form--data-item-list {
+div.#{$iot-prefix}--card-edit-form--data-item-list {
   // remove the spacing
   margin-left: -(spacing.$spacing-05);
   margin-right: -(spacing.$spacing-05);
   width: unset;
 
   // add more spacing to the item so that the content will still align
-  .#{vars.$iot-prefix}--list-item {
+  .#{$iot-prefix}--list-item {
     padding-left: spacing.$spacing-05;
   }
   &--item-color-icon {
@@ -281,7 +281,7 @@ div.#{vars.$iot-prefix}--card-edit-form--data-item-list {
     background-color: var(--icon-color-option);
   }
 
-  .#{vars.$iot-prefix}--list-item--content--values--value__with-actions {
+  .#{$iot-prefix}--list-item--content--values--value__with-actions {
     // need to make room for 2 actions
     padding-right: spacing.$spacing-10;
   }

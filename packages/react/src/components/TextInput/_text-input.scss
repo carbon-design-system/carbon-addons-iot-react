@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/text-input';
 
-.#{vars.$prefix}--text-input--xxl {
+.#{$prefix}--text-input--xxl {
   height: 3.5rem;
 }

@@ -1,6 +1,6 @@
 @use '../../../../globals/theme';
 @use '../../../../globals/spacing';
-@use '../../../../globals/vars';
+@use '../../../../globals/vars' as *;
 @use '../../../../globals/motion';
 @use '../../../../globals/colors';
 
@@ -8,7 +8,7 @@
   background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$color} 16px);
 }
 
-.#{vars.$iot-prefix}--row-actions-container {
+.#{$iot-prefix}--row-actions-container {
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -20,7 +20,7 @@
   }
 
   /* the spinner was a little too big and causing the row to scroll so need to scale down a bit */
-  .#{vars.$prefix}--loading--small {
+  .#{$prefix}--loading--small {
     width: 1.875rem;
     height: 1.875rem;
     margin-right: spacing.$spacing-03;
@@ -31,7 +31,7 @@
   }
 }
 
-.#{vars.$iot-prefix}--row-actions-container__background {
+.#{$iot-prefix}--row-actions-container__background {
   height: 100%;
   align-items: center;
   display: flex;
@@ -43,10 +43,7 @@
   @include backgroundGradient(theme.$hover-ui);
 }
 
-.#{vars.$prefix}--data-table
-  tbody
-  tr:hover
-  .#{vars.$iot-prefix}--row-actions-container__background {
+.#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background {
   background: linear-gradient(
     90deg,
     rgba(229, 229, 229, 0) 0,
@@ -54,7 +51,7 @@
   );
 }
 
-.#{vars.$iot-prefix}--action-overflow-item {
+.#{$iot-prefix}--action-overflow-item {
   div {
     width: 100%;
   }
@@ -68,76 +65,75 @@
   }
 }
 
-.#{vars.$iot-prefix}--row-actions-container__background:focus-within {
+.#{$iot-prefix}--row-actions-container__background:focus-within {
   opacity: 1;
   @include backgroundGradient(theme.$ui-01);
   transition: opacity motion.$duration-fast-02 motion.motion(entrance, productive);
 }
 
-.#{vars.$prefix}--data-table tbody tr:hover .#{vars.$iot-prefix}--row-actions-container__background,
-.#{vars.$iot-prefix}--row-actions-container__background--overflow-menu-open {
+.#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background,
+.#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
   opacity: 1;
   transition: opacity motion.$duration-fast-02 motion.motion(entrance, productive);
 }
 
-.#{vars.$prefix}--data-table tbody tr {
-  &:not(:hover) .#{vars.$iot-prefix}--row-actions-container__background--overflow-menu-open {
+.#{$prefix}--data-table tbody tr {
+  &:not(:hover) .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
     // doesn't use the mixin above because safari has problems with 229 rgb values being rendered
     // as transparent.
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #{theme.$ui-01} 16px);
   }
 
-  &.#{vars.$prefix}--data-table--selected:hover
-    .#{vars.$iot-prefix}--row-actions-container__background {
+  &.#{$prefix}--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
     @include backgroundGradient(theme.$hover-selected-ui);
   }
 
-  &.#{vars.$prefix}--data-table--selected:not(:hover) {
-    .#{vars.$iot-prefix}--row-actions-container__background--overflow-menu-open,
-    .#{vars.$iot-prefix}--row-actions-container__background:focus-within {
+  &.#{$prefix}--data-table--selected:not(:hover) {
+    .#{$iot-prefix}--row-actions-container__background--overflow-menu-open,
+    .#{$iot-prefix}--row-actions-container__background:focus-within {
       @include backgroundGradient(colors.$gray-20);
     }
   }
 }
 
 html[dir='rtl'] {
-  .#{vars.$iot-prefix}--row-actions-container__background {
+  .#{$iot-prefix}--row-actions-container__background {
     margin-left: unset;
     margin-right: spacing.$spacing-04;
     padding-left: spacing.$spacing-06;
     padding-right: spacing.$spacing-06;
 
-    .#{vars.$prefix}--btn__icon {
+    .#{$prefix}--btn__icon {
       margin-left: unset;
       margin-right: spacing.$spacing-03;
       transform: rotate(180deg);
     }
 
-    .#{vars.$prefix}--loading--small {
+    .#{$prefix}--loading--small {
       margin-right: unset;
       margin-left: spacing.$spacing-03;
     }
 
-    .#{vars.$iot-prefix}--row-actions-cell--overflow-menu {
+    .#{$iot-prefix}--row-actions-cell--overflow-menu {
       margin-left: unset;
     }
   }
 }
 
-.#{vars.$iot-prefix}--row-actions-cell--table-cell {
-  &.#{vars.$iot-prefix}--row-actions-cell--table-cell {
+.#{$iot-prefix}--row-actions-cell--table-cell {
+  &.#{$iot-prefix}--row-actions-cell--table-cell {
     padding: 0;
     vertical-align: middle;
   }
 }
 
-.#{vars.$iot-prefix}--row-actions-cell--overflow-menu-content {
+.#{$iot-prefix}--row-actions-cell--overflow-menu-content {
   display: flex;
   align-items: center;
 }
 
-.#{vars.$iot-prefix}--row-actions-cell--overflow-menu {
-  &.#{vars.$iot-prefix}--row-actions-cell--overflow-menu {
+.#{$iot-prefix}--row-actions-cell--overflow-menu {
+  &.#{$iot-prefix}--row-actions-cell--overflow-menu {
     margin-left: 0.5rem;
     &:hover > svg {
       fill: theme.$interactive-01;
@@ -145,23 +141,23 @@ html[dir='rtl'] {
   }
 }
 
-.#{vars.$iot-prefix}--row-actions-error--span {
+.#{$iot-prefix}--row-actions-error--span {
   margin-left: 0.5rem;
   line-height: 1.875rem;
 }
 
-.#{vars.$iot-prefix}--row-actions-error--title {
+.#{$iot-prefix}--row-actions-error--title {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-.#{vars.$iot-prefix}--row-actions-error--footer {
+.#{$iot-prefix}--row-actions-error--footer {
   margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.#{vars.$iot-prefix}--row-actions-error--tooltip {
+.#{$iot-prefix}--row-actions-error--tooltip {
   font-size: 0.875rem;
 }

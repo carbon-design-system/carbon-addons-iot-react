@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/mixins';
 
-.#{vars.$iot-prefix}--map-scroll-controls {
+.#{$iot-prefix}--map-scroll-controls {
   &__container {
     margin-bottom: 1rem;
     @include mixins.box-shadow();

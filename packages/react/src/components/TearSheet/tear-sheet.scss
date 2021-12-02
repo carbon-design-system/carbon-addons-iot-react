@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/typography';
 
-.#{vars.$iot-prefix}--tear-sheet {
+.#{$iot-prefix}--tear-sheet {
   background-color: theme.$ui-01;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
       @include typography.type-style('body-long-01');
       color: theme.$text-02;
     }
-    .#{vars.$prefix}--btn.#{vars.$prefix}--btn--icon-only.#{vars.$prefix}--tooltip__trigger {
+    .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
       position: absolute;
       top: 0;
       right: 0;

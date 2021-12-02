@@ -1,5 +1,5 @@
 @use 'theme';
-@use 'vars';
+@use 'vars' as *;
 @forward '@carbon/styles/scss/utilities/box-shadow';
 @forward '@carbon/styles/scss/utilities/focus-outline';
 @forward '@carbon/styles/scss/utilities/text-overflow';
@@ -48,14 +48,14 @@
 }
 
 @mixin list-box-menu-fits-content() {
-  .#{vars.$prefix}--list-box__menu {
+  .#{$prefix}--list-box__menu {
     width: fit-content;
     min-width: 100%;
   }
 }
 
 @mixin list-box-menu-flip-horizontal() {
-  .#{vars.$prefix}--list-box__menu {
+  .#{$prefix}--list-box__menu {
     left: unset;
     right: 0;
     [dir='rtl'] & {

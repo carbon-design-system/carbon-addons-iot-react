@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/typography';
 
-.#{vars.$iot-prefix}--image-uploader {
+.#{$iot-prefix}--image-uploader {
   background: theme.$ui-02;
   display: flex;
   height: calc(100% - 1rem);
@@ -34,7 +34,7 @@
     max-width: 32rem;
   }
 
-  .#{vars.$prefix}--file {
+  .#{$prefix}--file {
     height: calc(100% - 2rem);
     left: spacing.$spacing-05;
     position: absolute;
@@ -42,18 +42,18 @@
     width: calc(100% - 2rem);
   }
 
-  .#{vars.$prefix}--file-browse-btn {
+  .#{$prefix}--file-browse-btn {
     height: 100%;
     max-width: unset;
     width: 100%;
   }
 
-  .#{vars.$prefix}--file__drop-container {
+  .#{$prefix}--file__drop-container {
     height: 100%;
     width: 100%;
   }
 
-  &:not(.#{vars.$iot-prefix}--image-uploader__medium) .#{vars.$iot-prefix}--btn:not(:last-child) {
+  &:not(.#{$iot-prefix}--image-uploader__medium) .#{$iot-prefix}--btn:not(:last-child) {
     margin-right: spacing.$spacing-05;
   }
 
@@ -70,31 +70,31 @@
     }
   }
 
-  &.#{vars.$iot-prefix}--image-uploader__url {
+  &.#{$iot-prefix}--image-uploader__url {
     align-items: center;
     padding-top: 0;
 
-    .#{vars.$iot-prefix}--btn:not(:last-child) {
+    .#{$iot-prefix}--btn:not(:last-child) {
       margin-right: spacing.$spacing-02;
     }
   }
 
-  .#{vars.$prefix}--inline-notification {
+  .#{$prefix}--inline-notification {
     margin: auto;
     margin-top: 1rem;
   }
 }
 
-.#{vars.$iot-prefix}--image-uploader.#{vars.$iot-prefix}--image-uploader__medium {
+.#{$iot-prefix}--image-uploader.#{$iot-prefix}--image-uploader__medium {
   padding-top: spacing.$spacing-07;
 
-  .#{vars.$iot-prefix}--image-uploader-url-wrapper {
+  .#{$iot-prefix}--image-uploader-url-wrapper {
     flex-direction: column;
 
-    .#{vars.$prefix}--text-input-wrapper {
+    .#{$prefix}--text-input-wrapper {
       width: 100%;
     }
-    .#{vars.$iot-prefix}--btn:not(:last-child) {
+    .#{$iot-prefix}--btn:not(:last-child) {
       margin-right: 0;
     }
 
@@ -103,55 +103,55 @@
       margin-right: 0;
     }
   }
-  .#{vars.$iot-prefix}--image-uploader-drop-description-text,
-  .#{vars.$iot-prefix}--image-uploader-icon {
+  .#{$iot-prefix}--image-uploader-drop-description-text,
+  .#{$iot-prefix}--image-uploader-icon {
     display: none;
   }
 
-  .#{vars.$iot-prefix}--image-uploader-drop-label-text {
+  .#{$iot-prefix}--image-uploader-drop-label-text {
     @include typography.type-style('productive-heading-01');
     margin-bottom: spacing.$spacing-05;
   }
 
-  .#{vars.$iot-prefix}--btn {
+  .#{$iot-prefix}--btn {
     width: 100%;
   }
 
-  .#{vars.$iot-prefix}--btn:not(:last-child) {
+  .#{$iot-prefix}--btn:not(:last-child) {
     margin-bottom: spacing.$spacing-05;
   }
 
-  .#{vars.$prefix}--inline-notification {
+  .#{$prefix}--inline-notification {
     min-width: unset;
   }
 
-  .#{vars.$prefix}--inline-notification__details {
+  .#{$prefix}--inline-notification__details {
     margin: 0;
   }
-  .#{vars.$prefix}--inline-notification__icon {
+  .#{$prefix}--inline-notification__icon {
     margin-left: spacing.$spacing-03;
     margin-right: spacing.$spacing-03;
   }
 
-  .#{vars.$prefix}--inline-notification__title {
+  .#{$prefix}--inline-notification__title {
     display: none;
   }
 }
 
-.#{vars.$iot-prefix}--image-uploader.#{vars.$iot-prefix}--image-uploader__mediumwide {
+.#{$iot-prefix}--image-uploader.#{$iot-prefix}--image-uploader__mediumwide {
   padding-top: spacing.$spacing-07;
 
-  .#{vars.$iot-prefix}--image-uploader-drop-description-text {
+  .#{$iot-prefix}--image-uploader-drop-description-text {
     @include typography.type-style('body-long-01');
   }
 
-  .#{vars.$iot-prefix}--image-uploader-url-wrapper {
+  .#{$iot-prefix}--image-uploader-url-wrapper {
     flex-direction: row;
   }
 }
 
-.#{vars.$iot-prefix}--image-uploader.#{vars.$iot-prefix}--image-uploader__largewide {
-  .#{vars.$iot-prefix}--image-uploader-icon {
+.#{$iot-prefix}--image-uploader.#{$iot-prefix}--image-uploader__largewide {
+  .#{$iot-prefix}--image-uploader-icon {
     margin-left: spacing.$spacing-07;
     margin-right: spacing.$spacing-09;
   }

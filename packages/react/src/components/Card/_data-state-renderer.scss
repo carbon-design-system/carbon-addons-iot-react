@@ -1,23 +1,23 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/colors';
 @use '../../globals/mixins';
 @use '../../globals/typography';
 
-.#{vars.$iot-prefix}--data-state-container {
+.#{$iot-prefix}--data-state-container {
   // the custom property (CSS var) is defined in the Card that is using it
   padding: 0 var(--container-padding);
   width: inherit;
 }
 
-.#{vars.$iot-prefix}--data-state-dashes {
+.#{$iot-prefix}--data-state-dashes {
   color: colors.$gray-20;
   font-size: 4rem;
   line-height: 0.67;
 }
 
-.#{vars.$iot-prefix}--data-state-grid {
+.#{$iot-prefix}--data-state-grid {
   margin-top: spacing.$spacing-05;
   display: grid;
   align-items: center;
@@ -27,7 +27,7 @@
     'app-icon  app-label             .        '
     '    .     app-description app-description';
 
-  > .#{vars.$prefix}--tooltip__label {
+  > .#{$prefix}--tooltip__label {
     overflow: hidden;
     &:focus {
       outline: none;
@@ -46,7 +46,7 @@
     // We want app label to use ellipsis for longer texts and
     // we can't have overflow:hidden due to tooltip scrolling.
     // This shrinks the width to fit the app-label grid area.
-    .#{vars.$prefix}--tooltip__label {
+    .#{$prefix}--tooltip__label {
       display: grid;
     }
   }
@@ -56,12 +56,12 @@
   }
 }
 
-.#{vars.$iot-prefix}--data-state-grid__label {
+.#{$iot-prefix}--data-state-grid__label {
   @include typography.type-style('productive-heading-01');
   @include mixins.text-overflow;
 }
 
-.#{vars.$iot-prefix}--data-state-grid__description {
+.#{$iot-prefix}--data-state-grid__description {
   @include typography.type-style('helper-text-01');
   color: colors.$gray-70;
 
@@ -70,29 +70,29 @@
   @include mixins.multiline-text-overflow($max-lines, $line-height);
 }
 
-.#{vars.$iot-prefix}--data-state-tooltip:focus {
+.#{$iot-prefix}--data-state-tooltip:focus {
   outline: none;
 }
 
-.#{vars.$iot-prefix}--data-state-tooltip {
+.#{$iot-prefix}--data-state-tooltip {
   > * {
     margin-bottom: spacing.$spacing-05;
   }
 
-  .#{vars.$iot-prefix}--data-state-tooltip__label {
+  .#{$iot-prefix}--data-state-tooltip__label {
     @include typography.type-style('productive-heading-01');
   }
 }
 
-.#{vars.$iot-prefix}--data-state-default-error-icon {
+.#{$iot-prefix}--data-state-default-error-icon {
   fill: colors.$red-60;
 }
 
-.#{vars.$iot-prefix}--data-state-default-warning-icon {
+.#{$iot-prefix}--data-state-default-warning-icon {
   fill: colors.$yellow-30;
 }
 
-html[dir='rtl'] .#{vars.$iot-prefix}--data-state-grid {
+html[dir='rtl'] .#{$iot-prefix}--data-state-grid {
   & > *:first-child {
     margin-right: 0;
     margin-left: spacing.$spacing-03;

@@ -1,11 +1,11 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/mixins';
 @use '../../globals/motion';
 @use '../../globals/typography';
 
-.#{vars.$iot-prefix}--map {
+.#{$iot-prefix}--map {
   &-legend {
     max-width: 50%;
     background: theme.$ui-02;
@@ -47,13 +47,13 @@
     padding: spacing.$spacing-03;
     padding-bottom: spacing.$spacing-02; // Needed for horizontal scrollbar
 
-    .#{vars.$iot-prefix}--map-legend__keys-container {
+    .#{$iot-prefix}--map-legend__keys-container {
       overflow-x: auto;
-      .#{vars.$iot-prefix}--map-legend-keys {
+      .#{$iot-prefix}--map-legend-keys {
         margin-bottom: 0;
       }
 
-      & > .#{vars.$iot-prefix}--map-legend-keys:not(:last-child) {
+      & > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
         margin-right: spacing.$spacing-03;
       }
     }
@@ -68,9 +68,9 @@
   }
 
   [dir='rtl']
-    &-legend.#{vars.$iot-prefix}--map-legend--fullwidth
-    .#{vars.$iot-prefix}--map-legend__keys-container
-    > .#{vars.$iot-prefix}--map-legend-keys:not(:last-child) {
+    &-legend.#{$iot-prefix}--map-legend--fullwidth
+    .#{$iot-prefix}--map-legend__keys-container
+    > .#{$iot-prefix}--map-legend-keys:not(:last-child) {
     margin-left: spacing.$spacing-03;
     margin-right: unset;
   }
@@ -99,7 +99,7 @@
     width: calc(100% - #{spacing.$spacing-09});
   }
 
-  &-legend--fullwidth-collapsed .#{vars.$iot-prefix}--map-legend__keys-container {
+  &-legend--fullwidth-collapsed .#{$iot-prefix}--map-legend__keys-container {
     overflow-x: hidden;
   }
 

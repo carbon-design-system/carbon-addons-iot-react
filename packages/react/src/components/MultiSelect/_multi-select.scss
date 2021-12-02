@@ -1,9 +1,9 @@
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/multiselect';
 
-html[dir='rtl'] .#{vars.$prefix}--multi-select__wrapper {
-  .#{vars.$prefix}--tag--filter {
+html[dir='rtl'] .#{$prefix}--multi-select__wrapper {
+  .#{$prefix}--tag--filter {
     margin-right: 0;
     margin-left: spacing.$spacing-03;
     padding-left: spacing.$spacing-01;

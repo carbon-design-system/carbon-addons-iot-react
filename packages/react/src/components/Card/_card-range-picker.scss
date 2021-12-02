@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--card--toolbar-date-range-wrapper {
+.#{$iot-prefix}--card--toolbar-date-range-wrapper {
   align-items: center;
   background: transparent;
   border: none;
@@ -10,7 +10,7 @@
   outline: 2px solid transparent;
 }
 
-.#{vars.$iot-prefix}--card--toolbar-timerange-label {
+.#{$iot-prefix}--card--toolbar-timerange-label {
   white-space: nowrap;
   min-height: spacing.$spacing-09;
   min-width: spacing.$spacing-09;
@@ -23,8 +23,8 @@
   }
 }
 
-.#{vars.$iot-prefix}--card--toolbar-date-range-wrapper
-  > .#{vars.$iot-prefix}--card--toolbar-date-range-action {
+.#{$iot-prefix}--card--toolbar-date-range-wrapper
+  > .#{$iot-prefix}--card--toolbar-date-range-action {
   &:active,
   &:focus {
     outline: 2px solid theme.$focus;
@@ -35,13 +35,13 @@
   }
 }
 
-.#{vars.$iot-prefix}--card--overflow {
+.#{$iot-prefix}--card--overflow {
   width: auto;
-  &.#{vars.$prefix}--overflow-menu-options[data-floating-menu-direction='bottom']::after {
+  &.#{$prefix}--overflow-menu-options[data-floating-menu-direction='bottom']::after {
     width: 3rem; // since the button is wider, the overlay needs to be wider to match
   }
 }
 
-.#{vars.$iot-prefix}--card--overflow-menuitem-active:not(:hover) {
+.#{$iot-prefix}--card--overflow-menuitem-active:not(:hover) {
   background-color: theme.$active-ui;
 }

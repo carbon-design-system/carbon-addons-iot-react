@@ -1,6 +1,6 @@
 @use '../../../../globals/theme';
 @use '../../../../globals/spacing';
-@use '../../../../globals/vars' as globals-vars;
+@use '../../../../globals/vars' as *;
 /**
   This mixin is used to switch the position of the two header rows
   ("column row" and "group row") and adjust the heights and positions for
@@ -8,9 +8,9 @@
   on 'tr' elements we have to manage the repositioning on the 'th' level.
 **/
 @mixin adjustPositionsAndHeights($group-height, $col-height) {
-  .#{globals-vars.$iot-prefix}--table-head--with-column-groups {
+  .#{$iot-prefix}--table-head--with-column-groups {
     // Move column row down to the position of the group row
-    .#{globals-vars.$iot-prefix}--table-header__column-row {
+    .#{$iot-prefix}--table-header__column-row {
       th {
         position: relative;
         top: $group-height;
@@ -20,22 +20,22 @@
 
       // cells with span-group-row are columns that don't belong to a group
       // and span both the column row and the group row.
-      th.#{globals-vars.$iot-prefix}--table-header--span-group-row {
+      th.#{$iot-prefix}--table-header--span-group-row {
         top: 0;
         > span {
           // Add padding top to have the labels in these extra tall cells
           // align with the normal height cells.
           margin-top: $group-height;
         }
-        button.#{globals-vars.$iot-prefix}--table-head--table-header,
-        a.#{globals-vars.$iot-prefix}--table-head--table-header {
+        button.#{$iot-prefix}--table-head--table-header,
+        a.#{$iot-prefix}--table-head--table-header {
           // Add padding top to have the labels in these extra tall cells
           // align with the normal height cells.
           padding-top: $group-height;
           // Height is needed for FF & Safari
           height: calc(#{$group-height} + #{$col-height});
           // Undo 'fix' added to sort button in teable-head.scss
-          &:focus button.#{globals-vars.$iot-prefix}--table-head--overflow:hover {
+          &:focus button.#{$iot-prefix}--table-head--overflow:hover {
             margin-top: auto;
             margin-bottom: auto;
           }
@@ -43,7 +43,7 @@
       }
     }
     // Move group row up to the position of the column row
-    .#{globals-vars.$iot-prefix}--table-header__group-row {
+    .#{$iot-prefix}--table-header__group-row {
       th {
         position: relative;
         top: calc(#{$col-height} * -1);
@@ -54,8 +54,8 @@
 
 // SET BORDERS
 // We need the bx--data-table selector in order to override some Carbon styles
-.#{globals-vars.$prefix}--data-table {
-  .#{globals-vars.$iot-prefix}--table-head--with-column-groups {
+.#{$prefix}--data-table {
+  .#{$iot-prefix}--table-head--with-column-groups {
     $border-width: 2px;
 
     // Basic border styling to simplify further border modifications
@@ -67,10 +67,10 @@
     }
 
     // THE ROW OF COLUMN HEADERS
-    .#{globals-vars.$iot-prefix}--table-header__column-row {
+    .#{$iot-prefix}--table-header__column-row {
       th {
         // Add left border width to the "real" columns (i.e. not to nesting/muli select etc)
-        &.#{globals-vars.$iot-prefix}--table-head--table-header {
+        &.#{$iot-prefix}--table-head--table-header {
           border-left-width: $border-width;
         }
         // But first columm should never get a left border.
@@ -80,11 +80,11 @@
           // because we can't put a left border on the first group row column
           // since the rowspan makes it in possible to tell when a group row column is the
           // first visual column.
-          &.#{globals-vars.$iot-prefix}--table-header--span-group-row {
+          &.#{$iot-prefix}--table-header--span-group-row {
             border-right-width: $border-width;
             // We need to compensate the next sibling by removing that left border
             // or else we end up with double borders.
-            & + .#{globals-vars.$iot-prefix}--table-head--table-header {
+            & + .#{$iot-prefix}--table-head--table-header {
               border-left-width: 0;
             }
           }
@@ -96,15 +96,15 @@
         // row action column (needed for online row edit) is present, be can forced into having
         // no width at all, and hence not showing the border.
         &:not(:last-of-type) {
-          &.#{globals-vars.$iot-prefix}--table-head--table-header.#{globals-vars.$iot-prefix}--table-header--last-data-column {
+          &.#{$iot-prefix}--table-head--table-header.#{$iot-prefix}--table-header--last-data-column {
             border-right-width: $border-width;
           }
         }
       }
 
       // Fix for multisort/overflow button that exceeded its container
-      .#{globals-vars.$iot-prefix}--table-head--table-header--with-overflow {
-        .#{globals-vars.$prefix}--table-header-label {
+      .#{$iot-prefix}--table-head--table-header--with-overflow {
+        .#{$prefix}--table-header-label {
           padding-bottom: 0;
           padding-top: 0;
         }
@@ -114,26 +114,24 @@
       // elements inside a sortable headers (which happens when table head is disabled).
       // We need to undo this since our sort element can be a child of the header rather
       // then the header itself. We add the spacing back as margin of the child label instead.
-      .table-header-sortable:not(.#{globals-vars.$prefix}--table-sort)
-        > .#{globals-vars.$prefix}--table-header-label,
-      .table-header-sortable:not(.#{globals-vars.$prefix}--table-sort)
-        > .#{globals-vars.$prefix}--tooltip--definition {
+      .table-header-sortable:not(.#{$prefix}--table-sort) > .#{$prefix}--table-header-label,
+      .table-header-sortable:not(.#{$prefix}--table-sort) > .#{$prefix}--tooltip--definition {
         margin-left: spacing.$spacing-05;
         margin-right: spacing.$spacing-05;
       }
 
       // Fix for combination of resize, overflow and tooltip that caused the headers to expand in height.
-      .#{globals-vars.$iot-prefix}--table-header-resize.#{globals-vars.$iot-prefix}--table-head--table-header--with-overflow
-        .#{globals-vars.$prefix}--tooltip--definition {
+      .#{$iot-prefix}--table-header-resize.#{$iot-prefix}--table-head--table-header--with-overflow
+        .#{$prefix}--tooltip--definition {
         word-break: normal;
       }
     }
 
     // THE ROW OF THE GROUPS
-    .#{globals-vars.$iot-prefix}--table-header__group-row {
+    .#{$iot-prefix}--table-header__group-row {
       th {
         border-left-width: $border-width;
-        &.#{globals-vars.$iot-prefix}--table-header__column-group {
+        &.#{$iot-prefix}--table-header__column-group {
           text-align: center;
           border-bottom-width: $border-width;
           span {
@@ -144,18 +142,18 @@
           }
         }
         &:first-of-type {
-          &.#{globals-vars.$iot-prefix}--table-header__group-row-spacer,
-          &.#{globals-vars.$iot-prefix}--table-header__column-group {
+          &.#{$iot-prefix}--table-header__group-row-spacer,
+          &.#{$iot-prefix}--table-header__column-group {
             border-left-width: 0;
           }
         }
         &:last-of-type {
-          &.#{globals-vars.$iot-prefix}--table-header__group-row-spacer {
+          &.#{$iot-prefix}--table-header__group-row-spacer {
             border-left-width: 0;
           }
         }
         &:not(:last-of-type) {
-          &.#{globals-vars.$iot-prefix}--table-header__column-group--last-data-column {
+          &.#{$iot-prefix}--table-header__column-group--last-data-column {
             border-right-width: $border-width;
           }
         }
@@ -164,47 +162,47 @@
 
     // RTL STYLING
     [dir='rtl'] & {
-      .#{globals-vars.$iot-prefix}--table-header__column-row {
+      .#{$iot-prefix}--table-header__column-row {
         th {
-          &.#{globals-vars.$iot-prefix}--table-head--table-header {
+          &.#{$iot-prefix}--table-head--table-header {
             border-right-width: $border-width;
             border-left-width: 0;
           }
           &:first-of-type {
             border-right-width: 0;
-            &.#{globals-vars.$iot-prefix}--table-header--span-group-row {
+            &.#{$iot-prefix}--table-header--span-group-row {
               border-left-width: $border-width;
               border-right-width: 0;
-              & + .#{globals-vars.$iot-prefix}--table-head--table-header {
+              & + .#{$iot-prefix}--table-head--table-header {
                 border-right-width: 0;
               }
             }
           }
           &:not(:last-of-type) {
-            &.#{globals-vars.$iot-prefix}--table-head--table-header.#{globals-vars.$iot-prefix}--table-header--last-data-column {
+            &.#{$iot-prefix}--table-head--table-header.#{$iot-prefix}--table-header--last-data-column {
               border-left-width: $border-width;
             }
           }
         }
       }
 
-      .#{globals-vars.$iot-prefix}--table-header__group-row {
+      .#{$iot-prefix}--table-header__group-row {
         th {
           border-right-width: $border-width;
           border-left-width: 0;
           &:first-of-type {
-            &.#{globals-vars.$iot-prefix}--table-header__group-row-spacer,
-            &.#{globals-vars.$iot-prefix}--table-header__column-group {
+            &.#{$iot-prefix}--table-header__group-row-spacer,
+            &.#{$iot-prefix}--table-header__column-group {
               border-right-width: 0;
             }
           }
           &:last-of-type {
-            &.#{globals-vars.$iot-prefix}--table-header__group-row-spacer {
+            &.#{$iot-prefix}--table-header__group-row-spacer {
               border-right-width: 0;
             }
           }
           &:not(:last-of-type) {
-            &.#{globals-vars.$iot-prefix}--table-header__column-group--last-data-column {
+            &.#{$iot-prefix}--table-header__column-group--last-data-column {
               border-right-width: 0;
               border-left-width: $border-width;
             }
@@ -224,31 +222,31 @@
   }
   &--md {
     @include adjustPositionsAndHeights(spacing.$spacing-08, spacing.$spacing-08);
-    &.#{globals-vars.$iot-prefix}--data-table--column-groups--min-size-large {
+    &.#{$iot-prefix}--data-table--column-groups--min-size-large {
       @include adjustPositionsAndHeights(spacing.$spacing-08, $size-lg);
     }
   }
   &--sm {
-    .#{globals-vars.$iot-prefix}--table-head--with-column-groups {
-      .#{globals-vars.$prefix}--table-header-label {
+    .#{$iot-prefix}--table-head--with-column-groups {
+      .#{$prefix}--table-header-label {
         padding-bottom: 0;
         padding-top: 0;
       }
     }
     @include adjustPositionsAndHeights(spacing.$spacing-07, spacing.$spacing-07);
-    &.#{globals-vars.$iot-prefix}--data-table--column-groups--min-size-large {
+    &.#{$iot-prefix}--data-table--column-groups--min-size-large {
       @include adjustPositionsAndHeights(spacing.$spacing-07, $size-lg);
     }
   }
   &--xs {
-    .#{globals-vars.$iot-prefix}--table-head--with-column-groups {
-      .#{globals-vars.$prefix}--table-header-label {
+    .#{$iot-prefix}--table-head--with-column-groups {
+      .#{$prefix}--table-header-label {
         padding-bottom: 0;
         padding-top: 0;
       }
     }
     @include adjustPositionsAndHeights(spacing.$spacing-06, spacing.$spacing-06);
-    &.#{globals-vars.$iot-prefix}--data-table--column-groups--min-size-large {
+    &.#{$iot-prefix}--data-table--column-groups--min-size-large {
       @include adjustPositionsAndHeights(spacing.$spacing-06, $size-lg);
     }
   }

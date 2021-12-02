@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/layout';
 
-.#{vars.$iot-prefix}--list {
+.#{$iot-prefix}--list {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -61,11 +61,11 @@
   }
 }
 
-.#{vars.$iot-prefix}--list--skeleton {
+.#{$iot-prefix}--list--skeleton {
   margin: spacing.$spacing-03 0 spacing.$spacing-03 spacing.$spacing-05;
 }
 
-.#{vars.$iot-prefix}--load-more-row {
+.#{$iot-prefix}--load-more-row {
   justify-content: center;
   cursor: pointer;
   min-width: 100%;
@@ -77,9 +77,9 @@
   .#{prefix}--loading__stroke {
     stroke: theme.$interactive-01;
   }
-  &.#{vars.$prefix}--btn--disabled,
-  .#{vars.$prefix}--btn--disabled:focus,
-  .#{vars.$prefix}--btn--disabled:hover {
+  &.#{$prefix}--btn--disabled,
+  .#{$prefix}--btn--disabled:focus,
+  .#{$prefix}--btn--disabled:hover {
     border-bottom: 1px solid theme.$decorative-01;
   }
 }

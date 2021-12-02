@@ -1,10 +1,10 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/mixins";
 @use '~@carbon/styles/scss/components/dropdown';
 
-.#{vars.$iot-prefix}--dropdown__image-button:hover {
+.#{$iot-prefix}--dropdown__image-button:hover {
   border-color: transparent;
 
   ::before {
@@ -12,7 +12,7 @@
   }
 }
 
-.#{vars.$iot-prefix}--icon-dropdown__footer {
+.#{$iot-prefix}--icon-dropdown__footer {
   @include mixins.box-shadow();
   outline: 1px solid theme.$focus;
   position: absolute;
@@ -26,44 +26,44 @@
   }
 }
 
-.#{vars.$iot-prefix}--icon-dropdown__selection-buttons {
-  > .#{vars.$prefix}--list-box__field {
+.#{$iot-prefix}--icon-dropdown__selection-buttons {
+  > .#{$prefix}--list-box__field {
     padding: 0 spacing.$spacing-09 0 spacing.$spacing-05;
   }
 
-  > .#{vars.$prefix}--list-box__menu {
+  > .#{$prefix}--list-box__menu {
     transition: initial;
     box-shadow: none;
     outline-style: none;
     border: none;
 
-    > .#{vars.$prefix}--list-box__menu-item--active {
+    > .#{$prefix}--list-box__menu-item--active {
       background: transparent;
     }
 
-    > .#{vars.$prefix}--list-box__menu-item.#{vars.$prefix}--list-box__menu-item--highlighted {
+    > .#{$prefix}--list-box__menu-item.#{$prefix}--list-box__menu-item--highlighted {
       background: transparent;
 
       &:hover {
-        > .#{vars.$prefix}--list-box__menu-item__option {
-          > .#{vars.$iot-prefix}--dropdown__image-button {
+        > .#{$prefix}--list-box__menu-item__option {
+          > .#{$iot-prefix}--dropdown__image-button {
             border-color: transparent;
           }
         }
       }
 
-      > .#{vars.$prefix}--list-box__menu-item__option {
-        > .#{vars.$iot-prefix}--dropdown__image-button {
+      > .#{$prefix}--list-box__menu-item__option {
+        > .#{$iot-prefix}--dropdown__image-button {
           border-color: theme.$focus;
         }
       }
     }
 
-    > .#{vars.$prefix}--list-box__menu-item {
+    > .#{$prefix}--list-box__menu-item {
       display: inline-flex;
       height: min-content;
 
-      > .#{vars.$prefix}--list-box__menu-item__option {
+      > .#{$prefix}--list-box__menu-item__option {
         overflow: visible;
         border: none;
         height: min-content;
@@ -78,15 +78,15 @@
           background: theme.$hover-ui;
         }
 
-        > .#{vars.$iot-prefix}--icon-dropdown__selected-icon-label {
+        > .#{$iot-prefix}--icon-dropdown__selected-icon-label {
           display: none;
         }
 
-        > .#{vars.$prefix}--list-box__menu-item__selected-icon {
+        > .#{$prefix}--list-box__menu-item__selected-icon {
           display: none;
         }
 
-        > .#{vars.$iot-prefix}--icon-dropdown__image-button {
+        > .#{$iot-prefix}--icon-dropdown__image-button {
           border-width: 1px;
           border-style: solid;
           border-top-color: transparent;
@@ -116,7 +116,7 @@
             color: transparent;
           }
 
-          > .#{vars.$prefix}--assistive-text {
+          > .#{$prefix}--assistive-text {
             display: none;
           }
         }
@@ -124,18 +124,18 @@
     }
   }
 
-  .#{vars.$prefix}--list-box__label {
-    > .#{vars.$iot-prefix}--icon-dropdown__image-button {
+  .#{$prefix}--list-box__label {
+    > .#{$iot-prefix}--icon-dropdown__image-button {
       display: none;
     }
 
-    > .#{vars.$iot-prefix}--icon-dropdown__text {
+    > .#{$iot-prefix}--icon-dropdown__text {
       height: 100%;
     }
   }
 }
 
-.#{vars.$iot-prefix}--icon-dropdown__selected-icon-label {
+.#{$iot-prefix}--icon-dropdown__selected-icon-label {
   display: flex;
   height: 100%;
 

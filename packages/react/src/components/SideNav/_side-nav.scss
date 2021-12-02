@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/motion";
 @use "../../globals/mixins";
 @use 'side-nav-carbon';
@@ -13,85 +13,84 @@ $textColor: theme.$inverse-01;
 $selectedBgColor: theme.$inverse-02;
 $hoverBgColor: #2c2c2c;
 
-.#{vars.$iot-prefix}--side-nav {
+.#{$iot-prefix}--side-nav {
   background: theme.$ui-05;
 
-  .#{vars.$prefix}--side-nav__submenu,
-  .#{vars.$prefix}--side-nav__link > .#{vars.$prefix}--side-nav__link-text,
-  .#{vars.$prefix}--side-nav__item--active .#{vars.$prefix}--side-nav__submenu-title,
-  .#{vars.$prefix}--side-nav__item:not(.#{vars.$prefix}--side-nav__item--active)
-    > .#{vars.$prefix}--side-nav__link:hover
+  .#{$prefix}--side-nav__submenu,
+  .#{$prefix}--side-nav__link > .#{$prefix}--side-nav__link-text,
+  .#{$prefix}--side-nav__item--active .#{$prefix}--side-nav__submenu-title,
+  .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
+    > .#{$prefix}--side-nav__link:hover
     > span,
-  .#{vars.$prefix}--side-nav__item:not(.#{vars.$prefix}--side-nav__item--active)
-    .#{vars.$prefix}--side-nav__menu-item
-    > .#{vars.$prefix}--side-nav__link:hover
+  .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
+    .#{$prefix}--side-nav__menu-item
+    > .#{$prefix}--side-nav__link:hover
     > span,
-  .#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link--current > span,
-  .#{vars.$prefix}--side-nav__link--current > span {
+  .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current > span,
+  .#{$prefix}--side-nav__link--current > span {
     color: $textColor;
   }
 
-  .#{vars.$prefix}--side-nav__icon > svg {
+  .#{$prefix}--side-nav__icon > svg {
     fill: $textColor;
   }
 
-  .#{vars.$prefix}--side-nav__submenu:hover,
-  .#{vars.$prefix}--side-nav__submenu:hover + .#{vars.$prefix}--side-nav__menu,
-  [aria-expanded='true'].#{vars.$prefix}--side-nav__submenu,
-  [aria-expanded='true'].#{vars.$prefix}--side-nav__submenu + .#{vars.$prefix}--side-nav__menu,
-  .#{vars.$prefix}--side-nav__item:not(.#{vars.$prefix}--side-nav__item--active)
-    > .#{vars.$prefix}--side-nav__link:hover {
+  .#{$prefix}--side-nav__submenu:hover,
+  .#{$prefix}--side-nav__submenu:hover + .#{$prefix}--side-nav__menu,
+  [aria-expanded='true'].#{$prefix}--side-nav__submenu,
+  [aria-expanded='true'].#{$prefix}--side-nav__submenu + .#{$prefix}--side-nav__menu,
+  .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
+    > .#{$prefix}--side-nav__link:hover {
     background-color: $hoverBgColor;
   }
 
-  .#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link--current,
-  .#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link[aria-current='page'],
-  .#{vars.$prefix}--side-nav__link--current,
-  .#{vars.$prefix}--side-nav__menu
-    .#{vars.$prefix}--side-nav__link:not(.#{vars.$prefix}--side-nav__link--current):not([aria-current='page']):hover {
+  .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current,
+  .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'],
+  .#{$prefix}--side-nav__link--current,
+  .#{$prefix}--side-nav__menu
+    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover {
     background-color: $selectedBgColor;
   }
 
-  .#{vars.$prefix}--side-nav__menu
-    .#{vars.$prefix}--side-nav__link:not(.#{vars.$prefix}--side-nav__link--current):not([aria-current='page']):hover,
-  &.#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link--current > span,
-  &.#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link[aria-current='page'] > span,
-  &.#{vars.$prefix}--side-nav__link--current > span {
+  .#{$prefix}--side-nav__menu
+    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover,
+  &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current > span,
+  &.#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'] > span,
+  &.#{$prefix}--side-nav__link--current > span {
     color: $textColor;
   }
 
-  .#{vars.$prefix}--side-nav__item--active
-    .#{vars.$prefix}--side-nav__submenu[aria-expanded='false'] {
+  .#{$prefix}--side-nav__item--active .#{$prefix}--side-nav__submenu[aria-expanded='false'] {
     background-color: $selectedBgColor;
     color: $textColor;
   }
 
-  &.#{vars.$prefix}--side-nav.#{vars.$prefix}--side-nav--rail:not(.#{vars.$prefix}--side-nav--fixed):hover {
+  &.#{$prefix}--side-nav.#{$prefix}--side-nav--rail:not(.#{$prefix}--side-nav--fixed):hover {
     // stylelint-disable-next-line declaration-property-unit-blacklist
     transition: width motion.$duration-fast-01 motion.motion(entrance, productive) 300ms;
   }
 }
 
 html[dir='rtl'] {
-  .#{vars.$iot-prefix}--side-nav {
+  .#{$iot-prefix}--side-nav {
     left: unset;
     right: 0;
   }
 
-  .#{vars.$prefix}--side-nav__icon:not(.#{vars.$prefix}--side-nav__submenu-chevron) {
+  .#{$prefix}--side-nav__icon:not(.#{$prefix}--side-nav__submenu-chevron) {
     margin-left: functions.mini-units(3);
     margin-right: unset;
   }
 
-  .#{vars.$iot-prefix}--side-nav__item--depth-0 {
-    .#{vars.$prefix}--side-nav__link-text {
+  .#{$iot-prefix}--side-nav__item--depth-0 {
+    .#{$prefix}--side-nav__link-text {
       padding-right: spacing.$spacing-09 + spacing.$spacing-03;
     }
   }
 }
 
-.#{vars.$iot-prefix}--side-nav__item--depth-1 {
-  .#{vars.$prefix}--side-nav__submenu-title {
+.#{$iot-prefix}--side-nav__item--depth-1 {
+  .#{$prefix}--side-nav__submenu-title {
     padding-left: spacing.$spacing-09 + spacing.$spacing-03;
 
     html[dir='rtl'] & {
@@ -99,7 +98,7 @@ html[dir='rtl'] {
       padding-right: spacing.$spacing-09 + spacing.$spacing-03;
     }
   }
-  .#{vars.$prefix}--side-nav__link-text {
+  .#{$prefix}--side-nav__link-text {
     padding-left: spacing.$spacing-05;
 
     html[dir='rtl'] & {
@@ -109,8 +108,8 @@ html[dir='rtl'] {
   }
 }
 
-.#{vars.$iot-prefix}--side-nav__item--depth-2 {
-  .#{vars.$prefix}--side-nav__submenu-title {
+.#{$iot-prefix}--side-nav__item--depth-2 {
+  .#{$prefix}--side-nav__submenu-title {
     padding-left: spacing.$spacing-10 + spacing.$spacing-03;
 
     html[dir='rtl'] & {
@@ -119,7 +118,7 @@ html[dir='rtl'] {
     }
   }
 
-  .#{vars.$prefix}--side-nav__link-text {
+  .#{$prefix}--side-nav__link-text {
     padding-left: spacing.$spacing-07;
 
     html[dir='rtl'] & {
@@ -129,8 +128,8 @@ html[dir='rtl'] {
   }
 }
 
-.#{vars.$iot-prefix}--side-nav__item--depth-3 {
-  .#{vars.$prefix}--side-nav__submenu-title {
+.#{$iot-prefix}--side-nav__item--depth-3 {
+  .#{$prefix}--side-nav__submenu-title {
     padding-left: spacing.$spacing-10 + spacing.$spacing-06;
 
     html[dir='rtl'] & {
@@ -139,7 +138,7 @@ html[dir='rtl'] {
     }
   }
 
-  .#{vars.$prefix}--side-nav__link-text {
+  .#{$prefix}--side-nav__link-text {
     padding-left: spacing.$spacing-09;
 
     html[dir='rtl'] & {
@@ -149,6 +148,6 @@ html[dir='rtl'] {
   }
 }
 
-.#{vars.$prefix}--side-nav__overlay-active {
+.#{$prefix}--side-nav__overlay-active {
   z-index: mixins.z('overlay');
 }

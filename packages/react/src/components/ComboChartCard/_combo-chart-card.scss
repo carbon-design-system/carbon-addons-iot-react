@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--combo-chart-card__container {
+.#{$iot-prefix}--combo-chart-card__container {
   padding: 0 spacing.$spacing-05 spacing.$spacing-05;
   position: absolute;
   width: 100%;

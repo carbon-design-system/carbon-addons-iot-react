@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--value-card__attribute {
+.#{$iot-prefix}--value-card__attribute {
   display: flex;
   // need a set height to determine truncation vs wrapping. This is the max font size allowed
   height: 54px;
@@ -64,7 +64,7 @@
   }
 }
 
-html[dir='rtl'] .#{vars.$iot-prefix}--value-card__attribute {
+html[dir='rtl'] .#{$iot-prefix}--value-card__attribute {
   padding-right: 0;
   padding-left: spacing.$spacing-05;
 }

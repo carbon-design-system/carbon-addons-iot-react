@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--composed-structured-list {
+.#{$iot-prefix}--composed-structured-list {
   &__wrapper {
     width: inherit;
   }

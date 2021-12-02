@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/typography';
 @use "../../globals/motion";
 @use '../../globals/layout';
@@ -66,7 +66,7 @@
       padding-left: spacing.$spacing-07;
     }
 
-    .#{vars.$prefix}--btn--primary {
+    .#{$prefix}--btn--primary {
       margin-left: spacing.$spacing-03;
       [dir='rtl'] & {
         margin-left: unset;
@@ -74,7 +74,7 @@
       }
     }
 
-    .#{vars.$prefix}--btn--secondary + .#{vars.$prefix}--btn--primary {
+    .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary {
       margin-left: 1px;
       [dir='rtl'] & {
         margin-left: unset;
@@ -83,13 +83,12 @@
     }
 
     /* search boxes, selects, etc should have slightly wider margin */
-    .#{vars.$prefix}--btn ~ :not(.#{vars.$prefix}--btn) {
+    .#{$prefix}--btn ~ :not(.#{$prefix}--btn) {
       margin-left: spacing.$spacing-05;
       margin-right: spacing.$spacing-05;
     }
 
-    .#{vars.$prefix}--btn
-      + .#{vars.$prefix}--btn--secondary:not(.#{vars.$iot-prefix}--icon-switch) {
+    .#{$prefix}--btn + .#{$prefix}--btn--secondary:not(.#{$iot-prefix}--icon-switch) {
       margin-left: spacing.$spacing-05;
     }
 
@@ -188,7 +187,7 @@
 
     > nav {
       width: 100%;
-      .#{vars.$prefix}--breadcrumb-item:first-child {
+      .#{$prefix}--breadcrumb-item:first-child {
         [dir='rtl'] & {
           margin-right: 0;
         }
@@ -290,12 +289,12 @@
         fill: theme.$icon-01;
       }
 
-      .#{vars.$prefix}--tooltip__label {
+      .#{$prefix}--tooltip__label {
         height: 100%;
         width: spacing.$spacing-08;
       }
 
-      .#{vars.$prefix}--tooltip__trigger {
+      .#{$prefix}--tooltip__trigger {
         margin-left: 0;
         padding-left: spacing.$spacing-04;
         padding-right: spacing.$spacing-04;
@@ -308,7 +307,7 @@
         }
       }
     }
-    .#{vars.$prefix}--text-input {
+    .#{$prefix}--text-input {
       margin-right: spacing.$spacing-05;
       [dir='rtl'] & {
         margin-right: unset;
@@ -316,7 +315,7 @@
       }
     }
 
-    &--edit.#{vars.$prefix}--btn.#{vars.$prefix}--btn--field {
+    &--edit.#{$prefix}--btn.#{$prefix}--btn--field {
       margin-left: spacing.$spacing-05;
       [dir='rtl'] & {
         margin-left: unset;
@@ -325,7 +324,7 @@
     }
   }
 
-  .#{vars.$prefix}--tab-content {
+  .#{$prefix}--tab-content {
     padding: unset;
     padding-top: spacing.$spacing-05;
   }
@@ -339,7 +338,7 @@
     padding-left: spacing.$spacing-07;
     padding-right: spacing.$spacing-07;
 
-    .#{vars.$prefix}--inline-loading {
+    .#{$prefix}--inline-loading {
       @include typography.type-style('label-01');
       height: spacing.$spacing-04;
       min-height: unset;
@@ -363,14 +362,14 @@
     margin-top: spacing.$spacing-06;
 
     &.page-title-bar-content--active {
-      .#{vars.$prefix}--tabs--scrollable {
+      .#{$prefix}--tabs--scrollable {
         transition: all motion.$duration-fast-02 ease-in;
         background: theme.$ui-01;
         border-bottom: 1px solid theme.$ui-03;
       }
     }
 
-    .#{vars.$prefix}--tabs--scrollable {
+    .#{$prefix}--tabs--scrollable {
       padding-left: spacing.$spacing-05;
       margin-left: -(spacing.$spacing-07);
       width: calc(100% + #{spacing.$spacing-10});
@@ -382,7 +381,7 @@
         margin-right: -(spacing.$spacing-07);
       }
 
-      .#{vars.$prefix}--tabs--scrollable__nav-link {
+      .#{$prefix}--tabs--scrollable__nav-link {
         text-align: left;
 
         [dir='rtl'] & {
@@ -399,9 +398,9 @@
 }
 
 /* styles for sticky breadcrumbs and tabs */
-.#{vars.$iot-prefix}--page-title-bar--stack-tabs,
-.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-show,
-.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-hide {
+.#{$iot-prefix}--page-title-bar--stack-tabs,
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-show,
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide {
   &.page-title-bar--dynamic--after,
   &.page-title-bar--condensed-static {
     .page-title-bar-header {
@@ -417,19 +416,19 @@
   }
 
   &.page-title-bar--condensed-static {
-    .#{vars.$prefix}--tabs--scrollable {
+    .#{$prefix}--tabs--scrollable {
       @include make-sticky();
     }
   }
 }
 
-.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-show.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-show {
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-show.#{$iot-prefix}--page-title-bar--stack-tabs-override-show {
   .page-title-bar-header {
     top: var(--negative-header-offset);
   }
 }
 
-.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-hide.#{vars.$iot-prefix}--page-title-bar--stack-tabs-override-hide {
+.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide.#{$iot-prefix}--page-title-bar--stack-tabs-override-hide {
   .page-title-bar-header {
     top: -(spacing.$spacing-10 + spacing.$spacing-05);
   }

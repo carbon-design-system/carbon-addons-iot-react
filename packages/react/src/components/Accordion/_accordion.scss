@@ -1,12 +1,12 @@
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/accordion';
 
-[dir='rtl'] .#{vars.$prefix}--accordion__title {
+[dir='rtl'] .#{$prefix}--accordion__title {
   margin: 0 spacing.$spacing-05 0 0;
   text-align: right;
 }
 
-[dir='rtl'] .#{vars.$prefix}--accordion__arrow {
+[dir='rtl'] .#{$prefix}--accordion__arrow {
   margin: spacing.$spacing-01 0 0 spacing.$spacing-05;
 }

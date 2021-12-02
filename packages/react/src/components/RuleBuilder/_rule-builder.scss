@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/typography';
 
-.#{vars.$iot-prefix}--rule-builder-wrap {
+.#{$iot-prefix}--rule-builder-wrap {
   background: theme.$ui-01;
   border: 1px solid theme.$ui-03;
   display: flex;
@@ -16,7 +16,7 @@
     justify-content: space-between;
     padding: spacing.$spacing-05;
 
-    .#{vars.$iot-prefix}--card--toolbar-svg-wrapper {
+    .#{$iot-prefix}--card--toolbar-svg-wrapper {
       height: spacing.$spacing-07;
       width: spacing.$spacing-07;
     }
@@ -53,43 +53,43 @@
     flex-direction: column;
     padding: spacing.$spacing-05;
 
-    .#{vars.$prefix}--tab-content {
+    .#{$prefix}--tab-content {
       flex: 1;
       padding: 0;
     }
 
-    .#{vars.$prefix}--accordion {
+    .#{$prefix}--accordion {
       padding-top: 0;
     }
 
-    .#{vars.$prefix}--accordion__item {
+    .#{$prefix}--accordion__item {
       border-top: 0;
       border-bottom: 1px solid theme.$ui-03;
 
       &--active {
         border-bottom: 0;
 
-        .#{vars.$prefix}--accordion__content {
+        .#{$prefix}--accordion__content {
           border-top: 1px solid theme.$ui-03;
           padding: spacing.$spacing-05 0;
         }
       }
     }
 
-    .#{vars.$iot-prefix}--filtertags-container {
+    .#{$iot-prefix}--filtertags-container {
       position: relative;
     }
 
-    .#{vars.$iot-prefix}--filtertags-overflow-menu {
+    .#{$iot-prefix}--filtertags-overflow-menu {
       position: relative;
       bottom: 0;
     }
 
-    .#{vars.$prefix}--accordion__heading {
+    .#{$prefix}--accordion__heading {
       padding: spacing.$spacing-06 0;
     }
 
-    .#{vars.$prefix}--accordion__title {
+    .#{$prefix}--accordion__title {
       @include typography.type-style('productive-heading-02');
       margin-left: 0;
     }
@@ -99,15 +99,15 @@
     border-bottom: 2px solid #e0e0e0;
     width: 100%;
 
-    .#{vars.$iot-prefix}--rule-builder--tab {
+    .#{$iot-prefix}--rule-builder--tab {
       width: auto;
-      &:not(.#{vars.$prefix}--tabs__nav-item--selected),
+      &:not(.#{$prefix}--tabs__nav-item--selected),
       &:not(:hover) {
         border-bottom: none;
       }
     }
 
-    & + .#{vars.$prefix}--tab-content {
+    & + .#{$prefix}--tab-content {
       padding-top: spacing.$spacing-06;
       padding-right: spacing.$spacing-12;
     }
@@ -120,7 +120,7 @@
     margin: auto 0 0;
     padding: spacing.$spacing-05;
 
-    .#{vars.$iot-prefix}--btn:not(:last-child) {
+    .#{$iot-prefix}--btn:not(:last-child) {
       margin-right: spacing.$spacing-03;
     }
   }

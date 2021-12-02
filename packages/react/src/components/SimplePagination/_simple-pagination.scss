@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/layout";
 
-.#{vars.$iot-prefix}-simple-pagination-container {
+.#{$iot-prefix}-simple-pagination-container {
   display: flex;
   height: spacing.$spacing-09;
   width: 100%;
@@ -11,25 +11,25 @@
   background-color: theme.$ui-01;
 }
 
-.#{vars.$iot-prefix}-simple-pagination-page-bar {
+.#{$iot-prefix}-simple-pagination-page-bar {
   display: flex;
   margin-left: auto;
 }
 
-.#{vars.$iot-prefix}-simple-pagination-page-label {
+.#{$iot-prefix}-simple-pagination-page-label {
   padding-right: spacing.$spacing-05;
   padding-left: spacing.$spacing-05;
   font-size: 0.875rem;
   align-self: center;
 }
 
-.#{vars.$iot-prefix}-addons-simple-pagination-button {
+.#{$iot-prefix}-addons-simple-pagination-button {
   &:focus {
     outline: none;
   }
 }
 
-.#{vars.$iot-prefix}-addons-simple-pagination-button-disabled {
+.#{$iot-prefix}-addons-simple-pagination-button-disabled {
   &:focus {
     outline: none;
   }
@@ -39,10 +39,10 @@
   cursor: not-allowed;
 }
 
-.#{vars.$iot-prefix}-simple-pagination-caret {
+.#{$iot-prefix}-simple-pagination-caret {
   fill: theme.$icon-01;
 }
 
-.#{vars.$iot-prefix}-simple-pagination-caret-disabled {
+.#{$iot-prefix}-simple-pagination-caret-disabled {
   fill: theme.$disabled-02;
 }

@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/typography';
 
-.#{vars.$iot-prefix}--wizard-inline {
+.#{$iot-prefix}--wizard-inline {
   &__header {
     @include typography.type-style('productive-heading-03');
     margin-bottom: spacing.$spacing-06;

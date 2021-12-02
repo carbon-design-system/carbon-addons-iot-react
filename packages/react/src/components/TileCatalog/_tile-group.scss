@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--tile-group {
+.#{$iot-prefix}--tile-group {
   display: flex;
   flex-flow: row wrap;
   > * {
@@ -18,17 +18,19 @@
   overflow-y: hidden;
 }
 
-.#{vars.$iot-prefix}--greedy-tile {
+.#{$iot-prefix}--greedy-tile {
   flex: 1 1 33.33%;
   display: none;
   min-height: 0px;
   padding: 0;
   border-top: 0px;
   border-bottom: 0px;
-  @media screen and (min-width: vars.$two-pane) {
+  // comes from vars
+  @media screen and (min-width: $two-pane) {
     display: flex;
   }
-  @media screen and (min-width: vars.$three-pane) {
+  // comes from vars
+  @media screen and (min-width: $three-pane) {
     flex: 1 1 66.66%;
     display: flex;
   }

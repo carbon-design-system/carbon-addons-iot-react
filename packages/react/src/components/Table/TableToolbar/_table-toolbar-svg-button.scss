@@ -1,19 +1,19 @@
 @use '../../../globals/theme';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use "../../../globals/colors";
 @use "../../../globals/mixins";
 
-button.#{vars.$iot-prefix}--tooltip-svg-wrapper,
-.#{vars.$iot-prefix}--tooltip-svg-wrapper.#{vars.$prefix}--btn--ghost:hover {
+button.#{$iot-prefix}--tooltip-svg-wrapper,
+.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost:hover {
   color: colors.$gray-70;
 }
-button.#{vars.$prefix}--btn.#{vars.$iot-prefix}--tooltip-svg-wrapper.#{vars.$prefix}--btn--ghost {
+button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost {
   border: 0;
-  &.#{vars.$iot-prefix}--table-toolbar-button-active:not(:hover) {
+  &.#{$iot-prefix}--table-toolbar-button-active:not(:hover) {
     background-color: theme.$ui-02;
   }
 }
 
-.#{vars.$iot-prefix}--tooltip-svg-wrapper--disabled {
+.#{$iot-prefix}--tooltip-svg-wrapper--disabled {
   @include mixins.disabled-icon-button();
 }

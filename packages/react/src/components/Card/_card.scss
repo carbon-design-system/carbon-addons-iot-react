@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/mixins';
 @use '../../globals/typography';
 @use './card-range-picker';
@@ -11,7 +11,7 @@ $iot-header-padding: spacing.$spacing-05;
 $tooltipSize: spacing.$spacing-07;
 $lineHeightSize: 1.375em;
 
-.#{vars.$iot-prefix}--card--wrapper {
+.#{$iot-prefix}--card--wrapper {
   background: white;
   box-sizing: border-box;
   outline: solid spacing.$spacing-01 transparent;
@@ -26,17 +26,17 @@ $lineHeightSize: 1.375em;
   }
 }
 
-.#{vars.$iot-prefix}--card--resizing {
+.#{$iot-prefix}--card--resizing {
   outline: spacing.$spacing-01 solid theme.$interactive-02;
   box-sizing: border-box;
 }
 
-.#{vars.$iot-prefix}--card.react-grid-item > .react-resizable-handle {
+.#{$iot-prefix}--card.react-grid-item > .react-resizable-handle {
   // Make sure the resize handle is placed on top of absolute positioned card content
   z-index: 2;
 }
 
-.#{vars.$iot-prefix}--card--title {
+.#{$iot-prefix}--card--title {
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
@@ -52,39 +52,39 @@ $lineHeightSize: 1.375em;
     padding-right: unset;
   }
 
-  & + *:not(.#{vars.$iot-prefix}--card--toolbar) {
+  & + *:not(.#{$iot-prefix}--card--toolbar) {
     margin-left: spacing.$spacing-05;
   }
 }
 
-.#{vars.$iot-prefix}--card--header--tooltip {
+.#{$iot-prefix}--card--header--tooltip {
   flex-basis: $tooltipSize;
   margin-top: spacing.$spacing-02;
-  .#{vars.$prefix}--tooltip__trigger {
+  .#{$prefix}--tooltip__trigger {
     margin-right: spacing.$spacing-03;
   }
 }
 
-.#{vars.$iot-prefix}--card--title--text,
-.#{vars.$iot-prefix}--card--subtitle--text {
+.#{$iot-prefix}--card--title--text,
+.#{$iot-prefix}--card--subtitle--text {
   @include mixins.multiline-text-overflow(1, $lineHeightSize);
   word-break: break-all;
   min-width: 3rem;
 }
 
-.#{vars.$iot-prefix}--card--title--text--wrapped {
+.#{$iot-prefix}--card--title--text--wrapped {
   -webkit-line-clamp: 2;
   max-height: calc(#{$lineHeightSize} * 2);
   word-break: normal;
 }
 
-.#{vars.$iot-prefix}--card--title--text {
+.#{$iot-prefix}--card--title--text {
   @include typography.type-style('productive-heading-02');
   color: theme.$text-01;
   max-width: calc(100% - #{$tooltipSize});
 }
 
-.#{vars.$iot-prefix}--card--subtitle--text {
+.#{$iot-prefix}--card--subtitle--text {
   @include typography.type-style('label-01');
   color: theme.$text-02;
   font-weight: normal;
@@ -102,7 +102,7 @@ $lineHeightSize: 1.375em;
   }
 }
 
-.#{vars.$iot-prefix}--card--header {
+.#{$iot-prefix}--card--header {
   flex: 0 0 spacing.$spacing-09;
   display: flex;
   align-items: flex-start;
@@ -115,7 +115,7 @@ $lineHeightSize: 1.375em;
   }
 }
 
-.#{vars.$iot-prefix}--card--content {
+.#{$iot-prefix}--card--content {
   flex: 1;
   padding: 0 spacing.$spacing-05 spacing.$spacing-05;
   position: relative;
@@ -123,21 +123,21 @@ $lineHeightSize: 1.375em;
   overflow-x: visible;
   overflow-y: visible;
 
-  .#{vars.$prefix}--cc--chart-wrapper {
+  .#{$prefix}--cc--chart-wrapper {
     background-color: inherit;
   }
 }
 
-.#{vars.$iot-prefix}--card--content--expanded {
+.#{$iot-prefix}--card--content--expanded {
   overflow-y: auto;
 }
 
-.#{vars.$iot-prefix}--card--skeleton-wrapper {
+.#{$iot-prefix}--card--skeleton-wrapper {
   padding: var(--card-content-padding);
   width: 80%;
 }
 
-.#{vars.$iot-prefix}--card--footer--wrapper {
+.#{$iot-prefix}--card--footer--wrapper {
   align-items: center;
   border-top: 1px solid theme.$ui-03;
   display: flex;
@@ -146,7 +146,7 @@ $lineHeightSize: 1.375em;
   padding: 0 spacing.$spacing-05;
 }
 
-.#{vars.$iot-prefix}--card--empty-message-wrapper {
+.#{$iot-prefix}--card--empty-message-wrapper {
   height: 100%;
   width: 100%;
   display: flex;
@@ -158,11 +158,11 @@ $lineHeightSize: 1.375em;
 }
 
 // Change background for charts in Cards
-.#{vars.$iot-prefix}--card .#{vars.$prefix}--chart-holder {
+.#{$iot-prefix}--card .#{$prefix}--chart-holder {
   background-color: theme.$ui-01;
 }
 
 // Needed to allow the overflow menu to overlay the expanded card correctly
-.#{vars.$prefix}--modal .#{vars.$iot-prefix}--card--overflow {
+.#{$prefix}--modal .#{$iot-prefix}--card--overflow {
   z-index: 10000;
 }

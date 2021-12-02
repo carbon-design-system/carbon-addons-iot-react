@@ -1,9 +1,9 @@
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--hotspot-editor-modal.#{vars.$iot-prefix}--composed-modal {
+.#{$iot-prefix}--hotspot-editor-modal.#{$iot-prefix}--composed-modal {
   // Only apply to the top level modal, in case there is another modal nested inside the modal
-  & > .#{vars.$prefix}--modal-container > .#{vars.$prefix}--modal-content {
+  & > .#{$prefix}--modal-container > .#{$prefix}--modal-content {
     $right-side-width: 420px;
     padding-right: 0;
     display: flex;
@@ -18,18 +18,18 @@
       overflow-y: auto;
     }
 
-    .#{vars.$prefix}--tabs {
+    .#{$prefix}--tabs {
       margin-top: spacing.$spacing-05;
     }
 
-    .#{vars.$prefix}--tab-content {
+    .#{$prefix}--tab-content {
       padding-right: 0;
       padding-left: 0;
     }
   }
 }
 
-.#{vars.$iot-prefix}--hotspot-editor-modal__variable-loading {
+.#{$iot-prefix}--hotspot-editor-modal__variable-loading {
   margin-top: spacing.$spacing-10;
   justify-content: center;
 }

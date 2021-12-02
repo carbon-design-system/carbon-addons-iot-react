@@ -1,15 +1,15 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--icon-dropdown {
-  .#{vars.$prefix}--list-box__menu-item__option {
+.#{$iot-prefix}--icon-dropdown {
+  .#{$prefix}--list-box__menu-item__option {
     margin: 0;
     padding: 0;
     border-top: none;
   }
 
-  .#{vars.$iot-prefix}--icon-dropdown__item {
+  .#{$iot-prefix}--icon-dropdown__item {
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -17,43 +17,43 @@
     padding-right: 1rem;
   }
 
-  .#{vars.$iot-prefix}--icon-dropdown__item-border {
+  .#{$iot-prefix}--icon-dropdown__item-border {
     display: flex;
     align-items: center;
   }
 
   // When showing selected item we must remove the padding and border.
-  .#{vars.$prefix}--list-box__label .#{vars.$iot-prefix}--icon-dropdown__item {
+  .#{$prefix}--list-box__label .#{$iot-prefix}--icon-dropdown__item {
     padding-left: 0;
-    .#{vars.$iot-prefix}--icon-dropdown__item-border {
+    .#{$iot-prefix}--icon-dropdown__item-border {
       border-color: transparent;
     }
   }
 }
 
-.#{vars.$iot-prefix}--color-dropdown__icon-sample {
+.#{$iot-prefix}--color-dropdown__icon-sample {
   width: 1.5rem;
   height: 1.5rem;
   margin-right: spacing.$spacing-04;
   flex-shrink: 0;
 }
 
-.#{vars.$iot-prefix}--icon-dropdown__icon-name {
+.#{$iot-prefix}--icon-dropdown__icon-name {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 html[dir='rtl'] {
-  .#{vars.$iot-prefix}--icon-dropdown__icon-sample {
+  .#{$iot-prefix}--icon-dropdown__icon-sample {
     margin-left: spacing.$spacing-04;
   }
 
-  .#{vars.$iot-prefix}--icon-dropdown__item {
+  .#{$iot-prefix}--icon-dropdown__item {
     padding-right: 2rem;
   }
 
   // When showing selected item we must remove the padding.
-  .#{vars.$prefix}--list-box__label .#{vars.$iot-prefix}--icon-dropdown__item {
+  .#{$prefix}--list-box__label .#{$iot-prefix}--icon-dropdown__item {
     padding-right: 0;
   }
 }

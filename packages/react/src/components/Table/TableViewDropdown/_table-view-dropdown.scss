@@ -1,18 +1,18 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../../../globals/colors';
 @use '../../../globals/mixins';
 
-.#{vars.$iot-prefix}--view-dropdown__container {
+.#{$iot-prefix}--view-dropdown__container {
   padding: 0 spacing.$spacing-05;
   margin: auto 0;
 }
 
-.#{vars.$iot-prefix}--view-dropdown__button-prefix {
+.#{$iot-prefix}--view-dropdown__button-prefix {
   display: none;
 }
-.#{vars.$prefix}--list-box__field .#{vars.$iot-prefix}--view-dropdown__button-prefix {
+.#{$prefix}--list-box__field .#{$iot-prefix}--view-dropdown__button-prefix {
   display: flex;
   flex-shrink: 0;
   margin-right: spacing.$spacing-02;
@@ -21,11 +21,11 @@
   }
 }
 
-.#{vars.$iot-prefix}--view-dropdown__edited-text {
+.#{$iot-prefix}--view-dropdown__edited-text {
   color: colors.$gray-50;
 }
 
-.#{vars.$iot-prefix}--view-dropdown__item {
+.#{$iot-prefix}--view-dropdown__item {
   display: flex;
   justify-content: space-between;
   span {
@@ -33,14 +33,14 @@
   }
 }
 
-.#{vars.$iot-prefix}--view-dropdown__item-link {
+.#{$iot-prefix}--view-dropdown__item-link {
   color: theme.$link-01;
   // compensate for carbon selected checkbox space that is not needed since these
   // link-items with custom actions will not actually be
   margin-right: -(spacing.$spacing-06);
 }
 
-.#{vars.$iot-prefix}--view-dropdown__item-link-icon {
+.#{$iot-prefix}--view-dropdown__item-link-icon {
   color: theme.$link-01;
   fill: theme.$link-01;
   margin-left: spacing.$spacing-03;
@@ -48,7 +48,7 @@
 }
 
 html[dir='rtl'] {
-  .#{vars.$prefix}--list-box__field .#{vars.$iot-prefix}--view-dropdown__button-prefix {
+  .#{$prefix}--list-box__field .#{$iot-prefix}--view-dropdown__button-prefix {
     margin-right: 0;
     margin-left: spacing.$spacing-02;
     svg {
@@ -57,11 +57,11 @@ html[dir='rtl'] {
     }
   }
 
-  .#{vars.$iot-prefix}--view-dropdown__item-link-icon {
+  .#{$iot-prefix}--view-dropdown__item-link-icon {
     margin-right: -(spacing.$spacing-06);
   }
 
-  .#{vars.$iot-prefix}--view-dropdown__item-link {
+  .#{$iot-prefix}--view-dropdown__item-link {
     justify-content: normal;
     margin-right: 0;
     span {

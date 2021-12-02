@@ -1,51 +1,51 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--select-users-modal {
-  .#{vars.$prefix}--modal-container .#{vars.$prefix}--modal-content {
+.#{$iot-prefix}--select-users-modal {
+  .#{$prefix}--modal-container .#{$prefix}--modal-content {
     padding-right: spacing.$spacing-05;
   }
 
-  .#{vars.$iot-prefix}--list {
+  .#{$iot-prefix}--list {
     background-color: theme.$ui-01;
     height: 100%;
   }
 
-  .#{vars.$iot-prefix}--list-item {
+  .#{$iot-prefix}--list-item {
     overflow: hidden;
   }
 
-  .#{vars.$prefix}--search-input {
+  .#{$prefix}--search-input {
     background-color: theme.$ui-background;
   }
-  .#{vars.$iot-prefix}--list-header--search,
-  .#{vars.$iot-prefix}--list-header-container,
-  .#{vars.$iot-prefix}--list-header,
-  .#{vars.$iot-prefix}--list--content {
+  .#{$iot-prefix}--list-header--search,
+  .#{$iot-prefix}--list-header-container,
+  .#{$iot-prefix}--list-header,
+  .#{$iot-prefix}--list--content {
     background-color: transparent;
   }
 }
 
-.#{vars.$iot-prefix}--select-users-modal-content {
+.#{$iot-prefix}--select-users-modal-content {
   width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
 
   /* Hide the unused nested modal reordering dialog that throws off the scrolling */
-  .#{vars.$iot-prefix}--hierarchy-list-bulk-modal {
+  .#{$iot-prefix}--hierarchy-list-bulk-modal {
     display: none;
   }
 }
 
-.#{vars.$iot-prefix}--select-users-modal-content__all-users {
+.#{$iot-prefix}--select-users-modal-content__all-users {
   width: 100%;
   height: 404px;
   align-self: stretch;
   padding: spacing.$spacing-02;
 }
 
-.#{vars.$iot-prefix}--select-users-modal-content__selected-users {
+.#{$iot-prefix}--select-users-modal-content__selected-users {
   width: 100%;
   height: 404px;
   align-self: stretch;

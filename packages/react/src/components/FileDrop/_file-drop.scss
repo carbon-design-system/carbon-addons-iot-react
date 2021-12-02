@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--file-drop {
+.#{$iot-prefix}--file-drop {
   &__selected-file {
     background-color: rgba(85, 150, 230, 0.1);
   }

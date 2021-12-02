@@ -1,14 +1,14 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../../../globals/layout';
 @use '../../../globals/typography';
 
-.#{vars.$iot-prefix}--list-item-parent {
+.#{$iot-prefix}--list-item-parent {
   position: relative;
 }
 
-.#{vars.$iot-prefix}--list-item-editable {
+.#{$iot-prefix}--list-item-editable {
   &--drag-container {
     position: relative;
     overflow: hidden;
@@ -91,7 +91,7 @@
   }
 }
 
-.#{vars.$iot-prefix}--list-item {
+.#{$iot-prefix}--list-item {
   border-bottom: 1px solid theme.$ui-03;
   display: flex;
   height: layout.rem(40px);

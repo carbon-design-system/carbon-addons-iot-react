@@ -1,10 +1,10 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/mixins';
 @use '~@carbon/styles/scss/components/combo-box';
 
-.#{vars.$iot-prefix}--combobox {
+.#{$iot-prefix}--combobox {
   display: flex;
   flex-flow: column-reverse;
   position: relative;
@@ -19,19 +19,19 @@
     }
   }
 
-  &.#{vars.$iot-prefix}--combobox__menu--fit-content {
+  &.#{$iot-prefix}--combobox__menu--fit-content {
     @include mixins.list-box-menu-fits-content;
   }
 
   // Default for when fit-content is active and the menu is wider than the input
   // is that the menu expands to the right. This style makes it expand to the left
   // unless we are in RTL mode.
-  &.#{vars.$iot-prefix}--combobox__menu--flip-horizontal {
+  &.#{$iot-prefix}--combobox__menu--flip-horizontal {
     @include mixins.list-box-menu-flip-horizontal;
   }
 
   // Placement of the editOptionText
-  &.#{vars.$iot-prefix}--combobox-add {
+  &.#{$iot-prefix}--combobox-add {
     $ai-apps-combobox-input-height-sm: spacing.$spacing-07;
     $ai-apps-combobox-input-height: spacing.$spacing-08;
     $ai-apps-combobox-input-height-xl: spacing.$spacing-09;
@@ -52,27 +52,27 @@
       transform: translateY(50%);
     }
     // when helperText is present, it's height must be accounted for
-    &.#{vars.$iot-prefix}--combobox-helper-text::after {
+    &.#{$iot-prefix}--combobox-helper-text::after {
       bottom: calc(
         (#{$ai-apps-combobox-input-negative-height} / 2) + #{$ai-apps-combobox-helper-text-height}
       );
     }
 
     // sm field size variant
-    &.#{vars.$iot-prefix}--combobox-size-sm::after {
+    &.#{$iot-prefix}--combobox-size-sm::after {
       bottom: calc(#{$ai-apps-combobox-input-negative-height-sm} / 2);
     }
-    &.#{vars.$iot-prefix}--combobox-size-sm.#{vars.$iot-prefix}--combobox-helper-text::after {
+    &.#{$iot-prefix}--combobox-size-sm.#{$iot-prefix}--combobox-helper-text::after {
       bottom: calc(
         (#{$ai-apps-combobox-input-negative-height-sm} / 2) + #{$ai-apps-combobox-helper-text-height}
       );
     }
 
     // xl field size variant
-    &.#{vars.$iot-prefix}--combobox-size-xl::after {
+    &.#{$iot-prefix}--combobox-size-xl::after {
       bottom: calc(#{$ai-apps-combobox-input-negative-height-xl} / 2);
     }
-    &.#{vars.$iot-prefix}--combobox-size-xl.#{vars.$iot-prefix}--combobox-helper-text::after {
+    &.#{$iot-prefix}--combobox-size-xl.#{$iot-prefix}--combobox-helper-text::after {
       bottom: calc(
         (#{$ai-apps-combobox-input-negative-height-xl} / 2) + #{$ai-apps-combobox-helper-text-height}
       );

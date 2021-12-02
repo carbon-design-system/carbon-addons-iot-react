@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/dropdown';
 
-.#{vars.$iot-prefix}--dropdown__label {
+.#{$iot-prefix}--dropdown__label {
   display: flex;
   align-items: center;
   height: 100%;

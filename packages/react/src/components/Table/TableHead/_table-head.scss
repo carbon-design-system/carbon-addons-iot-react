@@ -1,6 +1,6 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../../../globals/colors';
 @use '../../../globals/mixins';
 @use './column-resize';
@@ -8,7 +8,7 @@
 @use './FilterHeaderRow/filter-header-row';
 @use './ColumnGrouping/column-grouping';
 
-.#{vars.$prefix}--data-table {
+.#{$prefix}--data-table {
   th {
     height: spacing.$spacing-09;
     border-top: none;
@@ -16,25 +16,25 @@
     position: relative;
 
     // always vertically align headers to middle--even with xl size prop
-    &.#{vars.$iot-prefix}--table-head--table-header {
+    &.#{$iot-prefix}--table-head--table-header {
       vertical-align: middle;
     }
   }
 
   // override sort icons, so they stay in the middle, at xl size, too.
   &--xl {
-    .#{vars.$prefix}--table-sort__icon-unsorted,
-    .#{vars.$prefix}--table-sort__icon {
+    .#{$prefix}--table-sort__icon-unsorted,
+    .#{$prefix}--table-sort__icon {
       margin-top: 0;
     }
 
     // fix positioning of order number when in multi-sort
-    span.#{vars.$iot-prefix}--table-header-label__sort-order {
+    span.#{$iot-prefix}--table-header-label__sort-order {
       bottom: spacing.$spacing-06;
     }
 
     // fix sort icon missing at xl sizes
-    &.#{vars.$prefix}--data-table--sort th .#{vars.$prefix}--table-sort {
+    &.#{$prefix}--data-table--sort th .#{$prefix}--table-sort {
       display: flex;
     }
 
@@ -65,12 +65,12 @@
     position: relative;
   }
 
-  .#{vars.$prefix}--table-header-label {
+  .#{$prefix}--table-header-label {
     display: flex;
     user-select: none;
     overflow: hidden;
     // allow the multiselect filter to expand to full height and the table to scroll
-    .#{vars.$prefix}--multi-select .#{vars.$prefix}--list-box__menu {
+    .#{$prefix}--multi-select .#{$prefix}--list-box__menu {
       max-height: unset;
     }
 
@@ -83,7 +83,7 @@
     }
   }
 
-  .#{vars.$iot-prefix}--table-header-label__sort-order {
+  .#{$iot-prefix}--table-header-label__sort-order {
     position: absolute;
     bottom: spacing.$spacing-04;
     right: spacing.$spacing-04;
@@ -122,7 +122,7 @@
     }
     th {
       background-color: theme.$ui-01;
-      .#{vars.$prefix}--table-sort {
+      .#{$prefix}--table-sort {
         background-color: theme.$ui-01;
         &:hover {
           background-color: theme.$ui-03;
@@ -131,51 +131,51 @@
     }
   }
 
-  .#{vars.$iot-prefix}--table-expand-resize {
+  .#{$iot-prefix}--table-expand-resize {
     width: 40px;
   }
 
-  .#{vars.$iot-prefix}--table-header-checkbox {
+  .#{$iot-prefix}--table-header-checkbox {
     vertical-align: middle;
   }
 
-  .#{vars.$iot-prefix}--table-header-checkbox-resize {
+  .#{$iot-prefix}--table-header-checkbox-resize {
     width: 54px;
   }
 
-  .#{vars.$iot-prefix}--table-header-resize {
+  .#{$iot-prefix}--table-header-resize {
     word-break: break-all;
   }
 
-  .#{vars.$iot-prefix}--table-header-row-action-column {
+  .#{$iot-prefix}--table-header-row-action-column {
     min-width: 40px;
   }
 
-  .#{vars.$iot-prefix}--table-header-expander-column {
+  .#{$iot-prefix}--table-header-expander-column {
     width: auto;
     padding: 0;
   }
 
-  .#{vars.$iot-prefix}--tableheader-filter > .#{vars.$prefix}--table-header-label {
+  .#{$iot-prefix}--tableheader-filter > .#{$prefix}--table-header-label {
     overflow: visible;
   }
 
-  th:last-of-type.#{vars.$iot-prefix}--table-header-row-action-column--extra-wide {
+  th:last-of-type.#{$iot-prefix}--table-header-row-action-column--extra-wide {
     min-width: 250px;
     width: 250px; // Needed for fixed/resizable columns that don't respect min-width
   }
 
-  .#{vars.$iot-prefix}--clear-filters-button--disabled {
+  .#{$iot-prefix}--clear-filters-button--disabled {
     @include mixins.disabled-icon-button();
   }
 }
 
-.#{vars.$iot-prefix}--table-head {
+.#{$iot-prefix}--table-head {
   &--overflow {
     margin: auto 0;
     flex-shrink: 0;
 
-    .#{vars.$prefix}--table-sort:focus &:hover {
+    .#{$prefix}--table-sort:focus &:hover {
       margin-top: -2px;
       margin-bottom: -2px;
       background-color: colors.$gray-40;
@@ -186,7 +186,7 @@
     position: relative;
     vertical-align: middle;
 
-    .#{vars.$prefix}--table-header-label {
+    .#{$prefix}--table-header-label {
       height: 100%;
       white-space: nowrap;
       overflow: hidden;
@@ -196,11 +196,11 @@
     }
 
     &--with-overflow {
-      .#{vars.$prefix}--table-header-label {
+      .#{$prefix}--table-header-label {
         padding-right: 0;
       }
 
-      .#{vars.$prefix}--overflow-menu-options:after {
+      .#{$prefix}--overflow-menu-options:after {
         width: 3rem;
       }
     }

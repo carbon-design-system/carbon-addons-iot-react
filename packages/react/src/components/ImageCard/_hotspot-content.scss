@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/typography';
 
-.#{vars.$iot-prefix}--hotspot-content {
+.#{$iot-prefix}--hotspot-content {
   h4 {
     white-space: nowrap;
     overflow: hidden;

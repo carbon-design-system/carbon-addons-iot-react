@@ -1,21 +1,21 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--card--toolbar {
+.#{$iot-prefix}--card--toolbar {
   margin: 0;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
 
   // shrink the default text of the date-time-picker
-  .#{vars.$iot-prefix}--date-time-picker__field {
+  .#{$iot-prefix}--date-time-picker__field {
     font-size: 0.875rem;
     font-weight: normal;
   }
 }
 
-.#{vars.$iot-prefix}--card--toolbar-action {
+.#{$iot-prefix}--card--toolbar-action {
   color: theme.$ui-05;
   border-width: 2px;
   display: flex;
@@ -40,13 +40,13 @@
     fill: theme.$icon-02;
   }
 
-  svg.#{vars.$prefix}--overflow-menu__icon {
+  svg.#{$prefix}--overflow-menu__icon {
     height: auto;
     width: auto;
   }
 }
 
-.#{vars.$iot-prefix}--card--toolbar-svg-wrapper {
+.#{$iot-prefix}--card--toolbar-svg-wrapper {
   align-items: center;
   background: transparent;
   border: none;

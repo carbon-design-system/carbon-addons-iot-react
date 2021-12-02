@@ -1,18 +1,18 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../mixins';
 
-.#{vars.$iot-prefix}--hotspot-editor-tooltip-tab {
+.#{$iot-prefix}--hotspot-editor-tooltip-tab {
   background-color: theme.$ui-01;
   padding: spacing.$spacing-03 0;
 }
 
-.#{vars.$iot-prefix}--hotspot-editor--tooltip-form {
+.#{$iot-prefix}--hotspot-editor--tooltip-form {
   @include mixins.vertical-form();
 }
 
-.#{vars.$iot-prefix}--icon-color-container {
+.#{$iot-prefix}--icon-color-container {
   $dropdown-spacer: 2rem;
 
   display: flex;
@@ -20,26 +20,26 @@
     flex-grow: 1;
   }
 
-  .#{vars.$iot-prefix}--dropdown__label > svg {
+  .#{$iot-prefix}--dropdown__label > svg {
     min-width: 24px;
     width: 24px;
     fill: var(--icon-fill-color);
   }
 
-  .#{vars.$prefix}--dropdown__wrapper:nth-of-type(1) {
+  .#{$prefix}--dropdown__wrapper:nth-of-type(1) {
     margin-right: $dropdown-spacer;
   }
 
-  .#{vars.$prefix}--dropdown__wrapper {
+  .#{$prefix}--dropdown__wrapper {
     width: calc(50% - 1rem);
   }
 }
 
-.#{vars.$iot-prefix}--hotspot-editor-tooltip-tab__delete-button-container {
+.#{$iot-prefix}--hotspot-editor-tooltip-tab__delete-button-container {
   display: flex;
   justify-content: flex-end;
 }
 
-.#{vars.$iot-prefix}--hotspot-editor--tooltip-info-message {
+.#{$iot-prefix}--hotspot-editor--tooltip-info-message {
   @include mixins.info-message();
 }

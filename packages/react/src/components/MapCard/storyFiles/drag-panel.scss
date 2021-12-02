@@ -1,7 +1,7 @@
 @use '../../../globals/config';
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../../../globals/mixins';
 
 .drag-panel {

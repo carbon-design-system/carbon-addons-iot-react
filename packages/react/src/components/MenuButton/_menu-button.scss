@@ -1,41 +1,41 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/mixins';
 @use '~@carbon/styles/scss/components/menu';
 
-.#{vars.$iot-prefix}--menu-button {
-  .#{vars.$iot-prefix}--menu-button__primary + .#{vars.$iot-prefix}--menu-button__secondary {
+.#{$iot-prefix}--menu-button {
+  .#{$iot-prefix}--menu-button__primary + .#{$iot-prefix}--menu-button__secondary {
     border-left: 1px solid theme.$ui-01;
   }
 
-  .#{vars.$prefix}--btn--ghost.#{vars.$prefix}--btn--icon-only {
+  .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {
     color: theme.$icon-01;
   }
 
   &--open {
-    .#{vars.$iot-prefix}--menu-button__trigger {
+    .#{$iot-prefix}--menu-button__trigger {
       background-color: theme.$active-primary;
     }
 
-    .#{vars.$prefix}--btn--ghost.#{vars.$prefix}--btn--icon-only {
+    .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {
       background-color: theme.$ui-01;
       @include mixins.box-shadow();
     }
   }
 }
 
-.#{vars.$prefix}--menu.#{vars.$prefix}--menu--open.#{vars.$prefix}--menu--root {
+.#{$prefix}--menu.#{$prefix}--menu--open.#{$prefix}--menu--root {
   opacity: var(--iot-menu-button-menu-opacity);
 }
 
-html[dir='rtl'] .#{vars.$iot-prefix}--menu-button {
-  .#{vars.$prefix}--context-menu-option__icon {
+html[dir='rtl'] .#{$iot-prefix}--menu-button {
+  .#{$prefix}--context-menu-option__icon {
     margin-right: 0;
     margin-left: spacing.$spacing-03;
   }
 
-  .#{vars.$prefix}--context-menu-option__info {
+  .#{$prefix}--context-menu-option__info {
     margin-left: 0;
     margin-right: spacing.$spacing-05;
     transform: rotate(180deg);

@@ -1,8 +1,8 @@
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 // Without this external style the logo and attribution texts won't be correctly displayed
 @import url('https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css');
 
-.#{vars.$iot-prefix}--map {
+.#{$iot-prefix}--map {
   .mapboxgl-canvas-container {
     height: 100%;
   }

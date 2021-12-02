@@ -1,4 +1,4 @@
-@use '../../globals/vars';
-.#{vars.$prefix}--file__selected-file {
+@use '../../globals/vars' as *;
+.#{$prefix}--file__selected-file {
   width: 288px;
 }

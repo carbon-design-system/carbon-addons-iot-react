@@ -1,20 +1,20 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/breadcrumb';
 
-.#{vars.$prefix}--breadcrumb {
+.#{$prefix}--breadcrumb {
   display: flex;
   flex-wrap: nowrap;
 }
 
 .breadcrumb--container {
   &__overflowfull {
-    .#{vars.$prefix}--breadcrumb-item {
+    .#{$prefix}--breadcrumb-item {
       min-width: 0;
     }
 
-    .#{vars.$prefix}--breadcrumb-item > * {
+    .#{$prefix}--breadcrumb-item > * {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -30,7 +30,7 @@
   }
   margin-right: spacing.$spacing-03;
 
-  .#{vars.$prefix}--overflow-menu {
+  .#{$prefix}--overflow-menu {
     height: auto;
     width: auto;
 
@@ -47,7 +47,7 @@
       border-color: theme.$link-01;
     }
 
-    &.#{vars.$prefix}--overflow-menu--open {
+    &.#{$prefix}--overflow-menu--open {
       background: none;
       box-shadow: none;
     }
@@ -55,15 +55,15 @@
 }
 
 .breadcrumb--overflow-items {
-  &.#{vars.$prefix}--overflow-menu-options--open {
+  &.#{$prefix}--overflow-menu-options--open {
     transform: translate(-45%, 1rem);
 
     &:focus {
       outline: none;
     }
   }
-  &.#{vars.$prefix}--overflow-menu-options::after,
-  &.#{vars.$prefix}--overflow-menu-options[data-floating-menu-direction='bottom']::after {
+  &.#{$prefix}--overflow-menu-options::after,
+  &.#{$prefix}--overflow-menu-options[data-floating-menu-direction='bottom']::after {
     transform: translate(-50%, -8px);
     background: none;
     left: 50% !important;
@@ -74,7 +74,7 @@
     height: 0;
   }
 
-  .#{vars.$prefix}--overflow-menu-options__option:nth-child(even) {
+  .#{$prefix}--overflow-menu-options__option:nth-child(even) {
     background-color: theme.$field-02;
 
     &:hover {
@@ -82,16 +82,16 @@
     }
   }
 
-  .#{vars.$prefix}--overflow-menu-options__btn {
+  .#{$prefix}--overflow-menu-options__btn {
     text-decoration: none;
   }
 }
 
 html[dir='rtl'] .breadcrumb--container {
-  .#{vars.$prefix}--breadcrumb-item::after,
+  .#{$prefix}--breadcrumb-item::after,
   .breadcrumb--overflow:after,
-  .#{vars.$prefix}--breadcrumb-item:last-child,
-  .#{vars.$prefix}--breadcrumb-item:last-child::after {
+  .#{$prefix}--breadcrumb-item:last-child,
+  .#{$prefix}--breadcrumb-item:last-child::after {
     margin-left: auto;
     margin-right: spacing.$spacing-03;
   }

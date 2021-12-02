@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/motion";
 @use "../../globals/mixins";
 @use "../../globals/typography";
@@ -10,8 +10,8 @@
 
 $cardPadding: spacing.$spacing-05;
 
-.#{vars.$iot-prefix}--map {
-  &-card-content.#{vars.$iot-prefix}--card--content--expanded {
+.#{$iot-prefix}--map {
+  &-card-content.#{$iot-prefix}--card--content--expanded {
     overflow: hidden;
   }
   // container and map canvas
@@ -71,7 +71,7 @@ $cardPadding: spacing.$spacing-05;
   // settings open
   &__container--open {
     width: calc(100% - 256px);
-    &-legend.#{vars.$iot-prefix}--map-legend--fullwidth {
+    &-legend.#{$iot-prefix}--map-legend--fullwidth {
       width: calc(100% - 256px);
     }
   }
@@ -101,7 +101,7 @@ $cardPadding: spacing.$spacing-05;
       right: 2rem;
       top: 2rem;
       bottom: 2rem;
-      &.#{vars.$iot-prefix}--map-controls--has-fullwidth-legend {
+      &.#{$iot-prefix}--map-controls--has-fullwidth-legend {
         bottom: 8.5rem;
       }
     }
@@ -142,7 +142,7 @@ $cardPadding: spacing.$spacing-05;
   }
 
   &-controls-btn:not(:last-child) {
-    &:not(.#{vars.$iot-prefix}--btn-icon-selection--selected) {
+    &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
       border-bottom: 1px solid theme.$ui-03;
     }
   }
@@ -162,12 +162,12 @@ $cardPadding: spacing.$spacing-05;
     top: 0;
     z-index: 2;
 
-    .#{vars.$iot-prefix}--map-controls-layers--open &:not(:hover)::before,
-    .#{vars.$iot-prefix}--map-controls-layers--open &:not(:hover) .#{vars.$prefix}--assistive-text {
+    .#{$iot-prefix}--map-controls-layers--open &:not(:hover)::before,
+    .#{$iot-prefix}--map-controls-layers--open &:not(:hover) .#{$prefix}--assistive-text {
       visibility: hidden;
     }
 
-    svg.#{vars.$iot-prefix}--map-controls-layers-trigger__caret {
+    svg.#{$iot-prefix}--map-controls-layers-trigger__caret {
       fill: theme.$icon-01 !important;
       transform: rotate(45deg);
       bottom: -1px;
@@ -190,13 +190,13 @@ $cardPadding: spacing.$spacing-05;
     transition: opacity motion.$duration-fast-02 motion.motion(entrance, productive),
       transform motion.$duration-fast-02 motion.motion(entrance, productive);
 
-    .#{vars.$iot-prefix}--map-controls-layers--open & {
+    .#{$iot-prefix}--map-controls-layers--open & {
       opacity: 1;
       overflow: visible;
       max-width: 100vw;
       transform: translateX(#{$size-small-offset});
 
-      .#{vars.$iot-prefix}--card--content--expanded & {
+      .#{$iot-prefix}--card--content--expanded & {
         transform: translateX(#{$size-field-offset});
       }
     }
@@ -206,16 +206,16 @@ $cardPadding: spacing.$spacing-05;
       right: unset;
     }
 
-    [dir='rtl'] .#{vars.$iot-prefix}--map-controls-layers--open & {
+    [dir='rtl'] .#{$iot-prefix}--map-controls-layers--open & {
       transform: translateX(calc(-1 * #{$size-small-offset}));
-      .#{vars.$iot-prefix}--card--content--expanded & {
+      .#{$iot-prefix}--card--content--expanded & {
         transform: translateX(calc(-1 * #{$size-field-offset}));
       }
     }
 
     [dir='rtl']
-      .#{vars.$iot-prefix}--card--content--expanded
-      .#{vars.$iot-prefix}--map-controls-layers--open
+      .#{$iot-prefix}--card--content--expanded
+      .#{$iot-prefix}--map-controls-layers--open
       & {
       transform: translateX(calc(-1 * #{$size-field-offset}));
     }
@@ -223,12 +223,12 @@ $cardPadding: spacing.$spacing-05;
 
   &-controls-layers-btn {
     background-color: white;
-    &:not(.#{vars.$iot-prefix}--btn-icon-selection--selected) {
+    &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
       border-right: 1px solid theme.$ui-03;
     }
 
     [dir='rtl'] & {
-      &:not(.#{vars.$iot-prefix}--btn-icon-selection--selected) {
+      &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
         border-left: 1px solid theme.$ui-03;
         border-right: none;
       }

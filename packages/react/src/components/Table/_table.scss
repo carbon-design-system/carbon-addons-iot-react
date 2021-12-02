@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/colors";
 @use "../../globals/mixins";
 @use './TableHead/table-head';
@@ -10,35 +10,35 @@
 @use './TableDetailWizard/table-detail-wizard';
 @use './TableMultiSortModal/table-multi-sort-modal';
 
-table.#{vars.$prefix}--side-nav--data-table {
+table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
 }
 
-.#{vars.$iot-prefix}--data-table--row-actions {
+.#{$iot-prefix}--data-table--row-actions {
   height: 0;
 }
 
-.#{vars.$iot-prefix}--data-table--fixed {
+.#{$iot-prefix}--data-table--fixed {
   table-layout: fixed;
 }
 
-.#{vars.$iot-prefix}--data-table--column-groups {
+.#{$iot-prefix}--data-table--column-groups {
   border-collapse: separate;
 }
 
-.#{vars.$iot-prefix}--table__cell--truncate {
+.#{$iot-prefix}--table__cell--truncate {
   max-width: 0;
 }
 
-td.#{vars.$iot-prefix}--table__cell--sortable {
+td.#{$iot-prefix}--table__cell--sortable {
   padding-right: spacing.$spacing-09;
 }
 
-.#{vars.$iot-prefix}--data-table--resize td {
+.#{$iot-prefix}--data-table--resize td {
   word-break: break-all;
 }
 
-.#{vars.$iot-prefix}--table-container {
+.#{$iot-prefix}--table-container {
   min-width: unset;
   padding-top: 0;
 
@@ -47,29 +47,29 @@ td.#{vars.$iot-prefix}--table__cell--sortable {
   }
 }
 
-.#{vars.$iot-prefix}-table-container--dropdown-height-fix {
+.#{$iot-prefix}-table-container--dropdown-height-fix {
   background-color: theme.$ui-01;
   min-height: calc(#{spacing.$spacing-10} * 5);
-  .#{vars.$prefix}--data-table-content {
+  .#{$prefix}--data-table-content {
     min-height: calc(#{spacing.$spacing-10} * 5);
   }
 }
 
 html[dir='rtl'] {
-  .#{vars.$iot-prefix}--expanded-tablerow td:first-of-type:before {
+  .#{$iot-prefix}--expanded-tablerow td:first-of-type:before {
     left: auto;
     right: 0;
   }
-  .#{vars.$iot-prefix}--expanded-tablerow > td * {
+  .#{$iot-prefix}--expanded-tablerow > td * {
     text-align: right;
   }
 
-  td.#{vars.$iot-prefix}--table__cell--sortable {
+  td.#{$iot-prefix}--table__cell--sortable {
     padding-left: spacing.$spacing-08;
   }
 }
 
-.#{vars.$iot-prefix}--empty-table--table-row {
+.#{$iot-prefix}--empty-table--table-row {
   height: calc(100% - #{spacing.$spacing-09});
   &:hover td {
     background: inherit;
@@ -98,12 +98,12 @@ html[dir='rtl'] {
   }
 }
 
-.#{vars.$iot-prefix}--table__advanced-filters-container {
+.#{$iot-prefix}--table__advanced-filters-container {
   background-color: theme.$ui-01;
   padding: spacing.$spacing-02 spacing.$spacing-04;
   border-top: 1px solid theme.$ui-03;
 
-  .#{vars.$prefix}--tag {
+  .#{$prefix}--tag {
     color: theme.$interactive-01;
     background-color: colors.$blue-20;
   }
@@ -111,17 +111,17 @@ html[dir='rtl'] {
 
 // needed specificity to override .iot--tooltip-svg-wrapper and allow flyout to align
 // properly with button
-button.#{vars.$prefix}--btn.#{vars.$iot-prefix}--tooltip-svg-wrapper.#{vars.$prefix}--btn--ghost.#{vars.$iot-prefix}--table-toolbar__advanced-filters-button {
+button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost.#{$iot-prefix}--table-toolbar__advanced-filters-button {
   border: 1px solid transparent;
 
-  &.#{vars.$iot-prefix}--table-toolbar-button-active {
+  &.#{$iot-prefix}--table-toolbar-button-active {
     @include mixins.box-shadow;
   }
 }
 
 // regression fix for tiny expand chrevron on some expandable table rows
-.#{vars.$prefix}--data-table thead th.#{vars.$prefix}--table-expand,
-.#{vars.$prefix}--data-table tbody td.#{vars.$prefix}--table-expand {
+.#{$prefix}--data-table thead th.#{$prefix}--table-expand,
+.#{$prefix}--data-table tbody td.#{$prefix}--table-expand {
   height: spacing.$spacing-07;
   width: spacing.$spacing-08;
 }

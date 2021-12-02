@@ -1,31 +1,31 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--table-multi-sort-modal {
+.#{$iot-prefix}--table-multi-sort-modal {
   html[dir='rtl'] & {
-    .#{vars.$prefix}--modal-content {
+    .#{$prefix}--modal-content {
       padding-right: spacing.$spacing-05;
       padding-left: spacing.$spacing-09;
     }
-    .#{vars.$prefix}--modal-header {
+    .#{$prefix}--modal-header {
       padding-right: spacing.$spacing-09;
     }
   }
 
-  .#{vars.$iot-prefix}--table-multi-sort-row {
+  .#{$iot-prefix}--table-multi-sort-row {
     display: grid;
     gap: spacing.$spacing-05;
     grid-template-columns: 16px 1fr 1fr 48px 48px;
     margin-bottom: spacing.$spacing-05;
-    button.#{vars.$prefix}--btn--icon-only {
+    button.#{$prefix}--btn--icon-only {
       height: 40px;
       width: 48px;
       margin-top: 24px;
     }
   }
 
-  .#{vars.$iot-prefix}--table-multi-sort-row__handle {
+  .#{$iot-prefix}--table-multi-sort-row__handle {
     align-self: center;
     cursor: grab;
   }

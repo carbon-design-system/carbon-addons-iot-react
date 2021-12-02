@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--sample-tile {
+.#{$iot-prefix}--sample-tile {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -10,7 +10,7 @@
   height: 100%;
   overflow: hidden;
 }
-.#{vars.$iot-prefix}--sample-tile-icon {
+.#{$iot-prefix}--sample-tile-icon {
   background-color: #dfe3e6;
   height: 100px;
   width: 100px;
@@ -22,28 +22,32 @@
   justify-content: center;
 }
 
-.#{vars.$iot-prefix}--sample-tile-title {
+.#{$iot-prefix}--sample-tile-title {
   color: theme.$link-01;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;
   padding-bottom: spacing.$spacing-03;
   max-width: calc(100vw - 20rem);
-  @media screen and (min-width: vars.$two-pane) {
+
+  // comes from vars
+  @media screen and (min-width: $two-pane) {
     max-width: calc(100vw / 2 - 15rem);
   }
-  @media screen and (min-width: vars.$three-pane) {
+  // comes from vars
+  @media screen and (min-width: $three-pane) {
     max-width: calc(100vw / 3 - 15rem);
   }
 }
 
-.#{vars.$iot-prefix}--sample-tile-contents {
+.#{$iot-prefix}--sample-tile-contents {
   display: flex;
   flex-flow: column nowrap;
   padding: 0 spacing.$spacing-05;
   align-self: flex-start;
 }
 
-.#{vars.$iot-prefix}--sample-tile-description {
-  font-size: vars.$typography-01;
+.#{$iot-prefix}--sample-tile-description {
+  // comes from vars
+  font-size: $typography-01;
 }

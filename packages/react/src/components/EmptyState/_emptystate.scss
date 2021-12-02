@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/typography';
 
-.#{vars.$iot-prefix}--empty-state {
+.#{$iot-prefix}--empty-state {
   display: flex;
   flex-flow: column;
   justify-content: center;

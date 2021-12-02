@@ -1,17 +1,17 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../../../globals/typography';
 @use './table-toolbar-svg-button';
 @use './advanced-filter-flyout';
 
-div.#{vars.$prefix}--toolbar-action.#{vars.$prefix}--toolbar-search-container-expandable {
-  > div.#{vars.$prefix}--search.#{vars.$prefix}--search--sm.table-toolbar-search {
+div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
+  > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {
     flex-grow: 2;
   }
 }
 
-.#{vars.$iot-prefix}--table-toolbar-secondary-title {
+.#{$iot-prefix}--table-toolbar-secondary-title {
   padding: spacing.$spacing-05;
   @include typography.type-style('productive-heading-01');
   overflow: hidden;
@@ -19,16 +19,16 @@ div.#{vars.$prefix}--toolbar-action.#{vars.$prefix}--toolbar-search-container-ex
   white-space: nowrap;
 }
 
-.#{vars.$iot-prefix}--table-toolbar {
+.#{$iot-prefix}--table-toolbar {
   width: 100%;
   padding-top: spacing.$spacing-01;
 }
 
-.#{vars.$prefix}--table-toolbar {
+.#{$prefix}--table-toolbar {
   height: spacing.$spacing-09;
 }
 
-.#{vars.$iot-prefix}--table-toolbar-content {
+.#{$iot-prefix}--table-toolbar-content {
   flex: 1;
   font-size: 0.875rem;
   // Z-index higher than 1 is needed to have Dropdown components correctly show
@@ -36,26 +36,25 @@ div.#{vars.$prefix}--toolbar-action.#{vars.$prefix}--toolbar-search-container-ex
   z-index: 2;
 }
 
-.#{vars.$prefix}--batch-actions:not(.#{vars.$prefix}--batch-actions--active)
-  ~ .#{vars.$prefix}--toolbar-content {
+.#{$prefix}--batch-actions:not(.#{$prefix}--batch-actions--active) ~ .#{$prefix}--toolbar-content {
   // The carbon clip-path is hiding the menus for Dropdowns placed in the toolbar,
   // but the clip-path is only needed when batch actions are active.
   clip-path: unset;
 }
 
-.#{vars.$iot-prefix}--table-batch-actions {
+.#{$iot-prefix}--table-batch-actions {
   z-index: 3;
 
-  & + .#{vars.$prefix}--toolbar-action {
+  & + .#{$prefix}--toolbar-action {
     padding: 0;
   }
 }
 
-.#{vars.$iot-prefix}--table-tooltip-container {
+.#{$iot-prefix}--table-tooltip-container {
   padding: spacing.$spacing-05 0;
 }
 
-.#{vars.$iot-prefix}--table-row-edit-actions {
+.#{$iot-prefix}--table-row-edit-actions {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
@@ -63,32 +62,32 @@ div.#{vars.$prefix}--toolbar-action.#{vars.$prefix}--toolbar-search-container-ex
 }
 
 html[dir='rtl'] {
-  .#{vars.$iot-prefix}--table-batch-actions {
-    .#{vars.$prefix}--action-list {
+  .#{$iot-prefix}--table-batch-actions {
+    .#{$prefix}--action-list {
       left: 0;
       right: auto;
     }
 
-    .#{vars.$prefix}--batch-summary {
+    .#{$prefix}--batch-summary {
       left: auto;
       margin-left: 0;
       margin-right: spacing.$spacing-05;
       right: 0;
     }
 
-    .#{vars.$prefix}--btn--primary.#{vars.$prefix}--batch-summary__cancel::before {
+    .#{$prefix}--btn--primary.#{$prefix}--batch-summary__cancel::before {
       left: auto;
       right: 0;
     }
   }
 }
 
-.#{vars.$iot-prefix}--table-toolbar-aggregations__overflow-menu {
+.#{$iot-prefix}--table-toolbar-aggregations__overflow-menu {
   min-height: spacing.$spacing-09;
   width: spacing.$spacing-09;
 }
 
-.#{vars.$iot-prefix}--table-toolbar-aggregations__overflow-icon {
+.#{$iot-prefix}--table-toolbar-aggregations__overflow-icon {
   height: initial;
   width: initial;
 }

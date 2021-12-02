@@ -1,8 +1,8 @@
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/motion';
 @use '../../globals/spacing';
 
-.#{vars.$iot-prefix}--main-content {
+.#{$iot-prefix}--main-content {
   padding-top: spacing.$spacing-09;
   height: 100%;
   transition: all motion.$duration-fast-02 cubic-bezier(0.2, 0, 1, 0.9);
@@ -11,7 +11,7 @@
   @media (min-width: 66em) {
     width: calc(100% - 3rem);
 
-    .#{vars.$iot-prefix}--side-nav--expanded + & {
+    .#{$iot-prefix}--side-nav--expanded + & {
       width: calc(100% - 16rem);
     }
 
@@ -19,7 +19,7 @@
       transform: translateX(3rem);
     }
 
-    html:not([dir='rtl']) .#{vars.$iot-prefix}--side-nav--expanded + & {
+    html:not([dir='rtl']) .#{$iot-prefix}--side-nav--expanded + & {
       transform: translateX(16rem);
     }
 
@@ -27,7 +27,7 @@
       transform: translateX(-3rem);
     }
 
-    html[dir='rtl'] .#{vars.$iot-prefix}--side-nav--expanded + & {
+    html[dir='rtl'] .#{$iot-prefix}--side-nav--expanded + & {
       transform: translateX(-16rem);
     }
   }

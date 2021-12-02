@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/colors';
 @use '../../globals/mixins';
 @use '../../globals/motion';
@@ -22,7 +22,7 @@
 /* stylelint-disable */
 $small-screen-breakpoint: 65.99em;
 
-.#{vars.$iot-prefix}--side-nav {
+.#{$iot-prefix}--side-nav {
   ///////////////////////////////////////
   // Added here to allow for collapse sidenav
   // with isRail property functionality
@@ -35,7 +35,7 @@ $small-screen-breakpoint: 65.99em;
   // Added here to allow for collapse sidenav
   // with isRail property functionality
   ///////////////////////////////////////
-  &.#{vars.$iot-prefix}--side-nav--expanded {
+  &.#{$iot-prefix}--side-nav--expanded {
     @media (max-width: $small-screen-breakpoint) {
       width: 16rem;
     }
@@ -45,7 +45,7 @@ $small-screen-breakpoint: 65.99em;
   // Added here to align the button with the
   // regular Carbon anchor tag
   ///////////////////////////////////////
-  button.#{vars.$prefix}--side-nav__link {
+  button.#{$prefix}--side-nav__link {
     background: none;
     border: none;
     width: 100%;
@@ -55,21 +55,20 @@ $small-screen-breakpoint: 65.99em;
   // Duplicated here to remove scoping
   // carbon does to anchor element
   //////////////////////////////////////
-  .#{vars.$prefix}--side-nav__menu
-    .#{vars.$prefix}--side-nav__link:not(.#{vars.$prefix}--side-nav__link--current):not([aria-current='page']):hover {
+  .#{$prefix}--side-nav__menu
+    .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover {
     color: colors.$gray-100;
     background-color: theme.$background-hover;
   }
 
-  .#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link {
+  .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link {
     height: functions.mini-units(4);
     min-height: functions.mini-units(4);
     padding-left: functions.mini-units(4);
     font-weight: 400;
   }
 
-  .#{vars.$prefix}--side-nav__item.#{vars.$prefix}--side-nav__item--icon
-    .#{vars.$prefix}--side-nav__link {
+  .#{$prefix}--side-nav__item.#{$prefix}--side-nav__item--icon .#{$prefix}--side-nav__link {
     padding-left: functions.mini-units(9);
 
     html[dir='rtl'] & {
@@ -77,9 +76,9 @@ $small-screen-breakpoint: 65.99em;
     }
   }
 
-  .#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link--current,
-  .#{vars.$prefix}--side-nav__menu .#{vars.$prefix}--side-nav__link[aria-current='page'],
-  .#{vars.$prefix}--side-nav__link--current {
+  .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current,
+  .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'],
+  .#{$prefix}--side-nav__link--current {
     background-color: colors.$gray-20;
 
     > span {
@@ -88,7 +87,7 @@ $small-screen-breakpoint: 65.99em;
     }
   }
 
-  .#{vars.$prefix}--side-nav__link {
+  .#{$prefix}--side-nav__link {
     @include mixins.focus-outline('reset');
     @include typography.type-style('productive-heading-01');
 
@@ -102,7 +101,7 @@ $small-screen-breakpoint: 65.99em;
       outline motion.$duration-fast-02;
   }
 
-  .#{vars.$prefix}--side-nav__link > .#{vars.$prefix}--side-nav__link-text {
+  .#{$prefix}--side-nav__link > .#{$prefix}--side-nav__link-text {
     @include shell-mixins.text-overflow();
 
     color: theme.$text-secondary;
@@ -112,7 +111,7 @@ $small-screen-breakpoint: 65.99em;
     user-select: none;
   }
 
-  .#{vars.$prefix}--side-nav__link:focus {
+  .#{$prefix}--side-nav__link:focus {
     @include mixins.focus-outline('outline');
 
     // Windows, Firefox HCM Fix
@@ -122,19 +121,19 @@ $small-screen-breakpoint: 65.99em;
     }
   }
 
-  .#{vars.$prefix}--side-nav__link[aria-current='page'],
-  .#{vars.$prefix}--side-nav__link--current {
+  .#{$prefix}--side-nav__link[aria-current='page'],
+  .#{$prefix}--side-nav__link--current {
     font-weight: 600;
     background-color: theme.$background-hover;
   }
 
-  .#{vars.$prefix}--side-nav__link[aria-current='page'] .#{vars.$prefix}--side-nav__link-text,
-  .#{vars.$prefix}--side-nav__link--current .#{vars.$prefix}--side-nav__link-text {
+  .#{$prefix}--side-nav__link[aria-current='page'] .#{$prefix}--side-nav__link-text,
+  .#{$prefix}--side-nav__link--current .#{$prefix}--side-nav__link-text {
     color: colors.$gray-100;
   }
 
-  .#{vars.$prefix}--side-nav__link[aria-current='page']::before,
-  .#{vars.$prefix}--side-nav__link--current::before {
+  .#{$prefix}--side-nav__link[aria-current='page']::before,
+  .#{$prefix}--side-nav__link--current::before {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -144,14 +143,14 @@ $small-screen-breakpoint: 65.99em;
     content: '';
   }
 
-  &.#{vars.$prefix}--side-nav--fixed .#{vars.$prefix}--side-nav__link {
+  &.#{$prefix}--side-nav--fixed .#{$prefix}--side-nav__link {
     padding-left: functions.mini-units(2);
   }
 
-  &.#{vars.$prefix}--side-nav--fixed
-    .#{vars.$prefix}--side-nav__item:not(.#{vars.$prefix}--side-nav__item--icon)
-    .#{vars.$prefix}--side-nav__menu
-    .#{vars.$prefix}--side-nav__link {
+  &.#{$prefix}--side-nav--fixed
+    .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--icon)
+    .#{$prefix}--side-nav__menu
+    .#{$prefix}--side-nav__link {
     padding-left: functions.mini-units(4);
   }
 }

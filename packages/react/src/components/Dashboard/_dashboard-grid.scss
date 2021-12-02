@@ -1,7 +1,7 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
-.#{vars.$iot-prefix}--dashboard-grid {
+@use '../../globals/vars' as *;
+.#{$iot-prefix}--dashboard-grid {
   position: relative;
   .react-grid-item.cssTransforms {
     transition-property: none;
@@ -13,7 +13,7 @@
   }
 }
 
-.#{vars.$iot-prefix}--dashboard-grid__animate {
+.#{$iot-prefix}--dashboard-grid__animate {
   .react-grid-item.cssTransforms {
     transition-property: transform;
   }

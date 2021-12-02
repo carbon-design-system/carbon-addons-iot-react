@@ -1,9 +1,9 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/motion";
 
-.#{vars.$iot-prefix}--tear-sheet-wrapper {
+.#{$iot-prefix}--tear-sheet-wrapper {
   top: 0;
   left: 0;
   height: 100vh;
@@ -26,12 +26,12 @@
     opacity: 1;
     margin: 0 auto;
 
-    .#{vars.$iot-prefix}--tear-sheet-wrapper__is-visible
-      &:not(.#{vars.$iot-prefix}--tear-sheet-wrapper--container__is-hidden) {
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible
+      &:not(.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden) {
       transform: translate(-50%, 0);
     }
 
-    .#{vars.$iot-prefix}--tear-sheet-wrapper__is-visible &__is-hidden {
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible &__is-hidden {
       filter: brightness(75%);
       transform: translate(-50%, 100vh);
       width: calc(100% - 9.5rem);
@@ -40,16 +40,16 @@
       }
     }
 
-    .#{vars.$iot-prefix}--tear-sheet-wrapper__is-visible
-      &:first-child.#{vars.$iot-prefix}--tear-sheet-wrapper--container__is-hidden,
-    .#{vars.$iot-prefix}--tear-sheet-wrapper__is-visible
-      &:first-child.#{vars.$iot-prefix}--tear-sheet-wrapper--container__is-hidden
-      + .#{vars.$iot-prefix}--tear-sheet-wrapper--container__is-hidden {
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible
+      &:first-child.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden,
+    .#{$iot-prefix}--tear-sheet-wrapper__is-visible
+      &:first-child.#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden
+      + .#{$iot-prefix}--tear-sheet-wrapper--container__is-hidden {
       transform: translate(-50%, -0.75rem);
     }
   }
 
-  &.#{vars.$iot-prefix}--tear-sheet-wrapper__is-visible {
+  &.#{$iot-prefix}--tear-sheet-wrapper__is-visible {
     background-color: theme.$overlay-01;
     z-index: 5999;
     transition: opacity motion.$duration-slow-01 motion.motion(standard, expressive),

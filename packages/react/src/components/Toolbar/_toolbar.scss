@@ -2,14 +2,14 @@
 // copied it here to create it.
 
 // @use '~carbon-components/scss/components/toolbar/toolbar';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/layout';
 @use '../../globals/theme';
 @use '../../globals/motion';
 @use '../../globals/typography';
 @use '../../globals/mixins';
 
-.#{vars.$prefix}--toolbar {
+.#{$prefix}--toolbar {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -19,22 +19,22 @@
     margin: 0 layout.rem(4px);
   }
 
-  .#{vars.$prefix}--search-input {
+  .#{$prefix}--search-input {
     height: layout.rem(32px);
     background-color: transparent;
     outline: none;
   }
 
-  .#{vars.$prefix}--search-close {
+  .#{$prefix}--search-close {
     display: none;
   }
 
-  .#{vars.$prefix}--overflow-menu__icon {
+  .#{$prefix}--overflow-menu__icon {
     fill: theme.$text-02;
     transition: fill 50ms motion.$standard-easing;
   }
 
-  .#{vars.$prefix}--search-magnifier {
+  .#{$prefix}--search-magnifier {
     top: layout.rem(8px);
     left: layout.rem(6px);
     cursor: pointer;
@@ -48,38 +48,38 @@
     border: 0;
   }
 
-  .#{vars.$prefix}--toolbar-search--active {
+  .#{$prefix}--toolbar-search--active {
     width: layout.rem(250px);
 
-    .#{vars.$prefix}--search-magnifier {
+    .#{$prefix}--search-magnifier {
       top: layout.rem(9px);
       transform: scale(1);
     }
 
-    .#{vars.$prefix}--search-input {
+    .#{$prefix}--search-input {
       background-color: theme.$field-02;
     }
 
-    .#{vars.$prefix}--search-close {
+    .#{$prefix}--search-close {
       display: block;
     }
   }
 
-  .#{vars.$prefix}--checkbox-label {
+  .#{$prefix}--checkbox-label {
     margin-bottom: 0;
   }
 
-  .#{vars.$prefix}--overflow-menu--open > .#{vars.$prefix}--overflow-menu__icon {
+  .#{$prefix}--overflow-menu--open > .#{$prefix}--overflow-menu__icon {
     fill: theme.$interactive-01;
   }
 }
 
-.#{vars.$prefix}--toolbar-search {
+.#{$prefix}--toolbar-search {
   width: 1.8rem;
   transition: all 175ms motion.$standard-easing;
 }
 
-.#{vars.$prefix}--toolbar-search__btn {
+.#{$prefix}--toolbar-search__btn {
   position: absolute;
   top: 0;
   left: 0;
@@ -93,33 +93,32 @@
   }
 }
 
-.#{vars.$prefix}--toolbar-filter-icon {
+.#{$prefix}--toolbar-filter-icon {
   padding-right: 0;
   padding-left: 0;
 }
 
-.#{vars.$prefix}--toolbar-menu__title {
+.#{$prefix}--toolbar-menu__title {
   @include typography.type-style('caption-01');
 
   padding: 0.5rem 1.25rem;
   font-weight: 600;
 }
 
-.#{vars.$prefix}--toolbar-menu__option {
+.#{$prefix}--toolbar-menu__option {
   padding: 0.5rem 1.25rem;
 }
 
-.#{vars.$prefix}--toolbar-menu__divider {
+.#{$prefix}--toolbar-menu__divider {
   width: 100%;
   border: 0;
   border-top: 1px solid theme.$ui-03;
 }
 
-.#{vars.$prefix}--radio-button-group {
+.#{$prefix}--radio-button-group {
   border: none;
 }
 
-.#{vars.$prefix}--toolbar-search:not(.#{vars.$prefix}--toolbar-search--active)
-  .#{vars.$prefix}--search-input {
+.#{$prefix}--toolbar-search:not(.#{$prefix}--toolbar-search--active) .#{$prefix}--search-input {
   border-bottom: none;
 }

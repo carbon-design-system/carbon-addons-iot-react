@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/mixins';
 @use '../../globals/colors';
 @use '../../globals/typography';
@@ -12,7 +12,7 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
 
 // The custom properties --x-pos, --y-pos, --width, --height are set
 // on the container by the react js code. They do not include units.
-.#{vars.$iot-prefix}--hotspot-container {
+.#{$iot-prefix}--hotspot-container {
   position: absolute;
   font-family: Sans-Serif;
   pointer-events: auto;
@@ -21,9 +21,9 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
 }
 
 // FIXED OR DYNAMIC HOTSPOT (USING TOOLTIP)
-.#{vars.$iot-prefix}--hotspot-container--is-fixed,
-.#{vars.$iot-prefix}--hotspot-container--is-dynamic {
-  &.#{vars.$iot-prefix}--hotspot-container--selected {
+.#{$iot-prefix}--hotspot-container--is-fixed,
+.#{$iot-prefix}--hotspot-container--is-dynamic {
+  &.#{$iot-prefix}--hotspot-container--selected {
     $padding: spacing.$spacing-02;
 
     box-sizing: border-box;
@@ -36,8 +36,8 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
       (var(--x-pos) * 1%) - (((var(--width) * 1px) / 2) + #{$padding} + #{$selected-border-width})
     );
   }
-  &.#{vars.$iot-prefix}--hotspot-container--has-icon {
-    .#{vars.$prefix}--tooltip__label {
+  &.#{$iot-prefix}--hotspot-container--has-icon {
+    .#{$prefix}--tooltip__label {
       border: solid 1px colors.$gray-40;
       cursor: pointer;
       padding: spacing.$spacing-02;
@@ -48,7 +48,7 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
     }
   }
 
-  .#{vars.$prefix}--tooltip__label {
+  .#{$prefix}--tooltip__label {
     display: flex;
     cursor: pointer;
     border-radius: 13px;
@@ -57,15 +57,15 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
   }
 }
 
-.#{vars.$iot-prefix}--hotspot-container--is-dynamic.#{vars.$iot-prefix}--hotspot-container--selected {
+.#{$iot-prefix}--hotspot-container--is-dynamic.#{$iot-prefix}--hotspot-container--selected {
   border-style: dashed;
 }
 
 // TEXT HOTSPOT
 // The custom properties --bold, --italic, --background-color etc are set
 // on the container by the react js code
-.#{vars.$iot-prefix}--hotspot-container--is-text {
-  &.#{vars.$iot-prefix}--hotspot-container--selected {
+.#{$iot-prefix}--hotspot-container--is-text {
+  &.#{$iot-prefix}--hotspot-container--selected {
     box-sizing: border-box;
     border: $selected-border;
     top: calc((var(--y-pos) * 1%) - (((var(--height) * 1px) / 2)));
@@ -73,7 +73,7 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
   }
 }
 
-.#{vars.$iot-prefix}--text-hotspot {
+.#{$iot-prefix}--text-hotspot {
   $padding: spacing.$spacing-03;
   $min-width: spacing.$spacing-12;
   $text-input-height: spacing.$spacing-08;
@@ -90,9 +90,9 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
   border-color: var(--border-color);
   border-width: calc(var(--border-width) * 1px);
 
-  .#{vars.$iot-prefix}--hotspot-content {
+  .#{$iot-prefix}--hotspot-content {
     & > *:nth-child(2) {
-      &.#{vars.$iot-prefix}--hotspot-content-attribute {
+      &.#{$iot-prefix}--hotspot-content-attribute {
         margin-top: spacing.$spacing-03;
       }
     }
@@ -115,27 +115,27 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
       font-size: calc(var(--title-font-size) * 1px);
 
       // Used to expand the hotspot while the user types into the TextInput
-      &.#{vars.$iot-prefix}--hotspot-content-title__visually-hidden {
+      &.#{$iot-prefix}--hotspot-content-title__visually-hidden {
         visibility: hidden;
         height: 0px;
       }
     }
   }
 
-  .#{vars.$iot-prefix}--hotspot-content-label-section {
+  .#{$iot-prefix}--hotspot-content-label-section {
     text-align: left;
   }
-  .#{vars.$iot-prefix}--hotspot-content-label,
-  .#{vars.$iot-prefix}--hotspot-content-threshold {
+  .#{$iot-prefix}--hotspot-content-label,
+  .#{$iot-prefix}--hotspot-content-threshold {
     @include typography.type-style('helper-text-01');
     font-weight: normal;
   }
 
-  .#{vars.$iot-prefix}--hotspot-content-title-wrapper--editable {
+  .#{$iot-prefix}--hotspot-content-title-wrapper--editable {
     $negative-margin-to-overide-parent-padding: calc(-1 * (#{$padding}));
     margin: $negative-margin-to-overide-parent-padding;
 
-    .#{vars.$iot-prefix}--hotspot-content-title-input {
+    .#{$iot-prefix}--hotspot-content-title-input {
       padding: 0 calc(#{$padding} + #{$selected-border-width});
       width: calc(
         (var(--width) * 1px) - (#{$selected-border-width} * 2) - (var(--border-width) * 1px * 2)

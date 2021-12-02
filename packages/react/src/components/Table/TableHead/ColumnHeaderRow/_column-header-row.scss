@@ -1,16 +1,16 @@
 @use '../../../../globals/theme';
 @use '../../../../globals/spacing';
-@use '../../../../globals/vars' as globals-vars;
+@use '../../../../globals/vars' as *;
 
-.#{globals-vars.$iot-prefix}--column-header-row--select-wrapper {
+.#{$iot-prefix}--column-header-row--select-wrapper {
   display: flex;
   flex-wrap: wrap;
 }
 
-.#{globals-vars.$iot-prefix}--column-header-row--table-header {
+.#{$iot-prefix}--column-header-row--table-header {
   border-top: none;
 
-  .#{globals-vars.$prefix}--form-item {
+  .#{$prefix}--form-item {
     display: table-cell;
 
     input {
@@ -18,12 +18,12 @@
     }
   }
 
-  .#{globals-vars.$prefix}--table-header-label {
+  .#{$prefix}--table-header-label {
     flex-wrap: wrap;
   }
 }
 
-.#{globals-vars.$iot-prefix}--column-header-row--table-row {
+.#{$iot-prefix}--column-header-row--table-row {
   th {
     padding-top: 1.5rem;
     padding-bottom: 0.5rem;

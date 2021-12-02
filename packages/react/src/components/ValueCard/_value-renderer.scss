@@ -1,20 +1,20 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use "../../globals/mixins";
 @use "../../globals/typography";
 
-.#{vars.$iot-prefix}--value-card__value-renderer {
+.#{$iot-prefix}--value-card__value-renderer {
   &--wrapper {
     text-overflow: ellipsis;
     display: flex;
 
-    .#{vars.$iot-prefix}--value-card__attribute-wrapper--horizontal & {
+    .#{$iot-prefix}--value-card__attribute-wrapper--horizontal & {
       width: auto;
       max-width: 100%;
     }
 
-    .#{vars.$iot-prefix}--value-card__content-wrapper--vertical & {
+    .#{$iot-prefix}--value-card__content-wrapper--vertical & {
       overflow: hidden;
     }
   }
@@ -31,7 +31,7 @@
     @include mixins.multiline-text-overflow($max-lines, $line-height);
     word-break: break-all;
     /* override default button styles to match span visuals when using a button */
-    &.#{vars.$prefix}--btn {
+    &.#{$prefix}--btn {
       padding: spacing.$spacing-01;
       flex: 1;
       white-space: nowrap;
@@ -47,6 +47,6 @@
   }
 }
 
-html[dir='rtl'] .#{vars.$iot-prefix}--value-card__value-renderer--value.#{vars.$iot-prefix}--btn {
+html[dir='rtl'] .#{$iot-prefix}--value-card__value-renderer--value.#{$iot-prefix}--btn {
   padding: spacing.$spacing-01;
 }

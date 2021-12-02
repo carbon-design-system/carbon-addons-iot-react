@@ -1,10 +1,10 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../../../globals/typography';
 @use '../../../globals/mixins';
 
-.#{vars.$iot-prefix}--table__cell--truncate .#{vars.$prefix}--tooltip__label {
+.#{$iot-prefix}--table__cell--truncate .#{$prefix}--tooltip__label {
   // Revert the styles added by the tooltip since we want
   // normal table cell content style even if a tooltip is triggered.
   font-size: inherit;
@@ -20,19 +20,19 @@
   }
 }
 
-.#{vars.$prefix}--tooltip__trigger.#{vars.$prefix}--tooltip--a11y.#{vars.$iot-prefix}--table__cell-tooltip {
+.#{$prefix}--tooltip__trigger.#{$prefix}--tooltip--a11y.#{$iot-prefix}--table__cell-tooltip {
   @include typography.type-style('productive-heading-01');
 }
 
-.#{vars.$iot-prefix}--table__cell-text--truncate {
+.#{$iot-prefix}--table__cell-text--truncate {
   @include mixins.text-overflow();
   display: block;
 }
 
-.#{vars.$iot-prefix}--table__cell-text--no-wrap {
+.#{$iot-prefix}--table__cell-text--no-wrap {
   white-space: nowrap;
 }
 
-.#{vars.$iot-prefix}--table__cell-text--preserve {
+.#{$iot-prefix}--table__cell-text--preserve {
   white-space: pre;
 }

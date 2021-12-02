@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/colors';
 @use "../../globals/layout";
 @use "../../globals/motion";
@@ -11,7 +11,7 @@
   flex-grow: 1;
   justify-content: flex-end;
   align-items: center;
-  .#{vars.$prefix}--search-input {
+  .#{$prefix}--search-input {
     height: spacing.$spacing-08;
     font-size: 0.875rem;
   }
@@ -19,17 +19,17 @@
     margin-left: spacing.$spacing-05;
     margin-right: spacing.$spacing-05;
   }
-  .#{vars.$prefix}--form-item {
+  .#{$prefix}--form-item {
     flex-grow: 0;
     flex-basis: 20rem;
   }
-  .#{vars.$prefix}--content-switcher {
+  .#{$prefix}--content-switcher {
     width: 10rem;
     display: flex;
     margin-left: spacing.$spacing-06;
     margin-right: spacing.$spacing-06;
   }
-  .#{vars.$prefix}--content-switcher-btn {
+  .#{$prefix}--content-switcher-btn {
     padding: 0 spacing.$spacing-05;
     width: 5rem;
   }
@@ -38,20 +38,20 @@
 // TileGallery component
 .tile-gallery {
   &--section {
-    .#{vars.$prefix}--accordion__title {
+    .#{$prefix}--accordion__title {
       font-size: spacing.$spacing-05;
       font-weight: bold;
     }
-    .#{vars.$prefix}--accordion__content {
+    .#{$prefix}--accordion__content {
       padding-left: 0;
     }
-    .#{vars.$prefix}--accordion__item:last-child {
+    .#{$prefix}--accordion__item:last-child {
       border-bottom: none;
     }
-    .#{vars.$prefix}--accordion__item {
+    .#{$prefix}--accordion__item {
       border-top: none;
     }
-    .#{vars.$prefix}--accordion__heading {
+    .#{$prefix}--accordion__heading {
       border-bottom: layout.rem(1px) solid theme.$ui-03;
     }
 
@@ -78,15 +78,15 @@
   .options {
     flex: 0;
     color: theme.$text-01;
-    .#{vars.$prefix}--overflow-menu {
+    .#{$prefix}--overflow-menu {
       height: spacing.$spacing-07;
       margin-right: -(spacing.$spacing-03);
     }
-    .#{vars.$prefix}--inline-loading {
+    .#{$prefix}--inline-loading {
       flex-direction: row-reverse;
       margin-left: spacing.$spacing-03;
     }
-    .#{vars.$prefix}--inline-loading__text {
+    .#{$prefix}--inline-loading__text {
       margin-bottom: 0;
       min-width: 3.5rem;
     }
@@ -108,7 +108,7 @@
     padding-right: spacing.$spacing-05;
     overflow-x: hidden;
   }
-  &.#{vars.$prefix}--tile--clickable:hover,
+  &.#{$prefix}--tile--clickable:hover,
   .tile-list-title:hover {
     background: colors.$white-0;
   }
@@ -116,7 +116,7 @@
     margin-top: -(spacing.$spacing-03);
     margin-left: auto;
   }
-  &.#{vars.$prefix}--link:hover {
+  &.#{$prefix}--link:hover {
     text-decoration: none;
   }
 

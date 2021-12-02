@@ -1,9 +1,9 @@
 @use '../../../globals/theme';
 @use '../../../globals/spacing';
-@use '../../../globals/vars';
+@use '../../../globals/vars' as *;
 @use '../../../globals/layout';
 
-.#{vars.$iot-prefix}--hierarchy-list-bulk {
+.#{$iot-prefix}--hierarchy-list-bulk {
   &-header {
     width: 100%;
     background-color: theme.$focus;
@@ -35,7 +35,7 @@
     }
 
     &--button-no-icon,
-    html[dir='rtl'] &--button-no-icon.#{vars.$iot-prefix}--btn {
+    html[dir='rtl'] &--button-no-icon.#{$iot-prefix}--btn {
       padding: 0 spacing.$spacing-05;
     }
   }
@@ -105,12 +105,12 @@
       }
     }
 
-    & .#{vars.$iot-prefix}--hierarchy-list-bulk-modal--radio {
+    & .#{$iot-prefix}--hierarchy-list-bulk-modal--radio {
       padding: spacing.$spacing-05;
       margin-right: 0;
     }
 
-    &--radio .#{vars.$prefix}--radio-button__appearance {
+    &--radio .#{$prefix}--radio-button__appearance {
       margin-right: 0;
     }
   }

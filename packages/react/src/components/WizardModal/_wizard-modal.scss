@@ -1,29 +1,29 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--wizard-modal {
-  .#{vars.$prefix}--modal-container {
+.#{$iot-prefix}--wizard-modal {
+  .#{$prefix}--modal-container {
     min-width: 410px;
   }
 
-  .#{vars.$prefix}--progress {
+  .#{$prefix}--progress {
     /* need to pad some space for the focus outlines*/
     padding: spacing.$spacing-01;
   }
-  .#{vars.$prefix}--progress-step {
+  .#{$prefix}--progress-step {
     max-width: 150px;
   }
   > div + div {
     padding-top: spacing.$spacing-05;
   }
 
-  .#{vars.$prefix}--modal-content {
+  .#{$prefix}--modal-content {
     width: 100%;
     padding: 0 spacing.$spacing-05;
   }
 
-  .#{vars.$iot-prefix}--wizard-modal__content {
+  .#{$iot-prefix}--wizard-modal__content {
     padding-top: spacing.$spacing-05;
     padding-left: spacing.$spacing-05;
     padding-bottom: spacing.$spacing-12;
@@ -31,18 +31,18 @@
 }
 
 html[dir='rtl'] {
-  .#{vars.$iot-prefix}--wizard-modal {
-    .#{vars.$prefix}--modal-header,
-    .#{vars.$prefix}--modal-content {
+  .#{$iot-prefix}--wizard-modal {
+    .#{$prefix}--modal-header,
+    .#{$prefix}--modal-content {
       padding-left: 20%;
       padding-right: spacing.$spacing-09;
     }
-    .#{vars.$prefix}--progress-step svg {
+    .#{$prefix}--progress-step svg {
       margin-right: 0;
       margin-left: spacing.$spacing-03;
     }
 
-    .#{vars.$iot-prefix}--wizard-modal__content {
+    .#{$iot-prefix}--wizard-modal__content {
       padding-right: spacing.$spacing-05;
       padding-left: 0;
     }

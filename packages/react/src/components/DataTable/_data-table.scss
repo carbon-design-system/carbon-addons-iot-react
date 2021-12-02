@@ -1,6 +1,6 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/data-table';
 @use '~@carbon/styles/scss/components/data-table/action';
 @use '~@carbon/styles/scss/components/data-table/expandable';
@@ -9,19 +9,19 @@
 
 .table-header-label {
   &-start {
-    .#{vars.$prefix}--table-header-label {
+    .#{$prefix}--table-header-label {
       text-align: start;
     }
   }
 
   &-center {
-    .#{vars.$prefix}--table-header-label {
+    .#{$prefix}--table-header-label {
       text-align: center;
     }
   }
 
   &-end {
-    .#{vars.$prefix}--table-header-label {
+    .#{$prefix}--table-header-label {
       text-align: end;
     }
   }
@@ -30,7 +30,7 @@
 .table-header-label-start .table-header-label-start,
 .table-header-label-center .table-header-label-center,
 .table-header-label-end .table-header-label-end {
-  .#{vars.$prefix}--table-header-label {
+  .#{$prefix}--table-header-label {
     width: 100%;
   }
 }
@@ -50,8 +50,8 @@ td.data-table {
 }
 
 html[dir='rtl'] {
-  .#{vars.$prefix}--table-sort__icon-unsorted,
-  .#{vars.$prefix}--table-sort__icon {
+  .#{$prefix}--table-sort__icon-unsorted,
+  .#{$prefix}--table-sort__icon {
     margin-right: spacing.$spacing-03;
     margin-left: 0;
   }
@@ -73,37 +73,37 @@ html[dir='rtl'] {
   }
 }
 
-.#{vars.$prefix}--data-table {
-  .table-header-sortable:not(.#{vars.$prefix}--table-sort) {
+.#{$prefix}--data-table {
+  .table-header-sortable:not(.#{$prefix}--table-sort) {
     padding: 0;
   }
-  .#{vars.$prefix}--table-sort {
+  .#{$prefix}--table-sort {
     padding-left: spacing.$spacing-04;
     padding-right: spacing.$spacing-04;
 
-    .#{vars.$prefix}--table-header-label {
+    .#{$prefix}--table-header-label {
       padding-left: 0;
       padding-right: 0;
     }
   }
 
   // override padding on chexkbox cells, so that it aligns with cell content in tables with xl size prop
-  &.#{vars.$prefix}--data-table--xl {
-    .#{vars.$prefix}--checkbox-table-cell {
+  &.#{$prefix}--data-table--xl {
+    .#{$prefix}--checkbox-table-cell {
       padding-top: spacing.$spacing-05;
     }
   }
 
-  &.#{vars.$prefix}--data-table--xs,
-  &.#{vars.$prefix}--data-table--sm,
-  &.#{vars.$prefix}--data-table--md {
-    .#{vars.$prefix}--checkbox-table-cell {
+  &.#{$prefix}--data-table--xs,
+  &.#{$prefix}--data-table--sm,
+  &.#{$prefix}--data-table--md {
+    .#{$prefix}--checkbox-table-cell {
       padding-top: spacing.$spacing-01;
       padding-bottom: spacing.$spacing-01;
     }
   }
 
-  .#{vars.$prefix}--checkbox-table-cell {
+  .#{$prefix}--checkbox-table-cell {
     padding-bottom: spacing.$spacing-03;
     padding-top: spacing.$spacing-03;
     width: 2.5rem;
@@ -115,35 +115,32 @@ html[dir='rtl'] {
   }
 }
 
-.#{vars.$prefix}--toolbar-search-container-active
-  .#{vars.$prefix}--search
-  .#{vars.$prefix}--search-input {
+.#{$prefix}--toolbar-search-container-active .#{$prefix}--search .#{$prefix}--search-input {
   padding-right: spacing.$spacing-09;
 }
 
 // Fixes bug when modal is opened, then closed. The toolbar moves to the top
-section.#{vars.$prefix}--table-toolbar {
+section.#{$prefix}--table-toolbar {
   overflow: unset;
 }
 
-.#{vars.$prefix}--data-table th {
+.#{$prefix}--data-table th {
   position: relative;
 }
 
-.#{vars.$prefix}--expandable-row .#{vars.$prefix}--table-expand {
+.#{$prefix}--expandable-row .#{$prefix}--table-expand {
   z-index: 2;
 }
 
-.#{vars.$prefix}--expandable-row .#{vars.$prefix}--checkbox-table-cell {
+.#{$prefix}--expandable-row .#{$prefix}--checkbox-table-cell {
   z-index: 1;
 }
 
-tr.#{vars.$prefix}--parent-row.#{vars.$prefix}--data-table--selected td,
-tr.#{vars.$prefix}--parent-row.#{vars.$prefix}--data-table--selected:not(.#{vars.$prefix}--expandable-row):hover
+tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected td,
+tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected:not(.#{$prefix}--expandable-row):hover
   td,
-tr.#{vars.$prefix}--parent-row.#{vars.$prefix}--data-table--selected.#{vars.$prefix}--expandable-row
-  td,
-tr.#{vars.$prefix}--parent-row.#{vars.$prefix}--data-table--selected.#{vars.$prefix}--expandable-row
+tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row td,
+tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row
   td:first-of-type {
   border-bottom-color: theme.$active-ui;
   box-shadow: none;

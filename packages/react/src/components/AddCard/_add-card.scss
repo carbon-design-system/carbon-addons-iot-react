@@ -1,8 +1,8 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}-add-card {
+.#{$iot-prefix}-add-card {
   border: 1px solid transparent;
   display: inline-flex;
   flex-direction: column;
@@ -18,6 +18,6 @@
   }
 }
 
-.#{vars.$iot-prefix}-addcard-title {
+.#{$iot-prefix}-addcard-title {
   color: theme.$text-01;
 }

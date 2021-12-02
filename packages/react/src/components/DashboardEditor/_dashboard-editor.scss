@@ -1,11 +1,11 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
-.#{vars.$iot-prefix}--dashboard-editor {
+@use '../../globals/vars' as *;
+.#{$iot-prefix}--dashboard-editor {
   display: flex;
   // need to reserve space for the suite header
   height: calc(100vh - 3rem);
-  > .#{vars.$prefix}--skeleton__text {
+  > .#{$prefix}--skeleton__text {
     margin-top: 1rem;
     margin-left: 1rem;
   }
@@ -24,7 +24,7 @@
   &-header {
     flex: 0;
     padding: spacing.$spacing-05 0 spacing.$spacing-06;
-    .#{vars.$prefix}--grid {
+    .#{$prefix}--grid {
       /* allow the header to stretch the full page width */
       max-width: none;
       padding-left: spacing.$spacing-07;
@@ -40,7 +40,7 @@
       display: flex;
       align-items: center;
       // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
-      &__import.#{vars.$prefix}--tooltip__trigger {
+      &__import.#{$prefix}--tooltip__trigger {
         // have to force the span containing the svg down to be aligned with other iconOnly buttons
         span {
           padding-top: 3px;
@@ -54,8 +54,8 @@
         margin-right: spacing.$spacing-05;
       }
 
-      .#{vars.$prefix}--btn--tertiary,
-      .#{vars.$prefix}--btn--primary {
+      .#{$prefix}--btn--tertiary,
+      .#{$prefix}--btn--primary {
         margin-left: spacing.$spacing-05;
         padding-left: spacing.$spacing-05;
         padding-right: spacing.$spacing-05;

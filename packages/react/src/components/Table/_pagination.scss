@@ -1,68 +1,66 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 
-.#{vars.$iot-prefix}--pagination {
-  .#{vars.$prefix}--pagination__left {
+.#{$iot-prefix}--pagination {
+  .#{$prefix}--pagination__left {
     margin: auto auto auto 0;
 
     html[dir='rtl'] & {
       margin: auto 0 auto auto;
     }
   }
-  .#{vars.$prefix}--select .#{vars.$prefix}--select-input ~ .#{vars.$prefix}--select__arrow {
+  .#{$prefix}--select .#{$prefix}--select-input ~ .#{$prefix}--select__arrow {
     align-self: center;
   }
-  .#{vars.$prefix}--pagination__left,
-  .#{vars.$prefix}--pagination__text {
+  .#{$prefix}--pagination__left,
+  .#{$prefix}--pagination__text {
     display: var(--pagination-text-display);
   }
 }
-.#{vars.$iot-prefix}--pagination--hide-page {
-  .#{vars.$prefix}--pagination__left .#{vars.$prefix}--pagination__text:first-child,
-  .#{vars.$prefix}--pagination__left span:first-child,
-  .#{vars.$prefix}--pagination__left .#{vars.$prefix}--form-item {
+.#{$iot-prefix}--pagination--hide-page {
+  .#{$prefix}--pagination__left .#{$prefix}--pagination__text:first-child,
+  .#{$prefix}--pagination__left span:first-child,
+  .#{$prefix}--pagination__left .#{$prefix}--form-item {
     display: none;
   }
-  .#{vars.$prefix}--pagination__left .#{vars.$prefix}--pagination__text {
+  .#{$prefix}--pagination__left .#{$prefix}--pagination__text {
     margin-left: 0rem;
   }
 }
 // This is a workaround to hide the select controls since the
 // page size select can't be disabled.
-.#{vars.$iot-prefix}--pagination--hide-select .#{vars.$prefix}--select {
+.#{$iot-prefix}--pagination--hide-select .#{$prefix}--select {
   display: none;
 }
 
 html[dir='rtl'] {
-  .#{vars.$prefix}--pagination__button--forward,
-  .#{vars.$prefix}--pagination__button--backward {
+  .#{$prefix}--pagination__button--forward,
+  .#{$prefix}--pagination__button--backward {
     transform: rotate(180deg);
   }
 
-  .#{vars.$prefix}--pagination .#{vars.$prefix}--select__item-count .#{vars.$prefix}--select-input {
+  .#{$prefix}--pagination .#{$prefix}--select__item-count .#{$prefix}--select-input {
     border-left: 0.0625rem solid theme.$ui-03;
     border-right: none;
   }
 
-  .#{vars.$prefix}--pagination
-    .#{vars.$prefix}--select__page-number
-    .#{vars.$prefix}--select-input {
+  .#{$prefix}--pagination .#{$prefix}--select__page-number .#{$prefix}--select-input {
     border-left: none;
     border-right: 0.0625rem solid theme.$ui-03;
   }
 
-  .#{vars.$prefix}--pagination__left .#{vars.$prefix}--pagination__text {
+  .#{$prefix}--pagination__left .#{$prefix}--pagination__text {
     margin-left: 0;
     margin-right: spacing.$spacing-05;
   }
 
-  .#{vars.$prefix}--pagination__right .#{vars.$prefix}--pagination__text {
+  .#{$prefix}--pagination__right .#{$prefix}--pagination__text {
     margin-left: spacing.$spacing-05;
     margin-right: 0.0625rem;
   }
 
-  .#{vars.$iot-prefix}--pagination.#{vars.$prefix}--pagination .#{vars.$prefix}--select-input {
+  .#{$iot-prefix}--pagination.#{$prefix}--pagination .#{$prefix}--select-input {
     padding: 0 spacing.$spacing-05 0 spacing.$spacing-08;
 
     @media (min-width: 42rem) {

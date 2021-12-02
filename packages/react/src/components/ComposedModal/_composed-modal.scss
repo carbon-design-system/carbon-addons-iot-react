@@ -1,31 +1,31 @@
 @use '../../globals/theme';
 @use '../../globals/spacing';
-@use '../../globals/vars';
+@use '../../globals/vars' as *;
 @use '../../globals/layout';
 
-.#{vars.$iot-prefix}--composed-modal {
-  .#{vars.$prefix}--modal-container {
+.#{$iot-prefix}--composed-modal {
+  .#{$prefix}--modal-container {
     @media (min-height: layout.rem(515px)) {
       overflow-y: auto;
     }
   }
 
-  .#{vars.$prefix}--overflow-menu-options {
+  .#{$prefix}--overflow-menu-options {
     // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
     z-index: 10000;
   }
 
-  .#{vars.$prefix}--tooltip {
+  .#{$prefix}--tooltip {
     // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
     z-index: 10000;
   }
 
   /* support large modals for ll the sizes */
-  &.#{vars.$iot-prefix}--composed-modal--large {
-    .#{vars.$prefix}--modal-header {
+  &.#{$iot-prefix}--composed-modal--large {
+    .#{$prefix}--modal-header {
       margin-bottom: 0;
     }
-    .#{vars.$prefix}--modal-container {
+    .#{$prefix}--modal-container {
       min-height: layout.rem(600px);
       min-width: layout.rem(800px);
       max-height: 80%;
@@ -41,8 +41,8 @@
     }
   }
 
-  &.#{vars.$iot-prefix}--composed-modal--full-screen {
-    & > .#{vars.$prefix}--modal-container {
+  &.#{$iot-prefix}--composed-modal--full-screen {
+    & > .#{$prefix}--modal-container {
       $min-width: calc(100% - #{spacing.$spacing-06});
       min-height: $min-width;
       min-width: $min-width;
@@ -54,7 +54,7 @@
         min-width: $min-width;
       }
 
-      .#{vars.$prefix}--modal-header {
+      .#{$prefix}--modal-header {
         margin-bottom: 0;
       }
     }
@@ -62,21 +62,21 @@
 
   /* Needed for buttons when they're next to each other */
 
-  .#{vars.$prefix}--modal-header__heading {
+  .#{$prefix}--modal-header__heading {
     margin-bottom: spacing.$spacing-04;
   }
 
-  .#{vars.$prefix}--modal-content {
+  .#{$prefix}--modal-content {
     min-height: layout.rem(200px);
   }
 }
 
-.#{vars.$iot-prefix}--composed-modal--inline-notification {
+.#{$iot-prefix}--composed-modal--inline-notification {
   width: calc(100% - 1rem * 2);
   margin: spacing.$spacing-05 auto;
 }
 
-.#{vars.$iot-prefix}--composed-modal-footer {
+.#{$iot-prefix}--composed-modal-footer {
   justify-content: flex-end;
 
   & > * {
@@ -89,6 +89,6 @@
   }
 }
 
-.#{vars.$iot-prefix}--composed-modal__body--small-margin-bottom {
+.#{$iot-prefix}--composed-modal__body--small-margin-bottom {
   margin-bottom: spacing.$spacing-05;
 }

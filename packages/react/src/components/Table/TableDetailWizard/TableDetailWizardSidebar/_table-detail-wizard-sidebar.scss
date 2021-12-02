@@ -1,9 +1,9 @@
 @use '../../../../globals/theme';
 @use '../../../../globals/spacing';
-@use '../../../../globals/vars';
+@use '../../../../globals/vars' as *;
 @use '../../../../globals/layout';
 
-.#{vars.$iot-prefix}--table-detail-wizard-sidebar--header {
+.#{$iot-prefix}--table-detail-wizard-sidebar--header {
   display: flex;
   flex-flow: column nowrap;
   border-right: layout.rem(1px) solid #dadada8c;
@@ -13,7 +13,7 @@
     border-left: layout.rem(1px) solid #dadada8c;
   }
 
-  .#{vars.$iot-prefix}--progress-indicator {
+  .#{$iot-prefix}--progress-indicator {
     padding: spacing.$spacing-05 spacing.$spacing-05 spacing.$spacing-05 spacing.$spacing-10;
   }
 }

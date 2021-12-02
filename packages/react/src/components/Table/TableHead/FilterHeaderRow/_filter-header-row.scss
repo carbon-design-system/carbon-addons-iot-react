@@ -1,70 +1,70 @@
 @use '../../../../globals/theme';
 @use '../../../../globals/spacing';
-@use '../../../../globals/vars';
+@use '../../../../globals/vars' as *;
 @use '../../../../globals/mixins';
 
-.#{vars.$iot-prefix}--filter-header-row--form-item {
+.#{$iot-prefix}--filter-header-row--form-item {
   display: inline-block;
   position: relative;
   input {
     padding-right: spacing.$spacing-08;
   }
 
-  .#{vars.$prefix}--list-box__selection {
+  .#{$prefix}--list-box__selection {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
   }
 }
 
-.#{vars.$prefix}--data-table th.#{vars.$iot-prefix}--filter-header-row--header {
+.#{$prefix}--data-table th.#{$iot-prefix}--filter-header-row--header {
   padding-right: 1px;
   padding-left: 1px;
-  .#{vars.$prefix}--table-header-label {
+  .#{$prefix}--table-header-label {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
-.#{vars.$iot-prefix}--filter-header-row--header {
-  span.#{vars.$prefix}--table-header-label {
+.#{$iot-prefix}--filter-header-row--header {
+  span.#{$prefix}--table-header-label {
     padding-top: 0;
   }
 
-  .#{vars.$prefix}--form-item input {
+  .#{$prefix}--form-item input {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: spacing.$spacing-07;
   }
-  .#{vars.$prefix}--form-item input:placeholder-shown {
+  .#{$prefix}--form-item input:placeholder-shown {
     padding-right: spacing.$spacing-03;
   }
 
   /* Need to force the colors of the selected-items counter in
      the multiselect box back to their original colors as they
      were being overridden by other styles */
-  .#{vars.$iot-prefix}--filterheader-multiselect {
-    .#{vars.$prefix}--list-box__selection--multi {
+  .#{$iot-prefix}--filterheader-multiselect {
+    .#{$prefix}--list-box__selection--multi {
       background-color: theme.$interactive-02;
     }
-    .#{vars.$prefix}--list-box__selection--multi > svg {
+    .#{$prefix}--list-box__selection--multi > svg {
       fill: theme.$ui-background;
     }
 
-    &.#{vars.$iot-prefix}--filterheader-multiselect__menu--fit-content {
+    &.#{$iot-prefix}--filterheader-multiselect__menu--fit-content {
       @include mixins.list-box-menu-fits-content;
     }
 
     // Default for when fit-content is active and the menu is wider than the input
     // is that the menu expands to the right. This style makes it expand tp the left
     // unless we are in RTL mode.
-    &.#{vars.$iot-prefix}--filterheader-multiselect__menu--flip-horizontal {
+    &.#{$iot-prefix}--filterheader-multiselect__menu--flip-horizontal {
       @include mixins.list-box-menu-flip-horizontal;
     }
   }
 
-  .#{vars.$prefix}--tag--filter {
+  .#{$prefix}--tag--filter {
     &:focus {
       outline: 2px solid theme.$interactive-01;
       outline-offset: -2px;
@@ -84,16 +84,16 @@
     }
   }
 
-  .#{vars.$iot-prefix}--combobox {
+  .#{$iot-prefix}--combobox {
     padding-top: 0;
   }
 }
 
-.#{vars.$prefix}--data-table {
-  .#{vars.$prefix}--table-header-label {
-    .#{vars.$prefix}--multi-select,
-    .#{vars.$iot-prefix}--combobox {
-      .#{vars.$prefix}--list-box__menu.#{vars.$prefix}--list-box__menu {
+.#{$prefix}--data-table {
+  .#{$prefix}--table-header-label {
+    .#{$prefix}--multi-select,
+    .#{$iot-prefix}--combobox {
+      .#{$prefix}--list-box__menu.#{$prefix}--list-box__menu {
         max-height: var(--filter-header-dropdown-max-height);
       }
     }
