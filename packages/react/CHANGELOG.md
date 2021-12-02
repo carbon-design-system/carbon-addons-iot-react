@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.74](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.73...v2.147.0-next.74) (2021-12-02)
+
+
+### Bug Fixes
+
+* **table:** segregate angular styles from react table ([eac4cf5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eac4cf5f179c6c46a3c8ed99580452c1be9ae43a))
+
+
+
+
+
 # [2.147.0-next.73](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.72...v2.147.0-next.73) (2021-12-02)
 
 
