@@ -45,15 +45,16 @@ storiesOf('Components/Rule builder', module)
       tree: object('tree', {
         groupLogic: 'any',
         rules: [
-          {operand: 'eq', id: '1'},
-          {operand: 'eq', id: '2'},
+          { operand: 'eq', id: '1' },
+          { operand: 'eq', id: '2' },
           {
             groupLogic: 'any',
             rules: [
-              {operand: 'eq', id: '3'},
-              {operand: 'eq', id: '4'},
-            ]
-          }
-        ]})
-    }
+              { operand: 'eq', id: '3' },
+              { operand: 'eq', id: '4' },
+            ],
+          },
+        ],
+      }),
+    },
   }));
