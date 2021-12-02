@@ -1,5 +1,4 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}-add-card {
@@ -7,7 +6,7 @@
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: theme.$ui-01;
+  background-color: $ui-01;
   min-height: 8rem;
   min-width: 8.5rem;
   max-width: 18.75rem;
@@ -19,5 +18,5 @@
 }
 
 .#{$iot-prefix}-addcard-title {
-  color: theme.$text-01;
+  color: $text-01;
 }

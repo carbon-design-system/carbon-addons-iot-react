@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/data-table';
 @use '~@carbon/styles/scss/components/data-table/action';
@@ -52,14 +52,14 @@ td.data-table {
 html[dir='rtl'] {
   .#{$prefix}--table-sort__icon-unsorted,
   .#{$prefix}--table-sort__icon {
-    margin-right: spacing.$spacing-03;
+    margin-right: $spacing-03;
     margin-left: 0;
   }
 
   td.data-table {
     &-start {
       text-align: start;
-      padding-right: spacing.$spacing-04;
+      padding-right: $spacing-04;
     }
 
     &-center {
@@ -68,7 +68,7 @@ html[dir='rtl'] {
 
     &-end {
       text-align: end;
-      padding-left: spacing.$spacing-05;
+      padding-left: $spacing-05;
     }
   }
 }
@@ -78,8 +78,8 @@ html[dir='rtl'] {
     padding: 0;
   }
   .#{$prefix}--table-sort {
-    padding-left: spacing.$spacing-04;
-    padding-right: spacing.$spacing-04;
+    padding-left: $spacing-04;
+    padding-right: $spacing-04;
 
     .#{$prefix}--table-header-label {
       padding-left: 0;
@@ -90,7 +90,7 @@ html[dir='rtl'] {
   // override padding on chexkbox cells, so that it aligns with cell content in tables with xl size prop
   &.#{$prefix}--data-table--xl {
     .#{$prefix}--checkbox-table-cell {
-      padding-top: spacing.$spacing-05;
+      padding-top: $spacing-05;
     }
   }
 
@@ -98,14 +98,14 @@ html[dir='rtl'] {
   &.#{$prefix}--data-table--sm,
   &.#{$prefix}--data-table--md {
     .#{$prefix}--checkbox-table-cell {
-      padding-top: spacing.$spacing-01;
-      padding-bottom: spacing.$spacing-01;
+      padding-top: $spacing-01;
+      padding-bottom: $spacing-01;
     }
   }
 
   .#{$prefix}--checkbox-table-cell {
-    padding-bottom: spacing.$spacing-03;
-    padding-top: spacing.$spacing-03;
+    padding-bottom: $spacing-03;
+    padding-top: $spacing-03;
     width: 2.5rem;
 
     /* Added to undo carbon component. this needs to be removed when we redo this table */
@@ -116,7 +116,7 @@ html[dir='rtl'] {
 }
 
 .#{$prefix}--toolbar-search-container-active .#{$prefix}--search .#{$prefix}--search-input {
-  padding-right: spacing.$spacing-09;
+  padding-right: $spacing-09;
 }
 
 // Fixes bug when modal is opened, then closed. The toolbar moves to the top
@@ -142,6 +142,6 @@ tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected:not(.#{$prefix}--expa
 tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row td,
 tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row
   td:first-of-type {
-  border-bottom-color: theme.$active-ui;
+  border-bottom-color: $active-ui;
   box-shadow: none;
 }

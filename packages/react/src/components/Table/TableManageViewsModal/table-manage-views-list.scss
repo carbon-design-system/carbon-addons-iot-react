@@ -1,5 +1,5 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
 
 // We need to override some List specific styles to
@@ -12,7 +12,7 @@
   }
 
   .#{$iot-prefix}-simple-pagination-container {
-    margin: spacing.$spacing-02 0;
+    margin: $spacing-02 0;
   }
 
   // This is a temporary fix for https://github.com/IBM/carbon-addons-iot-react/issues/1424

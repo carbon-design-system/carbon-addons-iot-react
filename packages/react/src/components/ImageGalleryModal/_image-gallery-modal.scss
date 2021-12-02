@@ -1,8 +1,8 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/layout';
-@use '../../globals/mixins';
+@use '../../globals/layout' as *;
+@use '../../globals/mixins' as *;
 
 $top-section-height: 6.25rem;
 $border-radius: 0.25rem;
@@ -13,33 +13,33 @@ $border-radius: 0.25rem;
   }
   &.#{$iot-prefix}--composed-modal.#{$iot-prefix}--composed-modal--large {
     .#{$prefix}--modal-container {
-      background-color: theme.$ui-02;
+      background-color: $ui-02;
       overflow: hidden;
       height: 80%;
-      $min-width: calc(100% - #{spacing.$spacing-06});
+      $min-width: calc(100% - #{$spacing-06});
       min-width: $min-width;
       max-width: $min-width;
 
       // Override large Composed modal
-      @media (min-width: layout.rem(600px)) {
+      @media (min-width: rem(600px)) {
         height: 80%;
         min-width: $min-width;
       }
-      @media (min-width: layout.rem(1024px)) {
+      @media (min-width: rem(1024px)) {
         min-width: $min-width;
       }
-      @media (min-width: layout.rem(1200px)) {
+      @media (min-width: rem(1200px)) {
         min-width: $min-width;
       }
     }
   }
 
   .#{$prefix}--search-input {
-    background-color: theme.$field-01;
+    background-color: $field-01;
   }
 
   .#{$prefix}--modal-content {
-    padding-right: spacing.$spacing-05;
+    padding-right: $spacing-05;
   }
 }
 
@@ -48,7 +48,7 @@ $border-radius: 0.25rem;
 }
 
 .#{$iot-prefix}--image-gallery-modal__instruction-text {
-  margin-bottom: spacing.$spacing-05;
+  margin-bottom: $spacing-05;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -56,14 +56,14 @@ $border-radius: 0.25rem;
 
 .#{$iot-prefix}--image-gallery-modal__search-list-view-container {
   display: flex;
-  margin-bottom: spacing.$spacing-05;
+  margin-bottom: $spacing-05;
 }
 
 .#{$iot-prefix}--image-gallery-modal__content-switcher {
   width: auto;
-  margin-left: spacing.$spacing-05;
-  margin-right: spacing.$spacing-05;
-  @include mixins.content-switcher-border-radius($border-radius, left, right);
+  margin-left: $spacing-05;
+  margin-right: $spacing-05;
+  @include content-switcher-border-radius($border-radius, left, right);
 }
 
 // Container that lets the scroll panel use negative margin.
@@ -82,11 +82,11 @@ $border-radius: 0.25rem;
   flex-wrap: wrap;
   // We only want space between the children, not to the edges of the panel.
   & > * {
-    margin-left: spacing.$spacing-05;
-    margin-bottom: spacing.$spacing-05;
+    margin-left: $spacing-05;
+    margin-bottom: $spacing-05;
   }
-  margin-left: calc(-1 * #{spacing.$spacing-05});
-  margin-bottom: calc(-1 * #{spacing.$spacing-05});
+  margin-left: calc(-1 * #{$spacing-05});
+  margin-bottom: calc(-1 * #{$spacing-05});
 }
 
 .#{$iot-prefix}--image-gallery-modal__scroll-panel--list {
@@ -95,6 +95,6 @@ $border-radius: 0.25rem;
 
 html[dir='rtl'] {
   .#{$iot-prefix}--image-gallery-modal__content-switcher {
-    @include mixins.content-switcher-border-radius($border-radius, right, left);
+    @include content-switcher-border-radius($border-radius, right, left);
   }
 }

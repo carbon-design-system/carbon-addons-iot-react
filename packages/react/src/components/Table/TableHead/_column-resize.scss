@@ -1,5 +1,5 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
 
 .#{$iot-prefix}--column-resize-handle {
@@ -10,12 +10,12 @@
   position: absolute;
   outline: none;
   &:hover {
-    background-color: theme.$ui-05;
+    background-color: $ui-05;
   }
 }
 
 .#{$iot-prefix}--column-resize-handle--dragging {
-  background-color: theme.$ui-05;
+  background-color: $ui-05;
 }
 
 .#{$iot-prefix}--table-expand-resize {

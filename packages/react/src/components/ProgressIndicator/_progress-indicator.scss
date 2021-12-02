@@ -1,9 +1,9 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "../../globals/layout";
-@use "../../globals/motion";
-@use "../../globals/typography";
+@use '../../globals/layout' as *;
+@use '../../globals/motion' as *;
+@use '../../globals/typography' as *;
 @use '~@carbon/styles/scss/components/progress-indicator';
 
 .#{$iot-prefix}--progress-indicator {
@@ -11,31 +11,31 @@
 
   .#{$iot-prefix}--progress-step {
     width: 8rem;
-    height: layout.rem(68px);
+    height: rem(68px);
     &-line {
       position: absolute;
-      width: calc(100% - #{spacing.$spacing-06});
-      height: spacing.$spacing-01;
-      background-color: theme.$ui-03;
-      top: layout.rem(11px);
-      left: spacing.$spacing-06;
+      width: calc(100% - #{$spacing-06});
+      height: $spacing-01;
+      background-color: $ui-03;
+      top: rem(11px);
+      left: $spacing-06;
 
       &--complete {
         /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
         @extend .#{$iot-prefix}--progress-step-line;
-        background-color: theme.$interactive-01;
+        background-color: $interactive-01;
       }
 
       &--sub {
         /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
         @extend .#{$iot-prefix}--progress-step-line;
-        left: spacing.$spacing-05;
-        width: calc(100% - #{spacing.$spacing-05});
+        left: $spacing-05;
+        width: calc(100% - #{$spacing-05});
 
         &-complete {
           /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
           @extend .#{$iot-prefix}--progress-step-line--sub;
-          background-color: theme.$interactive-03;
+          background-color: $interactive-03;
         }
       }
     }
@@ -62,63 +62,63 @@
       }
 
       &--sub-step .#{$iot-prefix}--progress-step-icon {
-        margin-top: spacing.$spacing-02;
+        margin-top: $spacing-02;
         margin-left: 0;
       }
 
       .#{$iot-prefix}--progress-text {
         position: absolute;
         left: 0;
-        top: spacing.$spacing-07;
+        top: $spacing-07;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         width: 100%;
         height: 100%;
         display: block;
-        margin-left: spacing.$spacing-01;
-        margin-right: spacing.$spacing-01;
+        margin-left: $spacing-01;
+        margin-right: $spacing-01;
 
         &--hidden {
           visibility: hidden;
         }
 
         &-label {
-          @include typography.type-style('body-short-01');
+          @include type-style('body-short-01');
           position: relative;
-          color: theme.$text-01;
+          color: $text-01;
           cursor: default;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
           width: auto;
 
-          transition: box-shadow motion.$duration-fast-02 motion.motion(standard, productive),
-            color motion.$duration-fast-02 motion.motion(standard, productive);
+          transition: box-shadow $duration-fast-02 motion(standard, productive),
+            color $duration-fast-02 motion(standard, productive);
 
           &:focus {
-            color: theme.$interactive-01;
+            color: $interactive-01;
           }
           &:hover {
-            box-shadow: 0 layout.rem(1px) theme.$link-01;
-            color: theme.$interactive-01;
+            box-shadow: 0 rem(1px) $link-01;
+            color: $interactive-01;
           }
           &:active {
-            box-shadow: 0 layout.rem(3px) 0 0 theme.$interactive-01;
+            box-shadow: 0 rem(3px) 0 0 $interactive-01;
           }
         }
 
         &-label--optional {
-          @include typography.type-style('body-short-01');
+          @include type-style('body-short-01');
           position: relative;
           cursor: default;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
           width: auto;
-          font-size: spacing.$spacing-04;
-          color: theme.$icon-02;
-          margin-top: spacing.$spacing-01;
+          font-size: $spacing-04;
+          color: $icon-02;
+          margin-top: $spacing-01;
         }
       }
 
@@ -134,22 +134,22 @@
       &:not(.#{$iot-prefix}--progress-step--invalid) {
         .#{$iot-prefix}--progress-step-button {
           &--main-step {
-            fill: theme.$interactive-01;
+            fill: $interactive-01;
 
             // force the correct color for the svg
             text {
-              fill: theme.$text-04;
+              fill: $text-04;
             }
             circle {
-              fill: theme.$interactive-01;
+              fill: $interactive-01;
             }
             path {
-              fill: theme.$interactive-01;
+              fill: $interactive-01;
             }
           }
           &--sub-step {
             svg {
-              fill: theme.$interactive-03;
+              fill: $interactive-03;
             }
           }
         }
@@ -157,11 +157,11 @@
       .#{$iot-prefix}--progress-text-label {
         &:focus {
           box-shadow: unset;
-          color: theme.$text-01;
+          color: $text-01;
         }
         &:hover {
           box-shadow: unset;
-          color: theme.$text-01;
+          color: $text-01;
         }
         &:active {
           box-shadow: unset;
@@ -171,18 +171,18 @@
 
     &--complete {
       svg {
-        fill: theme.$interactive-01;
+        fill: $interactive-01;
       }
     }
 
     &--incomplete {
       .#{$iot-prefix}--progress-step-button--main-step {
-        fill: theme.$text-01;
+        fill: $text-01;
       }
 
       .#{$iot-prefix}--progress-step-button--sub-step {
         svg {
-          color: theme.$text-01;
+          color: $text-01;
         }
       }
     }
@@ -190,26 +190,26 @@
     &--disabled {
       &:not(.#{$iot-prefix}--progress-step--invalid) {
         .#{$iot-prefix}--progress-step-button--main-step {
-          fill: theme.$disabled-02;
+          fill: $disabled-02;
         }
 
         .#{$iot-prefix}--progress-step-button--sub-step {
           svg {
-            fill: theme.$disabled-02;
+            fill: $disabled-02;
           }
         }
       }
 
       &.#{$iot-prefix}--progress-step--invalid {
         svg {
-          fill: theme.$disabled-02;
+          fill: $disabled-02;
         }
       }
 
       .#{$iot-prefix}--progress-step-button .#{$iot-prefix}--progress-text {
         &-label,
         &-label--optional {
-          color: theme.$disabled-02;
+          color: $disabled-02;
           cursor: default;
           box-shadow: none;
         }
@@ -218,7 +218,7 @@
 
     &--invalid {
       svg {
-        fill: theme.$text-error;
+        fill: $text-error;
       }
     }
   }
@@ -239,12 +239,12 @@
       }
       &-line {
         left: 0;
-        right: spacing.$spacing-06;
+        right: $spacing-06;
         text-align: right;
 
         &--sub {
           left: 0;
-          right: spacing.$spacing-05;
+          right: $spacing-05;
         }
       }
     }
@@ -261,8 +261,8 @@
     .#{$iot-prefix}--progress-step {
       &-button {
         .#{$iot-prefix}--progress-text {
-          left: spacing.$spacing-07;
-          top: layout.rem(3px);
+          left: $spacing-07;
+          top: rem(3px);
         }
         &--sub-step {
           .#{$iot-prefix}--progress-text {
@@ -270,17 +270,17 @@
           }
           .#{$iot-prefix}--progress-step-icon {
             margin-top: 0;
-            margin-left: spacing.$spacing-02;
-            margin-right: spacing.$spacing-02;
+            margin-left: $spacing-02;
+            margin-right: $spacing-02;
           }
         }
       }
 
       &-line {
-        width: spacing.$spacing-01;
-        height: calc(100% - #{spacing.$spacing-06});
-        top: spacing.$spacing-06;
-        left: layout.rem(11px);
+        width: $spacing-01;
+        height: calc(100% - #{$spacing-06});
+        top: $spacing-06;
+        left: rem(11px);
 
         &--complete {
           /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
@@ -289,9 +289,9 @@
         &--sub {
           /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
           @extend .#{$iot-prefix}--progress-step-line;
-          top: spacing.$spacing-05;
-          height: calc(100% - #{spacing.$spacing-05});
-          width: spacing.$spacing-01;
+          top: $spacing-05;
+          height: calc(100% - #{$spacing-05});
+          width: $spacing-01;
           &-complete {
             /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
             @extend .#{$iot-prefix}--progress-step-line--sub;
@@ -309,13 +309,13 @@
         &-button {
           text-align: right;
           .#{$iot-prefix}--progress-text {
-            right: spacing.$spacing-07;
+            right: $spacing-07;
             text-align: right;
           }
         }
         &-line {
           left: unset;
-          right: layout.rem(11px);
+          right: rem(11px);
           text-align: right;
         }
       }
@@ -323,7 +323,7 @@
       .#{$prefix}--skeleton {
         .#{$prefix}--progress-step--incomplete svg {
           margin-right: 0;
-          margin-left: spacing.$spacing-03;
+          margin-left: $spacing-03;
         }
       }
     }

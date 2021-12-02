@@ -1,11 +1,11 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../../../globals/typography';
+@use '../../../globals/typography' as *;
 
 .#{$iot-prefix}--card-edit-form {
   height: 100%;
-  background: theme.$ui-01;
+  background: $ui-01;
   display: flex;
   flex-direction: column;
 
@@ -31,7 +31,7 @@
   }
 
   .#{$prefix}--file__selected-file {
-    background-color: theme.$ui-02;
+    background-color: $ui-02;
   }
 
   .color-picker {
@@ -39,11 +39,11 @@
       // need to leave just enough room for the selected border
       width: 1.95rem;
       height: 1.95rem;
-      border: solid spacing.$spacing-01 theme.$ui-01;
+      border: solid $spacing-01 $ui-01;
     }
 
     .color-picker-button__selected {
-      border: solid spacing.$spacing-01 theme.$interactive-04;
+      border: solid $spacing-01 $interactive-04;
     }
   }
 
@@ -55,29 +55,29 @@
   }
 
   &--form-section {
-    padding: spacing.$spacing-03 spacing.$spacing-05;
-    @include typography.type-style('productive-heading-01');
-    border-top: solid 1px theme.$ui-03;
-    border-bottom: solid 1px theme.$ui-03;
-    margin-left: -(spacing.$spacing-05);
-    margin-right: -(spacing.$spacing-05);
-    margin-bottom: spacing.$spacing-05;
+    padding: $spacing-03 $spacing-05;
+    @include type-style('productive-heading-01');
+    border-top: solid 1px $ui-03;
+    border-bottom: solid 1px $ui-03;
+    margin-left: -($spacing-05);
+    margin-right: -($spacing-05);
+    margin-bottom: $spacing-05;
     display: flex;
     justify-content: space-between;
   }
 
   &--input-label {
-    font-size: spacing.$spacing-04;
+    font-size: $spacing-04;
   }
 
   &--input {
-    padding-bottom: spacing.$spacing-05;
+    padding-bottom: $spacing-05;
     .#{$prefix}--fieldset {
       margin-bottom: unset;
     }
 
     &--label {
-      font-size: spacing.$spacing-04;
+      font-size: $spacing-04;
     }
     &--toggle-field {
       display: flex;
@@ -92,7 +92,7 @@
     }
   }
   &--input-inline {
-    padding: 0 spacing.$spacing-05 spacing.$spacing-05;
+    padding: 0 $spacing-05 $spacing-05;
     display: flex;
     align-items: center;
     &--label {
@@ -121,7 +121,7 @@
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    padding-bottom: spacing.$spacing-05;
+    padding-bottom: $spacing-05;
     &--bottom {
       align-items: flex-end;
     }
@@ -129,16 +129,16 @@
       .#{$iot-prefix}--color-dropdown {
         margin-bottom: 1.25rem;
       }
-      margin-right: spacing.$spacing-05;
+      margin-right: $spacing-05;
       width: 100%;
     }
     &--item-half {
       display: flex;
       flex-direction: column;
-      margin-right: spacing.$spacing-05;
+      margin-right: $spacing-05;
       width: 50%;
       &-label {
-        margin-bottom: spacing.$spacing-05;
+        margin-bottom: $spacing-05;
       }
       &-content {
         margin-bottom: 0.6rem;
@@ -151,17 +151,17 @@
       width: 100%;
     }
     &--item-dropdown {
-      margin-right: spacing.$spacing-05;
+      margin-right: $spacing-05;
       max-width: 5rem;
 
       [dir='rtl'] & {
         margin-right: 0;
-        margin-left: spacing.$spacing-05;
+        margin-left: $spacing-05;
       }
     }
 
     &--span {
-      font-size: spacing.$spacing-04;
+      font-size: $spacing-04;
     }
   }
   &--threshold-input-group {
@@ -170,11 +170,11 @@
     align-items: flex-end;
     justify-content: space-between;
     &--item {
-      margin-right: spacing.$spacing-05;
+      margin-right: $spacing-05;
       width: 100%;
     }
     &--item-half {
-      margin-right: spacing.$spacing-05;
+      margin-right: $spacing-05;
       width: 50%;
     }
     &--item-end {
@@ -193,18 +193,18 @@
       }
     }
     &--item-dropdown {
-      margin-right: spacing.$spacing-05;
+      margin-right: $spacing-05;
       max-width: 6rem;
 
       [dir='rtl'] & {
         margin-right: 0;
-        margin-left: spacing.$spacing-05;
+        margin-left: $spacing-05;
       }
     }
   }
 
   &--footer {
-    border-top: solid 1px theme.$ui-03;
+    border-top: solid 1px $ui-03;
     & > button {
       justify-content: space-between;
       width: 100%;
@@ -236,7 +236,7 @@
   }
 
   &--input {
-    margin-bottom: spacing.$spacing-05;
+    margin-bottom: $spacing-05;
     position: relative;
   }
 
@@ -247,11 +247,11 @@
     position: absolute;
     right: 0;
     top: 1.25rem;
-    color: theme.$ui-05;
-    background-color: theme.$ui-02;
+    color: $ui-05;
+    background-color: $ui-02;
     &:hover,
     &:active {
-      color: theme.$ui-05;
+      color: $ui-05;
     }
     border: 0;
     min-height: 2rem;
@@ -267,22 +267,22 @@
 
 div.#{$iot-prefix}--card-edit-form--data-item-list {
   // remove the spacing
-  margin-left: -(spacing.$spacing-05);
-  margin-right: -(spacing.$spacing-05);
+  margin-left: -($spacing-05);
+  margin-right: -($spacing-05);
   width: unset;
 
   // add more spacing to the item so that the content will still align
   .#{$iot-prefix}--list-item {
-    padding-left: spacing.$spacing-05;
+    padding-left: $spacing-05;
   }
   &--item-color-icon {
-    width: spacing.$spacing-05;
-    height: spacing.$spacing-05;
+    width: $spacing-05;
+    height: $spacing-05;
     background-color: var(--icon-color-option);
   }
 
   .#{$iot-prefix}--list-item--content--values--value__with-actions {
     // need to make room for 2 actions
-    padding-right: spacing.$spacing-10;
+    padding-right: $spacing-10;
   }
 }

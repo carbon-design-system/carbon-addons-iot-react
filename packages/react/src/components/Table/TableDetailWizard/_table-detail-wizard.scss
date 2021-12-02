@@ -1,21 +1,21 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../../../globals/layout';
+@use '../../../globals/layout' as *;
 @use './TableDetailWizardHeader/table-detail-wizard-header';
 @use './TableDetailWizardSidebar/table-detail-wizard-sidebar';
 
 .#{$iot-prefix}--table-detail-wizard--wizard-wrapper {
-  background-color: theme.$ui-background;
+  background-color: $ui-background;
   display: flex;
   flex-flow: column;
   align-items: left;
-  border: layout.rem(1px) solid #a2a2a28c;
+  border: rem(1px) solid #a2a2a28c;
 
   .#{$prefix}--inline-notification {
     max-width: none;
-    width: calc(100% - #{spacing.$spacing-07});
-    margin: spacing.$spacing-05;
+    width: calc(100% - #{$spacing-07});
+    margin: $spacing-05;
 
     html[dir='rtl'] & {
       .#{$prefix}--inline-notification__close-button,
@@ -24,12 +24,12 @@
       }
 
       .#{$prefix}--inline-notification__icon {
-        margin-left: spacing.$spacing-05;
+        margin-left: $spacing-05;
       }
 
       &--error {
         border-left: unset;
-        border-right: layout.rem(3px) solid theme.$inverse-support-01;
+        border-right: rem(3px) solid $inverse-support-01;
       }
     }
   }
@@ -54,7 +54,7 @@
 }
 
 .#{$iot-prefix}--table-detail-wizard--content-container {
-  padding-top: layout.rem(30px);
-  padding-right: layout.rem(50px);
-  padding-left: layout.rem(40px);
+  padding-top: rem(30px);
+  padding-right: rem(50px);
+  padding-left: rem(40px);
 }

@@ -1,15 +1,15 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../mixins';
+@use '../mixins' as *;
 
 .#{$iot-prefix}--hotspot-editor-tooltip-tab {
-  background-color: theme.$ui-01;
-  padding: spacing.$spacing-03 0;
+  background-color: $ui-01;
+  padding: $spacing-03 0;
 }
 
 .#{$iot-prefix}--hotspot-editor--tooltip-form {
-  @include mixins.vertical-form();
+  @include vertical-form();
 }
 
 .#{$iot-prefix}--icon-color-container {
@@ -41,5 +41,5 @@
 }
 
 .#{$iot-prefix}--hotspot-editor--tooltip-info-message {
-  @include mixins.info-message();
+  @include info-message();
 }

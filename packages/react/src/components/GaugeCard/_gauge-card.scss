@@ -1,17 +1,17 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "../../globals/typography";
-@use "../../globals/motion";
+@use '../../globals/typography' as *;
+@use '../../globals/motion' as *;
 
 .#{$iot-prefix}--gauge-container {
   display: flex;
   flex-wrap: wrap;
-  font-size: typography.type-scale(1);
+  font-size: type-scale(1);
   flex-direction: row;
   align-items: center;
   row-gap: var(--gauge-row-gap);
-  column-gap: spacing.$spacing-05;
+  column-gap: $spacing-05;
 }
 
 .#{$iot-prefix}--gauge {
@@ -23,7 +23,7 @@
   width: var(--gauge-size);
 
   text {
-    fill: theme.$text-02;
+    fill: $text-02;
   }
 }
 
@@ -38,7 +38,7 @@
   stroke-dasharray: 0 var(--stroke-dash-array);
   transform: rotate(-90deg);
   transform-origin: center;
-  transition: all motion.$duration-moderate-01 ease-in;
+  transition: all $duration-moderate-01 ease-in;
 
   .#{$iot-prefix}--gauge__loaded & {
     stroke-dasharray: var(--stroke-dash) var(--stroke-dash-array);
@@ -68,7 +68,7 @@
 }
 
 .#{$iot-prefix}--gauge-trend {
-  padding-left: spacing.$spacing-05;
+  padding-left: $spacing-05;
   display: flex;
   align-items: center;
 
@@ -76,7 +76,7 @@
     border-left: 0.3rem solid transparent;
     border-right: 0.3rem solid transparent;
     content: '';
-    left: -(spacing.$spacing-04);
+    left: -($spacing-04);
     height: 0;
     position: absolute;
     top: 50%;
@@ -85,14 +85,14 @@
   }
 
   &__up {
-    color: theme.$support-02;
+    color: $support-02;
 
     & p::before {
       border-bottom: 0.3rem solid;
     }
   }
   &__down {
-    color: theme.$support-01;
+    color: $support-01;
 
     & p::before {
       border-top: 0.3rem solid;

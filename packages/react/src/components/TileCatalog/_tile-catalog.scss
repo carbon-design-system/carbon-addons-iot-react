@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--tile-catalog {
@@ -8,7 +8,7 @@
 }
 
 .#{$iot-prefix}--tile-catalog--header {
-  background: theme.$ui-02;
+  background: $ui-02;
 
   display: flex;
   height: 3rem;
@@ -34,18 +34,18 @@
   align-items: center;
   justify-content: center;
   > * {
-    padding-bottom: spacing.$spacing-03;
+    padding-bottom: $spacing-03;
   }
 }
 
 html[dir='rtl'] {
   .#{$prefix}--tile--selectable {
-    padding-left: spacing.$spacing-09;
-    padding-right: spacing.$spacing-05;
+    padding-left: $spacing-09;
+    padding-right: $spacing-05;
   }
 
   .#{$prefix}--tile__checkmark {
     right: initial;
-    left: spacing.$spacing-05;
+    left: $spacing-05;
   }
 }

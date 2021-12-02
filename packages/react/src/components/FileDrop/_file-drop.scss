@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--file-drop {
@@ -13,14 +13,14 @@
     padding: 0;
     font: inherit;
     outline: none;
-    color: theme.$interactive-01;
+    color: $interactive-01;
     cursor: pointer;
     margin-left: 0.25rem;
     text-decoration: underline;
   }
 
   &__text {
-    padding: spacing.$spacing-05;
+    padding: $spacing-05;
     line-height: 30px;
   }
 }

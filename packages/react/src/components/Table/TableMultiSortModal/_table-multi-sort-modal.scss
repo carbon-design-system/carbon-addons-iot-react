@@ -1,23 +1,23 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
 
 .#{$iot-prefix}--table-multi-sort-modal {
   html[dir='rtl'] & {
     .#{$prefix}--modal-content {
-      padding-right: spacing.$spacing-05;
-      padding-left: spacing.$spacing-09;
+      padding-right: $spacing-05;
+      padding-left: $spacing-09;
     }
     .#{$prefix}--modal-header {
-      padding-right: spacing.$spacing-09;
+      padding-right: $spacing-09;
     }
   }
 
   .#{$iot-prefix}--table-multi-sort-row {
     display: grid;
-    gap: spacing.$spacing-05;
+    gap: $spacing-05;
     grid-template-columns: 16px 1fr 1fr 48px 48px;
-    margin-bottom: spacing.$spacing-05;
+    margin-bottom: $spacing-05;
     button.#{$prefix}--btn--icon-only {
       height: 40px;
       width: 48px;

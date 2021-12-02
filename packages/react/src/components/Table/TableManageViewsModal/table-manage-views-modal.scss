@@ -1,9 +1,9 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
 
 .#{$iot-prefix}--manage-views-modal .#{$prefix}--modal-content {
-  padding-right: spacing.$spacing-05;
+  padding-right: $spacing-05;
 }
 
 .#{$iot-prefix}--manage-views-modal .#{$prefix}--modal-container {
@@ -13,17 +13,17 @@
 }
 
 .#{$iot-prefix}--manage-views-modal__filter-container {
-  margin-bottom: spacing.$spacing-06;
+  margin-bottom: $spacing-06;
   display: flex;
   align-items: baseline;
 }
 
 .#{$iot-prefix}--manage-views-modal__public-checkbox {
   flex-shrink: 0;
-  margin-left: spacing.$spacing-05;
+  margin-left: $spacing-05;
 }
 
 html[dir='rtl'] .#{$iot-prefix}--manage-views-modal__public-checkbox {
   margin-left: 0;
-  margin-right: spacing.$spacing-05;
+  margin-right: $spacing-05;
 }

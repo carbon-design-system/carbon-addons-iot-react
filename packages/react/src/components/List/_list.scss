@@ -1,7 +1,7 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/layout';
+@use '../../globals/layout' as *;
 
 .#{$iot-prefix}--list {
   display: flex;
@@ -12,7 +12,7 @@
     flex: 0;
   }
   &--content {
-    background: theme.$ui-01;
+    background: $ui-01;
     flex: 1;
     overflow-y: auto;
 
@@ -28,19 +28,19 @@
   &--page {
     position: relative;
     div[class^='SimplePagination__StyledContainer'] {
-      border-top: theme.$ui-03;
-      background: theme.$ui-01;
-      height: layout.rem(40px);
+      border-top: $ui-03;
+      background: $ui-01;
+      height: rem(40px);
       border: none;
     }
     div > span {
-      padding-left: spacing.$spacing-05;
+      padding-left: $spacing-05;
       margin-right: auto;
     }
   }
 
   &--empty-state {
-    padding: spacing.$spacing-05 0 spacing.$spacing-05;
+    padding: $spacing-05 0 $spacing-05;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -52,17 +52,17 @@
     }
 
     svg {
-      margin-bottom: spacing.$spacing-06;
+      margin-bottom: $spacing-06;
     }
 
     .explore-button {
-      margin-top: spacing.$spacing-06;
+      margin-top: $spacing-06;
     }
   }
 }
 
 .#{$iot-prefix}--list--skeleton {
-  margin: spacing.$spacing-03 0 spacing.$spacing-03 spacing.$spacing-05;
+  margin: $spacing-03 0 $spacing-03 $spacing-05;
 }
 
 .#{$iot-prefix}--load-more-row {
@@ -70,16 +70,16 @@
   cursor: pointer;
   min-width: 100%;
   border: none;
-  background: theme.$ui-01;
+  background: $ui-01;
   &--content {
-    color: theme.$interactive-01;
+    color: $interactive-01;
   }
   .#{prefix}--loading__stroke {
-    stroke: theme.$interactive-01;
+    stroke: $interactive-01;
   }
   &.#{$prefix}--btn--disabled,
   .#{$prefix}--btn--disabled:focus,
   .#{$prefix}--btn--disabled:hover {
-    border-bottom: 1px solid theme.$decorative-01;
+    border-bottom: 1px solid $decorative-01;
   }
 }

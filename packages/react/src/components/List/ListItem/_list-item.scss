@@ -1,8 +1,8 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../../../globals/layout';
-@use '../../../globals/typography';
+@use '../../../globals/layout' as *;
+@use '../../../globals/typography' as *;
 
 .#{$iot-prefix}--list-item-parent {
   position: relative;
@@ -14,14 +14,14 @@
     overflow: hidden;
     align-items: stretch;
     justify-content: space-between;
-    background: theme.$ui-01;
+    background: $ui-01;
 
     &:hover {
       cursor: grab;
     }
 
     &:active {
-      background: theme.$hover-ui;
+      background: $hover-ui;
 
       cursor: grabbing;
     }
@@ -29,7 +29,7 @@
 
   &--drop-targets {
     width: 100%;
-    height: layout.rem(40px);
+    height: rem(40px);
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -42,7 +42,7 @@
     bottom: 0;
 
     &__over {
-      border-top: solid 2px theme.$focus;
+      border-top: solid 2px $focus;
     }
   }
 
@@ -54,7 +54,7 @@
     bottom: 0;
 
     &__over {
-      border: solid 2px theme.$focus;
+      border: solid 2px $focus;
     }
   }
 
@@ -65,15 +65,15 @@
     bottom: 0;
 
     &__over {
-      border-bottom: solid 2px theme.$focus;
+      border-bottom: solid 2px $focus;
     }
   }
 
   &--drag-preview {
     position: absolute;
-    background: theme.$inverse-02;
-    color: theme.$text-04;
-    padding: spacing.$spacing-02 spacing.$spacing-04;
+    background: $inverse-02;
+    color: $text-04;
+    padding: $spacing-02 $spacing-04;
     border-radius: 0.125rem;
     opacity: 1;
 
@@ -81,96 +81,96 @@
   }
 
   &--dragging {
-    background: theme.$hover-ui;
+    background: $hover-ui;
     cursor: grabbing;
   }
 
   &:hover {
-    background: theme.$hover-ui;
+    background: $hover-ui;
     cursor: grab;
   }
 }
 
 .#{$iot-prefix}--list-item {
-  border-bottom: 1px solid theme.$ui-03;
+  border-bottom: 1px solid $ui-03;
   display: flex;
-  height: layout.rem(40px);
-  color: theme.$text-02;
-  padding: spacing.$spacing-03 spacing.$spacing-05;
+  height: rem(40px);
+  color: $text-02;
+  padding: $spacing-03 $spacing-05;
   align-items: center;
   overflow: hidden;
 
   &:focus {
-    outline: 2px solid theme.$focus;
-    outline-offset: -(spacing.$spacing-01);
+    outline: 2px solid $focus;
+    outline-offset: -($spacing-01);
   }
 
   &--handle,
   &--lock {
     flex-shrink: 0;
-    fill: theme.$inverse-02;
-    margin-right: spacing.$spacing-04;
+    fill: $inverse-02;
+    margin-right: $spacing-04;
 
     &__disabled {
-      fill: theme.$disabled-02;
+      fill: $disabled-02;
       cursor: not-allowed;
     }
   }
 
   &__large {
-    height: layout.rem(96px);
-    padding: spacing.$spacing-05;
+    height: rem(96px);
+    padding: $spacing-05;
     align-items: start;
   }
 
   &--category {
-    @include typography.type-style('productive-heading-01');
-    color: theme.$text-01;
+    @include type-style('productive-heading-01');
+    color: $text-01;
   }
 
   &__selectable {
     cursor: pointer;
     &:hover {
-      background: theme.$hover-row;
-      color: theme.$text-01;
+      background: $hover-row;
+      color: $text-01;
     }
   }
 
   &__selected {
-    $selected-mark-width: spacing.$spacing-02;
+    $selected-mark-width: $spacing-02;
     // Box shadow used to avoid mitered corner with the bottom border
-    box-shadow: calc(-1 * #{$selected-mark-width}) 0 theme.$interactive-01;
+    box-shadow: calc(-1 * #{$selected-mark-width}) 0 $interactive-01;
     // Can't use inset box-shadow because of bottom border so we need a left margin
     margin-left: $selected-mark-width;
     // Make sure content is unaffected by extra left margin
-    padding-left: calc(#{spacing.$spacing-05} - #{$selected-mark-width});
+    padding-left: calc(#{$spacing-05} - #{$selected-mark-width});
 
     &:focus {
-      margin-left: spacing.$spacing-01;
-      padding-left: calc(#{spacing.$spacing-05} - #{spacing.$spacing-01});
+      margin-left: $spacing-01;
+      padding-left: calc(#{$spacing-05} - #{$spacing-01});
     }
-    color: theme.$text-01;
-    background: theme.$selected-ui;
+    color: $text-01;
+    background: $selected-ui;
   }
 
   &--expand-icon {
     cursor: pointer;
-    padding: spacing.$spacing-01;
-    margin-right: spacing.$spacing-04 - spacing.$spacing-01; // account for padding
+    padding: $spacing-01;
+    margin-right: $spacing-04 - $spacing-01; // account for padding
 
     &:focus {
-      outline: 2px solid theme.$focus;
+      outline: 2px solid $focus;
     }
 
     &__disabled {
-      fill: theme.$disabled-02;
-      color: theme.$disabled-02;
+      fill: $disabled-02;
+      color: $disabled-02;
       cursor: not-allowed;
     }
   }
 
   &--content {
-    @include typography.type-style('body-short-01');
+    @include type-style('body-short-01');
     display: flex;
     width: 100%;
     height: 100%;
@@ -180,12 +180,12 @@
       align-items: flex-start;
     }
     &--icon {
-      padding-top: spacing.$spacing-01;
+      padding-top: $spacing-01;
       &__left {
-        padding-right: spacing.$spacing-04;
+        padding-right: $spacing-04;
       }
       &__right {
-        padding-left: spacing.$spacing-04;
+        padding-left: $spacing-04;
         order: 9;
       }
     }
@@ -199,9 +199,9 @@
         max-width: 100%;
         align-items: center;
         &__large {
-          @include typography.type-style('productive-heading-01');
-          color: theme.$text-01;
-          padding-bottom: spacing.$spacing-03;
+          @include type-style('productive-heading-01');
+          color: $text-01;
+          padding-bottom: $spacing-03;
         }
       }
       &--value {
@@ -209,19 +209,19 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-right: spacing.$spacing-09;
+        padding-right: $spacing-09;
         &__with-actions {
-          padding-right: spacing.$spacing-07; // save room for the action button
+          padding-right: $spacing-07; // save room for the action button
         }
         &__large {
-          color: theme.$text-05;
+          color: $text-05;
           white-space: normal;
-          height: layout.rem(36px);
+          height: rem(36px);
           overflow: hidden;
         }
       }
       &__disabled {
-        color: theme.$disabled-02;
+        color: $disabled-02;
       }
     }
     &--row-actions {
@@ -230,7 +230,7 @@
       overflow: none;
       display: flex;
       position: absolute;
-      right: -(spacing.$spacing-03);
+      right: -($spacing-03);
     }
   }
   &--nesting-offset {

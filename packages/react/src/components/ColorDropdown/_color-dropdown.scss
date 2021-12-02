@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 // We want to make sure the title attribute of the carbon option element
@@ -27,7 +27,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    border-top: 1px solid theme.$decorative-01;
+    border-top: 1px solid $decorative-01;
   }
   // The new borders must be hidded on :hover, :active & .highlighted
   .#{$prefix}--list-box__menu-item:hover,
@@ -58,7 +58,7 @@
 .#{$iot-prefix}--color-dropdown__color-sample {
   width: 1.5rem;
   height: 1.5rem;
-  margin-right: spacing.$spacing-04;
+  margin-right: $spacing-04;
   flex-shrink: 0;
 }
 
@@ -69,7 +69,7 @@
 
 html[dir='rtl'] {
   .#{$iot-prefix}--color-dropdown__color-sample {
-    margin-left: spacing.$spacing-04;
+    margin-left: $spacing-04;
   }
 
   .#{$iot-prefix}--color-dropdown__item {

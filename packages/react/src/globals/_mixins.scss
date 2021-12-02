@@ -1,4 +1,4 @@
-@use 'theme';
+@use 'theme' as *;
 @use 'vars' as *;
 @forward '@carbon/styles/scss/utilities/box-shadow';
 @forward '@carbon/styles/scss/utilities/focus-outline';
@@ -23,7 +23,7 @@
 @mixin disabled-icon-button() {
   cursor: not-allowed;
   svg {
-    fill: theme.$disabled-02;
+    fill: $disabled-02;
   }
   &:active,
   &:focus {

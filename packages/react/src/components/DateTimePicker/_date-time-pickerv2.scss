@@ -1,8 +1,8 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/motion';
-@use "../../globals/colors" as colors;
+@use '../../globals/motion' as *;
+@use '../../globals/colors' as *;
 
 // wraps the entire component
 .#{$iot-prefix}--date-time-pickerv2__wrapper {
@@ -10,11 +10,11 @@
   cursor: pointer;
 
   &:focus {
-    outline: spacing.$spacing-01 solid theme.$interactive-03;
+    outline: $spacing-01 solid $interactive-03;
   }
 
   &:hover {
-    background-color: theme.$hover-ui;
+    background-color: $hover-ui;
   }
 
   .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition {
@@ -25,12 +25,12 @@
 
   // the text version of this
   .#{$iot-prefix}--date-time-picker__box--full {
-    background-color: theme.$ui-01;
-    color: colors.$gray-100;
+    background-color: $ui-01;
+    color: $gray-100;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid theme.$ui-04;
+    border-bottom: 1px solid $ui-04;
     &::selection {
       color: none;
       background: none;
@@ -55,7 +55,7 @@
     }
 
     .#{$iot-prefix}--date-time-picker__field {
-      padding-left: spacing.$spacing-05;
+      padding-left: $spacing-05;
       overflow: hidden;
       text-overflow: ellipsis;
       & span {
@@ -63,11 +63,11 @@
       }
 
       &:hover {
-        background-color: theme.$hover-ui;
+        background-color: $hover-ui;
       }
 
       &:focus {
-        outline: 2px solid colors.$blue-60;
+        outline: 2px solid $blue-60;
         border-bottom: none;
       }
       // tooltip has default left outline
@@ -78,7 +78,7 @@
   }
 
   .#{$iot-prefix}--date-time-picker__box--light {
-    background-color: theme.$field-02;
+    background-color: $field-02;
   }
 }
 
@@ -91,8 +91,8 @@
     width: var(--wrapper-width);
 
     .#{$prefix}--fieldset {
-      margin-bottom: spacing.$spacing-06;
-      padding: 0 spacing.$spacing-05;
+      margin-bottom: $spacing-06;
+      padding: 0 $spacing-05;
 
       &:last-child {
         margin-bottom: 0;
@@ -101,8 +101,8 @@
 
     .#{$iot-prefix}--date-time-picker__custom-wrapper {
       width: var(--wrapper-width);
-      padding-top: spacing.$spacing-05;
-      padding-bottom: spacing.$spacing-07;
+      padding-top: $spacing-05;
+      padding-bottom: $spacing-07;
     }
   }
 
@@ -148,12 +148,12 @@
 
   .#{$iot-prefix}--time-picker__wrapper {
     &.#{$iot-prefix}--time-picker__wrapper--with-spinner:first-of-type {
-      margin-right: spacing.$spacing-05;
+      margin-right: $spacing-05;
     }
     &.#{$iot-prefix}--time-picker__wrapper--with-spinner {
       .#{$prefix}--time-picker__input-field {
         width: 8.5rem;
-        padding-right: spacing.$spacing-07;
+        padding-right: $spacing-07;
       }
     }
     .#{$iot-prefix}--time-picker__controls {
@@ -170,45 +170,45 @@
     }
 
     .#{$prefix}--form-item + .#{$prefix}--form-item {
-      margin-left: spacing.$spacing-05;
+      margin-left: $spacing-05;
     }
   }
 
   .#{$iot-prefix}--date-time-picker__no-formgroup {
-    margin-bottom: spacing.$spacing-05;
+    margin-bottom: $spacing-05;
   }
 
   &.#{$iot-prefix}--date-time-picker__menu-formgroup {
     display: block;
-    padding-top: spacing.$spacing-05;
+    padding-top: $spacing-05;
   }
 
   .#{$iot-prefix}--date-time-picker__listitem {
-    padding: spacing.$spacing-04 spacing.$spacing-05;
+    padding: $spacing-04 $spacing-05;
     cursor: pointer;
     border-left: 4px solid transparent;
-    border-bottom: 1px solid theme.$ui-03;
+    border-bottom: 1px solid $ui-03;
   }
 
   .#{$iot-prefix}--date-time-picker__listitem--preset {
     &:hover,
     &:focus {
-      background-color: theme.$hover-ui;
+      background-color: $hover-ui;
     }
 
     &.#{$iot-prefix}--date-time-picker__listitem--preset-selected {
-      background-color: colors.$gray-20;
-      border-left-color: colors.$blue-60;
+      background-color: $gray-20;
+      border-left-color: $blue-60;
     }
   }
 
   .#{$iot-prefix}--date-time-picker__listitem--current {
-    color: colors.$gray-60;
+    color: $gray-60;
     cursor: default;
   }
 
   .#{$iot-prefix}--date-time-picker__listitem--custom {
-    color: colors.$blue-60;
+    color: $blue-60;
   }
 }
 
@@ -244,7 +244,7 @@ html[dir='rtl'] {
     .#{$iot-prefix}--date-time-picker__fields-wrapper {
       .#{$prefix}--form-item + .#{$prefix}--form-item,
       .#{$prefix}--form-item + .#{$iot-prefix}--time-picker__wrapper {
-        margin-right: spacing.$spacing-05;
+        margin-right: $spacing-05;
         margin-left: unset;
       }
     }
@@ -254,7 +254,7 @@ html[dir='rtl'] {
       .#{$prefix}--number__input-wrapper {
         input {
           min-width: 8.5rem;
-          padding-right: spacing.$spacing-05;
+          padding-right: $spacing-05;
         }
       }
 
@@ -267,14 +267,14 @@ html[dir='rtl'] {
     .#{$iot-prefix}--time-picker__wrapper {
       &.#{$iot-prefix}--time-picker__wrapper--with-spinner:first-of-type {
         margin-right: unset;
-        margin-left: spacing.$spacing-05;
+        margin-left: $spacing-05;
       }
     }
 
     .#{$iot-prefix}--date-time-picker__box {
       .#{$iot-prefix}--date-time-picker__field {
-        padding-right: spacing.$spacing-05;
-        padding-left: spacing.$spacing-09;
+        padding-right: $spacing-05;
+        padding-left: $spacing-09;
       }
     }
     .#{$iot-prefix}--date-time-picker__menu-scroll {
@@ -285,7 +285,7 @@ html[dir='rtl'] {
 
       .#{$iot-prefix}--date-time-picker__listitem--preset {
         &.#{$iot-prefix}--date-time-picker__listitem--preset-selected {
-          border-right-color: colors.$blue-60;
+          border-right-color: $blue-60;
         }
       }
     }

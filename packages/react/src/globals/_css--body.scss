@@ -1,6 +1,6 @@
-@use './config';
-@use './theme';
-@use './typography';
+@use './config' as *;
+@use './theme' as *;
+@use './typography' as *;
 @use './css--reset';
 
 // This hasn't been converted to @carbon/styles yet, so I copied it out manually.
@@ -11,10 +11,10 @@
 @mixin css-body {
   body {
     @include css--reset.reset;
-    @include typography.type-style('body-short-01');
+    @include type-style('body-short-01');
 
-    background-color: theme.$ui-background;
-    color: theme.$text-01;
+    background-color: $ui-background;
+    color: $text-01;
     line-height: 1;
   }
 }

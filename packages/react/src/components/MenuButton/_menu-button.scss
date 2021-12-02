@@ -1,26 +1,26 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/mixins';
+@use '../../globals/mixins' as *;
 @use '~@carbon/styles/scss/components/menu';
 
 .#{$iot-prefix}--menu-button {
   .#{$iot-prefix}--menu-button__primary + .#{$iot-prefix}--menu-button__secondary {
-    border-left: 1px solid theme.$ui-01;
+    border-left: 1px solid $ui-01;
   }
 
   .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {
-    color: theme.$icon-01;
+    color: $icon-01;
   }
 
   &--open {
     .#{$iot-prefix}--menu-button__trigger {
-      background-color: theme.$active-primary;
+      background-color: $active-primary;
     }
 
     .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {
-      background-color: theme.$ui-01;
-      @include mixins.box-shadow();
+      background-color: $ui-01;
+      @include box-shadow();
     }
   }
 }
@@ -32,12 +32,12 @@
 html[dir='rtl'] .#{$iot-prefix}--menu-button {
   .#{$prefix}--context-menu-option__icon {
     margin-right: 0;
-    margin-left: spacing.$spacing-03;
+    margin-left: $spacing-03;
   }
 
   .#{$prefix}--context-menu-option__info {
     margin-left: 0;
-    margin-right: spacing.$spacing-05;
+    margin-right: $spacing-05;
     transform: rotate(180deg);
   }
 }

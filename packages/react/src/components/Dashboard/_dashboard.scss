@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use 'react-grid-layout/css/styles';
 @use 'react-resizable/css/styles' as styles2;
 
@@ -15,7 +15,7 @@
     align-items: center;
 
     & > p {
-      margin-left: spacing.$spacing-05;
+      margin-left: $spacing-05;
       margin-bottom: 0;
     }
   }
@@ -25,7 +25,7 @@
     flex-flow: column;
 
     & > p {
-      padding-bottom: spacing.$spacing-05;
+      padding-bottom: $spacing-05;
       margin-bottom: 0;
     }
 
@@ -37,7 +37,7 @@
 
     & > p,
     div {
-      color: theme.$text-02;
+      color: $text-02;
     }
   }
 
@@ -47,7 +47,7 @@
     flex-grow: 0;
 
     & > div + div {
-      margin-left: spacing.$spacing-05;
+      margin-left: $spacing-05;
     }
   }
 
@@ -58,12 +58,12 @@
     flex-grow: 0;
 
     & > div + div {
-      margin-left: spacing.$spacing-03;
+      margin-left: $spacing-03;
     }
   }
 }
 
 .react-grid-item.react-grid-placeholder {
   background: none;
-  border: 3px dashed theme.$active-secondary;
+  border: 3px dashed $active-secondary;
 }

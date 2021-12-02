@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--card--toolbar {
@@ -16,7 +16,7 @@
 }
 
 .#{$iot-prefix}--card--toolbar-action {
-  color: theme.$ui-05;
+  color: $ui-05;
   border-width: 2px;
   display: flex;
   height: 2rem;
@@ -26,18 +26,18 @@
   width: 2rem;
 
   &:hover {
-    background-color: theme.$hover-ui;
-    color: theme.$ui-05;
+    background-color: $hover-ui;
+    color: $ui-05;
   }
 
   &:focus {
     border-color: transparent;
-    outline: 2px solid theme.$focus;
+    outline: 2px solid $focus;
     outline-offset: -2px;
   }
 
   svg {
-    fill: theme.$icon-02;
+    fill: $icon-02;
   }
 
   svg.#{$prefix}--overflow-menu__icon {
@@ -58,11 +58,11 @@
   margin: 0;
 
   :hover {
-    background: theme.$hover-ui;
+    background: $hover-ui;
   }
 
   &:active {
-    outline: 2px solid theme.$focus;
+    outline: 2px solid $focus;
     outline-offset: -2px;
   }
 }

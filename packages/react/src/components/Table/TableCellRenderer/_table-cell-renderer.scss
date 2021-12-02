@@ -1,8 +1,8 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../../../globals/typography';
-@use '../../../globals/mixins';
+@use '../../../globals/typography' as *;
+@use '../../../globals/mixins' as *;
 
 .#{$iot-prefix}--table__cell--truncate .#{$prefix}--tooltip__label {
   // Revert the styles added by the tooltip since we want
@@ -21,11 +21,11 @@
 }
 
 .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip--a11y.#{$iot-prefix}--table__cell-tooltip {
-  @include typography.type-style('productive-heading-01');
+  @include type-style('productive-heading-01');
 }
 
 .#{$iot-prefix}--table__cell-text--truncate {
-  @include mixins.text-overflow();
+  @include text-overflow();
   display: block;
 }
 

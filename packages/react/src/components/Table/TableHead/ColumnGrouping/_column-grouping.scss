@@ -1,5 +1,5 @@
-@use '../../../../globals/theme';
-@use '../../../../globals/spacing';
+@use '../../../../globals/theme' as *;
+@use '../../../../globals/spacing' as *;
 @use '../../../../globals/vars' as *;
 /**
   This mixin is used to switch the position of the two header rows
@@ -61,7 +61,7 @@
     // Basic border styling to simplify further border modifications
     // using color or width only.
     th {
-      border-color: theme.$ui-02;
+      border-color: $ui-02;
       border-style: solid;
       border-width: 0;
     }
@@ -116,8 +116,8 @@
       // then the header itself. We add the spacing back as margin of the child label instead.
       .table-header-sortable:not(.#{$prefix}--table-sort) > .#{$prefix}--table-header-label,
       .table-header-sortable:not(.#{$prefix}--table-sort) > .#{$prefix}--tooltip--definition {
-        margin-left: spacing.$spacing-05;
-        margin-right: spacing.$spacing-05;
+        margin-left: $spacing-05;
+        margin-right: $spacing-05;
       }
 
       // Fix for combination of resize, overflow and tooltip that caused the headers to expand in height.
@@ -214,16 +214,16 @@
 
   // ADJUST FOR DIFFERENT TABLE ROW SIZES
   // Default size is lg
-  $size-lg: spacing.$spacing-09;
+  $size-lg: $spacing-09;
   @include adjustPositionsAndHeights($size-lg, $size-lg);
 
   &--xl {
-    @include adjustPositionsAndHeights(spacing.$spacing-10, spacing.$spacing-10);
+    @include adjustPositionsAndHeights($spacing-10, $spacing-10);
   }
   &--md {
-    @include adjustPositionsAndHeights(spacing.$spacing-08, spacing.$spacing-08);
+    @include adjustPositionsAndHeights($spacing-08, $spacing-08);
     &.#{$iot-prefix}--data-table--column-groups--min-size-large {
-      @include adjustPositionsAndHeights(spacing.$spacing-08, $size-lg);
+      @include adjustPositionsAndHeights($spacing-08, $size-lg);
     }
   }
   &--sm {
@@ -233,9 +233,9 @@
         padding-top: 0;
       }
     }
-    @include adjustPositionsAndHeights(spacing.$spacing-07, spacing.$spacing-07);
+    @include adjustPositionsAndHeights($spacing-07, $spacing-07);
     &.#{$iot-prefix}--data-table--column-groups--min-size-large {
-      @include adjustPositionsAndHeights(spacing.$spacing-07, $size-lg);
+      @include adjustPositionsAndHeights($spacing-07, $size-lg);
     }
   }
   &--xs {
@@ -245,9 +245,9 @@
         padding-top: 0;
       }
     }
-    @include adjustPositionsAndHeights(spacing.$spacing-06, spacing.$spacing-06);
+    @include adjustPositionsAndHeights($spacing-06, $spacing-06);
     &.#{$iot-prefix}--data-table--column-groups--min-size-large {
-      @include adjustPositionsAndHeights(spacing.$spacing-06, $size-lg);
+      @include adjustPositionsAndHeights($spacing-06, $size-lg);
     }
   }
 }

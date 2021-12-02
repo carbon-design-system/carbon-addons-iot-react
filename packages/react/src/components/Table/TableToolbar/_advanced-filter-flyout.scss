@@ -1,5 +1,5 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
 
 .#{$iot-prefix}--advanced-filter__tab-container {
@@ -25,9 +25,9 @@
 .#{$iot-prefix}--filter-flyout__simple-row {
   display: flex;
   flex: 1 1 0%;
-  gap: spacing.$spacing-05;
+  gap: $spacing-05;
   flex-direction: row;
-  padding-bottom: spacing.$spacing-05;
+  padding-bottom: $spacing-05;
 
   &:last-of-type {
     padding-bottom: 0;

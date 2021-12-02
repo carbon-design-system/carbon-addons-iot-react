@@ -1,7 +1,7 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/colors';
+@use '../../globals/colors' as *;
 
 .#{$iot-prefix}--rule-builder-header {
   display: flex;
@@ -28,16 +28,16 @@
 %#{$iot-prefix}--rule-builder-rule {
   display: grid;
   align-items: center;
-  column-gap: spacing.$spacing-04;
-  padding: spacing.$spacing-04 0 0 spacing.$spacing-06;
+  column-gap: $spacing-04;
+  padding: $spacing-04 0 0 $spacing-06;
   grid-template-columns: 1fr 1fr 1fr minmax(145px, 0.5fr);
-  margin-left: spacing.$spacing-04;
+  margin-left: $spacing-04;
   position: relative;
   &:before {
     content: ' ';
     width: 2px;
     height: 100%;
-    background-color: colors.$blue-70;
+    background-color: $blue-70;
     position: absolute;
     top: 0;
     left: 0;
@@ -51,9 +51,9 @@
 
   &:after {
     content: ' ';
-    width: spacing.$spacing-06;
+    width: $spacing-06;
     height: 2px;
-    background-color: colors.$blue-70;
+    background-color: $blue-70;
     position: absolute;
     top: 60%;
     left: 0;
@@ -61,8 +61,8 @@
   }
 
   html[dir='rtl'] & {
-    margin-right: spacing.$spacing-04;
-    padding: spacing.$spacing-04 spacing.$spacing-06 0 0;
+    margin-right: $spacing-04;
+    padding: $spacing-04 $spacing-06 0 0;
 
     &:before,
     &:after {
@@ -77,12 +77,12 @@
 
   &:last-child {
     &:before {
-      height: spacing.$spacing-07;
+      height: $spacing-07;
     }
   }
 
   &:after {
-    top: spacing.$spacing-07;
+    top: $spacing-07;
     transform: translateY(0);
   }
 }

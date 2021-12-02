@@ -1,21 +1,21 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 .#{$iot-prefix}--editor {
   .#{$prefix}--modal-content {
-    padding-right: spacing.$spacing-05;
+    padding-right: $spacing-05;
   }
 
   &-container {
-    background-color: theme.$ui-background;
+    background-color: $ui-background;
     height: 100%;
     overflow: hidden;
     min-height: 3.5rem;
-    padding-top: spacing.$spacing-05;
+    padding-top: $spacing-05;
   }
 
   &-notification {
-    margin: 0 auto spacing.$spacing-05;
+    margin: 0 auto $spacing-05;
   }
 
   &-copy-wrapper {
@@ -24,7 +24,7 @@
   }
 
   &-copy {
-    background-color: theme.$ui-background;
+    background-color: $ui-background;
     position: absolute;
     right: 0;
     top: 0;
@@ -38,7 +38,7 @@
   & .#{$iot-prefix}--editor-expand.#{$prefix}--btn {
     color: transparent;
     position: absolute;
-    right: spacing.$spacing-09;
+    right: $spacing-09;
     top: 0;
 
     .#{$prefix}--assistive-text,

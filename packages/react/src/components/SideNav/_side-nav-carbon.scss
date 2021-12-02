@@ -1,13 +1,12 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/colors';
-@use '../../globals/mixins';
-@use '../../globals/motion';
-@use '../../globals/typography';
-@use '../../globals/layout';
-@use '~@carbon/styles/scss/components/ui-shell/functions';
-@use '~@carbon/styles/scss/components/ui-shell/mixins' as shell-mixins;
+@use '../../globals/colors' as *;
+@use '../../globals/mixins' as *;
+@use '../../globals/motion' as *;
+@use '../../globals/typography' as *;
+@use '../../globals/layout' as *;
+@use '~@carbon/styles/scss/components/ui-shell/functions' as *;
 
 /*****************************
 *
@@ -57,19 +56,19 @@ $small-screen-breakpoint: 65.99em;
   //////////////////////////////////////
   .#{$prefix}--side-nav__menu
     .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover {
-    color: colors.$gray-100;
-    background-color: theme.$background-hover;
+    color: $gray-100;
+    background-color: $background-hover;
   }
 
   .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link {
-    height: functions.mini-units(4);
-    min-height: functions.mini-units(4);
-    padding-left: functions.mini-units(4);
+    height: mini-units(4);
+    min-height: mini-units(4);
+    padding-left: mini-units(4);
     font-weight: 400;
   }
 
   .#{$prefix}--side-nav__item.#{$prefix}--side-nav__item--icon .#{$prefix}--side-nav__link {
-    padding-left: functions.mini-units(9);
+    padding-left: mini-units(9);
 
     html[dir='rtl'] & {
       padding-left: unset;
@@ -79,40 +78,40 @@ $small-screen-breakpoint: 65.99em;
   .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current,
   .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[aria-current='page'],
   .#{$prefix}--side-nav__link--current {
-    background-color: colors.$gray-20;
+    background-color: $gray-20;
 
     > span {
-      color: colors.$gray-100;
+      color: $gray-100;
       font-weight: 600;
     }
   }
 
   .#{$prefix}--side-nav__link {
-    @include mixins.focus-outline('reset');
-    @include typography.type-style('productive-heading-01');
+    @include focus-outline('reset');
+    @include type-style('productive-heading-01');
 
     position: relative;
     display: flex;
     align-items: center;
-    min-height: functions.mini-units(4);
-    padding: 0 functions.mini-units(2);
+    min-height: mini-units(4);
+    padding: 0 mini-units(2);
     text-decoration: none;
-    transition: color motion.$duration-fast-02, background-color motion.$duration-fast-02,
-      outline motion.$duration-fast-02;
+    transition: color $duration-fast-02, background-color $duration-fast-02,
+      outline $duration-fast-02;
   }
 
   .#{$prefix}--side-nav__link > .#{$prefix}--side-nav__link-text {
-    @include shell-mixins.text-overflow();
+    @include text-overflow();
 
-    color: theme.$text-secondary;
-    font-size: layout.rem(14px);
+    color: $text-secondary;
+    font-size: rem(14px);
     line-height: 1.25rem;
     letter-spacing: 0.1px;
     user-select: none;
   }
 
   .#{$prefix}--side-nav__link:focus {
-    @include mixins.focus-outline('outline');
+    @include focus-outline('outline');
 
     // Windows, Firefox HCM Fix
     @media screen and (-ms-high-contrast: active), screen and (prefers-contrast) {
@@ -124,12 +123,12 @@ $small-screen-breakpoint: 65.99em;
   .#{$prefix}--side-nav__link[aria-current='page'],
   .#{$prefix}--side-nav__link--current {
     font-weight: 600;
-    background-color: theme.$background-hover;
+    background-color: $background-hover;
   }
 
   .#{$prefix}--side-nav__link[aria-current='page'] .#{$prefix}--side-nav__link-text,
   .#{$prefix}--side-nav__link--current .#{$prefix}--side-nav__link-text {
-    color: colors.$gray-100;
+    color: $gray-100;
   }
 
   .#{$prefix}--side-nav__link[aria-current='page']::before,
@@ -139,19 +138,19 @@ $small-screen-breakpoint: 65.99em;
     bottom: 0;
     left: 0;
     width: 4px;
-    background-color: colors.$blue-60;
+    background-color: $blue-60;
     content: '';
   }
 
   &.#{$prefix}--side-nav--fixed .#{$prefix}--side-nav__link {
-    padding-left: functions.mini-units(2);
+    padding-left: mini-units(2);
   }
 
   &.#{$prefix}--side-nav--fixed
     .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--icon)
     .#{$prefix}--side-nav__menu
     .#{$prefix}--side-nav__link {
-    padding-left: functions.mini-units(4);
+    padding-left: mini-units(4);
   }
 }
 /* stylelint-enable */

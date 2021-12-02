@@ -1,11 +1,11 @@
 @use '../../globals/vars' as *;
-@use '../../globals/motion';
-@use '../../globals/spacing';
+@use '../../globals/motion' as *;
+@use '../../globals/spacing' as *;
 
 .#{$iot-prefix}--main-content {
-  padding-top: spacing.$spacing-09;
+  padding-top: $spacing-09;
   height: 100%;
-  transition: all motion.$duration-fast-02 cubic-bezier(0.2, 0, 1, 0.9);
+  transition: all $duration-fast-02 cubic-bezier(0.2, 0, 1, 0.9);
   width: 100%;
 
   @media (min-width: 66em) {

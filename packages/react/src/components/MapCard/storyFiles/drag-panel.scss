@@ -1,15 +1,15 @@
-@use '../../../globals/config';
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/config' as *;
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../../../globals/mixins';
+@use '../../../globals/mixins' as *;
 
 .drag-panel {
   position: absolute;
   z-index: 3;
   opacity: 0.8;
-  @include mixins.box-shadow();
+  @include box-shadow();
   cursor: move;
-  padding: spacing.$spacing-05;
-  background: theme.$layer-02;
+  padding: $spacing-05;
+  background: $layer-02;
 }

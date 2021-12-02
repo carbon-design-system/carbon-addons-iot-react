@@ -1,11 +1,11 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/layout';
+@use '../../globals/layout' as *;
 
 .#{$iot-prefix}--composed-modal {
   .#{$prefix}--modal-container {
-    @media (min-height: layout.rem(515px)) {
+    @media (min-height: rem(515px)) {
       overflow-y: auto;
     }
   }
@@ -26,16 +26,16 @@
       margin-bottom: 0;
     }
     .#{$prefix}--modal-container {
-      min-height: layout.rem(600px);
-      min-width: layout.rem(800px);
+      min-height: rem(600px);
+      min-width: rem(800px);
       max-height: 80%;
-      @media (min-width: layout.rem(600px)) {
+      @media (min-width: rem(600px)) {
         height: auto;
       }
-      @media (min-width: layout.rem(1024px)) {
+      @media (min-width: rem(1024px)) {
         max-width: 80%;
       }
-      @media (min-width: layout.rem(1200px)) {
+      @media (min-width: rem(1200px)) {
         max-width: 60%;
       }
     }
@@ -43,14 +43,14 @@
 
   &.#{$iot-prefix}--composed-modal--full-screen {
     & > .#{$prefix}--modal-container {
-      $min-width: calc(100% - #{spacing.$spacing-06});
+      $min-width: calc(100% - #{$spacing-06});
       min-height: $min-width;
       min-width: $min-width;
       max-height: 80%;
-      @media (min-width: layout.rem(1024px)) {
+      @media (min-width: rem(1024px)) {
         min-width: $min-width;
       }
-      @media (min-width: layout.rem(1200px)) {
+      @media (min-width: rem(1200px)) {
         min-width: $min-width;
       }
 
@@ -63,17 +63,17 @@
   /* Needed for buttons when they're next to each other */
 
   .#{$prefix}--modal-header__heading {
-    margin-bottom: spacing.$spacing-04;
+    margin-bottom: $spacing-04;
   }
 
   .#{$prefix}--modal-content {
-    min-height: layout.rem(200px);
+    min-height: rem(200px);
   }
 }
 
 .#{$iot-prefix}--composed-modal--inline-notification {
   width: calc(100% - 1rem * 2);
-  margin: spacing.$spacing-05 auto;
+  margin: $spacing-05 auto;
 }
 
 .#{$iot-prefix}--composed-modal-footer {
@@ -90,5 +90,5 @@
 }
 
 .#{$iot-prefix}--composed-modal__body--small-margin-bottom {
-  margin-bottom: spacing.$spacing-05;
+  margin-bottom: $spacing-05;
 }

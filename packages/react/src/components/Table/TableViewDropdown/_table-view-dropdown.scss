@@ -1,11 +1,11 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../../../globals/colors';
-@use '../../../globals/mixins';
+@use '../../../globals/colors' as *;
+@use '../../../globals/mixins' as *;
 
 .#{$iot-prefix}--view-dropdown__container {
-  padding: 0 spacing.$spacing-05;
+  padding: 0 $spacing-05;
   margin: auto 0;
 }
 
@@ -15,50 +15,50 @@
 .#{$prefix}--list-box__field .#{$iot-prefix}--view-dropdown__button-prefix {
   display: flex;
   flex-shrink: 0;
-  margin-right: spacing.$spacing-02;
+  margin-right: $spacing-02;
   svg {
-    margin-right: spacing.$spacing-03;
+    margin-right: $spacing-03;
   }
 }
 
 .#{$iot-prefix}--view-dropdown__edited-text {
-  color: colors.$gray-50;
+  color: $gray-50;
 }
 
 .#{$iot-prefix}--view-dropdown__item {
   display: flex;
   justify-content: space-between;
   span {
-    @include mixins.text-overflow();
+    @include text-overflow();
   }
 }
 
 .#{$iot-prefix}--view-dropdown__item-link {
-  color: theme.$link-01;
+  color: $link-01;
   // compensate for carbon selected checkbox space that is not needed since these
   // link-items with custom actions will not actually be
-  margin-right: -(spacing.$spacing-06);
+  margin-right: -($spacing-06);
 }
 
 .#{$iot-prefix}--view-dropdown__item-link-icon {
-  color: theme.$link-01;
-  fill: theme.$link-01;
-  margin-left: spacing.$spacing-03;
+  color: $link-01;
+  fill: $link-01;
+  margin-left: $spacing-03;
   flex-shrink: 0;
 }
 
 html[dir='rtl'] {
   .#{$prefix}--list-box__field .#{$iot-prefix}--view-dropdown__button-prefix {
     margin-right: 0;
-    margin-left: spacing.$spacing-02;
+    margin-left: $spacing-02;
     svg {
       margin-right: 0;
-      margin-left: spacing.$spacing-03;
+      margin-left: $spacing-03;
     }
   }
 
   .#{$iot-prefix}--view-dropdown__item-link-icon {
-    margin-right: -(spacing.$spacing-06);
+    margin-right: -($spacing-06);
   }
 
   .#{$iot-prefix}--view-dropdown__item-link {

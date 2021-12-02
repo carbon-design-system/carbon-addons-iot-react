@@ -1,9 +1,9 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/colors';
-@use '../../globals/mixins';
-@use '../../globals/typography';
+@use '../../globals/colors' as *;
+@use '../../globals/mixins' as *;
+@use '../../globals/typography' as *;
 
 .#{$iot-prefix}--data-state-container {
   // the custom property (CSS var) is defined in the Card that is using it
@@ -12,13 +12,13 @@
 }
 
 .#{$iot-prefix}--data-state-dashes {
-  color: colors.$gray-20;
+  color: $gray-20;
   font-size: 4rem;
   line-height: 0.67;
 }
 
 .#{$iot-prefix}--data-state-grid {
-  margin-top: spacing.$spacing-05;
+  margin-top: $spacing-05;
   display: grid;
   align-items: center;
   grid-template-columns: auto auto 1fr;
@@ -37,7 +37,7 @@
   & > *:first-child {
     grid-area: app-icon;
     cursor: pointer;
-    margin-right: spacing.$spacing-03;
+    margin-right: $spacing-03;
   }
 
   & > *:nth-child(2) {
@@ -57,17 +57,17 @@
 }
 
 .#{$iot-prefix}--data-state-grid__label {
-  @include typography.type-style('productive-heading-01');
-  @include mixins.text-overflow;
+  @include type-style('productive-heading-01');
+  @include text-overflow;
 }
 
 .#{$iot-prefix}--data-state-grid__description {
-  @include typography.type-style('helper-text-01');
-  color: colors.$gray-70;
+  @include type-style('helper-text-01');
+  color: $gray-70;
 
   $max-lines: 2;
   $line-height: 1rem;
-  @include mixins.multiline-text-overflow($max-lines, $line-height);
+  @include multiline-text-overflow($max-lines, $line-height);
 }
 
 .#{$iot-prefix}--data-state-tooltip:focus {
@@ -76,25 +76,25 @@
 
 .#{$iot-prefix}--data-state-tooltip {
   > * {
-    margin-bottom: spacing.$spacing-05;
+    margin-bottom: $spacing-05;
   }
 
   .#{$iot-prefix}--data-state-tooltip__label {
-    @include typography.type-style('productive-heading-01');
+    @include type-style('productive-heading-01');
   }
 }
 
 .#{$iot-prefix}--data-state-default-error-icon {
-  fill: colors.$red-60;
+  fill: $red-60;
 }
 
 .#{$iot-prefix}--data-state-default-warning-icon {
-  fill: colors.$yellow-30;
+  fill: $yellow-30;
 }
 
 html[dir='rtl'] .#{$iot-prefix}--data-state-grid {
   & > *:first-child {
     margin-right: 0;
-    margin-left: spacing.$spacing-03;
+    margin-left: $spacing-03;
   }
 }

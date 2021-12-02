@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--list-builder__container {
@@ -12,12 +12,12 @@
   width: 100%;
   height: 100%;
   align-self: stretch;
-  padding: spacing.$spacing-02;
+  padding: $spacing-02;
 }
 
 .#{$iot-prefix}--list-builder__selected {
   width: 100%;
   height: 100%;
   align-self: stretch;
-  padding: spacing.$spacing-02;
+  padding: $spacing-02;
 }

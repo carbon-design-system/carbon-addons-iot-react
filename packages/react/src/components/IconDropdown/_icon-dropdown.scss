@@ -1,7 +1,7 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "../../globals/mixins";
+@use '../../globals/mixins' as *;
 @use '~@carbon/styles/scss/components/dropdown';
 
 .#{$iot-prefix}--dropdown__image-button:hover {
@@ -13,22 +13,22 @@
 }
 
 .#{$iot-prefix}--icon-dropdown__footer {
-  @include mixins.box-shadow();
-  outline: 1px solid theme.$focus;
+  @include box-shadow();
+  outline: 1px solid $focus;
   position: absolute;
 
-  background-color: theme.$ui-01;
+  background-color: $ui-01;
   z-index: 5999; // dropdown z-index is 6000, this needs to render just below
   width: 100%;
 
   &-content {
-    padding: spacing.$spacing-03;
+    padding: $spacing-03;
   }
 }
 
 .#{$iot-prefix}--icon-dropdown__selection-buttons {
   > .#{$prefix}--list-box__field {
-    padding: 0 spacing.$spacing-09 0 spacing.$spacing-05;
+    padding: 0 $spacing-09 0 $spacing-05;
   }
 
   > .#{$prefix}--list-box__menu {
@@ -54,7 +54,7 @@
 
       > .#{$prefix}--list-box__menu-item__option {
         > .#{$iot-prefix}--dropdown__image-button {
-          border-color: theme.$focus;
+          border-color: $focus;
         }
       }
     }
@@ -75,7 +75,7 @@
         justify-items: center;
 
         &:hover {
-          background: theme.$hover-ui;
+          background: $hover-ui;
         }
 
         > .#{$iot-prefix}--icon-dropdown__selected-icon-label {
@@ -90,8 +90,8 @@
           border-width: 1px;
           border-style: solid;
           border-top-color: transparent;
-          border-right-color: theme.$ui-03;
-          border-bottom-color: theme.$ui-03;
+          border-right-color: $ui-03;
+          border-bottom-color: $ui-03;
           border-left-color: transparent;
 
           color: transparent;
@@ -109,7 +109,7 @@
           }
 
           &--top {
-            border-top-color: theme.$ui-03;
+            border-top-color: $ui-03;
           }
 
           &:hover {
@@ -146,13 +146,13 @@
   }
 
   &__content {
-    margin: auto spacing.$spacing-03;
+    margin: auto $spacing-03;
 
     overflow: hidden;
     text-overflow: ellipsis;
 
     &--open {
-      color: theme.$active-ui;
+      color: $active-ui;
     }
   }
 }

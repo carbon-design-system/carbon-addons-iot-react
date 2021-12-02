@@ -1,5 +1,5 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
 
 .#{$iot-prefix}--table-skeleton-with-headers--table-row {
@@ -15,14 +15,14 @@
 
   &--head {
     td {
-      background-color: theme.$ui-03;
+      background-color: $ui-03;
     }
 
     .#{$prefix}--skeleton__text {
-      background: theme.$ui-04;
+      background: $ui-04;
 
       &:before {
-        background: theme.$text-03;
+        background: $text-03;
       }
     }
   }

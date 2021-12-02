@@ -1,12 +1,12 @@
-@use '../../../../globals/theme';
-@use '../../../../globals/spacing';
+@use '../../../../globals/theme' as *;
+@use '../../../../globals/spacing' as *;
 @use '../../../../globals/vars' as *;
-@use '../../../../globals/typography';
+@use '../../../../globals/typography' as *;
 
 .#{$iot-prefix}--load-more-cell {
   &--content.#{$iot-prefix}--btn {
-    @include typography.type-style('body-short-01');
-    color: theme.$interactive-01;
+    @include type-style('body-short-01');
+    color: $interactive-01;
     min-width: 100%;
     display: flex;
     justify-content: center;

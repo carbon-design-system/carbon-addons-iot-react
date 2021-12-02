@@ -1,10 +1,10 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "../../globals/typography";
-@use "../../globals/colors";
-@use "../../globals/motion";
-@use "~@carbon/styles/scss/components/ui-shell/functions";
+@use '../../globals/typography' as *;
+@use '../../globals/colors' as *;
+@use '../../globals/motion' as *;
+@use '~@carbon/styles/scss/components/ui-shell/functions' as *;
 
 $hoverBgColor: #2c2c2c;
 
@@ -12,7 +12,7 @@ $hoverBgColor: #2c2c2c;
   .#{$prefix}--skip-to-content:focus {
     min-width: 240px;
     justify-content: center;
-    border: spacing.$spacing-01 solid theme.$ui-01;
+    border: $spacing-01 solid $ui-01;
   }
 
   &__menu-toggle {
@@ -22,7 +22,7 @@ $hoverBgColor: #2c2c2c;
   }
 
   & .#{$prefix}--header__name {
-    padding-left: spacing.$spacing-03;
+    padding-left: $spacing-03;
     min-width: 150px;
     display: inline-flex;
 
@@ -63,7 +63,7 @@ $hoverBgColor: #2c2c2c;
   }
 
   &__menu-item[role='menuitem']:focus {
-    border-color: theme.$ui-01;
+    border-color: $ui-01;
     outline: none;
   }
 
@@ -73,29 +73,29 @@ $hoverBgColor: #2c2c2c;
 
   .#{$prefix}--overflow-menu {
     &:hover {
-      background-color: colors.$gray-90;
+      background-color: $gray-90;
     }
     &--open {
-      background-color: colors.$gray-90;
+      background-color: $gray-90;
     }
 
     &-options {
-      background-color: colors.$gray-90;
+      background-color: $gray-90;
 
       &::after {
-        background-color: colors.$gray-90;
-        width: spacing.$spacing-09;
+        background-color: $gray-90;
+        width: $spacing-09;
       }
 
       &__btn {
-        color: theme.$text-secondary;
-        background-color: colors.$gray-90;
+        color: $text-secondary;
+        background-color: $gray-90;
         text-decoration: none;
       }
     }
 
     &__icon {
-      fill: theme.$ui-01;
+      fill: $ui-01;
     }
 
     .#{$prefix}--header__submenu.#{$prefix}--header-action-btn {
@@ -103,10 +103,10 @@ $hoverBgColor: #2c2c2c;
 
       .#{$prefix}--header__menu-item.#{$prefix}--header__menu-title {
         justify-content: flex-start;
-        padding-left: spacing.$spacing-05;
-        padding-right: spacing.$spacing-05;
+        padding-left: $spacing-05;
+        padding-right: $spacing-05;
         text-decoration: none;
-        color: theme.$text-secondary;
+        color: $text-secondary;
       }
     }
 
@@ -114,24 +114,24 @@ $hoverBgColor: #2c2c2c;
       height: 100%;
       width: 100%;
       justify-content: flex-start;
-      padding-left: spacing.$spacing-05;
-      padding-right: spacing.$spacing-05;
+      padding-left: $spacing-05;
+      padding-right: $spacing-05;
       text-decoration: none;
-      color: theme.$text-secondary;
+      color: $text-secondary;
     }
   }
 }
 
 .#{$iot-prefix}--header__subtitle {
-  @include typography.type-style('body-short-01');
-  border-left: theme.$icon-02 1px solid;
-  padding: spacing.$spacing-01 spacing.$spacing-05;
-  color: theme.$disabled-02;
-  margin-left: spacing.$spacing-05;
+  @include type-style('body-short-01');
+  border-left: $icon-02 1px solid;
+  padding: $spacing-01 $spacing-05;
+  color: $disabled-02;
+  margin-left: $spacing-05;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  min-height: spacing.$spacing-06;
+  min-height: $spacing-06;
 
   .#{$prefix}--tag {
     margin: 0;
@@ -156,15 +156,15 @@ $hoverBgColor: #2c2c2c;
   padding: 0;
 
   &.#{$prefix}--btn--primary {
-    background-color: theme.$ui-05;
+    background-color: $ui-05;
 
     &:hover {
       background-color: $hoverBgColor;
     }
 
     &.#{$prefix}--btn:focus {
-      outline-color: theme.$ui-01;
-      border-color: theme.$ui-01;
+      outline-color: $ui-01;
+      border-color: $ui-01;
       box-shadow: none;
     }
   }
@@ -189,7 +189,7 @@ $hoverBgColor: #2c2c2c;
 .#{$prefix}--header__menu .#{$prefix}--header__menu-item[role='menuitem'] {
   display: flex;
   align-items: center;
-  color: theme.$active-ui;
+  color: $active-ui;
   height: 100%;
   font-size: 0.875rem;
   font-weight: 400;
@@ -198,19 +198,19 @@ $hoverBgColor: #2c2c2c;
   text-decoration: none;
   user-select: none;
   border: 2px solid #0000;
-  transition: background-color motion.$duration-fast-02, border-color motion.$duration-fast-02,
-    color motion.$duration-fast-02;
+  transition: background-color $duration-fast-02, border-color $duration-fast-02,
+    color $duration-fast-02;
   justify-content: center;
   padding: 0;
   width: 100%;
 
   &:focus {
-    border-color: theme.$inverse-focus-ui;
+    border-color: $inverse-focus-ui;
   }
 }
 
 .#{$prefix}--app-switcher {
-  background-color: theme.$ui-01;
+  background-color: $ui-01;
   border: none;
 }
 
@@ -226,19 +226,19 @@ $hoverBgColor: #2c2c2c;
   position: relative;
   display: flex;
   align-items: center;
-  color: theme.$text-secondary;
-  padding: 0 functions.mini-units(2);
+  color: $text-secondary;
+  padding: 0 mini-units(2);
   // Used for links that are directly in the menubar to span the full height
   height: 100%;
   // Text styles
-  @include typography.type-style('body-short-01');
+  @include type-style('body-short-01');
   // Reset link styles and make sure the text isn't selectable
   text-decoration: none;
   user-select: none;
   // Used for focus styles
   border: 2px solid transparent;
-  transition: background-color motion.$duration-fast-02, border-color motion.$duration-fast-02,
-    color motion.$duration-fast-02;
+  transition: background-color $duration-fast-02, border-color $duration-fast-02,
+    color $duration-fast-02;
 }
 
 button.#{$prefix}--header__menu-item {
@@ -246,8 +246,8 @@ button.#{$prefix}--header__menu-item {
   width: 100%;
 
   &:focus {
-    border-color: theme.$inverse-focus-ui;
-    color: theme.$ui-02;
+    border-color: $inverse-focus-ui;
+    color: $ui-02;
     outline: none;
   }
 }

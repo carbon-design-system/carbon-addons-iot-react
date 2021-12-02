@@ -1,11 +1,11 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "../../globals/typography";
+@use '../../globals/typography' as *;
 
 .#{$iot-prefix}--value-card__attribute-unit {
-  @include typography.type-style('productive-heading-03');
-  padding-left: spacing.$spacing-02;
-  padding-bottom: spacing.$spacing-02;
+  @include type-style('productive-heading-03');
+  padding-left: $spacing-02;
+  padding-bottom: $spacing-02;
   white-space: nowrap;
 }

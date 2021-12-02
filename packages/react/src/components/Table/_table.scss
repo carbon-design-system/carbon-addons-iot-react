@@ -1,8 +1,8 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "../../globals/colors";
-@use "../../globals/mixins";
+@use '../../globals/colors' as *;
+@use '../../globals/mixins' as *;
 @use './TableHead/table-head';
 @use './TableFoot/table-foot';
 @use './TableSkeletonWithHeaders/table-skeleton-with-headers';
@@ -31,7 +31,7 @@ table.#{$prefix}--side-nav--data-table {
 }
 
 td.#{$iot-prefix}--table__cell--sortable {
-  padding-right: spacing.$spacing-09;
+  padding-right: $spacing-09;
 }
 
 .#{$iot-prefix}--data-table--resize td {
@@ -48,10 +48,10 @@ td.#{$iot-prefix}--table__cell--sortable {
 }
 
 .#{$iot-prefix}-table-container--dropdown-height-fix {
-  background-color: theme.$ui-01;
-  min-height: calc(#{spacing.$spacing-10} * 5);
+  background-color: $ui-01;
+  min-height: calc(#{$spacing-10} * 5);
   .#{$prefix}--data-table-content {
-    min-height: calc(#{spacing.$spacing-10} * 5);
+    min-height: calc(#{$spacing-10} * 5);
   }
 }
 
@@ -65,12 +65,12 @@ html[dir='rtl'] {
   }
 
   td.#{$iot-prefix}--table__cell--sortable {
-    padding-left: spacing.$spacing-08;
+    padding-left: $spacing-08;
   }
 }
 
 .#{$iot-prefix}--empty-table--table-row {
-  height: calc(100% - #{spacing.$spacing-09});
+  height: calc(100% - #{$spacing-09});
   &:hover td {
     background: inherit;
   }
@@ -85,11 +85,11 @@ html[dir='rtl'] {
     // stylelint-disable-next-line declaration-property-unit-blacklist
     padding: Max(calc(48 * var(--is-large-card)), 0px);
     svg {
-      margin: spacing.$spacing-05;
+      margin: $spacing-05;
     }
 
     & > * {
-      margin: spacing.$spacing-03;
+      margin: $spacing-03;
     }
   }
 
@@ -99,13 +99,13 @@ html[dir='rtl'] {
 }
 
 .#{$iot-prefix}--table__advanced-filters-container {
-  background-color: theme.$ui-01;
-  padding: spacing.$spacing-02 spacing.$spacing-04;
-  border-top: 1px solid theme.$ui-03;
+  background-color: $ui-01;
+  padding: $spacing-02 $spacing-04;
+  border-top: 1px solid $ui-03;
 
   .#{$prefix}--tag {
-    color: theme.$interactive-01;
-    background-color: colors.$blue-20;
+    color: $interactive-01;
+    background-color: $blue-20;
   }
 }
 
@@ -115,13 +115,13 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   border: 1px solid transparent;
 
   &.#{$iot-prefix}--table-toolbar-button-active {
-    @include mixins.box-shadow;
+    @include box-shadow;
   }
 }
 
 // regression fix for tiny expand chrevron on some expandable table rows
 .#{$prefix}--data-table thead th.#{$prefix}--table-expand,
 .#{$prefix}--data-table tbody td.#{$prefix}--table-expand {
-  height: spacing.$spacing-07;
-  width: spacing.$spacing-08;
+  height: $spacing-07;
+  width: $spacing-08;
 }

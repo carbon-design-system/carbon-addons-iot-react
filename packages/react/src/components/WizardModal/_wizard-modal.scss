@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--wizard-modal {
@@ -9,24 +9,24 @@
 
   .#{$prefix}--progress {
     /* need to pad some space for the focus outlines*/
-    padding: spacing.$spacing-01;
+    padding: $spacing-01;
   }
   .#{$prefix}--progress-step {
     max-width: 150px;
   }
   > div + div {
-    padding-top: spacing.$spacing-05;
+    padding-top: $spacing-05;
   }
 
   .#{$prefix}--modal-content {
     width: 100%;
-    padding: 0 spacing.$spacing-05;
+    padding: 0 $spacing-05;
   }
 
   .#{$iot-prefix}--wizard-modal__content {
-    padding-top: spacing.$spacing-05;
-    padding-left: spacing.$spacing-05;
-    padding-bottom: spacing.$spacing-12;
+    padding-top: $spacing-05;
+    padding-left: $spacing-05;
+    padding-bottom: $spacing-12;
   }
 }
 
@@ -35,15 +35,15 @@ html[dir='rtl'] {
     .#{$prefix}--modal-header,
     .#{$prefix}--modal-content {
       padding-left: 20%;
-      padding-right: spacing.$spacing-09;
+      padding-right: $spacing-09;
     }
     .#{$prefix}--progress-step svg {
       margin-right: 0;
-      margin-left: spacing.$spacing-03;
+      margin-left: $spacing-03;
     }
 
     .#{$iot-prefix}--wizard-modal__content {
-      padding-right: spacing.$spacing-05;
+      padding-right: $spacing-05;
       padding-left: 0;
     }
   }

@@ -1,8 +1,8 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../../../globals/colors';
-@use '../../../globals/mixins';
+@use '../../../globals/colors' as *;
+@use '../../../globals/mixins' as *;
 @use './column-resize';
 @use './ColumnHeaderRow/column-header-row';
 @use './FilterHeaderRow/filter-header-row';
@@ -10,7 +10,7 @@
 
 .#{$prefix}--data-table {
   th {
-    height: spacing.$spacing-09;
+    height: $spacing-09;
     border-top: none;
     border-bottom: none;
     position: relative;
@@ -30,7 +30,7 @@
 
     // fix positioning of order number when in multi-sort
     span.#{$iot-prefix}--table-header-label__sort-order {
-      bottom: spacing.$spacing-06;
+      bottom: $spacing-06;
     }
 
     // fix sort icon missing at xl sizes
@@ -39,25 +39,25 @@
     }
 
     th {
-      height: spacing.$spacing-10;
+      height: $spacing-10;
     }
   }
 
   &--md {
     th {
-      height: spacing.$spacing-08;
+      height: $spacing-08;
     }
   }
 
   &--sm {
     th {
-      height: spacing.$spacing-07;
+      height: $spacing-07;
     }
   }
 
   &--xs {
     th {
-      height: spacing.$spacing-06;
+      height: $spacing-06;
     }
   }
 
@@ -85,20 +85,20 @@
 
   .#{$iot-prefix}--table-header-label__sort-order {
     position: absolute;
-    bottom: spacing.$spacing-04;
-    right: spacing.$spacing-04;
+    bottom: $spacing-04;
+    right: $spacing-04;
     font-size: 0.667rem;
     font-weight: bold;
 
     html[dir='rtl'] & {
-      left: spacing.$spacing-03;
+      left: $spacing-03;
       right: unset;
     }
   }
 
   .column-header__btn {
-    margin: 0 spacing.$spacing-05 spacing.$spacing-05 0;
-    max-height: spacing.$spacing-07;
+    margin: 0 $spacing-05 $spacing-05 0;
+    max-height: $spacing-07;
   }
 
   .column-header__select {
@@ -110,22 +110,22 @@
   }
 
   .column-header__select--isOver {
-    border-color: theme.$focus;
-    box-shadow: inset 0 0 0 1px colors.$gray-10;
+    border-color: $focus;
+    box-shadow: inset 0 0 0 1px $gray-10;
   }
 
   .lightweight {
     tr:last-of-type {
       th {
-        border-bottom: solid 2px theme.$interactive-02;
+        border-bottom: solid 2px $interactive-02;
       }
     }
     th {
-      background-color: theme.$ui-01;
+      background-color: $ui-01;
       .#{$prefix}--table-sort {
-        background-color: theme.$ui-01;
+        background-color: $ui-01;
         &:hover {
-          background-color: theme.$ui-03;
+          background-color: $ui-03;
         }
       }
     }
@@ -166,7 +166,7 @@
   }
 
   .#{$iot-prefix}--clear-filters-button--disabled {
-    @include mixins.disabled-icon-button();
+    @include disabled-icon-button();
   }
 }
 
@@ -178,7 +178,7 @@
     .#{$prefix}--table-sort:focus &:hover {
       margin-top: -2px;
       margin-bottom: -2px;
-      background-color: colors.$gray-40;
+      background-color: $gray-40;
     }
   }
 

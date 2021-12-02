@@ -1,14 +1,14 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "../../globals/layout";
+@use '../../globals/layout' as *;
 
 .#{$iot-prefix}-simple-pagination-container {
   display: flex;
-  height: spacing.$spacing-09;
+  height: $spacing-09;
   width: 100%;
-  border: layout.rem(1px) solid theme.$ui-03;
-  background-color: theme.$ui-01;
+  border: rem(1px) solid $ui-03;
+  background-color: $ui-01;
 }
 
 .#{$iot-prefix}-simple-pagination-page-bar {
@@ -17,8 +17,8 @@
 }
 
 .#{$iot-prefix}-simple-pagination-page-label {
-  padding-right: spacing.$spacing-05;
-  padding-left: spacing.$spacing-05;
+  padding-right: $spacing-05;
+  padding-left: $spacing-05;
   font-size: 0.875rem;
   align-self: center;
 }
@@ -34,15 +34,15 @@
     outline: none;
   }
   &:hover {
-    background-color: theme.$ui-01;
+    background-color: $ui-01;
   }
   cursor: not-allowed;
 }
 
 .#{$iot-prefix}-simple-pagination-caret {
-  fill: theme.$icon-01;
+  fill: $icon-01;
 }
 
 .#{$iot-prefix}-simple-pagination-caret-disabled {
-  fill: theme.$disabled-02;
+  fill: $disabled-02;
 }

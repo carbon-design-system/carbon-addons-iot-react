@@ -1,7 +1,7 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "~@carbon/styles/scss/components/ui-shell/functions";
+@use '~@carbon/styles/scss/components/ui-shell/functions' as *;
 
 $textColor: #f3f3f3;
 $selectedBgColor: #565656;
@@ -13,10 +13,10 @@ $hoverBgColor: #3d3d3d;
   ////////////////////////////////////////
   .#{$prefix}--side-nav__menu-item + .#{$prefix}--side-nav__item > .#{$prefix}--side-nav__submenu {
     font-weight: 400;
-    padding-left: functions.mini-units(9);
+    padding-left: mini-units(9);
 
     & + .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link {
-      padding-left: functions.mini-units(13);
+      padding-left: mini-units(13);
     }
   }
 

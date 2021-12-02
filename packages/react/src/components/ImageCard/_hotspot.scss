@@ -1,14 +1,14 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/mixins';
-@use '../../globals/colors';
-@use '../../globals/typography';
+@use '../../globals/mixins' as *;
+@use '../../globals/colors' as *;
+@use '../../globals/typography' as *;
 
 // Part of the css and the colors used come from old StyledComponents code
 // and should be replaced with actual carbon colors and design. See issue 1806
-$selected-border-width: spacing.$spacing-01;
-$selected-border: solid $selected-border-width theme.$interactive-04;
+$selected-border-width: $spacing-01;
+$selected-border: solid $selected-border-width $interactive-04;
 
 // The custom properties --x-pos, --y-pos, --width, --height are set
 // on the container by the react js code. They do not include units.
@@ -24,7 +24,7 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
 .#{$iot-prefix}--hotspot-container--is-fixed,
 .#{$iot-prefix}--hotspot-container--is-dynamic {
   &.#{$iot-prefix}--hotspot-container--selected {
-    $padding: spacing.$spacing-02;
+    $padding: $spacing-02;
 
     box-sizing: border-box;
     border: $selected-border;
@@ -38,13 +38,13 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
   }
   &.#{$iot-prefix}--hotspot-container--has-icon {
     .#{$prefix}--tooltip__label {
-      border: solid 1px colors.$gray-40;
+      border: solid 1px $gray-40;
       cursor: pointer;
-      padding: spacing.$spacing-02;
-      background: colors.$white-0;
+      padding: $spacing-02;
+      background: $white-0;
       opacity: 0.9;
       border-radius: 4px;
-      @include mixins.box-shadow();
+      @include box-shadow();
     }
   }
 
@@ -53,7 +53,7 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
     cursor: pointer;
     border-radius: 13px;
     background: none;
-    @include mixins.box-shadow();
+    @include box-shadow();
   }
 }
 
@@ -74,9 +74,9 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
 }
 
 .#{$iot-prefix}--text-hotspot {
-  $padding: spacing.$spacing-03;
-  $min-width: spacing.$spacing-12;
-  $text-input-height: spacing.$spacing-08;
+  $padding: $spacing-03;
+  $min-width: $spacing-12;
+  $text-input-height: $spacing-08;
 
   display: flex;
   flex-direction: column;
@@ -93,12 +93,12 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
   .#{$iot-prefix}--hotspot-content {
     & > *:nth-child(2) {
       &.#{$iot-prefix}--hotspot-content-attribute {
-        margin-top: spacing.$spacing-03;
+        margin-top: $spacing-03;
       }
     }
 
     h4 {
-      @include typography.type-style('productive-heading-01');
+      @include type-style('productive-heading-01');
       text-align: left;
       padding-bottom: 0;
       line-height: calc(var(--title-font-size) * 1.4px);
@@ -127,7 +127,7 @@ $selected-border: solid $selected-border-width theme.$interactive-04;
   }
   .#{$iot-prefix}--hotspot-content-label,
   .#{$iot-prefix}--hotspot-content-threshold {
-    @include typography.type-style('helper-text-01');
+    @include type-style('helper-text-01');
     font-weight: normal;
   }
 

@@ -1,38 +1,38 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/mixins';
-@use '../../globals/typography';
-@use '../../globals/layout';
+@use '../../globals/mixins' as *;
+@use '../../globals/typography' as *;
+@use '../../globals/layout' as *;
 
 .#{$iot-prefix}--suite-header-profile {
-  background-color: theme.$ui-05;
-  color: theme.$inverse-01;
+  background-color: $ui-05;
+  color: $inverse-01;
   width: 100%;
-  padding: spacing.$spacing-05;
+  padding: $spacing-05;
 
   h5 {
-    margin-bottom: spacing.$spacing-04;
+    margin-bottom: $spacing-04;
   }
 
   &--user {
     display: flex;
     align-items: center;
-    margin-bottom: spacing.$spacing-05;
+    margin-bottom: $spacing-05;
 
     &--chip {
-      width: spacing.$spacing-07;
-      height: spacing.$spacing-07;
-      border-radius: spacing.$spacing-05;
-      background-color: theme.$ui-03;
-      color: theme.$text-01;
+      width: $spacing-07;
+      height: $spacing-07;
+      border-radius: $spacing-05;
+      background-color: $ui-03;
+      color: $text-01;
       text-align: center;
-      line-height: spacing.$spacing-07;
+      line-height: $spacing-07;
     }
 
     &--detail {
       flex: 1;
-      padding-left: spacing.$spacing-05;
+      padding-left: $spacing-05;
       overflow: hidden;
       div {
         overflow: hidden;
@@ -42,29 +42,29 @@
   }
 
   &--manage-button {
-    padding-bottom: spacing.$spacing-08;
+    padding-bottom: $spacing-08;
 
     /* mimic tertiary button from grey-100 theme */
     .#{$prefix}--btn {
-      border: solid 1px theme.$ui-02;
-      background-color: theme.$ui-05;
+      border: solid 1px $ui-02;
+      background-color: $ui-05;
 
       &:hover {
-        background-color: theme.$ui-02;
-        color: theme.$ui-05;
+        background-color: $ui-02;
+        color: $ui-05;
       }
     }
     &--no-logout {
-      padding-bottom: spacing.$spacing-03;
+      padding-bottom: $spacing-03;
     }
   }
 
   &--loading {
     height: 120px;
     p {
-      background-color: theme.$inverse-hover-ui;
-      height: spacing.$spacing-04;
-      margin-bottom: spacing.$spacing-02;
+      background-color: $inverse-hover-ui;
+      height: $spacing-04;
+      margin-bottom: $spacing-02;
     }
     &--no-logout {
       height: 88px;
@@ -72,14 +72,14 @@
   }
 
   &--logout {
-    margin: -(spacing.$spacing-05);
+    margin: -($spacing-05);
 
     .#{$prefix}--btn {
       width: 100%;
     }
     &--loading {
       div {
-        background-color: theme.$inverse-hover-ui !important;
+        background-color: $inverse-hover-ui !important;
       }
     }
   }
@@ -87,21 +87,21 @@
 
 .#{$iot-prefix}--suite-header-survey-toast {
   position: fixed;
-  top: spacing.$spacing-09;
+  top: $spacing-09;
   right: 0;
-  max-width: layout.rem(425px);
+  max-width: rem(425px);
   width: auto;
-  z-index: mixins.z('overlay');
+  z-index: z('overlay');
 
   .#{$prefix}--toast-notification__title {
-    margin-top: spacing.$spacing-04;
+    margin-top: $spacing-04;
   }
 }
 
 .#{$iot-prefix}--suite-header-survey-policy-link {
   margin: auto;
   width: 50%;
-  padding-top: spacing.$spacing-04;
+  padding-top: $spacing-04;
 }
 
 .#{$iot-prefix}--suite-header-app-switcher {
@@ -110,49 +110,49 @@
   li {
     width: 100%;
     button {
-      margin: spacing.$spacing-05;
+      margin: $spacing-05;
       width: calc(100% - 32px);
       min-height: 40px;
     }
     p {
-      @include typography.type-style('productive-heading-01');
+      @include type-style('productive-heading-01');
       display: flex;
       align-items: center;
-      padding: spacing.$spacing-05 spacing.$spacing-05 0;
+      padding: $spacing-05 $spacing-05 0;
       text-decoration: none;
-      color: theme.$text-01;
+      color: $text-01;
     }
   }
 
   a {
     display: flex;
     align-items: center;
-    padding: spacing.$spacing-05;
+    padding: $spacing-05;
   }
 
   &--nav-link {
     a {
       text-decoration: none;
-      color: theme.$text-02;
+      color: $text-02;
 
       &:hover {
-        background-color: theme.$hover-ui;
+        background-color: $hover-ui;
       }
 
       svg {
-        margin-right: spacing.$spacing-03;
+        margin-right: $spacing-03;
       }
     }
     &--loading {
       display: flex;
-      padding: spacing.$spacing-05;
+      padding: $spacing-05;
       flex-direction: column;
       p {
-        margin-bottom: spacing.$spacing-05;
+        margin-bottom: $spacing-05;
       }
     }
     &--button--loading {
-      padding: spacing.$spacing-05;
+      padding: $spacing-05;
       div {
         min-height: 40px;
         width: 100% !important;
@@ -161,47 +161,47 @@
     &--separator {
       padding: 0;
       height: 0;
-      border-bottom: 1px solid theme.$ui-03;
-      margin: 0 spacing.$spacing-05 0 spacing.$spacing-05;
+      border-bottom: 1px solid $ui-03;
+      margin: 0 $spacing-05 0 $spacing-05;
     }
   }
 
   &--app-link {
     button {
-      @include typography.type-style('productive-heading-01');
+      @include type-style('productive-heading-01');
       text-decoration: none;
-      color: theme.$text-02;
+      color: $text-02;
 
       &:hover {
-        background-color: theme.$hover-ui;
+        background-color: $hover-ui;
       }
     }
   }
 
   &--no-app {
-    padding: spacing.$spacing-10 spacing.$spacing-07 spacing.$spacing-05;
+    padding: $spacing-10 $spacing-07 $spacing-05;
     .bee-icon-container {
       display: block;
       svg {
         display: inherit;
       }
       .bee-shadow {
-        background-color: theme.$ui-03;
-        height: spacing.$spacing-03;
-        width: spacing.$spacing-07;
+        background-color: $ui-03;
+        height: $spacing-03;
+        width: $spacing-07;
         border-radius: 50%;
-        margin-top: spacing.$spacing-02;
+        margin-top: $spacing-02;
       }
     }
     span {
-      @include typography.type-style('body-short-01');
-      color: theme.$text-01;
-      padding-top: spacing.$spacing-05;
+      @include type-style('body-short-01');
+      color: $text-01;
+      padding-top: $spacing-05;
     }
     a {
       text-decoration: none;
       padding: 0;
-      margin: spacing.$spacing-05 0;
+      margin: $spacing-05 0;
     }
   }
 }
@@ -211,21 +211,21 @@
     display: none;
   }
   &-subtitle {
-    margin-left: spacing.$spacing-05;
+    margin-left: $spacing-05;
   }
   button.admin-icon {
     .#{$prefix}--tooltip__trigger svg {
-      fill: theme.$ui-01;
+      fill: $ui-01;
     }
   }
   button.admin-icon__hidden {
     visibility: hidden !important;
   }
   button.admin-icon__selected {
-    background-color: theme.$interactive-02;
+    background-color: $interactive-02;
     border: none;
-    border-bottom: spacing.$spacing-01 solid theme.$ui-01;
-    padding-top: spacing.$spacing-01;
+    border-bottom: $spacing-01 solid $ui-01;
+    padding-top: $spacing-01;
   }
 
   .#{$prefix}--header__global {
@@ -241,8 +241,8 @@
     div.#{$prefix}--header__menu-item {
       padding: 0;
       border: none;
-      color: theme.$text-02;
-      background-color: theme.$ui-background;
+      color: $text-02;
+      background-color: $ui-background;
 
       &:hover {
         background-color: inherit;
@@ -257,10 +257,10 @@
     }
 
     a.#{$prefix}--header__menu-item {
-      padding: spacing.$spacing-05;
+      padding: $spacing-05;
 
       &:hover {
-        color: theme.$text-04;
+        color: $text-04;
       }
     }
   }
@@ -271,35 +271,35 @@
   }
 
   .#{$iot-prefix}--suite-header-help--loading {
-    background-color: theme.$ui-05;
-    color: theme.$inverse-01;
+    background-color: $ui-05;
+    color: $inverse-01;
     width: 100%;
-    padding: spacing.$spacing-05;
+    padding: $spacing-05;
     p {
-      background-color: theme.$inverse-hover-ui;
-      margin-bottom: spacing.$spacing-06;
+      background-color: $inverse-hover-ui;
+      margin-bottom: $spacing-06;
     }
   }
 
   .#{$iot-prefix}--suite-header-help--separator {
     padding: 0;
     height: 0;
-    border-bottom: 1px solid theme.$hover-secondary;
-    margin: 0 spacing.$spacing-05 0 spacing.$spacing-05;
+    border-bottom: 1px solid $hover-secondary;
+    margin: 0 $spacing-05 0 $spacing-05;
   }
 
   &--logout {
     a {
-      background-color: theme.$interactive-02;
-      color: theme.$inverse-01;
+      background-color: $interactive-02;
+      color: $inverse-01;
       &:hover {
-        background-color: theme.$hover-secondary !important;
+        background-color: $hover-secondary !important;
       }
     }
   }
   &--logout--loading {
     div {
-      background-color: theme.$inverse-hover-ui !important;
+      background-color: $inverse-hover-ui !important;
       width: 256px !important;
     }
   }

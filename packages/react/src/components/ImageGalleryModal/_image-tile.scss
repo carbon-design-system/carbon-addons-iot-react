@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 $title-height: 3rem;
@@ -20,7 +20,7 @@ $title-height: 3rem;
   $image-max-height: 12rem;
   $image-max-width: 20rem;
 
-  background-color: theme.$ui-01;
+  background-color: $ui-01;
   width: $image-max-width;
   height: calc(#{$image-max-height} + #{$title-height});
   padding: 0;
@@ -36,8 +36,8 @@ $title-height: 3rem;
 
   width: 100%;
   height: $title-height;
-  padding: spacing.$spacing-03;
-  border-top: 1px solid theme.$ui-03;
+  padding: $spacing-03;
+  border-top: 1px solid $ui-03;
 
   &:nth-of-type(1) {
     border-color: transparent;
@@ -71,9 +71,9 @@ $title-height: 3rem;
   height: $title-height;
   display: flex;
   align-items: center;
-  background-color: theme.$ui-01;
-  padding-left: spacing.$spacing-05;
-  padding-right: spacing.$spacing-07; // Make room for check mark when selected
+  background-color: $ui-01;
+  padding-left: $spacing-05;
+  padding-right: $spacing-07; // Make room for check mark when selected
   span {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -93,11 +93,11 @@ html[dir='rtl'] {
     padding: 0;
   }
   .#{$iot-prefix}--image-tile--wide.#{$prefix}--tile--selectable {
-    padding: spacing.$spacing-03;
+    padding: $spacing-03;
   }
 
   .#{$iot-prefix}--image-tile__title {
-    padding-left: spacing.$spacing-08;
-    padding-right: spacing.$spacing-05;
+    padding-left: $spacing-08;
+    padding-right: $spacing-05;
   }
 }

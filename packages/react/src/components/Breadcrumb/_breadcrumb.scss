@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/breadcrumb';
 
@@ -26,16 +26,16 @@
   display: flex;
   &:after {
     content: '/';
-    margin-left: spacing.$spacing-03;
+    margin-left: $spacing-03;
   }
-  margin-right: spacing.$spacing-03;
+  margin-right: $spacing-03;
 
   .#{$prefix}--overflow-menu {
     height: auto;
     width: auto;
 
     & svg {
-      fill: theme.$link-01;
+      fill: $link-01;
       border-bottom: 1px solid transparent;
     }
 
@@ -44,7 +44,7 @@
     }
 
     &:hover svg {
-      border-color: theme.$link-01;
+      border-color: $link-01;
     }
 
     &.#{$prefix}--overflow-menu--open {
@@ -75,10 +75,10 @@
   }
 
   .#{$prefix}--overflow-menu-options__option:nth-child(even) {
-    background-color: theme.$field-02;
+    background-color: $field-02;
 
     &:hover {
-      background-color: theme.$hover-ui;
+      background-color: $hover-ui;
     }
   }
 
@@ -93,6 +93,6 @@ html[dir='rtl'] .breadcrumb--container {
   .#{$prefix}--breadcrumb-item:last-child,
   .#{$prefix}--breadcrumb-item:last-child::after {
     margin-left: auto;
-    margin-right: spacing.$spacing-03;
+    margin-right: $spacing-03;
   }
 }

@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--composed-structured-list {
@@ -8,9 +8,9 @@
   }
 
   &__empty-content {
-    background-color: theme.$ui-01;
+    background-color: $ui-01;
     text-align: center;
-    color: theme.$text-03;
+    color: $text-03;
     // stylelint-disable-next-line declaration-property-unit-blacklist
     font-size: 14px;
     padding-top: 90px;
@@ -21,7 +21,7 @@
   }
 
   &__loading {
-    padding-top: spacing.$spacing-05;
+    padding-top: $spacing-05;
   }
 
   &__list-cell {

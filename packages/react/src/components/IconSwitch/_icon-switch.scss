@@ -1,20 +1,20 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/mixins';
+@use '../../globals/mixins' as *;
 
-$icon-switch-size-small: spacing.$spacing-07;
-$icon-switch-size-default: spacing.$spacing-08;
-$icon-switch-size-large: spacing.$spacing-09;
+$icon-switch-size-small: $spacing-07;
+$icon-switch-size-default: $spacing-08;
+$icon-switch-size-large: $spacing-09;
 
 .#{$iot-prefix}--icon-switch {
   border: 0;
-  border-top: 1px solid theme.$ui-05;
-  border-bottom: 1px solid theme.$ui-05;
+  border-top: 1px solid $ui-05;
+  border-bottom: 1px solid $ui-05;
   position: relative;
 
   &:focus {
-    box-shadow: inset 0 0 0 2px theme.$focus, inset 0 0 0 3px theme.$ui-01;
+    box-shadow: inset 0 0 0 2px $focus, inset 0 0 0 3px $ui-01;
 
     &,
     & + .#{$iot-prefix}--icon-switch {
@@ -39,12 +39,12 @@ $icon-switch-size-large: spacing.$spacing-09;
   }
 
   &:first-child {
-    border-top-left-radius: spacing.$spacing-02;
-    border-bottom-left-radius: spacing.$spacing-02;
-    border-left: 1px solid theme.$ui-05;
+    border-top-left-radius: $spacing-02;
+    border-bottom-left-radius: $spacing-02;
+    border-left: 1px solid $ui-05;
 
     &:focus {
-      border-radius: spacing.$spacing-02 0 0 spacing.$spacing-02;
+      border-radius: $spacing-02 0 0 $spacing-02;
     }
 
     .#{$iot-prefix}--icon-switch__divider:after {
@@ -53,12 +53,12 @@ $icon-switch-size-large: spacing.$spacing-09;
   }
 
   &:last-child {
-    border-top-right-radius: spacing.$spacing-02;
-    border-bottom-right-radius: spacing.$spacing-02;
-    border-right: 1px solid theme.$ui-05;
+    border-top-right-radius: $spacing-02;
+    border-bottom-right-radius: $spacing-02;
+    border-right: 1px solid $ui-05;
 
     &:focus {
-      border-radius: 0 spacing.$spacing-02 spacing.$spacing-02 0;
+      border-radius: 0 $spacing-02 $spacing-02 0;
     }
   }
 
@@ -70,8 +70,8 @@ $icon-switch-size-large: spacing.$spacing-09;
   }
 
   .#{$prefix}--btn__icon {
-    height: spacing.$spacing-05;
-    width: spacing.$spacing-05;
+    height: $spacing-05;
+    width: $spacing-05;
   }
 
   &--small {
@@ -79,7 +79,7 @@ $icon-switch-size-large: spacing.$spacing-09;
     height: $icon-switch-size-small;
     min-width: $icon-switch-size-small;
     width: $icon-switch-size-small;
-    padding: 0 0 0 spacing.$spacing-03;
+    padding: 0 0 0 $spacing-03;
   }
 
   &--default {
@@ -87,7 +87,7 @@ $icon-switch-size-large: spacing.$spacing-09;
     height: $icon-switch-size-default;
     min-width: $icon-switch-size-default;
     width: $icon-switch-size-default;
-    padding: 0 0 0 spacing.$spacing-04;
+    padding: 0 0 0 $spacing-04;
   }
 
   &--large {
@@ -95,7 +95,7 @@ $icon-switch-size-large: spacing.$spacing-09;
     height: $icon-switch-size-large;
     min-width: $icon-switch-size-large;
     width: $icon-switch-size-large;
-    padding: 0 0 0 spacing.$spacing-05;
+    padding: 0 0 0 $spacing-05;
   }
 
   &.#{$prefix}--btn {
@@ -103,7 +103,7 @@ $icon-switch-size-large: spacing.$spacing-09;
       &:hover {
         &.#{$prefix}--tooltip__trigger {
           .#{$prefix}--assistive-text {
-            z-index: (mixins.z('floating') * 2);
+            z-index: (z('floating') * 2);
           }
         }
       }
@@ -113,36 +113,36 @@ $icon-switch-size-large: spacing.$spacing-09;
 
 .#{$iot-prefix}--icon-switch--unselected {
   background-color: transparent;
-  color: theme.$icon-01;
+  color: $icon-01;
 
   &:focus {
-    color: theme.$icon-01;
+    color: $icon-01;
   }
 
   &:disabled,
   &:disabled:hover {
     background-color: transparent;
-    border-color: theme.$disabled-02;
-    color: theme.$disabled-02;
+    border-color: $disabled-02;
+    color: $disabled-02;
 
     .#{$iot-prefix}--icon-switch__divider:after {
-      background-color: theme.$ui-03;
+      background-color: $ui-03;
     }
   }
 
   &.#{$iot-prefix}--icon-switch--unselected--light {
-    background-color: theme.$ui-03;
-    color: theme.$icon-02;
+    background-color: $ui-03;
+    color: $icon-02;
 
     &:focus {
-      box-shadow: inset 0 0 0 2px theme.$focus;
+      box-shadow: inset 0 0 0 2px $focus;
     }
 
     &:disabled,
     &:disabled:hover {
-      background-color: theme.$ui-02;
-      border-color: theme.$disabled-02;
-      color: theme.$disabled-02;
+      background-color: $ui-02;
+      border-color: $disabled-02;
+      color: $disabled-02;
     }
   }
 }
@@ -160,14 +160,14 @@ $icon-switch-size-large: spacing.$spacing-09;
     position: absolute;
     top: 50%;
     left: 0;
-    height: spacing.$spacing-05;
+    height: $spacing-05;
     width: 1px;
     transform: translateY(-50%);
-    background-color: theme.$ui-03;
+    background-color: $ui-03;
   }
 
   :focus &:after {
-    background-color: theme.$focus;
+    background-color: $focus;
   }
 
   .#{$iot-prefix}--icon-switch--selected &:after {
@@ -175,7 +175,7 @@ $icon-switch-size-large: spacing.$spacing-09;
   }
 
   .#{$iot-prefix}--icon-switch--light &:after {
-    background-color: theme.$ui-04;
+    background-color: $ui-04;
   }
 
   // hide the divider when a selected icon (in light mode)
@@ -194,9 +194,9 @@ $icon-switch-size-large: spacing.$spacing-09;
 .#{$iot-prefix}--icon-switch--selected {
   &:disabled,
   &:disabled:hover {
-    background-color: theme.$disabled-03;
-    border-color: theme.$disabled-02;
-    color: theme.$disabled-02;
+    background-color: $disabled-03;
+    border-color: $disabled-02;
+    color: $disabled-02;
   }
 
   // hide divider beside a selected icon
@@ -208,27 +208,27 @@ $icon-switch-size-large: spacing.$spacing-09;
 
   &.#{$iot-prefix}--icon-switch--light {
     background-color: transparent;
-    color: theme.$icon-02;
+    color: $icon-02;
 
     .#{$iot-prefix}--icon-switch__divider {
-      border-left: 1px solid theme.$ui-05;
-      border-right: 1px solid theme.$ui-05;
+      border-left: 1px solid $ui-05;
+      border-right: 1px solid $ui-05;
     }
 
     &:focus {
       .#{$iot-prefix}--icon-switch__divider {
-        border-color: theme.$focus;
+        border-color: $focus;
       }
     }
 
     &:disabled,
     &:disabled:hover {
-      background-color: theme.$disabled-01;
-      border-color: theme.$disabled-02;
-      color: theme.$disabled-02;
+      background-color: $disabled-01;
+      border-color: $disabled-02;
+      color: $disabled-02;
 
       .#{$iot-prefix}--icon-switch__divider {
-        border-color: theme.$disabled-02;
+        border-color: $disabled-02;
       }
     }
 
@@ -248,7 +248,7 @@ $icon-switch-size-large: spacing.$spacing-09;
 
 .#{$iot-prefix}--icon-switch--selected + .#{$iot-prefix}--icon-switch--selected {
   .#{$iot-prefix}--icon-switch__divider:after {
-    background-color: theme.$icon-03;
+    background-color: $icon-03;
   }
 }
 
@@ -270,13 +270,13 @@ html[dir='rtl'] {
     border-radius: 0;
 
     &:first-child {
-      border-top-right-radius: spacing.$spacing-02;
-      border-bottom-right-radius: spacing.$spacing-02;
-      border-right: 1px solid theme.$ui-05;
+      border-top-right-radius: $spacing-02;
+      border-bottom-right-radius: $spacing-02;
+      border-right: 1px solid $ui-05;
       border-left: 0;
 
       &:focus {
-        border-radius: 0 spacing.$spacing-02 spacing.$spacing-02 0;
+        border-radius: 0 $spacing-02 $spacing-02 0;
       }
 
       &:last-child {
@@ -285,13 +285,13 @@ html[dir='rtl'] {
     }
 
     &:last-child {
-      border-top-left-radius: spacing.$spacing-02;
-      border-bottom-left-radius: spacing.$spacing-02;
+      border-top-left-radius: $spacing-02;
+      border-bottom-left-radius: $spacing-02;
       border-right: 0;
       border-left: 0;
 
       &:focus {
-        border-radius: spacing.$spacing-02 0 0 spacing.$spacing-02;
+        border-radius: $spacing-02 0 0 $spacing-02;
       }
     }
 
@@ -301,13 +301,13 @@ html[dir='rtl'] {
     }
 
     &--small {
-      padding: 0 spacing.$spacing-03 0 0;
+      padding: 0 $spacing-03 0 0;
     }
     &--default {
-      padding: 0 spacing.$spacing-04 0 0;
+      padding: 0 $spacing-04 0 0;
     }
     &--large {
-      padding: 0 spacing.$spacing-05 0 0;
+      padding: 0 $spacing-05 0 0;
     }
 
     &--unselected + .#{$iot-prefix}--icon-switch--selected {
@@ -324,20 +324,20 @@ html[dir='rtl'] {
     }
 
     &--selected {
-      border-color: theme.$ui-05;
+      border-color: $ui-05;
 
       &.#{$iot-prefix}--icon-switch--light {
         &:first-child {
           .#{$iot-prefix}--icon-switch__divider {
             border-right: 0;
-            border-left: 1px solid theme.$ui-05;
+            border-left: 1px solid $ui-05;
           }
         }
 
         &:last-child {
           .#{$iot-prefix}--icon-switch__divider {
             border-left: 0;
-            border-right: 1px solid theme.$ui-05;
+            border-right: 1px solid $ui-05;
           }
         }
       }

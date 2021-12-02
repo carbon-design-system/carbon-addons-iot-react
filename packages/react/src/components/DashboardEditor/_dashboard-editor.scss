@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 .#{$iot-prefix}--dashboard-editor {
   display: flex;
@@ -23,20 +23,20 @@
 
   &-header {
     flex: 0;
-    padding: spacing.$spacing-05 0 spacing.$spacing-06;
+    padding: $spacing-05 0 $spacing-06;
     .#{$prefix}--grid {
       /* allow the header to stretch the full page width */
       max-width: none;
-      padding-left: spacing.$spacing-07;
-      padding-right: spacing.$spacing-05;
+      padding-left: $spacing-07;
+      padding-right: $spacing-05;
     }
     &--top {
-      height: calc(#{spacing.$spacing-05} + #{spacing.$spacing-02});
+      height: calc(#{$spacing-05} + #{$spacing-02});
       display: flex;
       align-items: center;
     }
     &--bottom {
-      height: calc(#{spacing.$spacing-07} + #{spacing.$spacing-02});
+      height: calc(#{$spacing-07} + #{$spacing-02});
       display: flex;
       align-items: center;
       // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
@@ -46,19 +46,19 @@
           padding-top: 3px;
         }
         svg {
-          fill: theme.$icon-01;
+          fill: $icon-01;
         }
       }
 
       &__switcher {
-        margin-right: spacing.$spacing-05;
+        margin-right: $spacing-05;
       }
 
       .#{$prefix}--btn--tertiary,
       .#{$prefix}--btn--primary {
-        margin-left: spacing.$spacing-05;
-        padding-left: spacing.$spacing-05;
-        padding-right: spacing.$spacing-05;
+        margin-left: $spacing-05;
+        padding-left: $spacing-05;
+        padding-right: $spacing-05;
       }
     }
     &--left {
@@ -73,16 +73,16 @@
 
   &--preview {
     flex: 1;
-    margin-left: spacing.$spacing-05;
-    margin-right: spacing.$spacing-05;
+    margin-left: $spacing-05;
+    margin-right: $spacing-05;
 
     &__selected-breakpoint {
-      background-color: theme.$text-03;
+      background-color: $text-03;
       overflow-x: auto; // allows a larger width
     }
 
     &__card:focus {
-      outline: 2px solid theme.$focus;
+      outline: 2px solid $focus;
     }
 
     // add an extra 4 pixels for the 2px border plus 1 pixel to fully detect the breakpoint
@@ -97,20 +97,20 @@
     }
 
     &__breakpoint-info {
-      padding: spacing.$spacing-05;
+      padding: $spacing-05;
       width: 100%;
-      background-color: theme.$ui-03;
+      background-color: $ui-03;
     }
 
     &__outline {
-      border: 2px dashed theme.$ui-04;
+      border: 2px dashed $ui-04;
     }
 
     &__grid-container {
       // force a larger height so the background color will stretch the full height
       // 3rem for the navbar, 100px for the PageTitleBar header
       min-height: calc(100vh - 7rem - 100px);
-      background-color: theme.$ui-background;
+      background-color: $ui-background;
       padding-top: 1rem;
     }
   }

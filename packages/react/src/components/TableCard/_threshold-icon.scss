@@ -1,4 +1,4 @@
-@use '../../globals/spacing';
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--threshold-icon--wrapper {
@@ -6,5 +6,5 @@
 }
 
 .#{$iot-prefix}--threshold-icon--text {
-  margin-left: spacing.$spacing-02;
+  margin-left: $spacing-02;
 }

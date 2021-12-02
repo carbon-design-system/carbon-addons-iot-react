@@ -1,33 +1,33 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/typography';
+@use '../../globals/typography' as *;
 
 .#{$iot-prefix}--image-uploader {
-  background: theme.$ui-02;
+  background: $ui-02;
   display: flex;
   height: calc(100% - 1rem);
-  margin-top: spacing.$spacing-05;
+  margin-top: $spacing-05;
   overflow: hidden;
-  padding: 9rem spacing.$spacing-05 spacing.$spacing-05; /* stylelint-disable-line declaration-property-unit-blacklist */
+  padding: 9rem $spacing-05 $spacing-05; /* stylelint-disable-line declaration-property-unit-blacklist */
   width: 100%;
 
   &-icon {
     display: inline-flex;
     justify-content: center;
-    margin-right: spacing.$spacing-05;
-    min-width: spacing.$spacing-07;
+    margin-right: $spacing-05;
+    min-width: $spacing-07;
   }
 
   &-drop-label-text {
-    color: theme.$interactive-01;
+    color: $interactive-01;
     display: block;
-    @include typography.type-style('productive-heading-02');
-    margin-bottom: spacing.$spacing-03;
+    @include type-style('productive-heading-02');
+    margin-bottom: $spacing-03;
   }
 
   &-drop-description-text {
-    margin-bottom: spacing.$spacing-06;
+    margin-bottom: $spacing-06;
   }
 
   &-content {
@@ -36,9 +36,9 @@
 
   .#{$prefix}--file {
     height: calc(100% - 2rem);
-    left: spacing.$spacing-05;
+    left: $spacing-05;
     position: absolute;
-    top: spacing.$spacing-05;
+    top: $spacing-05;
     width: calc(100% - 2rem);
   }
 
@@ -54,7 +54,7 @@
   }
 
   &:not(.#{$iot-prefix}--image-uploader__medium) .#{$iot-prefix}--btn:not(:last-child) {
-    margin-right: spacing.$spacing-05;
+    margin-right: $spacing-05;
   }
 
   &-url-wrapper {
@@ -66,7 +66,7 @@
     width: 100%;
 
     input {
-      margin-right: spacing.$spacing-05;
+      margin-right: $spacing-05;
     }
   }
 
@@ -75,7 +75,7 @@
     padding-top: 0;
 
     .#{$iot-prefix}--btn:not(:last-child) {
-      margin-right: spacing.$spacing-02;
+      margin-right: $spacing-02;
     }
   }
 
@@ -86,7 +86,7 @@
 }
 
 .#{$iot-prefix}--image-uploader.#{$iot-prefix}--image-uploader__medium {
-  padding-top: spacing.$spacing-07;
+  padding-top: $spacing-07;
 
   .#{$iot-prefix}--image-uploader-url-wrapper {
     flex-direction: column;
@@ -99,7 +99,7 @@
     }
 
     input {
-      margin-bottom: spacing.$spacing-05;
+      margin-bottom: $spacing-05;
       margin-right: 0;
     }
   }
@@ -109,8 +109,8 @@
   }
 
   .#{$iot-prefix}--image-uploader-drop-label-text {
-    @include typography.type-style('productive-heading-01');
-    margin-bottom: spacing.$spacing-05;
+    @include type-style('productive-heading-01');
+    margin-bottom: $spacing-05;
   }
 
   .#{$iot-prefix}--btn {
@@ -118,7 +118,7 @@
   }
 
   .#{$iot-prefix}--btn:not(:last-child) {
-    margin-bottom: spacing.$spacing-05;
+    margin-bottom: $spacing-05;
   }
 
   .#{$prefix}--inline-notification {
@@ -129,8 +129,8 @@
     margin: 0;
   }
   .#{$prefix}--inline-notification__icon {
-    margin-left: spacing.$spacing-03;
-    margin-right: spacing.$spacing-03;
+    margin-left: $spacing-03;
+    margin-right: $spacing-03;
   }
 
   .#{$prefix}--inline-notification__title {
@@ -139,10 +139,10 @@
 }
 
 .#{$iot-prefix}--image-uploader.#{$iot-prefix}--image-uploader__mediumwide {
-  padding-top: spacing.$spacing-07;
+  padding-top: $spacing-07;
 
   .#{$iot-prefix}--image-uploader-drop-description-text {
-    @include typography.type-style('body-long-01');
+    @include type-style('body-long-01');
   }
 
   .#{$iot-prefix}--image-uploader-url-wrapper {
@@ -152,7 +152,7 @@
 
 .#{$iot-prefix}--image-uploader.#{$iot-prefix}--image-uploader__largewide {
   .#{$iot-prefix}--image-uploader-icon {
-    margin-left: spacing.$spacing-07;
-    margin-right: spacing.$spacing-09;
+    margin-left: $spacing-07;
+    margin-right: $spacing-09;
   }
 }

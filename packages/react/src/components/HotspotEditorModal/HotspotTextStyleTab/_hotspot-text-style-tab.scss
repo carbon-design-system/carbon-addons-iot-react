@@ -1,25 +1,25 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../mixins';
-@use "../../../globals/mixins" as globals-mixins;
+@use '../mixins' as *;
+@use '../../../globals/mixins' as *;
 
 $border-radius: 5px;
 
 .#{$iot-prefix}--hotspot-text-style-tab {
   &__form {
-    @include mixins.vertical-form();
+    @include vertical-form();
     .#{$prefix}--number input[type='number'] {
       padding-right: 5rem;
     }
   }
 
   &__text-style {
-    @include globals-mixins.content-switcher-border-radius($border-radius, left, right);
+    @include content-switcher-border-radius($border-radius, left, right);
   }
 
   html[dir='rtl'] &__text-style {
-    @include globals-mixins.content-switcher-border-radius($border-radius, right, left);
+    @include content-switcher-border-radius($border-radius, right, left);
   }
 
   &__dropdown {
@@ -30,7 +30,7 @@ $border-radius: 5px;
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    gap: spacing.$spacing-06;
+    gap: $spacing-06;
 
     .#{$prefix}--dropdown__wrapper.#{$prefix}--list-box__wrapper {
       width: 100%;
@@ -43,7 +43,7 @@ $border-radius: 5px;
 }
 
 .#{$iot-prefix}--hotspot-editor--text-info-message {
-  @include mixins.info-message();
+  @include info-message();
 }
 
 .#{$iot-prefix}--hotspot-text-style-tab__delete-button-container {

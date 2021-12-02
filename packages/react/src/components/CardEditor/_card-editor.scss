@@ -1,29 +1,29 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/typography';
+@use '../../globals/typography' as *;
 
 .#{$iot-prefix}--card-editor {
   height: 100%;
   width: 16rem;
   display: flex;
-  background: theme.$ui-01;
+  background: $ui-01;
   flex-direction: column;
-  border-left: 1px solid theme.$ui-03;
+  border-left: 1px solid $ui-03;
   &--header {
     flex: 0 0 3.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 spacing.$spacing-02;
-    border-bottom: 1px solid theme.$ui-03;
+    padding: 0 $spacing-02;
+    border-bottom: 1px solid $ui-03;
     h5 {
-      padding: 0 spacing.$spacing-03;
+      padding: 0 $spacing-03;
     }
   }
 
   &--footer {
-    border-top: solid 1px theme.$ui-03;
+    border-top: solid 1px $ui-03;
     & > button {
       justify-content: space-between;
       width: 100%;
@@ -36,13 +36,13 @@
     overflow: auto;
 
     .#{$iot-prefix}--list-item {
-      height: spacing.$spacing-09;
+      height: $spacing-09;
     }
   }
 
   &--header--title {
-    @include typography.type-style('productive-heading-02');
-    padding-left: spacing.$spacing-03;
+    @include type-style('productive-heading-02');
+    padding-left: $spacing-03;
     width: 100%;
   }
 }

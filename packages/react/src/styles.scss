@@ -1,8 +1,8 @@
-@use 'globals/config';
+@use 'globals/config' as *;
 @use 'globals/theme';
 
-@use "sass:list" as sass-list;
-@use "sass:meta";
+@use 'sass:list' as sass-list;
+@use 'sass:meta';
 @use 'globals/feature-flags';
 @use 'globals/vars';
 @use 'globals/colors';

@@ -1,7 +1,7 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/mixins';
+@use '../../globals/mixins' as *;
 
 .#{$iot-prefix}--map {
   &-zoom {
@@ -10,10 +10,10 @@
     display: flex;
     flex-direction: column;
     z-index: 2;
-    @include mixins.box-shadow();
+    @include box-shadow();
 
     & > *:first-child {
-      border-bottom: 1px solid theme.$ui-03; // should be updated to $button-separator once available
+      border-bottom: 1px solid $ui-03; // should be updated to $button-separator once available
     }
   }
 }

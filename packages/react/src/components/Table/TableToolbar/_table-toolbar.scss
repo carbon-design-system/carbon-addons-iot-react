@@ -1,7 +1,7 @@
-@use '../../../globals/theme';
-@use '../../../globals/spacing';
+@use '../../../globals/theme' as *;
+@use '../../../globals/spacing' as *;
 @use '../../../globals/vars' as *;
-@use '../../../globals/typography';
+@use '../../../globals/typography' as *;
 @use './table-toolbar-svg-button';
 @use './advanced-filter-flyout';
 
@@ -12,8 +12,8 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 }
 
 .#{$iot-prefix}--table-toolbar-secondary-title {
-  padding: spacing.$spacing-05;
-  @include typography.type-style('productive-heading-01');
+  padding: $spacing-05;
+  @include type-style('productive-heading-01');
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -21,11 +21,11 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 
 .#{$iot-prefix}--table-toolbar {
   width: 100%;
-  padding-top: spacing.$spacing-01;
+  padding-top: $spacing-01;
 }
 
 .#{$prefix}--table-toolbar {
-  height: spacing.$spacing-09;
+  height: $spacing-09;
 }
 
 .#{$iot-prefix}--table-toolbar-content {
@@ -51,14 +51,14 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 }
 
 .#{$iot-prefix}--table-tooltip-container {
-  padding: spacing.$spacing-05 0;
+  padding: $spacing-05 0;
 }
 
 .#{$iot-prefix}--table-row-edit-actions {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
-  padding: spacing.$spacing-03;
+  padding: $spacing-03;
 }
 
 html[dir='rtl'] {
@@ -71,7 +71,7 @@ html[dir='rtl'] {
     .#{$prefix}--batch-summary {
       left: auto;
       margin-left: 0;
-      margin-right: spacing.$spacing-05;
+      margin-right: $spacing-05;
       right: 0;
     }
 
@@ -83,8 +83,8 @@ html[dir='rtl'] {
 }
 
 .#{$iot-prefix}--table-toolbar-aggregations__overflow-menu {
-  min-height: spacing.$spacing-09;
-  width: spacing.$spacing-09;
+  min-height: $spacing-09;
+  width: $spacing-09;
 }
 
 .#{$iot-prefix}--table-toolbar-aggregations__overflow-icon {

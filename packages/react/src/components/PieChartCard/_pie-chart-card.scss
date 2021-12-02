@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--pie-chart-container {
@@ -10,12 +10,12 @@
 // Temporary fix. See issue
 // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1637
 .#{$iot-prefix}--pie-chart-container .#{$prefix}--chart-holder {
-  padding: 0 spacing.$spacing-05;
+  padding: 0 $spacing-05;
 }
 
 .#{$iot-prefix}--pie-chart-container__expanded {
   height: calc(100% - 9rem); // makes room for the table below which is 3 rows tall
   .#{$prefix}--chart-holder {
-    padding-bottom: spacing.$spacing-01;
+    padding-bottom: $spacing-01;
   }
 }

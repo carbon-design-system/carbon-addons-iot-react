@@ -1,12 +1,12 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/mixins';
+@use '../../globals/mixins' as *;
 
 .#{$iot-prefix}--map-scroll-controls {
   &__container {
     margin-bottom: 1rem;
-    @include mixins.box-shadow();
+    @include box-shadow();
   }
 
   &__scroll-area {
@@ -17,15 +17,15 @@
   }
   &__btn {
     background: white;
-    border-bottom: 1px solid theme.$ui-03;
+    border-bottom: 1px solid $ui-03;
   }
 
   &__scroll-btn {
-    border-bottom: 1px solid theme.$ui-03;
+    border-bottom: 1px solid $ui-03;
     &:disabled,
     &:disabled:hover {
       background: white;
-      border-bottom: 1px solid theme.$ui-03;
+      border-bottom: 1px solid $ui-03;
       &:last-child {
         border-bottom: inherit;
       }
@@ -39,7 +39,7 @@
     z-index: 3;
     position: absolute;
     width: 100%;
-    height: spacing.$spacing-06;
+    height: $spacing-06;
     margin-top: -0.1rem;
     background: linear-gradient(
       to bottom,
@@ -48,7 +48,7 @@
       rgba(255, 255, 255, 0) 100%
     );
     &--flipped {
-      margin-top: calc(#{spacing.$spacing-06} * -1);
+      margin-top: calc(#{$spacing-06} * -1);
       background: linear-gradient(
         to top,
         rgba(255, 255, 255, 1) 0%,

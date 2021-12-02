@@ -1,5 +1,5 @@
 @use '../../globals/vars' as *;
-@use '../../globals/spacing';
+@use '../../globals/spacing' as *;
 @use '~@carbon/styles/scss/components/overflow-menu';
 
 button.#{$prefix}--overflow-menu {
@@ -8,6 +8,6 @@ button.#{$prefix}--overflow-menu {
 
 .#{$prefix}--overflow-menu-options[data-floating-menu-direction] {
   &:after {
-    width: spacing.$spacing-09;
+    width: $spacing-09;
   }
 }

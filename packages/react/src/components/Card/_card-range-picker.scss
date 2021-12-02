@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--card--toolbar-date-range-wrapper {
@@ -12,9 +12,9 @@
 
 .#{$iot-prefix}--card--toolbar-timerange-label {
   white-space: nowrap;
-  min-height: spacing.$spacing-09;
-  min-width: spacing.$spacing-09;
-  padding: spacing.$spacing-05 spacing.$spacing-03;
+  min-height: $spacing-09;
+  min-width: $spacing-09;
+  padding: $spacing-05 $spacing-03;
   font-size: 0.875rem;
   font-weight: normal;
 
@@ -27,11 +27,11 @@
   > .#{$iot-prefix}--card--toolbar-date-range-action {
   &:active,
   &:focus {
-    outline: 2px solid theme.$focus;
+    outline: 2px solid $focus;
     outline-offset: -2px;
   }
   &:hover {
-    background: theme.$hover-ui;
+    background: $hover-ui;
   }
 }
 
@@ -43,5 +43,5 @@
 }
 
 .#{$iot-prefix}--card--overflow-menuitem-active:not(:hover) {
-  background-color: theme.$active-ui;
+  background-color: $active-ui;
 }

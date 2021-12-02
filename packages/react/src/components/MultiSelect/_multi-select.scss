@@ -1,15 +1,15 @@
-@use '../../globals/spacing';
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/multiselect';
 
 html[dir='rtl'] .#{$prefix}--multi-select__wrapper {
   .#{$prefix}--tag--filter {
     margin-right: 0;
-    margin-left: spacing.$spacing-03;
-    padding-left: spacing.$spacing-01;
-    padding-right: spacing.$spacing-03;
+    margin-left: $spacing-03;
+    padding-left: $spacing-01;
+    padding-right: $spacing-03;
     & > svg {
-      margin-right: spacing.$spacing-02;
+      margin-right: $spacing-02;
       margin-left: 0;
     }
   }

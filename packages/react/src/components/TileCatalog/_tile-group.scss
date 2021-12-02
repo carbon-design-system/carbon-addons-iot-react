@@ -1,18 +1,18 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 
 .#{$iot-prefix}--tile-group {
   display: flex;
   flex-flow: row wrap;
   > * {
-    border: 1px solid theme.$ui-03;
+    border: 1px solid $ui-03;
     flex: 1 1 33.33%;
     min-width: 300px;
   }
 
   > label {
-    border: 1px solid theme.$ui-03;
+    border: 1px solid $ui-03;
     outline-offset: -1px;
   }
   overflow-y: hidden;

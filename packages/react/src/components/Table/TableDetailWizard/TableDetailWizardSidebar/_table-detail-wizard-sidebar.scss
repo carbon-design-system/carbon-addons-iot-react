@@ -1,19 +1,19 @@
-@use '../../../../globals/theme';
-@use '../../../../globals/spacing';
+@use '../../../../globals/theme' as *;
+@use '../../../../globals/spacing' as *;
 @use '../../../../globals/vars' as *;
-@use '../../../../globals/layout';
+@use '../../../../globals/layout' as *;
 
 .#{$iot-prefix}--table-detail-wizard-sidebar--header {
   display: flex;
   flex-flow: column nowrap;
-  border-right: layout.rem(1px) solid #dadada8c;
+  border-right: rem(1px) solid #dadada8c;
 
   html[dir='rtl'] & {
     border-right: unset;
-    border-left: layout.rem(1px) solid #dadada8c;
+    border-left: rem(1px) solid #dadada8c;
   }
 
   .#{$iot-prefix}--progress-indicator {
-    padding: spacing.$spacing-05 spacing.$spacing-05 spacing.$spacing-05 spacing.$spacing-10;
+    padding: $spacing-05 $spacing-05 $spacing-05 $spacing-10;
   }
 }

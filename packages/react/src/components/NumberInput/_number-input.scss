@@ -1,5 +1,5 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/number-input';
 
@@ -9,7 +9,7 @@ html[dir='rtl'] {
     .#{$prefix}--number__input-wrapper {
       input {
         min-width: 8.5rem;
-        padding-right: spacing.$spacing-05;
+        padding-right: $spacing-05;
       }
     }
 

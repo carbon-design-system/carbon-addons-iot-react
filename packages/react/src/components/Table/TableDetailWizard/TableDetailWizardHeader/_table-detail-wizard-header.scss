@@ -1,24 +1,24 @@
-@use '../../../../globals/theme';
-@use '../../../../globals/spacing';
+@use '../../../../globals/theme' as *;
+@use '../../../../globals/spacing' as *;
 @use '../../../../globals/vars' as *;
-@use '../../../../globals/layout';
+@use '../../../../globals/layout' as *;
 
 .#{$iot-prefix}--table-detail-wizard-header--wrapper {
   display: block;
-  border-bottom: layout.rem(1px) solid #dadada8c;
+  border-bottom: rem(1px) solid #dadada8c;
 }
 
 .#{$iot-prefix}--table-detail-wizard-header--heading {
   float: left;
   font-size: 1.25rem;
-  line-height: layout.rem(50px);
+  line-height: rem(50px);
   vertical-align: middle;
-  margin-left: spacing.$spacing-05;
+  margin-left: $spacing-05;
 
   html[dir='rtl'] & {
     float: right;
     margin-left: unset;
-    margin-right: spacing.$spacing-05;
+    margin-right: $spacing-05;
   }
 }
 
@@ -27,12 +27,12 @@
   margin-left: auto;
 
   .#{$prefix}--btn--ghost {
-    height: layout.rem(50px);
+    height: rem(50px);
   }
 
   .#{$prefix}--btn__icon {
-    margin-left: layout.rem(5px);
-    margin-right: layout.rem(5px);
+    margin-left: rem(5px);
+    margin-right: rem(5px);
   }
 
   html[dir='rtl'] & {

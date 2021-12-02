@@ -1,15 +1,15 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
 @use '~@carbon/styles/scss/components/tag';
 
 html[dir='rtl'] {
   .#{$prefix}--tag--filter {
-    padding-right: spacing.$spacing-03;
-    padding-left: spacing.$spacing-01;
+    padding-right: $spacing-03;
+    padding-left: $spacing-01;
   }
 
   .#{$prefix}--tag__close-icon {
-    margin: 0 spacing.$spacing-02 0 0;
+    margin: 0 $spacing-02 0 0;
   }
 }

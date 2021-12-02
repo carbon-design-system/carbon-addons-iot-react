@@ -1,14 +1,14 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "../../globals/motion";
-@use "../../globals/mixins";
-@use "../../globals/typography";
+@use '../../globals/motion' as *;
+@use '../../globals/mixins' as *;
+@use '../../globals/typography' as *;
 @use 'legend';
 @use 'zoom-control';
 @use 'scrolling-controls';
 
-$cardPadding: spacing.$spacing-05;
+$cardPadding: $spacing-05;
 
 .#{$iot-prefix}--map {
   &-card-content.#{$iot-prefix}--card--content--expanded {
@@ -21,7 +21,7 @@ $cardPadding: spacing.$spacing-05;
     height: calc(100% + #{$cardPadding});
     width: calc(100% + #{$cardPadding} + #{$cardPadding});
     transform: translateX(-#{$cardPadding});
-    transition: width motion.$duration-fast-02 motion.motion(entrance, productive);
+    transition: width $duration-fast-02 motion(entrance, productive);
 
     canvas {
       min-height: 100%;
@@ -38,8 +38,8 @@ $cardPadding: spacing.$spacing-05;
     width: 256px;
     height: 100%;
     transform: translateX(0%);
-    transition: opacity motion.$duration-fast-02 motion.motion(entrance, productive),
-      transform motion.$duration-fast-02 motion.motion(entrance, productive);
+    transition: opacity $duration-fast-02 motion(entrance, productive),
+      transform $duration-fast-02 motion(entrance, productive);
 
     [dir='rtl'] & {
       left: unset;
@@ -51,15 +51,15 @@ $cardPadding: spacing.$spacing-05;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: spacing.$spacing-02 spacing.$spacing-03 spacing.$spacing-02 spacing.$spacing-05;
+    padding: $spacing-02 $spacing-03 $spacing-02 $spacing-05;
 
     [dir='rtl'] & {
-      padding: spacing.$spacing-02 spacing.$spacing-05 spacing.$spacing-02 spacing.$spacing-03;
+      padding: $spacing-02 $spacing-05 $spacing-02 $spacing-03;
     }
   }
 
   &-settings-header__title {
-    @include typography.type-style('productive-heading-01');
+    @include type-style('productive-heading-01');
     margin-right: auto;
 
     [dir='rtl'] & {
@@ -87,15 +87,15 @@ $cardPadding: spacing.$spacing-05;
 
   // Controls
   &-controls {
-    transition: bottom motion.$duration-fast-02 motion.motion(entrance, productive);
+    transition: bottom $duration-fast-02 motion(entrance, productive);
     display: flex;
     flex-direction: column;
     position: absolute;
     justify-content: space-between;
     z-index: 2;
-    right: spacing.$spacing-05;
-    top: spacing.$spacing-05;
-    bottom: spacing.$spacing-05;
+    right: $spacing-05;
+    top: $spacing-05;
+    bottom: $spacing-05;
 
     &--has-increased-margins {
       right: 2rem;
@@ -108,11 +108,11 @@ $cardPadding: spacing.$spacing-05;
 
     &--has-fullwidth-legend {
       bottom: 7.5rem;
-      transition: bottom motion.$duration-fast-02 motion.motion(entrance, productive);
+      transition: bottom $duration-fast-02 motion(entrance, productive);
     }
 
     [dir='rtl'] & {
-      left: spacing.$spacing-05;
+      left: $spacing-05;
       right: unset;
 
       &--has-increased-margins {
@@ -133,17 +133,17 @@ $cardPadding: spacing.$spacing-05;
   &-controls-btn-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: spacing.$spacing-05;
+    margin-bottom: $spacing-05;
   }
 
   &-controls-btn {
     background: #fff;
-    @include mixins.box-shadow();
+    @include box-shadow();
   }
 
   &-controls-btn:not(:last-child) {
     &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
-      border-bottom: 1px solid theme.$ui-03;
+      border-bottom: 1px solid $ui-03;
     }
   }
 
@@ -155,8 +155,8 @@ $cardPadding: spacing.$spacing-05;
   // Layered controls
   &-controls-layers-trigger {
     background-color: white;
-    @include mixins.box-shadow();
-    margin-bottom: spacing.$spacing-05;
+    @include box-shadow();
+    margin-bottom: $spacing-05;
     position: absolute;
     right: 0;
     top: 0;
@@ -168,7 +168,7 @@ $cardPadding: spacing.$spacing-05;
     }
 
     svg.#{$iot-prefix}--map-controls-layers-trigger__caret {
-      fill: theme.$icon-01 !important;
+      fill: $icon-01 !important;
       transform: rotate(45deg);
       bottom: -1px;
       left: -1px;
@@ -179,7 +179,7 @@ $cardPadding: spacing.$spacing-05;
   &-controls-layers-wrapper {
     $size-small-offset: -2rem;
     $size-field-offset: -2.5rem;
-    @include mixins.box-shadow();
+    @include box-shadow();
     flex-direction: row-reverse;
     position: absolute;
     top: 0;
@@ -187,8 +187,8 @@ $cardPadding: spacing.$spacing-05;
     display: flex;
     opacity: 0;
     overflow: hidden;
-    transition: opacity motion.$duration-fast-02 motion.motion(entrance, productive),
-      transform motion.$duration-fast-02 motion.motion(entrance, productive);
+    transition: opacity $duration-fast-02 motion(entrance, productive),
+      transform $duration-fast-02 motion(entrance, productive);
 
     .#{$iot-prefix}--map-controls-layers--open & {
       opacity: 1;
@@ -224,12 +224,12 @@ $cardPadding: spacing.$spacing-05;
   &-controls-layers-btn {
     background-color: white;
     &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
-      border-right: 1px solid theme.$ui-03;
+      border-right: 1px solid $ui-03;
     }
 
     [dir='rtl'] & {
       &:not(.#{$iot-prefix}--btn-icon-selection--selected) {
-        border-left: 1px solid theme.$ui-03;
+        border-left: 1px solid $ui-03;
         border-right: none;
       }
     }

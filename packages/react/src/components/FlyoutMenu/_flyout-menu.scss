@@ -1,8 +1,8 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/mixins';
-@use "../../globals/colors";
+@use '../../globals/mixins' as *;
+@use '../../globals/colors' as *;
 
 $shadow-plus-padding: 1.4rem;
 $shadow: 0.4rem;
@@ -33,18 +33,18 @@ $shadow: 0.4rem;
     border-radius: 0;
 
     &:not(.#{$iot-prefix}--flyout-menu--body__light) {
-      background: theme.$ui-01;
+      background: $ui-01;
 
       .#{$prefix}--tooltip__content::after {
-        background-color: theme.$ui-01;
+        background-color: $ui-01;
       }
     }
 
     &.#{$iot-prefix}--flyout-menu--body__light {
-      background: theme.$ui-02;
+      background: $ui-02;
 
       .#{$prefix}--tooltip__content::after {
-        background-color: theme.$ui-02;
+        background-color: $ui-02;
       }
     }
 
@@ -61,7 +61,7 @@ $shadow: 0.4rem;
     &.#{$iot-prefix}--flyout-menu--body__open .#{$prefix}--tooltip__content::after {
       content: '';
       position: absolute;
-      top: -(theme.$shadow);
+      top: -($shadow);
       left: 0;
     }
 
@@ -72,12 +72,12 @@ $shadow: 0.4rem;
 
     &.#{$iot-prefix}--flyout-menu--body__top-start .#{$prefix}--tooltip__content::after {
       top: unset;
-      bottom: -(theme.$shadow);
+      bottom: -($shadow);
       left: 0;
     }
 
     &.#{$iot-prefix}--flyout-menu--body__top-end .#{$prefix}--tooltip__content::after {
-      bottom: -(theme.$shadow);
+      bottom: -($shadow);
       left: unset;
       right: 0;
       top: unset;
@@ -85,7 +85,7 @@ $shadow: 0.4rem;
 
     &.#{$iot-prefix}--flyout-menu--body__left-start .#{$prefix}--tooltip__content::after {
       left: unset;
-      right: -(theme.$shadow);
+      right: -($shadow);
       top: 0;
     }
 
@@ -95,13 +95,13 @@ $shadow: 0.4rem;
 
     &.#{$iot-prefix}--flyout-menu--body__right-start .#{$prefix}--tooltip__content::after {
       top: 0;
-      left: -(theme.$shadow);
+      left: -($shadow);
     }
 
     &.#{$iot-prefix}--flyout-menu--body__right-end .#{$prefix}--tooltip__content::after {
       top: unset;
       bottom: 0;
-      left: -(theme.$shadow);
+      left: -($shadow);
     }
 
     &.#{$iot-prefix}--flyout-menu--body__bottom-start,
@@ -110,7 +110,7 @@ $shadow: 0.4rem;
     &.#{$iot-prefix}--flyout-menu--body__top-end {
       .#{$prefix}--tooltip__content::after {
         width: 3rem;
-        height: theme.$shadow;
+        height: $shadow;
       }
     }
 
@@ -137,7 +137,7 @@ $shadow: 0.4rem;
     &.#{$iot-prefix}--flyout-menu--body__right-start,
     &.#{$iot-prefix}--flyout-menu--body__right-end {
       .#{$prefix}--tooltip__content::after {
-        width: theme.$shadow;
+        width: $shadow;
         height: 3rem;
       }
     }
@@ -164,7 +164,7 @@ $shadow: 0.4rem;
   &__shadow-block {
     display: block;
     position: absolute;
-    background: theme.$ui-02;
+    background: $ui-02;
 
     &.bottom-start {
       height: $shadow-plus-padding;
@@ -222,7 +222,7 @@ $shadow: 0.4rem;
   }
 
   &__open {
-    @include mixins.box-shadow;
+    @include box-shadow;
   }
 
   &__bottom-container {
@@ -255,31 +255,31 @@ $shadow: 0.4rem;
 }
 
 .#{$iot-prefix}--flyout-menu--content {
-  padding: spacing.$spacing-05 spacing.$spacing-05 spacing.$spacing-09 spacing.$spacing-05;
+  padding: $spacing-05 $spacing-05 $spacing-09 $spacing-05;
 }
 
 .#{$iot-prefix}--flyout-menu--trigger-button {
-  color: theme.$icon-01;
+  color: $icon-01;
 
   &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger svg,
   &.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger:hover svg {
-    fill: colors.$gray-70;
+    fill: $gray-70;
   }
 
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__light) & {
-    background-color: theme.$ui-01;
+    background-color: $ui-01;
   }
 
   .#{$iot-prefix}--flyout-menu:not(.#{$iot-prefix}--flyout-menu__open) &:hover {
-    background-color: theme.$hover-ui;
+    background-color: $hover-ui;
   }
 
   .#{$iot-prefix}--flyout-menu__light.#{$iot-prefix}--flyout-menu__open &:hover {
-    background-color: theme.$ui-02;
+    background-color: $ui-02;
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 2px theme.$focus, inset 0 0 0 3px theme.$ui-background;
+    box-shadow: inset 0 0 0 2px $focus, inset 0 0 0 3px $ui-background;
   }
 
   .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger::before {

@@ -1,8 +1,8 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use '../../globals/layout';
-@use '../../globals/mixins';
+@use '../../globals/layout' as *;
+@use '../../globals/mixins' as *;
 
 .#{$iot-prefix}--time-picker__wrapper {
   position: relative;
@@ -10,7 +10,7 @@
   &.#{$iot-prefix}--time-picker__wrapper--with-spinner {
     .#{$prefix}--time-picker__input-field {
       width: 5.875rem;
-      padding-right: spacing.$spacing-07;
+      padding-right: $spacing-07;
     }
   }
 
@@ -40,7 +40,7 @@
 
   .#{$prefix}--time-picker--invalid {
     .#{$iot-prefix}--time-picker__controls {
-      bottom: calc(#{spacing.$spacing-06} - #{spacing.$spacing-01});
+      bottom: calc(#{$spacing-06} - #{$spacing-01});
     }
   }
 
@@ -60,7 +60,7 @@
       align-items: center;
       padding: 0;
       width: 1.7rem;
-      height: layout.rem(18px);
+      height: rem(18px);
 
       svg {
         fill: currentColor;
@@ -68,27 +68,27 @@
       }
 
       &.up-icon svg {
-        top: layout.rem(4px);
+        top: rem(4px);
       }
 
       &.down-icon svg {
-        top: layout.rem(-4px);
+        top: rem(-4px);
       }
 
       &:focus {
-        @include mixins.focus-outline;
+        @include focus-outline;
         outline-width: 2px;
         outline-offset: -2px;
       }
 
       &:hover {
         cursor: pointer;
-        color: theme.$icon-01;
+        color: $icon-01;
       }
 
       &:disabled {
         cursor: not-allowed;
-        color: theme.$disabled-02;
+        color: $disabled-02;
       }
     }
   }

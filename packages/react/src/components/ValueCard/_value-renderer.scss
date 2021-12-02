@@ -1,8 +1,8 @@
-@use '../../globals/theme';
-@use '../../globals/spacing';
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 @use '../../globals/vars' as *;
-@use "../../globals/mixins";
-@use "../../globals/typography";
+@use '../../globals/mixins' as *;
+@use '../../globals/typography' as *;
 
 .#{$iot-prefix}--value-card__value-renderer {
   &--wrapper {
@@ -20,7 +20,7 @@
   }
 
   &--value {
-    @include typography.type-style('productive-heading-06');
+    @include type-style('productive-heading-06');
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: var(--value-renderer-font-size);
@@ -28,11 +28,11 @@
     $line-height: calc(var(--value-renderer-font-size) * 1.2);
     $max-lines: var(--value-renderer-max-lines);
     line-height: $line-height;
-    @include mixins.multiline-text-overflow($max-lines, $line-height);
+    @include multiline-text-overflow($max-lines, $line-height);
     word-break: break-all;
     /* override default button styles to match span visuals when using a button */
     &.#{$prefix}--btn {
-      padding: spacing.$spacing-01;
+      padding: $spacing-01;
       flex: 1;
       white-space: nowrap;
     }
@@ -48,5 +48,5 @@
 }
 
 html[dir='rtl'] .#{$iot-prefix}--value-card__value-renderer--value.#{$iot-prefix}--btn {
-  padding: spacing.$spacing-01;
+  padding: $spacing-01;
 }
