@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 
 import { settings } from '../../../../../constants/Settings';
 import { Dropdown } from '../../../../Dropdown';

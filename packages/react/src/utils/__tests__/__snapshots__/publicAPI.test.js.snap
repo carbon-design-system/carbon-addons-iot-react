@@ -506,6 +506,7 @@ Map {
         "toolbar": Object {
           "onApplyAdvancedFilter": [Function],
           "onApplyBatchAction": [Function],
+          "onApplyToolbarAction": [Function],
           "onCancelAdvancedFilter": [Function],
           "onCancelBatchAction": [Function],
           "onChangeAdvancedFilter": [Function],
@@ -581,6 +582,7 @@ Map {
         "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle aggregations",
         "toolbarLabelAria": undefined,
+        "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "id": null,
       "lightweight": undefined,
@@ -754,6 +756,9 @@ Map {
                     "type": "func",
                   },
                   "onApplySearch": Object {
+                    "type": "func",
+                  },
+                  "onApplyToolbarAction": Object {
                     "type": "func",
                   },
                   "onCancelAdvancedFilter": Object {
@@ -1298,6 +1303,9 @@ Map {
             "toolbarLabelAria": Object {
               "type": "string",
             },
+            "toolbarTooltipLabel": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -1613,9 +1621,7 @@ Map {
                   "isItemPerPageHidden": Object {
                     "type": "bool",
                   },
-                  "maxPages": Object {
-                    "type": "number",
-                  },
+                  "maxPages": [Function],
                   "page": Object {
                     "type": "number",
                   },
@@ -1957,6 +1963,121 @@ Map {
                       },
                     ],
                     "type": "shape",
+                  },
+                  "toolbarActions": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "func",
+                        },
+                        Object {
+                          "args": Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "disabled": Object {
+                                    "type": "bool",
+                                  },
+                                  "hasDivider": Object {
+                                    "type": "bool",
+                                  },
+                                  "hidden": Object {
+                                    "type": "bool",
+                                  },
+                                  "id": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "isActive": Object {
+                                    "type": "bool",
+                                  },
+                                  "isDelete": Object {
+                                    "type": "bool",
+                                  },
+                                  "isOverflow": Object {
+                                    "type": "bool",
+                                  },
+                                  "labelText": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "renderIcon": Object {
+                                    "args": Array [
+                                      Array [
+                                        Object {
+                                          "args": Array [
+                                            Object {
+                                              "height": Object {
+                                                "type": "string",
+                                              },
+                                              "svgData": Object {
+                                                "args": Array [
+                                                  Object {
+                                                    "type": Object {
+                                                      "args": Array [
+                                                        Array [
+                                                          "svg",
+                                                        ],
+                                                      ],
+                                                      "type": "oneOf",
+                                                    },
+                                                  },
+                                                ],
+                                                "isRequired": true,
+                                                "type": "shape",
+                                              },
+                                              "viewBox": Object {
+                                                "isRequired": true,
+                                                "type": "string",
+                                              },
+                                              "width": Object {
+                                                "type": "string",
+                                              },
+                                            },
+                                          ],
+                                          "type": "shape",
+                                        },
+                                        Object {
+                                          "args": Array [
+                                            Array [
+                                              "caretUp",
+                                              "caretDown",
+                                              "edit",
+                                              "close",
+                                              "checkmark",
+                                              "warning",
+                                              "arrowUp",
+                                              "arrowDown",
+                                              "user",
+                                              "info",
+                                              "help",
+                                            ],
+                                          ],
+                                          "type": "oneOf",
+                                        },
+                                        Object {
+                                          "type": "node",
+                                        },
+                                        Object {
+                                          "type": "object",
+                                        },
+                                        Object {
+                                          "type": "func",
+                                        },
+                                      ],
+                                    ],
+                                    "type": "oneOfType",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                          ],
+                          "type": "arrayOf",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                 },
               ],
@@ -3729,6 +3850,7 @@ Map {
       "defaultSelectedId": null,
       "editingStyle": null,
       "emptyState": "No list items to show",
+      "expandedIds": Array [],
       "getAllowedDropIds": null,
       "hasDeselection": true,
       "hasMultiSelect": false,
@@ -3754,6 +3876,7 @@ Map {
       "itemWillMove": [Function],
       "items": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": [Function],
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
@@ -3810,6 +3933,14 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
       },
       "getAllowedDropIds": Object {
         "type": "func",
@@ -3961,6 +4092,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onListUpdated": Object {
         "type": "func",

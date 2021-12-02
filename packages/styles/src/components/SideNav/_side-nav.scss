@@ -58,6 +58,11 @@ $hoverBgColor: #2c2c2c;
     background-color: $selectedBgColor;
     color: $textColor;
   }
+
+  &.#{$prefix}--side-nav.#{$prefix}--side-nav--rail:not(.#{$prefix}--side-nav--fixed):hover {
+    // stylelint-disable-next-line declaration-property-unit-blacklist
+    transition: width $duration--fast-01 motion(entrance, productive) 300ms;
+  }
 }
 
 html[dir='rtl'] {

@@ -1,6 +1,6 @@
 {
   "name": "@ai-apps/styles",
-  "version": "2.147.0-next.57",
+  "version": "2.147.0-next.72",
   "description": "Styles for the AI Applications PAL",
   "main": "index.js",
   "scripts": {
@@ -28,12 +28,12 @@
     "@carbon/charts": "0.41.31",
     "@carbon/motion": "10.12.0",
     "@carbon/themes": "10.26.0",
-    "ai-apps-monorepo-utils": "^2.146.1-next.0",
-    "carbon-components": "10.20.0",
+    "ai-apps-monorepo-utils": "^2.147.0-next.72",
+    "carbon-components": "10.47.0",
     "react-grid-layout": "1.2.0",
     "react-resizable": "1.11.0",
     "rimraf": "3.0.2",
-    "sass": "1.42.1"
+    "sass": "^1.42.1"
   },
   "author": "IBM",
   "license": "Apache-2.0"

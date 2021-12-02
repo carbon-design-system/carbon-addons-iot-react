@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import omit from 'lodash/omit';
-import isEqual from 'lodash/isEqual';
-import isNil from 'lodash/isNil';
+import { omit, isEqual, isNil } from 'lodash-es';
 import update from 'immutability-helper';
 
 import { usePrevious } from '../../hooks/usePrevious';
