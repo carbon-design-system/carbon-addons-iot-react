@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.73](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.72...v2.147.0-next.73) (2021-12-02)
+
+
+### Bug Fixes
+
+* **table:** ensure open state tracking is working when clicking actions ([8114f90](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8114f90c92c648db31fa8b44c6e89f9ec06ccd85))
+* **table:** fix missed extraActions->toolbarActions conversions ([b330ea8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b330ea808c73c4587a675e7e1cb4d9bccf901320))
+* **table-toolbar:** alignment extraActions proptypes with rowActions ([2408f70](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2408f70a0650d54c3290ae117041f6ee6abce47f))
+
+
+### Features
+
+* **table:** add extraActions to toolbar overflow menu ([983202a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/983202af59db678581d239fbc15d27b6c79ee3fd))
+* **table:** allow extraActions to be rendered dynamically ([2118d4f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2118d4fa4801d2e2bf90a8587c1d242f1f9e2e3c))
+* **table:** allow toolbarActions to appear in toolbar or overflow menu ([5951a6b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5951a6b221de1169f64d3e8ed2dd048fbcbb754c))
+
+
+
+
+
 # [2.147.0-next.72](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.71...v2.147.0-next.72) (2021-12-02)
 
 
