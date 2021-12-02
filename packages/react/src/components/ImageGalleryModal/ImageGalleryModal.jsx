@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Grid20, List20 } from '@carbon/icons-react';
-import omit from 'lodash/omit';
-import isEqual from 'lodash/isEqual';
+import { omit, isEqual } from 'lodash-es';
 import { Modal } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';

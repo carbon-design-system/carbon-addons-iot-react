@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import warning from 'warning';
-import isNil from 'lodash/isNil';
-import mapValues from 'lodash/mapValues';
+import { isNil, mapValues } from 'lodash-es';
 
 import { CARD_SIZES } from '../constants/LayoutConstants';
 

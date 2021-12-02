@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { ComboBox as CarbonComboBox, Tag } from 'carbon-components-react';
-import pick from 'lodash/pick';
+import { pick } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import { filterValidAttributes } from '../../utils/componentUtilityFunctions';

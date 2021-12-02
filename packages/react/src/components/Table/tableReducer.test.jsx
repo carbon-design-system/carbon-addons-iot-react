@@ -1,6 +1,5 @@
 import React from 'react';
-import merge from 'lodash/merge';
-import omit from 'lodash/omit';
+import { merge, omit } from 'lodash-es';
 import { Add20 } from '@carbon/icons-react';
 
 import { tableReducer, filterData, searchData, filterSearchAndSort } from './tableReducer';

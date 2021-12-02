@@ -1,10 +1,6 @@
 import React, { useMemo, useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import merge from 'lodash/merge';
-import isEmpty from 'lodash/isEmpty';
-import isNil from 'lodash/isNil';
-import omit from 'lodash/omit';
-import isEqual from 'lodash/isEqual';
+import { merge, isEmpty, isNil, omit, isEqual } from 'lodash-es';
 import warning from 'warning';
 
 import ValueCard from '../ValueCard/ValueCard';
