@@ -18,7 +18,7 @@
 			"./../src",
 			"./../stories"
 		],
-		"target": "es5",
+		"target": "es2015",
 		"inlineSources": true,
 		"typeRoots": [
 			"./../node_modules/@types",
