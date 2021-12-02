@@ -2,8 +2,7 @@ import React, { createElement, useMemo, useRef, useState } from 'react';
 import { boolean, text, select, array, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { SettingsAdjust16, TrashCan16 } from '@carbon/icons-react';
-import isEqual from 'lodash/isEqual';
-import assign from 'lodash/assign';
+import { isEqual, assign } from 'lodash-es';
 
 import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -236,6 +235,10 @@ export const SimpleStatefulExample = () => {
           'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
           ['multi', 'single', false],
           'multi'
+        ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
+          true
         ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
         hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),

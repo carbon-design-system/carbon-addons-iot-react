@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   Column20,
@@ -7,11 +7,13 @@ import {
   Edit20,
   OverflowMenuVertical20,
 } from '@carbon/icons-react';
-import { DataTable, Tooltip, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+import { DataTable, Tooltip } from 'carbon-components-react';
 import classnames from 'classnames';
-import isNil from 'lodash/isNil';
-import pick from 'lodash/pick';
+import { useLangDirection } from 'use-lang-direction';
+import { isNil, pick } from 'lodash-es';
 
+import { OverflowMenuItem } from '../../OverflowMenuItem';
+import { OverflowMenu } from '../../OverflowMenu';
 import Button from '../../Button';
 import deprecate from '../../../internal/deprecate';
 import {
@@ -22,10 +24,15 @@ import {
   TableColumnsPropTypes,
   TableFiltersPropType,
   TableOrderingPropType,
+  TableToolbarActionsPropType,
 } from '../TablePropTypes';
-import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
+import {
+  handleSpecificKeyDown,
+  tableTranslateWithId,
+} from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { RuleGroupPropType } from '../../RuleBuilder/RuleBuilderPropTypes';
+import useDynamicOverflowMenuItems from '../../../hooks/useDynamicOverflowMenuItems';
 
 import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout';
 import TableToolbarSVGButton from './TableToolbarSVGButton';
@@ -49,6 +56,8 @@ const propTypes = {
   options: PropTypes.shape({
     hasAdvancedFilter: PropTypes.bool,
     hasAggregations: PropTypes.bool,
+    /** If true, search is applied as typed. If false, only after 'Enter' is pressed */
+    hasFastSearch: PropTypes.bool,
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
@@ -85,6 +94,8 @@ const propTypes = {
     toolbarLabelAria: PropTypes.string,
     rowCountInHeader: PropTypes.func,
     downloadIconDescription: PropTypes.string,
+    /** aria-label applied to the tooltip in the toolbar (if given) */
+    toolbarTooltipLabel: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -104,6 +115,7 @@ const propTypes = {
     onShowRowEdit: PropTypes.func,
     onApplySearch: PropTypes.func,
     onDownloadCSV: PropTypes.func,
+    onApplyToolbarAction: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -143,13 +155,15 @@ const propTypes = {
       PropTypes.shape({
         /** Unique id for particular filter */
         filterId: PropTypes.string.isRequired,
-        /** Text for main tilte of page */
+        /** Text for main title of page */
         filterTitleText: PropTypes.string.isRequired,
         filterRules: RuleGroupPropType.isRequired,
       })
     ),
     /** currently selected advanced filters */
     selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
+    /** toolbar actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
+    toolbarActions: TableToolbarActionsPropType,
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
@@ -182,6 +196,7 @@ const TableToolbar = ({
     hasAdvancedFilter,
     hasAggregations,
     hasColumnSelection,
+    hasFastSearch,
     hasFilter,
     hasSearch,
     hasRowSelection,
@@ -204,6 +219,7 @@ const TableToolbar = ({
     onCreateAdvancedFilter,
     onChangeAdvancedFilter,
     onToggleAdvancedFilter,
+    onApplyToolbarAction,
   },
   tableState: {
     advancedFilterFlyoutOpen,
@@ -221,6 +237,7 @@ const TableToolbar = ({
     selectedAdvancedFilterIds,
     columns,
     ordering,
+    toolbarActions,
   },
   data,
   // TODO: remove deprecated 'testID' in v3
@@ -228,6 +245,28 @@ const TableToolbar = ({
   testId,
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
+  const langDir = useLangDirection();
+
+  const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
+    actions: toolbarActions,
+    className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
+    isDisabled,
+    onClick: onApplyToolbarAction,
+    testId: testID || testId,
+  });
+
+  const hasToolbarOverflowActions =
+    typeof toolbarActions === 'function' ||
+    (toolbarActions?.length > 0 && toolbarActions.some((action) => action.isOverflow));
+
+  const visibleToolbarActions = useMemo(() => {
+    if (typeof toolbarActions === 'function') {
+      return toolbarActions().filter(({ isOverflow }) => !isOverflow);
+    }
+
+    return toolbarActions?.filter(({ isOverflow }) => !isOverflow) ?? [];
+  }, [toolbarActions]);
+
   return (
     <CarbonTableToolbar
       // TODO: remove deprecated 'testID' in v3
@@ -275,6 +314,7 @@ const TableToolbar = ({
             triggerId={`card-tooltip-trigger-${tableId}`}
             tooltipId={`card-tooltip-${tableId}`}
             triggerText=""
+            iconDescription={i18n.toolbarTooltipLabel}
           >
             {tooltip}
           </Tooltip>
@@ -305,9 +345,21 @@ const TableToolbar = ({
               translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               id={`${tableId}-toolbar-search`}
               onChange={(event, defaultValue) => {
-                // https://github.com/carbon-design-system/carbon/issues/6157
-                onApplySearch(event?.target?.value || defaultValue);
+                const value = event?.target?.value || (defaultValue ?? '');
+                if (hasFastSearch) {
+                  onApplySearch(value);
+                }
               }}
+              onKeyDown={
+                hasFastSearch
+                  ? undefined
+                  : handleSpecificKeyDown(['Enter'], (e) => onApplySearch(e.target.value))
+              }
+              onClear={() => onApplySearch('')}
+              // This can't be used yet b/c it prevents the search box from automatically
+              // closing on blur.
+              // https://github.com/carbon-design-system/carbon/issues/10077
+              // onBlur={!hasFastSearch ? (e) => onApplySearch(e.target.value) : undefined}
               disabled={isDisabled}
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}
@@ -408,26 +460,56 @@ const TableToolbar = ({
               disabled={isDisabled}
             />
           ) : null}
-          {hasAggregations ? (
+          {visibleToolbarActions.map((action) => {
+            return (
+              <TableToolbarSVGButton
+                isActive={action.isActive}
+                description={action.labelText || action.iconDescription}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onApplyToolbarAction(action);
+                }}
+                testId={`${tableId}-toolbar-actions-button-${action.id}`}
+                key={`${tableId}-toolbar-actions-button-${action.id}`}
+                renderIcon={action.renderIcon}
+                disabled={isDisabled || action.disabled}
+              />
+            );
+          })}
+          {hasAggregations || hasToolbarOverflowActions ? (
             <OverflowMenu
               className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
               direction="bottom"
-              flipped
+              flipped={langDir === 'ltr'}
               data-testid="table-head--overflow"
               onClick={(e) => e.stopPropagation()}
               renderIcon={OverflowMenuVertical20}
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
+              onOpen={() => setIsOpen(true)}
+              onClose={() => setIsOpen(false)}
             >
-              <OverflowMenuItem
-                data-testid={`${testID || testId}-toolbar-overflow-menu-item-aggregations`}
-                itemText={i18n.toggleAggregations}
-                key="table-aggregations-overflow-item"
-                // wrapping in function to prevent error in netlify storybook deploys.
-                // When passing the event directly to the storybook action it throws an iframe access
-                // error. This might a temporary issue and can be removed later.
-                onClick={() => onToggleAggregations()}
-                disabled={isDisabled}
-              />
+              {hasAggregations && (
+                <OverflowMenuItem
+                  data-testid={`${testID || testId}-toolbar-overflow-menu-item-aggregations`}
+                  itemText={i18n.toggleAggregations}
+                  key="table-aggregations-overflow-item"
+                  onClick={() => {
+                    setIsOpen(false);
+                    onToggleAggregations();
+                  }}
+                  disabled={isDisabled}
+                />
+              )}
+              {isOpen && renderToolbarOverflowActions()}
+
+              {
+                /**
+                 * a placeholder node to ensure the menu will always open. If there are no children,
+                 * the renderToolbarOverflowAction method above will never fire, because the
+                 * OverflowMenu doesn't open properly if no children are provided.
+                 */
+                !isOpen && <OverflowMenuItem itemText="" disabled />
+              }
             </OverflowMenu>
           ) : null}
           {

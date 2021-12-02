@@ -183,6 +183,16 @@ const VirtualListContent = ({
           }
         }
 
+        if (!item.children && item.hasLoadMore) {
+          tmp = tmp.concat([
+            {
+              ...item,
+              level: currentLevel,
+              isLoadMoreRow: true,
+            },
+          ]);
+        }
+
         return tmp;
       }, []);
     },
@@ -240,7 +250,7 @@ const VirtualListContent = ({
     } = item;
 
     if (item.isLoadMoreRow) {
-      if (parentIsExpanded) {
+      if (parentIsExpanded || item.level === 0) {
         return (
           <Button
             key={`${item.id}-list-item-parent-loading`}
@@ -320,7 +330,7 @@ const VirtualListContent = ({
 
     const isExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
-    if (item.isLoadMoreRow && isExpanded) {
+    if (item.isLoadMoreRow && (isExpanded || item.level === 0)) {
       return 48;
     }
 

@@ -17,6 +17,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         aria-hidden={true}
         className="bx--batch-actions iot--table-batch-actions"
         data-testid="table-table-toolbar-batch-actions"
+        onScroll={[Function]}
       >
         <div
           className="bx--batch-summary"
@@ -63,6 +64,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           
           <div
+            aria-label="Toolbar tooltip"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
             onClick={[Function]}
@@ -151,8 +153,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             fill="currentColor"
             focusable="false"
             height={20}
-            onClick={[Function]}
-            onKeyDown={[Function]}
             preserveAspectRatio="xMidYMid meet"
             role="img"
             viewBox="0 0 32 32"
@@ -26721,6 +26721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         aria-hidden={true}
         className="bx--batch-actions iot--table-batch-actions"
         data-testid="loading-table-table-toolbar-batch-actions"
+        onScroll={[Function]}
       >
         <div
           className="bx--batch-summary"
@@ -26876,8 +26877,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             fill="currentColor"
             focusable="false"
             height={20}
-            onClick={[Function]}
-            onKeyDown={[Function]}
             preserveAspectRatio="xMidYMid meet"
             role="img"
             viewBox="0 0 32 32"
@@ -27245,6 +27244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         aria-hidden={true}
         className="bx--batch-actions iot--table-batch-actions"
         data-testid="AsyncTable-table-toolbar-batch-actions"
+        onScroll={[Function]}
       >
         <div
           className="bx--batch-summary"
@@ -29049,6 +29049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-hidden={true}
           className="bx--batch-actions iot--table-batch-actions"
           data-testid="table-table-toolbar-batch-actions"
+          onScroll={[Function]}
         >
           <div
             className="bx--batch-summary"
@@ -30120,6 +30121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="string-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="string"
@@ -30191,6 +30193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="date-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="date"
@@ -30346,6 +30349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="number-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="number"
@@ -30393,6 +30397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="boolean-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="boolean"
@@ -30452,6 +30457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="object-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="object"
@@ -30739,6 +30745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -30759,8 +30766,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -31052,6 +31057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -31105,8 +31111,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -31398,6 +31402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -31451,8 +31456,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -31737,6 +31740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -31790,8 +31794,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -32083,6 +32085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -32103,8 +32106,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -32396,6 +32397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -32449,8 +32451,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -32735,6 +32735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -32788,8 +32789,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -33081,6 +33080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -33134,8 +33134,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -33427,6 +33425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -33447,8 +33446,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -33733,6 +33730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-describedby={null}
@@ -33786,8 +33784,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -34666,7 +34662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Table with filtering and custom toolbar content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Table with filtering, toolbarActions, and custom toolbar content 1`] = `
 <div
   className="storybook-container"
 >
@@ -34683,6 +34679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         aria-hidden={true}
         className="bx--batch-actions iot--table-batch-actions"
         data-testid="table-table-toolbar-batch-actions"
+        onScroll={[Function]}
       >
         <div
           className="bx--batch-summary"
@@ -34766,6 +34763,86 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <path
               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
             />
+          </svg>
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+          data-testid="table-toolbar-actions-button-toggle"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          title="toolbarAction shown in toolbar instead of overflow"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            aria-label="toolbarAction shown in toolbar instead of overflow"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.6,11.3l0.7-0.7C2.6,9.8,1.9,9,1.5,8c1-2.5,3.8-4.5,6.5-4.5c0.7,0,1.4,0.1,2,0.4l0.8-0.8C9.9,2.7,9,2.5,8,2.5	C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3C1,9.3,1.7,10.4,2.6,11.3z"
+            />
+            <path
+              d="M6 7.9c.1-1 .9-1.8 1.8-1.8l.9-.9C7.2 4.7 5.5 5.6 5.1 7.2 5 7.7 5 8.3 5.1 8.8L6 7.9zM15.5 7.8c-.6-1.5-1.6-2.8-2.9-3.7L15 1.7 14.3 1 1 14.3 1.7 15l2.6-2.6c1.1.7 2.4 1 3.7 1.1 3.3-.1 6.3-2.2 7.5-5.3C15.5 8.1 15.5 7.9 15.5 7.8zM10 8c0 1.1-.9 2-2 2-.3 0-.7-.1-1-.3L9.7 7C9.9 7.3 10 7.6 10 8zM8 12.5c-1 0-2.1-.3-3-.8l1.3-1.3c1.4.9 3.2.6 4.2-.8.7-1 .7-2.4 0-3.4l1.4-1.4c1.1.8 2 1.9 2.6 3.2C13.4 10.5 10.6 12.5 8 12.5z"
+            />
+          </svg>
+        </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          aria-label="open and close list of options"
+          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu"
+          data-testid="table-head--overflow"
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          open={false}
+          type="button"
+        >
+          <svg
+            aria-label="open and close list of options"
+            className="bx--overflow-menu__icon iot--table-toolbar-aggregations__overflow-icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="16"
+              cy="8"
+              r="2"
+            />
+            <circle
+              cx="16"
+              cy="16"
+              r="2"
+            />
+            <circle
+              cx="16"
+              cy="24"
+              r="2"
+            />
+            <title>
+              open and close list of options
+            </title>
           </svg>
         </button>
         <div
@@ -35076,6 +35153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
+                            aria-describedby="string-helper-text"
                             className="bx--text-input"
                             disabled={false}
                             id="string"
@@ -35146,6 +35224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
+                            aria-describedby="date-helper-text"
                             className="bx--text-input"
                             disabled={false}
                             id="date"
@@ -35321,6 +35400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
+                            aria-describedby="number-helper-text"
                             className="bx--text-input"
                             disabled={false}
                             id="number"
@@ -35367,6 +35447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
+                            aria-describedby="boolean-helper-text"
                             className="bx--text-input"
                             disabled={false}
                             id="boolean"
@@ -35424,6 +35505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
+                            aria-describedby="object-helper-text"
                             className="bx--text-input"
                             disabled={false}
                             id="object"
@@ -37819,6 +37901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-hidden={true}
           className="bx--batch-actions iot--table-batch-actions"
           data-testid="table-table-toolbar-batch-actions"
+          onScroll={[Function]}
         >
           <div
             className="bx--batch-summary"
@@ -38428,6 +38511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -38448,8 +38532,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -38676,6 +38758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -38696,8 +38779,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -38924,6 +39005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -38944,8 +39026,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -39172,6 +39252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -39192,8 +39273,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -39420,6 +39499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -39440,8 +39520,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -39668,6 +39746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -39688,8 +39767,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -39916,6 +39993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -39936,8 +40014,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -40164,6 +40240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -40184,8 +40261,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -40412,6 +40487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -40432,8 +40508,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -40660,6 +40734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     <div
                       className="iot--row-actions-container__background"
                       data-testid="row-action-container-background"
+                      onClick={[Function]}
                     >
                       <button
                         aria-expanded={false}
@@ -40680,8 +40755,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -41044,6 +41117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-hidden={true}
           className="bx--batch-actions iot--table-batch-actions"
           data-testid="table-table-toolbar-batch-actions"
+          onScroll={[Function]}
         >
           <div
             className="bx--batch-summary"
@@ -41486,6 +41560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="string-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="string"
@@ -41556,6 +41631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="date-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="date"
@@ -41742,6 +41818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="number-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="number"
@@ -41788,6 +41865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="boolean-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="boolean"
@@ -41845,6 +41923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
+                              aria-describedby="object-helper-text"
                               className="bx--text-input"
                               disabled={false}
                               id="object"
@@ -47527,6 +47606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             data-invalid={null}
           >
             <input
+              aria-describedby="colsToAddInput-helper-text"
               className="bx--text-input"
               disabled={false}
               id="colsToAddInput"
@@ -47593,6 +47673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             data-invalid={null}
           >
             <input
+              aria-describedby="colsToAddWidthInput-helper-text"
               className="bx--text-input"
               disabled={false}
               id="colsToAddWidthInput"
@@ -47689,6 +47770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             data-invalid={null}
           >
             <input
+              aria-describedby="removeColInput-helper-text"
               className="bx--text-input"
               disabled={false}
               id="removeColInput"
@@ -47745,6 +47827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-hidden={true}
           className="bx--batch-actions iot--table-batch-actions"
           data-testid="table-table-toolbar-batch-actions"
+          onScroll={[Function]}
         >
           <div
             className="bx--batch-summary"
@@ -50930,6 +51013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <div
                       className="bx--tooltip__label"
@@ -51236,6 +51320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -51289,8 +51374,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -51581,6 +51664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -51634,8 +51718,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -51926,6 +52008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -51979,8 +52062,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -52271,6 +52352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -52535,6 +52617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -52588,8 +52671,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -52880,6 +52961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -52933,8 +53015,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -53225,6 +53305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -53278,8 +53359,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -53570,6 +53649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -53834,6 +53914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -53887,8 +53968,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -54179,6 +54258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -54232,8 +54312,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -54524,6 +54602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -54577,8 +54656,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -54869,6 +54946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -55133,6 +55211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -55186,8 +55265,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -55478,6 +55555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -55531,8 +55609,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -55823,6 +55899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -55876,8 +55953,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -56168,6 +56243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -56432,6 +56508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -56485,8 +56562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -56777,6 +56852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -56830,8 +56906,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -57122,6 +57196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -57175,8 +57250,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -57467,6 +57540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -57731,6 +57805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -57784,8 +57859,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -58076,6 +58149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -58129,8 +58203,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -58421,6 +58493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -58474,8 +58547,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -58766,6 +58837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -59030,6 +59102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -59083,8 +59156,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -59375,6 +59446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -59428,8 +59500,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -59720,6 +59790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -59773,8 +59844,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -60065,6 +60134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -60329,6 +60399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -60382,8 +60453,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -60674,6 +60743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -60727,8 +60797,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -61019,6 +61087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -61072,8 +61141,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -61364,6 +61431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -61628,6 +61696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -61681,8 +61750,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -61975,6 +62042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -62028,8 +62096,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -62322,6 +62388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -62375,8 +62442,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -62669,6 +62734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -62935,6 +63001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -62988,8 +63055,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -63282,6 +63347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -63335,8 +63401,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -63629,6 +63693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -63682,8 +63747,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -63976,6 +64039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -64242,6 +64306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -64295,8 +64360,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -64589,6 +64652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -64642,8 +64706,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -64936,6 +64998,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -64989,8 +65052,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -65283,6 +65344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -65549,6 +65611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -65602,8 +65665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -65896,6 +65957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -65949,8 +66011,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -66243,6 +66303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -66296,8 +66357,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -66590,6 +66649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -66856,6 +66916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -66909,8 +66970,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -67203,6 +67262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -67256,8 +67316,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -67550,6 +67608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <div
                       aria-atomic="true"
@@ -67851,6 +67910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -68117,6 +68177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -68170,8 +68231,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -68464,6 +68523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -68517,8 +68577,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -68811,6 +68869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -68864,8 +68923,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -69158,6 +69215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -69424,6 +69482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -69477,8 +69536,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -69771,6 +69828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -69824,8 +69882,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -70118,6 +70174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -70171,8 +70228,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -70465,6 +70520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -70731,6 +70787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -70784,8 +70841,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -71078,6 +71133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -71131,8 +71187,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -71425,6 +71479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -71478,8 +71533,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -71772,6 +71825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -72038,6 +72092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -72091,8 +72146,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -72385,6 +72438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -72438,8 +72492,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -72732,6 +72784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -72785,8 +72838,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -73079,6 +73130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -73345,6 +73397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -73398,8 +73451,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -73692,6 +73743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -73745,8 +73797,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -74039,6 +74089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -74092,8 +74143,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -74386,6 +74435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -74652,6 +74702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -74705,8 +74756,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -74999,6 +75048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -75052,8 +75102,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -75346,6 +75394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -75399,8 +75448,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -75693,6 +75740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -75959,6 +76007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -76012,8 +76061,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -76306,6 +76353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -76359,8 +76407,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -76653,6 +76699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -76706,8 +76753,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -77000,6 +77045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -77266,6 +77312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -77319,8 +77366,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -77613,6 +77658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -77666,8 +77712,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -77960,6 +78004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -78013,8 +78058,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -78307,6 +78350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -78573,6 +78617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -78626,8 +78671,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -78920,6 +78963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -78973,8 +79017,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -79267,6 +79309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -79320,8 +79363,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -79614,6 +79655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -79880,6 +79922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -79933,8 +79976,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -80227,6 +80268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -80280,8 +80322,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -80574,6 +80614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -80627,8 +80668,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -80921,6 +80960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -81187,6 +81227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -81240,8 +81281,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -81534,6 +81573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -81587,8 +81627,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -81881,6 +81919,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -81934,8 +81973,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -82228,6 +82265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   />
                 </div>
               </td>
@@ -82494,6 +82532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -82547,8 +82586,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -82841,6 +82878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -82894,8 +82932,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -83188,6 +83224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <div
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
+                    onClick={[Function]}
                   >
                     <button
                       aria-describedby={null}
@@ -83241,8 +83278,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         fill="currentColor"
                         focusable="false"
                         height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         viewBox="0 0 32 32"
@@ -83298,6 +83333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         aria-hidden={false}
         className="bx--batch-actions bx--batch-actions--active iot--table-batch-actions"
         data-testid="table-table-toolbar-batch-actions"
+        onScroll={[Function]}
       >
         <div
           className="bx--batch-summary"
@@ -86309,6 +86345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             aria-hidden={true}
             className="bx--batch-actions iot--table-batch-actions"
             data-testid="null-table-toolbar-batch-actions"
+            onScroll={[Function]}
           >
             <div
               className="bx--batch-summary"
@@ -86363,8 +86400,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 fill="currentColor"
                 focusable="false"
                 height={20}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -107922,6 +107957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         aria-hidden={true}
         className="bx--batch-actions iot--table-batch-actions"
         data-testid="table-table-toolbar-batch-actions"
+        onScroll={[Function]}
       >
         <div
           className="bx--batch-summary"
@@ -108089,7 +108125,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="iot--advanced-filter__tab-container bx--tabs--scrollable"
-                      onScroll={[Function]}
                       selected={0}
                     >
                       <button
@@ -108119,6 +108154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </button>
                       <ul
                         className="bx--tabs--scrollable__nav"
+                        onScroll={[Function]}
                         role="tablist"
                         tabIndex={-1}
                       >
@@ -108215,6 +108251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
+                                  aria-describedby="string-helper-text"
                                   className="bx--text-input"
                                   defaultValue="whiteboard"
                                   disabled={false}
@@ -108273,6 +108310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
+                                  aria-describedby="date-helper-text"
                                   className="bx--text-input"
                                   disabled={false}
                                   id="date"
@@ -108416,6 +108454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
+                                  aria-describedby="number-helper-text"
                                   className="bx--text-input"
                                   disabled={false}
                                   id="number"
@@ -108453,6 +108492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
+                                  aria-describedby="boolean-helper-text"
                                   className="bx--text-input"
                                   disabled={false}
                                   id="boolean"
@@ -108486,6 +108526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
+                                  aria-describedby="object-helper-text"
                                   className="bx--text-input"
                                   disabled={false}
                                   id="object"
@@ -108571,7 +108612,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 1
                               </span>
                               <div
-                                aria-hidden={true}
                                 aria-label="Clear all selected items"
                                 className="bx--tag__close-icon"
                                 disabled={false}

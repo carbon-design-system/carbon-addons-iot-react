@@ -11,9 +11,8 @@ import {
 } from 'carbon-components-react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
-import memoize from 'lodash/memoize';
+import { memoize, isEqual } from 'lodash-es';
 import PropTypes from 'prop-types';
-import isEqual from 'lodash/isEqual';
 
 import { settings } from '../../../constants/Settings';
 import FlyoutMenu, { FlyoutMenuDirection } from '../../FlyoutMenu/FlyoutMenu';

@@ -1,8 +1,7 @@
 import React, { useMemo, useCallback, useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Responsive, WidthProvider } from 'react-grid-layout';
-import find from 'lodash/find';
-import pick from 'lodash/pick';
+import { find, pick } from 'lodash-es';
 import classnames from 'classnames';
 
 import { useResize } from '../../internal/UseResizeObserver';

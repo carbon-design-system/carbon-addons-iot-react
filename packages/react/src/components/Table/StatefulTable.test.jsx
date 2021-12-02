@@ -1,7 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import merge from 'lodash/merge';
-import pick from 'lodash/pick';
+import { merge, pick } from 'lodash-es';
 import { screen, render, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -27,6 +26,10 @@ const selectData = getSelectData();
 const tableColumns = getTableColumns(selectData);
 
 describe('stateful table with real reducer', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should clear filters', async () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     render(<StatefulTable {...initialState} actions={mockActions} />);

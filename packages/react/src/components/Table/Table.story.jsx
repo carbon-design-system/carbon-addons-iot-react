@@ -1,14 +1,12 @@
 import React, { useState, useMemo, useEffect, useCallback, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select, array, object } from '@storybook/addon-knobs';
-import Arrow from '@carbon/icons-react/lib/arrow--right/16';
-import Add from '@carbon/icons-react/lib/add/16';
-import Edit from '@carbon/icons-react/lib/edit/16';
+import Arrow from '@carbon/icons-react/es/arrow--right/16';
+import Add from '@carbon/icons-react/es/add/16';
+import Edit from '@carbon/icons-react/es/edit/16';
 import { spacing03 } from '@carbon/layout';
-import { Add20, TrashCan16 } from '@carbon/icons-react';
-import cloneDeep from 'lodash/cloneDeep';
-import assign from 'lodash/assign';
-import isEqual from 'lodash/isEqual';
+import { Add20, TrashCan16, ViewOff16 } from '@carbon/icons-react';
+import { cloneDeep, assign, isEqual } from 'lodash-es';
 import { firstBy } from 'thenby';
 
 import { TextInput } from '../TextInput';
@@ -421,6 +419,7 @@ export const tableActions = {
     // since they won't be adding this prop to any of their components
     // can be readded in V3.
     // onToggleAggregations: action('onToggleAggregations'),
+    onApplyToolbarAction: action('onApplyToolbarAction'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -558,6 +557,30 @@ export const initialState = {
   },
 };
 
+const tableToolbarActions = [
+  {
+    id: 'edit',
+    labelText: 'Edit',
+    renderIcon: 'edit',
+    disabled: true,
+    isOverflow: true,
+  },
+  {
+    id: 'delete',
+    labelText: 'Delete',
+    isDelete: true,
+    hasDivider: true,
+    isOverflow: true,
+    renderIcon: () => <TrashCan16 />,
+  },
+  {
+    id: 'hidden',
+    labelText: 'Hidden',
+    hidden: true,
+    isOverflow: true,
+  },
+];
+
 export default {
   title: '1 - Watson IoT/Table/Table',
 
@@ -604,7 +627,7 @@ export const BasicDumbTable = () => {
   );
 
   const hasMultiSort = boolean(
-    'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
+    'Enables sorting the table by multiple dimensions (options.hasMultiSort)',
     false
   );
   return (
@@ -656,6 +679,10 @@ export const BasicDumbTable = () => {
           ['multi', 'single', false],
           'multi'
         ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
+          true
+        ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
         hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
         preserveColumnWidths: boolean(
@@ -686,6 +713,7 @@ export const BasicDumbTable = () => {
         toolbar: {
           activeBar: hasColumnSelection || hasColumnSelectionConfig ? 'column' : undefined,
           isDisabled: boolean('Disable the table toolbar (view.toolbar.isDisabled)', false),
+          toolbarActions: tableToolbarActions,
         },
         table: {
           loadingState: {
@@ -2024,6 +2052,14 @@ export const WithFilters = () => {
         },
         toolbar: {
           activeBar: 'filter',
+          toolbarActions: [
+            ...tableToolbarActions,
+            {
+              id: 'toggle',
+              labelText: 'toolbarAction shown in toolbar instead of overflow',
+              renderIcon: ViewOff16,
+            },
+          ],
           customToolbarContent: (
             <div style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}>
               custom content
@@ -2038,7 +2074,7 @@ export const WithFilters = () => {
   );
 };
 
-WithFilters.storyName = 'with filtering and custom toolbar content';
+WithFilters.storyName = 'with filtering, toolbarActions, and custom toolbar content';
 
 export const WithAdvancedFilters = () => {
   const operands = {
@@ -2668,6 +2704,10 @@ export const AsyncColumnLoading = () => {
       options={{
         hasAggregations: boolean(
           'Aggregates column values and displays in a footer row (options.hasAggregations)',
+          true
+        ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
           true
         ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', true),

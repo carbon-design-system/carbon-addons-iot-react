@@ -9,6 +9,7 @@ import TimeSeriesCard from './TimeSeriesCard';
 const { prefix } = settings;
 describe('TimeSeriesCard', () => {
   it('should show a tooltip on mouseover a point', () => {
+    cy.viewport(1680, 900);
     mount(
       <TimeSeriesCard
         id="facility-temperature"
@@ -57,6 +58,7 @@ describe('TimeSeriesCard', () => {
   });
 
   it('should show a tooltip on mouseover a ruler line', () => {
+    cy.viewport(1680, 900);
     mount(
       <TimeSeriesCard
         id="facility-temperature"

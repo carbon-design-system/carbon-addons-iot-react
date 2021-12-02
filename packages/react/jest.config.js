@@ -45,9 +45,9 @@ module.exports = {
       functions: 89,
     },
     './src/components/PageTitleBar/PageTitleBar.jsx': {
-      statements: 82,
-      branches: 87,
-      lines: 81,
+      statements: 81,
+      branches: 81,
+      lines: 80,
     },
     './src/components/DateTimePicker/DateTimePickerV2.jsx': {
       branches: 89,
@@ -104,7 +104,7 @@ module.exports = {
   },
   testPathIgnorePatterns: ['/config/', '/lib/'],
   transformIgnorePatterns: [
-    '/node_modules/(?!(@carbon/charts|@storybook/addon-docs)).+(.jsx?)',
+    '/node_modules/(?!(@carbon/charts|@storybook/addon-docs|lodash-es)).+(.jsx?)',
     '/__mocks__/.+(.jsx?)',
   ],
   watchPathIgnorePatterns: ['/coverage/', '/results/', '/.git/'],

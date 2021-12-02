@@ -15,7 +15,7 @@ import {
   ContentSwitcher,
   TextInput,
 } from 'carbon-components-react';
-import isEmpty from 'lodash/isEmpty';
+import { isEmpty } from 'lodash-es';
 
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';

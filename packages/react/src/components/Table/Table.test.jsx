@@ -3,8 +3,8 @@ import { render, fireEvent, screen, waitFor, within } from '@testing-library/rea
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import merge from 'lodash/merge';
-import { ArrowRight16 } from '@carbon/icons-react';
+import { ArrowRight16, Screen16, ViewOff16 } from '@carbon/icons-react';
+import { merge } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
@@ -526,6 +526,101 @@ describe('Table', () => {
     wrapper.update();
 
     expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
+  });
+
+  it('should call onApplySearch when typing in the search box with hasFastSearch:true', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+      />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(7);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}'
+    );
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(7);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'test');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(4);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('test');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.click(screen.getByRole('button', { name: 'Clear search input' }));
+    // once from onChange, once from onClear
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(2);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    mockActions.toolbar.onApplySearch.mockClear();
+  });
+
+  it('should only call onApplySearch when hitting Enter or Blur in the search box with hasFastSearch:false', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: false,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+      />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing{enter}');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}test{enter}'
+    );
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('test');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    // these tests can be added back once this issue is resolved:
+    // https://github.com/carbon-design-system/carbon/issues/10077
+    // userEvent.type(
+    //   screen.getByPlaceholderText('Search'),
+    //   '{backspace}{backspace}{backspace}{backspace}testing'
+    // );
+    // fireEvent.blur(screen.getByPlaceholderText('Search'));
+    // expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    // expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    // mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.click(screen.getByRole('button', { name: 'Clear search input' }));
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    mockActions.toolbar.onApplySearch.mockClear();
   });
 
   it('cells should always wrap by default', () => {
@@ -2481,5 +2576,344 @@ describe('Table', () => {
     expect(toggleButton).not.toBeDisabled();
     expect(screen.getByText('Total:')).toBeVisible();
     jest.resetAllMocks();
+  });
+
+  it('should throw a prop-type warning if float used for maxPages', () => {
+    const { __DEV__ } = global;
+    global.__DEV__ = true;
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 10)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasPagination: true,
+        }}
+        view={{
+          ...view,
+          pagination: {
+            pageSize: 5,
+            pageSizes: [5, 10],
+            maxPages: 1.5,
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByText('1 of 2 pages')).toBeVisible();
+    // 5 * 1.5 = 7.5, rounded is 8 items.
+    expect(screen.getByText('1–5 of 8 items')).toBeVisible();
+
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'Warning: Failed prop type: Invalid prop `maxPages` supplied to `Table`. `maxPages` must be a positive integer.'
+      )
+    );
+    global.__DEV__ = __DEV__;
+    jest.resetAllMocks();
+  });
+
+  describe('toolbarActions in toolbar', () => {
+    const toolbarActions = [
+      {
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: Screen16,
+      },
+      {
+        id: 'edit',
+        labelText: 'Edit something',
+        disabled: true,
+        isOverflow: true,
+      },
+      {
+        id: 'hide',
+        labelText: 'Hide something',
+        renderIcon: ViewOff16,
+        hasDivider: true,
+        isOverflow: true,
+      },
+      {
+        id: 'delete',
+        labelText: 'Delete something',
+        isDelete: true,
+        isOverflow: true,
+      },
+      {
+        id: 'hidden',
+        labelText: 'Hidden option',
+        hidden: true,
+        isOverflow: true,
+      },
+    ];
+    const onApplyToolbarAction = jest.fn();
+
+    beforeEach(() => {
+      jest
+        .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+        .mockImplementation(() => ({ width: 100, height: 100 }));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('should allow other actions to be passed to the overflow menu when using aggregations', async () => {
+      render(
+        <Table
+          columns={tableColumns}
+          data={tableData.slice(0, 1)}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: true,
+          }}
+          view={{
+            ...view,
+            aggregations: {
+              label: 'Total: ',
+              columns: [
+                {
+                  id: 'number',
+                  value: 100000,
+                },
+              ],
+            },
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions,
+            },
+          }}
+        />
+      );
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+      expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+      expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+        `${prefix}--overflow-menu-options__option--danger`
+      );
+      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        hasDivider: true,
+        isOverflow: true,
+        renderIcon: expect.anything(),
+      });
+    });
+
+    it('should add items to the toolbarActions overflow menu when aggregations are not used', async () => {
+      render(
+        <Table
+          columns={tableColumns}
+          data={tableData.slice(0, 1)}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions,
+            },
+          }}
+        />
+      );
+
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+      expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+      expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+        `${prefix}--overflow-menu-options__option--danger`
+      );
+      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        renderIcon: expect.anything(),
+        hasDivider: true,
+        isOverflow: true,
+      });
+    });
+
+    it('should allow dynamically creating the toolbarActions from a callback', async () => {
+      const obj = {
+        toolbarActions: () => toolbarActions,
+      };
+
+      jest.spyOn(obj, 'toolbarActions');
+
+      render(
+        <Table
+          columns={tableColumns}
+          data={tableData.slice(0, 1)}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions: obj.toolbarActions,
+            },
+          }}
+        />
+      );
+      // once to check if there are non-overflow toolbarActions in the callback
+      expect(obj.toolbarActions).toHaveBeenCalledTimes(1);
+
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      // second after the toolbar has been opened
+      expect(obj.toolbarActions).toHaveBeenCalledTimes(2);
+
+      // check an item is present with correct state
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+
+      userEvent.click(screen.getByRole('menuitem', { name: 'Delete something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'delete',
+        labelText: 'Delete something',
+        isDelete: true,
+        isOverflow: true,
+      });
+
+      // ensure state tracking is working and items are visible again when re-opening.
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        hasDivider: true,
+        isOverflow: true,
+        renderIcon: expect.anything(),
+      });
+    });
+
+    it('should render icons given various renderIcon types', async () => {
+      render(
+        <Table
+          testId="icon-render"
+          columns={tableColumns}
+          data={tableData.slice(0, 1)}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions: [
+                {
+                  id: 'string',
+                  renderIcon: 'warning',
+                  labelText: 'a-warning-label',
+                  isOverflow: true,
+                },
+                {
+                  id: 'off',
+                  renderIcon: () => <ViewOff16 aria-label="View off" />,
+                  labelText: 'View off',
+                  isOverflow: true,
+                },
+                {
+                  id: 'arrow-right',
+                  renderIcon: ArrowRight16,
+                  labelText: 'Arrow right',
+                  isOverflow: true,
+                },
+                {
+                  id: 'text',
+                  labelText: 'Just text',
+                  isOverflow: true,
+                },
+                {
+                  id: 'off-in-toolbar',
+                  renderIcon: () => <ViewOff16 aria-label="View off toolbar" />,
+                  labelText: 'View off toolbar',
+                },
+                {
+                  id: 'arrow-right-in-toolbar',
+                  renderIcon: ArrowRight16,
+                  labelText: 'Arrow right toolbar',
+                },
+              ],
+            },
+          }}
+        />
+      );
+
+      expect(screen.getByTitle('View off toolbar')).toBeVisible();
+      expect(screen.getByTitle('View off toolbar').firstChild).toBeVisible();
+      expect(screen.getByTitle('View off toolbar').firstChild).toHaveAttribute(
+        'aria-label',
+        'View off toolbar'
+      );
+      expect(screen.getByTitle('Arrow right toolbar')).toBeVisible();
+      expect(screen.getByTitle('Arrow right toolbar').firstChild).toBeVisible();
+      expect(screen.getByTitle('Arrow right toolbar').firstChild).toHaveAttribute(
+        'aria-label',
+        'Arrow right toolbar'
+      );
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'a-warning-label' })).toBeVisible();
+      expect(screen.getByLabelText('a-warning-label', { selector: 'svg' })).toBeVisible();
+      expect(screen.getByTitle('View off')).toBeVisible();
+      expect(screen.getByTitle('View off').firstChild).toBeVisible();
+      expect(screen.getByTitle('View off').firstChild).toHaveAttribute('aria-label', 'View off');
+      expect(screen.getByTitle('Arrow right')).toBeVisible();
+      expect(screen.getByTitle('Arrow right').firstChild).toBeVisible();
+      expect(screen.getByTitle('Arrow right').firstChild).toHaveAttribute(
+        'description',
+        'Arrow right'
+      );
+      expect(screen.getByRole('menuitem', { name: 'Just text' })).toBeVisible();
+    });
   });
 });
