@@ -9,9 +9,8 @@ import {
 } from '@carbon/icons-react';
 import { DataTable, Tooltip } from 'carbon-components-react';
 import classnames from 'classnames';
-import isNil from 'lodash/isNil';
-import pick from 'lodash/pick';
 import { useLangDirection } from 'use-lang-direction';
+import { isNil, pick } from 'lodash-es';
 
 import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { OverflowMenu } from '../../OverflowMenu';

@@ -1,7 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import merge from 'lodash/merge';
-import pick from 'lodash/pick';
+import { merge, pick } from 'lodash-es';
 import { screen, render, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 

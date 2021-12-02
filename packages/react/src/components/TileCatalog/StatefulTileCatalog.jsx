@@ -1,7 +1,6 @@
 import React, { useReducer, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
-import isEqual from 'lodash/isEqual';
+import { omit, isEqual } from 'lodash-es';
 
 import { usePrevious } from '../../hooks/usePrevious';
 

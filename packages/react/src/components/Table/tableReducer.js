@@ -1,8 +1,5 @@
 import update from 'immutability-helper';
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import get from 'lodash/get';
-import find from 'lodash/find';
+import { isNil, isEmpty, get, find } from 'lodash-es';
 import { firstBy } from 'thenby';
 
 import {

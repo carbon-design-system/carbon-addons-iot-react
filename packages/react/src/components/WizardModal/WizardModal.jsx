@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import isNil from 'lodash/isNil';
+import { isNil } from 'lodash-es';
 
 import ComposedModal from '../ComposedModal/ComposedModal';
 import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
