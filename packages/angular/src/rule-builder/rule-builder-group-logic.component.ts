@@ -20,7 +20,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class RuleBuilderGroupLogicComponent {
   @Input() anyAll = [
     { content: 'ALL', id: 'all', selected: true },
-    { content: 'ANY', id: 'any' },
+    { content: 'ANY', id: 'any', selected: false },
   ];
 
   @Input() selected: 'any' | 'all' = 'all';

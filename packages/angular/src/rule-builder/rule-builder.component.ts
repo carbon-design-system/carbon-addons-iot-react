@@ -14,25 +14,24 @@ import {
   template: `
     <div>
       <ai-rule-builder-header
-        [id]="tree.id"
         [(groupLogic)]="tree.groupLogic"
         (addRule)="handleAddRule($event.id, $event.isGroup)"
       ></ai-rule-builder-header>
-      <ng-container *ngFor="let rule of tree.rules">
+      <ng-container *ngFor="let rule of tree.rules; let i = index">
         <ai-rule
           (addRule)="handleAddRule($event.id, $event.isGroup)"
           (removeRule)="handleRemoveRule($event)"
           [columns]="columns"
           [columnOperands]="columnOperands"
-          [(rule)]="rule"
+          [(rule)]="tree.rules[i]"
         ></ai-rule>
       </ng-container>
     </div>
   `,
 })
 export class RuleBuilderComponent {
-  @Input() columns: Array<ListItem> | Observable<Array<ListItem>> = [];
-  @Input() columnOperands: Array<ListItem> | Observable<Array<ListItem>> = [
+  @Input() columns: Array<any> = [];
+  @Input() columnOperands: Array<ListItem> = [
     { content: 'Not equal', id: 'ne', selected: false },
     { content: 'Less than', id: 'lt', selected: false },
     { content: 'Less than or equal to', id: 'ltoet', selected: false },

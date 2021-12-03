@@ -4,7 +4,6 @@ import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/co
   selector: 'ai-rule-builder-header',
   template: `
     <ai-rule-builder-group-logic
-      [id]="id"
       [selected]="groupLogic"
       (selectedChange)="groupLogicChange.emit($event)"
     >
@@ -25,12 +24,12 @@ import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/co
 })
 export class RuleBuilderHeaderComponent {
   @HostBinding('class.iot--rule-builder-header') ruleClass = true;
-  @Input() groupLogic: string;
+  @Input() groupLogic: 'any' | 'all';
   @Output() groupLogicChange = new EventEmitter();
 
   @Output() removeRule = new EventEmitter<string>();
 
-  @Output() addRule = new EventEmitter<{ id: string; isGroup: boolean }>();
+  @Output() addRule = new EventEmitter<{ id?: string; isGroup?: boolean }>();
 
   constructor() {}
 }

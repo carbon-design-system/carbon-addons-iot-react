@@ -7,13 +7,13 @@ import { ListItem } from 'carbon-components-angular';
     <ng-container *ngIf="isRuleGroup">
       <ai-rule-builder-group-logic [id]="rule.id" [(selected)]="rule.groupLogic">
       </ai-rule-builder-group-logic>
-      <ng-container *ngFor="let rule of rule.rules">
+      <ng-container *ngFor="let r of rule.rules; let i = index">
         <ai-rule
           (addRule)="addRule.emit($event)"
           (removeRule)="removeRule.emit($event)"
           [columns]="columns"
           [columnOperands]="columnOperands"
-          [(rule)]="rule"
+          [(rule)]="rule.rules[i]"
         ></ai-rule>
       </ng-container>
     </ng-container>
@@ -77,7 +77,7 @@ export class RuleComponent {
 
   @Output() removeRule = new EventEmitter<string>();
 
-  @Output() addRule = new EventEmitter<{ id: string; isGroup: boolean }>();
+  @Output() addRule = new EventEmitter<{ id: string; isGroup?: boolean }>();
 
   @HostBinding('class.iot--rule-builder-rule') get isRule() {
     return this.rule && !this.rule.groupLogic && !Array.isArray(this.rule.rules);
