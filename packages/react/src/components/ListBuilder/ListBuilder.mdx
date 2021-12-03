@@ -40,7 +40,7 @@ import { ListBuilder } from 'carbon-addons-iot-react';
 
 | Name                       | Type                        | Default        | Description                                                                                                                                            |
 | :------------------------- | :-------------------------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| allDefaultExpandedIds      | funarrayOfct                | []             | An array of the ids of the items in the "all list" that should be expanded.                                                                            |
+| allDefaultExpandedIds      | arrayOf                     | []             | An array of the ids of the items in the "all list" that should be expanded.                                                                            |
 | getAllowedDropIds          | funct                       | null           | Callback used to limit which items that should get drop targets rendered. Receives the id of the item that is being dragged and returns a list of ids. |
 | handleLoadMore             | func                        | undefined      | Callback function for when load more row is clicked (rowId) => {}                                                                                      |
 | hasItemsSearch             | boolean                     | true           | True if the items list should have search                                                                                                              |
@@ -76,7 +76,7 @@ import { ListBuilder } from 'carbon-addons-iot-react';
 | allListEmptyText                  | string   |                                          | Message shown if the all items list is empty           |
 | allListSearchPlaceholderText      | string   | 'Enter a value to search all items'      | Placeholder text for the search box for all items      |
 | allListTitle                      | function | (count) => `Items (${count} available)`  | Title for the list of all items                        |
-| clearSearchIconDescription        | string   | xxx                                      | Icon description label for the clear search icon       |
+| clearSearchIconDescription        | string   |                                          | Icon description label for the clear search icon       |
 | collapseIconDescription           | string   | 'Collapse'                               | Collapse icon description when using nested groups     |
 | expandIconDescription             | string   | 'Expand'                                 | Expand icon description when using nested groups       |
 | loadMoreButtonLabel               | string   | 'Load more...'                           | Label for the "Load more" button                       |
