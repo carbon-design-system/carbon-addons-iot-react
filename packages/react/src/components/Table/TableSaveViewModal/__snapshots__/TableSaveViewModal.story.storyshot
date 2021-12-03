@@ -89,7 +89,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby="save-view-modal-view-title-helper-text"
                   className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
@@ -536,7 +535,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby="save-view-modal-view-title-helper-text"
                   className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
@@ -752,7 +750,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby="save-view-modal-view-title-helper-text"
                   className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}

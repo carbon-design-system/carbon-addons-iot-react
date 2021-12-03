@@ -111,7 +111,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   aria-hidden={true}
                   className="bx--batch-actions iot--table-batch-actions"
                   data-testid="basicCardStory-table-table-toolbar-batch-actions"
-                  onScroll={[Function]}
                 >
                   <div
                     className="bx--batch-summary"

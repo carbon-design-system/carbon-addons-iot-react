@@ -157,6 +157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   4
                 </span>
                 <div
+                  aria-hidden={true}
                   className="bx--tag__close-icon"
                   disabled={false}
                   onClick={[Function]}
