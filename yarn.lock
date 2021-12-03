@@ -9796,10 +9796,10 @@ capture-exit@^2.0.0:
   dependencies:
     rsvp "^4.8.4"
 
-carbon-components-angular@4.53.5:
-  version "4.53.5"
-  resolved "https://registry.yarnpkg.com/carbon-components-angular/-/carbon-components-angular-4.53.5.tgz#74c326bdc549cbb6392f560aedd3097b98f25883"
-  integrity sha512-aZ9svVVlqmBKhC9pFveG0jCtPC2SzHHwN1jXcH2HFBGyUDCrRJhDzq8rehc4jqVY56p7gwAuenslPIqoSY2ODA==
+carbon-components-angular@4.56.2:
+  version "4.56.2"
+  resolved "https://registry.yarnpkg.com/carbon-components-angular/-/carbon-components-angular-4.56.2.tgz#26b1480ea51a5af598943cb4816b3fca12238ae1"
+  integrity sha512-HT6rvVURLAhbxdR140gkWaLHuvix6proTt4Sk4ORzKdeH3TOa+Djn4I7c9RReLlATVH1TZfDREqB80tMn8hmoA==
   dependencies:
     "@carbon/icon-helpers" "10.9.0"
     "@carbon/icons" "10.20.0"
@@ -9833,19 +9833,20 @@ carbon-components-react@7.48.1:
     wicg-inert "^3.1.1"
     window-or-global "^1.0.1"
 
-carbon-components@10.20.0:
-  version "10.20.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.20.0.tgz#3a927ad4f566c5dc263d32c257269c74a3ab23cc"
-  integrity sha512-MysxXg4/DpDt9GJPV3zmxi9X6HyGxr7DyROvVjf4SCyYrBqTeLOoajd3sbPhKxPjDdRIyqEb2roLq5DbbtazLg==
-  dependencies:
-    flatpickr "4.6.1"
-    lodash.debounce "^4.0.8"
-    warning "^3.0.0"
-
 carbon-components@10.40.0:
   version "10.40.0"
   resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.40.0.tgz#59c339dd964624cd07802dc695ceed6f32a07ef7"
   integrity sha512-tIc0qHVLilWCelkH56al4ILwZRA4AbbwJEFt0mnGtefmgQ3O1UJLm5/ybp7VnWeHwUnip7PljHSDwHUzQcj5zg==
+  dependencies:
+    "@carbon/telemetry" "0.0.0-alpha.6"
+    flatpickr "4.6.1"
+    lodash.debounce "^4.0.8"
+    warning "^3.0.0"
+
+carbon-components@10.47.0:
+  version "10.47.0"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.47.0.tgz#fbc984531e3abe9d072dc88b371bd5bb397c2b0d"
+  integrity sha512-ThjNOMUL6kFgMORvLII76WMGD4VEqgSA+wft5AK9imhsAIFP/54LxzAH+FSpZxP+VA0FjbunUUIv3pKOodedbA==
   dependencies:
     "@carbon/telemetry" "0.0.0-alpha.6"
     flatpickr "4.6.1"
@@ -24314,24 +24315,10 @@ sass@1.32.6, sass@^1.32.5:
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
-sass@1.32.7:
-  version "1.32.7"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.7.tgz#632a9df2b85dc4b346977fcaf2d5e6f2b7039fd8"
-  integrity sha512-C8Z4bjqGWnsYa11o8hpKAuoyFdRhrSHcYjCr+XAWVPSIQqC8mp2f5Dx4em0dKYehPzg5XSekmCjqJnEZbIls9A==
-  dependencies:
-    chokidar ">=2.0.0 <4.0.0"
-
-sass@1.42.1, sass@^1.42.1:
-  version "1.42.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.42.1.tgz#5ab17bebc1cb1881ad2e0c9a932c66ad64e441e2"
-  integrity sha512-/zvGoN8B7dspKc5mC6HlaygyCBRvnyzzgD5khiaCfglWztY99cYoiTUksVx11NlnemrcfH5CEaCpsUKoW0cQqg==
-  dependencies:
-    chokidar ">=3.0.0 <4.0.0"
-
-sass@^1.32.11:
-  version "1.32.11"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.11.tgz#b236b3ea55c76602c2ef2bd0445f0db581baa218"
-  integrity sha512-O9tRcob/fegUVSIV1ihLLZcftIOh0AF1VpKgusUfLqnb2jQ0GLDwI5ivv1FYWivGv8eZ/AwntTyTzjcHu0c/qw==
+sass@^1.42.1:
+  version "1.43.4"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.43.4.tgz#68c7d6a1b004bef49af0d9caf750e9b252105d1f"
+  integrity sha512-/ptG7KE9lxpGSYiXn7Ar+lKOv37xfWsZRtFYal2QHNigyVQDx685VFT/h7ejVr+R8w7H4tmUgtulsKl5YpveOg==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
 

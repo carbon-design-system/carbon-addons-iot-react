@@ -17,6 +17,7 @@
   - [☢️ Advanced Filtering Experimental](#%EF%B8%8F-advanced-filtering-experimental)
 - [Pagination](#pagination)
 - [Batch actions](#batch-actions)
+- [Toolbar actions](#toolbar-actions)
 - [Aggregation](#aggregation)
 - [Row data editing](#row-data-editing)
 - [Column customization](#column-customization)
@@ -961,6 +962,68 @@ the following props:
 />
 ```
 
+## Toolbar actions
+
+You can add other actions to the toolbar overflow menu by using the toolbarActions prop on the view.toolbar.
+When clicking on an action it will trigger the `onApplyToolbarAction` callback passing the object
+used to create the action. If `toolbarActions` is a function, it can return an array of objects
+representing the toolbarActions and these will be rendered dynamically when the overflow menu is opened.
+
+The `isOverflow` prop will force the item to appear in the overflow menu, but by default it will
+appear as another button in the toolbar.
+
+```jsx
+<Table
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    toolbar: {
+      onApplyToolbarAction: (actionObject) => {},
+    },
+  }}
+  view={{
+    toolbar: {
+      toolbarActions: [
+        {
+          id: 'edit',
+          labelText: 'Edit',
+          // can be a handful of included icons
+          renderIcon: 'edit',
+          disabled: true,
+          isOverflow: true,
+        },
+        // this item will appear in the toolbar, not the overflow menu, because it doesn't have
+        // isOverflow:true
+        {
+          id: 'toggle',
+          labelText: 'Toggle something',
+          // can be an icon directly from @carbon/icons-react
+          renderIcon: ViewOff16,
+          // force this item to show in an active state
+          isActive: true,
+        },
+        {
+          id: 'delete',
+          labelText: 'Delete',
+          isDelete: true,
+          hasDivider: true,
+          // can be a function
+          renderIcon: () => <TrashCan16 aria-label="Delete" />,
+          isOverflow: true,
+        },
+        {
+          id: 'hidden',
+          labelText: 'Hidden',
+          hidden: true,
+          isOverflow: true,
+        },
+      ],
+    },
+  }}
+/>
+```
+
 ## Aggregation
 
 The table can sum columns and show their aggregate total in a footer. A custom value can be passed, a function to sum the rows, or a default sum function will be provided. The `onToggleAggregations` prop passed to `actions.toolbar` serves as a callback to show or hide the the aggregations row in the bottom by changing the `aggregations.isHidden` prop.
@@ -1366,6 +1429,16 @@ import TableColumnCustomizationModalContent from './TableColumnCustomizationModa
 | toolbar.search.onExpand                          | func                             |           |                                                                                                                                                     |
 | toolbar.isDisabled                               | bool                             |           | Disable the toolbar                                                                                                                                 |
 | toolbar.rowEditBarButtons                        | node                             |           | buttons to be shown with when activeBar is 'rowEdit'                                                                                                |
+| toolbar.toolbarActions                           | arrayOf(object)                  |           | An array of objects for adding actions to the overflow menu in the toolbar                                                                          |
+| toolbar.toolbarActions[].id                      | string                           |           | the id of this action                                                                                                                               |
+| toolbar.toolbarActions[].labelText               | string                           |           | The text to display in the overflow menu                                                                                                            |
+| toolbar.toolbarActions[].hidden                  | bool                             |           | This will hide this item from the menu                                                                                                              |
+| toolbar.toolbarActions[].disabled                | bool                             |           | This will show the item, but it will be disabled                                                                                                    |
+| toolbar.toolbarActions[].isDelete                | bool                             |           | Show the item, and turn the background red on hover                                                                                                 |
+| toolbar.toolbarActions[].hasDivider              | bool                             |           | Show a divider at the top of this action item                                                                                                       |
+| toolbar.toolbarActions[].renderIcon              | node, func, string               |           | Can be a string of a handful of included icons, a function to render an icon, or an icon element                                                    |
+| toolbar.toolbarActions[].isActive                | bool                             | false     | used when the action is not in the overflow menu to show it is in active state                                                                      |
+| toolbar.toolbarActions[].isOverflow              | bool                             | false     | Force this item to appear in the overflow menu                                                                                                      |
 | table                                            | object                           |           |                                                                                                                                                     |
 | table.isSelectAllSelected                        | bool                             |           | If true, the select all option is checked                                                                                                           |
 | table.isSelectAllIndeterminate                   | bool                             |           |                                                                                                                                                     |
@@ -1426,6 +1499,7 @@ import TableColumnCustomizationModalContent from './TableColumnCustomizationModa
 | toolbar.onCancelAdvancedFilter  | func   |         | Fired when then 'Cancel' button is clicked in the advanced filter flyout menu                                                                                                                                   |
 | toolbar.onChangeAdvancedFilter  | func   |         | Fired when an advanced filter is selected or removed.                                                                                                                                                           |
 | toolbar.onToggleAggregations    | func   |         | Fired when the "Toggle aggregations" option is clicked from the overflow menu in the table toolbar                                                                                                              |
+| toolbar.onApplyToolbarAction    | func   |         | Fired when clicking on toolbarActions in the table toolbar                                                                                                                                                      |
 | table                           | object |         |                                                                                                                                                                                                                 |
 | table.onRowSelected             | func   |         |                                                                                                                                                                                                                 |
 | table.onRowClicked              | func   |         |                                                                                                                                                                                                                 |

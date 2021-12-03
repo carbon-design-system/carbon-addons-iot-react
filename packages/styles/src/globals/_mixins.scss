@@ -1,4 +1,5 @@
 @import '../vendor/carbon-components/scss/globals/scss/mixins';
+@import 'vars';
 
 @mixin multiline-text-overflow($max-lines: 3, $line-height-rem: 1) {
   overflow: hidden;
@@ -39,5 +40,23 @@
   button:last-of-type {
     border-top-#{$last-button-side}-radius: $border-radius;
     border-bottom-#{$last-button-side}-radius: $border-radius;
+  }
+}
+
+@mixin list-box-menu-fits-content() {
+  .#{$prefix}--list-box__menu {
+    width: fit-content;
+    min-width: 100%;
+  }
+}
+
+@mixin list-box-menu-flip-horizontal() {
+  .#{$prefix}--list-box__menu {
+    left: unset;
+    right: 0;
+    [dir='rtl'] & {
+      left: 0;
+      right: unset;
+    }
   }
 }

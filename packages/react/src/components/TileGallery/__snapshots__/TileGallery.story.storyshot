@@ -201,7 +201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-1610"
+                    aria-controls="accordion-item-1571"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -232,7 +232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-1610"
+                    id="accordion-item-1571"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -326,8 +326,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -474,8 +472,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -594,8 +590,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -645,7 +639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-1611"
+                    aria-controls="accordion-item-1572"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -676,7 +670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-1611"
+                    id="accordion-item-1572"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -770,8 +764,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -918,8 +910,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -1038,8 +1028,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -1193,8 +1181,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1300,8 +1286,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1550,7 +1534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-1617"
+                    aria-controls="accordion-item-1578"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1581,7 +1565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-1617"
+                    id="accordion-item-1578"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -1675,8 +1659,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -1752,7 +1734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-1614"
+              aria-controls="accordion-item-1575"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -1783,7 +1765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-1614"
+              id="accordion-item-1575"
             >
               <div
                 className="tile-gallery--section--items"
@@ -1888,8 +1870,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2015,8 +1995,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2170,8 +2148,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2221,7 +2197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-1615"
+              aria-controls="accordion-item-1576"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -2252,7 +2228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-1615"
+              id="accordion-item-1576"
             >
               <div
                 className="tile-gallery--section--items"
@@ -2381,8 +2357,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2515,7 +2489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1612"
+                aria-controls="accordion-item-1573"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2546,7 +2520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1612"
+                id="accordion-item-1573"
               >
                 <div
                   className="tile-gallery--section--items"
@@ -2651,8 +2625,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2778,8 +2750,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2933,8 +2903,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2984,7 +2952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1613"
+                aria-controls="accordion-item-1574"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -3015,7 +2983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1613"
+                id="accordion-item-1574"
               >
                 <div
                   className="tile-gallery--section--items"
@@ -3144,8 +3112,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"

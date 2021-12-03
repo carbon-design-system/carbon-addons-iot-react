@@ -27,6 +27,7 @@ import {
   TableColumnGroupPropType,
   TableOrderingPropType,
   TableFiltersPropType,
+  TableToolbarActionsPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -73,7 +74,7 @@ const propTypes = {
     hasFastSearch: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
-    /** True if the rows shuld be expandable */
+    /** True if the rows should be expandable */
     hasRowExpansion: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
@@ -207,7 +208,7 @@ const propTypes = {
       PropTypes.shape({
         /** Unique id for particular filter */
         filterId: PropTypes.string.isRequired,
-        /** Text for main tilte of page */
+        /** Text for main title of page */
         filterTitleText: PropTypes.string.isRequired,
         filterRules: RuleGroupPropType.isRequired,
       })
@@ -233,6 +234,8 @@ const propTypes = {
       isDisabled: PropTypes.bool,
       /** buttons to be shown with when activeBar is 'rowEdit' */
       rowEditBarButtons: PropTypes.node,
+      /** extra actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
+      toolbarActions: TableToolbarActionsPropType,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -258,7 +261,7 @@ const propTypes = {
       multiSortModal: PropTypes.shape({
         /**
          * The anticipatedColumn is used to add the most recently click columnId to the UI of the
-         * MultiSort modal. This gives the user a better experience by pre-emptively adding the column
+         * MultiSort modal. This gives the user a better experience by preemptively adding the column
          * they clicked multi-sort on to the multisort modal without changing state. They still have to
          * click "Sort" to save it, or can click 'Cancel' or the 'X' to clear it.
          */
@@ -282,7 +285,7 @@ const propTypes = {
       onToggleFilter: PropTypes.func,
       onShowRowEdit: PropTypes.func,
       onToggleColumnSelection: PropTypes.func,
-      /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
+      /** Specify a callback for when the user clicks toolbar button to clear all filters. Receives a parameter of the current filter values for each column */
       onClearAllFilters: PropTypes.func,
       onCancelBatchAction: PropTypes.func,
       onApplyBatchAction: PropTypes.func,
@@ -304,6 +307,8 @@ const propTypes = {
       onChangeAdvancedFilter: PropTypes.func,
       /** fired when 'Toggle aggregations' is clicked in the overflow menu */
       onToggleAggregations: PropTypes.func,
+      /** fired when clicking a 'toolbarAction' in the table toolbar */
+      onApplyToolbarAction: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -428,12 +433,14 @@ export const defaultProps = (baseProps) => ({
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
+      onApplyToolbarAction: defaultFunction('actions.toolbar.onApplyToolbarAction'),
       onRemoveAdvancedFilter: defaultFunction('actions.toolbar.onRemoveAdvancedFilter'),
       onCancelAdvancedFilter: defaultFunction('actions.toolbar.onCancelFilter'),
       onCreateAdvancedFilter: defaultFunction('actions.toolbar.onCreateAdvancedFilter'),
       onApplyAdvancedFilter: defaultFunction('actions.toolbar.onApplyAdvancedFilter'),
       onChangeAdvancedFilter: defaultFunction('actions.toolbar.onChangeAdvancedFilter'),
       onToggleAdvancedFilter: defaultFunction('actions.toolbar.onToggleAdvancedFilter'),
+
       // TODO: removed to mimic the current state of consumers in the wild
       // since they won't be adding this prop to any of their components
       // can be readded in V3.
@@ -558,14 +565,14 @@ const Table = (props) => {
   } = merge({}, defaultProps(props), props);
 
   // There is no way to access the current search value in the Table
-  // so we need to track that for the save view fuctionality.
+  // so we need to track that for the save view functionality.
   const searchValue = useRef(view?.toolbar?.search?.defaultValue);
 
   const initialRendering = useRef(true);
 
   // The save/load view functionality needs access to the latest view configuration
   // and also needs to know when the configuration has changed for the StatefulTable.
-  // This effect satifies both those needs.
+  // This effect satisfies both those needs.
   useDeepCompareEffect(() => {
     if (options.hasUserViewManagement && onUserViewModified) {
       if (!initialRendering.current) {
@@ -844,7 +851,8 @@ const Table = (props) => {
                 'onCreateAdvancedFilter',
                 'onChangeAdvancedFilter',
                 'onRemoveAdvancedFilter',
-                'onToggleAdvancedFilter'
+                'onToggleAdvancedFilter',
+                'onApplyToolbarAction'
               ),
               onToggleAggregations,
               onApplySearch: (value) => {
@@ -886,7 +894,8 @@ const Table = (props) => {
                 'activeBar',
                 'customToolbarContent',
                 'rowEditBarButtons',
-                'advancedFilterFlyoutOpen'
+                'advancedFilterFlyoutOpen',
+                'toolbarActions'
               ),
             }}
             data={data}

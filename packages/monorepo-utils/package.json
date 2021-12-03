@@ -1,6 +1,6 @@
 {
   "name": "ai-apps-monorepo-utils",
-  "version": "2.146.1-next.0",
+  "version": "2.147.0-next.72",
   "description": "Internal monorepo tools",
   "main": "index.js",
   "private": true,
@@ -11,7 +11,7 @@
     "fs-extra": "9.1.0",
     "glob": "7.1.6",
     "rimraf": "3.0.2",
-    "sass": "1.32.7"
+    "sass": "^1.42.1"
   },
   "author": "IBM",
   "license": "Apache-2.0"

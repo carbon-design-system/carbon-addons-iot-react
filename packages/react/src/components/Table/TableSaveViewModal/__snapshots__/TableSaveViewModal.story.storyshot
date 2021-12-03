@@ -89,6 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
+                  aria-describedby="save-view-modal-view-title-helper-text"
                   className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
@@ -110,7 +111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1540"
+                aria-controls="accordion-item-1501"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -141,7 +142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1540"
+                id="accordion-item-1501"
               >
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -153,7 +154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1541"
+                aria-controls="accordion-item-1502"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -184,7 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1541"
+                id="accordion-item-1502"
               >
                 <p>
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -535,6 +536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
+                  aria-describedby="save-view-modal-view-title-helper-text"
                   className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
@@ -750,6 +752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
+                  aria-describedby="save-view-modal-view-title-helper-text"
                   className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
