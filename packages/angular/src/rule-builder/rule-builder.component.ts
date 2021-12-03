@@ -68,7 +68,7 @@ export class RuleBuilderComponent {
    *   ]
    * }
    */
-  @Input() tree: any; // TODO
+  @Input() tree: any;
 
   constructor() {}
 

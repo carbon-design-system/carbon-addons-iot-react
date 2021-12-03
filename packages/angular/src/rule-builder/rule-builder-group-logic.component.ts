@@ -18,6 +18,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   `,
 })
 export class RuleBuilderGroupLogicComponent {
+  /**
+   * An array of options for the dropdown
+   *
+   * Each option is an object containing:
+   *
+   * `content` - the display value (you can use this for translation)
+   * `id` - the value used for selection, should be either `'all'` or `'any'`
+   * `selected` - set to `true` for the value selected by default ( by default it's `'all'`)
+   */
   @Input() anyAll = [
     { content: 'ALL', id: 'all', selected: true },
     { content: 'ANY', id: 'any', selected: false },
