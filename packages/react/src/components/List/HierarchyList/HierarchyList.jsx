@@ -52,6 +52,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     /** Text displayed in search bar */
     searchPlaceHolderText: PropTypes.string,
+    clearSearchIconDescription: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
     itemSelected: PropTypes.string,
@@ -143,9 +144,7 @@ const defaultProps = {
   onListUpdated: () => {},
   cancelMoveClicked: () => {},
   onExpandedChange: () => {},
-  itemWillMove: () => {
-    return true;
-  },
+  itemWillMove: () => true,
   className: null,
   items: [],
   searchId: null,
@@ -495,7 +494,7 @@ const HierarchyList = ({
 
   return (
     <>
-      {editingStyle ? (
+      {editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0 ? (
         <HierarchyListReorderModal
           open={showModal}
           items={items}

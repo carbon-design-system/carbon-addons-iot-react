@@ -158,7 +158,8 @@
       "src/components/Dashboard/CardRenderer.jsx",
       "src/components/MapCard/storyFiles/*.jsx",
       "src/components/Table/Table.test.helpers.jsx",
-      "src/components/Table/TablePropTypes.js"
+      "src/components/Table/TablePropTypes.js",
+      "src/components/Table/TableColumnCustomizationModal/tableColumnCustomizationTestUtils.js"
     ],
     "branches": 90,
     "lines": 90,
@@ -339,7 +340,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.147.0-next.74",
+  "version": "2.147.0-next.75",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2"
