@@ -741,8 +741,13 @@ describe('HierarchyList', () => {
 
     fireEvent.click(expandIcons[1]);
 
+    // Make a selection to show the "Move button"
+    fireEvent.click(screen.queryByTestId('New York Yankees_Gary Sanchez-checkbox'));
+    // Open the reorder modal
+    userEvent.click(screen.getByText('Move'));
+
     userEvent.click(screen.queryByText('Save'));
-    expect(onSelect).not.toHaveBeenCalled();
+
     expect(onListUpdated).not.toHaveBeenCalled();
   });
 
