@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ListItem } from 'carbon-components-angular';
-import { Observable } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { I18n, ListItem } from 'carbon-components-angular';
 import {
   filterRulesById,
   findRulePathById,
@@ -29,7 +28,7 @@ import {
     </div>
   `,
 })
-export class RuleBuilderComponent {
+export class RuleBuilderComponent implements OnInit {
   @Input() columns: Array<any> = [];
   @Input() columnOperands: Array<ListItem> = [
     { content: 'Not equal', id: 'ne', selected: false },
@@ -70,7 +69,23 @@ export class RuleBuilderComponent {
    */
   @Input() tree: any;
 
-  constructor() {}
+  constructor(protected i18n: I18n) {}
+
+  ngOnInit() {
+    this.updateI18nTranslationString();
+  }
+
+  updateI18nTranslationString() {
+    this.i18n.setLocale('en', {
+      RULE_BUILDER: {
+        ADD_RULE: 'Add rule',
+        ADD_NEW_RULE: 'Add new rule',
+        ADD_GROUP: 'Add group',
+        ADD_NEW_GROUP: 'Add new rule group',
+        OF_THE_FOLLOWING: 'of the following are true',
+      },
+    } as any);
+  }
 
   handleAddRule(id: string, isGroup) {
     const generate = isGroup ? generateRuleGroup : generateRule;

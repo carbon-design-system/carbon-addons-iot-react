@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { I18n } from 'carbon-components-angular';
 
 @Component({
   selector: 'ai-rule-builder-group-logic',
@@ -14,10 +15,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
       </ibm-dropdown>
     </div>
 
-    <span>of the following are true</span>
+    <span>{{ ofTheFollowingLabel }}</span>
   `,
 })
-export class RuleBuilderGroupLogicComponent {
+export class RuleBuilderGroupLogicComponent implements OnInit {
   /**
    * An array of options for the dropdown
    *
@@ -33,7 +34,13 @@ export class RuleBuilderGroupLogicComponent {
   ];
 
   @Input() selected: 'any' | 'all' = 'all';
+  @Input() ofTheFollowingLabel = '';
   @Output() selectedChange = new EventEmitter();
 
-  constructor() {}
+  constructor(protected i18n: I18n) {}
+
+  ngOnInit() {
+    this.ofTheFollowingLabel =
+      this.ofTheFollowingLabel || this.i18n.get().RULE_BUILDER.OF_THE_FOLLOWING;
+  }
 }
