@@ -506,6 +506,7 @@ Map {
         "toolbar": Object {
           "onApplyAdvancedFilter": [Function],
           "onApplyBatchAction": [Function],
+          "onApplyToolbarAction": [Function],
           "onCancelAdvancedFilter": [Function],
           "onCancelBatchAction": [Function],
           "onChangeAdvancedFilter": [Function],
@@ -581,6 +582,7 @@ Map {
         "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle aggregations",
         "toolbarLabelAria": undefined,
+        "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "id": null,
       "lightweight": undefined,
@@ -754,6 +756,9 @@ Map {
                     "type": "func",
                   },
                   "onApplySearch": Object {
+                    "type": "func",
+                  },
+                  "onApplyToolbarAction": Object {
                     "type": "func",
                   },
                   "onCancelAdvancedFilter": Object {
@@ -1298,6 +1303,9 @@ Map {
             "toolbarLabelAria": Object {
               "type": "string",
             },
+            "toolbarTooltipLabel": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -1613,9 +1621,7 @@ Map {
                   "isItemPerPageHidden": Object {
                     "type": "bool",
                   },
-                  "maxPages": Object {
-                    "type": "number",
-                  },
+                  "maxPages": [Function],
                   "page": Object {
                     "type": "number",
                   },
@@ -1957,6 +1963,121 @@ Map {
                       },
                     ],
                     "type": "shape",
+                  },
+                  "toolbarActions": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "func",
+                        },
+                        Object {
+                          "args": Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "disabled": Object {
+                                    "type": "bool",
+                                  },
+                                  "hasDivider": Object {
+                                    "type": "bool",
+                                  },
+                                  "hidden": Object {
+                                    "type": "bool",
+                                  },
+                                  "id": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "isActive": Object {
+                                    "type": "bool",
+                                  },
+                                  "isDelete": Object {
+                                    "type": "bool",
+                                  },
+                                  "isOverflow": Object {
+                                    "type": "bool",
+                                  },
+                                  "labelText": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "renderIcon": Object {
+                                    "args": Array [
+                                      Array [
+                                        Object {
+                                          "args": Array [
+                                            Object {
+                                              "height": Object {
+                                                "type": "string",
+                                              },
+                                              "svgData": Object {
+                                                "args": Array [
+                                                  Object {
+                                                    "type": Object {
+                                                      "args": Array [
+                                                        Array [
+                                                          "svg",
+                                                        ],
+                                                      ],
+                                                      "type": "oneOf",
+                                                    },
+                                                  },
+                                                ],
+                                                "isRequired": true,
+                                                "type": "shape",
+                                              },
+                                              "viewBox": Object {
+                                                "isRequired": true,
+                                                "type": "string",
+                                              },
+                                              "width": Object {
+                                                "type": "string",
+                                              },
+                                            },
+                                          ],
+                                          "type": "shape",
+                                        },
+                                        Object {
+                                          "args": Array [
+                                            Array [
+                                              "caretUp",
+                                              "caretDown",
+                                              "edit",
+                                              "close",
+                                              "checkmark",
+                                              "warning",
+                                              "arrowUp",
+                                              "arrowDown",
+                                              "user",
+                                              "info",
+                                              "help",
+                                            ],
+                                          ],
+                                          "type": "oneOf",
+                                        },
+                                        Object {
+                                          "type": "node",
+                                        },
+                                        Object {
+                                          "type": "object",
+                                        },
+                                        Object {
+                                          "type": "func",
+                                        },
+                                      ],
+                                    ],
+                                    "type": "oneOfType",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                          ],
+                          "type": "arrayOf",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                 },
               ],
@@ -3729,6 +3850,7 @@ Map {
       "defaultSelectedId": null,
       "editingStyle": null,
       "emptyState": "No list items to show",
+      "expandedIds": Array [],
       "getAllowedDropIds": null,
       "hasDeselection": true,
       "hasMultiSelect": false,
@@ -3754,6 +3876,7 @@ Map {
       "itemWillMove": [Function],
       "items": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": [Function],
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
@@ -3811,6 +3934,14 @@ Map {
         ],
         "type": "oneOfType",
       },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "getAllowedDropIds": Object {
         "type": "func",
       },
@@ -3833,6 +3964,9 @@ Map {
               "type": "string",
             },
             "cancel": Object {
+              "type": "string",
+            },
+            "clearSearchIconDescription": Object {
               "type": "string",
             },
             "close": Object {
@@ -3961,6 +4095,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onListUpdated": Object {
         "type": "func",
@@ -21523,6 +21660,9 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "clearSearchIconDescription": Object {
+              "type": "string",
+            },
             "close": Object {
               "type": "string",
             },
@@ -24553,28 +24693,79 @@ Map {
   },
   "ListBuilder" => Object {
     "defaultProps": Object {
+      "allDefaultExpandedIds": Array [],
+      "getAllowedDropIds": null,
+      "handleLoadMore": undefined,
+      "hasItemsSearch": true,
+      "hasReset": false,
+      "hasSelectedItemsSearch": true,
       "i18n": Object {
         "addLabel": "Add item to list",
         "allListSearchPlaceholderText": "Enter a value to search all items",
         "allListTitle": [Function],
-        "close": "Close",
-        "expand": "Expand",
-        "removeLabel": "Remove item from list",
+        "collapseIconDescription": "Collapse",
+        "expandIconDescription": "Expand",
+        "loadMoreButtonLabel": "Load more...",
+        "removeIconDescription": "Remove item from list",
+        "resetLabel": "Reset",
         "selectedListSearchPlaceholderText": "Enter a value to search selected items",
         "selectedListTitle": [Function],
       },
+      "isLargeRow": false,
       "itemCount": null,
+      "itemWillMove": [Function],
       "items": Array [],
+      "itemsSearchValue": null,
+      "loadingMoreIds": Array [],
+      "lockedIds": Array [],
       "onAdd": null,
+      "onItemsSearchChange": null,
       "onRemove": null,
+      "onReset": [Function],
+      "onSelectedListReordered": [Function],
+      "removeIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "selectedDefaultExpandedIds": Array [],
+      "selectedEditingStyle": undefined,
       "selectedItems": Array [],
+      "showLoaderInAvailableList": false,
+      "showLoaderInSelectedList": false,
       "testId": "list-builder",
+      "useCheckboxes": false,
     },
     "propTypes": Object {
+      "allDefaultExpandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getAllowedDropIds": Object {
+        "type": "func",
+      },
+      "handleLoadMore": Object {
+        "type": "func",
+      },
+      "hasItemsSearch": Object {
+        "type": "bool",
+      },
+      "hasReset": Object {
+        "type": "bool",
+      },
+      "hasSelectedItemsSearch": Object {
+        "type": "bool",
+      },
       "i18n": Object {
         "args": Array [
           Object {
             "addLabel": Object {
+              "type": "string",
+            },
+            "allListEmptyText": Object {
               "type": "string",
             },
             "allListSearchPlaceholderText": Object {
@@ -24583,13 +24774,27 @@ Map {
             "allListTitle": Object {
               "type": "func",
             },
-            "close": Object {
+            "clearSearchIconDescription": Object {
               "type": "string",
             },
-            "expand": Object {
+            "close": [Function],
+            "collapseIconDescription": Object {
               "type": "string",
             },
-            "removeLabel": Object {
+            "expand": [Function],
+            "expandIconDescription": Object {
+              "type": "string",
+            },
+            "loadMoreButtonLabel": Object {
+              "type": "string",
+            },
+            "removeIconDescription": Object {
+              "type": "string",
+            },
+            "resetLabel": Object {
+              "type": "string",
+            },
+            "selectedListEmptyText": Object {
               "type": "string",
             },
             "selectedListSearchPlaceholderText": Object {
@@ -24602,8 +24807,14 @@ Map {
         ],
         "type": "shape",
       },
+      "isLargeRow": Object {
+        "type": "bool",
+      },
       "itemCount": Object {
         "type": "number",
+      },
+      "itemWillMove": Object {
+        "type": "func",
       },
       "items": Object {
         "args": Array [
@@ -24647,11 +24858,102 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "itemsSearchValue": Object {
+        "type": "string",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "lockedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "onAdd": Object {
+        "type": "func",
+      },
+      "onItemsSearchChange": Object {
         "type": "func",
       },
       "onRemove": Object {
         "type": "func",
+      },
+      "onReset": Object {
+        "type": "func",
+      },
+      "onSelectedListReordered": Object {
+        "type": "func",
+      },
+      "removeIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "height": Object {
+                    "type": "string",
+                  },
+                  "svgData": Object {
+                    "args": Array [
+                      Object {
+                        "type": Object {
+                          "args": Array [
+                            Array [
+                              "svg",
+                            ],
+                          ],
+                          "type": "oneOf",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "shape",
+                  },
+                  "viewBox": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                  "width": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            Object {
+              "type": "object",
+            },
+            Object {
+              "type": "element",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "selectedDefaultExpandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "selectedEditingStyle": Object {
+        "args": Array [
+          Array [
+            "single",
+            "single-nesting",
+          ],
+        ],
+        "type": "oneOf",
       },
       "selectedItems": Object {
         "args": Array [
@@ -24695,7 +24997,317 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "showLoaderInAvailableList": Object {
+        "type": "bool",
+      },
+      "showLoaderInSelectedList": Object {
+        "type": "bool",
+      },
       "testID": [Function],
+      "testId": Object {
+        "type": "string",
+      },
+      "useCheckboxes": Object {
+        "type": "bool",
+      },
+    },
+  },
+  "TableColumnCustomizationModal" => Object {
+    "defaultProps": Object {
+      "error": undefined,
+      "groupMapping": Array [],
+      "hasLoadMore": false,
+      "hasVisibilityToggle": false,
+      "i18n": Object {
+        "availableColumnsEmptyText": "No available columns to show",
+        "availableColumnsLabel": "Available columns",
+        "cancelButtonLabel": "Cancel",
+        "clearSearchIconDescription": "Clear search input",
+        "closeIconDescription": "Close",
+        "collapseIconDescription": "Collapse",
+        "expandIconDescription": "Expand",
+        "hideIconDescription": "Column is visible, click to hide.",
+        "loadMoreButtonLabel": "Load more...",
+        "modalBody": "Select the available columns to be displayed on the table. Drag the selected columns to reorder them.",
+        "modalTitle": "Customize columns",
+        "removeIconDescription": "Remove from list",
+        "resetButtonLabel": "Reset",
+        "saveButtonLabel": "Save",
+        "searchPlaceholder": "Search",
+        "selectedColumnsEmptyText": "No columns selected",
+        "selectedColumnsLabel": "Selected columns",
+        "showIconDescription": "Column is hidden, click to show.",
+      },
+      "isPrimaryButtonDisabled": false,
+      "loadingMoreIds": Array [],
+      "onChange": [Function],
+      "onClearError": [Function],
+      "onLoadMore": [Function],
+      "onReset": [Function],
+      "overrides": undefined,
+      "pinnedColumnId": undefined,
+      "primaryValue": "name",
+      "secondaryValue": undefined,
+      "showLoaderInAvailableList": false,
+      "showLoaderInSelectedList": false,
+      "testId": "table-column-customization-modal",
+    },
+    "propTypes": Object {
+      "availableColumns": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "groupMapping": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "columnIds": Object {
+                  "args": Array [
+                    Object {
+                      "type": "string",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "hasLoadMore": Object {
+        "type": "bool",
+      },
+      "hasVisibilityToggle": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "availableColumnsEmptyText": Object {
+              "type": "string",
+            },
+            "availableColumnsLabel": Object {
+              "type": "string",
+            },
+            "cancelButtonLabel": Object {
+              "type": "string",
+            },
+            "clearSearchIconDescription": Object {
+              "type": "string",
+            },
+            "closeIconDescription": Object {
+              "type": "string",
+            },
+            "collapseIconDescription": Object {
+              "type": "string",
+            },
+            "expandIconDescription": Object {
+              "type": "string",
+            },
+            "hideIconDescription": Object {
+              "type": "string",
+            },
+            "loadMoreButtonLabel": Object {
+              "type": "string",
+            },
+            "modalBody": Object {
+              "type": "string",
+            },
+            "modalTitle": Object {
+              "type": "string",
+            },
+            "removeIconDescription": Object {
+              "type": "string",
+            },
+            "resetButtonLabel": Object {
+              "type": "string",
+            },
+            "saveButtonLabel": Object {
+              "type": "string",
+            },
+            "searchPlaceholder": Object {
+              "type": "string",
+            },
+            "selectedColumnsEmptyText": Object {
+              "type": "string",
+            },
+            "selectedColumnsLabel": Object {
+              "type": "string",
+            },
+            "showIconDescription": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "initialOrdering": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "columnId": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isHidden": Object {
+                  "type": "bool",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
+      "isPrimaryButtonDisabled": Object {
+        "type": "bool",
+      },
+      "loadingMoreIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "onClearError": Object {
+        "type": "func",
+      },
+      "onClose": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onLoadMore": Object {
+        "type": "func",
+      },
+      "onReset": Object {
+        "type": "func",
+      },
+      "onSave": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "open": Object {
+        "isRequired": true,
+        "type": "bool",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "composedModal": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "listBuilder": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "pinnedColumnId": Object {
+        "type": "string",
+      },
+      "primaryValue": Object {
+        "args": Array [
+          Array [
+            "id",
+            "name",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "secondaryValue": Object {
+        "args": Array [
+          Array [
+            "id",
+            "name",
+            undefined,
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "showLoaderInAvailableList": Object {
+        "type": "bool",
+      },
+      "showLoaderInSelectedList": Object {
+        "type": "bool",
+      },
       "testId": Object {
         "type": "string",
       },

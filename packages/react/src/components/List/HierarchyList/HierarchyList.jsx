@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'lodash/debounce';
-import isNil from 'lodash/isNil';
-import isEqual from 'lodash/isEqual';
+import { debounce, isNil, isEqual } from 'lodash-es';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
@@ -31,6 +29,8 @@ const propTypes = {
     EditingStyle.SingleNesting,
     EditingStyle.MultipleNesting,
   ]),
+  /** an array of user controlled expanded ids */
+  expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** List heading */
   title: PropTypes.string,
   /** Determines whether the search function is enabled */
@@ -52,6 +52,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     /** Text displayed in search bar */
     searchPlaceHolderText: PropTypes.string,
+    clearSearchIconDescription: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
     itemSelected: PropTypes.string,
@@ -85,8 +86,10 @@ const propTypes = {
   /** Item ids to be pre-expanded */
   defaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
   /** callback used to limit which items that should get drop targets rendered.
-   * recieves the id of the item that is being dragged and returns a list of ids. */
+   * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
+  /** a callback used to notify when the expanded items in the list change. */
+  onExpandedChange: PropTypes.func,
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
   /** callback function returned a modified list */
@@ -107,6 +110,7 @@ const propTypes = {
 
 const defaultProps = {
   editingStyle: null,
+  expandedIds: [],
   title: null,
   hasSearch: false,
   hasPagination: true,
@@ -139,9 +143,8 @@ const defaultProps = {
   getAllowedDropIds: null,
   onListUpdated: () => {},
   cancelMoveClicked: () => {},
-  itemWillMove: () => {
-    return true;
-  },
+  onExpandedChange: () => {},
+  itemWillMove: () => true,
   className: null,
   items: [],
   searchId: null,
@@ -226,6 +229,7 @@ const reduceItems = (items) =>
 
 const HierarchyList = ({
   editingStyle,
+  expandedIds: expandedIdsProp,
   title,
   hasSearch,
   hasPagination,
@@ -243,6 +247,7 @@ const HierarchyList = ({
   defaultSelectedId,
   defaultExpandedIds,
   getAllowedDropIds,
+  onExpandedChange,
   onSelect,
   onListUpdated,
   itemWillMove,
@@ -253,14 +258,15 @@ const HierarchyList = ({
   emptyState,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-
-  const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
+  const initialExpandedIds = expandedIdsProp?.length > 0 ? expandedIdsProp : defaultExpandedIds;
+  const [expandedIds, setExpandedIds] = useState(initialExpandedIds);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const isFirstRender = useRef(true);
   const [indeterminateIds, setIndeterminateIds] = useState([]);
 
   // these are used in filtering, and since items may contain nodes or react elements
@@ -268,6 +274,7 @@ const HierarchyList = ({
   // the basics need for filtering checks and memoize them for use in the useEffect below
   const itemsStrippedOfNodeElements = useMemo(() => reduceItems(items), [items]);
   const previousItems = usePrevious(items);
+  const previousExpandedIds = usePrevious(expandedIds);
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
       setFilteredItems(items);
@@ -276,6 +283,33 @@ const HierarchyList = ({
     }
   }, [items, previousItems]);
 
+  /**
+   * Effect to change the currently expanded hierarchies. Ignore it on the first render to allow
+   * defaultExpandedIds to work, but fire it on all other changes
+   */
+  useEffect(() => {
+    if (!isFirstRender.current) {
+      setExpandedIds(expandedIdsProp);
+    }
+    isFirstRender.current = false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [expandedIdsProp]);
+
+  /**
+   * effect to trigger calling the onExpandedChange callback. Ignore it on the initial render
+   * when previousExpandedIds is undefined, but fire it on every change afterward
+   */
+  useEffect(() => {
+    if (previousExpandedIds !== undefined && !isEqual(previousExpandedIds, expandedIds)) {
+      onExpandedChange(expandedIds);
+    }
+  }, [expandedIds, onExpandedChange, previousExpandedIds]);
+
+  /**
+   * Effect to handle indeterminate state for parent checkboxes. If we're in an editMode and
+   * the selected ids changes, fire this effect to determine the currently indeterminate ids
+   * in the list.
+   */
   useEffect(() => {
     if (editingStyle) {
       setIndeterminateIds(handleEditModeIndeterminateIds(items, editModeSelectedIds));
@@ -460,7 +494,7 @@ const HierarchyList = ({
 
   return (
     <>
-      {editingStyle ? (
+      {editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0 ? (
         <HierarchyListReorderModal
           open={showModal}
           items={items}

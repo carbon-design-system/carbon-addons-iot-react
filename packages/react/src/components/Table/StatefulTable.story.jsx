@@ -2,8 +2,7 @@ import React, { createElement, useMemo, useRef, useState } from 'react';
 import { boolean, text, select, array, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { SettingsAdjust16, TrashCan16 } from '@carbon/icons-react';
-import isEqual from 'lodash/isEqual';
-import assign from 'lodash/assign';
+import { isEqual, assign } from 'lodash-es';
 
 import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';

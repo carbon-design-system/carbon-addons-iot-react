@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen, within, waitFor } from '@testing-library/react';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 import userEvent from '@testing-library/user-event';
 
 import { sampleHierarchy } from '../List.story';
@@ -13,7 +13,7 @@ import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from
 const { iotPrefix } = settings;
 
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
-jest.mock('lodash/debounce', () => (fn) => fn);
+jest.mock('lodash-es/debounce', () => (fn) => fn);
 
 const getListItems = (num) =>
   Array(num)
@@ -26,6 +26,19 @@ const getListItems = (num) =>
 
 describe('HierarchyList', () => {
   const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
+
+  const getCloseButtonForTeam = (id) =>
+    within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).getByLabelText('Close');
+  const getExpandButtonForTeam = (id) =>
+    within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).getByLabelText('Expand');
+
+  const expectTeamToBeExpanded = (id) => {
+    expect(getCloseButtonForTeam(id)).toBeVisible();
+  };
+
+  const expectTeamNotToBeExpanded = (id) => {
+    expect(getExpandButtonForTeam(id)).toBeVisible();
+  };
 
   beforeEach(() => {
     // Mock the scroll function as its not implemented in jsdom
@@ -728,8 +741,13 @@ describe('HierarchyList', () => {
 
     fireEvent.click(expandIcons[1]);
 
+    // Make a selection to show the "Move button"
+    fireEvent.click(screen.queryByTestId('New York Yankees_Gary Sanchez-checkbox'));
+    // Open the reorder modal
+    userEvent.click(screen.getByText('Move'));
+
     userEvent.click(screen.queryByText('Save'));
-    expect(onSelect).not.toHaveBeenCalled();
+
     expect(onListUpdated).not.toHaveBeenCalled();
   });
 
@@ -872,6 +890,37 @@ describe('HierarchyList', () => {
     expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
   });
 
+  it('should force ids to be expanded when expandedIds is passed', () => {
+    const { rerender } = render(
+      <HierarchyList items={items} title="Force expanded ids" expandedIds={['Chicago White Sox']} />
+    );
+
+    expectTeamToBeExpanded('Chicago White Sox');
+
+    rerender(
+      <HierarchyList
+        items={items}
+        title="Force expanded ids"
+        expandedIds={['Chicago White Sox', 'New York Yankees']}
+      />
+    );
+
+    expectTeamToBeExpanded('Chicago White Sox');
+    expectTeamToBeExpanded('New York Yankees');
+
+    rerender(
+      <HierarchyList items={items} title="Force expanded ids" expandedIds={['Houston Astros']} />
+    );
+
+    expectTeamToBeExpanded('Houston Astros');
+    expectTeamNotToBeExpanded('Chicago White Sox');
+    expectTeamNotToBeExpanded('New York Yankees');
+
+    rerender(<HierarchyList items={items} title="Force expanded ids" expandedIds={[]} />);
+
+    expect(screen.queryByLabelText('Close')).toBeNull();
+  });
+
   it('should set indeterminate state on parent when a child is checked', () => {
     render(
       <HierarchyList
@@ -970,6 +1019,60 @@ describe('HierarchyList', () => {
     expect(screen.getByTitle('Item 5')).toBeVisible();
   });
 
+  it('should fire onExpandedChange when user expands or collapses hierarchies', () => {
+    const onExpandedChange = jest.fn();
+
+    const { rerender } = render(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        defaultExpandedIds={['Atlanta Braves']}
+        title="indeterminate Ids"
+        onExpandedChange={onExpandedChange}
+      />
+    );
+    expect(onExpandedChange).toHaveBeenCalledTimes(0);
+
+    userEvent.click(getCloseButtonForTeam('Atlanta Braves'));
+    expect(onExpandedChange).toHaveBeenCalledWith([]);
+    expect(onExpandedChange).toHaveBeenCalledTimes(1);
+    userEvent.click(getExpandButtonForTeam('Atlanta Braves'));
+    expect(onExpandedChange).toHaveBeenCalledWith(['Atlanta Braves']);
+    expect(onExpandedChange).toHaveBeenCalledTimes(2);
+
+    rerender(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        title="indeterminate Ids"
+        onExpandedChange={onExpandedChange}
+        expandedIds={['Atlanta Braves', 'Chicago White Sox']}
+      />
+    );
+
+    expect(onExpandedChange).toHaveBeenCalledWith(['Atlanta Braves', 'Chicago White Sox']);
+    expect(onExpandedChange).toHaveBeenCalledTimes(3);
+    userEvent.click(getExpandButtonForTeam('New York Mets'));
+    expect(onExpandedChange).toHaveBeenCalledWith([
+      'Atlanta Braves',
+      'Chicago White Sox',
+      'New York Mets',
+    ]);
+    expect(onExpandedChange).toHaveBeenCalledTimes(4);
+
+    rerender(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        title="indeterminate Ids"
+        onExpandedChange={onExpandedChange}
+      />
+    );
+
+    expect(onExpandedChange).toHaveBeenCalledWith([]);
+    expect(onExpandedChange).toHaveBeenCalledTimes(5);
+  });
+
   /** ***********************************************
    * VirtualListTests
    ************************************************ */
@@ -1043,6 +1146,64 @@ describe('HierarchyList', () => {
       expect(onSelect).toHaveBeenCalled();
       expect(screen.queryByText('9 items selected')).toBeNull();
       expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
+    });
+
+    it('should force ids to be expanded when expandedIds is passed', () => {
+      const expectTeamToBeExpanded = (id) => {
+        expect(
+          within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).getByLabelText('Close')
+        ).toBeVisible();
+      };
+
+      const expectTeamNotToBeExpanded = (id) => {
+        expect(
+          within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).queryByLabelText(
+            'Close'
+          )
+        ).toBeNull();
+      };
+
+      const { rerender } = render(
+        <HierarchyList
+          items={items}
+          title="Force expanded ids"
+          expandedIds={['Chicago White Sox']}
+          isVirtualList
+        />
+      );
+
+      expectTeamToBeExpanded('Chicago White Sox');
+
+      rerender(
+        <HierarchyList
+          items={items}
+          title="Force expanded ids"
+          expandedIds={['Chicago White Sox', 'New York Yankees']}
+          isVirtualList
+        />
+      );
+
+      expectTeamToBeExpanded('Chicago White Sox');
+      expectTeamToBeExpanded('New York Yankees');
+
+      rerender(
+        <HierarchyList
+          items={items}
+          title="Force expanded ids"
+          expandedIds={['Houston Astros']}
+          isVirtualList
+        />
+      );
+
+      expectTeamToBeExpanded('Houston Astros');
+      expectTeamNotToBeExpanded('Chicago White Sox');
+      expectTeamNotToBeExpanded('New York Yankees');
+
+      rerender(
+        <HierarchyList items={items} title="Force expanded ids" expandedIds={[]} isVirtualList />
+      );
+
+      expect(screen.queryByLabelText('Close')).toBeNull();
     });
 
     it('should set indeterminate state on parent when a child is checked', () => {

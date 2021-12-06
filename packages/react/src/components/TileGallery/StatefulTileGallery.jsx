@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
-import escapeRegExp from 'lodash/escapeRegExp';
+import { get, escapeRegExp } from 'lodash-es';
 import { ButtonKinds } from 'carbon-components-react/es/prop-types/types';
 
 import PageTitleBar from '../PageTitleBar';

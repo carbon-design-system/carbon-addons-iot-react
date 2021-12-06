@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.72](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.71...v2.147.0-next.72) (2021-12-02)
+
+
+### Bug Fixes
+
+* **button-menu:** update cca and query correct el ([83ce0b8](https://github.com/IBM/carbon-components-angular/commit/83ce0b84927d6ca486f9377a678a2ce8f66c4eff))
+
+
+### Features
+
+* update carbon-components ([8a7dd47](https://github.com/IBM/carbon-components-angular/commit/8a7dd47ebff6e3f535dd831bb9ffd95bed0ab224))
+
+
+
+
+
 # [2.147.0-next.57](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.56...v2.147.0-next.57) (2021-11-11)
 
 **Note:** Version bump only for package @ai-apps/angular

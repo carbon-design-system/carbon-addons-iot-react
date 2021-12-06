@@ -17,9 +17,19 @@
   - [☢️ Advanced Filtering Experimental](#%EF%B8%8F-advanced-filtering-experimental)
 - [Pagination](#pagination)
 - [Batch actions](#batch-actions)
+- [Toolbar actions](#toolbar-actions)
 - [Aggregation](#aggregation)
 - [Row data editing](#row-data-editing)
-- [Column grouping](#column-grouping)
+- [Column customization](#column-customization)
+  - [Programmatic ordering and visibility](#programmatic-ordering-and-visibility)
+  - [Column grouping](#column-grouping)
+  - [The column customization modal](#the-column-customization-modal)
+    - [Visibility toggle](#visibility-toggle)
+    - [Pinned column](#pinned-column)
+    - [Load more columns](#load-more-columns)
+    - [Use predefined column grouping](#use-predefined-column-grouping)
+    - [TableColumnCustomizationModal Props](#tablecolumncustomizationmodal-props)
+  - [Async column customization modal](#async-column-customization-modal)
 - [Props](#props)
   - [Column Prop](#column-prop)
   - [Data Prop](#data-prop)
@@ -846,8 +856,9 @@ Advanced filtering is experimental and may be subject to change, so it's usage i
 
 ## Pagination
 
-Pagination is controlled through the `options.hasPagingation` prop combined with the `view.pagination` prop. Pagination has one callback event for onChangePage that is fired when the page or the number of items per page changes.
+Pagination is controlled through the `options.hasPagination` prop combined with the `view.pagination` prop. Pagination has one callback event for onChangePage that is fired when the page or the number of items per page changes.
 By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number. In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior. With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.
+The maxPages prop must be a positive integer and is used to limit the number of pages available the dropdown when working with very large datasets.
 
 ```jsx
 <Table
@@ -947,6 +958,68 @@ the following props:
       ]
     }
   }}
+  }}
+/>
+```
+
+## Toolbar actions
+
+You can add other actions to the toolbar overflow menu by using the toolbarActions prop on the view.toolbar.
+When clicking on an action it will trigger the `onApplyToolbarAction` callback passing the object
+used to create the action. If `toolbarActions` is a function, it can return an array of objects
+representing the toolbarActions and these will be rendered dynamically when the overflow menu is opened.
+
+The `isOverflow` prop will force the item to appear in the overflow menu, but by default it will
+appear as another button in the toolbar.
+
+```jsx
+<Table
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    toolbar: {
+      onApplyToolbarAction: (actionObject) => {},
+    },
+  }}
+  view={{
+    toolbar: {
+      toolbarActions: [
+        {
+          id: 'edit',
+          labelText: 'Edit',
+          // can be a handful of included icons
+          renderIcon: 'edit',
+          disabled: true,
+          isOverflow: true,
+        },
+        // this item will appear in the toolbar, not the overflow menu, because it doesn't have
+        // isOverflow:true
+        {
+          id: 'toggle',
+          labelText: 'Toggle something',
+          // can be an icon directly from @carbon/icons-react
+          renderIcon: ViewOff16,
+          // force this item to show in an active state
+          isActive: true,
+        },
+        {
+          id: 'delete',
+          labelText: 'Delete',
+          isDelete: true,
+          hasDivider: true,
+          // can be a function
+          renderIcon: () => <TrashCan16 aria-label="Delete" />,
+          isOverflow: true,
+        },
+        {
+          id: 'hidden',
+          labelText: 'Hidden',
+          hidden: true,
+          isOverflow: true,
+        },
+      ],
+    },
   }}
 />
 ```
@@ -1080,7 +1153,84 @@ const onApplyRowAction = (action, rowId) => {
 
 See the table story code for a complete example.
 
-## Column grouping
+## Column customization
+
+The table columns can be customized when it comes to order of appearance, visibility, width and grouping.
+
+### Programmatic ordering and visibility
+
+In the simplest form the presence and order of a column is determined by the `columns` prop. By updating the prop it is possible to add, remove and
+reorder columns. The following simplified example will render a table with 4 columns in the order col1, col2, col3 and col4.
+
+```jsx
+<table
+  columns={[
+    {id: 'col1', name: 'Column 1'}
+    {id: 'col2', name: 'Column 2'}
+    {id: 'col3', name: 'Column 3'}
+    {id: 'col4', name: 'Column 4'}
+  ]}
+  data={tableData}
+/>
+```
+
+But the order and the visibility of the columns can also be controlled by the view prop `view.table.ordering`.
+The order of the objects in the ordering prop will override the `columns` prop and determine the order the columns will have in the table.
+It is possible to have columns referenced in the ordering prop without having them visible in the table
+by using the `isHidden` attribute. The following simplified example will render a table with 3 columns in the order col4, col1 and col3.
+
+```jsx
+<table
+  columns={[
+    {id: 'col1', name: 'Column 1'}
+    {id: 'col2', name: 'Column 2'}
+    {id: 'col3', name: 'Column 3'}
+    {id: 'col4', name: 'Column 4'}
+  ]}
+  data={tableData}
+  view={{
+    table: {
+      ordering: [
+        { columnId: 'col4' },
+        { columnId: 'col1' },
+        { columnId: 'col2', isHidden: true },
+        { columnId: 'col3' },
+      ],
+    },
+  }}
+/>
+```
+
+If the table has the prop `options.hasResize` the width of the columns can be programmatically controlled by the `columns` prop.
+Each column object in the columns array can have a width defined in `px`. The minimum column width is 62px and the default value
+is 150px if no column width is given.
+
+```jsx
+columns={[
+  {
+    id: 'string',
+    name: 'String',
+    width: '200px'
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+    width: '100px'
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    width: '100px'
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+  }
+]}
+```
+
+### Column grouping
 
 The table columns can be grouped into any number of groups. Each column group has an id, a name and can include any number of columns. The column groups will be displayed in a dedicated row above the normal column headers.
 The column grouping can be combined with any other table functionality except with the StatefulTable's column toggle and reordering functionality (`hasColumnSelection`).
@@ -1123,6 +1273,12 @@ A complete example of how to use the column grouping could look like this:
   }}
 />
 ```
+
+### The column customization modal
+
+import TableColumnCustomizationModalContent from './TableColumnCustomizationModal/TableColumnCustomizationModalContent.mdx';
+
+<TableColumnCustomizationModalContent />
 
 ## Props
 
@@ -1247,7 +1403,7 @@ A complete example of how to use the column grouping could look like this:
 | pagination.pageSizes                             | number[]                         |           | An array of selections for choosing how many rows are displayed per page.                                                                           |
 | pagination.page                                  | number                           |           | The current page number                                                                                                                             |
 | pagination.totalItems                            | number                           |           | The total number of items available to the table                                                                                                    |
-| pagination.maxPages                              | number                           |           | Number of pages rendered in pagination                                                                                                              |
+| pagination.maxPages                              | number                           |           | Number of pages rendered in pagination. Must be a positive integer.                                                                                 |
 | pagination.isItemPerPageHidden                   | bool                             |           | Hide displaying the text for the number of rows per page                                                                                            |
 | filters                                          | object[]                         |           | An array of objects setting the current filter state                                                                                                |
 | filters[].columnId                               | string                           |           | The columnId of the column being filtered by this value                                                                                             |
@@ -1273,6 +1429,16 @@ A complete example of how to use the column grouping could look like this:
 | toolbar.search.onExpand                          | func                             |           |                                                                                                                                                     |
 | toolbar.isDisabled                               | bool                             |           | Disable the toolbar                                                                                                                                 |
 | toolbar.rowEditBarButtons                        | node                             |           | buttons to be shown with when activeBar is 'rowEdit'                                                                                                |
+| toolbar.toolbarActions                           | arrayOf(object)                  |           | An array of objects for adding actions to the overflow menu in the toolbar                                                                          |
+| toolbar.toolbarActions[].id                      | string                           |           | the id of this action                                                                                                                               |
+| toolbar.toolbarActions[].labelText               | string                           |           | The text to display in the overflow menu                                                                                                            |
+| toolbar.toolbarActions[].hidden                  | bool                             |           | This will hide this item from the menu                                                                                                              |
+| toolbar.toolbarActions[].disabled                | bool                             |           | This will show the item, but it will be disabled                                                                                                    |
+| toolbar.toolbarActions[].isDelete                | bool                             |           | Show the item, and turn the background red on hover                                                                                                 |
+| toolbar.toolbarActions[].hasDivider              | bool                             |           | Show a divider at the top of this action item                                                                                                       |
+| toolbar.toolbarActions[].renderIcon              | node, func, string               |           | Can be a string of a handful of included icons, a function to render an icon, or an icon element                                                    |
+| toolbar.toolbarActions[].isActive                | bool                             | false     | used when the action is not in the overflow menu to show it is in active state                                                                      |
+| toolbar.toolbarActions[].isOverflow              | bool                             | false     | Force this item to appear in the overflow menu                                                                                                      |
 | table                                            | object                           |           |                                                                                                                                                     |
 | table.isSelectAllSelected                        | bool                             |           | If true, the select all option is checked                                                                                                           |
 | table.isSelectAllIndeterminate                   | bool                             |           |                                                                                                                                                     |
@@ -1333,6 +1499,7 @@ A complete example of how to use the column grouping could look like this:
 | toolbar.onCancelAdvancedFilter  | func   |         | Fired when then 'Cancel' button is clicked in the advanced filter flyout menu                                                                                                                                   |
 | toolbar.onChangeAdvancedFilter  | func   |         | Fired when an advanced filter is selected or removed.                                                                                                                                                           |
 | toolbar.onToggleAggregations    | func   |         | Fired when the "Toggle aggregations" option is clicked from the overflow menu in the table toolbar                                                                                                              |
+| toolbar.onApplyToolbarAction    | func   |         | Fired when clicking on toolbarActions in the table toolbar                                                                                                                                                      |
 | table                           | object |         |                                                                                                                                                                                                                 |
 | table.onRowSelected             | func   |         |                                                                                                                                                                                                                 |
 | table.onRowClicked              | func   |         |                                                                                                                                                                                                                 |
@@ -1415,3 +1582,7 @@ A complete example of how to use the column grouping could look like this:
 
 Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
 [GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/Table/Table.mdx).
+
+```
+
+```

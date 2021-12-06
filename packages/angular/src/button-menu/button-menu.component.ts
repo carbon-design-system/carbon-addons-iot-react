@@ -104,7 +104,7 @@ export class ButtonMenuComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const { nativeElement }: { nativeElement: HTMLElement } = this.elementRef;
-    const menuElement: HTMLElement = nativeElement.querySelector('.bx--context-menu');
+    const menuElement: HTMLElement = nativeElement.querySelector('.bx--context-menu, .bx--menu');
     const dimensions = nativeElement.getBoundingClientRect();
     const menuDimensions = menuElement.getBoundingClientRect();
     // default placement (align left, place bottom)

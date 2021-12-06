@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 import { spacing03, spacing06 } from '@carbon/layout';
 
