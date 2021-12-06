@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.76](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.75...v2.147.0-next.76) (2021-12-06)
+
+
+### Bug Fixes
+
+* **list:** prevent multiple callbacks on checkbox click ([3b6a9a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3b6a9a34c18ec9cf96047ceaf1943f5ea9bd2c98))
+
+
+
+
+
 # [2.147.0-next.75](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.74...v2.147.0-next.75) (2021-12-03)
 
 
