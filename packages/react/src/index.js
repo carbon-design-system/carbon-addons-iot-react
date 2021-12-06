@@ -117,6 +117,7 @@ export { default as DynamicHotspotSourcePicker } from './components/HotspotEdito
 export { default as ComboChartCard } from './components/ComboChartCard/ComboChartCard';
 export { default as MenuButton } from './components/MenuButton/MenuButton';
 export { default as ListBuilder } from './components/ListBuilder/ListBuilder';
+export { default as TableColumnCustomizationModal } from './components/Table/TableColumnCustomizationModal/TableColumnCustomizationModal';
 export { default as TearSheet } from './components/TearSheet/TearSheet';
 export { default as TearSheetWrapper } from './components/TearSheet/TearSheetWrapper';
 export { default as MapCard } from './components/MapCard/MapCard';

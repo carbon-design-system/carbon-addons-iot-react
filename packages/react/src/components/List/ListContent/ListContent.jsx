@@ -174,7 +174,7 @@ const ListContent = ({
                   event.stopPropagation();
                 }}
                 checked={isSelected}
-                disabled={isLocked}
+                disabled={disabled || isLocked}
                 indeterminate={isIndeterminate}
               />
             ) : (

@@ -227,6 +227,10 @@
       display: flex;
       position: absolute;
       right: -$spacing-03;
+      [dir='rtl'] & {
+        right: unset;
+        left: -($spacing-03);
+      }
     }
   }
   &--nesting-offset {
