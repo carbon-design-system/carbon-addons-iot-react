@@ -1,4 +1,5 @@
 @import '../../../globals/vars';
+@import '../list-vars';
 
 .#{$iot-prefix}--list-item-parent {
   position: relative;
@@ -88,9 +89,9 @@
 }
 
 .#{$iot-prefix}--list-item {
-  border-bottom: 1px solid $ui-03;
+  border-bottom: 1px solid $list-item-border-color;
   display: flex;
-  height: rem(40px);
+  height: $list-item-height;
   color: $text-02;
   padding: $spacing-03 $spacing-05;
   align-items: center;
@@ -114,7 +115,7 @@
   }
 
   &__large {
-    height: rem(96px);
+    height: $list-item-height-large;
     padding: $spacing-05;
     align-items: start;
   }

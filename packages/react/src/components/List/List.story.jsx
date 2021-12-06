@@ -129,22 +129,39 @@ export default {
   excludeStories: ['sampleHierarchy'],
 };
 
-export const BasicSingleColumn = () => (
-  <div style={{ width: 400 }}>
-    <List
-      title={text('title', 'NY Yankees')}
-      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
-        ([key]) => ({
-          id: key,
-          content: { value: key },
-        })
-      )}
-      isLoading={boolean('isLoading', false)}
-      isVirtualList={boolean('isVirtualList', false)}
-    />
-  </div>
-);
+export const BasicSingleColumn = () => {
+  const BasicSingleColumn = () => {
+    const [searchValue, setSearchValue] = useState(null);
+    const useSearch = boolean('use search (search)', true);
 
+    return (
+      <div style={{ width: 400 }}>
+        <List
+          isLargeRow={boolean('show large rows (isLargeRow)', false)}
+          title={text('title', 'NY Yankees')}
+          items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees'])
+            .map(([key]) => ({
+              id: key,
+              content: { value: key },
+            }))
+            .filter(
+              ({ id }) => !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
+            )}
+          search={
+            useSearch
+              ? {
+                  onChange: (evt) => setSearchValue(evt.target.value),
+                }
+              : undefined
+          }
+          isLoading={boolean('isLoading', false)}
+          isVirtualList={boolean('isVirtualList', false)}
+        />
+      </div>
+    );
+  };
+  return <BasicSingleColumn />;
+};
 BasicSingleColumn.storyName = 'basic (single column)';
 
 export const BasicSingleColumnWithSearch = () => {

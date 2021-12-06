@@ -1,10 +1,11 @@
 @import '../../../globals/vars';
+@import '../list-vars';
 
 .#{$iot-prefix}--list-header {
   display: flex;
   align-items: center;
   background: $ui-01;
-  padding: $spacing-04;
+  padding: $spacing-04 $spacing-05;
   border-bottom: 1px solid $ui-03;
   height: rem(56px);
   &--title {
@@ -22,22 +23,15 @@
   }
 
   &--search {
-    padding: 0 $spacing-05;
-    height: rem(56px);
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background: $ui-01;
-    & > div {
-      flex: 1;
+    .#{$prefix}--search .#{$prefix}--search-magnifier-icon {
+      left: $spacing-05;
     }
-  }
 
-  &--search__expanded {
-    background: $ui-01;
-    width: 80%;
-    left: 1.5rem;
-    position: absolute;
+    .#{$prefix}--search .#{$prefix}--search-input {
+      background: $ui-01;
+      border-bottom-color: $list-item-border-color;
+      padding: 0 $spacing-09;
+    }
   }
 
   &--add {
