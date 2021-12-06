@@ -625,7 +625,7 @@ export const WithPagination = () => (
         page: 1,
         onPage() {},
         maxPage: 10,
-        pageOfPagesText: (page) => `Page ${page}`,
+        i18n: { pageOfPagesText: (page) => `Page ${page}` },
       }}
       isFullHeight={boolean('isFullHeight', true)}
       isVirtualList={boolean('isVirtualList', false)}

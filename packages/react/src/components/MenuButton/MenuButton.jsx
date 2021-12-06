@@ -6,7 +6,8 @@ import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 
 import { settings } from '../../constants/Settings';
-import deprecate from '../../internal/deprecate';
+import deprecate, { deprecateString } from '../../internal/deprecate';
+import useMerged from '../../hooks/useMerged';
 
 import { SplitMenuButton } from './SplitMenuButton';
 import { SingleMenuButton } from './SingleMenuButton';
@@ -15,7 +16,6 @@ import { getMenuPosition } from './utils';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  // eslint-disable-next-line react/require-default-props
   testID: deprecate(
     PropTypes.string,
     `The 'testID' prop has been deprecated. Please use 'testId' instead.`
@@ -49,39 +49,37 @@ const propTypes = {
    * If specifying the `renderIcon` prop, provide a description for that icon that can
    * be read by screen readers
    */
-  closeIconDescription: (props) => {
-    if (props.renderCloseIcon && !props.closeIconDescription) {
-      return new Error(
-        'renderCloseIcon property specified without also providing an closeIconDescription property.'
-      );
-    }
-    return undefined;
-  },
-
+  closeIconDescription: deprecateString(),
   /**
    * If specifying the `renderIcon` prop, provide a description for that icon that can
    * be read by screen readers
    */
-  openIconDescription: (props) => {
-    if (props.renderOpenIcon && !props.openIconDescription) {
-      return new Error(
-        'renderOpenIcon property specified without also providing an openIconDescription property.'
-      );
-    }
-    return undefined;
+  openIconDescription: deprecateString(),
+
+  i18n(...args) {
+    const [props] = args;
+    return PropTypes.shape({
+      closeIconDescription: props.renderCloseIcon ? PropTypes.string.isRequired : PropTypes.string,
+      openIconDescription: props.renderOpenIcon ? PropTypes.string.isRequired : PropTypes.string,
+    }).apply(this, args);
   },
 
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
 };
 
 const defaultProps = {
+  testID: undefined,
   testId: 'menu-button',
   onPrimaryActionClick: null,
   label: null,
-  openIconDescription: 'open menu button',
-  closeIconDescription: 'close menu button',
+  openIconDescription: undefined,
+  closeIconDescription: undefined,
   renderOpenIcon: ChevronDown16,
   renderCloseIcon: ChevronUp16,
+  i18n: {
+    openIconDescription: 'open menu button',
+    closeIconDescription: 'close menu button',
+  },
 };
 
 const MenuButton = ({
@@ -95,7 +93,9 @@ const MenuButton = ({
   renderOpenIcon,
   renderCloseIcon,
   children,
+  i18n,
 }) => {
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef(null);
@@ -116,7 +116,7 @@ const MenuButton = ({
   /**
    * This is a hacky work-around, because the current Menu (7.42.1) won't allow us
    * to set classNames or a target for where the menu should be placed via the portal
-   * So, to fix the autopositioning, I have to open it, hide it with a property, check
+   * So, to fix the auto-positioning, I have to open it, hide it with a property, check
    * the positioning, reposition it, and then show it. ugh. They are adding these other
    * features. Hopefully they'll be released soon, and we can use the `target` prop to open
    * the menu in this container div where it used to be...
@@ -214,7 +214,11 @@ const MenuButton = ({
         ref={buttonRef}
         onPrimaryActionClick={handlePrimaryClick}
         onSecondaryActionClick={handleSecondaryClick}
-        iconDescription={isMenuOpen ? closeIconDescription : openIconDescription}
+        iconDescription={
+          isMenuOpen
+            ? closeIconDescription ?? mergedI18n.closeIconDescription
+            : openIconDescription ?? mergedI18n.openIconDescription
+        }
         renderIcon={isMenuOpen ? renderCloseIcon : renderOpenIcon}
         label={label}
         // TODO: remove deprecated 'testID' in v3.

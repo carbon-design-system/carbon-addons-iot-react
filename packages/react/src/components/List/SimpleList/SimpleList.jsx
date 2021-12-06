@@ -7,6 +7,7 @@ import {
   moveItemsInList,
 } from '../../../utils/DragAndDropUtils';
 import List from '../List';
+import useMerged from '../../../hooks/useMerged';
 
 const itemPropTypes = {
   id: PropTypes.string,
@@ -61,6 +62,7 @@ const propTypes = {
   testId: PropTypes.string,
 };
 
+/* istanbul ignore next */
 const defaultProps = {
   buttons: [],
   editingStyle: null,
@@ -96,7 +98,7 @@ const SimpleList = ({
   title,
   testId,
 }) => {
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const [selectedIds, setSelectedIds] = useState([]);
   const [searchValue, setSearchValue] = useState('');
@@ -247,7 +249,7 @@ const SimpleList = ({
               page: currentPageNumber,
               onPage,
               maxPage,
-              pageOfPagesText: (page) => mergedI18n.pageOfPagesText(page),
+              i18n: { pageOfPagesText: (page) => mergedI18n.pageOfPagesText(page) },
             }
           : null
       }

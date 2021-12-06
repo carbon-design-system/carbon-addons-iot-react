@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Modal } from '../../Modal';
+import useMerged from '../../../hooks/useMerged';
 
 const defaultProps = {
   isOpen: false,
@@ -31,20 +32,20 @@ const propTypes = {
 };
 
 const SuiteHeaderLogoutModal = ({ isOpen, onClose, onLogout, i18n, testId }) => {
-  const mergedI18N = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   return (
     <Modal
       open={isOpen}
-      modalHeading={mergedI18N.heading}
-      primaryButtonText={mergedI18N.primaryButton}
-      secondaryButtonText={mergedI18N.secondaryButton}
+      modalHeading={mergedI18n.heading}
+      primaryButtonText={mergedI18n.primaryButton}
+      secondaryButtonText={mergedI18n.secondaryButton}
       onSecondarySubmit={onClose}
       onRequestSubmit={onLogout}
       onRequestClose={onClose}
       data-testid={testId}
-      closeButtonLabel={mergedI18N.closeButtonLabel}
+      closeButtonLabel={mergedI18n.closeButtonLabel}
     >
-      {mergedI18N.body}
+      {mergedI18n.body}
     </Modal>
   );
 };

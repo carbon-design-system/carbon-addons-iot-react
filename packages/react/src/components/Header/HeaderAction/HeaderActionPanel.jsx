@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
@@ -9,6 +9,7 @@ import { white } from '@carbon/colors';
 import { APP_SWITCHER } from '../headerConstants';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 import { HeaderActionPropTypes } from '../HeaderPropTypes';
+import useMerged from '../../../hooks/useMerged';
 
 const { prefix: carbonPrefix } = settings;
 
@@ -51,13 +52,8 @@ const HeaderActionPanel = ({
   i18n,
   inOverflow,
 }) => {
-  const mergedI18n = useMemo(
-    () => ({
-      ...defaultProps.i18n,
-      ...i18n,
-    }),
-    [i18n]
-  );
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+
   return (
     <>
       <HeaderGlobalAction

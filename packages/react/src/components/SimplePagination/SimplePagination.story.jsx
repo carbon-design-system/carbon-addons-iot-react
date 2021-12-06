@@ -26,7 +26,9 @@ export const Default = () => (
       maxPage={number('maxPage', 4)}
       onPage={action('onPage')}
       totalItems={number('totalItems', 10)}
-      totalItemsText={text('total items display text (totalItemsText)', 'Assets')}
+      i18n={{
+        totalItemsText: text('total items display text (i18n.totalItemsText)', 'Assets'),
+      }}
     />
   </StyledSimplePagination>
 );

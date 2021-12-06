@@ -7,24 +7,169 @@ import { pick } from 'lodash-es';
 import { settings } from '../../constants/Settings';
 import { filterValidAttributes } from '../../utils/componentUtilityFunctions';
 import { keyboardKeys } from '../../constants/KeyCodeConstants';
+import { deprecateString } from '../../internal/deprecate';
+import useMerged from '../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
 const propTypes = {
-  // eslint-disable-next-line react/forbid-foreign-prop-types
-  ...CarbonComboBox.propTypes,
-  loading: PropTypes.bool,
-  // Callback that is called with the value of the input on change
+  /**
+   * 'aria-label' of the ListBox component.
+   */
+  ariaLabel: deprecateString(),
+
+  /**
+   * An optional className to add to the container node
+   */
+  className: PropTypes.string,
+
+  /**
+   * Specify the direction of the combobox dropdown. Can be either top or bottom.
+   */
+  direction: PropTypes.oneOf(['top', 'bottom']),
+
+  /**
+   * Specify if the control should be disabled, or not
+   */
+  disabled: PropTypes.bool,
+
+  /**
+   * Additional props passed to Downshift
+   */
+  downshiftProps: PropTypes.shape(PropTypes.object),
+
+  /**
+   * Provide helper text that is used alongside the control label for
+   * additional help
+   */
+  helperText: PropTypes.string,
+
+  /**
+   * Specify a custom `id` for the input
+   */
+  id: PropTypes.string.isRequired,
+
+  /**
+   * Allow users to pass in an arbitrary item or a string (in case their items are an array of strings)
+   * from their collection that are pre-selected
+   */
+  initialSelectedItem: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.number]),
+
+  /**
+   * Specify if the currently selected value is invalid.
+   */
+  invalid: PropTypes.bool,
+
+  /**
+   * Message which is displayed if the value is invalid.
+   */
+  invalidText: PropTypes.node,
+
+  /**
+   * Optional function to render items as custom components instead of strings.
+   * Defaults to null and is overridden by a getter
+   */
+  itemToElement: PropTypes.func,
+
+  /**
+   * Helper function passed to downshift that allows the library to render a
+   * given item to a string label. By default, it extracts the `label` field
+   * from a given item to serve as the item label in the list
+   */
+  itemToString: PropTypes.func,
+
+  /**
+   * We try to stay as generic as possible here to allow individuals to pass
+   * in a collection of whatever kind of data structure they prefer
+   */
+  items: PropTypes.arrayOf(PropTypes.object),
+
+  /**
+   * should use "light theme" (white background)?
+   */
+  light: PropTypes.bool,
+
+  /**
+   * `onChange` is a utility for this controlled component to communicate to a
+   * consuming component when a specific dropdown item is selected.
+   * @param {{ selectedItem }}
+   */
   onChange: PropTypes.func.isRequired,
+
+  /**
+   * Callback function to notify consumer when the text input changes.
+   * This provides support to change available items based on the text.
+   * @param {string} inputText
+   */
+  onInputChange: PropTypes.func,
+
+  /**
+   * Callback function that fires when the combobox menu toggle is clicked
+   * @param {MouseEvent} event
+   */
+  onToggleClick: PropTypes.func,
+
+  /**
+   * Used to provide a placeholder text node before a user enters any input.
+   * This is only present if the control has no items selected
+   */
+  placeholder: PropTypes.string.isRequired,
+
+  /**
+   * For full control of the selection
+   */
+  selectedItem: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.number]),
+
+  /**
+   * Specify your own filtering logic by passing in a `shouldFilterItem`
+   * function that takes in the current input and an item and passes back
+   * whether or not the item should be filtered.
+   */
+  shouldFilterItem: PropTypes.func,
+
+  /**
+   * Specify the size of the ListBox. Currently supports either `sm`, `md` or `lg` as an option.
+   */
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+
+  /**
+   * Provide text to be used in a `<label>` element that is tied to the
+   * combobox via ARIA attributes.
+   */
+  titleText: PropTypes.node,
+
+  /**
+   * Specify a custom translation function that takes in a message identifier
+   * and returns the localized string for the message
+   */
+  translateWithId: PropTypes.func,
+
+  /**
+   * Currently supports either the default type, or an inline variant
+   */
+  type: PropTypes.oneOf(['default', 'inline']),
+
+  /**
+   * Specify whether the control is currently in warning state
+   */
+  warn: PropTypes.bool,
+
+  /**
+   * Provide the text that is displayed when the control is in warning state
+   */
+  warnText: PropTypes.node,
+
+  loading: PropTypes.bool,
+
   // Optional classname to be applied to wrapper
   wrapperClassName: PropTypes.string,
   // String to pass to input field option
-  editOptionText: PropTypes.string,
+  editOptionText: deprecateString(),
   // String to pass for tags close button aria-label. Will be prepended to value name
-  closeButtonText: PropTypes.string,
-  // Allow custom onBlur function to be passed to the combobox textinput
+  closeButtonText: deprecateString(),
+  // Allow custom onBlur function to be passed to the combobox text input
   onBlur: PropTypes.func,
-  // Bit that will allow mult value and tag feature
+  // Bit that will allow multi value and tag feature
   hasMultiValue: PropTypes.bool,
   // On submit/enter, new items should be added to the listbox
   addToList: PropTypes.bool,
@@ -34,14 +179,24 @@ const propTypes = {
   // Default is 'end' whit means that it expands to the right in normal LTR mode
   horizontalDirection: PropTypes.oneOf(['start', 'end']),
   testId: PropTypes.string,
+
+  i18n: PropTypes.shape({
+    /**
+     * 'aria-label' of the ListBox component.
+     */
+    ariaLabel: PropTypes.string,
+    // String to pass for tags close button aria-label. Will be prepended to value name
+    closeButtonText: PropTypes.string,
+    // String to pass to input field option
+    editOptionText: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
   ...CarbonComboBox.defaultProps,
+  ariaLabel: undefined,
   loading: false,
   wrapperClassName: null,
-  closeButtonText: 'Close',
-  editOptionText: 'Create',
   hasMultiValue: false,
   addToList: false,
   items: [],
@@ -50,6 +205,13 @@ const defaultProps = {
   testId: 'combo',
   menuFitContent: false,
   horizontalDirection: 'end',
+  closeButtonText: undefined,
+  editOptionText: undefined,
+  i18n: {
+    ariaLabel: 'Choose an item',
+    closeButtonText: 'Close',
+    editOptionText: 'Create',
+  },
 };
 
 const ComboBox = React.forwardRef(
@@ -75,6 +237,8 @@ const ComboBox = React.forwardRef(
       testId,
       menuFitContent,
       horizontalDirection,
+      i18n,
+      ariaLabel,
       ...rest
     },
     ref
@@ -89,6 +253,8 @@ const ComboBox = React.forwardRef(
     const [tagItems, setTagItems] = useState([]);
     // Array that populates tags
     const prevTagAndListCount = useRef(items.length + tagItems.length);
+
+    const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
     // Handle focus after adding new tags or list items
     useEffect(() => {
@@ -226,7 +392,7 @@ const ComboBox = React.forwardRef(
         onKeyDown={handleOnKeypress}
         onBlur={handleOnBlur}
         data-testid={`${testId}-wrapper`}
-        data-edit-option-text={editOptionText}
+        data-edit-option-text={editOptionText || mergedI18n.editOptionText}
       >
         <CarbonComboBox
           data-testid={`${testId}-box`}
@@ -242,9 +408,9 @@ const ComboBox = React.forwardRef(
           disabled={disabled || (loading !== undefined && loading !== false)}
           helperText={helperText}
           shouldFilterItem={hasMultiValue || addToList ? shouldFilterItemForTags : shouldFilterItem}
+          ariaLabel={ariaLabel || mergedI18n.ariaLabel}
           {...pick(
             rest,
-            'ariaLabel',
             'direction',
             'downshiftProps',
             'initialSelectedItem',
@@ -271,7 +437,7 @@ const ComboBox = React.forwardRef(
                   key={`tag-${item?.id}-${idx}`}
                   filter
                   onClose={(e) => handleOnClose(e)}
-                  title={closeButtonText}
+                  title={closeButtonText || mergedI18n.closeButtonText}
                 >
                   {itemToString(item)}
                 </Tag>

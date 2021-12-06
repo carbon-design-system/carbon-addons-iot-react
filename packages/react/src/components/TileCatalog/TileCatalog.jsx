@@ -6,7 +6,7 @@ import classnames from 'classnames';
 
 import SimplePagination from '../SimplePagination/SimplePagination';
 import { settings } from '../../constants/Settings';
-import deprecate from '../../internal/deprecate';
+import deprecate, { deprecateString } from '../../internal/deprecate';
 
 import TileGroup from './TileGroup';
 
@@ -23,9 +23,17 @@ export const propTypes = {
     pageSize: PropTypes.number,
     pageText: PropTypes.string,
     /** Gets called back with arguments (page, maxPage) */
-    pageOfPagesText: PropTypes.func,
-    nextPageText: PropTypes.string,
-    prevPageText: PropTypes.string,
+    pageOfPagesText: deprecate(
+      PropTypes.func,
+      `The prop \`pageOfPagesText\` has been deprecated for the \`SimplePagination\` component. It will be removed in the next major release. Please use \`i18n.pageOfPagesText\` instead.`
+    ),
+    nextPageText: deprecateString(),
+    prevPageText: deprecateString(),
+    i18n: PropTypes.shape({
+      pageOfPagesText: PropTypes.func,
+      nextPageText: PropTypes.string,
+      prevPageText: PropTypes.string,
+    }),
     onPage: PropTypes.func,
     /** current page number */
     page: PropTypes.number,

@@ -14,6 +14,7 @@ import { validThresholdIcons, validThresholdColors } from '../../../DashboardEdi
 import SimpleIconDropdown from '../../../SimpleIconDropdown/SimpleIconDropdown';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { CarbonIconPropType } from '../../../../constants/SharedPropTypes';
+import useMerged from '../../../../hooks/useMerged';
 
 const { iotPrefix, prefix } = settings;
 
@@ -115,7 +116,7 @@ const ThresholdsFormItem = ({
   i18n,
   translateWithId,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   // initialize thresholds with a unique id
@@ -173,8 +174,10 @@ const ThresholdsFormItem = ({
                   // need to regen if a threshold is added
                   key={`${thresholds.length}`}
                   id={`${cardConfig.id}_value-card-threshold-color_${i}`}
-                  label=""
-                  titleText=""
+                  i18n={{
+                    label: '',
+                    titleText: '',
+                  }}
                   hideLabels
                   colors={colors}
                   selectedColor={thresholdColor}

@@ -23,9 +23,11 @@ export const DefaultExample = () => (
   <div style={{ width: '200px' }}>
     <ColorDropdown
       id="myColorDropdown"
-      label={text('label', 'Select a color')}
+      i18n={{
+        label: text('i18n.label', 'Select a color'),
+        titleText: text('i18n.titleText', 'Color'),
+      }}
       light={boolean('light', false)}
-      titleText={text('titleText', 'Color')}
       onChange={action('onChange')}
       disabled={boolean('disabled', false)}
     />
@@ -36,8 +38,10 @@ export const PresetSelectionExample = () => (
   <div style={{ width: '200px' }}>
     <ColorDropdown
       id="myColorDropdown"
-      label={text('label', 'Select a color')}
-      titleText={text('titleText', 'Color')}
+      i18n={{
+        label: text('label', 'Select a color'),
+        titleText: text('titleText', 'Color'),
+      }}
       onChange={action('onChange')}
       selectedColor={{ carbonColor: teal70, name: 'teal70' }}
     />
@@ -48,8 +52,10 @@ export const CustomColorsExample = () => (
   <div style={{ width: '200px' }}>
     <ColorDropdown
       id="myColorDropdown"
-      label={text('label', 'Select a color')}
-      titleText={text('titleText', 'Color')}
+      i18n={{
+        label: text('label', 'Select a color'),
+        titleText: text('titleText', 'Color'),
+      }}
       colors={[
         { carbonColor: red50, name: 'red' },
         { carbonColor: green50, name: 'green' },
@@ -64,8 +70,10 @@ export const NoLabelsExample = () => (
   <div style={{ width: '6rem' }}>
     <ColorDropdown
       id="myColorDropdown"
-      label={text('label', 'Select a color')}
-      titleText={text('titleText', 'Color')}
+      i18n={{
+        label: text('label', 'Select a color'),
+        titleText: text('titleText', 'Color'),
+      }}
       selectedColor={{ carbonColor: purple70, name: 'purple70' }}
       hideLabels={boolean('showLabels', true)}
       onChange={action('onChange')}

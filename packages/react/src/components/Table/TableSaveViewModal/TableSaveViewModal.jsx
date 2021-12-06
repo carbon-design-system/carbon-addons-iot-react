@@ -152,7 +152,9 @@ const TableSaveViewModal = ({
         ...i18nFooter,
         isPrimaryButtonDisabled: formValues.title === '',
       }}
-      iconDescription={closeIconDescription}
+      i18n={{
+        closeButtonLabel: closeIconDescription,
+      }}
       // TODO: remove deprecated 'testID' in v3
       testID={testID || testId}
       error={error}

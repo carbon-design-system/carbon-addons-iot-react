@@ -127,7 +127,7 @@ const propTypes = {
   testId: PropTypes.string,
 };
 
-const defaultPropTypes = {
+const defaultProps = {
   ariaLabel: undefined,
   className: undefined,
   downshiftProps: undefined,
@@ -182,6 +182,6 @@ const Dropdown = ({ itemToString, testId, ...other }) => {
 };
 
 Dropdown.propTypes = propTypes;
-Dropdown.defaultProps = defaultPropTypes;
+Dropdown.defaultProps = defaultProps;
 
 export default Dropdown;

@@ -17,6 +17,7 @@ import {
   validThresholdColors,
   validHotspotIcons,
 } from '../DashboardEditor/editorUtils';
+import useMerged from '../../hooks/useMerged';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 import HotspotTextStyleTab from './HotspotTextStyleTab/HotspotTextStyleTab';
@@ -302,7 +303,7 @@ const HotspotEditorModal = ({
   });
 
   const hasNonEditableContent = React.isValidElement(selectedHotspot?.content);
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const {
     backgroundLabelText,
@@ -572,7 +573,9 @@ const HotspotEditorModal = ({
         label,
         title: modalHeaderTitleText,
       }}
-      iconDescription={modalIconDescriptionText}
+      i18n={{
+        closeButtonLabel: modalIconDescriptionText,
+      }}
       isFullScreen
       onClose={onClose}
       onSubmit={onSave}

@@ -50,8 +50,8 @@ describe('SimplePagination', () => {
     // Test totalItemsText & pageText as strings for backward compatibility
     rerender(
       <SimplePagination
-        totalItemsText="test-items"
         pageText="test-page"
+        i18n={{ totalItemsText: 'test-items' }}
         totalItems={10}
         page={1}
         maxPage={1}

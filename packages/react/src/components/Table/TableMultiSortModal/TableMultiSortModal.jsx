@@ -274,7 +274,9 @@ const TableMultiSortModal = ({
       header={{
         title: i18n.multiSortModalTitle,
       }}
-      iconDescription={i18n.multiSortCloseModal}
+      i18n={{
+        closeButtonLabel: i18n.multiSortCloseModal,
+      }}
       onClose={handleCancelMultiSortColumns}
       footer={
         <div className={`${iotPrefix}--table-multi-sort-modal__footer`}>

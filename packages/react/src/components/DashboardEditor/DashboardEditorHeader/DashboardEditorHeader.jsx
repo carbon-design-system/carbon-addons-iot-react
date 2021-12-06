@@ -21,6 +21,7 @@ import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
 import PageTitleBar from '../../PageTitleBar';
 import IconSwitch from '../../IconSwitch/IconSwitch';
+import useMerged from '../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -136,7 +137,7 @@ const DashboardEditorHeader = ({
 }) => {
   const [isTitleEditMode, setIsTitleEditMode] = useState(false);
   const [updatedTitle, setUpdatedTitle] = useState(title);
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
     <div data-testid={testId} className={`${baseClassName}--right`}>

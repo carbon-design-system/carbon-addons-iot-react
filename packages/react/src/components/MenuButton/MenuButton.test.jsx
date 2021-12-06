@@ -187,7 +187,7 @@ describe('MenuButton', () => {
   });
 
   it('should show a warning when using an icon without an icon description', () => {
-    console.error = jest.fn();
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     render(
       <MenuButton
         label="Create"
@@ -196,26 +196,36 @@ describe('MenuButton', () => {
         renderCloseIcon={ChevronUp16}
         openIconDescription={null}
         closeIconDescription={null}
+        i18n={{
+          openIconDescription: null,
+          closeIconDescription: null,
+        }}
       >
         {menuItems}
       </MenuButton>
     );
 
-    expect(console.error).toHaveBeenCalledTimes(3);
+    expect(console.error).toHaveBeenCalledTimes(4);
     expect(console.error).toHaveBeenNthCalledWith(
       1,
       expect.stringContaining(
-        `Failed prop type: renderCloseIcon property specified without also providing an closeIconDescription property.`
+        'The prop `closeIconDescription` has been deprecated for the `MenuButton` component. It will be removed in the next major release. Please use `i18n.closeIconDescription` instead.'
       )
     );
     expect(console.error).toHaveBeenNthCalledWith(
       2,
       expect.stringContaining(
-        `Failed prop type: renderOpenIcon property specified without also providing an openIconDescription property.`
+        'The prop `openIconDescription` has been deprecated for the `MenuButton` component. It will be removed in the next major release. Please use `i18n.openIconDescription` instead.'
       )
     );
     expect(console.error).toHaveBeenNthCalledWith(
       3,
+      expect.stringContaining(
+        `Failed prop type: The prop \`i18n.closeIconDescription\` is marked as required in \`MenuButton\`, but its value is \`null\``
+      )
+    );
+    expect(console.error).toHaveBeenNthCalledWith(
+      4,
       expect.stringContaining(
         `Failed prop type: The prop \`iconDescription\` is marked as required in \`ForwardRef\`, but its value is \`null\`.`
       )

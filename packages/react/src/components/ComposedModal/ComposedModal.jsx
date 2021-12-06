@@ -14,7 +14,7 @@ import warning from 'warning';
 import { settings } from '../../constants/Settings';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import Button from '../Button';
-import deprecate from '../../internal/deprecate';
+import deprecate, { deprecateString } from '../../internal/deprecate';
 
 const { iotPrefix, prefix } = settings;
 
@@ -30,7 +30,12 @@ export const ComposedModalPropTypes = {
     helpText: PropTypes.node,
   }),
   /** ability to add translation string to close icon */
-  iconDescription: PropTypes.string,
+  iconDescription: deprecateString('closeButtonLabel'),
+
+  i18n: PropTypes.shape({
+    /** ability to add translation string to close icon */
+    closeButtonLabel: PropTypes.string,
+  }),
 
   /** Content to render inside Modal */
   children: PropTypes.node,
@@ -48,14 +53,14 @@ export const ComposedModalPropTypes = {
       isPrimaryButtonDisabled: PropTypes.bool,
     }),
   ]),
-  /** NEW PROP: Type of dialog, affects colors, styles of dialog */
+  /** Type of dialog, affects colors, styles of dialog */
   type: PropTypes.oneOf(['warn', 'normal']),
-  /** NEW PROP: Whether this particular dialog needs to be very large */
+  /** Whether this particular dialog needs to be very large */
   isLarge: PropTypes.bool,
-  /** NEW PROP: Whether this particular dialog needs to be full width */
+  /** Whether this particular dialog needs to be full width */
   isFullScreen: PropTypes.bool,
   /** Should the dialog be open or not */
-  open: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
+  open: PropTypes.bool,
   /**   Close the dialog */
   onClose: PropTypes.func.isRequired,
 
@@ -119,9 +124,12 @@ class ComposedModal extends React.Component {
     invalid: false,
     children: null,
     header: {},
-    iconDescription: 'Close',
+    iconDescription: undefined,
     passiveModal: false,
     testId: 'ComposedModal',
+    i18n: {
+      closeButtonLabel: 'Close',
+    },
   };
 
   componentDidUpdate(prevProps) {
@@ -164,6 +172,7 @@ class ComposedModal extends React.Component {
       // TODO: remove deprecated testID in v3.
       testID,
       testId,
+      i18n,
       ...props
     } = this.props;
     const { label, title, helpText } = header;
@@ -200,7 +209,7 @@ class ComposedModal extends React.Component {
           title={title}
           closeModal={onClose}
           buttonOnClick={onClose}
-          iconDescription={iconDescription}
+          iconDescription={iconDescription || i18n.closeButtonLabel}
         >
           {helpText ? <p className={`${prefix}--modal-content__text`}>{helpText}</p> : null}
         </ModalHeader>

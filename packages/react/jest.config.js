@@ -63,7 +63,7 @@ module.exports = {
       statements: 51,
       branches: 20,
       lines: 50,
-      functions: 56,
+      functions: 53,
     },
     './src/components/DashboardEditor/DashboardEditorCardRenderer.jsx': {
       branches: 87,

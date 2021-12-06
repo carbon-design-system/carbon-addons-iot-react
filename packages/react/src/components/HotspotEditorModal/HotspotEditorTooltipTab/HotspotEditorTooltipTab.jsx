@@ -184,12 +184,14 @@ const HotspotEditorTooltipTab = ({
         selectedColor={getSelectedColorItem(formValues.color, hotspotIconFillColors)}
         id="tooltip-form-color"
         colors={hotspotIconFillColors}
-        label={colorDropdownLabelText}
+        i18n={{
+          label: colorDropdownLabelText,
+          titleText: colorDropdownTitleText,
+        }}
         light
         onChange={(selectedColorItem) => {
           onChange({ color: selectedColorItem.color?.carbonColor });
         }}
-        titleText={colorDropdownTitleText}
         translateWithId={translateWithId}
       />
     </div>

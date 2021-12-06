@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Erase32 } from '@carbon/icons-react';
 import classnames from 'classnames';
@@ -7,6 +7,7 @@ import { settings } from '../../../constants/Settings';
 import { Dropdown } from '../../Dropdown';
 import Button from '../../Button/Button';
 import deprecate from '../../../internal/deprecate';
+import useMerged from '../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -74,7 +75,7 @@ const DynamicHotspotSourcePicker = ({
   translateWithId,
 }) => {
   const classname = `${iotPrefix}--dynamic-hotspot-source-picker`;
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const {
     clearIconDescription,
     xCoordinateDropdownTitleText,

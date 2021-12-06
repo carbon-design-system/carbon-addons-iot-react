@@ -15,6 +15,7 @@ import {
 } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 import { usePrevious } from '../../../hooks/usePrevious';
+import useMerged from '../../../hooks/useMerged';
 
 import HierarchyListReorderModal from './HierarchyListReorderModal/HierarchyListReorderModal';
 import BulkActionHeader from './BulkActionHeader';
@@ -257,7 +258,7 @@ const HierarchyList = ({
   searchId,
   emptyState,
 }) => {
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const initialExpandedIds = expandedIdsProp?.length > 0 ? expandedIdsProp : defaultExpandedIds;
   const [expandedIds, setExpandedIds] = useState(initialExpandedIds);
   const [searchValue, setSearchValue] = useState('');
@@ -435,7 +436,7 @@ const HierarchyList = ({
     page: currentPageNumber,
     onPage,
     maxPage,
-    pageOfPagesText: (page) => `Page ${page}`,
+    i18n: { pageOfPagesText: (page) => `Page ${page}` },
   };
 
   /**

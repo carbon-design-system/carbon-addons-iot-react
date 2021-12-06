@@ -1,6 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
+import useMerged from '../../hooks/useMerged';
+
 import Rule from './Rule';
 import RuleBuilderHeader from './RuleBuilderHeader';
 import {
@@ -79,13 +81,7 @@ const defaultProps = {
 const RuleBuilderEditor = ({ defaultRules, columns, onChange, i18n, testId }) => {
   const [tree, setTree] = React.useState(defaultRules);
 
-  const mergedI18n = React.useMemo(
-    () => ({
-      ...defaultProps.i18n,
-      ...(i18n ?? {}),
-    }),
-    [i18n]
-  );
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const handleAddRule = React.useCallback(
     (ruleId, isGroup = false) => () => {

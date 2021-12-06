@@ -1,9 +1,10 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
 import { DataItemsPropTypes } from '../../DashboardEditor/editorUtils';
 import { settings } from '../../../constants/Settings';
+import useMerged from '../../../hooks/useMerged';
 
 import CommonCardEditFormFields from './CommonCardEditFormFields';
 import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
@@ -150,7 +151,7 @@ const CardEditFormContent = ({
   onFetchDynamicDemoHotspots,
 }) => {
   const { type, timeRange, renderEditContent } = cardConfig;
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const [selectedDataItems, setSelectedDataItems] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 

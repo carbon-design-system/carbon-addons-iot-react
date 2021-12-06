@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { HeaderGlobalBar } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import { Close16, OverflowMenuVertical16 } from '@carbon/icons-react';
@@ -8,6 +8,7 @@ import { useLangDirection } from 'use-lang-direction';
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
 import { settings } from '../../constants/Settings';
+import useMerged from '../../hooks/useMerged';
 
 import HeaderAction from './HeaderAction/HeaderAction';
 import { HeaderActionItemPropTypes } from './HeaderPropTypes';
@@ -57,13 +58,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) =
   const [overflowOpen, setOverflowOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [menu, setMenu] = useState(null);
-  const mergedI18n = useMemo(
-    () => ({
-      ...defaultProps.i18n,
-      ...i18n,
-    }),
-    [i18n]
-  );
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const langDir = useLangDirection();
   const checkForOverflow = useCallback(() => {

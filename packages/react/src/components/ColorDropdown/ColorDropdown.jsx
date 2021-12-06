@@ -18,8 +18,9 @@ import {
 import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
-import deprecate from '../../internal/deprecate';
+import deprecate, { deprecateString } from '../../internal/deprecate';
 import { useDropdownTitleFixer } from '../IconDropdown/dropdownHooks';
+import useMerged from '../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -34,11 +35,11 @@ const propTypes = {
   /** True disables the control */
   disabled: PropTypes.bool,
   /** The label of the Dropdown, defaults to 'Select a color' */
-  label: PropTypes.string,
+  label: deprecateString(),
   /** True if the dropdown should hide the color names that display next to the color box */
   hideLabels: PropTypes.bool,
   /** The title of the Dropdown, defaults to 'Color' */
-  titleText: PropTypes.string,
+  titleText: deprecateString(),
   /** Required Id string */
   id: PropTypes.string.isRequired,
   /** True if the light theme is to be used, defaults to false */
@@ -57,6 +58,12 @@ const propTypes = {
   ),
   /** Id used if needed for testing */
   testId: PropTypes.string,
+  i18n: PropTypes.shape({
+    /** The label of the Dropdown, defaults to 'Select a color' */
+    label: PropTypes.string,
+    /** The title of the Dropdown, defaults to 'Color' */
+    titleText: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -74,14 +81,18 @@ const defaultProps = {
     { carbonColor: teal50, name: 'teal50' },
     { carbonColor: cyan90, name: 'cyan90' },
   ],
+  label: undefined,
+  titleText: undefined,
   disabled: false,
-  label: 'Select a color',
   hideLabels: false,
   light: false,
   selectedColor: undefined,
   testId: 'color-dropdown',
-  titleText: 'Color',
   translateWithId: undefined,
+  i18n: {
+    label: 'Select a color',
+    titleText: 'Color',
+  },
 };
 
 const ColorDropdown = ({
@@ -98,6 +109,7 @@ const ColorDropdown = ({
   testID,
   testId,
   translateWithId,
+  i18n,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -107,6 +119,8 @@ const ColorDropdown = ({
       );
     }
   }, []);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+
   const [selectedColor, setSelectedColor] = useState(selectedColorProp);
   const [dropdownRef, updateTitle] = useDropdownTitleFixer();
 
@@ -140,16 +154,16 @@ const ColorDropdown = ({
       id={id}
       itemToString={renderColorItem}
       items={colors}
-      label={label}
+      label={label || mergedI18n.label}
       light={light}
-      title={label}
+      title={label || mergedI18n.label}
       translateWithId={translateWithId}
       onChange={({ selectedItem }) => {
         setSelectedColor(selectedItem);
         onChange({ color: selectedItem });
       }}
       selectedItem={selectedColor}
-      titleText={titleText}
+      titleText={titleText || mergedI18n.titleText}
       type="default"
       data-testid={testID || testId}
       disabled={disabled}

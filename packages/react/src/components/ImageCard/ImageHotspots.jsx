@@ -8,6 +8,7 @@ import { findMatchingThresholds } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import { HotspotIconPropType, HotspotPropTypes } from '../../constants/SharedPropTypes';
 import { keyboardKeys } from '../../constants/KeyCodeConstants';
+import useMerged from '../../hooks/useMerged';
 
 import Hotspot from './Hotspot';
 import ImageControls from './ImageControls';
@@ -584,7 +585,7 @@ const ImageHotspots = ({
     hideMinimap: minimapBehavior !== 'show',
   });
 
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const handleCtrlKeyUp = useCallback((event) => {
     // Was the control key unpressed

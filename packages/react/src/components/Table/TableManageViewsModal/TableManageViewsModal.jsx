@@ -178,7 +178,9 @@ const TableManageViewsModal = ({
         header={{
           title: modalTitle,
         }}
-        iconDescription={closeIconDescription}
+        i18n={{
+          closeButtonLabel: closeIconDescription,
+        }}
         onClearError={onClearError}
         onClose={onClose}
         open={open}

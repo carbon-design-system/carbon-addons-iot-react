@@ -1101,7 +1101,7 @@ export const TableExampleWithCreateSaveViews = () => {
           page: manageViewsCurrentPageNumber,
           onPage: (pageNumber) => showPage(pageNumber, manageViewsFilteredViews),
           maxPage: Math.ceil(manageViewsFilteredViews.length / manageViewsRowsPerPage),
-          pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
+          i18n: { pageOfPagesText: (pageNumber) => `Page ${pageNumber}` },
         }}
       />
     );

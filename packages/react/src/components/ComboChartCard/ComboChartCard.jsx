@@ -14,6 +14,7 @@ import { CardPropTypes, ComboChartPropTypes } from '../../constants/CardPropType
 import { settings } from '../../constants/Settings';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+import useMerged from '../../hooks/useMerged';
 
 import { useTableData, useTableColumns, useChartData, useChartOptions } from './comboChartHelpers';
 
@@ -71,7 +72,7 @@ const ComboChartCard = ({
   testId,
   ...others
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const { noDataLabel } = mergedI18n;
 
   const { content, title, values } = handleCardVariables(
