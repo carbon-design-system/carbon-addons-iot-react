@@ -24,15 +24,19 @@
 
   &--page {
     position: relative;
-    div[class^='SimplePagination__StyledContainer'] {
-      border-top: $ui-03;
-      background: $ui-01;
-      height: rem(40px);
-      border: none;
-    }
-    div > span {
-      padding-left: $spacing-05;
-      margin-right: auto;
+    .#{$iot-prefix}-simple-pagination-container {
+      border-width: 1px 0 0 0;
+      height: $list-item-height;
+
+      .#{$iot-prefix}-simple-pagination-page-bar {
+        margin-left: unset;
+        justify-content: space-between;
+        width: 100%;
+
+        .#{$iot-prefix}-simple-pagination-page-label {
+          flex-grow: 2;
+        }
+      }
     }
   }
 

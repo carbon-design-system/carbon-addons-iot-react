@@ -227,7 +227,7 @@ const List = forwardRef((props, ref) => {
         />
         {pagination && !isLoading ? (
           <div className={`${iotPrefix}--list--page`}>
-            <SimplePagination {...pagination} />
+            <SimplePagination {...pagination} size="md" />
           </div>
         ) : null}
       </div>
