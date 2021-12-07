@@ -33818,6 +33818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
+      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
@@ -37644,6 +37645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </table>
       </div>
     </div>
+    <div />
     <div
       className="bx--pagination iot--pagination bx--pagination--lg"
       data-testid="table-table-pagination"
@@ -40789,6 +40791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
+      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
@@ -46542,6 +46545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
+      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
@@ -50200,6 +50204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
+      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
@@ -67612,13 +67617,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       aria-atomic="true"
-                      aria-labelledby="loading-id-9"
+                      aria-labelledby="loading-id-11"
                       aria-live="assertive"
                       className="bx--loading bx--loading--small"
                     >
                       <label
                         className="bx--visually-hidden"
-                        id="loading-id-9"
+                        id="loading-id-11"
                       >
                         Active loading indicator
                       </label>
@@ -86084,6 +86089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </table>
       </div>
     </div>
+    <div />
     <div
       className="bx--pagination iot--pagination bx--pagination--lg"
       data-testid="table-table-pagination"
@@ -111105,6 +111111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </table>
       </div>
     </div>
+    <div />
     <div
       className="bx--pagination iot--pagination bx--pagination--lg"
       data-testid="table-table-pagination"
