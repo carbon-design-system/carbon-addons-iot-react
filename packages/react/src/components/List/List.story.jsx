@@ -275,7 +275,7 @@ export const WithRowActionsSingle = () => (
           content: {
             value: key,
             secondaryValue: value,
-            rowActions: [
+            rowActions: () => [
               <Button
                 key={`${key}-list-item-button-${value}`}
                 style={{ color: 'black' }}
@@ -308,8 +308,9 @@ export const WithRowActionsMultiple = () => (
           content: {
             value: key,
             secondaryValue: value,
-            rowActions: [
+            rowActions: () => [
               <OverflowMenu
+                size="sm"
                 flipped={document.dir !== 'rtl'}
                 key={`${key}-list-item-button-${value}`}
               >

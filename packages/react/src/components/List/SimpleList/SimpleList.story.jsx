@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-import { EditingStyle } from '../../../utils/DragAndDropUtils';
+import { DragAndDrop, EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
 import SimpleListREADME from './SimpleList.mdx';
@@ -24,14 +24,41 @@ const listItemsWithEmptyRow = getListItems(5).concat({
   content: { value: '' },
 });
 
-const rowActions = [
-  <Edit16 onClick={action('edit')} key="simple-list-action-edit" />,
-  <Add16 onClick={action('add')} key="simple-list-action-add" />,
-  <Close16 onClick={action('close')} key="simple-list-action-close" />,
+const getRowActions = (dir) => () => [
+  <Button
+    key="simple-list-action-edit"
+    renderIcon={Edit16}
+    hasIconOnly
+    kind="ghost"
+    size="small"
+    onClick={() => action('edit')()}
+    iconDescription="Edit"
+    tooltipPosition={dir === 'ltr' ? 'left' : 'right'}
+  />,
+  <Button
+    key="simple-list-action-add"
+    renderIcon={Add16}
+    hasIconOnly
+    kind="ghost"
+    size="small"
+    onClick={() => action('add')()}
+    iconDescription="Add"
+    tooltipPosition={dir === 'ltr' ? 'left' : 'right'}
+  />,
+  <Button
+    key="simple-list-action-close"
+    renderIcon={Close16}
+    hasIconOnly
+    kind="ghost"
+    size="small"
+    onClick={() => action('close')()}
+    iconDescription="Close"
+    tooltipPosition={dir === 'ltr' ? 'left' : 'right'}
+  />,
 ];
 
-const rowActionsOverFlowMenu = [
-  <OverflowMenu flipped key="simple-list-overflow-menu">
+const getRowActionsOverFlowMenu = (dir) => [
+  <OverflowMenu size="sm" flipped={dir !== 'rtl'} key="simple-list-overflow-menu">
     <OverflowMenuItem itemText="Edit" />
     <OverflowMenuItem itemText="Add" />
     <OverflowMenuItem itemText="Delete" />
@@ -39,14 +66,14 @@ const rowActionsOverFlowMenu = [
   </OverflowMenu>,
 ];
 
-export const getListItemsWithActions = (num) =>
+export const getListItemsWithActions = (num, dir) =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
       id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
-        rowActions,
+        rowActions: getRowActions(dir),
       },
     }));
 
@@ -57,7 +84,7 @@ const getListItemsWithOverflowMenu = (num) =>
       id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
-        rowActions: rowActionsOverFlowMenu,
+        rowActions: getRowActionsOverFlowMenu(document.dir),
       },
     }));
 
@@ -81,7 +108,7 @@ const getFatRowListItemsWithActions = (num) =>
       content: {
         value: `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
-        rowActions,
+        rowActions: getRowActions(document.dir),
       },
     }));
 
@@ -93,7 +120,7 @@ const getFatRowListItemsWithOverflowMenu = (num) =>
       content: {
         value: `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
-        rowActions: rowActionsOverFlowMenu,
+        rowActions: getRowActionsOverFlowMenu(document.dir),
       },
     }));
 
@@ -127,7 +154,12 @@ export default {
     },
   },
 
-  excludeStories: ['getListItems', 'getListItemsWithActions'],
+  excludeStories: [
+    'getListItems',
+    'getListItemsWithActions',
+    'getRowActions',
+    'getRowActionsOverFlowMenu',
+  ],
 };
 
 export const Basic = () => (
@@ -225,7 +257,7 @@ export const ListWithMultipleActions = () => (
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
       buttons={buttonsToRender}
-      items={getListItemsWithActions(5)}
+      items={getListItemsWithActions(5, document.dir)}
       isFullHeight={boolean('isFullHeight', true)}
       pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
       isLoading={boolean('isLoading', false)}
@@ -359,3 +391,10 @@ export const ListWithReorder = () => {
 };
 
 ListWithReorder.storyName = 'with reorder';
+ListWithReorder.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];

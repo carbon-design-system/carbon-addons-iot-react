@@ -294,7 +294,11 @@ export const WithOverflowMenuRowActions = () => (
       isExpandable={boolean('isExpandable', true)}
       onExpand={action('onExpand')}
       rowActions={[
-        <OverflowMenu key="ListItem-action-overflow-menu" flipped>
+        <OverflowMenu
+          key="ListItem-action-overflow-menu"
+          flipped={document.dir !== 'rtl'}
+          size="sm"
+        >
           <OverflowMenuItem key="ListItem-action-overflow-Edit" itemText="Edit" />
           <OverflowMenuItem key="ListItem-action-overflow-Add" itemText="Add" />
           <OverflowMenuItem key="ListItem-action-overflow-Delete" itemText="Delete" />
