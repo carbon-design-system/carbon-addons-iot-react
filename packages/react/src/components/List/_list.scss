@@ -40,20 +40,10 @@
     padding: $spacing-05 0 $spacing-05;
     display: flex;
     flex-flow: column;
-    align-items: center;
-    justify-content: center;
 
     &__full-height {
       height: 100%;
       padding: 0;
-    }
-
-    svg {
-      margin-bottom: $spacing-06;
-    }
-
-    .explore-button {
-      margin-top: $spacing-06;
     }
   }
 }

@@ -201,7 +201,7 @@ export const TabsWithEmptyState = () => {
 export const Playground = () => (
   <EmptyState
     icon={select(
-      'image',
+      'icon',
       ['error', 'error404', 'empty', 'not-authorized', 'no-result', 'success', null],
       'empty'
     )}

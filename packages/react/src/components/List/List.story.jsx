@@ -137,16 +137,21 @@ export const BasicSingleColumn = () => {
     return (
       <div style={{ width: 400 }}>
         <List
+          emptyState={text('Empty state text (emptyState)', 'No list items to show')}
+          emptySearchState={text('Empty search state text (emptySearchState)', 'No results found')}
           isLargeRow={boolean('show large rows (isLargeRow)', false)}
           title={text('title', 'NY Yankees')}
-          items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees'])
-            .map(([key]) => ({
-              id: key,
-              content: { value: key },
-            }))
-            .filter(
-              ({ id }) => !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
-            )}
+          items={object(
+            'items',
+            Object.entries(sampleHierarchy.MLB['American League']['New York Yankees'])
+              .map(([key]) => ({
+                id: key,
+                content: { value: key },
+              }))
+              .filter(
+                ({ id }) => !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
+              )
+          )}
           search={
             useSearch
               ? {
@@ -154,6 +159,7 @@ export const BasicSingleColumn = () => {
                 }
               : undefined
           }
+          isFiltering={!!searchValue}
           isLoading={boolean('isLoading', false)}
           isVirtualList={boolean('isVirtualList', false)}
         />
@@ -179,6 +185,7 @@ export const BasicSingleColumnWithSearch = () => {
             .filter(
               ({ id }) => !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
             )}
+          isFiltering={!!searchValue}
           isLoading={boolean('isLoading', false)}
           search={{
             onChange: (evt) => setSearchValue(evt.target.value),

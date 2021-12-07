@@ -2,12 +2,12 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { Bee32 } from '@carbon/icons-react';
 import { VariableSizeList } from 'react-window';
 
 import { settings } from '../../../constants/Settings';
 import ListItem from '../ListItem/ListItem';
 import { Checkbox } from '../../Checkbox';
+import EmptyState from '../../EmptyState';
 import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
 import { ListItemPropTypes } from '../ListPropTypes';
@@ -19,6 +19,8 @@ const { iotPrefix } = settings;
 const propTypes = {
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** content shown if list is empty on search */
+  emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
@@ -28,6 +30,8 @@ const propTypes = {
   }),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
+  /** if true shows empty search state, instead of empty state, when there are no search results */
+  isFiltering: PropTypes.bool,
   /** use full height in list */
   // eslint-disable-next-line consistent-return
   isFullHeight: (props, propName, componentName) => {
@@ -85,6 +89,7 @@ const propTypes = {
 const defaultProps = {
   editingStyle: null,
   emptyState: 'No list items to show',
+  emptySearchState: 'No results found',
   expandedIds: [],
   getAllowedDropIds: null,
   handleLoadMore: () => {},
@@ -96,6 +101,7 @@ const defaultProps = {
     loadMore: 'Load more...',
   },
   iconPosition: 'left',
+  isFiltering: false,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -122,12 +128,14 @@ const getAdjustedNestingLevel = (items, currentLevel) =>
 const VirtualListContent = ({
   editingStyle,
   emptyState,
+  emptySearchState,
   expandedIds,
   handleLoadMore,
   handleSelect,
   i18n,
   iconPosition,
   indeterminateIds,
+  isFiltering,
   isFullHeight,
   isLargeRow,
   isLoading,
@@ -368,19 +376,20 @@ const VirtualListContent = ({
     );
   };
 
-  const emptyContent =
-    typeof emptyState === 'string' ? (
+  const renderEmptyContent = () => {
+    const emptyContent = isFiltering ? emptySearchState : emptyState;
+    return typeof emptyContent === 'string' ? (
       <div
         className={classnames(`${iotPrefix}--list--empty-state`, {
           [`${iotPrefix}--list--empty-state__full-height`]: isFullHeight,
         })}
       >
-        <Bee32 />
-        <p>{emptyState}</p>
+        <EmptyState icon={isFiltering ? 'no-result' : 'empty'} title={emptyContent} body="" />
       </div>
     ) : (
-      emptyState
+      emptyContent
     );
+  };
 
   const handleItemsRendered = useCallback(() => {
     const parentList = listOuterRef.current.closest(`.${iotPrefix}--list`);
@@ -441,7 +450,7 @@ const VirtualListContent = ({
           data-testid={`${testId}-loading`}
         />
       ) : (
-        emptyContent
+        renderEmptyContent()
       )}
     </div>
   );
