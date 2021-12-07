@@ -1,5 +1,5 @@
-import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
-import { ListItem } from 'carbon-components-angular';
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+import { I18n, ListItem } from 'carbon-components-angular';
 
 @Component({
   selector: 'ai-rule',
@@ -50,11 +50,11 @@ import { ListItem } from 'carbon-components-angular';
       <div class="iot--rule-builder-rule__actions">
         <button ibmButton="ghost" [iconOnly]="true" (click)="removeRule.emit(rule.id)">
           <svg class="bx--btn__icon" ibmIcon="subtract" size="32"></svg>
-          <span class="bx--assistive-text">Remove rule</span>
+          <span class="bx--assistive-text">{{ removeRuleLabel }}</span>
         </button>
         <button ibmButton="ghost" [iconOnly]="true" (click)="addRule.emit({ id: rule.id })">
           <svg class="bx--btn__icon" ibmIcon="add" size="32"></svg>
-          <span class="bx--assistive-text">Add new rule</span>
+          <span class="bx--assistive-text">{{ addNewRuleLabel }}</span>
         </button>
         <button
           ibmButton="ghost"
@@ -62,15 +62,19 @@ import { ListItem } from 'carbon-components-angular';
           (click)="addRule.emit({ id: rule.id, isGroup: true })"
         >
           <svg class="bx--btn__icon" ibmIcon="text--new-line" size="32"></svg>
-          <span class="bx--assistive-text">Add new rule group</span>
+          <span class="bx--assistive-text">{{ addNewGroupLabel }}</span>
         </button>
       </div>
     </ng-container>
   `,
 })
-export class RuleComponent {
+export class RuleComponent implements OnInit {
   @Input() columns: Array<ListItem | any> = [];
   @Input() columnOperands: Array<ListItem> = [];
+
+  @Input() removeRuleLabel = '';
+  @Input() addNewRuleLabel = '';
+  @Input() addNewGroupLabel = '';
 
   @Input() rule: any;
   @Output() ruleChange = new EventEmitter();
@@ -89,7 +93,13 @@ export class RuleComponent {
 
   dropdownColumns: Array<ListItem>;
 
-  constructor() {}
+  constructor(protected i18n: I18n) {}
+
+  ngOnInit() {
+    this.removeRuleLabel = this.removeRuleLabel || this.i18n.get().RULE_BUILDER.REMOVE_RULE;
+    this.addNewRuleLabel = this.addNewRuleLabel || this.i18n.get().RULE_BUILDER.ADD_NEW_RULE;
+    this.addNewGroupLabel = this.addNewGroupLabel || this.i18n.get().RULE_BUILDER.ADD_NEW_GROUP;
+  }
 
   hasTemplate() {
     const selectedColumn = this.columns.find((column: any) => column.id === this.rule.columnId);

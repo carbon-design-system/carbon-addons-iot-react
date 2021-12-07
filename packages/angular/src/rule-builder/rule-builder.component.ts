@@ -79,6 +79,7 @@ export class RuleBuilderComponent implements OnInit {
     this.i18n.setLocale('en', {
       RULE_BUILDER: {
         ADD_RULE: 'Add rule',
+        REMOVE_RULE: 'Remove rule',
         ADD_NEW_RULE: 'Add new rule',
         ADD_GROUP: 'Add group',
         ADD_NEW_GROUP: 'Add new rule group',
