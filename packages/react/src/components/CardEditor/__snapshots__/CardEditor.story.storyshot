@@ -4785,9 +4785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <div
               className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
             >
-              <span
-                className="iot--card-edit-form--input-label"
-              >
+              <span>
                 Include zero on x-axis
               </span>
               <div
@@ -4840,9 +4838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <div
               className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
             >
-              <span
-                className="iot--card-edit-form--input-label"
-              >
+              <span>
                 Include zero on y-axis
               </span>
               <div
@@ -7338,9 +7334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <div
               className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
             >
-              <span
-                className="iot--card-edit-form--input-label"
-              >
+              <span>
                 Include zero on x-axis
               </span>
               <div
@@ -7393,9 +7387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <div
               className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
             >
-              <span
-                className="iot--card-edit-form--input-label"
-              >
+              <span>
                 Include zero on y-axis
               </span>
               <div

@@ -146,7 +146,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
         />
       </div>
       <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
-        <span className={`${baseClassName}--input-label`}>{mergedI18n.includeZeroOnXaxis}</span>
+        <span>{mergedI18n.includeZeroOnXaxis}</span>
         <Toggle
           size="sm"
           data-testid="includeZeroOnXaxis-toggle"
@@ -164,7 +164,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
         />
       </div>
       <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
-        <span className={`${baseClassName}--input-label`}>{mergedI18n.includeZeroOnYaxis}</span>
+        <span>{mergedI18n.includeZeroOnYaxis}</span>
         <Toggle
           size="sm"
           data-testid="includeZeroOnYaxis-toggle"
