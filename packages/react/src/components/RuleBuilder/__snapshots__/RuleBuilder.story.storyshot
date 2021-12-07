@@ -700,7 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-655"
+                aria-controls="accordion-item-648"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -731,7 +731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-655"
+                id="accordion-item-648"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -814,7 +814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-656"
+                aria-controls="accordion-item-649"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -845,7 +845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-656"
+                id="accordion-item-649"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -5265,7 +5265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-695"
+                aria-controls="accordion-item-688"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -5296,7 +5296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-695"
+                id="accordion-item-688"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -5461,7 +5461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-696"
+                aria-controls="accordion-item-689"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -5492,7 +5492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-696"
+                id="accordion-item-689"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"

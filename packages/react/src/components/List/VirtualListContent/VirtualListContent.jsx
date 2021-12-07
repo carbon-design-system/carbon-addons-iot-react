@@ -288,9 +288,14 @@ const VirtualListContent = ({
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={() => handleSelect(item.id, parentId)}
+                onChange={() => handleSelect(item.id, parentId)}
+                onClick={(event) => {
+                  // This is needed as a workaround for a carbon checkbox bug
+                  // https://github.com/carbon-design-system/carbon/issues/10122#issuecomment-984692702
+                  event.stopPropagation();
+                }}
                 checked={isSelected}
-                disabled={isLocked}
+                disabled={disabled || isLocked}
                 indeterminate={isIndeterminate}
               />
             ) : (

@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.76](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.75...v2.147.0-next.76) (2021-12-06)
+
+
+### Bug Fixes
+
+* **list:** prevent multiple callbacks on checkbox click ([3b6a9a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3b6a9a34c18ec9cf96047ceaf1943f5ea9bd2c98))
+
+
+
+
+
+# [2.147.0-next.75](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.74...v2.147.0-next.75) (2021-12-03)
+
+
+### Bug Fixes
+
+* **list:** prevent multiple callbacks on checkbox click ([2e1d553](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2e1d553d9fcfea1add35e75ba924a35864ea9983))
+* **listbuilder:** add back and deprecate i18n props ([29397a7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/29397a7720d50427792a3b1ab0aefd35ef0b3be2))
+* **listbuilder:** memo code for checkboxes use condition ([6dd916e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6dd916e5b63b8b4d042b224e5a9964f7bb0ece99))
+* **tablecolumncustomizationmodal:** delete story update snaps ([6f4c17f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6f4c17fc9838d170d51d907272e5e2346e123bdd))
+* **tablecolumncustomizationmodal:** fix lodash import ([d9c77a0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d9c77a08211d5a4acc5c0c896d4b2b4fa6389ca4))
+
+
+### Features
+
+* **tablecolumncustomizationmodal:** add async wrapper ([93f0771](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/93f077115b5a2fb7a7545e926abae98e9fc83f1b))
+* **tablecolumncustomizationmodal:** add available list groups ([86dcd32](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/86dcd32ddd266da186a74a8aaa748578e09ac99c)), closes [#2603](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/2603)
+* **tablecolumncustomizationmodal:** add new modal and improve subcomponents ([c29a6e8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c29a6e8b92bc2213946cbad34cc6e6206d4fb957))
+* **tablecolumncustomizationmodal:** add secondary value ([0a3749c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0a3749ceedcb0f40eb955683596dcd4be0d127e0))
+* **tablecolumncustomizationmodal:** small improvements ([cbb3657](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cbb36573fb5220b2b07f386a3e5bf57e29244ff3))
+
+
+
+
+
+# [2.147.0-next.74](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.73...v2.147.0-next.74) (2021-12-02)
+
+
+### Bug Fixes
+
+* **table:** segregate angular styles from react table ([eac4cf5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eac4cf5f179c6c46a3c8ed99580452c1be9ae43a))
+
+
+
+
+
 # [2.147.0-next.73](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.72...v2.147.0-next.73) (2021-12-02)
 
 

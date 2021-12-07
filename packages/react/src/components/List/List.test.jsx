@@ -450,6 +450,11 @@ describe('List', () => {
     ).toHaveAttribute('draggable');
   });
 
+  it('disabled the checkbox of a locked id when using isCheckboxMultiSelect', () => {
+    render(<List items={getListItems(1)} isCheckboxMultiSelect lockedIds={['1']} />);
+    expect(screen.getByRole('checkbox')).toBeDisabled();
+  });
+
   describe('isVirtualList', () => {
     beforeEach(() => {
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
@@ -954,6 +959,13 @@ describe('List', () => {
       expect(
         screen.getAllByText('Item 2')[0].closest(`.${iotPrefix}--list-item-parent > *`)
       ).toHaveAttribute('draggable');
+    });
+
+    it('disabled the checkbox of a locked id when using isCheckboxMultiSelect', () => {
+      render(
+        <List items={getListItems(1)} isVirtualList isCheckboxMultiSelect lockedIds={['1']} />
+      );
+      expect(screen.getByRole('checkbox')).toBeDisabled();
     });
   });
 });

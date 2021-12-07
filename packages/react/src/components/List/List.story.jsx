@@ -292,7 +292,10 @@ export const WithRowActionsMultiple = () => (
             value: key,
             secondaryValue: value,
             rowActions: [
-              <OverflowMenu flipped key={`${key}-list-item-button-${value}`}>
+              <OverflowMenu
+                flipped={document.dir !== 'rtl'}
+                key={`${key}-list-item-button-${value}`}
+              >
                 <OverflowMenuItem itemText="Edit" />
                 <OverflowMenuItem itemText="Add" />
                 <OverflowMenuItem itemText="Delete" hasDivider isDelete />
@@ -333,7 +336,10 @@ export const WithHierarchy = () => (
               ]
             : level === 2
             ? [
-                <OverflowMenu flipped key={`${key}-list-item-button-${level}`}>
+                <OverflowMenu
+                  flipped={document.dir !== 'rtl'}
+                  key={`${key}-list-item-button-${level}`}
+                >
                   <OverflowMenuItem itemText="Edit" />
                   <OverflowMenuItem itemText="Add" />
                   <OverflowMenuItem itemText="Delete" hasDivider isDelete />
@@ -493,6 +499,7 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
     };
 
     const handleSelection = (items, id) => {
+      action('handleSelect')();
       setSelectedIds((currentSelectedIds) => {
         const isDeselecting = currentSelectedIds.includes(id);
         const parent = findParent(items, id);
