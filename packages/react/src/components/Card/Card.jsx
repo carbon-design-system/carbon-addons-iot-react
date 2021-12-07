@@ -1,11 +1,10 @@
 import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
-import SizeMe from 'react-sizeme';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 
+import useVisibilityLoader from '../../hooks/useVisibilityLoader';
 import { settings } from '../../constants/Settings';
 import {
   CARD_TITLE_HEIGHT,
@@ -23,6 +22,7 @@ import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtil
 import { getUpdatedCardSize, useCardResizing } from '../../utils/cardUtilityFunctions';
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
+import useSizeObserver from '../../hooks/useSizeObserver';
 
 import CardToolbar from './CardToolbar';
 
@@ -31,54 +31,60 @@ const { prefix, iotPrefix } = settings;
 const OptimizedSkeletonText = React.memo(SkeletonText);
 
 /** Full card */
-const CardWrapper = ({
-  isSelected,
-  children,
-  dimensions,
-  id,
-  style,
-  className,
-  onScroll,
-  // The event handlers are needed for when the card appears as grid items
-  // in the Dashboard Grid - isEditable
-  onMouseDown,
-  onMouseUp,
-  onTouchEnd,
-  onTouchStart,
-  onFocus,
-  onBlur,
-  tabIndex,
-  // TODO: remove deprecated testID prop in v3
-  // eslint-disable-next-line react/prop-types
-  testID,
-  testId,
-  ...others
-}) => {
-  const validOthers = filterValidAttributes(others);
+const CardWrapper = React.forwardRef(
+  (
+    {
+      isSelected,
+      children,
+      dimensions,
+      id,
+      style,
+      className,
+      onScroll,
+      // The event handlers are needed for when the card appears as grid items
+      // in the Dashboard Grid - isEditable
+      onMouseDown,
+      onMouseUp,
+      onTouchEnd,
+      onTouchStart,
+      onFocus,
+      onBlur,
+      tabIndex,
+      // TODO: remove deprecated testID prop in v3
+      // eslint-disable-next-line react/prop-types
+      testID,
+      testId,
+      ...others
+    },
+    ref
+  ) => {
+    const validOthers = filterValidAttributes(others);
 
-  return (
-    <div
-      role="presentation"
-      data-testid={testID || testId}
-      id={id}
-      style={{ ...style, '--card-default-height': `${dimensions.y}px` }}
-      onMouseDown={onMouseDown}
-      onMouseUp={onMouseUp}
-      onTouchEnd={onTouchEnd}
-      onTouchStart={onTouchStart}
-      onScroll={onScroll}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      tabIndex={tabIndex}
-      className={classnames(className, `${iotPrefix}--card--wrapper`, {
-        [`${iotPrefix}--card--wrapper__selected`]: isSelected,
-      })}
-      {...validOthers}
-    >
-      {children}
-    </div>
-  );
-};
+    return (
+      <div
+        ref={ref}
+        role="presentation"
+        data-testid={testID || testId}
+        id={id}
+        style={{ ...style, '--card-default-height': `${dimensions.y}px` }}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+        onTouchEnd={onTouchEnd}
+        onTouchStart={onTouchStart}
+        onScroll={onScroll}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        tabIndex={tabIndex}
+        className={classnames(className, `${iotPrefix}--card--wrapper`, {
+          [`${iotPrefix}--card--wrapper__selected`]: isSelected,
+        })}
+        {...validOthers}
+      >
+        {children}
+      </div>
+    );
+  }
+);
 
 /** Header components */
 export const CardHeader = (
@@ -299,6 +305,7 @@ const Card = (props) => {
   }, [availableActions]);
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
+  const [cardSize, cardRef] = useSizeObserver(useRef(null));
 
   const isSM = newSize === CARD_SIZES.SMALL;
 
@@ -365,13 +372,13 @@ const Card = (props) => {
     [subtitleProp, onCardAction, id]
   );
 
-  const getChildSize = (cardSize, cardTitle) => {
+  const getChildSize = (theSize, cardTitle) => {
     const childSize = {
-      ...cardSize,
+      ...theSize,
       height:
         cardTitle === null || cardTitle === undefined
-          ? cardSize.height
-          : cardSize.height - CARD_TITLE_HEIGHT,
+          ? theSize.height
+          : theSize.height - CARD_TITLE_HEIGHT,
     };
     return childSize;
   };
@@ -381,201 +388,189 @@ const Card = (props) => {
   const subTitleRef = useRef();
   const hasTitleTooltip = useHasTextOverflow(titleRef);
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef);
-
+  const [isVisible] = useVisibilityLoader(cardRef);
   const { resizeHandles, isResizing } = useCardResizing(
     wrappingCardResizeHandles,
     children,
     isResizable
   );
 
-  const card = (
-    <VisibilitySensor partialVisibility offset={{ top: 10 }}>
-      {({ isVisible }) => (
-        <SizeMe.SizeMe monitorHeight>
-          {({ size: cardSize }) => {
-            // support passing the card toolbar through to the custom card
-            const cardToolbar = hasToolbarActions ? (
-              <CardToolbar
-                width={cardSize.width}
-                availableActions={mergedAvailableActions}
-                renderExpandIcon={renderExpandIcon}
-                i18n={strings}
-                isEditable={isEditable}
-                isExpanded={isExpanded}
-                timeRange={timeRange}
-                locale={others.locale}
-                timeRangeOptions={timeRangeOptions}
-                onCardAction={cachedOnCardAction}
-                // TODO: remove deprecated testID prop in v3
-                testId={`${testID || testId}-toolbar`}
-                dateTimeMask={dateTimeMask}
-                extraActions={extraActions}
-              />
-            ) : null;
+  // support passing the card toolbar through to the custom card
+  const cardToolbar = hasToolbarActions ? (
+    <CardToolbar
+      width={cardSize.width}
+      availableActions={mergedAvailableActions}
+      renderExpandIcon={renderExpandIcon}
+      i18n={strings}
+      isEditable={isEditable}
+      isExpanded={isExpanded}
+      timeRange={timeRange}
+      locale={others.locale}
+      timeRangeOptions={timeRangeOptions}
+      onCardAction={cachedOnCardAction}
+      // TODO: remove deprecated testID prop in v3
+      testId={`${testID || testId}-toolbar`}
+      dateTimeMask={dateTimeMask}
+      extraActions={extraActions}
+    />
+  ) : null;
 
-            return (
-              <CardWrapper
-                {...others} // you need all of these to support dynamic positioning during edit
-                // TODO: remove deprecated testID prop in v3
-                testId={testID || testId}
-                id={id}
-                dimensions={dimensions}
-                isExpanded={isExpanded}
-                style={
-                  !isExpanded
-                    ? style
-                    : {
-                        height: 'calc(100% - 50px)',
-                        width: 'calc(100% - 50px)',
-                      }
-                }
-                className={classnames(`${iotPrefix}--card`, className, {
-                  [`${iotPrefix}--card--resizing`]: isResizing,
+  const card = (
+    <CardWrapper
+      {...others} // you need all of these to support dynamic positioning during edit
+      ref={cardRef}
+      // TODO: remove deprecated testID prop in v3
+      testId={testID || testId}
+      id={id}
+      dimensions={dimensions}
+      isExpanded={isExpanded}
+      style={
+        !isExpanded
+          ? style
+          : {
+              height: 'calc(100% - 50px)',
+              width: 'calc(100% - 50px)',
+            }
+      }
+      className={classnames(`${iotPrefix}--card`, className, {
+        [`${iotPrefix}--card--resizing`]: isResizing,
+      })}
+    >
+      {!hideHeader && (
+        <CardHeader
+          // TODO: remove deprecated testID prop in v3
+          testId={`${testID || testId}-header`}
+        >
+          <CardTitle
+            title={title}
+            // TODO: remove deprecated testID prop in v3
+            testId={`${testID || testId}-title`}
+          >
+            {hasTitleTooltip ? (
+              <Tooltip
+                data-testid={`${testID || testId}-title-tooltip`}
+                ref={titleRef}
+                showIcon={false}
+                triggerClassName={classnames(
+                  `${iotPrefix}--card--title--text__overflow`,
+                  `${iotPrefix}--card--title--text`,
+                  {
+                    [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
+                  }
+                )}
+                triggerText={title}
+              >
+                {title}
+              </Tooltip>
+            ) : (
+              <div
+                ref={titleRef}
+                className={classnames(`${iotPrefix}--card--title--text`, {
+                  [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
                 })}
               >
-                {!hideHeader && (
-                  <CardHeader
-                    // TODO: remove deprecated testID prop in v3
-                    testId={`${testID || testId}-header`}
-                  >
-                    <CardTitle
-                      title={title}
-                      // TODO: remove deprecated testID prop in v3
-                      testId={`${testID || testId}-title`}
-                    >
-                      {hasTitleTooltip ? (
-                        <Tooltip
-                          data-testid={`${testID || testId}-title-tooltip`}
-                          ref={titleRef}
-                          showIcon={false}
-                          triggerClassName={classnames(
-                            `${iotPrefix}--card--title--text__overflow`,
-                            `${iotPrefix}--card--title--text`,
-                            {
-                              [`${iotPrefix}--card--title--text--wrapped`]:
-                                hasTitleWrap && !subtitle,
-                            }
-                          )}
-                          triggerText={title}
-                        >
-                          {title}
-                        </Tooltip>
-                      ) : (
-                        <div
-                          ref={titleRef}
-                          className={classnames(`${iotPrefix}--card--title--text`, {
-                            [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
-                          })}
-                        >
-                          {title}
-                        </div>
-                      )}
-                      {tooltip && (
-                        <Tooltip
-                          data-testid={`${testID || testId}-tooltip`}
-                          triggerId={`card-tooltip-trigger-${id}`}
-                          tooltipId={`card-tooltip-${id}`}
-                          triggerClassName={`${iotPrefix}--card--header--tooltip`}
-                          id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
-                          triggerText=""
-                        >
-                          {tooltip}
-                        </Tooltip>
-                      )}
-                      {!subtitle ? null : hasSubTitleTooltip ? (
-                        <Tooltip
-                          data-testid={`${testID || testId}-subtitle`}
-                          ref={subTitleRef}
-                          showIcon={false}
-                          triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
-                            [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
-                          })}
-                          triggerText={subtitle}
-                        >
-                          {subtitle}
-                        </Tooltip>
-                      ) : (
-                        <div
-                          ref={subTitleRef}
-                          data-testid={`${testID || testId}-subtitle`}
-                          className={classnames(`${iotPrefix}--card--subtitle--text`, {
-                            [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
-                          })}
-                        >
-                          {subtitle}
-                        </div>
-                      )}
-                    </CardTitle>
-                    {cardToolbar}
-                  </CardHeader>
-                )}
-                <CardContent
-                  // TODO: remove deprecated testID prop in v3
-                  testId={`${testID || testId}-content`}
-                  dimensions={dimensions}
-                  isExpanded={isExpanded}
-                  className={contentClassName}
-                >
-                  {!isVisible && isLazyLoading ? ( // if not visible don't show anything
-                    ''
-                  ) : isLoading ? (
-                    <div
-                      style={{
-                        '--card-content-padding': `${CARD_CONTENT_PADDING}px`,
-                      }}
-                      className={`${iotPrefix}--card--skeleton-wrapper`}
-                    >
-                      <OptimizedSkeletonText
-                        paragraph
-                        lineCount={
-                          newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE ? 2 : 3
-                        }
-                        width="100%"
-                      />
-                    </div>
-                  ) : error ? (
-                    <EmptyMessageWrapper>
-                      {newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE
-                        ? strings.errorLoadingDataShortLabel
-                        : `${strings.errorLoadingDataLabel} ${error}`}
-                    </EmptyMessageWrapper>
-                  ) : isEmpty && !isEditable ? (
-                    <EmptyMessageWrapper>
-                      {isSM ? strings.noDataShortLabel : strings.noDataLabel}
-                    </EmptyMessageWrapper>
-                  ) : Array.isArray(children) && typeof children?.[0] === 'function' ? ( // pass the measured size down to the children if it's an render function
-                    [
-                      // first option is a function
-                      children?.[0](getChildSize(cardSize, title), {
-                        cardToolbar,
-                        ...props,
-                      }), // second and third options are the resizable handles
-                      children?.slice(1),
-                    ]
-                  ) : typeof children === 'function' ? (
-                    children?.(getChildSize(cardSize, title), {
-                      cardToolbar,
-                      ...props,
-                    })
-                  ) : (
-                    children
-                  )}
-                </CardContent>
-                {CardFooter ? (
-                  <div
-                    className={`${iotPrefix}--card--footer--wrapper`}
-                    data-testid={`${testID || testId}-footer`}
-                  >
-                    <CardFooter />
-                  </div>
-                ) : null}
-                {resizeHandles}
-              </CardWrapper>
-            );
-          }}
-        </SizeMe.SizeMe>
+                {title}
+              </div>
+            )}
+            {tooltip && (
+              <Tooltip
+                data-testid={`${testID || testId}-tooltip`}
+                triggerId={`card-tooltip-trigger-${id}`}
+                tooltipId={`card-tooltip-${id}`}
+                triggerClassName={`${iotPrefix}--card--header--tooltip`}
+                id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
+                triggerText=""
+              >
+                {tooltip}
+              </Tooltip>
+            )}
+            {!subtitle ? null : hasSubTitleTooltip ? (
+              <Tooltip
+                data-testid={`${testID || testId}-subtitle`}
+                ref={subTitleRef}
+                showIcon={false}
+                triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
+                  [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
+                })}
+                triggerText={subtitle}
+              >
+                {subtitle}
+              </Tooltip>
+            ) : (
+              <div
+                ref={subTitleRef}
+                data-testid={`${testID || testId}-subtitle`}
+                className={classnames(`${iotPrefix}--card--subtitle--text`, {
+                  [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
+                })}
+              >
+                {subtitle}
+              </div>
+            )}
+          </CardTitle>
+          {cardToolbar}
+        </CardHeader>
       )}
-    </VisibilitySensor>
+      <CardContent
+        // TODO: remove deprecated testID prop in v3
+        testId={`${testID || testId}-content`}
+        dimensions={dimensions}
+        isExpanded={isExpanded}
+        className={contentClassName}
+      >
+        {!isVisible && isLazyLoading ? ( // if not visible don't show anything
+          ''
+        ) : isLoading ? (
+          <div
+            style={{
+              '--card-content-padding': `${CARD_CONTENT_PADDING}px`,
+            }}
+            className={`${iotPrefix}--card--skeleton-wrapper`}
+          >
+            <OptimizedSkeletonText
+              paragraph
+              lineCount={newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE ? 2 : 3}
+              width="100%"
+            />
+          </div>
+        ) : error ? (
+          <EmptyMessageWrapper>
+            {newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE
+              ? strings.errorLoadingDataShortLabel
+              : `${strings.errorLoadingDataLabel} ${error}`}
+          </EmptyMessageWrapper>
+        ) : isEmpty && !isEditable ? (
+          <EmptyMessageWrapper>
+            {isSM ? strings.noDataShortLabel : strings.noDataLabel}
+          </EmptyMessageWrapper>
+        ) : Array.isArray(children) && typeof children?.[0] === 'function' ? ( // pass the measured size down to the children if it's an render function
+          [
+            // first option is a function
+            children?.[0](getChildSize(cardSize, title), {
+              cardToolbar,
+              ...props,
+            }), // second and third options are the resizable handles
+            children?.slice(1),
+          ]
+        ) : typeof children === 'function' ? (
+          children?.(getChildSize(cardSize, title), {
+            cardToolbar,
+            ...props,
+          })
+        ) : (
+          children
+        )}
+      </CardContent>
+      {CardFooter ? (
+        <div
+          className={`${iotPrefix}--card--footer--wrapper`}
+          data-testid={`${testID || testId}-footer`}
+        >
+          <CardFooter />
+        </div>
+      ) : null}
+      {resizeHandles}
+    </CardWrapper>
   );
 
   return isExpanded ? (

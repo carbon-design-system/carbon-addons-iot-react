@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable } from 'carbon-components-react';
-import VisibilitySensor from 'react-visibility-sensor';
+import { TableBody as CarbonTableBody } from 'carbon-components-react';
 import { pick } from 'lodash-es';
 
+import useVisibilityLoader from '../../../hooks/useVisibilityLoader';
 import {
   ExpandedRowsPropTypes,
   TableRowPropTypes,
@@ -15,8 +15,6 @@ import { findRow, tableTraverser } from '../tableUtilities';
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
 import TableBodyLoadMoreRow from './TableBodyLoadMoreRow/TableBodyLoadMoreRow';
-
-const { TableBody: CarbonTableBody } = DataTable;
 
 const propTypes = {
   /** The unique id of the table */
@@ -172,6 +170,11 @@ const TableBody = ({
   showExpanderColumn,
   preserveCellWhiteSpace,
 }) => {
+  const visibleCheckerRef = useRef(null);
+  const [isVisible, moreToLoad] = useVisibilityLoader(visibleCheckerRef, {
+    maxToLoad: rows.length,
+  });
+
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
     () =>
@@ -342,20 +345,10 @@ const TableBody = ({
 
   return (
     <CarbonTableBody data-testid={testID || testId}>
-      {rows.map((row) => {
-        return shouldLazyRender ? (
-          <VisibilitySensor
-            key={`visibilitysensor-${row.id}`}
-            scrollCheck
-            partialVisibility
-            resizeCheck
-          >
-            {({ isVisible }) => (isVisible ? renderRow(row) : <tr />)}
-          </VisibilitySensor>
-        ) : (
-          renderRow(row)
-        );
+      {rows.map((row, i) => {
+        return shouldLazyRender ? (isVisible?.[i] ? renderRow(row) : null) : renderRow(row);
       })}
+      {shouldLazyRender && moreToLoad ? <tr ref={visibleCheckerRef} /> : null}
     </CarbonTableBody>
   );
 };

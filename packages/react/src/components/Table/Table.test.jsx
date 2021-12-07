@@ -2608,7 +2608,7 @@ describe('Table', () => {
     // 5 * 1.5 = 7.5, rounded is 8 items.
     expect(screen.getByText('1–5 of 8 items')).toBeVisible();
 
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'Warning: Failed prop type: Invalid prop `maxPages` supplied to `Table`. `maxPages` must be a positive integer.'
       )

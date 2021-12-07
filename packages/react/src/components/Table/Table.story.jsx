@@ -666,6 +666,10 @@ export const BasicDumbTable = () => {
           ['onKeyPress', 'onEnterAndBlur', true, false],
           true
         ),
+        shouldLazyRender: boolean(
+          'Enables only loading table rows as they become visible (options.shouldLazyRender)',
+          false
+        ),
         hasMultiSort,
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
         hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
