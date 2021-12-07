@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'carbon-components-react';
 import { Settings16 } from '@carbon/icons-react';
-import withSize from 'react-sizeme';
 
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
+import useSizeObserver from '../../../hooks/useSizeObserver';
 
 import TableViewItemPropType from './TableViewItemPropTypes';
 import TableViewDropdownItem from './TableViewDropdownItem';
@@ -13,7 +13,7 @@ import TableViewDropdownItem from './TableViewDropdownItem';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  /** Set to true if the user has modfied filters etc since the view was loaded */
+  /** Set to true if the user has modified filters etc since the view was loaded */
   selectedViewEdited: PropTypes.bool,
   /** The id of the view that is currently selected */
   selectedViewId: PropTypes.string,
@@ -41,7 +41,7 @@ const propTypes = {
     /** Callback for when the current view is changed by the user */
     onChangeView: PropTypes.func,
   }).isRequired,
-  /** Used to overide the internal components and props of the TableViewDropdown */
+  /** Used to override the internal components and props of the TableViewDropdown */
   overrides: PropTypes.shape({
     dropdown: OverridePropTypes,
     dropdownItem: OverridePropTypes,
@@ -129,6 +129,7 @@ const TableViewDropdown = ({
   const mySelectedItem = allItems.find((item) => item.id === selectedViewId) || viewAllItem;
   const MyDropDown = overrides?.dropdown?.component || Dropdown;
   const MyTableViewDropDownItem = overrides?.dropdownItem?.component || TableViewDropdownItem;
+  const [containerSize, containerRef] = useSizeObserver(useRef(null));
 
   const onSelectionChange = (change) => {
     const item = change.selectedItem;
@@ -142,42 +143,36 @@ const TableViewDropdown = ({
   };
 
   return (
-    <withSize.SizeMe>
-      {({ size: measuredSize }) => {
-        return (
-          <div className={`${iotPrefix}--view-dropdown__container`} style={style}>
-            <MyDropDown
-              label={i18n.tableViewMenu}
-              data-testid={testID}
-              selectedItem={mySelectedItem}
-              ariaLabel={i18n.ariaLabel}
-              disabled={disabled}
-              id={`${iotPrefix}--view-dropdown`}
-              // We are using itemToString instead of itemToElement since we need the custom
-              // rendering to also happen when the item is selected. See closed PR
-              // https://github.com/carbon-design-system/carbon/pull/5578
-              itemToString={(itemData) => {
-                return (
-                  <MyTableViewDropDownItem
-                    testID={`TableViewDropdownItem-${itemData.id}`}
-                    isCompact={measuredSize?.width < 200}
-                    item={itemData}
-                    isSelected={itemData.id === mySelectedItem.id}
-                    activeViewEdited={selectedViewEdited}
-                    i18n={i18n}
-                    {...overrides?.dropdownItem?.props}
-                  />
-                );
-              }}
-              items={allItems}
-              light={false}
-              onChange={onSelectionChange}
-              {...overrides?.dropdown?.props}
+    <div ref={containerRef} className={`${iotPrefix}--view-dropdown__container`} style={style}>
+      <MyDropDown
+        label={i18n.tableViewMenu}
+        data-testid={testID}
+        selectedItem={mySelectedItem}
+        ariaLabel={i18n.ariaLabel}
+        disabled={disabled}
+        id={`${iotPrefix}--view-dropdown`}
+        // We are using itemToString instead of itemToElement since we need the custom
+        // rendering to also happen when the item is selected. See closed PR
+        // https://github.com/carbon-design-system/carbon/pull/5578
+        itemToString={(itemData) => {
+          return (
+            <MyTableViewDropDownItem
+              testID={`TableViewDropdownItem-${itemData.id}`}
+              isCompact={containerSize.width < 200}
+              item={itemData}
+              isSelected={itemData.id === mySelectedItem.id}
+              activeViewEdited={selectedViewEdited}
+              i18n={i18n}
+              {...overrides?.dropdownItem?.props}
             />
-          </div>
-        );
-      }}
-    </withSize.SizeMe>
+          );
+        }}
+        items={allItems}
+        light={false}
+        onChange={onSelectionChange}
+        {...overrides?.dropdown?.props}
+      />
+    </div>
   );
 };
 

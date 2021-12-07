@@ -35,6 +35,10 @@ describe('TableViewDropdown', () => {
   const itemSelector = `.${prefix}--list-box__menu-item__option`;
   const iotItemSelector = `.${prefix}--list-box__field .${iotPrefix}--view-dropdown__item`;
 
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
   describe('item rendering', () => {
     it('adds a "view all" default item to the start of the list of views', () => {
       const wrapper = mount(
@@ -289,6 +293,16 @@ describe('TableViewDropdown', () => {
   });
 
   it('i18n string tests', () => {
+    jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
+      callback([{ contentRect: { width: 200, height: 400 } }]);
+
+      return {
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+    });
+
     const i18nTest = {
       view: 'viewz',
       edited: 'edited',
