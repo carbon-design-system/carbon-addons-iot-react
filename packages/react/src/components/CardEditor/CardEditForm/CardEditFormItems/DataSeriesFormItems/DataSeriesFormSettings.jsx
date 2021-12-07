@@ -30,6 +30,8 @@ const propTypes = {
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
       showLegend: PropTypes.bool,
+      /** maximum amounts of data points to render in the graph */
+      maximumDataPoints: PropTypes.bool,
     }),
     interval: PropTypes.string,
   }),
@@ -40,6 +42,7 @@ const propTypes = {
     yAxisLabel: PropTypes.string,
     unitLabel: PropTypes.string,
     decimalPrecisionLabel: PropTypes.string,
+    maximumDataPointsLabel: PropTypes.string,
   }),
 };
 
@@ -52,6 +55,7 @@ const defaultProps = {
     includeZeroOnYaxis: 'Include zero on y-axis',
     unitLabel: 'Unit',
     decimalPrecisionLabel: 'Decimal precision',
+    maximumDataPoints: 'Maximum data points',
   },
 };
 
@@ -122,8 +126,27 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
           value={content?.decimalPrecision}
         />
       </div>
+      <div className={`${baseClassName}--input`}>
+        <TextInput
+          id={`${id}_maximum_data_points`}
+          labelText={mergedI18n.maximumDataPoints}
+          light
+          type="number"
+          onChange={(evt) => {
+            const maximumDataPointsString = evt.target.value;
+            const maximumDataPoints = Number.parseInt(maximumDataPointsString, 10);
+            if (!Number.isNaN(maximumDataPoints)) {
+              onChange({
+                ...cardConfig,
+                content: { ...cardConfig.content, maximumDataPoints },
+              });
+            }
+          }}
+          value={content?.maximumDataPoints}
+        />
+      </div>
       <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
-        <span>{mergedI18n.includeZeroOnXaxis}</span>
+        <span className={`${baseClassName}--input-label`}>{mergedI18n.includeZeroOnXaxis}</span>
         <Toggle
           size="sm"
           data-testid="includeZeroOnXaxis-toggle"
@@ -141,7 +164,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
         />
       </div>
       <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
-        <span>{mergedI18n.includeZeroOnYaxis}</span>
+        <span className={`${baseClassName}--input-label`}>{mergedI18n.includeZeroOnYaxis}</span>
         <Toggle
           size="sm"
           data-testid="includeZeroOnYaxis-toggle"

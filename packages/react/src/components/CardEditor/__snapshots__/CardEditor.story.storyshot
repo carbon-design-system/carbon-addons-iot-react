@@ -4751,9 +4751,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
             <div
+              className="iot--card-edit-form--input"
+            >
+              <div
+                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="calculated_maximum_data_points"
+                >
+                  Maximum data points
+                </label>
+                <div
+                  className="bx--text-input__field-outer-wrapper"
+                >
+                  <div
+                    className="bx--text-input__field-wrapper"
+                    data-invalid={null}
+                  >
+                    <input
+                      aria-describedby="calculated_maximum_data_points-helper-text"
+                      className="bx--text-input bx--text-input--light"
+                      disabled={false}
+                      id="calculated_maximum_data_points"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="number"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
               className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
             >
-              <span>
+              <span
+                className="iot--card-edit-form--input-label"
+              >
                 Include zero on x-axis
               </span>
               <div
@@ -4806,7 +4840,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <div
               className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
             >
-              <span>
+              <span
+                className="iot--card-edit-form--input-label"
+              >
                 Include zero on y-axis
               </span>
               <div
@@ -7268,9 +7304,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
             <div
+              className="iot--card-edit-form--input"
+            >
+              <div
+                className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="timeseries_maximum_data_points"
+                >
+                  Maximum data points
+                </label>
+                <div
+                  className="bx--text-input__field-outer-wrapper"
+                >
+                  <div
+                    className="bx--text-input__field-wrapper"
+                    data-invalid={null}
+                  >
+                    <input
+                      aria-describedby="timeseries_maximum_data_points-helper-text"
+                      className="bx--text-input bx--text-input--light"
+                      disabled={false}
+                      id="timeseries_maximum_data_points"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      type="number"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
               className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
             >
-              <span>
+              <span
+                className="iot--card-edit-form--input-label"
+              >
                 Include zero on x-axis
               </span>
               <div
@@ -7323,7 +7393,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             <div
               className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
             >
-              <span>
+              <span
+                className="iot--card-edit-form--input-label"
+              >
                 Include zero on y-axis
               </span>
               <div

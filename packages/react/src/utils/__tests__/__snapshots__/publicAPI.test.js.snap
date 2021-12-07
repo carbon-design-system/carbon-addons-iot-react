@@ -12757,6 +12757,9 @@ Map {
             "layoutInfoXl": Object {
               "type": "string",
             },
+            "maximumDataPointsLabel": Object {
+              "type": "string",
+            },
             "modalHelpText": Object {
               "type": "string",
             },
@@ -12977,6 +12980,7 @@ Map {
       },
     },
   },
+  "getDefaultCard" => Object {},
   "DashboardEditorDefaultCardRenderer" => Object {
     "defaultProps": Object {
       "availableDimensions": undefined,
