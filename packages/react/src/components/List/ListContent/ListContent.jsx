@@ -142,7 +142,7 @@ const ListContent = ({
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const renderLoadMore = (item, isLoadingMore, level) => {
-    const indentation = `${getAdjustedNestingLevel(item?.children || [], level) * 32}px`;
+    const indentation = `${level * 32}px`;
     return isLoadingMore ? (
       <div key={`${item.id}-list-item-load-more`} className={`${iotPrefix}--list-item`}>
         <div
@@ -249,14 +249,9 @@ const ListContent = ({
       ...(hasChildren && isExpanded
         ? item.children
             .map((child, nestedIndex) => {
-              return renderItemAndChildren(
-                child,
-                nestedIndex,
-                item.id,
-                getAdjustedNestingLevel(item?.children, level)
-              );
+              return renderItemAndChildren(child, nestedIndex, item.id, level + 1);
             })
-            .concat(item.hasLoadMore ? [renderLoadMore(item, isLoadingMore, level)] : [])
+            .concat(item.hasLoadMore ? [renderLoadMore(item, isLoadingMore, level + 1)] : [])
         : []),
       ...(!hasChildren && item.hasLoadMore ? [renderLoadMore(item, isLoadingMore, level)] : []),
     ];

@@ -435,7 +435,6 @@ export const WithMixedHierarchies = () => (
       items={[
         {
           id: 'Tasks',
-          isCategory: true,
           content: {
             value: 'Tasks',
           },
@@ -462,7 +461,6 @@ export const WithMixedHierarchies = () => (
         },
         {
           id: 'Requests',
-          isCategory: true,
           content: {
             value: 'Requests',
           },
@@ -476,7 +474,6 @@ export const WithMixedHierarchies = () => (
             },
             {
               id: 'Request 2',
-              isCategory: true,
               content: {
                 value: 'Request 2',
               },

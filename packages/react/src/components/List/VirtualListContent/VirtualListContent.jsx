@@ -160,7 +160,7 @@ const VirtualListContent = ({
   const virtualListRef = virtualListRefProp || internalVirtualListRef;
 
   const renderLoadMore = (item, isLoadingMore, level, style) => {
-    const indentation = `${getAdjustedNestingLevel(item?.children || [], level) * 32}px`;
+    const indentation = `${level * 32}px`;
     return isLoadingMore ? (
       <div
         style={style}
@@ -213,9 +213,7 @@ const VirtualListContent = ({
         }
 
         if (isExpanded && item.children) {
-          tmp = tmp.concat(
-            flatten(item.children, item.id, getAdjustedNestingLevel(item.children, currentLevel))
-          );
+          tmp = tmp.concat(flatten(item.children, item.id, currentLevel + 1));
 
           if (item.hasLoadMore && isExpanded) {
             tmp = tmp.concat([
@@ -297,7 +295,8 @@ const VirtualListContent = ({
 
     if (item.isLoadMoreRow) {
       if (parentIsExpanded || item.level === 0) {
-        return renderLoadMore(item, isLoadingMore, level, style);
+        const loadMoreLevel = parentIsExpanded ? level + 1 : level;
+        return renderLoadMore(item, isLoadingMore, loadMoreLevel, style);
       }
 
       return null;
