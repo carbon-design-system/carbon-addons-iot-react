@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
 import { ComboChart } from '@carbon/charts-react';
 import classnames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import defaultsDeep from 'lodash/defaultsDeep';
+import { isEmpty, defaultsDeep } from 'lodash-es';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import {

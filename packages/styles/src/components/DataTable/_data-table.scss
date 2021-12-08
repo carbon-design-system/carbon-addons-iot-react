@@ -79,16 +79,32 @@ html[dir='rtl'] {
       padding-right: 0;
     }
   }
-}
 
-.#{$prefix}--data-table .#{$prefix}--checkbox-table-cell {
-  padding-bottom: $spacing-03;
-  padding-top: $spacing-03;
-  width: 2.5rem;
+  // override padding on chexkbox cells, so that it aligns with cell content in tables with xl size prop
+  &.#{$prefix}--data-table--xl {
+    .#{$prefix}--checkbox-table-cell {
+      padding-top: $spacing-05;
+    }
+  }
 
-  /* Added to undo carbon component. this needs to be removed when we redo this table */
-  &::after {
-    background-color: transparent !important;
+  &.#{$prefix}--data-table--xs,
+  &.#{$prefix}--data-table--sm,
+  &.#{$prefix}--data-table--md {
+    .#{$prefix}--checkbox-table-cell {
+      padding-top: $spacing-01;
+      padding-bottom: $spacing-01;
+    }
+  }
+
+  .#{$prefix}--checkbox-table-cell {
+    padding-bottom: $spacing-03;
+    padding-top: $spacing-03;
+    width: 2.5rem;
+
+    /* Added to undo carbon component. this needs to be removed when we redo this table */
+    &::after {
+      background-color: transparent !important;
+    }
   }
 }
 

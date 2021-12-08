@@ -1,4 +1,4 @@
-@import '../../vendor/@ai-apps/styles/scss/globals/vars';
+@import '../../globals/vars';
 
 // TODO add styling hooks to carbon-components-angular so we can remove aiTableHeadCell
 .table-head-cell-text,
@@ -38,7 +38,7 @@
   top: 16px;
 }
 
-.ai-table {
+.#{$iot-prefix}-table {
   .#{$prefix}--table-header-label,
   .table-head-cell-text {
     padding-left: 16px;

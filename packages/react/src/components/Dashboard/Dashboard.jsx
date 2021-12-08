@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 import warning from 'warning';
 
 import { SvgPropType } from '../../constants/SharedPropTypes';

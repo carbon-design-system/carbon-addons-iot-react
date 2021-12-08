@@ -84,7 +84,6 @@ import { AITableHeaderItem } from '../table-model.class';
       </button>
     </ng-container>
   `,
-  styleUrls: ['./table-head-cell.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class AITableHeadCell extends TableHeadCell {

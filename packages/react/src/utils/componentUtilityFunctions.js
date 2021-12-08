@@ -1,7 +1,6 @@
-import delay from 'lodash/delay';
+import { delay, isNil } from 'lodash-es';
 import { sortStates } from 'carbon-components-react/es/components/DataTable/state/sorting';
 import fileDownload from 'js-file-download';
-import isNil from 'lodash/isNil';
 import warning from 'warning';
 import { firstBy } from 'thenby';
 

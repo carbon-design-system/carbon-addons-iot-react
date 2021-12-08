@@ -19,7 +19,7 @@ import { Table } from 'carbon-components-angular';
       [striped]="striped"
       [skeleton]="skeleton"
       [ngClass]="{ 'bx--data-table--sticky-header': stickyHeader }"
-      class="ai-table"
+      class="iot-table"
     >
       <thead
         aiTableHead
@@ -88,7 +88,6 @@ import { Table } from 'carbon-components-angular';
       </tfoot>
     </table>
   `,
-  styleUrls: ['./table.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class AITableComponent extends Table {

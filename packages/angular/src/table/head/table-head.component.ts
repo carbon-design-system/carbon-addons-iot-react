@@ -66,7 +66,6 @@ import { TableHead } from 'carbon-components-angular';
     </ng-container>
     <ng-content></ng-content>
   `,
-  styleUrls: ['./table-head.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class AITableHeadComponent extends TableHead {

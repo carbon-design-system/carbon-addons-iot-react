@@ -2,14 +2,14 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Loading } from 'carbon-components-react';
 import classnames from 'classnames';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 
 import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
-import icons from '../../../../utils/bundledIcons';
 import { OverflowMenu } from '../../../OverflowMenu';
 import { OverflowMenuItem } from '../../../OverflowMenuItem';
+import { renderTableOverflowItemText } from '../../tableUtilities';
 
 import RowActionsError from './RowActionsError';
 
@@ -65,11 +65,6 @@ const defaultProps = {
   showSingleRowEditButtons: false,
   singleRowEditButtons: null,
   langDir: 'ltr',
-};
-
-const renderBundledIconUsingName = (iconName, label) => {
-  const Icon = icons[iconName];
-  return <Icon aria-label={label} />;
 };
 
 class RowActionsCell extends React.Component {
@@ -201,23 +196,10 @@ class RowActionsCell extends React.Component {
                         requireTitle={!action.renderIcon}
                         hasDivider={action.hasDivider}
                         isDelete={action.isDelete}
-                        itemText={
-                          action.renderIcon ? (
-                            <div
-                              className={`${iotPrefix}--row-actions-cell--overflow-menu-content`}
-                              title={action.labelText}
-                            >
-                              {typeof action.renderIcon === 'string' ? (
-                                renderBundledIconUsingName(action.renderIcon, action.labelText)
-                              ) : (
-                                <action.renderIcon description={action.labelText} />
-                              )}
-                              {action.labelText}
-                            </div>
-                          ) : (
-                            action.labelText
-                          )
-                        }
+                        itemText={renderTableOverflowItemText({
+                          action,
+                          className: `${iotPrefix}--row-actions-cell--overflow-menu-content`,
+                        })}
                         disabled={action.disabled}
                       />
                     ))}
