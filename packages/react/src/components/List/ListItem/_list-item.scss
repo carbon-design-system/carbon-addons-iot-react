@@ -96,6 +96,7 @@
   padding: $spacing-03 $spacing-05;
   align-items: center;
   overflow: hidden;
+  column-gap: $spacing-05;
 
   &:focus {
     outline: 2px solid $focus;
@@ -118,6 +119,7 @@
     height: $list-item-height-large;
     padding: $spacing-05;
     align-items: start;
+    // background-color: lightgreen;
   }
 
   &--category {
@@ -152,8 +154,6 @@
 
   &--expand-icon {
     cursor: pointer;
-    padding: $spacing-01;
-    margin-right: $spacing-04 - $spacing-01; // account for padding
 
     &:focus {
       outline: 2px solid $focus;
@@ -173,32 +173,43 @@
     height: 100%;
     align-items: center;
     min-width: 0;
+    column-gap: $spacing-05;
+
+    .#{$prefix}--checkbox-wrapper:first-of-type .#{$prefix}--checkbox-label-text {
+      padding: 0; // Let the column-gap determine the spacing
+    }
+
     &__large {
       align-items: flex-start;
+      .#{$prefix}--checkbox-wrapper:first-of-type {
+        margin-top: calc(-1 * #{$spacing-02});
+      }
     }
-    &--icon {
-      padding-top: $spacing-01;
-      &__left {
-        padding-right: $spacing-04;
-      }
-      &__right {
-        padding-left: $spacing-04;
-        order: 9;
-      }
+    &--icon__right {
+      order: 9;
     }
     &--values {
+      display: flex;
       position: relative;
       flex: 1;
-      max-width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 0;
+      column-gap: $spacing-03;
+
+      &__large {
+        align-items: flex-start;
+      }
+
       &--main {
         flex: 1;
         display: flex;
-        max-width: 100%;
-        align-items: center;
+        min-width: 0;
+
         &__large {
+          flex-direction: column;
           @include type-style('productive-heading-01');
           color: $text-01;
-          padding-bottom: $spacing-03;
         }
       }
       &--value {
@@ -206,15 +217,9 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-right: $spacing-09;
-        &__with-actions {
-          padding-right: $spacing-07; // save room for the action button
-        }
         &__large {
+          @include type-style('body-short-01');
           color: $text-05;
-          white-space: normal;
-          height: rem(36px);
-          overflow: hidden;
         }
       }
       &__disabled {
@@ -222,15 +227,12 @@
       }
     }
     &--row-actions {
-      flex: 0;
-      margin-right: 0;
-      overflow: none;
-      display: flex;
-      position: absolute;
-      right: -$spacing-03;
+      // Negative margin needed to have the actions
+      // closer to the edge than than the padding allows
+      margin-right: -$spacing-03;
       [dir='rtl'] & {
-        right: unset;
-        left: -($spacing-03);
+        margin-right: unset;
+        margin-left: -($spacing-03);
       }
     }
   }

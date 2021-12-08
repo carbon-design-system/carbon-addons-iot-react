@@ -152,7 +152,7 @@ const VirtualListContent = ({
   virtualListRef: virtualListRefProp,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-  const rowSize = isLargeRow ? 96 : 40;
+  const rowSize = isLargeRow ? 64 : 40;
   const [listHeight, setListHeight] = useState(0);
   const listOuterRef = useResize(useRef(null));
   const didScrollRef = useRef(false);
@@ -160,7 +160,9 @@ const VirtualListContent = ({
   const virtualListRef = virtualListRefProp || internalVirtualListRef;
 
   const renderLoadMore = (item, isLoadingMore, level, style) => {
-    const indentation = `${level * 32}px`;
+    const columnGap = '16';
+    const levelOffset = '32';
+    const indentation = `${level * levelOffset - columnGap}px`;
     return isLoadingMore ? (
       <div
         style={style}

@@ -142,7 +142,9 @@ const ListContent = ({
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const renderLoadMore = (item, isLoadingMore, level) => {
-    const indentation = `${level * 32}px`;
+    const columnGap = '16';
+    const levelOffset = '32';
+    const indentation = `${level * levelOffset - columnGap}px`;
     return isLoadingMore ? (
       <div key={`${item.id}-list-item-load-more`} className={`${iotPrefix}--list-item`}>
         <div

@@ -155,11 +155,13 @@ const ListItem = ({
   }
 
   const renderNestingOffset = () => {
+    const columnGap = '16';
+    const levelOffset = '32';
     return nestingLevel > 0 ? (
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
         style={{
-          width: `${nestingLevel * 32}px`,
+          width: `${nestingLevel * levelOffset - columnGap}px`,
         }}
       />
     ) : null;
@@ -230,6 +232,19 @@ const ListItem = ({
     return null;
   };
 
+  const renderSecondaryValue = () =>
+    secondaryValue ? (
+      <div
+        title={typeof secondaryValue === 'function' ? `${value}--secondary-value` : secondaryValue}
+        className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+          [`${iotPrefix}--list-item--content--values--value__large`]: isLargeRow,
+          [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+        })}
+      >
+        {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
+      </div>
+    ) : null;
+
   const dragIcon = () =>
     isLocked ? (
       <Locked16 className={classnames(`${iotPrefix}--list-item--lock`)} />
@@ -285,77 +300,24 @@ const ListItem = ({
             [`${iotPrefix}--list-item--content--values__large`]: isLargeRow,
           })}
         >
-          {isLargeRow ? (
-            <>
-              <div
-                className={`${iotPrefix}--list-item--content--values--main ${iotPrefix}--list-item--content--values--main__large`}
-              >
-                <div
-                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
-                    [`${iotPrefix}--list-item--category`]: isCategory,
-                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                  })}
-                  title={value}
-                >
-                  {value}
-                </div>
-                {renderTags()}
-                {renderRowActions()}
-              </div>
-              {secondaryValue ? (
-                <div
-                  title={
-                    typeof secondaryValue === 'function'
-                      ? `${value}--secondary-value`
-                      : secondaryValue
-                  }
-                  className={classnames(
-                    `${iotPrefix}--list-item--content--values--value`,
-                    `${iotPrefix}--list-item--content--values--value__large`,
-                    {
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    }
-                  )}
-                >
-                  {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
-                </div>
-              ) : null}
-            </>
-          ) : (
-            <>
-              <div className={`${iotPrefix}--list-item--content--values--main`}>
-                <div
-                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
-                    [`${iotPrefix}--list-item--category`]: isCategory,
-                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                  })}
-                  title={value}
-                >
-                  {value}
-                </div>
-                {secondaryValue ? (
-                  <div
-                    title={
-                      typeof secondaryValue === 'function'
-                        ? `${value}--secondary-value`
-                        : secondaryValue
-                    }
-                    className={classnames(`${iotPrefix}--list-item--content--values--value`, {
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    })}
-                  >
-                    {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
-                  </div>
-                ) : null}
-                {renderTags()}
-                {renderRowActions()}
-              </div>
-            </>
-          )}
+          <div
+            className={classnames(`${iotPrefix}--list-item--content--values--main`, {
+              [`${iotPrefix}--list-item--content--values--main__large`]: isLargeRow,
+            })}
+          >
+            <div
+              className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                [`${iotPrefix}--list-item--category`]: isCategory,
+                [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+              })}
+              title={value}
+            >
+              {value}
+            </div>
+            {renderSecondaryValue()}
+          </div>
+          {renderTags()}
+          {renderRowActions()}
         </div>
       </div>
     </ListItemWrapper>

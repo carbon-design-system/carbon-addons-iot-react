@@ -597,9 +597,6 @@ describe('TableColumnCustomizationModal', () => {
       screen.getByText('column 1').closest(`.${iotPrefix}--list-item--content--values--main`)
     ).toBeVisible();
     expect(screen.queryByText('col1')).toBeVisible();
-    expect(
-      screen.getByText('col1').closest(`.${iotPrefix}--list-item--content--values--main`)
-    ).toBeNull();
   });
 
   it('renders all rows large when a secondary value is used', () => {
