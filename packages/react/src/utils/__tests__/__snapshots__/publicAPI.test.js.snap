@@ -31034,6 +31034,9 @@ Map {
         "labelText": Object {
           "type": "string",
         },
+        "onBlur": Object {
+          "type": "func",
+        },
         "onChange": Object {
           "type": "func",
         },
@@ -31041,6 +31044,9 @@ Map {
           "type": "func",
         },
         "onExpand": Object {
+          "type": "func",
+        },
+        "onFocus": Object {
           "type": "func",
         },
         "persistant": [Function],
