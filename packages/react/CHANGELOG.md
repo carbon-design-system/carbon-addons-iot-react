@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.79](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.78...v2.147.0-next.79) (2021-12-08)
+
+
+### Features
+
+* **table:** add search onBlur when hasFastSearch:false ([2db93b2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2db93b21b6ac8455a0cbac8a2f26ccdfcd94cc7c))
+
+
+
+
+
 # [2.147.0-next.78](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.77...v2.147.0-next.78) (2021-12-08)
 
 
