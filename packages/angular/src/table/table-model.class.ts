@@ -8,6 +8,17 @@ export class AITableHeaderItem extends TableHeaderItem {
    * Defines the alignment of the the header item and the column below it.
    */
   alignment: 'start' | 'center' | 'end' = 'start';
+
+  constructor(rawData?: any) {
+    super(rawData);
+
+    const defaults = {
+			alignment: this.alignment
+		};
+
+    // fill our object with provided props, and fallback to defaults
+		Object.assign(this, defaults, rawData);
+  }
 }
 
 /**
