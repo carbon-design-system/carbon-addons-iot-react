@@ -606,19 +606,18 @@ describe('Table', () => {
     expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('test');
     mockActions.toolbar.onApplySearch.mockClear();
 
-    // these tests can be added back once this issue is resolved:
-    // https://github.com/carbon-design-system/carbon/issues/10077
-    // userEvent.type(
-    //   screen.getByPlaceholderText('Search'),
-    //   '{backspace}{backspace}{backspace}{backspace}testing'
-    // );
-    // fireEvent.blur(screen.getByPlaceholderText('Search'));
-    // expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
-    // expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
-    // mockActions.toolbar.onApplySearch.mockClear();
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}testing'
+    );
+    fireEvent.blur(screen.getByPlaceholderText('Search'));
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    mockActions.toolbar.onApplySearch.mockClear();
 
     userEvent.click(screen.getByRole('button', { name: 'Clear search input' }));
-    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    // once on blur, once on clicking clear
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(2);
     expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
     mockActions.toolbar.onApplySearch.mockClear();
   });
