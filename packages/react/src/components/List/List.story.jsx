@@ -132,7 +132,8 @@ export default {
 export const BasicSingleColumn = () => {
   const BasicSingleColumn = () => {
     const [searchValue, setSearchValue] = useState(null);
-    const useSearch = boolean('use search (search)', true);
+    const useSearch = boolean('use search (search)', false);
+    const demoEmptyList = boolean('demo empty list', false);
 
     return (
       <div style={{ width: 400 }}>
@@ -141,17 +142,19 @@ export const BasicSingleColumn = () => {
           emptySearchState={text('Empty search state text (emptySearchState)', 'No results found')}
           isLargeRow={boolean('show large rows (isLargeRow)', false)}
           title={text('title', 'NY Yankees')}
-          items={object(
-            'items',
-            Object.entries(sampleHierarchy.MLB['American League']['New York Yankees'])
-              .map(([key]) => ({
-                id: key,
-                content: { value: key },
-              }))
-              .filter(
-                ({ id }) => !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
-              )
-          )}
+          items={
+            demoEmptyList
+              ? []
+              : Object.entries(sampleHierarchy.MLB['American League']['New York Yankees'])
+                  .map(([key]) => ({
+                    id: key,
+                    content: { value: key },
+                  }))
+                  .filter(
+                    ({ id }) =>
+                      !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
+                  )
+          }
           search={
             useSearch
               ? {
