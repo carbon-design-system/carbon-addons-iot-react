@@ -349,4 +349,27 @@ describe('Table visual regression tests', () => {
       cy.findByTestId('snapshot-3-container').compareSnapshot('snapshot-3');
     });
   });
+
+  it('shouldLazyRender rows on scroll when shouldLazyRender:true', () => {
+    // cypress hack to get screen to re-render correctly after last test.
+    cy.viewport(1600, 900);
+    cy.viewport(1680, 900);
+
+    const tableData = getTableData(50, words, selectData);
+    const columns = getTableColumns(selectData);
+
+    mount(
+      <Table
+        columns={columns}
+        data={tableData}
+        options={{
+          shouldLazyRender: true,
+        }}
+      />
+    );
+
+    cy.get('tr').should('have.length', 22);
+    cy.get('tr').last().scrollIntoView({ duration: 500 });
+    cy.get('tr').should('have.length', 42);
+  });
 });

@@ -2617,6 +2617,83 @@ describe('Table', () => {
     jest.resetAllMocks();
   });
 
+  describe('shouldLazyRender', () => {
+    beforeEach(() => {
+      window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
+        callback([{ isIntersecting: false }]);
+
+        return {
+          observe: jest.fn(),
+          unobserve: jest.fn(),
+          disconnect: jest.fn(),
+        };
+      });
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('should render an extra empty row when shouldLazyRender:true', () => {
+      const { container } = render(
+        <Table
+          columns={tableColumns}
+          data={tableData.slice(0, 10)}
+          expandedData={expandedData}
+          actions={mockActions}
+          options={{
+            ...options,
+            shouldLazyRender: true,
+          }}
+          view={{
+            ...view,
+          }}
+        />
+      );
+
+      // one for the header, one for the empty row
+      expect(container.querySelectorAll('tr')).toHaveLength(2);
+    });
+
+    it('should render only visible rows when shouldLazyRender:true', () => {
+      let isIntersecting = true;
+      const observer = {
+        observe: jest.fn().mockImplementation(() => {
+          isIntersecting = false;
+        }),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+      window.IntersectionObserver.mockReset();
+      // because the hard-coded batch size is currently 20 items, we only want the loading to be
+      // triggered once so that we load 20 of the 30 total rows.
+      window.IntersectionObserver.mockImplementation((callback) => {
+        callback([{ isIntersecting }], observer);
+
+        return observer;
+      });
+
+      const { container } = render(
+        <Table
+          columns={tableColumns}
+          data={tableData.slice(0, 30)}
+          expandedData={expandedData}
+          actions={mockActions}
+          options={{
+            ...options,
+            shouldLazyRender: true,
+          }}
+          view={{
+            ...view,
+          }}
+        />
+      );
+
+      // one for the header, one for the visibility placeholder, 20 for the data
+      expect(container.querySelectorAll('tr')).toHaveLength(22);
+    });
+  });
+
   describe('toolbarActions in toolbar', () => {
     const toolbarActions = [
       {
