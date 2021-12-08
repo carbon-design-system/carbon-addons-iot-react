@@ -132,7 +132,7 @@ const RuleBuilder = ({
     isOpen: false,
     access: 'READ',
   });
-  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+  const mergedI18n = useMerged(defaultProps.i18n, { defaultTitleText }, i18n);
 
   const Editor = useMemo(() => RuleEditor || RuleBuilderEditor, [RuleEditor]);
   const actions = useMemo(
@@ -253,7 +253,7 @@ const RuleBuilder = ({
       <header className={`${baseClass}--header`}>
         <div>
           <h1 className={`${baseClass}--header-title`} data-testid={`${testId}-title`}>
-            {currentFilter?.filterTitleText || defaultTitleText || mergedI18n.defaultTitleText}
+            {currentFilter?.filterTitleText || mergedI18n.defaultTitleText}
           </h1>
           {currentFilter?.filterMetaText && (
             <p data-testid={`${testId}-metatext`} className={`${baseClass}--header-metatext`}>

@@ -119,7 +119,7 @@ const ColorDropdown = ({
       );
     }
   }, []);
-  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+  const mergedI18n = useMerged(defaultProps.i18n, { label, titleText }, i18n);
 
   const [selectedColor, setSelectedColor] = useState(selectedColorProp);
   const [dropdownRef, updateTitle] = useDropdownTitleFixer();
@@ -154,16 +154,16 @@ const ColorDropdown = ({
       id={id}
       itemToString={renderColorItem}
       items={colors}
-      label={label || mergedI18n.label}
+      label={mergedI18n.label}
       light={light}
-      title={label || mergedI18n.label}
+      title={mergedI18n.label}
       translateWithId={translateWithId}
       onChange={({ selectedItem }) => {
         setSelectedColor(selectedItem);
         onChange({ color: selectedItem });
       }}
       selectedItem={selectedColor}
-      titleText={titleText || mergedI18n.titleText}
+      titleText={mergedI18n.titleText}
       type="default"
       data-testid={testID || testId}
       disabled={disabled}

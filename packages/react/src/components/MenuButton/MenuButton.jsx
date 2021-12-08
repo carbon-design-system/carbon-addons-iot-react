@@ -95,7 +95,11 @@ const MenuButton = ({
   children,
   i18n,
 }) => {
-  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+  const mergedI18n = useMerged(
+    defaultProps.i18n,
+    { closeIconDescription, openIconDescription },
+    i18n
+  );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef(null);
@@ -215,9 +219,7 @@ const MenuButton = ({
         onPrimaryActionClick={handlePrimaryClick}
         onSecondaryActionClick={handleSecondaryClick}
         iconDescription={
-          isMenuOpen
-            ? closeIconDescription ?? mergedI18n.closeIconDescription
-            : openIconDescription ?? mergedI18n.openIconDescription
+          isMenuOpen ? mergedI18n.closeIconDescription : mergedI18n.openIconDescription
         }
         renderIcon={isMenuOpen ? renderCloseIcon : renderOpenIcon}
         label={label}

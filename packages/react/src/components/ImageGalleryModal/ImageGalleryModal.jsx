@@ -167,7 +167,23 @@ const ImageGalleryModal = ({
   i18n,
   ...composedModalProps
 }) => {
-  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+  const mergedI18n = useMerged(
+    defaultProps.i18n,
+    {
+      gridButtonText,
+      instructionText,
+      listButtonText,
+      modalCloseIconDescriptionText,
+      modalLabelText,
+      modalTitleText,
+      modalPrimaryButtonLabelText,
+      deleteLabelText,
+      deleteModalLabelText,
+      modalSecondaryButtonLabelText,
+      searchPlaceHolderText,
+    },
+    i18n
+  );
   const [activeView, setActiveView] = useState(defaultView);
   const [selectedImage, setSelectedImage] = useState();
   const [isDeleteWarningModalOpen, setIsDeleteWarningModalOpen] = useState(false);
@@ -209,18 +225,14 @@ const ImageGalleryModal = ({
           className={`${baseClass}--warning-modal`}
           open={isDeleteWarningModalOpen}
           danger
-          primaryButtonText={deleteLabelText || mergedI18n.deleteLabelText}
-          secondaryButtonText={
-            modalSecondaryButtonLabelText || mergedI18n.modalSecondaryButtonLabelText
-          }
+          primaryButtonText={mergedI18n.deleteLabelText}
+          secondaryButtonText={mergedI18n.modalSecondaryButtonLabelText}
           modalHeading={
             deleteModalTitleText?.(selectedImage?.id) ??
             mergedI18n.deleteModalTitleText(selectedImage?.id)
           }
           size="xs"
-          closeButtonLabel={
-            modalCloseIconDescriptionText || mergedI18n.modalCloseIconDescriptionText
-          }
+          closeButtonLabel={mergedI18n.modalCloseIconDescriptionText}
           onRequestClose={() => setIsDeleteWarningModalOpen(false)}
           onRequestSubmit={handleDelete}
           data-testid={`${testId}-warning-modal`}
@@ -231,19 +243,17 @@ const ImageGalleryModal = ({
         className={classnames(className, baseClass)}
         footer={{
           isPrimaryButtonDisabled: !selectedImage,
-          primaryButtonLabel: modalPrimaryButtonLabelText || mergedI18n.modalPrimaryButtonLabelText,
-          secondaryButtonLabel:
-            modalSecondaryButtonLabelText || mergedI18n.modalSecondaryButtonLabelText,
+          primaryButtonLabel: mergedI18n.modalPrimaryButtonLabelText,
+          secondaryButtonLabel: mergedI18n.modalSecondaryButtonLabelText,
           ...footer,
         }}
         header={{
-          label: modalLabelText || mergedI18n.modalLabelText,
-          title: modalTitleText || mergedI18n.modalTitleText,
+          label: mergedI18n.modalLabelText,
+          title: mergedI18n.modalTitleText,
         }}
         isLarge
         i18n={{
-          closeButtonLabel:
-            modalCloseIconDescriptionText || mergedI18n.modalCloseIconDescriptionText,
+          closeButtonLabel: mergedI18n.modalCloseIconDescriptionText,
         }}
         onClose={onClose}
         onSubmit={() => {
@@ -254,11 +264,8 @@ const ImageGalleryModal = ({
         {...composedModalProps}
       >
         <div className={`${baseClass}__top-section`}>
-          <p
-            className={`${baseClass}__instruction-text`}
-            alt={instructionText || mergedI18n.instructionText}
-          >
-            {instructionText || mergedI18n.instructionText}
+          <p className={`${baseClass}__instruction-text`} alt={mergedI18n.instructionText}>
+            {mergedI18n.instructionText}
           </p>
           <div className={`${baseClass}__search-list-view-container`}>
             <Search
@@ -266,7 +273,7 @@ const ImageGalleryModal = ({
               onChange={filterContent}
               labelText=""
               light
-              placeholder={searchPlaceHolderText || mergedI18n.searchPlaceHolderText}
+              placeholder={mergedI18n.searchPlaceHolderText}
               data-testid={`${testId}-search-input`}
             />
             <ContentSwitcher
@@ -280,7 +287,7 @@ const ImageGalleryModal = ({
               <IconSwitch
                 name={GRID}
                 size="large"
-                text={gridButtonText || mergedI18n.gridButtonText}
+                text={mergedI18n.gridButtonText}
                 renderIcon={Grid20}
                 index={0}
                 data-testid={`${testId}-grid-switch`}
@@ -288,7 +295,7 @@ const ImageGalleryModal = ({
               <IconSwitch
                 name={LIST}
                 size="large"
-                text={listButtonText || mergedI18n.listButtonText}
+                text={mergedI18n.listButtonText}
                 renderIcon={List20}
                 index={1}
                 data-testid={`${testId}-list-switch`}

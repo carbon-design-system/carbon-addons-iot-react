@@ -92,7 +92,11 @@ const SimplePagination = ({
   size,
   i18n,
 }) => {
-  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+  const mergedI18n = useMerged(
+    defaultProps.i18n,
+    { totalItemsText, pageText, pageOfPagesText, prevPageText, nextPageText },
+    i18n
+  );
   const hasPrev = page > 1;
   const hasNext = page <= maxPage - 1;
 
@@ -110,13 +114,13 @@ const SimplePagination = ({
             ? totalItemsText(totalItems)
             : typeof mergedI18n.totalItemsText === 'function'
             ? mergedI18n.totalItemsText(totalItems)
-            : `${totalItems} ${totalItemsText || mergedI18n.totalItemsText}`}
+            : `${totalItems} ${mergedI18n.totalItemsText}`}
         </span>
       ) : null}
       <div className={`${iotPrefix}-simple-pagination-page-bar`}>
         <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
-          {pageText || mergedI18n.pageText
-            ? `${pageText || mergedI18n.pageText} ${page}`
+          {mergedI18n.pageText
+            ? `${mergedI18n.pageText} ${page}`
             : pageOfPagesText?.(page, maxPage) ?? mergedI18n.pageOfPagesText(page, maxPage)}
         </span>
         {maxPage > 1 ? (
@@ -135,7 +139,7 @@ const SimplePagination = ({
             >
               <CaretLeft16
                 dir="ltr"
-                aria-label={prevPageText || mergedI18n.prevPageText}
+                aria-label={mergedI18n.prevPageText}
                 className={
                   hasPrev
                     ? `${iotPrefix}-simple-pagination-caret`
@@ -157,7 +161,7 @@ const SimplePagination = ({
             >
               <CaretRight16
                 dir="ltr"
-                aria-label={nextPageText || mergedI18n.nextPageText}
+                aria-label={mergedI18n.nextPageText}
                 className={
                   hasNext
                     ? `${iotPrefix}-simple-pagination-caret`

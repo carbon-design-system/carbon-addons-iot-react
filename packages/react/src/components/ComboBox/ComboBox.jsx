@@ -254,7 +254,11 @@ const ComboBox = React.forwardRef(
     // Array that populates tags
     const prevTagAndListCount = useRef(items.length + tagItems.length);
 
-    const mergedI18n = useMerged(defaultProps.i18n, i18n);
+    const mergedI18n = useMerged(
+      defaultProps.i18n,
+      { ariaLabel, closeButtonText, editOptionText },
+      i18n
+    );
 
     // Handle focus after adding new tags or list items
     useEffect(() => {
@@ -392,7 +396,7 @@ const ComboBox = React.forwardRef(
         onKeyDown={handleOnKeypress}
         onBlur={handleOnBlur}
         data-testid={`${testId}-wrapper`}
-        data-edit-option-text={editOptionText || mergedI18n.editOptionText}
+        data-edit-option-text={mergedI18n.editOptionText}
       >
         <CarbonComboBox
           data-testid={`${testId}-box`}
@@ -408,7 +412,7 @@ const ComboBox = React.forwardRef(
           disabled={disabled || (loading !== undefined && loading !== false)}
           helperText={helperText}
           shouldFilterItem={hasMultiValue || addToList ? shouldFilterItemForTags : shouldFilterItem}
-          ariaLabel={ariaLabel || mergedI18n.ariaLabel}
+          ariaLabel={mergedI18n.ariaLabel}
           {...pick(
             rest,
             'direction',
@@ -437,7 +441,7 @@ const ComboBox = React.forwardRef(
                   key={`tag-${item?.id}-${idx}`}
                   filter
                   onClose={(e) => handleOnClose(e)}
-                  title={closeButtonText || mergedI18n.closeButtonText}
+                  title={mergedI18n.closeButtonText}
                 >
                   {itemToString(item)}
                 </Tag>
