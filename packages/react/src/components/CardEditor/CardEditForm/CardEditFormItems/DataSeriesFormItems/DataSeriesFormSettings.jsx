@@ -135,12 +135,10 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
           onChange={(evt) => {
             const maximumDataPointsString = evt.target.value;
             const maximumDataPoints = Number.parseInt(maximumDataPointsString, 10);
-            if (!Number.isNaN(maximumDataPoints)) {
-              onChange({
-                ...cardConfig,
-                content: { ...cardConfig.content, maximumDataPoints },
-              });
-            }
+            onChange({
+              ...cardConfig,
+              content: { ...cardConfig.content, maximumDataPoints },
+            });
           }}
           value={content?.maximumDataPoints}
         />
