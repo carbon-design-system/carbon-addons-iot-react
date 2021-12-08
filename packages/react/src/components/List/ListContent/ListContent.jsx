@@ -140,6 +140,40 @@ const ListContent = ({
   selectedItemRef,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
+  const renderLoadMore = (item, isLoadingMore, level) => {
+    const indentation = `${getAdjustedNestingLevel(item?.children || [], level) * 32}px`;
+    return isLoadingMore ? (
+      <div key={`${item.id}-list-item-load-more`} className={`${iotPrefix}--list-item`}>
+        <div
+          style={{
+            width: indentation,
+          }}
+        />
+        <SkeletonText
+          className={`${iotPrefix}--list--load-more-skeleton`}
+          width="30%"
+          data-testid={`${testId}-loading-more`}
+        />
+      </div>
+    ) : (
+      <Button
+        key={`${item.id}-list-item-load-more`}
+        className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
+        onClick={() => handleLoadMore(item.id)}
+        data-testid={`${testId}-${item.id}-load-more`}
+        kind="ghost"
+      >
+        <div
+          style={{
+            width: indentation,
+          }}
+        />
+        <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
+      </Button>
+    );
+  };
+
   const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item?.children && item.children.length > 0;
     const isSelected = selectedIds.some((id) => item.id === id);
@@ -222,39 +256,9 @@ const ListContent = ({
                 getAdjustedNestingLevel(item?.children, level)
               );
             })
-            .concat(
-              item.hasLoadMore
-                ? [
-                    <Button
-                      key={`${item.id}-list-item-parent-loading`}
-                      className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
-                      onClick={() => handleLoadMore(item.id)}
-                      data-testid={`${testId}-${item.id}-load-more`}
-                      kind="ghost"
-                      loading={isLoadingMore}
-                    >
-                      <div className={`${iotPrefix}--load-more-row--content`}>
-                        {mergedI18n.loadMore}
-                      </div>
-                    </Button>,
-                  ]
-                : []
-            )
+            .concat(item.hasLoadMore ? [renderLoadMore(item, isLoadingMore, level)] : [])
         : []),
-      ...(!hasChildren && item.hasLoadMore
-        ? [
-            <Button
-              key={`${item.id}-list-item-parent-loading`}
-              className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
-              onClick={() => handleLoadMore(item.id)}
-              data-testid={`${testId}-${item.id}-load-more`}
-              kind="ghost"
-              loading={isLoadingMore}
-            >
-              <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
-            </Button>,
-          ]
-        : []),
+      ...(!hasChildren && item.hasLoadMore ? [renderLoadMore(item, isLoadingMore, level)] : []),
     ];
   };
 

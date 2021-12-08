@@ -8,7 +8,7 @@ import Button from '../Button';
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
 import { Tag } from '../Tag';
-import { EditingStyle } from '../../utils/DragAndDropUtils';
+import { EditingStyle, DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import List from './List';
 import ListREADME from './List.mdx';
@@ -772,6 +772,13 @@ export const WithLoadMore = () => {
 };
 
 WithLoadMore.storyName = 'with load more';
+WithLoadMore.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const WithVirtualList = () => (
   <div style={{ height: 300, overflow: 'auto', width: 400 }}>

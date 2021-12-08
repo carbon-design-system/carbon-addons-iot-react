@@ -419,6 +419,7 @@ describe('List', () => {
         title="Sports Teams"
         items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
         handleLoadMore={mockLoadMore}
+        i18n={{ loadMore: 'Load more...' }}
       />
     );
     expect(mockLoadMore).not.toHaveBeenCalled();
@@ -427,6 +428,7 @@ describe('List', () => {
     expect(mockLoadMore).toHaveBeenCalledTimes(1);
   });
   it(' load more row clicked without handleLoadMore function provided', () => {
+    const { loadMore } = List.defaultProps.i18n;
     render(
       <List
         title="Sports Teams"
@@ -452,8 +454,8 @@ describe('List', () => {
         testId="test-list"
       />
     );
-    expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
-    userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+    expect(screen.getAllByText(loadMore)[0]).toBeInTheDocument();
+    userEvent.click(screen.getByRole('button', { name: loadMore }));
   });
 
   it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
@@ -923,6 +925,7 @@ describe('List', () => {
           items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
           isVirtualList
           handleLoadMore={mockLoadMore}
+          i18n={{ loadMore: 'Load more...' }}
         />
       );
       expect(mockLoadMore).not.toHaveBeenCalled();
@@ -931,6 +934,7 @@ describe('List', () => {
       expect(mockLoadMore).toHaveBeenCalledTimes(1);
     });
     it('should load more row clicked without handleLoadMore function provided', () => {
+      const { loadMore } = List.defaultProps.i18n;
       render(
         <List
           title="Sports Teams"
@@ -957,8 +961,8 @@ describe('List', () => {
           isVirtualList
         />
       );
-      expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
-      userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+      expect(screen.getAllByText(loadMore)[0]).toBeInTheDocument();
+      userEvent.click(screen.getByRole('button', { name: loadMore }));
     });
 
     it('should pass override props to list content', () => {

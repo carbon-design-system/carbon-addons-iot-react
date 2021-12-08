@@ -159,6 +159,44 @@ const VirtualListContent = ({
   const internalVirtualListRef = useRef(null);
   const virtualListRef = virtualListRefProp || internalVirtualListRef;
 
+  const renderLoadMore = (item, isLoadingMore, level, style) => {
+    const indentation = `${getAdjustedNestingLevel(item?.children || [], level) * 32}px`;
+    return isLoadingMore ? (
+      <div
+        style={style}
+        key={`${item.id}-list-item-load-more`}
+        className={`${iotPrefix}--list-item`}
+      >
+        <div
+          style={{
+            width: indentation,
+          }}
+        />
+        <SkeletonText
+          className={`${iotPrefix}--list--load-more-skeleton`}
+          width="30%"
+          data-testid={`${testId}-loading-more`}
+        />
+      </div>
+    ) : (
+      <Button
+        key={`${item.id}-list-item-load-more`}
+        className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
+        onClick={() => handleLoadMore(item.id)}
+        data-testid={`${testId}-${item.id}-load-more`}
+        kind="ghost"
+        style={style}
+      >
+        <div
+          style={{
+            width: indentation,
+          }}
+        />
+        <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
+      </Button>
+    );
+  };
+
   const flatten = useCallback(
     (initialItems, parentId = null, currentLevel = 0) => {
       return initialItems.reduce((carry, item) => {
@@ -259,19 +297,7 @@ const VirtualListContent = ({
 
     if (item.isLoadMoreRow) {
       if (parentIsExpanded || item.level === 0) {
-        return (
-          <Button
-            key={`${item.id}-list-item-parent-loading`}
-            className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
-            onClick={() => handleLoadMore(item.id)}
-            data-testid={`${testId}-${item.id}-load-more`}
-            kind="ghost"
-            loading={isLoadingMore}
-            style={style}
-          >
-            <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
-          </Button>
-        );
+        return renderLoadMore(item, isLoadingMore, level, style);
       }
 
       return null;
@@ -344,7 +370,7 @@ const VirtualListContent = ({
     const isExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
     if (item.isLoadMoreRow && (isExpanded || item.level === 0)) {
-      return 48;
+      return 40;
     }
 
     if (!item.parentId || isExpanded) {
