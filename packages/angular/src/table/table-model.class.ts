@@ -13,11 +13,11 @@ export class AITableHeaderItem extends TableHeaderItem {
     super(rawData);
 
     const defaults = {
-			alignment: this.alignment
-		};
+      alignment: this.alignment,
+    };
 
     // fill our object with provided props, and fallback to defaults
-		Object.assign(this, defaults, rawData);
+    Object.assign(this, defaults, rawData);
   }
 }
 
