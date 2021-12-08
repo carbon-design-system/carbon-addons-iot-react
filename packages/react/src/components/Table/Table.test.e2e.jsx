@@ -351,9 +351,8 @@ describe('Table visual regression tests', () => {
   });
 
   it('shouldLazyRender rows on scroll when shouldLazyRender:true', () => {
-    // cypress hack to get screen to re-render correctly after last test.
-    cy.viewport(1600, 900);
-    cy.viewport(1680, 900);
+    // cypress hack to get screen to re-render correctly after last test
+    cy.viewport(1680, 400);
 
     const tableData = getTableData(50, words, selectData);
     const columns = getTableColumns(selectData);
@@ -367,9 +366,11 @@ describe('Table visual regression tests', () => {
         }}
       />
     );
-
     cy.get('tr').should('have.length', 22);
     cy.get('tr').last().scrollIntoView({ duration: 500 });
     cy.get('tr').should('have.length', 42);
+
+    // reset back to default
+    cy.viewport(1680, 900);
   });
 });
