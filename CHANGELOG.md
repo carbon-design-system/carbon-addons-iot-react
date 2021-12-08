@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.78](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.77...v2.147.0-next.78) (2021-12-08)
+
+
+### Features
+
+* **repo:** upgrade carbon to 10.49/7.49.1 ([b146adf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b146adf5deccadee1a4e2121cdd3b9420133733c))
+
+
+
+
+
 # [2.147.0-next.77](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.76...v2.147.0-next.77) (2021-12-07)
 
 
