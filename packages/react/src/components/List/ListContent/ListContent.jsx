@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -11,6 +11,7 @@ import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
 import { ListItemPropTypes } from '../ListPropTypes';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
+import useVisibilityLoader from '../../../hooks/useVisibilityLoader';
 
 const { iotPrefix } = settings;
 
@@ -44,7 +45,7 @@ const propTypes = {
   /** callback function of select */
   handleSelect: PropTypes.func,
   /** callback used to limit which items that should get drop targets rendered.
-   * recieves the id of the item that is being dragged and returns a list of ids. */
+   * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
   /** call back function of expansion */
   toggleExpansion: PropTypes.func,
@@ -130,8 +131,18 @@ const ListContent = ({
   handleLoadMore,
   i18n,
   selectedItemRef,
+  isInfiniteScroll,
+  onInfiniteScroll,
+  isInfiniteLoading,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const lastListItemRef = useRef(null);
+  const [isVisible] = useVisibilityLoader(lastListItemRef, {
+    isLoading: isInfiniteLoading,
+    hasMoreToLoad: true,
+    onVisible: onInfiniteScroll,
+  });
+
   const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item?.children && item.children.length > 0;
     const isSelected = selectedIds.some((id) => item.id === id);
@@ -279,7 +290,26 @@ const ListContent = ({
       )}
     >
       {!isLoading ? (
-        <>{listItems.length ? listItems : emptyContent}</>
+        <>
+          {listItems.length ? (
+            isInfiniteScroll ? (
+              <>
+                {listItems}
+                <div ref={lastListItemRef}>
+                  <SkeletonText
+                    className={`${iotPrefix}--list--skeleton`}
+                    width="90%"
+                    data-testid={`${testId}-loading`}
+                  />
+                </div>
+              </>
+            ) : (
+              listItems
+            )
+          ) : (
+            emptyContent
+          )}
+        </>
       ) : (
         <SkeletonText
           className={`${iotPrefix}--list--skeleton`}

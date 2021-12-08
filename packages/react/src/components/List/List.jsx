@@ -73,7 +73,7 @@ const propTypes = {
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** callback used to limit which items that should get drop targets rendered.
-   * Recieves the id of the item that is being dragged and shuld return a list of allowed ids.
+   * Receives the id of the item that is being dragged and should return a list of allowed ids.
    * Returning an empty list will result in 0 drop targets but returning null will
    * enable all items as drop targets */
   getAllowedDropIds: PropTypes.func,
@@ -163,6 +163,9 @@ const List = forwardRef((props, ref) => {
     testId,
     handleLoadMore,
     loadingMoreIds,
+    isInfiniteScroll,
+    onInfiniteScroll,
+    isInfiniteLoading,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const ListHeader = overrides?.header?.component || DefaultListHeader;
@@ -213,6 +216,9 @@ const List = forwardRef((props, ref) => {
           selectedItemRef={ref}
           i18n={mergedI18n}
           lockedIds={lockedIds}
+          isInfiniteScroll={isInfiniteScroll}
+          onInfiniteScroll={onInfiniteScroll}
+          isInfiniteLoading={isInfiniteLoading}
           {...overrides?.content?.props}
         />
         {pagination && !isLoading ? (

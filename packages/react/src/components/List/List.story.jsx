@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { createElement, useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text, object } from '@storybook/addon-knobs';
+import { boolean, text, object, number } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import { cloneDeep } from 'lodash-es';
 
@@ -814,3 +814,47 @@ export const WithReorderAndDropTargetRestrictions = () => {
 };
 
 WithReorderAndDropTargetRestrictions.storyName = 'with reorder and drop target restrictions';
+
+export const WithInfiniteScroll = () => {
+  const numberOfItems = number('number of items to render', 20);
+
+  const generateItems = (startIndex = 0) =>
+    [...Array(numberOfItems)].map((_, i) => {
+      const index = i + startIndex;
+      return {
+        id: `item-${index}`,
+        content: {
+          value: `Item ${index}`,
+          secondaryValue: `Item ${index} Subvalue`,
+        },
+      };
+    });
+
+  const [items, setItems] = useState(generateItems());
+  const [isInfiniteLoading, setIsInfiniteLoading] = useState(false);
+
+  return (
+    <div style={{ height: 300, overflow: 'auto', width: 400 }}>
+      <List
+        title={text('title', 'Infinite scrolling list')}
+        items={items}
+        isLoading={boolean('isLoading', false)}
+        isVirtualList={boolean('isVirtualList', false)}
+        isFullHeight={boolean('isFullHeight', true)}
+        isLargeRow={boolean('isLargeRow', false)}
+        isInfiniteScroll={boolean('isInfiniteScroll', true)}
+        isInfiniteLoading={isInfiniteLoading}
+        onInfiniteScroll={async () => {
+          setIsInfiniteLoading(true);
+          setTimeout(() => {
+            setItems((prev) => [...prev, ...generateItems(prev.length)]);
+            setIsInfiniteLoading(false);
+          }, 3000);
+        }}
+      />
+    </div>
+  );
+};
+
+WithInfiniteScroll.storyName = 'with infinite scrolling';
+WithInfiniteScroll.decorators = [createElement];

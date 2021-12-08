@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { TableBody as CarbonTableBody } from 'carbon-components-react';
 import { pick } from 'lodash-es';
@@ -171,8 +171,15 @@ const TableBody = ({
   preserveCellWhiteSpace,
 }) => {
   const visibleCheckerRef = useRef(null);
-  const [isVisible, moreToLoad] = useVisibilityLoader(visibleCheckerRef, {
-    maxToLoad: rows.length,
+  const [visibleRowIndex, setVisibleRowIndex] = useState(0);
+  useVisibilityLoader(visibleCheckerRef, {
+    hasMoreToLoad: visibleRowIndex < rows.length,
+    onVisible: () => {
+      const batchSize = 20;
+      const rowsLeftToLoad = rows.length - visibleRowIndex;
+      const nextBatchSize = Math.max(0, Math.min(batchSize, rowsLeftToLoad));
+      setVisibleRowIndex((prev) => prev + nextBatchSize);
+    },
   });
 
   // Need to merge the ordering and the columns since the columns have the renderer function
@@ -345,10 +352,10 @@ const TableBody = ({
 
   return (
     <CarbonTableBody data-testid={testID || testId}>
-      {rows.map((row, i) => {
-        return shouldLazyRender ? (isVisible?.[i] ? renderRow(row) : null) : renderRow(row);
-      })}
-      {shouldLazyRender && moreToLoad ? <tr ref={visibleCheckerRef} /> : null}
+      {shouldLazyRender
+        ? rows.slice(0, visibleRowIndex).map((row) => renderRow(row))
+        : rows.map((row) => renderRow(row))}
+      {shouldLazyRender && visibleRowIndex < rows.length ? <tr ref={visibleCheckerRef} /> : null}
     </CarbonTableBody>
   );
 };
