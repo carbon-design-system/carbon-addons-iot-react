@@ -331,4 +331,22 @@ describe('Header', () => {
     render(<Header {...HeaderPropsWithoutOnClick} actionItems={[]} />);
     expect(screen.getByText('IBM')).toBeVisible();
   });
+  it('should change side-nav menu button label when isSideNavExpanded change', () => {
+    const { rerender } = render(<Header {...HeaderPropsWithoutOnClick} isSideNavExpanded />);
+    expect(screen.getByLabelText('Close menu')).toBeVisible();
+    rerender(<Header {...HeaderPropsWithoutOnClick} isSideNavExpanded={false} />);
+    expect(screen.getByLabelText('Open menu')).toBeVisible();
+    rerender(
+      <Header
+        {...HeaderPropsWithoutOnClick}
+        isSideNavExpanded={false}
+        i18n={{ openMenu: '__open__' }}
+      />
+    );
+    expect(screen.getByLabelText('__open__')).toBeVisible();
+    rerender(
+      <Header {...HeaderPropsWithoutOnClick} isSideNavExpanded i18n={{ closeMenu: '__close__' }} />
+    );
+    expect(screen.getByLabelText('__close__')).toBeVisible();
+  });
 });
