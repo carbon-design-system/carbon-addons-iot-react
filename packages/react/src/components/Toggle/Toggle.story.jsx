@@ -1,1 +1,1 @@
-export { default as ToggleStory } from 'carbon-components-react/lib/components/Toggle/Toggle-story';
+export { default as ToggleStory } from 'carbon-components-react/es/components/Toggle/Toggle-story';

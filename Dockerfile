@@ -1,4 +1,4 @@
-FROM cypress/browsers:node14.17.0-chrome91-ff89
+FROM cypress/browsers:node16.5.0-chrome94-ff93
 
 RUN mkdir /@ai-apps
 WORKDIR /@ai-apps

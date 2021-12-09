@@ -149,11 +149,9 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/PaginationNav/pagination-nav';
 @import 'components/UIShell/ui-shell';
 @import 'components/List/carbon-list';
-
 //-------------------------------------
 // 🔬 Experimental
 //-------------------------------------
-
 @import 'components/ColorDropdown/color-dropdown';
 @import 'components/FlyoutMenu/flyout-menu';
 @import 'components/HotspotEditorModal/HotspotEditorTooltipTab/hotspot-editor-tooltip-tab';
@@ -225,12 +223,14 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/RuleBuilder/rulebuilder';
 @import 'components/SelectUsersModal/select-users-modal';
 @import 'components/SideNav/side-nav';
+@import 'components/SidePanel/side-panel';
 @import 'components/SimplePagination/simple-pagination';
 @import 'components/SuiteHeader/suite-header';
 @import 'components/Table/TableToolbar/table-toolbar';
 @import 'components/Table/pagination';
 @import 'components/Table/TableBody/RowActionsCell/row-actions-cell';
 @import 'components/Table/table';
+@import 'components/TableMultiline/table.scss';
 @import 'components/Table/TableViewDropdown/table-view-dropdown';
 @import 'components/Table/TableSaveViewModal/table-save-view-modal';
 @import 'components/Table/TableManageViewsModal/table-manage-views-modal';

@@ -1,0 +1,55 @@
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--column-customization-modal {
+  .#{$prefix}--modal-header__label {
+    display: none;
+  }
+
+  .#{$prefix}--modal-container {
+    overflow-y: hidden;
+  }
+
+  .#{$prefix}--modal-content {
+    height: 100%;
+    min-height: 60vh;
+    // Can't use $ui-01 beacuse it becomes white in the modal
+    background-color: $carbon--gray-10;
+    padding: $spacing-05;
+    padding-bottom: $spacing-09;
+    margin-bottom: 0;
+  }
+
+  .#{$iot-prefix}--list-builder__container {
+    column-gap: $spacing-05;
+    grid-template-columns: calc(50% - #{$spacing-03}) calc(50% - #{$spacing-03});
+    height: 100%;
+  }
+
+  .#{$iot-prefix}--list-builder__all,
+  .#{$iot-prefix}--list-builder__selected {
+    height: 100%;
+    max-height: 60vh;
+    background-color: $ui-01;
+    padding: 0;
+  }
+
+  .#{$prefix}--modal-content .#{$iot-prefix}--list--content p {
+    padding-right: 0;
+  }
+
+  &.#{$iot-prefix}--column-customization-modal--error-state {
+    $error-notification-height: $spacing-11;
+    $content-padding: $spacing-07;
+
+    .#{$prefix}--modal-content {
+      min-height: calc(60vh - #{$error-notification-height} - #{$content-padding});
+    }
+    .#{$iot-prefix}--list-builder__container {
+      height: calc(100% - #{$error-notification-height});
+    }
+    .#{$iot-prefix}--list-builder__all,
+    .#{$iot-prefix}--list-builder__selected {
+      min-height: calc(60vh - #{$error-notification-height} - #{$content-padding});
+    }
+  }
+}

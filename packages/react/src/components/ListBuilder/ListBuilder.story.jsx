@@ -1,12 +1,13 @@
 import React, { createElement, useMemo, useState } from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import isEmpty from 'lodash/isEmpty';
-import { ArrowRight16, Subtract16 } from '@carbon/icons-react';
+import { isEmpty } from 'lodash-es';
+import { ArrowRight16, CloseOutline16, Subtract16 } from '@carbon/icons-react';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 import Button from '../Button/Button';
 import { generateUserList } from '../SelectUsersModal/SelectUsersModal.story';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import ListBuilder from './ListBuilder';
 import ListBuilderREADME from './ListBuilder.mdx';
@@ -104,6 +105,70 @@ export const StatefulExample = () => {
 
 StatefulExample.storyName = 'stateful example';
 StatefulExample.decorators = [createElement];
+
+export const StatefulExampleWithCheckboxes = () => {
+  const [selected, setSelected] = useState([]);
+  const [searchValue, setSearchValue] = useState(null);
+
+  const items = [
+    {
+      id: '1',
+      content: {
+        value: 'item one',
+      },
+    },
+    {
+      id: '2',
+      content: {
+        value: 'item two',
+      },
+    },
+    {
+      id: '3',
+      content: {
+        value: 'item three',
+      },
+    },
+  ];
+
+  const handleAdd = (event, id) => {
+    setSelected((prev) => [...prev, items.find((item) => item.id === id)]);
+    action('onAdd')(event, id);
+  };
+
+  const handleRemove = (event, id) => {
+    setSelected((previous) => previous.filter((item) => item.id !== id));
+    action('onRemove')(event, id);
+  };
+
+  return (
+    <ListBuilder
+      hasSelectedItemsSearch={boolean('hasSelectedItemsSearch', false)}
+      hasReset={boolean('hasReset', true)}
+      onAdd={handleAdd}
+      onRemove={handleRemove}
+      onReset={action('onReset')}
+      onItemsSearchChange={(value, evt) => {
+        setSearchValue(value);
+        action('onItemsSearchChange')(value, evt);
+      }}
+      items={items}
+      itemsSearchValue={searchValue}
+      selectedItems={selected}
+      removeIcon={CloseOutline16}
+      useCheckboxes={boolean('useCheckboxes', true)}
+    />
+  );
+};
+
+StatefulExampleWithCheckboxes.storyName = 'stateful example with checkboxes';
+StatefulExampleWithCheckboxes.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 const itemsAreEqual = (item1, item2) => {
   if (!item1 || !item2) {

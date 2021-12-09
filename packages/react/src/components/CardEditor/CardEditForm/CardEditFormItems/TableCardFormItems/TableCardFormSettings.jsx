@@ -1,6 +1,6 @@
 import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import isEmpty from 'lodash/isEmpty';
+import { isEmpty } from 'lodash-es';
 import update from 'immutability-helper';
 
 import { settings } from '../../../../../constants/Settings';

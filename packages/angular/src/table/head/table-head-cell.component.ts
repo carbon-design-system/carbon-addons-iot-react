@@ -75,7 +75,6 @@ import { TableHeadCell } from 'carbon-components-angular';
       </button>
     </ng-container>
   `,
-  styleUrls: ['./table-head-cell.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class AITableHeadCell extends TableHeadCell {
