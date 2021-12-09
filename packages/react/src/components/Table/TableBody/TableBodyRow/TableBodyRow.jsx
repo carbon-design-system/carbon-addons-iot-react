@@ -381,6 +381,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
 const StyledNestedSpan = styled.span`
   position: relative;
   left: ${(props) => props.nestingOffset}px;
+  max-width: calc(100% - ${(props) => props.nestingOffset}px);
   display: block;
 `;
 
