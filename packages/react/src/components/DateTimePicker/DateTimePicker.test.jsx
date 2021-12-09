@@ -229,6 +229,18 @@ describe('DateTimePicker', () => {
     expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       '2020-04-01 13:34 to 2020-04-06 11:49'
     );
+
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).at(1).simulate('click');
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).at(1).simulate('click');
+    jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 13:34 to 2020-04-06 13:49'
+    );
+    verify;
+
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-apply`).first().simulate('click');
+    jest.runAllTimers();
+    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
   it('should go back to presets when cancel button is picked on Absolute screen', () => {
@@ -489,7 +501,9 @@ describe('DateTimePicker', () => {
     expect(screen.queryByText(i18nDefault.startTimeLabel)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.endTimeLabel)).not.toBeInTheDocument();
     // click apply
-    fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
+    const times = screen.getAllByTestId('time-picker-spinner');
+    fireEvent.change(times[1], { target: { value: '03:00' } });
+    expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
 
     expect(
       screen.queryByTitle(new RegExp(`.*\\s${i18nDefault.toLabel}\\s.*`))
@@ -703,15 +717,42 @@ describe('DateTimePicker', () => {
 
     // Change end time to 01:00 - start time is before end time
     fireEvent.change(endTime, { target: { value: '01:00' } });
+    expect(startTime).toHaveValue('00:00');
+    expect(endTime).toHaveValue('01:00');
     expect(applyBytton).toBeEnabled();
 
     // Change start time to 02:00 - start time is after end time
     fireEvent.change(startTime, { target: { value: '02:00' } });
+    expect(startTime).toHaveValue('02:00');
+    expect(endTime).toHaveValue('01:00');
     expect(applyBytton).toBeDisabled();
 
-    // Change end time to 02:00 - start time is after end time
-    fireEvent.change(endTime, { target: { value: '00:00' } });
+    // Change end time to 03:00 - start time is before end time
+    fireEvent.change(endTime, { target: { value: '03:00' } });
+    expect(startTime).toHaveValue('02:00');
+    expect(endTime).toHaveValue('03:00');
+    expect(applyBytton).toBeEnabled();
+
+    // Change  start time to 05:00 and end time to 06:00 - start time is before end time
+    fireEvent.change(startTime, { target: { value: '05:00' } });
+    fireEvent.change(endTime, { target: { value: '06:00' } });
+    expect(startTime).toHaveValue('05:00');
+    expect(endTime).toHaveValue('06:00');
+    expect(applyBytton).toBeEnabled();
+
+    // Change  start time to 08:00 and end time to 03:00 - start time is after end time
+    fireEvent.change(startTime, { target: { value: '08:00' } });
+    fireEvent.change(endTime, { target: { value: '03:00' } });
+    expect(startTime).toHaveValue('08:00');
+    expect(endTime).toHaveValue('03:00');
     expect(applyBytton).toBeDisabled();
+
+    // Change  start time to 20:00 and end time to 23:00 - start time is before end time
+    fireEvent.change(startTime, { target: { value: '20:00' } });
+    fireEvent.change(endTime, { target: { value: '23:00' } });
+    expect(startTime).toHaveValue('20:00');
+    expect(endTime).toHaveValue('23:00');
+    expect(applyBytton).toBeEnabled();
   });
 
   it('should close picker when escape is pressed', () => {
