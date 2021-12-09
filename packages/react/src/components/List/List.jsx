@@ -92,6 +92,12 @@ const propTypes = {
   handleLoadMore: PropTypes.func,
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
+  /** does this list use infinite scrolling */
+  isInfiniteScroll: PropTypes.bool,
+  /** callback to fire when the last element in an infinite scroll list is visible */
+  onInfiniteScroll: PropTypes.func,
+  /** is the application currently loading more infinite data */
+  isInfiniteLoading: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -130,6 +136,9 @@ const defaultProps = {
   emptyState: 'No list items to show',
   testId: 'list',
   handleLoadMore: () => {},
+  isInfiniteScroll: false,
+  onInfiniteScroll: () => {},
+  isInfiniteLoading: false,
 };
 
 const List = forwardRef((props, ref) => {
@@ -172,7 +181,7 @@ const List = forwardRef((props, ref) => {
   const ListContent =
     overrides?.content?.component || isVirtualList ? VirtualListContent : DefaultListContent;
   // getAllowedDropIds will be called by all list items when a drag is initiated and the
-  // paramater (id of the dragged item) will be the same until a new drag starts.
+  // parameter (id of the dragged item) will be the same until a new drag starts.
   const memoizedGetAllowedDropIds = getAllowedDropIds ? memoize(getAllowedDropIds) : null;
 
   return (

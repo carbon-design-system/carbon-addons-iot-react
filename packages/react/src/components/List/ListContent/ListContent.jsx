@@ -69,6 +69,12 @@ const propTypes = {
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   selectedItemRef: HtmlElementRefProp,
+  /** does this list use infinite scrolling */
+  isInfiniteScroll: PropTypes.bool,
+  /** callback to fire when the last element in an infinite scroll list is visible */
+  onInfiniteScroll: PropTypes.func,
+  /** is the application currently loading more infinite data */
+  isInfiniteLoading: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -101,6 +107,9 @@ const defaultProps = {
   selectedItemRef: React.createRef(),
   testId: 'list',
   toggleExpansion: () => {},
+  isInfiniteScroll: false,
+  onInfiniteScroll: () => {},
+  isInfiniteLoading: false,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -137,9 +146,9 @@ const ListContent = ({
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const lastListItemRef = useRef(null);
-  const [isVisible] = useVisibilityLoader(lastListItemRef, {
+  useVisibilityLoader(lastListItemRef, {
     isLoading: isInfiniteLoading,
-    hasMoreToLoad: true,
+    hasMoreToLoad: isInfiniteScroll,
     onVisible: onInfiniteScroll,
   });
 

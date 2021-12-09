@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import { DragAndDrop, EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
+import { getListItems } from '../List.test.helpers';
 
 import VirtualListContent from './VirtualListContent';
 
@@ -192,5 +193,30 @@ describe('ListContent', () => {
 
     userEvent.click(screen.getByTestId('one-1-checkbox'));
     expect(handleSelect).toHaveBeenCalledWith('one-1', 'one');
+  });
+
+  it('shows list loading skeleton when isInfiniteScroll:true', () => {
+    window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
+      const obj = {
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+      callback([{ isIntersecting: true }], obj);
+
+      return obj;
+    });
+    const { container } = render(
+      <DragAndDrop>
+        <VirtualListContent
+          items={getListItems(1)}
+          isInfiniteScroll
+          testId="test-list"
+          isVirtualList
+        />
+      </DragAndDrop>
+    );
+    expect(container.querySelectorAll(`.${iotPrefix}--list--skeleton`)).toHaveLength(1);
+    jest.resetAllMocks();
   });
 });

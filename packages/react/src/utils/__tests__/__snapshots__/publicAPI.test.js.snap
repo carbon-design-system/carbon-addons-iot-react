@@ -6391,12 +6391,15 @@ Map {
       "indeterminateIds": Array [],
       "isCheckboxMultiSelect": false,
       "isFullHeight": false,
+      "isInfiniteLoading": false,
+      "isInfiniteScroll": false,
       "isLargeRow": false,
       "isLoading": false,
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
+      "onInfiniteScroll": [Function],
       "onItemMoved": [Function],
       "selectedIds": Array [],
       "selectedItemRef": Object {
@@ -6489,6 +6492,12 @@ Map {
       "isFullHeight": Object {
         "type": "bool",
       },
+      "isInfiniteLoading": Object {
+        "type": "bool",
+      },
+      "isInfiniteScroll": Object {
+        "type": "bool",
+      },
       "isLargeRow": Object {
         "type": "bool",
       },
@@ -6564,6 +6573,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "onInfiniteScroll": Object {
+        "type": "func",
+      },
       "onItemMoved": Object {
         "type": "func",
       },
@@ -6628,12 +6640,15 @@ Map {
       "indeterminateIds": Array [],
       "isCheckboxMultiSelect": false,
       "isFullHeight": false,
+      "isInfiniteLoading": false,
+      "isInfiniteScroll": false,
       "isLargeRow": false,
       "isLoading": false,
       "itemWillMove": [Function],
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
+      "onInfiniteScroll": [Function],
       "onItemMoved": [Function],
       "selectedIds": Array [],
       "testId": "list",
@@ -6722,6 +6737,12 @@ Map {
         "type": "bool",
       },
       "isFullHeight": [Function],
+      "isInfiniteLoading": Object {
+        "type": "bool",
+      },
+      "isInfiniteScroll": Object {
+        "type": "bool",
+      },
       "isLargeRow": Object {
         "type": "bool",
       },
@@ -6796,6 +6817,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onInfiniteScroll": Object {
+        "type": "func",
       },
       "onItemMoved": Object {
         "type": "func",
@@ -23832,6 +23856,8 @@ Map {
       "indeterminateIds": Array [],
       "isCheckboxMultiSelect": false,
       "isFullHeight": false,
+      "isInfiniteLoading": false,
+      "isInfiniteScroll": false,
       "isLargeRow": false,
       "isLoading": false,
       "isVirtualList": false,
@@ -23839,6 +23865,7 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
+      "onInfiniteScroll": [Function],
       "onItemMoved": [Function],
       "overrides": null,
       "pagination": null,
@@ -23946,6 +23973,12 @@ Map {
       "isFullHeight": Object {
         "type": "bool",
       },
+      "isInfiniteLoading": Object {
+        "type": "bool",
+      },
+      "isInfiniteScroll": Object {
+        "type": "bool",
+      },
       "isLargeRow": Object {
         "type": "bool",
       },
@@ -24023,6 +24056,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onInfiniteScroll": Object {
+        "type": "func",
       },
       "onItemMoved": Object {
         "type": "func",

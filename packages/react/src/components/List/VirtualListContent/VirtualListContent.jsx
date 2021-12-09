@@ -13,6 +13,7 @@ import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDrop
 import { ListItemPropTypes } from '../ListPropTypes';
 import { useResize } from '../../../internal/UseResizeObserver';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
+import useVisibilityLoader from '../../../hooks/useVisibilityLoader';
 
 const { iotPrefix } = settings;
 
@@ -52,7 +53,7 @@ const propTypes = {
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** callback used to limit which items that should get drop targets rendered.
-   * recieves the id of the item that is being dragged and returns a list of ids. */
+   * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
   /** call back function of select */
   handleSelect: PropTypes.func,
@@ -80,6 +81,12 @@ const propTypes = {
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   virtualListRef: HtmlElementRefProp,
+  /** does this list use infinite scrolling */
+  isInfiniteScroll: PropTypes.bool,
+  /** callback to fire when the last element in an infinite scroll list is visible */
+  onInfiniteScroll: PropTypes.func,
+  /** is the application currently loading more infinite data */
+  isInfiniteLoading: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -112,6 +119,9 @@ const defaultProps = {
   testId: 'list',
   toggleExpansion: () => {},
   virtualListRef: undefined,
+  isInfiniteScroll: false,
+  onInfiniteScroll: () => {},
+  isInfiniteLoading: false,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -142,6 +152,9 @@ const VirtualListContent = ({
   testId,
   toggleExpansion,
   virtualListRef: virtualListRefProp,
+  isInfiniteScroll,
+  onInfiniteScroll,
+  isInfiniteLoading,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const rowSize = isLargeRow ? 96 : 40;
@@ -150,10 +163,16 @@ const VirtualListContent = ({
   const didScrollRef = useRef(false);
   const internalVirtualListRef = useRef(null);
   const virtualListRef = virtualListRefProp || internalVirtualListRef;
+  const lastListItemRef = useRef(null);
+  useVisibilityLoader(lastListItemRef, {
+    isLoading: isInfiniteLoading,
+    hasMoreToLoad: isInfiniteScroll,
+    onVisible: onInfiniteScroll,
+  });
 
   const flatten = useCallback(
     (initialItems, parentId = null, currentLevel = 0) => {
-      return initialItems.reduce((carry, item) => {
+      return initialItems.reduce((carry, item, index) => {
         let tmp = carry;
         const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
         const parentIsExpanded = expandedIds.some((rowId) => parentId === rowId);
@@ -193,19 +212,34 @@ const VirtualListContent = ({
           ]);
         }
 
+        if (isInfiniteScroll && currentLevel === 0 && index === initialItems.length - 1) {
+          tmp = tmp.concat({
+            level: currentLevel,
+          });
+        }
+
         return tmp;
       }, []);
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [expandedIds]
+    [expandedIds, isInfiniteScroll]
   );
 
-  const [flattened, setFlattened] = useState(() => {
+  const flattenHelper = useCallback(() => {
     const flattenedItems = flatten(items);
     const parents = flattenedItems.filter(
       (item) =>
         item.level === 0 || expandedIds.includes(item.id) || expandedIds.includes(item.parentId)
     ).length;
+
+    return {
+      flattenedItems,
+      parents,
+    };
+  }, [expandedIds, flatten, items]);
+
+  const [flattened, setFlattened] = useState(() => {
+    const { flattenedItems, parents } = flattenHelper();
+
     return {
       items: flattenedItems,
       parents,
@@ -220,18 +254,14 @@ const VirtualListContent = ({
   }, [expandedIds, flattened, virtualListRef, rowSize]);
 
   useEffect(() => {
-    const flattenedItems = flatten(items);
-    const parents = flattenedItems.filter(
-      (item) =>
-        item.level === 0 || expandedIds.includes(item.id) || expandedIds.includes(item.parentId)
-    ).length;
+    const { flattenedItems, parents } = flattenHelper();
 
     setFlattened({
       items: flattenedItems,
       parents,
       height: parents * rowSize,
     });
-  }, [expandedIds, flatten, items, rowSize]);
+  }, [flattenHelper, rowSize]);
 
   const renderItemAndChildren = (item, index, parentId, level, style) => {
     const hasChildren = item?.children && item.children.length > 0;
@@ -327,8 +357,17 @@ const VirtualListContent = ({
     ];
   };
 
+  const showLoadingSkeleton = (index) => {
+    return isInfiniteScroll && index === flattened?.items.length - 1;
+  };
+
   const getItemSize = (index) => {
     const item = flattened?.items?.[index];
+
+    if (showLoadingSkeleton(index)) {
+      return rowSize;
+    }
+
     if (!item) {
       return 0;
     }
@@ -346,9 +385,23 @@ const VirtualListContent = ({
     return 0;
   };
 
+  // eslint-disable-next-line react/prop-types
   const ListRow = ({ index, style }) => {
     const item = flattened?.items?.[index];
-    if (!item) {
+
+    if (showLoadingSkeleton(index)) {
+      return (
+        <div ref={lastListItemRef} style={style}>
+          <SkeletonText
+            className={`${iotPrefix}--list--skeleton`}
+            width="90%"
+            data-testid={`${testId}-loading`}
+          />
+        </div>
+      );
+    }
+
+    if (!item || !item?.content) {
       return null;
     }
 
@@ -387,7 +440,7 @@ const VirtualListContent = ({
     if (parentList) {
       const rect = parentList.getBoundingClientRect();
       const { height } = rect;
-      setListHeight(height);
+      setListHeight(isInfiniteScroll ? height + rowSize : height);
     }
 
     if (didScrollRef.current === false && selectedIds?.length > 0 && virtualListRef.current) {
@@ -397,7 +450,7 @@ const VirtualListContent = ({
         didScrollRef.current = true;
       }
     }
-  }, [flattened.items, listOuterRef, selectedIds, virtualListRef]);
+  }, [flattened.items, isInfiniteScroll, listOuterRef, rowSize, selectedIds, virtualListRef]);
 
   if (!isLoading && flattened.items.length) {
     return (
