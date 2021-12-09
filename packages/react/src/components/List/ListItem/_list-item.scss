@@ -207,7 +207,13 @@
         text-overflow: ellipsis;
         padding-right: $spacing-09;
         &__with-actions {
-          padding-right: $spacing-07; // save room for the action button
+          // save room for the action button
+          padding-right: $spacing-08;
+
+          [dir='rtl'] & {
+            padding-right: 0;
+            padding-left: $spacing-08;
+          }
         }
         &__large {
           color: $text-05;

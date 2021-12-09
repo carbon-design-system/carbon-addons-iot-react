@@ -1122,9 +1122,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <div
                     className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                    title="Item 1"
+                    title="Item 1 with a very long title that should truncate before it hits the edge of the list"
                   >
-                    Item 1
+                    Item 1 with a very long title that should truncate before it hits the edge of the list
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
@@ -1763,9 +1763,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <div
                     className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                    title="Item 1"
+                    title="Item 1 with a very long title that should truncate before it hits the edge of the list"
                   >
-                    Item 1
+                    Item 1 with a very long title that should truncate before it hits the edge of the list
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
@@ -2802,9 +2802,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <div
                     className="iot--list-item--content--values--value"
-                    title="Item 1"
+                    title="Item 1 with a very long title that should truncate before it hits the edge of the list"
                   >
-                    Item 1
+                    Item 1 with a very long title that should truncate before it hits the edge of the list
                   </div>
                 </div>
                 <div
@@ -3238,9 +3238,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <div
                     className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                    title="Item 1"
+                    title="Item 1 with a very long title that should truncate before it hits the edge of the list"
                   >
-                    Item 1
+                    Item 1 with a very long title that should truncate before it hits the edge of the list
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"
@@ -3849,9 +3849,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 >
                   <div
                     className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                    title="Item 1"
+                    title="Item 1 with a very long title that should truncate before it hits the action icons"
                   >
-                    Item 1
+                    Item 1 with a very long title that should truncate before it hits the action icons
                   </div>
                   <div
                     className="iot--list-item--content--row-actions"

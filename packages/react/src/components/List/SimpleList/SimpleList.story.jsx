@@ -45,7 +45,12 @@ export const getListItemsWithActions = (num) =>
     .map((i, idx) => ({
       id: (idx + 1).toString(),
       content: {
-        value: `Item ${idx + 1}`,
+        value:
+          idx === 0
+            ? `Item ${
+                idx + 1
+              } with a very long title that should truncate before it hits the edge of the list`
+            : `Item ${idx + 1}`,
         rowActions,
       },
     }));
@@ -56,7 +61,12 @@ const getListItemsWithOverflowMenu = (num) =>
     .map((i, idx) => ({
       id: (idx + 1).toString(),
       content: {
-        value: `Item ${idx + 1}`,
+        value:
+          idx === 0
+            ? `Item ${
+                idx + 1
+              } with a very long title that should truncate before it hits the action icons`
+            : `Item ${idx + 1}`,
         rowActions: rowActionsOverFlowMenu,
       },
     }));
@@ -67,7 +77,12 @@ const getFatRowListItems = (num) =>
     .map((i, idx) => ({
       id: (idx + 1).toString(),
       content: {
-        value: `Item ${idx + 1}`,
+        value:
+          idx === 0
+            ? `Item ${
+                idx + 1
+              } with a very long title that should truncate before it hits the edge of the list`
+            : `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
         rowActions: [],
       },
@@ -79,7 +94,12 @@ const getFatRowListItemsWithActions = (num) =>
     .map((i, idx) => ({
       id: (idx + 1).toString(),
       content: {
-        value: `Item ${idx + 1}`,
+        value:
+          idx === 0
+            ? `Item ${
+                idx + 1
+              } with a very long title that should truncate before it hits the edge of the list`
+            : `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
         rowActions,
       },
@@ -91,7 +111,12 @@ const getFatRowListItemsWithOverflowMenu = (num) =>
     .map((i, idx) => ({
       id: (idx + 1).toString(),
       content: {
-        value: `Item ${idx + 1}`,
+        value:
+          idx === 0
+            ? `Item ${
+                idx + 1
+              } with a very long title that should truncate before it hits the edge of the list`
+            : `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
         rowActions: rowActionsOverFlowMenu,
       },
