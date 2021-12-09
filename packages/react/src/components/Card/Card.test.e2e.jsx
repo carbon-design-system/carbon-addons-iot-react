@@ -30,7 +30,7 @@ describe('Card', () => {
         ));
     mount(<ManyCards />);
 
-    // only five loaded at first.
+    // only three loaded at first.
     cy.findAllByText(/renderprop/).should('have.length', 3);
 
     // scroll down to load the rest.

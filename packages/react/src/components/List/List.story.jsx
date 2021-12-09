@@ -873,6 +873,7 @@ export const WithInfiniteScroll = () => {
           isInfiniteScroll={isInfiniteScroll}
           isInfiniteLoading={isInfiniteLoading}
           onInfiniteScroll={async () => {
+            action('onInfiniteScroll')();
             setIsInfiniteLoading(true);
 
             try {

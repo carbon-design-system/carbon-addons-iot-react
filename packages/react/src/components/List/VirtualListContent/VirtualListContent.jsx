@@ -212,6 +212,8 @@ const VirtualListContent = ({
           ]);
         }
 
+        // if infinite scrolling is being used, we need to add a placeholder for the loading
+        // row at the end of all the items
         if (isInfiniteScroll && currentLevel === 0 && index === initialItems.length - 1) {
           tmp = tmp.concat({
             level: currentLevel,
