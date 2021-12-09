@@ -229,10 +229,6 @@ describe('DateTimePicker', () => {
     expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       '2020-04-01 13:34 to 2020-04-06 11:49'
     );
-
-    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-apply`).first().simulate('click');
-    jest.runAllTimers();
-    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
   it('should go back to presets when cancel button is picked on Absolute screen', () => {
@@ -494,7 +490,6 @@ describe('DateTimePicker', () => {
     expect(screen.queryByText(i18nDefault.endTimeLabel)).not.toBeInTheDocument();
     // click apply
     fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
-    expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
 
     expect(
       screen.queryByTitle(new RegExp(`.*\\s${i18nDefault.toLabel}\\s.*`))
@@ -682,6 +677,40 @@ describe('DateTimePicker', () => {
     // set time to 11:61
     userEvent.type(relativeToTime, '{backspace}{backspace}61');
     expect(relativeToTime).toBeInvalid();
+    expect(applyBytton).toBeDisabled();
+  });
+
+  it('should disable apply button when absolute TimePickerSpinner input is invalid', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
+    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.absoluteLabel));
+    const applyBytton = screen.getByRole('button', { name: i18n.applyBtnLabel });
+
+    // Get start and end time inputs
+    const startTime = screen.getByLabelText('Start time');
+    const endTime = screen.getByLabelText('End time');
+
+    // confirm that start and end time is: 00:00
+    expect(startTime).toHaveValue('00:00');
+    expect(endTime).toHaveValue('00:00');
+
+    // start time and end times are equally initally - hence start time is invalid and apply button is disabled
+    expect(applyBytton).toBeDisabled();
+
+    // Change end time to 01:00 - start time is before end time
+    fireEvent.change(endTime, { target: { value: '01:00' } });
+    expect(applyBytton).toBeEnabled();
+
+    // Change start time to 02:00 - start time is after end time
+    fireEvent.change(startTime, { target: { value: '02:00' } });
+    expect(applyBytton).toBeDisabled();
+
+    // Change end time to 02:00 - start time is after end time
+    fireEvent.change(endTime, { target: { value: '00:00' } });
     expect(applyBytton).toBeDisabled();
   });
 

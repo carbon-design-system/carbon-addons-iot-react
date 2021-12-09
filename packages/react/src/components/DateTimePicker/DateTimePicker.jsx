@@ -804,12 +804,14 @@ const DateTimePicker = ({
 
   // on change functions that trigger a absolute value update
   const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
+    setAbsoluteStartTimeInvalid(meta.invalid);
     const invalidStartEndTime = validateStartEndTime(pickerValue, absoluteValue.endTime);
     setAbsoluteStartTimeInvalid(meta.invalid || invalidStartEndTime);
     setAbsoluteEndTimeInvalid(absoluteEndTimeInvalid && invalidStartEndTime);
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
   const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
+    setAbsoluteEndTimeInvalid(meta.invalid);
     const invalidStartEndTime = validateStartEndTime(absoluteValue.startTime, pickerValue);
     setAbsoluteEndTimeInvalid(meta.invalid || invalidStartEndTime);
     setAbsoluteStartTimeInvalid(absoluteStartTimeInvalid && invalidStartEndTime);
