@@ -236,7 +236,6 @@ describe('DateTimePicker', () => {
     expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
       '2020-04-01 13:34 to 2020-04-06 13:49'
     );
-    verify;
 
     wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-apply`).first().simulate('click');
     jest.runAllTimers();
@@ -503,6 +502,7 @@ describe('DateTimePicker', () => {
     // click apply
     const times = screen.getAllByTestId('time-picker-spinner');
     fireEvent.change(times[1], { target: { value: '03:00' } });
+    fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
     expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
 
     expect(
