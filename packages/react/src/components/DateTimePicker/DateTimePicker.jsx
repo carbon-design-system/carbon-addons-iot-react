@@ -318,7 +318,7 @@ const DateTimePicker = ({
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
   const [relativeLastNumberInvalid, setRelativeLastNumberInvalid] = useState(false);
   const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
-  const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(false);
+  const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(true);
   const [absoluteEndTimeInvalid, setAbsoluteEndTimeInvalid] = useState(false);
 
   // Refs
