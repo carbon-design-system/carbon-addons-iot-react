@@ -4,6 +4,12 @@ import { onlyOn } from '@cypress/skip-test';
 
 import FlyoutMenu, { FlyoutMenuDirection } from './FlyoutMenu';
 
+/**
+ * I've had to manually adjust the positioning of these with menuOffset objects. They are off by a
+ * few pixel in Cypress, but look perfect in storybook. I don't know if these offsets will need to
+ * be adjusted over time, or if I should leave them off and take the snapshots with them in the
+ * "wrong" position since they are correct in storybook/chrome.
+ */
 const AllFlyoutMenusForPositioning = (isRTL) => (
   <div
     data-testid="flyout-positioning-test"
