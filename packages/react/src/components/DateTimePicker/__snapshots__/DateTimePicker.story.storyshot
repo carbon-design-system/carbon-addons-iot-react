@@ -615,7 +615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Start time
                         </label>
                         <div
-                          className="bx--time-picker bx--time-picker--light bx--time-picker--invalid"
+                          className="bx--time-picker bx--time-picker--light"
                         >
                           <div
                             className="bx--time-picker__input"
@@ -623,7 +623,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input bx--text-input--light"
-                              data-invalid={true}
                               data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker25-start-time"
@@ -706,11 +705,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </button>
                           </div>
                         </div>
-                        <div
-                          className="bx--form-requirement"
-                        >
-                          Invalid time format.
-                        </div>
                       </div>
                     </div>
                     <div
@@ -727,7 +721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           End time
                         </label>
                         <div
-                          className="bx--time-picker bx--time-picker--light bx--time-picker--invalid"
+                          className="bx--time-picker bx--time-picker--light"
                         >
                           <div
                             className="bx--time-picker__input"
@@ -735,7 +729,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input bx--text-input--light"
-                              data-invalid={true}
                               data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker25-end-time"
@@ -818,11 +811,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </button>
                           </div>
                         </div>
-                        <div
-                          className="bx--form-requirement"
-                        >
-                          Invalid time format.
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -852,8 +840,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary bx--btn--disabled"
-              disabled={true}
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
+              disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -1120,7 +1108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Start time
                         </label>
                         <div
-                          className="bx--time-picker bx--time-picker--light bx--time-picker--invalid"
+                          className="bx--time-picker bx--time-picker--light"
                         >
                           <div
                             className="bx--time-picker__input"
@@ -1128,7 +1116,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input bx--text-input--light"
-                              data-invalid={true}
                               data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker-start-time"
@@ -1211,11 +1198,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </button>
                           </div>
                         </div>
-                        <div
-                          className="bx--form-requirement"
-                        >
-                          Invalid time format.
-                        </div>
                       </div>
                     </div>
                     <div
@@ -1232,7 +1214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           End time
                         </label>
                         <div
-                          className="bx--time-picker bx--time-picker--light bx--time-picker--invalid"
+                          className="bx--time-picker bx--time-picker--light"
                         >
                           <div
                             className="bx--time-picker__input"
@@ -1240,7 +1222,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input bx--text-input--light"
-                              data-invalid={true}
                               data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker-end-time"
@@ -1323,11 +1304,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </button>
                           </div>
                         </div>
-                        <div
-                          className="bx--form-requirement"
-                        >
-                          Invalid time format.
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -1357,8 +1333,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary bx--btn--disabled"
-              disabled={true}
+              className="iot--date-time-picker__menu-btn iot--date-time-picker__menu-btn-apply bx--btn bx--btn--md bx--btn--primary"
+              disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
