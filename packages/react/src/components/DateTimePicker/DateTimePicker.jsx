@@ -319,7 +319,7 @@ const DateTimePicker = ({
   const [relativeLastNumberInvalid, setRelativeLastNumberInvalid] = useState(false);
   const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
   const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(true);
-  const [absoluteEndTimeInvalid, setAbsoluteEndTimeInvalid] = useState(false);
+  const [absoluteEndTimeInvalid, setAbsoluteEndTimeInvalid] = useState(true);
 
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
@@ -592,6 +592,16 @@ const DateTimePicker = ({
     }
 
     setAbsoluteValue(newAbsolute);
+
+    const invalidDate = invalidAbsoluteDate(
+      newAbsolute.startTime,
+      newAbsolute.endTime,
+      newAbsolute
+    );
+
+    // Update end and start time invalid state when date changed
+    setAbsoluteEndTimeInvalid(invalidDate);
+    setAbsoluteStartTimeInvalid(invalidDate);
   };
 
   const onDatePickerClose = (range, single, flatpickr) => {
@@ -787,33 +797,52 @@ const DateTimePicker = ({
     setAbsoluteValue(newAbsolute);
   };
 
-  // Validate that the start time if less than the end time
-  const validateStartEndTime = (startTime, endTime) => {
-    const timefrom = new Date();
-    let temp = startTime.split(':');
-    timefrom.setHours(Number(temp[0]));
-    timefrom.setMinutes(Number(temp[1]));
+  // Returns true if start date is after end date for absolute range
+  const invalidAbsoluteDate = (startTime, endTime, absoluteValues) => {
+    // If start and end date have been selected
+    if (absoluteValues.hasOwnProperty('start') && absoluteValues.hasOwnProperty('end')) {
+      // Include start time in start date
+      const timefrom = new Date(absoluteValues.start);
+      let temp = startTime.split(':');
+      timefrom.setHours(Number(temp[0]));
+      timefrom.setMinutes(Number(temp[1]));
 
-    const timeto = new Date();
-    temp = endTime.split(':');
-    timeto.setHours(Number(temp[0]));
-    timeto.setMinutes(Number(temp[1]));
+      // Include end time in end date
+      const timeto = new Date(absoluteValues.end);
+      temp = endTime.split(':');
+      timeto.setHours(Number(temp[0]));
+      timeto.setMinutes(Number(temp[1]));
 
-    return timefrom >= timeto;
+      console.log(timefrom, timeto);
+
+      return timefrom >= timeto;
+    }
+
+    // Return invalid date if start time and end date not selected
+    return true;
   };
 
   // on change functions that trigger a absolute value update
   const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
     setAbsoluteStartTimeInvalid(meta.invalid);
-    const invalidStartEndTime = validateStartEndTime(pickerValue, absoluteValue.endTime);
+    const invalidStartEndTime = invalidAbsoluteDate(
+      pickerValue,
+      absoluteValue.endTime,
+      absoluteValue
+    );
     setAbsoluteStartTimeInvalid(meta.invalid || invalidStartEndTime);
     setAbsoluteEndTimeInvalid(absoluteEndTimeInvalid && invalidStartEndTime);
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
   const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
     setAbsoluteEndTimeInvalid(meta.invalid);
-    const invalidStartEndTime = validateStartEndTime(absoluteValue.startTime, pickerValue);
+    const invalidStartEndTime = invalidAbsoluteDate(
+      absoluteValue.startTime,
+      pickerValue,
+      absoluteValue
+    );
     setAbsoluteEndTimeInvalid(meta.invalid || invalidStartEndTime);
+
     setAbsoluteStartTimeInvalid(absoluteStartTimeInvalid && invalidStartEndTime);
 
     changeAbsolutePropertyValue('endTime', pickerValue);

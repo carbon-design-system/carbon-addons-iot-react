@@ -694,65 +694,84 @@ describe('DateTimePicker', () => {
     expect(applyBytton).toBeDisabled();
   });
 
-  it('should disable apply button when absolute TimePickerSpinner input is invalid', () => {
-    const { i18n } = DateTimePicker.defaultProps;
-    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+  it('should disable apply button when absolute TimePickerSpinner input is invalid on the same day', () => {
+    const defaultValues = {
+      timeRangeKind: PICKER_KINDS.ABSOLUTE,
+      timeRangeValue: {
+        startDate: '2020-04-01',
+        startTime: '12:34',
+        endDate: '2020-04-01',
+        endTime: '11:49',
+      },
+    };
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultValues} />);
     jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 12:34 to 2020-04-01 11:49'
+    );
 
-    userEvent.click(screen.getByTestId('date-time-picker__field'));
-    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
-    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.absoluteLabel));
-    const applyBytton = screen.getByRole('button', { name: i18n.applyBtnLabel });
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).first().simulate('click');
+    jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 13:34 to 2020-04-01 11:49'
+    );
 
-    // Get start and end time inputs
-    const startTime = screen.getByLabelText('Start time');
-    const endTime = screen.getByLabelText('End time');
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).at(1).simulate('click');
+    jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 13:34 to 2020-04-01 12:49'
+    );
 
-    // confirm that start and end time is: 00:00
-    expect(startTime).toHaveValue('00:00');
-    expect(endTime).toHaveValue('00:00');
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).at(1).simulate('click');
+    jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 13:34 to 2020-04-01 13:49'
+    );
 
-    // start time and end times are equally initally - hence start time is invalid and apply button is disabled
-    expect(applyBytton).toBeDisabled();
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-apply`).first().simulate('click');
+    jest.runAllTimers();
+    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
+  });
 
-    // Change end time to 01:00 - start time is before end time
-    fireEvent.change(endTime, { target: { value: '01:00' } });
-    expect(startTime).toHaveValue('00:00');
-    expect(endTime).toHaveValue('01:00');
-    expect(applyBytton).toBeEnabled();
+  it('should enabe apply button when absolute DatePicker input has start and end date in different dates', () => {
+    const defaultValues = {
+      timeRangeKind: PICKER_KINDS.ABSOLUTE,
+      timeRangeValue: {
+        startDate: '2020-04-01',
+        startTime: '12:34',
+        endDate: '2020-04-06',
+        endTime: '11:49',
+      },
+    };
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultValues} />);
+    jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`)).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 12:34 to 2020-04-06 11:49'
+    );
 
-    // Change start time to 02:00 - start time is after end time
-    fireEvent.change(startTime, { target: { value: '02:00' } });
-    expect(startTime).toHaveValue('02:00');
-    expect(endTime).toHaveValue('01:00');
-    expect(applyBytton).toBeDisabled();
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).first().simulate('click');
+    jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 13:34 to 2020-04-06 11:49'
+    );
 
-    // Change end time to 03:00 - start time is before end time
-    fireEvent.change(endTime, { target: { value: '03:00' } });
-    expect(startTime).toHaveValue('02:00');
-    expect(endTime).toHaveValue('03:00');
-    expect(applyBytton).toBeEnabled();
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).at(1).simulate('click');
+    jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 13:34 to 2020-04-06 12:49'
+    );
 
-    // Change  start time to 05:00 and end time to 06:00 - start time is before end time
-    fireEvent.change(startTime, { target: { value: '05:00' } });
-    fireEvent.change(endTime, { target: { value: '06:00' } });
-    expect(startTime).toHaveValue('05:00');
-    expect(endTime).toHaveValue('06:00');
-    expect(applyBytton).toBeEnabled();
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).at(1).simulate('click');
+    jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 13:34 to 2020-04-06 13:49'
+    );
 
-    // Change  start time to 08:00 and end time to 03:00 - start time is after end time
-    fireEvent.change(startTime, { target: { value: '08:00' } });
-    fireEvent.change(endTime, { target: { value: '03:00' } });
-    expect(startTime).toHaveValue('08:00');
-    expect(endTime).toHaveValue('03:00');
-    expect(applyBytton).toBeDisabled();
-
-    // Change  start time to 20:00 and end time to 23:00 - start time is before end time
-    fireEvent.change(startTime, { target: { value: '20:00' } });
-    fireEvent.change(endTime, { target: { value: '23:00' } });
-    expect(startTime).toHaveValue('20:00');
-    expect(endTime).toHaveValue('23:00');
-    expect(applyBytton).toBeEnabled();
+    wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-apply`).first().simulate('click');
+    jest.runAllTimers();
+    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
   it('should close picker when escape is pressed', () => {

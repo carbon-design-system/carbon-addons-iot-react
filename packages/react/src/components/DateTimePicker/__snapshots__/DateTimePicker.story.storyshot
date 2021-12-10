@@ -727,7 +727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           End time
                         </label>
                         <div
-                          className="bx--time-picker bx--time-picker--light"
+                          className="bx--time-picker bx--time-picker--light bx--time-picker--invalid"
                         >
                           <div
                             className="bx--time-picker__input"
@@ -735,6 +735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input bx--text-input--light"
+                              data-invalid={true}
                               data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker25-end-time"
@@ -816,6 +817,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               </svg>
                             </button>
                           </div>
+                        </div>
+                        <div
+                          className="bx--form-requirement"
+                        >
+                          Invalid time format.
                         </div>
                       </div>
                     </div>
@@ -1226,7 +1232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           End time
                         </label>
                         <div
-                          className="bx--time-picker bx--time-picker--light"
+                          className="bx--time-picker bx--time-picker--light bx--time-picker--invalid"
                         >
                           <div
                             className="bx--time-picker__input"
@@ -1234,6 +1240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             <input
                               autoComplete="off"
                               className="bx--time-picker__input-field bx--text-input bx--text-input--light"
+                              data-invalid={true}
                               data-testid="time-picker-spinner"
                               disabled={false}
                               id="datetimepicker-end-time"
@@ -1315,6 +1322,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               </svg>
                             </button>
                           </div>
+                        </div>
+                        <div
+                          className="bx--form-requirement"
+                        >
+                          Invalid time format.
                         </div>
                       </div>
                     </div>
