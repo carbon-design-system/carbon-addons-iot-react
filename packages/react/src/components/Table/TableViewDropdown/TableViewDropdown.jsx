@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'carbon-components-react';
 import { Settings16 } from '@carbon/icons-react';
@@ -6,6 +6,7 @@ import { Settings16 } from '@carbon/icons-react';
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 import useSizeObserver from '../../../hooks/useSizeObserver';
+import { useDropdownTitleFixer } from '../../IconDropdown/dropdownHooks';
 
 import TableViewItemPropType from './TableViewItemPropTypes';
 import TableViewDropdownItem from './TableViewDropdownItem';
@@ -103,7 +104,7 @@ const TableViewDropdown = ({
       icon: Settings16,
     };
     // Save changes button show only appear if the view has been edited and the current view is not 'View all'
-    // 'View all' is equivalent to a "default view", which would not be able to get resaved. The user should supply
+    // 'View all' is equivalent to a "default view", which would not be able to get re-saved. The user should supply
     // their own default views that can be changed if they would like that functionality
     const dialogItems =
       selectedViewEdited && selectedViewId && selectedViewId !== 'view-all'
@@ -130,6 +131,15 @@ const TableViewDropdown = ({
   const MyDropDown = overrides?.dropdown?.component || Dropdown;
   const MyTableViewDropDownItem = overrides?.dropdownItem?.component || TableViewDropdownItem;
   const [containerSize, containerRef] = useSizeObserver(useRef(null));
+  const [dropdownRef, updateTitle] = useDropdownTitleFixer();
+
+  useEffect(() => {
+    if (mySelectedItem?.text && dropdownRef?.current) {
+      updateTitle(
+        selectedViewEdited ? `${mySelectedItem.text} - ${i18n.edited}` : mySelectedItem.text
+      );
+    }
+  }, [dropdownRef, i18n.edited, mySelectedItem, selectedViewEdited, updateTitle]);
 
   const onSelectionChange = (change) => {
     const item = change.selectedItem;
@@ -145,6 +155,7 @@ const TableViewDropdown = ({
   return (
     <div ref={containerRef} className={`${iotPrefix}--view-dropdown__container`} style={style}>
       <MyDropDown
+        ref={dropdownRef}
         label={i18n.tableViewMenu}
         data-testid={testID}
         selectedItem={mySelectedItem}

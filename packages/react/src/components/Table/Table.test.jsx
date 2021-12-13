@@ -113,7 +113,7 @@ describe('Table', () => {
     const { rerender } = render(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 1)}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -159,7 +159,7 @@ describe('Table', () => {
     rerender(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 1)}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -216,7 +216,7 @@ describe('Table', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={options}
@@ -231,7 +231,7 @@ describe('Table', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={tableData.slice(0, 2)}
         actions={mockActions}
         options={options}
         view={view}
@@ -245,7 +245,7 @@ describe('Table', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         actions={mockActions}
         options={options}
         view={view}
@@ -388,7 +388,7 @@ describe('Table', () => {
     render(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         actions={mockActions}
         options={options}
         view={view}
@@ -497,7 +497,7 @@ describe('Table', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         actions={mockActions}
         options={{
           hasSearch: true,
@@ -532,7 +532,7 @@ describe('Table', () => {
     render(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         actions={mockActions}
         options={{
           hasSearch: true,
@@ -577,7 +577,7 @@ describe('Table', () => {
     render(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         actions={mockActions}
         options={{
           hasSearch: true,
@@ -703,18 +703,22 @@ describe('Table', () => {
     const id = 'TableId3';
     // Should render correctly by default even if no lang attribute exist
     const { unmount, rerender, baseElement } = render(
-      <Table id={id} columns={tableColumns} data={[tableData[0]]} options={options} />
+      <Table id={id} columns={tableColumns} data={[tableData[0]]} options={options} size="xs" />
     );
     await fireEvent.click(screen.getByTestId(`${id}-row-0-row-actions-cell-overflow`));
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
       expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).toHaveClass(
-        `${prefix}--overflow-menu--flip`
+        `${prefix}--overflow-menu--flip`,
+        // should render a sm overflow menu for `xs` table rows
+        `${prefix}--overflow-menu-options--sm`
       );
     });
     document.documentElement.setAttribute('dir', 'rtl');
 
-    rerender(<Table id={id} columns={tableColumns} data={[tableData[1]]} options={options} />);
+    rerender(
+      <Table id={id} columns={tableColumns} data={[tableData[1]]} options={options} size="sm" />
+    );
     await fireEvent.click(screen.getByTestId(`${id}-row-1-row-actions-cell-overflow`));
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
@@ -1382,7 +1386,7 @@ describe('Table', () => {
           ...col,
           width: '100px',
         }))}
-        data={tableData}
+        data={[tableData[0]]}
       />
     );
 
@@ -1395,7 +1399,7 @@ describe('Table', () => {
           width: '100px',
           overflowMenuItems: overflowData,
         }))}
-        data={tableData}
+        data={[tableData[0]]}
       />
     );
 
@@ -1847,7 +1851,7 @@ describe('Table', () => {
         <Table
           id={tableTestId}
           columns={tableColumns}
-          data={tableData}
+          data={tableData.slice(0, 5)}
           options={{ hasAggregations: true }}
           view={{
             aggregations: { columns: [{ id: columnId }] },
@@ -1857,7 +1861,7 @@ describe('Table', () => {
 
       expect(
         screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`).textContent
-      ).toEqual('2470');
+      ).toEqual('30');
     });
 
     it('shows aggregation for specified columns using custom aggregation function', () => {
@@ -1872,7 +1876,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={tableData.slice(0, 5)}
           tooltip="this is a tooltip"
           options={{ hasAggregations: true }}
           actions={{
@@ -1898,7 +1902,7 @@ describe('Table', () => {
 
       expect(
         screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`).textContent
-      ).toEqual('2471');
+      ).toEqual('31');
       expect(sumFunction).toHaveBeenCalled();
 
       const overflow = screen.getByTestId('table-head--overflow');
@@ -1945,7 +1949,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           options={{ hasFilter: true, hasAdvancedFilter: true }}
         />
       );
@@ -1964,7 +1968,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           options={{ hasAdvancedFilter: 'true' }}
         />
       );
@@ -1980,7 +1984,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onToggleAdvancedFilter: handleToggleFilters,
@@ -2006,7 +2010,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onApplyAdvancedFilter: handleApplyFilter,
@@ -2052,7 +2056,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onApplyAdvancedFilter: handleApplyFilter,
@@ -2085,7 +2089,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onApplyAdvancedFilter: handleApplyFilter,
@@ -2196,7 +2200,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onApplyAdvancedFilter: handleApplyFilter,
@@ -2315,7 +2319,7 @@ describe('Table', () => {
       <Table
         id="loading-table"
         columns={tableColumns}
-        data={tableData}
+        data={tableData.slice(0, 5)}
         view={{ table: { loadingState: { isLoading: false, rowCount: 10, columnCount: 3 } } }}
       />
     );
@@ -2323,8 +2327,8 @@ describe('Table', () => {
       container.querySelectorAll(`.${iotPrefix}--table-skeleton-with-headers--table-row`)
     ).toHaveLength(0);
 
-    // 20 rows plus the header
-    expect(container.querySelectorAll('tr')).toHaveLength(21);
+    // 5 rows plus the header
+    expect(container.querySelectorAll('tr')).toHaveLength(6);
     expect(screen.getByTitle('String')).toBeVisible();
     expect(screen.getByTitle('Date')).toBeVisible();
   });
@@ -2358,7 +2362,7 @@ describe('Table', () => {
   it('should show a deprecation warning for old size props', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
-      <Table id="loading-table" columns={tableColumns} data={tableData} size="compact" />
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="compact" />
     );
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
@@ -2370,7 +2374,9 @@ describe('Table', () => {
         'The value `compact` has been deprecated for the `size` prop on the TableHead component.'
       )
     );
-    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="short" />);
+    rerender(
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="short" />
+    );
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `short` has been deprecated for the `size` prop on the Table component.'
@@ -2381,7 +2387,9 @@ describe('Table', () => {
         'The value `short` has been deprecated for the `size` prop on the TableHead component.'
       )
     );
-    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="normal" />);
+    rerender(
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="normal" />
+    );
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `normal` has been deprecated for the `size` prop on the Table component.'
@@ -2392,7 +2400,7 @@ describe('Table', () => {
         'The value `normal` has been deprecated for the `size` prop on the TableHead component.'
       )
     );
-    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="tall" />);
+    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="tall" />);
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `tall` has been deprecated for the `size` prop on the Table component.'
@@ -2404,7 +2412,7 @@ describe('Table', () => {
       )
     );
     rerender(
-      <Table id="loading-table" columns={tableColumns} data={tableData} size="unsupported" />
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="unsupported" />
     );
     expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
@@ -2412,7 +2420,7 @@ describe('Table', () => {
       )
     );
     jest.clearAllMocks();
-    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="lg" />);
+    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="lg" />);
     expect(console.error).not.toHaveBeenCalled();
   });
 
@@ -2510,7 +2518,7 @@ describe('Table', () => {
     const { rerender } = render(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 1)}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -2545,7 +2553,7 @@ describe('Table', () => {
     rerender(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 1)}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -2742,7 +2750,7 @@ describe('Table', () => {
       render(
         <Table
           columns={tableColumns}
-          data={tableData.slice(0, 1)}
+          data={[tableData[0]]}
           expandedData={expandedData}
           actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
           options={{
@@ -2798,7 +2806,7 @@ describe('Table', () => {
       render(
         <Table
           columns={tableColumns}
-          data={tableData.slice(0, 1)}
+          data={[tableData[0]]}
           expandedData={expandedData}
           actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
           options={{
@@ -2852,7 +2860,7 @@ describe('Table', () => {
       render(
         <Table
           columns={tableColumns}
-          data={tableData.slice(0, 1)}
+          data={[tableData[0]]}
           expandedData={expandedData}
           actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
           options={{
@@ -2913,7 +2921,7 @@ describe('Table', () => {
         <Table
           testId="icon-render"
           columns={tableColumns}
-          data={tableData.slice(0, 1)}
+          data={[tableData[0]]}
           expandedData={expandedData}
           actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
           options={{
