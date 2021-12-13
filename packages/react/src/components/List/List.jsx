@@ -7,6 +7,7 @@ import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { EditingStyle, DragAndDrop } from '../../utils/DragAndDropUtils';
 import { OverridePropTypes } from '../../constants/SharedPropTypes';
+import experimental from '../../internal/experimental';
 
 import DefaultListHeader from './ListHeader/ListHeader';
 import DefaultListContent from './ListContent/ListContent';
@@ -93,11 +94,11 @@ const propTypes = {
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
   /** does this list use infinite scrolling */
-  isInfiniteScroll: PropTypes.bool,
+  isInfiniteScroll: experimental(PropTypes.bool),
   /** callback to fire when the last element in an infinite scroll list is visible */
-  onInfiniteScroll: PropTypes.func,
+  onInfiniteScroll: experimental(PropTypes.func),
   /** is the application currently loading more infinite data */
-  isInfiniteLoading: PropTypes.bool,
+  isInfiniteLoading: experimental(PropTypes.bool),
 };
 
 const defaultProps = {
@@ -240,6 +241,7 @@ const List = forwardRef((props, ref) => {
   );
 });
 
+List.displayName = 'List';
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 

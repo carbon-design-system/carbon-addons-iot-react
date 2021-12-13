@@ -23888,6 +23888,7 @@ Map {
       "title": null,
       "toggleExpansion": [Function],
     },
+    "displayName": "List",
     "propTypes": Object {
       "buttons": Object {
         "args": Array [
@@ -23986,12 +23987,8 @@ Map {
       "isFullHeight": Object {
         "type": "bool",
       },
-      "isInfiniteLoading": Object {
-        "type": "bool",
-      },
-      "isInfiniteScroll": Object {
-        "type": "bool",
-      },
+      "isInfiniteLoading": [Function],
+      "isInfiniteScroll": [Function],
       "isLargeRow": Object {
         "type": "bool",
       },
@@ -24070,9 +24067,7 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "onInfiniteScroll": Object {
-        "type": "func",
-      },
+      "onInfiniteScroll": [Function],
       "onItemMoved": Object {
         "type": "func",
       },
