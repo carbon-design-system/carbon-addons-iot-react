@@ -172,7 +172,10 @@ Map {
       "error": null,
       "footer": null,
       "header": Object {},
-      "iconDescription": "Close",
+      "i18n": Object {
+        "closeButtonLabel": "Close",
+      },
+      "iconDescription": undefined,
       "invalid": false,
       "isFetchingData": false,
       "isFullScreen": false,
@@ -239,9 +242,17 @@ Map {
         ],
         "type": "shape",
       },
-      "iconDescription": Object {
-        "type": "string",
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "closeButtonLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
+      "iconDescription": [Function],
       "invalid": Object {
         "type": "bool",
       },
@@ -408,9 +419,7 @@ Map {
         ],
         "type": "shape",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "initialValue": Object {
         "type": "string",
       },
@@ -2520,13 +2529,43 @@ Map {
       "pagination": Object {
         "args": Array [
           Object {
+            "i18n": Object {
+              "args": Array [
+                Object {
+                  "nextPageText": Object {
+                    "type": "string",
+                  },
+                  "pageOfPagesText": Object {
+                    "type": "func",
+                  },
+                  "pageText": Object {
+                    "type": "string",
+                  },
+                  "prevPageText": Object {
+                    "type": "string",
+                  },
+                  "totalItemsText": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "string",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
             "maxPage": Object {
               "isRequired": true,
               "type": "number",
             },
-            "nextPageText": Object {
-              "type": "string",
-            },
+            "nextPageText": [Function],
             "onPage": Object {
               "isRequired": true,
               "type": "func",
@@ -2535,15 +2574,11 @@ Map {
               "isRequired": true,
               "type": "number",
             },
-            "pageOfPagesText": Object {
-              "type": "func",
-            },
+            "pageOfPagesText": [Function],
             "pageText": Object {
               "type": "string",
             },
-            "prevPageText": Object {
-              "type": "string",
-            },
+            "prevPageText": [Function],
             "size": Object {
               "args": Array [
                 Array [
@@ -2561,19 +2596,7 @@ Map {
             "totalItems": Object {
               "type": "number",
             },
-            "totalItemsText": Object {
-              "args": Array [
-                Array [
-                  Object {
-                    "type": "string",
-                  },
-                  Object {
-                    "type": "func",
-                  },
-                ],
-              ],
-              "type": "oneOfType",
-            },
+            "totalItemsText": [Function],
           },
         ],
         "type": "shape",
@@ -3026,27 +3049,37 @@ Map {
       "pagination": Object {
         "args": Array [
           Object {
-            "nextPageText": Object {
-              "type": "string",
+            "i18n": Object {
+              "args": Array [
+                Object {
+                  "nextPageText": Object {
+                    "type": "string",
+                  },
+                  "pageOfPagesText": Object {
+                    "type": "func",
+                  },
+                  "prevPageText": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
             },
+            "nextPageText": [Function],
             "onPage": Object {
               "type": "func",
             },
             "page": Object {
               "type": "number",
             },
-            "pageOfPagesText": Object {
-              "type": "func",
-            },
+            "pageOfPagesText": [Function],
             "pageSize": Object {
               "type": "number",
             },
             "pageText": Object {
               "type": "string",
             },
-            "prevPageText": Object {
-              "type": "string",
-            },
+            "prevPageText": [Function],
             "totalItems": Object {
               "type": "number",
             },
@@ -3147,27 +3180,37 @@ Map {
       "pagination": Object {
         "args": Array [
           Object {
-            "nextPageText": Object {
-              "type": "string",
+            "i18n": Object {
+              "args": Array [
+                Object {
+                  "nextPageText": Object {
+                    "type": "string",
+                  },
+                  "pageOfPagesText": Object {
+                    "type": "func",
+                  },
+                  "prevPageText": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
             },
+            "nextPageText": [Function],
             "onPage": Object {
               "type": "func",
             },
             "page": Object {
               "type": "number",
             },
-            "pageOfPagesText": Object {
-              "type": "func",
-            },
+            "pageOfPagesText": [Function],
             "pageSize": Object {
               "type": "number",
             },
             "pageText": Object {
               "type": "string",
             },
-            "prevPageText": Object {
-              "type": "string",
-            },
+            "prevPageText": [Function],
             "totalItems": Object {
               "type": "number",
             },
@@ -3263,23 +3306,59 @@ Map {
   },
   "SimplePagination" => Object {
     "defaultProps": Object {
-      "nextPageText": "Next page",
-      "pageOfPagesText": [Function],
+      "i18n": Object {
+        "nextPageText": "Next page",
+        "pageOfPagesText": [Function],
+        "prevPageText": "Prev page",
+        "totalItemsText": "Items",
+      },
+      "nextPageText": undefined,
+      "pageOfPagesText": undefined,
       "pageText": null,
-      "prevPageText": "Prev page",
+      "prevPageText": undefined,
       "size": "lg",
       "testId": "iot-simple-pagination",
       "totalItems": undefined,
-      "totalItemsText": "Items",
+      "totalItemsText": undefined,
     },
     "propTypes": Object {
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "nextPageText": Object {
+              "type": "string",
+            },
+            "pageOfPagesText": Object {
+              "type": "func",
+            },
+            "pageText": Object {
+              "type": "string",
+            },
+            "prevPageText": Object {
+              "type": "string",
+            },
+            "totalItemsText": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "maxPage": Object {
         "isRequired": true,
         "type": "number",
       },
-      "nextPageText": Object {
-        "type": "string",
-      },
+      "nextPageText": [Function],
       "onPage": Object {
         "isRequired": true,
         "type": "func",
@@ -3288,15 +3367,11 @@ Map {
         "isRequired": true,
         "type": "number",
       },
-      "pageOfPagesText": Object {
-        "type": "func",
-      },
+      "pageOfPagesText": [Function],
       "pageText": Object {
         "type": "string",
       },
-      "prevPageText": Object {
-        "type": "string",
-      },
+      "prevPageText": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -3314,19 +3389,7 @@ Map {
       "totalItems": Object {
         "type": "number",
       },
-      "totalItemsText": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "string",
-            },
-            Object {
-              "type": "func",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
+      "totalItemsText": [Function],
     },
   },
   "ProgressIndicator" => Object {
@@ -3642,10 +3705,14 @@ Map {
   "FileDrop" => Object {
     "defaultProps": Object {
       "accept": Array [],
-      "buttonLabel": "Add files",
+      "buttonLabel": undefined,
       "description": null,
-      "dragAndDropLabel": "Drag and drop your file here or ",
+      "dragAndDropLabel": undefined,
       "fileType": "BINARY",
+      "i18n": Object {
+        "buttonLabel": "Add files",
+        "dragAndDropLabel": "Drag and drop your file here or ",
+      },
       "id": "FileUploader",
       "kind": "browse",
       "multiple": true,
@@ -3664,15 +3731,11 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "buttonLabel": Object {
-        "type": "string",
-      },
+      "buttonLabel": [Function],
       "description": Object {
         "type": "string",
       },
-      "dragAndDropLabel": Object {
-        "type": "string",
-      },
+      "dragAndDropLabel": [Function],
       "fileType": Object {
         "args": Array [
           Array [
@@ -3681,6 +3744,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "buttonLabel": Object {
+              "type": "string",
+            },
+            "dragAndDropLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "id": Object {
         "type": "string",
@@ -7292,20 +7368,34 @@ Map {
       "className": "",
       "content": Array [],
       "defaultView": "grid",
-      "deleteLabelText": "Delete",
-      "deleteModalLabelText": "Delete image",
-      "deleteModalTitleText": [Function],
+      "deleteLabelText": undefined,
+      "deleteModalLabelText": undefined,
+      "deleteModalTitleText": undefined,
       "footer": Object {},
-      "gridButtonText": "Grid",
-      "instructionText": "Select the image that you want to display on this card.",
-      "listButtonText": "List",
-      "modalCloseIconDescriptionText": "Close",
-      "modalLabelText": "New image card",
-      "modalPrimaryButtonLabelText": "Select",
-      "modalSecondaryButtonLabelText": "Cancel",
-      "modalTitleText": "Image gallery",
+      "gridButtonText": undefined,
+      "i18n": Object {
+        "deleteLabelText": "Delete",
+        "deleteModalLabelText": "Delete image",
+        "deleteModalTitleText": [Function],
+        "gridButtonText": "Grid",
+        "instructionText": "Select the image that you want to display on this card.",
+        "listButtonText": "List",
+        "modalCloseIconDescriptionText": "Close",
+        "modalLabelText": "New image card",
+        "modalPrimaryButtonLabelText": "Select",
+        "modalSecondaryButtonLabelText": "Cancel",
+        "modalTitleText": "Image gallery",
+        "searchPlaceHolderText": "Search image by file name",
+      },
+      "instructionText": undefined,
+      "listButtonText": undefined,
+      "modalCloseIconDescriptionText": undefined,
+      "modalLabelText": undefined,
+      "modalPrimaryButtonLabelText": undefined,
+      "modalSecondaryButtonLabelText": undefined,
+      "modalTitleText": undefined,
       "onDelete": null,
-      "searchPlaceHolderText": "Search image by file name",
+      "searchPlaceHolderText": undefined,
       "searchProperty": "id",
       "testId": "ComposedModal",
     },
@@ -7351,15 +7441,9 @@ Map {
         ],
         "type": "oneOf",
       },
-      "deleteLabelText": Object {
-        "type": "string",
-      },
-      "deleteModalLabelText": Object {
-        "type": "string",
-      },
-      "deleteModalTitleText": Object {
-        "type": "func",
-      },
+      "deleteLabelText": [Function],
+      "deleteModalLabelText": [Function],
+      "deleteModalTitleText": [Function],
       "error": Object {
         "type": "string",
       },
@@ -7393,9 +7477,7 @@ Map {
         ],
         "type": "oneOfType",
       },
-      "gridButtonText": Object {
-        "type": "string",
-      },
+      "gridButtonText": [Function],
       "header": Object {
         "args": Array [
           Object {
@@ -7412,12 +7494,51 @@ Map {
         ],
         "type": "shape",
       },
-      "iconDescription": Object {
-        "type": "string",
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "deleteLabelText": Object {
+              "type": "string",
+            },
+            "deleteModalLabelText": Object {
+              "type": "string",
+            },
+            "deleteModalTitleText": Object {
+              "type": "func",
+            },
+            "gridButtonText": Object {
+              "type": "string",
+            },
+            "instructionText": Object {
+              "type": "string",
+            },
+            "listButtonText": Object {
+              "type": "string",
+            },
+            "modalCloseIconDescriptionText": Object {
+              "type": "string",
+            },
+            "modalLabelText": Object {
+              "type": "string",
+            },
+            "modalPrimaryButtonLabelText": Object {
+              "type": "string",
+            },
+            "modalSecondaryButtonLabelText": Object {
+              "type": "string",
+            },
+            "modalTitleText": Object {
+              "type": "string",
+            },
+            "searchPlaceHolderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
-      "instructionText": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
+      "instructionText": [Function],
       "invalid": Object {
         "type": "bool",
       },
@@ -7430,24 +7551,12 @@ Map {
       "isLarge": Object {
         "type": "bool",
       },
-      "listButtonText": Object {
-        "type": "string",
-      },
-      "modalCloseIconDescriptionText": Object {
-        "type": "string",
-      },
-      "modalLabelText": Object {
-        "type": "string",
-      },
-      "modalPrimaryButtonLabelText": Object {
-        "type": "string",
-      },
-      "modalSecondaryButtonLabelText": Object {
-        "type": "string",
-      },
-      "modalTitleText": Object {
-        "type": "string",
-      },
+      "listButtonText": [Function],
+      "modalCloseIconDescriptionText": [Function],
+      "modalLabelText": [Function],
+      "modalPrimaryButtonLabelText": [Function],
+      "modalSecondaryButtonLabelText": [Function],
+      "modalTitleText": [Function],
       "onClearError": Object {
         "type": "func",
       },
@@ -7468,9 +7577,7 @@ Map {
       "passiveModal": Object {
         "type": "bool",
       },
-      "searchPlaceHolderText": Object {
-        "type": "string",
-      },
+      "searchPlaceHolderText": [Function],
       "searchProperty": Object {
         "type": "string",
       },
@@ -21839,13 +21946,43 @@ Map {
       "pagination": Object {
         "args": Array [
           Object {
+            "i18n": Object {
+              "args": Array [
+                Object {
+                  "nextPageText": Object {
+                    "type": "string",
+                  },
+                  "pageOfPagesText": Object {
+                    "type": "func",
+                  },
+                  "pageText": Object {
+                    "type": "string",
+                  },
+                  "prevPageText": Object {
+                    "type": "string",
+                  },
+                  "totalItemsText": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "string",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
             "maxPage": Object {
               "isRequired": true,
               "type": "number",
             },
-            "nextPageText": Object {
-              "type": "string",
-            },
+            "nextPageText": [Function],
             "onPage": Object {
               "isRequired": true,
               "type": "func",
@@ -21854,15 +21991,11 @@ Map {
               "isRequired": true,
               "type": "number",
             },
-            "pageOfPagesText": Object {
-              "type": "func",
-            },
+            "pageOfPagesText": [Function],
             "pageText": Object {
               "type": "string",
             },
-            "prevPageText": Object {
-              "type": "string",
-            },
+            "prevPageText": [Function],
             "size": Object {
               "args": Array [
                 Array [
@@ -21880,19 +22013,7 @@ Map {
             "totalItems": Object {
               "type": "number",
             },
-            "totalItemsText": Object {
-              "args": Array [
-                Array [
-                  Object {
-                    "type": "string",
-                  },
-                  Object {
-                    "type": "func",
-                  },
-                ],
-              ],
-              "type": "oneOfType",
-            },
+            "totalItemsText": [Function],
           },
         ],
         "type": "shape",
@@ -22195,13 +22316,18 @@ Map {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
       "addToList": false,
-      "ariaLabel": "Choose an item",
-      "closeButtonText": "Close",
+      "ariaLabel": undefined,
+      "closeButtonText": undefined,
       "direction": "bottom",
       "disabled": false,
-      "editOptionText": "Create",
+      "editOptionText": undefined,
       "hasMultiValue": false,
       "horizontalDirection": "end",
+      "i18n": Object {
+        "ariaLabel": "Choose an item",
+        "closeButtonText": "Close",
+        "editOptionText": "Create",
+      },
       "itemToElement": null,
       "itemToString": [Function],
       "items": Array [],
@@ -22219,15 +22345,11 @@ Map {
       "addToList": Object {
         "type": "bool",
       },
-      "ariaLabel": Object {
-        "type": "string",
-      },
+      "ariaLabel": [Function],
       "className": Object {
         "type": "string",
       },
-      "closeButtonText": Object {
-        "type": "string",
-      },
+      "closeButtonText": [Function],
       "direction": Object {
         "args": Array [
           Array [
@@ -22243,43 +22365,12 @@ Map {
       "downshiftProps": Object {
         "args": Array [
           Object {
-            "children": [Function],
-            "defaultHighlightedIndex": [Function],
-            "defaultIsOpen": [Function],
-            "environment": [Function],
-            "getA11yStatusMessage": [Function],
-            "getItemId": [Function],
-            "highlightedIndex": [Function],
-            "id": [Function],
-            "initialHighlightedIndex": [Function],
-            "initialInputValue": [Function],
-            "initialIsOpen": [Function],
-            "initialSelectedItem": [Function],
-            "inputId": [Function],
-            "inputValue": [Function],
-            "isOpen": [Function],
-            "itemCount": [Function],
-            "itemToString": [Function],
-            "labelId": [Function],
-            "menuId": [Function],
-            "onChange": [Function],
-            "onInputValueChange": [Function],
-            "onOuterClick": [Function],
-            "onSelect": [Function],
-            "onStateChange": [Function],
-            "onUserAction": [Function],
-            "scrollIntoView": [Function],
-            "selectedItem": [Function],
-            "selectedItemChanged": [Function],
-            "stateReducer": [Function],
-            "suppressRefError": [Function],
+            "type": "object",
           },
         ],
         "type": "shape",
       },
-      "editOptionText": Object {
-        "type": "string",
-      },
+      "editOptionText": [Function],
       "hasMultiValue": Object {
         "type": "bool",
       },
@@ -22294,6 +22385,22 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "ariaLabel": Object {
+              "type": "string",
+            },
+            "closeButtonText": Object {
+              "type": "string",
+            },
+            "editOptionText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "id": Object {
         "isRequired": true,
@@ -22328,8 +22435,12 @@ Map {
         "type": "func",
       },
       "items": Object {
-        "isRequired": true,
-        "type": "array",
+        "args": Array [
+          Object {
+            "type": "object",
+          },
+        ],
+        "type": "arrayOf",
       },
       "light": Object {
         "type": "bool",
@@ -22382,7 +22493,6 @@ Map {
             "sm",
             "md",
             "lg",
-            "xl",
           ],
         ],
         "type": "oneOf",
@@ -22690,11 +22800,15 @@ Map {
       ],
       "disabled": false,
       "hideLabels": false,
-      "label": "Select a color",
+      "i18n": Object {
+        "label": "Select a color",
+        "titleText": "Color",
+      },
+      "label": undefined,
       "light": false,
       "selectedColor": undefined,
       "testId": "color-dropdown",
-      "titleText": "Color",
+      "titleText": undefined,
       "translateWithId": undefined,
     },
     "propTypes": Object {
@@ -22722,13 +22836,24 @@ Map {
       "hideLabels": Object {
         "type": "bool",
       },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "label": Object {
+              "type": "string",
+            },
+            "titleText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "id": Object {
         "isRequired": true,
         "type": "string",
       },
-      "label": Object {
-        "type": "string",
-      },
+      "label": [Function],
       "light": Object {
         "type": "bool",
       },
@@ -22753,9 +22878,7 @@ Map {
       "testId": Object {
         "type": "string",
       },
-      "titleText": Object {
-        "type": "string",
-      },
+      "titleText": [Function],
       "translateWithId": Object {
         "type": "func",
       },
@@ -24617,10 +24740,14 @@ Map {
   },
   "MenuButton" => Object {
     "defaultProps": Object {
-      "closeIconDescription": "close menu button",
+      "closeIconDescription": undefined,
+      "i18n": Object {
+        "closeIconDescription": "close menu button",
+        "openIconDescription": "open menu button",
+      },
       "label": null,
       "onPrimaryActionClick": null,
-      "openIconDescription": "open menu button",
+      "openIconDescription": undefined,
       "renderCloseIcon": Object {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
@@ -24629,6 +24756,7 @@ Map {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
       },
+      "testID": undefined,
       "testId": "menu-button",
     },
     "propTypes": Object {
@@ -24652,6 +24780,7 @@ Map {
         "type": "oneOfType",
       },
       "closeIconDescription": [Function],
+      "i18n": [Function],
       "label": Object {
         "type": "string",
       },
@@ -26715,7 +26844,7 @@ Map {
     "defaultProps": Object {
       "actionBar": null,
       "className": null,
-      "defaultTitleText": "Undefined",
+      "defaultTitleText": undefined,
       "filter": Object {
         "filterAccess": Array [],
         "filterTags": Array [],
@@ -26726,6 +26855,7 @@ Map {
         "addUsersButtonLabel": "Add users",
         "cancelLabel": "Cancel",
         "clearFilterTitle": "Clear Filter",
+        "defaultTitleText": "Undefined",
         "detailsAccordionText": "Details",
         "editModalHeaderLabel": "Selected users will have edit access",
         "editorAccessLabel": "Editor access",
@@ -26779,9 +26909,7 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "defaultTitleText": Object {
-        "type": "string",
-      },
+      "defaultTitleText": [Function],
       "filter": Object {
         "args": Array [
           Object {
@@ -27026,6 +27154,9 @@ Map {
               "type": "string",
             },
             "clearFilterTitle": Object {
+              "type": "string",
+            },
+            "defaultTitleText": Object {
               "type": "string",
             },
             "editorAccess": Object {

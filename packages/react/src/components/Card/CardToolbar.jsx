@@ -14,6 +14,7 @@ import DateTimePicker, {
 } from '../DateTimePicker/DateTimePickerV2';
 import Button from '../Button';
 import { PRESET_VALUES } from '../../constants/DateConstants';
+import useMerged from '../../hooks/useMerged';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
@@ -126,7 +127,7 @@ const CardToolbar = ({
   dateTimeMask,
   extraActions,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const langDir = useLangDirection();
   const overflowMenuPosition = React.useMemo(() => langDir === 'ltr', [langDir]);
   // maps the timebox internal label to a translated string

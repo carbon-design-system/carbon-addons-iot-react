@@ -8,6 +8,7 @@ import Button from '../Button';
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
 import deprecate from '../../internal/deprecate';
+import useMerged from '../../hooks/useMerged';
 
 import CardGalleryList from './CardGalleryList/CardGalleryList';
 import CardEditForm from './CardEditForm/CardEditForm';
@@ -212,7 +213,7 @@ const CardEditor = ({
       );
     }
   }, []);
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const availableDimensions = useMemo(
     () => (getValidDimensions ? getValidDimensions(cardConfig) : availableDimensionsProp),

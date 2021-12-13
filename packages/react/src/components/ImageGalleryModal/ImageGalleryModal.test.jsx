@@ -136,7 +136,7 @@ describe('ImageGalleryModal', () => {
     expect(onSubmit).toHaveBeenCalledWith(omit(content[0], 'title'));
   });
 
-  it('disables select (sumit) button when no image is selected', () => {
+  it('disables select (submit) button when no image is selected', () => {
     const content = getTestContent();
     const onSubmit = jest.fn();
     render(<ImageGalleryModal content={content} onSubmit={onSubmit} onClose={() => {}} />);

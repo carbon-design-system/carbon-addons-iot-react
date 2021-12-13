@@ -989,7 +989,7 @@ export const StatefulExampleWithCreateSaveViews = () => {
           page: manageViewsCurrentPageNumber,
           onPage: (pageNumber) => showPage(pageNumber, manageViewsFilteredViews),
           maxPage: Math.ceil(manageViewsFilteredViews.length / manageViewsRowsPerPage),
-          pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
+          i18n: { pageOfPagesText: (pageNumber) => `Page ${pageNumber}` },
         }}
       />
     );
@@ -1125,7 +1125,7 @@ export const StatefulExampleWithCreateSaveViews = () => {
   // We need to merge (using assign) the view properties from a few sources as
   // explained below in order to get the desired result. This is written as a
   // more general function, but it can just as well be written as an explicit
-  // object literal picking the right properties from the differentsources.
+  // object literal picking the right properties from the different sources.
   const mergedViewProp = useMemo(() => {
     const merged = assign(
       {},

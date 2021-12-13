@@ -17,6 +17,7 @@ import ComboBox from '../../../../ComboBox';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
+import useMerged from '../../../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -128,7 +129,7 @@ const TableCardFormContent = ({
   dataSeriesItemLinks,
   translateWithId,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const {
     content: { columns, thresholds },
   } = cardConfig;

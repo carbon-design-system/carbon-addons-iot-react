@@ -11,6 +11,7 @@ import { TextArea } from '../../TextArea';
 import { TextInput } from '../../TextInput';
 import { Dropdown } from '../../Dropdown';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
+import useMerged from '../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -150,7 +151,7 @@ const CommonCardEditFormFields = ({
   translateWithId,
 }) => {
   const { title, description, size, type, id } = cardConfig;
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 

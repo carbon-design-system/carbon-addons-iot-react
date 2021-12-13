@@ -12,6 +12,8 @@ import { Search } from '../Search';
 import { ContentSwitcher } from '../ContentSwitcher';
 import { ComposedModalPropTypes } from '../ComposedModal/ComposedModal';
 import { usePrevious } from '../../hooks/usePrevious';
+import deprecate, { deprecateString } from '../../internal/deprecate';
+import useMerged from '../../hooks/useMerged';
 
 import ImageTile from './ImageTile';
 
@@ -32,7 +34,7 @@ export const ImagePropTypes = PropTypes.arrayOf(
 );
 
 const propTypes = {
-  ...ComposedModalPropTypes, // eslint-disable-line react/forbid-foreign-prop-types
+  ...ComposedModalPropTypes,
   /** Classname to be added to the root node */
   className: PropTypes.string,
   /** Array of the images that should be shown */
@@ -52,27 +54,53 @@ const propTypes = {
   onDelete: PropTypes.func,
 
   /** The text of the grid button in the grid list toggle */
-  gridButtonText: PropTypes.string,
+  gridButtonText: deprecateString(),
   /** The text with instructions showing above the search */
-  instructionText: PropTypes.string,
+  instructionText: deprecateString(),
   /** The text of the list button in the grid list toggle */
-  listButtonText: PropTypes.string,
-  modalCloseIconDescriptionText: PropTypes.string,
+  listButtonText: deprecateString(),
+  modalCloseIconDescriptionText: deprecateString(),
   /** The small label text of the modal */
-  modalLabelText: PropTypes.string,
+  modalLabelText: deprecateString(),
   /** The large title text of the modal */
-  modalTitleText: PropTypes.string,
+  modalTitleText: deprecateString(),
   /** The primary button (select) text of the modal */
-  modalPrimaryButtonLabelText: PropTypes.string,
-  deleteLabelText: PropTypes.string,
-  deleteModalLabelText: PropTypes.string,
+  modalPrimaryButtonLabelText: deprecateString(),
+  deleteLabelText: deprecateString(),
+  deleteModalLabelText: deprecateString(),
   /** callback function that passes the image name and returns the title text for the delete */
-  deleteModalTitleText: PropTypes.func,
+  deleteModalTitleText: deprecate(
+    PropTypes.func,
+    `The prop \`deleteModalTitleText\` has been deprecated for the \`ImageGalleryModal\` component. It will be removed in the next major release. Please use \`i18n.deleteModalTitleText\` instead.`
+  ),
   /** The secondary button (cancel) text of the modal */
-  modalSecondaryButtonLabelText: PropTypes.string,
+  modalSecondaryButtonLabelText: deprecateString(),
   /** The text for the search input placeHolder */
-  searchPlaceHolderText: PropTypes.string,
+  searchPlaceHolderText: deprecateString(),
 
+  i18n: PropTypes.shape({
+    /** The text of the grid button in the grid list toggle */
+    gridButtonText: PropTypes.string,
+    /** The text with instructions showing above the search */
+    instructionText: PropTypes.string,
+    /** The text of the list button in the grid list toggle */
+    listButtonText: PropTypes.string,
+    modalCloseIconDescriptionText: PropTypes.string,
+    /** The small label text of the modal */
+    modalLabelText: PropTypes.string,
+    /** The large title text of the modal */
+    modalTitleText: PropTypes.string,
+    /** The primary button (select) text of the modal */
+    modalPrimaryButtonLabelText: PropTypes.string,
+    deleteLabelText: PropTypes.string,
+    deleteModalLabelText: PropTypes.string,
+    /** callback function that passes the image name and returns the title text for the delete */
+    deleteModalTitleText: PropTypes.func,
+    /** The secondary button (cancel) text of the modal */
+    modalSecondaryButtonLabelText: PropTypes.string,
+    /** The text for the search input placeHolder */
+    searchPlaceHolderText: PropTypes.string,
+  }),
   testId: PropTypes.string,
 };
 
@@ -83,19 +111,32 @@ const defaultProps = {
   footer: {},
   searchProperty: 'id',
   onDelete: null,
-
-  gridButtonText: 'Grid',
-  instructionText: 'Select the image that you want to display on this card.',
-  listButtonText: 'List',
-  modalLabelText: 'New image card',
-  modalTitleText: 'Image gallery',
-  modalPrimaryButtonLabelText: 'Select',
-  deleteLabelText: 'Delete',
-  deleteModalLabelText: 'Delete image',
-  deleteModalTitleText: (image) => `Are you sure you want to delete the image: ${image}?`,
-  modalSecondaryButtonLabelText: 'Cancel',
-  modalCloseIconDescriptionText: 'Close',
-  searchPlaceHolderText: 'Search image by file name',
+  gridButtonText: undefined,
+  instructionText: undefined,
+  listButtonText: undefined,
+  modalLabelText: undefined,
+  modalTitleText: undefined,
+  modalPrimaryButtonLabelText: undefined,
+  deleteLabelText: undefined,
+  deleteModalLabelText: undefined,
+  deleteModalTitleText: undefined,
+  modalSecondaryButtonLabelText: undefined,
+  modalCloseIconDescriptionText: undefined,
+  searchPlaceHolderText: undefined,
+  i18n: {
+    gridButtonText: 'Grid',
+    instructionText: 'Select the image that you want to display on this card.',
+    listButtonText: 'List',
+    modalLabelText: 'New image card',
+    modalTitleText: 'Image gallery',
+    modalPrimaryButtonLabelText: 'Select',
+    deleteLabelText: 'Delete',
+    deleteModalLabelText: 'Delete image',
+    deleteModalTitleText: (image) => `Are you sure you want to delete the image: ${image}?`,
+    modalSecondaryButtonLabelText: 'Cancel',
+    modalCloseIconDescriptionText: 'Close',
+    searchPlaceHolderText: 'Search image by file name',
+  },
   // TODO: update this default in v3 to match the component.
   // kept here for backwards compat.
   testId: 'ComposedModal',
@@ -123,8 +164,26 @@ const ImageGalleryModal = ({
   onDelete,
   footer,
   testId,
+  i18n,
   ...composedModalProps
 }) => {
+  const mergedI18n = useMerged(
+    defaultProps.i18n,
+    {
+      gridButtonText,
+      instructionText,
+      listButtonText,
+      modalCloseIconDescriptionText,
+      modalLabelText,
+      modalTitleText,
+      modalPrimaryButtonLabelText,
+      deleteLabelText,
+      deleteModalLabelText,
+      modalSecondaryButtonLabelText,
+      searchPlaceHolderText,
+    },
+    i18n
+  );
   const [activeView, setActiveView] = useState(defaultView);
   const [selectedImage, setSelectedImage] = useState();
   const [isDeleteWarningModalOpen, setIsDeleteWarningModalOpen] = useState(false);
@@ -166,11 +225,14 @@ const ImageGalleryModal = ({
           className={`${baseClass}--warning-modal`}
           open={isDeleteWarningModalOpen}
           danger
-          primaryButtonText={deleteLabelText}
-          secondaryButtonText={modalSecondaryButtonLabelText}
-          modalHeading={deleteModalTitleText(selectedImage?.id)}
+          primaryButtonText={mergedI18n.deleteLabelText}
+          secondaryButtonText={mergedI18n.modalSecondaryButtonLabelText}
+          modalHeading={
+            deleteModalTitleText?.(selectedImage?.id) ??
+            mergedI18n.deleteModalTitleText(selectedImage?.id)
+          }
           size="xs"
-          closeButtonLabel={modalCloseIconDescriptionText}
+          closeButtonLabel={mergedI18n.modalCloseIconDescriptionText}
           onRequestClose={() => setIsDeleteWarningModalOpen(false)}
           onRequestSubmit={handleDelete}
           data-testid={`${testId}-warning-modal`}
@@ -181,16 +243,18 @@ const ImageGalleryModal = ({
         className={classnames(className, baseClass)}
         footer={{
           isPrimaryButtonDisabled: !selectedImage,
-          primaryButtonLabel: modalPrimaryButtonLabelText,
-          secondaryButtonLabel: modalSecondaryButtonLabelText,
+          primaryButtonLabel: mergedI18n.modalPrimaryButtonLabelText,
+          secondaryButtonLabel: mergedI18n.modalSecondaryButtonLabelText,
           ...footer,
         }}
         header={{
-          label: modalLabelText,
-          title: modalTitleText,
+          label: mergedI18n.modalLabelText,
+          title: mergedI18n.modalTitleText,
         }}
         isLarge
-        iconDescription={modalCloseIconDescriptionText}
+        i18n={{
+          closeButtonLabel: mergedI18n.modalCloseIconDescriptionText,
+        }}
         onClose={onClose}
         onSubmit={() => {
           // title only makes sense in the modal selector, not in the image card
@@ -200,8 +264,8 @@ const ImageGalleryModal = ({
         {...composedModalProps}
       >
         <div className={`${baseClass}__top-section`}>
-          <p className={`${baseClass}__instruction-text`} alt={instructionText}>
-            {instructionText}
+          <p className={`${baseClass}__instruction-text`} alt={mergedI18n.instructionText}>
+            {mergedI18n.instructionText}
           </p>
           <div className={`${baseClass}__search-list-view-container`}>
             <Search
@@ -209,7 +273,7 @@ const ImageGalleryModal = ({
               onChange={filterContent}
               labelText=""
               light
-              placeholder={searchPlaceHolderText}
+              placeholder={mergedI18n.searchPlaceHolderText}
               data-testid={`${testId}-search-input`}
             />
             <ContentSwitcher
@@ -223,7 +287,7 @@ const ImageGalleryModal = ({
               <IconSwitch
                 name={GRID}
                 size="large"
-                text={gridButtonText}
+                text={mergedI18n.gridButtonText}
                 renderIcon={Grid20}
                 index={0}
                 data-testid={`${testId}-grid-switch`}
@@ -231,7 +295,7 @@ const ImageGalleryModal = ({
               <IconSwitch
                 name={LIST}
                 size="large"
-                text={listButtonText}
+                text={mergedI18n.listButtonText}
                 renderIcon={List20}
                 index={1}
                 data-testid={`${testId}-list-switch`}

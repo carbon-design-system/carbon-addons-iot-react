@@ -7,6 +7,7 @@ import ComposedModal from '../ComposedModal/ComposedModal';
 import Button from '../Button';
 import { settings } from '../../constants/Settings';
 import ListBuilder from '../ListBuilder/ListBuilder';
+import useMerged from '../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -156,7 +157,7 @@ const SelectUsersModal = ({
   i18n,
   testId,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const [selectedUsers, setSelectedUsers] = useState(initialSelectedUsers);
 

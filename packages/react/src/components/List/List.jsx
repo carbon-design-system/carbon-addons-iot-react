@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { memoize } from 'lodash-es';
@@ -7,6 +7,7 @@ import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { EditingStyle, DragAndDrop } from '../../utils/DragAndDropUtils';
 import { OverridePropTypes } from '../../constants/SharedPropTypes';
+import useMerged from '../../hooks/useMerged';
 
 import DefaultListHeader from './ListHeader/ListHeader';
 import DefaultListContent from './ListContent/ListContent';
@@ -73,7 +74,7 @@ const propTypes = {
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** callback used to limit which items that should get drop targets rendered.
-   * Recieves the id of the item that is being dragged and shuld return a list of allowed ids.
+   * Receives the id of the item that is being dragged and should return a list of allowed ids.
    * Returning an empty list will result in 0 drop targets but returning null will
    * enable all items as drop targets */
   getAllowedDropIds: PropTypes.func,
@@ -94,6 +95,7 @@ const propTypes = {
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
 };
 
+/* istanbul ignore next */
 const defaultProps = {
   className: null,
   title: null,
@@ -164,12 +166,12 @@ const List = forwardRef((props, ref) => {
     handleLoadMore,
     loadingMoreIds,
   } = props;
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const ListHeader = overrides?.header?.component || DefaultListHeader;
   const ListContent =
     overrides?.content?.component || isVirtualList ? VirtualListContent : DefaultListContent;
   // getAllowedDropIds will be called by all list items when a drag is initiated and the
-  // paramater (id of the dragged item) will be the same until a new drag starts.
+  // parameter (id of the dragged item) will be the same until a new drag starts.
   const memoizedGetAllowedDropIds = getAllowedDropIds ? memoize(getAllowedDropIds) : null;
 
   return (

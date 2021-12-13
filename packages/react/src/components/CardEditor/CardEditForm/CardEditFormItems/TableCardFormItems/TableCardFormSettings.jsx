@@ -9,6 +9,7 @@ import { Dropdown } from '../../../../Dropdown';
 import { RadioButton } from '../../../../RadioButton';
 import { RadioButtonGroup } from '../../../../RadioButtonGroup';
 import { TableCardPropTypes } from '../../../../../constants/CardPropTypes';
+import useMerged from '../../../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -107,7 +108,7 @@ export const updateColumnSort = (columns, sortDataSourceId, sortDirection) => {
  * and calls onChange with the updated cardConfig object every time the user interacts with the form
  */
 const TableCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const { content, id } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;

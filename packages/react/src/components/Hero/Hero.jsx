@@ -90,7 +90,7 @@ const StyledBreadcrumbDiv = styled.div`
 `;
 
 /**
- * Renders the hero text and styles for the page.  Can either render Breadcrumb, Title with description and secundary nav.
+ * Renders the hero text and styles for the page.  Can either render Breadcrumb, Title with description and secondary nav.
  */
 const Hero = ({
   title,

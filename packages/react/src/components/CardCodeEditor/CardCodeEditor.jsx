@@ -126,7 +126,9 @@ const CardCodeEditor = ({
       }}
       onSubmit={handleOnSubmit}
       onClose={onClose}
-      iconDescription={mergedI18n.modalIconDescription}
+      i18n={{
+        closeButtonLabel: mergedI18n.modalIconDescription,
+      }}
       footer={{
         primaryButtonLabel: mergedI18n.modalPrimaryButtonLabel,
         secondaryButtonLabel: mergedI18n.modalSecondaryButtonLabel,

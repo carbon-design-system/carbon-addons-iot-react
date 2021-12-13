@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16, Locked16 } from '@carbon/icons-react';
@@ -8,6 +8,7 @@ import warning from 'warning';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import useMerged from '../../../hooks/useMerged';
 
 import ListItemWrapper from './ListItemWrapper';
 
@@ -73,7 +74,7 @@ const ListItemPropTypes = {
   preventRowFocus: PropTypes.bool,
 };
 
-const ListItemDefaultProps = {
+const defaultProps = {
   editingStyle: null,
   isLargeRow: false,
   isLocked: false,
@@ -137,7 +138,7 @@ const ListItem = ({
   dragPreviewText,
   preventRowFocus,
 }) => {
-  const mergedI18n = useMemo(() => ({ ...ListItemDefaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const handleExpansionClick = (event) => {
     event.stopPropagation();
@@ -370,7 +371,7 @@ const dragSourceSpecification = {
   },
 };
 
-// These props origininate from React DND and are passed down to
+// These props originate from React DND and are passed down to
 // the ListItem via the DragSource wrapper.
 const dndPropsCollecting = (connect, monitor) => {
   return {
@@ -385,7 +386,7 @@ const dndPropsCollecting = (connect, monitor) => {
 const ds = DragSource(ItemType, dragSourceSpecification, dndPropsCollecting);
 
 ListItem.propTypes = ListItemPropTypes;
-ListItem.defaultProps = ListItemDefaultProps;
+ListItem.defaultProps = defaultProps;
 
 export { ListItem as UnconnectedListItem };
 

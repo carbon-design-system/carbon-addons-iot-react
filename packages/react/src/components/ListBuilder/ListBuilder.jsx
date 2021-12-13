@@ -11,6 +11,7 @@ import deprecate from '../../internal/deprecate';
 import List from '../List/List';
 import { ButtonIconPropType } from '../../constants/SharedPropTypes';
 import { EditingStyle } from '../../utils/DragAndDropUtils';
+import useMerged from '../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -126,7 +127,7 @@ const propTypes = {
   }),
   /** the icon used as button to remove items from the selected list */
   removeIcon: ButtonIconPropType,
-  /** the editing style of the hirerchy list showing the selected items */
+  /** the editing style of the hierarchy list showing the selected items */
   selectedEditingStyle: PropTypes.oneOf([EditingStyle.Single, EditingStyle.SingleNesting]),
   /** if true the list for available columns will show a loader only */
   showLoaderInAvailableList: PropTypes.bool,
@@ -238,10 +239,7 @@ const ListBuilder = ({
     }
   }
 
-  const mergedI18n = {
-    ...defaultProps.i18n,
-    ...i18n,
-  };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const {
     allListTitle,
     selectedListTitle,

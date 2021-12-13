@@ -22,6 +22,7 @@ import {
   findMatchingThresholds,
 } from '../../utils/cardUtilityFunctions';
 import icons from '../../utils/bundledIcons';
+import useMerged from '../../hooks/useMerged';
 
 import {
   determineFilterFunction,
@@ -177,7 +178,7 @@ const TableCard = ({
   className,
   ...others
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   // Set the locale
   dayjs.locale(locale);

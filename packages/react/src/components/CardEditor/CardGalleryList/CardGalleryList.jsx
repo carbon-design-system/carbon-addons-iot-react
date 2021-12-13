@@ -15,6 +15,7 @@ import {
   ListIcon,
   CustomCardIcon,
 } from '../../../icons/components';
+import useMerged from '../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -69,8 +70,8 @@ const defaultProps = {
 };
 
 const CardGalleryList = ({ supportedCardTypes, onAddCard, icons, i18n, testId }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const mergedIcons = { ...defaultProps.icons, ...icons };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+  const mergedIcons = useMerged(defaultProps.icons, icons);
 
   return (
     <SimpleList

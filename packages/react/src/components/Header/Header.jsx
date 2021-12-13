@@ -9,6 +9,7 @@ import React from 'react';
 import { Switcher20 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
+import useMerged from '../../hooks/useMerged';
 
 import HeaderActionGroup from './HeaderActionGroup';
 import { HeaderActionItemPropTypes, HeaderPanelPropTypes } from './HeaderPropTypes';
@@ -92,7 +93,7 @@ const Header = ({
   testId,
   isActionItemVisible,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const theShortAppName = shortAppName || appName;
   const actionItems = !headerPanel
     ? actionItemsProp

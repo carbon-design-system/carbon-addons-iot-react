@@ -509,7 +509,9 @@ const TableColumnCustomizationModal = ({
         title: modalTitle,
         helpText: modalBody,
       }}
-      iconDescription={closeIconDescription}
+      i18n={{
+        closeButtonLabel: closeIconDescription,
+      }}
       onClearError={onClearError}
       onClose={onClose}
       onSubmit={onSave}

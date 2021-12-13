@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { settings } from 'carbon-components';
 import { HeaderGlobalAction } from 'carbon-components-react/es/components/UIShell';
 import classnames from 'classnames';
@@ -8,6 +8,7 @@ import { white } from '@carbon/colors';
 import { keyboardKeys } from '../../../constants/KeyCodeConstants';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 import { HeaderActionPropTypes } from '../HeaderPropTypes';
+import useMerged from '../../../hooks/useMerged';
 
 import HeaderActionMenu from './HeaderActionMenu';
 import HeaderActionPanel from './HeaderActionPanel';
@@ -48,14 +49,7 @@ const HeaderAction = ({
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const parentContainerRef = useRef(null);
   const menuButtonRef = useRef(null);
-
-  const mergedI18n = useMemo(
-    () => ({
-      ...defaultProps.i18n,
-      ...i18n,
-    }),
-    [i18n]
-  );
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   // expanded state for HeaderAction dropdowns
   const toggleExpandedState = () => {

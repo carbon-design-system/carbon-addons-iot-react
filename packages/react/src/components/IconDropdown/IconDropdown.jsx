@@ -69,7 +69,7 @@ const propTypes = {
 
   /**
    * `onChange` is a utility for this controlled component to communicate to a
-   * consuming component what kind of internal state changes are occuring.
+   * consuming component what kind of internal state changes are occurring.
    */
   onChange: PropTypes.func,
   translateWithId: PropTypes.func,
@@ -89,7 +89,7 @@ const propTypes = {
 };
 
 /* istanbul ignore next, ignore the default onChange */
-const defaultPropTypes = {
+const defaultProps = {
   columnCount: 4,
   selectedItem: null,
   disabled: false,
@@ -293,6 +293,6 @@ const IconDropdown = ({
 };
 
 IconDropdown.propTypes = propTypes;
-IconDropdown.defaultProps = defaultPropTypes;
+IconDropdown.defaultProps = defaultProps;
 
 export default IconDropdown;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { isNil, pick } from 'lodash-es';
 import { Image32, Warning24 } from '@carbon/icons-react';
 
@@ -8,6 +8,7 @@ import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { validThresholdIcons, validHotspotIcons } from '../DashboardEditor/editorUtils';
 import { settings } from '../../constants/Settings';
+import useMerged from '../../hooks/useMerged';
 
 import ImageHotspots from './ImageHotspots';
 import ImageUploader from './ImageUploader';
@@ -16,6 +17,7 @@ const { iotPrefix } = settings;
 
 const propTypes = { ...CardPropTypes, ...ImageCardPropTypes };
 
+/* istanbul ignore next */
 const defaultProps = {
   i18n: {
     loadingDataLabel: 'Loading hotspot data',
@@ -99,7 +101,7 @@ const ImageCard = ({
   const hotspots = values ? values.hotspots || [] : [];
 
   const { hasInsertFromUrl } = content || {};
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   useEffect(() => {
     setImgContent(content);

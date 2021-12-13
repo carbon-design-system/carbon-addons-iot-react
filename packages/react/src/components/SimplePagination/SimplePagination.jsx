@@ -4,7 +4,8 @@ import { CaretLeft16, CaretRight16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
-import deprecate from '../../internal/deprecate';
+import deprecate, { deprecateString } from '../../internal/deprecate';
+import useMerged from '../../hooks/useMerged';
 
 const { iotPrefix, prefix } = settings;
 
@@ -14,20 +15,26 @@ export const SimplePaginationPropTypes = {
   /** The maximum page number that can be navigated to */
   maxPage: PropTypes.number.isRequired,
   /** Gets called back with arguments (page, maxPage) */
-  pageOfPagesText: PropTypes.func,
+  pageOfPagesText: deprecate(
+    PropTypes.func,
+    `The prop \`pageOfPagesText\` has been deprecated for the \`SimplePagination\` component. It will be removed in the next major release. Please use \`i18n.pageOfPagesText\` instead.`
+  ),
   /** Internationalized label for the word 'Page' */
   pageText: PropTypes.string,
   /** Internationalized label for the word 'Next page' */
-  nextPageText: PropTypes.string,
+  nextPageText: deprecateString(),
   /** Internationalized label for the word 'Previous page' */
-  prevPageText: PropTypes.string,
+  prevPageText: deprecateString(),
   /** Callback when the page is changed */
   onPage: PropTypes.func.isRequired,
   /** total number of items */
   totalItems: PropTypes.number,
   /** Internationalized label for the word 'Items' or function receiving
    * a param for the total: (total) => `${total} items`} */
-  totalItemsText: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  totalItemsText: deprecate(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    `The prop \`totalItemsText\` has been deprecated for the \`SimplePagination\` component. It will be removed in the next major release. Please use \`i18n.totalItemsText\` instead.`
+  ),
   // eslint-disable-next-line react/require-default-props
   testID: deprecate(
     PropTypes.string,
@@ -37,17 +44,35 @@ export const SimplePaginationPropTypes = {
   testId: PropTypes.string,
   /** the size of the buttons in pagination */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  i18n: PropTypes.shape({
+    /** Gets called back with arguments (page, maxPage) */
+    pageOfPagesText: PropTypes.func,
+    /** Internationalized label for the word 'Page' */
+    pageText: PropTypes.string,
+    /** Internationalized label for the word 'Next page' */
+    nextPageText: PropTypes.string,
+    /** Internationalized label for the word 'Previous page' */
+    prevPageText: PropTypes.string,
+    /** a param for the total: (total) => `${total} items`} */
+    totalItemsText: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  }),
 };
 
-const SimplePaginationDefaultProps = {
-  pageOfPagesText: (page, maxPage) => `Page ${page} of ${maxPage}`,
+const defaultProps = {
+  pageOfPagesText: undefined,
   pageText: null,
-  nextPageText: 'Next page',
-  prevPageText: 'Prev page',
-  totalItemsText: 'Items',
+  nextPageText: undefined,
+  prevPageText: undefined,
+  totalItemsText: undefined,
   totalItems: undefined,
   testId: `${iotPrefix}-simple-pagination`,
   size: 'lg',
+  i18n: {
+    pageOfPagesText: (page, maxPage) => `Page ${page} of ${maxPage}`,
+    nextPageText: 'Next page',
+    prevPageText: 'Prev page',
+    totalItemsText: 'Items',
+  },
 };
 
 /** This is a lighter weight pagination component than the default Carbon one */
@@ -65,7 +90,13 @@ const SimplePagination = ({
   testID,
   testId,
   size,
+  i18n,
 }) => {
+  const mergedI18n = useMerged(
+    defaultProps.i18n,
+    { totalItemsText, pageText, pageOfPagesText, prevPageText, nextPageText },
+    i18n
+  );
   const hasPrev = page > 1;
   const hasNext = page <= maxPage - 1;
 
@@ -81,12 +112,16 @@ const SimplePagination = ({
         <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
           {typeof totalItemsText === 'function'
             ? totalItemsText(totalItems)
-            : `${totalItems} ${totalItemsText}`}
+            : typeof mergedI18n.totalItemsText === 'function'
+            ? mergedI18n.totalItemsText(totalItems)
+            : `${totalItems} ${mergedI18n.totalItemsText}`}
         </span>
       ) : null}
       <div className={`${iotPrefix}-simple-pagination-page-bar`}>
         <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
-          {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
+          {mergedI18n.pageText
+            ? `${mergedI18n.pageText} ${page}`
+            : pageOfPagesText?.(page, maxPage) ?? mergedI18n.pageOfPagesText(page, maxPage)}
         </span>
         {maxPage > 1 ? (
           <>
@@ -104,7 +139,7 @@ const SimplePagination = ({
             >
               <CaretLeft16
                 dir="ltr"
-                aria-label={prevPageText}
+                aria-label={mergedI18n.prevPageText}
                 className={
                   hasPrev
                     ? `${iotPrefix}-simple-pagination-caret`
@@ -126,7 +161,7 @@ const SimplePagination = ({
             >
               <CaretRight16
                 dir="ltr"
-                aria-label={nextPageText}
+                aria-label={mergedI18n.nextPageText}
                 className={
                   hasNext
                     ? `${iotPrefix}-simple-pagination-caret`
@@ -142,6 +177,6 @@ const SimplePagination = ({
 };
 
 SimplePagination.propTypes = SimplePaginationPropTypes;
-SimplePagination.defaultProps = SimplePaginationDefaultProps;
+SimplePagination.defaultProps = defaultProps;
 
 export default SimplePagination;

@@ -10,6 +10,7 @@ import { CARD_ACTIONS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { CardPropTypes, MapCardPropTypes } from '../../constants/CardPropTypes';
 import { settings } from '../../constants/Settings';
 import { mergeRefs } from '../../utils/DragAndDropUtils';
+import useMerged from '../../hooks/useMerged';
 
 import Legend from './Legend';
 import ZoomControl from './ZoomControl';
@@ -71,7 +72,7 @@ const MapCard = ({
   testId,
   ...others
 }) => {
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const langDir = useLangDirection();
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);

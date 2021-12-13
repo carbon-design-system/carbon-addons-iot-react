@@ -7,6 +7,7 @@ import { Toggle } from '../../../../Toggle';
 import { Tooltip } from '../../../../Tooltip';
 import { DEFAULT_FONT_SIZE } from '../../../../ValueCard/valueCardUtils';
 import { isNumberValidForMinMax } from '../../../../../utils/componentUtilityFunctions';
+import useMerged from '../../../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -54,7 +55,7 @@ const MIN_FONT_SIZE = 16;
 const MAX_FONT_SIZE = 54;
 
 const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const { id, fontSize, isNumberValueCompact } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;

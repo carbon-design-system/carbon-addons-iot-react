@@ -59,7 +59,6 @@ const props = () => ({
     ['start', 'end'],
     'end'
   ),
-  ariaLabel: text('The ariaLabel applied to the combobox list (ariaLabel)', 'Choose an item'),
   direction: select(
     'The direction to open the ComboBox',
     { 'Bottom (default)': 'bottom', Top: 'top' },
@@ -69,6 +68,17 @@ const props = () => ({
   type: select('The type of combobox to render (type)', ['default', 'inline'], 'default'),
   warn: boolean('Show warning state (warn)', false),
   warnText: text('Warning state text (warnText)', 'This mode may perform worse on older machines'),
+  i18n: {
+    ariaLabel: text(
+      'The ariaLabel applied to the combobox list (i18n.ariaLabel)',
+      'Choose an item'
+    ),
+    closeButtonText: text(
+      'String to pass for tags close button aria-label. Will be prepended to value name. (i18n.closeButtonText)',
+      'Close'
+    ),
+    editOptionText: text('String to pass to input field option. (i18n.editOptionText)', 'Create'),
+  },
 });
 
 const itemToElement = (item) => {

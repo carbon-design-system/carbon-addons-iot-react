@@ -9,6 +9,7 @@ import HotspotEditorModal from '../../../../HotspotEditorModal/HotspotEditorModa
 import { settings } from '../../../../../constants/Settings';
 import ContentFormItemTitle from '../ContentFormItemTitle';
 import { ImageCardValuesPropType } from '../../../../../constants/CardPropTypes';
+import useMerged from '../../../../../hooks/useMerged';
 
 const { iotPrefix, prefix } = settings;
 
@@ -87,7 +88,7 @@ const ImageCardFormItems = ({
   onFetchDynamicDemoHotspots,
 }) => {
   const [isHotspotModalShowing, setIsHotspotModalShowing] = useState(false);
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const baseClassName = `${iotPrefix}--card-edit-form`;
   const handleShowHotspotEditor = useCallback(() => {
     // if this image card doesn't have a hotspots field, set it

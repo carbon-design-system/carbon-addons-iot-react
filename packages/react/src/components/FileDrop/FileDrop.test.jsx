@@ -10,7 +10,9 @@ const originalFileReader = window.FileReader;
 const dragAndDropProps = {
   title: 'Upload Files',
   description: 'Any file can be uploaded.  Feel free to upload more than one!',
-  buttonLabel: 'Try it out!',
+  i18n: {
+    buttonLabel: 'Try it out!',
+  },
   kind: 'drag-and-drop',
   onData: jest.fn(),
   onError: jest.fn(),
@@ -18,7 +20,9 @@ const dragAndDropProps = {
 const commonProps = {
   title: 'Upload Files',
   description: 'Any file can be uploaded.  Feel free to upload more than one!',
-  buttonLabel: 'Try it out!',
+  i18n: {
+    buttonLabel: 'Try it out!',
+  },
   kind: 'browse',
   onData: jest.fn(),
   onError: jest.fn(),

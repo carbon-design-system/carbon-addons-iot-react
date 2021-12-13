@@ -266,9 +266,11 @@ const HotspotTextStyleTab = ({
                 disabled={hasNonEditableContent}
                 key={fontColor?.carbonColor ?? fontColor}
                 id={`${iotPrefix}--hotspot-text-style-tab__font-color`}
-                titleText={fontColorLabelText}
+                i18n={{
+                  titleText: fontColorLabelText,
+                  label: selectAColor,
+                }}
                 light={light}
-                label={selectAColor}
                 selectedColor={getSelectedColorItem(fontColor, fontColors)}
                 colors={fontColors}
                 onChange={(selected) => {
@@ -303,9 +305,11 @@ const HotspotTextStyleTab = ({
               <ColorDropdown
                 key={backgroundColor?.carbonColor ?? backgroundColor}
                 id={`${iotPrefix}--hotspot-text-style-tab__background-color`}
-                titleText={backgroundLabelText}
                 light={light}
-                label={selectAColor}
+                i18n={{
+                  titleText: backgroundLabelText,
+                  label: selectAColor,
+                }}
                 selectedColor={getSelectedColorItem(backgroundColor, backgroundColors)}
                 colors={backgroundColors}
                 onChange={(selected) => {
@@ -340,9 +344,11 @@ const HotspotTextStyleTab = ({
               <ColorDropdown
                 key={borderColor?.carbonColor ?? borderColor}
                 id={`${iotPrefix}--hotspot-text-style-tab__border-color`}
-                titleText={borderLabelText}
+                i18n={{
+                  titleText: borderLabelText,
+                  label: i18n.selectAColor,
+                }}
                 light={light}
-                label={i18n.selectAColor}
                 colors={borderColors}
                 onChange={(selected) => {
                   onChange({ borderColor: selected.color.carbonColor });

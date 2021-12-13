@@ -15,6 +15,7 @@ import { HeaderActionItemPropTypes, ChildContentPropTypes } from '../Header/Head
 import { settings } from '../../constants/Settings';
 import { SkeletonText } from '../SkeletonText';
 import Walkme from '../Walkme/Walkme';
+import useMerged from '../../hooks/useMerged';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
@@ -140,7 +141,7 @@ const SuiteHeader = ({
   testId,
   ...otherHeaderProps
 }) => {
-  const mergedI18N = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
   const translate = useCallback(
@@ -203,9 +204,9 @@ const SuiteHeader = ({
           className={`${settings.iotPrefix}--suite-header-survey-toast`}
           kind="info"
           title={
-            typeof mergedI18N.surveyTitle === 'function'
-              ? mergedI18N.surveyTitle(appName || suiteName)
-              : translate(mergedI18N.surveyTitle, [['{solutionName}', appName || suiteName]])
+            typeof mergedI18n.surveyTitle === 'function'
+              ? mergedI18n.surveyTitle(appName || suiteName)
+              : translate(mergedI18n.surveyTitle, [['{solutionName}', appName || suiteName]])
           }
           subtitle={
             <>
@@ -217,7 +218,7 @@ const SuiteHeader = ({
                   true
                 )}
               >
-                {mergedI18N.surveyText}
+                {mergedI18n.surveyText}
               </Link>
               <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
                 <Link
@@ -228,7 +229,7 @@ const SuiteHeader = ({
                     true
                   )}
                 >
-                  {mergedI18N.surveyPrivacyPolicy}
+                  {mergedI18n.surveyPrivacyPolicy}
                 </Link>
               </div>
             </>
@@ -252,13 +253,13 @@ const SuiteHeader = ({
         onClose={() => setShowLogoutModal(false)}
         onLogout={handleOnClick(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes?.logout)}
         i18n={{
-          heading: mergedI18N.profileLogoutModalHeading,
-          primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
-          secondaryButton: mergedI18N.profileLogoutModalSecondaryButton,
+          heading: mergedI18n.profileLogoutModalHeading,
+          primaryButton: mergedI18n.profileLogoutModalPrimaryButton,
+          secondaryButton: mergedI18n.profileLogoutModalSecondaryButton,
           body:
-            typeof mergedI18N.profileLogoutModalBody === 'function'
-              ? mergedI18N.profileLogoutModalBody(appName || suiteName, userDisplayName)
-              : translate(mergedI18N.profileLogoutModalBody, [
+            typeof mergedI18n.profileLogoutModalBody === 'function'
+              ? mergedI18n.profileLogoutModalBody(appName || suiteName, userDisplayName)
+              : translate(mergedI18n.profileLogoutModalBody, [
                   ['{solutionName}', appName || suiteName],
                   ['{userName}', userDisplayName],
                 ]),
@@ -294,10 +295,10 @@ const SuiteHeader = ({
               noAccessLink={routes?.gettingStarted || '#'}
               onRouteChange={onRouteChange}
               i18n={{
-                myApplications: mergedI18N.switcherMyApplications,
-                allApplicationsLink: mergedI18N.switcherNavigatorLink,
-                requestAccess: mergedI18N.switcherRequestAccess,
-                learnMoreLink: mergedI18N.switcherLearnMoreLink,
+                myApplications: mergedI18n.switcherMyApplications,
+                allApplicationsLink: mergedI18n.switcherNavigatorLink,
+                requestAccess: mergedI18n.switcherRequestAccess,
+                learnMoreLink: mergedI18n.switcherLearnMoreLink,
               }}
               testId={`${testId}-app-switcher`}
             />
@@ -318,7 +319,7 @@ const SuiteHeader = ({
           ...customActionItems,
           {
             id: 'admin',
-            label: mergedI18N.administrationIcon,
+            label: mergedI18n.administrationIcon,
             className: [
               'admin-icon',
               !routes?.admin ? 'admin-icon__hidden' : null,
@@ -331,7 +332,7 @@ const SuiteHeader = ({
                 <Settings20
                   fill="white"
                   data-testid="admin-icon"
-                  description={mergedI18N.settingsIcon}
+                  description={mergedI18n.settingsIcon}
                 />
               </span>
             ),
@@ -347,11 +348,11 @@ const SuiteHeader = ({
           },
           {
             id: 'help',
-            label: mergedI18N.help,
+            label: mergedI18n.help,
             onClick: () => {},
             btnContent: (
               <span id="suite-header-action-item-help">
-                <Help20 fill="white" description={mergedI18N.help} />
+                <Help20 fill="white" description={mergedI18n.help} />
               </span>
             ),
             childContent: routes
@@ -368,24 +369,24 @@ const SuiteHeader = ({
                       element: 'a',
                       'data-testid': `suite-header-help--${item}`,
                       href: '#',
-                      title: mergedI18N[item],
+                      title: mergedI18n[item],
                       onClick: handleOnClick(
                         SUITE_HEADER_ROUTE_TYPES.DOCUMENTATION,
                         routes[item],
                         true
                       ),
                     },
-                    content: <span id={`suite-header-help-menu-${item}`}>{mergedI18N[item]}</span>,
+                    content: <span id={`suite-header-help-menu-${item}`}>{mergedI18n[item]}</span>,
                   })),
                   {
                     metaData: {
                       element: 'a',
                       'data-testid': 'suite-header-help--about',
                       href: '#',
-                      title: mergedI18N.about,
+                      title: mergedI18n.about,
                       onClick: handleOnClick(SUITE_HEADER_ROUTE_TYPES.ABOUT, routes.about),
                     },
-                    content: <span id="suite-header-help-menu-about">{mergedI18N.about}</span>,
+                    content: <span id="suite-header-help-menu-about">{mergedI18n.about}</span>,
                   },
                 ]
               : [
@@ -412,7 +413,7 @@ const SuiteHeader = ({
                 <UserAvatar20
                   data-testid="user-icon"
                   fill="white"
-                  description={mergedI18N.userIcon}
+                  description={mergedI18n.userIcon}
                 />
               </span>
             ),
@@ -431,8 +432,8 @@ const SuiteHeader = ({
                         routes?.profile
                       )}
                       i18n={{
-                        profileTitle: mergedI18N.profileTitle,
-                        profileButton: mergedI18N.profileManageButton,
+                        profileTitle: mergedI18n.profileTitle,
+                        profileButton: mergedI18n.profileManageButton,
                       }}
                       testId={`${testId}-profile`}
                     />
@@ -447,13 +448,13 @@ const SuiteHeader = ({
                       element: 'a',
                       'data-testid': 'suite-header-profile--logout',
                       href: '#',
-                      title: mergedI18N.logout,
+                      title: mergedI18n.logout,
                       onClick: (e) => {
                         e.preventDefault();
                         setShowLogoutModal(true);
                       },
                     },
-                    content: <span id="suite-header-profile-menu-logout">{mergedI18N.logout}</span>,
+                    content: <span id="suite-header-profile-menu-logout">{mergedI18n.logout}</span>,
                   }
                 : {
                     metaData: {

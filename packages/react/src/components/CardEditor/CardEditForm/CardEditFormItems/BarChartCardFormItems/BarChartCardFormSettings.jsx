@@ -6,6 +6,7 @@ import { RadioButtonGroup } from '../../../../RadioButtonGroup';
 import { RadioButton } from '../../../../RadioButton';
 import { FormGroup } from '../../../../FormGroup';
 import { TextInput } from '../../../../TextInput';
+import useMerged from '../../../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -71,7 +72,7 @@ const defaultProps = {
 };
 
 const BarChartCardFormSettings = ({ cardConfig, onChange, i18n }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const { content, id } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;

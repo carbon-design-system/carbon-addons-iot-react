@@ -13,6 +13,7 @@ import { shouldOpenInNewWindow } from '../suiteHeaderUtils';
 import { SUITE_HEADER_ROUTE_TYPES } from '../suiteHeaderConstants';
 import { SuiteHeaderApplicationPropTypes } from '../SuiteHeaderPropTypes';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import useMerged from '../../../hooks/useMerged';
 
 const defaultProps = {
   applications: null,
@@ -51,7 +52,7 @@ const SuiteHeaderAppSwitcher = ({
   onRouteChange,
   testId,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const baseClassName = `${settings.iotPrefix}--suite-header-app-switcher`;
   const mergedApplications = applications
     ? [...customApplications, ...applications]

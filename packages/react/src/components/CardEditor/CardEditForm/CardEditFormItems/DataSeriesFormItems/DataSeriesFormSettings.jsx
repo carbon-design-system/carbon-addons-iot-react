@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { settings } from '../../../../../constants/Settings';
 import { TextInput } from '../../../../TextInput';
 import { Toggle } from '../../../../Toggle';
+import useMerged from '../../../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -56,7 +57,7 @@ const defaultProps = {
 };
 
 const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const { content, id } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
