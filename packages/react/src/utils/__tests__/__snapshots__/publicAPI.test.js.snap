@@ -2897,6 +2897,7 @@ Map {
       "shouldLazyRender": false,
       "showExpanderColumn": false,
       "singleRowEditButtons": null,
+      "size": undefined,
       "testId": "",
       "totalColumns": 0,
     },
@@ -3384,6 +3385,18 @@ Map {
       },
       "singleRowEditButtons": Object {
         "type": "element",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
       },
       "tableId": Object {
         "isRequired": true,
