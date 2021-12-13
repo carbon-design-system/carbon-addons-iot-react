@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.81](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.80...v2.147.0-next.81) (2021-12-13)
+
+
+### Bug Fixes
+
+* **table:** pass size to overflow menu in row actions ([9535a7c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9535a7c2518f4536d755f10e4da9d5700b9346f3))
+* **table-view-dropdown:** fix [Object object] showing in title ([73a5efb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/73a5efb02cb7cd6b85e9e671bf51f6ba228b5303))
+
+
+
+
+
 # [2.147.0-next.79](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.78...v2.147.0-next.79) (2021-12-08)
 
 
