@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import warning from 'warning';
 import { merge } from 'lodash-es';
 
@@ -36,7 +36,7 @@ const useVisibilityLoader = (ref, options) => {
       !__DEV__,
       'The current browser does not support IntersectionObserver. You will need to include a IntersectionObserver polyfill for this component to function properly.'
     );
-    return [true, false];
+    return [true];
   }
 
   const { hasMoreToLoad, isLoading, onVisible, intersectionObserverOptions } = merge(
@@ -48,34 +48,27 @@ const useVisibilityLoader = (ref, options) => {
   /* eslint-disable react-hooks/rules-of-hooks */
   const observerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const intersectionCallback = useCallback(
-    (entries, ob) => {
-      if (isLoading) {
-        return;
-      }
-
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          onVisible();
-          setIsVisible(true);
-
-          // need to check that the visibility ref item is still available in the dom, because
-          // it may have been removed by the application code after all items were loaded.
-          if (ref.current) {
-            ob.unobserve(ref.current);
-          }
-        }
-      });
-    },
-    [isLoading, onVisible, ref]
-  );
 
   useEffect(() => {
     if (ref.current && !observerRef.current && hasMoreToLoad) {
-      observerRef.current = new IntersectionObserver(
-        intersectionCallback,
-        intersectionObserverOptions
-      );
+      observerRef.current = new IntersectionObserver((entries, ob) => {
+        if (isLoading) {
+          return;
+        }
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            onVisible();
+            setIsVisible(true);
+
+            // need to check that the visibility ref item is still available in the dom, because
+            // it may have been removed by the application code after all items were loaded.
+            if (ref.current) {
+              ob.unobserve(ref.current);
+            }
+          }
+        });
+      }, intersectionObserverOptions);
 
       observerRef.current.observe(ref.current);
     }
@@ -86,7 +79,7 @@ const useVisibilityLoader = (ref, options) => {
         observerRef.current = null;
       }
     };
-  }, [isVisible, ref, intersectionObserverOptions, intersectionCallback, hasMoreToLoad]);
+  }, [isVisible, ref, intersectionObserverOptions, hasMoreToLoad, isLoading, onVisible]);
   /* eslint-enable react-hooks/rules-of-hooks */
 
   return [isVisible];
