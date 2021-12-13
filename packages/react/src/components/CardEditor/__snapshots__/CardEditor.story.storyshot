@@ -25,7 +25,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -55,6 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -149,7 +149,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        aria-describedby=""
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="table card_title"
                         onChange={[Function]}
@@ -221,6 +222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Large wide (16x4)"
                       type="button"
                     >
                       <span
@@ -295,6 +297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -403,6 +406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <label
                         className="bx--label"
+                        dir="auto"
                         htmlFor="table card_dataSourceIds-combobox"
                         id="downshift-2-label"
                       >
@@ -435,6 +439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             placeholder="Filter"
                             role="combobox"
                             tabIndex="0"
+                            title=""
                             type="text"
                             value=""
                           />
@@ -1126,6 +1131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-3-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Sort by"
                     type="button"
                   >
                     <span
@@ -1201,6 +1207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       />
                       <span
                         className=""
+                        dir="auto"
                       >
                         Descending
                       </span>
@@ -1228,6 +1235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       />
                       <span
                         className=""
+                        dir="auto"
                       >
                         Ascending
                       </span>
@@ -1921,7 +1929,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -1951,6 +1958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -2045,7 +2053,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        aria-describedby=""
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
                         onChange={[Function]}
@@ -2117,6 +2126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium thin (4x2)"
                       type="button"
                     >
                       <span
@@ -2191,6 +2201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -2539,7 +2550,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -2569,6 +2579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -2663,7 +2674,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        aria-describedby=""
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="table card_title"
                         onChange={[Function]}
@@ -2735,6 +2747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Large wide (16x4)"
                       type="button"
                     >
                       <span
@@ -2809,6 +2822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -2917,6 +2931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <label
                         className="bx--label"
+                        dir="auto"
                         htmlFor="table card_dataSourceIds-combobox"
                         id="downshift-2-label"
                       >
@@ -2949,6 +2964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             placeholder="Filter"
                             role="combobox"
                             tabIndex="0"
+                            title=""
                             type="text"
                             value=""
                           />
@@ -3715,6 +3731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     id="downshift-4-toggle-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    title="Sort by"
                     type="button"
                   >
                     <span
@@ -3790,6 +3807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       />
                       <span
                         className=""
+                        dir="auto"
                       >
                         Descending
                       </span>
@@ -3817,6 +3835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       />
                       <span
                         className=""
+                        dir="auto"
                       >
                         Ascending
                       </span>
@@ -4046,7 +4065,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -4076,6 +4094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -4170,7 +4189,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        aria-describedby=""
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
                         onChange={[Function]}
@@ -4242,6 +4262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium thin (4x2)"
                       type="button"
                     >
                       <span
@@ -4316,6 +4337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -4421,6 +4443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <label
                       className="bx--label"
+                      dir="auto"
                       htmlFor="calculated_dataSourceIds-combobox"
                       id="downshift-2-label"
                     >
@@ -4453,6 +4476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           placeholder="Filter"
                           role="combobox"
                           tabIndex="0"
+                          title=""
                           type="text"
                           value=""
                         />
@@ -4577,7 +4601,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input"
+                      aria-describedby=""
+                      className="bx--text-input"
                       disabled={false}
                       id="custom-content-textinput"
                       onChange={[Function]}
@@ -4617,7 +4642,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_title"
                       onChange={[Function]}
@@ -4648,7 +4674,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_y-axis-label"
                       onChange={[Function]}
@@ -4679,7 +4706,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_unit-selection"
                       onChange={[Function]}
@@ -4710,7 +4738,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_decimal-precision"
                       onChange={[Function]}
@@ -4934,7 +4963,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -4964,6 +4992,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -5058,7 +5087,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        aria-describedby=""
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
                         onChange={[Function]}
@@ -5130,6 +5160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium thin (4x2)"
                       type="button"
                     >
                       <span
@@ -5204,6 +5235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -5552,7 +5584,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -5582,6 +5613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -5676,7 +5708,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        aria-describedby=""
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="image_title"
                         onChange={[Function]}
@@ -5748,6 +5781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium wide (16x2)"
                       type="button"
                     >
                       <span
@@ -5822,6 +5856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -6046,6 +6081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           />
                           <span
                             className=""
+                            dir="auto"
                           >
                             Fit
                           </span>
@@ -6073,6 +6109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           />
                           <span
                             className=""
+                            dir="auto"
                           >
                             Stretch
                           </span>
@@ -6113,6 +6150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-2-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a color"
                       type="button"
                     >
                       <span
@@ -6379,7 +6417,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--tabs--scrollable"
-            onScroll={[Function]}
             selected={0}
           >
             <button
@@ -6409,6 +6446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </button>
             <ul
               className="bx--tabs--scrollable__nav"
+              onScroll={[Function]}
               role="tablist"
               tabIndex={-1}
             >
@@ -6503,7 +6541,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
+                        aria-describedby=""
+                        className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="timeseries_title"
                         onChange={[Function]}
@@ -6575,6 +6614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-0-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Medium wide (16x2)"
                       type="button"
                     >
                       <span
@@ -6649,6 +6689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="downshift-1-toggle-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      title="Select a time range"
                       type="button"
                     >
                       <span
@@ -6754,6 +6795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <label
                       className="bx--label"
+                      dir="auto"
                       htmlFor="timeseries_dataSourceIds-combobox"
                       id="downshift-2-label"
                     >
@@ -6786,6 +6828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           placeholder="Filter"
                           role="combobox"
                           tabIndex="0"
+                          title=""
                           type="text"
                           value=""
                         />
@@ -7113,7 +7156,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_title"
                       onChange={[Function]}
@@ -7145,7 +7189,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_y-axis-label"
                       onChange={[Function]}
@@ -7177,7 +7222,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_unit-selection"
                       onChange={[Function]}
@@ -7209,7 +7255,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text__input bx--text-input--light"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_decimal-precision"
                       onChange={[Function]}
@@ -7450,7 +7497,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="bx--tabs--scrollable"
-              onScroll={[Function]}
               selected={0}
             >
               <button
@@ -7480,6 +7526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <ul
                 className="bx--tabs--scrollable__nav"
+                onScroll={[Function]}
                 role="tablist"
                 tabIndex={-1}
               >
@@ -7574,7 +7621,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
+                          aria-describedby=""
+                          className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="card-1_title"
                           onChange={[Function]}
@@ -7646,6 +7694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-0-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="Small (4x1)"
                         type="button"
                       >
                         <span
@@ -7720,6 +7769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         id="downshift-1-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        title="Select a time range"
                         type="button"
                       >
                         <span
@@ -8833,11 +8883,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Zm-1.125-5h2.25V12h-2.25Z"
+        data-icon-path="inner-path"
         fill="none"
       />
       <path
-        d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16.002,6.1714h-.004L4.6487,27.9966,4.6506,28H27.3494l.0019-.0034ZM14.875,12h2.25v9h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+      />
+      <path
+        d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
       />
       <title>
         warning-alt icon

@@ -118,6 +118,62 @@ describe('HierarchyList', () => {
       .should('have.text', 'Michael Conforto is a super duper long name that will get cut off');
   });
 
+  it('should restrict drop targets to item ids returned by getAllowedDropIds', () => {
+    const onSelect = cy.stub();
+    const onListUpdated = cy.stub();
+    const getAllowedDropIds = cy.stub().returns(['New York Mets_Amed Rosario']);
+    mount(
+      <div style={{ width: 400, height: 600 }}>
+        <HierarchyList
+          title="MLB Expanded List"
+          items={getInitialItems()}
+          editingStyle={EditingStyle.SingleNesting}
+          pageSize="lg"
+          isLoading={false}
+          isLargeRow={false}
+          onListUpdated={onListUpdated}
+          hasSearch
+          hasDeselection
+          onSelect={onSelect}
+          defaultExpandedIds={['New York Mets']}
+          getAllowedDropIds={getAllowedDropIds}
+        />
+      </div>
+    );
+
+    // expect Pete in position 5 and Amed in position 3 (zero-based-index)
+    cy.get(`.${iotPrefix}--list-item`).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+    cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Amed Rosario');
+
+    // Select Pete and drag above to Amed (one-based-index). 'New York Mets_Amed Rosario' is
+    // an allowed drop target
+    cy.findByTitle('Pete Alonso')
+      .drag(':nth-child(3) > [draggable="true"]', { position: 'top' })
+      .then(() => {
+        expect(getAllowedDropIds).to.be.calledWith('New York Mets_Pete Alonso');
+        expect(onListUpdated).to.be.called;
+        onListUpdated.reset();
+      });
+
+    // expect Pete in position 3 and Amed in position 4 (zero-based-index)
+    cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Pete Alonso');
+    cy.get(`.${iotPrefix}--list-item`).eq(3).find('[title]').should('have.text', 'Amed Rosario');
+
+    // try to drag and drop michael to the top of the list, it is not allowed since the only
+    // drop target is 'New York Mets_Amed Rosario'
+    cy.findByTitle('Michael Conforto is a super duper long name that will get cut off')
+      .drag(':nth-child(3) > [draggable="true"]', { position: 'top' })
+      .then(() => {
+        expect(onListUpdated).not.to.be.called;
+      });
+
+    // expect Michael still to be in position 5 (zero-based-index)
+    cy.get(`.${iotPrefix}--list-item`)
+      .eq(4)
+      .find('[title]')
+      .should('have.text', 'Michael Conforto is a super duper long name that will get cut off');
+  });
+
   it('handles drag and drop with a selection', () => {
     const onSelect = cy.stub();
     const onListUpdated = cy.stub();
@@ -352,6 +408,63 @@ describe('HierarchyList', () => {
         });
 
       // expect Michael to be in position 5
+      cy.get(`.${iotPrefix}--list-item`)
+        .eq(4)
+        .find('[title]')
+        .should('have.text', 'Michael Conforto is a super duper long name that will get cut off');
+    });
+
+    it('should restrict drop targets to item ids returned by getAllowedDropIds', () => {
+      const onSelect = cy.stub();
+      const onListUpdated = cy.stub();
+      const getAllowedDropIds = cy.stub().returns(['New York Mets_Amed Rosario']);
+      mount(
+        <div style={{ width: 400, height: 600 }}>
+          <HierarchyList
+            title="MLB Expanded List"
+            items={getInitialItems()}
+            editingStyle={EditingStyle.SingleNesting}
+            pageSize="lg"
+            isLoading={false}
+            isLargeRow={false}
+            onListUpdated={onListUpdated}
+            hasSearch
+            hasDeselection
+            onSelect={onSelect}
+            defaultExpandedIds={['New York Mets']}
+            getAllowedDropIds={getAllowedDropIds}
+            isVirtualList
+          />
+        </div>
+      );
+
+      // expect Pete in position 5 and Amed in position 3 (zero-based-index)
+      cy.get(`.${iotPrefix}--list-item`).eq(4).find('[title]').should('have.text', 'Pete Alonso');
+      cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Amed Rosario');
+
+      // Select Pete and drag above to Amed (one-based-index). 'New York Mets_Amed Rosario' is
+      // an allowed drop target
+      cy.findByTitle('Pete Alonso')
+        .drag(':nth-child(3) > [draggable="true"]', { position: 'top' })
+        .then(() => {
+          expect(getAllowedDropIds).to.be.calledWith('New York Mets_Pete Alonso');
+          expect(onListUpdated).to.be.called;
+          onListUpdated.reset();
+        });
+
+      // expect Pete in position 3 and Amed in position 4 (zero-based-index)
+      cy.get(`.${iotPrefix}--list-item`).eq(2).find('[title]').should('have.text', 'Pete Alonso');
+      cy.get(`.${iotPrefix}--list-item`).eq(3).find('[title]').should('have.text', 'Amed Rosario');
+
+      // try to drag and drop michael to the top of the list, it is not allowed since the only
+      // drop target is 'New York Mets_Amed Rosario'
+      cy.findByTitle('Michael Conforto is a super duper long name that will get cut off')
+        .drag(':nth-child(3) > [draggable="true"]', { position: 'top' })
+        .then(() => {
+          expect(onListUpdated).not.to.be.called;
+        });
+
+      // expect Michael still to be in position 5 (zero-based-index)
       cy.get(`.${iotPrefix}--list-item`)
         .eq(4)
         .find('[title]')

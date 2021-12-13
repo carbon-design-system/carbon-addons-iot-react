@@ -1,14 +1,31 @@
 @import '../../../globals/vars';
 
 .#{$iot-prefix}-table-foot {
-  border-top: 2px solid $carbon--gray-20;
+  border-top: 2px solid $ui-03;
+
+  .#{$prefix}--data-table--xs & tr {
+    height: $spacing-06;
+  }
+
+  .#{$prefix}--data-table--sm & tr {
+    height: $spacing-07;
+  }
+
+  .#{$prefix}--data-table--md & tr {
+    height: $spacing-08;
+  }
+
+  .#{$prefix}--data-table--xl & tr {
+    height: $spacing-10;
+  }
 }
+
 .#{$iot-prefix}-table-foot--label {
-  font-weight: 600;
+  @include type-style('productive-heading-01');
 }
 
 .#{$iot-prefix}-table-foot--value {
-  font-weight: 600;
+  @include type-style('productive-heading-01');
 }
 
 td.#{$iot-prefix}-table-foot--value__sortable {

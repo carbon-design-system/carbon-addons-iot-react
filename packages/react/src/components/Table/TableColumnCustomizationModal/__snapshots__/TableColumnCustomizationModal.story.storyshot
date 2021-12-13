@@ -1,0 +1,3803 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal playground with knobs 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--modal is-visible iot--column-customization-modal iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="table-column-customization-modal"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-label="Customize columns"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <h2
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Customize columns
+        </h2>
+        <h3
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Customize columns
+        </h3>
+        <p
+          className="bx--modal-content__text"
+        >
+          Select the available columns to be displayed on the table. Drag the selected columns to reorder them.
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        <div
+          className="iot--list-builder__container"
+          data-testid="table-column-customization-modal-list-builder"
+        >
+          <div
+            className="iot--list-builder__all"
+            data-testid="table-column-customization-modal-list-builder__all"
+          >
+            <div
+              className="iot--list iot--list--virtual"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Available columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  />
+                </div>
+              </div>
+              <div
+                className="iot--list--content iot--list--content--virtual"
+                onScroll={[Function]}
+                style={
+                  Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "direction": "ltr",
+                    "height": 0,
+                    "overflow": "auto",
+                    "position": "relative",
+                    "width": undefined,
+                    "willChange": "transform",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "height": 420,
+                      "pointerEvents": undefined,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 0,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item"
+                    >
+                      <div
+                        className="iot--list-item--content iot--list-item--content__selected"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={true}
+                              className="bx--checkbox"
+                              data-testid="string-checkbox"
+                              disabled={true}
+                              id="string-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="string-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values__disabled"
+                              title="String"
+                            >
+                              String
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 40,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable iot--list-item__selected"
+                      data-testid="list-item__selected"
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        className="iot--list-item--content iot--list-item--content__selected"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={true}
+                              className="bx--checkbox"
+                              data-testid="date-checkbox"
+                              disabled={false}
+                              id="date-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="date-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Date"
+                            >
+                              Date
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 80,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable iot--list-item__selected"
+                      data-testid="list-item__selected"
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        className="iot--list-item--content iot--list-item--content__selected"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={true}
+                              className="bx--checkbox"
+                              data-testid="select-checkbox"
+                              disabled={false}
+                              id="select-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="select-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Select"
+                            >
+                              Select
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-builder__selected"
+            data-testid="table-column-customization-modal-list-builder__selected"
+          >
+            <div
+              className="iot--list"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Selected columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  >
+                    <button
+                      aria-describedby={null}
+                      aria-pressed={null}
+                      className="iot--list-builder__reset-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+                      data-testid="table-column-customization-modal-list-builder__selected__reset-button"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      Reset
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Reset"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18,28A12,12,0,1,0,6,16v6.2L2.4,18.6,1,20l6,6,6-6-1.4-1.4L8,22.2V16H8A10,10,0,1,1,18,26Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list--content"
+              >
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="iot--list-item--lock"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24,14H22V8A6,6,0,0,0,10,8v6H8a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V16A2,2,0,0,0,24,14ZM12,8a4,4,0,0,1,8,0v6H12ZM24,28H8V16H24Z"
+                      />
+                    </svg>
+                    <div
+                      className="iot--list-item--content"
+                    >
+                      <div
+                        className="iot--list-item--content--values"
+                      >
+                        <div
+                          className="iot--list-item--content--values--main"
+                        >
+                          <div
+                            className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                            title="String"
+                          >
+                            String
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Date
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Date"
+                            >
+                              Date
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-date"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Select
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Select"
+                            >
+                              Select
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-select"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Secret Information
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Secret Information"
+                            >
+                              Secret Information
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-secretField"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Status
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Status"
+                            >
+                              Status
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-status"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Number
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Number"
+                            >
+                              Number
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-number"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="table-column-customization-modal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="table-column-customization-modal-modal-primary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal with async data and loading state 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--modal is-visible iot--column-customization-modal iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="table-column-customization-modal"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-label="Customize columns"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <h2
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Customize columns
+        </h2>
+        <h3
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Customize columns
+        </h3>
+        <p
+          className="bx--modal-content__text"
+        >
+          This modal is the AsyncTableColumnCustomizationModal which accepts a Promise for the prop availableColumns. It also and manages the loading state and errors.
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        <div
+          className="iot--list-builder__container"
+          data-testid="table-column-customization-modal-list-builder"
+        >
+          <div
+            className="iot--list-builder__all"
+            data-testid="table-column-customization-modal-list-builder__all"
+          >
+            <div
+              className="iot--list iot--list--virtual"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Available columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  />
+                </div>
+              </div>
+              <div
+                className="iot--list--content"
+              >
+                <p
+                  className="bx--skeleton__text iot--list--skeleton"
+                  data-testid="list-loading"
+                  style={
+                    Object {
+                      "width": "90%",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-builder__selected"
+            data-testid="table-column-customization-modal-list-builder__selected"
+          >
+            <div
+              className="iot--list"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Selected columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  >
+                    <button
+                      aria-describedby={null}
+                      aria-pressed={null}
+                      className="iot--list-builder__reset-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+                      data-testid="table-column-customization-modal-list-builder__selected__reset-button"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      Reset
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Reset"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18,28A12,12,0,1,0,6,16v6.2L2.4,18.6,1,20l6,6,6-6-1.4-1.4L8,22.2V16H8A10,10,0,1,1,18,26Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list--content"
+              >
+                <p
+                  className="bx--skeleton__text iot--list--skeleton"
+                  data-testid="list-loading"
+                  style={
+                    Object {
+                      "width": "90%",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="table-column-customization-modal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+          data-testid="table-column-customization-modal-modal-primary-button"
+          disabled={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal with column groups 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--modal is-visible iot--column-customization-modal iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="table-column-customization-modal"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-label="Customize columns"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <h2
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Customize columns
+        </h2>
+        <h3
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Customize columns
+        </h3>
+        <p
+          className="bx--modal-content__text"
+        >
+          Select the available columns to be displayed on the table. Drag the selected columns to reorder them.
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        <div
+          className="iot--list-builder__container"
+          data-testid="table-column-customization-modal-list-builder"
+        >
+          <div
+            className="iot--list-builder__all"
+            data-testid="table-column-customization-modal-list-builder__all"
+          >
+            <div
+              className="iot--list iot--list--virtual"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Available columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  />
+                </div>
+              </div>
+              <div
+                className="iot--list--content iot--list--content--virtual"
+                onScroll={[Function]}
+                style={
+                  Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "direction": "ltr",
+                    "height": 0,
+                    "overflow": "auto",
+                    "position": "relative",
+                    "width": undefined,
+                    "willChange": "transform",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "height": 520,
+                      "pointerEvents": undefined,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 0,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable iot--list-item__selected"
+                      data-testid="list-item__selected"
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        aria-label="Close"
+                        className="iot--list-item--expand-icon"
+                        data-testid="expand-icon"
+                        onClick={[Function]}
+                        onKeyPress={[Function]}
+                        role="button"
+                        tabIndex={0}
+                        title="Close"
+                      >
+                        <svg
+                          aria-label="Close-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--content iot--list-item--content__selected"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={true}
+                              className="bx--checkbox"
+                              data-testid="groupA-checkbox"
+                              disabled={false}
+                              id="groupA-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="groupA-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--category"
+                              title="Group A"
+                            >
+                              Group A
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 40,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable iot--list-item__selected"
+                      data-testid="list-item__selected"
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        className="iot--list-item--nesting-offset"
+                        style={
+                          Object {
+                            "width": "32px",
+                          }
+                        }
+                      />
+                      <div
+                        className="iot--list-item--content iot--list-item--content__selected"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={true}
+                              className="bx--checkbox"
+                              data-testid="date-checkbox"
+                              disabled={false}
+                              id="date-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="date-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Date"
+                            >
+                              Date
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 80,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable iot--list-item__selected"
+                      data-testid="list-item__selected"
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        className="iot--list-item--nesting-offset"
+                        style={
+                          Object {
+                            "width": "32px",
+                          }
+                        }
+                      />
+                      <div
+                        className="iot--list-item--content iot--list-item--content__selected"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={true}
+                              className="bx--checkbox"
+                              data-testid="select-checkbox"
+                              disabled={false}
+                              id="select-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="select-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Select"
+                            >
+                              Select
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-builder__selected"
+            data-testid="table-column-customization-modal-list-builder__selected"
+          >
+            <div
+              className="iot--list"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Selected columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  >
+                    <button
+                      aria-describedby={null}
+                      aria-pressed={null}
+                      className="iot--list-builder__reset-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+                      data-testid="table-column-customization-modal-list-builder__selected__reset-button"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      Reset
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Reset"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18,28A12,12,0,1,0,6,16v6.2L2.4,18.6,1,20l6,6,6-6-1.4-1.4L8,22.2V16H8A10,10,0,1,1,18,26Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list--content"
+              >
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        String
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--nesting-offset"
+                        style={
+                          Object {
+                            "width": "32px",
+                          }
+                        }
+                      />
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="String"
+                            >
+                              String
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-string"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Group A
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        aria-label="Collapse"
+                        className="iot--list-item--expand-icon"
+                        data-testid="expand-icon"
+                        onClick={[Function]}
+                        onKeyPress={[Function]}
+                        role="button"
+                        tabIndex={0}
+                        title="Collapse"
+                      >
+                        <svg
+                          aria-label="Collapse-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--category iot--list-item--content--values--value__with-actions"
+                              title="Group A"
+                            >
+                              Group A
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-groupA"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Date
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--nesting-offset"
+                        style={
+                          Object {
+                            "width": "32px",
+                          }
+                        }
+                      />
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Date"
+                            >
+                              Date
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-date"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Select
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--nesting-offset"
+                        style={
+                          Object {
+                            "width": "32px",
+                          }
+                        }
+                      />
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Select"
+                            >
+                              Select
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-select"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Group B
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        aria-label="Collapse"
+                        className="iot--list-item--expand-icon"
+                        data-testid="expand-icon"
+                        onClick={[Function]}
+                        onKeyPress={[Function]}
+                        role="button"
+                        tabIndex={0}
+                        title="Collapse"
+                      >
+                        <svg
+                          aria-label="Collapse-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--category iot--list-item--content--values--value__with-actions"
+                              title="Group B"
+                            >
+                              Group B
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-groupB"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Secret Information
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--nesting-offset"
+                        style={
+                          Object {
+                            "width": "32px",
+                          }
+                        }
+                      />
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Secret Information"
+                            >
+                              Secret Information
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-secretField"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Status
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--nesting-offset"
+                        style={
+                          Object {
+                            "width": "32px",
+                          }
+                        }
+                      />
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Status"
+                            >
+                              Status
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-status"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item-editable--drag-container"
+                    role="listitem"
+                  >
+                    <div
+                      className="iot--list-item iot--list-item-editable"
+                    >
+                      <div
+                        className="iot--list-item-editable--drag-preview"
+                      >
+                        Number
+                      </div>
+                      <div
+                        title="Drag handle"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="iot--list-item--handle"
+                          data-testid="list-item-editable"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="iot--list-item--nesting-offset"
+                        style={
+                          Object {
+                            "width": "32px",
+                          }
+                        }
+                      />
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              title="Number"
+                            >
+                              Number
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                                data-testid="table-column-customization-modal-list-builder-remove-button-number"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
+                                  onMouseEnter={[Function]}
+                                >
+                                  Remove from list
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove from list"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                  />
+                                  <path
+                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="table-column-customization-modal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="table-column-customization-modal-modal-primary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal with many columns and "Load more" 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--modal is-visible iot--column-customization-modal iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="table-column-customization-modal"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-label="Customize columns"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <h2
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Customize columns
+        </h2>
+        <h3
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Customize columns
+        </h3>
+        <p
+          className="bx--modal-content__text"
+        >
+          Select the available columns to be displayed on the table. Drag the selected columns to reorder them.
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        <div
+          className="iot--list-builder__container"
+          data-testid="table-column-customization-modal-list-builder"
+        >
+          <div
+            className="iot--list-builder__all"
+            data-testid="table-column-customization-modal-list-builder__all"
+          >
+            <div
+              className="iot--list iot--list--virtual"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Available columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  />
+                </div>
+                <div
+                  className="iot--list-header--search"
+                >
+                  <div
+                    aria-labelledby="iot--list-header--search-search"
+                    className="bx--search bx--search--sm"
+                    role="search"
+                  >
+                    <div
+                      className="bx--search-magnifier"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                    </div>
+                    <label
+                      className="bx--label"
+                      htmlFor="iot--list-header--search"
+                      id="iot--list-header--search-search"
+                    >
+                      Search
+                    </label>
+                    <input
+                      autoComplete="off"
+                      className="bx--search-input"
+                      data-testid="list-header-search-input"
+                      id="iot--list-header--search"
+                      onChange={[Function]}
+                      onKeyDown={[Function]}
+                      placeholder="Search"
+                      role="searchbox"
+                      type="text"
+                    />
+                    <button
+                      aria-label="Clear search input"
+                      className="bx--search-close bx--search-close--hidden"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list--content iot--list--content--virtual"
+                onScroll={[Function]}
+                style={
+                  Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "direction": "ltr",
+                    "height": 0,
+                    "overflow": "auto",
+                    "position": "relative",
+                    "width": undefined,
+                    "willChange": "transform",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "height": 5020,
+                      "pointerEvents": undefined,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 0,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data-testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={false}
+                              className="bx--checkbox"
+                              data-testid="id-1-checkbox"
+                              disabled={false}
+                              id="id-1-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="id-1-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Column 1"
+                            >
+                              Column 1
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 40,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data-testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={false}
+                              className="bx--checkbox"
+                              data-testid="id-2-checkbox"
+                              disabled={false}
+                              id="id-2-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="id-2-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Column 2"
+                            >
+                              Column 2
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 80,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data-testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={false}
+                              className="bx--checkbox"
+                              data-testid="id-3-checkbox"
+                              disabled={false}
+                              id="id-3-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="id-3-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Column 3"
+                            >
+                              Column 3
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-builder__selected"
+            data-testid="table-column-customization-modal-list-builder__selected"
+          >
+            <div
+              className="iot--list"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Selected columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  >
+                    <button
+                      aria-describedby={null}
+                      aria-pressed={null}
+                      className="iot--list-builder__reset-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+                      data-testid="table-column-customization-modal-list-builder__selected__reset-button"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      Reset
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Reset"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18,28A12,12,0,1,0,6,16v6.2L2.4,18.6,1,20l6,6,6-6-1.4-1.4L8,22.2V16H8A10,10,0,1,1,18,26Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list--content"
+              >
+                <div
+                  className="iot--list--empty-state"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={32}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
+                    />
+                  </svg>
+                  <p>
+                    No columns selected
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="table-column-customization-modal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="table-column-customization-modal-modal-primary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal with pinned first column 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--modal is-visible iot--column-customization-modal iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="table-column-customization-modal"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-label="Customize columns"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <h2
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Customize columns
+        </h2>
+        <h3
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Customize columns
+        </h3>
+        <p
+          className="bx--modal-content__text"
+        >
+          Select the available columns to be displayed on the table. Drag the selected columns to reorder them.
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        <div
+          className="iot--list-builder__container"
+          data-testid="table-column-customization-modal-list-builder"
+        >
+          <div
+            className="iot--list-builder__all"
+            data-testid="table-column-customization-modal-list-builder__all"
+          >
+            <div
+              className="iot--list iot--list--virtual"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Available columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  />
+                </div>
+              </div>
+              <div
+                className="iot--list--content iot--list--content--virtual"
+                onScroll={[Function]}
+                style={
+                  Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "direction": "ltr",
+                    "height": 0,
+                    "overflow": "auto",
+                    "position": "relative",
+                    "width": undefined,
+                    "willChange": "transform",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "height": 420,
+                      "pointerEvents": undefined,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 0,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item"
+                    >
+                      <div
+                        className="iot--list-item--content iot--list-item--content__selected"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={true}
+                              className="bx--checkbox"
+                              data-testid="string-checkbox"
+                              disabled={true}
+                              id="string-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="string-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value iot--list-item--content--values__disabled"
+                              title="String"
+                            >
+                              String
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 40,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data-testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={false}
+                              className="bx--checkbox"
+                              data-testid="date-checkbox"
+                              disabled={false}
+                              id="date-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="date-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Date"
+                            >
+                              Date
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    style={
+                      Object {
+                        "height": 40,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": undefined,
+                        "top": 80,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data-testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <div
+                            className="bx--form-item bx--checkbox-wrapper"
+                            onClick={[Function]}
+                          >
+                            <input
+                              checked={false}
+                              className="bx--checkbox"
+                              data-testid="select-checkbox"
+                              disabled={false}
+                              id="select-checkbox"
+                              onChange={[Function]}
+                              type="checkbox"
+                            />
+                            <label
+                              className="bx--checkbox-label"
+                              htmlFor="select-checkbox"
+                              title={null}
+                            >
+                              <span
+                                className="bx--checkbox-label-text"
+                                dir="auto"
+                              >
+                                
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Select"
+                            >
+                              Select
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-builder__selected"
+            data-testid="table-column-customization-modal-list-builder__selected"
+          >
+            <div
+              className="iot--list"
+              data-testid="list"
+            >
+              <div
+                className="iot--list-header-container"
+                data-testid="list-header"
+              >
+                <div
+                  className="iot--list-header"
+                >
+                  <div
+                    className="iot--list-header--title"
+                  >
+                    Selected columns
+                  </div>
+                  <div
+                    className="iot--list-header--btn-container"
+                  >
+                    <button
+                      aria-describedby={null}
+                      aria-pressed={null}
+                      className="iot--list-builder__reset-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+                      data-testid="table-column-customization-modal-list-builder__selected__reset-button"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      Reset
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Reset"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18,28A12,12,0,1,0,6,16v6.2L2.4,18.6,1,20l6,6,6-6-1.4-1.4L8,22.2V16H8A10,10,0,1,1,18,26Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list--content"
+              >
+                <div
+                  className="iot--list-item-parent"
+                  data-floating-menu-container={true}
+                >
+                  <div
+                    className="iot--list-item"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="iot--list-item--lock"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24,14H22V8A6,6,0,0,0,10,8v6H8a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V16A2,2,0,0,0,24,14ZM12,8a4,4,0,0,1,8,0v6H12ZM24,28H8V16H24Z"
+                      />
+                    </svg>
+                    <div
+                      className="iot--list-item--content"
+                    >
+                      <div
+                        className="iot--list-item--content--values"
+                      >
+                        <div
+                          className="iot--list-item--content--values--main"
+                        >
+                          <div
+                            className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                            title="String"
+                          >
+                            String
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="table-column-customization-modal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary"
+          data-testid="table-column-customization-modal-modal-primary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal ️⚠️ Experimental Notice  1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--toast-notification bx--toast-notification--warning-alt"
+    kind="warning-alt"
+    role="alert"
+    style={
+      Object {
+        "marginBottom": "0.5rem",
+        "minWidth": "30rem",
+      }
+    }
+  >
+    <svg
+      aria-hidden={true}
+      className="bx--toast-notification__icon"
+      fill="currentColor"
+      focusable="false"
+      height={20}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 32 32"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Zm-1.125-5h2.25V12h-2.25Z"
+        data-icon-path="inner-path"
+        fill="none"
+      />
+      <path
+        d="M16.002,6.1714h-.004L4.6487,27.9966,4.6506,28H27.3494l.0019-.0034ZM14.875,12h2.25v9h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+      />
+      <path
+        d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
+      />
+      <title>
+        warning-alt icon
+      </title>
+    </svg>
+    <div
+      className="bx--toast-notification__details"
+    >
+      <h3
+        className="bx--toast-notification__title"
+      >
+        Experimental Component Notice
+      </h3>
+      <div
+        className="bx--toast-notification__subtitle"
+      >
+        <span>
+          TableColumnCustomizationModal
+           is an
+           
+          <a
+            href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
+          >
+            experimental component
+          </a>
+           
+          and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

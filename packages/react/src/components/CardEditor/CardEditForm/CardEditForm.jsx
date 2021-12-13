@@ -1,9 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
-import isEmpty from 'lodash/isEmpty';
-import omit from 'lodash/omit';
-import pick from 'lodash/pick';
+import { isEmpty, omit, pick } from 'lodash-es';
 
 import { CARD_DIMENSIONS, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
@@ -214,7 +212,7 @@ export const hideCardPropertiesForEditor = (card) => {
       : columns // TABLE CARD
       ? { ...card, content: { ...card.content, columns } }
       : card,
-    ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
+    ['content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
   );
 };
 

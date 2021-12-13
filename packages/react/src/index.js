@@ -11,6 +11,7 @@ export { default as AddCard } from './components/AddCard';
 export { default as Button } from './components/Button';
 export { default as Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export { default as ComposedModal } from './components/ComposedModal';
+export { default as CardCodeEditor } from './components/CardCodeEditor/CardCodeEditor';
 export { default as EmptyTable } from './components/Table/EmptyTable/EmptyTable';
 export { default as Table } from './components/Table';
 export { default as TableHead } from './components/Table/TableHead/TableHead';
@@ -116,6 +117,7 @@ export { default as DynamicHotspotSourcePicker } from './components/HotspotEdito
 export { default as ComboChartCard } from './components/ComboChartCard/ComboChartCard';
 export { default as MenuButton } from './components/MenuButton/MenuButton';
 export { default as ListBuilder } from './components/ListBuilder/ListBuilder';
+export { default as TableColumnCustomizationModal } from './components/Table/TableColumnCustomizationModal/TableColumnCustomizationModal';
 export { default as TearSheet } from './components/TearSheet/TearSheet';
 export { default as TearSheetWrapper } from './components/TearSheet/TearSheetWrapper';
 export { default as MapCard } from './components/MapCard/MapCard';
@@ -143,6 +145,7 @@ export {
   ButtonSet,
   Checkbox,
   CodeSnippet,
+  ControlledPasswordInput,
   // TODO: unify combobox
   // ComboBox,
   ModalHeader,
@@ -185,6 +188,7 @@ export {
   FileUploaderButton,
   FileUploaderDropContainer,
   FileUploaderItem,
+  FilterableMultiSelect,
   Form,
   FormGroup,
   FormItem,
@@ -212,6 +216,7 @@ export {
   OverflowMenuItem,
   Pagination,
   PaginationNav,
+  PasswordInput,
   PrimaryButton,
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,

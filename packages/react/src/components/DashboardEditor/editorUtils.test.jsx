@@ -1,4 +1,4 @@
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 import { render, screen } from '@testing-library/react';
 
 import { CARD_TYPES, BAR_CHART_TYPES } from '../../constants/LayoutConstants';

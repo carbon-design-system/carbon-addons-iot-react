@@ -841,6 +841,438 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ ListBuilder stateful example with checkboxes 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--list-builder__container"
+    data-testid="list-builder"
+  >
+    <div
+      className="iot--list-builder__all"
+      data-testid="list-builder__all"
+    >
+      <div
+        className="iot--list iot--list--virtual"
+        data-testid="list"
+      >
+        <div
+          className="iot--list-header-container"
+          data-testid="list-header"
+        >
+          <div
+            className="iot--list-header"
+          >
+            <div
+              className="iot--list-header--title"
+            >
+              Items (3 available)
+            </div>
+            <div
+              className="iot--list-header--btn-container"
+            />
+          </div>
+          <div
+            className="iot--list-header--search"
+          >
+            <div
+              aria-labelledby="iot--list-header--search-search"
+              className="bx--search bx--search--sm"
+              role="search"
+            >
+              <div
+                className="bx--search-magnifier"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
+              <label
+                className="bx--label"
+                htmlFor="iot--list-header--search"
+                id="iot--list-header--search-search"
+              >
+                Enter a value to search all items
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                data-testid="list-header-search-input"
+                id="iot--list-header--search"
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value to search all items"
+                role="searchbox"
+                type="text"
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list--content iot--list--content--virtual"
+          onScroll={[Function]}
+          style={
+            Object {
+              "WebkitOverflowScrolling": "touch",
+              "direction": "ltr",
+              "height": 0,
+              "overflow": "auto",
+              "position": "relative",
+              "width": undefined,
+              "willChange": "transform",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": 120,
+                "pointerEvents": undefined,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item-parent"
+              style={
+                Object {
+                  "height": 40,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": undefined,
+                  "top": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                className="iot--list-item iot--list-item__selectable"
+                data-testid={null}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={-1}
+              >
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                  >
+                    <div
+                      className="bx--form-item bx--checkbox-wrapper"
+                      onClick={[Function]}
+                    >
+                      <input
+                        checked={false}
+                        className="bx--checkbox"
+                        data-testid="1-checkbox"
+                        disabled={false}
+                        id="1-checkbox"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <label
+                        className="bx--checkbox-label"
+                        htmlFor="1-checkbox"
+                        title={null}
+                      >
+                        <span
+                          className="bx--checkbox-label-text"
+                          dir="auto"
+                        >
+                          
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="item one"
+                      >
+                        item one
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--list-item-parent"
+              style={
+                Object {
+                  "height": 40,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": undefined,
+                  "top": 40,
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                className="iot--list-item iot--list-item__selectable"
+                data-testid={null}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={-1}
+              >
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                  >
+                    <div
+                      className="bx--form-item bx--checkbox-wrapper"
+                      onClick={[Function]}
+                    >
+                      <input
+                        checked={false}
+                        className="bx--checkbox"
+                        data-testid="2-checkbox"
+                        disabled={false}
+                        id="2-checkbox"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <label
+                        className="bx--checkbox-label"
+                        htmlFor="2-checkbox"
+                        title={null}
+                      >
+                        <span
+                          className="bx--checkbox-label-text"
+                          dir="auto"
+                        >
+                          
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="item two"
+                      >
+                        item two
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--list-item-parent"
+              style={
+                Object {
+                  "height": 40,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": undefined,
+                  "top": 80,
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                className="iot--list-item iot--list-item__selectable"
+                data-testid={null}
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={-1}
+              >
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                  >
+                    <div
+                      className="bx--form-item bx--checkbox-wrapper"
+                      onClick={[Function]}
+                    >
+                      <input
+                        checked={false}
+                        className="bx--checkbox"
+                        data-testid="3-checkbox"
+                        disabled={false}
+                        id="3-checkbox"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <label
+                        className="bx--checkbox-label"
+                        htmlFor="3-checkbox"
+                        title={null}
+                      >
+                        <span
+                          className="bx--checkbox-label-text"
+                          dir="auto"
+                        >
+                          
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="item three"
+                      >
+                        item three
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="iot--list-builder__selected"
+      data-testid="list-builder__selected"
+    >
+      <div
+        className="iot--list"
+        data-testid="list"
+      >
+        <div
+          className="iot--list-header-container"
+          data-testid="list-header"
+        >
+          <div
+            className="iot--list-header"
+          >
+            <div
+              className="iot--list-header--title"
+            >
+              0 Selected
+            </div>
+            <div
+              className="iot--list-header--btn-container"
+            >
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="iot--list-builder__reset-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+                data-testid="list-builder__selected__reset-button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Reset
+                <svg
+                  aria-hidden="true"
+                  aria-label="Reset"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18,28A12,12,0,1,0,6,16v6.2L2.4,18.6,1,20l6,6,6-6-1.4-1.4L8,22.2V16H8A10,10,0,1,1,18,26Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list--content"
+        >
+          <div
+            className="iot--list--empty-state"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={32}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={32}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
+              />
+            </svg>
+            <p>
+              No list items to show
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ ListBuilder with items selected 1`] = `
 <div
   className="storybook-container"
@@ -1147,16 +1579,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <button
                         aria-describedby={null}
-                        aria-label="Remove item from list"
                         className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                        data-testid="list-builder-add-button-2"
+                        data-testid="list-builder-remove-button-2"
                         disabled={false}
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        role="button"
                         tabIndex={0}
                         type="button"
                       >
@@ -1601,11 +2031,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Zm-1.125-5h2.25V12h-2.25Z"
+        data-icon-path="inner-path"
         fill="none"
       />
       <path
-        d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16.002,6.1714h-.004L4.6487,27.9966,4.6506,28H27.3494l.0019-.0034ZM14.875,12h2.25v9h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+      />
+      <path
+        d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
       />
       <title>
         warning-alt icon

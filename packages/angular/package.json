@@ -1,6 +1,6 @@
 {
   "name": "@ai-apps/angular",
-  "version": "2.147.0-next.39",
+  "version": "2.147.0-next.80",
   "description": "AI Applications PAL in Angular",
   "main": "index.js",
   "scripts": {
@@ -66,9 +66,9 @@
     "@storybook/theming": "^6.2.3",
     "@types/jasmine": "2.8.2",
     "@types/node": "11.13.0",
-    "ai-apps-monorepo-utils": "^2.146.1-next.0",
+    "ai-apps-monorepo-utils": "^2.147.0-next.72",
     "babel-loader": "^8.2.2",
-    "carbon-components-angular": "4.53.5",
+    "carbon-components-angular": "4.56.2",
     "codelyzer": "5.0.0",
     "core-js": "2.6.11",
     "element-closest-polyfill": "1.0.0",
@@ -87,7 +87,7 @@
     "lodash-es": "4.17.15",
     "ng-packagr": "11.1.4",
     "rxjs": "6.5.3",
-    "sass": "^1.32.11",
+    "sass": "^1.42.1",
     "ts-helpers": "1.1.2",
     "tsickle": "0.35.0",
     "tslib": "1.9.3",
@@ -98,7 +98,7 @@
     "zone.js": "0.11.3"
   },
   "dependencies": {
-    "@ai-apps/styles": "^2.147.0-next.22",
+    "@ai-apps/styles": "^2.147.0-next.72",
     "@carbon/icons": "10.20.0",
     "@carbon/telemetry": "0.0.0-alpha.6",
     "date-fns": "^2.22.1",

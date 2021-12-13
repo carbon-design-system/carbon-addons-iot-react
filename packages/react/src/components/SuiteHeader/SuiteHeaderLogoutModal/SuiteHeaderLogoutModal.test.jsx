@@ -22,9 +22,9 @@ describe('SuiteHeaderLogoutModal', () => {
       <SuiteHeaderLogoutModal {...commonProps} onClose={mockOnClose} onLogout={mockOnLogout} />
     );
 
-    const modalCloseButton = within(container.querySelector(`.${prefix}--modal-header`)).getByTitle(
-      'Close'
-    );
+    const modalCloseButton = within(
+      container.querySelector(`.${prefix}--modal-header`)
+    ).getByLabelText('Close');
     userEvent.click(modalCloseButton);
     expect(mockOnClose).toHaveBeenCalled();
 

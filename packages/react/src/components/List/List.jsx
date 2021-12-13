@@ -1,6 +1,7 @@
 import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { memoize } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
@@ -58,16 +59,24 @@ const propTypes = {
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
+    clearSearchIconDescription: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
     loadMore: PropTypes.string,
   }),
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** pagination at the bottom of list */
   pagination: PropTypes.shape(SimplePaginationPropTypes),
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** callback used to limit which items that should get drop targets rendered.
+   * Recieves the id of the item that is being dragged and shuld return a list of allowed ids.
+   * Returning an empty list will result in 0 drop targets but returning null will
+   * enable all items as drop targets */
+  getAllowedDropIds: PropTypes.func,
   /** call back function of select */
   handleSelect: PropTypes.func,
   /** call back function of expansion */
@@ -91,6 +100,7 @@ const defaultProps = {
   search: null,
   buttons: [],
   editingStyle: null,
+  getAllowedDropIds: null,
   overrides: null,
   indeterminateIds: [],
   isFullHeight: false,
@@ -105,6 +115,7 @@ const defaultProps = {
     loadMore: 'Load more...',
   },
   iconPosition: 'left',
+  lockedIds: [],
   pagination: null,
   selectedIds: [],
   expandedIds: [],
@@ -131,9 +142,11 @@ const List = forwardRef((props, ref) => {
     items,
     isFullHeight,
     i18n,
+    lockedIds,
     pagination,
     selectedIds,
     expandedIds,
+    getAllowedDropIds,
     handleSelect,
     overrides,
     toggleExpansion,
@@ -155,6 +168,9 @@ const List = forwardRef((props, ref) => {
   const ListHeader = overrides?.header?.component || DefaultListHeader;
   const ListContent =
     overrides?.content?.component || isVirtualList ? VirtualListContent : DefaultListContent;
+  // getAllowedDropIds will be called by all list items when a drag is initiated and the
+  // paramater (id of the dragged item) will be the same until a new drag starts.
+  const memoizedGetAllowedDropIds = getAllowedDropIds ? memoize(getAllowedDropIds) : null;
 
   return (
     <DragAndDrop>
@@ -184,6 +200,7 @@ const List = forwardRef((props, ref) => {
           isCheckboxMultiSelect={isCheckboxMultiSelect}
           selectedIds={selectedIds}
           expandedIds={expandedIds}
+          getAllowedDropIds={memoizedGetAllowedDropIds}
           handleSelect={handleSelect}
           toggleExpansion={toggleExpansion}
           iconPosition={iconPosition}
@@ -195,6 +212,7 @@ const List = forwardRef((props, ref) => {
           loadingMoreIds={loadingMoreIds}
           selectedItemRef={ref}
           i18n={mergedI18n}
+          lockedIds={lockedIds}
           {...overrides?.content?.props}
         />
         {pagination && !isLoading ? (

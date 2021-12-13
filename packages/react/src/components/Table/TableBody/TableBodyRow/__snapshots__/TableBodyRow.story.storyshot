@@ -30,6 +30,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -46,6 +47,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       Select row
                     </span>
@@ -81,6 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--row-actions-container__background"
                   data-testid="row-action-container-background"
+                  onClick={[Function]}
                 >
                   <button
                     aria-describedby={null}
@@ -160,6 +163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -176,6 +180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <span
                       className="bx--checkbox-label-text bx--visually-hidden"
+                      dir="auto"
                     >
                       Select row
                     </span>
@@ -211,6 +216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--row-actions-container__background"
                   data-testid="row-action-container-background"
+                  onClick={[Function]}
                 >
                   <button
                     aria-describedby={null}
@@ -387,6 +393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--row-actions-container__background"
                   data-testid="row-action-container-background"
+                  onClick={[Function]}
                 >
                   <button
                     aria-describedby={null}
@@ -516,6 +523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--row-actions-container__background"
                   data-testid="row-action-container-background"
+                  onClick={[Function]}
                 >
                   <button
                     aria-describedby={null}
@@ -573,8 +581,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       viewBox="0 0 32 32"
@@ -692,6 +698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--row-actions-container__background"
                   data-testid="row-action-container-background"
+                  onClick={[Function]}
                 >
                   <div
                     className="bx--tooltip__label"
@@ -825,6 +832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--row-actions-container__background"
                   data-testid="row-action-container-background"
+                  onClick={[Function]}
                 >
                   <div
                     aria-atomic="true"
@@ -849,13 +857,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="bx--loading__background"
                         cx="50%"
                         cy="50%"
-                        r="42"
+                        r="44"
                       />
                       <circle
                         className="bx--loading__stroke"
                         cx="50%"
                         cy="50%"
-                        r="42"
+                        r="44"
                       />
                     </svg>
                   </div>

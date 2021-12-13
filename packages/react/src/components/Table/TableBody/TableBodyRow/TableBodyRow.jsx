@@ -60,6 +60,8 @@ const propTypes = {
     shouldExpandOnRowClick: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
+    /** use white-space: pre; css when true */
+    preserveCellWhiteSpace: PropTypes.bool,
   }),
 
   /** The unique row id */
@@ -120,6 +122,10 @@ const propTypes = {
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
+  /**
+   * the size passed to the table to set row height
+   */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 };
 
 const defaultProps = {
@@ -148,6 +154,7 @@ const defaultProps = {
   langDir: 'ltr',
   locale: 'en',
   isSelectable: undefined,
+  size: undefined,
 };
 
 const StyledTableRow = styled(({ isSelectable, isEditMode, ...others }) => (
@@ -398,6 +405,7 @@ const TableBodyRow = ({
     shouldExpandOnRowClick,
     wrapCellText,
     truncateCellText,
+    preserveCellWhiteSpace,
   },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
@@ -423,6 +431,7 @@ const TableBodyRow = ({
   singleRowEditMode,
   singleRowEditButtons,
   showExpanderColumn,
+  size,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -510,6 +519,7 @@ const TableBodyRow = ({
                   columnId={col.columnId}
                   rowId={id}
                   row={values}
+                  preserveCellWhiteSpace={preserveCellWhiteSpace}
                 >
                   {values[col.columnId]}
                 </TableCellRenderer>
@@ -538,6 +548,7 @@ const TableBodyRow = ({
           dismissText={dismissText}
           rowActionsError={rowActionsError}
           onClearError={onClearRowError ? () => onClearRowError(id) : null}
+          size={size}
         />
       ) : nestingLevel > 0 && hasRowActions ? (
         <TableCell key={`${tableId}-${id}-row-actions-cell`} />

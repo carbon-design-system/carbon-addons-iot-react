@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import cloneDeep from 'lodash/cloneDeep';
+import { cloneDeep } from 'lodash-es';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -39,7 +39,7 @@ const commonTableHeadProps = {
 
 // Needed to get the debounced window resize tested
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
-jest.mock('lodash/debounce', () => (fn) => fn);
+jest.mock('lodash-es/debounce', () => (fn) => fn);
 
 describe('TableHead', () => {
   it('be selectable by testID or testId', () => {
@@ -797,10 +797,12 @@ describe('TableHead', () => {
         container: document.body.appendChild(document.createElement('table')),
       });
 
-      expect(screen.queryAllByRole('button', 'Resize column')).toHaveLength(2);
+      expect(screen.queryAllByRole('button', { name: 'Resize column' })).toHaveLength(2);
 
       let lastTableHeader = screen.getByTestId('my-test-column-col3');
-      expect(within(lastTableHeader).queryAllByRole('button', 'Resize column')).toHaveLength(0);
+      expect(
+        within(lastTableHeader).queryAllByRole('button', { name: 'Resize column' })
+      ).toHaveLength(0);
 
       // Hide the last column (use shortcut via props)
       const orderingAfterToggleHide = cloneDeep(myProps.tableState.ordering).map((col) =>
@@ -817,10 +819,12 @@ describe('TableHead', () => {
           container: document.body.appendChild(document.createElement('table')),
         }
       );
-      expect(screen.queryAllByRole('button', 'Resize column')).toHaveLength(1);
+      expect(screen.queryAllByRole('button', { name: 'Resize column' })).toHaveLength(1);
 
       lastTableHeader = screen.getByTestId('my-test-column-col2');
-      expect(within(lastTableHeader).queryAllByRole('button', 'Resize column')).toHaveLength(0);
+      expect(
+        within(lastTableHeader).queryAllByRole('button', { name: 'Resize column' })
+      ).toHaveLength(0);
     });
 
     it('should always add resize handle to the last visible column if there is an expander column', () => {

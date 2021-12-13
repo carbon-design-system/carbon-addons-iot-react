@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text } from '@storybook/addon-knobs';
+import { boolean, text, object } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
-import cloneDeep from 'lodash/cloneDeep';
+import { cloneDeep } from 'lodash-es';
 
 import Button from '../Button';
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
 import { Tag } from '../Tag';
+import { EditingStyle } from '../../utils/DragAndDropUtils';
 
 import List from './List';
 import ListREADME from './List.mdx';
@@ -291,7 +292,10 @@ export const WithRowActionsMultiple = () => (
             value: key,
             secondaryValue: value,
             rowActions: [
-              <OverflowMenu flipped key={`${key}-list-item-button-${value}`}>
+              <OverflowMenu
+                flipped={document.dir !== 'rtl'}
+                key={`${key}-list-item-button-${value}`}
+              >
                 <OverflowMenuItem itemText="Edit" />
                 <OverflowMenuItem itemText="Add" />
                 <OverflowMenuItem itemText="Delete" hasDivider isDelete />
@@ -332,7 +336,10 @@ export const WithHierarchy = () => (
               ]
             : level === 2
             ? [
-                <OverflowMenu flipped key={`${key}-list-item-button-${level}`}>
+                <OverflowMenu
+                  flipped={document.dir !== 'rtl'}
+                  key={`${key}-list-item-button-${level}`}
+                >
                   <OverflowMenuItem itemText="Edit" />
                   <OverflowMenuItem itemText="Add" />
                   <OverflowMenuItem itemText="Delete" hasDivider isDelete />
@@ -492,6 +499,7 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
     };
 
     const handleSelection = (items, id) => {
+      action('handleSelect')();
       setSelectedIds((currentSelectedIds) => {
         const isDeselecting = currentSelectedIds.includes(id);
         const parent = findParent(items, id);
@@ -658,6 +666,7 @@ export const WithLoadMore = () => {
           },
         ],
       },
+      { id: 'org2', content: { value: 'Organization 2' }, hasLoadMore: true },
     ]);
     return (
       <div style={{ width: 400 }}>
@@ -716,6 +725,16 @@ export const WithLoadMore = () => {
                     },
                   ],
                 },
+                {
+                  id: 'org2',
+                  content: { value: 'Organization 2' },
+                  hasLoadMore: id === 'org2' ? false : prevItems[1]?.hasLoadMore,
+                },
+                ...(id === 'org2'
+                  ? [{ id: 'org3', content: { value: 'Organization 3' } }]
+                  : prevItems[2]
+                  ? [prevItems[2]]
+                  : []),
               ]);
               setLoadingMoreIds((prev) => prev.filter((prevId) => prevId !== id));
             }, 2000);
@@ -748,3 +767,50 @@ export const WithVirtualList = () => (
 );
 
 WithVirtualList.storyName = 'with virtual list';
+
+export const WithReorderAndLockedRows = () => (
+  <div style={{ width: 400 }}>
+    <List
+      title={text('title', 'NY Yankees')}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key]) => ({
+          id: key,
+          content: { value: key },
+        })
+      )}
+      isLoading={boolean('isLoading', false)}
+      isVirtualList={boolean('isVirtualList', false)}
+      editingStyle={EditingStyle.Single}
+      lockedIds={['DJ LeMahieu', 'Luke Voit']}
+      onItemMoved={action('onItemMoved')}
+      itemWillMove={(args) => {
+        action('itemWillMove')(args);
+        return true;
+      }}
+    />
+  </div>
+);
+
+WithReorderAndLockedRows.storyName = 'with reorder and locked rows';
+
+export const WithReorderAndDropTargetRestrictions = () => {
+  const allowedDropIds = object('getAllowedDropIds return value', ['Luke Voit', 'Gleyber Torres']);
+  return (
+    <div style={{ height: 300, overflow: 'auto', width: 400 }}>
+      <List
+        title={text('title', 'NY Yankees')}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key]) => ({
+            id: key,
+            content: { value: key },
+          })
+        )}
+        isVirtualList={boolean('isVirtualList', false)}
+        editingStyle={EditingStyle.Single}
+        getAllowedDropIds={() => allowedDropIds}
+      />
+    </div>
+  );
+};
+
+WithReorderAndDropTargetRestrictions.storyName = 'with reorder and drop target restrictions';

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import isNil from 'lodash/isNil';
+import { isNil } from 'lodash-es';
 import classnames from 'classnames';
 import { blue60 } from '@carbon/colors';
 

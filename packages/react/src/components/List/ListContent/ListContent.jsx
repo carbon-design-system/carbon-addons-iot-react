@@ -32,6 +32,8 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** true if the list should have multiple selectable rows using checkboxes */
   isCheckboxMultiSelect: PropTypes.bool,
   testId: PropTypes.string,
@@ -39,15 +41,18 @@ const propTypes = {
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
-  /** call back function of select */
+  /** callback function of select */
   handleSelect: PropTypes.func,
+  /** callback used to limit which items that should get drop targets rendered.
+   * recieves the id of the item that is being dragged and returns a list of ids. */
+  getAllowedDropIds: PropTypes.func,
   /** call back function of expansion */
   toggleExpansion: PropTypes.func,
   /** callback function for reorder */
   onItemMoved: PropTypes.func,
   /** callback function when reorder will occur - can cancel the move by returning false */
   itemWillMove: PropTypes.func,
-  /** call back function for when load more row is clicked  (rowId) => {} */
+  /** callback function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
   /** ids of selectable rows with indeterminate selection state */
   indeterminateIds: PropTypes.arrayOf(PropTypes.string),
@@ -69,6 +74,7 @@ const defaultProps = {
   editingStyle: null,
   emptyState: 'No list items to show',
   expandedIds: [],
+  getAllowedDropIds: null,
   handleLoadMore: () => {},
   handleSelect: () => {},
   i18n: {
@@ -88,6 +94,7 @@ const defaultProps = {
   },
   indeterminateIds: [],
   loadingMoreIds: [],
+  lockedIds: [],
   onItemMoved: () => {},
   selectedIds: [],
   selectedItemRef: React.createRef(),
@@ -113,11 +120,13 @@ const ListContent = ({
   loadingMoreIds,
   handleSelect,
   editingStyle,
+  getAllowedDropIds,
   iconPosition,
   toggleExpansion,
   onItemMoved,
   itemWillMove,
   isLargeRow,
+  lockedIds,
   handleLoadMore,
   i18n,
   selectedItemRef,
@@ -128,6 +137,7 @@ const ListContent = ({
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
     const isLoadingMore = loadingMoreIds.includes(item.id);
+    const isLocked = lockedIds.includes(item.id);
     const isIndeterminate = indeterminateIds.includes(item.id);
 
     const {
@@ -157,18 +167,14 @@ const ListContent = ({
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={(evt) => {
-                  if (isSelectable && isCheckboxMultiSelect) {
-                    // When combing checkboxes with selectable rows (isSelectable) we are
-                    // getting click events from the ListItemWrapper before this handler is called.
-                    // Therefor we stop this one and rely on the ListItem onSelect handler to handle
-                    // the selection. If we don't the handleSelect callback will be called multiple times.
-                    evt.stopPropagation();
-                  } else {
-                    handleSelect(item.id, parentId);
-                  }
+                onChange={() => handleSelect(item.id, parentId)}
+                onClick={(event) => {
+                  // This is needed as a workaround for a carbon checkbox bug
+                  // https://github.com/carbon-design-system/carbon/issues/10122#issuecomment-984692702
+                  event.stopPropagation();
                 }}
                 checked={isSelected}
+                disabled={disabled || isLocked}
                 indeterminate={isIndeterminate}
               />
             ) : (
@@ -177,17 +183,19 @@ const ListContent = ({
           }
           disabled={disabled}
           iconPosition={iconPosition}
-          editingStyle={editingStyle}
+          editingStyle={isLocked ? null : editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
           onSelect={() => handleSelect(item.id, parentId)}
           onExpand={toggleExpansion}
           onItemMoved={onItemMoved}
           itemWillMove={itemWillMove}
+          getAllowedDropIds={getAllowedDropIds}
           selected={isSelected}
           expanded={isExpanded}
           isExpandable={hasChildren}
           isLargeRow={isLargeRow}
+          isLocked={isLocked}
           isCategory={isCategory}
           isSelectable={editingStyle === null && isSelectable}
           i18n={mergedI18n}
@@ -224,6 +232,20 @@ const ListContent = ({
                   ]
                 : []
             )
+        : []),
+      ...(!hasChildren && item.hasLoadMore
+        ? [
+            <Button
+              key={`${item.id}-list-item-parent-loading`}
+              className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
+              onClick={() => handleLoadMore(item.id)}
+              data-testid={`${testId}-${item.id}-load-more`}
+              kind="ghost"
+              loading={isLoadingMore}
+            >
+              <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
+            </Button>,
+          ]
         : []),
     ];
   };

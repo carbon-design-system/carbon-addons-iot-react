@@ -4,15 +4,15 @@ import {
   ComboBox,
   FormItem,
   MultiSelect,
+  FilterableMultiSelect,
   Tab,
   Tabs,
   TextInput,
 } from 'carbon-components-react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
-import memoize from 'lodash/memoize';
+import { memoize, isEqual } from 'lodash-es';
 import PropTypes from 'prop-types';
-import isEqual from 'lodash/isEqual';
 
 import { settings } from '../../../constants/Settings';
 import FlyoutMenu, { FlyoutMenuDirection } from '../../FlyoutMenu/FlyoutMenu';
@@ -313,7 +313,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                     if (column.options) {
                       if (column.isMultiselect) {
                         return (
-                          <MultiSelect.Filterable
+                          <FilterableMultiSelect
                             className={`${iotPrefix}--filter-flyout__simple-field`}
                             key={`${columnIndex}-${columnFilterValue}`}
                             id={`column-${rowIndex}-${columnIndex}`}

@@ -54,12 +54,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       Focus sentinel
     </span>
     <div
+      align="center"
       className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
       data-floating-menu-direction="right"
+      direction="right"
       id="tooltip"
       onBlur={[Function]}
       onContextMenu={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onMouseOut={[Function]}
       onMouseOver={[Function]}
       open={true}
@@ -77,6 +80,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
+        aria-labelledby="tooltip"
         className="bx--tooltip__content"
         role="dialog"
       >
@@ -219,12 +223,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       Focus sentinel
     </span>
     <div
+      align="center"
       className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
       data-floating-menu-direction="right"
+      direction="right"
       id="tooltip"
       onBlur={[Function]}
       onContextMenu={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onMouseOut={[Function]}
       onMouseOver={[Function]}
       open={true}
@@ -242,6 +249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
+        aria-labelledby="tooltip"
         className="bx--tooltip__content"
         role="dialog"
       >
@@ -394,12 +402,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       Focus sentinel
     </span>
     <div
+      align="center"
       className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
       data-floating-menu-direction="right"
+      direction="right"
       id="tooltip"
       onBlur={[Function]}
       onContextMenu={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onMouseOut={[Function]}
       onMouseOver={[Function]}
       open={true}
@@ -417,6 +428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
+        aria-labelledby="tooltip"
         className="bx--tooltip__content"
         role="dialog"
       >
@@ -615,12 +627,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
       Focus sentinel
     </span>
     <div
+      align="center"
       className="bx--tooltip bx--tooltip--shown bx--tooltip--right bx--tooltip--align-center"
       data-floating-menu-direction="right"
+      direction="right"
       id="tooltip"
       onBlur={[Function]}
       onContextMenu={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onMouseOut={[Function]}
       onMouseOver={[Function]}
       open={true}
@@ -638,6 +653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="bx--tooltip__caret"
       />
       <div
+        aria-labelledby="tooltip"
         className="bx--tooltip__content"
         role="dialog"
       >

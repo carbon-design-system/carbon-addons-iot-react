@@ -51,6 +51,9 @@ const propTypes = {
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** callback used to limit which items that should get drop targets rendered.
+   * recieves the id of the item that is being dragged and returns a list of ids. */
+  getAllowedDropIds: PropTypes.func,
   /** call back function of select */
   handleSelect: PropTypes.func,
   /** call back function of expansion */
@@ -65,6 +68,8 @@ const propTypes = {
   indeterminateIds: PropTypes.arrayOf(PropTypes.string),
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** list editing style */
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,
@@ -81,6 +86,7 @@ const defaultProps = {
   editingStyle: null,
   emptyState: 'No list items to show',
   expandedIds: [],
+  getAllowedDropIds: null,
   handleLoadMore: () => {},
   handleSelect: () => {},
   i18n: {
@@ -100,6 +106,7 @@ const defaultProps = {
   },
   indeterminateIds: [],
   loadingMoreIds: [],
+  lockedIds: [],
   onItemMoved: () => {},
   selectedIds: [],
   testId: 'list',
@@ -127,7 +134,9 @@ const VirtualListContent = ({
   isCheckboxMultiSelect,
   items,
   itemWillMove,
+  getAllowedDropIds,
   loadingMoreIds,
+  lockedIds,
   onItemMoved,
   selectedIds,
   testId,
@@ -172,6 +181,16 @@ const VirtualListContent = ({
               },
             ]);
           }
+        }
+
+        if (!item.children && item.hasLoadMore) {
+          tmp = tmp.concat([
+            {
+              ...item,
+              level: currentLevel,
+              isLoadMoreRow: true,
+            },
+          ]);
         }
 
         return tmp;
@@ -219,6 +238,7 @@ const VirtualListContent = ({
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
     const isLoadingMore = loadingMoreIds.includes(item.id);
+    const isLocked = lockedIds.includes(item.id);
     const isIndeterminate = indeterminateIds.includes(item.id);
     const parentIsExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
@@ -230,7 +250,7 @@ const VirtualListContent = ({
     } = item;
 
     if (item.isLoadMoreRow) {
-      if (parentIsExpanded) {
+      if (parentIsExpanded || item.level === 0) {
         return (
           <Button
             key={`${item.id}-list-item-parent-loading`}
@@ -268,8 +288,14 @@ const VirtualListContent = ({
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={() => handleSelect(item.id, parentId)}
+                onChange={() => handleSelect(item.id, parentId)}
+                onClick={(event) => {
+                  // This is needed as a workaround for a carbon checkbox bug
+                  // https://github.com/carbon-design-system/carbon/issues/10122#issuecomment-984692702
+                  event.stopPropagation();
+                }}
                 checked={isSelected}
+                disabled={disabled || isLocked}
                 indeterminate={isIndeterminate}
               />
             ) : (
@@ -278,17 +304,19 @@ const VirtualListContent = ({
           }
           disabled={disabled}
           iconPosition={iconPosition}
-          editingStyle={editingStyle}
+          editingStyle={isLocked ? null : editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
           onSelect={() => handleSelect(item.id, parentId)}
           onExpand={toggleExpansion}
           onItemMoved={onItemMoved}
           itemWillMove={itemWillMove}
+          getAllowedDropIds={getAllowedDropIds}
           selected={isSelected}
           expanded={isExpanded}
           isExpandable={hasChildren}
           isLargeRow={isLargeRow}
+          isLocked={isLocked}
           isCategory={isCategory}
           isSelectable={editingStyle === null && isSelectable}
           i18n={mergedI18n}
@@ -307,7 +335,7 @@ const VirtualListContent = ({
 
     const isExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
-    if (item.isLoadMoreRow && isExpanded) {
+    if (item.isLoadMoreRow && (isExpanded || item.level === 0)) {
       return 48;
     }
 

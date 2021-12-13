@@ -1,7 +1,5 @@
 import React, { useMemo } from 'react';
-import omit from 'lodash/omit';
-import find from 'lodash/find';
-import isEqual from 'lodash/isEqual';
+import { omit, find, isEqual } from 'lodash-es';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../constants/LayoutConstants';

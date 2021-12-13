@@ -3,10 +3,7 @@
 import React, { useState, useLayoutEffect, createRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import isEqual from 'lodash/isEqual';
-import debounce from 'lodash/debounce';
+import { isNil, isEmpty, isEqual, debounce } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';
 
@@ -528,10 +525,10 @@ const TableHead = ({
               align={align}
               className={classnames(`table-header-label-${align}`, {
                 [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
-                'table-header-sortable': matchingColumnMeta.isSortable,
+                'table-header-sortable': matchingColumnMeta.isSortable && !isDisabled,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
                 [`${iotPrefix}--table-head--table-header--with-overflow`]:
-                  hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable),
+                  hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable && !isDisabled),
                 [`${iotPrefix}--table-header--last-data-column`]:
                   showColumnGroups && item === lastVisibleColumn,
               })}
@@ -548,7 +545,7 @@ const TableHead = ({
                 {matchingColumnMeta.name}
               </TableCellRenderer>
 
-              {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable) ? (
+              {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable && !isDisabled) ? (
                 <OverflowMenu
                   className={`${iotPrefix}--table-head--overflow`}
                   direction="bottom"
@@ -580,7 +577,7 @@ const TableHead = ({
                   )}
                 </OverflowMenu>
               ) : null}
-              {sortOrder > 0 && (
+              {sortOrder > 0 && !isDisabled && (
                 <span className={`${iotPrefix}--table-header-label__sort-order`}>{sortOrder}</span>
               )}
               {hasResize && (item !== lastVisibleColumn || showExpanderColumn) ? (

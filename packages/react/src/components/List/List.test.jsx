@@ -4,11 +4,12 @@ import userEvent from '@testing-library/user-event';
 
 import { Checkbox } from '../Checkbox';
 import { settings } from '../../constants/Settings';
+import { EditingStyle } from '../../utils/DragAndDropUtils';
 
 import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 const defaultEmptyText = 'No list items to show';
 
 describe('List', () => {
@@ -297,7 +298,7 @@ describe('List', () => {
     const { container } = render(
       <List title="list" items={getListItems(1)} handleSelect={onSelect} isCheckboxMultiSelect />
     );
-    userEvent.click(container.querySelectorAll('.bx--checkbox-label')[0]);
+    userEvent.click(container.querySelectorAll(`.${prefix}--checkbox-label`)[0]);
     expect(onSelect).toHaveBeenCalledWith('1', null);
   });
 
@@ -358,7 +359,7 @@ describe('List', () => {
 
   it('calls handleLoadMore when load more row clicked', () => {
     const mockLoadMore = jest.fn();
-    render(
+    const { rerender } = render(
       <List
         title="Sports Teams"
         items={[
@@ -389,6 +390,20 @@ describe('List', () => {
     userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
     expect(mockLoadMore).toHaveBeenCalledWith('site-02');
     expect(mockLoadMore).toHaveBeenCalledTimes(1);
+
+    // Call load more from the top level
+    mockLoadMore.mockClear();
+    rerender(
+      <List
+        title="Sports Teams"
+        items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
+        handleLoadMore={mockLoadMore}
+      />
+    );
+    expect(mockLoadMore).not.toHaveBeenCalled();
+    userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+    expect(mockLoadMore).toHaveBeenCalledWith('org');
+    expect(mockLoadMore).toHaveBeenCalledTimes(1);
   });
   it(' load more row clicked without handleLoadMore function provided', () => {
     render(
@@ -418,6 +433,26 @@ describe('List', () => {
     );
     expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
     userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+  });
+
+  it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
+    render(<List items={getListItems(2)} editingStyle={EditingStyle.Single} lockedIds={['1']} />);
+    expect(
+      screen.getByText('Item 1').closest(`.${iotPrefix}--list-item-parent > *`)
+    ).not.toHaveAttribute('draggable');
+
+    expect(screen.getByText('Item 1').closest(`.${iotPrefix}--list-item`).firstChild).toHaveClass(
+      `${iotPrefix}--list-item--lock`
+    );
+
+    expect(
+      screen.getAllByText('Item 2')[0].closest(`.${iotPrefix}--list-item-parent > *`)
+    ).toHaveAttribute('draggable');
+  });
+
+  it('disabled the checkbox of a locked id when using isCheckboxMultiSelect', () => {
+    render(<List items={getListItems(1)} isCheckboxMultiSelect lockedIds={['1']} />);
+    expect(screen.getByRole('checkbox')).toBeDisabled();
   });
 
   describe('isVirtualList', () => {
@@ -806,7 +841,7 @@ describe('List', () => {
 
     it('calls handleLoadMore when load more row clicked', () => {
       const mockLoadMore = jest.fn();
-      render(
+      const { rerender } = render(
         <List
           title="Sports Teams"
           items={[
@@ -837,6 +872,20 @@ describe('List', () => {
       expect(mockLoadMore).not.toHaveBeenCalled();
       userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
       expect(mockLoadMore).toHaveBeenCalledWith('site-02');
+      expect(mockLoadMore).toHaveBeenCalledTimes(1);
+
+      mockLoadMore.mockClear();
+      rerender(
+        <List
+          title="Sports Teams"
+          items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
+          isVirtualList
+          handleLoadMore={mockLoadMore}
+        />
+      );
+      expect(mockLoadMore).not.toHaveBeenCalled();
+      userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+      expect(mockLoadMore).toHaveBeenCalledWith('org');
       expect(mockLoadMore).toHaveBeenCalledTimes(1);
     });
     it('should load more row clicked without handleLoadMore function provided', () => {
@@ -888,6 +937,35 @@ describe('List', () => {
         />
       );
       expect(screen.getByTestId('__test-list-virtual-content__-loading')).toBeInTheDocument();
+    });
+
+    it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
+      render(
+        <List
+          items={getListItems(2)}
+          isVirtualList
+          editingStyle={EditingStyle.Single}
+          lockedIds={['1']}
+        />
+      );
+      expect(
+        screen.getByText('Item 1').closest(`.${iotPrefix}--list-item-parent > *`)
+      ).not.toHaveAttribute('draggable');
+
+      expect(screen.getByText('Item 1').closest(`.${iotPrefix}--list-item`).firstChild).toHaveClass(
+        `${iotPrefix}--list-item--lock`
+      );
+
+      expect(
+        screen.getAllByText('Item 2')[0].closest(`.${iotPrefix}--list-item-parent > *`)
+      ).toHaveAttribute('draggable');
+    });
+
+    it('disabled the checkbox of a locked id when using isCheckboxMultiSelect', () => {
+      render(
+        <List items={getListItems(1)} isVirtualList isCheckboxMultiSelect lockedIds={['1']} />
+      );
+      expect(screen.getByRole('checkbox')).toBeDisabled();
     });
   });
 });
