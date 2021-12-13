@@ -8,6 +8,23 @@ import RuleBuilder from './RuleBuilder';
 const RULE_ID_MATCH = expect.stringMatching(/[a-zA-Z0-9]/gi);
 
 describe('The RuleBuilder', () => {
+  beforeEach(() => {
+    window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
+      const obj = {
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+      callback([{ isIntersecting: true }], obj);
+
+      return obj;
+    });
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
   it('should be selectable by testId', () => {
     const handleSave = jest.fn();
     const handleCancel = jest.fn();
@@ -170,22 +187,6 @@ describe('The RuleBuilder', () => {
   });
 
   it('should call callbacks on button clicks', () => {
-    const observe = jest.fn();
-    const unobserve = jest.fn();
-    const takeRecords = jest.fn();
-    const disconnect = jest.fn();
-    const IntersectionObserverMock = jest.fn(() => ({
-      observe,
-      unobserve,
-      takeRecords,
-      disconnect,
-    }));
-    Object.defineProperty(window, 'IntersectionObserver', {
-      writable: true,
-      enumerable: true,
-      value: IntersectionObserverMock,
-    });
-
     const handleSave = jest.fn();
     const handleCancel = jest.fn();
     const handleFavorite = jest.fn();
@@ -281,12 +282,6 @@ describe('The RuleBuilder', () => {
     userEvent.click(screen.getAllByRole('button', { name: 'Add' })[0]);
     userEvent.click(screen.getAllByRole('button', { name: 'OK' })[0]);
 
-    expect(IntersectionObserver).toHaveBeenCalledWith(expect.any(Function)); // callback arg
-
-    act(() => {
-      const [callback] = IntersectionObserverMock.mock.calls[0];
-      callback([{ isIntersecting: true }]); // test a callback
-    });
     const saveButton = screen.getByRole('button', { name: 'Save' });
     expect(saveButton).toBeVisible();
     userEvent.click(saveButton);

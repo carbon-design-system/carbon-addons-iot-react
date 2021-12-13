@@ -6381,6 +6381,7 @@ Map {
       "getAllowedDropIds": null,
       "handleLoadMore": [Function],
       "handleSelect": [Function],
+      "hasMoreData": false,
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
@@ -6395,12 +6396,15 @@ Map {
       "isInfiniteScroll": false,
       "isLargeRow": false,
       "isLoading": false,
+      "isLoadingMoreData": false,
       "itemWillMove": [Function],
       "items": Array [],
+      "listRef": null,
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
-      "onInfiniteScroll": [Function],
+      "onInfiniteScroll": undefined,
       "onItemMoved": [Function],
+      "onLoadData": undefined,
       "selectedIds": Array [],
       "selectedItemRef": Object {
         "current": null,
@@ -6449,6 +6453,9 @@ Map {
       },
       "handleSelect": Object {
         "type": "func",
+      },
+      "hasMoreData": Object {
+        "type": "bool",
       },
       "i18n": Object {
         "args": Array [
@@ -6504,6 +6511,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isLoadingMoreData": Object {
+        "type": "bool",
+      },
       "itemWillMove": Object {
         "type": "func",
       },
@@ -6557,6 +6567,29 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "listRef": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "current": Object {
+                    "args": Array [
+                      [Function],
+                    ],
+                    "type": "instanceOf",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "loadingMoreIds": Object {
         "args": Array [
           Object {
@@ -6579,6 +6612,9 @@ Map {
       "onItemMoved": Object {
         "type": "func",
       },
+      "onLoadData": Object {
+        "type": "func",
+      },
       "selectedIds": Object {
         "args": Array [
           Object {
@@ -6598,13 +6634,9 @@ Map {
                 Object {
                   "current": Object {
                     "args": Array [
-                      Array [
-                        Object {
-                          "type": "object",
-                        },
-                      ],
+                      [Function],
                     ],
-                    "type": "oneOfType",
+                    "type": "instanceOf",
                   },
                 },
               ],
@@ -6849,13 +6881,9 @@ Map {
                 Object {
                   "current": Object {
                     "args": Array [
-                      Array [
-                        Object {
-                          "type": "object",
-                        },
-                      ],
+                      [Function],
                     ],
-                    "type": "oneOfType",
+                    "type": "instanceOf",
                   },
                 },
               ],
@@ -23865,8 +23893,9 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
-      "onInfiniteScroll": [Function],
+      "onInfiniteScroll": undefined,
       "onItemMoved": [Function],
+      "onLoadData": undefined,
       "overrides": null,
       "pagination": null,
       "search": null,
@@ -24061,6 +24090,9 @@ Map {
         "type": "func",
       },
       "onItemMoved": Object {
+        "type": "func",
+      },
+      "onLoadData": Object {
         "type": "func",
       },
       "overrides": Object {

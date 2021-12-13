@@ -1,13 +1,16 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16, Locked16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
+import { SkeletonText } from 'carbon-components-react';
 
+import useVisibleLoader from '../../../hooks/useVisibilityLoader';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
 
 import ListItemWrapper from './ListItemWrapper';
 
@@ -71,6 +74,7 @@ const ListItemPropTypes = {
   itemWillMove: PropTypes.func.isRequired,
   /** true if the list item should not be focusable even though isSelectable is true */
   preventRowFocus: PropTypes.bool,
+  listRef: HtmlElementRefProp,
 };
 
 const ListItemDefaultProps = {
@@ -102,6 +106,7 @@ const ListItemDefaultProps = {
   selectedItemRef: null,
   tags: null,
   preventRowFocus: false,
+  listRef: null,
 };
 
 const ListItem = ({
@@ -136,8 +141,26 @@ const ListItem = ({
   itemWillMove,
   dragPreviewText,
   preventRowFocus,
+  listRef,
 }) => {
   const mergedI18n = useMemo(() => ({ ...ListItemDefaultProps.i18n, ...i18n }), [i18n]);
+  const listItemRef = useRef(null);
+  const [isVisible] = useVisibleLoader(listItemRef, {
+    keepObservingAfterVisible: true,
+    intersectionObserverOptions: {
+      root: listRef?.current?.parentNode,
+      rootMargin: '100% 0px',
+      threshold: 0,
+    },
+  });
+
+  if (!isVisible) {
+    return (
+      <div ref={listItemRef} className={`${iotPrefix}--list-item`}>
+        {isVisible && <SkeletonText className={`${iotPrefix}--list--skeleton`} width="90%" />}
+      </div>
+    );
+  }
 
   const handleExpansionClick = (event) => {
     event.stopPropagation();
@@ -246,6 +269,7 @@ const ListItem = ({
 
   return (
     <ListItemWrapper
+      ref={listItemRef}
       isPreview={false}
       {...{
         id,
@@ -370,7 +394,7 @@ const dragSourceSpecification = {
   },
 };
 
-// These props origininate from React DND and are passed down to
+// These props originate from React DND and are passed down to
 // the ListItem via the DragSource wrapper.
 const dndPropsCollecting = (connect, monitor) => {
   return {

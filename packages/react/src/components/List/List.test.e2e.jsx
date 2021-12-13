@@ -15,6 +15,10 @@ const getListItems = (num) =>
     }));
 
 describe('List', () => {
+  beforeEach(() => {
+    cy.viewport(1680, 900);
+  });
+
   it('should not move items on a list if itemWillMove return false', () => {
     const itemWillMove = cy.stub().returns(false);
     const onItemMoved = cy.stub();

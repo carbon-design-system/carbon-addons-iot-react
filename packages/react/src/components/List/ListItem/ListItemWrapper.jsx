@@ -9,121 +9,129 @@ import ListTarget, { TargetSize } from './ListTarget';
 
 const { iotPrefix } = settings;
 
-const ListItemWrapper = ({
-  id,
-  editingStyle,
-  expanded,
-  isSelectable,
-  itemWillMove,
-  onItemMoved,
-  onSelect,
-  selected,
-  isDragging,
-  renderDropTargets,
-  getAllowedDropIds,
-  isLargeRow,
-  children,
-  connectDragSource,
-  disabled,
-  preventRowFocus,
-}) => {
-  const body =
-    isSelectable && !disabled ? (
-      <div
-        role="button"
-        tabIndex={preventRowFocus ? -1 : 0}
-        className={classnames(
-          `${iotPrefix}--list-item`,
-          `${iotPrefix}--list-item__selectable`,
-          {
-            [`${iotPrefix}--list-item__selected`]: editingStyle ? false : selected,
-          },
-          { [`${iotPrefix}--list-item__large`]: isLargeRow },
-          { [`${iotPrefix}--list-item-editable`]: editingStyle }
-        )}
-        data-testid={selected ? 'list-item__selected' : null}
-        onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
-        onClick={() => {
-          onSelect(id);
-        }}
-      >
-        {children}
-      </div>
-    ) : (
-      <div
-        className={classnames(`${iotPrefix}--list-item`, {
-          [`${iotPrefix}--list-item__large`]: isLargeRow,
-          [`${iotPrefix}--list-item-editable`]: editingStyle,
-        })}
-      >
-        {children}
-      </div>
-    );
-
-  if (editingStyle) {
-    const canNest =
-      editingStyle === EditingStyle.SingleNesting || editingStyle === EditingStyle.MultipleNesting;
-
-    const allowedDropIds = renderDropTargets && getAllowedDropIds && getAllowedDropIds();
-    const preventDrop = Array.isArray(allowedDropIds) && !allowedDropIds.includes(id);
-
-    return (
-      <div
-        role="listitem"
-        className={classnames(`${iotPrefix}--list-item-editable--drag-container`, {
-          [`${iotPrefix}--list-item-editable--dragging`]: isDragging,
-        })}
-        ref={(instance) => {
-          if (connectDragSource) {
-            connectDragSource(instance);
-          }
-        }}
-      >
-        {renderDropTargets && !preventDrop && (
-          <div
-            className={classnames(`${iotPrefix}--list-item-editable--drop-targets`, {
-              [`${iotPrefix}--list-item__large`]: isLargeRow,
-            })}
-          >
+const ListItemWrapper = React.forwardRef(
+  (
+    {
+      id,
+      editingStyle,
+      expanded,
+      isSelectable,
+      itemWillMove,
+      onItemMoved,
+      onSelect,
+      selected,
+      isDragging,
+      renderDropTargets,
+      getAllowedDropIds,
+      isLargeRow,
+      children,
+      connectDragSource,
+      disabled,
+      preventRowFocus,
+    },
+    ref
+  ) => {
+    const body =
+      isSelectable && !disabled ? (
+        <div
+          ref={ref}
+          role="button"
+          tabIndex={preventRowFocus ? -1 : 0}
+          className={classnames(
+            `${iotPrefix}--list-item`,
+            `${iotPrefix}--list-item__selectable`,
             {
-              // Renders Nested location only if nesting is allowed
+              [`${iotPrefix}--list-item__selected`]: editingStyle ? false : selected,
+            },
+            { [`${iotPrefix}--list-item__large`]: isLargeRow },
+            { [`${iotPrefix}--list-item-editable`]: editingStyle }
+          )}
+          data-testid={selected ? 'list-item__selected' : null}
+          onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
+          onClick={() => {
+            onSelect(id);
+          }}
+        >
+          {children}
+        </div>
+      ) : (
+        <div
+          ref={ref}
+          className={classnames(`${iotPrefix}--list-item`, {
+            [`${iotPrefix}--list-item__large`]: isLargeRow,
+            [`${iotPrefix}--list-item-editable`]: editingStyle,
+          })}
+        >
+          {children}
+        </div>
+      );
 
-              canNest ? (
-                <ListTarget
-                  id={id}
-                  targetPosition={DropLocation.Nested}
-                  targetSize={TargetSize.Full}
-                  itemWillMove={itemWillMove}
-                  onItemMoved={onItemMoved}
-                />
-              ) : null
+    if (editingStyle) {
+      const canNest =
+        editingStyle === EditingStyle.SingleNesting ||
+        editingStyle === EditingStyle.MultipleNesting;
+
+      const allowedDropIds = renderDropTargets && getAllowedDropIds && getAllowedDropIds();
+      const preventDrop = Array.isArray(allowedDropIds) && !allowedDropIds.includes(id);
+
+      return (
+        <div
+          role="listitem"
+          className={classnames(`${iotPrefix}--list-item-editable--drag-container`, {
+            [`${iotPrefix}--list-item-editable--dragging`]: isDragging,
+          })}
+          ref={(instance) => {
+            if (connectDragSource) {
+              connectDragSource(instance);
             }
+          }}
+        >
+          {renderDropTargets && !preventDrop && (
+            <div
+              className={classnames(`${iotPrefix}--list-item-editable--drop-targets`, {
+                [`${iotPrefix}--list-item__large`]: isLargeRow,
+              })}
+            >
+              {
+                // Renders Nested location only if nesting is allowed
 
-            <ListTarget
-              id={id}
-              targetPosition={DropLocation.Above}
-              itemWillMove={itemWillMove}
-              targetSize={canNest ? TargetSize.Third : TargetSize.Half}
-              onItemMoved={onItemMoved}
-            />
+                canNest ? (
+                  <ListTarget
+                    id={id}
+                    targetPosition={DropLocation.Nested}
+                    targetSize={TargetSize.Full}
+                    itemWillMove={itemWillMove}
+                    onItemMoved={onItemMoved}
+                  />
+                ) : null
+              }
 
-            <ListTarget
-              id={id}
-              targetPosition={DropLocation.Below}
-              itemWillMove={itemWillMove}
-              targetOverride={expanded ? DropLocation.Nested : null} // If item is expanded then the bottom target will nest
-              targetSize={canNest ? TargetSize.Third : TargetSize.Half}
-              onItemMoved={onItemMoved}
-            />
-          </div>
-        )}
-        {body}
-      </div>
-    );
+              <ListTarget
+                id={id}
+                targetPosition={DropLocation.Above}
+                itemWillMove={itemWillMove}
+                targetSize={canNest ? TargetSize.Third : TargetSize.Half}
+                onItemMoved={onItemMoved}
+              />
+
+              <ListTarget
+                id={id}
+                targetPosition={DropLocation.Below}
+                itemWillMove={itemWillMove}
+                targetOverride={expanded ? DropLocation.Nested : null} // If item is expanded then the bottom target will nest
+                targetSize={canNest ? TargetSize.Third : TargetSize.Half}
+                onItemMoved={onItemMoved}
+              />
+            </div>
+          )}
+          {body}
+        </div>
+      );
+    }
+
+    return body;
   }
-
-  return body;
-};
+);
 
 const ListItemWrapperProps = {
   id: PropTypes.string.isRequired,

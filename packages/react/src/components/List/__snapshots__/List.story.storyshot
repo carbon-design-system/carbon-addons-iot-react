@@ -11206,17 +11206,143 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
             </div>
           </div>
         </div>
-        <div>
+        <div
+          className="iot--list-item"
+        >
           <p
             className="bx--skeleton__text iot--list--skeleton"
             data-testid="list-loading"
             style={
               Object {
-                "width": "90%",
+                "width": "100%",
               }
             }
           />
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List ☢️ with infinite scrolling onLoadData data loader 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--toast-notification bx--toast-notification--warning-alt"
+    kind="warning-alt"
+    role="alert"
+    style={
+      Object {
+        "marginBottom": "0.5rem",
+        "minWidth": "30rem",
+      }
+    }
+  >
+    <svg
+      aria-hidden={true}
+      className="bx--toast-notification__icon"
+      fill="currentColor"
+      focusable="false"
+      height={20}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 32 32"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Zm-1.125-5h2.25V12h-2.25Z"
+        data-icon-path="inner-path"
+        fill="none"
+      />
+      <path
+        d="M16.002,6.1714h-.004L4.6487,27.9966,4.6506,28H27.3494l.0019-.0034ZM14.875,12h2.25v9h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+      />
+      <path
+        d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
+      />
+      <title>
+        warning-alt icon
+      </title>
+    </svg>
+    <div
+      className="bx--toast-notification__details"
+    >
+      <h3
+        className="bx--toast-notification__title"
+      >
+        Experimental Component Notice
+      </h3>
+      <div
+        className="bx--toast-notification__subtitle"
+      >
+        <span>
+          List with infinite loading
+           is an
+           
+          <a
+            href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/docs/guides/experimental-components.md"
+          >
+            experimental component
+          </a>
+           
+          and may have changing APIs with no major version bump and/or insufficient test coverage. Use of this component in production is discouraged.
+        </span>
+      </div>
+    </div>
+  </div>
+  <p
+    style={
+      Object {
+        "margin": "1rem 0",
+      }
+    }
+  >
+    This infinite loading is experimental and may change. It is published for feedback purposes only. As an example error flow, your third attempt at loading will fail, and the data will stop loading after 100 items as an example of reaching the end of the data and turning off the infinite scroll loading.
+  </p>
+  <div
+    style={
+      Object {
+        "height": 300,
+        "overflow": "auto",
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list iot--list__full-height"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            Infinite scrolling list with DataLoader
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+      </div>
+      <div
+        className="iot--list--content__full-height iot--list--content"
+      >
+        <p
+          className="bx--skeleton__text iot--list--skeleton"
+          data-testid="list-loading"
+          style={
+            Object {
+              "width": "90%",
+            }
+          }
+        />
       </div>
     </div>
   </div>

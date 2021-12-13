@@ -106,7 +106,12 @@ describe('ListContent', () => {
     });
     const { container } = render(
       <DragAndDrop>
-        <ListContent items={getListItems(1)} isInfiniteScroll testId="test-list" />
+        <ListContent
+          items={getListItems(1)}
+          isInfiniteScroll
+          testId="test-list"
+          onInfiniteScroll={jest.fn()}
+        />
       </DragAndDrop>
     );
     expect(container.querySelectorAll(`.${iotPrefix}--list--skeleton`)).toHaveLength(1);

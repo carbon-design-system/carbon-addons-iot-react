@@ -139,5 +139,7 @@ export const CarbonIconPropType = PropTypes.oneOfType([PropTypes.func, PropTypes
 
 export const HtmlElementRefProp = PropTypes.oneOfType([
   PropTypes.func,
-  PropTypes.shape({ current: PropTypes.oneOfType([PropTypes.object]) }),
+  PropTypes.shape({
+    current: typeof Element === 'undefined' ? PropTypes.any : PropTypes.instanceOf(Element),
+  }),
 ]);

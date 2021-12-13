@@ -75,6 +75,14 @@ const propTypes = {
   onInfiniteScroll: PropTypes.func,
   /** is the application currently loading more infinite data */
   isInfiniteLoading: PropTypes.bool,
+  /** boolean to show more data is available to be loaded */
+  hasMoreData: PropTypes.bool,
+  /** callback to fire when loading more data */
+  onLoadData: PropTypes.func,
+  /** is currently loading more data */
+  isLoadingMoreData: PropTypes.bool,
+  /** a ref to the parent list for use in IntersectionObserver checking */
+  listRef: HtmlElementRefProp,
 };
 
 const defaultProps = {
@@ -108,8 +116,12 @@ const defaultProps = {
   testId: 'list',
   toggleExpansion: () => {},
   isInfiniteScroll: false,
-  onInfiniteScroll: () => {},
+  onInfiniteScroll: undefined,
   isInfiniteLoading: false,
+  hasMoreData: false,
+  onLoadData: undefined,
+  isLoadingMoreData: false,
+  listRef: null,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -143,22 +155,33 @@ const ListContent = ({
   isInfiniteScroll,
   onInfiniteScroll,
   isInfiniteLoading,
+  hasMoreData,
+  onLoadData,
+  isLoadingMoreData,
+  listRef,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const lastListItemRef = useRef(null);
   useVisibilityLoader(lastListItemRef, {
-    isLoading: isInfiniteLoading,
-    hasMoreToLoad: isInfiniteScroll,
-    onVisible: onInfiniteScroll,
+    hasMoreData: (onLoadData && hasMoreData) || (onInfiniteScroll && isInfiniteScroll),
+    isLoading: (onLoadData && isLoadingMoreData) || (onInfiniteScroll && isInfiniteLoading),
+    onVisible: onLoadData || onInfiniteScroll,
+    intersectionObserverOptions: {
+      root: listRef?.current?.parentNode,
+      rootMargin: '100% 0px',
+      threshold: 0,
+    },
   });
 
   const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item?.children && item.children.length > 0;
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
-    const isLoadingMore = loadingMoreIds.includes(item.id);
+    const isLoadingMoreRows = loadingMoreIds.includes(item.id);
     const isLocked = lockedIds.includes(item.id);
     const isIndeterminate = indeterminateIds.includes(item.id);
+    const isLastItem = index === items.length - 1;
+    const attachVisibilityTrackerToLastItem = isLastItem && onLoadData && hasMoreData;
 
     const {
       content: { value, secondaryValue, icon, rowActions, tags },
@@ -173,6 +196,7 @@ const ListContent = ({
         // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
         data-floating-menu-container
         className={`${iotPrefix}--list-item-parent`}
+        ref={attachVisibilityTrackerToLastItem ? lastListItemRef : null}
       >
         <ListItem
           id={item.id}
@@ -222,6 +246,8 @@ const ListContent = ({
           selectedItemRef={isSelected ? selectedItemRef : null}
           tags={tags}
           preventRowFocus={isCheckboxMultiSelect}
+          testId={testId}
+          listRef={listRef}
         />
       </div>,
       ...(hasChildren && isExpanded
@@ -243,7 +269,7 @@ const ListContent = ({
                       onClick={() => handleLoadMore(item.id)}
                       data-testid={`${testId}-${item.id}-load-more`}
                       kind="ghost"
-                      loading={isLoadingMore}
+                      loading={isLoadingMoreRows}
                     >
                       <div className={`${iotPrefix}--load-more-row--content`}>
                         {mergedI18n.loadMore}
@@ -261,7 +287,7 @@ const ListContent = ({
               onClick={() => handleLoadMore(item.id)}
               data-testid={`${testId}-${item.id}-load-more`}
               kind="ghost"
-              loading={isLoadingMore}
+              loading={isLoadingMoreRows}
             >
               <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
             </Button>,
@@ -301,10 +327,37 @@ const ListContent = ({
       {!isLoading ? (
         <>
           {listItems.length ? (
+            <>
+              {listItems}
+              {((onLoadData && isLoadingMoreData && hasMoreData) ||
+                (onInfiniteScroll && isInfiniteScroll)) && (
+                <div
+                  ref={onInfiniteScroll && isInfiniteScroll ? lastListItemRef : null}
+                  className={`${iotPrefix}--list-item`}
+                >
+                  <SkeletonText
+                    className={`${iotPrefix}--list--skeleton`}
+                    data-testid={`${testId}-loading`}
+                  />
+                </div>
+              )}
+            </>
+          ) : onLoadData && hasMoreData ? (
+            <div ref={lastListItemRef}>
+              <SkeletonText
+                className={`${iotPrefix}--list--skeleton`}
+                width="90%"
+                data-testid={`${testId}-loading`}
+              />
+            </div>
+          ) : (
+            emptyContent
+          )}
+          {/* {listItems.length ? (
             isInfiniteScroll ? (
               <>
                 {listItems}
-                <div ref={lastListItemRef}>
+                <div ref={lastListItemRef} className={`${iotPrefix}--list-item`}>
                   <SkeletonText
                     className={`${iotPrefix}--list--skeleton`}
                     width="90%"
@@ -317,7 +370,7 @@ const ListContent = ({
             )
           ) : (
             emptyContent
-          )}
+          )} */}
         </>
       ) : (
         <SkeletonText

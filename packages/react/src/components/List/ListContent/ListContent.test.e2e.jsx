@@ -6,6 +6,10 @@ import { DragAndDrop, EditingStyle } from '../../../utils/DragAndDropUtils';
 import ListContent from './ListContent';
 
 describe('List', () => {
+  beforeEach(() => {
+    cy.viewport(1680, 900);
+  });
+
   it('should fallback to default drag and drop callbacks when none provided', () => {
     const itemWillMove = cy.spy(ListContent.defaultProps, 'itemWillMove');
     const onItemMoved = cy.spy(ListContent.defaultProps, 'onItemMoved');

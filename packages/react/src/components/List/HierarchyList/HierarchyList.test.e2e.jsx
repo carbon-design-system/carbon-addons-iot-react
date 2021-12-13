@@ -68,6 +68,10 @@ const getListItems = (num) =>
     }));
 
 describe('HierarchyList', () => {
+  beforeEach(() => {
+    cy.viewport(1680, 900);
+  });
+
   it('handles drag and drop above and below with no selections', () => {
     const onSelect = cy.stub();
     const onListUpdated = cy.stub();

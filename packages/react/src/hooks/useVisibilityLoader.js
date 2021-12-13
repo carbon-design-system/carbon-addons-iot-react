@@ -9,11 +9,12 @@ const defaultOptions = {
   hasMoreToLoad: true,
   /** is the application already loading new data */
   isLoading: false,
+  keepObservingAfterVisible: false,
   /** a callback that will be triggered when the ref element becomes visible */
-  onVisible: () => {},
+  onVisible: null,
   /* options passed to IntersectionObserver, see: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API */
   intersectionObserverOptions: {
-    rootMargin: '100px 0px 100px 0px',
+    rootMargin: '0px',
   },
 };
 
@@ -39,11 +40,13 @@ const useVisibilityLoader = (ref, options) => {
     return [true, false];
   }
 
-  const { hasMoreToLoad, isLoading, onVisible, intersectionObserverOptions } = merge(
-    {},
-    defaultOptions,
-    options
-  );
+  const {
+    hasMoreToLoad,
+    isLoading,
+    onVisible,
+    intersectionObserverOptions,
+    keepObservingAfterVisible,
+  } = merge({}, defaultOptions, options);
 
   /* eslint-disable react-hooks/rules-of-hooks */
   const observerRef = useRef(null);
@@ -56,18 +59,22 @@ const useVisibilityLoader = (ref, options) => {
 
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          onVisible();
+          if (typeof onVisible === 'function') {
+            onVisible();
+          }
           setIsVisible(true);
 
           // need to check that the visibility ref item is still available in the dom, because
           // it may have been removed by the application code after all items were loaded.
-          if (ref.current) {
+          if (ref.current && !keepObservingAfterVisible) {
             ob.unobserve(ref.current);
           }
+        } else {
+          setIsVisible(false);
         }
       });
     },
-    [isLoading, onVisible, ref]
+    [isLoading, keepObservingAfterVisible, onVisible, ref]
   );
 
   useEffect(() => {
@@ -77,7 +84,11 @@ const useVisibilityLoader = (ref, options) => {
         intersectionObserverOptions
       );
 
-      observerRef.current.observe(ref.current);
+      if (ref.current instanceof Element) {
+        observerRef.current.observe(ref.current);
+      } else {
+        warning(!__DEV__, `The ref passed to useVisibleLoader must be an Element.`);
+      }
     }
 
     return () => {
@@ -86,7 +97,7 @@ const useVisibilityLoader = (ref, options) => {
         observerRef.current = null;
       }
     };
-  }, [isVisible, ref, intersectionObserverOptions, intersectionCallback, hasMoreToLoad]);
+  }, [isVisible, intersectionObserverOptions, intersectionCallback, hasMoreToLoad, ref]);
   /* eslint-enable react-hooks/rules-of-hooks */
 
   return [isVisible];

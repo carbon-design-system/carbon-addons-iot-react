@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { memoize } from 'lodash-es';
@@ -7,6 +7,7 @@ import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { EditingStyle, DragAndDrop } from '../../utils/DragAndDropUtils';
 import { OverridePropTypes } from '../../constants/SharedPropTypes';
+import useDataLoader from '../../hooks/useDataLoader';
 
 import DefaultListHeader from './ListHeader/ListHeader';
 import DefaultListContent from './ListContent/ListContent';
@@ -98,6 +99,8 @@ const propTypes = {
   onInfiniteScroll: PropTypes.func,
   /** is the application currently loading more infinite data */
   isInfiniteLoading: PropTypes.bool,
+  /** callback function that manages dynamically loading all data */
+  onLoadData: PropTypes.func,
 };
 
 const defaultProps = {
@@ -137,8 +140,9 @@ const defaultProps = {
   testId: 'list',
   handleLoadMore: () => {},
   isInfiniteScroll: false,
-  onInfiniteScroll: () => {},
+  onInfiniteScroll: undefined,
   isInfiniteLoading: false,
+  onLoadData: undefined,
 };
 
 const List = forwardRef((props, ref) => {
@@ -148,11 +152,11 @@ const List = forwardRef((props, ref) => {
     title,
     search,
     buttons,
-    items,
+    items: itemsProp,
     isFullHeight,
     i18n,
     lockedIds,
-    pagination,
+    pagination: paginationProp,
     selectedIds,
     expandedIds,
     getAllowedDropIds,
@@ -163,7 +167,7 @@ const List = forwardRef((props, ref) => {
     editingStyle,
     indeterminateIds,
     isLargeRow,
-    isLoading,
+    isLoading: isLoadingProp,
     isCheckboxMultiSelect,
     isVirtualList,
     onItemMoved,
@@ -175,6 +179,7 @@ const List = forwardRef((props, ref) => {
     isInfiniteScroll,
     onInfiniteScroll,
     isInfiniteLoading,
+    onLoadData,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const ListHeader = overrides?.header?.component || DefaultListHeader;
@@ -183,10 +188,22 @@ const List = forwardRef((props, ref) => {
   // getAllowedDropIds will be called by all list items when a drag is initiated and the
   // parameter (id of the dragged item) will be the same until a new drag starts.
   const memoizedGetAllowedDropIds = getAllowedDropIds ? memoize(getAllowedDropIds) : null;
-
+  const listRef = useRef(null);
+  const dataLoaderResults = useDataLoader({
+    data: itemsProp,
+    onLoadData,
+    pageSize: paginationProp?.pageSize || 25,
+    start: itemsProp?.length ?? 0,
+    pagination: paginationProp,
+  });
+  const pagination = dataLoaderResults?.pagination ?? paginationProp;
+  const items = dataLoaderResults?.data ?? itemsProp;
+  const hasMoreData = dataLoaderResults?.hasMoreData ?? false;
+  const isLoadingMore = dataLoaderResults?.isLoading;
   return (
     <DragAndDrop>
       <div
+        ref={listRef}
         data-testid={testId}
         className={classnames(`${iotPrefix}--list`, className, {
           [`${iotPrefix}--list__full-height`]: isFullHeight,
@@ -208,7 +225,7 @@ const List = forwardRef((props, ref) => {
           isFullHeight={isFullHeight}
           testId={testId}
           indeterminateIds={indeterminateIds}
-          isLoading={isLoading}
+          isLoading={isLoadingProp || (!items?.length && isLoadingMore)}
           isCheckboxMultiSelect={isCheckboxMultiSelect}
           selectedIds={selectedIds}
           expandedIds={expandedIds}
@@ -228,9 +245,13 @@ const List = forwardRef((props, ref) => {
           isInfiniteScroll={isInfiniteScroll}
           onInfiniteScroll={onInfiniteScroll}
           isInfiniteLoading={isInfiniteLoading}
+          hasMoreData={hasMoreData}
+          isLoadingMoreData={isLoadingMore}
+          onLoadData={dataLoaderResults?.onLoad}
+          listRef={listRef}
           {...overrides?.content?.props}
         />
-        {pagination && !isLoading ? (
+        {pagination && !isLoadingProp ? (
           <div className={`${iotPrefix}--list--page`}>
             <SimplePagination {...pagination} />
           </div>

@@ -9,6 +9,10 @@ import VirtualListContent from './VirtualListContent';
 const { iotPrefix } = settings;
 
 describe('List', () => {
+  beforeEach(() => {
+    cy.viewport(1680, 900);
+  });
+
   it('should fallback to default drag and drop callbacks when none provided', () => {
     const itemWillMove = cy.spy(VirtualListContent.defaultProps, 'itemWillMove');
     const onItemMoved = cy.spy(VirtualListContent.defaultProps, 'onItemMoved');

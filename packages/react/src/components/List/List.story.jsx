@@ -912,3 +912,118 @@ WithInfiniteScroll.decorators = [
     </DragAndDrop>
   ),
 ];
+
+export const WithInfiniteScrollDataLoader = () => {
+  const generateItems = ({ pageSize = 25, start = 0 }) =>
+    [...Array(pageSize)].map((_, i) => {
+      const index = i + start;
+      return {
+        id: `item-${index}`,
+        content: {
+          value: `Item ${index}`,
+          secondaryValue: `Item ${index} Subvalue`,
+        },
+      };
+    });
+  const [showError, setShowError] = useState(false);
+  const attemptRef = useRef(0);
+  const retryFnRef = useRef(null);
+
+  // simulate an API request time from 500ms to 3s
+  const simulatedApiRequestTime = Math.floor(Math.random() * 3000 + 500);
+  const demoPagination = boolean('demo with pagination', false);
+  const isInfiniteScroll = boolean('isInfiniteScroll', true);
+
+  return (
+    <>
+      <StoryNotice componentName="List with infinite loading" experimental />
+      {demoPagination && isInfiniteScroll && (
+        <ToastNotification
+          title="Story knob error"
+          subtitle="Pagination and isFiniteScroll cannot be used together"
+          kind="error"
+        />
+      )}
+      {showError && (
+        <ToastNotification
+          title="Data error"
+          subtitle="The data failed to be fetched"
+          kind="error"
+          caption={
+            <Button
+              onClick={() => {
+                setShowError(false);
+
+                if (typeof retryFnRef.current === 'function') {
+                  retryFnRef.current();
+                }
+              }}
+            >
+              Retry
+            </Button>
+          }
+        />
+      )}
+      <p style={{ margin: '1rem 0' }}>
+        This infinite loading is experimental and may change. It is published for feedback purposes
+        only. As an example error flow, your third attempt at loading will fail, and the data will
+        stop loading after 100 items as an example of reaching the end of the data and turning off
+        the infinite scroll loading.
+      </p>
+      <div style={{ height: 300, overflow: 'auto', width: 400 }}>
+        <List
+          title={text('title', 'Infinite scrolling list with DataLoader')}
+          items={[]}
+          isLoading={boolean('isLoading', false)}
+          isVirtualList={boolean('isVirtualList', false)}
+          isFullHeight={boolean('isFullHeight', true)}
+          isLargeRow={boolean('isLargeRow', false)}
+          isInfiniteScroll={isInfiniteScroll}
+          pagination={
+            demoPagination
+              ? {
+                  page: 1,
+                  maxPage: 10,
+                  pageSize: 25,
+                }
+              : null
+          }
+          onLoadData={({ pageSize, start, retry }) => {
+            action('onDataLoad')({ pageSize, start });
+            return new Promise((resolve, reject) => {
+              // eslint-disable-next-line consistent-return
+              setTimeout(() => {
+                attemptRef.current += 1;
+                try {
+                  const nextRows = generateItems({ pageSize, start });
+                  if (attemptRef.current === 3) {
+                    throw new Error('api failure.');
+                  }
+                  return resolve({
+                    data: nextRows,
+                    loading: false,
+                    hasMoreData: attemptRef.current <= 4,
+                  });
+                } catch (error) {
+                  setShowError(true);
+                  retryFnRef.current = retry;
+                  return reject(error);
+                }
+              }, simulatedApiRequestTime);
+            });
+          }}
+        />
+      </div>
+    </>
+  );
+};
+
+WithInfiniteScrollDataLoader.storyName = '☢️ with infinite scrolling onLoadData data loader';
+WithInfiniteScrollDataLoader.decorators = [
+  createElement,
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];

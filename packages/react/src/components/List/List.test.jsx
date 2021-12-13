@@ -466,6 +466,7 @@ describe('List', () => {
   });
 
   it('should trigger show the loading skeleton at the bottom of the list when isInfiniteScroll:true', () => {
+    const onInfiniteScroll = jest.fn();
     window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
       const obj = {
         observe: jest.fn(),
@@ -477,7 +478,9 @@ describe('List', () => {
       return obj;
     });
 
-    const { container } = render(<List items={getListItems(1)} isInfiniteScroll />);
+    const { container } = render(
+      <List items={getListItems(1)} isInfiniteScroll onInfiniteScroll={onInfiniteScroll} />
+    );
     expect(container.querySelectorAll(`.${iotPrefix}--list--skeleton`)).toHaveLength(1);
     jest.resetAllMocks();
   });
@@ -487,11 +490,22 @@ describe('List', () => {
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
         height: 800,
       }));
+      window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
+        const obj = {
+          observe: jest.fn(),
+          unobserve: jest.fn(),
+          disconnect: jest.fn(),
+        };
+        callback([{ isIntersecting: true }], obj);
+
+        return obj;
+      });
     });
 
     afterEach(() => {
       jest.resetAllMocks();
     });
+
     it('should be selectable by testId', () => {
       render(
         <List

@@ -15,6 +15,10 @@ const getListItems = (num) =>
     }));
 
 describe('SimpleList', () => {
+  beforeEach(() => {
+    cy.viewport(1680, 900);
+  });
+
   it('handles drag and drop above and below with no selections', () => {
     const onListUpdated = cy.stub();
     mount(
