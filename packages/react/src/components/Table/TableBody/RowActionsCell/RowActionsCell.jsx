@@ -51,6 +51,10 @@ const propTypes = {
    * Direction of document. Passed in at Table
    */
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
+  /**
+   * the size passed to the table to set row height
+   */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 };
 
 const defaultProps = {
@@ -65,6 +69,7 @@ const defaultProps = {
   showSingleRowEditButtons: false,
   singleRowEditButtons: null,
   langDir: 'ltr',
+  size: undefined,
 };
 
 class RowActionsCell extends React.Component {
@@ -110,6 +115,7 @@ class RowActionsCell extends React.Component {
       showSingleRowEditButtons,
       singleRowEditButtons,
       langDir,
+      size,
     } = this.props;
     const { isOpen } = this.state;
     const overflowActions = actions ? actions.filter((action) => action.isOverflow) : [];
@@ -180,6 +186,8 @@ class RowActionsCell extends React.Component {
                     iconDescription={overflowMenuAria}
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
+                    // compact or xs rows need the `sm` overflow menu, everything else is default (md)
+                    size={['compact', 'xs'].includes(size) ? 'sm' : undefined}
                     className={`${iotPrefix}--row-actions-cell--overflow-menu`}
                     selectorPrimaryFocus={`.${iotPrefix}--action-overflow-item--initialFocus`}
                     useAutoPositioning
