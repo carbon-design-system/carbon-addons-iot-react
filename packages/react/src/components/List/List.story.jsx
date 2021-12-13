@@ -975,7 +975,6 @@ export const WithInfiniteScrollDataLoader = () => {
           title={text('title', 'Infinite scrolling list with DataLoader')}
           items={[]}
           isLoading={boolean('isLoading', false)}
-          isVirtualList={boolean('isVirtualList', false)}
           isFullHeight={boolean('isFullHeight', true)}
           isLargeRow={boolean('isLargeRow', false)}
           isInfiniteScroll={isInfiniteScroll}
