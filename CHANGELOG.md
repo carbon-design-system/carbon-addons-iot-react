@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.82](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.81...v2.147.0-next.82) (2021-12-14)
+
+
+### Bug Fixes
+
+* **header:** add isSideNavExpanded prop to fix aria-label for button ([156c301](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/156c3016c5639c61097f85780c047a2f9e32f6de))
+
+
+
+
+
 # [2.147.0-next.81](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.80...v2.147.0-next.81) (2021-12-13)
 
 
