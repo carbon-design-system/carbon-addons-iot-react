@@ -10037,6 +10037,7 @@ Map {
         "openMenu": "Open menu",
       },
       "isActionItemVisible": [Function],
+      "isSideNavExpanded": false,
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -10147,6 +10148,9 @@ Map {
       },
       "isActionItemVisible": Object {
         "type": "func",
+      },
+      "isSideNavExpanded": Object {
+        "type": "bool",
       },
       "onClickSideNavExpand": Object {
         "type": "func",
