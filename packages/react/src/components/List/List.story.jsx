@@ -499,7 +499,7 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
     };
 
     const handleSelection = (items, id) => {
-      action('handleSelect');
+      action('handleSelect')();
       setSelectedIds((currentSelectedIds) => {
         const isDeselecting = currentSelectedIds.includes(id);
         const parent = findParent(items, id);

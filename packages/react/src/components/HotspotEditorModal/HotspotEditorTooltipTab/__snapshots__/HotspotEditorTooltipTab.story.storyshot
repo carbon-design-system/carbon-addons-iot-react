@@ -30,7 +30,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                aria-describedby="tooltip-form-title-helper-text"
+                aria-describedby=""
                 className="bx--text-input bx--text-input--light"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
@@ -297,7 +297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                aria-describedby="tooltip-form-title-helper-text"
+                aria-describedby=""
                 className="bx--text-input bx--text-input--light"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
@@ -603,7 +603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                aria-describedby="tooltip-form-title-helper-text"
+                aria-describedby=""
                 className="bx--text-input bx--text-input--light"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}

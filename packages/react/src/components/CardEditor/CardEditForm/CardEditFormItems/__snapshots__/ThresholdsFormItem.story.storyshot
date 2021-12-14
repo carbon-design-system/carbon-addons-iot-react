@@ -1204,7 +1204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 data-invalid={null}
               >
                 <input
-                  aria-describedby="undefined_value-card-threshold-value_2-helper-text"
+                  aria-describedby=""
                   className="bx--text-input"
                   data-testid="threshold-2-text-input"
                   disabled={false}

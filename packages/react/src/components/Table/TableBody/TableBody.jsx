@@ -98,6 +98,10 @@ const propTypes = {
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
   /** use white-space: pre; css when true */
   preserveCellWhiteSpace: PropTypes.bool,
+  /**
+   * the size passed to the table to set row height
+   */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 };
 
 const defaultProps = {
@@ -132,6 +136,7 @@ const defaultProps = {
   inProgressText: 'In progress',
   dismissText: 'Dismiss',
   actionFailedText: 'Action failed',
+  size: undefined,
 };
 
 const TableBody = ({
@@ -171,6 +176,7 @@ const TableBody = ({
   testId,
   showExpanderColumn,
   preserveCellWhiteSpace,
+  size,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -315,6 +321,7 @@ const TableBody = ({
         rowActions={row.rowActions}
         values={row.values}
         showExpanderColumn={showExpanderColumn}
+        size={size}
       />
     ) : (
       <TableBodyLoadMoreRow

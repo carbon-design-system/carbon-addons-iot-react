@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.81](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.80...v2.147.0-next.81) (2021-12-13)
+
+
+### Bug Fixes
+
+* **table:** pass size to overflow menu in row actions ([9535a7c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9535a7c2518f4536d755f10e4da9d5700b9346f3))
+* **table-view-dropdown:** fix [Object object] showing in title ([73a5efb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/73a5efb02cb7cd6b85e9e671bf51f6ba228b5303))
+
+
+
+
+
+# [2.147.0-next.79](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.78...v2.147.0-next.79) (2021-12-08)
+
+
+### Features
+
+* **table:** add search onBlur when hasFastSearch:false ([2db93b2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2db93b21b6ac8455a0cbac8a2f26ccdfcd94cc7c))
+
+
+
+
+
+# [2.147.0-next.78](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.77...v2.147.0-next.78) (2021-12-08)
+
+
+### Features
+
+* **repo:** upgrade carbon to 10.49/7.49.1 ([b146adf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b146adf5deccadee1a4e2121cdd3b9420133733c))
+
+
+
+
+
+# [2.147.0-next.76](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.75...v2.147.0-next.76) (2021-12-06)
+
+
+### Bug Fixes
+
+* **list:** prevent multiple callbacks on checkbox click ([3b6a9a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3b6a9a34c18ec9cf96047ceaf1943f5ea9bd2c98))
+
+
+
+
+
 # [2.147.0-next.75](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.74...v2.147.0-next.75) (2021-12-03)
 
 

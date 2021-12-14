@@ -568,6 +568,7 @@ const Table = (props) => {
     tooltip,
     error,
     testId,
+    size,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -947,10 +948,12 @@ const Table = (props) => {
               options.hasResize && !options.useAutoTableLayoutForResize,
             [`${iotPrefix}--data-table--row-actions`]: options.hasRowActions,
           })}
+          size={size}
           {...others}
         >
           {columns.length ? (
             <TableHead
+              size={size}
               {...others}
               i18n={i18n}
               lightweight={lightweight}
@@ -1081,6 +1084,7 @@ const Table = (props) => {
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-body`}
                 showExpanderColumn={showExpanderColumn}
+                size={size}
               />
             ) : (
               <EmptyTable
