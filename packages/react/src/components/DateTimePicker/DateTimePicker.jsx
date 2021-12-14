@@ -593,15 +593,13 @@ const DateTimePicker = ({
 
     setAbsoluteValue(newAbsolute);
 
-    const invalidDate = invalidAbsoluteDate(
-      newAbsolute.startTime,
-      newAbsolute.endTime,
-      newAbsolute
-    );
-
     // Update end and start time invalid state when date changed
-    setAbsoluteEndTimeInvalid(invalidDate);
-    setAbsoluteStartTimeInvalid(invalidDate);
+    setAbsoluteEndTimeInvalid(
+      invalidEndDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
+    );
+    setAbsoluteStartTimeInvalid(
+      invalidStartDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
+    );
   };
 
   const onDatePickerClose = (range, single, flatpickr) => {
@@ -797,52 +795,60 @@ const DateTimePicker = ({
     setAbsoluteValue(newAbsolute);
   };
 
-  // Returns true if start date is after end date for absolute range
-  const invalidAbsoluteDate = (startTime, endTime, absoluteValues) => {
+  const isValidDate = (d, time) => {
+    const allEqualTwo = time.every(function (e) {
+      return e.length == 2;
+    });
+    return d instanceof Date && !isNaN(d) && time.length == 2 && allEqualTwo;
+  };
+
+  // Validates absolute start date
+  const invalidStartDate = (startTime, endTime, absoluteValues) => {
     // If start and end date have been selected
-    if (absoluteValues.hasOwnProperty('start') && absoluteValues.hasOwnProperty('end')) {
-      // Include start time in start date
-      const timefrom = new Date(absoluteValues.start);
-      let temp = startTime.split(':');
-      timefrom.setHours(Number(temp[0]));
-      timefrom.setMinutes(Number(temp[1]));
-
-      // Include end time in end date
-      const timeto = new Date(absoluteValues.end);
-      temp = endTime.split(':');
-      timeto.setHours(Number(temp[0]));
-      timeto.setMinutes(Number(temp[1]));
-
-      return timefrom >= timeto;
+    if (
+      absoluteValues.hasOwnProperty('start') &&
+      absoluteValues.hasOwnProperty('end') &&
+      isValidDate(new Date(absoluteValues.start), startTime.split(':'))
+    ) {
+      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
+      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
+      return startDate >= endDate;
     }
+    // Return invalid date if start time and end date not selected or if inputted time is not valid
+    return true;
+  };
 
-    // Return invalid date if start time and end date not selected
+  // Validates absolute end date
+  const invalidEndDate = (startTime, endTime, absoluteValues) => {
+    // If start and end date have been selected
+    if (
+      absoluteValues.hasOwnProperty('start') &&
+      absoluteValues.hasOwnProperty('end') &&
+      isValidDate(new Date(absoluteValues.end), endTime.split(':'))
+    ) {
+      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
+      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
+      return startDate >= endDate;
+    }
+    // Return invalid date if start time and end date not selected or if inputted time is not valid
     return true;
   };
 
   // on change functions that trigger a absolute value update
   const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
-    setAbsoluteStartTimeInvalid(meta.invalid);
-    const invalidStartEndTime = invalidAbsoluteDate(
-      pickerValue,
-      absoluteValue.endTime,
-      absoluteValue
+    setAbsoluteStartTimeInvalid(
+      meta.invalid || invalidStartDate(pickerValue, absoluteValue.endTime, absoluteValue)
     );
-    setAbsoluteStartTimeInvalid(meta.invalid || invalidStartEndTime);
-    setAbsoluteEndTimeInvalid(absoluteEndTimeInvalid && invalidStartEndTime);
+    setAbsoluteEndTimeInvalid(invalidEndDate(pickerValue, absoluteValue.endTime, absoluteValue));
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
   const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
-    setAbsoluteEndTimeInvalid(meta.invalid);
-    const invalidStartEndTime = invalidAbsoluteDate(
-      absoluteValue.startTime,
-      pickerValue,
-      absoluteValue
+    setAbsoluteEndTimeInvalid(
+      meta.invalid || invalidEndDate(absoluteValue.startTime, pickerValue, absoluteValue)
     );
-    setAbsoluteEndTimeInvalid(meta.invalid || invalidStartEndTime);
-
-    setAbsoluteStartTimeInvalid(absoluteStartTimeInvalid && invalidStartEndTime);
-
+    setAbsoluteStartTimeInvalid(
+      invalidStartDate(absoluteValue.startTime, pickerValue, absoluteValue)
+    );
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 

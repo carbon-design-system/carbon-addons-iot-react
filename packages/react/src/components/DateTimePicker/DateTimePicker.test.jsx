@@ -757,12 +757,11 @@ describe('DateTimePicker', () => {
     expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-01 13:49');
     expect(applyBytton).toBeDisabled();
 
-    // // 2020-04-01 13:50 to 2020-04-01 13:51
-    userEvent.type(endTime, '{backspace}{backspace}51');
-    expect(startTime).toHaveValue('13:50');
-    expect(endTime).toHaveValue('13:51');
-    expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-01 13:51');
-    expect(applyBytton).toBeEnabled();
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}9999');
+    userEvent.type(startTime, '{backspace}{backspace}51');
+    expect(startTime).toHaveValue('13:51');
+    expect(endTime).toHaveValue('9999');
+    expect(applyBytton).toBeDisabled();
   });
 
   it('should enabe apply button when absolute DatePicker input has start and end date in different dates', () => {
@@ -821,12 +820,18 @@ describe('DateTimePicker', () => {
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 13:49');
     expect(applyBytton).toBeEnabled();
 
-    // 2020-04-01 13:50 to 2020-04-06 11:49
+    // 2020-04-01 13:50 to 2020-04-06 13:49
     userEvent.type(startTime, '{backspace}{backspace}50');
     expect(startTime).toHaveValue('13:50');
     expect(endTime).toHaveValue('13:49');
     expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-06 13:49');
     expect(applyBytton).toBeEnabled();
+
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}9999');
+    userEvent.type(startTime, '{backspace}{backspace}51');
+    expect(startTime).toHaveValue('13:51');
+    expect(endTime).toHaveValue('9999');
+    expect(applyBytton).toBeDisabled();
   });
 
   it('should close picker when escape is pressed', () => {
