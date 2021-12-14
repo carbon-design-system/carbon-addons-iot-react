@@ -813,8 +813,6 @@ const DateTimePicker = ({
       timeto.setHours(Number(temp[0]));
       timeto.setMinutes(Number(temp[1]));
 
-      console.log(timefrom, timeto);
-
       return timefrom >= timeto;
     }
 
