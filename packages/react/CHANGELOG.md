@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.83](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.82...v2.147.0-next.83) (2021-12-14)
+
+
+### Bug Fixes
+
+* **tablerow:** max-width for nested table ([315c669](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/315c669090da982187a6b89494ba6be386993106))
+
+
+
+
+
 # [2.147.0-next.82](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.81...v2.147.0-next.82) (2021-12-14)
 
 
