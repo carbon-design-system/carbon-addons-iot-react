@@ -33,7 +33,7 @@ const getRowActions = (dir) => () => [
     size="small"
     onClick={() => action('edit')()}
     iconDescription="Edit"
-    tooltipPosition={dir === 'ltr' ? 'left' : 'right'}
+    tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
   />,
   <Button
     key="simple-list-action-add"
@@ -43,7 +43,7 @@ const getRowActions = (dir) => () => [
     size="small"
     onClick={() => action('add')()}
     iconDescription="Add"
-    tooltipPosition={dir === 'ltr' ? 'left' : 'right'}
+    tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
   />,
   <Button
     key="simple-list-action-close"
@@ -53,11 +53,11 @@ const getRowActions = (dir) => () => [
     size="small"
     onClick={() => action('close')()}
     iconDescription="Close"
-    tooltipPosition={dir === 'ltr' ? 'left' : 'right'}
+    tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
   />,
 ];
 
-const getRowActionsOverFlowMenu = (dir) => [
+const getRowActionsOverFlowMenu = (dir) => () => [
   <OverflowMenu size="sm" flipped={dir !== 'rtl'} key="simple-list-overflow-menu">
     <OverflowMenuItem itemText="Edit" />
     <OverflowMenuItem itemText="Add" />
