@@ -119,7 +119,6 @@
     height: $list-item-height-large;
     padding: $spacing-05;
     align-items: start;
-    // background-color: lightgreen;
   }
 
   &--category {
@@ -182,7 +181,7 @@
     &__large {
       align-items: flex-start;
       .#{$prefix}--checkbox-wrapper:first-of-type {
-        margin-top: calc(-1 * #{$spacing-02});
+        margin-top: -($spacing-02);
       }
     }
     &--icon__right {

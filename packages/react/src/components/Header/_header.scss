@@ -68,9 +68,9 @@ $hoverBgColor: #2c2c2c;
   .#{$prefix}--overflow-menu {
     align-items: center;
     display: inline-flex;
-    height: 3rem;
+    height: $spacing-09;
     justify-content: center;
-    width: 3rem;
+    width: $spacing-09;
     padding: 0;
 
     &:hover {
