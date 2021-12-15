@@ -795,11 +795,9 @@ const DateTimePicker = ({
     setAbsoluteValue(newAbsolute);
   };
 
-  const isValidDate = (d, time) => {
-    const allEqualTwo = time.every(function (e) {
-      return e.length == 2;
-    });
-    return d instanceof Date && !isNaN(d) && time.length == 2 && allEqualTwo;
+  const isValidDate = (date, time) => {
+    const isValid24HoursRegex = /^([01][0-9]|2[0-3]):([0-5][0-9])$/;
+    return date instanceof Date && !isNaN(date) && isValid24HoursRegex.test(time);
   };
 
   // Validates absolute start date
@@ -808,7 +806,7 @@ const DateTimePicker = ({
     if (
       absoluteValues.hasOwnProperty('start') &&
       absoluteValues.hasOwnProperty('end') &&
-      isValidDate(new Date(absoluteValues.start), startTime.split(':'))
+      isValidDate(new Date(absoluteValues.start), startTime)
     ) {
       const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
       const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
@@ -824,7 +822,7 @@ const DateTimePicker = ({
     if (
       absoluteValues.hasOwnProperty('start') &&
       absoluteValues.hasOwnProperty('end') &&
-      isValidDate(new Date(absoluteValues.end), endTime.split(':'))
+      isValidDate(new Date(absoluteValues.end), endTime)
     ) {
       const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
       const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
