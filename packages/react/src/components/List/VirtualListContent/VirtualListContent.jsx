@@ -160,7 +160,9 @@ const VirtualListContent = ({
   const virtualListRef = virtualListRefProp || internalVirtualListRef;
 
   const renderLoadMore = (item, isLoadingMore, level, style) => {
-    const indentation = `${level * 32}px`;
+    const columnGap = '16';
+    const levelOffset = '32';
+    const indentation = `${level * levelOffset - columnGap}px`;
     return isLoadingMore ? (
       <div
         style={style}
