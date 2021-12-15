@@ -8,6 +8,7 @@
   padding: $spacing-04 $spacing-05;
   border-bottom: 1px solid $ui-03;
   height: rem(56px);
+  column-gap: $spacing-05;
   &--title {
     @include type-style('productive-heading-02');
     flex: 1;
@@ -15,10 +16,14 @@
 
   &--btn-container {
     display: flex;
-    padding: $spacing-03;
     align-items: center;
-    & > * {
-      margin-left: $spacing-05;
+    column-gap: $spacing-05;
+    // Negative margin needed to have the buttons
+    // closer to the edge than than the padding allows
+    margin-right: -$spacing-03;
+    [dir='rtl'] & {
+      margin-right: unset;
+      margin-left: -($spacing-03);
     }
   }
 
@@ -32,9 +37,5 @@
       border-bottom-color: $list-item-border-color;
       padding: 0 $spacing-09;
     }
-  }
-
-  &--add {
-    padding: $spacing-03;
   }
 }

@@ -124,8 +124,17 @@ const getFatRowListItemsWithOverflowMenu = (num) =>
       },
     }));
 
-const buttonsToRender = [
-  <Edit16 key="simple-list-header-edit" />,
+const buttonsToRender = (dir) => [
+  <Button
+    key="simple-list-header-edit"
+    renderIcon={Edit16}
+    hasIconOnly
+    kind="ghost"
+    size="small"
+    onClick={() => {}}
+    iconDescription="Edit"
+    tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
+  />,
   <Button
     key="simple-list-header-close"
     renderIcon={Close16}
@@ -134,6 +143,7 @@ const buttonsToRender = [
     size="small"
     onClick={() => {}}
     iconDescription="Close"
+    tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
   />,
   <Button
     key="simple-list-header-add"
@@ -141,6 +151,7 @@ const buttonsToRender = [
     hasIconOnly
     size="small"
     iconDescription="Add"
+    tooltipPosition={dir !== 'rtl' ? 'left' : 'right'}
   />,
 ];
 
@@ -171,7 +182,7 @@ export const Basic = () => (
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
-      buttons={buttonsToRender}
+      buttons={buttonsToRender(document.dir)}
       items={getListItems(number('items to render', 30))}
       isFullHeight={boolean('isFullHeight', true)}
       pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
@@ -199,7 +210,7 @@ export const ListWithEmptyRow = () => (
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
-      buttons={buttonsToRender}
+      buttons={buttonsToRender(document.dir)}
       items={listItemsWithEmptyRow}
       isFullHeight={boolean('isFullHeight', true)}
       pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
@@ -227,7 +238,7 @@ export const ListWithLargeRow = () => (
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
-      buttons={buttonsToRender}
+      buttons={buttonsToRender(document.dir)}
       items={getFatRowListItems(20)}
       isFullHeight={boolean('isFullHeight', true)}
       pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
@@ -256,7 +267,7 @@ export const ListWithMultipleActions = () => (
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
-      buttons={buttonsToRender}
+      buttons={buttonsToRender(document.dir)}
       items={getListItemsWithActions(5, document.dir)}
       isFullHeight={boolean('isFullHeight', true)}
       pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
@@ -284,7 +295,7 @@ export const ListWithOverflowMenu = () => (
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
-      buttons={buttonsToRender}
+      buttons={buttonsToRender(document.dir)}
       items={getListItemsWithOverflowMenu(5)}
       isFullHeight={boolean('isFullHeight', true)}
       pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
@@ -312,7 +323,7 @@ export const LargeRowListWithMultipleActions = () => (
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
-      buttons={buttonsToRender}
+      buttons={buttonsToRender(document.dir)}
       items={getFatRowListItemsWithActions(5)}
       isFullHeight={boolean('isFullHeight', true)}
       pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
@@ -341,7 +352,7 @@ export const LargeRowListWithOverflowMenu = () => (
         searchPlaceHolderText: 'Enter a search',
         pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
       }}
-      buttons={buttonsToRender}
+      buttons={buttonsToRender(document.dir)}
       items={getFatRowListItemsWithOverflowMenu(5)}
       isFullHeight={boolean('isFullHeight', true)}
       pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'sm')}
@@ -368,7 +379,7 @@ export const ListWithReorder = () => {
             pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
             items: '%d items',
           }}
-          buttons={buttonsToRender}
+          buttons={buttonsToRender(document.dir)}
           items={items}
           isFullHeight={boolean('isFullHeight', true)}
           pageSize={select('pageSize', ['sm', 'lg', 'xl'], 'xl')}
