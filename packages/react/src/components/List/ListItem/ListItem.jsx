@@ -8,6 +8,7 @@ import warning from 'warning';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import { ITEM_COLUMN_GAP, ITEM_LEVEL_OFFSET } from '../VirtualListContent/listConstants';
 
 import ListItemWrapper from './ListItemWrapper';
 
@@ -155,13 +156,11 @@ const ListItem = ({
   }
 
   const renderNestingOffset = () => {
-    const columnGap = '16';
-    const levelOffset = '32';
     return nestingLevel > 0 ? (
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
         style={{
-          width: `${nestingLevel * levelOffset - columnGap}px`,
+          width: `${nestingLevel * ITEM_LEVEL_OFFSET - ITEM_COLUMN_GAP}px`,
         }}
       />
     ) : null;

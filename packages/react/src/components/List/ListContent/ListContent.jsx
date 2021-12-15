@@ -11,6 +11,7 @@ import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
 import { ListItemPropTypes } from '../ListPropTypes';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
+import { ITEM_COLUMN_GAP, ITEM_LEVEL_OFFSET } from '../VirtualListContent/listConstants';
 
 const { iotPrefix } = settings;
 
@@ -142,9 +143,7 @@ const ListContent = ({
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const renderLoadMore = (item, isLoadingMore, level) => {
-    const columnGap = '16';
-    const levelOffset = '32';
-    const indentation = `${level * levelOffset - columnGap}px`;
+    const indentation = `${level * ITEM_LEVEL_OFFSET - ITEM_COLUMN_GAP}px`;
     return isLoadingMore ? (
       <div key={`${item.id}-list-item-load-more`} className={`${iotPrefix}--list-item`}>
         <div

@@ -14,6 +14,13 @@ import { ListItemPropTypes } from '../ListPropTypes';
 import { useResize } from '../../../internal/UseResizeObserver';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
 
+import {
+  ITEM_COLUMN_GAP,
+  ITEM_HEIGHT,
+  ITEM_HEIGHT_LARGE,
+  ITEM_LEVEL_OFFSET,
+} from './listConstants';
+
 const { iotPrefix } = settings;
 
 const propTypes = {
@@ -152,7 +159,7 @@ const VirtualListContent = ({
   virtualListRef: virtualListRefProp,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-  const rowSize = isLargeRow ? 64 : 40;
+  const rowSize = isLargeRow ? ITEM_HEIGHT_LARGE : ITEM_HEIGHT;
   const [listHeight, setListHeight] = useState(0);
   const listOuterRef = useResize(useRef(null));
   const didScrollRef = useRef(false);
@@ -160,9 +167,7 @@ const VirtualListContent = ({
   const virtualListRef = virtualListRefProp || internalVirtualListRef;
 
   const renderLoadMore = (item, isLoadingMore, level, style) => {
-    const columnGap = '16';
-    const levelOffset = '32';
-    const indentation = `${level * levelOffset - columnGap}px`;
+    const indentation = `${level * ITEM_LEVEL_OFFSET - ITEM_COLUMN_GAP}px`;
     return isLoadingMore ? (
       <div
         style={style}
@@ -371,7 +376,7 @@ const VirtualListContent = ({
     const isExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
     if (item.isLoadMoreRow && (isExpanded || item.level === 0)) {
-      return 40;
+      return ITEM_HEIGHT;
     }
 
     if (!item.parentId || isExpanded) {
