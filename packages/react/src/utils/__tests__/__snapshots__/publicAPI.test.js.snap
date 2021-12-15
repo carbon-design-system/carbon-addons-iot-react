@@ -6412,7 +6412,7 @@ Map {
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
-        "loadMore": "Load more...",
+        "loadMore": "View more...",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
@@ -6667,7 +6667,7 @@ Map {
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
-        "loadMore": "Load more...",
+        "loadMore": "View more...",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",

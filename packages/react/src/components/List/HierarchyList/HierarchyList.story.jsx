@@ -154,7 +154,7 @@ export const WithOverflowMenu = () => (
             content: {
               value: player,
               rowActions: () => (
-                <OverflowMenu title="data-item-menu" flipped>
+                <OverflowMenu title="data-item-menu" size="sm" flipped={document.dir !== 'rtl'}>
                   <OverflowMenuItem itemText="Configure" onClick={() => console.log('Configure')} />
                   <OverflowMenuItem
                     itemText="Delete"

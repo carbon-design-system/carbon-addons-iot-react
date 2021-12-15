@@ -105,7 +105,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
-    loadMore: 'Load more...',
+    loadMore: 'View more...',
   },
   iconPosition: 'left',
   isFiltering: false,
