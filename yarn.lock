@@ -3794,10 +3794,10 @@
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.25.0.tgz#bfe2465e165bb78477c77494610552064fcab09f"
   integrity sha512-jvDUKz3NLopiDf7BROLDAT4NoswMpeXg4+ulbkLlFHdgY3v7gaxT/MJ7f9DZeEIiYUBhQSjTmcB3agIIO1jOdw==
 
-"@carbon/icons-react@10.43.0", "@carbon/icons-react@^10.43.0":
-  version "10.43.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.43.0.tgz#dc5cfa2dc423910f95c42d768b05cb44064df9ad"
-  integrity sha512-BtRX3/wMqH3BrP1O32CKwz2DmuE351NVkk0gYuASIfDBOOf4BsZ30hBo7p6rUJ3JdjG0wXzbJgXD2XbvvHQIYw==
+"@carbon/icons-react@10.44.0", "@carbon/icons-react@^10.44.0":
+  version "10.44.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.44.0.tgz#40f411ea162ecbb86fea0756f954bcd43c5bfaf0"
+  integrity sha512-1M8J0/vMHYj5Bd4GmgkMP+tCsAD1gRCoiZYHNhohJb6ed40c2yaLa7DQ89PLStocZR9ZNtvc3akR00Ro3uiNWA==
   dependencies:
     "@carbon/icon-helpers" "^10.25.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
@@ -9808,14 +9808,14 @@ carbon-components-angular@4.56.2:
     flatpickr "4.6.1"
     tslib "^1.9.0"
 
-carbon-components-react@7.48.1:
-  version "7.48.1"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.48.1.tgz#ab7e83557b87357e12adc714135673456e647029"
-  integrity sha512-41l294GoKsKZ3Ncc0SJZ/NyaGUGq4Kmer4WR7PzI44z3RTCrF2LjcgjcXAn4Etvea35vdY6Reb4bPtFkmPT4TA==
+carbon-components-react@7.49.1:
+  version "7.49.1"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.49.1.tgz#32f17882ab0fa4122473d1e44f6035b1102bef28"
+  integrity sha512-5BziCgloaUOmR+RjjYt2PUxD90w81x3wHnjkBJPn81LkqyBl9WT+yjlZDQJPXI8dTkyCbqppFspL/Jtqir1u4g==
   dependencies:
     "@babel/runtime" "^7.14.6"
     "@carbon/feature-flags" "^0.6.0"
-    "@carbon/icons-react" "^10.43.0"
+    "@carbon/icons-react" "^10.44.0"
     "@carbon/layout" "^10.34.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
     classnames "2.3.1"
@@ -9853,10 +9853,10 @@ carbon-components@10.47.0:
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-components@10.48.0:
-  version "10.48.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.48.0.tgz#e1c31b7b5d27cf12299fd86f6c9b8f0546bb6b43"
-  integrity sha512-kz6WlB4sVyOW/fUZLQ+f83cS2AAvcNRXkMi6au1guUHMdoTtIBz62AGKGxq54Xy2hQZK0Ca6aH01NopxOV4wUw==
+carbon-components@10.49.0:
+  version "10.49.0"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.49.0.tgz#1c43ffdc8a48bed5e67b21d5ddd817d950b969a6"
+  integrity sha512-toGvNgXA9YCs9XuNSj3E2UWPCCaSkAS9JoMi0qJFNa70CPXgt0TF/PeHNXLi8swS7eIEsNxNn6bQ6W3Rk+5KsQ==
   dependencies:
     "@carbon/telemetry" "0.0.0-alpha.6"
     flatpickr "4.6.1"

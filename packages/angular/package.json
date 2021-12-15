@@ -1,6 +1,6 @@
 {
   "name": "@ai-apps/angular",
-  "version": "2.147.0-next.72",
+  "version": "2.147.0-next.80",
   "description": "AI Applications PAL in Angular",
   "main": "index.js",
   "scripts": {

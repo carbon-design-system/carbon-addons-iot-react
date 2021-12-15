@@ -2897,6 +2897,7 @@ Map {
       "shouldLazyRender": false,
       "showExpanderColumn": false,
       "singleRowEditButtons": null,
+      "size": undefined,
       "testId": "",
       "totalColumns": 0,
     },
@@ -3384,6 +3385,18 @@ Map {
       },
       "singleRowEditButtons": Object {
         "type": "element",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
       },
       "tableId": Object {
         "isRequired": true,
@@ -10074,6 +10087,7 @@ Map {
         "openMenu": "Open menu",
       },
       "isActionItemVisible": [Function],
+      "isSideNavExpanded": false,
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -10184,6 +10198,9 @@ Map {
       },
       "isActionItemVisible": Object {
         "type": "func",
+      },
+      "isSideNavExpanded": Object {
+        "type": "bool",
       },
       "onClickSideNavExpand": Object {
         "type": "func",
@@ -31116,6 +31133,9 @@ Map {
         "labelText": Object {
           "type": "string",
         },
+        "onBlur": Object {
+          "type": "func",
+        },
         "onChange": Object {
           "type": "func",
         },
@@ -31123,6 +31143,9 @@ Map {
           "type": "func",
         },
         "onExpand": Object {
+          "type": "func",
+        },
+        "onFocus": Object {
           "type": "func",
         },
         "persistant": [Function],
