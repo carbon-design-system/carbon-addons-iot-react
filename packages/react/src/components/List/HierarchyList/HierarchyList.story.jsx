@@ -5,7 +5,6 @@ import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
 import Button from '../../Button';
-import { InlineLoading } from '../../InlineLoading';
 import { EditingStyle, DragAndDrop } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
@@ -443,9 +442,7 @@ export const WithMixedHierarchies = () => (
               id: 'Task 1',
               content: {
                 value: 'Task 1',
-                secondaryValue: () => (
-                  <InlineLoading description="Loading data.." status="active" />
-                ),
+                secondaryValue: () => <div> SecondaryValue </div>,
               },
               isSelectable: true,
             },
@@ -455,7 +452,7 @@ export const WithMixedHierarchies = () => (
           id: 'My Reports',
           content: {
             value: 'My Reports',
-            secondaryValue: () => <InlineLoading description="Loading data.." status="active" />,
+            secondaryValue: () => <div> SecondaryValue </div>,
           },
           isSelectable: true,
         },
