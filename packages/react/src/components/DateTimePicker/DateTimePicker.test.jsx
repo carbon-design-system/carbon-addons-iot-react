@@ -764,7 +764,7 @@ describe('DateTimePicker', () => {
     expect(applyBytton).toBeDisabled();
   });
 
-  it('should enabe apply button when absolute DatePicker input has start and end date in different dates', () => {
+  it('should enable apply button when absolute DatePicker input has start and end date in different dates', () => {
     const { i18n } = DateTimePicker.defaultProps;
 
     render(
