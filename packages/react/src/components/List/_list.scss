@@ -28,11 +28,13 @@
     .#{$iot-prefix}-simple-pagination-container {
       border-width: 1px 0 0 0;
       height: $list-item-height;
+      box-sizing: content-box;
 
       .#{$iot-prefix}-simple-pagination-page-bar {
         margin-left: unset;
         justify-content: space-between;
         width: 100%;
+        height: fit-content;
 
         .#{$iot-prefix}-simple-pagination-page-label {
           flex-grow: 2;
