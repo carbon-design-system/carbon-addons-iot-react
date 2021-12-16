@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.84](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.83...v2.147.0-next.84) (2021-12-16)
+
+
+### Bug Fixes
+
+* **use-popover-positioning:** minor style and offset adjustments ([6a5fa71](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6a5fa71cca749acc280ec63fff463e0207367055))
+
+
+
+
+
 # [2.147.0-next.83](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.82...v2.147.0-next.83) (2021-12-14)
 
 
