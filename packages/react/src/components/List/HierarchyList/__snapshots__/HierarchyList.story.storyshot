@@ -7003,52 +7003,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                     className="iot--list-item--content--values--value"
                     title="My Reports--secondary-value"
                   >
-                    <div
-                      aria-live="assertive"
-                      className="bx--inline-loading"
-                    >
-                      <div
-                        className="bx--inline-loading__animation"
-                      >
-                        <div
-                          aria-atomic="true"
-                          aria-labelledby="loading-id-7"
-                          aria-live="assertive"
-                          className="bx--loading bx--loading--small"
-                        >
-                          <label
-                            className="bx--visually-hidden"
-                            id="loading-id-7"
-                          >
-                            Active loading indicator
-                          </label>
-                          <svg
-                            className="bx--loading__svg"
-                            viewBox="0 0 100 100"
-                          >
-                            <title>
-                              Active loading indicator
-                            </title>
-                            <circle
-                              className="bx--loading__background"
-                              cx="50%"
-                              cy="50%"
-                              r="44"
-                            />
-                            <circle
-                              className="bx--loading__stroke"
-                              cx="50%"
-                              cy="50%"
-                              r="44"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        className="bx--inline-loading__text"
-                      >
-                        Loading data..
-                      </div>
+                    <div>
+                       SecondaryValue 
                     </div>
                   </div>
                 </div>
