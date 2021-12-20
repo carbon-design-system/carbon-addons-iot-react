@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text } from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs';
 
 import { ArchetypeModal, ModalHeader, ModalBody, ModalFooter } from './ArchetypeModal';
 import CheckboxList from './CheckboxList';
@@ -43,7 +43,7 @@ export const ArchetypeModalComposable = () => (
       return (
         <>
           <ModalHeader
-            // These props contain customized defaults that this specific
+            // These props can contain customized defaults that this specific
             // implementation of the ComposedModal is using.
             {...headerProps}
             // This prop is set directly on the ModalHeader
@@ -51,17 +51,23 @@ export const ArchetypeModalComposable = () => (
           />
           <ModalBody>
             <CheckboxList
-              // Get the wiring of data, selectedIds, onChange for free
+              // We set {data, selectedIds, onChange}
               {...checkboxListProps}
-              renderRow={({ customKey }, xxx) => {
+              // We recieve data, { onChange, id, checked }
+              // We extract any key we want to use for the data object, here we use customKey
+              renderRow={({ customKey }, checkboxListItemProps) => {
                 return (
-                  // checkboxListItemProps gives us the wiring of checked, onChange, id for free
-                  <CheckboxListItem primaryValue={customKey} {...xxx} />
+                  // checkboxListItemProps is setting { onChange, id, checked }
+                  <CheckboxListItem primaryValue={customKey} {...checkboxListItemProps} />
                 );
               }}
             />
           </ModalBody>
-          <ModalFooter {...footerProps} secondaryButtonText="Cancel" />
+          <ModalFooter
+            // footerProps is setting { onRequestSubmit, primaryButtonDisabled }
+            {...footerProps}
+            secondaryButtonText="Cancel"
+          />
         </>
       );
     }}

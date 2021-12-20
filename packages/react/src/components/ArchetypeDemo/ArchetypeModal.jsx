@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ComposedModal, ModalBody, ModalFooter, ModalHeader } from 'carbon-components-react';
 
 import CheckboxList from './CheckboxList';
+import { getRenderPropChildren } from './helperFunctions';
 
 const renderDefaultHeader = ({ children, ...props }) => {
   return <ModalHeader {...props}>{children}</ModalHeader>;
@@ -15,16 +16,6 @@ const renderDefaultBody = ({ data, selectedIds, onChange }) => (
 );
 
 const renderDefaultFooter = (props) => <ModalFooter {...props} />;
-
-const getRenderPropChildren = (props, children) => {
-  if (typeof children === 'function') {
-    const renderedChildren = children(props);
-    if (renderedChildren.type.description === 'react.fragment') {
-      return renderedChildren.props.children;
-    }
-  }
-  return [];
-};
 
 const ArchetypeModalPropTypes = {
   children: PropTypes.func,
@@ -74,26 +65,41 @@ const ArchetypeModal = ({
   };
 
   const onCheckboxChange = (check, checkboxValueId) => {
-    console.info(check, checkboxValueId);
     setSelectedIds((prev) =>
       check ? [...prev, checkboxValueId] : prev.filter((id) => id !== checkboxValueId)
     );
   };
 
+  // CREATE PROPS FOR THE RENDER-PROPS
+  // This is a single source of truth to guarantee that the internal
+  // and external renderprops can render the same thing
+  const modifiedCheckboxListProps = { data, selectedIds, onChange: onCheckboxChange };
+  const modifiedFooterProps = {
+    ...footerProps,
+    onRequestSubmit: onSubmit,
+    primaryButtonDisabled: !selectedIds.length,
+  };
+
+  // RENDER THE CHILD RENDER-PROP
+  // We render the main child prop and extract the subcomponents based on their positions.
+  // We are using the children-prop but could just as well have used normal render
+  // props for these sub components.
   const [modalHeader, modalBody, modalFooter] = getRenderPropChildren(
     {
-      checkboxListProps: { data, selectedIds, onChange: onCheckboxChange },
-      footerProps: { ...footerProps, onRequestSubmit: onSubmit },
+      // These props will be exposed to the child render prop
+      checkboxListProps: modifiedCheckboxListProps,
+      footerProps: modifiedFooterProps,
       headerProps,
     },
     children
   );
 
+  // The returning JSX stays small and easy to read
   return (
     <ComposedModal open>
       {modalHeader || renderDefaultHeader(headerProps)}
-      {modalBody || renderDefaultBody({ data, selectedIds, onChange: onCheckboxChange })}
-      {modalFooter || renderDefaultFooter({ ...footerProps, onRequestSubmit: onSubmit })}
+      {modalBody || renderDefaultBody(modifiedCheckboxListProps)}
+      {modalFooter || renderDefaultFooter(modifiedFooterProps)}
     </ComposedModal>
   );
 };
