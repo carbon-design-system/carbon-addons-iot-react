@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ClickableTile } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
+import { SvgPropType } from '../../constants/SharedPropTypes';
 
 const { prefix } = settings;
 
@@ -17,7 +18,7 @@ const propTypes = {
       width: PropTypes.string,
       height: PropTypes.string,
       viewBox: PropTypes.string.isRequired,
-      svgData: PropTypes.object.isRequired,
+      svgData: SvgPropType.isRequired,
     }),
     PropTypes.node,
   ]),
@@ -106,7 +107,7 @@ const TileGalleryItem = ({
           mode === 'grid' ? 'card' : 'list'
         }-title`}
         key={`${title}-card-link`}
-        handleClick={onClick}
+        onClick={onClick}
         data-testid={testId}
       >
         {tile}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import { NumberInput } from 'carbon-components-react';
 import {
   TrashCan32,
@@ -45,6 +45,7 @@ const propTypes = {
     borderWidthInvalidText: PropTypes.string,
     deleteButtonLabelText: PropTypes.string,
     deleteButtonIconDescription: PropTypes.string,
+    selectAColor: PropTypes.string,
   }),
   /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func.isRequired,
@@ -57,6 +58,21 @@ const propTypes = {
     bold: PropTypes.bool,
     italic: PropTypes.bool,
     underline: PropTypes.bool,
+    content: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+        attributes: PropTypes.arrayOf(
+          PropTypes.shape({
+            dataItemId: PropTypes.string,
+            dataSourceId: PropTypes.string,
+            label: PropTypes.string,
+            precision: PropTypes.number,
+          })
+        ),
+      }),
+    ]),
     fontColor: PropTypes.oneOfType([PropTypes.string, colorPropType]),
     fontSize: PropTypes.number,
     backgroundColor: PropTypes.oneOfType([PropTypes.string, colorPropType]),

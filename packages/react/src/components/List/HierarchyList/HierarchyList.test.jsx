@@ -1,16 +1,19 @@
 import React from 'react';
 import { render, fireEvent, screen, within, waitFor } from '@testing-library/react';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 import userEvent from '@testing-library/user-event';
 
 import { sampleHierarchy } from '../List.story';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
-import { InlineLoading } from '../../..';
+import { settings } from '../../../constants/Settings';
+import { InlineLoading } from '../../InlineLoading';
 
 import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from './HierarchyList';
 
+const { iotPrefix } = settings;
+
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
-jest.mock('lodash/debounce', () => (fn) => fn);
+jest.mock('lodash-es/debounce', () => (fn) => fn);
 
 const getListItems = (num) =>
   Array(num)
@@ -23,6 +26,19 @@ const getListItems = (num) =>
 
 describe('HierarchyList', () => {
   const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
+
+  const getCloseButtonForTeam = (id) =>
+    within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).getByLabelText('Close');
+  const getExpandButtonForTeam = (id) =>
+    within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).getByLabelText('Expand');
+
+  const expectTeamToBeExpanded = (id) => {
+    expect(getCloseButtonForTeam(id)).toBeVisible();
+  };
+
+  const expectTeamNotToBeExpanded = (id) => {
+    expect(getExpandButtonForTeam(id)).toBeVisible();
+  };
 
   beforeEach(() => {
     // Mock the scroll function as its not implemented in jsdom
@@ -725,8 +741,13 @@ describe('HierarchyList', () => {
 
     fireEvent.click(expandIcons[1]);
 
+    // Make a selection to show the "Move button"
+    fireEvent.click(screen.queryByTestId('New York Yankees_Gary Sanchez-checkbox'));
+    // Open the reorder modal
+    userEvent.click(screen.getByText('Move'));
+
     userEvent.click(screen.queryByText('Save'));
-    expect(onSelect).not.toHaveBeenCalled();
+
     expect(onListUpdated).not.toHaveBeenCalled();
   });
 
@@ -799,6 +820,263 @@ describe('HierarchyList', () => {
     expect(container.querySelectorAll('input[checked]').length).toBe(0);
   });
 
+  it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
+    render(
+      <HierarchyList
+        title="Hierarchy List"
+        items={getListItems(2)}
+        editingStyle={EditingStyle.SingleNesting}
+        lockedIds={['1']}
+      />
+    );
+
+    expect(
+      within(screen.getByTestId('list'))
+        .getByText('Item 1')
+        .closest(`.${iotPrefix}--list-item-parent > *`)
+    ).not.toHaveAttribute('draggable');
+
+    expect(
+      within(screen.getByTestId('list')).getByText('Item 1').closest(`.${iotPrefix}--list-item`)
+        .firstChild
+    ).toHaveClass(`${iotPrefix}--list-item--lock`);
+
+    expect(
+      within(screen.getByTestId('list'))
+        .getAllByText('Item 2')[0]
+        .closest(`.${iotPrefix}--list-item-parent > *`)
+    ).toHaveAttribute('draggable');
+  });
+
+  it('should uncheck children when the parent is unchecked.', () => {
+    const onSelect = jest.fn();
+    const { container } = render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+        onSelect={onSelect}
+      />
+    );
+
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.getByText('10 items selected')).toBeVisible();
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.queryByText('10 items selected')).toBeNull();
+    expect(container.querySelectorAll('input[checked]').length).toBe(0);
+  });
+
+  it('should not selected a locked row when parent selected', () => {
+    const onSelect = jest.fn();
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+        lockedIds={['Atlanta Braves_Dansby Swanson']}
+        defaultExpandedIds={['Atlanta Braves']}
+        onSelect={onSelect}
+      />
+    );
+
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.getByText('9 items selected')).toBeVisible();
+    userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+    expect(onSelect).toHaveBeenCalled();
+    expect(screen.queryByText('9 items selected')).toBeNull();
+    expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
+  });
+
+  it('should force ids to be expanded when expandedIds is passed', () => {
+    const { rerender } = render(
+      <HierarchyList items={items} title="Force expanded ids" expandedIds={['Chicago White Sox']} />
+    );
+
+    expectTeamToBeExpanded('Chicago White Sox');
+
+    rerender(
+      <HierarchyList
+        items={items}
+        title="Force expanded ids"
+        expandedIds={['Chicago White Sox', 'New York Yankees']}
+      />
+    );
+
+    expectTeamToBeExpanded('Chicago White Sox');
+    expectTeamToBeExpanded('New York Yankees');
+
+    rerender(
+      <HierarchyList items={items} title="Force expanded ids" expandedIds={['Houston Astros']} />
+    );
+
+    expectTeamToBeExpanded('Houston Astros');
+    expectTeamNotToBeExpanded('Chicago White Sox');
+    expectTeamNotToBeExpanded('New York Yankees');
+
+    rerender(<HierarchyList items={items} title="Force expanded ids" expandedIds={[]} />);
+
+    expect(screen.queryByLabelText('Close')).toBeNull();
+  });
+
+  it('should set indeterminate state on parent when a child is checked', () => {
+    render(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        defaultExpandedIds={['Atlanta Braves']}
+        title="indeterminate Ids"
+      />
+    );
+
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
+  });
+
+  it('should unset indeterminate state on parent when a preselected child is unchecked', () => {
+    render(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        defaultExpandedIds={['Atlanta Braves']}
+        defaultSelectedId="Atlanta Braves_Ronald Acuna Jr."
+        title="indeterminate Ids"
+      />
+    );
+
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
+  });
+
+  it('should check the parent when all children are checked', () => {
+    render(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        defaultExpandedIds={['Atlanta Braves']}
+        title="indeterminate Ids"
+      />
+    );
+
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Freddie Freeman-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Josh Donaldson-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Nick Markakis-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Austin Riley-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Brian McCann-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Ozzie Albies-checkbox'));
+    userEvent.click(screen.getByTestId('Atlanta Braves_Kevin Gausman-checkbox'));
+    expect(screen.getByTestId('Atlanta Braves-checkbox')).toBeChecked();
+  });
+
+  it('should show custom empty state when given', () => {
+    const { rerender } = render(
+      <HierarchyList items={[]} title="Empty List" emptyState="__custom-empty-state__" />
+    );
+
+    expect(screen.getByText('__custom-empty-state__')).toBeVisible();
+
+    rerender(
+      <HierarchyList items={[]} title="Empty List" emptyState={<div>A CUSTOM EMPTY NODE</div>} />
+    );
+
+    expect(screen.getByText('A CUSTOM EMPTY NODE')).toBeVisible();
+  });
+
+  it('should reset pagination and search when data changes', () => {
+    const { rerender } = render(
+      <HierarchyList items={getListItems(100)} hasSearch title="Changing List" pageSize="sm" />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Enter a value'), '5');
+    expect(screen.getByTitle('Item 5')).toBeVisible();
+    expect(screen.getByTitle('Item 15')).toBeVisible();
+    expect(screen.getByTitle('Item 25')).toBeVisible();
+    expect(screen.getByTitle('Item 35')).toBeVisible();
+    expect(screen.getByTitle('Item 45')).toBeVisible();
+    userEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    expect(screen.getByText('Page 2')).toBeVisible();
+    expect(screen.getByTitle('Item 50')).toBeVisible();
+    expect(screen.getByTitle('Item 51')).toBeVisible();
+    expect(screen.getByTitle('Item 52')).toBeVisible();
+    expect(screen.getByTitle('Item 53')).toBeVisible();
+    expect(screen.getByTitle('Item 54')).toBeVisible();
+    rerender(<HierarchyList items={getListItems(50)} title="Changing List" pageSize="sm" />);
+    expect(screen.getByText('Page 1')).toBeVisible();
+    expect(screen.getByTitle('Item 1')).toBeVisible();
+    expect(screen.getByTitle('Item 2')).toBeVisible();
+    expect(screen.getByTitle('Item 3')).toBeVisible();
+    expect(screen.getByTitle('Item 4')).toBeVisible();
+    expect(screen.getByTitle('Item 5')).toBeVisible();
+  });
+
+  it('should fire onExpandedChange when user expands or collapses hierarchies', () => {
+    const onExpandedChange = jest.fn();
+
+    const { rerender } = render(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        defaultExpandedIds={['Atlanta Braves']}
+        title="indeterminate Ids"
+        onExpandedChange={onExpandedChange}
+      />
+    );
+    expect(onExpandedChange).toHaveBeenCalledTimes(0);
+
+    userEvent.click(getCloseButtonForTeam('Atlanta Braves'));
+    expect(onExpandedChange).toHaveBeenCalledWith([]);
+    expect(onExpandedChange).toHaveBeenCalledTimes(1);
+    userEvent.click(getExpandButtonForTeam('Atlanta Braves'));
+    expect(onExpandedChange).toHaveBeenCalledWith(['Atlanta Braves']);
+    expect(onExpandedChange).toHaveBeenCalledTimes(2);
+
+    rerender(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        title="indeterminate Ids"
+        onExpandedChange={onExpandedChange}
+        expandedIds={['Atlanta Braves', 'Chicago White Sox']}
+      />
+    );
+
+    expect(onExpandedChange).toHaveBeenCalledWith(['Atlanta Braves', 'Chicago White Sox']);
+    expect(onExpandedChange).toHaveBeenCalledTimes(3);
+    userEvent.click(getExpandButtonForTeam('New York Mets'));
+    expect(onExpandedChange).toHaveBeenCalledWith([
+      'Atlanta Braves',
+      'Chicago White Sox',
+      'New York Mets',
+    ]);
+    expect(onExpandedChange).toHaveBeenCalledTimes(4);
+
+    rerender(
+      <HierarchyList
+        items={items}
+        editingStyle={EditingStyle.MultipleNesting}
+        title="indeterminate Ids"
+        onExpandedChange={onExpandedChange}
+      />
+    );
+
+    expect(onExpandedChange).toHaveBeenCalledWith([]);
+    expect(onExpandedChange).toHaveBeenCalledTimes(5);
+  });
+
+  /** ***********************************************
+   * VirtualListTests
+   ************************************************ */
+
   describe('isVirtualList', () => {
     beforeEach(() => {
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
@@ -825,19 +1103,167 @@ describe('HierarchyList', () => {
       expect(screen.getByText('Page 2')).toBeVisible();
       expect(screen.getByText('Item 9')).toBeVisible();
     });
-  });
 
-  it('should show custom empty state when given', () => {
-    const { rerender } = render(
-      <HierarchyList items={[]} title="Empty List" emptyState="__custom-empty-state__" />
-    );
+    it('should uncheck children when the parent is unchecked.', () => {
+      const onSelect = jest.fn();
+      const { container } = render(
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          editingStyle={EditingStyle.MultipleNesting}
+          onSelect={onSelect}
+          isVirtualList
+        />
+      );
 
-    expect(screen.getByText('__custom-empty-state__')).toBeVisible();
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.getByText('10 items selected')).toBeVisible();
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.queryByText('10 items selected')).toBeNull();
+      expect(container.querySelectorAll('input[checked]').length).toBe(0);
+    });
 
-    rerender(
-      <HierarchyList items={[]} title="Empty List" emptyState={<div>A CUSTOM EMPTY NODE</div>} />
-    );
+    it('should not selected a locked row when parent selected', () => {
+      const onSelect = jest.fn();
+      render(
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          editingStyle={EditingStyle.MultipleNesting}
+          lockedIds={['Atlanta Braves_Dansby Swanson']}
+          defaultExpandedIds={['Atlanta Braves']}
+          onSelect={onSelect}
+          isVirtualList
+        />
+      );
 
-    expect(screen.getByText('A CUSTOM EMPTY NODE')).toBeVisible();
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.getByText('9 items selected')).toBeVisible();
+      userEvent.click(screen.getByTestId('Atlanta Braves-checkbox'));
+      expect(onSelect).toHaveBeenCalled();
+      expect(screen.queryByText('9 items selected')).toBeNull();
+      expect(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox')).not.toBeChecked();
+    });
+
+    it('should force ids to be expanded when expandedIds is passed', () => {
+      const expectTeamToBeExpanded = (id) => {
+        expect(
+          within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).getByLabelText('Close')
+        ).toBeVisible();
+      };
+
+      const expectTeamNotToBeExpanded = (id) => {
+        expect(
+          within(screen.getByTitle(id).closest(`.${iotPrefix}--list-item`)).queryByLabelText(
+            'Close'
+          )
+        ).toBeNull();
+      };
+
+      const { rerender } = render(
+        <HierarchyList
+          items={items}
+          title="Force expanded ids"
+          expandedIds={['Chicago White Sox']}
+          isVirtualList
+        />
+      );
+
+      expectTeamToBeExpanded('Chicago White Sox');
+
+      rerender(
+        <HierarchyList
+          items={items}
+          title="Force expanded ids"
+          expandedIds={['Chicago White Sox', 'New York Yankees']}
+          isVirtualList
+        />
+      );
+
+      expectTeamToBeExpanded('Chicago White Sox');
+      expectTeamToBeExpanded('New York Yankees');
+
+      rerender(
+        <HierarchyList
+          items={items}
+          title="Force expanded ids"
+          expandedIds={['Houston Astros']}
+          isVirtualList
+        />
+      );
+
+      expectTeamToBeExpanded('Houston Astros');
+      expectTeamNotToBeExpanded('Chicago White Sox');
+      expectTeamNotToBeExpanded('New York Yankees');
+
+      rerender(
+        <HierarchyList items={items} title="Force expanded ids" expandedIds={[]} isVirtualList />
+      );
+
+      expect(screen.queryByLabelText('Close')).toBeNull();
+    });
+
+    it('should set indeterminate state on parent when a child is checked', () => {
+      render(
+        <HierarchyList
+          items={items}
+          editingStyle={EditingStyle.MultipleNesting}
+          defaultExpandedIds={['Atlanta Braves']}
+          title="indeterminate Ids"
+          isVirtualList
+        />
+      );
+
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
+    });
+
+    it('should unset indeterminate state on parent when a preselected child is unchecked', () => {
+      render(
+        <HierarchyList
+          items={items}
+          editingStyle={EditingStyle.MultipleNesting}
+          defaultExpandedIds={['Atlanta Braves']}
+          defaultSelectedId="Atlanta Braves_Ronald Acuna Jr."
+          title="indeterminate Ids"
+          isVirtualList
+        />
+      );
+
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).toBePartiallyChecked();
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBePartiallyChecked();
+    });
+
+    it('should check the parent when all children are checked', () => {
+      render(
+        <HierarchyList
+          items={items}
+          editingStyle={EditingStyle.MultipleNesting}
+          defaultExpandedIds={['Atlanta Braves']}
+          title="indeterminate Ids"
+          isVirtualList
+        />
+      );
+
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).not.toBeChecked();
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ronald Acuna Jr.-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Dansby Swanson-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Freddie Freeman-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Josh Donaldson-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Nick Markakis-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Austin Riley-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Brian McCann-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Ozzie Albies-checkbox'));
+      userEvent.click(screen.getByTestId('Atlanta Braves_Kevin Gausman-checkbox'));
+      expect(screen.getByTestId('Atlanta Braves-checkbox')).toBeChecked();
+    });
   });
 });

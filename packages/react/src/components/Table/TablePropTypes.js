@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 
+import { SvgPropType } from '../../constants/SharedPropTypes';
 import deprecate from '../../internal/deprecate';
 import { bundledIconNames } from '../../utils/bundledIcons';
 
@@ -13,7 +14,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
         width: PropTypes.string,
         height: PropTypes.string,
         viewBox: PropTypes.string.isRequired,
-        svgData: PropTypes.object.isRequired,
+        svgData: SvgPropType.isRequired,
       }),
       PropTypes.oneOf(bundledIconNames),
       PropTypes.node,
@@ -212,6 +213,8 @@ export const I18NPropTypes = PropTypes.shape({
   multiSortDragHandle: PropTypes.string,
   /** I18N label for load more row */
   loadMoreText: PropTypes.string,
+  /** aria-label applied to the tooltip in the toolbar (if given) */
+  toolbarTooltipLabel: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
@@ -277,6 +280,7 @@ export const defaultI18NPropTypes = {
   multiSortOpenMenu: 'Open menu',
   multiSortCloseMenu: 'Close menu',
   multiSortDragHandle: 'Drag handle',
+  toolbarTooltipLabel: 'Toolbar tooltip',
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
@@ -316,3 +320,52 @@ export const TableOrderingPropType = PropTypes.arrayOf(
     columnGroupId: PropTypes.string,
   })
 );
+
+export const TableFiltersPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    columnId: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.bool,
+      PropTypes.arrayOf(PropTypes.string),
+    ]).isRequired,
+  })
+);
+
+export const TableToolbarActionsPropType = PropTypes.oneOfType([
+  /** allow the actions to be generated dynamically by a callback */
+  PropTypes.func,
+  PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      /** the item is displayed, but disabled */
+      disabled: PropTypes.bool,
+      /** the text for the option */
+      labelText: PropTypes.string.isRequired,
+      /** filters out the option so it isn't displayed */
+      hidden: PropTypes.bool,
+      /** displays the option in red */
+      isDelete: PropTypes.bool,
+      /** the icon to render for this action */
+      renderIcon: PropTypes.oneOfType([
+        PropTypes.shape({
+          width: PropTypes.string,
+          height: PropTypes.string,
+          viewBox: PropTypes.string.isRequired,
+          svgData: SvgPropType.isRequired,
+        }),
+        PropTypes.oneOf(bundledIconNames),
+        PropTypes.node,
+        PropTypes.object,
+        PropTypes.func,
+      ]),
+      /** show a divider above this item */
+      hasDivider: PropTypes.bool,
+      /** should this action be shown in the overflow menu */
+      isOverflow: PropTypes.bool,
+      /** only used for actions in the toolbar (not overflow menu) to show when they are active */
+      isActive: PropTypes.bool,
+    })
+  ),
+]);

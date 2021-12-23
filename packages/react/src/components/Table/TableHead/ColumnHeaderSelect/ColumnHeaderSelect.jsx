@@ -34,7 +34,7 @@ const ColumnHeaderSelect = ({
       kind="secondary"
       key={columnId}
       onClick={() => onClick()}
-      role="presentation"
+      role="button"
       data-ishidden={isHidden}
       renderIcon={Draggable16}
       size="small"

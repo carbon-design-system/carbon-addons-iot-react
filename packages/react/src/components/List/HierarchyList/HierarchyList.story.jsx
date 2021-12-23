@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { text, select, boolean, object } from '@storybook/addon-knobs';
+import { text, select, boolean, object, number, array } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-import { Button, InlineLoading, DragAndDrop } from '../../..';
-import { EditingStyle } from '../../../utils/DragAndDropUtils';
+import Button from '../../Button';
+import { InlineLoading } from '../../InlineLoading';
+import { EditingStyle, DragAndDrop } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
 import HierarchyList from './HierarchyList';
@@ -78,6 +79,8 @@ export const StatefulListWithNestedSearching = () => (
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -127,6 +130,8 @@ export const WithDefaultSelectedId = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -197,11 +202,17 @@ export const WithOverflowMenu = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array(
+        'A comma separated list of expandedIds (expandedIds)',
+        ['Chicago White Sox'],
+        ','
+      )}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
 
-WithOverflowMenu.storyName = 'With OverflowMenu';
+WithOverflowMenu.storyName = 'With OverflowMenu and controlled expandedIds';
 
 export const WithNestedReorder = () => {
   const HierarchyListWithReorder = () => {
@@ -263,6 +274,9 @@ export const WithNestedReorder = () => {
           hasDeselection={boolean('hasDeselection', true)}
           hasMultiSelect={boolean('hasMultiSelect', false)}
           isVirtualList={boolean('hasVirtualList', false)}
+          lockedIds={object('lockedIds', ['New York Mets_Jeff McNeil'])}
+          expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+          onExpandedChange={action('onExpandedChange')}
         />
       </div>
     );
@@ -272,6 +286,90 @@ export const WithNestedReorder = () => {
 };
 
 WithNestedReorder.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
+export const WithNestedReorderingRestricted = () => {
+  const HierarchyListWithReorderAndRestrictions = () => {
+    const [items, setItems] = useState([
+      ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
+        id: team,
+        isCategory: true,
+        content: {
+          value: team,
+        },
+        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+          },
+          isSelectable: true,
+        })),
+      })),
+      ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
+        id: team,
+        isCategory: true,
+        content: {
+          value: team,
+        },
+        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+          },
+          isSelectable: true,
+        })),
+      })),
+    ]);
+
+    const demoDropRestrictions = boolean(
+      'Demo drop restrictions to preserve teams (using getAllowedDropIds)',
+      true
+    );
+
+    return (
+      <div style={{ width: 400, height: 400 }}>
+        <HierarchyList
+          title={text('Title', 'Preserve team compositions')}
+          items={items}
+          editingStyle={EditingStyle.Single}
+          onListUpdated={(updatedItems) => {
+            setItems(updatedItems);
+          }}
+          // Prevent nested dropping, so that a team cannot be dropped in a team
+          itemWillMove={(...args) => args[2] !== 'nested'}
+          hasSearch={boolean('hasSearch', true)}
+          isVirtualList={boolean('hasVirtualList', false)}
+          expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+          onExpandedChange={action('onExpandedChange')}
+          getAllowedDropIds={
+            demoDropRestrictions
+              ? (dragId) => {
+                  const teamIsDragged = items.find(({ id }) => id === dragId);
+                  return teamIsDragged
+                    ? // Return team ids
+                      items.map(({ id }) => id)
+                    : // Return teammate ids
+                      items
+                        .find((team) => team.children.find(({ id }) => dragId === id))
+                        .children.map(({ id }) => id);
+                }
+              : null
+          }
+        />
+      </div>
+    );
+  };
+
+  return <HierarchyListWithReorderAndRestrictions />;
+};
+
+WithNestedReorderingRestricted.storyName = 'With nested reordering restricted';
+WithNestedReorderingRestricted.decorators = [
   (Story) => (
     <DragAndDrop>
       <Story />
@@ -322,6 +420,8 @@ export const WithDefaultExpandedIds = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -407,6 +507,8 @@ export const WithMixedHierarchies = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -457,6 +559,8 @@ export const WithSelectableCategories = () => (
       hasDeselection={boolean('hasDeselection', true)}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -468,10 +572,17 @@ export const WithLargeNumberOfItems = () => (
     <HierarchyList
       title={text('Title', 'Big List')}
       isFullHeight={boolean('isFullHeight', false)}
-      items={[...Array(1000)].map((_, i) => ({
+      items={[...Array(number('number of items to render', 1000))].map((_, i) => ({
         id: `item-${i}`,
         content: {
-          value: `Item ${i}`,
+          value:
+            i === 20
+              ? `Item ${i} that has an extra long label that will definitely be truncated`
+              : `Item ${i}`,
+          secondaryValue:
+            i === 10
+              ? `Item ${i} that has an extra long label that will definitely be truncated`
+              : `Item ${i} Subvalue`,
         },
       }))}
       editingStyle={EditingStyle.Single}
@@ -487,6 +598,7 @@ export const WithLargeNumberOfItems = () => (
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       isVirtualList={boolean('hasVirtualList', true)}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );
@@ -511,6 +623,7 @@ export const WithEmptyState = () => (
       })}
       hasMultiSelect={boolean('hasMultiSelect', false)}
       emptyState={text('emptyState', '__a custom empty state__')}
+      onExpandedChange={action('onExpandedChange')}
     />
   </div>
 );

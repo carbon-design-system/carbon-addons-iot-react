@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 
@@ -13,7 +13,10 @@ describe('DashboardEditorCardRenderer', () => {
     expect(screen.getByText(/myid/)).toBeInTheDocument();
   });
   it('timeseries card just renders id', () => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
     render(<DashboardEditorCardRenderer {...commonProps} type={CARD_TYPES.TIMESERIES} id="myid" />);
+    expect(console.warn).toHaveBeenCalledWith(`Warning: The card JSON for myid is invalid.`);
+    console.warn.mockReset();
     expect(screen.getByText(/myid/)).toBeInTheDocument();
   });
   it('value card renders threshold icon', () => {
@@ -211,7 +214,7 @@ describe('DashboardEditorCardRenderer', () => {
         isResizable
         key="listCard"
         title="ListCard render"
-        size={CARD_SIZES.SMALL}
+        size={CARD_SIZES.MEDIUM}
         data={listCardData}
         hasMoreData={false}
         loadData={() => {}}
@@ -231,40 +234,44 @@ describe('DashboardEditorCardRenderer', () => {
     expect(screen.getByText(/defaultCard/)).toBeInTheDocument();
   });
 
-  it('should call onFetchDynamicDemoHotspots when the function is available and dynamic hotspots are passed', () => {
+  it('should call onFetchDynamicDemoHotspots when the function is available and dynamic hotspots are passed', async () => {
     const onCardChange = jest.fn();
 
     const onFetchDynamicDemoHotspots = jest
       .fn()
       .mockImplementation(
-        () => new Promise((resolve) => resolve([{ x: 75, y: 10, type: 'text' }]))
+        () =>
+          new Promise((resolve) =>
+            resolve([{ x: 75, y: 10, type: 'text', content: { title: 'Title' } }])
+          )
       );
-
-    render(
-      <DashboardEditorCardRenderer
-        {...commonProps}
-        size={CARD_SIZES.MEDIUM}
-        type="IMAGE"
-        onCardChange={onCardChange}
-        content={{
-          src: 'landscape',
-          image: 'landscape',
-          alt: 'Sample image',
-          zoomMax: 10,
-          hasInsertFromUrl: true,
-        }}
-        onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-        values={{
-          hotspots: [
-            {
-              color: 'purple',
-              icon: 'Checkmark',
-              type: 'dynamic',
-            },
-          ],
-        }}
-      />
-    );
+    await act(async () => {
+      render(
+        <DashboardEditorCardRenderer
+          {...commonProps}
+          size={CARD_SIZES.MEDIUM}
+          type="IMAGE"
+          onCardChange={onCardChange}
+          content={{
+            src: 'landscape',
+            image: 'landscape',
+            alt: 'Sample image',
+            zoomMax: 10,
+            hasInsertFromUrl: true,
+          }}
+          onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+          values={{
+            hotspots: [
+              {
+                color: 'purple',
+                icon: 'Checkmark',
+                type: 'dynamic',
+              },
+            ],
+          }}
+        />
+      );
+    });
 
     expect(onFetchDynamicDemoHotspots).toHaveBeenCalled();
   });

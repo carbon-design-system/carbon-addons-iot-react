@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import isEqual from 'lodash/isEqual';
+import { isEqual } from 'lodash-es';
 import update from 'immutability-helper';
 
 import Button from '../../Button/Button';
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { settings } from '../../../constants/Settings';
 import { TableColumnsPropTypes, TableSortPropType } from '../TablePropTypes';
-import { DragAndDrop } from '../../..';
+import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 
 import { TableMultiSortRow } from './TableMultiSortRow';
 
@@ -29,7 +29,7 @@ const propTypes = {
     onCancelMultiSortColumns: PropTypes.func,
     onClearMultiSortColumns: PropTypes.func,
   }).isRequired,
-  sort: PropTypes.arrayOf(TableSortPropType).isRequired,
+  sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]).isRequired,
   showMultiSortModal: PropTypes.bool,
   i18n: PropTypes.shape({
     multiSortModalTitle: PropTypes.string,

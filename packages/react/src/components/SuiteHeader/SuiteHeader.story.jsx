@@ -4,13 +4,13 @@
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { ScreenOff16, Switcher24 } from '@carbon/icons-react';
-import Chip from '@carbon/icons-react/lib/chip/24';
-import Dashboard from '@carbon/icons-react/lib/dashboard/24';
-import Group from '@carbon/icons-react/lib/group/24';
-import NotificationOn from '@carbon/icons-react/lib/notification/24';
-import Bee from '@carbon/icons-react/lib/bee/24';
-import Car from '@carbon/icons-react/lib/car/24';
-import Chat from '@carbon/icons-react/lib/chat/24';
+import Chip from '@carbon/icons-react/es/chip/24';
+import Dashboard from '@carbon/icons-react/es/dashboard/24';
+import Group from '@carbon/icons-react/es/group/24';
+import NotificationOn from '@carbon/icons-react/es/notification/24';
+import Bee from '@carbon/icons-react/es/bee/24';
+import Car from '@carbon/icons-react/es/car/24';
+import Chat from '@carbon/icons-react/es/chat/24';
 
 import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';
@@ -354,7 +354,7 @@ export const HeaderWithExtraContent = () => {
     <SuiteHeader
       suiteName="Application Suite"
       appName="Application Name"
-      extraContent={<Tag>Admin Mode</Tag>}
+      extraContent={<Tag size="sm">Admin Mode</Tag>}
       userDisplayName="Admin User"
       username="adminuser"
       routes={{
@@ -614,9 +614,8 @@ export const HeaderWithIdleLogoutConfirmation = () => (
     />
     <p>The logout confirmation dialog will show up after 10 seconds of inactivity.</p>
     <p>
-      {
-        'Open this story in another tab, wait for the dialog to show up in both tabs, then click "Stay logged in" to see the other dialog go away.'
-      }
+      Open this story in another tab, wait for the dialog to show up in both tabs, then click
+      &ldquo;Stay logged in&ldquo; to see the other dialog go away.
     </p>
   </>
 );

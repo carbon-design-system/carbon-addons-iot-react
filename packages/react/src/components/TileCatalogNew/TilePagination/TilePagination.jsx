@@ -14,7 +14,13 @@ const propTypes = {
   /** call back function receive current page number */
   onChange: PropTypes.func.isRequired,
   /** i18n strings */
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    ariaLabelPreviousPage: PropTypes.string,
+    ariaLabelNextPage: PropTypes.string,
+    ariaLabelPagination: PropTypes.string,
+    ariaLabelPage: PropTypes.string,
+    ariaLabelSelect: PropTypes.string,
+  }),
   testId: PropTypes.string,
 };
 

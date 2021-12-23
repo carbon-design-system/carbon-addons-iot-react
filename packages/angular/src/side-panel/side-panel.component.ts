@@ -71,7 +71,6 @@ import { IconService } from 'carbon-components-angular';
       </div>
     </div>
   `,
-  styleUrls: ['side-panel.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class SidePanel implements OnInit {

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
-import escapeRegExp from 'lodash/escapeRegExp';
+import { get, escapeRegExp } from 'lodash-es';
 import { ButtonKinds } from 'carbon-components-react/es/prop-types/types';
 
 import PageTitleBar from '../PageTitleBar';
 import Button from '../Button';
+import { SvgPropType } from '../../constants/SharedPropTypes';
 
 import TileGallery from './TileGallery';
 import TileGallerySection from './TileGallerySection';
@@ -53,7 +53,7 @@ const propTypes = {
               width: PropTypes.string,
               height: PropTypes.string,
               viewBox: PropTypes.string.isRequired,
-              svgData: PropTypes.object.isRequired,
+              svgData: SvgPropType.isRequired,
             }),
             PropTypes.node,
           ]),
@@ -139,7 +139,7 @@ const StatefulTileGallery = ({
               i18n={{
                 iconDescription: i18n.searchIconDescription,
                 placeHolderText: i18n.searchPlaceHolderText,
-                closeButtonText: i18n.searchBloseButtonText,
+                closeButtonText: i18n.searchCloseButtonText,
               }}
               testId={`${testId}-search-input`}
             />

@@ -1,0 +1,31 @@
+@import '../../globals/vars';
+
+/* stylelint-disable-next-line */
+ai-table {
+  tr.table-row:not(:first-of-type) {
+    border-top: 2px solid $ui-01;
+  }
+
+  th:not(:last-of-type) {
+    border-right: 2px solid $ui-01;
+
+    &.table-selection-column {
+      border-right: none;
+    }
+  }
+
+  .#{$prefix}--table-sort,
+  &.#{$prefix}--data-table--sort th:first-of-type .#{$prefix}--table-sort {
+    padding-left: 0;
+  }
+  &.#{$prefix}--data-table th button {
+    align-items: flex-end;
+    padding-bottom: $spacing-05;
+  }
+  &.#{$prefix}--data-table th {
+    position: inherit;
+  }
+  .#{$iot-prefix}--table-head-cell {
+    vertical-align: bottom;
+  }
+}

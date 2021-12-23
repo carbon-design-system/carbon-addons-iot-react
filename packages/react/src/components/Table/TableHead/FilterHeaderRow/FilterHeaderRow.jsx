@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, FormItem, TextInput, MultiSelect } from 'carbon-components-react';
+import { DataTable, FormItem, TextInput, FilterableMultiSelect } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
-import memoize from 'lodash/memoize';
+import { memoize, debounce, isEqual } from 'lodash-es';
 import classnames from 'classnames';
-import debounce from 'lodash/debounce';
-import isEqual from 'lodash/isEqual';
 import warning from 'warning';
 
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
@@ -149,10 +147,12 @@ class FilterHeaderRow extends Component {
     super(props);
 
     this.rowRef = React.createRef();
+    this.firstFilterableRef = React.createRef();
   }
 
   componentDidMount() {
     this.updateDropdownHeight();
+    this.updateFocus();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -176,6 +176,22 @@ class FilterHeaderRow extends Component {
         this.setState({
           dropdownMaxHeight: `${height}px`,
         });
+      }
+    }
+  };
+
+  setFirstFilterableRef = (node) => {
+    if (!this.firstFilterableRef.current && node) {
+      this.firstFilterableRef.current = node;
+    }
+  };
+
+  updateFocus = () => {
+    if (this.firstFilterableRef.current) {
+      if (typeof this.firstFilterableRef.current.focus === 'function') {
+        this.firstFilterableRef.current.focus();
+      } else if (typeof this.firstFilterableRef.current.textInput.current.focus === 'function') {
+        this.firstFilterableRef.current.textInput.current.focus();
       }
     }
   };
@@ -265,7 +281,8 @@ class FilterHeaderRow extends Component {
               <div />
             ) : column.options ? (
               column.isMultiselect ? (
-                <MultiSelect.Filterable
+                <FilterableMultiSelect
+                  ref={this.setFirstFilterableRef}
                   key={columnStateValue}
                   className={classnames(
                     `${iotPrefix}--filterheader-multiselect`,
@@ -306,6 +323,7 @@ class FilterHeaderRow extends Component {
                 />
               ) : (
                 <ComboBox
+                  ref={this.setFirstFilterableRef}
                   menuFitContent
                   horizontalDirection={isLastColumn ? 'start' : 'end'}
                   key={columnStateValue}
@@ -342,6 +360,7 @@ class FilterHeaderRow extends Component {
             ) : (
               <FormItem className={`${iotPrefix}--filter-header-row--form-item`}>
                 <TextInput
+                  ref={this.setFirstFilterableRef}
                   id={column.id}
                   labelText={column.id}
                   hideLabel

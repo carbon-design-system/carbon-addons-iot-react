@@ -10,6 +10,13 @@ import { itemsAndComponents } from './WizardInline.story';
 const { iotPrefix } = settings;
 
 describe('WizardInline', () => {
+  beforeEach(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
   it('should be selectable by testId', () => {
     render(
       <WizardInline
@@ -22,6 +29,12 @@ describe('WizardInline', () => {
         testId="wizard_inline"
       />
     );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The prop `blurb` for WizardInline has been deprecated in favor of `description`'
+      )
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('wizard_inline')).toBeDefined();
     expect(screen.getByTestId('wizard_inline-header-page-title-bar')).toBeDefined();
     expect(screen.getByTestId('wizard_inline-content')).toBeDefined();

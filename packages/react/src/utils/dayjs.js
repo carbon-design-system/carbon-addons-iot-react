@@ -1,144 +1,5 @@
 import originalDayJS from 'dayjs';
 
-// dayjs doesn't load locale data automatically, specify locales to include in bundle here
-import 'dayjs/locale/af';
-import 'dayjs/locale/am';
-import 'dayjs/locale/ar-dz';
-import 'dayjs/locale/ar-kw';
-import 'dayjs/locale/ar-ly';
-import 'dayjs/locale/ar-ma';
-import 'dayjs/locale/ar-sa';
-import 'dayjs/locale/ar-tn';
-import 'dayjs/locale/ar';
-import 'dayjs/locale/az';
-import 'dayjs/locale/be';
-import 'dayjs/locale/bg';
-import 'dayjs/locale/bi';
-import 'dayjs/locale/bm';
-import 'dayjs/locale/bn';
-import 'dayjs/locale/bo';
-import 'dayjs/locale/br';
-import 'dayjs/locale/bs';
-import 'dayjs/locale/ca';
-import 'dayjs/locale/cs';
-import 'dayjs/locale/cv';
-import 'dayjs/locale/cy';
-import 'dayjs/locale/da';
-import 'dayjs/locale/de-at';
-import 'dayjs/locale/de-ch';
-import 'dayjs/locale/de';
-import 'dayjs/locale/dv';
-import 'dayjs/locale/el';
-import 'dayjs/locale/en-au';
-import 'dayjs/locale/en-ca';
-import 'dayjs/locale/en-gb';
-import 'dayjs/locale/en-ie';
-import 'dayjs/locale/en-il';
-import 'dayjs/locale/en-in';
-import 'dayjs/locale/en-nz';
-import 'dayjs/locale/en-sg';
-import 'dayjs/locale/en-tt';
-import 'dayjs/locale/en';
-import 'dayjs/locale/eo';
-import 'dayjs/locale/es-do';
-import 'dayjs/locale/es-pr';
-import 'dayjs/locale/es-us';
-import 'dayjs/locale/es';
-import 'dayjs/locale/et';
-import 'dayjs/locale/eu';
-import 'dayjs/locale/fa';
-import 'dayjs/locale/fi';
-import 'dayjs/locale/fo';
-import 'dayjs/locale/fr-ca';
-import 'dayjs/locale/fr-ch';
-import 'dayjs/locale/fr';
-import 'dayjs/locale/fy';
-import 'dayjs/locale/ga';
-import 'dayjs/locale/gd';
-import 'dayjs/locale/gl';
-import 'dayjs/locale/gom-latn';
-import 'dayjs/locale/gu';
-import 'dayjs/locale/he';
-import 'dayjs/locale/hi';
-import 'dayjs/locale/hr';
-import 'dayjs/locale/ht';
-import 'dayjs/locale/hu';
-import 'dayjs/locale/hy-am';
-import 'dayjs/locale/id';
-import 'dayjs/locale/is';
-import 'dayjs/locale/it-ch';
-import 'dayjs/locale/it';
-import 'dayjs/locale/ja';
-import 'dayjs/locale/jv';
-import 'dayjs/locale/ka';
-import 'dayjs/locale/kk';
-import 'dayjs/locale/km';
-import 'dayjs/locale/kn';
-import 'dayjs/locale/ko';
-import 'dayjs/locale/ku';
-import 'dayjs/locale/ky';
-import 'dayjs/locale/lb';
-import 'dayjs/locale/lo';
-import 'dayjs/locale/lt';
-import 'dayjs/locale/lv';
-import 'dayjs/locale/me';
-import 'dayjs/locale/mi';
-import 'dayjs/locale/mk';
-import 'dayjs/locale/ml';
-import 'dayjs/locale/mn';
-import 'dayjs/locale/mr';
-import 'dayjs/locale/ms-my';
-import 'dayjs/locale/ms';
-import 'dayjs/locale/mt';
-import 'dayjs/locale/my';
-import 'dayjs/locale/nb';
-import 'dayjs/locale/ne';
-import 'dayjs/locale/nl-be';
-import 'dayjs/locale/nl';
-import 'dayjs/locale/nn';
-import 'dayjs/locale/oc-lnc';
-import 'dayjs/locale/pa-in';
-import 'dayjs/locale/pl';
-import 'dayjs/locale/pt-br';
-import 'dayjs/locale/pt';
-import 'dayjs/locale/ro';
-import 'dayjs/locale/ru';
-import 'dayjs/locale/rw';
-import 'dayjs/locale/sd';
-import 'dayjs/locale/se';
-import 'dayjs/locale/si';
-import 'dayjs/locale/sk';
-import 'dayjs/locale/sl';
-import 'dayjs/locale/sq';
-import 'dayjs/locale/sr-cyrl';
-import 'dayjs/locale/sr';
-import 'dayjs/locale/ss';
-import 'dayjs/locale/sv';
-import 'dayjs/locale/sw';
-import 'dayjs/locale/ta';
-import 'dayjs/locale/te';
-import 'dayjs/locale/tet';
-import 'dayjs/locale/tg';
-import 'dayjs/locale/th';
-import 'dayjs/locale/tk';
-import 'dayjs/locale/tl-ph';
-import 'dayjs/locale/tlh';
-import 'dayjs/locale/tr';
-import 'dayjs/locale/tzl';
-import 'dayjs/locale/tzm-latn';
-import 'dayjs/locale/tzm';
-import 'dayjs/locale/ug-cn';
-import 'dayjs/locale/uk';
-import 'dayjs/locale/ur';
-import 'dayjs/locale/uz-latn';
-import 'dayjs/locale/uz';
-import 'dayjs/locale/vi';
-import 'dayjs/locale/yo';
-import 'dayjs/locale/zh-cn';
-import 'dayjs/locale/zh-hk';
-import 'dayjs/locale/zh-tw';
-import 'dayjs/locale/zh';
-
 const localizedFormat = require('dayjs/plugin/localizedFormat');
 const utc = require('dayjs/plugin/utc');
 const pluralGetSet = require('dayjs/plugin/pluralGetSet');
@@ -151,5 +12,157 @@ dayjs.extend(utc); // gives .utc() and .local()
 dayjs.extend(pluralGetSet); // gives .hour .minute get/set ability
 dayjs.extend(timezone); // timezone support
 dayjs.extend(localeData); // gives local specific data
+
+/* eslint-disable global-require */
+const locales = {
+  af: () => require('dayjs/locale/af'),
+  am: () => require('dayjs/locale/am'),
+  'ar-dz': () => require('dayjs/locale/ar-dz'),
+  'ar-kw': () => require('dayjs/locale/ar-kw'),
+  'ar-ly': () => require('dayjs/locale/ar-ly'),
+  'ar-ma': () => require('dayjs/locale/ar-ma'),
+  'ar-sa': () => require('dayjs/locale/ar-sa'),
+  'ar-tn': () => require('dayjs/locale/ar-tn'),
+  ar: () => require('dayjs/locale/ar'),
+  az: () => require('dayjs/locale/az'),
+  be: () => require('dayjs/locale/be'),
+  bg: () => require('dayjs/locale/bg'),
+  bi: () => require('dayjs/locale/bi'),
+  bm: () => require('dayjs/locale/bm'),
+  bn: () => require('dayjs/locale/bn'),
+  bo: () => require('dayjs/locale/bo'),
+  br: () => require('dayjs/locale/br'),
+  bs: () => require('dayjs/locale/bs'),
+  ca: () => require('dayjs/locale/ca'),
+  cs: () => require('dayjs/locale/cs'),
+  cv: () => require('dayjs/locale/cv'),
+  cy: () => require('dayjs/locale/cy'),
+  da: () => require('dayjs/locale/da'),
+  'de-at': () => require('dayjs/locale/de-at'),
+  'de-ch': () => require('dayjs/locale/de-ch'),
+  de: () => require('dayjs/locale/de'),
+  dv: () => require('dayjs/locale/dv'),
+  el: () => require('dayjs/locale/el'),
+  'en-au': () => require('dayjs/locale/en-au'),
+  'en-ca': () => require('dayjs/locale/en-ca'),
+  'en-gb': () => require('dayjs/locale/en-gb'),
+  'en-ie': () => require('dayjs/locale/en-ie'),
+  'en-il': () => require('dayjs/locale/en-il'),
+  'en-in': () => require('dayjs/locale/en-in'),
+  'en-nz': () => require('dayjs/locale/en-nz'),
+  'en-sg': () => require('dayjs/locale/en-sg'),
+  'en-tt': () => require('dayjs/locale/en-tt'),
+  en: () => require('dayjs/locale/en'),
+  eo: () => require('dayjs/locale/eo'),
+  'es-do': () => require('dayjs/locale/es-do'),
+  'es-pr': () => require('dayjs/locale/es-pr'),
+  'es-us': () => require('dayjs/locale/es-us'),
+  es: () => require('dayjs/locale/es'),
+  et: () => require('dayjs/locale/et'),
+  eu: () => require('dayjs/locale/eu'),
+  fa: () => require('dayjs/locale/fa'),
+  fi: () => require('dayjs/locale/fi'),
+  fo: () => require('dayjs/locale/fo'),
+  'fr-ca': () => require('dayjs/locale/fr-ca'),
+  'fr-ch': () => require('dayjs/locale/fr-ch'),
+  fr: () => require('dayjs/locale/fr'),
+  fy: () => require('dayjs/locale/fy'),
+  ga: () => require('dayjs/locale/ga'),
+  gd: () => require('dayjs/locale/gd'),
+  gl: () => require('dayjs/locale/gl'),
+  'gom-latn': () => require('dayjs/locale/gom-latn'),
+  gu: () => require('dayjs/locale/gu'),
+  he: () => require('dayjs/locale/he'),
+  hi: () => require('dayjs/locale/hi'),
+  hr: () => require('dayjs/locale/hr'),
+  ht: () => require('dayjs/locale/ht'),
+  hu: () => require('dayjs/locale/hu'),
+  'hy-am': () => require('dayjs/locale/hy-am'),
+  id: () => require('dayjs/locale/id'),
+  is: () => require('dayjs/locale/is'),
+  'it-ch': () => require('dayjs/locale/it-ch'),
+  it: () => require('dayjs/locale/it'),
+  ja: () => require('dayjs/locale/ja'),
+  jv: () => require('dayjs/locale/jv'),
+  ka: () => require('dayjs/locale/ka'),
+  kk: () => require('dayjs/locale/kk'),
+  km: () => require('dayjs/locale/km'),
+  kn: () => require('dayjs/locale/kn'),
+  ko: () => require('dayjs/locale/ko'),
+  ku: () => require('dayjs/locale/ku'),
+  ky: () => require('dayjs/locale/ky'),
+  lb: () => require('dayjs/locale/lb'),
+  lo: () => require('dayjs/locale/lo'),
+  lt: () => require('dayjs/locale/lt'),
+  lv: () => require('dayjs/locale/lv'),
+  me: () => require('dayjs/locale/me'),
+  mi: () => require('dayjs/locale/mi'),
+  mk: () => require('dayjs/locale/mk'),
+  ml: () => require('dayjs/locale/ml'),
+  mn: () => require('dayjs/locale/mn'),
+  mr: () => require('dayjs/locale/mr'),
+  'ms-my': () => require('dayjs/locale/ms-my'),
+  ms: () => require('dayjs/locale/ms'),
+  mt: () => require('dayjs/locale/mt'),
+  my: () => require('dayjs/locale/my'),
+  nb: () => require('dayjs/locale/nb'),
+  ne: () => require('dayjs/locale/ne'),
+  'nl-be': () => require('dayjs/locale/nl-be'),
+  nl: () => require('dayjs/locale/nl'),
+  nn: () => require('dayjs/locale/nn'),
+  'oc-lnc': () => require('dayjs/locale/oc-lnc'),
+  'pa-in': () => require('dayjs/locale/pa-in'),
+  pl: () => require('dayjs/locale/pl'),
+  'pt-br': () => require('dayjs/locale/pt-br'),
+  pt: () => require('dayjs/locale/pt'),
+  ro: () => require('dayjs/locale/ro'),
+  ru: () => require('dayjs/locale/ru'),
+  rw: () => require('dayjs/locale/rw'),
+  sd: () => require('dayjs/locale/sd'),
+  se: () => require('dayjs/locale/se'),
+  si: () => require('dayjs/locale/si'),
+  sk: () => require('dayjs/locale/sk'),
+  sl: () => require('dayjs/locale/sl'),
+  sq: () => require('dayjs/locale/sq'),
+  'sr-cyrl': () => require('dayjs/locale/sr-cyrl'),
+  sr: () => require('dayjs/locale/sr'),
+  ss: () => require('dayjs/locale/ss'),
+  sv: () => require('dayjs/locale/sv'),
+  sw: () => require('dayjs/locale/sw'),
+  ta: () => require('dayjs/locale/ta'),
+  te: () => require('dayjs/locale/te'),
+  tet: () => require('dayjs/locale/tet'),
+  tg: () => require('dayjs/locale/tg'),
+  th: () => require('dayjs/locale/th'),
+  tk: () => require('dayjs/locale/tk'),
+  'tl-ph': () => require('dayjs/locale/tl-ph'),
+  tlh: () => require('dayjs/locale/tlh'),
+  tr: () => require('dayjs/locale/tr'),
+  tzl: () => require('dayjs/locale/tzl'),
+  'tzm-latn': () => require('dayjs/locale/tzm-latn'),
+  tzm: () => require('dayjs/locale/tzm'),
+  'ug-cn': () => require('dayjs/locale/ug-cn'),
+  uk: () => require('dayjs/locale/uk'),
+  ur: () => require('dayjs/locale/ur'),
+  'uz-latn': () => require('dayjs/locale/uz-latn'),
+  uz: () => require('dayjs/locale/uz'),
+  vi: () => require('dayjs/locale/vi'),
+  yo: () => require('dayjs/locale/yo'),
+  'zh-cn': () => require('dayjs/locale/zh-cn'),
+  'zh-hk': () => require('dayjs/locale/zh-hk'),
+  'zh-tw': () => require('dayjs/locale/zh-tw'),
+  zh: () => require('dayjs/locale/zh'),
+};
+/* eslint-enable global-require */
+
+const loadLocales = () => {
+  Object.keys(locales).forEach((locale) => {
+    locales[locale]();
+    dayjs.locale(locale);
+  });
+  dayjs.locale('en');
+};
+
+loadLocales();
 
 export default dayjs;

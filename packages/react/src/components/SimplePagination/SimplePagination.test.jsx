@@ -9,12 +9,17 @@ import SimplePagination from './SimplePagination';
 describe('SimplePagination', () => {
   it('should be selectable by testID or testId', () => {
     const mockPage = jest.fn();
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <SimplePagination page={2} maxPage={4} onPage={mockPage} testID="SIMPLE_PAGINATION" />
     );
     expect(screen.getByTestId('SIMPLE_PAGINATION')).toBeDefined();
     expect(screen.getByTestId('SIMPLE_PAGINATION-forward-button')).toBeDefined();
     expect(screen.getByTestId('SIMPLE_PAGINATION-backward-button')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(
       <SimplePagination page={2} maxPage={4} onPage={mockPage} testID="simple_pagination" />

@@ -10,8 +10,9 @@ import ListItem from '../ListItem/ListItem';
 import { Checkbox } from '../../Checkbox';
 import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
-import { ListItemPropTypes } from '../List';
+import { ListItemPropTypes } from '../ListPropTypes';
 import { useResize } from '../../../internal/UseResizeObserver';
+import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
 
 const { iotPrefix } = settings;
 
@@ -43,11 +44,16 @@ const propTypes = {
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** true if the list should have multiple selectable rows using checkboxes */
+  isCheckboxMultiSelect: PropTypes.bool,
   testId: PropTypes.string,
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** callback used to limit which items that should get drop targets rendered.
+   * recieves the id of the item that is being dragged and returns a list of ids. */
+  getAllowedDropIds: PropTypes.func,
   /** call back function of select */
   handleSelect: PropTypes.func,
   /** call back function of expansion */
@@ -58,8 +64,12 @@ const propTypes = {
   itemWillMove: PropTypes.func,
   /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
+  /** ids of selectable rows with indeterminate selection state */
+  indeterminateIds: PropTypes.arrayOf(PropTypes.string),
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** list editing style */
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,
@@ -69,16 +79,14 @@ const propTypes = {
   ]),
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
-  virtualListRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.any }),
-  ]),
+  virtualListRef: HtmlElementRefProp,
 };
 
 const defaultProps = {
   editingStyle: null,
   emptyState: 'No list items to show',
   expandedIds: [],
+  getAllowedDropIds: null,
   handleLoadMore: () => {},
   handleSelect: () => {},
   i18n: {
@@ -91,16 +99,19 @@ const defaultProps = {
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
+  isCheckboxMultiSelect: false,
   items: [],
   itemWillMove: () => {
     return true;
   },
+  indeterminateIds: [],
   loadingMoreIds: [],
+  lockedIds: [],
   onItemMoved: () => {},
   selectedIds: [],
   testId: 'list',
   toggleExpansion: () => {},
-  virtualListRef: React.createRef(),
+  virtualListRef: undefined,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -116,23 +127,29 @@ const VirtualListContent = ({
   handleSelect,
   i18n,
   iconPosition,
+  indeterminateIds,
   isFullHeight,
   isLargeRow,
   isLoading,
+  isCheckboxMultiSelect,
   items,
   itemWillMove,
+  getAllowedDropIds,
   loadingMoreIds,
+  lockedIds,
   onItemMoved,
   selectedIds,
   testId,
   toggleExpansion,
-  virtualListRef,
+  virtualListRef: virtualListRefProp,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const rowSize = isLargeRow ? 96 : 40;
   const [listHeight, setListHeight] = useState(0);
   const listOuterRef = useResize(useRef(null));
   const didScrollRef = useRef(false);
+  const internalVirtualListRef = useRef(null);
+  const virtualListRef = virtualListRefProp || internalVirtualListRef;
 
   const flatten = useCallback(
     (initialItems, parentId = null, currentLevel = 0) => {
@@ -166,11 +183,21 @@ const VirtualListContent = ({
           }
         }
 
+        if (!item.children && item.hasLoadMore) {
+          tmp = tmp.concat([
+            {
+              ...item,
+              level: currentLevel,
+              isLoadMoreRow: true,
+            },
+          ]);
+        }
+
         return tmp;
       }, []);
     },
-    // eslint-disable-next-line no-use-before-define
-    [expandedIds, flatten]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [expandedIds]
   );
 
   const [flattened, setFlattened] = useState(() => {
@@ -211,6 +238,8 @@ const VirtualListContent = ({
     const isSelected = selectedIds.some((id) => item.id === id);
     const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
     const isLoadingMore = loadingMoreIds.includes(item.id);
+    const isLocked = lockedIds.includes(item.id);
+    const isIndeterminate = indeterminateIds.includes(item.id);
     const parentIsExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
     const {
@@ -221,7 +250,7 @@ const VirtualListContent = ({
     } = item;
 
     if (item.isLoadMoreRow) {
-      if (parentIsExpanded) {
+      if (parentIsExpanded || item.level === 0) {
         return (
           <Button
             key={`${item.id}-list-item-parent-loading`}
@@ -253,14 +282,21 @@ const VirtualListContent = ({
           nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
           value={value}
           icon={
-            editingStyleIsMultiple(editingStyle) ? (
+            editingStyleIsMultiple(editingStyle) || (isSelectable && isCheckboxMultiSelect) ? (
               <Checkbox
                 id={`${item.id}-checkbox`}
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={() => handleSelect(item.id, parentId)}
+                onChange={() => handleSelect(item.id, parentId)}
+                onClick={(event) => {
+                  // This is needed as a workaround for a carbon checkbox bug
+                  // https://github.com/carbon-design-system/carbon/issues/10122#issuecomment-984692702
+                  event.stopPropagation();
+                }}
                 checked={isSelected}
+                disabled={disabled || isLocked}
+                indeterminate={isIndeterminate}
               />
             ) : (
               icon
@@ -268,21 +304,24 @@ const VirtualListContent = ({
           }
           disabled={disabled}
           iconPosition={iconPosition}
-          editingStyle={editingStyle}
+          editingStyle={isLocked ? null : editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
           onSelect={() => handleSelect(item.id, parentId)}
           onExpand={toggleExpansion}
           onItemMoved={onItemMoved}
           itemWillMove={itemWillMove}
+          getAllowedDropIds={getAllowedDropIds}
           selected={isSelected}
           expanded={isExpanded}
           isExpandable={hasChildren}
           isLargeRow={isLargeRow}
+          isLocked={isLocked}
           isCategory={isCategory}
           isSelectable={editingStyle === null && isSelectable}
           i18n={mergedI18n}
           tags={tags}
+          preventRowFocus={isCheckboxMultiSelect}
         />
       </div>,
     ];
@@ -296,7 +335,7 @@ const VirtualListContent = ({
 
     const isExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
-    if (item.isLoadMoreRow && isExpanded) {
+    if (item.isLoadMoreRow && (isExpanded || item.level === 0)) {
       return 48;
     }
 

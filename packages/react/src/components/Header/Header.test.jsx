@@ -5,7 +5,8 @@ import { User20, Help20 } from '@carbon/icons-react';
 import { settings } from '../../constants/Settings';
 import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
-import Header, { APP_SWITCHER } from './Header';
+import Header from './Header';
+import { APP_SWITCHER } from './headerConstants';
 
 const { prefix, iotPrefix } = settings;
 
@@ -297,10 +298,17 @@ describe('Header', () => {
     expect(screen.getByLabelText('user')).toBeTruthy();
   });
   it('should not display the shortname if none given', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { container } = render(
       <Header {...HeaderPropsWithoutOnClick} shortAppName={undefined} appName={undefined} />
     );
     expect(container.querySelectorAll(`.${iotPrefix}--header__short-name`)).toHaveLength(0);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Failed prop type: The prop `appName` is marked as required in `Header`'
+      )
+    );
+    console.error.mockReset();
   });
 
   it('should not display an action item if isActionItemVisible returns false', () => {
@@ -322,5 +330,23 @@ describe('Header', () => {
   it('should render if actionItems is empty', () => {
     render(<Header {...HeaderPropsWithoutOnClick} actionItems={[]} />);
     expect(screen.getByText('IBM')).toBeVisible();
+  });
+  it('should change side-nav menu button label when isSideNavExpanded change', () => {
+    const { rerender } = render(<Header {...HeaderPropsWithoutOnClick} isSideNavExpanded />);
+    expect(screen.getByLabelText('Close menu')).toBeVisible();
+    rerender(<Header {...HeaderPropsWithoutOnClick} isSideNavExpanded={false} />);
+    expect(screen.getByLabelText('Open menu')).toBeVisible();
+    rerender(
+      <Header
+        {...HeaderPropsWithoutOnClick}
+        isSideNavExpanded={false}
+        i18n={{ openMenu: '__open__' }}
+      />
+    );
+    expect(screen.getByLabelText('__open__')).toBeVisible();
+    rerender(
+      <Header {...HeaderPropsWithoutOnClick} isSideNavExpanded i18n={{ closeMenu: '__close__' }} />
+    );
+    expect(screen.getByLabelText('__close__')).toBeVisible();
   });
 });

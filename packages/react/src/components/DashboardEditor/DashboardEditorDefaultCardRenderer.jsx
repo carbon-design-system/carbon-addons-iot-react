@@ -1,18 +1,15 @@
 import React, { useMemo } from 'react';
-import omit from 'lodash/omit';
-import find from 'lodash/find';
-import isEqual from 'lodash/isEqual';
+import { omit, find, isEqual } from 'lodash-es';
+import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../constants/LayoutConstants';
-import {
-  ValueCard,
-  TimeSeriesCard,
-  BarChartCard,
-  ImageCard,
-  TableCard,
-  ListCard,
-  Card,
-} from '../../index';
+import ValueCard from '../ValueCard/ValueCard';
+import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
+import BarChartCard from '../BarChartCard/BarChartCard';
+import ImageCard from '../ImageCard/ImageCard';
+import TableCard from '../TableCard/TableCard';
+import ListCard from '../ListCard/ListCard';
+import Card from '../Card/Card';
 
 import { timeRangeToJSON, isCardJsonValid } from './editorUtils';
 
@@ -100,6 +97,18 @@ const DashboardEditorDefaultCardRenderer = ({ card: cardProps, availableDimensio
         renderDefaultCard(cardProps)
       );
   }
+};
+
+DashboardEditorDefaultCardRenderer.propTypes = {
+  card: PropTypes.oneOfType([PropTypes.object]),
+  availableDimensions: PropTypes.objectOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
+  ),
+};
+
+DashboardEditorDefaultCardRenderer.defaultProps = {
+  card: undefined,
+  availableDimensions: undefined,
 };
 
 export default DashboardEditorDefaultCardRenderer;

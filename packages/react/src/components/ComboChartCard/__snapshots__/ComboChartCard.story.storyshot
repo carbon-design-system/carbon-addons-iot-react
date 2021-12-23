@@ -76,8 +76,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   fill="currentColor"
                   focusable="false"
                   height={16}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
                   viewBox="0 0 32 32"
@@ -162,6 +160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   aria-hidden={true}
                   className="bx--batch-actions iot--table-batch-actions"
                   data-testid="BarChartCard-table-table-toolbar-batch-actions"
+                  onScroll={[Function]}
                 >
                   <div
                     className="bx--batch-summary"
@@ -686,7 +685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -705,7 +704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -724,7 +723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -743,7 +742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -762,7 +761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -786,7 +785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -805,7 +804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -824,7 +823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -843,7 +842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -862,7 +861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -886,7 +885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -905,7 +904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -924,7 +923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -943,7 +942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -962,7 +961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -986,7 +985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1005,7 +1004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1024,7 +1023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1043,7 +1042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1062,7 +1061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1086,7 +1085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1105,7 +1104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1124,7 +1123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1143,7 +1142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1162,7 +1161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1186,7 +1185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1205,7 +1204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1224,7 +1223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1243,7 +1242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1262,7 +1261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1286,7 +1285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1305,7 +1304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1324,7 +1323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1343,7 +1342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1362,7 +1361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1386,7 +1385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1405,7 +1404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1424,7 +1423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1443,7 +1442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1462,7 +1461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1486,7 +1485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1505,7 +1504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1524,7 +1523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1543,7 +1542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1562,7 +1561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1586,7 +1585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1605,7 +1604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1624,7 +1623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1643,7 +1642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1662,7 +1661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           offset={0}
                         >
                           <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                           >
                             <span
                               className=""
@@ -1678,7 +1677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
               <div
-                className="bx--pagination iot--pagination"
+                className="bx--pagination iot--pagination bx--pagination--lg"
                 data-testid="BarChartCard-table-table-pagination"
                 style={
                   Object {
@@ -1999,8 +1998,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -2190,8 +2187,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -2402,11 +2397,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Zm-1.125-5h2.25V12h-2.25Z"
+        data-icon-path="inner-path"
         fill="none"
       />
       <path
-        d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16.002,6.1714h-.004L4.6487,27.9966,4.6506,28H27.3494l.0019-.0034ZM14.875,12h2.25v9h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+      />
+      <path
+        d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
       />
       <title>
         warning-alt icon

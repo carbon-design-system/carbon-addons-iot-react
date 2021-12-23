@@ -1,10 +1,8 @@
 import React, { useMemo, useState, useRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import merge from 'lodash/merge';
-import pick from 'lodash/pick';
+import { merge, pick, uniqueId } from 'lodash-es';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { Table as CarbonTable, TableContainer, Tag } from 'carbon-components-react';
-import uniqueId from 'lodash/uniqueId';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 import warning from 'warning';
@@ -28,6 +26,8 @@ import {
   TableSortPropType,
   TableColumnGroupPropType,
   TableOrderingPropType,
+  TableFiltersPropType,
+  TableToolbarActionsPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -57,7 +57,7 @@ const propTypes = {
   ),
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
-  /** Specify the properties of each column group in the table. Defaults to empty column. */
+  /** Specify the properties of each column group in the table. Defaults to empty array. */
   columnGroups: TableColumnGroupPropType,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
@@ -70,9 +70,11 @@ const propTypes = {
   options: PropTypes.shape({
     /** If true allows the table to aggregate values of columns in a special row */
     hasAggregations: PropTypes.bool,
+    /** If true, search is applied as typed. If false, only after 'Enter' is pressed */
+    hasFastSearch: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
-    /** True if the rows shuld be expandable */
+    /** True if the rows should be expandable */
     hasRowExpansion: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
@@ -123,6 +125,8 @@ const propTypes = {
     hasUserViewManagement: PropTypes.bool,
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
+    /* If true, fire the onRowExpanded callback with the rowId when a row is clicked */
+    shouldExpandOnRowClick: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     /**
@@ -132,6 +136,8 @@ const propTypes = {
      * alwaysTruncate - Always truncate if needed for all table column configurations
      */
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
+    /** use white-space: pre; css when true */
+    preserveCellWhiteSpace: PropTypes.bool,
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -171,26 +177,38 @@ const propTypes = {
       page: PropTypes.number,
       totalItems: PropTypes.number,
       /** Number of pages rendered in pagination */
-      maxPages: PropTypes.number,
+      maxPages: (props, propName, componentName) => {
+        if (__DEV__) {
+          if (typeof props[propName] !== 'number') {
+            return new Error(
+              `Invalid type of \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` must be a positive integer.`
+            );
+          }
+          if (props[propName] < 0 || !Number.isInteger(props[propName])) {
+            const roundedStr = `${props[propName]} will be rounded to ${Math.ceil(
+              props[propName]
+            )}`;
+            return new Error(
+              `Invalid prop \`${propName}\` supplied to \`${componentName}\`. \`${propName}\` must be a positive integer. ${roundedStr}.`
+            );
+          }
+        }
+
+        return '';
+      },
       isItemPerPageHidden: PropTypes.bool,
+      /**
+       * Specify the size of the Pagination buttons. Currently supports either `sm`, 'md' (default) or 'lg` as an option.
+       */
+      size: PropTypes.oneOf(['sm', 'md', 'lg']),
     }),
-    filters: PropTypes.arrayOf(
-      PropTypes.shape({
-        columnId: PropTypes.string.isRequired,
-        value: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.number,
-          PropTypes.bool,
-          PropTypes.arrayOf(PropTypes.string),
-        ]).isRequired,
-      })
-    ),
+    filters: TableFiltersPropType,
     /** a stripped down version of the RuleBuilderFilterPropType */
     advancedFilters: PropTypes.arrayOf(
       PropTypes.shape({
         /** Unique id for particular filter */
         filterId: PropTypes.string.isRequired,
-        /** Text for main tilte of page */
+        /** Text for main title of page */
         filterTitleText: PropTypes.string.isRequired,
         filterRules: RuleGroupPropType.isRequired,
       })
@@ -216,6 +234,8 @@ const propTypes = {
       isDisabled: PropTypes.bool,
       /** buttons to be shown with when activeBar is 'rowEdit' */
       rowEditBarButtons: PropTypes.node,
+      /** extra actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
+      toolbarActions: TableToolbarActionsPropType,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -241,7 +261,7 @@ const propTypes = {
       multiSortModal: PropTypes.shape({
         /**
          * The anticipatedColumn is used to add the most recently click columnId to the UI of the
-         * MultiSort modal. This gives the user a better experience by pre-emptively adding the column
+         * MultiSort modal. This gives the user a better experience by preemptively adding the column
          * they clicked multi-sort on to the multisort modal without changing state. They still have to
          * click "Sort" to save it, or can click 'Cancel' or the 'X' to clear it.
          */
@@ -265,7 +285,7 @@ const propTypes = {
       onToggleFilter: PropTypes.func,
       onShowRowEdit: PropTypes.func,
       onToggleColumnSelection: PropTypes.func,
-      /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
+      /** Specify a callback for when the user clicks toolbar button to clear all filters. Receives a parameter of the current filter values for each column */
       onClearAllFilters: PropTypes.func,
       onCancelBatchAction: PropTypes.func,
       onApplyBatchAction: PropTypes.func,
@@ -287,6 +307,8 @@ const propTypes = {
       onChangeAdvancedFilter: PropTypes.func,
       /** fired when 'Toggle aggregations' is clicked in the overflow menu */
       onToggleAggregations: PropTypes.func,
+      /** fired when clicking a 'toolbarAction' in the table toolbar */
+      onApplyToolbarAction: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -350,6 +372,7 @@ export const defaultProps = (baseProps) => ({
     hasFilter: false,
     hasAdvancedFilter: false,
     hasOnlyPageData: false,
+    hasFastSearch: true,
     hasSearch: false,
     hasColumnSelection: false,
     hasColumnSelectionConfig: false,
@@ -359,7 +382,9 @@ export const defaultProps = (baseProps) => ({
     preserveColumnWidths: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
+    shouldExpandOnRowClick: false,
     wrapCellText: 'always',
+    preserveCellWhiteSpace: false,
   },
   size: undefined,
   view: {
@@ -371,6 +396,7 @@ export const defaultProps = (baseProps) => ({
       totalItems: baseProps.data && baseProps.data.length,
       maxPages: 100,
       isItemPerPageHidden: false,
+      size: 'lg',
     },
     filters: [],
     advancedFilters: [],
@@ -407,12 +433,14 @@ export const defaultProps = (baseProps) => ({
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
+      onApplyToolbarAction: defaultFunction('actions.toolbar.onApplyToolbarAction'),
       onRemoveAdvancedFilter: defaultFunction('actions.toolbar.onRemoveAdvancedFilter'),
       onCancelAdvancedFilter: defaultFunction('actions.toolbar.onCancelFilter'),
       onCreateAdvancedFilter: defaultFunction('actions.toolbar.onCreateAdvancedFilter'),
       onApplyAdvancedFilter: defaultFunction('actions.toolbar.onApplyAdvancedFilter'),
       onChangeAdvancedFilter: defaultFunction('actions.toolbar.onChangeAdvancedFilter'),
       onToggleAdvancedFilter: defaultFunction('actions.toolbar.onToggleAdvancedFilter'),
+
       // TODO: removed to mimic the current state of consumers in the wild
       // since they won't be adding this prop to any of their components
       // can be readded in V3.
@@ -500,6 +528,11 @@ export const defaultProps = (baseProps) => ({
     buttonLabelOnTableError: 'Refresh the page',
     /* table load more */
     loadMoreText: 'Load more...',
+    learnMoreText: 'Learn more',
+    inProgressText: 'In progress',
+    dismissText: 'Dismiss',
+    actionFailedText: 'Action failed',
+    toolbarTooltipLabel: 'Toolbar tooltip',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -528,18 +561,19 @@ const Table = (props) => {
     tooltip,
     error,
     testId,
+    size,
     ...others
   } = merge({}, defaultProps(props), props);
 
   // There is no way to access the current search value in the Table
-  // so we need to track that for the save view fuctionality.
+  // so we need to track that for the save view functionality.
   const searchValue = useRef(view?.toolbar?.search?.defaultValue);
 
   const initialRendering = useRef(true);
 
   // The save/load view functionality needs access to the latest view configuration
   // and also needs to know when the configuration has changed for the StatefulTable.
-  // This effect satifies both those needs.
+  // This effect satisfies both those needs.
   useDeepCompareEffect(() => {
     if (options.hasUserViewManagement && onUserViewModified) {
       if (!initialRendering.current) {
@@ -800,6 +834,7 @@ const Table = (props) => {
               rowCountInHeader: i18n.rowCountInHeader,
               toggleAggregations: i18n.toggleAggregations,
               toolbarLabelAria: i18n.toolbarLabelAria,
+              toolbarTooltipLabel: i18n.toolbarTooltipLabel,
             }}
             actions={{
               ...pick(
@@ -817,7 +852,8 @@ const Table = (props) => {
                 'onCreateAdvancedFilter',
                 'onChangeAdvancedFilter',
                 'onRemoveAdvancedFilter',
-                'onToggleAdvancedFilter'
+                'onToggleAdvancedFilter',
+                'onApplyToolbarAction'
               ),
               onToggleAggregations,
               onApplySearch: (value) => {
@@ -832,6 +868,7 @@ const Table = (props) => {
                 options,
                 'hasAggregations',
                 'hasColumnSelection',
+                'hasFastSearch',
                 'hasSearch',
                 'hasRowSelection',
                 'hasRowCountInHeader',
@@ -858,7 +895,8 @@ const Table = (props) => {
                 'activeBar',
                 'customToolbarContent',
                 'rowEditBarButtons',
-                'advancedFilterFlyoutOpen'
+                'advancedFilterFlyoutOpen',
+                'toolbarActions'
               ),
             }}
             data={data}
@@ -919,10 +957,12 @@ const Table = (props) => {
               options.hasResize && !options.useAutoTableLayoutForResize,
             [`${iotPrefix}--data-table--row-actions`]: options.hasRowActions,
           })}
+          size={size}
           {...others}
         >
           {columns.length ? (
             <TableHead
+              size={size}
               {...others}
               i18n={i18n}
               lightweight={lightweight}
@@ -1035,7 +1075,8 @@ const Table = (props) => {
                   'hasRowActions',
                   'hasRowNesting',
                   'shouldExpandOnRowClick',
-                  'shouldLazyRender'
+                  'shouldLazyRender',
+                  'preserveCellWhiteSpace'
                 )}
                 hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}
@@ -1054,6 +1095,7 @@ const Table = (props) => {
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-body`}
                 showExpanderColumn={showExpanderColumn}
+                size={size}
               />
             ) : (
               <EmptyTable
@@ -1109,9 +1151,9 @@ const Table = (props) => {
           page={paginationProps.page}
           isItemPerPageHidden={paginationProps.isItemPerPageHidden}
           totalItems={
-            paginationProps.totalItems < maxPages * paginationProps.pageSize
+            paginationProps.totalItems < Math.ceil(maxPages * paginationProps.pageSize)
               ? paginationProps.totalItems
-              : maxPages * paginationProps.pageSize
+              : Math.ceil(maxPages * paginationProps.pageSize)
           }
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
@@ -1122,6 +1164,7 @@ const Table = (props) => {
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}
+          carbonSize={paginationProps.size}
         />
       ) : null}
       {options.hasMultiSort && (

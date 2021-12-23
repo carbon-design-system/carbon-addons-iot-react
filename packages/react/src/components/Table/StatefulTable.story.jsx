@@ -2,8 +2,7 @@ import React, { createElement, useMemo, useRef, useState } from 'react';
 import { boolean, text, select, array, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { SettingsAdjust16, TrashCan16 } from '@carbon/icons-react';
-import isEqual from 'lodash/isEqual';
-import assign from 'lodash/assign';
+import { isEqual, assign } from 'lodash-es';
 
 import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -157,6 +156,14 @@ export const SimpleStatefulExample = () => {
       id="table"
       key={`table${demoInitialColumnSizes}`}
       {...initialState}
+      data={initialState.data.slice(
+        0,
+        select(
+          'number of data items in table',
+          [initialState.data.length, 50, 20, 5],
+          initialState.data.length
+        )
+      )}
       actions={tableActions}
       columns={initialState.columns
         .map((column) => {
@@ -165,7 +172,7 @@ export const SimpleStatefulExample = () => {
               ...column,
               filter: {
                 ...column.filter,
-                isMultiselect: !!column.filter?.options,
+                isMultiselect: boolean('force MultiSelect filter', !!column.filter?.options),
               },
             };
           }
@@ -174,7 +181,11 @@ export const SimpleStatefulExample = () => {
         .map((col, i) => ({
           ...col,
           width: demoInitialColumnSizes ? (i % 2 === 0 ? '100px' : '200px') : undefined,
-          tooltip: demoColumnTooltips ? `A tooltip for ${col.name} here` : undefined,
+          tooltip: demoColumnTooltips
+            ? col.id === 'select'
+              ? `This tooltip displays extra information about the select box. You can choose from a variety of options. Pick one today!`
+              : `A tooltip for ${col.name} here`
+            : undefined,
         }))}
       columnGroups={object('Column groups definition (columnGroups)', [
         {
@@ -224,6 +235,10 @@ export const SimpleStatefulExample = () => {
           'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
           ['multi', 'single', false],
           'multi'
+        ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
+          true
         ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
         hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),

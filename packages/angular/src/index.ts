@@ -6,3 +6,4 @@ export * from '@ai-apps/angular/date-time-picker';
 export * from '@ai-apps/angular/list';
 export * from '@ai-apps/angular/list-builder';
 export * from '@ai-apps/angular/table';
+export * from '@ai-apps/angular/rule-builder';

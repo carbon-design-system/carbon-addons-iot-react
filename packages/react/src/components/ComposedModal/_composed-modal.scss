@@ -90,3 +90,15 @@
 .#{$iot-prefix}--composed-modal__body--small-margin-bottom {
   margin-bottom: $spacing-05;
 }
+
+[dir='rtl'] {
+  .#{$prefix}--modal-header {
+    padding-right: $spacing-05;
+    padding-left: $spacing-09;
+  }
+
+  .#{$prefix}--modal-close {
+    right: unset;
+    left: 0;
+  }
+}

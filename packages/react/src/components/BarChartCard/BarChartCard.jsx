@@ -1,9 +1,7 @@
 import React, { useCallback, useMemo, useRef } from 'react';
 import { SimpleBarChart, StackedBarChart, GroupedBarChart } from '@carbon/charts-react';
 import classnames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import isNil from 'lodash/isNil';
-import defaultsDeep from 'lodash/defaultsDeep';
+import { isEmpty, isNil, defaultsDeep } from 'lodash-es';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import {

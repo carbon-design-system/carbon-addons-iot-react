@@ -18,10 +18,15 @@ const modalProps = {
 
 describe('ComposedModal', () => {
   it('should be selectable with either testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(<ComposedModal {...modalProps} testID="COMPOSED_MODAL" />);
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     expect(screen.getByTestId('COMPOSED_MODAL')).toBeDefined();
-    rerender(<ComposedModal {...modalProps} testID="composed_modal" />);
+    rerender(<ComposedModal {...modalProps} testId="composed_modal" />);
 
     expect(screen.getByTestId('composed_modal')).toBeDefined();
     expect(screen.getByTestId('composed_modal-modal-secondary-button')).toBeDefined();

@@ -2,9 +2,17 @@
 
 .#{$iot-prefix}--value-card__value-renderer {
   &--wrapper {
-    overflow: hidden;
     text-overflow: ellipsis;
     display: flex;
+
+    .#{$iot-prefix}--value-card__attribute-wrapper--horizontal & {
+      width: auto;
+      max-width: 100%;
+    }
+
+    .#{$iot-prefix}--value-card__content-wrapper--vertical & {
+      overflow: hidden;
+    }
   }
 
   &--value {
@@ -18,6 +26,12 @@
     line-height: $line-height;
     @include multiline-text-overflow($max-lines, $line-height);
     word-break: break-all;
+    /* override default button styles to match span visuals when using a button */
+    &.#{$prefix}--btn {
+      padding: $spacing-01;
+      flex: 1;
+      white-space: nowrap;
+    }
 
     &--vertical {
       text-align: left;
@@ -27,4 +41,8 @@
   &--boolean {
     text-transform: capitalize;
   }
+}
+
+html[dir='rtl'] .#{$iot-prefix}--value-card__value-renderer--value.#{$iot-prefix}--btn {
+  padding: $spacing-01;
 }

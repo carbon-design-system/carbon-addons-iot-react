@@ -1,8 +1,7 @@
 import React, { useCallback, useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
-import omit from 'lodash/omit';
-import isEmpty from 'lodash/isEmpty';
+import { omit, isEmpty } from 'lodash-es';
 import warning from 'warning';
 
 import { findMatchingThresholds } from '../../utils/cardUtilityFunctions';
