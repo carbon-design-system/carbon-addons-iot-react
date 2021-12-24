@@ -60,19 +60,22 @@ export class AIColumnCustomizationModal extends BaseModal {
     this.closeModal();
   }
 
-  protected headerToListItems(header: TableHeaderItem[][]) {
-    const availableHeaderItems = header.map((headerRow) =>
-      headerRow.filter((headerItem) => headerItem !== null).map((headerItem) => headerItem)
-    );
-
-    return this.createListItems(header[0], availableHeaderItems);
-  }
-
-  protected createListItems(
-    headerRow: TableHeaderItem[],
-    availableHeaderItems: TableHeaderItem[][],
+  protected headerToListItems(
+    header: TableHeaderItem[][],
+    headerRow: TableHeaderItem[] = [],
+    availableHeaderItems: TableHeaderItem[][] = [],
     rowIndex = 0
   ) {
+    if (!headerRow.length && rowIndex === 0) {
+      headerRow = header[0];
+    }
+
+    if (!availableHeaderItems.length) {
+      availableHeaderItems = header.map((headerRow) =>
+        headerRow.filter((headerItem) => headerItem !== null)
+      );
+    }
+
     return headerRow
       .filter((headerItem) => headerItem !== null)
       .map((headerItem) => {
@@ -110,7 +113,8 @@ export class AIColumnCustomizationModal extends BaseModal {
           children.push(nextChild);
         }
 
-        listBuilderItem.items = this.createListItems(
+        listBuilderItem.items = this.headerToListItems(
+          header,
           children,
           availableHeaderItems,
           rowIndex + rowSpan
@@ -120,96 +124,37 @@ export class AIColumnCustomizationModal extends BaseModal {
       });
   }
 
-  protected listItemsToHeader(listItems: AIListItem[]) {
-    // fill([]) gives each row the same array reference.
-    const header = new Array(this.model.header.length).fill(0).map(() => []);
-    this.createHeader(listItems, header);
-    const maxLength = Math.max(
-      ...header.map((headerRow) =>
-        headerRow.reduce((totalLength, headerItem) => totalLength + headerItem.colSpan, 0)
-      )
-    );
-    header.forEach((headerRow) => {
-      const rowLength = headerRow.reduce(
-        (totalLength, headerItem) => totalLength + headerItem.colSpan,
-        0
-      );
-      headerRow.push(...new Array(maxLength - rowLength).fill(null));
+  protected listItemsToHeader(
+    listItems: AIListItem[],
+    header: TableHeaderItem[][] = new Array(this.model.header.length).fill([]),
+    rowIndex = 0
+  ) {
+    listItems.forEach((listItem: any) => {
+      const rowSpan = listItem.headerItem?.rowSpan || 1;
+
+      header[rowIndex] = [...header[rowIndex], listItem.itemMetaData.headerItem];
+
+      if (rowIndex + rowSpan >= this.model.header.length) {
+        return;
+      }
+
+      if (listItem.hasChildren()) {
+        this.listItemsToHeader(listItem.items, header, rowIndex + rowSpan);
+      }
     });
+
     return header;
   }
 
-  protected createHeader(listItems: AIListItem[], headers: any[][], rowIndex = 0) {
-    listItems.forEach((listItem) => {
-      headers[rowIndex].push(listItem.itemMetaData.headerItem);
-
-      if (listItem.hasChildren()) {
-        this.createHeader(
-          listItem.items,
-          headers,
-          rowIndex + (listItem.itemMetaData.headerItem?.rowSpan || 1)
-        );
-      }
-    });
-  }
-
   protected moveColumns(items: AIListItem[]) {
-    const newHeader = this.listItemsToHeader(items);
-
-    if (!this.isHeaderValid(newHeader)) {
-      return;
-    }
-
-    for (let i = 0; i < this.model.header[0].length; i++) {
-      const headerItem = this.model.header[0][i];
-      if (headerItem !== null && !newHeader[0].includes(headerItem)) {
-        this.model.deleteColumn(i);
-      }
-    }
-
-    // Move items to their new positions
-    newHeader.forEach((newHeaderRow, rowIndex) => {
-      const headerRow = this.model.header[rowIndex];
-
-      newHeaderRow.forEach((newHeaderItem, colIndex) => {
-        if (newHeaderItem === null) {
-          return;
-        }
-
-        const prevItem = colIndex > 0 ? newHeaderRow[colIndex - 1] : newHeaderRow[colIndex];
-
-        const indexFrom = headerRow.findIndex((headerItem) => headerItem === newHeaderItem);
-        let indexTo =
-          headerRow.findIndex((headerItem) => headerItem === prevItem) + (colIndex > 0 ? 1 : 0);
-
-        this.model.moveColumn(indexFrom, indexTo, rowIndex);
-      });
-    });
-  }
-
-  protected isHeaderValid(header: TableHeaderItem[][]) {
-    // This keeps track of the projected width of all header rows.
-    // This should include the total `colSpan` of all items in the header row
-    // and the added length from higher level items with `rowSpan`s that
-    // go past each particular row.
-    const headerProjectedWidths = new Array(header.length).fill(0);
-
+    const header = this.listItemsToHeader(items);
     header.forEach((headerRow, rowIndex) => {
-      headerRow.forEach((headerItem) => {
-        if (headerItem === null) {
-          return;
-        }
-        const colSpan = headerItem?.colSpan || 1;
-        const rowSpan = headerItem?.rowSpan || 1;
-        headerProjectedWidths[rowIndex] += colSpan;
-        for (let i = 1; i < rowSpan; i++) {
-          headerProjectedWidths[rowIndex + i] += colSpan;
+      headerRow.forEach((headerItem, newIndex) => {
+        const currentIndex = this.model.header[rowIndex].indexOf(headerItem);
+        if (currentIndex !== newIndex) {
+          this.model.moveColumn(currentIndex, newIndex, rowIndex);
         }
       });
     });
-
-    // In order for `header` to be valid, all rows must
-    // have the same projected width.
-    return headerProjectedWidths.every((width) => width === headerProjectedWidths[0]);
   }
 }

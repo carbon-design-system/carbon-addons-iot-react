@@ -597,16 +597,15 @@ export class AITableModel implements PaginationModel {
     for (let i = 0; i < rowCount; i++) {
       this._data[i].splice(rci, 1);
     }
-    this.deleteHeader(rci, 0);
+    // update header if not already set by user
+    if (this.header.length > 0 && this.header[0].length > this._data[0].length) {
+      for (let i = 0; i < this.header.length; i++) {
+        const headerRow = this.header[i];
+        headerRow.splice(rci, 1);
+      }
+    }
+
     this.dataChange.next();
-  }
-
-  deleteHeader(index: number, rowIndex = 0) {
-    const availableHeaderItems = this.header.map((headerRow) =>
-      headerRow.filter((headerItem) => headerItem !== null).map((headerItem) => headerItem)
-    );
-
-    this.deleteHeaderColumn(this.header[0], availableHeaderItems, index, rowIndex);
   }
 
   /**
@@ -707,23 +706,11 @@ export class AITableModel implements PaginationModel {
    * |  f  |  g  |  h  |  j  |  i  |
    */
   moveColumn(indexFrom: number, indexTo: number, rowIndex = 0) {
-    // ignore everything above rowIndex
-    // find the "projected indices" of the header column we're moving
-    const projectedIndices = this.actualIndexToProjectedIndices(indexFrom, this.header[rowIndex]);
-    // based on those indices, find the "actual indices" of child rows
-    for (let nextRowIndex = rowIndex; nextRowIndex < this.header.length; nextRowIndex++) {
-      const actualIndices = this.projectedIndicesToActualIndices(
-        projectedIndices,
-        this.header[nextRowIndex]
-      );
-      // move them to the right place (based on the "projected indexTo")
-      this.moveMultipleToIndex(actualIndices, indexTo, this.header[nextRowIndex]);
-    }
-
-    // move the data columns as well
-    for (let dataRowIndex = 0; dataRowIndex < this._data.length; dataRowIndex++) {
-      this.moveMultipleToIndex(projectedIndices, indexTo, this._data[dataRowIndex]);
-    }
+    const nested = this.tabularToNested();
+    this.moveNested(nested, indexFrom, indexTo, rowIndex);
+    const { header, data } = this.nestedToTabular(nested);
+    this.header = header;
+    this._data = data;
   }
 
   /**
@@ -965,11 +952,10 @@ export class AITableModel implements PaginationModel {
     let startingIndex = 0;
     for (let i = 0; i < actualIndex; i++) {
       const item = list[i];
-      startingIndex += item?.colSpan || 1;
+      startingIndex += item.colSpan || 1;
     }
 
-    const item = list[actualIndex];
-    return new Array(item?.colSpan || 1).fill(0).map((_, index) => startingIndex + index);
+    return new Array(list[actualIndex].colSpan).fill(0).map((_, index) => startingIndex + index);
   }
 
   protected projectedIndicesToActualIndices(
@@ -997,66 +983,147 @@ export class AITableModel implements PaginationModel {
     } else {
       // if moving to right
       const block = list.slice(blockStart, blockEnd + 1);
-      list.splice.apply(list, [index, 0].concat(block));
+      list.splice.apply(list, [index + 1, 0].concat(block));
       list.splice(blockStart, blockEnd - blockStart + 1);
     }
   }
 
-  /**
-   * @param headerChildren Header row that is being iterated over in a recursive step. This should be initialized to the first header row.
-   * @param availableHeaderItems All header items which have not been checked yet. This is needed to account for rowSpans.
-   * @param colIndexToRemove Column index of item to remove. Begins removing items directly underneath this item.
-   * @param rowIndexRowRemove Row index of the item to remove. Begins removing items directly underneath this item.
-   * @param rowIndex Row index of `headerChildren`.
-   * @param shouldRemoveChildren `true` if items below a particular `headerItem` should be removed `false` if not.
-   */
-  protected deleteHeaderColumn(
-    headerChildren: TableHeaderItem[],
-    availableHeaderItems: TableHeaderItem[][],
-    colIndexToRemove: number,
-    rowIndexRowRemove: number,
-    rowIndex = 0,
-    shouldRemoveChildren = false
+  protected tabularToNested(
+    headerRow: TableHeaderItem[] = [],
+    availableHeaderItems: TableHeaderItem[][] = [],
+    // This allows us to walk the leaves as if they were in a list from left to right.
+    // We need to pass by reference so that we can update this value from within the recursion.
+    leafIndexRef = { current: 0 },
+    rowIndex = 0
   ) {
-    headerChildren.forEach((headerItem: TableHeaderItem) => {
-      const colIndex = this.header[rowIndex].indexOf(headerItem);
-      const shouldRemoveItem =
-        shouldRemoveChildren || (colIndex === colIndexToRemove && rowIndex === rowIndexRowRemove);
-      if (shouldRemoveItem) {
-        this.header[rowIndex].splice(colIndex, 1);
-      }
+    if (!headerRow.length && rowIndex === 0) {
+      headerRow = this.header[0];
+    }
 
-      if (headerItem === null) {
-        return;
-      }
+    if (!availableHeaderItems.length) {
+      availableHeaderItems = this.header.map((headerRow) =>
+        headerRow.filter((headerItem) => headerItem !== null)
+      );
+    }
 
-      const colSpan = headerItem?.colSpan || 1;
-      const rowSpan = headerItem?.rowSpan || 1;
+    return headerRow
+      .filter((headerItem) => headerItem !== null)
+      .map((headerItem, i) => {
+        const colSpan = headerItem?.colSpan || 1;
+        const rowSpan = headerItem?.rowSpan || 1;
+
+        // Leaf
+        if (rowIndex + rowSpan >= this.header.length) {
+          const leafIndex = leafIndexRef.current;
+          leafIndexRef.current += colSpan;
+
+          return {
+            headerItem,
+            leafIndex,
+            rowIndex,
+            children: [],
+          };
+        }
+
+        let spaceLeft = colSpan;
+        const availableChildren = availableHeaderItems[rowIndex + rowSpan];
+        const children = [];
+
+        while (spaceLeft > 0 && availableChildren.length) {
+          const nextChild = availableChildren.shift();
+          spaceLeft -= nextChild?.colSpan || 1;
+          children.push(nextChild);
+        }
+
+        return {
+          headerItem,
+          leafIndex: -1,
+          rowIndex,
+          children: this.tabularToNested(
+            children,
+            availableHeaderItems,
+            leafIndexRef,
+            rowIndex + rowSpan
+          ),
+        };
+      });
+  }
+
+  protected nestedToTabular(
+    nested: any,
+    header: TableHeaderItem[][] = new Array(this.header.length).fill([]),
+    data: TableItem[][] = new Array(this._data.length).fill([]),
+    rowIndex = 0
+  ) {
+    nested.forEach((headerObj: any) => {
+      const rowSpan = headerObj.headerItem?.rowSpan || 1;
+      const colSpan = headerObj.headerItem?.colSpan || 1;
+
+      header[rowIndex] = [...header[rowIndex], headerObj.headerItem];
+
+      if (headerObj.leafIndex >= 0) {
+        for (let i = 0; i < data.length; i++) {
+          data[i] = [
+            ...data[i],
+            ...this._data[i].slice(headerObj.leafIndex, headerObj.leafIndex + colSpan),
+          ];
+        }
+      }
 
       if (rowIndex + rowSpan >= this.header.length) {
         return;
       }
 
-      let spaceLeft = colSpan;
-      const availableChildren = availableHeaderItems[rowIndex + rowSpan];
-      const children = [];
+      const children = headerObj.children;
+      this.nestedToTabular(children, header, data, rowIndex + rowSpan);
+    });
 
-      while (spaceLeft > 0 && availableChildren.length) {
-        const nextChild = availableChildren.shift();
-        spaceLeft -= nextChild?.colSpan || 1;
-        children.push(nextChild);
-      }
+    return {
+      header,
+      data,
+    };
+  }
 
-      if (children.length) {
-        this.deleteHeaderColumn(
-          children,
-          availableHeaderItems,
-          colIndexToRemove,
-          rowIndexRowRemove,
-          rowIndex + rowSpan,
-          shouldRemoveItem
-        );
-      }
+  /**
+   * Move `nested` element at `rowIndex` with index `indexFrom` to `indexTo`.
+   */
+  protected moveNested(
+    nested: any,
+    indexFrom: number,
+    indexTo: number,
+    rowIndex = 0,
+    startingChildIndex = 0
+  ) {
+    if (!nested.length) {
+      return;
+    }
+
+    const currentRowIndex = nested[0].rowIndex;
+    if (
+      currentRowIndex === rowIndex &&
+      startingChildIndex <= indexFrom &&
+      startingChildIndex + nested.length >= indexFrom &&
+      startingChildIndex <= indexTo &&
+      startingChildIndex + nested.length >= indexTo
+    ) {
+      this.moveMultipleToIndex(
+        [indexFrom - startingChildIndex],
+        indexTo - startingChildIndex,
+        nested
+      );
+      return;
+    }
+
+    nested.forEach((headerObj: any, i: number) => {
+      const rowSpan = headerObj.headerItem?.rowSpan || 1;
+      const children = headerObj.children;
+      this.moveNested(
+        children,
+        indexFrom,
+        indexTo,
+        rowIndex,
+        this.header[currentRowIndex + rowSpan]?.indexOf(children[0]?.headerItem)
+      );
     });
   }
 }
