@@ -4,13 +4,13 @@
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { ScreenOff16, Switcher24 } from '@carbon/icons-react';
-import Chip from '@carbon/icons-react/lib/chip/24';
-import Dashboard from '@carbon/icons-react/lib/dashboard/24';
-import Group from '@carbon/icons-react/lib/group/24';
-import NotificationOn from '@carbon/icons-react/lib/notification/24';
-import Bee from '@carbon/icons-react/lib/bee/24';
-import Car from '@carbon/icons-react/lib/car/24';
-import Chat from '@carbon/icons-react/lib/chat/24';
+import Chip from '@carbon/icons-react/es/chip/24';
+import Dashboard from '@carbon/icons-react/es/dashboard/24';
+import Group from '@carbon/icons-react/es/group/24';
+import NotificationOn from '@carbon/icons-react/es/notification/24';
+import Bee from '@carbon/icons-react/es/bee/24';
+import Car from '@carbon/icons-react/es/car/24';
+import Chat from '@carbon/icons-react/es/chat/24';
 
 import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';

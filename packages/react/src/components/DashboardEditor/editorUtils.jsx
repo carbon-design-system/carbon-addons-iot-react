@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
-import isNil from 'lodash/isNil';
-import uniqBy from 'lodash/uniqBy';
-import isEmpty from 'lodash/isEmpty';
+import { isNil, uniqBy, isEmpty } from 'lodash-es';
 import {
   purple70,
   cyan50,

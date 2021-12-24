@@ -2,12 +2,7 @@ import React, { useRef, useMemo, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { LineChart, StackedBarChart } from '@carbon/charts-react';
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import omit from 'lodash/omit';
-import capitalize from 'lodash/capitalize';
-import defaultsDeep from 'lodash/defaultsDeep';
-import isEqual from 'lodash/isEqual';
+import { isNil, isEmpty, omit, capitalize, defaultsDeep, isEqual } from 'lodash-es';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import {

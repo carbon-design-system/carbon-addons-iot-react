@@ -1,7 +1,6 @@
 import * as React from 'react';
 import update from 'immutability-helper';
-import merge from 'lodash/merge';
-import isNil from 'lodash/isNil';
+import { merge, isNil } from 'lodash-es';
 import PropTypes from 'prop-types';
 
 import { HotspotPropTypes } from '../../../constants/SharedPropTypes';

@@ -1,19 +1,20 @@
-@import '../vendor/@ai-apps/styles/scss/globals/vars';
-@import '../vendor/@ai-apps/styles/scss/globals/typography';
+@import '../../globals/vars';
+@import '../../globals/typography';
 
 $side-panel-width: 320px;
 $side-panel-drawer-width: $spacing-09;
 $border-width: 1px;
 
 .#{$iot-prefix}--side-panel {
-  display: block;
   position: relative;
   background-color: $ui-background;
   width: fit-content;
   overflow-x: hidden;
   display: inline-block;
   min-width: $side-panel-width;
-  transition: min-width 250ms, width 250ms, left 250ms, right 250ms;
+  transition: min-width $duration--moderate-02, width $duration--moderate-02,
+    left $duration--moderate-02, right $duration--moderate-02;
+  transition-timing-function: carbon--motion(standard);
 
   &.#{$iot-prefix}--side-panel__right {
     right: 0;
@@ -136,7 +137,8 @@ $border-width: 1px;
     width: $side-panel-width;
     height: 100%;
     position: relative;
-    transition: width 250ms, left 250ms, right 250ms;
+    transition: width carbon--motion(standard), left carbon--motion(standard),
+      right carbon--motion(standard);
 
     &.#{$iot-prefix}--side-panel__left {
       left: -$side-panel-width;

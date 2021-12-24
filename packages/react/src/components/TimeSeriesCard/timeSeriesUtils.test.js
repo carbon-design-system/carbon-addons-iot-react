@@ -1,5 +1,4 @@
-import every from 'lodash/every';
-import omit from 'lodash/omit';
+import { every, omit } from 'lodash-es';
 
 import { COLORS } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';

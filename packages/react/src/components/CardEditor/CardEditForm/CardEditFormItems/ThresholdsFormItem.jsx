@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Add16, TrashCan32 } from '@carbon/icons-react';
-import omit from 'lodash/omit';
-import isEmpty from 'lodash/isEmpty';
+import { omit, isEmpty } from 'lodash-es';
 import uuid from 'uuid';
 import { red60 } from '@carbon/colors';
 import { TextInput } from 'carbon-components-react';

@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.80](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.79...v2.147.0-next.80) (2021-12-11)
+
+**Note:** Version bump only for package @ai-apps/angular
+
+
+
+
+
+# [2.147.0-next.77](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.76...v2.147.0-next.77) (2021-12-07)
+
+
+### Bug Fixes
+
+* **rule-builder:** build ([6cc54bb](https://github.com/IBM/carbon-components-angular/commit/6cc54bb115fe72a1d988ea7a4b562188b7859d0f))
+* **rule-builder:** clean ([ae5903c](https://github.com/IBM/carbon-components-angular/commit/ae5903c18eb51fa0a4bb9056e4a7d77749b9843d))
+
+
+### Features
+
+* **rule-builder:** add basic rule builder angular ([feab7fd](https://github.com/IBM/carbon-components-angular/commit/feab7fd5ef9e97b7c3df476f7d440241ecfc28fa))
+* **rule-builder:** add more translations ([cf0c639](https://github.com/IBM/carbon-components-angular/commit/cf0c63999574c5343ce9f7972d6caf9aff49536a))
+* **rule-builder:** add per-column operands and value templates ([d32553f](https://github.com/IBM/carbon-components-angular/commit/d32553f954e5b988662745d40d7b4b8daa493ada))
+* **rule-builder:** add translations ([7e79321](https://github.com/IBM/carbon-components-angular/commit/7e7932164d4210e4912658def9430a0cd6c289ba))
+
+
+
+
+
+# [2.147.0-next.72](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.71...v2.147.0-next.72) (2021-12-02)
+
+
+### Bug Fixes
+
+* **button-menu:** update cca and query correct el ([83ce0b8](https://github.com/IBM/carbon-components-angular/commit/83ce0b84927d6ca486f9377a678a2ce8f66c4eff))
+
+
+### Features
+
+* update carbon-components ([8a7dd47](https://github.com/IBM/carbon-components-angular/commit/8a7dd47ebff6e3f535dd831bb9ffd95bed0ab224))
+
+
+
+
+
 # [2.147.0-next.57](https://github.com/IBM/carbon-components-angular/compare/v2.147.0-next.56...v2.147.0-next.57) (2021-11-11)
 
 **Note:** Version bump only for package @ai-apps/angular
