@@ -561,7 +561,7 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
           buttons={[headerButton]}
           iconPosition="left"
           items={nestedItems}
-          selectedIds={selectedIds}
+          selectedIds={selectedIds.filter((id) => !indeterminateIds.includes(id))}
           expandedIds={expandedIds}
           indeterminateIds={indeterminateIds}
           toggleExpansion={(id) => {
