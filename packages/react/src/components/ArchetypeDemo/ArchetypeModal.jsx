@@ -9,15 +9,15 @@ const renderDefaultHeader = ({ children, ...props }) => {
   return <ModalHeader {...props}>{children}</ModalHeader>;
 };
 
-const renderDefaultBody = ({ data, selectedIds, onChange }) => (
+const renderDefaultBody = ({ data, selectedIds, onChange, isLoading }) => (
   <ModalBody>
-    <CheckboxList data={data} selectedIds={selectedIds} onChange={onChange} />
+    <CheckboxList data={data} selectedIds={selectedIds} onChange={onChange} isLoading={isLoading} />
   </ModalBody>
 );
 
 const renderDefaultFooter = (props) => <ModalFooter {...props} />;
 
-const ArchetypeModalPropTypes = {
+export const propTypes = {
   children: PropTypes.func,
   data: PropTypes.arrayOf(PropTypes.object),
   header: PropTypes.shape({
@@ -32,11 +32,12 @@ const ArchetypeModalPropTypes = {
     primaryButtonDisabled: PropTypes.bool,
     secondaryButtonText: PropTypes.string,
   }),
+  isLoading: PropTypes.bool,
   onSubmit: PropTypes.func.isRequired,
 };
 
-const DefaultArchetypeModalPropTypes = {
-  children: {},
+export const defaultProps = {
+  children: undefined,
   data: [],
   footer: {
     secondaryButtonText: 'Cancel',
@@ -45,6 +46,7 @@ const DefaultArchetypeModalPropTypes = {
   header: {
     title: 'I am a default value',
   },
+  isLoading: false,
 };
 
 const ArchetypeModal = ({
@@ -52,6 +54,7 @@ const ArchetypeModal = ({
   data,
   header: headerProps,
   footer: footerProps,
+  isLoading,
   onSubmit: onSubmitProp,
 }) => {
   const [selectedIds, setSelectedIds] = useState([]);
@@ -73,11 +76,11 @@ const ArchetypeModal = ({
   // CREATE PROPS FOR THE RENDER-PROPS
   // This is a single source of truth to guarantee that the internal
   // and external renderprops can render the same thing
-  const modifiedCheckboxListProps = { data, selectedIds, onChange: onCheckboxChange };
+  const modifiedCheckboxListProps = { data, selectedIds, onChange: onCheckboxChange, isLoading };
   const modifiedFooterProps = {
     ...footerProps,
     onRequestSubmit: onSubmit,
-    primaryButtonDisabled: !selectedIds.length,
+    primaryButtonDisabled: !selectedIds.length || isLoading,
   };
 
   // RENDER THE CHILD RENDER-PROP
@@ -104,6 +107,6 @@ const ArchetypeModal = ({
   );
 };
 
-ArchetypeModal.defaultProps = DefaultArchetypeModalPropTypes;
-ArchetypeModal.propTypes = ArchetypeModalPropTypes;
+ArchetypeModal.defaultProps = defaultProps;
+ArchetypeModal.propTypes = propTypes;
 export { ModalHeader, ModalBody, ModalFooter, ArchetypeModal };

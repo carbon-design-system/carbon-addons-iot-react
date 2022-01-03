@@ -1,8 +1,9 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 
 import { ArchetypeModal, ModalHeader, ModalBody, ModalFooter } from './ArchetypeModal';
+import AsyncArchetypeModal from './AsyncArchetypeModal';
 import CheckboxList from './CheckboxList';
 import CheckboxListItem from './CheckboxListItem';
 
@@ -25,17 +26,19 @@ export const ArchetypeModalBlackBox = () => (
       label: text('header.label', 'I am a black box label'),
       title: text('header.title', 'A black box modal'),
     }}
+    isLoading={boolean('isLoading', false)}
     onSubmit={action('submit')}
     onClose={action('close')}
   />
 );
 
-ArchetypeModalBlackBox.storyName = 'Archetype Modal black box';
+ArchetypeModalBlackBox.storyName = 'Black box Modal';
 
 export const ArchetypeModalComposable = () => (
   <ArchetypeModal
     // Using custom data format of which the ArchetypeModal is unaware
     data={[{ customKey: '1' }, { customKey: '2' }]}
+    isLoading={boolean('isLoading', false)}
     onSubmit={action('submit')}
     onClose={action('close')}
   >
@@ -57,7 +60,7 @@ export const ArchetypeModalComposable = () => (
               // We extract any key we want to use for the data object, here we use customKey
               renderRow={({ customKey }, checkboxListItemProps) => {
                 return (
-                  // checkboxListItemProps is setting { onChange, id, checked }
+                  // checkboxListItemProps is setting { onChange, id, checked & key }
                   <CheckboxListItem primaryValue={customKey} {...checkboxListItemProps} />
                 );
               }}
@@ -74,4 +77,38 @@ export const ArchetypeModalComposable = () => (
   </ArchetypeModal>
 );
 
-ArchetypeModalComposable.storyName = 'Archetype Modal Composable using children';
+ArchetypeModalComposable.storyName = 'Composable Modal using children';
+
+const mockAsyncDataLoad = () =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([{ customKey: '1' }, { customKey: '2' }]);
+    }, 4000);
+  });
+
+export const AsyncArchetypeModalComposable = () => (
+  <AsyncArchetypeModal
+    data={mockAsyncDataLoad()}
+    onSubmit={action('submit')}
+    onClose={action('close')}
+  >
+    {({ headerProps, footerProps, checkboxListProps }) => {
+      return (
+        <>
+          <ModalHeader {...headerProps} />
+          <ModalBody>
+            <CheckboxList
+              {...checkboxListProps}
+              renderRow={({ customKey }, checkboxListItemProps) => {
+                return <CheckboxListItem primaryValue={customKey} {...checkboxListItemProps} />;
+              }}
+            />
+          </ModalBody>
+          <ModalFooter {...footerProps} secondaryButtonText="Cancel" />
+        </>
+      );
+    }}
+  </AsyncArchetypeModal>
+);
+
+AsyncArchetypeModalComposable.storyName = 'Async Composable Modal';
