@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { ContentSwitcher, Switch, Tabs, Tab, InlineNotification } from 'carbon-components-react';
 import { pick, sortBy } from 'lodash-es';
@@ -303,7 +303,7 @@ const HotspotEditorModal = ({
 
   const hasNonEditableContent = React.isValidElement(selectedHotspot?.content);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-  const [modalContentSize, modelContentRef] = useSizeObserver(useRef(null));
+  const [modalContentSize, modelContentRef] = useSizeObserver();
 
   const {
     backgroundLabelText,

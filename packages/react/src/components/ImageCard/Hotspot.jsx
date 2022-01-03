@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { Tooltip } from 'carbon-components-react';
 import { g10 } from '@carbon/themes';
@@ -64,7 +64,7 @@ const Hotspot = ({
   borderWidth,
   ...others
 }) => {
-  const [containerSize, containerRef] = useSizeObserver(useRef(null));
+  const [containerSize, containerRef] = useSizeObserver();
 
   const defaultIcon = (
     <svg width={width} height={height}>

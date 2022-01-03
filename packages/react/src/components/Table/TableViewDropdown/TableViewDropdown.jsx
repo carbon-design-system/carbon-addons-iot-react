@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'carbon-components-react';
 import { Settings16 } from '@carbon/icons-react';
@@ -130,7 +130,7 @@ const TableViewDropdown = ({
   const mySelectedItem = allItems.find((item) => item.id === selectedViewId) || viewAllItem;
   const MyDropDown = overrides?.dropdown?.component || Dropdown;
   const MyTableViewDropDownItem = overrides?.dropdownItem?.component || TableViewDropdownItem;
-  const [containerSize, containerRef] = useSizeObserver(useRef(null));
+  const [containerSize, containerRef] = useSizeObserver({ initialWidth: 200 });
   const [dropdownRef, updateTitle] = useDropdownTitleFixer();
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Pagination } from 'carbon-components-react';
 import classnames from 'classnames';
@@ -21,7 +21,7 @@ const SizedPagination = ({
   size,
   ...rest
 }) => {
-  const [{ width }, paginationRef] = useSizeObserver(useRef(null));
+  const [{ width }, paginationRef] = useSizeObserver();
   return (
     <>
       {/** empty div to fill the width of the pagination area so we don't have to wrap the pagination
