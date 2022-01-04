@@ -34,7 +34,7 @@
         margin-left: unset;
         justify-content: space-between;
         width: 100%;
-        height: fit-content;
+        height: $spacing-08;
 
         .#{$iot-prefix}-simple-pagination-page-label {
           flex-grow: 2;
