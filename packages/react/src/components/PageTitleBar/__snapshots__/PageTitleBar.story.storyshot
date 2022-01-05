@@ -1627,7 +1627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                   aria-expanded={false}
                                   aria-haspopup={true}
                                   aria-label="More actions"
-                                  className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                                  className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                                   data-testid="table-12-row-1-row-actions-cell-overflow"
                                   id="table-12-row-1-row-actions-cell-overflow"
                                   onClick={[Function]}
@@ -1930,7 +1930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                   aria-expanded={false}
                                   aria-haspopup={true}
                                   aria-label="More actions"
-                                  className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                                  className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                                   data-testid="table-12-row-4-row-actions-cell-overflow"
                                   id="table-12-row-4-row-actions-cell-overflow"
                                   onClick={[Function]}
@@ -3731,7 +3731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                   aria-expanded={false}
                                   aria-haspopup={true}
                                   aria-label="More actions"
-                                  className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                                  className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                                   data-testid="table-13-row-1-row-actions-cell-overflow"
                                   id="table-13-row-1-row-actions-cell-overflow"
                                   onClick={[Function]}
@@ -4034,7 +4034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                   aria-expanded={false}
                                   aria-haspopup={true}
                                   aria-label="More actions"
-                                  className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                                  className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                                   data-testid="table-13-row-4-row-actions-cell-overflow"
                                   id="table-13-row-4-row-actions-cell-overflow"
                                   onClick={[Function]}

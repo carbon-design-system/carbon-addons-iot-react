@@ -28776,100 +28776,100 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                       >
                         <div
-                          className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                          className="iot--list-item--content--values--value"
                           title="Search view (Public)"
                         >
                           Search view (Public)
                         </div>
                         <div
-                          className="iot--list-item--content--row-actions"
-                          onClick={[Function]}
-                          onKeyPress={[Function]}
+                          className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                          title="Columns: 7, Filters: 0, Search: pinoc"
                         >
-                          <button
-                            aria-describedby={null}
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-view1-edit"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <div
-                              className="bx--assistive-text"
-                              onMouseEnter={[Function]}
-                            >
-                              edit
-                            </div>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="edit"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-describedby={null}
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-view1-delete"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <div
-                              className="bx--assistive-text"
-                              onMouseEnter={[Function]}
-                            >
-                              delete
-                            </div>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="delete"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 12H14V24H12zM18 12H20V24H18z"
-                              />
-                              <path
-                                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                              />
-                            </svg>
-                          </button>
+                          Columns: 7, Filters: 0, Search: pinoc
                         </div>
                       </div>
                       <div
-                        className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                        title="Columns: 7, Filters: 0, Search: pinoc"
+                        className="iot--list-item--content--row-actions"
+                        onClick={[Function]}
+                        onKeyPress={[Function]}
                       >
-                        Columns: 7, Filters: 0, Search: pinoc
+                        <button
+                          aria-describedby={null}
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                          data-testid="TableManageViewsModal-views-list-row-action-view1-edit"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <div
+                            className="bx--assistive-text"
+                            onMouseEnter={[Function]}
+                          >
+                            edit
+                          </div>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="edit"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                            />
+                          </svg>
+                        </button>
+                        <button
+                          aria-describedby={null}
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                          data-testid="TableManageViewsModal-views-list-row-action-view1-delete"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <div
+                            className="bx--assistive-text"
+                            onMouseEnter={[Function]}
+                          >
+                            delete
+                          </div>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="delete"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12 12H14V24H12zM18 12H20V24H18z"
+                            />
+                            <path
+                              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -28892,114 +28892,114 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                       >
                         <div
-                          className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                          className="iot--list-item--content--values--value"
                           title="Filters and search view (Private)"
                         >
                           Filters and search view (Private)
                         </div>
-                        <div>
-                          <div
-                            className="bx--tag bx--tag--blue"
-                            disabled={null}
-                            id="tag-33"
-                          >
-                            
-                            <span
-                              title="default"
-                            >
-                              default
-                            </span>
-                          </div>
-                        </div>
                         <div
-                          className="iot--list-item--content--row-actions"
-                          onClick={[Function]}
-                          onKeyPress={[Function]}
+                          className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                          title="Columns: 7, Filters: 1, Search:"
                         >
-                          <button
-                            aria-describedby={null}
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-view2-edit"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            tabIndex={0}
-                            type="button"
+                          Columns: 7, Filters: 1, Search:
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          className="bx--tag bx--tag--blue"
+                          disabled={null}
+                          id="tag-33"
+                        >
+                          
+                          <span
+                            title="default"
                           >
-                            <div
-                              className="bx--assistive-text"
-                              onMouseEnter={[Function]}
-                            >
-                              edit
-                            </div>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="edit"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-describedby={null}
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-view2-delete"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <div
-                              className="bx--assistive-text"
-                              onMouseEnter={[Function]}
-                            >
-                              delete
-                            </div>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="delete"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 12H14V24H12zM18 12H20V24H18z"
-                              />
-                              <path
-                                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                              />
-                            </svg>
-                          </button>
+                            default
+                          </span>
                         </div>
                       </div>
                       <div
-                        className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                        title="Columns: 7, Filters: 1, Search:"
+                        className="iot--list-item--content--row-actions"
+                        onClick={[Function]}
+                        onKeyPress={[Function]}
                       >
-                        Columns: 7, Filters: 1, Search:
+                        <button
+                          aria-describedby={null}
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                          data-testid="TableManageViewsModal-views-list-row-action-view2-edit"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <div
+                            className="bx--assistive-text"
+                            onMouseEnter={[Function]}
+                          >
+                            edit
+                          </div>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="edit"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                            />
+                          </svg>
+                        </button>
+                        <button
+                          aria-describedby={null}
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                          data-testid="TableManageViewsModal-views-list-row-action-view2-delete"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <div
+                            className="bx--assistive-text"
+                            onMouseEnter={[Function]}
+                          >
+                            delete
+                          </div>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="delete"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12 12H14V24H12zM18 12H20V24H18z"
+                            />
+                            <path
+                              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -29010,7 +29010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               className="iot--list--page"
             >
               <div
-                className="iot-simple-pagination-container bx--pagination--lg"
+                className="iot-simple-pagination-container bx--pagination--md"
                 data-testid="iot-simple-pagination"
               >
                 <div
@@ -30751,7 +30751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-0-row-actions-cell-overflow"
                         id="table-row-0-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -31096,7 +31096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-1-row-actions-cell-overflow"
                         id="table-row-1-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -31441,7 +31441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-2-row-actions-cell-overflow"
                         id="table-row-2-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -31779,7 +31779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-3-row-actions-cell-overflow"
                         id="table-row-3-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -32091,7 +32091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-4-row-actions-cell-overflow"
                         id="table-row-4-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -32436,7 +32436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-5-row-actions-cell-overflow"
                         id="table-row-5-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -32774,7 +32774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-6-row-actions-cell-overflow"
                         id="table-row-6-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -33119,7 +33119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-7-row-actions-cell-overflow"
                         id="table-row-7-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -33431,7 +33431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-8-row-actions-cell-overflow"
                         id="table-row-8-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -33769,7 +33769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-9-row-actions-cell-overflow"
                         id="table-row-9-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -38517,7 +38517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-3-row-actions-cell-overflow"
                         id="table-row-3-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -38764,7 +38764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-33-row-actions-cell-overflow"
                         id="table-row-33-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -39011,7 +39011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-63-row-actions-cell-overflow"
                         id="table-row-63-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -39258,7 +39258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-93-row-actions-cell-overflow"
                         id="table-row-93-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -39505,7 +39505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-15-row-actions-cell-overflow"
                         id="table-row-15-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -39752,7 +39752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-45-row-actions-cell-overflow"
                         id="table-row-45-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -39999,7 +39999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-75-row-actions-cell-overflow"
                         id="table-row-75-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -40246,7 +40246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-24-row-actions-cell-overflow"
                         id="table-row-24-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -40493,7 +40493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-54-row-actions-cell-overflow"
                         id="table-row-54-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -40740,7 +40740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="More actions"
-                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                         data-testid="table-row-84-row-actions-cell-overflow"
                         id="table-row-84-row-actions-cell-overflow"
                         onClick={[Function]}
@@ -51359,7 +51359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-33-row-actions-cell-overflow"
                       id="table-row-33-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -51703,7 +51703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-63-row-actions-cell-overflow"
                       id="table-row-63-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -52047,7 +52047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-93-row-actions-cell-overflow"
                       id="table-row-93-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -52656,7 +52656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-45-row-actions-cell-overflow"
                       id="table-row-45-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -53000,7 +53000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-75-row-actions-cell-overflow"
                       id="table-row-75-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -53344,7 +53344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-24-row-actions-cell-overflow"
                       id="table-row-24-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -53953,7 +53953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-84-row-actions-cell-overflow"
                       id="table-row-84-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -54297,7 +54297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-27-row-actions-cell-overflow"
                       id="table-row-27-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -54641,7 +54641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-57-row-actions-cell-overflow"
                       id="table-row-57-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -55250,7 +55250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-36-row-actions-cell-overflow"
                       id="table-row-36-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -55594,7 +55594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-6-row-actions-cell-overflow"
                       id="table-row-6-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -55938,7 +55938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-66-row-actions-cell-overflow"
                       id="table-row-66-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -56547,7 +56547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-21-row-actions-cell-overflow"
                       id="table-row-21-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -56891,7 +56891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-51-row-actions-cell-overflow"
                       id="table-row-51-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -57235,7 +57235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-81-row-actions-cell-overflow"
                       id="table-row-81-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -57844,7 +57844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-48-row-actions-cell-overflow"
                       id="table-row-48-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -58188,7 +58188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-78-row-actions-cell-overflow"
                       id="table-row-78-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -58532,7 +58532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-39-row-actions-cell-overflow"
                       id="table-row-39-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -59141,7 +59141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-9-row-actions-cell-overflow"
                       id="table-row-9-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -59485,7 +59485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-99-row-actions-cell-overflow"
                       id="table-row-99-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -59829,7 +59829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-0-row-actions-cell-overflow"
                       id="table-row-0-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -60438,7 +60438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-60-row-actions-cell-overflow"
                       id="table-row-60-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -60782,7 +60782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-90-row-actions-cell-overflow"
                       id="table-row-90-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -61126,7 +61126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-12-row-actions-cell-overflow"
                       id="table-row-12-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -61735,7 +61735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-72-row-actions-cell-overflow"
                       id="table-row-72-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -62081,7 +62081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-13-row-actions-cell-overflow"
                       id="table-row-13-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -62427,7 +62427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-43-row-actions-cell-overflow"
                       id="table-row-43-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -63040,7 +63040,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-25-row-actions-cell-overflow"
                       id="table-row-25-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -63386,7 +63386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-55-row-actions-cell-overflow"
                       id="table-row-55-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -63732,7 +63732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-85-row-actions-cell-overflow"
                       id="table-row-85-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -64345,7 +64345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-4-row-actions-cell-overflow"
                       id="table-row-4-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -64691,7 +64691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-64-row-actions-cell-overflow"
                       id="table-row-64-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -65037,7 +65037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-94-row-actions-cell-overflow"
                       id="table-row-94-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -65650,7 +65650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-67-row-actions-cell-overflow"
                       id="table-row-67-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -65996,7 +65996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-7-row-actions-cell-overflow"
                       id="table-row-7-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -66342,7 +66342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-97-row-actions-cell-overflow"
                       id="table-row-97-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -66955,7 +66955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-46-row-actions-cell-overflow"
                       id="table-row-46-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -67301,7 +67301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-76-row-actions-cell-overflow"
                       id="table-row-76-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -67612,13 +67612,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       aria-atomic="true"
-                      aria-labelledby="loading-id-9"
+                      aria-labelledby="loading-id-7"
                       aria-live="assertive"
                       className="bx--loading bx--loading--small"
                     >
                       <label
                         className="bx--visually-hidden"
-                        id="loading-id-9"
+                        id="loading-id-7"
                       >
                         Active loading indicator
                       </label>
@@ -68216,7 +68216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-61-row-actions-cell-overflow"
                       id="table-row-61-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -68562,7 +68562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-91-row-actions-cell-overflow"
                       id="table-row-91-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -68908,7 +68908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-28-row-actions-cell-overflow"
                       id="table-row-28-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -69521,7 +69521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-88-row-actions-cell-overflow"
                       id="table-row-88-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -69867,7 +69867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-19-row-actions-cell-overflow"
                       id="table-row-19-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -70213,7 +70213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-49-row-actions-cell-overflow"
                       id="table-row-49-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -70826,7 +70826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-10-row-actions-cell-overflow"
                       id="table-row-10-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -71172,7 +71172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-40-row-actions-cell-overflow"
                       id="table-row-40-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -71518,7 +71518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-70-row-actions-cell-overflow"
                       id="table-row-70-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -72131,7 +72131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-52-row-actions-cell-overflow"
                       id="table-row-52-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -72477,7 +72477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-82-row-actions-cell-overflow"
                       id="table-row-82-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -72823,7 +72823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-23-row-actions-cell-overflow"
                       id="table-row-23-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -73436,7 +73436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-83-row-actions-cell-overflow"
                       id="table-row-83-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -73782,7 +73782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-35-row-actions-cell-overflow"
                       id="table-row-35-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -74128,7 +74128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-5-row-actions-cell-overflow"
                       id="table-row-5-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -74741,7 +74741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-95-row-actions-cell-overflow"
                       id="table-row-95-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -75087,7 +75087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-14-row-actions-cell-overflow"
                       id="table-row-14-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -75433,7 +75433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-44-row-actions-cell-overflow"
                       id="table-row-44-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -76046,7 +76046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-17-row-actions-cell-overflow"
                       id="table-row-17-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -76392,7 +76392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-47-row-actions-cell-overflow"
                       id="table-row-47-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -76738,7 +76738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-77-row-actions-cell-overflow"
                       id="table-row-77-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -77351,7 +77351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-56-row-actions-cell-overflow"
                       id="table-row-56-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -77697,7 +77697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-86-row-actions-cell-overflow"
                       id="table-row-86-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -78043,7 +78043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-11-row-actions-cell-overflow"
                       id="table-row-11-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -78656,7 +78656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-71-row-actions-cell-overflow"
                       id="table-row-71-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -79002,7 +79002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-38-row-actions-cell-overflow"
                       id="table-row-38-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -79348,7 +79348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-68-row-actions-cell-overflow"
                       id="table-row-68-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -79961,7 +79961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-98-row-actions-cell-overflow"
                       id="table-row-98-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -80307,7 +80307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-29-row-actions-cell-overflow"
                       id="table-row-29-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -80653,7 +80653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-59-row-actions-cell-overflow"
                       id="table-row-59-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -81266,7 +81266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-20-row-actions-cell-overflow"
                       id="table-row-20-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -81612,7 +81612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-50-row-actions-cell-overflow"
                       id="table-row-50-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -81958,7 +81958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-80-row-actions-cell-overflow"
                       id="table-row-80-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -82571,7 +82571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-32-row-actions-cell-overflow"
                       id="table-row-32-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -82917,7 +82917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-62-row-actions-cell-overflow"
                       id="table-row-62-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -83263,7 +83263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                       data-testid="table-row-92-row-actions-cell-overflow"
                       id="table-row-92-row-actions-cell-overflow"
                       onClick={[Function]}
@@ -112299,7 +112299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "16px",
                           }
                         }
                       />
@@ -112475,7 +112475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -112621,7 +112621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       className="iot--list-item--nesting-offset"
                       style={
                         Object {
-                          "width": "32px",
+                          "width": "16px",
                         }
                       }
                     />
@@ -112635,17 +112635,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           className="iot--list-item--content--values--main"
                         >
                           <div
-                            className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                            className="iot--list-item--content--values--value"
                             title="String"
                           >
                             String
                           </div>
-                          <div
-                            className="iot--list-item--content--row-actions"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                          />
                         </div>
+                        <div
+                          className="iot--list-item--content--row-actions"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
+                        />
                       </div>
                     </div>
                   </div>
@@ -112722,99 +112722,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--category iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value iot--list-item--category"
                               title="Group A"
                             >
                               Group A
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-toggle-visibility-button-groupA"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Column is visible, click to hide."
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-toggle-visibility-button-groupA"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Column is visible, click to hide."
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Column is visible, click to hide.
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Column is visible, click to hide."
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
-                                  />
-                                  <path
-                                    d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-groupA"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                                Column is visible, click to hide.
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Column is visible, click to hide."
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
+                                />
+                                <path
+                                  d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-groupA"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Remove from list"
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Remove from list"
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -112861,7 +112861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -112875,99 +112875,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Date"
                             >
                               Date
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-toggle-visibility-button-date"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Column is visible, click to hide."
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-toggle-visibility-button-date"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Column is visible, click to hide."
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Column is visible, click to hide.
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Column is visible, click to hide."
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
-                                  />
-                                  <path
-                                    d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-date"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                                Column is visible, click to hide.
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Column is visible, click to hide."
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
+                                />
+                                <path
+                                  d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-date"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Remove from list"
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Remove from list"
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -113014,7 +113014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -113028,99 +113028,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Select"
                             >
                               Select
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-toggle-visibility-button-select"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Column is visible, click to hide."
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-toggle-visibility-button-select"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Column is visible, click to hide."
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Column is visible, click to hide.
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Column is visible, click to hide."
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
-                                  />
-                                  <path
-                                    d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-select"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                                Column is visible, click to hide.
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Column is visible, click to hide."
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
+                                />
+                                <path
+                                  d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-select"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Remove from list"
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Remove from list"
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -113199,99 +113199,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--category iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value iot--list-item--category"
                               title="Group B"
                             >
                               Group B
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-toggle-visibility-button-groupB"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Column is visible, click to hide."
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-toggle-visibility-button-groupB"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Column is visible, click to hide."
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Column is visible, click to hide.
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Column is visible, click to hide."
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
-                                  />
-                                  <path
-                                    d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-groupB"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                                Column is visible, click to hide.
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Column is visible, click to hide."
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
+                                />
+                                <path
+                                  d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-groupB"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Remove from list"
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Remove from list"
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -113338,7 +113338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -113352,99 +113352,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Status"
                             >
                               Status
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-toggle-visibility-button-status"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Column is visible, click to hide."
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-toggle-visibility-button-status"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Column is visible, click to hide."
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Column is visible, click to hide.
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Column is visible, click to hide."
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
-                                  />
-                                  <path
-                                    d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-status"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                                Column is visible, click to hide.
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Column is visible, click to hide."
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
+                                />
+                                <path
+                                  d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-status"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Remove from list"
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Remove from list"
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -113491,7 +113491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -113505,99 +113505,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Secret Information"
                             >
                               Secret Information
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-toggle-visibility-button-secretField"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Column is hidden, click to show."
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-toggle-visibility-button-secretField"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Column is hidden, click to show."
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Column is hidden, click to show.
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Column is hidden, click to show."
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M2.6,11.3l0.7-0.7C2.6,9.8,1.9,9,1.5,8c1-2.5,3.8-4.5,6.5-4.5c0.7,0,1.4,0.1,2,0.4l0.8-0.8C9.9,2.7,9,2.5,8,2.5	C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3C1,9.3,1.7,10.4,2.6,11.3z"
-                                  />
-                                  <path
-                                    d="M6 7.9c.1-1 .9-1.8 1.8-1.8l.9-.9C7.2 4.7 5.5 5.6 5.1 7.2 5 7.7 5 8.3 5.1 8.8L6 7.9zM15.5 7.8c-.6-1.5-1.6-2.8-2.9-3.7L15 1.7 14.3 1 1 14.3 1.7 15l2.6-2.6c1.1.7 2.4 1 3.7 1.1 3.3-.1 6.3-2.2 7.5-5.3C15.5 8.1 15.5 7.9 15.5 7.8zM10 8c0 1.1-.9 2-2 2-.3 0-.7-.1-1-.3L9.7 7C9.9 7.3 10 7.6 10 8zM8 12.5c-1 0-2.1-.3-3-.8l1.3-1.3c1.4.9 3.2.6 4.2-.8.7-1 .7-2.4 0-3.4l1.4-1.4c1.1.8 2 1.9 2.6 3.2C13.4 10.5 10.6 12.5 8 12.5z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-secretField"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                                Column is hidden, click to show.
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Column is hidden, click to show."
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2.6,11.3l0.7-0.7C2.6,9.8,1.9,9,1.5,8c1-2.5,3.8-4.5,6.5-4.5c0.7,0,1.4,0.1,2,0.4l0.8-0.8C9.9,2.7,9,2.5,8,2.5	C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3C1,9.3,1.7,10.4,2.6,11.3z"
+                                />
+                                <path
+                                  d="M6 7.9c.1-1 .9-1.8 1.8-1.8l.9-.9C7.2 4.7 5.5 5.6 5.1 7.2 5 7.7 5 8.3 5.1 8.8L6 7.9zM15.5 7.8c-.6-1.5-1.6-2.8-2.9-3.7L15 1.7 14.3 1 1 14.3 1.7 15l2.6-2.6c1.1.7 2.4 1 3.7 1.1 3.3-.1 6.3-2.2 7.5-5.3C15.5 8.1 15.5 7.9 15.5 7.8zM10 8c0 1.1-.9 2-2 2-.3 0-.7-.1-1-.3L9.7 7C9.9 7.3 10 7.6 10 8zM8 12.5c-1 0-2.1-.3-3-.8l1.3-1.3c1.4.9 3.2.6 4.2-.8.7-1 .7-2.4 0-3.4l1.4-1.4c1.1.8 2 1.9 2.6 3.2C13.4 10.5 10.6 12.5 8 12.5z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-secretField"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Remove from list"
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Remove from list"
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -113644,7 +113644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -113658,99 +113658,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Number"
                             >
                               Number
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-toggle-visibility-button-number"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Column is visible, click to hide."
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-toggle-visibility-button-number"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Column is visible, click to hide."
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Column is visible, click to hide.
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Column is visible, click to hide."
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
-                                  />
-                                  <path
-                                    d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-number"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                                Column is visible, click to hide.
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Column is visible, click to hide."
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.5,7.8C14.3,4.7,11.3,2.6,8,2.5C4.7,2.6,1.7,4.7,0.5,7.8c0,0.1,0,0.2,0,0.3c1.2,3.1,4.1,5.2,7.5,5.3	c3.3-0.1,6.3-2.2,7.5-5.3C15.5,8.1,15.5,7.9,15.5,7.8z M8,12.5c-2.7,0-5.4-2-6.5-4.5c1-2.5,3.8-4.5,6.5-4.5s5.4,2,6.5,4.5	C13.4,10.5,10.6,12.5,8,12.5z"
+                                />
+                                <path
+                                  d="M8,5C6.3,5,5,6.3,5,8s1.3,3,3,3s3-1.3,3-3S9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S9.1,10,8,10z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-number"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              title="Remove from list"
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                title="Remove from list"
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
