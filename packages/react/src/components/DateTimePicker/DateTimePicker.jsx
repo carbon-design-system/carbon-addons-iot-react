@@ -545,6 +545,43 @@ const DateTimePicker = ({
     }
   }, [datePickerElem, focusOnFirstField]);
 
+  const isValidDate = (date, time) => {
+    const isValid24HoursRegex = /^([01][0-9]|2[0-3]):([0-5][0-9])$/;
+    return date instanceof Date && !Number.isNaN(date) && isValid24HoursRegex.test(time);
+  };
+
+  // Validates absolute start date
+  const invalidStartDate = (startTime, endTime, absoluteValues) => {
+    // If start and end date have been selected
+    if (
+      absoluteValues.hasOwnProperty('start') &&
+      absoluteValues.hasOwnProperty('end') &&
+      isValidDate(new Date(absoluteValues.start), startTime)
+    ) {
+      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
+      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
+      return startDate >= endDate;
+    }
+    // Return invalid date if start time and end date not selected or if inputted time is not valid
+    return true;
+  };
+
+  // Validates absolute end date
+  const invalidEndDate = (startTime, endTime, absoluteValues) => {
+    // If start and end date have been selected
+    if (
+      absoluteValues.hasOwnProperty('start') &&
+      absoluteValues.hasOwnProperty('end') &&
+      isValidDate(new Date(absoluteValues.end), endTime)
+    ) {
+      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
+      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
+      return startDate >= endDate;
+    }
+    // Return invalid date if start time and end date not selected or if inputted time is not valid
+    return true;
+  };
+
   const onDatePickerChange = ([start, end], _, flatpickr) => {
     const calendarInFocus = document.activeElement.closest(
       `.${iotPrefix}--date-time-picker__datepicker`
@@ -793,43 +830,6 @@ const DateTimePicker = ({
     const newAbsolute = { ...absoluteValue };
     newAbsolute[property] = value;
     setAbsoluteValue(newAbsolute);
-  };
-
-  const isValidDate = (date, time) => {
-    const isValid24HoursRegex = /^([01][0-9]|2[0-3]):([0-5][0-9])$/;
-    return date instanceof Date && !isNaN(date) && isValid24HoursRegex.test(time);
-  };
-
-  // Validates absolute start date
-  const invalidStartDate = (startTime, endTime, absoluteValues) => {
-    // If start and end date have been selected
-    if (
-      absoluteValues.hasOwnProperty('start') &&
-      absoluteValues.hasOwnProperty('end') &&
-      isValidDate(new Date(absoluteValues.start), startTime)
-    ) {
-      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
-      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
-      return startDate >= endDate;
-    }
-    // Return invalid date if start time and end date not selected or if inputted time is not valid
-    return true;
-  };
-
-  // Validates absolute end date
-  const invalidEndDate = (startTime, endTime, absoluteValues) => {
-    // If start and end date have been selected
-    if (
-      absoluteValues.hasOwnProperty('start') &&
-      absoluteValues.hasOwnProperty('end') &&
-      isValidDate(new Date(absoluteValues.end), endTime)
-    ) {
-      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
-      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
-      return startDate >= endDate;
-    }
-    // Return invalid date if start time and end date not selected or if inputted time is not valid
-    return true;
   };
 
   // on change functions that trigger a absolute value update
