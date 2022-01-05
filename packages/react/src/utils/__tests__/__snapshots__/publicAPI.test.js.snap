@@ -3925,6 +3925,7 @@ Map {
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "emptyState": "No list items to show",
       "expandedIds": Array [],
       "getAllowedDropIds": null,
@@ -3996,6 +3997,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "emptyState": Object {
         "args": Array [
@@ -4208,6 +4222,7 @@ Map {
   "ListContent" => Object {
     "defaultProps": Object {
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "emptyState": "No list items to show",
       "expandedIds": Array [],
       "getAllowedDropIds": null,
@@ -4216,12 +4231,13 @@ Map {
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
-        "loadMore": "Load more...",
+        "loadMore": "View more...",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
       "indeterminateIds": Array [],
       "isCheckboxMultiSelect": false,
+      "isFiltering": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
@@ -4248,6 +4264,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "emptyState": Object {
         "args": Array [
@@ -4316,6 +4345,9 @@ Map {
         "type": "arrayOf",
       },
       "isCheckboxMultiSelect": Object {
+        "type": "bool",
+      },
+      "isFiltering": Object {
         "type": "bool",
       },
       "isFullHeight": Object {
@@ -4445,6 +4477,7 @@ Map {
   "VirtualListContent" => Object {
     "defaultProps": Object {
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "emptyState": "No list items to show",
       "expandedIds": Array [],
       "getAllowedDropIds": null,
@@ -4453,12 +4486,13 @@ Map {
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
-        "loadMore": "Load more...",
+        "loadMore": "View more...",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
       "indeterminateIds": Array [],
       "isCheckboxMultiSelect": false,
+      "isFiltering": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
@@ -4483,6 +4517,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "emptyState": Object {
         "args": Array [
@@ -4551,6 +4598,9 @@ Map {
         "type": "arrayOf",
       },
       "isCheckboxMultiSelect": Object {
+        "type": "bool",
+      },
+      "isFiltering": Object {
         "type": "bool",
       },
       "isFullHeight": [Function],
@@ -7887,6 +7937,7 @@ Map {
         "openMenu": "Open menu",
       },
       "isActionItemVisible": [Function],
+      "isSideNavExpanded": false,
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -7997,6 +8048,9 @@ Map {
       },
       "isActionItemVisible": Object {
         "type": "func",
+      },
+      "isSideNavExpanded": Object {
+        "type": "bool",
       },
       "onClickSideNavExpand": Object {
         "type": "func",
@@ -21680,6 +21734,7 @@ Map {
       "buttons": Array [],
       "className": null,
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "emptyState": "No list items to show",
       "expandedIds": Array [],
       "getAllowedDropIds": null,
@@ -21688,12 +21743,13 @@ Map {
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
-        "loadMore": "Load more...",
+        "loadMore": "View more",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
       "indeterminateIds": Array [],
       "isCheckboxMultiSelect": false,
+      "isFiltering": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
@@ -21733,6 +21789,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "emptyState": Object {
         "args": Array [
@@ -21804,6 +21873,9 @@ Map {
         "type": "arrayOf",
       },
       "isCheckboxMultiSelect": Object {
+        "type": "bool",
+      },
+      "isFiltering": Object {
         "type": "bool",
       },
       "isFullHeight": Object {
@@ -22058,6 +22130,7 @@ Map {
     "defaultProps": Object {
       "buttons": Array [],
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "hasPagination": true,
       "hasSearch": false,
       "i18n": Object {
@@ -22092,6 +22165,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "hasPagination": Object {
         "type": "bool",

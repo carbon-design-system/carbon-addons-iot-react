@@ -28,6 +28,7 @@ const defaultProps = {
     flipped: boolean('Flipped (flipped)', false),
     light: boolean('Light (light)', false),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
+    size: select('Size (size)', ['sm', 'md', 'lg'], 'md'),
     onClick: action('onClick'),
     onFocus: action('onFocus'),
     onKeyDown: action('onKeyDown'),
