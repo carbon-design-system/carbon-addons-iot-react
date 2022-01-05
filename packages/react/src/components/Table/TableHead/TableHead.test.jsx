@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import cloneDeep from 'lodash/cloneDeep';
+import { cloneDeep } from 'lodash-es';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -39,7 +39,7 @@ const commonTableHeadProps = {
 
 // Needed to get the debounced window resize tested
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
-jest.mock('lodash/debounce', () => (fn) => fn);
+jest.mock('lodash-es/debounce', () => (fn) => fn);
 
 describe('TableHead', () => {
   it('be selectable by testID or testId', () => {
@@ -56,6 +56,8 @@ describe('TableHead', () => {
         },
       ],
     }));
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <TableHead {...commonTableHeadProps} columns={columns} testID="TABLE_HEAD" />,
       {
@@ -71,6 +73,10 @@ describe('TableHead', () => {
     userEvent.click(screen.getAllByRole('button', { name: 'open and close list of options' })[1]);
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-1')).toBeDefined();
     expect(screen.getByTestId('TABLE_HEAD-column-overflow-menu-item-2')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(<TableHead {...commonTableHeadProps} columns={columns} testId="table_head" />, {
       container: document.body.appendChild(document.createElement('table')),
@@ -293,8 +299,10 @@ describe('TableHead', () => {
     });
 
     const column3 = screen.getByRole('columnheader', { name: /Column 3/i });
-    expect(column3).toHaveClass('iot--table-head--table-header--with-overflow');
-    expect(within(column3).getByText('1')).toHaveClass('iot--table-header-label__sort-order');
+    expect(column3).toHaveClass(`${iotPrefix}--table-head--table-header--with-overflow`);
+    expect(within(column3).getByText('1')).toHaveClass(
+      `${iotPrefix}--table-header-label__sort-order`
+    );
   });
 
   it('calls onOverflowItemClicked when multi-sort overflow is clicked', async () => {
@@ -328,7 +336,9 @@ describe('TableHead', () => {
     await waitFor(() => expect(screen.getByText('Multi-sort')).toBeInTheDocument());
 
     userEvent.click(screen.getByText(/Multi-sort/i));
-    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort');
+    expect(commonTableHeadProps.actions.onOverflowItemClicked).toHaveBeenCalledWith('multi-sort', {
+      columnId: 'col3',
+    });
   });
 
   describe('Column resizing active', () => {
@@ -593,10 +603,28 @@ describe('TableHead', () => {
       ];
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
-
+      jest.spyOn(console, 'error').mockImplementation(() => {});
       const { container, rerender } = render(<TableHead {...myProps} />, {
         container: document.body.appendChild(document.createElement('table')),
       });
+      // fallbacks to clean up output for old options. these can be removed
+      // when we move to new props in v3
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'Failed prop type: The prop `options.wrapCellText` is marked as required in `TableHead`'
+        )
+      );
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'Failed prop type: The prop `wrapText` is marked as required in `TableCellRenderer`'
+        )
+      );
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'Failed prop type: The prop `truncateCellText` is marked as required in `TableCellRenderer`'
+        )
+      );
+      console.error.mockReset();
 
       myProps.tableState = {
         ...myProps.tableState,
@@ -769,10 +797,12 @@ describe('TableHead', () => {
         container: document.body.appendChild(document.createElement('table')),
       });
 
-      expect(screen.queryAllByRole('button', 'Resize column')).toHaveLength(2);
+      expect(screen.queryAllByRole('button', { name: 'Resize column' })).toHaveLength(2);
 
       let lastTableHeader = screen.getByTestId('my-test-column-col3');
-      expect(within(lastTableHeader).queryAllByRole('button', 'Resize column')).toHaveLength(0);
+      expect(
+        within(lastTableHeader).queryAllByRole('button', { name: 'Resize column' })
+      ).toHaveLength(0);
 
       // Hide the last column (use shortcut via props)
       const orderingAfterToggleHide = cloneDeep(myProps.tableState.ordering).map((col) =>
@@ -789,10 +819,12 @@ describe('TableHead', () => {
           container: document.body.appendChild(document.createElement('table')),
         }
       );
-      expect(screen.queryAllByRole('button', 'Resize column')).toHaveLength(1);
+      expect(screen.queryAllByRole('button', { name: 'Resize column' })).toHaveLength(1);
 
       lastTableHeader = screen.getByTestId('my-test-column-col2');
-      expect(within(lastTableHeader).queryAllByRole('button', 'Resize column')).toHaveLength(0);
+      expect(
+        within(lastTableHeader).queryAllByRole('button', { name: 'Resize column' })
+      ).toHaveLength(0);
     });
 
     it('should always add resize handle to the last visible column if there is an expander column', () => {

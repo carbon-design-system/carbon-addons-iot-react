@@ -2,13 +2,14 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Checkbox } from '../..';
+import { Checkbox } from '../Checkbox';
 import { settings } from '../../constants/Settings';
+import { EditingStyle } from '../../utils/DragAndDropUtils';
 
 import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 const defaultEmptyText = 'No list items to show';
 
 describe('List', () => {
@@ -220,24 +221,45 @@ describe('List', () => {
     );
     expect(screen.getByLabelText('Chicago White Sox')).toBeTruthy();
   });
-  it('List shows default empty text if not empty state defined', () => {
+  it('it shows default empty text if not empty state defined', () => {
     render(<List title="list" />);
     expect(screen.getByText(defaultEmptyText)).toBeTruthy();
   });
-  it('List shows no empty text if defined', () => {
+  it('it shows no empty text if defined', () => {
     render(<List title="list" emptyState="" />);
     expect(screen.queryByText(defaultEmptyText)).toBeNull();
   });
-  it('List shows empty text if desired', () => {
+  it('it shows custom empty text if desired', () => {
     const emptyText = 'empty';
-    render(<List title="list" hasEmptyState emptyState={emptyText} />);
+    render(<List title="list" emptyState={emptyText} />);
     expect(screen.getByText(emptyText)).toBeTruthy();
   });
-  it('Renders custom component for empty state', () => {
+  it('renders custom component for empty state', () => {
     const emptyText = 'empty test';
     const emptyComponent = <div data-testid="emptyState">{emptyText}</div>;
-    render(<List title="list" hasEmptyState emptyState={emptyComponent} />);
+    render(<List title="list" emptyState={emptyComponent} />);
     expect(screen.getByTestId('emptyState').textContent).toEqual(emptyText);
+  });
+
+  it('shows no empty search text if defined as empty string', () => {
+    render(<List isFiltering title="list" emptySearchState="" />);
+    expect(screen.queryByText(defaultEmptyText)).toBeNull();
+  });
+
+  it('shows default empty search text if emptySearchState is not provided', () => {
+    render(<List isFiltering title="list" />);
+    expect(screen.getByText(List.defaultProps.emptySearchState)).toBeTruthy();
+  });
+
+  it('shows custom empty search text if desired', () => {
+    render(<List isFiltering title="list" emptySearchState="test-empty" />);
+    expect(screen.getByText('test-empty')).toBeTruthy();
+  });
+
+  it('renders custom component for empty search state', () => {
+    const emptyComponent = <div>test-empty</div>;
+    render(<List isFiltering title="list" emptySearchState={emptyComponent} />);
+    expect(screen.getByText('test-empty')).toBeVisible();
   });
 
   it('should show skeleton text when loading', () => {
@@ -277,7 +299,6 @@ describe('List', () => {
         items={getListItems(1)}
         handleSelect={onSelect}
         editingStyle="single-nesting"
-        isSelectable
       />
     );
     userEvent.click(screen.getByTitle('Item 1'));
@@ -287,21 +308,79 @@ describe('List', () => {
   it('should call onSelect when editingStyle is set to multiple', () => {
     const onSelect = jest.fn();
     render(
-      <List
-        title="list"
-        items={getListItems(1)}
-        handleSelect={onSelect}
-        editingStyle="multiple"
-        isSelectable
-      />
+      <List title="list" items={getListItems(1)} handleSelect={onSelect} editingStyle="multiple" />
     );
     userEvent.click(screen.getByTestId('1-checkbox'));
     expect(onSelect).toHaveBeenCalledWith('1', null);
   });
 
+  it('adds checkboxes when isCheckboxMultiSelect is set to true', () => {
+    const onSelect = jest.fn();
+    const { container } = render(
+      <List title="list" items={getListItems(1)} handleSelect={onSelect} isCheckboxMultiSelect />
+    );
+    userEvent.click(container.querySelectorAll(`.${prefix}--checkbox-label`)[0]);
+    expect(onSelect).toHaveBeenCalledWith('1', null);
+  });
+
+  it('sets selected checkboxes when isCheckboxMultiSelect is set to true', () => {
+    const onSelect = jest.fn();
+    const { rerender } = render(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        isCheckboxMultiSelect
+        selectedIds={['1']}
+      />
+    );
+    expect(screen.getByTestId('1-checkbox')).toBeChecked();
+
+    rerender(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        isCheckboxMultiSelect
+        selectedIds={[]}
+      />
+    );
+    expect(screen.getByTestId('1-checkbox')).not.toBeChecked();
+  });
+
+  it('sets indeterminate checkboxes when isCheckboxMultiSelect is set to true', () => {
+    const onSelect = jest.fn();
+    const { rerender } = render(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        isCheckboxMultiSelect
+        indeterminateIds={['1']}
+      />
+    );
+    expect(screen.getByTestId('1-checkbox')).toBePartiallyChecked();
+
+    rerender(
+      <List
+        title="list"
+        items={getListItems(1)}
+        handleSelect={onSelect}
+        isCheckboxMultiSelect
+        indeterminateIds={[]}
+      />
+    );
+    expect(screen.getByTestId('1-checkbox')).not.toBePartiallyChecked();
+  });
+
+  it('prevents row focus when isCheckboxMultiSelect is true', () => {
+    render(<List title="list" items={getListItems(1)} isCheckboxMultiSelect />);
+    expect(screen.getByRole('button')).toHaveAttribute('tabIndex', expect.stringMatching('-1'));
+  });
+
   it('calls handleLoadMore when load more row clicked', () => {
     const mockLoadMore = jest.fn();
-    render(
+    const { rerender } = render(
       <List
         title="Sports Teams"
         items={[
@@ -332,8 +411,24 @@ describe('List', () => {
     userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
     expect(mockLoadMore).toHaveBeenCalledWith('site-02');
     expect(mockLoadMore).toHaveBeenCalledTimes(1);
+
+    // Call load more from the top level
+    mockLoadMore.mockClear();
+    rerender(
+      <List
+        title="Sports Teams"
+        items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
+        handleLoadMore={mockLoadMore}
+        i18n={{ loadMore: 'Load more...' }}
+      />
+    );
+    expect(mockLoadMore).not.toHaveBeenCalled();
+    userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+    expect(mockLoadMore).toHaveBeenCalledWith('org');
+    expect(mockLoadMore).toHaveBeenCalledTimes(1);
   });
   it(' load more row clicked without handleLoadMore function provided', () => {
+    const { loadMore } = List.defaultProps.i18n;
     render(
       <List
         title="Sports Teams"
@@ -359,8 +454,28 @@ describe('List', () => {
         testId="test-list"
       />
     );
-    expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
-    userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+    expect(screen.getAllByText(loadMore)[0]).toBeInTheDocument();
+    userEvent.click(screen.getByRole('button', { name: loadMore }));
+  });
+
+  it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
+    render(<List items={getListItems(2)} editingStyle={EditingStyle.Single} lockedIds={['1']} />);
+    expect(
+      screen.getByText('Item 1').closest(`.${iotPrefix}--list-item-parent > *`)
+    ).not.toHaveAttribute('draggable');
+
+    expect(screen.getByText('Item 1').closest(`.${iotPrefix}--list-item`).firstChild).toHaveClass(
+      `${iotPrefix}--list-item--lock`
+    );
+
+    expect(
+      screen.getAllByText('Item 2')[0].closest(`.${iotPrefix}--list-item-parent > *`)
+    ).toHaveAttribute('draggable');
+  });
+
+  it('disabled the checkbox of a locked id when using isCheckboxMultiSelect', () => {
+    render(<List items={getListItems(1)} isCheckboxMultiSelect lockedIds={['1']} />);
+    expect(screen.getByRole('checkbox')).toBeDisabled();
   });
 
   describe('isVirtualList', () => {
@@ -590,24 +705,45 @@ describe('List', () => {
       );
       expect(screen.getByLabelText('Chicago White Sox')).toBeTruthy();
     });
-    it('List shows default empty text if not empty state defined', () => {
+    it('shows default empty text if not empty state defined', () => {
       render(<List title="list" isVirtualList />);
       expect(screen.getByText(defaultEmptyText)).toBeTruthy();
     });
-    it('List shows no empty text if defined', () => {
+    it('shows no empty text if defined', () => {
       render(<List title="list" emptyState="" isVirtualList />);
       expect(screen.queryByText(defaultEmptyText)).toBeNull();
     });
-    it('List shows empty text if desired', () => {
+    it('shows empty text if desired', () => {
       const emptyText = 'empty';
-      render(<List title="list" hasEmptyState emptyState={emptyText} isVirtualList />);
+      render(<List title="list" emptyState={emptyText} isVirtualList />);
       expect(screen.getByText(emptyText)).toBeTruthy();
     });
-    it('Renders custom component for empty state', () => {
+    it('renders custom component for empty state', () => {
       const emptyText = 'empty test';
       const emptyComponent = <div data-testid="emptyState">{emptyText}</div>;
-      render(<List title="list" hasEmptyState emptyState={emptyComponent} isVirtualList />);
+      render(<List title="list" emptyState={emptyComponent} isVirtualList />);
       expect(screen.getByTestId('emptyState').textContent).toEqual(emptyText);
+    });
+
+    it('shows no empty search text if defined as empty string', () => {
+      render(<List isFiltering title="list" emptySearchState="" isVirtualList />);
+      expect(screen.queryByText(defaultEmptyText)).toBeNull();
+    });
+
+    it('shows default empty search text if emptySearchState is not provided', () => {
+      render(<List isFiltering title="list" isVirtualList />);
+      expect(screen.getByText(List.defaultProps.emptySearchState)).toBeTruthy();
+    });
+
+    it('shows custom empty search text if desired', () => {
+      render(<List isFiltering title="list" emptySearchState="test-empty" isVirtualList />);
+      expect(screen.getByText('test-empty')).toBeTruthy();
+    });
+
+    it('renders custom component for empty search state', () => {
+      const emptyComponent = <div>test-empty</div>;
+      render(<List isFiltering title="list" emptySearchState={emptyComponent} isVirtualList />);
+      expect(screen.getByText('test-empty')).toBeVisible();
     });
 
     it('should show skeleton text when loading', () => {
@@ -651,7 +787,6 @@ describe('List', () => {
           items={getListItems(1)}
           handleSelect={onSelect}
           editingStyle="single-nesting"
-          isSelectable
           isVirtualList
         />
       );
@@ -667,7 +802,6 @@ describe('List', () => {
           items={getListItems(1)}
           handleSelect={onSelect}
           editingStyle="multiple"
-          isSelectable
           isVirtualList
         />
       );
@@ -675,9 +809,83 @@ describe('List', () => {
       expect(onSelect).toHaveBeenCalledWith('1', null);
     });
 
+    it('adds checkboxes when isCheckboxMultiSelect is set to true', () => {
+      const onSelect = jest.fn();
+      render(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isCheckboxMultiSelect
+          isVirtualList
+        />
+      );
+      userEvent.click(screen.getByTestId('1-checkbox'));
+      expect(onSelect).toHaveBeenCalledWith('1', null);
+    });
+
+    it('sets selected checkboxes when isCheckboxMultiSelect is set to true', () => {
+      const onSelect = jest.fn();
+      const { rerender } = render(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isCheckboxMultiSelect
+          selectedIds={['1']}
+          isVirtualList
+        />
+      );
+      expect(screen.getByTestId('1-checkbox')).toBeChecked();
+
+      rerender(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isCheckboxMultiSelect
+          selectedIds={[]}
+          isVirtualList
+        />
+      );
+      expect(screen.getByTestId('1-checkbox')).not.toBeChecked();
+    });
+
+    it('sets indeterminate checkboxes when isCheckboxMultiSelect is set to true', () => {
+      const onSelect = jest.fn();
+      const { rerender } = render(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isCheckboxMultiSelect
+          indeterminateIds={['1']}
+          isVirtualList
+        />
+      );
+      expect(screen.getByTestId('1-checkbox')).toBePartiallyChecked();
+
+      rerender(
+        <List
+          title="list"
+          items={getListItems(1)}
+          handleSelect={onSelect}
+          isCheckboxMultiSelect
+          indeterminateIds={[]}
+          isVirtualList
+        />
+      );
+      expect(screen.getByTestId('1-checkbox')).not.toBePartiallyChecked();
+    });
+
+    it('prevents row focus when isCheckboxMultiSelect is true', () => {
+      render(<List title="list" items={getListItems(1)} isCheckboxMultiSelect isVirtualList />);
+      expect(screen.getByRole('button')).toHaveAttribute('tabIndex', expect.stringMatching('-1'));
+    });
+
     it('calls handleLoadMore when load more row clicked', () => {
       const mockLoadMore = jest.fn();
-      render(
+      const { rerender } = render(
         <List
           title="Sports Teams"
           items={[
@@ -709,8 +917,24 @@ describe('List', () => {
       userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
       expect(mockLoadMore).toHaveBeenCalledWith('site-02');
       expect(mockLoadMore).toHaveBeenCalledTimes(1);
+
+      mockLoadMore.mockClear();
+      rerender(
+        <List
+          title="Sports Teams"
+          items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
+          isVirtualList
+          handleLoadMore={mockLoadMore}
+          i18n={{ loadMore: 'Load more...' }}
+        />
+      );
+      expect(mockLoadMore).not.toHaveBeenCalled();
+      userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+      expect(mockLoadMore).toHaveBeenCalledWith('org');
+      expect(mockLoadMore).toHaveBeenCalledTimes(1);
     });
     it('should load more row clicked without handleLoadMore function provided', () => {
+      const { loadMore } = List.defaultProps.i18n;
       render(
         <List
           title="Sports Teams"
@@ -737,8 +961,8 @@ describe('List', () => {
           isVirtualList
         />
       );
-      expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
-      userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+      expect(screen.getAllByText(loadMore)[0]).toBeInTheDocument();
+      userEvent.click(screen.getByRole('button', { name: loadMore }));
     });
 
     it('should pass override props to list content', () => {
@@ -759,6 +983,35 @@ describe('List', () => {
         />
       );
       expect(screen.getByTestId('__test-list-virtual-content__-loading')).toBeInTheDocument();
+    });
+
+    it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
+      render(
+        <List
+          items={getListItems(2)}
+          isVirtualList
+          editingStyle={EditingStyle.Single}
+          lockedIds={['1']}
+        />
+      );
+      expect(
+        screen.getByText('Item 1').closest(`.${iotPrefix}--list-item-parent > *`)
+      ).not.toHaveAttribute('draggable');
+
+      expect(screen.getByText('Item 1').closest(`.${iotPrefix}--list-item`).firstChild).toHaveClass(
+        `${iotPrefix}--list-item--lock`
+      );
+
+      expect(
+        screen.getAllByText('Item 2')[0].closest(`.${iotPrefix}--list-item-parent > *`)
+      ).toHaveAttribute('draggable');
+    });
+
+    it('disabled the checkbox of a locked id when using isCheckboxMultiSelect', () => {
+      render(
+        <List items={getListItems(1)} isVirtualList isCheckboxMultiSelect lockedIds={['1']} />
+      );
+      expect(screen.getByRole('checkbox')).toBeDisabled();
     });
   });
 });

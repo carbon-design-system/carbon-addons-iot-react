@@ -8,8 +8,7 @@
  * Office.
  */
 import React, { useRef, useState, useMemo } from 'react';
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
+import { isNil, isEmpty } from 'lodash-es';
 import { Edit20 } from '@carbon/icons-react';
 
 import {
@@ -143,7 +142,7 @@ const HotspotContent = ({
           (hotspotThreshold && hotspotThreshold.dataSourceId === dataSourceId // then see if the parent threshold might match this attribute
             ? hotspotThreshold
             : null);
-        const value = isNil(values[dataSourceId]) ? '--' : values[dataSourceId];
+        const value = isNil(values?.[dataSourceId]) ? '--' : values[dataSourceId];
         const thresholdIcon =
           thresholdMatch && thresholdMatch.dataSourceId === dataSourceId && thresholdMatch.icon ? (
             <CardIcon

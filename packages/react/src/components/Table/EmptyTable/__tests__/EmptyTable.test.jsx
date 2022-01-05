@@ -11,6 +11,7 @@ const commonTableProps = {
 
 describe('EmptyTable', () => {
   it('should be selectable by testID and testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <EmptyTable
         {...commonTableProps}
@@ -22,6 +23,10 @@ describe('EmptyTable', () => {
       }
     );
     expect(screen.getByTestId('EMPTY')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
 
     rerender(
       <EmptyTable

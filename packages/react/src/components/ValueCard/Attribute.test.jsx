@@ -9,6 +9,7 @@ const commonProps = {
   isNumberValueCompact: true,
   testId: 'attribute-test',
   attribute: {
+    dataSourceId: 'testDataSource',
     label: 'Test',
     unit: '%',
     precision: 5,

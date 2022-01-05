@@ -24,6 +24,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           style={
             Object {
               "--header-offset": "48px",
+              "--negative-header-offset": "-48px",
               "--scroll-transition-progress": 1,
             }
           }
@@ -122,7 +123,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           ".json",
                         ]
                       }
-                      aria-disabled={false}
                       className="bx--btn bx--btn--ghost bx--btn--md"
                       data-testid="dashboard-editor-header-file-uploader-button"
                       htmlFor="id3"
@@ -130,6 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       tabIndex={0}
                     >
                       <span
+                        aria-disabled={false}
                         role="button"
                       >
                         <svg
@@ -641,6 +642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             aria-hidden={true}
                             className="bx--batch-actions iot--table-batch-actions"
                             data-testid="table-for-card-Table-table-toolbar-batch-actions"
+                            onScroll={[Function]}
                           >
                             <div
                               className="bx--batch-summary"
@@ -770,8 +772,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -802,7 +802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </div>
                         </section>
                         <div
-                          className="addons-iot-table-container"
+                          className="addons-iot-table-container iot-table-container--dropdown-height-fix"
                         >
                           <div
                             className="bx--data-table-content"
@@ -969,7 +969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -989,7 +989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1014,7 +1014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1034,7 +1034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1059,7 +1059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1079,7 +1079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1104,7 +1104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1124,7 +1124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1149,7 +1149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1169,7 +1169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1194,7 +1194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1214,7 +1214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1239,7 +1239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1259,7 +1259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1284,7 +1284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1304,7 +1304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1329,7 +1329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1349,7 +1349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1374,7 +1374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1394,7 +1394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                     width=""
                                   >
                                     <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                     >
                                       <span
                                         className=""
@@ -1410,7 +1410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </div>
                         </div>
                         <div
-                          className="bx--pagination iot--pagination iot--pagination--hide-page"
+                          className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                           data-testid="table-for-card-Table-table-pagination"
                           style={
                             Object {
@@ -1785,8 +1785,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -1921,8 +1919,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2103,8 +2099,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2225,8 +2219,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2323,7 +2315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     aria-labelledby="iot--list-header--search-search"
-                    className="bx--search bx--search--sm"
+                    className="bx--search bx--search--lg"
                     role="search"
                   >
                     <div
@@ -3002,6 +2994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -3489,7 +3482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-labelledby="iot--list-header--search-search"
-                  className="bx--search bx--search--sm"
+                  className="bx--search bx--search--lg"
                   role="search"
                 >
                   <div
@@ -4227,6 +4220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -4325,7 +4319,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ".json",
                       ]
                     }
-                    aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
                     data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id9"
@@ -4333,6 +4326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     tabIndex={0}
                   >
                     <span
+                      aria-disabled={false}
                       role="button"
                     >
                       <svg
@@ -5720,7 +5714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-labelledby="iot--list-header--search-search"
-                  className="bx--search bx--search--sm"
+                  className="bx--search bx--search--lg"
                   role="search"
                 >
                   <div
@@ -7356,6 +7350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -7637,7 +7632,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ".json",
                       ]
                     }
-                    aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
                     data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id10"
@@ -7645,6 +7639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     tabIndex={0}
                   >
                     <span
+                      aria-disabled={false}
                       role="button"
                     >
                       <svg
@@ -9032,7 +9027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-labelledby="iot--list-header--search-search"
-                  className="bx--search bx--search--sm"
+                  className="bx--search bx--search--lg"
                   role="search"
                 >
                   <div
@@ -9204,6 +9199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -9302,7 +9298,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ".json",
                       ]
                     }
-                    aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
                     data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id7"
@@ -9310,6 +9305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     tabIndex={0}
                   >
                     <span
+                      aria-disabled={false}
                       role="button"
                     >
                       <svg
@@ -9837,8 +9833,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -9976,8 +9970,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -10185,7 +10177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-labelledby="iot--list-header--search-search"
-                  className="bx--search bx--search--sm"
+                  className="bx--search bx--search--lg"
                   role="search"
                 >
                   <div
@@ -11245,7 +11237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     aria-labelledby="iot--list-header--search-search"
-                    className="bx--search bx--search--sm"
+                    className="bx--search bx--search--lg"
                     role="search"
                   >
                     <div
@@ -11984,6 +11976,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -12082,7 +12075,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ".json",
                       ]
                     }
-                    aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
                     data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id1"
@@ -12090,6 +12082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     tabIndex={0}
                   >
                     <span
+                      aria-disabled={false}
                       role="button"
                     >
                       <svg
@@ -13477,7 +13470,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-labelledby="iot--list-header--search-search"
-                  className="bx--search bx--search--sm"
+                  className="bx--search bx--search--lg"
                   role="search"
                 >
                   <div
@@ -14180,6 +14173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -14461,7 +14455,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ".json",
                       ]
                     }
-                    aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
                     data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id8"
@@ -14469,6 +14462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     tabIndex={0}
                   >
                     <span
+                      aria-disabled={false}
                       role="button"
                     >
                       <svg
@@ -15856,7 +15850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-labelledby="iot--list-header--search-search"
-                  className="bx--search bx--search--sm"
+                  className="bx--search bx--search--lg"
                   role="search"
                 >
                   <div
@@ -16595,6 +16589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           style={
             Object {
               "--header-offset": "48px",
+              "--negative-header-offset": "-48px",
               "--scroll-transition-progress": 1,
             }
           }
@@ -16876,7 +16871,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           ".json",
                         ]
                       }
-                      aria-disabled={false}
                       className="bx--btn bx--btn--ghost bx--btn--md"
                       data-testid="dashboard-editor-header-file-uploader-button"
                       htmlFor="id6"
@@ -16884,6 +16878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       tabIndex={0}
                     >
                       <span
+                        aria-disabled={false}
                         role="button"
                       >
                         <svg
@@ -17385,7 +17380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 >
                   <div
                     aria-labelledby="iot--list-header--search-search"
-                    className="bx--search bx--search--sm"
+                    className="bx--search bx--search--lg"
                     role="search"
                   >
                     <div
@@ -18027,6 +18022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -18125,7 +18121,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ".json",
                       ]
                     }
-                    aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
                     data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id4"
@@ -18133,6 +18128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     tabIndex={0}
                   >
                     <span
+                      aria-disabled={false}
                       role="button"
                     >
                       <svg
@@ -18659,8 +18655,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -18757,7 +18751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-labelledby="iot--list-header--search-search"
-                  className="bx--search bx--search--sm"
+                  className="bx--search bx--search--lg"
                   role="search"
                 >
                   <div
@@ -19398,6 +19392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -19496,7 +19491,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ".json",
                       ]
                     }
-                    aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
                     data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id2"
@@ -19504,6 +19498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     tabIndex={0}
                   >
                     <span
+                      aria-disabled={false}
                       role="button"
                     >
                       <svg
@@ -19964,7 +19959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 onDrop={[Function]}
                 style={
                   Object {
-                    "height": "1264px",
+                    "height": "1584px",
                   }
                 }
               >
@@ -20015,6 +20010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-hidden={true}
                           className="bx--batch-actions iot--table-batch-actions"
                           data-testid="table-for-card-Table-table-toolbar-batch-actions"
+                          onScroll={[Function]}
                         >
                           <div
                             className="bx--batch-summary"
@@ -20144,8 +20140,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 fill="currentColor"
                                 focusable="false"
                                 height={16}
-                                onClick={[Function]}
-                                onKeyDown={[Function]}
                                 preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 viewBox="0 0 32 32"
@@ -20176,7 +20170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </div>
                       </section>
                       <div
-                        className="addons-iot-table-container"
+                        className="addons-iot-table-container iot-table-container--dropdown-height-fix"
                       >
                         <div
                           className="bx--data-table-content"
@@ -20343,7 +20337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20363,7 +20357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20388,7 +20382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20408,7 +20402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20433,7 +20427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20453,7 +20447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20478,7 +20472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20498,7 +20492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20523,7 +20517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20543,7 +20537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20568,7 +20562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20588,7 +20582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20613,7 +20607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20633,7 +20627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20658,7 +20652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20678,7 +20672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20703,7 +20697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20723,7 +20717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20748,7 +20742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20768,7 +20762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   width=""
                                 >
                                   <span
-                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                                   >
                                     <span
                                       className=""
@@ -20784,7 +20778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </div>
                       </div>
                       <div
-                        className="bx--pagination iot--pagination iot--pagination--hide-page"
+                        className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                         data-testid="table-for-card-Table-table-pagination"
                         style={
                           Object {
@@ -21160,8 +21154,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -21288,8 +21280,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -21521,8 +21511,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -21643,8 +21631,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           fill="currentColor"
                           focusable="false"
                           height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
@@ -21703,6 +21689,135 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   />
                 </div>
+                <div
+                  className="iot--card iot--dashboard-editor--preview__card iot--card--wrapper"
+                  data-testid="Card"
+                  id="Custom-2"
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  role="presentation"
+                  style={
+                    Object {
+                      "--card-default-height": "304px",
+                      "MozTransform": "translate(0px,1280px)",
+                      "OTransform": "translate(0px,1280px)",
+                      "WebkitTransform": "translate(0px,1280px)",
+                      "height": "304px",
+                      "msTransform": "translate(0px,1280px)",
+                      "position": "absolute",
+                      "transform": "translate(0px,1280px)",
+                      "width": "632px",
+                    }
+                  }
+                  tabIndex={0}
+                  type="CUSTOM"
+                  value={35}
+                >
+                  <div
+                    className="iot--card--header"
+                    data-testid="Card-header"
+                  >
+                    <span
+                      className="iot--card--title"
+                      data-testid="Card-title"
+                      title="Custom rendered card"
+                    >
+                      <div
+                        className="iot--card--title--text"
+                      >
+                        Custom rendered card
+                      </div>
+                    </span>
+                    <div
+                      className="iot--card--toolbar"
+                      data-testid="Card-toolbar"
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        title="Open and close list of options"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="Open and close list of options"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            Open and close list of options
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--card--content"
+                    data-testid="Card-content"
+                    style={
+                      Object {
+                        "--card-content-height": "256px",
+                      }
+                    }
+                  >
+                    <div>
+                      custom react element content
+                    </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
+                  </div>
+                  <span
+                    className="react-resizable-handle react-resizable-handle-se"
+                    onMouseDown={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "touchAction": "none",
+                      }
+                    }
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -21741,7 +21856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-labelledby="iot--list-header--search-search"
-                  className="bx--search bx--search--sm"
+                  className="bx--search bx--search--lg"
                   role="search"
                 >
                   <div
@@ -22382,6 +22497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -22480,7 +22596,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         ".json",
                       ]
                     }
-                    aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--md"
                     data-testid="dashboard-editor-header-file-uploader-button"
                     htmlFor="id5"
@@ -22488,6 +22603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     tabIndex={0}
                   >
                     <span
+                      aria-disabled={false}
                       role="button"
                     >
                       <svg
@@ -22658,6 +22774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <path
               d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+              data-icon-path="inner-path"
               fill="none"
             />
             <path
@@ -23202,7 +23319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               >
                 <div
                   aria-labelledby="iot--list-header--search-search"
-                  className="bx--search bx--search--sm"
+                  className="bx--search bx--search--lg"
                   role="search"
                 >
                   <div
@@ -23915,11 +24032,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Zm-1.125-5h2.25V12h-2.25Z"
+        data-icon-path="inner-path"
         fill="none"
       />
       <path
-        d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"
+        d="M16.002,6.1714h-.004L4.6487,27.9966,4.6506,28H27.3494l.0019-.0034ZM14.875,12h2.25v9h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+      />
+      <path
+        d="M29,30H3a1,1,0,0,1-.8872-1.4614l13-25a1,1,0,0,1,1.7744,0l13,25A1,1,0,0,1,29,30ZM4.6507,28H27.3493l.002-.0033L16.002,6.1714h-.004L4.6487,27.9967Z"
       />
       <title>
         warning-alt icon

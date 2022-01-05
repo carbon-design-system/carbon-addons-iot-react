@@ -30,7 +30,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                className="bx--text-input bx--text__input bx--text-input--light"
+                aria-describedby=""
+                className="bx--text-input bx--text-input--light"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
                 id="tooltip-form-title"
@@ -109,6 +110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select an icon"
                 type="button"
               >
                 <span
@@ -177,6 +179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select a color"
                 type="button"
               >
                 <span
@@ -294,7 +297,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                className="bx--text-input bx--text__input bx--text-input--light"
+                aria-describedby=""
+                className="bx--text-input bx--text-input--light"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
                 id="tooltip-form-title"
@@ -373,6 +377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select an icon"
                 type="button"
               >
                 <span
@@ -441,6 +446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title="Select a color"
                 type="button"
               >
                 <span
@@ -551,6 +557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <path
             d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+            data-icon-path="inner-path"
             fill="none"
           />
           <path
@@ -596,7 +603,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                className="bx--text-input bx--text__input bx--text-input--light"
+                aria-describedby=""
+                className="bx--text-input bx--text-input--light"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
                 id="tooltip-form-title"
@@ -675,6 +683,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title={
+                  <div
+                    className="iot--dropdown__item"
+                    title="Information square filled"
+                  >
+                    <div
+                      className="iot--dropdown__label"
+                    >
+                      <ForwardRef(InformationSquareFilled24) />
+                      <div
+                        className="iot--dropdown__label__content"
+                      >
+                        Information square filled
+                      </div>
+                    </div>
+                  </div>
+                }
                 type="button"
               >
                 <span
@@ -699,6 +724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <path
                           d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                          data-icon-path="inner-path"
                           fill="none"
                         />
                         <path
@@ -774,6 +800,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-1-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                title={
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="green"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#24a148",
+                          }
+                        }
+                        title="#24a148"
+                      />
+                      <div
+                        className="iot--color-dropdown__color-name"
+                      >
+                        green
+                      </div>
+                    </div>
+                  </div>
+                }
                 type="button"
               >
                 <span

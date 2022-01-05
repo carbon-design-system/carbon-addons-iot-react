@@ -17,6 +17,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       style={
         Object {
           "--header-offset": "48px",
+          "--negative-header-offset": "-48px",
           "--scroll-transition-progress": 1,
         }
       }
@@ -98,7 +99,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   value=""
                 />
                 <button
-                  aria-label="Clear search input"
+                  aria-label="Clear search"
                   className="bx--search-close bx--search-close--hidden"
                   onClick={[Function]}
                   type="button"
@@ -200,7 +201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-1566"
+                    aria-controls="accordion-item-1649"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -224,13 +225,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                     <div
                       className="bx--accordion__title"
+                      dir="auto"
                     >
                       Favorites
                     </div>
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-1566"
+                    id="accordion-item-1649"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -306,6 +308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -323,8 +326,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -453,6 +454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -470,8 +472,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -572,6 +572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -589,8 +590,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -640,7 +639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-1567"
+                    aria-controls="accordion-item-1650"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -664,13 +663,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                     <div
                       className="bx--accordion__title"
+                      dir="auto"
                     >
                       Dashboard Category A
                     </div>
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-1567"
+                    id="accordion-item-1650"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -746,6 +746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -763,8 +764,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -893,6 +892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -910,8 +910,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -1012,6 +1010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -1029,8 +1028,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -1166,6 +1163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="bx--overflow-menu"
+              data-testid="overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -1183,8 +1181,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1272,6 +1268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               aria-haspopup={true}
               aria-label="open and close list of options"
               className="bx--overflow-menu"
+              data-testid="overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -1289,8 +1286,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1355,6 +1350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       style={
         Object {
           "--header-offset": "48px",
+          "--negative-header-offset": "-48px",
           "--scroll-transition-progress": 1,
         }
       }
@@ -1436,7 +1432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   value=""
                 />
                 <button
-                  aria-label="Clear search input"
+                  aria-label="__Search Close Button__"
                   className="bx--search-close bx--search-close--hidden"
                   onClick={[Function]}
                   type="button"
@@ -1538,7 +1534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onAnimationEnd={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-1573"
+                    aria-controls="accordion-item-1656"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1562,13 +1558,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     </svg>
                     <div
                       className="bx--accordion__title"
+                      dir="auto"
                     >
                       __Favorites__
                     </div>
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-1573"
+                    id="accordion-item-1656"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -1644,6 +1641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
                                 className="bx--overflow-menu"
+                                data-testid="overflow-menu"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -1661,8 +1659,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                   fill="currentColor"
                                   focusable="false"
                                   height={16}
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
@@ -1738,7 +1734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-1570"
+              aria-controls="accordion-item-1653"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -1762,13 +1758,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </svg>
               <div
                 className="bx--accordion__title"
+                dir="auto"
               >
                 Title
               </div>
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-1570"
+              id="accordion-item-1653"
             >
               <div
                 className="tile-gallery--section--items"
@@ -1855,6 +1852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           aria-haspopup={true}
                           aria-label="open and close list of options"
                           className="bx--overflow-menu"
+                          data-testid="overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -1872,8 +1870,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -1981,6 +1977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           aria-haspopup={true}
                           aria-label="open and close list of options"
                           className="bx--overflow-menu"
+                          data-testid="overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -1998,8 +1995,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2135,6 +2130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           aria-haspopup={true}
                           aria-label="open and close list of options"
                           className="bx--overflow-menu"
+                          data-testid="overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -2152,8 +2148,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2203,7 +2197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onAnimationEnd={[Function]}
           >
             <button
-              aria-controls="accordion-item-1571"
+              aria-controls="accordion-item-1654"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -2227,13 +2221,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </svg>
               <div
                 className="bx--accordion__title"
+                dir="auto"
               >
                 More
               </div>
             </button>
             <div
               className="bx--accordion__content"
-              id="accordion-item-1571"
+              id="accordion-item-1654"
             >
               <div
                 className="tile-gallery--section--items"
@@ -2344,6 +2339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           aria-haspopup={true}
                           aria-label="open and close list of options"
                           className="bx--overflow-menu"
+                          data-testid="overflow-menu"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -2361,8 +2357,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -2495,7 +2489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1568"
+                aria-controls="accordion-item-1651"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2519,13 +2513,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   Title
                 </div>
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1568"
+                id="accordion-item-1651"
               >
                 <div
                   className="tile-gallery--section--items"
@@ -2612,6 +2607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             aria-haspopup={true}
                             aria-label="open and close list of options"
                             className="bx--overflow-menu"
+                            data-testid="overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -2629,8 +2625,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2738,6 +2732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             aria-haspopup={true}
                             aria-label="open and close list of options"
                             className="bx--overflow-menu"
+                            data-testid="overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -2755,8 +2750,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2892,6 +2885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             aria-haspopup={true}
                             aria-label="open and close list of options"
                             className="bx--overflow-menu"
+                            data-testid="overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -2909,8 +2903,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2960,7 +2952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1569"
+                aria-controls="accordion-item-1652"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2984,13 +2976,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </svg>
                 <div
                   className="bx--accordion__title"
+                  dir="auto"
                 >
                   More
                 </div>
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1569"
+                id="accordion-item-1652"
               >
                 <div
                   className="tile-gallery--section--items"
@@ -3101,6 +3094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             aria-haspopup={true}
                             aria-label="open and close list of options"
                             className="bx--overflow-menu"
+                            data-testid="overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -3118,8 +3112,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"

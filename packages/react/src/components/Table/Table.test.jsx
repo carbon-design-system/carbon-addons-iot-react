@@ -3,8 +3,8 @@ import { render, fireEvent, screen, waitFor, within } from '@testing-library/rea
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import merge from 'lodash/merge';
-import { ArrowRight16 } from '@carbon/icons-react';
+import { ArrowRight16, Screen16, ViewOff16 } from '@carbon/icons-react';
+import { merge } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
@@ -108,10 +108,12 @@ describe('Table', () => {
   ];
 
   it('should be selectable with testId or id', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 1)}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -132,6 +134,10 @@ describe('Table', () => {
         testId="__table__"
       />
     );
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('__table__')).toBeDefined();
     expect(screen.getByTestId('__table__-table-container')).toBeDefined();
     expect(screen.getByTestId('__table__-table-toolbar')).toBeDefined();
@@ -149,10 +155,11 @@ describe('Table', () => {
     ).toBeDefined();
     // close menu
     userEvent.click(screen.getByTestId('table-head--overflow'));
+
     rerender(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 1)}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -173,7 +180,6 @@ describe('Table', () => {
         id="__TABLE__"
       />
     );
-
     expect(screen.getByTestId('__TABLE__')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-container')).toBeDefined();
     expect(screen.getByTestId('__TABLE__-table-toolbar')).toBeDefined();
@@ -203,21 +209,21 @@ describe('Table', () => {
         view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
       />
     );
-    expect(wrapper.find('.bx--select-option')).toHaveLength(5);
+    expect(wrapper.find(`.${prefix}--select-option`)).toHaveLength(5);
   });
 
   it('handles row collapse', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={options}
         view={view}
       />
     );
-    wrapper.find('.bx--table-expand__button').at(0).simulate('click');
+    wrapper.find(`.${prefix}--table-expand__button`).at(0).simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
@@ -225,13 +231,13 @@ describe('Table', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={tableData.slice(0, 2)}
         actions={mockActions}
         options={options}
         view={view}
       />
     );
-    wrapper.find('.bx--table-expand__button').at(1).simulate('click');
+    wrapper.find(`.${prefix}--table-expand__button`).at(1).simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
@@ -239,7 +245,7 @@ describe('Table', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         actions={mockActions}
         options={options}
         view={view}
@@ -382,7 +388,7 @@ describe('Table', () => {
     render(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         actions={mockActions}
         options={options}
         view={view}
@@ -491,7 +497,7 @@ describe('Table', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
-        data={tableData}
+        data={[tableData[0]]}
         actions={mockActions}
         options={{
           hasSearch: true,
@@ -506,20 +512,114 @@ describe('Table', () => {
       />
     );
 
-    expect(wrapper.find('.bx--search-input')).toHaveLength(1);
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find(`.${prefix}--search-input`)).toHaveLength(1);
+    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
 
     wrapper.setProps({
       view: { toolbar: { search: { defaultValue: 'ferrari' } } },
     });
     wrapper.update();
 
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('ferrari');
 
     wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
     wrapper.update();
 
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
+  });
+
+  it('should call onApplySearch when typing in the search box with hasFastSearch:true', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+      />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(7);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}'
+    );
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(7);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'test');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(4);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('test');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.click(screen.getByRole('button', { name: 'Clear search input' }));
+    // once from onChange, once from onClear
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(2);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    mockActions.toolbar.onApplySearch.mockClear();
+  });
+
+  it('should only call onApplySearch when hitting Enter or Blur in the search box with hasFastSearch:false', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: false,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+      />
+    );
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing{enter}');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}test{enter}'
+    );
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('test');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}testing'
+    );
+    fireEvent.blur(screen.getByPlaceholderText('Search'));
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.click(screen.getByRole('button', { name: 'Clear search input' }));
+    // once on blur, once on clicking clear
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(2);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    mockActions.toolbar.onApplySearch.mockClear();
   });
 
   it('cells should always wrap by default', () => {
@@ -578,7 +678,9 @@ describe('Table', () => {
     );
     expect(
       wrapper3
-        .find('TableCell .iot--table__cell--truncate .iot--table__cell-text--truncate')
+        .find(
+          `TableCell .${iotPrefix}--table__cell--truncate .${iotPrefix}--table__cell-text--truncate`
+        )
         .first()
     ).toHaveLength(1);
   });
@@ -601,23 +703,27 @@ describe('Table', () => {
     const id = 'TableId3';
     // Should render correctly by default even if no lang attribute exist
     const { unmount, rerender, baseElement } = render(
-      <Table id={id} columns={tableColumns} data={[tableData[0]]} options={options} />
+      <Table id={id} columns={tableColumns} data={[tableData[0]]} options={options} size="xs" />
     );
     await fireEvent.click(screen.getByTestId(`${id}-row-0-row-actions-cell-overflow`));
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
       expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).toHaveClass(
-        'bx--overflow-menu--flip'
+        `${prefix}--overflow-menu--flip`,
+        // should render a sm overflow menu for `xs` table rows
+        `${prefix}--overflow-menu-options--sm`
       );
     });
     document.documentElement.setAttribute('dir', 'rtl');
 
-    rerender(<Table id={id} columns={tableColumns} data={[tableData[1]]} options={options} />);
+    rerender(
+      <Table id={id} columns={tableColumns} data={[tableData[1]]} options={options} size="sm" />
+    );
     await fireEvent.click(screen.getByTestId(`${id}-row-1-row-actions-cell-overflow`));
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
       expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).not.toHaveClass(
-        'bx--overflow-menu--flip'
+        `${prefix}--overflow-menu--flip`
       );
     });
 
@@ -951,9 +1057,7 @@ describe('Table', () => {
       },
     };
 
-    const { rerender } = render(
-      <Table {...initialState} {...additionalProps} isSortable i18n={i18nTest} />
-    );
+    const { rerender } = render(<Table {...initialState} {...additionalProps} i18n={i18nTest} />);
 
     expect(screen.getAllByLabelText(i18nTest.overflowMenuAria)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.clickToExpandAria)[0]).toBeInTheDocument();
@@ -1065,7 +1169,7 @@ describe('Table', () => {
       },
     };
 
-    const { rerender } = render(<Table {...initialState} {...additionalProps} isSortable />);
+    const { rerender } = render(<Table {...initialState} {...additionalProps} />);
 
     expect(screen.getByText(i18nDefault.itemsSelected(2))).toBeInTheDocument();
     expect(screen.getByText(i18nDefault.pageRange(1, 10))).toBeInTheDocument();
@@ -1073,7 +1177,7 @@ describe('Table', () => {
     expect(screen.getByText(i18nDefault.rowCountInHeader(100))).toBeInTheDocument();
 
     additionalProps.view.table.selectedIds = ['row-1'];
-    rerender(<Table {...initialState} {...additionalProps} isSortable />);
+    rerender(<Table {...initialState} {...additionalProps} />);
     expect(screen.getByText(i18nDefault.itemSelected(1))).toBeInTheDocument();
   });
 
@@ -1100,7 +1204,7 @@ describe('Table', () => {
     };
 
     const { rerender } = render(
-      <Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />
+      <Table {...initialState} {...additionalProps} i18n={i18nFunctions} />
     );
     expect(screen.getByText(i18nFunctions.itemsSelected(2))).toBeInTheDocument();
     expect(screen.getByText(i18nFunctions.pageRange(1, 10))).toBeInTheDocument();
@@ -1108,7 +1212,7 @@ describe('Table', () => {
     expect(screen.getByText(i18nFunctions.rowCountInHeader(100))).toBeInTheDocument();
 
     additionalProps.view.table.selectedIds = ['row-1'];
-    rerender(<Table {...initialState} {...additionalProps} isSortable i18n={i18nFunctions} />);
+    rerender(<Table {...initialState} {...additionalProps} i18n={i18nFunctions} />);
     expect(screen.getByText(i18nFunctions.itemSelected(1))).toBeInTheDocument();
   });
 
@@ -1178,7 +1282,7 @@ describe('Table', () => {
     expect(inModal.mock.calls.length).toBe(0);
     fireEvent.click(screen.getByText('Drill in 2').closest('button'));
     expect(inModal.mock.calls.length).toBe(1);
-    fireEvent.click(container.querySelector('.iot--row-actions-cell--overflow-menu'));
+    fireEvent.click(container.querySelector(`.${iotPrefix}--row-actions-cell--overflow-menu`));
     fireEvent.click(screen.queryByText('Drill in').closest('button'));
     expect(inModal.mock.calls.length).toBe(2);
   });
@@ -1282,7 +1386,7 @@ describe('Table', () => {
           ...col,
           width: '100px',
         }))}
-        data={tableData}
+        data={[tableData[0]]}
       />
     );
 
@@ -1295,7 +1399,7 @@ describe('Table', () => {
           width: '100px',
           overflowMenuItems: overflowData,
         }))}
-        data={tableData}
+        data={[tableData[0]]}
       />
     );
 
@@ -1747,7 +1851,7 @@ describe('Table', () => {
         <Table
           id={tableTestId}
           columns={tableColumns}
-          data={tableData}
+          data={tableData.slice(0, 5)}
           options={{ hasAggregations: true }}
           view={{
             aggregations: { columns: [{ id: columnId }] },
@@ -1757,7 +1861,7 @@ describe('Table', () => {
 
       expect(
         screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`).textContent
-      ).toEqual('2470');
+      ).toEqual('30');
     });
 
     it('shows aggregation for specified columns using custom aggregation function', () => {
@@ -1772,7 +1876,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={tableData.slice(0, 5)}
           tooltip="this is a tooltip"
           options={{ hasAggregations: true }}
           actions={{
@@ -1798,7 +1902,7 @@ describe('Table', () => {
 
       expect(
         screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`).textContent
-      ).toEqual('2471');
+      ).toEqual('31');
       expect(sumFunction).toHaveBeenCalled();
 
       const overflow = screen.getByTestId('table-head--overflow');
@@ -1845,7 +1949,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           options={{ hasFilter: true, hasAdvancedFilter: true }}
         />
       );
@@ -1864,7 +1968,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           options={{ hasAdvancedFilter: 'true' }}
         />
       );
@@ -1880,7 +1984,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onToggleAdvancedFilter: handleToggleFilters,
@@ -1906,7 +2010,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onApplyAdvancedFilter: handleApplyFilter,
@@ -1935,24 +2039,24 @@ describe('Table', () => {
       expect(filterFlyout).toHaveAttribute('open');
 
       userEvent.click(screen.getByTestId('flyout-menu-apply'));
-      expect(handleApplyFilter).toBeCalledWith({
+      expect(handleApplyFilter).toHaveBeenCalledWith({
         simple: {},
         advanced: {
           filterIds: [],
         },
       });
       userEvent.click(screen.getByTestId('flyout-menu-cancel'));
-      expect(handleCancelFilter).toBeCalledTimes(1);
+      expect(handleCancelFilter).toHaveBeenCalledTimes(1);
       userEvent.click(screen.getByRole('tab', { name: 'Advanced filters' }));
       userEvent.click(screen.getByRole('button', { name: 'create a new advanced filter' }));
-      expect(handleCreateAdvancedFilter).toBeCalledTimes(1);
+      expect(handleCreateAdvancedFilter).toHaveBeenCalledTimes(1);
       expect(screen.getByText('Select a filter')).toBeVisible();
 
       rerender(
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onApplyAdvancedFilter: handleApplyFilter,
@@ -1985,7 +2089,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onApplyAdvancedFilter: handleApplyFilter,
@@ -2096,7 +2200,7 @@ describe('Table', () => {
         <Table
           id="test"
           columns={tableColumns}
-          data={tableData}
+          data={[tableData[0]]}
           actions={{
             toolbar: {
               onApplyAdvancedFilter: handleApplyFilter,
@@ -2215,7 +2319,7 @@ describe('Table', () => {
       <Table
         id="loading-table"
         columns={tableColumns}
-        data={tableData}
+        data={tableData.slice(0, 5)}
         view={{ table: { loadingState: { isLoading: false, rowCount: 10, columnCount: 3 } } }}
       />
     );
@@ -2223,8 +2327,8 @@ describe('Table', () => {
       container.querySelectorAll(`.${iotPrefix}--table-skeleton-with-headers--table-row`)
     ).toHaveLength(0);
 
-    // 20 rows plus the header
-    expect(container.querySelectorAll('tr')).toHaveLength(21);
+    // 5 rows plus the header
+    expect(container.querySelectorAll('tr')).toHaveLength(6);
     expect(screen.getByTitle('String')).toBeVisible();
     expect(screen.getByTitle('Date')).toBeVisible();
   });
@@ -2258,41 +2362,65 @@ describe('Table', () => {
   it('should show a deprecation warning for old size props', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
-      <Table id="loading-table" columns={tableColumns} data={tableData} size="compact" />
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="compact" />
     );
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `compact` has been deprecated for the `size` prop on the Table component.'
       )
     );
-    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="short" />);
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `compact` has been deprecated for the `size` prop on the TableHead component.'
+      )
+    );
+    rerender(
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="short" />
+    );
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `short` has been deprecated for the `size` prop on the Table component.'
       )
     );
-    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="normal" />);
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `short` has been deprecated for the `size` prop on the TableHead component.'
+      )
+    );
+    rerender(
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="normal" />
+    );
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `normal` has been deprecated for the `size` prop on the Table component.'
       )
     );
-    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="tall" />);
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `normal` has been deprecated for the `size` prop on the TableHead component.'
+      )
+    );
+    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="tall" />);
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'The value `tall` has been deprecated for the `size` prop on the Table component.'
       )
     );
-    rerender(
-      <Table id="loading-table" columns={tableColumns} data={tableData} size="unsupported" />
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'The value `tall` has been deprecated for the `size` prop on the TableHead component.'
+      )
     );
-    expect(console.error).toHaveBeenLastCalledWith(
+    rerender(
+      <Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="unsupported" />
+    );
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'Failed prop type: Invalid prop `size` of value `unsupported` supplied to `Table`'
       )
     );
     jest.clearAllMocks();
-    rerender(<Table id="loading-table" columns={tableColumns} data={tableData} size="lg" />);
+    rerender(<Table id="loading-table" columns={tableColumns} data={[tableData[0]]} size="lg" />);
     expect(console.error).not.toHaveBeenCalled();
   });
 
@@ -2390,7 +2518,7 @@ describe('Table', () => {
     const { rerender } = render(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 1)}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -2425,7 +2553,7 @@ describe('Table', () => {
     rerender(
       <Table
         columns={tableColumns}
-        data={tableData.slice(0, 1)}
+        data={[tableData[0]]}
         expandedData={expandedData}
         actions={mockActions}
         options={{
@@ -2455,5 +2583,344 @@ describe('Table', () => {
     expect(toggleButton).not.toBeDisabled();
     expect(screen.getByText('Total:')).toBeVisible();
     jest.resetAllMocks();
+  });
+
+  it('should throw a prop-type warning if float used for maxPages', () => {
+    const { __DEV__ } = global;
+    global.__DEV__ = true;
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    render(
+      <Table
+        columns={tableColumns}
+        data={tableData.slice(0, 10)}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{
+          ...options,
+          hasPagination: true,
+        }}
+        view={{
+          ...view,
+          pagination: {
+            pageSize: 5,
+            pageSizes: [5, 10],
+            maxPages: 1.5,
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByText('1 of 2 pages')).toBeVisible();
+    // 5 * 1.5 = 7.5, rounded is 8 items.
+    expect(screen.getByText('1–5 of 8 items')).toBeVisible();
+
+    expect(console.error).toHaveBeenLastCalledWith(
+      expect.stringContaining(
+        'Warning: Failed prop type: Invalid prop `maxPages` supplied to `Table`. `maxPages` must be a positive integer.'
+      )
+    );
+    global.__DEV__ = __DEV__;
+    jest.resetAllMocks();
+  });
+
+  describe('toolbarActions in toolbar', () => {
+    const toolbarActions = [
+      {
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: Screen16,
+      },
+      {
+        id: 'edit',
+        labelText: 'Edit something',
+        disabled: true,
+        isOverflow: true,
+      },
+      {
+        id: 'hide',
+        labelText: 'Hide something',
+        renderIcon: ViewOff16,
+        hasDivider: true,
+        isOverflow: true,
+      },
+      {
+        id: 'delete',
+        labelText: 'Delete something',
+        isDelete: true,
+        isOverflow: true,
+      },
+      {
+        id: 'hidden',
+        labelText: 'Hidden option',
+        hidden: true,
+        isOverflow: true,
+      },
+    ];
+    const onApplyToolbarAction = jest.fn();
+
+    beforeEach(() => {
+      jest
+        .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+        .mockImplementation(() => ({ width: 100, height: 100 }));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('should allow other actions to be passed to the overflow menu when using aggregations', async () => {
+      render(
+        <Table
+          columns={tableColumns}
+          data={[tableData[0]]}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: true,
+          }}
+          view={{
+            ...view,
+            aggregations: {
+              label: 'Total: ',
+              columns: [
+                {
+                  id: 'number',
+                  value: 100000,
+                },
+              ],
+            },
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions,
+            },
+          }}
+        />
+      );
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+      expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+      expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+        `${prefix}--overflow-menu-options__option--danger`
+      );
+      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        hasDivider: true,
+        isOverflow: true,
+        renderIcon: expect.anything(),
+      });
+    });
+
+    it('should add items to the toolbarActions overflow menu when aggregations are not used', async () => {
+      render(
+        <Table
+          columns={tableColumns}
+          data={[tableData[0]]}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions,
+            },
+          }}
+        />
+      );
+
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+      expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+      expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+        `${prefix}--overflow-menu-options__option--danger`
+      );
+      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        renderIcon: expect.anything(),
+        hasDivider: true,
+        isOverflow: true,
+      });
+    });
+
+    it('should allow dynamically creating the toolbarActions from a callback', async () => {
+      const obj = {
+        toolbarActions: () => toolbarActions,
+      };
+
+      jest.spyOn(obj, 'toolbarActions');
+
+      render(
+        <Table
+          columns={tableColumns}
+          data={[tableData[0]]}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions: obj.toolbarActions,
+            },
+          }}
+        />
+      );
+      // once to check if there are non-overflow toolbarActions in the callback
+      expect(obj.toolbarActions).toHaveBeenCalledTimes(1);
+
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      // second after the toolbar has been opened
+      expect(obj.toolbarActions).toHaveBeenCalledTimes(2);
+
+      // check an item is present with correct state
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+
+      userEvent.click(screen.getByRole('menuitem', { name: 'Delete something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'delete',
+        labelText: 'Delete something',
+        isDelete: true,
+        isOverflow: true,
+      });
+
+      // ensure state tracking is working and items are visible again when re-opening.
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        hasDivider: true,
+        isOverflow: true,
+        renderIcon: expect.anything(),
+      });
+    });
+
+    it('should render icons given various renderIcon types', async () => {
+      render(
+        <Table
+          testId="icon-render"
+          columns={tableColumns}
+          data={[tableData[0]]}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions: [
+                {
+                  id: 'string',
+                  renderIcon: 'warning',
+                  labelText: 'a-warning-label',
+                  isOverflow: true,
+                },
+                {
+                  id: 'off',
+                  renderIcon: () => <ViewOff16 aria-label="View off" />,
+                  labelText: 'View off',
+                  isOverflow: true,
+                },
+                {
+                  id: 'arrow-right',
+                  renderIcon: ArrowRight16,
+                  labelText: 'Arrow right',
+                  isOverflow: true,
+                },
+                {
+                  id: 'text',
+                  labelText: 'Just text',
+                  isOverflow: true,
+                },
+                {
+                  id: 'off-in-toolbar',
+                  renderIcon: () => <ViewOff16 aria-label="View off toolbar" />,
+                  labelText: 'View off toolbar',
+                },
+                {
+                  id: 'arrow-right-in-toolbar',
+                  renderIcon: ArrowRight16,
+                  labelText: 'Arrow right toolbar',
+                },
+              ],
+            },
+          }}
+        />
+      );
+
+      expect(screen.getByTitle('View off toolbar')).toBeVisible();
+      expect(screen.getByTitle('View off toolbar').firstChild).toBeVisible();
+      expect(screen.getByTitle('View off toolbar').firstChild).toHaveAttribute(
+        'aria-label',
+        'View off toolbar'
+      );
+      expect(screen.getByTitle('Arrow right toolbar')).toBeVisible();
+      expect(screen.getByTitle('Arrow right toolbar').firstChild).toBeVisible();
+      expect(screen.getByTitle('Arrow right toolbar').firstChild).toHaveAttribute(
+        'aria-label',
+        'Arrow right toolbar'
+      );
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'a-warning-label' })).toBeVisible();
+      expect(screen.getByLabelText('a-warning-label', { selector: 'svg' })).toBeVisible();
+      expect(screen.getByTitle('View off')).toBeVisible();
+      expect(screen.getByTitle('View off').firstChild).toBeVisible();
+      expect(screen.getByTitle('View off').firstChild).toHaveAttribute('aria-label', 'View off');
+      expect(screen.getByTitle('Arrow right')).toBeVisible();
+      expect(screen.getByTitle('Arrow right').firstChild).toBeVisible();
+      expect(screen.getByTitle('Arrow right').firstChild).toHaveAttribute(
+        'description',
+        'Arrow right'
+      );
+      expect(screen.getByRole('menuitem', { name: 'Just text' })).toBeVisible();
+    });
   });
 });

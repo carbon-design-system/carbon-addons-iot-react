@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { EventSchedule16 } from '@carbon/icons-react';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classnames from 'classnames';
-import isNil from 'lodash/isNil';
+import { isNil } from 'lodash-es';
 
 import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { settings } from '../../constants/Settings';
@@ -74,6 +74,7 @@ const CardRangePicker = ({
         </div>
 
         <OverflowMenu
+          size="lg"
           className={classnames(`${iotPrefix}--card--toolbar-date-range-action`)}
           flipped
           title={i18n.selectTimeRangeLabel}

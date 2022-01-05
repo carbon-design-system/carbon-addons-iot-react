@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import isEqual from 'lodash/isEqual';
+import { isEqual } from 'lodash-es';
 import update from 'immutability-helper';
 
 import Button from '../../Button/Button';
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { settings } from '../../../constants/Settings';
 import { TableColumnsPropTypes, TableSortPropType } from '../TablePropTypes';
-import { DragAndDrop } from '../../..';
+import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 
 import { TableMultiSortRow } from './TableMultiSortRow';
 
@@ -29,7 +29,7 @@ const propTypes = {
     onCancelMultiSortColumns: PropTypes.func,
     onClearMultiSortColumns: PropTypes.func,
   }).isRequired,
-  sort: PropTypes.arrayOf(TableSortPropType).isRequired,
+  sort: PropTypes.oneOfType([TableSortPropType, PropTypes.arrayOf(TableSortPropType)]).isRequired,
   showMultiSortModal: PropTypes.bool,
   i18n: PropTypes.shape({
     multiSortModalTitle: PropTypes.string,
@@ -75,6 +75,17 @@ const defaultProps = {
   testId: 'multi-sort-modal',
 };
 
+/**
+ * Simple helper function to turn the sort object into an array and filter empty values from it
+ * @param {Array|Object} sort A sort object or an array of sort objects
+ * @returns Array
+ */
+const cleanSortArray = (sort) => {
+  const sortArray = Array.isArray(sort) ? sort : sort !== undefined ? [sort] : [];
+
+  return sortArray.filter(({ columnId }) => columnId);
+};
+
 const TableMultiSortModal = ({
   columns,
   ordering,
@@ -92,11 +103,26 @@ const TableMultiSortModal = ({
     onClearMultiSortColumns,
   } = actions;
 
-  const [selectedMultiSortColumns, setSelectedMultiSortColumns] = useState(sort);
+  const sortHelper = useCallback(() => {
+    const sortArray = cleanSortArray(sort);
+
+    if (!sortArray.length) {
+      return [
+        {
+          columnId: '',
+          direction: 'ASC',
+        },
+      ];
+    }
+
+    return sortArray;
+  }, [sort]);
+
+  const [selectedMultiSortColumns, setSelectedMultiSortColumns] = useState(sortHelper);
 
   useEffect(() => {
-    setSelectedMultiSortColumns(sort);
-  }, [sort]);
+    setSelectedMultiSortColumns(sortHelper);
+  }, [sort, sortHelper]);
 
   const sortDirections = useMemo(
     () => [
@@ -220,7 +246,7 @@ const TableMultiSortModal = ({
   };
 
   const handleCancelMultiSortColumns = () => {
-    setSelectedMultiSortColumns(sort);
+    setSelectedMultiSortColumns(cleanSortArray(sort));
     onCancelMultiSortColumns();
   };
 

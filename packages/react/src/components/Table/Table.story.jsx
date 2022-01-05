@@ -1,21 +1,26 @@
 import React, { useState, useMemo, useEffect, useCallback, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select, array, object } from '@storybook/addon-knobs';
-import Arrow from '@carbon/icons-react/lib/arrow--right/16';
-import Add from '@carbon/icons-react/lib/add/16';
-import Edit from '@carbon/icons-react/lib/edit/16';
+import Arrow from '@carbon/icons-react/es/arrow--right/16';
+import Add from '@carbon/icons-react/es/add/16';
+import Edit from '@carbon/icons-react/es/edit/16';
 import { spacing03 } from '@carbon/layout';
-import { Add20, TrashCan16 } from '@carbon/icons-react';
-import cloneDeep from 'lodash/cloneDeep';
-import assign from 'lodash/assign';
-import isEqual from 'lodash/isEqual';
+import { Add20, Column20, TrashCan16, ViewOff16 } from '@carbon/icons-react';
+import { cloneDeep, assign, isEqual } from 'lodash-es';
 import { firstBy } from 'thenby';
+import uuid from 'uuid';
 
-import { TextInput, Checkbox, ToastNotification, Button, FormGroup, Form } from '../../index';
+import { TextInput } from '../TextInput';
+import { Checkbox } from '../Checkbox';
+import { ToastNotification } from '../Notification';
+import Button from '../Button';
+import { FormGroup } from '../FormGroup';
+import { Form } from '../Form';
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
 import EmptyState from '../EmptyState';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import TableREADME from './Table.mdx';
 import Table from './Table';
@@ -25,6 +30,7 @@ import MockApiClient from './AsyncTable/MockApiClient';
 import TableViewDropdown from './TableViewDropdown/TableViewDropdown';
 import TableSaveViewModal from './TableSaveViewModal/TableSaveViewModal';
 import TableManageViewsModal from './TableManageViewsModal/TableManageViewsModal';
+import TableColumnCustomizationModal from './TableColumnCustomizationModal/TableColumnCustomizationModal';
 
 const selectData = [
   {
@@ -416,6 +422,7 @@ export const tableActions = {
     // since they won't be adding this prop to any of their components
     // can be readded in V3.
     // onToggleAggregations: action('onToggleAggregations'),
+    onApplyToolbarAction: action('onApplyToolbarAction'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -553,6 +560,30 @@ export const initialState = {
   },
 };
 
+const tableToolbarActions = [
+  {
+    id: 'edit',
+    labelText: 'Edit',
+    renderIcon: 'edit',
+    disabled: true,
+    isOverflow: true,
+  },
+  {
+    id: 'delete',
+    labelText: 'Delete',
+    isDelete: true,
+    hasDivider: true,
+    isOverflow: true,
+    renderIcon: () => <TrashCan16 />,
+  },
+  {
+    id: 'hidden',
+    labelText: 'Hidden',
+    hidden: true,
+    isOverflow: true,
+  },
+];
+
 export default {
   title: '1 - Watson IoT/Table/Table',
 
@@ -588,7 +619,6 @@ export const BasicDumbTable = () => {
     'Basic `dumb` table'
   );
   const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
-  const lightweight = boolean('Show an alternate header style (lightweight)', false);
   const hasColumnSelection = boolean(
     'Enables choosing which columns are visible or drag-and-drop reorder them (options.hasColumnSelection)',
     false
@@ -600,7 +630,7 @@ export const BasicDumbTable = () => {
   );
 
   const hasMultiSort = boolean(
-    'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
+    'Enables sorting the table by multiple dimensions (options.hasMultiSort)',
     false
   );
   return (
@@ -608,7 +638,6 @@ export const BasicDumbTable = () => {
       id="table"
       secondaryTitle={secondaryTitle}
       useZebraStyles={useZebraStyles}
-      lightweight={lightweight}
       tooltip={<div>Now with custom tooltip content!</div>}
       columns={
         hasMultiSort
@@ -653,6 +682,10 @@ export const BasicDumbTable = () => {
           ['multi', 'single', false],
           'multi'
         ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
+          true
+        ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
         hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
         preserveColumnWidths: boolean(
@@ -683,6 +716,7 @@ export const BasicDumbTable = () => {
         toolbar: {
           activeBar: hasColumnSelection || hasColumnSelectionConfig ? 'column' : undefined,
           isDisabled: boolean('Disable the table toolbar (view.toolbar.isDisabled)', false),
+          toolbarActions: tableToolbarActions,
         },
         table: {
           loadingState: {
@@ -768,7 +802,6 @@ export const TableWithColumnGrouping = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
-  const lightweight = boolean('Show an alternate header style (lightweight)', false);
   const ordering = object('Ordering (view.table.ordering)', [
     {
       columnId: 'string',
@@ -808,7 +841,6 @@ export const TableWithColumnGrouping = () => {
     <MyTable
       id="table"
       useZebraStyles={useZebraStyles}
-      lightweight={lightweight}
       columns={tableColumns.slice(0, 4)}
       columnGroups={object('Column groups (columnGroups)', [
         {
@@ -1287,8 +1319,6 @@ export const TableExampleWithCreateSaveViews = () => {
             },
           },
         }}
-        isSortable
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           ...baseState.options,
           hasResize: true,
@@ -1332,6 +1362,8 @@ TableExampleWithCreateSaveViews.parameters = {
 };
 
 export const BasicTableWithFullRowEditExample = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const [showRowEditBar, setShowRowEditBar] = useState(false);
   const startingData = tableData.map((i) => ({
     ...i,
@@ -1368,12 +1400,17 @@ export const BasicTableWithFullRowEditExample = () => {
     setRowActionsState([]);
   };
   const onSaveRowEdit = () => {
-    setShowToast(true);
-    setPreviousData(currentData);
-    setCurrentData(rowEditedData);
-    setRowEditedData([]);
-    setShowRowEditBar(false);
-    setRowActionsState([]);
+    // because of the nature of rendering these buttons dynamically (and asyncronously via dispatch)
+    // in the StatefulTable we need to wrap these calls inside the setRowEditedData callback to ensure
+    // we're always working with the correctly updated data.
+    setRowEditedData((prev) => {
+      setShowToast(true);
+      setPreviousData(currentData);
+      setCurrentData(prev);
+      setShowRowEditBar(false);
+      setRowActionsState([]);
+      return [];
+    });
   };
   const onUndoRowEdit = () => {
     setCurrentData(previousData);
@@ -1460,10 +1497,23 @@ export const BasicTableWithFullRowEditExample = () => {
     />
   );
 
+  const hasMultiSort = boolean(
+    'Enable MultiSort to sort the table my multiple columns, (options.hasMultiSort)',
+    false
+  );
+
+  const sortedData = hasMultiSort
+    ? currentData.sort(
+        firstBy((row) => row.values.select).thenBy((row) => {
+          return row.values.string;
+        })
+      )
+    : getSortedData(currentData, 'select', 'ASC');
+
   return (
     <div>
       {showToast ? myToast : null}
-      <Table
+      <MyTable
         id="table"
         secondaryTitle="My editable table"
         size={select(
@@ -1479,9 +1529,24 @@ export const BasicTableWithFullRowEditExample = () => {
           table: {
             rowActions: rowActionsState,
             singleRowEditButtons: saveCancelButtons,
+            sort: hasMultiSort
+              ? [
+                  {
+                    columnId: 'select',
+                    direction: 'ASC',
+                  },
+                  {
+                    columnId: 'string',
+                    direction: 'ASC',
+                  },
+                ]
+              : {
+                  columnId: 'select',
+                  direction: 'ASC',
+                },
           },
         }}
-        data={currentData}
+        data={sortedData}
         actions={{
           table: { onApplyRowAction },
           toolbar: { onShowRowEdit: onShowMultiRowEdit },
@@ -1495,10 +1560,19 @@ export const BasicTableWithFullRowEditExample = () => {
             'Enables row editing for a single row (options.hasSingleRowEdit)',
             true
           ),
+          preserveCellWhiteSpace: boolean(
+            'Adds classes to keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
+            false
+          ),
           hasRowActions: true,
           hasPagination: true,
+          hasMultiSort,
         }}
-        columns={tableColumns.map((i) => ({ ...i, editDataFunction }))}
+        columns={tableColumns.map((i) => ({
+          ...i,
+          isSortable: i.id === 'string' || i.id === 'select',
+          editDataFunction,
+        }))}
       />
     </div>
   );
@@ -1981,6 +2055,14 @@ export const WithFilters = () => {
         },
         toolbar: {
           activeBar: 'filter',
+          toolbarActions: [
+            ...tableToolbarActions,
+            {
+              id: 'toggle',
+              labelText: 'toolbarAction shown in toolbar instead of overflow',
+              renderIcon: ViewOff16,
+            },
+          ],
           customToolbarContent: (
             <div style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}>
               custom content
@@ -1995,7 +2077,7 @@ export const WithFilters = () => {
   );
 };
 
-WithFilters.storyName = 'with filtering and custom toolbar content';
+WithFilters.storyName = 'with filtering, toolbarActions, and custom toolbar content';
 
 export const WithAdvancedFilters = () => {
   const operands = {
@@ -2627,6 +2709,10 @@ export const AsyncColumnLoading = () => {
           'Aggregates column values and displays in a footer row (options.hasAggregations)',
           true
         ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
+          true
+        ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', true),
         hasFilter: select(
           'Enables filtering columns by value (options.hasFilter)',
@@ -2760,3 +2846,132 @@ export const RowExpansionAndLoadMore = () => {
 };
 
 RowExpansionAndLoadMore.storyName = 'row expansion: with load more ';
+
+export const WithColumnCustomizationModal = () => {
+  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
+  const demoGroupExample = boolean('demo grouping example', true);
+  const demoHasLoadMore = boolean('demo load more example (hasLoadMore)', true);
+  const demoPinnedColumn = boolean('demo pinned column (pinnedColumnId)', true);
+  const hasVisibilityToggle = boolean('Allow toggling visibility (hasVisibilityToggle)', true);
+  const primaryValue = select(
+    'Column key used for primary value (primaryValue)',
+    ['id', 'name'],
+    'name'
+  );
+  const secondaryValue = select(
+    'Column key used for secondary value (secondaryValue)',
+    ['id', 'name', 'NONE'],
+    'NONE'
+  );
+
+  const smallDataSet = tableData.slice(0, 5);
+  const allAvailableColumns = tableColumns;
+  const initialActiveColumns = allAvailableColumns.slice(0, 6);
+  const initialOrdering = [
+    { columnId: 'string' },
+    { columnId: 'date' },
+    { columnId: 'select' },
+    { columnId: 'secretField', isHidden: true },
+    { columnId: 'status' },
+    { columnId: 'number' },
+  ];
+
+  const columnGroupMapping = [
+    { id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] },
+    { id: 'groupB', name: 'Group B', columnIds: ['status', 'secretField', 'number', 'boolean'] },
+  ];
+  const columnGroups = [
+    { id: 'groupA', name: 'Group A' },
+    { id: 'groupB', name: 'Group B' },
+  ];
+
+  const appendGrouping = (col) => {
+    const group = columnGroupMapping.find((group) => group.columnIds.includes(col.columnId));
+    return group
+      ? {
+          ...col,
+          columnGroupId: group.id,
+        }
+      : col;
+  };
+
+  const [showModal, setShowModal] = useState(true);
+  const [loadedColumns, setLoadedColumns] = useState(allAvailableColumns.slice(0, 7));
+  const [loadingMoreIds, setLoadingMoreIds] = useState([]);
+  const [canLoadMore, setCanLoadMore] = useState(true);
+  const [activeColumns, setActiveColumns] = useState(initialActiveColumns);
+  const [ordering, setOrdering] = useState(initialOrdering);
+  const [modalKey, setModalKey] = useState('initial-key');
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  return (
+    <>
+      <MyTable
+        columns={activeColumns}
+        columnGroups={demoGroupExample ? columnGroups : undefined}
+        data={smallDataSet}
+        view={{
+          table: { ordering: demoGroupExample ? ordering.map(appendGrouping) : ordering },
+          toolbar: {
+            customToolbarContent: (
+              <Button
+                kind="ghost"
+                renderIcon={Column20}
+                iconDescription="Customize columns"
+                hasIconOnly
+                onClick={() => setShowModal(true)}
+              />
+            ),
+          },
+        }}
+      />
+
+      <TableColumnCustomizationModal
+        key={modalKey}
+        groupMapping={demoGroupExample ? columnGroupMapping : []}
+        hasLoadMore={demoHasLoadMore && canLoadMore}
+        hasVisibilityToggle={hasVisibilityToggle}
+        availableColumns={loadedColumns}
+        initialOrdering={ordering}
+        loadingMoreIds={loadingMoreIds}
+        onClose={() => {
+          setShowModal(false);
+          action('onClose');
+        }}
+        onChange={action('onChange')}
+        onLoadMore={(id) => {
+          setLoadingMoreIds([id]);
+          setTimeout(() => {
+            setLoadedColumns(allAvailableColumns);
+            setLoadingMoreIds([]);
+            setCanLoadMore(false);
+          }, 2000);
+          action('onLoadMore')(id);
+        }}
+        onReset={() => {
+          setModalKey(uuid.v4());
+          action('onReset');
+        }}
+        onSave={(updatedOrdering, updatedColumns) => {
+          setOrdering(updatedOrdering);
+          setActiveColumns(updatedColumns);
+          setShowModal(false);
+          action('onSave')(updatedOrdering, updatedColumns);
+        }}
+        open={showModal}
+        pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
+        primaryValue={primaryValue}
+        secondaryValue={secondaryValue === 'NONE' ? undefined : secondaryValue}
+      />
+    </>
+  );
+};
+
+WithColumnCustomizationModal.storyName = '☢️ with column customization modal';
+WithColumnCustomizationModal.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];

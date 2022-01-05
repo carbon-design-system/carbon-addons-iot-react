@@ -297,6 +297,74 @@ describe('ListItem', () => {
     expect(targets.length).toEqual(2);
   });
 
+  it('calls getAllowedDropIds with the draggId prop as param when renderDropTargets is true', () => {
+    const listItemProps = {
+      id: '1',
+      draggingId: '2',
+      value: 'test',
+      editingStyle: 'single',
+      index: 0,
+      isDragging: false,
+      connectDragSource: jest.fn(),
+      connectDragPreview: jest.fn(),
+      onItemMoved: jest.fn(),
+      itemWillMove: jest.fn(),
+      getAllowedDropIds: jest.fn(),
+    };
+
+    const { rerender } = render(
+      <DragAndDrop>
+        <UnconnectedListItem {...listItemProps} />
+      </DragAndDrop>
+    );
+    expect(listItemProps.getAllowedDropIds).not.toHaveBeenCalled();
+
+    rerender(
+      <DragAndDrop>
+        <UnconnectedListItem {...listItemProps} renderDropTargets />
+      </DragAndDrop>
+    );
+
+    expect(listItemProps.getAllowedDropIds).toHaveBeenCalledWith('2');
+  });
+
+  it('renders drop targets if the id is in result of getAllowedDropIds', () => {
+    const listItemProps = {
+      id: '1',
+      draggingId: '2',
+      value: 'test',
+      editingStyle: 'single',
+      index: 0,
+      renderDropTargets: true,
+      isDragging: false,
+      connectDragSource: jest.fn(),
+      connectDragPreview: jest.fn(),
+      onItemMoved: jest.fn(),
+      itemWillMove: jest.fn(),
+      getAllowedDropIds: jest.fn(),
+    };
+
+    listItemProps.getAllowedDropIds.mockReturnValue(['1']);
+
+    const { rerender } = render(
+      <DragAndDrop>
+        <UnconnectedListItem {...listItemProps} />
+      </DragAndDrop>
+    );
+
+    expect(screen.getAllByTestId('list-target').length).toEqual(2);
+
+    listItemProps.getAllowedDropIds.mockClear();
+    listItemProps.getAllowedDropIds.mockReturnValue(['0', '2', '3']);
+    rerender(
+      <DragAndDrop>
+        <UnconnectedListItem {...listItemProps} />
+      </DragAndDrop>
+    );
+
+    expect(screen.queryAllByTestId('list-target').length).toEqual(0);
+  });
+
   it('should throw a warning in DEV mode when rowActions is an array', () => {
     const { __DEV__ } = global;
     global.__DEV__ = true;
@@ -401,7 +469,17 @@ describe('ListItem', () => {
     expect(screen.getByTitle('secondary')).toBeVisible();
     expect(container.querySelectorAll(`.${iotPrefix}--list-item--nesting-offset`)).toHaveLength(1);
     expect(container.querySelector(`.${iotPrefix}--list-item--nesting-offset`)).toHaveStyle(
-      'width:32px'
+      'width:16px' // 32 - column gap of 16px
     );
+  });
+
+  it('should have negative tabIndex when preventRowFocus is true', () => {
+    const { rerender } = render(
+      <UnconnectedListItem id="test-item" value="Test item" isSelectable />
+    );
+    expect(screen.getByRole('button')).toHaveAttribute('tabIndex', expect.not.stringMatching('-1'));
+
+    rerender(<UnconnectedListItem id="test-item" value="Test item" isSelectable preventRowFocus />);
+    expect(screen.getByRole('button')).toHaveAttribute('tabIndex', expect.stringMatching('-1'));
   });
 });

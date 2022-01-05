@@ -3,11 +3,64 @@ name: Test
 on: [push, pull_request]
 
 jobs:
-  test-react:
-    name: Test React
+  react-jest-test:
+    name: React Jest test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
+      - name: Increase watchers
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        if: steps.changes.outputs.react == 'true'
+        with:
+          node-version: '16.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        if: steps.changes.outputs.react == 'true'
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          yarn --frozen-lockfile
+          yarn lerna run --stream postinstall
+          yarn lerna link
+
+      - name: Run Jest tests, collect coverage
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react
+          yarn test:ci
+
+      - name: Archive coverage artifacts
+        if: ${{ success() }} && steps.changes.outputs.react == 'true'
+        uses: actions/upload-artifact@v2
+        with:
+          name: jest-coverage
+          path: packages/react/jest/coverage/coverage-final.json
+
+  react-cypress-test:
+    name: React Cypress test
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node14.17.0-chrome91-ff89
+      image: cypress/browsers:node16.5.0-chrome94-ff93
       options: --privileged
 
     steps:
@@ -61,12 +114,6 @@ jobs:
           yarn lerna run --stream postinstall
           yarn lerna link
 
-      - name: Run Jest tests, collect coverage
-        if: steps.changes.outputs.react == 'true'
-        run: |
-          cd packages/react
-          yarn test:ci
-
       - name: Run Cypress tests, collect coverage
         if: steps.changes.outputs.react == 'true'
         run: |
@@ -85,6 +132,56 @@ jobs:
           path: |
             packages/react/cypress-visual-report
             packages/react/cypress-visual-screenshots
+
+      - name: Archive coverage artifacts
+        if: ${{ success() }} && steps.changes.outputs.react == 'true'
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-coverage
+          path: packages/react/cypress/coverage/coverage-final.json
+
+  combine-reports:
+    name: Combine Coverage Reports
+    runs-on: ubuntu-latest
+    needs: [react-cypress-test, react-jest-test]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            react:
+              - 'packages/react/**'
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        if: steps.changes.outputs.react == 'true'
+        with:
+          node-version: '16.x'
+
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v2
+        if: steps.changes.outputs.react == 'true'
+        with:
+          name: cypress-coverage
+          path: ~/work/carbon-addons-iot-react/carbon-addons-iot-react/packages/react/cypress/coverage/
+
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v2
+        if: steps.changes.outputs.react == 'true'
+        with:
+          name: jest-coverage
+          path: ~/work/carbon-addons-iot-react/carbon-addons-iot-react/packages/react/jest/coverage/
+
+      - name: Change file paths for cypress coverage report
+        if: steps.changes.outputs.react == 'true'
+        run: |
+          cd packages/react/cypress/coverage
+          pwd
+          node ../../../../scripts/change-paths.js
 
       - name: Copy, combine, and report coverage
         if: steps.changes.outputs.react == 'true'

@@ -24,7 +24,7 @@ const AddCard = ({ onClick, title, className, testId }) => (
   <ClickableTile
     data-testid={testId}
     className={classnames(`${iotPrefix}-add-card`, className)}
-    handleClick={onClick}
+    onClick={onClick}
   >
     <p className={`${iotPrefix}-addcard-title`}>{title}</p>
     <Add20 fill={g10.icon01} description={title} />

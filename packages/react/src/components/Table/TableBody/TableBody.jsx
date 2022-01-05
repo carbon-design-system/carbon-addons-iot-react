@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable } from 'carbon-components-react';
 import VisibilitySensor from 'react-visibility-sensor';
-import pick from 'lodash/pick';
+import { pick } from 'lodash-es';
 
 import {
   ExpandedRowsPropTypes,
@@ -35,15 +35,15 @@ const propTypes = {
   /** internationalized label */
   clickToCollapseAria: PropTypes.string,
   /** I18N label for in progress */
-  inProgressText: PropTypes.string, // eslint-disable-line react/require-default-props
+  inProgressText: PropTypes.string,
   /** I18N label for action failed */
-  actionFailedText: PropTypes.string, // eslint-disable-line react/require-default-props
+  actionFailedText: PropTypes.string,
   /** I18N label for learn more */
-  learnMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
+  learnMoreText: PropTypes.string,
   /** I18N label for dismiss */
-  dismissText: PropTypes.string, // eslint-disable-line react/require-default-props
+  dismissText: PropTypes.string,
   /** I18N label for load more */
-  loadMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
+  loadMoreText: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -96,6 +96,12 @@ const propTypes = {
   testId: PropTypes.string,
   /** Array with rowIds that are with loading active */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
+  /** use white-space: pre; css when true */
+  preserveCellWhiteSpace: PropTypes.bool,
+  /**
+   * the size passed to the table to set row height
+   */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 };
 
 const defaultProps = {
@@ -123,6 +129,13 @@ const defaultProps = {
   langDir: 'ltr',
   showExpanderColumn: false,
   testId: '',
+  preserveCellWhiteSpace: false,
+  loadMoreText: 'Load more...',
+  learnMoreText: 'Learn more',
+  inProgressText: 'In progress',
+  dismissText: 'Dismiss',
+  actionFailedText: 'Action failed',
+  size: undefined,
 };
 
 const TableBody = ({
@@ -162,6 +175,8 @@ const TableBody = ({
   testID,
   testId,
   showExpanderColumn,
+  preserveCellWhiteSpace,
+  size,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -296,6 +311,7 @@ const TableBody = ({
           shouldExpandOnRowClick,
           wrapCellText,
           truncateCellText,
+          preserveCellWhiteSpace,
         }}
         nestingLevel={nestingLevel}
         nestingChildCount={row.children ? row.children.length : 0}
@@ -306,6 +322,7 @@ const TableBody = ({
         rowActions={row.rowActions}
         values={row.values}
         showExpanderColumn={showExpanderColumn}
+        size={size}
       />
     ) : (
       <TableBodyLoadMoreRow

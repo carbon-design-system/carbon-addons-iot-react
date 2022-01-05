@@ -1,6 +1,7 @@
 import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { memoize } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
@@ -10,22 +11,9 @@ import { OverridePropTypes } from '../../constants/SharedPropTypes';
 import DefaultListHeader from './ListHeader/ListHeader';
 import DefaultListContent from './ListContent/ListContent';
 import VirtualListContent from './VirtualListContent/VirtualListContent';
+import { ListItemPropTypes } from './ListPropTypes';
 
 const { iotPrefix } = settings;
-
-export const ListItemPropTypes = {
-  id: PropTypes.string,
-  content: PropTypes.shape({
-    value: PropTypes.string,
-    icon: PropTypes.node,
-    /** The nodes should be Carbon Tags components */
-    tags: PropTypes.arrayOf(PropTypes.node),
-  }),
-  children: PropTypes.arrayOf(PropTypes.object),
-  isSelectable: PropTypes.bool,
-  /** boolean to define load more row is needed */
-  hasLoadMore: PropTypes.bool,
-};
 
 const propTypes = {
   /** Specify an optional className to be applied to the container */
@@ -36,6 +24,7 @@ const propTypes = {
   search: PropTypes.shape({
     onChange: PropTypes.func,
     value: PropTypes.string,
+    id: PropTypes.string,
   }),
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
@@ -44,21 +33,27 @@ const propTypes = {
     header: OverridePropTypes,
     content: OverridePropTypes,
   }),
+  /** ids of selectable rows with indeterminate selection state */
+  indeterminateIds: PropTypes.arrayOf(PropTypes.string),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
-  /** list editing style */
+  /** list editing style for Drag and Drop */
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,
     EditingStyle.Multiple,
     EditingStyle.SingleNesting,
     EditingStyle.MultipleNesting,
   ]),
+  /** if true shows empty search state, instead of empty state, when there are no search results */
+  isFiltering: PropTypes.bool,
   /** use full height in list */
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
   isLargeRow: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** true if the list should have multiple selectable rows using checkboxes */
+  isCheckboxMultiSelect: PropTypes.bool,
   /** optional prop to use a virtualized version of the list instead of rendering all items */
   isVirtualList: PropTypes.bool,
   /** icon can be left or right side of list row primary value */
@@ -66,16 +61,24 @@ const propTypes = {
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
+    clearSearchIconDescription: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
     loadMore: PropTypes.string,
   }),
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** pagination at the bottom of list */
   pagination: PropTypes.shape(SimplePaginationPropTypes),
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** callback used to limit which items that should get drop targets rendered.
+   * Recieves the id of the item that is being dragged and shuld return a list of allowed ids.
+   * Returning an empty list will result in 0 drop targets but returning null will
+   * enable all items as drop targets */
+  getAllowedDropIds: PropTypes.func,
   /** call back function of select */
   handleSelect: PropTypes.func,
   /** call back function of expansion */
@@ -86,6 +89,8 @@ const propTypes = {
   itemWillMove: PropTypes.func,
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** content shown if list is empty on search */
+  emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   testId: PropTypes.string,
   /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
@@ -99,18 +104,23 @@ const defaultProps = {
   search: null,
   buttons: [],
   editingStyle: null,
+  getAllowedDropIds: null,
   overrides: null,
+  indeterminateIds: [],
+  isFiltering: false,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
+  isCheckboxMultiSelect: false,
   isVirtualList: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
-    loadMore: 'Load more...',
+    loadMore: 'View more',
   },
   iconPosition: 'left',
+  lockedIds: [],
   pagination: null,
   selectedIds: [],
   expandedIds: [],
@@ -123,6 +133,7 @@ const defaultProps = {
     return true;
   },
   emptyState: 'No list items to show',
+  emptySearchState: 'No results found',
   testId: 'list',
   handleLoadMore: () => {},
 };
@@ -137,20 +148,26 @@ const List = forwardRef((props, ref) => {
     items,
     isFullHeight,
     i18n,
+    lockedIds,
     pagination,
     selectedIds,
     expandedIds,
+    getAllowedDropIds,
     handleSelect,
     overrides,
     toggleExpansion,
     iconPosition,
     editingStyle,
+    indeterminateIds,
     isLargeRow,
     isLoading,
+    isFiltering,
+    isCheckboxMultiSelect,
     isVirtualList,
     onItemMoved,
     itemWillMove,
     emptyState,
+    emptySearchState,
     testId,
     handleLoadMore,
     loadingMoreIds,
@@ -159,6 +176,9 @@ const List = forwardRef((props, ref) => {
   const ListHeader = overrides?.header?.component || DefaultListHeader;
   const ListContent =
     overrides?.content?.component || isVirtualList ? VirtualListContent : DefaultListContent;
+  // getAllowedDropIds will be called by all list items when a drag is initiated and the
+  // paramater (id of the dragged item) will be the same until a new drag starts.
+  const memoizedGetAllowedDropIds = getAllowedDropIds ? memoize(getAllowedDropIds) : null;
 
   return (
     <DragAndDrop>
@@ -180,12 +200,17 @@ const List = forwardRef((props, ref) => {
         />
         <ListContent
           emptyState={emptyState}
+          emptySearchState={emptySearchState}
           items={items}
           isFullHeight={isFullHeight}
           testId={testId}
+          indeterminateIds={indeterminateIds}
+          isFiltering={isFiltering}
           isLoading={isLoading}
+          isCheckboxMultiSelect={isCheckboxMultiSelect}
           selectedIds={selectedIds}
           expandedIds={expandedIds}
+          getAllowedDropIds={memoizedGetAllowedDropIds}
           handleSelect={handleSelect}
           toggleExpansion={toggleExpansion}
           iconPosition={iconPosition}
@@ -197,11 +222,12 @@ const List = forwardRef((props, ref) => {
           loadingMoreIds={loadingMoreIds}
           selectedItemRef={ref}
           i18n={mergedI18n}
+          lockedIds={lockedIds}
           {...overrides?.content?.props}
         />
         {pagination && !isLoading ? (
           <div className={`${iotPrefix}--list--page`}>
-            <SimplePagination {...pagination} />
+            <SimplePagination {...pagination} size="md" />
           </div>
         ) : null}
       </div>

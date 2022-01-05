@@ -4,8 +4,12 @@ import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import Chip from '@carbon/icons-react/es/chip/24';
 
+import { settings } from '../../constants/Settings';
+
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
+
+const { prefix } = settings;
 
 const commonProps = {
   suiteName: 'Application Suite',
@@ -67,6 +71,7 @@ describe('SuiteHeader', () => {
   });
 
   it('should be selectable with testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     render(
       <SuiteHeader
         {...commonProps}
@@ -88,6 +93,14 @@ describe('SuiteHeader', () => {
         testId="suite_header"
       />
     );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Warning: A future version of React will block javascript: URLs as a security precaution.'
+      ),
+      `"javascript:void(0)"`,
+      expect.stringContaining('SuiteHeader')
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('suite_header')).toBeDefined();
     expect(screen.getByTestId('suite_header-name')).toBeDefined();
     expect(screen.getByTestId('suite_header-menu-button')).toBeDefined();
@@ -396,7 +409,7 @@ describe('SuiteHeader', () => {
       <SuiteHeader
         {...commonProps}
         onRouteChange={async () => false}
-        dleTimeoutData={idleTimeoutDataProp}
+        idleTimeoutData={idleTimeoutDataProp}
       />
     );
     // Simulate a timestamp cookie that is in the past
@@ -519,7 +532,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),
@@ -565,7 +578,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),
@@ -612,7 +625,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),
@@ -658,7 +671,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),
@@ -904,7 +917,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),

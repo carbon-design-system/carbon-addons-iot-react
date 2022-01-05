@@ -3,11 +3,9 @@
 import React, { useState, useLayoutEffect, createRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import isEqual from 'lodash/isEqual';
-import debounce from 'lodash/debounce';
+import { isNil, isEmpty, isEqual, debounce } from 'lodash-es';
 import classnames from 'classnames';
+import warning from 'warning';
 
 import {
   TableColumnsPropTypes,
@@ -21,7 +19,8 @@ import {
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
-import { OverflowMenu, OverflowMenuItem } from '../../../index';
+import { OverflowMenu } from '../../OverflowMenu';
+import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { usePrevious } from '../../../hooks/usePrevious';
 import deprecate from '../../../internal/deprecate';
 
@@ -60,6 +59,13 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
+    hasRowNesting: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** If the hierarchy only has 1 nested level of children */
+        hasSingleNestedHierarchy: PropTypes.bool,
+      }),
+    ]),
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
     hasMultiSort: PropTypes.bool,
@@ -130,6 +136,17 @@ const propTypes = {
   testId: PropTypes.string,
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
+  /** Size prop from Carbon to shrink row height (and header height in some instances) */
+  size: function checkProps(props, propName, componentName) {
+    if (['compact', 'short', 'normal', 'tall'].includes(props[propName])) {
+      warning(
+        false,
+        `The value \`${props[propName]}\` has been deprecated for the ` +
+          `\`${propName}\` prop on the ${componentName} component. It will be removed in the next major ` +
+          `release. Please use 'xs', 'sm', 'md', 'lg', or 'xl' instead.`
+      );
+    }
+  },
 };
 
 const defaultProps = {
@@ -149,6 +166,7 @@ const defaultProps = {
   testID: '',
   testId: '',
   showExpanderColumn: false,
+  size: undefined,
 };
 
 const generateOrderedColumnRefs = (ordering) =>
@@ -204,6 +222,7 @@ const TableHead = ({
   i18n,
   hasFastFilter,
   showExpanderColumn,
+  size,
 }) => {
   const filterBarActive = activeBar === 'filter';
   const initialColumnWidths = {};
@@ -284,7 +303,7 @@ const TableHead = ({
     e.stopPropagation();
 
     if (onOverflowItemClicked) {
-      onOverflowItemClicked(option.id);
+      onOverflowItemClicked(option.id, option.meta);
     }
   };
 
@@ -506,10 +525,10 @@ const TableHead = ({
               align={align}
               className={classnames(`table-header-label-${align}`, {
                 [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
-                'table-header-sortable': matchingColumnMeta.isSortable,
+                'table-header-sortable': matchingColumnMeta.isSortable && !isDisabled,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
                 [`${iotPrefix}--table-head--table-header--with-overflow`]:
-                  hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable),
+                  hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable && !isDisabled),
                 [`${iotPrefix}--table-header--last-data-column`]:
                   showColumnGroups && item === lastVisibleColumn,
               })}
@@ -526,8 +545,9 @@ const TableHead = ({
                 {matchingColumnMeta.name}
               </TableCellRenderer>
 
-              {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable) ? (
+              {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable && !isDisabled) ? (
                 <OverflowMenu
+                  size="lg"
                   className={`${iotPrefix}--table-head--overflow`}
                   direction="bottom"
                   data-testid="table-head--overflow"
@@ -548,12 +568,17 @@ const TableHead = ({
                       data-testid={`${testID || testId}-column-overflow-menu-item-multi-sort`}
                       itemText={i18n.multiSortOverflowItem}
                       key={`${columnIndex}--overflow-item-multi-sort`}
-                      onClick={(e) => handleOverflowItemClick(e, { id: 'multi-sort' })}
+                      onClick={(e) =>
+                        handleOverflowItemClick(e, {
+                          id: 'multi-sort',
+                          meta: { columnId: matchingColumnMeta.id },
+                        })
+                      }
                     />
                   )}
                 </OverflowMenu>
               ) : null}
-              {sortOrder > 0 && (
+              {sortOrder > 0 && !isDisabled && (
                 <span className={`${iotPrefix}--table-header-label__sort-order`}>{sortOrder}</span>
               )}
               {hasResize && (item !== lastVisibleColumn || showExpanderColumn) ? (
@@ -627,6 +652,7 @@ const TableHead = ({
           lightweight={lightweight}
           isDisabled={isDisabled}
           showExpanderColumn={showExpanderColumn}
+          size={size}
         />
       )}
       {activeBar === 'column' && (

@@ -56,9 +56,12 @@ const propTypes = {
         hasSingleNestedHierarchy: PropTypes.bool,
       }),
     ]),
+    hasRowActions: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
+    /** use white-space: pre; css when true */
+    preserveCellWhiteSpace: PropTypes.bool,
   }),
 
   /** The unique row id */
@@ -92,6 +95,7 @@ const propTypes = {
     onRowClicked: PropTypes.func,
     onApplyRowAction: PropTypes.func,
     onRowExpanded: PropTypes.func,
+    onClearRowError: PropTypes.func,
   }).isRequired,
   /** optional per-row actions */
   rowActions: RowActionPropTypes,
@@ -107,8 +111,10 @@ const propTypes = {
   learnMoreText: PropTypes.string,
   /** I18N label for dismiss */
   dismissText: PropTypes.string,
+  locale: PropTypes.string,
   rowEditMode: PropTypes.bool,
   singleRowEditMode: PropTypes.bool,
+  isSelectable: PropTypes.bool,
   singleRowEditButtons: PropTypes.element,
   /**
    * direction of document
@@ -116,6 +122,10 @@ const propTypes = {
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
+  /**
+   * the size passed to the table to set row height
+   */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 };
 
 const defaultProps = {
@@ -134,6 +144,17 @@ const defaultProps = {
   rowEditMode: false,
   singleRowEditMode: false,
   singleRowEditButtons: null,
+  isRowActionRunning: false,
+  rowActionsError: null,
+  learnMoreText: 'Learn more',
+  inProgressText: 'In progress',
+  dismissText: 'Dismiss',
+  actionFailedText: 'Action failed',
+  showExpanderColumn: false,
+  langDir: 'ltr',
+  locale: 'en',
+  isSelectable: undefined,
+  size: undefined,
 };
 
 const StyledTableRow = styled(({ isSelectable, isEditMode, ...others }) => (
@@ -200,12 +221,12 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     ${(props) =>
       props['data-child-count'] === 0 && props['data-row-nesting']
         ? `
-    td > button.bx--table-expand__button {
+    td > button.${prefix}--table-expand__button {
       display: none;
     }
     `
         : `
-    td > button.bx--table-expand__button {
+    td > button.${prefix}--table-expand__button {
       position: relative;
       left: ${props['data-nesting-offset']}px;
     }
@@ -213,7 +234,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     ${(props) =>
       props['data-nesting-offset'] > 0
         ? `
-      td.bx--table-expand {
+      td.${prefix}--table-expand {
         position: relative;
       }
       td:first-of-type:before {
@@ -231,7 +252,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     `}
     cursor: pointer;
     td {
-      div .bx--btn--ghost:hover {
+      div .${prefix}--btn--ghost:hover {
         background: ${COLORS.gray20hover};
       }
     }
@@ -278,11 +299,11 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
       props['data-row-nesting']
         ? `
 
-        td.bx--table-expand, td {
+        td.${prefix}--table-expand, td {
           position: relative;
           border-color: ${COLORS.gray20};
         }
-        td > button.bx--table-expand__button {
+        td > button.${prefix}--table-expand__button {
           position: relative;
           left: ${props['data-nesting-offset']}px;
         }
@@ -365,6 +386,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
 const StyledNestedSpan = styled.span`
   position: relative;
   left: ${(props) => props.nestingOffset}px;
+  max-width: calc(100% - ${(props) => props.nestingOffset}px);
   display: block;
 `;
 
@@ -384,6 +406,7 @@ const TableBodyRow = ({
     shouldExpandOnRowClick,
     wrapCellText,
     truncateCellText,
+    preserveCellWhiteSpace,
   },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
@@ -409,6 +432,7 @@ const TableBodyRow = ({
   singleRowEditMode,
   singleRowEditButtons,
   showExpanderColumn,
+  size,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -446,7 +470,7 @@ const TableBodyRow = ({
 
   const firstVisibleColIndex = ordering.findIndex((col) => !col.isHidden);
   const tableCells = (
-    <>
+    <Fragment key={`${tableId}-${id}`}>
       {rowSelectionCell}
       {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find((column) => column.id === col.columnId);
@@ -496,6 +520,7 @@ const TableBodyRow = ({
                   columnId={col.columnId}
                   rowId={id}
                   row={values}
+                  preserveCellWhiteSpace={preserveCellWhiteSpace}
                 >
                   {values[col.columnId]}
                 </TableCellRenderer>
@@ -524,11 +549,12 @@ const TableBodyRow = ({
           dismissText={dismissText}
           rowActionsError={rowActionsError}
           onClearError={onClearRowError ? () => onClearRowError(id) : null}
+          size={size}
         />
       ) : nestingLevel > 0 && hasRowActions ? (
         <TableCell key={`${tableId}-${id}-row-actions-cell`} />
       ) : undefined}
-    </>
+    </Fragment>
   );
   return hasRowExpansion || hasRowNesting ? (
     isExpanded ? (

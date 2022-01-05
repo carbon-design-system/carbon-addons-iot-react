@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import merge from 'lodash/merge';
-import get from 'lodash/get';
+import { merge, get } from 'lodash-es';
 
 import { getRowAction } from './tableUtilities';
 import { tableReducer } from './tableReducer';
@@ -293,11 +292,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         }
         callbackParent(onColumnResize, resizedColumns);
       },
-      onOverflowItemClicked: (id) => {
+      onOverflowItemClicked: (id, meta) => {
         if (id === 'multi-sort') {
-          dispatch(tableMultiSortToggleModal());
+          dispatch(tableMultiSortToggleModal(meta));
         }
-        callbackParent(onOverflowItemClicked, id);
+        callbackParent(onOverflowItemClicked, id, meta);
       },
       onSaveMultiSortColumns: (sortColumns) => {
         dispatch(tableSaveMultiSortColumns(sortColumns));

@@ -17,6 +17,12 @@ const propTypes = {
   i18n: PropTypes.shape({
     multiSortSelectColumnSortByTitle: PropTypes.stirng,
     multiSortSelectColumnThenByTitle: PropTypes.string,
+    multiSortDragHandle: PropTypes.string,
+    multiSortSelectColumnLabel: PropTypes.string,
+    multiSortDirectionLabel: PropTypes.string,
+    multiSortDirectionTitle: PropTypes.string,
+    multiSortAddColumn: PropTypes.string,
+    multiSortRemoveColumn: PropTypes.string,
   }).isRequired,
   index: PropTypes.number.isRequired,
   multiSortColumns: PropTypes.arrayOf(
@@ -187,7 +193,7 @@ export const TableMultiSortRow = ({
         iconDescription={i18n.multiSortRemoveColumn}
         onClick={onRemoveMultiSortColumn}
         testId={`${columnId}-remove-sort-button`}
-        disabled={numSelectedColumns.length === 1}
+        disabled={numSelectedColumns === 1}
       />
     </div>
   );

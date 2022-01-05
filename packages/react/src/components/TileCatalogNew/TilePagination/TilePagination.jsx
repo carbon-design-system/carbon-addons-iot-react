@@ -14,7 +14,13 @@ const propTypes = {
   /** call back function receive current page number */
   onChange: PropTypes.func.isRequired,
   /** i18n strings */
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    ariaLabelPreviousPage: PropTypes.string,
+    ariaLabelNextPage: PropTypes.string,
+    ariaLabelPagination: PropTypes.string,
+    ariaLabelPage: PropTypes.string,
+    ariaLabelSelect: PropTypes.string,
+  }),
   testId: PropTypes.string,
 };
 
@@ -44,7 +50,7 @@ const TilePagination = ({ page, numPages, onChange, i18n, testId }) => {
       aria-disabled={page === pageNumber}
       data-testid={`${testId}-page-${pageNumber}-button`}
     >
-      <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelPage}</span>
+      <span className={`${prefix}--pagination-nav__accessibility-label`}>{i18n.ariaLabelPage}</span>
       {pageNumber}
     </button>
   );

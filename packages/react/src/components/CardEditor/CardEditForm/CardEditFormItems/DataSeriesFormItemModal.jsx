@@ -18,11 +18,12 @@ import {
 import { WarningAlt32 } from '@carbon/icons-react';
 import { FormLabel } from 'carbon-components-react';
 import classnames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import omit from 'lodash/omit';
+import { isEmpty, omit } from 'lodash-es';
 
 import { settings } from '../../../../constants/Settings';
-import { ComposedModal, TextInput, Dropdown } from '../../../../index';
+import { Dropdown } from '../../../Dropdown';
+import ComposedModal from '../../../ComposedModal';
+import { TextInput } from '../../../TextInput';
 import { handleDataItemEdit, DataItemsPropTypes } from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';
@@ -46,6 +47,14 @@ const propTypes = {
           color: PropTypes.string,
         })
       ),
+      columns: PropTypes.arrayOf(
+        PropTypes.shape({
+          dataSourceId: PropTypes.string,
+          label: PropTypes.string,
+          type: PropTypes.string,
+        })
+      ),
+      type: PropTypes.string,
       xLabel: PropTypes.string,
       yLabel: PropTypes.string,
       unit: PropTypes.string,
@@ -58,7 +67,32 @@ const propTypes = {
   }),
   showEditor: PropTypes.bool,
   setShowEditor: PropTypes.func,
-  editDataItem: PropTypes.shape({}),
+  editDataItem: PropTypes.shape({
+    dataSourceId: PropTypes.string,
+    dataFilter: PropTypes.objectOf(PropTypes.string),
+    type: PropTypes.string,
+    aggregationMethods: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        text: PropTypes.string,
+      })
+    ),
+    aggregationMethod: PropTypes.string,
+    grain: PropTypes.string,
+    label: PropTypes.string,
+    dataItemId: PropTypes.string,
+    color: PropTypes.string,
+    unit: PropTypes.string,
+    precision: PropTypes.number,
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        color: PropTypes.string,
+        comparison: PropTypes.stirng,
+        icon: PropTypes.string,
+        value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
+      })
+    ),
+  }),
   setEditDataItem: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }

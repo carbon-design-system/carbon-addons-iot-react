@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 

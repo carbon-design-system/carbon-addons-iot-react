@@ -370,6 +370,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       rangeWarnText: this.datePickerRangeWarnText,
       size: this.datePickerSize,
     };
+    this.previousSelection = this.selected;
     this.updateI18nTranslationString();
     this.updateAbsoluteDateFormat();
   }
@@ -449,11 +450,6 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
 
   onBack() {
     this.selectingCustomRange = false;
-    if (this.previousSelection) {
-      this.selected = this.previousSelection;
-      // we've gone back, clear out any previous slection
-      this.previousSelection = null;
-    }
   }
 
   onApply() {
@@ -468,11 +464,13 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
       this.selectedChange.emit(this.selected);
       this.apply.emit(range.getRange());
     }
+    this.previousSelection = this.selected;
     this.expanded = false;
     this.disabled = false;
   }
 
   onCancel() {
+    this.selected = this.previousSelection;
     this.cancel.emit();
     this.expanded = false;
   }

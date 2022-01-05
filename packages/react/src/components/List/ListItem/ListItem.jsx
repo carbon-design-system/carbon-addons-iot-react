@@ -1,13 +1,14 @@
 import React, { useMemo } from 'react';
 import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
-import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
+import { Draggable16, ChevronUp16, ChevronDown16, Locked16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import { ITEM_COLUMN_GAP, ITEM_LEVEL_OFFSET } from '../VirtualListContent/listConstants';
 
 import ListItemWrapper from './ListItemWrapper';
 
@@ -24,12 +25,16 @@ const ListItemPropTypes = {
     EditingStyle.MultipleNesting,
   ]),
   isLargeRow: PropTypes.bool,
+  isLocked: PropTypes.bool,
   isExpandable: PropTypes.bool,
   onExpand: PropTypes.func,
   isSelectable: PropTypes.bool,
   disabled: PropTypes.bool,
   onSelect: PropTypes.func,
   renderDropTargets: PropTypes.bool,
+  getAllowedDropIds: PropTypes.func,
+  /** the id of the item currently being dragged if any */
+  draggingId: PropTypes.string,
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
@@ -65,11 +70,14 @@ const ListItemPropTypes = {
   isDragging: PropTypes.bool.isRequired,
   onItemMoved: PropTypes.func.isRequired,
   itemWillMove: PropTypes.func.isRequired,
+  /** true if the list item should not be focusable even though isSelectable is true */
+  preventRowFocus: PropTypes.bool,
 };
 
 const ListItemDefaultProps = {
   editingStyle: null,
   isLargeRow: false,
+  isLocked: false,
   isExpandable: false,
   dragPreviewText: null,
   onExpand: () => {},
@@ -77,6 +85,8 @@ const ListItemDefaultProps = {
   disabled: false,
   onSelect: () => {},
   renderDropTargets: false,
+  getAllowedDropIds: null,
+  draggingId: null,
   selected: false,
   expanded: false,
   secondaryValue: null,
@@ -92,6 +102,7 @@ const ListItemDefaultProps = {
   },
   selectedItemRef: null,
   tags: null,
+  preventRowFocus: false,
 };
 
 const ListItem = ({
@@ -109,11 +120,14 @@ const ListItem = ({
   secondaryValue,
   rowActions,
   renderDropTargets,
+  getAllowedDropIds,
+  draggingId,
   icon,
   iconPosition, // or "right"
   onItemMoved,
   nestingLevel,
   isCategory,
+  isLocked,
   i18n,
   isDragging,
   selectedItemRef,
@@ -122,6 +136,7 @@ const ListItem = ({
   connectDragPreview,
   itemWillMove,
   dragPreviewText,
+  preventRowFocus,
 }) => {
   const mergedI18n = useMemo(() => ({ ...ListItemDefaultProps.i18n, ...i18n }), [i18n]);
 
@@ -145,7 +160,7 @@ const ListItem = ({
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
         style={{
-          width: `${nestingLevel * 32}px`,
+          width: `${nestingLevel * ITEM_LEVEL_OFFSET - ITEM_COLUMN_GAP}px`,
         }}
       />
     ) : null;
@@ -216,8 +231,23 @@ const ListItem = ({
     return null;
   };
 
+  const renderSecondaryValue = () =>
+    secondaryValue ? (
+      <div
+        title={typeof secondaryValue === 'function' ? `${value}--secondary-value` : secondaryValue}
+        className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+          [`${iotPrefix}--list-item--content--values--value__large`]: isLargeRow,
+          [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+        })}
+      >
+        {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
+      </div>
+    ) : null;
+
   const dragIcon = () =>
-    editingStyle ? (
+    isLocked ? (
+      <Locked16 className={classnames(`${iotPrefix}--list-item--lock`)} />
+    ) : editingStyle ? (
       <div title={mergedI18n.dragHandle}>
         <Draggable16
           className={classnames(`${iotPrefix}--list-item--handle`, {
@@ -245,6 +275,8 @@ const ListItem = ({
         itemWillMove,
         disabled,
         renderDropTargets,
+        getAllowedDropIds: getAllowedDropIds ? () => getAllowedDropIds(draggingId) : null,
+        preventRowFocus,
       }}
     >
       {renderDragPreview()}
@@ -267,99 +299,51 @@ const ListItem = ({
             [`${iotPrefix}--list-item--content--values__large`]: isLargeRow,
           })}
         >
-          {isLargeRow ? (
-            <>
-              <div
-                className={`${iotPrefix}--list-item--content--values--main ${iotPrefix}--list-item--content--values--main__large`}
-              >
-                <div
-                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
-                    [`${iotPrefix}--list-item--category`]: isCategory,
-                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                  })}
-                  title={value}
-                >
-                  {value}
-                </div>
-                {renderTags()}
-                {renderRowActions()}
-              </div>
-              {secondaryValue ? (
-                <div
-                  title={
-                    typeof secondaryValue === 'function'
-                      ? `${value}--secondary-value`
-                      : secondaryValue
-                  }
-                  className={classnames(
-                    `${iotPrefix}--list-item--content--values--value`,
-                    `${iotPrefix}--list-item--content--values--value__large`,
-                    {
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    }
-                  )}
-                >
-                  {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
-                </div>
-              ) : null}
-            </>
-          ) : (
-            <>
-              <div className={`${iotPrefix}--list-item--content--values--main`}>
-                <div
-                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
-                    [`${iotPrefix}--list-item--category`]: isCategory,
-                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                  })}
-                  title={value}
-                >
-                  {value}
-                </div>
-                {secondaryValue ? (
-                  <div
-                    title={
-                      typeof secondaryValue === 'function'
-                        ? `${value}--secondary-value`
-                        : secondaryValue
-                    }
-                    className={classnames(`${iotPrefix}--list-item--content--values--value`, {
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                    })}
-                  >
-                    {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
-                  </div>
-                ) : null}
-                {renderTags()}
-                {renderRowActions()}
-              </div>
-            </>
-          )}
+          <div
+            className={classnames(`${iotPrefix}--list-item--content--values--main`, {
+              [`${iotPrefix}--list-item--content--values--main__large`]: isLargeRow,
+            })}
+          >
+            <div
+              className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                [`${iotPrefix}--list-item--category`]: isCategory,
+                [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+              })}
+              title={value}
+            >
+              {value}
+            </div>
+            {renderSecondaryValue()}
+          </div>
+          {renderTags()}
+          {renderRowActions()}
         </div>
       </div>
     </ListItemWrapper>
   );
 };
 
-const cardSource = {
+const dragSourceSpecification = {
   beginDrag(props) {
     return {
-      id: props.columnId,
-      props,
-      index: props.index,
+      id: props.id,
     };
   },
 };
 
-const ds = DragSource(ItemType, cardSource, (connect, monitor) => ({
-  connectDragSource: connect.dragSource(),
-  connectDragPreview: connect.dragPreview(),
-  isDragging: monitor.isDragging(),
-  renderDropTargets: monitor.getItemType() !== null, // render drop targets if anything is dragging
-}));
+// These props origininate from React DND and are passed down to
+// the ListItem via the DragSource wrapper.
+const dndPropsCollecting = (connect, monitor) => {
+  return {
+    connectDragSource: connect.dragSource(),
+    connectDragPreview: connect.dragPreview(),
+    isDragging: monitor.isDragging(),
+    renderDropTargets: monitor.getItemType() !== null, // render drop targets if anything is dragging
+    draggingId: monitor.getItem()?.id,
+  };
+};
+
+const ds = DragSource(ItemType, dragSourceSpecification, dndPropsCollecting);
 
 ListItem.propTypes = ListItemPropTypes;
 ListItem.defaultProps = ListItemDefaultProps;

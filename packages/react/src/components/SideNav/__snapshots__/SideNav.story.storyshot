@@ -137,7 +137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--side-nav__items"
       >
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button
@@ -250,7 +250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           </a>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button
@@ -345,7 +345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           </ul>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button
@@ -429,6 +429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }
@@ -482,6 +483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               aria-hidden={true}
               className="bx--batch-actions iot--table-batch-actions"
               data-testid="null-table-toolbar-batch-actions"
+              onScroll={[Function]}
             >
               <div
                 className="bx--batch-summary"
@@ -739,7 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             </div>
           </section>
           <div
-            className="addons-iot-table-container"
+            className="addons-iot-table-container iot-table-container--dropdown-height-fix"
           >
             <div
               className="bx--data-table-content"
@@ -772,6 +774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -788,6 +791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select all items
                             </span>
@@ -1276,6 +1280,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   </tr>
                   <tr
                     data-testid="null-table-head-filter-header-row"
+                    style={
+                      Object {
+                        "--filter-header-dropdown-max-height": "unset",
+                      }
+                    }
                   >
                     <th
                       className="iot--filter-header-row--header"
@@ -1313,7 +1322,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                                 data-invalid={null}
                               >
                                 <input
-                                  className="bx--text-input bx--text__input"
+                                  aria-describedby=""
+                                  className="bx--text-input"
                                   disabled={false}
                                   id="string"
                                   onBlur={[Function]}
@@ -1383,7 +1393,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                                 data-invalid={null}
                               >
                                 <input
-                                  className="bx--text-input bx--text__input"
+                                  aria-describedby=""
+                                  className="bx--text-input"
                                   disabled={false}
                                   id="date"
                                   onBlur={[Function]}
@@ -1447,6 +1458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                                   placeholder="pick an option"
                                   role="combobox"
                                   tabIndex="0"
+                                  title=""
                                   type="text"
                                   value="option-B"
                                 />
@@ -1557,7 +1569,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                                 data-invalid={null}
                               >
                                 <input
-                                  className="bx--text-input bx--text__input"
+                                  aria-describedby=""
+                                  className="bx--text-input"
                                   disabled={false}
                                   id="number"
                                   onBlur={[Function]}
@@ -1603,7 +1616,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                                 data-invalid={null}
                               >
                                 <input
-                                  className="bx--text-input bx--text__input"
+                                  aria-describedby=""
+                                  className="bx--text-input"
                                   disabled={false}
                                   id="boolean"
                                   onBlur={[Function]}
@@ -1660,7 +1674,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                                 data-invalid={null}
                               >
                                 <input
-                                  className="bx--text-input bx--text__input"
+                                  aria-describedby=""
+                                  className="bx--text-input"
                                   disabled={false}
                                   id="object"
                                   onBlur={[Function]}
@@ -1731,10 +1746,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -1751,6 +1767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -1767,7 +1784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -1786,7 +1803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -1805,7 +1822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -1824,7 +1841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -1854,7 +1871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -1873,7 +1890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -1892,7 +1909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -1919,7 +1936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -1938,6 +1955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -1976,7 +1994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-1-row-actions-cell-overflow"
                             id="table-19-row-1-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -1991,8 +2009,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2066,10 +2082,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -2086,6 +2103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -2102,7 +2120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2121,7 +2139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2140,7 +2158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2159,7 +2177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2189,7 +2207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2208,7 +2226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2227,7 +2245,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -2254,7 +2272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2273,12 +2291,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-4-row-actions-cell-overflow"
                             id="table-19-row-4-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -2293,8 +2312,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2368,10 +2385,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -2388,6 +2406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -2404,7 +2423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2423,7 +2442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2442,7 +2461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2461,7 +2480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2491,7 +2510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2510,7 +2529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2529,7 +2548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -2556,7 +2575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2575,12 +2594,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-16-row-actions-cell-overflow"
                             id="table-19-row-16-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -2595,8 +2615,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -2670,10 +2688,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -2690,6 +2709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -2706,7 +2726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2725,7 +2745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2744,7 +2764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2763,7 +2783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2793,7 +2813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2812,7 +2832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2831,7 +2851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -2858,7 +2878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -2877,6 +2897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -2915,7 +2936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-22-row-actions-cell-overflow"
                             id="table-19-row-22-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -2930,8 +2951,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -3005,10 +3024,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -3025,6 +3045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -3041,7 +3062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3060,7 +3081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3079,7 +3100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3098,7 +3119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3128,7 +3149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3147,7 +3168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3166,7 +3187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -3193,7 +3214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3212,6 +3233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -3250,7 +3272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-31-row-actions-cell-overflow"
                             id="table-19-row-31-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -3265,8 +3287,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -3340,10 +3360,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -3360,6 +3381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -3376,7 +3398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3395,7 +3417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3414,7 +3436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3433,7 +3455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3463,7 +3485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3482,7 +3504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3501,7 +3523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -3528,7 +3550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3547,6 +3569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -3585,7 +3608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-34-row-actions-cell-overflow"
                             id="table-19-row-34-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -3600,8 +3623,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -3675,10 +3696,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -3695,6 +3717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -3711,7 +3734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3730,7 +3753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3749,7 +3772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3768,7 +3791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3798,7 +3821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3817,7 +3840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3836,7 +3859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -3863,7 +3886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -3882,6 +3905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -3920,7 +3944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-46-row-actions-cell-overflow"
                             id="table-19-row-46-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -3935,8 +3959,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -4010,10 +4032,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -4030,6 +4053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -4046,7 +4070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4065,7 +4089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4084,7 +4108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4103,7 +4127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4133,7 +4157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4152,7 +4176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4171,7 +4195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -4198,7 +4222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4217,12 +4241,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-52-row-actions-cell-overflow"
                             id="table-19-row-52-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -4237,8 +4262,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -4312,10 +4335,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -4332,6 +4356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -4348,7 +4373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4367,7 +4392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4386,7 +4411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4405,7 +4430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4435,7 +4460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4454,7 +4479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4473,7 +4498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -4500,7 +4525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4519,6 +4544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-describedby={null}
@@ -4557,7 +4583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-61-row-actions-cell-overflow"
                             id="table-19-row-61-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -4572,8 +4598,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -4647,10 +4671,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       onClick={[Function]}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <div
                           className="bx--form-item bx--checkbox-wrapper"
+                          onClick={[Function]}
                         >
                           <input
                             checked={false}
@@ -4667,6 +4692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                           >
                             <span
                               className="bx--checkbox-label-text bx--visually-hidden"
+                              dir="auto"
                             >
                               Select row
                             </span>
@@ -4683,7 +4709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4702,7 +4728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4721,7 +4747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4740,7 +4766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4770,7 +4796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4789,7 +4815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4808,7 +4834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <svg
                           aria-hidden={true}
@@ -4835,7 +4861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -4854,12 +4880,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--row-actions-container__background"
                           data-testid="row-action-container-background"
+                          onClick={[Function]}
                         >
                           <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="More actions"
-                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
+                            className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
                             data-testid="table-19-row-64-row-actions-cell-overflow"
                             id="table-19-row-64-row-actions-cell-overflow"
                             onClick={[Function]}
@@ -4874,8 +4901,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                               fill="currentColor"
                               focusable="false"
                               height={16}
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               viewBox="0 0 32 32"
@@ -4911,7 +4936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination"
+            className="bx--pagination iot--pagination bx--pagination--lg"
             data-testid="null-table-pagination"
             style={
               Object {
@@ -5289,7 +5314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--side-nav__items"
       >
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button
@@ -5383,7 +5408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           </ul>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon"
+          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon iot--side-nav__item--depth-0"
           onKeyDown={[Function]}
         >
           <button
@@ -5484,6 +5509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         style={
           Object {
             "--header-offset": "48px",
+            "--negative-header-offset": "-48px",
             "--scroll-transition-progress": 1,
           }
         }

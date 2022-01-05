@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../../constants/Settings';
@@ -1002,12 +1002,13 @@ describe('DataSeriesFormItemModal', () => {
         cardConfig={timeSeriesCardConfig}
         editDataItem={{
           ...editTimeseriesDataItem,
-          aggregationMethod: ['min'],
+          aggregationMethod: 'min',
         }}
         editDataSeries={editDataSeriesTimeSeries}
         isSummaryDashboard
         validDataItems={[
           {
+            dataItemId: 'testDataItem',
             dataSourceId: 'temperature',
             aggregationMethod: 'min',
             grain: 'hourly',
@@ -1016,7 +1017,7 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    expect(screen.getByText('MIN')).toBeVisible();
+    expect(screen.getByText('Min')).toBeVisible();
     expect(screen.getByText('Hourly')).toBeVisible();
   });
 
@@ -1031,6 +1032,7 @@ describe('DataSeriesFormItemModal', () => {
         isSummaryDashboard
         validDataItems={[
           {
+            dataItemId: 'testItemId',
             dataSourceId: 'temperature',
             aggregationMethod: 'min',
             grain: 'hourly',
