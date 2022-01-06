@@ -104,7 +104,7 @@ class IdleTimer {
     window.addEventListener('mousemove', this.eventHandler);
     window.addEventListener('mousedown', this.eventHandler);
     window.addEventListener('scroll', this.eventHandler);
-    window.addEventListener('keydown', this.eventHandler,true);
+    window.addEventListener('keydown', this.eventHandler);
     window.addEventListener('clientTimerEvent', this.eventHandler,true);
     // Listen for mobile (touch) events
     window.addEventListener('touchstart', this.eventHandler);
