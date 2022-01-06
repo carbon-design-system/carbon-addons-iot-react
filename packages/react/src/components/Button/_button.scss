@@ -74,8 +74,10 @@
   }
 
   .#{$iot-prefix}--btn.#{$prefix}--btn--ghost {
-    padding-left: $spacing-05;
-    padding-right: $spacing-05;
+    &:not(.#{$prefix}--btn--sm.#{$prefix}--btn--icon-only) {
+      padding-left: $spacing-05;
+      padding-right: $spacing-05;
+    }
   }
 
   .#{$prefix}--btn-set .#{$prefix}--btn:last-of-type:not(:focus) {
