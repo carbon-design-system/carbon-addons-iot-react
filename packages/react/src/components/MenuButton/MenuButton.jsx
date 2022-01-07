@@ -72,6 +72,11 @@ const propTypes = {
   },
 
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+
+  /**
+   * The size of the button and the dropdown items
+   */
+  size: PropTypes.oneOf(['sm', 'md', 'default']),
 };
 
 const defaultProps = {
@@ -82,6 +87,7 @@ const defaultProps = {
   closeIconDescription: 'close menu button',
   renderOpenIcon: ChevronDown16,
   renderCloseIcon: ChevronUp16,
+  size: 'default',
 };
 
 const MenuButton = ({
@@ -95,6 +101,7 @@ const MenuButton = ({
   renderOpenIcon,
   renderCloseIcon,
   children,
+  size: buttonSize,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -111,7 +118,7 @@ const MenuButton = ({
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [label, langDir, onPrimaryActionClick, isMenuOpen]);
+  }, [label, langDir, onPrimaryActionClick, isMenuOpen, buttonSize]);
 
   /**
    * This is a hacky work-around, because the current Menu (7.42.1) won't allow us
@@ -200,6 +207,8 @@ const MenuButton = ({
     [children, handleChildClick]
   );
 
+  const menuSize = buttonSize === 'default' ? 'lg' : buttonSize;
+
   const ButtonComponent =
     typeof onPrimaryActionClick === 'function' && label ? SplitMenuButton : SingleMenuButton;
   return (
@@ -219,8 +228,9 @@ const MenuButton = ({
         label={label}
         // TODO: remove deprecated 'testID' in v3.
         testId={testID || testId}
+        size={buttonSize}
       />
-      <Menu open={isMenuOpen} {...position}>
+      <Menu size={menuSize} open={isMenuOpen} {...position}>
         {contextMenuItems}
       </Menu>
     </div>

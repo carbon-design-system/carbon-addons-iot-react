@@ -135,6 +135,73 @@ describe('MenuButton', () => {
     expect(create).toBeCalled();
   });
 
+  it('should use default size for buttons and menu items', () => {
+    render(<MenuButton label="Create">{menuItems}</MenuButton>);
+
+    // The "default" size does not have a specific class, so we make sure that the
+    // other size classed have not been added.
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--sm`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--md`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--lg`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--xl`);
+
+    userEvent.click(screen.getByRole('button', { name: 'Create' }));
+
+    // The menu will by default get the size lg which mathces the size "default" of
+    // the triggering button
+    expect(screen.getAllByRole('menu')[0]).toHaveClass(`${prefix}--menu--lg`);
+  });
+
+  it('should render the correct sizes for buttons and menu items for size "default"', () => {
+    render(
+      <MenuButton size="default" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+
+    // The "default" size does not have a specific class, so we make sure that the
+    // other size classed have not been added.
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--sm`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--md`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--lg`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--xl`);
+
+    userEvent.click(screen.getByRole('button', { name: 'Create' }));
+
+    // The menu will by default get the size lg which mathces the size "default" of
+    // the triggering button
+    expect(screen.getAllByRole('menu')[0]).toHaveClass(`${prefix}--menu--lg`);
+  });
+
+  it('should render the correct sizes for buttons and menu items for size "md"', () => {
+    render(
+      <MenuButton size="md" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--md`);
+
+    userEvent.click(screen.getByRole('button', { name: 'Create' }));
+    expect(screen.getAllByRole('menu')[0]).toHaveClass(`${prefix}--menu--md`);
+  });
+
+  it('should render the correct sizes for buttons and menu items for size "sm"', () => {
+    render(
+      <MenuButton size="sm" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--sm`);
+
+    userEvent.click(screen.getByRole('button', { name: 'Create' }));
+    // The size "sm" will not get an explicit class, so we check that the other classes
+    // are not present
+    expect(screen.getAllByRole('menu')[0]).not.toHaveClass(`${prefix}--menu--md`);
+    expect(screen.getAllByRole('menu')[0]).not.toHaveClass(`${prefix}--menu--lg`);
+  });
+
   it('should be open the menu when clicking the button in single button mode', () => {
     render(<MenuButton label="Create">{menuItems}</MenuButton>);
 
