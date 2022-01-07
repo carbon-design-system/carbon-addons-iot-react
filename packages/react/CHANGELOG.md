@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.87](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.86...v2.147.0-next.87) (2022-01-07)
+
+
+### Bug Fixes
+
+* turn off toolbar on PieChartCards ([0df4461](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0df4461db60c68acb98611f8290431bc4fbc0f6f))
+
+
+### Features
+
+* upgrade @carbon/charts ([027541e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/027541ee9b1ce1b67c50118d4a298ceec0379f3b))
+
+
+
+
+
 # [2.147.0-next.86](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.85...v2.147.0-next.86) (2022-01-06)
 
 **Note:** Version bump only for package carbon-addons-iot-react
