@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.88](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.87...v2.147.0-next.88) (2022-01-07)
+
+
+### Bug Fixes
+
+* **list:** improve proptypes definition ([81477b0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/81477b02ba0103984d4d3ab0a1829b1fe2a23d92))
+* **list:** update snapshots ([549318b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/549318b3aff8a47ee236ee7225967ff7ec7647e5))
+
+
+
+
+
 # [2.147.0-next.87](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.86...v2.147.0-next.87) (2022-01-07)
 
 
