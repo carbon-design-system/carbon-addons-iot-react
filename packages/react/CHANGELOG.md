@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.90](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.89...v2.147.0-next.90) (2022-01-07)
+
+
+### Bug Fixes
+
+* **table:** fix select all checkbox focus ([a69825c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a69825c3e3a88fe0103ae9b733f54c30efc0152a))
+
+
+
+
+
 # [2.147.0-next.89](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.88...v2.147.0-next.89) (2022-01-07)
 
 
