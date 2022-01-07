@@ -187,6 +187,9 @@ const PieChartCard = ({
       tooltip: {
         customHTML: customTooltip,
       },
+      toolbar: {
+        enabled: false,
+      },
     },
   };
 
