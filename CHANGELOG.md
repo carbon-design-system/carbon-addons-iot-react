@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.147.0-next.89](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.88...v2.147.0-next.89) (2022-01-07)
+
+
+### Bug Fixes
+
+* **list:** indeterminate selection in story ([28314f2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/28314f208781a91a1060f1a37949582598adb389))
+
+
+
+
+
 # [2.147.0-next.88](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.87...v2.147.0-next.88) (2022-01-07)
 
 
