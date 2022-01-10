@@ -656,6 +656,51 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with secondary value an object 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list-item"
+    >
+      <div
+        className="iot--list-item--content"
+      >
+        <div
+          className="iot--list-item--content--values"
+        >
+          <div
+            className="iot--list-item--content--values--main"
+          >
+            <div
+              className="iot--list-item--content--values--value"
+              title="List Item"
+            >
+              List Item
+            </div>
+            <div
+              className="iot--list-item--content--values--value"
+              title="Secondary value object"
+            >
+              <div>
+                Secondary value object
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with secondaryValue 1`] = `
 <div
   className="storybook-container"
