@@ -388,7 +388,9 @@ const Card = (props) => {
   const subTitleRef = useRef();
   const hasTitleTooltip = useHasTextOverflow(titleRef);
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef);
-  const [isVisible] = useVisibilityObserver(cardRef);
+  const [isVisible] = useVisibilityObserver(cardRef, {
+    unobserveAfterVisible: true,
+  });
   const { resizeHandles, isResizing } = useCardResizing(
     wrappingCardResizeHandles,
     children,

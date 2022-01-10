@@ -417,7 +417,7 @@ describe('TableColumnCustomizationModal', () => {
   it('can load more rows', () => {
     const defaultTestProps = getDefaultTestProps();
     const { i18n } = realDefaultProps;
-    const { rerender } = render(
+    const { rerender, container } = render(
       <TableColumnCustomizationModal
         {...defaultTestProps}
         availableColumns={generateColumns(1)}
@@ -429,7 +429,8 @@ describe('TableColumnCustomizationModal', () => {
 
     userEvent.click(screen.getByText(i18n.loadMoreButtonLabel));
     expect(defaultTestProps.onLoadMore).toHaveBeenCalledWith('1');
-    expect(screen.queryByLabelText('Active loading indicator')).not.toBeInTheDocument();
+
+    expect(container.querySelectorAll(`.${iotPrefix}--list--load-more-skeleton`)).toHaveLength(0);
 
     rerender(
       <TableColumnCustomizationModal
@@ -440,7 +441,7 @@ describe('TableColumnCustomizationModal', () => {
       />
     );
 
-    expect(screen.getByLabelText('Active loading indicator')).toBeInTheDocument();
+    expect(container.querySelectorAll(`.${iotPrefix}--list--load-more-skeleton`)).toHaveLength(1);
 
     rerender(
       <TableColumnCustomizationModal
@@ -449,7 +450,7 @@ describe('TableColumnCustomizationModal', () => {
         hasLoadMore
       />
     );
-    expect(screen.queryByLabelText('Active loading indicator')).not.toBeInTheDocument();
+    expect(container.querySelectorAll(`.${iotPrefix}--list--load-more-skeleton`)).toHaveLength(0);
     expect(screen.getByText('Item 1')).toBeVisible();
     expect(screen.getByText('Item 2')).toBeVisible();
   });
@@ -596,9 +597,6 @@ describe('TableColumnCustomizationModal', () => {
       screen.getByText('column 1').closest(`.${iotPrefix}--list-item--content--values--main`)
     ).toBeVisible();
     expect(screen.queryByText('col1')).toBeVisible();
-    expect(
-      screen.getByText('col1').closest(`.${iotPrefix}--list-item--content--values--main`)
-    ).toBeNull();
   });
 
   it('renders all rows large when a secondary value is used', () => {
@@ -1186,9 +1184,10 @@ describe('TableColumnCustomizationModal', () => {
     const defaultTestProps = getDefaultTestProps();
     const { i18n } = realDefaultProps;
     let rerender;
+    let container;
 
     await act(async () => {
-      ({ rerender } = render(
+      ({ rerender, container } = render(
         <AsyncTableColumnCustomizationModal
           {...defaultTestProps}
           availableColumns={new Promise((resolve) => resolve(generateColumns(1)))}
@@ -1214,7 +1213,8 @@ describe('TableColumnCustomizationModal', () => {
     // Load more columns
     userEvent.click(screen.getByText(i18n.loadMoreButtonLabel));
     expect(defaultTestProps.onLoadMore).toHaveBeenCalledWith('1');
-    expect(screen.queryByLabelText('Active loading indicator')).toBeInTheDocument();
+
+    expect(container.querySelectorAll(`.${iotPrefix}--list--load-more-skeleton`)).toHaveLength(1);
 
     // Initialordering prop is unchanged like in a real scenario when loading more.
     await act(async () => {

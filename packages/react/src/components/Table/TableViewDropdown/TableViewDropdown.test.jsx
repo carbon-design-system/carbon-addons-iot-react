@@ -210,13 +210,13 @@ describe('TableViewDropdown', () => {
 
   describe('overrides', () => {
     it('can be overridden to use another dropdown component', () => {
-      const MyDropdown = (props) => {
+      const MyDropdown = React.forwardRef((props, ref) => {
         return (
           <div className="my-dropdown">
-            <Dropdown {...props} />
+            <Dropdown {...props} ref={ref} />
           </div>
         );
-      };
+      });
       const wrapper = mount(
         <TableViewDropdown
           views={myViews}
@@ -342,5 +342,24 @@ describe('TableViewDropdown', () => {
     expect(screen.queryByText(i18nDefault.saveChanges)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.manageViews)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.ariaLabel)).not.toBeInTheDocument();
+  });
+
+  it('should fix the title for the selected item', async () => {
+    jest.useFakeTimers();
+    jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
+      callback([{ contentRect: { width: 200, height: 400 } }]);
+
+      return {
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+    });
+
+    render(<TableViewDropdown views={myViews} actions={actions} selectedViewId={myViews[0].id} />);
+
+    jest.runAllTimers();
+    const button = screen.getByRole('button');
+    expect(button).toHaveAttribute('title', myViews[0].text);
   });
 });

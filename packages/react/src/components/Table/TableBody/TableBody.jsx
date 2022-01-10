@@ -261,7 +261,10 @@ const TableBody = ({
         <TableBodyRowRenderer
           key={row.id}
           actionFailedText={actionFailedText}
-          actions={actions}
+          actions={{
+            ...actions,
+            onRowSelected,
+          }}
           clickToCollapseAria={clickToCollapseAria}
           clickToExpandAria={clickToExpandAria}
           columns={columns}
@@ -279,7 +282,6 @@ const TableBody = ({
           loadingMoreIds={loadingMoreIds}
           loadMoreText={loadMoreText}
           locale={locale}
-          onRowSelected={onRowSelected}
           ordering={orderingMap}
           overflowMenuAria={overflowMenuAria}
           preserveCellWhiteSpace={preserveCellWhiteSpace}

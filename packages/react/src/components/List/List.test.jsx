@@ -213,24 +213,45 @@ describe('List', () => {
     );
     expect(screen.getByLabelText('Chicago White Sox')).toBeTruthy();
   });
-  it('List shows default empty text if not empty state defined', () => {
+  it('it shows default empty text if not empty state defined', () => {
     render(<List title="list" />);
     expect(screen.getByText(defaultEmptyText)).toBeTruthy();
   });
-  it('List shows no empty text if defined', () => {
+  it('it shows no empty text if defined', () => {
     render(<List title="list" emptyState="" />);
     expect(screen.queryByText(defaultEmptyText)).toBeNull();
   });
-  it('List shows empty text if desired', () => {
+  it('it shows custom empty text if desired', () => {
     const emptyText = 'empty';
-    render(<List title="list" hasEmptyState emptyState={emptyText} />);
+    render(<List title="list" emptyState={emptyText} />);
     expect(screen.getByText(emptyText)).toBeTruthy();
   });
-  it('Renders custom component for empty state', () => {
+  it('renders custom component for empty state', () => {
     const emptyText = 'empty test';
     const emptyComponent = <div data-testid="emptyState">{emptyText}</div>;
-    render(<List title="list" hasEmptyState emptyState={emptyComponent} />);
+    render(<List title="list" emptyState={emptyComponent} />);
     expect(screen.getByTestId('emptyState').textContent).toEqual(emptyText);
+  });
+
+  it('shows no empty search text if defined as empty string', () => {
+    render(<List isFiltering title="list" emptySearchState="" />);
+    expect(screen.queryByText(defaultEmptyText)).toBeNull();
+  });
+
+  it('shows default empty search text if emptySearchState is not provided', () => {
+    render(<List isFiltering title="list" />);
+    expect(screen.getByText(List.defaultProps.emptySearchState)).toBeTruthy();
+  });
+
+  it('shows custom empty search text if desired', () => {
+    render(<List isFiltering title="list" emptySearchState="test-empty" />);
+    expect(screen.getByText('test-empty')).toBeTruthy();
+  });
+
+  it('renders custom component for empty search state', () => {
+    const emptyComponent = <div>test-empty</div>;
+    render(<List isFiltering title="list" emptySearchState={emptyComponent} />);
+    expect(screen.getByText('test-empty')).toBeVisible();
   });
 
   it('should show skeleton text when loading', () => {
@@ -390,6 +411,7 @@ describe('List', () => {
         title="Sports Teams"
         items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
         handleLoadMore={mockLoadMore}
+        i18n={{ loadMore: 'Load more...' }}
       />
     );
     expect(mockLoadMore).not.toHaveBeenCalled();
@@ -398,6 +420,7 @@ describe('List', () => {
     expect(mockLoadMore).toHaveBeenCalledTimes(1);
   });
   it(' load more row clicked without handleLoadMore function provided', () => {
+    const { loadMore } = List.defaultProps.i18n;
     render(
       <List
         title="Sports Teams"
@@ -423,8 +446,8 @@ describe('List', () => {
         testId="test-list"
       />
     );
-    expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
-    userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+    expect(screen.getAllByText(loadMore)[0]).toBeInTheDocument();
+    userEvent.click(screen.getByRole('button', { name: loadMore }));
   });
 
   it('should show lock icons and prevent rows from being dragged for ids in lockedIds', () => {
@@ -674,24 +697,45 @@ describe('List', () => {
       );
       expect(screen.getByLabelText('Chicago White Sox')).toBeTruthy();
     });
-    it('List shows default empty text if not empty state defined', () => {
+    it('shows default empty text if not empty state defined', () => {
       render(<List title="list" isVirtualList />);
       expect(screen.getByText(defaultEmptyText)).toBeTruthy();
     });
-    it('List shows no empty text if defined', () => {
+    it('shows no empty text if defined', () => {
       render(<List title="list" emptyState="" isVirtualList />);
       expect(screen.queryByText(defaultEmptyText)).toBeNull();
     });
-    it('List shows empty text if desired', () => {
+    it('shows empty text if desired', () => {
       const emptyText = 'empty';
-      render(<List title="list" hasEmptyState emptyState={emptyText} isVirtualList />);
+      render(<List title="list" emptyState={emptyText} isVirtualList />);
       expect(screen.getByText(emptyText)).toBeTruthy();
     });
-    it('Renders custom component for empty state', () => {
+    it('renders custom component for empty state', () => {
       const emptyText = 'empty test';
       const emptyComponent = <div data-testid="emptyState">{emptyText}</div>;
-      render(<List title="list" hasEmptyState emptyState={emptyComponent} isVirtualList />);
+      render(<List title="list" emptyState={emptyComponent} isVirtualList />);
       expect(screen.getByTestId('emptyState').textContent).toEqual(emptyText);
+    });
+
+    it('shows no empty search text if defined as empty string', () => {
+      render(<List isFiltering title="list" emptySearchState="" isVirtualList />);
+      expect(screen.queryByText(defaultEmptyText)).toBeNull();
+    });
+
+    it('shows default empty search text if emptySearchState is not provided', () => {
+      render(<List isFiltering title="list" isVirtualList />);
+      expect(screen.getByText(List.defaultProps.emptySearchState)).toBeTruthy();
+    });
+
+    it('shows custom empty search text if desired', () => {
+      render(<List isFiltering title="list" emptySearchState="test-empty" isVirtualList />);
+      expect(screen.getByText('test-empty')).toBeTruthy();
+    });
+
+    it('renders custom component for empty search state', () => {
+      const emptyComponent = <div>test-empty</div>;
+      render(<List isFiltering title="list" emptySearchState={emptyComponent} isVirtualList />);
+      expect(screen.getByText('test-empty')).toBeVisible();
     });
 
     it('should show skeleton text when loading', () => {
@@ -873,6 +917,7 @@ describe('List', () => {
           items={[{ id: 'org', content: { value: 'Organization' }, hasLoadMore: true }]}
           isVirtualList
           handleLoadMore={mockLoadMore}
+          i18n={{ loadMore: 'Load more...' }}
         />
       );
       expect(mockLoadMore).not.toHaveBeenCalled();
@@ -881,6 +926,7 @@ describe('List', () => {
       expect(mockLoadMore).toHaveBeenCalledTimes(1);
     });
     it('should load more row clicked without handleLoadMore function provided', () => {
+      const { loadMore } = List.defaultProps.i18n;
       render(
         <List
           title="Sports Teams"
@@ -907,8 +953,8 @@ describe('List', () => {
           isVirtualList
         />
       );
-      expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
-      userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+      expect(screen.getAllByText(loadMore)[0]).toBeInTheDocument();
+      userEvent.click(screen.getByRole('button', { name: loadMore }));
     });
 
     it('should pass override props to list content', () => {

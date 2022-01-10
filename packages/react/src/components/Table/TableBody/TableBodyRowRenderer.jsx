@@ -62,8 +62,8 @@ const propTypes = {
   locale: PropTypes.string,
 
   actions: PropTypes.shape({
-    onRowSelected: PropTypes.func,
     onRowClicked: PropTypes.func,
+    onRowSelected: PropTypes.func,
     onApplyRowActions: PropTypes.func,
     onRowExpanded: PropTypes.func,
     onRowLoadMore: PropTypes.func,
@@ -95,7 +95,6 @@ const propTypes = {
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
   indeterminateSelectionIds: PropTypes.arrayOf(PropTypes.string),
   nestingLevel: PropTypes.number,
-  onRowSelected: PropTypes.func,
   someRowHasSingleRowEditMode: PropTypes.bool,
   row: TableRowPropTypes.isRequired,
   rows: TableRowsPropTypes,
@@ -121,7 +120,6 @@ const defaultProps = {
   loadMoreText: 'Load more...',
   locale: null,
   nestingLevel: 0,
-  onRowSelected: () => {},
   overflowMenuAria: 'More actions',
   preserveCellWhiteSpace: false,
   rowActionsState: [],
@@ -161,7 +159,6 @@ const TableBodyRowRenderer = (props) => {
     loadMoreText,
     locale,
     nestingLevel,
-    onRowSelected,
     ordering,
     overflowMenuAria,
     preserveCellWhiteSpace,
@@ -258,8 +255,14 @@ const TableBodyRowRenderer = (props) => {
       nestingLevel={nestingLevel}
       nestingChildCount={row.children ? row.children.length : 0}
       tableActions={{
-        ...pick(actions, 'onApplyRowAction', 'onRowExpanded', 'onRowClicked', 'onClearRowError'),
-        onRowSelected,
+        ...pick(
+          actions,
+          'onApplyRowAction',
+          'onRowExpanded',
+          'onRowClicked',
+          'onClearRowError',
+          'onRowSelected'
+        ),
       }}
       rowActions={row.rowActions}
       values={row.values}
