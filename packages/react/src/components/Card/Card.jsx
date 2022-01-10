@@ -388,7 +388,10 @@ const Card = (props) => {
   const subTitleRef = useRef();
   const hasTitleTooltip = useHasTextOverflow(titleRef);
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef);
-  const [isVisible] = useVisibilityObserver(cardRef);
+  const visibilityRef = useRef(null);
+  const [isVisible] = useVisibilityObserver(visibilityRef, {
+    unobserveAfterVisible: true,
+  });
   const { resizeHandles, isResizing } = useCardResizing(
     wrappingCardResizeHandles,
     children,
@@ -418,7 +421,12 @@ const Card = (props) => {
   const card = (
     <CardWrapper
       {...others} // you need all of these to support dynamic positioning during edit
-      ref={cardRef}
+      ref={(node) => {
+        if (node) {
+          visibilityRef.current = node;
+          cardRef(node);
+        }
+      }}
       // TODO: remove deprecated testID prop in v3
       testId={testID || testId}
       id={id}

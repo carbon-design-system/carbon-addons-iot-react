@@ -34,7 +34,7 @@ describe('Card', () => {
     cy.findAllByText(/renderprop/).should('have.length', 3);
 
     // scroll down to load the rest.
-    cy.scrollTo('bottom', { duration: 500 });
+    cy.scrollTo('bottom', { duration: 1000 });
     cy.findAllByText(/renderprop/).should('have.length', 8);
   });
 });

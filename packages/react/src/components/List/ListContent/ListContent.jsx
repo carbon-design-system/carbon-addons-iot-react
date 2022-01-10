@@ -2,21 +2,24 @@ import React, { useMemo } from 'react';
 import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { Bee32 } from '@carbon/icons-react';
 
 import { settings } from '../../../constants/Settings';
 import ListItem from '../ListItem/ListItem';
 import { Checkbox } from '../../Checkbox';
+import EmptyState from '../../EmptyState';
 import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
 import { ListItemPropTypes } from '../ListPropTypes';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
+import { ITEM_COLUMN_GAP, ITEM_LEVEL_OFFSET } from '../VirtualListContent/listConstants';
 
 const { iotPrefix } = settings;
 
 const propTypes = {
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** content shown if list is empty on search */
+  emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
@@ -26,6 +29,8 @@ const propTypes = {
   }),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
+  /** if true shows empty search state, instead of empty state, when there are no search results */
+  isFiltering: PropTypes.bool,
   /** use full height in list */
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
@@ -73,6 +78,7 @@ const propTypes = {
 const defaultProps = {
   editingStyle: null,
   emptyState: 'No list items to show',
+  emptySearchState: 'No results found',
   expandedIds: [],
   getAllowedDropIds: null,
   handleLoadMore: () => {},
@@ -81,9 +87,10 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
-    loadMore: 'Load more...',
+    loadMore: 'View more...',
   },
   iconPosition: 'left',
+  isFiltering: false,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -110,10 +117,12 @@ const getAdjustedNestingLevel = (items, currentLevel) =>
 const ListContent = ({
   isLoading,
   isCheckboxMultiSelect,
+  isFiltering,
   isFullHeight,
   items,
   testId,
   emptyState,
+  emptySearchState,
   selectedIds,
   expandedIds,
   indeterminateIds,
@@ -132,6 +141,39 @@ const ListContent = ({
   selectedItemRef,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
+  const renderLoadMore = (item, isLoadingMore, level) => {
+    const indentation = `${level * ITEM_LEVEL_OFFSET - ITEM_COLUMN_GAP}px`;
+    return isLoadingMore ? (
+      <div key={`${item.id}-list-item-load-more`} className={`${iotPrefix}--list-item`}>
+        <div
+          style={{
+            width: indentation,
+          }}
+        />
+        <SkeletonText
+          className={`${iotPrefix}--list--load-more-skeleton`}
+          width="30%"
+          data-testid={`${testId}-loading-more`}
+        />
+      </div>
+    ) : (
+      <Button
+        key={`${item.id}-list-item-load-more`}
+        className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
+        onClick={() => handleLoadMore(item.id)}
+        data-testid={`${testId}-${item.id}-load-more`}
+        kind="ghost"
+      >
+        <div
+          style={{
+            width: indentation,
+          }}
+        />
+        <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
+      </Button>
+    );
+  };
 
   const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item?.children && item.children.length > 0;
@@ -208,46 +250,11 @@ const ListContent = ({
       ...(hasChildren && isExpanded
         ? item.children
             .map((child, nestedIndex) => {
-              return renderItemAndChildren(
-                child,
-                nestedIndex,
-                item.id,
-                getAdjustedNestingLevel(item?.children, level)
-              );
+              return renderItemAndChildren(child, nestedIndex, item.id, level + 1);
             })
-            .concat(
-              item.hasLoadMore
-                ? [
-                    <Button
-                      key={`${item.id}-list-item-parent-loading`}
-                      className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
-                      onClick={() => handleLoadMore(item.id)}
-                      data-testid={`${testId}-${item.id}-load-more`}
-                      kind="ghost"
-                      loading={isLoadingMore}
-                    >
-                      <div className={`${iotPrefix}--load-more-row--content`}>
-                        {mergedI18n.loadMore}
-                      </div>
-                    </Button>,
-                  ]
-                : []
-            )
+            .concat(item.hasLoadMore ? [renderLoadMore(item, isLoadingMore, level + 1)] : [])
         : []),
-      ...(!hasChildren && item.hasLoadMore
-        ? [
-            <Button
-              key={`${item.id}-list-item-parent-loading`}
-              className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
-              onClick={() => handleLoadMore(item.id)}
-              data-testid={`${testId}-${item.id}-load-more`}
-              kind="ghost"
-              loading={isLoadingMore}
-            >
-              <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
-            </Button>,
-          ]
-        : []),
+      ...(!hasChildren && item.hasLoadMore ? [renderLoadMore(item, isLoadingMore, level)] : []),
     ];
   };
 
@@ -255,19 +262,20 @@ const ListContent = ({
     renderItemAndChildren(item, index, null, getAdjustedNestingLevel(items, 0))
   );
 
-  const emptyContent =
-    typeof emptyState === 'string' ? (
+  const renderEmptyContent = () => {
+    const emptyContent = isFiltering ? emptySearchState : emptyState;
+    return typeof emptyContent === 'string' ? (
       <div
         className={classnames(`${iotPrefix}--list--empty-state`, {
           [`${iotPrefix}--list--empty-state__full-height`]: isFullHeight,
         })}
       >
-        <Bee32 />
-        <p>{emptyState}</p>
+        <EmptyState icon={isFiltering ? 'no-result' : 'empty'} title={emptyContent} body="" />
       </div>
     ) : (
-      emptyState
+      emptyContent
     );
+  };
 
   return (
     <div
@@ -280,7 +288,7 @@ const ListContent = ({
       )}
     >
       {!isLoading ? (
-        <>{listItems.length ? listItems : emptyContent}</>
+        <>{listItems.length ? listItems : renderEmptyContent()}</>
       ) : (
         <SkeletonText
           className={`${iotPrefix}--list--skeleton`}

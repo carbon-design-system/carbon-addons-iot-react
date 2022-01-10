@@ -992,6 +992,45 @@ describe('HierarchyList', () => {
     expect(screen.getByText('A CUSTOM EMPTY NODE')).toBeVisible();
   });
 
+  it('should show custom empty search state when given', () => {
+    const { searchPlaceHolderText } = HierarchyList.defaultProps.i18n;
+    const { rerender } = render(
+      <HierarchyList
+        hasSearch
+        items={[]}
+        title="Empty List"
+        emptySearchState="__custom-empty-search-state__"
+        search={{
+          onChange: () => {},
+        }}
+      />
+    );
+
+    fireEvent.change(screen.getByPlaceholderText(searchPlaceHolderText), {
+      target: { value: 'a-search-resulting-in-empty' },
+    });
+
+    expect(screen.getByText('__custom-empty-search-state__')).toBeVisible();
+
+    rerender(
+      <HierarchyList
+        hasSearch
+        items={[]}
+        title="Empty List"
+        emptySearchState={<div>A CUSTOM EMPTY NODE</div>}
+        search={{
+          onChange: () => {},
+        }}
+      />
+    );
+
+    fireEvent.change(screen.getByPlaceholderText(searchPlaceHolderText), {
+      target: { value: 'a-search-resulting-in-empty' },
+    });
+
+    expect(screen.getByText('A CUSTOM EMPTY NODE')).toBeVisible();
+  });
+
   it('should reset pagination and search when data changes', () => {
     const { rerender } = render(
       <HierarchyList items={getListItems(100)} hasSearch title="Changing List" pageSize="sm" />
@@ -1086,6 +1125,69 @@ describe('HierarchyList', () => {
 
     afterEach(() => {
       jest.resetAllMocks();
+    });
+
+    it('should show custom empty state when given', () => {
+      const { rerender } = render(
+        <HierarchyList
+          items={[]}
+          title="Empty List"
+          emptyState="__custom-empty-state__"
+          isVirtualList
+        />
+      );
+
+      expect(screen.getByText('__custom-empty-state__')).toBeVisible();
+
+      rerender(
+        <HierarchyList
+          items={[]}
+          title="Empty List"
+          emptyState={<div>A CUSTOM EMPTY NODE</div>}
+          isVirtualList
+        />
+      );
+
+      expect(screen.getByText('A CUSTOM EMPTY NODE')).toBeVisible();
+    });
+
+    it('should show custom empty search state when given', () => {
+      const { searchPlaceHolderText } = HierarchyList.defaultProps.i18n;
+      const { rerender } = render(
+        <HierarchyList
+          hasSearch
+          items={[]}
+          title="Empty List"
+          emptySearchState="__custom-empty-search-state__"
+          search={{
+            onChange: () => {},
+          }}
+          isVirtualList
+        />
+      );
+
+      fireEvent.change(screen.getByPlaceholderText(searchPlaceHolderText), {
+        target: { value: 'a-search-resulting-in-empty' },
+      });
+      expect(screen.getByText('__custom-empty-search-state__')).toBeVisible();
+
+      rerender(
+        <HierarchyList
+          hasSearch
+          items={[]}
+          title="Empty List"
+          emptySearchState={<div>A CUSTOM EMPTY SEARCH NODE</div>}
+          search={{
+            onChange: () => {},
+          }}
+          isVirtualList
+        />
+      );
+
+      fireEvent.change(screen.getByPlaceholderText(searchPlaceHolderText), {
+        target: { value: 'a-search-resulting-in-empty' },
+      });
+      expect(screen.getByText('A CUSTOM EMPTY SEARCH NODE')).toBeVisible();
     });
 
     it('should maintain the current page when page size changes', () => {

@@ -57,6 +57,7 @@ describe('ListContent', () => {
   });
 
   it(' load more row clicked without handleLoadMore function provided', () => {
+    const { loadMore } = ListContent.defaultProps.i18n;
     jest.spyOn(ListContent.defaultProps, 'handleLoadMore');
     render(
       <DragAndDrop>
@@ -84,8 +85,8 @@ describe('ListContent', () => {
         />
       </DragAndDrop>
     );
-    expect(screen.getAllByText('Load more...')[0]).toBeInTheDocument();
-    userEvent.click(screen.getByRole('button', { name: 'Load more...' }));
+    expect(screen.getAllByText(loadMore)[0]).toBeInTheDocument();
+    userEvent.click(screen.getByRole('button', { name: loadMore }));
     expect(ListContent.defaultProps.handleLoadMore).toHaveBeenCalled();
   });
 });

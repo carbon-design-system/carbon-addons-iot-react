@@ -150,7 +150,8 @@ describe('StatefulTable', () => {
   });
 
   it('shouldLazyRender rows on scroll with pagination shouldLazyRender:true', () => {
-    cy.viewport(1680, 900);
+    // hack to get cypress to re-draw the screen and correctly render the table
+    cy.viewport(1680, 400);
 
     mount(
       <StatefulTable
@@ -169,23 +170,34 @@ describe('StatefulTable', () => {
       />
     );
 
-    // 22 because that's what fits on screen at 1680x900
-    cy.get('tr').should('have.length', 22);
-
-    cy.get('tr').last().scrollIntoView({ duration: 500 });
-    // header and 30 data rows
+    // all the rows
     cy.get('tr').should('have.length', 31);
-    cy.scrollTo('bottom');
+    // 22 loading, 8 visible
+    cy.findAllByTestId(/lazy-row/i).should('have.length', 22);
+    // we need to scroll slowly so the observer triggers correctly in cypress
+    cy.scrollTo('bottom', { duration: 1000 });
+    // at bottom so none should be loading now
+    cy.findAllByTestId(/lazy-row/i).should('have.length', 0);
 
     // rinse and repeat for page 2
     cy.findByLabelText('Next page').click();
-    cy.get('tr').last().scrollIntoView({ duration: 500 });
-    // header and 30 data rows
+    // all rows
     cy.get('tr').should('have.length', 31);
+    // 22 loading, 8 visible
+    cy.findAllByTestId(/lazy-row/i).should('have.length', 22);
+    // we're at the bottom from our scroll on the last page, so we scroll to the top
+    cy.scrollTo('top', { duration: 1000 });
+    // no rows loading
+    cy.findAllByTestId(/lazy-row/i).should('have.length', 0);
 
-    // load final 10 from page 3
+    // page 3
     cy.findByLabelText('Next page').click();
-    // header and 10 data rows
     cy.get('tr').should('have.length', 11);
+    // only two rows not visible
+    cy.findAllByTestId(/lazy-row/i).should('have.length', 2);
+    cy.scrollTo('top', { duration: 1000 });
+    cy.findAllByTestId(/lazy-row/i).should('have.length', 0);
+
+    cy.viewport(1680, 900);
   });
 });
